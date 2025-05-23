@@ -1,2 +1,1 @@
-# chip
-SiGo device support packages
+# SiGo Device Support Packages
