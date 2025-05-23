@@ -1,0 +1,155 @@
+#ifndef _PERIPHERALS_DMAMUX2_TD
+#define _PERIPHERALS_DMAMUX2_TD
+
+include "base.td"
+
+def DMAMUX2Peripheral : PeripheralType<"DMAMUX2", "DMAMUX"> {
+  let accessWidth = 32;
+  let registers = [
+    Register<"C0CR", 0x0, 32, [
+      Field<"DMAREQ_ID", 0, 8, ReadWrite, "Input DMA request line selected">,
+      Field<"SOIE", 8, 1, ReadWrite, "Interrupt enable at synchronization event overrun">,
+      Field<"EGE", 9, 1, ReadWrite, "Event generation enable/disable">,
+      Field<"SE", 16, 1, ReadWrite, "Synchronous operating mode enable/disable">,
+      Field<"SPOL", 17, 2, ReadWrite, "Synchronization event type selector Defines the synchronization event on the selected synchronization input:">,
+      Field<"NBREQ", 19, 5, ReadWrite, "Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.">,
+      Field<"SYNC_ID", 24, 5, ReadWrite, "Synchronization input selected">,
+    ], "DMAMux - DMA request line multiplexer channel x control register">,
+    Register<"C1CR", 0x4, 32, [
+      Field<"DMAREQ_ID", 0, 8, ReadWrite, "Input DMA request line selected">,
+      Field<"SOIE", 8, 1, ReadWrite, "Interrupt enable at synchronization event overrun">,
+      Field<"EGE", 9, 1, ReadWrite, "Event generation enable/disable">,
+      Field<"SE", 16, 1, ReadWrite, "Synchronous operating mode enable/disable">,
+      Field<"SPOL", 17, 2, ReadWrite, "Synchronization event type selector Defines the synchronization event on the selected synchronization input:">,
+      Field<"NBREQ", 19, 5, ReadWrite, "Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.">,
+      Field<"SYNC_ID", 24, 5, ReadWrite, "Synchronization input selected">,
+    ], "DMAMux - DMA request line multiplexer channel x control register">,
+    Register<"C2CR", 0x8, 32, [
+      Field<"DMAREQ_ID", 0, 8, ReadWrite, "Input DMA request line selected">,
+      Field<"SOIE", 8, 1, ReadWrite, "Interrupt enable at synchronization event overrun">,
+      Field<"EGE", 9, 1, ReadWrite, "Event generation enable/disable">,
+      Field<"SE", 16, 1, ReadWrite, "Synchronous operating mode enable/disable">,
+      Field<"SPOL", 17, 2, ReadWrite, "Synchronization event type selector Defines the synchronization event on the selected synchronization input:">,
+      Field<"NBREQ", 19, 5, ReadWrite, "Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.">,
+      Field<"SYNC_ID", 24, 5, ReadWrite, "Synchronization input selected">,
+    ], "DMAMux - DMA request line multiplexer channel x control register">,
+    Register<"C3CR", 0xc, 32, [
+      Field<"DMAREQ_ID", 0, 8, ReadWrite, "Input DMA request line selected">,
+      Field<"SOIE", 8, 1, ReadWrite, "Interrupt enable at synchronization event overrun">,
+      Field<"EGE", 9, 1, ReadWrite, "Event generation enable/disable">,
+      Field<"SE", 16, 1, ReadWrite, "Synchronous operating mode enable/disable">,
+      Field<"SPOL", 17, 2, ReadWrite, "Synchronization event type selector Defines the synchronization event on the selected synchronization input:">,
+      Field<"NBREQ", 19, 5, ReadWrite, "Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.">,
+      Field<"SYNC_ID", 24, 5, ReadWrite, "Synchronization input selected">,
+    ], "DMAMux - DMA request line multiplexer channel x control register">,
+    Register<"C4CR", 0x10, 32, [
+      Field<"DMAREQ_ID", 0, 8, ReadWrite, "Input DMA request line selected">,
+      Field<"SOIE", 8, 1, ReadWrite, "Interrupt enable at synchronization event overrun">,
+      Field<"EGE", 9, 1, ReadWrite, "Event generation enable/disable">,
+      Field<"SE", 16, 1, ReadWrite, "Synchronous operating mode enable/disable">,
+      Field<"SPOL", 17, 2, ReadWrite, "Synchronization event type selector Defines the synchronization event on the selected synchronization input:">,
+      Field<"NBREQ", 19, 5, ReadWrite, "Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.">,
+      Field<"SYNC_ID", 24, 5, ReadWrite, "Synchronization input selected">,
+    ], "DMAMux - DMA request line multiplexer channel x control register">,
+    Register<"C5CR", 0x14, 32, [
+      Field<"DMAREQ_ID", 0, 8, ReadWrite, "Input DMA request line selected">,
+      Field<"SOIE", 8, 1, ReadWrite, "Interrupt enable at synchronization event overrun">,
+      Field<"EGE", 9, 1, ReadWrite, "Event generation enable/disable">,
+      Field<"SE", 16, 1, ReadWrite, "Synchronous operating mode enable/disable">,
+      Field<"SPOL", 17, 2, ReadWrite, "Synchronization event type selector Defines the synchronization event on the selected synchronization input:">,
+      Field<"NBREQ", 19, 5, ReadWrite, "Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.">,
+      Field<"SYNC_ID", 24, 5, ReadWrite, "Synchronization input selected">,
+    ], "DMAMux - DMA request line multiplexer channel x control register">,
+    Register<"C6CR", 0x18, 32, [
+      Field<"DMAREQ_ID", 0, 8, ReadWrite, "Input DMA request line selected">,
+      Field<"SOIE", 8, 1, ReadWrite, "Interrupt enable at synchronization event overrun">,
+      Field<"EGE", 9, 1, ReadWrite, "Event generation enable/disable">,
+      Field<"SE", 16, 1, ReadWrite, "Synchronous operating mode enable/disable">,
+      Field<"SPOL", 17, 2, ReadWrite, "Synchronization event type selector Defines the synchronization event on the selected synchronization input:">,
+      Field<"NBREQ", 19, 5, ReadWrite, "Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.">,
+      Field<"SYNC_ID", 24, 5, ReadWrite, "Synchronization input selected">,
+    ], "DMAMux - DMA request line multiplexer channel x control register">,
+    Register<"C7CR", 0x1c, 32, [
+      Field<"DMAREQ_ID", 0, 8, ReadWrite, "Input DMA request line selected">,
+      Field<"SOIE", 8, 1, ReadWrite, "Interrupt enable at synchronization event overrun">,
+      Field<"EGE", 9, 1, ReadWrite, "Event generation enable/disable">,
+      Field<"SE", 16, 1, ReadWrite, "Synchronous operating mode enable/disable">,
+      Field<"SPOL", 17, 2, ReadWrite, "Synchronization event type selector Defines the synchronization event on the selected synchronization input:">,
+      Field<"NBREQ", 19, 5, ReadWrite, "Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.">,
+      Field<"SYNC_ID", 24, 5, ReadWrite, "Synchronization input selected">,
+    ], "DMAMux - DMA request line multiplexer channel x control register">,
+    Register<"CSR", 0x80, 32, [
+      Field<"SOF", 0, 16, ReadWrite, "Synchronization overrun event flag">,
+    ], "DMAMUX request line multiplexer interrupt channel status register">,
+    Register<"CFR", 0x84, 32, [
+      Field<"CSOF", 0, 16, ReadWrite, "Clear synchronization overrun event flag">,
+    ], "DMAMUX request line multiplexer interrupt clear flag register">,
+    Register<"RG0CR", 0x100, 32, [
+      Field<"SIG_ID", 0, 5, ReadWrite, "DMA request trigger input selected">,
+      Field<"OIE", 8, 1, ReadWrite, "Interrupt enable at trigger event overrun">,
+      Field<"GE", 16, 1, ReadWrite, "DMA request generator channel enable/disable">,
+      Field<"GPOL", 17, 2, ReadWrite, "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input">,
+      Field<"GNBREQ", 19, 5, ReadWrite, "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.">,
+    ], "DMAMux - DMA request generator channel x control register">,
+    Register<"RG1CR", 0x104, 32, [
+      Field<"SIG_ID", 0, 5, ReadWrite, "DMA request trigger input selected">,
+      Field<"OIE", 8, 1, ReadWrite, "Interrupt enable at trigger event overrun">,
+      Field<"GE", 16, 1, ReadWrite, "DMA request generator channel enable/disable">,
+      Field<"GPOL", 17, 2, ReadWrite, "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input">,
+      Field<"GNBREQ", 19, 5, ReadWrite, "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.">,
+    ], "DMAMux - DMA request generator channel x control register">,
+    Register<"RG2CR", 0x108, 32, [
+      Field<"SIG_ID", 0, 5, ReadWrite, "DMA request trigger input selected">,
+      Field<"OIE", 8, 1, ReadWrite, "Interrupt enable at trigger event overrun">,
+      Field<"GE", 16, 1, ReadWrite, "DMA request generator channel enable/disable">,
+      Field<"GPOL", 17, 2, ReadWrite, "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input">,
+      Field<"GNBREQ", 19, 5, ReadWrite, "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.">,
+    ], "DMAMux - DMA request generator channel x control register">,
+    Register<"RG3CR", 0x10c, 32, [
+      Field<"SIG_ID", 0, 5, ReadWrite, "DMA request trigger input selected">,
+      Field<"OIE", 8, 1, ReadWrite, "Interrupt enable at trigger event overrun">,
+      Field<"GE", 16, 1, ReadWrite, "DMA request generator channel enable/disable">,
+      Field<"GPOL", 17, 2, ReadWrite, "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input">,
+      Field<"GNBREQ", 19, 5, ReadWrite, "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.">,
+    ], "DMAMux - DMA request generator channel x control register">,
+    Register<"RG4CR", 0x110, 32, [
+      Field<"SIG_ID", 0, 5, ReadWrite, "DMA request trigger input selected">,
+      Field<"OIE", 8, 1, ReadWrite, "Interrupt enable at trigger event overrun">,
+      Field<"GE", 16, 1, ReadWrite, "DMA request generator channel enable/disable">,
+      Field<"GPOL", 17, 2, ReadWrite, "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input">,
+      Field<"GNBREQ", 19, 5, ReadWrite, "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.">,
+    ], "DMAMux - DMA request generator channel x control register">,
+    Register<"RG5CR", 0x114, 32, [
+      Field<"SIG_ID", 0, 5, ReadWrite, "DMA request trigger input selected">,
+      Field<"OIE", 8, 1, ReadWrite, "Interrupt enable at trigger event overrun">,
+      Field<"GE", 16, 1, ReadWrite, "DMA request generator channel enable/disable">,
+      Field<"GPOL", 17, 2, ReadWrite, "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input">,
+      Field<"GNBREQ", 19, 5, ReadWrite, "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.">,
+    ], "DMAMux - DMA request generator channel x control register">,
+    Register<"RG6CR", 0x118, 32, [
+      Field<"SIG_ID", 0, 5, ReadWrite, "DMA request trigger input selected">,
+      Field<"OIE", 8, 1, ReadWrite, "Interrupt enable at trigger event overrun">,
+      Field<"GE", 16, 1, ReadWrite, "DMA request generator channel enable/disable">,
+      Field<"GPOL", 17, 2, ReadWrite, "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input">,
+      Field<"GNBREQ", 19, 5, ReadWrite, "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.">,
+    ], "DMAMux - DMA request generator channel x control register">,
+    Register<"RG7CR", 0x11c, 32, [
+      Field<"SIG_ID", 0, 5, ReadWrite, "DMA request trigger input selected">,
+      Field<"OIE", 8, 1, ReadWrite, "Interrupt enable at trigger event overrun">,
+      Field<"GE", 16, 1, ReadWrite, "DMA request generator channel enable/disable">,
+      Field<"GPOL", 17, 2, ReadWrite, "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input">,
+      Field<"GNBREQ", 19, 5, ReadWrite, "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.">,
+    ], "DMAMux - DMA request generator channel x control register">,
+    Register<"RGSR", 0x140, 32, [
+      Field<"OF", 0, 8, ReadWrite, "Trigger event overrun flag The flag is set when a trigger event occurs on DMA request generator channel x, while the DMA request generator counter value is lower than GNBREQ. The flag is cleared by writing 1 to the corresponding COFx bit in DMAMUX_RGCFR register.">,
+    ], "DMAMux - DMA request generator status register">,
+    Register<"RGCFR", 0x144, 32, [
+      Field<"COF", 0, 8, ReadWrite, "Clear trigger event overrun flag Upon setting, this bit clears the corresponding overrun flag OFx in the DMAMUX_RGCSR register.">,
+    ], "DMAMux - DMA request generator clear flag register">,
+  ];
+}
+
+class DMAMUX2Instance<string Name, int Base> : PeripheralInstance<Name, Base, DMAMUX2Peripheral>;
+def DMAMUX2 : DMAMUX2Instance<"DMAMUX2", 0x58025800>;
+
+#endif // _PERIPHERALS_DMAMUX2_TD
