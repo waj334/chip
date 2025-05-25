@@ -7,14 +7,14 @@ include "arm/cortexm/registers.td"
 include "arm/cortexm/variant.td"
 include "arm/family.td"
 
-include "peripherals/adc3.td"
-include "peripherals/adc3_common.td"
+include "peripherals/adc.td"
+include "peripherals/adc_common.td"
 include "peripherals/art.td"
 include "peripherals/axi.td"
 include "peripherals/bdma.td"
 include "peripherals/can_ccu.td"
 include "peripherals/cec.td"
-include "peripherals/comp1.td"
+include "peripherals/comp.td"
 include "peripherals/crc.td"
 include "peripherals/crs.td"
 include "peripherals/cryp.td"
@@ -23,40 +23,34 @@ include "peripherals/dbgmcu.td"
 include "peripherals/dcmi.td"
 include "peripherals/delay_block_sdmmc1.td"
 include "peripherals/dfsdm.td"
-include "peripherals/dma1.td"
+include "peripherals/dma.td"
 include "peripherals/dma2d.td"
-include "peripherals/dmamux1.td"
-include "peripherals/dmamux2.td"
+include "peripherals/dmamux.td"
 include "peripherals/dsihost.td"
 include "peripherals/ethernet_mac.td"
 include "peripherals/exti.td"
-include "peripherals/fdcan1.td"
+include "peripherals/fdcan.td"
 include "peripherals/flash.td"
 include "peripherals/fmc.td"
-include "peripherals/gpioa.td"
+include "peripherals/gpio.td"
 include "peripherals/hash.td"
 include "peripherals/hrtim_common.td"
 include "peripherals/hrtim_master.td"
-include "peripherals/hrtim_tima.td"
-include "peripherals/hrtim_timb.td"
-include "peripherals/hrtim_timc.td"
-include "peripherals/hrtim_timd.td"
-include "peripherals/hrtim_time.td"
+include "peripherals/hrtim_tim.td"
 include "peripherals/hsem.td"
-include "peripherals/i2c1.td"
-include "peripherals/iwdg1.td"
+include "peripherals/i2c.td"
+include "peripherals/iwdg.td"
 include "peripherals/jpeg.td"
-include "peripherals/lptim1.td"
-include "peripherals/lptim3.td"
-include "peripherals/lpuart1.td"
+include "peripherals/lptim.td"
+include "peripherals/lpuart.td"
 include "peripherals/ltdc.td"
 include "peripherals/mdios.td"
 include "peripherals/mdma.td"
 include "peripherals/opamp.td"
-include "peripherals/otg1_hs_device.td"
-include "peripherals/otg1_hs_global.td"
-include "peripherals/otg1_hs_host.td"
-include "peripherals/otg1_hs_pwrclk.td"
+include "peripherals/otg_hs_device.td"
+include "peripherals/otg_hs_global.td"
+include "peripherals/otg_hs_host.td"
+include "peripherals/otg_hs_pwrclk.td"
 include "peripherals/pwr.td"
 include "peripherals/quadspi.td"
 include "peripherals/ramecc1.td"
@@ -65,10 +59,10 @@ include "peripherals/ramecc3.td"
 include "peripherals/rcc.td"
 include "peripherals/rng.td"
 include "peripherals/rtc.td"
-include "peripherals/sai4.td"
-include "peripherals/sdmmc1.td"
+include "peripherals/sai.td"
+include "peripherals/sdmmc.td"
 include "peripherals/spdifrx.td"
-include "peripherals/spi1.td"
+include "peripherals/spi.td"
 include "peripherals/swpmi.td"
 include "peripherals/syscfg.td"
 include "peripherals/tim1.td"
@@ -77,19 +71,19 @@ include "peripherals/tim16.td"
 include "peripherals/tim17.td"
 include "peripherals/tim2.td"
 include "peripherals/tim6.td"
-include "peripherals/usart1.td"
+include "peripherals/usart.td"
 include "peripherals/vrefbuf.td"
-include "peripherals/wwdg1.td"
+include "peripherals/wwdg.td"
 
 defvar peripherals = [
-  ADC3Peripheral,
-  ADC3_CommonPeripheral,
+  ADCPeripheral,
+  ADC_CommonPeripheral,
   ARTPeripheral,
   AXIPeripheral,
   BDMAPeripheral,
   CAN_CCUPeripheral,
   CECPeripheral,
-  COMP1Peripheral,
+  COMPPeripheral,
   CRCPeripheral,
   CRSPeripheral,
   CRYPPeripheral,
@@ -98,40 +92,34 @@ defvar peripherals = [
   DCMIPeripheral,
   DELAY_Block_SDMMC1Peripheral,
   DFSDMPeripheral,
-  DMA1Peripheral,
+  DMAPeripheral,
   DMA2DPeripheral,
-  DMAMUX1Peripheral,
-  DMAMUX2Peripheral,
+  DMAMUXPeripheral,
   DSIHOSTPeripheral,
   EXTIPeripheral,
   Ethernet_MACPeripheral,
-  FDCAN1Peripheral,
+  FDCANPeripheral,
   FMCPeripheral,
   FlashPeripheral,
-  GPIOAPeripheral,
+  GPIOPeripheral,
   HASHPeripheral,
   HRTIM_CommonPeripheral,
   HRTIM_MasterPeripheral,
-  HRTIM_TIMAPeripheral,
-  HRTIM_TIMBPeripheral,
-  HRTIM_TIMCPeripheral,
-  HRTIM_TIMDPeripheral,
-  HRTIM_TIMEPeripheral,
+  HRTIM_TIMPeripheral,
   HSEMPeripheral,
-  I2C1Peripheral,
-  IWDG1Peripheral,
+  I2CPeripheral,
+  IWDGPeripheral,
   JPEGPeripheral,
-  LPTIM1Peripheral,
-  LPTIM3Peripheral,
-  LPUART1Peripheral,
+  LPTIMPeripheral,
+  LPUARTPeripheral,
   LTDCPeripheral,
   MDIOSPeripheral,
   MDMAPeripheral,
   OPAMPPeripheral,
-  OTG1_HS_DEVICEPeripheral,
-  OTG1_HS_GLOBALPeripheral,
-  OTG1_HS_HOSTPeripheral,
-  OTG1_HS_PWRCLKPeripheral,
+  OTG_HS_DEVICEPeripheral,
+  OTG_HS_GLOBALPeripheral,
+  OTG_HS_HOSTPeripheral,
+  OTG_HS_PWRCLKPeripheral,
   PWRPeripheral,
   QUADSPIPeripheral,
   RAMECC1Peripheral,
@@ -140,10 +128,10 @@ defvar peripherals = [
   RCCPeripheral,
   RNGPeripheral,
   RTCPeripheral,
-  SAI4Peripheral,
-  SDMMC1Peripheral,
+  SAIPeripheral,
+  SDMMCPeripheral,
   SPDIFRXPeripheral,
-  SPI1Peripheral,
+  SPIPeripheral,
   SWPMIPeripheral,
   SYSCFGPeripheral,
   TIM1Peripheral,
@@ -152,9 +140,9 @@ defvar peripherals = [
   TIM17Peripheral,
   TIM2Peripheral,
   TIM6Peripheral,
-  USART1Peripheral,
+  USARTPeripheral,
   VREFBUFPeripheral,
-  WWDG1Peripheral,
+  WWDGPeripheral,
 ];
 
 defvar interrupts = [
@@ -308,49 +296,51 @@ def Flash512K_1 : MemoryRange<"FLASH", 0x08000000, KB<512>, true, ReadWrite, "Fl
 def Flash512K_2 : MemoryRange<"FLASH2", 0x08100000, KB<512>, true, ReadWrite, "Flash memory bank 2">;
 def Flash2M : MemoryRange<"FLASH", 0x08000000, MB<2>, true, ReadWrite, "Flash memory">;
 
-def FlashAXI : MemoryRange<"FLASH_AXI", 0x24000000, KB<512>, true, ReadWrite, "SRAM mapped on AXI bus">;
-def FlashSRAM1 : MemoryRange<"SRAM1", 0x30000000, KB<128>, true, ReadWrite, "SRAM1 (D2 domain)">;
-def FlashSRAM2 : MemoryRange<"SRAM2", 0x30020000, KB<128>, true, ReadWrite, "SRAM2 (D2 domain)">;
-def FlashSRAM3 : MemoryRange<"SRAM3", 0x30040000, KB<32>, true, ReadWrite, "SRAM3 (D2 domain)">;
-def FlashSRAM4 : MemoryRange<"SRAM4", 0x38000000, KB<64>, true, ReadWrite, "SRAM4 (D3 domain)">;
-def FlashITCM : MemoryRange<"ITCM", 0x00000000, KB<64>, true, ReadWrite, "ITCM RAM (instruction)">;
-def FlashDTCM : MemoryRange<"DTCM", 0x20000000, KB<128>, true, ReadWrite, "DTCM RAM (instruction)">;
-def FlashBackup : MemoryRange<"SRAM_BACKUP", 0x38800000, KB<4>, true, ReadWrite, "Backup SRAM (Kbytes)">;
+def SRAM_AXI : MemoryRange<"SRAM_AXI", 0x24000000, KB<512>, true, ReadWrite, "SRAM mapped on AXI bus">;
+def SRAM1_3 : MemoryRange<"RAM", 0x30000000, KB<288>, true, ReadWrite, "[SRAM1 : SRAM3]">;
+def SRAMSRAM1 : MemoryRange<"SRAM1", 0x30000000, KB<128>, true, ReadWrite, "SRAM1 (D2 domain)">;
+def SRAMSRAM2 : MemoryRange<"SRAM2", 0x30020000, KB<128>, true, ReadWrite, "SRAM2 (D2 domain)">;
+def SRAMSRAM3 : MemoryRange<"SRAM3", 0x30040000, KB<32>, true, ReadWrite, "SRAM3 (D2 domain)">;
+def SRAMSRAM4 : MemoryRange<"SRAM4", 0x38000000, KB<64>, true, ReadWrite, "SRAM4 (D3 domain)">;
+def SRAMITCM : MemoryRange<"ITCM", 0x00000000, KB<64>, true, ReadWrite, "ITCM RAM (instruction)">;
+def SRAMDTCM : MemoryRange<"DTCM", 0x20000000, KB<128>, true, ReadWrite, "DTCM RAM (instruction)">;
+def SRAMBackup : MemoryRange<"SRAM_BACKUP", 0x38800000, KB<4>, true, ReadWrite, "Backup SRAM (Kbytes)">;
 
-class STM32H7x7Variant<string Name, list<MemoryRange> Memories, MemoryUnit StackSize, list<string> Tags = [], 
-    string Description = ""> 
+class STM32H7x7Variant<string Name, list<MemoryRange> Memories, MemoryUnit StackSize, list<string> Tags = [],
+    string Description = "">
       : CortexMVariant<Name, Memories, interrupts, StackSize, !listconcat(tags, Tags), Description>;
 
 defvar GMemories = [
     Flash512K_1,
     Flash512K_2,
-    FlashAXI,
-    FlashSRAM1,
-    FlashSRAM2,
-    FlashSRAM3,
-    FlashSRAM4,
-    FlashITCM,
-    FlashDTCM,
-    FlashBackup,
+    SRAM_AXI,
+    SRAM1_3,
+    SRAMSRAM1,
+    SRAMSRAM2,
+    SRAMSRAM3,
+    SRAMSRAM4,
+    SRAMITCM,
+    SRAMDTCM,
+    SRAMBackup,
 ];
 
 defvar IMemories = [
     Flash2M,
-    FlashAXI,
-    FlashSRAM1,
-    FlashSRAM2,
-    FlashSRAM3,
-    FlashSRAM4,
-    FlashITCM,
-    FlashDTCM,
-    FlashBackup,
+    SRAM_AXI,
+    SRAM1_3,
+    SRAMSRAM1,
+    SRAMSRAM2,
+    SRAMSRAM3,
+    SRAMSRAM4,
+    SRAMITCM,
+    SRAMDTCM,
+    SRAMBackup,
 ];
 
 class GVariant<string Name, list<string> Tags = []> : STM32H7x7Variant<Name, GMemories, KB<4>, Tags>;
 class IVariant<string Name, list<string> Tags = []> : STM32H7x7Variant<Name, IMemories, KB<4>, Tags>;
 
-def STM32H7x7 : Series<"STM32H7x7", CortexM7> {
-  let variants = [
+defvar allVariants = [
     GVariant<"STM32H747AG">,
     GVariant<"STM32H747IG">,
     GVariant<"STM32H747BG">,
@@ -366,7 +356,10 @@ def STM32H7x7 : Series<"STM32H7x7", CortexM7> {
     IVariant<"STM32H757II">,
     IVariant<"STM32H757BI">,
     IVariant<"STM32H757XI">,
-  ];
+];
+
+def STM32H7x7 : Series<"STM32H7x7", CortexM7> {
+  let variants = allVariants;
   let peripheralTypes = peripherals;
 }
 

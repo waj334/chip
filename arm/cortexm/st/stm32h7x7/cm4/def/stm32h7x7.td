@@ -308,14 +308,15 @@ def Flash512K_1 : MemoryRange<"FLASH", 0x08000000, KB<512>, true, ReadWrite, "Fl
 def Flash512K_2 : MemoryRange<"FLASH2", 0x08100000, KB<512>, true, ReadWrite, "Flash memory bank 2">;
 def Flash2M : MemoryRange<"FLASH", 0x08000000, MB<2>, true, ReadWrite, "Flash memory">;
 
-def FlashAXI : MemoryRange<"FLASH_AXI", 0x24000000, KB<512>, true, ReadWrite, "SRAM mapped on AXI bus">;
-def FlashSRAM1 : MemoryRange<"SRAM1", 0x30000000, KB<128>, true, ReadWrite, "SRAM1 (D2 domain)">;
-def FlashSRAM2 : MemoryRange<"SRAM2", 0x30020000, KB<128>, true, ReadWrite, "SRAM2 (D2 domain)">;
-def FlashSRAM3 : MemoryRange<"SRAM3", 0x30040000, KB<32>, true, ReadWrite, "SRAM3 (D2 domain)">;
-def FlashSRAM4 : MemoryRange<"SRAM4", 0x38000000, KB<64>, true, ReadWrite, "SRAM4 (D3 domain)">;
-def FlashITCM : MemoryRange<"ITCM", 0x00000000, KB<64>, true, ReadWrite, "ITCM RAM (instruction)">;
-def FlashDTCM : MemoryRange<"DTCM", 0x20000000, KB<128>, true, ReadWrite, "DTCM RAM (instruction)">;
-def FlashBackup : MemoryRange<"SRAM_BACKUP", 0x38800000, KB<4>, true, ReadWrite, "Backup SRAM (Kbytes)">;
+def SRAM_AXI : MemoryRange<"SRAM_AXI", 0x24000000, KB<512>, true, ReadWrite, "SRAM mapped on AXI bus">;
+def SRAM1_3 : MemoryRange<"RAM", 0x30000000, KB<288>, true, ReadWrite, "[SRAM1 : SRAM3]">;
+def SRAMSRAM1 : MemoryRange<"SRAM1", 0x30000000, KB<128>, true, ReadWrite, "SRAM1 (D2 domain)">;
+def SRAMSRAM2 : MemoryRange<"SRAM2", 0x30020000, KB<128>, true, ReadWrite, "SRAM2 (D2 domain)">;
+def SRAMSRAM3 : MemoryRange<"SRAM3", 0x30040000, KB<32>, true, ReadWrite, "SRAM3 (D2 domain)">;
+def SRAMSRAM4 : MemoryRange<"SRAM4", 0x38000000, KB<64>, true, ReadWrite, "SRAM4 (D3 domain)">;
+def SRAMITCM : MemoryRange<"ITCM", 0x00000000, KB<64>, true, ReadWrite, "ITCM RAM (instruction)">;
+def SRAMDTCM : MemoryRange<"DTCM", 0x20000000, KB<128>, true, ReadWrite, "DTCM RAM (instruction)">;
+def SRAMBackup : MemoryRange<"SRAM_BACKUP", 0x38800000, KB<4>, true, ReadWrite, "Backup SRAM (Kbytes)">;
 
 class STM32H7x7Variant<string Name, list<MemoryRange> Memories, MemoryUnit StackSize, list<string> Tags = [],
     string Description = "">
@@ -324,33 +325,34 @@ class STM32H7x7Variant<string Name, list<MemoryRange> Memories, MemoryUnit Stack
 defvar GMemories = [
     Flash512K_1,
     Flash512K_2,
-    FlashAXI,
-    FlashSRAM1,
-    FlashSRAM2,
-    FlashSRAM3,
-    FlashSRAM4,
-    FlashITCM,
-    FlashDTCM,
-    FlashBackup,
+    SRAM_AXI,
+    SRAM1_3,
+    SRAMSRAM1,
+    SRAMSRAM2,
+    SRAMSRAM3,
+    SRAMSRAM4,
+    SRAMITCM,
+    SRAMDTCM,
+    SRAMBackup,
 ];
 
 defvar IMemories = [
     Flash2M,
-    FlashAXI,
-    FlashSRAM1,
-    FlashSRAM2,
-    FlashSRAM3,
-    FlashSRAM4,
-    FlashITCM,
-    FlashDTCM,
-    FlashBackup,
+    SRAM_AXI,
+    SRAM1_3,
+    SRAMSRAM1,
+    SRAMSRAM2,
+    SRAMSRAM3,
+    SRAMSRAM4,
+    SRAMITCM,
+    SRAMDTCM,
+    SRAMBackup,
 ];
 
 class GVariant<string Name, list<string> Tags = []> : STM32H7x7Variant<Name, GMemories, KB<4>, Tags>;
 class IVariant<string Name, list<string> Tags = []> : STM32H7x7Variant<Name, IMemories, KB<4>, Tags>;
 
-def STM32H7x7 : Series<"STM32H7x7", CortexM4> {
-  let variants = [
+defvar allVariants = [
     GVariant<"STM32H747AG">,
     GVariant<"STM32H747IG">,
     GVariant<"STM32H747BG">,
@@ -366,7 +368,10 @@ def STM32H7x7 : Series<"STM32H7x7", CortexM4> {
     IVariant<"STM32H757II">,
     IVariant<"STM32H757BI">,
     IVariant<"STM32H757XI">,
-  ];
+];
+
+def STM32H7x7 : Series<"STM32H7x7", CortexM4> {
+  let variants = allVariants;
   let peripheralTypes = peripherals;
 }
 
