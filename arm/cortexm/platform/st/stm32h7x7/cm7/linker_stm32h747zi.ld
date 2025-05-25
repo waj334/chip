@@ -12,6 +12,6 @@ MEMORY
 	SRAM_BACKUP (rwx) : ORIGIN = 0x38800000, LENGTH = 4K				/* Backup SRAM (Kbytes) */
 }
 
-__stack_size = 4K
+__stack_size = 4K;
 INCLUDE program.ld
 

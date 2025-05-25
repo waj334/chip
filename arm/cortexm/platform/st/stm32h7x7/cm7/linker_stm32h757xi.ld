@@ -1,8 +1,7 @@
 MEMORY
 {
 	ITCM (rwx) : ORIGIN = 0x0, LENGTH = 64K				/* ITCM RAM (instruction) */
-	FLASH (rwx) : ORIGIN = 0x8000000, LENGTH = 512K				/* Flash memory bank 1 */
-	FLASH2 (rwx) : ORIGIN = 0x8100000, LENGTH = 512K				/* Flash memory bank 2 */
+	FLASH (rwx) : ORIGIN = 0x8000000, LENGTH = 2000K				/* Flash memory */
 	DTCM (rwx) : ORIGIN = 0x20000000, LENGTH = 128K				/* DTCM RAM (instruction) */
 	SRAM_AXI (rwx) : ORIGIN = 0x24000000, LENGTH = 512K				/* SRAM mapped on AXI bus */
 	RAM (rwx) : ORIGIN = 0x30000000, LENGTH = 288K				/* [SRAM1 : SRAM3] */
@@ -13,6 +12,6 @@ MEMORY
 	SRAM_BACKUP (rwx) : ORIGIN = 0x38800000, LENGTH = 4K				/* Backup SRAM (Kbytes) */
 }
 
-__stack_size = 4K
+__stack_size = 4K;
 INCLUDE program.ld
 

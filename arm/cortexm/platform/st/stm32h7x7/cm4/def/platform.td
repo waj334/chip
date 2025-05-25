@@ -7,14 +7,14 @@ include "arm/cortexm/registers.td"
 include "arm/cortexm/variant.td"
 include "arm/family.td"
 
-include "peripherals/adc.td"
-include "peripherals/adc_common.td"
+include "peripherals/adc3.td"
+include "peripherals/adc3_common.td"
 include "peripherals/art.td"
 include "peripherals/axi.td"
 include "peripherals/bdma.td"
 include "peripherals/can_ccu.td"
 include "peripherals/cec.td"
-include "peripherals/comp.td"
+include "peripherals/comp1.td"
 include "peripherals/crc.td"
 include "peripherals/crs.td"
 include "peripherals/cryp.td"
@@ -23,34 +23,40 @@ include "peripherals/dbgmcu.td"
 include "peripherals/dcmi.td"
 include "peripherals/delay_block_sdmmc1.td"
 include "peripherals/dfsdm.td"
-include "peripherals/dma.td"
+include "peripherals/dma1.td"
 include "peripherals/dma2d.td"
-include "peripherals/dmamux.td"
+include "peripherals/dmamux1.td"
+include "peripherals/dmamux2.td"
 include "peripherals/dsihost.td"
 include "peripherals/ethernet_mac.td"
 include "peripherals/exti.td"
-include "peripherals/fdcan.td"
+include "peripherals/fdcan1.td"
 include "peripherals/flash.td"
 include "peripherals/fmc.td"
-include "peripherals/gpio.td"
+include "peripherals/gpioa.td"
 include "peripherals/hash.td"
 include "peripherals/hrtim_common.td"
 include "peripherals/hrtim_master.td"
-include "peripherals/hrtim_tim.td"
+include "peripherals/hrtim_tima.td"
+include "peripherals/hrtim_timb.td"
+include "peripherals/hrtim_timc.td"
+include "peripherals/hrtim_timd.td"
+include "peripherals/hrtim_time.td"
 include "peripherals/hsem.td"
-include "peripherals/i2c.td"
-include "peripherals/iwdg.td"
+include "peripherals/i2c1.td"
+include "peripherals/iwdg1.td"
 include "peripherals/jpeg.td"
-include "peripherals/lptim.td"
-include "peripherals/lpuart.td"
+include "peripherals/lptim1.td"
+include "peripherals/lptim3.td"
+include "peripherals/lpuart1.td"
 include "peripherals/ltdc.td"
 include "peripherals/mdios.td"
 include "peripherals/mdma.td"
 include "peripherals/opamp.td"
-include "peripherals/otg_hs_device.td"
-include "peripherals/otg_hs_global.td"
-include "peripherals/otg_hs_host.td"
-include "peripherals/otg_hs_pwrclk.td"
+include "peripherals/otg1_hs_device.td"
+include "peripherals/otg1_hs_global.td"
+include "peripherals/otg1_hs_host.td"
+include "peripherals/otg1_hs_pwrclk.td"
 include "peripherals/pwr.td"
 include "peripherals/quadspi.td"
 include "peripherals/ramecc1.td"
@@ -59,10 +65,10 @@ include "peripherals/ramecc3.td"
 include "peripherals/rcc.td"
 include "peripherals/rng.td"
 include "peripherals/rtc.td"
-include "peripherals/sai.td"
-include "peripherals/sdmmc.td"
+include "peripherals/sai4.td"
+include "peripherals/sdmmc1.td"
 include "peripherals/spdifrx.td"
-include "peripherals/spi.td"
+include "peripherals/spi1.td"
 include "peripherals/swpmi.td"
 include "peripherals/syscfg.td"
 include "peripherals/tim1.td"
@@ -71,19 +77,19 @@ include "peripherals/tim16.td"
 include "peripherals/tim17.td"
 include "peripherals/tim2.td"
 include "peripherals/tim6.td"
-include "peripherals/usart.td"
+include "peripherals/usart1.td"
 include "peripherals/vrefbuf.td"
-include "peripherals/wwdg.td"
+include "peripherals/wwdg1.td"
 
 defvar peripherals = [
-  ADCPeripheral,
-  ADC_CommonPeripheral,
+  ADC3Peripheral,
+  ADC3_CommonPeripheral,
   ARTPeripheral,
   AXIPeripheral,
   BDMAPeripheral,
   CAN_CCUPeripheral,
   CECPeripheral,
-  COMPPeripheral,
+  COMP1Peripheral,
   CRCPeripheral,
   CRSPeripheral,
   CRYPPeripheral,
@@ -92,34 +98,40 @@ defvar peripherals = [
   DCMIPeripheral,
   DELAY_Block_SDMMC1Peripheral,
   DFSDMPeripheral,
-  DMAPeripheral,
+  DMA1Peripheral,
   DMA2DPeripheral,
-  DMAMUXPeripheral,
+  DMAMUX1Peripheral,
+  DMAMUX2Peripheral,
   DSIHOSTPeripheral,
   EXTIPeripheral,
   Ethernet_MACPeripheral,
-  FDCANPeripheral,
+  FDCAN1Peripheral,
   FMCPeripheral,
   FlashPeripheral,
-  GPIOPeripheral,
+  GPIOAPeripheral,
   HASHPeripheral,
   HRTIM_CommonPeripheral,
   HRTIM_MasterPeripheral,
-  HRTIM_TIMPeripheral,
+  HRTIM_TIMAPeripheral,
+  HRTIM_TIMBPeripheral,
+  HRTIM_TIMCPeripheral,
+  HRTIM_TIMDPeripheral,
+  HRTIM_TIMEPeripheral,
   HSEMPeripheral,
-  I2CPeripheral,
-  IWDGPeripheral,
+  I2C1Peripheral,
+  IWDG1Peripheral,
   JPEGPeripheral,
-  LPTIMPeripheral,
-  LPUARTPeripheral,
+  LPTIM1Peripheral,
+  LPTIM3Peripheral,
+  LPUART1Peripheral,
   LTDCPeripheral,
   MDIOSPeripheral,
   MDMAPeripheral,
   OPAMPPeripheral,
-  OTG_HS_DEVICEPeripheral,
-  OTG_HS_GLOBALPeripheral,
-  OTG_HS_HOSTPeripheral,
-  OTG_HS_PWRCLKPeripheral,
+  OTG1_HS_DEVICEPeripheral,
+  OTG1_HS_GLOBALPeripheral,
+  OTG1_HS_HOSTPeripheral,
+  OTG1_HS_PWRCLKPeripheral,
   PWRPeripheral,
   QUADSPIPeripheral,
   RAMECC1Peripheral,
@@ -128,10 +140,10 @@ defvar peripherals = [
   RCCPeripheral,
   RNGPeripheral,
   RTCPeripheral,
-  SAIPeripheral,
-  SDMMCPeripheral,
+  SAI4Peripheral,
+  SDMMC1Peripheral,
   SPDIFRXPeripheral,
-  SPIPeripheral,
+  SPI1Peripheral,
   SWPMIPeripheral,
   SYSCFGPeripheral,
   TIM1Peripheral,
@@ -140,13 +152,13 @@ defvar peripherals = [
   TIM17Peripheral,
   TIM2Peripheral,
   TIM6Peripheral,
-  USARTPeripheral,
+  USART1Peripheral,
   VREFBUFPeripheral,
-  WWDGPeripheral,
+  WWDG1Peripheral,
 ];
 
 defvar interrupts = [
-  Interrupt<"WWDG1", 0, "Window Watchdog interrupt">,
+  Interrupt<"WWDG2", 0, "Window Watchdog interrupt">,
   Interrupt<"PVD_PVM", 1, "PVD through EXTI line">,
   Interrupt<"RTC_TAMP_STAMP_CSS_LSE", 2, "RTC tamper, timestamp">,
   Interrupt<"RTC_WKUP", 3, "RTC Wakeup interrupt">,
@@ -209,7 +221,7 @@ defvar interrupts = [
   Interrupt<"ETH", 61, "Ethernet global interrupt">,
   Interrupt<"ETH_WKUP", 62, "Ethernet wakeup through EXTI">,
   Interrupt<"FDCAN_CAL", 63, "CAN2TX interrupts">,
-  Interrupt<"CM4_SEV_IT", 65, "Arm Cortex-M4 Send even interrupt">,
+  Interrupt<"CM7_SEV_IT", 64, "ArmÃ‚Â® CortexÃ‚Â®-M7 Send">,
   Interrupt<"DMA2_STR5", 68, "DMA2 Stream5 interrupt">,
   Interrupt<"DMA2_STR6", 69, "DMA2 Stream6 interrupt">,
   Interrupt<"DMA2_STR7", 70, "DMA2 Stream7 interrupt">,
@@ -266,7 +278,7 @@ defvar interrupts = [
   Interrupt<"JPEG", 121, "JPEG global interrupt">,
   Interrupt<"MDMA", 122, "MDMA">,
   Interrupt<"SDMMC", 124, "SDMMC global interrupt">,
-  Interrupt<"HSEM0", 125, "HSEM global interrupt 1">,
+  Interrupt<"HSEM1", 126, "HSEM global interrupt 2">,
   Interrupt<"ADC3", 127, "ADC3 global interrupt">,
   Interrupt<"DMAMUX2_OVR", 128, "DMAMUX2 overrun interrupt">,
   Interrupt<"BDMA_CH1", 129, "BDMA channel 1 interrupt">,
@@ -283,10 +295,10 @@ defvar interrupts = [
   Interrupt<"LPTIM4", 140, "LPTIM2 timer interrupt">,
   Interrupt<"LPTIM5", 141, "LPTIM2 timer interrupt">,
   Interrupt<"LPUART", 142, "LPUART global interrupt">,
-  Interrupt<"WWDG2_RST", 143, "Window Watchdog interrupt">,
+  Interrupt<"WWDG1_RST", 143, "Window Watchdog interrupt">,
   Interrupt<"CRS", 144, "Clock Recovery System globa">,
   Interrupt<"SAI4", 146, "SAI4 global interrupt">,
-  Interrupt<"HOLD_CORE", 148, "CPU1 hold">,
+  Interrupt<"HOLD_CORE", 148, "CPU2 hold">,
   Interrupt<"WKUP", 149, "WKUP1 to WKUP6 pins">,
 ];
 
@@ -358,9 +370,12 @@ defvar allVariants = [
     IVariant<"STM32H757XI">,
 ];
 
-def STM32H7x7 : Series<"STM32H7x7", CortexM7> {
+def STM32H7x7 : Series<"STM32H7x7", CortexM4> {
   let variants = allVariants;
   let peripheralTypes = peripherals;
+  let runtimePackages = [
+    "pkg.si-go.dev/chip/arm/cortexm/st/stm32h7x7/cm4/def"
+  ];
 }
 
 #endif // _STM32H7x7_TD
