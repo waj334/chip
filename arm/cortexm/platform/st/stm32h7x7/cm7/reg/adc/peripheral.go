@@ -2085,18 +2085,18 @@ func (r *registerOfr1Type) SetOffset1(value uint32) {
 }
 
 const (
-	RegisterOfr1FieldOffset1_chShift = 26
-	RegisterOfr1FieldOffset1_chMask  = 0x7c000000
+	RegisterOfr1FieldOffset1chShift = 26
+	RegisterOfr1FieldOffset1chMask  = 0x7c000000
 )
 
-// GetOffset1_ch ADC offset number 1 channel selection
-func (r *registerOfr1Type) GetOffset1_ch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOfr1FieldOffset1_chMask) >> RegisterOfr1FieldOffset1_chShift)
+// GetOffset1ch ADC offset number 1 channel selection
+func (r *registerOfr1Type) GetOffset1ch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOfr1FieldOffset1chMask) >> RegisterOfr1FieldOffset1chShift)
 }
 
-// SetOffset1_ch ADC offset number 1 channel selection
-func (r *registerOfr1Type) SetOffset1_ch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOfr1FieldOffset1_chMask)|(uint32(value)<<RegisterOfr1FieldOffset1_chShift))
+// SetOffset1ch ADC offset number 1 channel selection
+func (r *registerOfr1Type) SetOffset1ch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOfr1FieldOffset1chMask)|(uint32(value)<<RegisterOfr1FieldOffset1chShift))
 }
 
 const (
@@ -2137,18 +2137,18 @@ func (r *registerOfr2Type) SetOffset1(value uint32) {
 }
 
 const (
-	RegisterOfr2FieldOffset1_chShift = 26
-	RegisterOfr2FieldOffset1_chMask  = 0x7c000000
+	RegisterOfr2FieldOffset1chShift = 26
+	RegisterOfr2FieldOffset1chMask  = 0x7c000000
 )
 
-// GetOffset1_ch ADC offset number 1 channel selection
-func (r *registerOfr2Type) GetOffset1_ch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOfr2FieldOffset1_chMask) >> RegisterOfr2FieldOffset1_chShift)
+// GetOffset1ch ADC offset number 1 channel selection
+func (r *registerOfr2Type) GetOffset1ch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOfr2FieldOffset1chMask) >> RegisterOfr2FieldOffset1chShift)
 }
 
-// SetOffset1_ch ADC offset number 1 channel selection
-func (r *registerOfr2Type) SetOffset1_ch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOfr2FieldOffset1_chMask)|(uint32(value)<<RegisterOfr2FieldOffset1_chShift))
+// SetOffset1ch ADC offset number 1 channel selection
+func (r *registerOfr2Type) SetOffset1ch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOfr2FieldOffset1chMask)|(uint32(value)<<RegisterOfr2FieldOffset1chShift))
 }
 
 const (
@@ -2189,18 +2189,18 @@ func (r *registerOfr3Type) SetOffset1(value uint32) {
 }
 
 const (
-	RegisterOfr3FieldOffset1_chShift = 26
-	RegisterOfr3FieldOffset1_chMask  = 0x7c000000
+	RegisterOfr3FieldOffset1chShift = 26
+	RegisterOfr3FieldOffset1chMask  = 0x7c000000
 )
 
-// GetOffset1_ch ADC offset number 1 channel selection
-func (r *registerOfr3Type) GetOffset1_ch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOfr3FieldOffset1_chMask) >> RegisterOfr3FieldOffset1_chShift)
+// GetOffset1ch ADC offset number 1 channel selection
+func (r *registerOfr3Type) GetOffset1ch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOfr3FieldOffset1chMask) >> RegisterOfr3FieldOffset1chShift)
 }
 
-// SetOffset1_ch ADC offset number 1 channel selection
-func (r *registerOfr3Type) SetOffset1_ch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOfr3FieldOffset1_chMask)|(uint32(value)<<RegisterOfr3FieldOffset1_chShift))
+// SetOffset1ch ADC offset number 1 channel selection
+func (r *registerOfr3Type) SetOffset1ch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOfr3FieldOffset1chMask)|(uint32(value)<<RegisterOfr3FieldOffset1chShift))
 }
 
 const (
@@ -2241,18 +2241,18 @@ func (r *registerOfr4Type) SetOffset1(value uint32) {
 }
 
 const (
-	RegisterOfr4FieldOffset1_chShift = 26
-	RegisterOfr4FieldOffset1_chMask  = 0x7c000000
+	RegisterOfr4FieldOffset1chShift = 26
+	RegisterOfr4FieldOffset1chMask  = 0x7c000000
 )
 
-// GetOffset1_ch ADC offset number 1 channel selection
-func (r *registerOfr4Type) GetOffset1_ch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOfr4FieldOffset1_chMask) >> RegisterOfr4FieldOffset1_chShift)
+// GetOffset1ch ADC offset number 1 channel selection
+func (r *registerOfr4Type) GetOffset1ch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOfr4FieldOffset1chMask) >> RegisterOfr4FieldOffset1chShift)
 }
 
-// SetOffset1_ch ADC offset number 1 channel selection
-func (r *registerOfr4Type) SetOffset1_ch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOfr4FieldOffset1_chMask)|(uint32(value)<<RegisterOfr4FieldOffset1_chShift))
+// SetOffset1ch ADC offset number 1 channel selection
+func (r *registerOfr4Type) SetOffset1ch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOfr4FieldOffset1chMask)|(uint32(value)<<RegisterOfr4FieldOffset1chShift))
 }
 
 const (
@@ -2476,33 +2476,33 @@ func (r *registerDifselType) SetDifsel(value uint32) {
 type registerCalfactType uint32
 
 const (
-	RegisterCalfactFieldCalfact_sShift = 0
-	RegisterCalfactFieldCalfact_sMask  = 0x7ff
+	RegisterCalfactFieldCalfactsShift = 0
+	RegisterCalfactFieldCalfactsMask  = 0x7ff
 )
 
-// GetCalfact_s ADC calibration factor in single-ended mode
-func (r *registerCalfactType) GetCalfact_s() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCalfactFieldCalfact_sMask) >> RegisterCalfactFieldCalfact_sShift)
+// GetCalfacts ADC calibration factor in single-ended mode
+func (r *registerCalfactType) GetCalfacts() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCalfactFieldCalfactsMask) >> RegisterCalfactFieldCalfactsShift)
 }
 
-// SetCalfact_s ADC calibration factor in single-ended mode
-func (r *registerCalfactType) SetCalfact_s(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCalfactFieldCalfact_sMask)|(uint32(value)<<RegisterCalfactFieldCalfact_sShift))
+// SetCalfacts ADC calibration factor in single-ended mode
+func (r *registerCalfactType) SetCalfacts(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCalfactFieldCalfactsMask)|(uint32(value)<<RegisterCalfactFieldCalfactsShift))
 }
 
 const (
-	RegisterCalfactFieldCalfact_dShift = 16
-	RegisterCalfactFieldCalfact_dMask  = 0x7ff0000
+	RegisterCalfactFieldCalfactdShift = 16
+	RegisterCalfactFieldCalfactdMask  = 0x7ff0000
 )
 
-// GetCalfact_d ADC calibration factor in differential mode
-func (r *registerCalfactType) GetCalfact_d() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCalfactFieldCalfact_dMask) >> RegisterCalfactFieldCalfact_dShift)
+// GetCalfactd ADC calibration factor in differential mode
+func (r *registerCalfactType) GetCalfactd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCalfactFieldCalfactdMask) >> RegisterCalfactFieldCalfactdShift)
 }
 
-// SetCalfact_d ADC calibration factor in differential mode
-func (r *registerCalfactType) SetCalfact_d(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCalfactFieldCalfact_dMask)|(uint32(value)<<RegisterCalfactFieldCalfact_dShift))
+// SetCalfactd ADC calibration factor in differential mode
+func (r *registerCalfactType) SetCalfactd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCalfactFieldCalfactdMask)|(uint32(value)<<RegisterCalfactFieldCalfactdShift))
 }
 
 // registerCalfact2Type ADC Calibration Factor register 2

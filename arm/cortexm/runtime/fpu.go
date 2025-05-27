@@ -1,10 +1,10 @@
 //go:build arm && fpu
 
-package cortexm
+package runtime
 
 import (
-	"runtime/arm/cortexm/support/fpu"
-	"runtime/arm/cortexm/support/systemControl"
+	"pkg.si-go.dev/chip/arm/cortexm/reg/fpu"
+	"pkg.si-go.dev/chip/arm/cortexm/reg/scb"
 )
 
 type extendedFrame struct {
@@ -21,8 +21,8 @@ var _fpuEnabled bool
 
 func initFPU() {
 	if _fpuEnabled {
-		systemcontrol.SystemControl.Cpacr.SetCp10(systemcontrol.CpacrCp10Full)
-		systemcontrol.SystemControl.Cpacr.SetCp11(systemcontrol.CpacrCp11Full)
+		scb.Scb.Cpacr.SetCp10(scb.RegisterCpacrFieldCp10EnumFull)
+		scb.Scb.Cpacr.SetCp11(scb.RegisterCpacrFieldCp11EnumFull)
 		fpu.Fpu.Fpccr.SetAspen(true)
 		fpu.Fpu.Fpccr.SetLspen(true)
 	}

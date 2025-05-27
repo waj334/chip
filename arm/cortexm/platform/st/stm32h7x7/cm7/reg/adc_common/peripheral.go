@@ -29,420 +29,420 @@ type _adc_common struct {
 type registerCsrType uint32
 
 const (
-	RegisterCsrFieldAdrdy_mstShift = 0
-	RegisterCsrFieldAdrdy_mstMask  = 0x1
+	RegisterCsrFieldAdrdymstShift = 0
+	RegisterCsrFieldAdrdymstMask  = 0x1
 )
 
-// GetAdrdy_mst Master ADC ready
-func (r *registerCsrType) GetAdrdy_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAdrdy_mstMask) != 0
+// GetAdrdymst Master ADC ready
+func (r *registerCsrType) GetAdrdymst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAdrdymstMask) != 0
 }
 
-// SetAdrdy_mst Master ADC ready
-func (r *registerCsrType) SetAdrdy_mst(value bool) {
+// SetAdrdymst Master ADC ready
+func (r *registerCsrType) SetAdrdymst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAdrdy_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAdrdymstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAdrdy_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAdrdymstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldEosmp_mstShift = 1
-	RegisterCsrFieldEosmp_mstMask  = 0x2
+	RegisterCsrFieldEosmpmstShift = 1
+	RegisterCsrFieldEosmpmstMask  = 0x2
 )
 
-// GetEosmp_mst End of Sampling phase flag of the master ADC
-func (r *registerCsrType) GetEosmp_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEosmp_mstMask) != 0
+// GetEosmpmst End of Sampling phase flag of the master ADC
+func (r *registerCsrType) GetEosmpmst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEosmpmstMask) != 0
 }
 
-// SetEosmp_mst End of Sampling phase flag of the master ADC
-func (r *registerCsrType) SetEosmp_mst(value bool) {
+// SetEosmpmst End of Sampling phase flag of the master ADC
+func (r *registerCsrType) SetEosmpmst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEosmp_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEosmpmstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEosmp_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEosmpmstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldEoc_mstShift = 2
-	RegisterCsrFieldEoc_mstMask  = 0x4
+	RegisterCsrFieldEocmstShift = 2
+	RegisterCsrFieldEocmstMask  = 0x4
 )
 
-// GetEoc_mst End of regular conversion of the master ADC
-func (r *registerCsrType) GetEoc_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEoc_mstMask) != 0
+// GetEocmst End of regular conversion of the master ADC
+func (r *registerCsrType) GetEocmst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEocmstMask) != 0
 }
 
-// SetEoc_mst End of regular conversion of the master ADC
-func (r *registerCsrType) SetEoc_mst(value bool) {
+// SetEocmst End of regular conversion of the master ADC
+func (r *registerCsrType) SetEocmst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEoc_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEocmstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEoc_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEocmstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldEos_mstShift = 3
-	RegisterCsrFieldEos_mstMask  = 0x8
+	RegisterCsrFieldEosmstShift = 3
+	RegisterCsrFieldEosmstMask  = 0x8
 )
 
-// GetEos_mst End of regular sequence flag of the master ADC
-func (r *registerCsrType) GetEos_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEos_mstMask) != 0
+// GetEosmst End of regular sequence flag of the master ADC
+func (r *registerCsrType) GetEosmst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEosmstMask) != 0
 }
 
-// SetEos_mst End of regular sequence flag of the master ADC
-func (r *registerCsrType) SetEos_mst(value bool) {
+// SetEosmst End of regular sequence flag of the master ADC
+func (r *registerCsrType) SetEosmst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEos_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEosmstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEos_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEosmstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldOvr_mstShift = 4
-	RegisterCsrFieldOvr_mstMask  = 0x10
+	RegisterCsrFieldOvrmstShift = 4
+	RegisterCsrFieldOvrmstMask  = 0x10
 )
 
-// GetOvr_mst Overrun flag of the master ADC
-func (r *registerCsrType) GetOvr_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldOvr_mstMask) != 0
+// GetOvrmst Overrun flag of the master ADC
+func (r *registerCsrType) GetOvrmst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldOvrmstMask) != 0
 }
 
-// SetOvr_mst Overrun flag of the master ADC
-func (r *registerCsrType) SetOvr_mst(value bool) {
+// SetOvrmst Overrun flag of the master ADC
+func (r *registerCsrType) SetOvrmst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldOvr_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldOvrmstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldOvr_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldOvrmstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldJeoc_mstShift = 5
-	RegisterCsrFieldJeoc_mstMask  = 0x20
+	RegisterCsrFieldJeocmstShift = 5
+	RegisterCsrFieldJeocmstMask  = 0x20
 )
 
-// GetJeoc_mst End of injected conversion flag of the master ADC
-func (r *registerCsrType) GetJeoc_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJeoc_mstMask) != 0
+// GetJeocmst End of injected conversion flag of the master ADC
+func (r *registerCsrType) GetJeocmst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJeocmstMask) != 0
 }
 
-// SetJeoc_mst End of injected conversion flag of the master ADC
-func (r *registerCsrType) SetJeoc_mst(value bool) {
+// SetJeocmst End of injected conversion flag of the master ADC
+func (r *registerCsrType) SetJeocmst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJeoc_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJeocmstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJeoc_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJeocmstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldJeos_mstShift = 6
-	RegisterCsrFieldJeos_mstMask  = 0x40
+	RegisterCsrFieldJeosmstShift = 6
+	RegisterCsrFieldJeosmstMask  = 0x40
 )
 
-// GetJeos_mst End of injected sequence flag of the master ADC
-func (r *registerCsrType) GetJeos_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJeos_mstMask) != 0
+// GetJeosmst End of injected sequence flag of the master ADC
+func (r *registerCsrType) GetJeosmst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJeosmstMask) != 0
 }
 
-// SetJeos_mst End of injected sequence flag of the master ADC
-func (r *registerCsrType) SetJeos_mst(value bool) {
+// SetJeosmst End of injected sequence flag of the master ADC
+func (r *registerCsrType) SetJeosmst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJeos_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJeosmstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJeos_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJeosmstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldAwd1_mstShift = 7
-	RegisterCsrFieldAwd1_mstMask  = 0x80
+	RegisterCsrFieldAwd1mstShift = 7
+	RegisterCsrFieldAwd1mstMask  = 0x80
 )
 
-// GetAwd1_mst Analog watchdog 1 flag of the master ADC
-func (r *registerCsrType) GetAwd1_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd1_mstMask) != 0
+// GetAwd1mst Analog watchdog 1 flag of the master ADC
+func (r *registerCsrType) GetAwd1mst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd1mstMask) != 0
 }
 
-// SetAwd1_mst Analog watchdog 1 flag of the master ADC
-func (r *registerCsrType) SetAwd1_mst(value bool) {
+// SetAwd1mst Analog watchdog 1 flag of the master ADC
+func (r *registerCsrType) SetAwd1mst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd1_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd1mstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd1_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd1mstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldAwd2_mstShift = 8
-	RegisterCsrFieldAwd2_mstMask  = 0x100
+	RegisterCsrFieldAwd2mstShift = 8
+	RegisterCsrFieldAwd2mstMask  = 0x100
 )
 
-// GetAwd2_mst Analog watchdog 2 flag of the master ADC
-func (r *registerCsrType) GetAwd2_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd2_mstMask) != 0
+// GetAwd2mst Analog watchdog 2 flag of the master ADC
+func (r *registerCsrType) GetAwd2mst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd2mstMask) != 0
 }
 
-// SetAwd2_mst Analog watchdog 2 flag of the master ADC
-func (r *registerCsrType) SetAwd2_mst(value bool) {
+// SetAwd2mst Analog watchdog 2 flag of the master ADC
+func (r *registerCsrType) SetAwd2mst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd2_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd2mstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd2_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd2mstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldAwd3_mstShift = 9
-	RegisterCsrFieldAwd3_mstMask  = 0x200
+	RegisterCsrFieldAwd3mstShift = 9
+	RegisterCsrFieldAwd3mstMask  = 0x200
 )
 
-// GetAwd3_mst Analog watchdog 3 flag of the master ADC
-func (r *registerCsrType) GetAwd3_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd3_mstMask) != 0
+// GetAwd3mst Analog watchdog 3 flag of the master ADC
+func (r *registerCsrType) GetAwd3mst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd3mstMask) != 0
 }
 
-// SetAwd3_mst Analog watchdog 3 flag of the master ADC
-func (r *registerCsrType) SetAwd3_mst(value bool) {
+// SetAwd3mst Analog watchdog 3 flag of the master ADC
+func (r *registerCsrType) SetAwd3mst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd3_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd3mstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd3_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd3mstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldJqovf_mstShift = 10
-	RegisterCsrFieldJqovf_mstMask  = 0x400
+	RegisterCsrFieldJqovfmstShift = 10
+	RegisterCsrFieldJqovfmstMask  = 0x400
 )
 
-// GetJqovf_mst Injected Context Queue Overflow flag of the master ADC
-func (r *registerCsrType) GetJqovf_mst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJqovf_mstMask) != 0
+// GetJqovfmst Injected Context Queue Overflow flag of the master ADC
+func (r *registerCsrType) GetJqovfmst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJqovfmstMask) != 0
 }
 
-// SetJqovf_mst Injected Context Queue Overflow flag of the master ADC
-func (r *registerCsrType) SetJqovf_mst(value bool) {
+// SetJqovfmst Injected Context Queue Overflow flag of the master ADC
+func (r *registerCsrType) SetJqovfmst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJqovf_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJqovfmstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJqovf_mstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJqovfmstMask)
 	}
 }
 
 const (
-	RegisterCsrFieldAdrdy_slvShift = 16
-	RegisterCsrFieldAdrdy_slvMask  = 0x10000
+	RegisterCsrFieldAdrdyslvShift = 16
+	RegisterCsrFieldAdrdyslvMask  = 0x10000
 )
 
-// GetAdrdy_slv Slave ADC ready
-func (r *registerCsrType) GetAdrdy_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAdrdy_slvMask) != 0
+// GetAdrdyslv Slave ADC ready
+func (r *registerCsrType) GetAdrdyslv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAdrdyslvMask) != 0
 }
 
-// SetAdrdy_slv Slave ADC ready
-func (r *registerCsrType) SetAdrdy_slv(value bool) {
+// SetAdrdyslv Slave ADC ready
+func (r *registerCsrType) SetAdrdyslv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAdrdy_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAdrdyslvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAdrdy_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAdrdyslvMask)
 	}
 }
 
 const (
-	RegisterCsrFieldEosmp_slvShift = 17
-	RegisterCsrFieldEosmp_slvMask  = 0x20000
+	RegisterCsrFieldEosmpslvShift = 17
+	RegisterCsrFieldEosmpslvMask  = 0x20000
 )
 
-// GetEosmp_slv End of Sampling phase flag of the slave ADC
-func (r *registerCsrType) GetEosmp_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEosmp_slvMask) != 0
+// GetEosmpslv End of Sampling phase flag of the slave ADC
+func (r *registerCsrType) GetEosmpslv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEosmpslvMask) != 0
 }
 
-// SetEosmp_slv End of Sampling phase flag of the slave ADC
-func (r *registerCsrType) SetEosmp_slv(value bool) {
+// SetEosmpslv End of Sampling phase flag of the slave ADC
+func (r *registerCsrType) SetEosmpslv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEosmp_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEosmpslvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEosmp_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEosmpslvMask)
 	}
 }
 
 const (
-	RegisterCsrFieldEoc_slvShift = 18
-	RegisterCsrFieldEoc_slvMask  = 0x40000
+	RegisterCsrFieldEocslvShift = 18
+	RegisterCsrFieldEocslvMask  = 0x40000
 )
 
-// GetEoc_slv End of regular conversion of the slave ADC
-func (r *registerCsrType) GetEoc_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEoc_slvMask) != 0
+// GetEocslv End of regular conversion of the slave ADC
+func (r *registerCsrType) GetEocslv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEocslvMask) != 0
 }
 
-// SetEoc_slv End of regular conversion of the slave ADC
-func (r *registerCsrType) SetEoc_slv(value bool) {
+// SetEocslv End of regular conversion of the slave ADC
+func (r *registerCsrType) SetEocslv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEoc_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEocslvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEoc_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEocslvMask)
 	}
 }
 
 const (
-	RegisterCsrFieldEos_slvShift = 19
-	RegisterCsrFieldEos_slvMask  = 0x80000
+	RegisterCsrFieldEosslvShift = 19
+	RegisterCsrFieldEosslvMask  = 0x80000
 )
 
-// GetEos_slv End of regular sequence flag of the slave ADC
-func (r *registerCsrType) GetEos_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEos_slvMask) != 0
+// GetEosslv End of regular sequence flag of the slave ADC
+func (r *registerCsrType) GetEosslv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldEosslvMask) != 0
 }
 
-// SetEos_slv End of regular sequence flag of the slave ADC
-func (r *registerCsrType) SetEos_slv(value bool) {
+// SetEosslv End of regular sequence flag of the slave ADC
+func (r *registerCsrType) SetEosslv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEos_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldEosslvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEos_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldEosslvMask)
 	}
 }
 
 const (
-	RegisterCsrFieldOvr_slvShift = 20
-	RegisterCsrFieldOvr_slvMask  = 0x100000
+	RegisterCsrFieldOvrslvShift = 20
+	RegisterCsrFieldOvrslvMask  = 0x100000
 )
 
-// GetOvr_slv Overrun flag of the slave ADC
-func (r *registerCsrType) GetOvr_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldOvr_slvMask) != 0
+// GetOvrslv Overrun flag of the slave ADC
+func (r *registerCsrType) GetOvrslv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldOvrslvMask) != 0
 }
 
-// SetOvr_slv Overrun flag of the slave ADC
-func (r *registerCsrType) SetOvr_slv(value bool) {
+// SetOvrslv Overrun flag of the slave ADC
+func (r *registerCsrType) SetOvrslv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldOvr_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldOvrslvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldOvr_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldOvrslvMask)
 	}
 }
 
 const (
-	RegisterCsrFieldJeoc_slvShift = 21
-	RegisterCsrFieldJeoc_slvMask  = 0x200000
+	RegisterCsrFieldJeocslvShift = 21
+	RegisterCsrFieldJeocslvMask  = 0x200000
 )
 
-// GetJeoc_slv End of injected conversion flag of the slave ADC
-func (r *registerCsrType) GetJeoc_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJeoc_slvMask) != 0
+// GetJeocslv End of injected conversion flag of the slave ADC
+func (r *registerCsrType) GetJeocslv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJeocslvMask) != 0
 }
 
-// SetJeoc_slv End of injected conversion flag of the slave ADC
-func (r *registerCsrType) SetJeoc_slv(value bool) {
+// SetJeocslv End of injected conversion flag of the slave ADC
+func (r *registerCsrType) SetJeocslv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJeoc_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJeocslvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJeoc_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJeocslvMask)
 	}
 }
 
 const (
-	RegisterCsrFieldJeos_slvShift = 22
-	RegisterCsrFieldJeos_slvMask  = 0x400000
+	RegisterCsrFieldJeosslvShift = 22
+	RegisterCsrFieldJeosslvMask  = 0x400000
 )
 
-// GetJeos_slv End of injected sequence flag of the slave ADC
-func (r *registerCsrType) GetJeos_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJeos_slvMask) != 0
+// GetJeosslv End of injected sequence flag of the slave ADC
+func (r *registerCsrType) GetJeosslv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJeosslvMask) != 0
 }
 
-// SetJeos_slv End of injected sequence flag of the slave ADC
-func (r *registerCsrType) SetJeos_slv(value bool) {
+// SetJeosslv End of injected sequence flag of the slave ADC
+func (r *registerCsrType) SetJeosslv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJeos_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJeosslvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJeos_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJeosslvMask)
 	}
 }
 
 const (
-	RegisterCsrFieldAwd1_slvShift = 23
-	RegisterCsrFieldAwd1_slvMask  = 0x800000
+	RegisterCsrFieldAwd1slvShift = 23
+	RegisterCsrFieldAwd1slvMask  = 0x800000
 )
 
-// GetAwd1_slv Analog watchdog 1 flag of the slave ADC
-func (r *registerCsrType) GetAwd1_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd1_slvMask) != 0
+// GetAwd1slv Analog watchdog 1 flag of the slave ADC
+func (r *registerCsrType) GetAwd1slv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd1slvMask) != 0
 }
 
-// SetAwd1_slv Analog watchdog 1 flag of the slave ADC
-func (r *registerCsrType) SetAwd1_slv(value bool) {
+// SetAwd1slv Analog watchdog 1 flag of the slave ADC
+func (r *registerCsrType) SetAwd1slv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd1_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd1slvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd1_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd1slvMask)
 	}
 }
 
 const (
-	RegisterCsrFieldAwd2_slvShift = 24
-	RegisterCsrFieldAwd2_slvMask  = 0x1000000
+	RegisterCsrFieldAwd2slvShift = 24
+	RegisterCsrFieldAwd2slvMask  = 0x1000000
 )
 
-// GetAwd2_slv Analog watchdog 2 flag of the slave ADC
-func (r *registerCsrType) GetAwd2_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd2_slvMask) != 0
+// GetAwd2slv Analog watchdog 2 flag of the slave ADC
+func (r *registerCsrType) GetAwd2slv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd2slvMask) != 0
 }
 
-// SetAwd2_slv Analog watchdog 2 flag of the slave ADC
-func (r *registerCsrType) SetAwd2_slv(value bool) {
+// SetAwd2slv Analog watchdog 2 flag of the slave ADC
+func (r *registerCsrType) SetAwd2slv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd2_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd2slvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd2_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd2slvMask)
 	}
 }
 
 const (
-	RegisterCsrFieldAwd3_slvShift = 25
-	RegisterCsrFieldAwd3_slvMask  = 0x2000000
+	RegisterCsrFieldAwd3slvShift = 25
+	RegisterCsrFieldAwd3slvMask  = 0x2000000
 )
 
-// GetAwd3_slv Analog watchdog 3 flag of the slave ADC
-func (r *registerCsrType) GetAwd3_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd3_slvMask) != 0
+// GetAwd3slv Analog watchdog 3 flag of the slave ADC
+func (r *registerCsrType) GetAwd3slv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldAwd3slvMask) != 0
 }
 
-// SetAwd3_slv Analog watchdog 3 flag of the slave ADC
-func (r *registerCsrType) SetAwd3_slv(value bool) {
+// SetAwd3slv Analog watchdog 3 flag of the slave ADC
+func (r *registerCsrType) SetAwd3slv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd3_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldAwd3slvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd3_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldAwd3slvMask)
 	}
 }
 
 const (
-	RegisterCsrFieldJqovf_slvShift = 26
-	RegisterCsrFieldJqovf_slvMask  = 0x4000000
+	RegisterCsrFieldJqovfslvShift = 26
+	RegisterCsrFieldJqovfslvMask  = 0x4000000
 )
 
-// GetJqovf_slv Injected Context Queue Overflow flag of the slave ADC
-func (r *registerCsrType) GetJqovf_slv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJqovf_slvMask) != 0
+// GetJqovfslv Injected Context Queue Overflow flag of the slave ADC
+func (r *registerCsrType) GetJqovfslv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldJqovfslvMask) != 0
 }
 
-// SetJqovf_slv Injected Context Queue Overflow flag of the slave ADC
-func (r *registerCsrType) SetJqovf_slv(value bool) {
+// SetJqovfslv Injected Context Queue Overflow flag of the slave ADC
+func (r *registerCsrType) SetJqovfslv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJqovf_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldJqovfslvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJqovf_slvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldJqovfslvMask)
 	}
 }
 
@@ -585,49 +585,49 @@ func (r *registerCcrType) SetVbaten(value bool) {
 type registerCdrType uint32
 
 const (
-	RegisterCdrFieldRdata_mstShift = 0
-	RegisterCdrFieldRdata_mstMask  = 0xffff
+	RegisterCdrFieldRdatamstShift = 0
+	RegisterCdrFieldRdatamstMask  = 0xffff
 )
 
-// GetRdata_mst Regular data of the master ADC
-func (r *registerCdrType) GetRdata_mst() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCdrFieldRdata_mstMask) >> RegisterCdrFieldRdata_mstShift)
+// GetRdatamst Regular data of the master ADC
+func (r *registerCdrType) GetRdatamst() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCdrFieldRdatamstMask) >> RegisterCdrFieldRdatamstShift)
 }
 
-// SetRdata_mst Regular data of the master ADC
-func (r *registerCdrType) SetRdata_mst(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCdrFieldRdata_mstMask)|(uint32(value)<<RegisterCdrFieldRdata_mstShift))
+// SetRdatamst Regular data of the master ADC
+func (r *registerCdrType) SetRdatamst(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCdrFieldRdatamstMask)|(uint32(value)<<RegisterCdrFieldRdatamstShift))
 }
 
 const (
-	RegisterCdrFieldRdata_slvShift = 16
-	RegisterCdrFieldRdata_slvMask  = 0xffff0000
+	RegisterCdrFieldRdataslvShift = 16
+	RegisterCdrFieldRdataslvMask  = 0xffff0000
 )
 
-// GetRdata_slv Regular data of the slave ADC
-func (r *registerCdrType) GetRdata_slv() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCdrFieldRdata_slvMask) >> RegisterCdrFieldRdata_slvShift)
+// GetRdataslv Regular data of the slave ADC
+func (r *registerCdrType) GetRdataslv() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCdrFieldRdataslvMask) >> RegisterCdrFieldRdataslvShift)
 }
 
-// SetRdata_slv Regular data of the slave ADC
-func (r *registerCdrType) SetRdata_slv(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCdrFieldRdata_slvMask)|(uint32(value)<<RegisterCdrFieldRdata_slvShift))
+// SetRdataslv Regular data of the slave ADC
+func (r *registerCdrType) SetRdataslv(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCdrFieldRdataslvMask)|(uint32(value)<<RegisterCdrFieldRdataslvShift))
 }
 
 // registerCdr2Type ADC x common regular data register for 32-bit dual mode
 type registerCdr2Type uint32
 
 const (
-	RegisterCdr2FieldRdata_altShift = 0
-	RegisterCdr2FieldRdata_altMask  = 0xffffffff
+	RegisterCdr2FieldRdataaltShift = 0
+	RegisterCdr2FieldRdataaltMask  = 0xffffffff
 )
 
-// GetRdata_alt Regular data of the master/slave alternated ADCs
-func (r *registerCdr2Type) GetRdata_alt() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCdr2FieldRdata_altMask) >> RegisterCdr2FieldRdata_altShift)
+// GetRdataalt Regular data of the master/slave alternated ADCs
+func (r *registerCdr2Type) GetRdataalt() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCdr2FieldRdataaltMask) >> RegisterCdr2FieldRdataaltShift)
 }
 
-// SetRdata_alt Regular data of the master/slave alternated ADCs
-func (r *registerCdr2Type) SetRdata_alt(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCdr2FieldRdata_altMask)|(uint32(value)<<RegisterCdr2FieldRdata_altShift))
+// SetRdataalt Regular data of the master/slave alternated ADCs
+func (r *registerCdr2Type) SetRdataalt(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCdr2FieldRdataaltMask)|(uint32(value)<<RegisterCdr2FieldRdataaltShift))
 }

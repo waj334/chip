@@ -149,21 +149,21 @@ func (r *registerCr1Type) SetSsi(value bool) {
 }
 
 const (
-	RegisterCr1FieldCrc33_17Shift = 13
-	RegisterCr1FieldCrc33_17Mask  = 0x2000
+	RegisterCr1FieldCrc3317Shift = 13
+	RegisterCr1FieldCrc3317Mask  = 0x2000
 )
 
-// GetCrc33_17 32-bit CRC polynomial configuration
-func (r *registerCr1Type) GetCrc33_17() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldCrc33_17Mask) != 0
+// GetCrc3317 32-bit CRC polynomial configuration
+func (r *registerCr1Type) GetCrc3317() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldCrc3317Mask) != 0
 }
 
-// SetCrc33_17 32-bit CRC polynomial configuration
-func (r *registerCr1Type) SetCrc33_17(value bool) {
+// SetCrc3317 32-bit CRC polynomial configuration
+func (r *registerCr1Type) SetCrc3317(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr1FieldCrc33_17Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr1FieldCrc3317Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCr1FieldCrc33_17Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCr1FieldCrc3317Mask)
 	}
 }
 

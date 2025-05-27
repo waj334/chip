@@ -1091,222 +1091,222 @@ func (r *registerUr2Type) GetBorh() uint8 {
 }
 
 const (
-	RegisterUr2FieldBcm7_add0Shift = 16
-	RegisterUr2FieldBcm7_add0Mask  = 0xffff0000
+	RegisterUr2FieldBcm7add0Shift = 16
+	RegisterUr2FieldBcm7add0Mask  = 0xffff0000
 )
 
-// GetBcm7_add0 Cortex-M7 Boot Address 0
-func (r *registerUr2Type) GetBcm7_add0() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr2FieldBcm7_add0Mask) >> RegisterUr2FieldBcm7_add0Shift)
+// GetBcm7add0 Cortex-M7 Boot Address 0
+func (r *registerUr2Type) GetBcm7add0() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr2FieldBcm7add0Mask) >> RegisterUr2FieldBcm7add0Shift)
 }
 
-// SetBcm7_add0 Cortex-M7 Boot Address 0
-func (r *registerUr2Type) SetBcm7_add0(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr2FieldBcm7_add0Mask)|(uint32(value)<<RegisterUr2FieldBcm7_add0Shift))
+// SetBcm7add0 Cortex-M7 Boot Address 0
+func (r *registerUr2Type) SetBcm7add0(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr2FieldBcm7add0Mask)|(uint32(value)<<RegisterUr2FieldBcm7add0Shift))
 }
 
 // registerUr3Type SYSCFG user register 3
 type registerUr3Type uint32
 
 const (
-	RegisterUr3FieldBcm4_add1Shift = 0
-	RegisterUr3FieldBcm4_add1Mask  = 0xffff
+	RegisterUr3FieldBcm4add1Shift = 0
+	RegisterUr3FieldBcm4add1Mask  = 0xffff
 )
 
-// GetBcm4_add1 Cortex-M4 Boot Address 0
-func (r *registerUr3Type) GetBcm4_add1() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr3FieldBcm4_add1Mask) >> RegisterUr3FieldBcm4_add1Shift)
+// GetBcm4add1 Cortex-M4 Boot Address 0
+func (r *registerUr3Type) GetBcm4add1() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr3FieldBcm4add1Mask) >> RegisterUr3FieldBcm4add1Shift)
 }
 
-// SetBcm4_add1 Cortex-M4 Boot Address 0
-func (r *registerUr3Type) SetBcm4_add1(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr3FieldBcm4_add1Mask)|(uint32(value)<<RegisterUr3FieldBcm4_add1Shift))
+// SetBcm4add1 Cortex-M4 Boot Address 0
+func (r *registerUr3Type) SetBcm4add1(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr3FieldBcm4add1Mask)|(uint32(value)<<RegisterUr3FieldBcm4add1Shift))
 }
 
 const (
-	RegisterUr3FieldBcm7_add1Shift = 16
-	RegisterUr3FieldBcm7_add1Mask  = 0xffff0000
+	RegisterUr3FieldBcm7add1Shift = 16
+	RegisterUr3FieldBcm7add1Mask  = 0xffff0000
 )
 
-// GetBcm7_add1 Cortex-M7 Boot Address 1
-func (r *registerUr3Type) GetBcm7_add1() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr3FieldBcm7_add1Mask) >> RegisterUr3FieldBcm7_add1Shift)
+// GetBcm7add1 Cortex-M7 Boot Address 1
+func (r *registerUr3Type) GetBcm7add1() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr3FieldBcm7add1Mask) >> RegisterUr3FieldBcm7add1Shift)
 }
 
-// SetBcm7_add1 Cortex-M7 Boot Address 1
-func (r *registerUr3Type) SetBcm7_add1(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr3FieldBcm7_add1Mask)|(uint32(value)<<RegisterUr3FieldBcm7_add1Shift))
+// SetBcm7add1 Cortex-M7 Boot Address 1
+func (r *registerUr3Type) SetBcm7add1(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr3FieldBcm7add1Mask)|(uint32(value)<<RegisterUr3FieldBcm7add1Shift))
 }
 
 // registerUr4Type SYSCFG user register 4
 type registerUr4Type uint32
 
 const (
-	RegisterUr4FieldBcm4_add1Shift = 0
-	RegisterUr4FieldBcm4_add1Mask  = 0xffff
+	RegisterUr4FieldBcm4add1Shift = 0
+	RegisterUr4FieldBcm4add1Mask  = 0xffff
 )
 
-// GetBcm4_add1 Mass Erase Protected Area Disabled for bank 1
-func (r *registerUr4Type) GetBcm4_add1() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr4FieldBcm4_add1Mask) >> RegisterUr4FieldBcm4_add1Shift)
+// GetBcm4add1 Mass Erase Protected Area Disabled for bank 1
+func (r *registerUr4Type) GetBcm4add1() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr4FieldBcm4add1Mask) >> RegisterUr4FieldBcm4add1Shift)
 }
 
-// SetBcm4_add1 Mass Erase Protected Area Disabled for bank 1
-func (r *registerUr4Type) SetBcm4_add1(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr4FieldBcm4_add1Mask)|(uint32(value)<<RegisterUr4FieldBcm4_add1Shift))
+// SetBcm4add1 Mass Erase Protected Area Disabled for bank 1
+func (r *registerUr4Type) SetBcm4add1(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr4FieldBcm4add1Mask)|(uint32(value)<<RegisterUr4FieldBcm4add1Shift))
 }
 
 const (
-	RegisterUr4FieldMepad_1Shift = 16
-	RegisterUr4FieldMepad_1Mask  = 0x10000
+	RegisterUr4FieldMepad1Shift = 16
+	RegisterUr4FieldMepad1Mask  = 0x10000
 )
 
-// GetMepad_1 Boot Cortex-M4 Address 1
-func (r *registerUr4Type) GetMepad_1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUr4FieldMepad_1Mask) != 0
+// GetMepad1 Boot Cortex-M4 Address 1
+func (r *registerUr4Type) GetMepad1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterUr4FieldMepad1Mask) != 0
 }
 
 // registerUr5Type SYSCFG user register 5
 type registerUr5Type uint32
 
 const (
-	RegisterUr5FieldMesad_1Shift = 0
-	RegisterUr5FieldMesad_1Mask  = 0x1
+	RegisterUr5FieldMesad1Shift = 0
+	RegisterUr5FieldMesad1Mask  = 0x1
 )
 
-// GetMesad_1 Mass erase secured area disabled for bank 1
-func (r *registerUr5Type) GetMesad_1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUr5FieldMesad_1Mask) != 0
+// GetMesad1 Mass erase secured area disabled for bank 1
+func (r *registerUr5Type) GetMesad1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterUr5FieldMesad1Mask) != 0
 }
 
-// SetMesad_1 Mass erase secured area disabled for bank 1
-func (r *registerUr5Type) SetMesad_1(value bool) {
+// SetMesad1 Mass erase secured area disabled for bank 1
+func (r *registerUr5Type) SetMesad1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUr5FieldMesad_1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUr5FieldMesad1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUr5FieldMesad_1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUr5FieldMesad1Mask)
 	}
 }
 
 const (
-	RegisterUr5FieldWrps_1Shift = 16
-	RegisterUr5FieldWrps_1Mask  = 0xff0000
+	RegisterUr5FieldWrps1Shift = 16
+	RegisterUr5FieldWrps1Mask  = 0xff0000
 )
 
-// GetWrps_1 Write protection for flash bank 1
-func (r *registerUr5Type) GetWrps_1() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterUr5FieldWrps_1Mask) >> RegisterUr5FieldWrps_1Shift)
+// GetWrps1 Write protection for flash bank 1
+func (r *registerUr5Type) GetWrps1() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterUr5FieldWrps1Mask) >> RegisterUr5FieldWrps1Shift)
 }
 
-// SetWrps_1 Write protection for flash bank 1
-func (r *registerUr5Type) SetWrps_1(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr5FieldWrps_1Mask)|(uint32(value)<<RegisterUr5FieldWrps_1Shift))
+// SetWrps1 Write protection for flash bank 1
+func (r *registerUr5Type) SetWrps1(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr5FieldWrps1Mask)|(uint32(value)<<RegisterUr5FieldWrps1Shift))
 }
 
 // registerUr6Type SYSCFG user register 6
 type registerUr6Type uint32
 
 const (
-	RegisterUr6FieldPa_beg_1Shift = 0
-	RegisterUr6FieldPa_beg_1Mask  = 0xfff
+	RegisterUr6FieldPabeg1Shift = 0
+	RegisterUr6FieldPabeg1Mask  = 0xfff
 )
 
-// GetPa_beg_1 Protected area start address for bank 1
-func (r *registerUr6Type) GetPa_beg_1() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr6FieldPa_beg_1Mask) >> RegisterUr6FieldPa_beg_1Shift)
+// GetPabeg1 Protected area start address for bank 1
+func (r *registerUr6Type) GetPabeg1() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr6FieldPabeg1Mask) >> RegisterUr6FieldPabeg1Shift)
 }
 
-// SetPa_beg_1 Protected area start address for bank 1
-func (r *registerUr6Type) SetPa_beg_1(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr6FieldPa_beg_1Mask)|(uint32(value)<<RegisterUr6FieldPa_beg_1Shift))
+// SetPabeg1 Protected area start address for bank 1
+func (r *registerUr6Type) SetPabeg1(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr6FieldPabeg1Mask)|(uint32(value)<<RegisterUr6FieldPabeg1Shift))
 }
 
 const (
-	RegisterUr6FieldPa_end_1Shift = 16
-	RegisterUr6FieldPa_end_1Mask  = 0xfff0000
+	RegisterUr6FieldPaend1Shift = 16
+	RegisterUr6FieldPaend1Mask  = 0xfff0000
 )
 
-// GetPa_end_1 Protected area end address for bank 1
-func (r *registerUr6Type) GetPa_end_1() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr6FieldPa_end_1Mask) >> RegisterUr6FieldPa_end_1Shift)
+// GetPaend1 Protected area end address for bank 1
+func (r *registerUr6Type) GetPaend1() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr6FieldPaend1Mask) >> RegisterUr6FieldPaend1Shift)
 }
 
-// SetPa_end_1 Protected area end address for bank 1
-func (r *registerUr6Type) SetPa_end_1(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr6FieldPa_end_1Mask)|(uint32(value)<<RegisterUr6FieldPa_end_1Shift))
+// SetPaend1 Protected area end address for bank 1
+func (r *registerUr6Type) SetPaend1(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr6FieldPaend1Mask)|(uint32(value)<<RegisterUr6FieldPaend1Shift))
 }
 
 // registerUr7Type SYSCFG user register 7
 type registerUr7Type uint32
 
 const (
-	RegisterUr7FieldSa_beg_1Shift = 0
-	RegisterUr7FieldSa_beg_1Mask  = 0xfff
+	RegisterUr7FieldSabeg1Shift = 0
+	RegisterUr7FieldSabeg1Mask  = 0xfff
 )
 
-// GetSa_beg_1 Secured area start address for bank 1
-func (r *registerUr7Type) GetSa_beg_1() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr7FieldSa_beg_1Mask) >> RegisterUr7FieldSa_beg_1Shift)
+// GetSabeg1 Secured area start address for bank 1
+func (r *registerUr7Type) GetSabeg1() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr7FieldSabeg1Mask) >> RegisterUr7FieldSabeg1Shift)
 }
 
-// SetSa_beg_1 Secured area start address for bank 1
-func (r *registerUr7Type) SetSa_beg_1(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr7FieldSa_beg_1Mask)|(uint32(value)<<RegisterUr7FieldSa_beg_1Shift))
+// SetSabeg1 Secured area start address for bank 1
+func (r *registerUr7Type) SetSabeg1(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr7FieldSabeg1Mask)|(uint32(value)<<RegisterUr7FieldSabeg1Shift))
 }
 
 const (
-	RegisterUr7FieldSa_end_1Shift = 16
-	RegisterUr7FieldSa_end_1Mask  = 0xfff0000
+	RegisterUr7FieldSaend1Shift = 16
+	RegisterUr7FieldSaend1Mask  = 0xfff0000
 )
 
-// GetSa_end_1 Secured area end address for bank 1
-func (r *registerUr7Type) GetSa_end_1() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr7FieldSa_end_1Mask) >> RegisterUr7FieldSa_end_1Shift)
+// GetSaend1 Secured area end address for bank 1
+func (r *registerUr7Type) GetSaend1() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr7FieldSaend1Mask) >> RegisterUr7FieldSaend1Shift)
 }
 
-// SetSa_end_1 Secured area end address for bank 1
-func (r *registerUr7Type) SetSa_end_1(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr7FieldSa_end_1Mask)|(uint32(value)<<RegisterUr7FieldSa_end_1Shift))
+// SetSaend1 Secured area end address for bank 1
+func (r *registerUr7Type) SetSaend1(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr7FieldSaend1Mask)|(uint32(value)<<RegisterUr7FieldSaend1Shift))
 }
 
 // registerUr8Type SYSCFG user register 8
 type registerUr8Type uint32
 
 const (
-	RegisterUr8FieldMepad_2Shift = 0
-	RegisterUr8FieldMepad_2Mask  = 0x1
+	RegisterUr8FieldMepad2Shift = 0
+	RegisterUr8FieldMepad2Mask  = 0x1
 )
 
-// GetMepad_2 Mass erase protected area disabled for bank 2
-func (r *registerUr8Type) GetMepad_2() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUr8FieldMepad_2Mask) != 0
+// GetMepad2 Mass erase protected area disabled for bank 2
+func (r *registerUr8Type) GetMepad2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterUr8FieldMepad2Mask) != 0
 }
 
-// SetMepad_2 Mass erase protected area disabled for bank 2
-func (r *registerUr8Type) SetMepad_2(value bool) {
+// SetMepad2 Mass erase protected area disabled for bank 2
+func (r *registerUr8Type) SetMepad2(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUr8FieldMepad_2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUr8FieldMepad2Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUr8FieldMepad_2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUr8FieldMepad2Mask)
 	}
 }
 
 const (
-	RegisterUr8FieldMesad_2Shift = 16
-	RegisterUr8FieldMesad_2Mask  = 0x10000
+	RegisterUr8FieldMesad2Shift = 16
+	RegisterUr8FieldMesad2Mask  = 0x10000
 )
 
-// GetMesad_2 Mass erase secured area disabled for bank 2
-func (r *registerUr8Type) GetMesad_2() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUr8FieldMesad_2Mask) != 0
+// GetMesad2 Mass erase secured area disabled for bank 2
+func (r *registerUr8Type) GetMesad2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterUr8FieldMesad2Mask) != 0
 }
 
-// SetMesad_2 Mass erase secured area disabled for bank 2
-func (r *registerUr8Type) SetMesad_2(value bool) {
+// SetMesad2 Mass erase secured area disabled for bank 2
+func (r *registerUr8Type) SetMesad2(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUr8FieldMesad_2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUr8FieldMesad2Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUr8FieldMesad_2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUr8FieldMesad2Mask)
 	}
 }
 
@@ -1314,84 +1314,84 @@ func (r *registerUr8Type) SetMesad_2(value bool) {
 type registerUr9Type uint32
 
 const (
-	RegisterUr9FieldWrps_2Shift = 0
-	RegisterUr9FieldWrps_2Mask  = 0xff
+	RegisterUr9FieldWrps2Shift = 0
+	RegisterUr9FieldWrps2Mask  = 0xff
 )
 
-// GetWrps_2 Write protection for flash bank 2
-func (r *registerUr9Type) GetWrps_2() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterUr9FieldWrps_2Mask) >> RegisterUr9FieldWrps_2Shift)
+// GetWrps2 Write protection for flash bank 2
+func (r *registerUr9Type) GetWrps2() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterUr9FieldWrps2Mask) >> RegisterUr9FieldWrps2Shift)
 }
 
-// SetWrps_2 Write protection for flash bank 2
-func (r *registerUr9Type) SetWrps_2(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr9FieldWrps_2Mask)|(uint32(value)<<RegisterUr9FieldWrps_2Shift))
+// SetWrps2 Write protection for flash bank 2
+func (r *registerUr9Type) SetWrps2(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr9FieldWrps2Mask)|(uint32(value)<<RegisterUr9FieldWrps2Shift))
 }
 
 const (
-	RegisterUr9FieldPa_beg_2Shift = 16
-	RegisterUr9FieldPa_beg_2Mask  = 0xfff0000
+	RegisterUr9FieldPabeg2Shift = 16
+	RegisterUr9FieldPabeg2Mask  = 0xfff0000
 )
 
-// GetPa_beg_2 Protected area start address for bank 2
-func (r *registerUr9Type) GetPa_beg_2() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr9FieldPa_beg_2Mask) >> RegisterUr9FieldPa_beg_2Shift)
+// GetPabeg2 Protected area start address for bank 2
+func (r *registerUr9Type) GetPabeg2() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr9FieldPabeg2Mask) >> RegisterUr9FieldPabeg2Shift)
 }
 
-// SetPa_beg_2 Protected area start address for bank 2
-func (r *registerUr9Type) SetPa_beg_2(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr9FieldPa_beg_2Mask)|(uint32(value)<<RegisterUr9FieldPa_beg_2Shift))
+// SetPabeg2 Protected area start address for bank 2
+func (r *registerUr9Type) SetPabeg2(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr9FieldPabeg2Mask)|(uint32(value)<<RegisterUr9FieldPabeg2Shift))
 }
 
 // registerUr10Type SYSCFG user register 10
 type registerUr10Type uint32
 
 const (
-	RegisterUr10FieldPa_end_2Shift = 0
-	RegisterUr10FieldPa_end_2Mask  = 0xfff
+	RegisterUr10FieldPaend2Shift = 0
+	RegisterUr10FieldPaend2Mask  = 0xfff
 )
 
-// GetPa_end_2 Protected area end address for bank 2
-func (r *registerUr10Type) GetPa_end_2() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr10FieldPa_end_2Mask) >> RegisterUr10FieldPa_end_2Shift)
+// GetPaend2 Protected area end address for bank 2
+func (r *registerUr10Type) GetPaend2() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr10FieldPaend2Mask) >> RegisterUr10FieldPaend2Shift)
 }
 
-// SetPa_end_2 Protected area end address for bank 2
-func (r *registerUr10Type) SetPa_end_2(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr10FieldPa_end_2Mask)|(uint32(value)<<RegisterUr10FieldPa_end_2Shift))
+// SetPaend2 Protected area end address for bank 2
+func (r *registerUr10Type) SetPaend2(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr10FieldPaend2Mask)|(uint32(value)<<RegisterUr10FieldPaend2Shift))
 }
 
 const (
-	RegisterUr10FieldSa_beg_2Shift = 16
-	RegisterUr10FieldSa_beg_2Mask  = 0xfff0000
+	RegisterUr10FieldSabeg2Shift = 16
+	RegisterUr10FieldSabeg2Mask  = 0xfff0000
 )
 
-// GetSa_beg_2 Secured area start address for bank 2
-func (r *registerUr10Type) GetSa_beg_2() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr10FieldSa_beg_2Mask) >> RegisterUr10FieldSa_beg_2Shift)
+// GetSabeg2 Secured area start address for bank 2
+func (r *registerUr10Type) GetSabeg2() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr10FieldSabeg2Mask) >> RegisterUr10FieldSabeg2Shift)
 }
 
-// SetSa_beg_2 Secured area start address for bank 2
-func (r *registerUr10Type) SetSa_beg_2(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr10FieldSa_beg_2Mask)|(uint32(value)<<RegisterUr10FieldSa_beg_2Shift))
+// SetSabeg2 Secured area start address for bank 2
+func (r *registerUr10Type) SetSabeg2(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr10FieldSabeg2Mask)|(uint32(value)<<RegisterUr10FieldSabeg2Shift))
 }
 
 // registerUr11Type SYSCFG user register 11
 type registerUr11Type uint32
 
 const (
-	RegisterUr11FieldSa_end_2Shift = 0
-	RegisterUr11FieldSa_end_2Mask  = 0xfff
+	RegisterUr11FieldSaend2Shift = 0
+	RegisterUr11FieldSaend2Mask  = 0xfff
 )
 
-// GetSa_end_2 Secured area end address for bank 2
-func (r *registerUr11Type) GetSa_end_2() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr11FieldSa_end_2Mask) >> RegisterUr11FieldSa_end_2Shift)
+// GetSaend2 Secured area end address for bank 2
+func (r *registerUr11Type) GetSaend2() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterUr11FieldSaend2Mask) >> RegisterUr11FieldSaend2Shift)
 }
 
-// SetSa_end_2 Secured area end address for bank 2
-func (r *registerUr11Type) SetSa_end_2(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr11FieldSa_end_2Mask)|(uint32(value)<<RegisterUr11FieldSa_end_2Shift))
+// SetSaend2 Secured area end address for bank 2
+func (r *registerUr11Type) SetSaend2(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterUr11FieldSaend2Mask)|(uint32(value)<<RegisterUr11FieldSaend2Shift))
 }
 
 const (
@@ -1609,20 +1609,20 @@ func (r *registerUr16Type) SetPkp(value bool) {
 type registerUr17Type uint32
 
 const (
-	RegisterUr17FieldIo_hslvShift = 0
-	RegisterUr17FieldIo_hslvMask  = 0x1
+	RegisterUr17FieldIohslvShift = 0
+	RegisterUr17FieldIohslvMask  = 0x1
 )
 
-// GetIo_hslv I/O high speed / low voltage
-func (r *registerUr17Type) GetIo_hslv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUr17FieldIo_hslvMask) != 0
+// GetIohslv I/O high speed / low voltage
+func (r *registerUr17Type) GetIohslv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterUr17FieldIohslvMask) != 0
 }
 
-// SetIo_hslv I/O high speed / low voltage
-func (r *registerUr17Type) SetIo_hslv(value bool) {
+// SetIohslv I/O high speed / low voltage
+func (r *registerUr17Type) SetIohslv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUr17FieldIo_hslvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUr17FieldIohslvMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUr17FieldIo_hslvMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUr17FieldIohslvMask)
 	}
 }

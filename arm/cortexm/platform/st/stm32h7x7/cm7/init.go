@@ -3,6 +3,6 @@
 package stm32h7x7
 
 import (
+	_ "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/def"
 	_ "pkg.si-go.dev/chip/arm/cortexm/runtime"
-	_ "pkg.si-go.dev/chip/arm/cortexm/st/stm32h7x7/cm7/def"
 )

@@ -6389,21 +6389,21 @@ func (r *registerBdtxuprType) SetTimxcmp4(value bool) {
 }
 
 const (
-	RegisterBdtxuprFieldTimx_dtxrShift = 10
-	RegisterBdtxuprFieldTimx_dtxrMask  = 0x400
+	RegisterBdtxuprFieldTimxdtxrShift = 10
+	RegisterBdtxuprFieldTimxdtxrMask  = 0x400
 )
 
-// GetTimx_dtxr HRTIM_DTxR register update enable
-func (r *registerBdtxuprType) GetTimx_dtxr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimx_dtxrMask) != 0
+// GetTimxdtxr HRTIM_DTxR register update enable
+func (r *registerBdtxuprType) GetTimxdtxr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxdtxrMask) != 0
 }
 
-// SetTimx_dtxr HRTIM_DTxR register update enable
-func (r *registerBdtxuprType) SetTimx_dtxr(value bool) {
+// SetTimxdtxr HRTIM_DTxR register update enable
+func (r *registerBdtxuprType) SetTimxdtxr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimx_dtxrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxdtxrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterBdtxuprFieldTimx_dtxrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterBdtxuprFieldTimxdtxrMask)
 	}
 }
 

@@ -22,2160 +22,2160 @@ var (
 )
 
 type _sai struct {
-	Sai_gcr    registerSai_gcrType
-	Sai_acr1   registerSai_acr1Type
-	Sai_acr2   registerSai_acr2Type
-	Sai_afrcr  registerSai_afrcrType
-	Sai_aslotr registerSai_aslotrType
-	Sai_aim    registerSai_aimType
-	Sai_asr    registerSai_asrType
-	Sai_aclrfr registerSai_aclrfrType
-	Sai_adr    registerSai_adrType
-	Sai_bcr1   registerSai_bcr1Type
-	Sai_bcr2   registerSai_bcr2Type
-	Sai_bfrcr  registerSai_bfrcrType
-	Sai_bslotr registerSai_bslotrType
-	Sai_bim    registerSai_bimType
-	Sai_bsr    registerSai_bsrType
-	Sai_bclrfr registerSai_bclrfrType
-	Sai_bdr    registerSai_bdrType
-	Sai_pdmcr  registerSai_pdmcrType
-	Sai_pdmdly registerSai_pdmdlyType
+	Saigcr    registerSaigcrType
+	Saiacr1   registerSaiacr1Type
+	Saiacr2   registerSaiacr2Type
+	Saiafrcr  registerSaiafrcrType
+	Saiaslotr registerSaiaslotrType
+	Saiaim    registerSaiaimType
+	Saiasr    registerSaiasrType
+	Saiaclrfr registerSaiaclrfrType
+	Saiadr    registerSaiadrType
+	Saibcr1   registerSaibcr1Type
+	Saibcr2   registerSaibcr2Type
+	Saibfrcr  registerSaibfrcrType
+	Saibslotr registerSaibslotrType
+	Saibim    registerSaibimType
+	Saibsr    registerSaibsrType
+	Saibclrfr registerSaibclrfrType
+	Saibdr    registerSaibdrType
+	Saipdmcr  registerSaipdmcrType
+	Saipdmdly registerSaipdmdlyType
 }
 
-// registerSai_gcrType Global configuration register
-type registerSai_gcrType uint32
+// registerSaigcrType Global configuration register
+type registerSaigcrType uint32
 
 const (
-	RegisterSai_gcrFieldSyncinShift = 0
-	RegisterSai_gcrFieldSyncinMask  = 0x3
+	RegisterSaigcrFieldSyncinShift = 0
+	RegisterSaigcrFieldSyncinMask  = 0x3
 )
 
 // GetSyncin Synchronization inputs
-func (r *registerSai_gcrType) GetSyncin() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_gcrFieldSyncinMask) >> RegisterSai_gcrFieldSyncinShift)
+func (r *registerSaigcrType) GetSyncin() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaigcrFieldSyncinMask) >> RegisterSaigcrFieldSyncinShift)
 }
 
 // SetSyncin Synchronization inputs
-func (r *registerSai_gcrType) SetSyncin(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_gcrFieldSyncinMask)|(uint32(value)<<RegisterSai_gcrFieldSyncinShift))
+func (r *registerSaigcrType) SetSyncin(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaigcrFieldSyncinMask)|(uint32(value)<<RegisterSaigcrFieldSyncinShift))
 }
 
 const (
-	RegisterSai_gcrFieldSyncoutShift = 4
-	RegisterSai_gcrFieldSyncoutMask  = 0x30
+	RegisterSaigcrFieldSyncoutShift = 4
+	RegisterSaigcrFieldSyncoutMask  = 0x30
 )
 
 // GetSyncout Synchronization outputs These bits are set and cleared by software.
-func (r *registerSai_gcrType) GetSyncout() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_gcrFieldSyncoutMask) >> RegisterSai_gcrFieldSyncoutShift)
+func (r *registerSaigcrType) GetSyncout() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaigcrFieldSyncoutMask) >> RegisterSaigcrFieldSyncoutShift)
 }
 
 // SetSyncout Synchronization outputs These bits are set and cleared by software.
-func (r *registerSai_gcrType) SetSyncout(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_gcrFieldSyncoutMask)|(uint32(value)<<RegisterSai_gcrFieldSyncoutShift))
+func (r *registerSaigcrType) SetSyncout(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaigcrFieldSyncoutMask)|(uint32(value)<<RegisterSaigcrFieldSyncoutShift))
 }
 
-// registerSai_acr1Type Configuration register 1
-type registerSai_acr1Type uint32
+// registerSaiacr1Type Configuration register 1
+type registerSaiacr1Type uint32
 
 const (
-	RegisterSai_acr1FieldModeShift = 0
-	RegisterSai_acr1FieldModeMask  = 0x3
+	RegisterSaiacr1FieldModeShift = 0
+	RegisterSaiacr1FieldModeMask  = 0x3
 )
 
 // GetMode SAIx audio block mode immediately
-func (r *registerSai_acr1Type) GetMode() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldModeMask) >> RegisterSai_acr1FieldModeShift)
+func (r *registerSaiacr1Type) GetMode() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldModeMask) >> RegisterSaiacr1FieldModeShift)
 }
 
 // SetMode SAIx audio block mode immediately
-func (r *registerSai_acr1Type) SetMode(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldModeMask)|(uint32(value)<<RegisterSai_acr1FieldModeShift))
+func (r *registerSaiacr1Type) SetMode(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldModeMask)|(uint32(value)<<RegisterSaiacr1FieldModeShift))
 }
 
 const (
-	RegisterSai_acr1FieldPrtcfgShift = 2
-	RegisterSai_acr1FieldPrtcfgMask  = 0xc
+	RegisterSaiacr1FieldPrtcfgShift = 2
+	RegisterSaiacr1FieldPrtcfgMask  = 0xc
 )
 
 // GetPrtcfg Protocol configuration. These bits are set and cleared by software. These bits have to be configured when the audio block is disabled.
-func (r *registerSai_acr1Type) GetPrtcfg() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldPrtcfgMask) >> RegisterSai_acr1FieldPrtcfgShift)
+func (r *registerSaiacr1Type) GetPrtcfg() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldPrtcfgMask) >> RegisterSaiacr1FieldPrtcfgShift)
 }
 
 // SetPrtcfg Protocol configuration. These bits are set and cleared by software. These bits have to be configured when the audio block is disabled.
-func (r *registerSai_acr1Type) SetPrtcfg(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldPrtcfgMask)|(uint32(value)<<RegisterSai_acr1FieldPrtcfgShift))
+func (r *registerSaiacr1Type) SetPrtcfg(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldPrtcfgMask)|(uint32(value)<<RegisterSaiacr1FieldPrtcfgShift))
 }
 
 const (
-	RegisterSai_acr1FieldDsShift = 5
-	RegisterSai_acr1FieldDsMask  = 0xe0
+	RegisterSaiacr1FieldDsShift = 5
+	RegisterSaiacr1FieldDsMask  = 0xe0
 )
 
 // GetDs Data size. These bits are set and cleared by software. These bits are ignored when the SPDIF protocols are selected (bit PRTCFG[1:0]), because the frame and the data size are fixed in such case. When the companding mode is selected through COMP[1:0] bits, DS[1:0] are ignored since the data size is fixed to 8 bits by the algorithm. These bits must be configured when the audio block is disabled.
-func (r *registerSai_acr1Type) GetDs() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldDsMask) >> RegisterSai_acr1FieldDsShift)
+func (r *registerSaiacr1Type) GetDs() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldDsMask) >> RegisterSaiacr1FieldDsShift)
 }
 
 // SetDs Data size. These bits are set and cleared by software. These bits are ignored when the SPDIF protocols are selected (bit PRTCFG[1:0]), because the frame and the data size are fixed in such case. When the companding mode is selected through COMP[1:0] bits, DS[1:0] are ignored since the data size is fixed to 8 bits by the algorithm. These bits must be configured when the audio block is disabled.
-func (r *registerSai_acr1Type) SetDs(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldDsMask)|(uint32(value)<<RegisterSai_acr1FieldDsShift))
+func (r *registerSaiacr1Type) SetDs(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldDsMask)|(uint32(value)<<RegisterSaiacr1FieldDsShift))
 }
 
 const (
-	RegisterSai_acr1FieldLsbfirstShift = 8
-	RegisterSai_acr1FieldLsbfirstMask  = 0x100
+	RegisterSaiacr1FieldLsbfirstShift = 8
+	RegisterSaiacr1FieldLsbfirstMask  = 0x100
 )
 
 // GetLsbfirst Least significant bit first. This bit is set and cleared by software. It must be configured when the audio block is disabled. This bit has no meaning in AC97 audio protocol since AC97 data are always transferred with the MSB first. This bit has no meaning in SPDIF audio protocol since in SPDIF data are always transferred with LSB first.
-func (r *registerSai_acr1Type) GetLsbfirst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldLsbfirstMask) != 0
+func (r *registerSaiacr1Type) GetLsbfirst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldLsbfirstMask) != 0
 }
 
 // SetLsbfirst Least significant bit first. This bit is set and cleared by software. It must be configured when the audio block is disabled. This bit has no meaning in AC97 audio protocol since AC97 data are always transferred with the MSB first. This bit has no meaning in SPDIF audio protocol since in SPDIF data are always transferred with LSB first.
-func (r *registerSai_acr1Type) SetLsbfirst(value bool) {
+func (r *registerSaiacr1Type) SetLsbfirst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr1FieldLsbfirstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr1FieldLsbfirstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldLsbfirstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldLsbfirstMask)
 	}
 }
 
 const (
-	RegisterSai_acr1FieldCkstrShift = 9
-	RegisterSai_acr1FieldCkstrMask  = 0x200
+	RegisterSaiacr1FieldCkstrShift = 9
+	RegisterSaiacr1FieldCkstrMask  = 0x200
 )
 
 // GetCkstr Clock strobing edge. This bit is set and cleared by software. It must be configured when the audio block is disabled. This bit has no meaning in SPDIF audio protocol.
-func (r *registerSai_acr1Type) GetCkstr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldCkstrMask) != 0
+func (r *registerSaiacr1Type) GetCkstr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldCkstrMask) != 0
 }
 
 // SetCkstr Clock strobing edge. This bit is set and cleared by software. It must be configured when the audio block is disabled. This bit has no meaning in SPDIF audio protocol.
-func (r *registerSai_acr1Type) SetCkstr(value bool) {
+func (r *registerSaiacr1Type) SetCkstr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr1FieldCkstrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr1FieldCkstrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldCkstrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldCkstrMask)
 	}
 }
 
 const (
-	RegisterSai_acr1FieldSyncenShift = 10
-	RegisterSai_acr1FieldSyncenMask  = 0xc00
+	RegisterSaiacr1FieldSyncenShift = 10
+	RegisterSaiacr1FieldSyncenMask  = 0xc00
 )
 
 // GetSyncen Synchronization enable. These bits are set and cleared by software. They must be configured when the audio sub-block is disabled. Note: The audio sub-block should be configured as asynchronous when SPDIF mode is enabled.
-func (r *registerSai_acr1Type) GetSyncen() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldSyncenMask) >> RegisterSai_acr1FieldSyncenShift)
+func (r *registerSaiacr1Type) GetSyncen() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldSyncenMask) >> RegisterSaiacr1FieldSyncenShift)
 }
 
 // SetSyncen Synchronization enable. These bits are set and cleared by software. They must be configured when the audio sub-block is disabled. Note: The audio sub-block should be configured as asynchronous when SPDIF mode is enabled.
-func (r *registerSai_acr1Type) SetSyncen(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldSyncenMask)|(uint32(value)<<RegisterSai_acr1FieldSyncenShift))
+func (r *registerSaiacr1Type) SetSyncen(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldSyncenMask)|(uint32(value)<<RegisterSaiacr1FieldSyncenShift))
 }
 
 const (
-	RegisterSai_acr1FieldMonoShift = 12
-	RegisterSai_acr1FieldMonoMask  = 0x1000
+	RegisterSaiacr1FieldMonoShift = 12
+	RegisterSaiacr1FieldMonoMask  = 0x1000
 )
 
 // GetMono Mono mode. This bit is set and cleared by software. It is meaningful only when the number of slots is equal to 2. When the mono mode is selected, slot 0 data are duplicated on slot 1 when the audio block operates as a transmitter. In reception mode, the slot1 is discarded and only the data received from slot 0 are stored. Refer to Section: Mono/stereo mode for more details.
-func (r *registerSai_acr1Type) GetMono() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldMonoMask) != 0
+func (r *registerSaiacr1Type) GetMono() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldMonoMask) != 0
 }
 
 // SetMono Mono mode. This bit is set and cleared by software. It is meaningful only when the number of slots is equal to 2. When the mono mode is selected, slot 0 data are duplicated on slot 1 when the audio block operates as a transmitter. In reception mode, the slot1 is discarded and only the data received from slot 0 are stored. Refer to Section: Mono/stereo mode for more details.
-func (r *registerSai_acr1Type) SetMono(value bool) {
+func (r *registerSaiacr1Type) SetMono(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr1FieldMonoMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr1FieldMonoMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldMonoMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldMonoMask)
 	}
 }
 
 const (
-	RegisterSai_acr1FieldOutdrivShift = 13
-	RegisterSai_acr1FieldOutdrivMask  = 0x2000
+	RegisterSaiacr1FieldOutdrivShift = 13
+	RegisterSaiacr1FieldOutdrivMask  = 0x2000
 )
 
 // GetOutdriv Output drive. This bit is set and cleared by software. Note: This bit has to be set before enabling the audio block and after the audio block configuration.
-func (r *registerSai_acr1Type) GetOutdriv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldOutdrivMask) != 0
+func (r *registerSaiacr1Type) GetOutdriv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldOutdrivMask) != 0
 }
 
 // SetOutdriv Output drive. This bit is set and cleared by software. Note: This bit has to be set before enabling the audio block and after the audio block configuration.
-func (r *registerSai_acr1Type) SetOutdriv(value bool) {
+func (r *registerSaiacr1Type) SetOutdriv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr1FieldOutdrivMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr1FieldOutdrivMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldOutdrivMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldOutdrivMask)
 	}
 }
 
 const (
-	RegisterSai_acr1FieldSaixenShift = 16
-	RegisterSai_acr1FieldSaixenMask  = 0x10000
+	RegisterSaiacr1FieldSaixenShift = 16
+	RegisterSaiacr1FieldSaixenMask  = 0x10000
 )
 
 // GetSaixen Audio block enable where x is A or B. This bit is set by software. To switch off the audio block, the application software must program this bit to 0 and poll the bit till it reads back 0, meaning that the block is completely disabled. Before setting this bit to 1, check that it is set to 0, otherwise the enable command will not be taken into account. This bit allows to control the state of SAIx audio block. If it is disabled when an audio frame transfer is ongoing, the ongoing transfer completes and the cell is fully disabled at the end of this audio frame transfer. Note: When SAIx block is configured in master mode, the clock must be present on the input of SAIx before setting SAIXEN bit.
-func (r *registerSai_acr1Type) GetSaixen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldSaixenMask) != 0
+func (r *registerSaiacr1Type) GetSaixen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldSaixenMask) != 0
 }
 
 // SetSaixen Audio block enable where x is A or B. This bit is set by software. To switch off the audio block, the application software must program this bit to 0 and poll the bit till it reads back 0, meaning that the block is completely disabled. Before setting this bit to 1, check that it is set to 0, otherwise the enable command will not be taken into account. This bit allows to control the state of SAIx audio block. If it is disabled when an audio frame transfer is ongoing, the ongoing transfer completes and the cell is fully disabled at the end of this audio frame transfer. Note: When SAIx block is configured in master mode, the clock must be present on the input of SAIx before setting SAIXEN bit.
-func (r *registerSai_acr1Type) SetSaixen(value bool) {
+func (r *registerSaiacr1Type) SetSaixen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr1FieldSaixenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr1FieldSaixenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldSaixenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldSaixenMask)
 	}
 }
 
 const (
-	RegisterSai_acr1FieldDmaenShift = 17
-	RegisterSai_acr1FieldDmaenMask  = 0x20000
+	RegisterSaiacr1FieldDmaenShift = 17
+	RegisterSaiacr1FieldDmaenMask  = 0x20000
 )
 
 // GetDmaen DMA enable. This bit is set and cleared by software. Note: Since the audio block defaults to operate as a transmitter after reset, the MODE[1:0] bits must be configured before setting DMAEN to avoid a DMA request in receiver mode.
-func (r *registerSai_acr1Type) GetDmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldDmaenMask) != 0
+func (r *registerSaiacr1Type) GetDmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldDmaenMask) != 0
 }
 
 // SetDmaen DMA enable. This bit is set and cleared by software. Note: Since the audio block defaults to operate as a transmitter after reset, the MODE[1:0] bits must be configured before setting DMAEN to avoid a DMA request in receiver mode.
-func (r *registerSai_acr1Type) SetDmaen(value bool) {
+func (r *registerSaiacr1Type) SetDmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr1FieldDmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr1FieldDmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldDmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldDmaenMask)
 	}
 }
 
 const (
-	RegisterSai_acr1FieldNomckShift = 19
-	RegisterSai_acr1FieldNomckMask  = 0x80000
+	RegisterSaiacr1FieldNomckShift = 19
+	RegisterSaiacr1FieldNomckMask  = 0x80000
 )
 
 // GetNomck No divider
-func (r *registerSai_acr1Type) GetNomck() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldNomckMask) != 0
+func (r *registerSaiacr1Type) GetNomck() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldNomckMask) != 0
 }
 
 // SetNomck No divider
-func (r *registerSai_acr1Type) SetNomck(value bool) {
+func (r *registerSaiacr1Type) SetNomck(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr1FieldNomckMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr1FieldNomckMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldNomckMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldNomckMask)
 	}
 }
 
 const (
-	RegisterSai_acr1FieldMckdivShift = 20
-	RegisterSai_acr1FieldMckdivMask  = 0xf00000
+	RegisterSaiacr1FieldMckdivShift = 20
+	RegisterSaiacr1FieldMckdivMask  = 0xf00000
 )
 
 // GetMckdiv Master clock divider. These bits are set and cleared by software. These bits are meaningless when the audio block operates in slave mode. They have to be configured when the audio block is disabled. Others: the master clock frequency is calculated accordingly to the following formula:
-func (r *registerSai_acr1Type) GetMckdiv() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldMckdivMask) >> RegisterSai_acr1FieldMckdivShift)
+func (r *registerSaiacr1Type) GetMckdiv() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldMckdivMask) >> RegisterSaiacr1FieldMckdivShift)
 }
 
 // SetMckdiv Master clock divider. These bits are set and cleared by software. These bits are meaningless when the audio block operates in slave mode. They have to be configured when the audio block is disabled. Others: the master clock frequency is calculated accordingly to the following formula:
-func (r *registerSai_acr1Type) SetMckdiv(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldMckdivMask)|(uint32(value)<<RegisterSai_acr1FieldMckdivShift))
+func (r *registerSaiacr1Type) SetMckdiv(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldMckdivMask)|(uint32(value)<<RegisterSaiacr1FieldMckdivShift))
 }
 
 const (
-	RegisterSai_acr1FieldOsrShift = 26
-	RegisterSai_acr1FieldOsrMask  = 0x4000000
+	RegisterSaiacr1FieldOsrShift = 26
+	RegisterSaiacr1FieldOsrMask  = 0x4000000
 )
 
 // GetOsr Oversampling ratio for master clock
-func (r *registerSai_acr1Type) GetOsr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr1FieldOsrMask) != 0
+func (r *registerSaiacr1Type) GetOsr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr1FieldOsrMask) != 0
 }
 
 // SetOsr Oversampling ratio for master clock
-func (r *registerSai_acr1Type) SetOsr(value bool) {
+func (r *registerSaiacr1Type) SetOsr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr1FieldOsrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr1FieldOsrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr1FieldOsrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr1FieldOsrMask)
 	}
 }
 
-// registerSai_acr2Type Configuration register 2
-type registerSai_acr2Type uint32
+// registerSaiacr2Type Configuration register 2
+type registerSaiacr2Type uint32
 
 const (
-	RegisterSai_acr2FieldFthShift = 0
-	RegisterSai_acr2FieldFthMask  = 0x7
+	RegisterSaiacr2FieldFthShift = 0
+	RegisterSaiacr2FieldFthMask  = 0x7
 )
 
 // GetFth FIFO threshold. This bit is set and cleared by software.
-func (r *registerSai_acr2Type) GetFth() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr2FieldFthMask) >> RegisterSai_acr2FieldFthShift)
+func (r *registerSaiacr2Type) GetFth() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr2FieldFthMask) >> RegisterSaiacr2FieldFthShift)
 }
 
 // SetFth FIFO threshold. This bit is set and cleared by software.
-func (r *registerSai_acr2Type) SetFth(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr2FieldFthMask)|(uint32(value)<<RegisterSai_acr2FieldFthShift))
+func (r *registerSaiacr2Type) SetFth(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr2FieldFthMask)|(uint32(value)<<RegisterSaiacr2FieldFthShift))
 }
 
 const (
-	RegisterSai_acr2FieldFflushShift = 3
-	RegisterSai_acr2FieldFflushMask  = 0x8
+	RegisterSaiacr2FieldFflushShift = 3
+	RegisterSaiacr2FieldFflushMask  = 0x8
 )
 
 // SetFflush FIFO flush. This bit is set by software. It is always read as 0. This bit should be configured when the SAI is disabled.
-func (r *registerSai_acr2Type) SetFflush(value bool) {
+func (r *registerSaiacr2Type) SetFflush(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr2FieldFflushMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr2FieldFflushMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr2FieldFflushMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr2FieldFflushMask)
 	}
 }
 
 const (
-	RegisterSai_acr2FieldTrisShift = 4
-	RegisterSai_acr2FieldTrisMask  = 0x10
+	RegisterSaiacr2FieldTrisShift = 4
+	RegisterSaiacr2FieldTrisMask  = 0x10
 )
 
 // GetTris Tristate management on data line. This bit is set and cleared by software. It is meaningful only if the audio block is configured as a transmitter. This bit is not used when the audio block is configured in SPDIF mode. It should be configured when SAI is disabled. Refer to Section: Output data line management on an inactive slot for more details.
-func (r *registerSai_acr2Type) GetTris() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr2FieldTrisMask) != 0
+func (r *registerSaiacr2Type) GetTris() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr2FieldTrisMask) != 0
 }
 
 // SetTris Tristate management on data line. This bit is set and cleared by software. It is meaningful only if the audio block is configured as a transmitter. This bit is not used when the audio block is configured in SPDIF mode. It should be configured when SAI is disabled. Refer to Section: Output data line management on an inactive slot for more details.
-func (r *registerSai_acr2Type) SetTris(value bool) {
+func (r *registerSaiacr2Type) SetTris(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr2FieldTrisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr2FieldTrisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr2FieldTrisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr2FieldTrisMask)
 	}
 }
 
 const (
-	RegisterSai_acr2FieldMuteShift = 5
-	RegisterSai_acr2FieldMuteMask  = 0x20
+	RegisterSaiacr2FieldMuteShift = 5
+	RegisterSaiacr2FieldMuteMask  = 0x20
 )
 
 // GetMute Mute. This bit is set and cleared by software. It is meaningful only when the audio block operates as a transmitter. The MUTE value is linked to value of MUTEVAL if the number of slots is lower or equal to 2, or equal to 0 if it is greater than 2. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.
-func (r *registerSai_acr2Type) GetMute() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr2FieldMuteMask) != 0
+func (r *registerSaiacr2Type) GetMute() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr2FieldMuteMask) != 0
 }
 
 // SetMute Mute. This bit is set and cleared by software. It is meaningful only when the audio block operates as a transmitter. The MUTE value is linked to value of MUTEVAL if the number of slots is lower or equal to 2, or equal to 0 if it is greater than 2. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.
-func (r *registerSai_acr2Type) SetMute(value bool) {
+func (r *registerSaiacr2Type) SetMute(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr2FieldMuteMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr2FieldMuteMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr2FieldMuteMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr2FieldMuteMask)
 	}
 }
 
 const (
-	RegisterSai_acr2FieldMutevalShift = 6
-	RegisterSai_acr2FieldMutevalMask  = 0x40
+	RegisterSaiacr2FieldMutevalShift = 6
+	RegisterSaiacr2FieldMutevalMask  = 0x40
 )
 
 // GetMuteval Mute value. This bit is set and cleared by software.It must be written before enabling the audio block: SAIXEN. This bit is meaningful only when the audio block operates as a transmitter, the number of slots is lower or equal to 2 and the MUTE bit is set. If more slots are declared, the bit value sent during the transmission in mute mode is equal to 0, whatever the value of MUTEVAL. if the number of slot is lower or equal to 2 and MUTEVAL = 1, the MUTE value transmitted for each slot is the one sent during the previous frame. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.
-func (r *registerSai_acr2Type) GetMuteval() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr2FieldMutevalMask) != 0
+func (r *registerSaiacr2Type) GetMuteval() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr2FieldMutevalMask) != 0
 }
 
 // SetMuteval Mute value. This bit is set and cleared by software.It must be written before enabling the audio block: SAIXEN. This bit is meaningful only when the audio block operates as a transmitter, the number of slots is lower or equal to 2 and the MUTE bit is set. If more slots are declared, the bit value sent during the transmission in mute mode is equal to 0, whatever the value of MUTEVAL. if the number of slot is lower or equal to 2 and MUTEVAL = 1, the MUTE value transmitted for each slot is the one sent during the previous frame. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.
-func (r *registerSai_acr2Type) SetMuteval(value bool) {
+func (r *registerSaiacr2Type) SetMuteval(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr2FieldMutevalMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr2FieldMutevalMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr2FieldMutevalMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr2FieldMutevalMask)
 	}
 }
 
 const (
-	RegisterSai_acr2FieldMutecntShift = 7
-	RegisterSai_acr2FieldMutecntMask  = 0x1f80
+	RegisterSaiacr2FieldMutecntShift = 7
+	RegisterSaiacr2FieldMutecntMask  = 0x1f80
 )
 
 // GetMutecnt Mute counter. These bits are set and cleared by software. They are used only in reception mode. The value set in these bits is compared to the number of consecutive mute frames detected in reception. When the number of mute frames is equal to this value, the flag MUTEDET will be set and an interrupt will be generated if bit MUTEDETIE is set. Refer to Section: Mute mode for more details.
-func (r *registerSai_acr2Type) GetMutecnt() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr2FieldMutecntMask) >> RegisterSai_acr2FieldMutecntShift)
+func (r *registerSaiacr2Type) GetMutecnt() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr2FieldMutecntMask) >> RegisterSaiacr2FieldMutecntShift)
 }
 
 // SetMutecnt Mute counter. These bits are set and cleared by software. They are used only in reception mode. The value set in these bits is compared to the number of consecutive mute frames detected in reception. When the number of mute frames is equal to this value, the flag MUTEDET will be set and an interrupt will be generated if bit MUTEDETIE is set. Refer to Section: Mute mode for more details.
-func (r *registerSai_acr2Type) SetMutecnt(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr2FieldMutecntMask)|(uint32(value)<<RegisterSai_acr2FieldMutecntShift))
+func (r *registerSaiacr2Type) SetMutecnt(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr2FieldMutecntMask)|(uint32(value)<<RegisterSaiacr2FieldMutecntShift))
 }
 
 const (
-	RegisterSai_acr2FieldCplShift = 13
-	RegisterSai_acr2FieldCplMask  = 0x2000
+	RegisterSaiacr2FieldCplShift = 13
+	RegisterSaiacr2FieldCplMask  = 0x2000
 )
 
 // GetCpl Complement bit. This bit is set and cleared by software. It defines the type of complement to be used for companding mode Note: This bit has effect only when the companding mode is -Law algorithm or A-Law algorithm.
-func (r *registerSai_acr2Type) GetCpl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr2FieldCplMask) != 0
+func (r *registerSaiacr2Type) GetCpl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr2FieldCplMask) != 0
 }
 
 // SetCpl Complement bit. This bit is set and cleared by software. It defines the type of complement to be used for companding mode Note: This bit has effect only when the companding mode is -Law algorithm or A-Law algorithm.
-func (r *registerSai_acr2Type) SetCpl(value bool) {
+func (r *registerSaiacr2Type) SetCpl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_acr2FieldCplMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiacr2FieldCplMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr2FieldCplMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr2FieldCplMask)
 	}
 }
 
 const (
-	RegisterSai_acr2FieldCompShift = 14
-	RegisterSai_acr2FieldCompMask  = 0xc000
+	RegisterSaiacr2FieldCompShift = 14
+	RegisterSaiacr2FieldCompMask  = 0xc000
 )
 
 // GetComp Companding mode. These bits are set and cleared by software. The -Law and the A-Law log are a part of the CCITT G.711 recommendation, the type of complement that will be used depends on CPL bit. The data expansion or data compression are determined by the state of bit MODE[0]. The data compression is applied if the audio block is configured as a transmitter. The data expansion is automatically applied when the audio block is configured as a receiver. Refer to Section: Companding mode for more details. Note: Companding mode is applicable only when TDM is selected.
-func (r *registerSai_acr2Type) GetComp() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_acr2FieldCompMask) >> RegisterSai_acr2FieldCompShift)
+func (r *registerSaiacr2Type) GetComp() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiacr2FieldCompMask) >> RegisterSaiacr2FieldCompShift)
 }
 
 // SetComp Companding mode. These bits are set and cleared by software. The -Law and the A-Law log are a part of the CCITT G.711 recommendation, the type of complement that will be used depends on CPL bit. The data expansion or data compression are determined by the state of bit MODE[0]. The data compression is applied if the audio block is configured as a transmitter. The data expansion is automatically applied when the audio block is configured as a receiver. Refer to Section: Companding mode for more details. Note: Companding mode is applicable only when TDM is selected.
-func (r *registerSai_acr2Type) SetComp(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_acr2FieldCompMask)|(uint32(value)<<RegisterSai_acr2FieldCompShift))
+func (r *registerSaiacr2Type) SetComp(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiacr2FieldCompMask)|(uint32(value)<<RegisterSaiacr2FieldCompShift))
 }
 
-// registerSai_afrcrType This register has no meaning in AC97 and SPDIF audio protocol
-type registerSai_afrcrType uint32
+// registerSaiafrcrType This register has no meaning in AC97 and SPDIF audio protocol
+type registerSaiafrcrType uint32
 
 const (
-	RegisterSai_afrcrFieldFrlShift = 0
-	RegisterSai_afrcrFieldFrlMask  = 0xff
+	RegisterSaiafrcrFieldFrlShift = 0
+	RegisterSaiafrcrFieldFrlMask  = 0xff
 )
 
 // GetFrl Frame length. These bits are set and cleared by software. They define the audio frame length expressed in number of SCK clock cycles: the number of bits in the frame is equal to FRL[7:0] + 1. The minimum number of bits to transfer in an audio frame must be equal to 8, otherwise the audio block will behaves in an unexpected way. This is the case when the data size is 8 bits and only one slot 0 is defined in NBSLOT[4:0] of SAI_xSLOTR register (NBSLOT[3:0] = 0000). In master mode, if the master clock (available on MCLK_x pin) is used, the frame length should be aligned with a number equal to a power of 2, ranging from 8 to 256. When the master clock is not used (NODIV = 1), it is recommended to program the frame length to an value ranging from 8 to 256. These bits are meaningless and are not used in AC97 or SPDIF audio block configuration.
-func (r *registerSai_afrcrType) GetFrl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_afrcrFieldFrlMask) >> RegisterSai_afrcrFieldFrlShift)
+func (r *registerSaiafrcrType) GetFrl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiafrcrFieldFrlMask) >> RegisterSaiafrcrFieldFrlShift)
 }
 
 // SetFrl Frame length. These bits are set and cleared by software. They define the audio frame length expressed in number of SCK clock cycles: the number of bits in the frame is equal to FRL[7:0] + 1. The minimum number of bits to transfer in an audio frame must be equal to 8, otherwise the audio block will behaves in an unexpected way. This is the case when the data size is 8 bits and only one slot 0 is defined in NBSLOT[4:0] of SAI_xSLOTR register (NBSLOT[3:0] = 0000). In master mode, if the master clock (available on MCLK_x pin) is used, the frame length should be aligned with a number equal to a power of 2, ranging from 8 to 256. When the master clock is not used (NODIV = 1), it is recommended to program the frame length to an value ranging from 8 to 256. These bits are meaningless and are not used in AC97 or SPDIF audio block configuration.
-func (r *registerSai_afrcrType) SetFrl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_afrcrFieldFrlMask)|(uint32(value)<<RegisterSai_afrcrFieldFrlShift))
+func (r *registerSaiafrcrType) SetFrl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiafrcrFieldFrlMask)|(uint32(value)<<RegisterSaiafrcrFieldFrlShift))
 }
 
 const (
-	RegisterSai_afrcrFieldFsallShift = 8
-	RegisterSai_afrcrFieldFsallMask  = 0x7f00
+	RegisterSaiafrcrFieldFsallShift = 8
+	RegisterSaiafrcrFieldFsallMask  = 0x7f00
 )
 
 // GetFsall Frame synchronization active level length. These bits are set and cleared by software. They specify the length in number of bit clock (SCK) + 1 (FSALL[6:0] + 1) of the active level of the FS signal in the audio frame These bits are meaningless and are not used in AC97 or SPDIF audio block configuration. They must be configured when the audio block is disabled.
-func (r *registerSai_afrcrType) GetFsall() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_afrcrFieldFsallMask) >> RegisterSai_afrcrFieldFsallShift)
+func (r *registerSaiafrcrType) GetFsall() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiafrcrFieldFsallMask) >> RegisterSaiafrcrFieldFsallShift)
 }
 
 // SetFsall Frame synchronization active level length. These bits are set and cleared by software. They specify the length in number of bit clock (SCK) + 1 (FSALL[6:0] + 1) of the active level of the FS signal in the audio frame These bits are meaningless and are not used in AC97 or SPDIF audio block configuration. They must be configured when the audio block is disabled.
-func (r *registerSai_afrcrType) SetFsall(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_afrcrFieldFsallMask)|(uint32(value)<<RegisterSai_afrcrFieldFsallShift))
+func (r *registerSaiafrcrType) SetFsall(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiafrcrFieldFsallMask)|(uint32(value)<<RegisterSaiafrcrFieldFsallShift))
 }
 
 const (
-	RegisterSai_afrcrFieldFsdefShift = 16
-	RegisterSai_afrcrFieldFsdefMask  = 0x10000
+	RegisterSaiafrcrFieldFsdefShift = 16
+	RegisterSaiafrcrFieldFsdefMask  = 0x10000
 )
 
 // GetFsdef Frame synchronization definition. This bit is set and cleared by software. When the bit is set, the number of slots defined in the SAI_xSLOTR register has to be even. It means that half of this number of slots will be dedicated to the left channel and the other slots for the right channel (e.g: this bit has to be set for I2S or MSB/LSB-justified protocols...). This bit is meaningless and is not used in AC97 or SPDIF audio block configuration. It must be configured when the audio block is disabled.
-func (r *registerSai_afrcrType) GetFsdef() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_afrcrFieldFsdefMask) != 0
+func (r *registerSaiafrcrType) GetFsdef() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiafrcrFieldFsdefMask) != 0
 }
 
 const (
-	RegisterSai_afrcrFieldFspolShift = 17
-	RegisterSai_afrcrFieldFspolMask  = 0x20000
+	RegisterSaiafrcrFieldFspolShift = 17
+	RegisterSaiafrcrFieldFspolMask  = 0x20000
 )
 
 // GetFspol Frame synchronization polarity. This bit is set and cleared by software. It is used to configure the level of the start of frame on the FS signal. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.
-func (r *registerSai_afrcrType) GetFspol() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_afrcrFieldFspolMask) != 0
+func (r *registerSaiafrcrType) GetFspol() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiafrcrFieldFspolMask) != 0
 }
 
 // SetFspol Frame synchronization polarity. This bit is set and cleared by software. It is used to configure the level of the start of frame on the FS signal. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.
-func (r *registerSai_afrcrType) SetFspol(value bool) {
+func (r *registerSaiafrcrType) SetFspol(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_afrcrFieldFspolMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiafrcrFieldFspolMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_afrcrFieldFspolMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiafrcrFieldFspolMask)
 	}
 }
 
 const (
-	RegisterSai_afrcrFieldFsoffShift = 18
-	RegisterSai_afrcrFieldFsoffMask  = 0x40000
+	RegisterSaiafrcrFieldFsoffShift = 18
+	RegisterSaiafrcrFieldFsoffMask  = 0x40000
 )
 
 // GetFsoff Frame synchronization offset. This bit is set and cleared by software. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.
-func (r *registerSai_afrcrType) GetFsoff() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_afrcrFieldFsoffMask) != 0
+func (r *registerSaiafrcrType) GetFsoff() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiafrcrFieldFsoffMask) != 0
 }
 
 // SetFsoff Frame synchronization offset. This bit is set and cleared by software. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.
-func (r *registerSai_afrcrType) SetFsoff(value bool) {
+func (r *registerSaiafrcrType) SetFsoff(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_afrcrFieldFsoffMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiafrcrFieldFsoffMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_afrcrFieldFsoffMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiafrcrFieldFsoffMask)
 	}
 }
 
-// registerSai_aslotrType This register has no meaning in AC97 and SPDIF audio protocol
-type registerSai_aslotrType uint32
+// registerSaiaslotrType This register has no meaning in AC97 and SPDIF audio protocol
+type registerSaiaslotrType uint32
 
 const (
-	RegisterSai_aslotrFieldFboffShift = 0
-	RegisterSai_aslotrFieldFboffMask  = 0x1f
+	RegisterSaiaslotrFieldFboffShift = 0
+	RegisterSaiaslotrFieldFboffMask  = 0x1f
 )
 
 // GetFboff First bit offset These bits are set and cleared by software. The value set in this bitfield defines the position of the first data transfer bit in the slot. It represents an offset value. In transmission mode, the bits outside the data field are forced to 0. In reception mode, the extra received bits are discarded. These bits must be set when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_aslotrType) GetFboff() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_aslotrFieldFboffMask) >> RegisterSai_aslotrFieldFboffShift)
+func (r *registerSaiaslotrType) GetFboff() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiaslotrFieldFboffMask) >> RegisterSaiaslotrFieldFboffShift)
 }
 
 // SetFboff First bit offset These bits are set and cleared by software. The value set in this bitfield defines the position of the first data transfer bit in the slot. It represents an offset value. In transmission mode, the bits outside the data field are forced to 0. In reception mode, the extra received bits are discarded. These bits must be set when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_aslotrType) SetFboff(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_aslotrFieldFboffMask)|(uint32(value)<<RegisterSai_aslotrFieldFboffShift))
+func (r *registerSaiaslotrType) SetFboff(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiaslotrFieldFboffMask)|(uint32(value)<<RegisterSaiaslotrFieldFboffShift))
 }
 
 const (
-	RegisterSai_aslotrFieldSlotszShift = 6
-	RegisterSai_aslotrFieldSlotszMask  = 0xc0
+	RegisterSaiaslotrFieldSlotszShift = 6
+	RegisterSaiaslotrFieldSlotszMask  = 0xc0
 )
 
 // GetSlotsz Slot size This bits is set and cleared by software. The slot size must be higher or equal to the data size. If this condition is not respected, the behavior of the SAI will be undetermined. Refer to Section: Output data line management on an inactive slot for information on how to drive SD line. These bits must be set when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_aslotrType) GetSlotsz() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_aslotrFieldSlotszMask) >> RegisterSai_aslotrFieldSlotszShift)
+func (r *registerSaiaslotrType) GetSlotsz() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiaslotrFieldSlotszMask) >> RegisterSaiaslotrFieldSlotszShift)
 }
 
 // SetSlotsz Slot size This bits is set and cleared by software. The slot size must be higher or equal to the data size. If this condition is not respected, the behavior of the SAI will be undetermined. Refer to Section: Output data line management on an inactive slot for information on how to drive SD line. These bits must be set when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_aslotrType) SetSlotsz(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_aslotrFieldSlotszMask)|(uint32(value)<<RegisterSai_aslotrFieldSlotszShift))
+func (r *registerSaiaslotrType) SetSlotsz(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiaslotrFieldSlotszMask)|(uint32(value)<<RegisterSaiaslotrFieldSlotszShift))
 }
 
 const (
-	RegisterSai_aslotrFieldNbslotShift = 8
-	RegisterSai_aslotrFieldNbslotMask  = 0xf00
+	RegisterSaiaslotrFieldNbslotShift = 8
+	RegisterSaiaslotrFieldNbslotMask  = 0xf00
 )
 
 // GetNbslot Number of slots in an audio frame. These bits are set and cleared by software. The value set in this bitfield represents the number of slots + 1 in the audio frame (including the number of inactive slots). The maximum number of slots is 16. The number of slots should be even if FSDEF bit in the SAI_xFRCR register is set. The number of slots must be configured when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_aslotrType) GetNbslot() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_aslotrFieldNbslotMask) >> RegisterSai_aslotrFieldNbslotShift)
+func (r *registerSaiaslotrType) GetNbslot() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiaslotrFieldNbslotMask) >> RegisterSaiaslotrFieldNbslotShift)
 }
 
 // SetNbslot Number of slots in an audio frame. These bits are set and cleared by software. The value set in this bitfield represents the number of slots + 1 in the audio frame (including the number of inactive slots). The maximum number of slots is 16. The number of slots should be even if FSDEF bit in the SAI_xFRCR register is set. The number of slots must be configured when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_aslotrType) SetNbslot(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_aslotrFieldNbslotMask)|(uint32(value)<<RegisterSai_aslotrFieldNbslotShift))
+func (r *registerSaiaslotrType) SetNbslot(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiaslotrFieldNbslotMask)|(uint32(value)<<RegisterSaiaslotrFieldNbslotShift))
 }
 
 const (
-	RegisterSai_aslotrFieldSlotenShift = 16
-	RegisterSai_aslotrFieldSlotenMask  = 0xffff0000
+	RegisterSaiaslotrFieldSlotenShift = 16
+	RegisterSaiaslotrFieldSlotenMask  = 0xffff0000
 )
 
 // GetSloten Slot enable. These bits are set and cleared by software. Each SLOTEN bit corresponds to a slot position from 0 to 15 (maximum 16 slots). The slot must be enabled when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_aslotrType) GetSloten() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterSai_aslotrFieldSlotenMask) >> RegisterSai_aslotrFieldSlotenShift)
+func (r *registerSaiaslotrType) GetSloten() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterSaiaslotrFieldSlotenMask) >> RegisterSaiaslotrFieldSlotenShift)
 }
 
 // SetSloten Slot enable. These bits are set and cleared by software. Each SLOTEN bit corresponds to a slot position from 0 to 15 (maximum 16 slots). The slot must be enabled when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_aslotrType) SetSloten(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_aslotrFieldSlotenMask)|(uint32(value)<<RegisterSai_aslotrFieldSlotenShift))
+func (r *registerSaiaslotrType) SetSloten(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiaslotrFieldSlotenMask)|(uint32(value)<<RegisterSaiaslotrFieldSlotenShift))
 }
 
-// registerSai_aimType Interrupt mask register 2
-type registerSai_aimType uint32
+// registerSaiaimType Interrupt mask register 2
+type registerSaiaimType uint32
 
 const (
-	RegisterSai_aimFieldOvrudrieShift = 0
-	RegisterSai_aimFieldOvrudrieMask  = 0x1
+	RegisterSaiaimFieldOvrudrieShift = 0
+	RegisterSaiaimFieldOvrudrieMask  = 0x1
 )
 
 // GetOvrudrie Overrun/underrun interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the OVRUDR bit in the SAI_xSR register is set.
-func (r *registerSai_aimType) GetOvrudrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aimFieldOvrudrieMask) != 0
+func (r *registerSaiaimType) GetOvrudrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaimFieldOvrudrieMask) != 0
 }
 
 // SetOvrudrie Overrun/underrun interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the OVRUDR bit in the SAI_xSR register is set.
-func (r *registerSai_aimType) SetOvrudrie(value bool) {
+func (r *registerSaiaimType) SetOvrudrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aimFieldOvrudrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaimFieldOvrudrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aimFieldOvrudrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaimFieldOvrudrieMask)
 	}
 }
 
 const (
-	RegisterSai_aimFieldMutedetieShift = 1
-	RegisterSai_aimFieldMutedetieMask  = 0x2
+	RegisterSaiaimFieldMutedetieShift = 1
+	RegisterSaiaimFieldMutedetieMask  = 0x2
 )
 
 // GetMutedetie Mute detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the MUTEDET bit in the SAI_xSR register is set. This bit has a meaning only if the audio block is configured in receiver mode.
-func (r *registerSai_aimType) GetMutedetie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aimFieldMutedetieMask) != 0
+func (r *registerSaiaimType) GetMutedetie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaimFieldMutedetieMask) != 0
 }
 
 // SetMutedetie Mute detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the MUTEDET bit in the SAI_xSR register is set. This bit has a meaning only if the audio block is configured in receiver mode.
-func (r *registerSai_aimType) SetMutedetie(value bool) {
+func (r *registerSaiaimType) SetMutedetie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aimFieldMutedetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaimFieldMutedetieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aimFieldMutedetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaimFieldMutedetieMask)
 	}
 }
 
 const (
-	RegisterSai_aimFieldWckcfgieShift = 2
-	RegisterSai_aimFieldWckcfgieMask  = 0x4
+	RegisterSaiaimFieldWckcfgieShift = 2
+	RegisterSaiaimFieldWckcfgieMask  = 0x4
 )
 
 // GetWckcfgie Wrong clock configuration interrupt enable. This bit is set and cleared by software. This bit is taken into account only if the audio block is configured as a master (MODE[1] = 0) and NODIV = 0. It generates an interrupt if the WCKCFG flag in the SAI_xSR register is set. Note: This bit is used only in TDM mode and is meaningless in other modes.
-func (r *registerSai_aimType) GetWckcfgie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aimFieldWckcfgieMask) != 0
+func (r *registerSaiaimType) GetWckcfgie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaimFieldWckcfgieMask) != 0
 }
 
 // SetWckcfgie Wrong clock configuration interrupt enable. This bit is set and cleared by software. This bit is taken into account only if the audio block is configured as a master (MODE[1] = 0) and NODIV = 0. It generates an interrupt if the WCKCFG flag in the SAI_xSR register is set. Note: This bit is used only in TDM mode and is meaningless in other modes.
-func (r *registerSai_aimType) SetWckcfgie(value bool) {
+func (r *registerSaiaimType) SetWckcfgie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aimFieldWckcfgieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaimFieldWckcfgieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aimFieldWckcfgieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaimFieldWckcfgieMask)
 	}
 }
 
 const (
-	RegisterSai_aimFieldFreqieShift = 3
-	RegisterSai_aimFieldFreqieMask  = 0x8
+	RegisterSaiaimFieldFreqieShift = 3
+	RegisterSaiaimFieldFreqieMask  = 0x8
 )
 
 // GetFreqie FIFO request interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the FREQ bit in the SAI_xSR register is set. Since the audio block defaults to operate as a transmitter after reset, the MODE bit must be configured before setting FREQIE to avoid a parasitic interruption in receiver mode,
-func (r *registerSai_aimType) GetFreqie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aimFieldFreqieMask) != 0
+func (r *registerSaiaimType) GetFreqie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaimFieldFreqieMask) != 0
 }
 
 // SetFreqie FIFO request interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the FREQ bit in the SAI_xSR register is set. Since the audio block defaults to operate as a transmitter after reset, the MODE bit must be configured before setting FREQIE to avoid a parasitic interruption in receiver mode,
-func (r *registerSai_aimType) SetFreqie(value bool) {
+func (r *registerSaiaimType) SetFreqie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aimFieldFreqieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaimFieldFreqieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aimFieldFreqieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaimFieldFreqieMask)
 	}
 }
 
 const (
-	RegisterSai_aimFieldCnrdyieShift = 4
-	RegisterSai_aimFieldCnrdyieMask  = 0x10
+	RegisterSaiaimFieldCnrdyieShift = 4
+	RegisterSaiaimFieldCnrdyieMask  = 0x10
 )
 
 // GetCnrdyie Codec not ready interrupt enable (AC97). This bit is set and cleared by software. When the interrupt is enabled, the audio block detects in the slot 0 (tag0) of the AC97 frame if the Codec connected to this line is ready or not. If it is not ready, the CNRDY flag in the SAI_xSR register is set and an interruption i generated. This bit has a meaning only if the AC97 mode is selected through PRTCFG[1:0] bits and the audio block is operates as a receiver.
-func (r *registerSai_aimType) GetCnrdyie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aimFieldCnrdyieMask) != 0
+func (r *registerSaiaimType) GetCnrdyie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaimFieldCnrdyieMask) != 0
 }
 
 // SetCnrdyie Codec not ready interrupt enable (AC97). This bit is set and cleared by software. When the interrupt is enabled, the audio block detects in the slot 0 (tag0) of the AC97 frame if the Codec connected to this line is ready or not. If it is not ready, the CNRDY flag in the SAI_xSR register is set and an interruption i generated. This bit has a meaning only if the AC97 mode is selected through PRTCFG[1:0] bits and the audio block is operates as a receiver.
-func (r *registerSai_aimType) SetCnrdyie(value bool) {
+func (r *registerSaiaimType) SetCnrdyie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aimFieldCnrdyieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaimFieldCnrdyieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aimFieldCnrdyieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaimFieldCnrdyieMask)
 	}
 }
 
 const (
-	RegisterSai_aimFieldAfsdetieShift = 5
-	RegisterSai_aimFieldAfsdetieMask  = 0x20
+	RegisterSaiaimFieldAfsdetieShift = 5
+	RegisterSaiaimFieldAfsdetieMask  = 0x20
 )
 
 // GetAfsdetie Anticipated frame synchronization detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt will be generated if the AFSDET bit in the SAI_xSR register is set. This bit is meaningless in AC97, SPDIF mode or when the audio block operates as a master.
-func (r *registerSai_aimType) GetAfsdetie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aimFieldAfsdetieMask) != 0
+func (r *registerSaiaimType) GetAfsdetie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaimFieldAfsdetieMask) != 0
 }
 
 // SetAfsdetie Anticipated frame synchronization detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt will be generated if the AFSDET bit in the SAI_xSR register is set. This bit is meaningless in AC97, SPDIF mode or when the audio block operates as a master.
-func (r *registerSai_aimType) SetAfsdetie(value bool) {
+func (r *registerSaiaimType) SetAfsdetie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aimFieldAfsdetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaimFieldAfsdetieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aimFieldAfsdetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaimFieldAfsdetieMask)
 	}
 }
 
 const (
-	RegisterSai_aimFieldLfsdetieShift = 6
-	RegisterSai_aimFieldLfsdetieMask  = 0x40
+	RegisterSaiaimFieldLfsdetieShift = 6
+	RegisterSaiaimFieldLfsdetieMask  = 0x40
 )
 
 // GetLfsdetie Late frame synchronization detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt will be generated if the LFSDET bit is set in the SAI_xSR register. This bit is meaningless in AC97, SPDIF mode or when the audio block operates as a master.
-func (r *registerSai_aimType) GetLfsdetie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aimFieldLfsdetieMask) != 0
+func (r *registerSaiaimType) GetLfsdetie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaimFieldLfsdetieMask) != 0
 }
 
 // SetLfsdetie Late frame synchronization detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt will be generated if the LFSDET bit is set in the SAI_xSR register. This bit is meaningless in AC97, SPDIF mode or when the audio block operates as a master.
-func (r *registerSai_aimType) SetLfsdetie(value bool) {
+func (r *registerSaiaimType) SetLfsdetie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aimFieldLfsdetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaimFieldLfsdetieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aimFieldLfsdetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaimFieldLfsdetieMask)
 	}
 }
 
-// registerSai_asrType Status register
-type registerSai_asrType uint32
+// registerSaiasrType Status register
+type registerSaiasrType uint32
 
 const (
-	RegisterSai_asrFieldOvrudrShift = 0
-	RegisterSai_asrFieldOvrudrMask  = 0x1
+	RegisterSaiasrFieldOvrudrShift = 0
+	RegisterSaiasrFieldOvrudrMask  = 0x1
 )
 
 // GetOvrudr Overrun / underrun. This bit is read only. The overrun and underrun conditions can occur only when the audio block is configured as a receiver and a transmitter, respectively. It can generate an interrupt if OVRUDRIE bit is set in SAI_xIM register. This flag is cleared when the software sets COVRUDR bit in SAI_xCLRFR register.
-func (r *registerSai_asrType) GetOvrudr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_asrFieldOvrudrMask) != 0
+func (r *registerSaiasrType) GetOvrudr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiasrFieldOvrudrMask) != 0
 }
 
 // SetOvrudr Overrun / underrun. This bit is read only. The overrun and underrun conditions can occur only when the audio block is configured as a receiver and a transmitter, respectively. It can generate an interrupt if OVRUDRIE bit is set in SAI_xIM register. This flag is cleared when the software sets COVRUDR bit in SAI_xCLRFR register.
-func (r *registerSai_asrType) SetOvrudr(value bool) {
+func (r *registerSaiasrType) SetOvrudr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_asrFieldOvrudrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiasrFieldOvrudrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_asrFieldOvrudrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiasrFieldOvrudrMask)
 	}
 }
 
 const (
-	RegisterSai_asrFieldMutedetShift = 1
-	RegisterSai_asrFieldMutedetMask  = 0x2
+	RegisterSaiasrFieldMutedetShift = 1
+	RegisterSaiasrFieldMutedetMask  = 0x2
 )
 
 // GetMutedet Mute detection. This bit is read only. This flag is set if consecutive 0 values are received in each slot of a given audio frame and for a consecutive number of audio frames (set in the MUTECNT bit in the SAI_xCR2 register). It can generate an interrupt if MUTEDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets bit CMUTEDET in the SAI_xCLRFR register.
-func (r *registerSai_asrType) GetMutedet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_asrFieldMutedetMask) != 0
+func (r *registerSaiasrType) GetMutedet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiasrFieldMutedetMask) != 0
 }
 
 // SetMutedet Mute detection. This bit is read only. This flag is set if consecutive 0 values are received in each slot of a given audio frame and for a consecutive number of audio frames (set in the MUTECNT bit in the SAI_xCR2 register). It can generate an interrupt if MUTEDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets bit CMUTEDET in the SAI_xCLRFR register.
-func (r *registerSai_asrType) SetMutedet(value bool) {
+func (r *registerSaiasrType) SetMutedet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_asrFieldMutedetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiasrFieldMutedetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_asrFieldMutedetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiasrFieldMutedetMask)
 	}
 }
 
 const (
-	RegisterSai_asrFieldWckcfgShift = 2
-	RegisterSai_asrFieldWckcfgMask  = 0x4
+	RegisterSaiasrFieldWckcfgShift = 2
+	RegisterSaiasrFieldWckcfgMask  = 0x4
 )
 
 // GetWckcfg Wrong clock configuration flag. This bit is read only. This bit is used only when the audio block operates in master mode (MODE[1] = 0) and NODIV = 0. It can generate an interrupt if WCKCFGIE bit is set in SAI_xIM register. This flag is cleared when the software sets CWCKCFG bit in SAI_xCLRFR register.
-func (r *registerSai_asrType) GetWckcfg() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_asrFieldWckcfgMask) != 0
+func (r *registerSaiasrType) GetWckcfg() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiasrFieldWckcfgMask) != 0
 }
 
 // SetWckcfg Wrong clock configuration flag. This bit is read only. This bit is used only when the audio block operates in master mode (MODE[1] = 0) and NODIV = 0. It can generate an interrupt if WCKCFGIE bit is set in SAI_xIM register. This flag is cleared when the software sets CWCKCFG bit in SAI_xCLRFR register.
-func (r *registerSai_asrType) SetWckcfg(value bool) {
+func (r *registerSaiasrType) SetWckcfg(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_asrFieldWckcfgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiasrFieldWckcfgMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_asrFieldWckcfgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiasrFieldWckcfgMask)
 	}
 }
 
 const (
-	RegisterSai_asrFieldFreqShift = 3
-	RegisterSai_asrFieldFreqMask  = 0x8
+	RegisterSaiasrFieldFreqShift = 3
+	RegisterSaiasrFieldFreqMask  = 0x8
 )
 
 // GetFreq FIFO request. This bit is read only. The request depends on the audio block configuration: If the block is configured in transmission mode, the FIFO request is related to a write request operation in the SAI_xDR. If the block configured in reception, the FIFO request related to a read request operation from the SAI_xDR. This flag can generate an interrupt if FREQIE bit is set in SAI_xIM register.
-func (r *registerSai_asrType) GetFreq() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_asrFieldFreqMask) != 0
+func (r *registerSaiasrType) GetFreq() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiasrFieldFreqMask) != 0
 }
 
 // SetFreq FIFO request. This bit is read only. The request depends on the audio block configuration: If the block is configured in transmission mode, the FIFO request is related to a write request operation in the SAI_xDR. If the block configured in reception, the FIFO request related to a read request operation from the SAI_xDR. This flag can generate an interrupt if FREQIE bit is set in SAI_xIM register.
-func (r *registerSai_asrType) SetFreq(value bool) {
+func (r *registerSaiasrType) SetFreq(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_asrFieldFreqMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiasrFieldFreqMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_asrFieldFreqMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiasrFieldFreqMask)
 	}
 }
 
 const (
-	RegisterSai_asrFieldCnrdyShift = 4
-	RegisterSai_asrFieldCnrdyMask  = 0x10
+	RegisterSaiasrFieldCnrdyShift = 4
+	RegisterSaiasrFieldCnrdyMask  = 0x10
 )
 
 // GetCnrdy Codec not ready. This bit is read only. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register and configured in receiver mode. It can generate an interrupt if CNRDYIE bit is set in SAI_xIM register. This flag is cleared when the software sets CCNRDY bit in SAI_xCLRFR register.
-func (r *registerSai_asrType) GetCnrdy() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_asrFieldCnrdyMask) != 0
+func (r *registerSaiasrType) GetCnrdy() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiasrFieldCnrdyMask) != 0
 }
 
 // SetCnrdy Codec not ready. This bit is read only. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register and configured in receiver mode. It can generate an interrupt if CNRDYIE bit is set in SAI_xIM register. This flag is cleared when the software sets CCNRDY bit in SAI_xCLRFR register.
-func (r *registerSai_asrType) SetCnrdy(value bool) {
+func (r *registerSaiasrType) SetCnrdy(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_asrFieldCnrdyMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiasrFieldCnrdyMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_asrFieldCnrdyMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiasrFieldCnrdyMask)
 	}
 }
 
 const (
-	RegisterSai_asrFieldAfsdetShift = 5
-	RegisterSai_asrFieldAfsdetMask  = 0x20
+	RegisterSaiasrFieldAfsdetShift = 5
+	RegisterSaiasrFieldAfsdetMask  = 0x20
 )
 
 // GetAfsdet Anticipated frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97or SPDIF mode. It can generate an interrupt if AFSDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets CAFSDET bit in SAI_xCLRFR register.
-func (r *registerSai_asrType) GetAfsdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_asrFieldAfsdetMask) != 0
+func (r *registerSaiasrType) GetAfsdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiasrFieldAfsdetMask) != 0
 }
 
 // SetAfsdet Anticipated frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97or SPDIF mode. It can generate an interrupt if AFSDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets CAFSDET bit in SAI_xCLRFR register.
-func (r *registerSai_asrType) SetAfsdet(value bool) {
+func (r *registerSaiasrType) SetAfsdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_asrFieldAfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiasrFieldAfsdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_asrFieldAfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiasrFieldAfsdetMask)
 	}
 }
 
 const (
-	RegisterSai_asrFieldLfsdetShift = 6
-	RegisterSai_asrFieldLfsdetMask  = 0x40
+	RegisterSaiasrFieldLfsdetShift = 6
+	RegisterSaiasrFieldLfsdetMask  = 0x40
 )
 
 // GetLfsdet Late frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97 or SPDIF mode. It can generate an interrupt if LFSDETIE bit is set in the SAI_xIM register. This flag is cleared when the software sets bit CLFSDET in SAI_xCLRFR register
-func (r *registerSai_asrType) GetLfsdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_asrFieldLfsdetMask) != 0
+func (r *registerSaiasrType) GetLfsdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiasrFieldLfsdetMask) != 0
 }
 
 // SetLfsdet Late frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97 or SPDIF mode. It can generate an interrupt if LFSDETIE bit is set in the SAI_xIM register. This flag is cleared when the software sets bit CLFSDET in SAI_xCLRFR register
-func (r *registerSai_asrType) SetLfsdet(value bool) {
+func (r *registerSaiasrType) SetLfsdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_asrFieldLfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiasrFieldLfsdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_asrFieldLfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiasrFieldLfsdetMask)
 	}
 }
 
 const (
-	RegisterSai_asrFieldFlvlShift = 16
-	RegisterSai_asrFieldFlvlMask  = 0x70000
+	RegisterSaiasrFieldFlvlShift = 16
+	RegisterSaiasrFieldFlvlMask  = 0x70000
 )
 
 // GetFlvl FIFO level threshold. This bit is read only. The FIFO level threshold flag is managed only by hardware and its setting depends on SAI block configuration (transmitter or receiver mode). If the SAI block is configured as transmitter: If SAI block is configured as receiver:
-func (r *registerSai_asrType) GetFlvl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_asrFieldFlvlMask) >> RegisterSai_asrFieldFlvlShift)
+func (r *registerSaiasrType) GetFlvl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaiasrFieldFlvlMask) >> RegisterSaiasrFieldFlvlShift)
 }
 
 // SetFlvl FIFO level threshold. This bit is read only. The FIFO level threshold flag is managed only by hardware and its setting depends on SAI block configuration (transmitter or receiver mode). If the SAI block is configured as transmitter: If SAI block is configured as receiver:
-func (r *registerSai_asrType) SetFlvl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_asrFieldFlvlMask)|(uint32(value)<<RegisterSai_asrFieldFlvlShift))
+func (r *registerSaiasrType) SetFlvl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiasrFieldFlvlMask)|(uint32(value)<<RegisterSaiasrFieldFlvlShift))
 }
 
-// registerSai_aclrfrType Clear flag register
-type registerSai_aclrfrType uint32
+// registerSaiaclrfrType Clear flag register
+type registerSaiaclrfrType uint32
 
 const (
-	RegisterSai_aclrfrFieldCovrudrShift = 0
-	RegisterSai_aclrfrFieldCovrudrMask  = 0x1
+	RegisterSaiaclrfrFieldCovrudrShift = 0
+	RegisterSaiaclrfrFieldCovrudrMask  = 0x1
 )
 
 // GetCovrudr Clear overrun / underrun. This bit is write only. Programming this bit to 1 clears the OVRUDR flag in the SAI_xSR register. Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) GetCovrudr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aclrfrFieldCovrudrMask) != 0
+func (r *registerSaiaclrfrType) GetCovrudr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaclrfrFieldCovrudrMask) != 0
 }
 
 // SetCovrudr Clear overrun / underrun. This bit is write only. Programming this bit to 1 clears the OVRUDR flag in the SAI_xSR register. Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) SetCovrudr(value bool) {
+func (r *registerSaiaclrfrType) SetCovrudr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aclrfrFieldCovrudrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaclrfrFieldCovrudrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aclrfrFieldCovrudrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaclrfrFieldCovrudrMask)
 	}
 }
 
 const (
-	RegisterSai_aclrfrFieldCmutedetShift = 1
-	RegisterSai_aclrfrFieldCmutedetMask  = 0x2
+	RegisterSaiaclrfrFieldCmutedetShift = 1
+	RegisterSaiaclrfrFieldCmutedetMask  = 0x2
 )
 
 // GetCmutedet Mute detection flag. This bit is write only. Programming this bit to 1 clears the MUTEDET flag in the SAI_xSR register. Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) GetCmutedet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aclrfrFieldCmutedetMask) != 0
+func (r *registerSaiaclrfrType) GetCmutedet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaclrfrFieldCmutedetMask) != 0
 }
 
 // SetCmutedet Mute detection flag. This bit is write only. Programming this bit to 1 clears the MUTEDET flag in the SAI_xSR register. Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) SetCmutedet(value bool) {
+func (r *registerSaiaclrfrType) SetCmutedet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aclrfrFieldCmutedetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaclrfrFieldCmutedetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aclrfrFieldCmutedetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaclrfrFieldCmutedetMask)
 	}
 }
 
 const (
-	RegisterSai_aclrfrFieldCwckcfgShift = 2
-	RegisterSai_aclrfrFieldCwckcfgMask  = 0x4
+	RegisterSaiaclrfrFieldCwckcfgShift = 2
+	RegisterSaiaclrfrFieldCwckcfgMask  = 0x4
 )
 
 // GetCwckcfg Clear wrong clock configuration flag. This bit is write only. Programming this bit to 1 clears the WCKCFG flag in the SAI_xSR register. This bit is used only when the audio block is set as master (MODE[1] = 0) and NODIV = 0 in the SAI_xCR1 register. Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) GetCwckcfg() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aclrfrFieldCwckcfgMask) != 0
+func (r *registerSaiaclrfrType) GetCwckcfg() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaclrfrFieldCwckcfgMask) != 0
 }
 
 // SetCwckcfg Clear wrong clock configuration flag. This bit is write only. Programming this bit to 1 clears the WCKCFG flag in the SAI_xSR register. This bit is used only when the audio block is set as master (MODE[1] = 0) and NODIV = 0 in the SAI_xCR1 register. Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) SetCwckcfg(value bool) {
+func (r *registerSaiaclrfrType) SetCwckcfg(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aclrfrFieldCwckcfgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaclrfrFieldCwckcfgMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aclrfrFieldCwckcfgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaclrfrFieldCwckcfgMask)
 	}
 }
 
 const (
-	RegisterSai_aclrfrFieldCcnrdyShift = 4
-	RegisterSai_aclrfrFieldCcnrdyMask  = 0x10
+	RegisterSaiaclrfrFieldCcnrdyShift = 4
+	RegisterSaiaclrfrFieldCcnrdyMask  = 0x10
 )
 
 // GetCcnrdy Clear Codec not ready flag. This bit is write only. Programming this bit to 1 clears the CNRDY flag in the SAI_xSR register. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register. Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) GetCcnrdy() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aclrfrFieldCcnrdyMask) != 0
+func (r *registerSaiaclrfrType) GetCcnrdy() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaclrfrFieldCcnrdyMask) != 0
 }
 
 // SetCcnrdy Clear Codec not ready flag. This bit is write only. Programming this bit to 1 clears the CNRDY flag in the SAI_xSR register. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register. Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) SetCcnrdy(value bool) {
+func (r *registerSaiaclrfrType) SetCcnrdy(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aclrfrFieldCcnrdyMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaclrfrFieldCcnrdyMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aclrfrFieldCcnrdyMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaclrfrFieldCcnrdyMask)
 	}
 }
 
 const (
-	RegisterSai_aclrfrFieldCafsdetShift = 5
-	RegisterSai_aclrfrFieldCafsdetMask  = 0x20
+	RegisterSaiaclrfrFieldCafsdetShift = 5
+	RegisterSaiaclrfrFieldCafsdetMask  = 0x20
 )
 
 // GetCafsdet Clear anticipated frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the AFSDET flag in the SAI_xSR register. It is not used in AC97or SPDIF mode. Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) GetCafsdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aclrfrFieldCafsdetMask) != 0
+func (r *registerSaiaclrfrType) GetCafsdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaclrfrFieldCafsdetMask) != 0
 }
 
 // SetCafsdet Clear anticipated frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the AFSDET flag in the SAI_xSR register. It is not used in AC97or SPDIF mode. Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) SetCafsdet(value bool) {
+func (r *registerSaiaclrfrType) SetCafsdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aclrfrFieldCafsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaclrfrFieldCafsdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aclrfrFieldCafsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaclrfrFieldCafsdetMask)
 	}
 }
 
 const (
-	RegisterSai_aclrfrFieldClfsdetShift = 6
-	RegisterSai_aclrfrFieldClfsdetMask  = 0x40
+	RegisterSaiaclrfrFieldClfsdetShift = 6
+	RegisterSaiaclrfrFieldClfsdetMask  = 0x40
 )
 
 // GetClfsdet Clear late frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the LFSDET flag in the SAI_xSR register. This bit is not used in AC97or SPDIF mode Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) GetClfsdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_aclrfrFieldClfsdetMask) != 0
+func (r *registerSaiaclrfrType) GetClfsdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaiaclrfrFieldClfsdetMask) != 0
 }
 
 // SetClfsdet Clear late frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the LFSDET flag in the SAI_xSR register. This bit is not used in AC97or SPDIF mode Reading this bit always returns the value 0.
-func (r *registerSai_aclrfrType) SetClfsdet(value bool) {
+func (r *registerSaiaclrfrType) SetClfsdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_aclrfrFieldClfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaiaclrfrFieldClfsdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_aclrfrFieldClfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaiaclrfrFieldClfsdetMask)
 	}
 }
 
-// registerSai_adrType Data register
-type registerSai_adrType uint32
+// registerSaiadrType Data register
+type registerSaiadrType uint32
 
 const (
-	RegisterSai_adrFieldDataShift = 0
-	RegisterSai_adrFieldDataMask  = 0xffffffff
+	RegisterSaiadrFieldDataShift = 0
+	RegisterSaiadrFieldDataMask  = 0xffffffff
 )
 
 // GetData Data A write to this register loads the FIFO provided the FIFO is not full. A read from this register empties the FIFO if the FIFO is not empty.
-func (r *registerSai_adrType) GetData() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterSai_adrFieldDataMask) >> RegisterSai_adrFieldDataShift)
+func (r *registerSaiadrType) GetData() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterSaiadrFieldDataMask) >> RegisterSaiadrFieldDataShift)
 }
 
 // SetData Data A write to this register loads the FIFO provided the FIFO is not full. A read from this register empties the FIFO if the FIFO is not empty.
-func (r *registerSai_adrType) SetData(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_adrFieldDataMask)|(uint32(value)<<RegisterSai_adrFieldDataShift))
+func (r *registerSaiadrType) SetData(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaiadrFieldDataMask)|(uint32(value)<<RegisterSaiadrFieldDataShift))
 }
 
-// registerSai_bcr1Type Configuration register 1
-type registerSai_bcr1Type uint32
+// registerSaibcr1Type Configuration register 1
+type registerSaibcr1Type uint32
 
 const (
-	RegisterSai_bcr1FieldModeShift = 0
-	RegisterSai_bcr1FieldModeMask  = 0x3
+	RegisterSaibcr1FieldModeShift = 0
+	RegisterSaibcr1FieldModeMask  = 0x3
 )
 
 // GetMode SAIx audio block mode immediately
-func (r *registerSai_bcr1Type) GetMode() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldModeMask) >> RegisterSai_bcr1FieldModeShift)
+func (r *registerSaibcr1Type) GetMode() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldModeMask) >> RegisterSaibcr1FieldModeShift)
 }
 
 // SetMode SAIx audio block mode immediately
-func (r *registerSai_bcr1Type) SetMode(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldModeMask)|(uint32(value)<<RegisterSai_bcr1FieldModeShift))
+func (r *registerSaibcr1Type) SetMode(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldModeMask)|(uint32(value)<<RegisterSaibcr1FieldModeShift))
 }
 
 const (
-	RegisterSai_bcr1FieldPrtcfgShift = 2
-	RegisterSai_bcr1FieldPrtcfgMask  = 0xc
+	RegisterSaibcr1FieldPrtcfgShift = 2
+	RegisterSaibcr1FieldPrtcfgMask  = 0xc
 )
 
 // GetPrtcfg Protocol configuration. These bits are set and cleared by software. These bits have to be configured when the audio block is disabled.
-func (r *registerSai_bcr1Type) GetPrtcfg() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldPrtcfgMask) >> RegisterSai_bcr1FieldPrtcfgShift)
+func (r *registerSaibcr1Type) GetPrtcfg() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldPrtcfgMask) >> RegisterSaibcr1FieldPrtcfgShift)
 }
 
 // SetPrtcfg Protocol configuration. These bits are set and cleared by software. These bits have to be configured when the audio block is disabled.
-func (r *registerSai_bcr1Type) SetPrtcfg(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldPrtcfgMask)|(uint32(value)<<RegisterSai_bcr1FieldPrtcfgShift))
+func (r *registerSaibcr1Type) SetPrtcfg(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldPrtcfgMask)|(uint32(value)<<RegisterSaibcr1FieldPrtcfgShift))
 }
 
 const (
-	RegisterSai_bcr1FieldDsShift = 5
-	RegisterSai_bcr1FieldDsMask  = 0xe0
+	RegisterSaibcr1FieldDsShift = 5
+	RegisterSaibcr1FieldDsMask  = 0xe0
 )
 
 // GetDs Data size. These bits are set and cleared by software. These bits are ignored when the SPDIF protocols are selected (bit PRTCFG[1:0]), because the frame and the data size are fixed in such case. When the companding mode is selected through COMP[1:0] bits, DS[1:0] are ignored since the data size is fixed to 8 bits by the algorithm. These bits must be configured when the audio block is disabled.
-func (r *registerSai_bcr1Type) GetDs() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldDsMask) >> RegisterSai_bcr1FieldDsShift)
+func (r *registerSaibcr1Type) GetDs() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldDsMask) >> RegisterSaibcr1FieldDsShift)
 }
 
 // SetDs Data size. These bits are set and cleared by software. These bits are ignored when the SPDIF protocols are selected (bit PRTCFG[1:0]), because the frame and the data size are fixed in such case. When the companding mode is selected through COMP[1:0] bits, DS[1:0] are ignored since the data size is fixed to 8 bits by the algorithm. These bits must be configured when the audio block is disabled.
-func (r *registerSai_bcr1Type) SetDs(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldDsMask)|(uint32(value)<<RegisterSai_bcr1FieldDsShift))
+func (r *registerSaibcr1Type) SetDs(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldDsMask)|(uint32(value)<<RegisterSaibcr1FieldDsShift))
 }
 
 const (
-	RegisterSai_bcr1FieldLsbfirstShift = 8
-	RegisterSai_bcr1FieldLsbfirstMask  = 0x100
+	RegisterSaibcr1FieldLsbfirstShift = 8
+	RegisterSaibcr1FieldLsbfirstMask  = 0x100
 )
 
 // GetLsbfirst Least significant bit first. This bit is set and cleared by software. It must be configured when the audio block is disabled. This bit has no meaning in AC97 audio protocol since AC97 data are always transferred with the MSB first. This bit has no meaning in SPDIF audio protocol since in SPDIF data are always transferred with LSB first.
-func (r *registerSai_bcr1Type) GetLsbfirst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldLsbfirstMask) != 0
+func (r *registerSaibcr1Type) GetLsbfirst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldLsbfirstMask) != 0
 }
 
 // SetLsbfirst Least significant bit first. This bit is set and cleared by software. It must be configured when the audio block is disabled. This bit has no meaning in AC97 audio protocol since AC97 data are always transferred with the MSB first. This bit has no meaning in SPDIF audio protocol since in SPDIF data are always transferred with LSB first.
-func (r *registerSai_bcr1Type) SetLsbfirst(value bool) {
+func (r *registerSaibcr1Type) SetLsbfirst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr1FieldLsbfirstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr1FieldLsbfirstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldLsbfirstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldLsbfirstMask)
 	}
 }
 
 const (
-	RegisterSai_bcr1FieldCkstrShift = 9
-	RegisterSai_bcr1FieldCkstrMask  = 0x200
+	RegisterSaibcr1FieldCkstrShift = 9
+	RegisterSaibcr1FieldCkstrMask  = 0x200
 )
 
 // GetCkstr Clock strobing edge. This bit is set and cleared by software. It must be configured when the audio block is disabled. This bit has no meaning in SPDIF audio protocol.
-func (r *registerSai_bcr1Type) GetCkstr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldCkstrMask) != 0
+func (r *registerSaibcr1Type) GetCkstr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldCkstrMask) != 0
 }
 
 // SetCkstr Clock strobing edge. This bit is set and cleared by software. It must be configured when the audio block is disabled. This bit has no meaning in SPDIF audio protocol.
-func (r *registerSai_bcr1Type) SetCkstr(value bool) {
+func (r *registerSaibcr1Type) SetCkstr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr1FieldCkstrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr1FieldCkstrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldCkstrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldCkstrMask)
 	}
 }
 
 const (
-	RegisterSai_bcr1FieldSyncenShift = 10
-	RegisterSai_bcr1FieldSyncenMask  = 0xc00
+	RegisterSaibcr1FieldSyncenShift = 10
+	RegisterSaibcr1FieldSyncenMask  = 0xc00
 )
 
 // GetSyncen Synchronization enable. These bits are set and cleared by software. They must be configured when the audio sub-block is disabled. Note: The audio sub-block should be configured as asynchronous when SPDIF mode is enabled.
-func (r *registerSai_bcr1Type) GetSyncen() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldSyncenMask) >> RegisterSai_bcr1FieldSyncenShift)
+func (r *registerSaibcr1Type) GetSyncen() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldSyncenMask) >> RegisterSaibcr1FieldSyncenShift)
 }
 
 // SetSyncen Synchronization enable. These bits are set and cleared by software. They must be configured when the audio sub-block is disabled. Note: The audio sub-block should be configured as asynchronous when SPDIF mode is enabled.
-func (r *registerSai_bcr1Type) SetSyncen(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldSyncenMask)|(uint32(value)<<RegisterSai_bcr1FieldSyncenShift))
+func (r *registerSaibcr1Type) SetSyncen(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldSyncenMask)|(uint32(value)<<RegisterSaibcr1FieldSyncenShift))
 }
 
 const (
-	RegisterSai_bcr1FieldMonoShift = 12
-	RegisterSai_bcr1FieldMonoMask  = 0x1000
+	RegisterSaibcr1FieldMonoShift = 12
+	RegisterSaibcr1FieldMonoMask  = 0x1000
 )
 
 // GetMono Mono mode. This bit is set and cleared by software. It is meaningful only when the number of slots is equal to 2. When the mono mode is selected, slot 0 data are duplicated on slot 1 when the audio block operates as a transmitter. In reception mode, the slot1 is discarded and only the data received from slot 0 are stored. Refer to Section: Mono/stereo mode for more details.
-func (r *registerSai_bcr1Type) GetMono() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldMonoMask) != 0
+func (r *registerSaibcr1Type) GetMono() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldMonoMask) != 0
 }
 
 // SetMono Mono mode. This bit is set and cleared by software. It is meaningful only when the number of slots is equal to 2. When the mono mode is selected, slot 0 data are duplicated on slot 1 when the audio block operates as a transmitter. In reception mode, the slot1 is discarded and only the data received from slot 0 are stored. Refer to Section: Mono/stereo mode for more details.
-func (r *registerSai_bcr1Type) SetMono(value bool) {
+func (r *registerSaibcr1Type) SetMono(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr1FieldMonoMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr1FieldMonoMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldMonoMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldMonoMask)
 	}
 }
 
 const (
-	RegisterSai_bcr1FieldOutdrivShift = 13
-	RegisterSai_bcr1FieldOutdrivMask  = 0x2000
+	RegisterSaibcr1FieldOutdrivShift = 13
+	RegisterSaibcr1FieldOutdrivMask  = 0x2000
 )
 
 // GetOutdriv Output drive. This bit is set and cleared by software. Note: This bit has to be set before enabling the audio block and after the audio block configuration.
-func (r *registerSai_bcr1Type) GetOutdriv() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldOutdrivMask) != 0
+func (r *registerSaibcr1Type) GetOutdriv() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldOutdrivMask) != 0
 }
 
 // SetOutdriv Output drive. This bit is set and cleared by software. Note: This bit has to be set before enabling the audio block and after the audio block configuration.
-func (r *registerSai_bcr1Type) SetOutdriv(value bool) {
+func (r *registerSaibcr1Type) SetOutdriv(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr1FieldOutdrivMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr1FieldOutdrivMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldOutdrivMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldOutdrivMask)
 	}
 }
 
 const (
-	RegisterSai_bcr1FieldSaixenShift = 16
-	RegisterSai_bcr1FieldSaixenMask  = 0x10000
+	RegisterSaibcr1FieldSaixenShift = 16
+	RegisterSaibcr1FieldSaixenMask  = 0x10000
 )
 
 // GetSaixen Audio block enable where x is A or B. This bit is set by software. To switch off the audio block, the application software must program this bit to 0 and poll the bit till it reads back 0, meaning that the block is completely disabled. Before setting this bit to 1, check that it is set to 0, otherwise the enable command will not be taken into account. This bit allows to control the state of SAIx audio block. If it is disabled when an audio frame transfer is ongoing, the ongoing transfer completes and the cell is fully disabled at the end of this audio frame transfer. Note: When SAIx block is configured in master mode, the clock must be present on the input of SAIx before setting SAIXEN bit.
-func (r *registerSai_bcr1Type) GetSaixen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldSaixenMask) != 0
+func (r *registerSaibcr1Type) GetSaixen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldSaixenMask) != 0
 }
 
 // SetSaixen Audio block enable where x is A or B. This bit is set by software. To switch off the audio block, the application software must program this bit to 0 and poll the bit till it reads back 0, meaning that the block is completely disabled. Before setting this bit to 1, check that it is set to 0, otherwise the enable command will not be taken into account. This bit allows to control the state of SAIx audio block. If it is disabled when an audio frame transfer is ongoing, the ongoing transfer completes and the cell is fully disabled at the end of this audio frame transfer. Note: When SAIx block is configured in master mode, the clock must be present on the input of SAIx before setting SAIXEN bit.
-func (r *registerSai_bcr1Type) SetSaixen(value bool) {
+func (r *registerSaibcr1Type) SetSaixen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr1FieldSaixenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr1FieldSaixenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldSaixenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldSaixenMask)
 	}
 }
 
 const (
-	RegisterSai_bcr1FieldDmaenShift = 17
-	RegisterSai_bcr1FieldDmaenMask  = 0x20000
+	RegisterSaibcr1FieldDmaenShift = 17
+	RegisterSaibcr1FieldDmaenMask  = 0x20000
 )
 
 // GetDmaen DMA enable. This bit is set and cleared by software. Note: Since the audio block defaults to operate as a transmitter after reset, the MODE[1:0] bits must be configured before setting DMAEN to avoid a DMA request in receiver mode.
-func (r *registerSai_bcr1Type) GetDmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldDmaenMask) != 0
+func (r *registerSaibcr1Type) GetDmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldDmaenMask) != 0
 }
 
 // SetDmaen DMA enable. This bit is set and cleared by software. Note: Since the audio block defaults to operate as a transmitter after reset, the MODE[1:0] bits must be configured before setting DMAEN to avoid a DMA request in receiver mode.
-func (r *registerSai_bcr1Type) SetDmaen(value bool) {
+func (r *registerSaibcr1Type) SetDmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr1FieldDmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr1FieldDmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldDmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldDmaenMask)
 	}
 }
 
 const (
-	RegisterSai_bcr1FieldNomckShift = 19
-	RegisterSai_bcr1FieldNomckMask  = 0x80000
+	RegisterSaibcr1FieldNomckShift = 19
+	RegisterSaibcr1FieldNomckMask  = 0x80000
 )
 
 // GetNomck No divider
-func (r *registerSai_bcr1Type) GetNomck() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldNomckMask) != 0
+func (r *registerSaibcr1Type) GetNomck() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldNomckMask) != 0
 }
 
 // SetNomck No divider
-func (r *registerSai_bcr1Type) SetNomck(value bool) {
+func (r *registerSaibcr1Type) SetNomck(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr1FieldNomckMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr1FieldNomckMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldNomckMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldNomckMask)
 	}
 }
 
 const (
-	RegisterSai_bcr1FieldMckdivShift = 20
-	RegisterSai_bcr1FieldMckdivMask  = 0xf00000
+	RegisterSaibcr1FieldMckdivShift = 20
+	RegisterSaibcr1FieldMckdivMask  = 0xf00000
 )
 
 // GetMckdiv Master clock divider. These bits are set and cleared by software. These bits are meaningless when the audio block operates in slave mode. They have to be configured when the audio block is disabled. Others: the master clock frequency is calculated accordingly to the following formula:
-func (r *registerSai_bcr1Type) GetMckdiv() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldMckdivMask) >> RegisterSai_bcr1FieldMckdivShift)
+func (r *registerSaibcr1Type) GetMckdiv() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldMckdivMask) >> RegisterSaibcr1FieldMckdivShift)
 }
 
 // SetMckdiv Master clock divider. These bits are set and cleared by software. These bits are meaningless when the audio block operates in slave mode. They have to be configured when the audio block is disabled. Others: the master clock frequency is calculated accordingly to the following formula:
-func (r *registerSai_bcr1Type) SetMckdiv(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldMckdivMask)|(uint32(value)<<RegisterSai_bcr1FieldMckdivShift))
+func (r *registerSaibcr1Type) SetMckdiv(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldMckdivMask)|(uint32(value)<<RegisterSaibcr1FieldMckdivShift))
 }
 
 const (
-	RegisterSai_bcr1FieldOsrShift = 26
-	RegisterSai_bcr1FieldOsrMask  = 0x4000000
+	RegisterSaibcr1FieldOsrShift = 26
+	RegisterSaibcr1FieldOsrMask  = 0x4000000
 )
 
 // GetOsr Oversampling ratio for master clock
-func (r *registerSai_bcr1Type) GetOsr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr1FieldOsrMask) != 0
+func (r *registerSaibcr1Type) GetOsr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr1FieldOsrMask) != 0
 }
 
 // SetOsr Oversampling ratio for master clock
-func (r *registerSai_bcr1Type) SetOsr(value bool) {
+func (r *registerSaibcr1Type) SetOsr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr1FieldOsrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr1FieldOsrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr1FieldOsrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr1FieldOsrMask)
 	}
 }
 
-// registerSai_bcr2Type Configuration register 2
-type registerSai_bcr2Type uint32
+// registerSaibcr2Type Configuration register 2
+type registerSaibcr2Type uint32
 
 const (
-	RegisterSai_bcr2FieldFthShift = 0
-	RegisterSai_bcr2FieldFthMask  = 0x7
+	RegisterSaibcr2FieldFthShift = 0
+	RegisterSaibcr2FieldFthMask  = 0x7
 )
 
 // GetFth FIFO threshold. This bit is set and cleared by software.
-func (r *registerSai_bcr2Type) GetFth() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr2FieldFthMask) >> RegisterSai_bcr2FieldFthShift)
+func (r *registerSaibcr2Type) GetFth() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr2FieldFthMask) >> RegisterSaibcr2FieldFthShift)
 }
 
 // SetFth FIFO threshold. This bit is set and cleared by software.
-func (r *registerSai_bcr2Type) SetFth(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr2FieldFthMask)|(uint32(value)<<RegisterSai_bcr2FieldFthShift))
+func (r *registerSaibcr2Type) SetFth(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr2FieldFthMask)|(uint32(value)<<RegisterSaibcr2FieldFthShift))
 }
 
 const (
-	RegisterSai_bcr2FieldFflushShift = 3
-	RegisterSai_bcr2FieldFflushMask  = 0x8
+	RegisterSaibcr2FieldFflushShift = 3
+	RegisterSaibcr2FieldFflushMask  = 0x8
 )
 
 // SetFflush FIFO flush. This bit is set by software. It is always read as 0. This bit should be configured when the SAI is disabled.
-func (r *registerSai_bcr2Type) SetFflush(value bool) {
+func (r *registerSaibcr2Type) SetFflush(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr2FieldFflushMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr2FieldFflushMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr2FieldFflushMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr2FieldFflushMask)
 	}
 }
 
 const (
-	RegisterSai_bcr2FieldTrisShift = 4
-	RegisterSai_bcr2FieldTrisMask  = 0x10
+	RegisterSaibcr2FieldTrisShift = 4
+	RegisterSaibcr2FieldTrisMask  = 0x10
 )
 
 // GetTris Tristate management on data line. This bit is set and cleared by software. It is meaningful only if the audio block is configured as a transmitter. This bit is not used when the audio block is configured in SPDIF mode. It should be configured when SAI is disabled. Refer to Section: Output data line management on an inactive slot for more details.
-func (r *registerSai_bcr2Type) GetTris() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr2FieldTrisMask) != 0
+func (r *registerSaibcr2Type) GetTris() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr2FieldTrisMask) != 0
 }
 
 // SetTris Tristate management on data line. This bit is set and cleared by software. It is meaningful only if the audio block is configured as a transmitter. This bit is not used when the audio block is configured in SPDIF mode. It should be configured when SAI is disabled. Refer to Section: Output data line management on an inactive slot for more details.
-func (r *registerSai_bcr2Type) SetTris(value bool) {
+func (r *registerSaibcr2Type) SetTris(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr2FieldTrisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr2FieldTrisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr2FieldTrisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr2FieldTrisMask)
 	}
 }
 
 const (
-	RegisterSai_bcr2FieldMuteShift = 5
-	RegisterSai_bcr2FieldMuteMask  = 0x20
+	RegisterSaibcr2FieldMuteShift = 5
+	RegisterSaibcr2FieldMuteMask  = 0x20
 )
 
 // GetMute Mute. This bit is set and cleared by software. It is meaningful only when the audio block operates as a transmitter. The MUTE value is linked to value of MUTEVAL if the number of slots is lower or equal to 2, or equal to 0 if it is greater than 2. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.
-func (r *registerSai_bcr2Type) GetMute() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr2FieldMuteMask) != 0
+func (r *registerSaibcr2Type) GetMute() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr2FieldMuteMask) != 0
 }
 
 // SetMute Mute. This bit is set and cleared by software. It is meaningful only when the audio block operates as a transmitter. The MUTE value is linked to value of MUTEVAL if the number of slots is lower or equal to 2, or equal to 0 if it is greater than 2. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.
-func (r *registerSai_bcr2Type) SetMute(value bool) {
+func (r *registerSaibcr2Type) SetMute(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr2FieldMuteMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr2FieldMuteMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr2FieldMuteMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr2FieldMuteMask)
 	}
 }
 
 const (
-	RegisterSai_bcr2FieldMutevalShift = 6
-	RegisterSai_bcr2FieldMutevalMask  = 0x40
+	RegisterSaibcr2FieldMutevalShift = 6
+	RegisterSaibcr2FieldMutevalMask  = 0x40
 )
 
 // GetMuteval Mute value. This bit is set and cleared by software.It must be written before enabling the audio block: SAIXEN. This bit is meaningful only when the audio block operates as a transmitter, the number of slots is lower or equal to 2 and the MUTE bit is set. If more slots are declared, the bit value sent during the transmission in mute mode is equal to 0, whatever the value of MUTEVAL. if the number of slot is lower or equal to 2 and MUTEVAL = 1, the MUTE value transmitted for each slot is the one sent during the previous frame. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.
-func (r *registerSai_bcr2Type) GetMuteval() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr2FieldMutevalMask) != 0
+func (r *registerSaibcr2Type) GetMuteval() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr2FieldMutevalMask) != 0
 }
 
 // SetMuteval Mute value. This bit is set and cleared by software.It must be written before enabling the audio block: SAIXEN. This bit is meaningful only when the audio block operates as a transmitter, the number of slots is lower or equal to 2 and the MUTE bit is set. If more slots are declared, the bit value sent during the transmission in mute mode is equal to 0, whatever the value of MUTEVAL. if the number of slot is lower or equal to 2 and MUTEVAL = 1, the MUTE value transmitted for each slot is the one sent during the previous frame. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.
-func (r *registerSai_bcr2Type) SetMuteval(value bool) {
+func (r *registerSaibcr2Type) SetMuteval(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr2FieldMutevalMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr2FieldMutevalMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr2FieldMutevalMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr2FieldMutevalMask)
 	}
 }
 
 const (
-	RegisterSai_bcr2FieldMutecntShift = 7
-	RegisterSai_bcr2FieldMutecntMask  = 0x1f80
+	RegisterSaibcr2FieldMutecntShift = 7
+	RegisterSaibcr2FieldMutecntMask  = 0x1f80
 )
 
 // GetMutecnt Mute counter. These bits are set and cleared by software. They are used only in reception mode. The value set in these bits is compared to the number of consecutive mute frames detected in reception. When the number of mute frames is equal to this value, the flag MUTEDET will be set and an interrupt will be generated if bit MUTEDETIE is set. Refer to Section: Mute mode for more details.
-func (r *registerSai_bcr2Type) GetMutecnt() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr2FieldMutecntMask) >> RegisterSai_bcr2FieldMutecntShift)
+func (r *registerSaibcr2Type) GetMutecnt() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr2FieldMutecntMask) >> RegisterSaibcr2FieldMutecntShift)
 }
 
 // SetMutecnt Mute counter. These bits are set and cleared by software. They are used only in reception mode. The value set in these bits is compared to the number of consecutive mute frames detected in reception. When the number of mute frames is equal to this value, the flag MUTEDET will be set and an interrupt will be generated if bit MUTEDETIE is set. Refer to Section: Mute mode for more details.
-func (r *registerSai_bcr2Type) SetMutecnt(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr2FieldMutecntMask)|(uint32(value)<<RegisterSai_bcr2FieldMutecntShift))
+func (r *registerSaibcr2Type) SetMutecnt(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr2FieldMutecntMask)|(uint32(value)<<RegisterSaibcr2FieldMutecntShift))
 }
 
 const (
-	RegisterSai_bcr2FieldCplShift = 13
-	RegisterSai_bcr2FieldCplMask  = 0x2000
+	RegisterSaibcr2FieldCplShift = 13
+	RegisterSaibcr2FieldCplMask  = 0x2000
 )
 
 // GetCpl Complement bit. This bit is set and cleared by software. It defines the type of complement to be used for companding mode Note: This bit has effect only when the companding mode is -Law algorithm or A-Law algorithm.
-func (r *registerSai_bcr2Type) GetCpl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr2FieldCplMask) != 0
+func (r *registerSaibcr2Type) GetCpl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr2FieldCplMask) != 0
 }
 
 // SetCpl Complement bit. This bit is set and cleared by software. It defines the type of complement to be used for companding mode Note: This bit has effect only when the companding mode is -Law algorithm or A-Law algorithm.
-func (r *registerSai_bcr2Type) SetCpl(value bool) {
+func (r *registerSaibcr2Type) SetCpl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bcr2FieldCplMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibcr2FieldCplMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr2FieldCplMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr2FieldCplMask)
 	}
 }
 
 const (
-	RegisterSai_bcr2FieldCompShift = 14
-	RegisterSai_bcr2FieldCompMask  = 0xc000
+	RegisterSaibcr2FieldCompShift = 14
+	RegisterSaibcr2FieldCompMask  = 0xc000
 )
 
 // GetComp Companding mode. These bits are set and cleared by software. The -Law and the A-Law log are a part of the CCITT G.711 recommendation, the type of complement that will be used depends on CPL bit. The data expansion or data compression are determined by the state of bit MODE[0]. The data compression is applied if the audio block is configured as a transmitter. The data expansion is automatically applied when the audio block is configured as a receiver. Refer to Section: Companding mode for more details. Note: Companding mode is applicable only when TDM is selected.
-func (r *registerSai_bcr2Type) GetComp() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bcr2FieldCompMask) >> RegisterSai_bcr2FieldCompShift)
+func (r *registerSaibcr2Type) GetComp() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibcr2FieldCompMask) >> RegisterSaibcr2FieldCompShift)
 }
 
 // SetComp Companding mode. These bits are set and cleared by software. The -Law and the A-Law log are a part of the CCITT G.711 recommendation, the type of complement that will be used depends on CPL bit. The data expansion or data compression are determined by the state of bit MODE[0]. The data compression is applied if the audio block is configured as a transmitter. The data expansion is automatically applied when the audio block is configured as a receiver. Refer to Section: Companding mode for more details. Note: Companding mode is applicable only when TDM is selected.
-func (r *registerSai_bcr2Type) SetComp(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bcr2FieldCompMask)|(uint32(value)<<RegisterSai_bcr2FieldCompShift))
+func (r *registerSaibcr2Type) SetComp(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibcr2FieldCompMask)|(uint32(value)<<RegisterSaibcr2FieldCompShift))
 }
 
-// registerSai_bfrcrType This register has no meaning in AC97 and SPDIF audio protocol
-type registerSai_bfrcrType uint32
+// registerSaibfrcrType This register has no meaning in AC97 and SPDIF audio protocol
+type registerSaibfrcrType uint32
 
 const (
-	RegisterSai_bfrcrFieldFrlShift = 0
-	RegisterSai_bfrcrFieldFrlMask  = 0xff
+	RegisterSaibfrcrFieldFrlShift = 0
+	RegisterSaibfrcrFieldFrlMask  = 0xff
 )
 
 // GetFrl Frame length. These bits are set and cleared by software. They define the audio frame length expressed in number of SCK clock cycles: the number of bits in the frame is equal to FRL[7:0] + 1. The minimum number of bits to transfer in an audio frame must be equal to 8, otherwise the audio block will behaves in an unexpected way. This is the case when the data size is 8 bits and only one slot 0 is defined in NBSLOT[4:0] of SAI_xSLOTR register (NBSLOT[3:0] = 0000). In master mode, if the master clock (available on MCLK_x pin) is used, the frame length should be aligned with a number equal to a power of 2, ranging from 8 to 256. When the master clock is not used (NODIV = 1), it is recommended to program the frame length to an value ranging from 8 to 256. These bits are meaningless and are not used in AC97 or SPDIF audio block configuration.
-func (r *registerSai_bfrcrType) GetFrl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bfrcrFieldFrlMask) >> RegisterSai_bfrcrFieldFrlShift)
+func (r *registerSaibfrcrType) GetFrl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibfrcrFieldFrlMask) >> RegisterSaibfrcrFieldFrlShift)
 }
 
 // SetFrl Frame length. These bits are set and cleared by software. They define the audio frame length expressed in number of SCK clock cycles: the number of bits in the frame is equal to FRL[7:0] + 1. The minimum number of bits to transfer in an audio frame must be equal to 8, otherwise the audio block will behaves in an unexpected way. This is the case when the data size is 8 bits and only one slot 0 is defined in NBSLOT[4:0] of SAI_xSLOTR register (NBSLOT[3:0] = 0000). In master mode, if the master clock (available on MCLK_x pin) is used, the frame length should be aligned with a number equal to a power of 2, ranging from 8 to 256. When the master clock is not used (NODIV = 1), it is recommended to program the frame length to an value ranging from 8 to 256. These bits are meaningless and are not used in AC97 or SPDIF audio block configuration.
-func (r *registerSai_bfrcrType) SetFrl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bfrcrFieldFrlMask)|(uint32(value)<<RegisterSai_bfrcrFieldFrlShift))
+func (r *registerSaibfrcrType) SetFrl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibfrcrFieldFrlMask)|(uint32(value)<<RegisterSaibfrcrFieldFrlShift))
 }
 
 const (
-	RegisterSai_bfrcrFieldFsallShift = 8
-	RegisterSai_bfrcrFieldFsallMask  = 0x7f00
+	RegisterSaibfrcrFieldFsallShift = 8
+	RegisterSaibfrcrFieldFsallMask  = 0x7f00
 )
 
 // GetFsall Frame synchronization active level length. These bits are set and cleared by software. They specify the length in number of bit clock (SCK) + 1 (FSALL[6:0] + 1) of the active level of the FS signal in the audio frame These bits are meaningless and are not used in AC97 or SPDIF audio block configuration. They must be configured when the audio block is disabled.
-func (r *registerSai_bfrcrType) GetFsall() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bfrcrFieldFsallMask) >> RegisterSai_bfrcrFieldFsallShift)
+func (r *registerSaibfrcrType) GetFsall() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibfrcrFieldFsallMask) >> RegisterSaibfrcrFieldFsallShift)
 }
 
 // SetFsall Frame synchronization active level length. These bits are set and cleared by software. They specify the length in number of bit clock (SCK) + 1 (FSALL[6:0] + 1) of the active level of the FS signal in the audio frame These bits are meaningless and are not used in AC97 or SPDIF audio block configuration. They must be configured when the audio block is disabled.
-func (r *registerSai_bfrcrType) SetFsall(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bfrcrFieldFsallMask)|(uint32(value)<<RegisterSai_bfrcrFieldFsallShift))
+func (r *registerSaibfrcrType) SetFsall(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibfrcrFieldFsallMask)|(uint32(value)<<RegisterSaibfrcrFieldFsallShift))
 }
 
 const (
-	RegisterSai_bfrcrFieldFsdefShift = 16
-	RegisterSai_bfrcrFieldFsdefMask  = 0x10000
+	RegisterSaibfrcrFieldFsdefShift = 16
+	RegisterSaibfrcrFieldFsdefMask  = 0x10000
 )
 
 // GetFsdef Frame synchronization definition. This bit is set and cleared by software. When the bit is set, the number of slots defined in the SAI_xSLOTR register has to be even. It means that half of this number of slots will be dedicated to the left channel and the other slots for the right channel (e.g: this bit has to be set for I2S or MSB/LSB-justified protocols...). This bit is meaningless and is not used in AC97 or SPDIF audio block configuration. It must be configured when the audio block is disabled.
-func (r *registerSai_bfrcrType) GetFsdef() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bfrcrFieldFsdefMask) != 0
+func (r *registerSaibfrcrType) GetFsdef() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibfrcrFieldFsdefMask) != 0
 }
 
 const (
-	RegisterSai_bfrcrFieldFspolShift = 17
-	RegisterSai_bfrcrFieldFspolMask  = 0x20000
+	RegisterSaibfrcrFieldFspolShift = 17
+	RegisterSaibfrcrFieldFspolMask  = 0x20000
 )
 
 // GetFspol Frame synchronization polarity. This bit is set and cleared by software. It is used to configure the level of the start of frame on the FS signal. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.
-func (r *registerSai_bfrcrType) GetFspol() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bfrcrFieldFspolMask) != 0
+func (r *registerSaibfrcrType) GetFspol() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibfrcrFieldFspolMask) != 0
 }
 
 // SetFspol Frame synchronization polarity. This bit is set and cleared by software. It is used to configure the level of the start of frame on the FS signal. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.
-func (r *registerSai_bfrcrType) SetFspol(value bool) {
+func (r *registerSaibfrcrType) SetFspol(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bfrcrFieldFspolMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibfrcrFieldFspolMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bfrcrFieldFspolMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibfrcrFieldFspolMask)
 	}
 }
 
 const (
-	RegisterSai_bfrcrFieldFsoffShift = 18
-	RegisterSai_bfrcrFieldFsoffMask  = 0x40000
+	RegisterSaibfrcrFieldFsoffShift = 18
+	RegisterSaibfrcrFieldFsoffMask  = 0x40000
 )
 
 // GetFsoff Frame synchronization offset. This bit is set and cleared by software. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.
-func (r *registerSai_bfrcrType) GetFsoff() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bfrcrFieldFsoffMask) != 0
+func (r *registerSaibfrcrType) GetFsoff() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibfrcrFieldFsoffMask) != 0
 }
 
 // SetFsoff Frame synchronization offset. This bit is set and cleared by software. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.
-func (r *registerSai_bfrcrType) SetFsoff(value bool) {
+func (r *registerSaibfrcrType) SetFsoff(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bfrcrFieldFsoffMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibfrcrFieldFsoffMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bfrcrFieldFsoffMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibfrcrFieldFsoffMask)
 	}
 }
 
-// registerSai_bslotrType This register has no meaning in AC97 and SPDIF audio protocol
-type registerSai_bslotrType uint32
+// registerSaibslotrType This register has no meaning in AC97 and SPDIF audio protocol
+type registerSaibslotrType uint32
 
 const (
-	RegisterSai_bslotrFieldFboffShift = 0
-	RegisterSai_bslotrFieldFboffMask  = 0x1f
+	RegisterSaibslotrFieldFboffShift = 0
+	RegisterSaibslotrFieldFboffMask  = 0x1f
 )
 
 // GetFboff First bit offset These bits are set and cleared by software. The value set in this bitfield defines the position of the first data transfer bit in the slot. It represents an offset value. In transmission mode, the bits outside the data field are forced to 0. In reception mode, the extra received bits are discarded. These bits must be set when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_bslotrType) GetFboff() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bslotrFieldFboffMask) >> RegisterSai_bslotrFieldFboffShift)
+func (r *registerSaibslotrType) GetFboff() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibslotrFieldFboffMask) >> RegisterSaibslotrFieldFboffShift)
 }
 
 // SetFboff First bit offset These bits are set and cleared by software. The value set in this bitfield defines the position of the first data transfer bit in the slot. It represents an offset value. In transmission mode, the bits outside the data field are forced to 0. In reception mode, the extra received bits are discarded. These bits must be set when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_bslotrType) SetFboff(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bslotrFieldFboffMask)|(uint32(value)<<RegisterSai_bslotrFieldFboffShift))
+func (r *registerSaibslotrType) SetFboff(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibslotrFieldFboffMask)|(uint32(value)<<RegisterSaibslotrFieldFboffShift))
 }
 
 const (
-	RegisterSai_bslotrFieldSlotszShift = 6
-	RegisterSai_bslotrFieldSlotszMask  = 0xc0
+	RegisterSaibslotrFieldSlotszShift = 6
+	RegisterSaibslotrFieldSlotszMask  = 0xc0
 )
 
 // GetSlotsz Slot size This bits is set and cleared by software. The slot size must be higher or equal to the data size. If this condition is not respected, the behavior of the SAI will be undetermined. Refer to Section: Output data line management on an inactive slot for information on how to drive SD line. These bits must be set when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_bslotrType) GetSlotsz() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bslotrFieldSlotszMask) >> RegisterSai_bslotrFieldSlotszShift)
+func (r *registerSaibslotrType) GetSlotsz() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibslotrFieldSlotszMask) >> RegisterSaibslotrFieldSlotszShift)
 }
 
 // SetSlotsz Slot size This bits is set and cleared by software. The slot size must be higher or equal to the data size. If this condition is not respected, the behavior of the SAI will be undetermined. Refer to Section: Output data line management on an inactive slot for information on how to drive SD line. These bits must be set when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_bslotrType) SetSlotsz(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bslotrFieldSlotszMask)|(uint32(value)<<RegisterSai_bslotrFieldSlotszShift))
+func (r *registerSaibslotrType) SetSlotsz(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibslotrFieldSlotszMask)|(uint32(value)<<RegisterSaibslotrFieldSlotszShift))
 }
 
 const (
-	RegisterSai_bslotrFieldNbslotShift = 8
-	RegisterSai_bslotrFieldNbslotMask  = 0xf00
+	RegisterSaibslotrFieldNbslotShift = 8
+	RegisterSaibslotrFieldNbslotMask  = 0xf00
 )
 
 // GetNbslot Number of slots in an audio frame. These bits are set and cleared by software. The value set in this bitfield represents the number of slots + 1 in the audio frame (including the number of inactive slots). The maximum number of slots is 16. The number of slots should be even if FSDEF bit in the SAI_xFRCR register is set. The number of slots must be configured when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_bslotrType) GetNbslot() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bslotrFieldNbslotMask) >> RegisterSai_bslotrFieldNbslotShift)
+func (r *registerSaibslotrType) GetNbslot() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibslotrFieldNbslotMask) >> RegisterSaibslotrFieldNbslotShift)
 }
 
 // SetNbslot Number of slots in an audio frame. These bits are set and cleared by software. The value set in this bitfield represents the number of slots + 1 in the audio frame (including the number of inactive slots). The maximum number of slots is 16. The number of slots should be even if FSDEF bit in the SAI_xFRCR register is set. The number of slots must be configured when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_bslotrType) SetNbslot(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bslotrFieldNbslotMask)|(uint32(value)<<RegisterSai_bslotrFieldNbslotShift))
+func (r *registerSaibslotrType) SetNbslot(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibslotrFieldNbslotMask)|(uint32(value)<<RegisterSaibslotrFieldNbslotShift))
 }
 
 const (
-	RegisterSai_bslotrFieldSlotenShift = 16
-	RegisterSai_bslotrFieldSlotenMask  = 0xffff0000
+	RegisterSaibslotrFieldSlotenShift = 16
+	RegisterSaibslotrFieldSlotenMask  = 0xffff0000
 )
 
 // GetSloten Slot enable. These bits are set and cleared by software. Each SLOTEN bit corresponds to a slot position from 0 to 15 (maximum 16 slots). The slot must be enabled when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_bslotrType) GetSloten() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bslotrFieldSlotenMask) >> RegisterSai_bslotrFieldSlotenShift)
+func (r *registerSaibslotrType) GetSloten() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterSaibslotrFieldSlotenMask) >> RegisterSaibslotrFieldSlotenShift)
 }
 
 // SetSloten Slot enable. These bits are set and cleared by software. Each SLOTEN bit corresponds to a slot position from 0 to 15 (maximum 16 slots). The slot must be enabled when the audio block is disabled. They are ignored in AC97 or SPDIF mode.
-func (r *registerSai_bslotrType) SetSloten(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bslotrFieldSlotenMask)|(uint32(value)<<RegisterSai_bslotrFieldSlotenShift))
+func (r *registerSaibslotrType) SetSloten(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibslotrFieldSlotenMask)|(uint32(value)<<RegisterSaibslotrFieldSlotenShift))
 }
 
-// registerSai_bimType Interrupt mask register 2
-type registerSai_bimType uint32
+// registerSaibimType Interrupt mask register 2
+type registerSaibimType uint32
 
 const (
-	RegisterSai_bimFieldOvrudrieShift = 0
-	RegisterSai_bimFieldOvrudrieMask  = 0x1
+	RegisterSaibimFieldOvrudrieShift = 0
+	RegisterSaibimFieldOvrudrieMask  = 0x1
 )
 
 // GetOvrudrie Overrun/underrun interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the OVRUDR bit in the SAI_xSR register is set.
-func (r *registerSai_bimType) GetOvrudrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bimFieldOvrudrieMask) != 0
+func (r *registerSaibimType) GetOvrudrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibimFieldOvrudrieMask) != 0
 }
 
 // SetOvrudrie Overrun/underrun interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the OVRUDR bit in the SAI_xSR register is set.
-func (r *registerSai_bimType) SetOvrudrie(value bool) {
+func (r *registerSaibimType) SetOvrudrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bimFieldOvrudrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibimFieldOvrudrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bimFieldOvrudrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibimFieldOvrudrieMask)
 	}
 }
 
 const (
-	RegisterSai_bimFieldMutedetieShift = 1
-	RegisterSai_bimFieldMutedetieMask  = 0x2
+	RegisterSaibimFieldMutedetieShift = 1
+	RegisterSaibimFieldMutedetieMask  = 0x2
 )
 
 // GetMutedetie Mute detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the MUTEDET bit in the SAI_xSR register is set. This bit has a meaning only if the audio block is configured in receiver mode.
-func (r *registerSai_bimType) GetMutedetie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bimFieldMutedetieMask) != 0
+func (r *registerSaibimType) GetMutedetie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibimFieldMutedetieMask) != 0
 }
 
 // SetMutedetie Mute detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the MUTEDET bit in the SAI_xSR register is set. This bit has a meaning only if the audio block is configured in receiver mode.
-func (r *registerSai_bimType) SetMutedetie(value bool) {
+func (r *registerSaibimType) SetMutedetie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bimFieldMutedetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibimFieldMutedetieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bimFieldMutedetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibimFieldMutedetieMask)
 	}
 }
 
 const (
-	RegisterSai_bimFieldWckcfgieShift = 2
-	RegisterSai_bimFieldWckcfgieMask  = 0x4
+	RegisterSaibimFieldWckcfgieShift = 2
+	RegisterSaibimFieldWckcfgieMask  = 0x4
 )
 
 // GetWckcfgie Wrong clock configuration interrupt enable. This bit is set and cleared by software. This bit is taken into account only if the audio block is configured as a master (MODE[1] = 0) and NODIV = 0. It generates an interrupt if the WCKCFG flag in the SAI_xSR register is set. Note: This bit is used only in TDM mode and is meaningless in other modes.
-func (r *registerSai_bimType) GetWckcfgie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bimFieldWckcfgieMask) != 0
+func (r *registerSaibimType) GetWckcfgie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibimFieldWckcfgieMask) != 0
 }
 
 // SetWckcfgie Wrong clock configuration interrupt enable. This bit is set and cleared by software. This bit is taken into account only if the audio block is configured as a master (MODE[1] = 0) and NODIV = 0. It generates an interrupt if the WCKCFG flag in the SAI_xSR register is set. Note: This bit is used only in TDM mode and is meaningless in other modes.
-func (r *registerSai_bimType) SetWckcfgie(value bool) {
+func (r *registerSaibimType) SetWckcfgie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bimFieldWckcfgieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibimFieldWckcfgieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bimFieldWckcfgieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibimFieldWckcfgieMask)
 	}
 }
 
 const (
-	RegisterSai_bimFieldFreqieShift = 3
-	RegisterSai_bimFieldFreqieMask  = 0x8
+	RegisterSaibimFieldFreqieShift = 3
+	RegisterSaibimFieldFreqieMask  = 0x8
 )
 
 // GetFreqie FIFO request interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the FREQ bit in the SAI_xSR register is set. Since the audio block defaults to operate as a transmitter after reset, the MODE bit must be configured before setting FREQIE to avoid a parasitic interruption in receiver mode,
-func (r *registerSai_bimType) GetFreqie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bimFieldFreqieMask) != 0
+func (r *registerSaibimType) GetFreqie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibimFieldFreqieMask) != 0
 }
 
 // SetFreqie FIFO request interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the FREQ bit in the SAI_xSR register is set. Since the audio block defaults to operate as a transmitter after reset, the MODE bit must be configured before setting FREQIE to avoid a parasitic interruption in receiver mode,
-func (r *registerSai_bimType) SetFreqie(value bool) {
+func (r *registerSaibimType) SetFreqie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bimFieldFreqieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibimFieldFreqieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bimFieldFreqieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibimFieldFreqieMask)
 	}
 }
 
 const (
-	RegisterSai_bimFieldCnrdyieShift = 4
-	RegisterSai_bimFieldCnrdyieMask  = 0x10
+	RegisterSaibimFieldCnrdyieShift = 4
+	RegisterSaibimFieldCnrdyieMask  = 0x10
 )
 
 // GetCnrdyie Codec not ready interrupt enable (AC97). This bit is set and cleared by software. When the interrupt is enabled, the audio block detects in the slot 0 (tag0) of the AC97 frame if the Codec connected to this line is ready or not. If it is not ready, the CNRDY flag in the SAI_xSR register is set and an interruption i generated. This bit has a meaning only if the AC97 mode is selected through PRTCFG[1:0] bits and the audio block is operates as a receiver.
-func (r *registerSai_bimType) GetCnrdyie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bimFieldCnrdyieMask) != 0
+func (r *registerSaibimType) GetCnrdyie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibimFieldCnrdyieMask) != 0
 }
 
 // SetCnrdyie Codec not ready interrupt enable (AC97). This bit is set and cleared by software. When the interrupt is enabled, the audio block detects in the slot 0 (tag0) of the AC97 frame if the Codec connected to this line is ready or not. If it is not ready, the CNRDY flag in the SAI_xSR register is set and an interruption i generated. This bit has a meaning only if the AC97 mode is selected through PRTCFG[1:0] bits and the audio block is operates as a receiver.
-func (r *registerSai_bimType) SetCnrdyie(value bool) {
+func (r *registerSaibimType) SetCnrdyie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bimFieldCnrdyieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibimFieldCnrdyieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bimFieldCnrdyieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibimFieldCnrdyieMask)
 	}
 }
 
 const (
-	RegisterSai_bimFieldAfsdetieShift = 5
-	RegisterSai_bimFieldAfsdetieMask  = 0x20
+	RegisterSaibimFieldAfsdetieShift = 5
+	RegisterSaibimFieldAfsdetieMask  = 0x20
 )
 
 // GetAfsdetie Anticipated frame synchronization detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt will be generated if the AFSDET bit in the SAI_xSR register is set. This bit is meaningless in AC97, SPDIF mode or when the audio block operates as a master.
-func (r *registerSai_bimType) GetAfsdetie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bimFieldAfsdetieMask) != 0
+func (r *registerSaibimType) GetAfsdetie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibimFieldAfsdetieMask) != 0
 }
 
 // SetAfsdetie Anticipated frame synchronization detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt will be generated if the AFSDET bit in the SAI_xSR register is set. This bit is meaningless in AC97, SPDIF mode or when the audio block operates as a master.
-func (r *registerSai_bimType) SetAfsdetie(value bool) {
+func (r *registerSaibimType) SetAfsdetie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bimFieldAfsdetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibimFieldAfsdetieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bimFieldAfsdetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibimFieldAfsdetieMask)
 	}
 }
 
 const (
-	RegisterSai_bimFieldLfsdetieShift = 6
-	RegisterSai_bimFieldLfsdetieMask  = 0x40
+	RegisterSaibimFieldLfsdetieShift = 6
+	RegisterSaibimFieldLfsdetieMask  = 0x40
 )
 
 // GetLfsdetie Late frame synchronization detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt will be generated if the LFSDET bit is set in the SAI_xSR register. This bit is meaningless in AC97, SPDIF mode or when the audio block operates as a master.
-func (r *registerSai_bimType) GetLfsdetie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bimFieldLfsdetieMask) != 0
+func (r *registerSaibimType) GetLfsdetie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibimFieldLfsdetieMask) != 0
 }
 
 // SetLfsdetie Late frame synchronization detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt will be generated if the LFSDET bit is set in the SAI_xSR register. This bit is meaningless in AC97, SPDIF mode or when the audio block operates as a master.
-func (r *registerSai_bimType) SetLfsdetie(value bool) {
+func (r *registerSaibimType) SetLfsdetie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bimFieldLfsdetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibimFieldLfsdetieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bimFieldLfsdetieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibimFieldLfsdetieMask)
 	}
 }
 
-// registerSai_bsrType Status register
-type registerSai_bsrType uint32
+// registerSaibsrType Status register
+type registerSaibsrType uint32
 
 const (
-	RegisterSai_bsrFieldOvrudrShift = 0
-	RegisterSai_bsrFieldOvrudrMask  = 0x1
+	RegisterSaibsrFieldOvrudrShift = 0
+	RegisterSaibsrFieldOvrudrMask  = 0x1
 )
 
 // GetOvrudr Overrun / underrun. This bit is read only. The overrun and underrun conditions can occur only when the audio block is configured as a receiver and a transmitter, respectively. It can generate an interrupt if OVRUDRIE bit is set in SAI_xIM register. This flag is cleared when the software sets COVRUDR bit in SAI_xCLRFR register.
-func (r *registerSai_bsrType) GetOvrudr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bsrFieldOvrudrMask) != 0
+func (r *registerSaibsrType) GetOvrudr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibsrFieldOvrudrMask) != 0
 }
 
 // SetOvrudr Overrun / underrun. This bit is read only. The overrun and underrun conditions can occur only when the audio block is configured as a receiver and a transmitter, respectively. It can generate an interrupt if OVRUDRIE bit is set in SAI_xIM register. This flag is cleared when the software sets COVRUDR bit in SAI_xCLRFR register.
-func (r *registerSai_bsrType) SetOvrudr(value bool) {
+func (r *registerSaibsrType) SetOvrudr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bsrFieldOvrudrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibsrFieldOvrudrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bsrFieldOvrudrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibsrFieldOvrudrMask)
 	}
 }
 
 const (
-	RegisterSai_bsrFieldMutedetShift = 1
-	RegisterSai_bsrFieldMutedetMask  = 0x2
+	RegisterSaibsrFieldMutedetShift = 1
+	RegisterSaibsrFieldMutedetMask  = 0x2
 )
 
 // GetMutedet Mute detection. This bit is read only. This flag is set if consecutive 0 values are received in each slot of a given audio frame and for a consecutive number of audio frames (set in the MUTECNT bit in the SAI_xCR2 register). It can generate an interrupt if MUTEDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets bit CMUTEDET in the SAI_xCLRFR register.
-func (r *registerSai_bsrType) GetMutedet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bsrFieldMutedetMask) != 0
+func (r *registerSaibsrType) GetMutedet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibsrFieldMutedetMask) != 0
 }
 
 // SetMutedet Mute detection. This bit is read only. This flag is set if consecutive 0 values are received in each slot of a given audio frame and for a consecutive number of audio frames (set in the MUTECNT bit in the SAI_xCR2 register). It can generate an interrupt if MUTEDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets bit CMUTEDET in the SAI_xCLRFR register.
-func (r *registerSai_bsrType) SetMutedet(value bool) {
+func (r *registerSaibsrType) SetMutedet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bsrFieldMutedetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibsrFieldMutedetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bsrFieldMutedetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibsrFieldMutedetMask)
 	}
 }
 
 const (
-	RegisterSai_bsrFieldWckcfgShift = 2
-	RegisterSai_bsrFieldWckcfgMask  = 0x4
+	RegisterSaibsrFieldWckcfgShift = 2
+	RegisterSaibsrFieldWckcfgMask  = 0x4
 )
 
 // GetWckcfg Wrong clock configuration flag. This bit is read only. This bit is used only when the audio block operates in master mode (MODE[1] = 0) and NODIV = 0. It can generate an interrupt if WCKCFGIE bit is set in SAI_xIM register. This flag is cleared when the software sets CWCKCFG bit in SAI_xCLRFR register.
-func (r *registerSai_bsrType) GetWckcfg() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bsrFieldWckcfgMask) != 0
+func (r *registerSaibsrType) GetWckcfg() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibsrFieldWckcfgMask) != 0
 }
 
 // SetWckcfg Wrong clock configuration flag. This bit is read only. This bit is used only when the audio block operates in master mode (MODE[1] = 0) and NODIV = 0. It can generate an interrupt if WCKCFGIE bit is set in SAI_xIM register. This flag is cleared when the software sets CWCKCFG bit in SAI_xCLRFR register.
-func (r *registerSai_bsrType) SetWckcfg(value bool) {
+func (r *registerSaibsrType) SetWckcfg(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bsrFieldWckcfgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibsrFieldWckcfgMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bsrFieldWckcfgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibsrFieldWckcfgMask)
 	}
 }
 
 const (
-	RegisterSai_bsrFieldFreqShift = 3
-	RegisterSai_bsrFieldFreqMask  = 0x8
+	RegisterSaibsrFieldFreqShift = 3
+	RegisterSaibsrFieldFreqMask  = 0x8
 )
 
 // GetFreq FIFO request. This bit is read only. The request depends on the audio block configuration: If the block is configured in transmission mode, the FIFO request is related to a write request operation in the SAI_xDR. If the block configured in reception, the FIFO request related to a read request operation from the SAI_xDR. This flag can generate an interrupt if FREQIE bit is set in SAI_xIM register.
-func (r *registerSai_bsrType) GetFreq() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bsrFieldFreqMask) != 0
+func (r *registerSaibsrType) GetFreq() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibsrFieldFreqMask) != 0
 }
 
 // SetFreq FIFO request. This bit is read only. The request depends on the audio block configuration: If the block is configured in transmission mode, the FIFO request is related to a write request operation in the SAI_xDR. If the block configured in reception, the FIFO request related to a read request operation from the SAI_xDR. This flag can generate an interrupt if FREQIE bit is set in SAI_xIM register.
-func (r *registerSai_bsrType) SetFreq(value bool) {
+func (r *registerSaibsrType) SetFreq(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bsrFieldFreqMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibsrFieldFreqMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bsrFieldFreqMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibsrFieldFreqMask)
 	}
 }
 
 const (
-	RegisterSai_bsrFieldCnrdyShift = 4
-	RegisterSai_bsrFieldCnrdyMask  = 0x10
+	RegisterSaibsrFieldCnrdyShift = 4
+	RegisterSaibsrFieldCnrdyMask  = 0x10
 )
 
 // GetCnrdy Codec not ready. This bit is read only. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register and configured in receiver mode. It can generate an interrupt if CNRDYIE bit is set in SAI_xIM register. This flag is cleared when the software sets CCNRDY bit in SAI_xCLRFR register.
-func (r *registerSai_bsrType) GetCnrdy() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bsrFieldCnrdyMask) != 0
+func (r *registerSaibsrType) GetCnrdy() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibsrFieldCnrdyMask) != 0
 }
 
 // SetCnrdy Codec not ready. This bit is read only. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register and configured in receiver mode. It can generate an interrupt if CNRDYIE bit is set in SAI_xIM register. This flag is cleared when the software sets CCNRDY bit in SAI_xCLRFR register.
-func (r *registerSai_bsrType) SetCnrdy(value bool) {
+func (r *registerSaibsrType) SetCnrdy(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bsrFieldCnrdyMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibsrFieldCnrdyMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bsrFieldCnrdyMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibsrFieldCnrdyMask)
 	}
 }
 
 const (
-	RegisterSai_bsrFieldAfsdetShift = 5
-	RegisterSai_bsrFieldAfsdetMask  = 0x20
+	RegisterSaibsrFieldAfsdetShift = 5
+	RegisterSaibsrFieldAfsdetMask  = 0x20
 )
 
 // GetAfsdet Anticipated frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97or SPDIF mode. It can generate an interrupt if AFSDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets CAFSDET bit in SAI_xCLRFR register.
-func (r *registerSai_bsrType) GetAfsdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bsrFieldAfsdetMask) != 0
+func (r *registerSaibsrType) GetAfsdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibsrFieldAfsdetMask) != 0
 }
 
 // SetAfsdet Anticipated frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97or SPDIF mode. It can generate an interrupt if AFSDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets CAFSDET bit in SAI_xCLRFR register.
-func (r *registerSai_bsrType) SetAfsdet(value bool) {
+func (r *registerSaibsrType) SetAfsdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bsrFieldAfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibsrFieldAfsdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bsrFieldAfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibsrFieldAfsdetMask)
 	}
 }
 
 const (
-	RegisterSai_bsrFieldLfsdetShift = 6
-	RegisterSai_bsrFieldLfsdetMask  = 0x40
+	RegisterSaibsrFieldLfsdetShift = 6
+	RegisterSaibsrFieldLfsdetMask  = 0x40
 )
 
 // GetLfsdet Late frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97 or SPDIF mode. It can generate an interrupt if LFSDETIE bit is set in the SAI_xIM register. This flag is cleared when the software sets bit CLFSDET in SAI_xCLRFR register
-func (r *registerSai_bsrType) GetLfsdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bsrFieldLfsdetMask) != 0
+func (r *registerSaibsrType) GetLfsdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibsrFieldLfsdetMask) != 0
 }
 
 // SetLfsdet Late frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97 or SPDIF mode. It can generate an interrupt if LFSDETIE bit is set in the SAI_xIM register. This flag is cleared when the software sets bit CLFSDET in SAI_xCLRFR register
-func (r *registerSai_bsrType) SetLfsdet(value bool) {
+func (r *registerSaibsrType) SetLfsdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bsrFieldLfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibsrFieldLfsdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bsrFieldLfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibsrFieldLfsdetMask)
 	}
 }
 
 const (
-	RegisterSai_bsrFieldFlvlShift = 16
-	RegisterSai_bsrFieldFlvlMask  = 0x70000
+	RegisterSaibsrFieldFlvlShift = 16
+	RegisterSaibsrFieldFlvlMask  = 0x70000
 )
 
 // GetFlvl FIFO level threshold. This bit is read only. The FIFO level threshold flag is managed only by hardware and its setting depends on SAI block configuration (transmitter or receiver mode). If the SAI block is configured as transmitter: If SAI block is configured as receiver:
-func (r *registerSai_bsrType) GetFlvl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bsrFieldFlvlMask) >> RegisterSai_bsrFieldFlvlShift)
+func (r *registerSaibsrType) GetFlvl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaibsrFieldFlvlMask) >> RegisterSaibsrFieldFlvlShift)
 }
 
 // SetFlvl FIFO level threshold. This bit is read only. The FIFO level threshold flag is managed only by hardware and its setting depends on SAI block configuration (transmitter or receiver mode). If the SAI block is configured as transmitter: If SAI block is configured as receiver:
-func (r *registerSai_bsrType) SetFlvl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bsrFieldFlvlMask)|(uint32(value)<<RegisterSai_bsrFieldFlvlShift))
+func (r *registerSaibsrType) SetFlvl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibsrFieldFlvlMask)|(uint32(value)<<RegisterSaibsrFieldFlvlShift))
 }
 
-// registerSai_bclrfrType Clear flag register
-type registerSai_bclrfrType uint32
+// registerSaibclrfrType Clear flag register
+type registerSaibclrfrType uint32
 
 const (
-	RegisterSai_bclrfrFieldCovrudrShift = 0
-	RegisterSai_bclrfrFieldCovrudrMask  = 0x1
+	RegisterSaibclrfrFieldCovrudrShift = 0
+	RegisterSaibclrfrFieldCovrudrMask  = 0x1
 )
 
 // GetCovrudr Clear overrun / underrun. This bit is write only. Programming this bit to 1 clears the OVRUDR flag in the SAI_xSR register. Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) GetCovrudr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bclrfrFieldCovrudrMask) != 0
+func (r *registerSaibclrfrType) GetCovrudr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibclrfrFieldCovrudrMask) != 0
 }
 
 // SetCovrudr Clear overrun / underrun. This bit is write only. Programming this bit to 1 clears the OVRUDR flag in the SAI_xSR register. Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) SetCovrudr(value bool) {
+func (r *registerSaibclrfrType) SetCovrudr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bclrfrFieldCovrudrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibclrfrFieldCovrudrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bclrfrFieldCovrudrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibclrfrFieldCovrudrMask)
 	}
 }
 
 const (
-	RegisterSai_bclrfrFieldCmutedetShift = 1
-	RegisterSai_bclrfrFieldCmutedetMask  = 0x2
+	RegisterSaibclrfrFieldCmutedetShift = 1
+	RegisterSaibclrfrFieldCmutedetMask  = 0x2
 )
 
 // GetCmutedet Mute detection flag. This bit is write only. Programming this bit to 1 clears the MUTEDET flag in the SAI_xSR register. Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) GetCmutedet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bclrfrFieldCmutedetMask) != 0
+func (r *registerSaibclrfrType) GetCmutedet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibclrfrFieldCmutedetMask) != 0
 }
 
 // SetCmutedet Mute detection flag. This bit is write only. Programming this bit to 1 clears the MUTEDET flag in the SAI_xSR register. Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) SetCmutedet(value bool) {
+func (r *registerSaibclrfrType) SetCmutedet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bclrfrFieldCmutedetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibclrfrFieldCmutedetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bclrfrFieldCmutedetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibclrfrFieldCmutedetMask)
 	}
 }
 
 const (
-	RegisterSai_bclrfrFieldCwckcfgShift = 2
-	RegisterSai_bclrfrFieldCwckcfgMask  = 0x4
+	RegisterSaibclrfrFieldCwckcfgShift = 2
+	RegisterSaibclrfrFieldCwckcfgMask  = 0x4
 )
 
 // GetCwckcfg Clear wrong clock configuration flag. This bit is write only. Programming this bit to 1 clears the WCKCFG flag in the SAI_xSR register. This bit is used only when the audio block is set as master (MODE[1] = 0) and NODIV = 0 in the SAI_xCR1 register. Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) GetCwckcfg() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bclrfrFieldCwckcfgMask) != 0
+func (r *registerSaibclrfrType) GetCwckcfg() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibclrfrFieldCwckcfgMask) != 0
 }
 
 // SetCwckcfg Clear wrong clock configuration flag. This bit is write only. Programming this bit to 1 clears the WCKCFG flag in the SAI_xSR register. This bit is used only when the audio block is set as master (MODE[1] = 0) and NODIV = 0 in the SAI_xCR1 register. Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) SetCwckcfg(value bool) {
+func (r *registerSaibclrfrType) SetCwckcfg(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bclrfrFieldCwckcfgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibclrfrFieldCwckcfgMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bclrfrFieldCwckcfgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibclrfrFieldCwckcfgMask)
 	}
 }
 
 const (
-	RegisterSai_bclrfrFieldCcnrdyShift = 4
-	RegisterSai_bclrfrFieldCcnrdyMask  = 0x10
+	RegisterSaibclrfrFieldCcnrdyShift = 4
+	RegisterSaibclrfrFieldCcnrdyMask  = 0x10
 )
 
 // GetCcnrdy Clear Codec not ready flag. This bit is write only. Programming this bit to 1 clears the CNRDY flag in the SAI_xSR register. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register. Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) GetCcnrdy() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bclrfrFieldCcnrdyMask) != 0
+func (r *registerSaibclrfrType) GetCcnrdy() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibclrfrFieldCcnrdyMask) != 0
 }
 
 // SetCcnrdy Clear Codec not ready flag. This bit is write only. Programming this bit to 1 clears the CNRDY flag in the SAI_xSR register. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register. Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) SetCcnrdy(value bool) {
+func (r *registerSaibclrfrType) SetCcnrdy(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bclrfrFieldCcnrdyMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibclrfrFieldCcnrdyMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bclrfrFieldCcnrdyMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibclrfrFieldCcnrdyMask)
 	}
 }
 
 const (
-	RegisterSai_bclrfrFieldCafsdetShift = 5
-	RegisterSai_bclrfrFieldCafsdetMask  = 0x20
+	RegisterSaibclrfrFieldCafsdetShift = 5
+	RegisterSaibclrfrFieldCafsdetMask  = 0x20
 )
 
 // GetCafsdet Clear anticipated frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the AFSDET flag in the SAI_xSR register. It is not used in AC97or SPDIF mode. Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) GetCafsdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bclrfrFieldCafsdetMask) != 0
+func (r *registerSaibclrfrType) GetCafsdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibclrfrFieldCafsdetMask) != 0
 }
 
 // SetCafsdet Clear anticipated frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the AFSDET flag in the SAI_xSR register. It is not used in AC97or SPDIF mode. Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) SetCafsdet(value bool) {
+func (r *registerSaibclrfrType) SetCafsdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bclrfrFieldCafsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibclrfrFieldCafsdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bclrfrFieldCafsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibclrfrFieldCafsdetMask)
 	}
 }
 
 const (
-	RegisterSai_bclrfrFieldClfsdetShift = 6
-	RegisterSai_bclrfrFieldClfsdetMask  = 0x40
+	RegisterSaibclrfrFieldClfsdetShift = 6
+	RegisterSaibclrfrFieldClfsdetMask  = 0x40
 )
 
 // GetClfsdet Clear late frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the LFSDET flag in the SAI_xSR register. This bit is not used in AC97or SPDIF mode Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) GetClfsdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_bclrfrFieldClfsdetMask) != 0
+func (r *registerSaibclrfrType) GetClfsdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaibclrfrFieldClfsdetMask) != 0
 }
 
 // SetClfsdet Clear late frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the LFSDET flag in the SAI_xSR register. This bit is not used in AC97or SPDIF mode Reading this bit always returns the value 0.
-func (r *registerSai_bclrfrType) SetClfsdet(value bool) {
+func (r *registerSaibclrfrType) SetClfsdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_bclrfrFieldClfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaibclrfrFieldClfsdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_bclrfrFieldClfsdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaibclrfrFieldClfsdetMask)
 	}
 }
 
-// registerSai_bdrType Data register
-type registerSai_bdrType uint32
+// registerSaibdrType Data register
+type registerSaibdrType uint32
 
 const (
-	RegisterSai_bdrFieldDataShift = 0
-	RegisterSai_bdrFieldDataMask  = 0xffffffff
+	RegisterSaibdrFieldDataShift = 0
+	RegisterSaibdrFieldDataMask  = 0xffffffff
 )
 
 // GetData Data A write to this register loads the FIFO provided the FIFO is not full. A read from this register empties the FIFO if the FIFO is not empty.
-func (r *registerSai_bdrType) GetData() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterSai_bdrFieldDataMask) >> RegisterSai_bdrFieldDataShift)
+func (r *registerSaibdrType) GetData() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterSaibdrFieldDataMask) >> RegisterSaibdrFieldDataShift)
 }
 
 // SetData Data A write to this register loads the FIFO provided the FIFO is not full. A read from this register empties the FIFO if the FIFO is not empty.
-func (r *registerSai_bdrType) SetData(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_bdrFieldDataMask)|(uint32(value)<<RegisterSai_bdrFieldDataShift))
+func (r *registerSaibdrType) SetData(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaibdrFieldDataMask)|(uint32(value)<<RegisterSaibdrFieldDataShift))
 }
 
-// registerSai_pdmcrType PDM control register
-type registerSai_pdmcrType uint32
+// registerSaipdmcrType PDM control register
+type registerSaipdmcrType uint32
 
 const (
-	RegisterSai_pdmcrFieldPdmenShift = 0
-	RegisterSai_pdmcrFieldPdmenMask  = 0x1
+	RegisterSaipdmcrFieldPdmenShift = 0
+	RegisterSaipdmcrFieldPdmenMask  = 0x1
 )
 
 // GetPdmen PDM enable
-func (r *registerSai_pdmcrType) GetPdmen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmcrFieldPdmenMask) != 0
+func (r *registerSaipdmcrType) GetPdmen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmcrFieldPdmenMask) != 0
 }
 
 // SetPdmen PDM enable
-func (r *registerSai_pdmcrType) SetPdmen(value bool) {
+func (r *registerSaipdmcrType) SetPdmen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_pdmcrFieldPdmenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaipdmcrFieldPdmenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmcrFieldPdmenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmcrFieldPdmenMask)
 	}
 }
 
 const (
-	RegisterSai_pdmcrFieldMicnbrShift = 4
-	RegisterSai_pdmcrFieldMicnbrMask  = 0x30
+	RegisterSaipdmcrFieldMicnbrShift = 4
+	RegisterSaipdmcrFieldMicnbrMask  = 0x30
 )
 
 // GetMicnbr Number of microphones
-func (r *registerSai_pdmcrType) GetMicnbr() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmcrFieldMicnbrMask) >> RegisterSai_pdmcrFieldMicnbrShift)
+func (r *registerSaipdmcrType) GetMicnbr() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmcrFieldMicnbrMask) >> RegisterSaipdmcrFieldMicnbrShift)
 }
 
 // SetMicnbr Number of microphones
-func (r *registerSai_pdmcrType) SetMicnbr(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmcrFieldMicnbrMask)|(uint32(value)<<RegisterSai_pdmcrFieldMicnbrShift))
+func (r *registerSaipdmcrType) SetMicnbr(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmcrFieldMicnbrMask)|(uint32(value)<<RegisterSaipdmcrFieldMicnbrShift))
 }
 
 const (
-	RegisterSai_pdmcrFieldCken1Shift = 8
-	RegisterSai_pdmcrFieldCken1Mask  = 0x100
+	RegisterSaipdmcrFieldCken1Shift = 8
+	RegisterSaipdmcrFieldCken1Mask  = 0x100
 )
 
 // GetCken1 Clock enable of bitstream clock number 1
-func (r *registerSai_pdmcrType) GetCken1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmcrFieldCken1Mask) != 0
+func (r *registerSaipdmcrType) GetCken1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmcrFieldCken1Mask) != 0
 }
 
 // SetCken1 Clock enable of bitstream clock number 1
-func (r *registerSai_pdmcrType) SetCken1(value bool) {
+func (r *registerSaipdmcrType) SetCken1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_pdmcrFieldCken1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaipdmcrFieldCken1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmcrFieldCken1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmcrFieldCken1Mask)
 	}
 }
 
 const (
-	RegisterSai_pdmcrFieldCken2Shift = 9
-	RegisterSai_pdmcrFieldCken2Mask  = 0x200
+	RegisterSaipdmcrFieldCken2Shift = 9
+	RegisterSaipdmcrFieldCken2Mask  = 0x200
 )
 
 // GetCken2 Clock enable of bitstream clock number 2
-func (r *registerSai_pdmcrType) GetCken2() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmcrFieldCken2Mask) != 0
+func (r *registerSaipdmcrType) GetCken2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmcrFieldCken2Mask) != 0
 }
 
 // SetCken2 Clock enable of bitstream clock number 2
-func (r *registerSai_pdmcrType) SetCken2(value bool) {
+func (r *registerSaipdmcrType) SetCken2(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_pdmcrFieldCken2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaipdmcrFieldCken2Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmcrFieldCken2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmcrFieldCken2Mask)
 	}
 }
 
 const (
-	RegisterSai_pdmcrFieldCken3Shift = 10
-	RegisterSai_pdmcrFieldCken3Mask  = 0x400
+	RegisterSaipdmcrFieldCken3Shift = 10
+	RegisterSaipdmcrFieldCken3Mask  = 0x400
 )
 
 // GetCken3 Clock enable of bitstream clock number 3
-func (r *registerSai_pdmcrType) GetCken3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmcrFieldCken3Mask) != 0
+func (r *registerSaipdmcrType) GetCken3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmcrFieldCken3Mask) != 0
 }
 
 // SetCken3 Clock enable of bitstream clock number 3
-func (r *registerSai_pdmcrType) SetCken3(value bool) {
+func (r *registerSaipdmcrType) SetCken3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_pdmcrFieldCken3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaipdmcrFieldCken3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmcrFieldCken3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmcrFieldCken3Mask)
 	}
 }
 
 const (
-	RegisterSai_pdmcrFieldCken4Shift = 11
-	RegisterSai_pdmcrFieldCken4Mask  = 0x800
+	RegisterSaipdmcrFieldCken4Shift = 11
+	RegisterSaipdmcrFieldCken4Mask  = 0x800
 )
 
 // GetCken4 Clock enable of bitstream clock number 4
-func (r *registerSai_pdmcrType) GetCken4() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmcrFieldCken4Mask) != 0
+func (r *registerSaipdmcrType) GetCken4() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmcrFieldCken4Mask) != 0
 }
 
 // SetCken4 Clock enable of bitstream clock number 4
-func (r *registerSai_pdmcrType) SetCken4(value bool) {
+func (r *registerSaipdmcrType) SetCken4(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSai_pdmcrFieldCken4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSaipdmcrFieldCken4Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmcrFieldCken4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmcrFieldCken4Mask)
 	}
 }
 
-// registerSai_pdmdlyType PDM delay register
-type registerSai_pdmdlyType uint32
+// registerSaipdmdlyType PDM delay register
+type registerSaipdmdlyType uint32
 
 const (
-	RegisterSai_pdmdlyFieldDlym1lShift = 0
-	RegisterSai_pdmdlyFieldDlym1lMask  = 0x7
+	RegisterSaipdmdlyFieldDlym1lShift = 0
+	RegisterSaipdmdlyFieldDlym1lMask  = 0x7
 )
 
 // GetDlym1l Delay line adjust for first microphone of pair 1
-func (r *registerSai_pdmdlyType) GetDlym1l() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmdlyFieldDlym1lMask) >> RegisterSai_pdmdlyFieldDlym1lShift)
+func (r *registerSaipdmdlyType) GetDlym1l() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmdlyFieldDlym1lMask) >> RegisterSaipdmdlyFieldDlym1lShift)
 }
 
 // SetDlym1l Delay line adjust for first microphone of pair 1
-func (r *registerSai_pdmdlyType) SetDlym1l(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmdlyFieldDlym1lMask)|(uint32(value)<<RegisterSai_pdmdlyFieldDlym1lShift))
+func (r *registerSaipdmdlyType) SetDlym1l(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmdlyFieldDlym1lMask)|(uint32(value)<<RegisterSaipdmdlyFieldDlym1lShift))
 }
 
 const (
-	RegisterSai_pdmdlyFieldDlym1rShift = 4
-	RegisterSai_pdmdlyFieldDlym1rMask  = 0x70
+	RegisterSaipdmdlyFieldDlym1rShift = 4
+	RegisterSaipdmdlyFieldDlym1rMask  = 0x70
 )
 
 // GetDlym1r Delay line adjust for second microphone of pair 1
-func (r *registerSai_pdmdlyType) GetDlym1r() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmdlyFieldDlym1rMask) >> RegisterSai_pdmdlyFieldDlym1rShift)
+func (r *registerSaipdmdlyType) GetDlym1r() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmdlyFieldDlym1rMask) >> RegisterSaipdmdlyFieldDlym1rShift)
 }
 
 // SetDlym1r Delay line adjust for second microphone of pair 1
-func (r *registerSai_pdmdlyType) SetDlym1r(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmdlyFieldDlym1rMask)|(uint32(value)<<RegisterSai_pdmdlyFieldDlym1rShift))
+func (r *registerSaipdmdlyType) SetDlym1r(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmdlyFieldDlym1rMask)|(uint32(value)<<RegisterSaipdmdlyFieldDlym1rShift))
 }
 
 const (
-	RegisterSai_pdmdlyFieldDlym2lShift = 8
-	RegisterSai_pdmdlyFieldDlym2lMask  = 0x700
+	RegisterSaipdmdlyFieldDlym2lShift = 8
+	RegisterSaipdmdlyFieldDlym2lMask  = 0x700
 )
 
 // GetDlym2l Delay line for first microphone of pair 2
-func (r *registerSai_pdmdlyType) GetDlym2l() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmdlyFieldDlym2lMask) >> RegisterSai_pdmdlyFieldDlym2lShift)
+func (r *registerSaipdmdlyType) GetDlym2l() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmdlyFieldDlym2lMask) >> RegisterSaipdmdlyFieldDlym2lShift)
 }
 
 // SetDlym2l Delay line for first microphone of pair 2
-func (r *registerSai_pdmdlyType) SetDlym2l(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmdlyFieldDlym2lMask)|(uint32(value)<<RegisterSai_pdmdlyFieldDlym2lShift))
+func (r *registerSaipdmdlyType) SetDlym2l(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmdlyFieldDlym2lMask)|(uint32(value)<<RegisterSaipdmdlyFieldDlym2lShift))
 }
 
 const (
-	RegisterSai_pdmdlyFieldDlym2rShift = 12
-	RegisterSai_pdmdlyFieldDlym2rMask  = 0x7000
+	RegisterSaipdmdlyFieldDlym2rShift = 12
+	RegisterSaipdmdlyFieldDlym2rMask  = 0x7000
 )
 
 // GetDlym2r Delay line for second microphone of pair 2
-func (r *registerSai_pdmdlyType) GetDlym2r() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmdlyFieldDlym2rMask) >> RegisterSai_pdmdlyFieldDlym2rShift)
+func (r *registerSaipdmdlyType) GetDlym2r() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmdlyFieldDlym2rMask) >> RegisterSaipdmdlyFieldDlym2rShift)
 }
 
 // SetDlym2r Delay line for second microphone of pair 2
-func (r *registerSai_pdmdlyType) SetDlym2r(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmdlyFieldDlym2rMask)|(uint32(value)<<RegisterSai_pdmdlyFieldDlym2rShift))
+func (r *registerSaipdmdlyType) SetDlym2r(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmdlyFieldDlym2rMask)|(uint32(value)<<RegisterSaipdmdlyFieldDlym2rShift))
 }
 
 const (
-	RegisterSai_pdmdlyFieldDlym3lShift = 16
-	RegisterSai_pdmdlyFieldDlym3lMask  = 0x70000
+	RegisterSaipdmdlyFieldDlym3lShift = 16
+	RegisterSaipdmdlyFieldDlym3lMask  = 0x70000
 )
 
 // GetDlym3l Delay line for first microphone of pair 3
-func (r *registerSai_pdmdlyType) GetDlym3l() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmdlyFieldDlym3lMask) >> RegisterSai_pdmdlyFieldDlym3lShift)
+func (r *registerSaipdmdlyType) GetDlym3l() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmdlyFieldDlym3lMask) >> RegisterSaipdmdlyFieldDlym3lShift)
 }
 
 // SetDlym3l Delay line for first microphone of pair 3
-func (r *registerSai_pdmdlyType) SetDlym3l(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmdlyFieldDlym3lMask)|(uint32(value)<<RegisterSai_pdmdlyFieldDlym3lShift))
+func (r *registerSaipdmdlyType) SetDlym3l(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmdlyFieldDlym3lMask)|(uint32(value)<<RegisterSaipdmdlyFieldDlym3lShift))
 }
 
 const (
-	RegisterSai_pdmdlyFieldDlym3rShift = 20
-	RegisterSai_pdmdlyFieldDlym3rMask  = 0x700000
+	RegisterSaipdmdlyFieldDlym3rShift = 20
+	RegisterSaipdmdlyFieldDlym3rMask  = 0x700000
 )
 
 // GetDlym3r Delay line for second microphone of pair 3
-func (r *registerSai_pdmdlyType) GetDlym3r() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmdlyFieldDlym3rMask) >> RegisterSai_pdmdlyFieldDlym3rShift)
+func (r *registerSaipdmdlyType) GetDlym3r() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmdlyFieldDlym3rMask) >> RegisterSaipdmdlyFieldDlym3rShift)
 }
 
 // SetDlym3r Delay line for second microphone of pair 3
-func (r *registerSai_pdmdlyType) SetDlym3r(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmdlyFieldDlym3rMask)|(uint32(value)<<RegisterSai_pdmdlyFieldDlym3rShift))
+func (r *registerSaipdmdlyType) SetDlym3r(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmdlyFieldDlym3rMask)|(uint32(value)<<RegisterSaipdmdlyFieldDlym3rShift))
 }
 
 const (
-	RegisterSai_pdmdlyFieldDlym4lShift = 24
-	RegisterSai_pdmdlyFieldDlym4lMask  = 0x7000000
+	RegisterSaipdmdlyFieldDlym4lShift = 24
+	RegisterSaipdmdlyFieldDlym4lMask  = 0x7000000
 )
 
 // GetDlym4l Delay line for first microphone of pair 4
-func (r *registerSai_pdmdlyType) GetDlym4l() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmdlyFieldDlym4lMask) >> RegisterSai_pdmdlyFieldDlym4lShift)
+func (r *registerSaipdmdlyType) GetDlym4l() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmdlyFieldDlym4lMask) >> RegisterSaipdmdlyFieldDlym4lShift)
 }
 
 // SetDlym4l Delay line for first microphone of pair 4
-func (r *registerSai_pdmdlyType) SetDlym4l(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmdlyFieldDlym4lMask)|(uint32(value)<<RegisterSai_pdmdlyFieldDlym4lShift))
+func (r *registerSaipdmdlyType) SetDlym4l(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmdlyFieldDlym4lMask)|(uint32(value)<<RegisterSaipdmdlyFieldDlym4lShift))
 }
 
 const (
-	RegisterSai_pdmdlyFieldDlym4rShift = 28
-	RegisterSai_pdmdlyFieldDlym4rMask  = 0x70000000
+	RegisterSaipdmdlyFieldDlym4rShift = 28
+	RegisterSaipdmdlyFieldDlym4rMask  = 0x70000000
 )
 
 // GetDlym4r Delay line for second microphone of pair 4
-func (r *registerSai_pdmdlyType) GetDlym4r() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSai_pdmdlyFieldDlym4rMask) >> RegisterSai_pdmdlyFieldDlym4rShift)
+func (r *registerSaipdmdlyType) GetDlym4r() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSaipdmdlyFieldDlym4rMask) >> RegisterSaipdmdlyFieldDlym4rShift)
 }
 
 // SetDlym4r Delay line for second microphone of pair 4
-func (r *registerSai_pdmdlyType) SetDlym4r(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSai_pdmdlyFieldDlym4rMask)|(uint32(value)<<RegisterSai_pdmdlyFieldDlym4rShift))
+func (r *registerSaipdmdlyType) SetDlym4r(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSaipdmdlyFieldDlym4rMask)|(uint32(value)<<RegisterSaipdmdlyFieldDlym4rShift))
 }

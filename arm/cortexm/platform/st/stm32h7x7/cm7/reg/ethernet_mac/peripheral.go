@@ -12,171 +12,171 @@ var (
 )
 
 type _ethernet_mac struct {
-	Maccr                              registerMaccrType
-	Macecr                             registerMacecrType
-	Macpfr                             registerMacpfrType
-	Macwtr                             registerMacwtrType
-	Macht0r                            registerMacht0rType
-	Macht1r                            registerMacht1rType
-	_                                  [56]byte
-	Macvtr                             registerMacvtrType
-	_                                  [4]byte
-	Macvhtr                            registerMacvhtrType
-	_                                  [4]byte
-	Macvir                             registerMacvirType
-	Macivir                            registerMacivirType
-	_                                  [8]byte
-	Macqtxfcr                          registerMacqtxfcrType
-	_                                  [28]byte
-	Macrxfcr                           registerMacrxfcrType
-	_                                  [28]byte
-	Macisr                             registerMacisrType
-	Macier                             registerMacierType
-	Macrxtxsr                          registerMacrxtxsrType
-	_                                  [4]byte
-	Macpcsr                            registerMacpcsrType
-	Macrwkpfr                          registerMacrwkpfrType
-	_                                  [8]byte
-	Maclcsr                            registerMaclcsrType
-	Macltcr                            registerMacltcrType
-	Macletr                            registerMacletrType
-	Mac1ustcr                          registerMac1ustcrType
-	_                                  [48]byte
-	Macvr                              registerMacvrType
-	Macdr                              registerMacdrType
-	_                                  [8]byte
-	Machwf1r                           registerMachwf1rType
-	Machwf2r                           registerMachwf2rType
-	_                                  [216]byte
-	Macmdioar                          registerMacmdioarType
-	Macmdiodr                          registerMacmdiodrType
-	_                                  [248]byte
-	Maca0hr                            registerMaca0hrType
-	Maca0lr                            registerMaca0lrType
-	Maca1hr                            registerMaca1hrType
-	Maca1lr                            registerMaca1lrType
-	Maca2hr                            registerMaca2hrType
-	Maca2lr                            registerMaca2lrType
-	Maca3hr                            registerMaca3hrType
-	Maca3lr                            registerMaca3lrType
-	_                                  [992]byte
-	Mmc_control                        registerMmc_controlType
-	Mmc_rx_interrupt                   registerMmc_rx_interruptType
-	Mmc_tx_interrupt                   registerMmc_tx_interruptType
-	Mmc_rx_interrupt_mask              registerMmc_rx_interrupt_maskType
-	Mmc_tx_interrupt_mask              registerMmc_tx_interrupt_maskType
-	_                                  [56]byte
-	Tx_single_collision_good_packets   registerTx_single_collision_good_packetsType
-	Tx_multiple_collision_good_packets registerTx_multiple_collision_good_packetsType
-	_                                  [20]byte
-	Tx_packet_count_good               registerTx_packet_count_goodType
-	_                                  [40]byte
-	Rx_crc_error_packets               registerRx_crc_error_packetsType
-	Rx_alignment_error_packets         registerRx_alignment_error_packetsType
-	_                                  [40]byte
-	Rx_unicast_packets_good            registerRx_unicast_packets_goodType
-	_                                  [36]byte
-	Tx_lpi_usec_cntr                   registerTx_lpi_usec_cntrType
-	Tx_lpi_tran_cntr                   registerTx_lpi_tran_cntrType
-	Rx_lpi_usec_cntr                   registerRx_lpi_usec_cntrType
-	Rx_lpi_tran_cntr                   registerRx_lpi_tran_cntrType
-	_                                  [260]byte
-	Macl3l4c0r                         registerMacl3l4c0rType
-	Macl4a0r                           registerMacl4a0rType
-	_                                  [8]byte
-	Macl3a00r                          registerMacl3a00rType
-	Macl3a10r                          registerMacl3a10rType
-	Macl3a20                           registerMacl3a20Type
-	Macl3a30                           registerMacl3a30Type
-	_                                  [16]byte
-	Macl3l4c1r                         registerMacl3l4c1rType
-	Macl4a1r                           registerMacl4a1rType
-	_                                  [8]byte
-	Macl3a01r                          registerMacl3a01rType
-	Macl3a11r                          registerMacl3a11rType
-	Macl3a21r                          registerMacl3a21rType
-	Macl3a31r                          registerMacl3a31rType
-	_                                  [400]byte
-	Macarpar                           registerMacarparType
-	_                                  [28]byte
-	Mactscr                            registerMactscrType
-	Macssir                            registerMacssirType
-	Macstsr                            registerMacstsrType
-	Macstnr                            registerMacstnrType
-	Macstsur                           registerMacstsurType
-	Macstnur                           registerMacstnurType
-	Mactsar                            registerMactsarType
-	_                                  [4]byte
-	Mactssr                            registerMactssrType
-	_                                  [12]byte
-	Mactxtssnr                         registerMactxtssnrType
-	Mactxtsssr                         registerMactxtsssrType
-	_                                  [8]byte
-	Macacr                             registerMacacrType
-	_                                  [4]byte
-	Macatsnr                           registerMacatsnrType
-	Macatssr                           registerMacatssrType
-	Mactsiacr                          registerMactsiacrType
-	Mactseacr                          registerMactseacrType
-	Mactsicnr                          registerMactsicnrType
-	Mactsecnr                          registerMactsecnrType
-	_                                  [16]byte
-	Macppscr                           registerMacppscrType
-	_                                  [12]byte
-	Macppsttsr                         registerMacppsttsrType
-	Macppsttnr                         registerMacppsttnrType
-	Macppsir                           registerMacppsirType
-	Macppswr                           registerMacppswrType
-	_                                  [48]byte
-	Macpocr                            registerMacpocrType
-	Macspi0r                           registerMacspi0rType
-	Macspi1r                           registerMacspi1rType
-	Macspi2r                           registerMacspi2rType
-	Maclmir                            registerMaclmirType
-	_                                  [44]byte
-	Mtlomr                             registerMtlomrType
-	_                                  [28]byte
-	Mtlisr                             registerMtlisrType
-	_                                  [220]byte
-	Mtltxqomr                          registerMtltxqomrType
-	Mtltxqur                           registerMtltxqurType
-	Mtltxqdr                           registerMtltxqdrType
-	_                                  [32]byte
-	Mtlqicsr                           registerMtlqicsrType
-	Mtlrxqomr                          registerMtlrxqomrType
-	Mtlrxqmpocr                        registerMtlrxqmpocrType
-	Mtlrxqdr                           registerMtlrxqdrType
-	_                                  [708]byte
-	Dmamr                              registerDmamrType
-	Dmasbmr                            registerDmasbmrType
-	Dmaisr                             registerDmaisrType
-	Dmadsr                             registerDmadsrType
-	_                                  [240]byte
-	Dmaccr                             registerDmaccrType
-	Dmactxcr                           registerDmactxcrType
-	Dmacrxcr                           registerDmacrxcrType
-	_                                  [8]byte
-	Dmactxdlar                         registerDmactxdlarType
-	_                                  [4]byte
-	Dmacrxdlar                         registerDmacrxdlarType
-	Dmactxdtpr                         registerDmactxdtprType
-	_                                  [4]byte
-	Dmacrxdtpr                         registerDmacrxdtprType
-	Dmactxrlr                          registerDmactxrlrType
-	Dmacrxrlr                          registerDmacrxrlrType
-	Dmacier                            registerDmacierType
-	Dmacrxiwtr                         registerDmacrxiwtrType
-	_                                  [8]byte
-	Dmaccatxdr                         registerDmaccatxdrType
-	_                                  [4]byte
-	Dmaccarxdr                         registerDmaccarxdrType
-	_                                  [4]byte
-	Dmaccatxbr                         registerDmaccatxbrType
-	_                                  [4]byte
-	Dmaccarxbr                         registerDmaccarxbrType
-	Dmacsr                             registerDmacsrType
-	_                                  [8]byte
-	Dmacmfcr                           registerDmacmfcrType
+	Maccr                          registerMaccrType
+	Macecr                         registerMacecrType
+	Macpfr                         registerMacpfrType
+	Macwtr                         registerMacwtrType
+	Macht0r                        registerMacht0rType
+	Macht1r                        registerMacht1rType
+	_                              [56]byte
+	Macvtr                         registerMacvtrType
+	_                              [4]byte
+	Macvhtr                        registerMacvhtrType
+	_                              [4]byte
+	Macvir                         registerMacvirType
+	Macivir                        registerMacivirType
+	_                              [8]byte
+	Macqtxfcr                      registerMacqtxfcrType
+	_                              [28]byte
+	Macrxfcr                       registerMacrxfcrType
+	_                              [28]byte
+	Macisr                         registerMacisrType
+	Macier                         registerMacierType
+	Macrxtxsr                      registerMacrxtxsrType
+	_                              [4]byte
+	Macpcsr                        registerMacpcsrType
+	Macrwkpfr                      registerMacrwkpfrType
+	_                              [8]byte
+	Maclcsr                        registerMaclcsrType
+	Macltcr                        registerMacltcrType
+	Macletr                        registerMacletrType
+	Mac1ustcr                      registerMac1ustcrType
+	_                              [48]byte
+	Macvr                          registerMacvrType
+	Macdr                          registerMacdrType
+	_                              [8]byte
+	Machwf1r                       registerMachwf1rType
+	Machwf2r                       registerMachwf2rType
+	_                              [216]byte
+	Macmdioar                      registerMacmdioarType
+	Macmdiodr                      registerMacmdiodrType
+	_                              [248]byte
+	Maca0hr                        registerMaca0hrType
+	Maca0lr                        registerMaca0lrType
+	Maca1hr                        registerMaca1hrType
+	Maca1lr                        registerMaca1lrType
+	Maca2hr                        registerMaca2hrType
+	Maca2lr                        registerMaca2lrType
+	Maca3hr                        registerMaca3hrType
+	Maca3lr                        registerMaca3lrType
+	_                              [992]byte
+	Mmccontrol                     registerMmccontrolType
+	Mmcrxinterrupt                 registerMmcrxinterruptType
+	Mmctxinterrupt                 registerMmctxinterruptType
+	Mmcrxinterruptmask             registerMmcrxinterruptmaskType
+	Mmctxinterruptmask             registerMmctxinterruptmaskType
+	_                              [56]byte
+	Txsinglecollisiongoodpackets   registerTxsinglecollisiongoodpacketsType
+	Txmultiplecollisiongoodpackets registerTxmultiplecollisiongoodpacketsType
+	_                              [20]byte
+	Txpacketcountgood              registerTxpacketcountgoodType
+	_                              [40]byte
+	Rxcrcerrorpackets              registerRxcrcerrorpacketsType
+	Rxalignmenterrorpackets        registerRxalignmenterrorpacketsType
+	_                              [40]byte
+	Rxunicastpacketsgood           registerRxunicastpacketsgoodType
+	_                              [36]byte
+	Txlpiuseccntr                  registerTxlpiuseccntrType
+	Txlpitrancntr                  registerTxlpitrancntrType
+	Rxlpiuseccntr                  registerRxlpiuseccntrType
+	Rxlpitrancntr                  registerRxlpitrancntrType
+	_                              [260]byte
+	Macl3l4c0r                     registerMacl3l4c0rType
+	Macl4a0r                       registerMacl4a0rType
+	_                              [8]byte
+	Macl3a00r                      registerMacl3a00rType
+	Macl3a10r                      registerMacl3a10rType
+	Macl3a20                       registerMacl3a20Type
+	Macl3a30                       registerMacl3a30Type
+	_                              [16]byte
+	Macl3l4c1r                     registerMacl3l4c1rType
+	Macl4a1r                       registerMacl4a1rType
+	_                              [8]byte
+	Macl3a01r                      registerMacl3a01rType
+	Macl3a11r                      registerMacl3a11rType
+	Macl3a21r                      registerMacl3a21rType
+	Macl3a31r                      registerMacl3a31rType
+	_                              [400]byte
+	Macarpar                       registerMacarparType
+	_                              [28]byte
+	Mactscr                        registerMactscrType
+	Macssir                        registerMacssirType
+	Macstsr                        registerMacstsrType
+	Macstnr                        registerMacstnrType
+	Macstsur                       registerMacstsurType
+	Macstnur                       registerMacstnurType
+	Mactsar                        registerMactsarType
+	_                              [4]byte
+	Mactssr                        registerMactssrType
+	_                              [12]byte
+	Mactxtssnr                     registerMactxtssnrType
+	Mactxtsssr                     registerMactxtsssrType
+	_                              [8]byte
+	Macacr                         registerMacacrType
+	_                              [4]byte
+	Macatsnr                       registerMacatsnrType
+	Macatssr                       registerMacatssrType
+	Mactsiacr                      registerMactsiacrType
+	Mactseacr                      registerMactseacrType
+	Mactsicnr                      registerMactsicnrType
+	Mactsecnr                      registerMactsecnrType
+	_                              [16]byte
+	Macppscr                       registerMacppscrType
+	_                              [12]byte
+	Macppsttsr                     registerMacppsttsrType
+	Macppsttnr                     registerMacppsttnrType
+	Macppsir                       registerMacppsirType
+	Macppswr                       registerMacppswrType
+	_                              [48]byte
+	Macpocr                        registerMacpocrType
+	Macspi0r                       registerMacspi0rType
+	Macspi1r                       registerMacspi1rType
+	Macspi2r                       registerMacspi2rType
+	Maclmir                        registerMaclmirType
+	_                              [44]byte
+	Mtlomr                         registerMtlomrType
+	_                              [28]byte
+	Mtlisr                         registerMtlisrType
+	_                              [220]byte
+	Mtltxqomr                      registerMtltxqomrType
+	Mtltxqur                       registerMtltxqurType
+	Mtltxqdr                       registerMtltxqdrType
+	_                              [32]byte
+	Mtlqicsr                       registerMtlqicsrType
+	Mtlrxqomr                      registerMtlrxqomrType
+	Mtlrxqmpocr                    registerMtlrxqmpocrType
+	Mtlrxqdr                       registerMtlrxqdrType
+	_                              [708]byte
+	Dmamr                          registerDmamrType
+	Dmasbmr                        registerDmasbmrType
+	Dmaisr                         registerDmaisrType
+	Dmadsr                         registerDmadsrType
+	_                              [240]byte
+	Dmaccr                         registerDmaccrType
+	Dmactxcr                       registerDmactxcrType
+	Dmacrxcr                       registerDmacrxcrType
+	_                              [8]byte
+	Dmactxdlar                     registerDmactxdlarType
+	_                              [4]byte
+	Dmacrxdlar                     registerDmacrxdlarType
+	Dmactxdtpr                     registerDmactxdtprType
+	_                              [4]byte
+	Dmacrxdtpr                     registerDmacrxdtprType
+	Dmactxrlr                      registerDmactxrlrType
+	Dmacrxrlr                      registerDmacrxrlrType
+	Dmacier                        registerDmacierType
+	Dmacrxiwtr                     registerDmacrxiwtrType
+	_                              [8]byte
+	Dmaccatxdr                     registerDmaccatxdrType
+	_                              [4]byte
+	Dmaccarxdr                     registerDmaccarxdrType
+	_                              [4]byte
+	Dmaccatxbr                     registerDmaccatxbrType
+	_                              [4]byte
+	Dmaccarxbr                     registerDmaccarxbrType
+	Dmacsr                         registerDmacsrType
+	_                              [8]byte
+	Dmacmfcr                       registerDmacmfcrType
 }
 
 // registerMaccrType Operating mode configuration register
@@ -1490,21 +1490,21 @@ func (r *registerMacivirType) SetVlti(value bool) {
 type registerMacqtxfcrType uint32
 
 const (
-	RegisterMacqtxfcrFieldFcb_bpaShift = 0
-	RegisterMacqtxfcrFieldFcb_bpaMask  = 0x1
+	RegisterMacqtxfcrFieldFcbbpaShift = 0
+	RegisterMacqtxfcrFieldFcbbpaMask  = 0x1
 )
 
-// GetFcb_bpa FCB_BPA
-func (r *registerMacqtxfcrType) GetFcb_bpa() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMacqtxfcrFieldFcb_bpaMask) != 0
+// GetFcbbpa FCB_BPA
+func (r *registerMacqtxfcrType) GetFcbbpa() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMacqtxfcrFieldFcbbpaMask) != 0
 }
 
-// SetFcb_bpa FCB_BPA
-func (r *registerMacqtxfcrType) SetFcb_bpa(value bool) {
+// SetFcbbpa FCB_BPA
+func (r *registerMacqtxfcrType) SetFcbbpa(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMacqtxfcrFieldFcb_bpaMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMacqtxfcrFieldFcbbpaMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMacqtxfcrFieldFcb_bpaMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMacqtxfcrFieldFcbbpaMask)
 	}
 }
 
@@ -2446,18 +2446,18 @@ func (r *registerMacletrType) SetLpiet(value uint32) {
 type registerMac1ustcrType uint32
 
 const (
-	RegisterMac1ustcrFieldTic_1us_cntrShift = 0
-	RegisterMac1ustcrFieldTic_1us_cntrMask  = 0xfff
+	RegisterMac1ustcrFieldTic1uscntrShift = 0
+	RegisterMac1ustcrFieldTic1uscntrMask  = 0xfff
 )
 
-// GetTic_1us_cntr TIC_1US_CNTR
-func (r *registerMac1ustcrType) GetTic_1us_cntr() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMac1ustcrFieldTic_1us_cntrMask) >> RegisterMac1ustcrFieldTic_1us_cntrShift)
+// GetTic1uscntr TIC_1US_CNTR
+func (r *registerMac1ustcrType) GetTic1uscntr() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMac1ustcrFieldTic1uscntrMask) >> RegisterMac1ustcrFieldTic1uscntrShift)
 }
 
-// SetTic_1us_cntr TIC_1US_CNTR
-func (r *registerMac1ustcrType) SetTic_1us_cntr(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMac1ustcrFieldTic_1us_cntrMask)|(uint32(value)<<RegisterMac1ustcrFieldTic_1us_cntrShift))
+// SetTic1uscntr TIC_1US_CNTR
+func (r *registerMac1ustcrType) SetTic1uscntr(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMac1ustcrFieldTic1uscntrMask)|(uint32(value)<<RegisterMac1ustcrFieldTic1uscntrShift))
 }
 
 // registerMacvrType Version register
@@ -3391,694 +3391,694 @@ func (r *registerMaca3lrType) SetAddrlo(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMaca3lrFieldAddrloMask)|(uint32(value)<<RegisterMaca3lrFieldAddrloShift))
 }
 
-// registerMmc_controlType MMC control register
-type registerMmc_controlType uint32
+// registerMmccontrolType MMC control register
+type registerMmccontrolType uint32
 
 const (
-	RegisterMmc_controlFieldCntrstShift = 0
-	RegisterMmc_controlFieldCntrstMask  = 0x1
+	RegisterMmccontrolFieldCntrstShift = 0
+	RegisterMmccontrolFieldCntrstMask  = 0x1
 )
 
 // GetCntrst CNTRST
-func (r *registerMmc_controlType) GetCntrst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_controlFieldCntrstMask) != 0
+func (r *registerMmccontrolType) GetCntrst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmccontrolFieldCntrstMask) != 0
 }
 
 // SetCntrst CNTRST
-func (r *registerMmc_controlType) SetCntrst(value bool) {
+func (r *registerMmccontrolType) SetCntrst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_controlFieldCntrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmccontrolFieldCntrstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_controlFieldCntrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmccontrolFieldCntrstMask)
 	}
 }
 
 const (
-	RegisterMmc_controlFieldCntstoproShift = 1
-	RegisterMmc_controlFieldCntstoproMask  = 0x2
+	RegisterMmccontrolFieldCntstoproShift = 1
+	RegisterMmccontrolFieldCntstoproMask  = 0x2
 )
 
 // GetCntstopro CNTSTOPRO
-func (r *registerMmc_controlType) GetCntstopro() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_controlFieldCntstoproMask) != 0
+func (r *registerMmccontrolType) GetCntstopro() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmccontrolFieldCntstoproMask) != 0
 }
 
 // SetCntstopro CNTSTOPRO
-func (r *registerMmc_controlType) SetCntstopro(value bool) {
+func (r *registerMmccontrolType) SetCntstopro(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_controlFieldCntstoproMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmccontrolFieldCntstoproMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_controlFieldCntstoproMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmccontrolFieldCntstoproMask)
 	}
 }
 
 const (
-	RegisterMmc_controlFieldRstonrdShift = 2
-	RegisterMmc_controlFieldRstonrdMask  = 0x4
+	RegisterMmccontrolFieldRstonrdShift = 2
+	RegisterMmccontrolFieldRstonrdMask  = 0x4
 )
 
 // GetRstonrd RSTONRD
-func (r *registerMmc_controlType) GetRstonrd() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_controlFieldRstonrdMask) != 0
+func (r *registerMmccontrolType) GetRstonrd() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmccontrolFieldRstonrdMask) != 0
 }
 
 // SetRstonrd RSTONRD
-func (r *registerMmc_controlType) SetRstonrd(value bool) {
+func (r *registerMmccontrolType) SetRstonrd(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_controlFieldRstonrdMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmccontrolFieldRstonrdMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_controlFieldRstonrdMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmccontrolFieldRstonrdMask)
 	}
 }
 
 const (
-	RegisterMmc_controlFieldCntfreezShift = 3
-	RegisterMmc_controlFieldCntfreezMask  = 0x8
+	RegisterMmccontrolFieldCntfreezShift = 3
+	RegisterMmccontrolFieldCntfreezMask  = 0x8
 )
 
 // GetCntfreez CNTFREEZ
-func (r *registerMmc_controlType) GetCntfreez() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_controlFieldCntfreezMask) != 0
+func (r *registerMmccontrolType) GetCntfreez() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmccontrolFieldCntfreezMask) != 0
 }
 
 // SetCntfreez CNTFREEZ
-func (r *registerMmc_controlType) SetCntfreez(value bool) {
+func (r *registerMmccontrolType) SetCntfreez(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_controlFieldCntfreezMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmccontrolFieldCntfreezMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_controlFieldCntfreezMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmccontrolFieldCntfreezMask)
 	}
 }
 
 const (
-	RegisterMmc_controlFieldCntprstShift = 4
-	RegisterMmc_controlFieldCntprstMask  = 0x10
+	RegisterMmccontrolFieldCntprstShift = 4
+	RegisterMmccontrolFieldCntprstMask  = 0x10
 )
 
 // GetCntprst CNTPRST
-func (r *registerMmc_controlType) GetCntprst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_controlFieldCntprstMask) != 0
+func (r *registerMmccontrolType) GetCntprst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmccontrolFieldCntprstMask) != 0
 }
 
 // SetCntprst CNTPRST
-func (r *registerMmc_controlType) SetCntprst(value bool) {
+func (r *registerMmccontrolType) SetCntprst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_controlFieldCntprstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmccontrolFieldCntprstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_controlFieldCntprstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmccontrolFieldCntprstMask)
 	}
 }
 
 const (
-	RegisterMmc_controlFieldCntprstlvlShift = 5
-	RegisterMmc_controlFieldCntprstlvlMask  = 0x20
+	RegisterMmccontrolFieldCntprstlvlShift = 5
+	RegisterMmccontrolFieldCntprstlvlMask  = 0x20
 )
 
 // GetCntprstlvl CNTPRSTLVL
-func (r *registerMmc_controlType) GetCntprstlvl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_controlFieldCntprstlvlMask) != 0
+func (r *registerMmccontrolType) GetCntprstlvl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmccontrolFieldCntprstlvlMask) != 0
 }
 
 // SetCntprstlvl CNTPRSTLVL
-func (r *registerMmc_controlType) SetCntprstlvl(value bool) {
+func (r *registerMmccontrolType) SetCntprstlvl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_controlFieldCntprstlvlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmccontrolFieldCntprstlvlMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_controlFieldCntprstlvlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmccontrolFieldCntprstlvlMask)
 	}
 }
 
 const (
-	RegisterMmc_controlFieldUcdbcShift = 8
-	RegisterMmc_controlFieldUcdbcMask  = 0x100
+	RegisterMmccontrolFieldUcdbcShift = 8
+	RegisterMmccontrolFieldUcdbcMask  = 0x100
 )
 
 // GetUcdbc UCDBC
-func (r *registerMmc_controlType) GetUcdbc() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_controlFieldUcdbcMask) != 0
+func (r *registerMmccontrolType) GetUcdbc() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmccontrolFieldUcdbcMask) != 0
 }
 
 // SetUcdbc UCDBC
-func (r *registerMmc_controlType) SetUcdbc(value bool) {
+func (r *registerMmccontrolType) SetUcdbc(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_controlFieldUcdbcMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmccontrolFieldUcdbcMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_controlFieldUcdbcMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmccontrolFieldUcdbcMask)
 	}
 }
 
-// registerMmc_rx_interruptType MMC Rx interrupt register
-type registerMmc_rx_interruptType uint32
+// registerMmcrxinterruptType MMC Rx interrupt register
+type registerMmcrxinterruptType uint32
 
 const (
-	RegisterMmc_rx_interruptFieldRxcrcerpisShift = 5
-	RegisterMmc_rx_interruptFieldRxcrcerpisMask  = 0x20
+	RegisterMmcrxinterruptFieldRxcrcerpisShift = 5
+	RegisterMmcrxinterruptFieldRxcrcerpisMask  = 0x20
 )
 
 // GetRxcrcerpis RXCRCERPIS
-func (r *registerMmc_rx_interruptType) GetRxcrcerpis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_rx_interruptFieldRxcrcerpisMask) != 0
+func (r *registerMmcrxinterruptType) GetRxcrcerpis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmcrxinterruptFieldRxcrcerpisMask) != 0
 }
 
 // SetRxcrcerpis RXCRCERPIS
-func (r *registerMmc_rx_interruptType) SetRxcrcerpis(value bool) {
+func (r *registerMmcrxinterruptType) SetRxcrcerpis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_rx_interruptFieldRxcrcerpisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmcrxinterruptFieldRxcrcerpisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_rx_interruptFieldRxcrcerpisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmcrxinterruptFieldRxcrcerpisMask)
 	}
 }
 
 const (
-	RegisterMmc_rx_interruptFieldRxalgnerpisShift = 6
-	RegisterMmc_rx_interruptFieldRxalgnerpisMask  = 0x40
+	RegisterMmcrxinterruptFieldRxalgnerpisShift = 6
+	RegisterMmcrxinterruptFieldRxalgnerpisMask  = 0x40
 )
 
 // GetRxalgnerpis RXALGNERPIS
-func (r *registerMmc_rx_interruptType) GetRxalgnerpis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_rx_interruptFieldRxalgnerpisMask) != 0
+func (r *registerMmcrxinterruptType) GetRxalgnerpis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmcrxinterruptFieldRxalgnerpisMask) != 0
 }
 
 // SetRxalgnerpis RXALGNERPIS
-func (r *registerMmc_rx_interruptType) SetRxalgnerpis(value bool) {
+func (r *registerMmcrxinterruptType) SetRxalgnerpis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_rx_interruptFieldRxalgnerpisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmcrxinterruptFieldRxalgnerpisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_rx_interruptFieldRxalgnerpisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmcrxinterruptFieldRxalgnerpisMask)
 	}
 }
 
 const (
-	RegisterMmc_rx_interruptFieldRxucgpisShift = 17
-	RegisterMmc_rx_interruptFieldRxucgpisMask  = 0x20000
+	RegisterMmcrxinterruptFieldRxucgpisShift = 17
+	RegisterMmcrxinterruptFieldRxucgpisMask  = 0x20000
 )
 
 // GetRxucgpis RXUCGPIS
-func (r *registerMmc_rx_interruptType) GetRxucgpis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_rx_interruptFieldRxucgpisMask) != 0
+func (r *registerMmcrxinterruptType) GetRxucgpis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmcrxinterruptFieldRxucgpisMask) != 0
 }
 
 // SetRxucgpis RXUCGPIS
-func (r *registerMmc_rx_interruptType) SetRxucgpis(value bool) {
+func (r *registerMmcrxinterruptType) SetRxucgpis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_rx_interruptFieldRxucgpisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmcrxinterruptFieldRxucgpisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_rx_interruptFieldRxucgpisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmcrxinterruptFieldRxucgpisMask)
 	}
 }
 
 const (
-	RegisterMmc_rx_interruptFieldRxlpiuscisShift = 26
-	RegisterMmc_rx_interruptFieldRxlpiuscisMask  = 0x4000000
+	RegisterMmcrxinterruptFieldRxlpiuscisShift = 26
+	RegisterMmcrxinterruptFieldRxlpiuscisMask  = 0x4000000
 )
 
 // GetRxlpiuscis RXLPIUSCIS
-func (r *registerMmc_rx_interruptType) GetRxlpiuscis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_rx_interruptFieldRxlpiuscisMask) != 0
+func (r *registerMmcrxinterruptType) GetRxlpiuscis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmcrxinterruptFieldRxlpiuscisMask) != 0
 }
 
 // SetRxlpiuscis RXLPIUSCIS
-func (r *registerMmc_rx_interruptType) SetRxlpiuscis(value bool) {
+func (r *registerMmcrxinterruptType) SetRxlpiuscis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_rx_interruptFieldRxlpiuscisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmcrxinterruptFieldRxlpiuscisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_rx_interruptFieldRxlpiuscisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmcrxinterruptFieldRxlpiuscisMask)
 	}
 }
 
 const (
-	RegisterMmc_rx_interruptFieldRxlpitrcisShift = 27
-	RegisterMmc_rx_interruptFieldRxlpitrcisMask  = 0x8000000
+	RegisterMmcrxinterruptFieldRxlpitrcisShift = 27
+	RegisterMmcrxinterruptFieldRxlpitrcisMask  = 0x8000000
 )
 
 // GetRxlpitrcis RXLPITRCIS
-func (r *registerMmc_rx_interruptType) GetRxlpitrcis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_rx_interruptFieldRxlpitrcisMask) != 0
+func (r *registerMmcrxinterruptType) GetRxlpitrcis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmcrxinterruptFieldRxlpitrcisMask) != 0
 }
 
 // SetRxlpitrcis RXLPITRCIS
-func (r *registerMmc_rx_interruptType) SetRxlpitrcis(value bool) {
+func (r *registerMmcrxinterruptType) SetRxlpitrcis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_rx_interruptFieldRxlpitrcisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmcrxinterruptFieldRxlpitrcisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_rx_interruptFieldRxlpitrcisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmcrxinterruptFieldRxlpitrcisMask)
 	}
 }
 
-// registerMmc_tx_interruptType MMC Tx interrupt register
-type registerMmc_tx_interruptType uint32
+// registerMmctxinterruptType MMC Tx interrupt register
+type registerMmctxinterruptType uint32
 
 const (
-	RegisterMmc_tx_interruptFieldTxscolgpisShift = 14
-	RegisterMmc_tx_interruptFieldTxscolgpisMask  = 0x4000
+	RegisterMmctxinterruptFieldTxscolgpisShift = 14
+	RegisterMmctxinterruptFieldTxscolgpisMask  = 0x4000
 )
 
 // GetTxscolgpis TXSCOLGPIS
-func (r *registerMmc_tx_interruptType) GetTxscolgpis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_tx_interruptFieldTxscolgpisMask) != 0
+func (r *registerMmctxinterruptType) GetTxscolgpis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmctxinterruptFieldTxscolgpisMask) != 0
 }
 
 // SetTxscolgpis TXSCOLGPIS
-func (r *registerMmc_tx_interruptType) SetTxscolgpis(value bool) {
+func (r *registerMmctxinterruptType) SetTxscolgpis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_tx_interruptFieldTxscolgpisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmctxinterruptFieldTxscolgpisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_tx_interruptFieldTxscolgpisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmctxinterruptFieldTxscolgpisMask)
 	}
 }
 
 const (
-	RegisterMmc_tx_interruptFieldTxmcolgpisShift = 15
-	RegisterMmc_tx_interruptFieldTxmcolgpisMask  = 0x8000
+	RegisterMmctxinterruptFieldTxmcolgpisShift = 15
+	RegisterMmctxinterruptFieldTxmcolgpisMask  = 0x8000
 )
 
 // GetTxmcolgpis TXMCOLGPIS
-func (r *registerMmc_tx_interruptType) GetTxmcolgpis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_tx_interruptFieldTxmcolgpisMask) != 0
+func (r *registerMmctxinterruptType) GetTxmcolgpis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmctxinterruptFieldTxmcolgpisMask) != 0
 }
 
 // SetTxmcolgpis TXMCOLGPIS
-func (r *registerMmc_tx_interruptType) SetTxmcolgpis(value bool) {
+func (r *registerMmctxinterruptType) SetTxmcolgpis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_tx_interruptFieldTxmcolgpisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmctxinterruptFieldTxmcolgpisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_tx_interruptFieldTxmcolgpisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmctxinterruptFieldTxmcolgpisMask)
 	}
 }
 
 const (
-	RegisterMmc_tx_interruptFieldTxgpktisShift = 21
-	RegisterMmc_tx_interruptFieldTxgpktisMask  = 0x200000
+	RegisterMmctxinterruptFieldTxgpktisShift = 21
+	RegisterMmctxinterruptFieldTxgpktisMask  = 0x200000
 )
 
 // GetTxgpktis TXGPKTIS
-func (r *registerMmc_tx_interruptType) GetTxgpktis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_tx_interruptFieldTxgpktisMask) != 0
+func (r *registerMmctxinterruptType) GetTxgpktis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmctxinterruptFieldTxgpktisMask) != 0
 }
 
 // SetTxgpktis TXGPKTIS
-func (r *registerMmc_tx_interruptType) SetTxgpktis(value bool) {
+func (r *registerMmctxinterruptType) SetTxgpktis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_tx_interruptFieldTxgpktisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmctxinterruptFieldTxgpktisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_tx_interruptFieldTxgpktisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmctxinterruptFieldTxgpktisMask)
 	}
 }
 
 const (
-	RegisterMmc_tx_interruptFieldTxlpiuscisShift = 26
-	RegisterMmc_tx_interruptFieldTxlpiuscisMask  = 0x4000000
+	RegisterMmctxinterruptFieldTxlpiuscisShift = 26
+	RegisterMmctxinterruptFieldTxlpiuscisMask  = 0x4000000
 )
 
 // GetTxlpiuscis TXLPIUSCIS
-func (r *registerMmc_tx_interruptType) GetTxlpiuscis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_tx_interruptFieldTxlpiuscisMask) != 0
+func (r *registerMmctxinterruptType) GetTxlpiuscis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmctxinterruptFieldTxlpiuscisMask) != 0
 }
 
 // SetTxlpiuscis TXLPIUSCIS
-func (r *registerMmc_tx_interruptType) SetTxlpiuscis(value bool) {
+func (r *registerMmctxinterruptType) SetTxlpiuscis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_tx_interruptFieldTxlpiuscisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmctxinterruptFieldTxlpiuscisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_tx_interruptFieldTxlpiuscisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmctxinterruptFieldTxlpiuscisMask)
 	}
 }
 
 const (
-	RegisterMmc_tx_interruptFieldTxlpitrcisShift = 27
-	RegisterMmc_tx_interruptFieldTxlpitrcisMask  = 0x8000000
+	RegisterMmctxinterruptFieldTxlpitrcisShift = 27
+	RegisterMmctxinterruptFieldTxlpitrcisMask  = 0x8000000
 )
 
 // GetTxlpitrcis TXLPITRCIS
-func (r *registerMmc_tx_interruptType) GetTxlpitrcis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_tx_interruptFieldTxlpitrcisMask) != 0
+func (r *registerMmctxinterruptType) GetTxlpitrcis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmctxinterruptFieldTxlpitrcisMask) != 0
 }
 
 // SetTxlpitrcis TXLPITRCIS
-func (r *registerMmc_tx_interruptType) SetTxlpitrcis(value bool) {
+func (r *registerMmctxinterruptType) SetTxlpitrcis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_tx_interruptFieldTxlpitrcisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmctxinterruptFieldTxlpitrcisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_tx_interruptFieldTxlpitrcisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmctxinterruptFieldTxlpitrcisMask)
 	}
 }
 
-// registerMmc_rx_interrupt_maskType MMC Rx interrupt mask register
-type registerMmc_rx_interrupt_maskType uint32
+// registerMmcrxinterruptmaskType MMC Rx interrupt mask register
+type registerMmcrxinterruptmaskType uint32
 
 const (
-	RegisterMmc_rx_interrupt_maskFieldRxcrcerpimShift = 5
-	RegisterMmc_rx_interrupt_maskFieldRxcrcerpimMask  = 0x20
+	RegisterMmcrxinterruptmaskFieldRxcrcerpimShift = 5
+	RegisterMmcrxinterruptmaskFieldRxcrcerpimMask  = 0x20
 )
 
 // GetRxcrcerpim RXCRCERPIM
-func (r *registerMmc_rx_interrupt_maskType) GetRxcrcerpim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_rx_interrupt_maskFieldRxcrcerpimMask) != 0
+func (r *registerMmcrxinterruptmaskType) GetRxcrcerpim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmcrxinterruptmaskFieldRxcrcerpimMask) != 0
 }
 
 // SetRxcrcerpim RXCRCERPIM
-func (r *registerMmc_rx_interrupt_maskType) SetRxcrcerpim(value bool) {
+func (r *registerMmcrxinterruptmaskType) SetRxcrcerpim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_rx_interrupt_maskFieldRxcrcerpimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmcrxinterruptmaskFieldRxcrcerpimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_rx_interrupt_maskFieldRxcrcerpimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmcrxinterruptmaskFieldRxcrcerpimMask)
 	}
 }
 
 const (
-	RegisterMmc_rx_interrupt_maskFieldRxalgnerpimShift = 6
-	RegisterMmc_rx_interrupt_maskFieldRxalgnerpimMask  = 0x40
+	RegisterMmcrxinterruptmaskFieldRxalgnerpimShift = 6
+	RegisterMmcrxinterruptmaskFieldRxalgnerpimMask  = 0x40
 )
 
 // GetRxalgnerpim RXALGNERPIM
-func (r *registerMmc_rx_interrupt_maskType) GetRxalgnerpim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_rx_interrupt_maskFieldRxalgnerpimMask) != 0
+func (r *registerMmcrxinterruptmaskType) GetRxalgnerpim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmcrxinterruptmaskFieldRxalgnerpimMask) != 0
 }
 
 // SetRxalgnerpim RXALGNERPIM
-func (r *registerMmc_rx_interrupt_maskType) SetRxalgnerpim(value bool) {
+func (r *registerMmcrxinterruptmaskType) SetRxalgnerpim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_rx_interrupt_maskFieldRxalgnerpimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmcrxinterruptmaskFieldRxalgnerpimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_rx_interrupt_maskFieldRxalgnerpimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmcrxinterruptmaskFieldRxalgnerpimMask)
 	}
 }
 
 const (
-	RegisterMmc_rx_interrupt_maskFieldRxucgpimShift = 17
-	RegisterMmc_rx_interrupt_maskFieldRxucgpimMask  = 0x20000
+	RegisterMmcrxinterruptmaskFieldRxucgpimShift = 17
+	RegisterMmcrxinterruptmaskFieldRxucgpimMask  = 0x20000
 )
 
 // GetRxucgpim RXUCGPIM
-func (r *registerMmc_rx_interrupt_maskType) GetRxucgpim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_rx_interrupt_maskFieldRxucgpimMask) != 0
+func (r *registerMmcrxinterruptmaskType) GetRxucgpim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmcrxinterruptmaskFieldRxucgpimMask) != 0
 }
 
 // SetRxucgpim RXUCGPIM
-func (r *registerMmc_rx_interrupt_maskType) SetRxucgpim(value bool) {
+func (r *registerMmcrxinterruptmaskType) SetRxucgpim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_rx_interrupt_maskFieldRxucgpimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmcrxinterruptmaskFieldRxucgpimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_rx_interrupt_maskFieldRxucgpimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmcrxinterruptmaskFieldRxucgpimMask)
 	}
 }
 
 const (
-	RegisterMmc_rx_interrupt_maskFieldRxlpiuscimShift = 26
-	RegisterMmc_rx_interrupt_maskFieldRxlpiuscimMask  = 0x4000000
+	RegisterMmcrxinterruptmaskFieldRxlpiuscimShift = 26
+	RegisterMmcrxinterruptmaskFieldRxlpiuscimMask  = 0x4000000
 )
 
 // GetRxlpiuscim RXLPIUSCIM
-func (r *registerMmc_rx_interrupt_maskType) GetRxlpiuscim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_rx_interrupt_maskFieldRxlpiuscimMask) != 0
+func (r *registerMmcrxinterruptmaskType) GetRxlpiuscim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmcrxinterruptmaskFieldRxlpiuscimMask) != 0
 }
 
 // SetRxlpiuscim RXLPIUSCIM
-func (r *registerMmc_rx_interrupt_maskType) SetRxlpiuscim(value bool) {
+func (r *registerMmcrxinterruptmaskType) SetRxlpiuscim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_rx_interrupt_maskFieldRxlpiuscimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmcrxinterruptmaskFieldRxlpiuscimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_rx_interrupt_maskFieldRxlpiuscimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmcrxinterruptmaskFieldRxlpiuscimMask)
 	}
 }
 
 const (
-	RegisterMmc_rx_interrupt_maskFieldRxlpitrcimShift = 27
-	RegisterMmc_rx_interrupt_maskFieldRxlpitrcimMask  = 0x8000000
+	RegisterMmcrxinterruptmaskFieldRxlpitrcimShift = 27
+	RegisterMmcrxinterruptmaskFieldRxlpitrcimMask  = 0x8000000
 )
 
 // GetRxlpitrcim RXLPITRCIM
-func (r *registerMmc_rx_interrupt_maskType) GetRxlpitrcim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_rx_interrupt_maskFieldRxlpitrcimMask) != 0
+func (r *registerMmcrxinterruptmaskType) GetRxlpitrcim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmcrxinterruptmaskFieldRxlpitrcimMask) != 0
 }
 
-// registerMmc_tx_interrupt_maskType MMC Tx interrupt mask register
-type registerMmc_tx_interrupt_maskType uint32
+// registerMmctxinterruptmaskType MMC Tx interrupt mask register
+type registerMmctxinterruptmaskType uint32
 
 const (
-	RegisterMmc_tx_interrupt_maskFieldTxscolgpimShift = 14
-	RegisterMmc_tx_interrupt_maskFieldTxscolgpimMask  = 0x4000
+	RegisterMmctxinterruptmaskFieldTxscolgpimShift = 14
+	RegisterMmctxinterruptmaskFieldTxscolgpimMask  = 0x4000
 )
 
 // GetTxscolgpim TXSCOLGPIM
-func (r *registerMmc_tx_interrupt_maskType) GetTxscolgpim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_tx_interrupt_maskFieldTxscolgpimMask) != 0
+func (r *registerMmctxinterruptmaskType) GetTxscolgpim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmctxinterruptmaskFieldTxscolgpimMask) != 0
 }
 
 // SetTxscolgpim TXSCOLGPIM
-func (r *registerMmc_tx_interrupt_maskType) SetTxscolgpim(value bool) {
+func (r *registerMmctxinterruptmaskType) SetTxscolgpim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_tx_interrupt_maskFieldTxscolgpimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmctxinterruptmaskFieldTxscolgpimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_tx_interrupt_maskFieldTxscolgpimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmctxinterruptmaskFieldTxscolgpimMask)
 	}
 }
 
 const (
-	RegisterMmc_tx_interrupt_maskFieldTxmcolgpimShift = 15
-	RegisterMmc_tx_interrupt_maskFieldTxmcolgpimMask  = 0x8000
+	RegisterMmctxinterruptmaskFieldTxmcolgpimShift = 15
+	RegisterMmctxinterruptmaskFieldTxmcolgpimMask  = 0x8000
 )
 
 // GetTxmcolgpim TXMCOLGPIM
-func (r *registerMmc_tx_interrupt_maskType) GetTxmcolgpim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_tx_interrupt_maskFieldTxmcolgpimMask) != 0
+func (r *registerMmctxinterruptmaskType) GetTxmcolgpim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmctxinterruptmaskFieldTxmcolgpimMask) != 0
 }
 
 // SetTxmcolgpim TXMCOLGPIM
-func (r *registerMmc_tx_interrupt_maskType) SetTxmcolgpim(value bool) {
+func (r *registerMmctxinterruptmaskType) SetTxmcolgpim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_tx_interrupt_maskFieldTxmcolgpimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmctxinterruptmaskFieldTxmcolgpimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_tx_interrupt_maskFieldTxmcolgpimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmctxinterruptmaskFieldTxmcolgpimMask)
 	}
 }
 
 const (
-	RegisterMmc_tx_interrupt_maskFieldTxgpktimShift = 21
-	RegisterMmc_tx_interrupt_maskFieldTxgpktimMask  = 0x200000
+	RegisterMmctxinterruptmaskFieldTxgpktimShift = 21
+	RegisterMmctxinterruptmaskFieldTxgpktimMask  = 0x200000
 )
 
 // GetTxgpktim TXGPKTIM
-func (r *registerMmc_tx_interrupt_maskType) GetTxgpktim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_tx_interrupt_maskFieldTxgpktimMask) != 0
+func (r *registerMmctxinterruptmaskType) GetTxgpktim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmctxinterruptmaskFieldTxgpktimMask) != 0
 }
 
 // SetTxgpktim TXGPKTIM
-func (r *registerMmc_tx_interrupt_maskType) SetTxgpktim(value bool) {
+func (r *registerMmctxinterruptmaskType) SetTxgpktim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_tx_interrupt_maskFieldTxgpktimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmctxinterruptmaskFieldTxgpktimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_tx_interrupt_maskFieldTxgpktimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmctxinterruptmaskFieldTxgpktimMask)
 	}
 }
 
 const (
-	RegisterMmc_tx_interrupt_maskFieldTxlpiuscimShift = 26
-	RegisterMmc_tx_interrupt_maskFieldTxlpiuscimMask  = 0x4000000
+	RegisterMmctxinterruptmaskFieldTxlpiuscimShift = 26
+	RegisterMmctxinterruptmaskFieldTxlpiuscimMask  = 0x4000000
 )
 
 // GetTxlpiuscim TXLPIUSCIM
-func (r *registerMmc_tx_interrupt_maskType) GetTxlpiuscim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_tx_interrupt_maskFieldTxlpiuscimMask) != 0
+func (r *registerMmctxinterruptmaskType) GetTxlpiuscim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmctxinterruptmaskFieldTxlpiuscimMask) != 0
 }
 
 // SetTxlpiuscim TXLPIUSCIM
-func (r *registerMmc_tx_interrupt_maskType) SetTxlpiuscim(value bool) {
+func (r *registerMmctxinterruptmaskType) SetTxlpiuscim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmc_tx_interrupt_maskFieldTxlpiuscimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmctxinterruptmaskFieldTxlpiuscimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmc_tx_interrupt_maskFieldTxlpiuscimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmctxinterruptmaskFieldTxlpiuscimMask)
 	}
 }
 
 const (
-	RegisterMmc_tx_interrupt_maskFieldTxlpitrcimShift = 27
-	RegisterMmc_tx_interrupt_maskFieldTxlpitrcimMask  = 0x8000000
+	RegisterMmctxinterruptmaskFieldTxlpitrcimShift = 27
+	RegisterMmctxinterruptmaskFieldTxlpitrcimMask  = 0x8000000
 )
 
 // GetTxlpitrcim TXLPITRCIM
-func (r *registerMmc_tx_interrupt_maskType) GetTxlpitrcim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmc_tx_interrupt_maskFieldTxlpitrcimMask) != 0
+func (r *registerMmctxinterruptmaskType) GetTxlpitrcim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmctxinterruptmaskFieldTxlpitrcimMask) != 0
 }
 
-// registerTx_single_collision_good_packetsType Tx single collision good packets register
-type registerTx_single_collision_good_packetsType uint32
+// registerTxsinglecollisiongoodpacketsType Tx single collision good packets register
+type registerTxsinglecollisiongoodpacketsType uint32
 
 const (
-	RegisterTx_single_collision_good_packetsFieldTxsnglcolgShift = 0
-	RegisterTx_single_collision_good_packetsFieldTxsnglcolgMask  = 0xffffffff
+	RegisterTxsinglecollisiongoodpacketsFieldTxsnglcolgShift = 0
+	RegisterTxsinglecollisiongoodpacketsFieldTxsnglcolgMask  = 0xffffffff
 )
 
 // GetTxsnglcolg TXSNGLCOLG
-func (r *registerTx_single_collision_good_packetsType) GetTxsnglcolg() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTx_single_collision_good_packetsFieldTxsnglcolgMask) >> RegisterTx_single_collision_good_packetsFieldTxsnglcolgShift)
+func (r *registerTxsinglecollisiongoodpacketsType) GetTxsnglcolg() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTxsinglecollisiongoodpacketsFieldTxsnglcolgMask) >> RegisterTxsinglecollisiongoodpacketsFieldTxsnglcolgShift)
 }
 
 // SetTxsnglcolg TXSNGLCOLG
-func (r *registerTx_single_collision_good_packetsType) SetTxsnglcolg(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTx_single_collision_good_packetsFieldTxsnglcolgMask)|(uint32(value)<<RegisterTx_single_collision_good_packetsFieldTxsnglcolgShift))
+func (r *registerTxsinglecollisiongoodpacketsType) SetTxsnglcolg(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTxsinglecollisiongoodpacketsFieldTxsnglcolgMask)|(uint32(value)<<RegisterTxsinglecollisiongoodpacketsFieldTxsnglcolgShift))
 }
 
-// registerTx_multiple_collision_good_packetsType Tx multiple collision good packets register
-type registerTx_multiple_collision_good_packetsType uint32
+// registerTxmultiplecollisiongoodpacketsType Tx multiple collision good packets register
+type registerTxmultiplecollisiongoodpacketsType uint32
 
 const (
-	RegisterTx_multiple_collision_good_packetsFieldTxmultcolgShift = 0
-	RegisterTx_multiple_collision_good_packetsFieldTxmultcolgMask  = 0xffffffff
+	RegisterTxmultiplecollisiongoodpacketsFieldTxmultcolgShift = 0
+	RegisterTxmultiplecollisiongoodpacketsFieldTxmultcolgMask  = 0xffffffff
 )
 
 // GetTxmultcolg TXMULTCOLG
-func (r *registerTx_multiple_collision_good_packetsType) GetTxmultcolg() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTx_multiple_collision_good_packetsFieldTxmultcolgMask) >> RegisterTx_multiple_collision_good_packetsFieldTxmultcolgShift)
+func (r *registerTxmultiplecollisiongoodpacketsType) GetTxmultcolg() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTxmultiplecollisiongoodpacketsFieldTxmultcolgMask) >> RegisterTxmultiplecollisiongoodpacketsFieldTxmultcolgShift)
 }
 
 // SetTxmultcolg TXMULTCOLG
-func (r *registerTx_multiple_collision_good_packetsType) SetTxmultcolg(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTx_multiple_collision_good_packetsFieldTxmultcolgMask)|(uint32(value)<<RegisterTx_multiple_collision_good_packetsFieldTxmultcolgShift))
+func (r *registerTxmultiplecollisiongoodpacketsType) SetTxmultcolg(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTxmultiplecollisiongoodpacketsFieldTxmultcolgMask)|(uint32(value)<<RegisterTxmultiplecollisiongoodpacketsFieldTxmultcolgShift))
 }
 
-// registerTx_packet_count_goodType Tx packet count good register
-type registerTx_packet_count_goodType uint32
+// registerTxpacketcountgoodType Tx packet count good register
+type registerTxpacketcountgoodType uint32
 
 const (
-	RegisterTx_packet_count_goodFieldTxpktgShift = 0
-	RegisterTx_packet_count_goodFieldTxpktgMask  = 0xffffffff
+	RegisterTxpacketcountgoodFieldTxpktgShift = 0
+	RegisterTxpacketcountgoodFieldTxpktgMask  = 0xffffffff
 )
 
 // GetTxpktg TXPKTG
-func (r *registerTx_packet_count_goodType) GetTxpktg() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTx_packet_count_goodFieldTxpktgMask) >> RegisterTx_packet_count_goodFieldTxpktgShift)
+func (r *registerTxpacketcountgoodType) GetTxpktg() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTxpacketcountgoodFieldTxpktgMask) >> RegisterTxpacketcountgoodFieldTxpktgShift)
 }
 
 // SetTxpktg TXPKTG
-func (r *registerTx_packet_count_goodType) SetTxpktg(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTx_packet_count_goodFieldTxpktgMask)|(uint32(value)<<RegisterTx_packet_count_goodFieldTxpktgShift))
+func (r *registerTxpacketcountgoodType) SetTxpktg(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTxpacketcountgoodFieldTxpktgMask)|(uint32(value)<<RegisterTxpacketcountgoodFieldTxpktgShift))
 }
 
-// registerRx_crc_error_packetsType Rx CRC error packets register
-type registerRx_crc_error_packetsType uint32
+// registerRxcrcerrorpacketsType Rx CRC error packets register
+type registerRxcrcerrorpacketsType uint32
 
 const (
-	RegisterRx_crc_error_packetsFieldRxcrcerrShift = 0
-	RegisterRx_crc_error_packetsFieldRxcrcerrMask  = 0xffffffff
+	RegisterRxcrcerrorpacketsFieldRxcrcerrShift = 0
+	RegisterRxcrcerrorpacketsFieldRxcrcerrMask  = 0xffffffff
 )
 
 // GetRxcrcerr RXCRCERR
-func (r *registerRx_crc_error_packetsType) GetRxcrcerr() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRx_crc_error_packetsFieldRxcrcerrMask) >> RegisterRx_crc_error_packetsFieldRxcrcerrShift)
+func (r *registerRxcrcerrorpacketsType) GetRxcrcerr() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRxcrcerrorpacketsFieldRxcrcerrMask) >> RegisterRxcrcerrorpacketsFieldRxcrcerrShift)
 }
 
 // SetRxcrcerr RXCRCERR
-func (r *registerRx_crc_error_packetsType) SetRxcrcerr(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRx_crc_error_packetsFieldRxcrcerrMask)|(uint32(value)<<RegisterRx_crc_error_packetsFieldRxcrcerrShift))
+func (r *registerRxcrcerrorpacketsType) SetRxcrcerr(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRxcrcerrorpacketsFieldRxcrcerrMask)|(uint32(value)<<RegisterRxcrcerrorpacketsFieldRxcrcerrShift))
 }
 
-// registerRx_alignment_error_packetsType Rx alignment error packets register
-type registerRx_alignment_error_packetsType uint32
+// registerRxalignmenterrorpacketsType Rx alignment error packets register
+type registerRxalignmenterrorpacketsType uint32
 
 const (
-	RegisterRx_alignment_error_packetsFieldRxalgnerrShift = 0
-	RegisterRx_alignment_error_packetsFieldRxalgnerrMask  = 0xffffffff
+	RegisterRxalignmenterrorpacketsFieldRxalgnerrShift = 0
+	RegisterRxalignmenterrorpacketsFieldRxalgnerrMask  = 0xffffffff
 )
 
 // GetRxalgnerr RXALGNERR
-func (r *registerRx_alignment_error_packetsType) GetRxalgnerr() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRx_alignment_error_packetsFieldRxalgnerrMask) >> RegisterRx_alignment_error_packetsFieldRxalgnerrShift)
+func (r *registerRxalignmenterrorpacketsType) GetRxalgnerr() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRxalignmenterrorpacketsFieldRxalgnerrMask) >> RegisterRxalignmenterrorpacketsFieldRxalgnerrShift)
 }
 
 // SetRxalgnerr RXALGNERR
-func (r *registerRx_alignment_error_packetsType) SetRxalgnerr(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRx_alignment_error_packetsFieldRxalgnerrMask)|(uint32(value)<<RegisterRx_alignment_error_packetsFieldRxalgnerrShift))
+func (r *registerRxalignmenterrorpacketsType) SetRxalgnerr(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRxalignmenterrorpacketsFieldRxalgnerrMask)|(uint32(value)<<RegisterRxalignmenterrorpacketsFieldRxalgnerrShift))
 }
 
-// registerRx_unicast_packets_goodType Rx unicast packets good register
-type registerRx_unicast_packets_goodType uint32
+// registerRxunicastpacketsgoodType Rx unicast packets good register
+type registerRxunicastpacketsgoodType uint32
 
 const (
-	RegisterRx_unicast_packets_goodFieldRxucastgShift = 0
-	RegisterRx_unicast_packets_goodFieldRxucastgMask  = 0xffffffff
+	RegisterRxunicastpacketsgoodFieldRxucastgShift = 0
+	RegisterRxunicastpacketsgoodFieldRxucastgMask  = 0xffffffff
 )
 
 // GetRxucastg RXUCASTG
-func (r *registerRx_unicast_packets_goodType) GetRxucastg() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRx_unicast_packets_goodFieldRxucastgMask) >> RegisterRx_unicast_packets_goodFieldRxucastgShift)
+func (r *registerRxunicastpacketsgoodType) GetRxucastg() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRxunicastpacketsgoodFieldRxucastgMask) >> RegisterRxunicastpacketsgoodFieldRxucastgShift)
 }
 
 // SetRxucastg RXUCASTG
-func (r *registerRx_unicast_packets_goodType) SetRxucastg(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRx_unicast_packets_goodFieldRxucastgMask)|(uint32(value)<<RegisterRx_unicast_packets_goodFieldRxucastgShift))
+func (r *registerRxunicastpacketsgoodType) SetRxucastg(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRxunicastpacketsgoodFieldRxucastgMask)|(uint32(value)<<RegisterRxunicastpacketsgoodFieldRxucastgShift))
 }
 
-// registerTx_lpi_usec_cntrType Tx LPI microsecond timer register
-type registerTx_lpi_usec_cntrType uint32
+// registerTxlpiuseccntrType Tx LPI microsecond timer register
+type registerTxlpiuseccntrType uint32
 
 const (
-	RegisterTx_lpi_usec_cntrFieldTxlpiuscShift = 0
-	RegisterTx_lpi_usec_cntrFieldTxlpiuscMask  = 0xffffffff
+	RegisterTxlpiuseccntrFieldTxlpiuscShift = 0
+	RegisterTxlpiuseccntrFieldTxlpiuscMask  = 0xffffffff
 )
 
 // GetTxlpiusc TXLPIUSC
-func (r *registerTx_lpi_usec_cntrType) GetTxlpiusc() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTx_lpi_usec_cntrFieldTxlpiuscMask) >> RegisterTx_lpi_usec_cntrFieldTxlpiuscShift)
+func (r *registerTxlpiuseccntrType) GetTxlpiusc() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTxlpiuseccntrFieldTxlpiuscMask) >> RegisterTxlpiuseccntrFieldTxlpiuscShift)
 }
 
 // SetTxlpiusc TXLPIUSC
-func (r *registerTx_lpi_usec_cntrType) SetTxlpiusc(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTx_lpi_usec_cntrFieldTxlpiuscMask)|(uint32(value)<<RegisterTx_lpi_usec_cntrFieldTxlpiuscShift))
+func (r *registerTxlpiuseccntrType) SetTxlpiusc(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTxlpiuseccntrFieldTxlpiuscMask)|(uint32(value)<<RegisterTxlpiuseccntrFieldTxlpiuscShift))
 }
 
-// registerTx_lpi_tran_cntrType Tx LPI transition counter register
-type registerTx_lpi_tran_cntrType uint32
+// registerTxlpitrancntrType Tx LPI transition counter register
+type registerTxlpitrancntrType uint32
 
 const (
-	RegisterTx_lpi_tran_cntrFieldTxlpitrcShift = 0
-	RegisterTx_lpi_tran_cntrFieldTxlpitrcMask  = 0xffffffff
+	RegisterTxlpitrancntrFieldTxlpitrcShift = 0
+	RegisterTxlpitrancntrFieldTxlpitrcMask  = 0xffffffff
 )
 
 // GetTxlpitrc TXLPITRC
-func (r *registerTx_lpi_tran_cntrType) GetTxlpitrc() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTx_lpi_tran_cntrFieldTxlpitrcMask) >> RegisterTx_lpi_tran_cntrFieldTxlpitrcShift)
+func (r *registerTxlpitrancntrType) GetTxlpitrc() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTxlpitrancntrFieldTxlpitrcMask) >> RegisterTxlpitrancntrFieldTxlpitrcShift)
 }
 
 // SetTxlpitrc TXLPITRC
-func (r *registerTx_lpi_tran_cntrType) SetTxlpitrc(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTx_lpi_tran_cntrFieldTxlpitrcMask)|(uint32(value)<<RegisterTx_lpi_tran_cntrFieldTxlpitrcShift))
+func (r *registerTxlpitrancntrType) SetTxlpitrc(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTxlpitrancntrFieldTxlpitrcMask)|(uint32(value)<<RegisterTxlpitrancntrFieldTxlpitrcShift))
 }
 
-// registerRx_lpi_usec_cntrType Rx LPI microsecond counter register
-type registerRx_lpi_usec_cntrType uint32
+// registerRxlpiuseccntrType Rx LPI microsecond counter register
+type registerRxlpiuseccntrType uint32
 
 const (
-	RegisterRx_lpi_usec_cntrFieldRxlpiuscShift = 0
-	RegisterRx_lpi_usec_cntrFieldRxlpiuscMask  = 0xffffffff
+	RegisterRxlpiuseccntrFieldRxlpiuscShift = 0
+	RegisterRxlpiuseccntrFieldRxlpiuscMask  = 0xffffffff
 )
 
 // GetRxlpiusc RXLPIUSC
-func (r *registerRx_lpi_usec_cntrType) GetRxlpiusc() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRx_lpi_usec_cntrFieldRxlpiuscMask) >> RegisterRx_lpi_usec_cntrFieldRxlpiuscShift)
+func (r *registerRxlpiuseccntrType) GetRxlpiusc() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRxlpiuseccntrFieldRxlpiuscMask) >> RegisterRxlpiuseccntrFieldRxlpiuscShift)
 }
 
 // SetRxlpiusc RXLPIUSC
-func (r *registerRx_lpi_usec_cntrType) SetRxlpiusc(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRx_lpi_usec_cntrFieldRxlpiuscMask)|(uint32(value)<<RegisterRx_lpi_usec_cntrFieldRxlpiuscShift))
+func (r *registerRxlpiuseccntrType) SetRxlpiusc(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRxlpiuseccntrFieldRxlpiuscMask)|(uint32(value)<<RegisterRxlpiuseccntrFieldRxlpiuscShift))
 }
 
-// registerRx_lpi_tran_cntrType Rx LPI transition counter register
-type registerRx_lpi_tran_cntrType uint32
+// registerRxlpitrancntrType Rx LPI transition counter register
+type registerRxlpitrancntrType uint32
 
 const (
-	RegisterRx_lpi_tran_cntrFieldRxlpitrcShift = 0
-	RegisterRx_lpi_tran_cntrFieldRxlpitrcMask  = 0xffffffff
+	RegisterRxlpitrancntrFieldRxlpitrcShift = 0
+	RegisterRxlpitrancntrFieldRxlpitrcMask  = 0xffffffff
 )
 
 // GetRxlpitrc RXLPITRC
-func (r *registerRx_lpi_tran_cntrType) GetRxlpitrc() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRx_lpi_tran_cntrFieldRxlpitrcMask) >> RegisterRx_lpi_tran_cntrFieldRxlpitrcShift)
+func (r *registerRxlpitrancntrType) GetRxlpitrc() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRxlpitrancntrFieldRxlpitrcMask) >> RegisterRxlpitrancntrFieldRxlpitrcShift)
 }
 
 // SetRxlpitrc RXLPITRC
-func (r *registerRx_lpi_tran_cntrType) SetRxlpitrc(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRx_lpi_tran_cntrFieldRxlpitrcMask)|(uint32(value)<<RegisterRx_lpi_tran_cntrFieldRxlpitrcShift))
+func (r *registerRxlpitrancntrType) SetRxlpitrc(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRxlpitrancntrFieldRxlpitrcMask)|(uint32(value)<<RegisterRxlpitrancntrFieldRxlpitrcShift))
 }
 
 // registerMacl3l4c0rType L3 and L4 control 0 register
@@ -6474,21 +6474,21 @@ func (r *registerMtlrxqomrType) SetRsf(value bool) {
 }
 
 const (
-	RegisterMtlrxqomrFieldDis_tcp_efShift = 6
-	RegisterMtlrxqomrFieldDis_tcp_efMask  = 0x40
+	RegisterMtlrxqomrFieldDistcpefShift = 6
+	RegisterMtlrxqomrFieldDistcpefMask  = 0x40
 )
 
-// GetDis_tcp_ef DIS_TCP_EF
-func (r *registerMtlrxqomrType) GetDis_tcp_ef() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMtlrxqomrFieldDis_tcp_efMask) != 0
+// GetDistcpef DIS_TCP_EF
+func (r *registerMtlrxqomrType) GetDistcpef() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterMtlrxqomrFieldDistcpefMask) != 0
 }
 
-// SetDis_tcp_ef DIS_TCP_EF
-func (r *registerMtlrxqomrType) SetDis_tcp_ef(value bool) {
+// SetDistcpef DIS_TCP_EF
+func (r *registerMtlrxqomrType) SetDistcpef(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMtlrxqomrFieldDis_tcp_efMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMtlrxqomrFieldDistcpefMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMtlrxqomrFieldDis_tcp_efMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMtlrxqomrFieldDistcpefMask)
 	}
 }
 

@@ -50,18 +50,18 @@ type _dmamux struct {
 type registerC0crType uint32
 
 const (
-	RegisterC0crFieldDmareq_idShift = 0
-	RegisterC0crFieldDmareq_idMask  = 0xff
+	RegisterC0crFieldDmareqidShift = 0
+	RegisterC0crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC0crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldDmareq_idMask) >> RegisterC0crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC0crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldDmareqidMask) >> RegisterC0crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC0crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC0crFieldDmareq_idMask)|(uint32(value)<<RegisterC0crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC0crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC0crFieldDmareqidMask)|(uint32(value)<<RegisterC0crFieldDmareqidShift))
 }
 
 const (
@@ -152,36 +152,36 @@ func (r *registerC0crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC0crFieldSync_idShift = 24
-	RegisterC0crFieldSync_idMask  = 0x1f000000
+	RegisterC0crFieldSyncidShift = 24
+	RegisterC0crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC0crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldSync_idMask) >> RegisterC0crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC0crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldSyncidMask) >> RegisterC0crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC0crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC0crFieldSync_idMask)|(uint32(value)<<RegisterC0crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC0crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC0crFieldSyncidMask)|(uint32(value)<<RegisterC0crFieldSyncidShift))
 }
 
 // registerC1crType DMAMux - DMA request line multiplexer channel x control register
 type registerC1crType uint32
 
 const (
-	RegisterC1crFieldDmareq_idShift = 0
-	RegisterC1crFieldDmareq_idMask  = 0xff
+	RegisterC1crFieldDmareqidShift = 0
+	RegisterC1crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC1crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldDmareq_idMask) >> RegisterC1crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC1crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldDmareqidMask) >> RegisterC1crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC1crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC1crFieldDmareq_idMask)|(uint32(value)<<RegisterC1crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC1crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC1crFieldDmareqidMask)|(uint32(value)<<RegisterC1crFieldDmareqidShift))
 }
 
 const (
@@ -272,36 +272,36 @@ func (r *registerC1crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC1crFieldSync_idShift = 24
-	RegisterC1crFieldSync_idMask  = 0x1f000000
+	RegisterC1crFieldSyncidShift = 24
+	RegisterC1crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC1crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldSync_idMask) >> RegisterC1crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC1crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldSyncidMask) >> RegisterC1crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC1crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC1crFieldSync_idMask)|(uint32(value)<<RegisterC1crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC1crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC1crFieldSyncidMask)|(uint32(value)<<RegisterC1crFieldSyncidShift))
 }
 
 // registerC2crType DMAMux - DMA request line multiplexer channel x control register
 type registerC2crType uint32
 
 const (
-	RegisterC2crFieldDmareq_idShift = 0
-	RegisterC2crFieldDmareq_idMask  = 0xff
+	RegisterC2crFieldDmareqidShift = 0
+	RegisterC2crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC2crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldDmareq_idMask) >> RegisterC2crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC2crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldDmareqidMask) >> RegisterC2crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC2crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC2crFieldDmareq_idMask)|(uint32(value)<<RegisterC2crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC2crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC2crFieldDmareqidMask)|(uint32(value)<<RegisterC2crFieldDmareqidShift))
 }
 
 const (
@@ -392,36 +392,36 @@ func (r *registerC2crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC2crFieldSync_idShift = 24
-	RegisterC2crFieldSync_idMask  = 0x1f000000
+	RegisterC2crFieldSyncidShift = 24
+	RegisterC2crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC2crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldSync_idMask) >> RegisterC2crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC2crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldSyncidMask) >> RegisterC2crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC2crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC2crFieldSync_idMask)|(uint32(value)<<RegisterC2crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC2crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC2crFieldSyncidMask)|(uint32(value)<<RegisterC2crFieldSyncidShift))
 }
 
 // registerC3crType DMAMux - DMA request line multiplexer channel x control register
 type registerC3crType uint32
 
 const (
-	RegisterC3crFieldDmareq_idShift = 0
-	RegisterC3crFieldDmareq_idMask  = 0xff
+	RegisterC3crFieldDmareqidShift = 0
+	RegisterC3crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC3crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldDmareq_idMask) >> RegisterC3crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC3crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldDmareqidMask) >> RegisterC3crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC3crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC3crFieldDmareq_idMask)|(uint32(value)<<RegisterC3crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC3crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC3crFieldDmareqidMask)|(uint32(value)<<RegisterC3crFieldDmareqidShift))
 }
 
 const (
@@ -512,36 +512,36 @@ func (r *registerC3crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC3crFieldSync_idShift = 24
-	RegisterC3crFieldSync_idMask  = 0x1f000000
+	RegisterC3crFieldSyncidShift = 24
+	RegisterC3crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC3crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldSync_idMask) >> RegisterC3crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC3crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldSyncidMask) >> RegisterC3crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC3crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC3crFieldSync_idMask)|(uint32(value)<<RegisterC3crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC3crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC3crFieldSyncidMask)|(uint32(value)<<RegisterC3crFieldSyncidShift))
 }
 
 // registerC4crType DMAMux - DMA request line multiplexer channel x control register
 type registerC4crType uint32
 
 const (
-	RegisterC4crFieldDmareq_idShift = 0
-	RegisterC4crFieldDmareq_idMask  = 0xff
+	RegisterC4crFieldDmareqidShift = 0
+	RegisterC4crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC4crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldDmareq_idMask) >> RegisterC4crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC4crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldDmareqidMask) >> RegisterC4crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC4crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC4crFieldDmareq_idMask)|(uint32(value)<<RegisterC4crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC4crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC4crFieldDmareqidMask)|(uint32(value)<<RegisterC4crFieldDmareqidShift))
 }
 
 const (
@@ -632,36 +632,36 @@ func (r *registerC4crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC4crFieldSync_idShift = 24
-	RegisterC4crFieldSync_idMask  = 0x1f000000
+	RegisterC4crFieldSyncidShift = 24
+	RegisterC4crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC4crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldSync_idMask) >> RegisterC4crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC4crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldSyncidMask) >> RegisterC4crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC4crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC4crFieldSync_idMask)|(uint32(value)<<RegisterC4crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC4crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC4crFieldSyncidMask)|(uint32(value)<<RegisterC4crFieldSyncidShift))
 }
 
 // registerC5crType DMAMux - DMA request line multiplexer channel x control register
 type registerC5crType uint32
 
 const (
-	RegisterC5crFieldDmareq_idShift = 0
-	RegisterC5crFieldDmareq_idMask  = 0xff
+	RegisterC5crFieldDmareqidShift = 0
+	RegisterC5crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC5crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldDmareq_idMask) >> RegisterC5crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC5crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldDmareqidMask) >> RegisterC5crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC5crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC5crFieldDmareq_idMask)|(uint32(value)<<RegisterC5crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC5crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC5crFieldDmareqidMask)|(uint32(value)<<RegisterC5crFieldDmareqidShift))
 }
 
 const (
@@ -752,36 +752,36 @@ func (r *registerC5crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC5crFieldSync_idShift = 24
-	RegisterC5crFieldSync_idMask  = 0x1f000000
+	RegisterC5crFieldSyncidShift = 24
+	RegisterC5crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC5crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldSync_idMask) >> RegisterC5crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC5crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldSyncidMask) >> RegisterC5crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC5crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC5crFieldSync_idMask)|(uint32(value)<<RegisterC5crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC5crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC5crFieldSyncidMask)|(uint32(value)<<RegisterC5crFieldSyncidShift))
 }
 
 // registerC6crType DMAMux - DMA request line multiplexer channel x control register
 type registerC6crType uint32
 
 const (
-	RegisterC6crFieldDmareq_idShift = 0
-	RegisterC6crFieldDmareq_idMask  = 0xff
+	RegisterC6crFieldDmareqidShift = 0
+	RegisterC6crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC6crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldDmareq_idMask) >> RegisterC6crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC6crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldDmareqidMask) >> RegisterC6crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC6crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC6crFieldDmareq_idMask)|(uint32(value)<<RegisterC6crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC6crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC6crFieldDmareqidMask)|(uint32(value)<<RegisterC6crFieldDmareqidShift))
 }
 
 const (
@@ -872,36 +872,36 @@ func (r *registerC6crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC6crFieldSync_idShift = 24
-	RegisterC6crFieldSync_idMask  = 0x1f000000
+	RegisterC6crFieldSyncidShift = 24
+	RegisterC6crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC6crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldSync_idMask) >> RegisterC6crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC6crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldSyncidMask) >> RegisterC6crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC6crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC6crFieldSync_idMask)|(uint32(value)<<RegisterC6crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC6crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC6crFieldSyncidMask)|(uint32(value)<<RegisterC6crFieldSyncidShift))
 }
 
 // registerC7crType DMAMux - DMA request line multiplexer channel x control register
 type registerC7crType uint32
 
 const (
-	RegisterC7crFieldDmareq_idShift = 0
-	RegisterC7crFieldDmareq_idMask  = 0xff
+	RegisterC7crFieldDmareqidShift = 0
+	RegisterC7crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC7crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldDmareq_idMask) >> RegisterC7crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC7crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldDmareqidMask) >> RegisterC7crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC7crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC7crFieldDmareq_idMask)|(uint32(value)<<RegisterC7crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC7crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC7crFieldDmareqidMask)|(uint32(value)<<RegisterC7crFieldDmareqidShift))
 }
 
 const (
@@ -992,36 +992,36 @@ func (r *registerC7crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC7crFieldSync_idShift = 24
-	RegisterC7crFieldSync_idMask  = 0x1f000000
+	RegisterC7crFieldSyncidShift = 24
+	RegisterC7crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC7crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldSync_idMask) >> RegisterC7crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC7crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldSyncidMask) >> RegisterC7crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC7crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC7crFieldSync_idMask)|(uint32(value)<<RegisterC7crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC7crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC7crFieldSyncidMask)|(uint32(value)<<RegisterC7crFieldSyncidShift))
 }
 
 // registerC8crType DMAMux - DMA request line multiplexer channel x control register
 type registerC8crType uint32
 
 const (
-	RegisterC8crFieldDmareq_idShift = 0
-	RegisterC8crFieldDmareq_idMask  = 0xff
+	RegisterC8crFieldDmareqidShift = 0
+	RegisterC8crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC8crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldDmareq_idMask) >> RegisterC8crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC8crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldDmareqidMask) >> RegisterC8crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC8crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC8crFieldDmareq_idMask)|(uint32(value)<<RegisterC8crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC8crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC8crFieldDmareqidMask)|(uint32(value)<<RegisterC8crFieldDmareqidShift))
 }
 
 const (
@@ -1112,36 +1112,36 @@ func (r *registerC8crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC8crFieldSync_idShift = 24
-	RegisterC8crFieldSync_idMask  = 0x1f000000
+	RegisterC8crFieldSyncidShift = 24
+	RegisterC8crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC8crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldSync_idMask) >> RegisterC8crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC8crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldSyncidMask) >> RegisterC8crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC8crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC8crFieldSync_idMask)|(uint32(value)<<RegisterC8crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC8crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC8crFieldSyncidMask)|(uint32(value)<<RegisterC8crFieldSyncidShift))
 }
 
 // registerC9crType DMAMux - DMA request line multiplexer channel x control register
 type registerC9crType uint32
 
 const (
-	RegisterC9crFieldDmareq_idShift = 0
-	RegisterC9crFieldDmareq_idMask  = 0xff
+	RegisterC9crFieldDmareqidShift = 0
+	RegisterC9crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC9crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldDmareq_idMask) >> RegisterC9crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC9crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldDmareqidMask) >> RegisterC9crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC9crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC9crFieldDmareq_idMask)|(uint32(value)<<RegisterC9crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC9crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC9crFieldDmareqidMask)|(uint32(value)<<RegisterC9crFieldDmareqidShift))
 }
 
 const (
@@ -1232,36 +1232,36 @@ func (r *registerC9crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC9crFieldSync_idShift = 24
-	RegisterC9crFieldSync_idMask  = 0x1f000000
+	RegisterC9crFieldSyncidShift = 24
+	RegisterC9crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC9crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldSync_idMask) >> RegisterC9crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC9crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldSyncidMask) >> RegisterC9crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC9crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC9crFieldSync_idMask)|(uint32(value)<<RegisterC9crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC9crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC9crFieldSyncidMask)|(uint32(value)<<RegisterC9crFieldSyncidShift))
 }
 
 // registerC10crType DMAMux - DMA request line multiplexer channel x control register
 type registerC10crType uint32
 
 const (
-	RegisterC10crFieldDmareq_idShift = 0
-	RegisterC10crFieldDmareq_idMask  = 0xff
+	RegisterC10crFieldDmareqidShift = 0
+	RegisterC10crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC10crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldDmareq_idMask) >> RegisterC10crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC10crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldDmareqidMask) >> RegisterC10crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC10crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC10crFieldDmareq_idMask)|(uint32(value)<<RegisterC10crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC10crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC10crFieldDmareqidMask)|(uint32(value)<<RegisterC10crFieldDmareqidShift))
 }
 
 const (
@@ -1352,36 +1352,36 @@ func (r *registerC10crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC10crFieldSync_idShift = 24
-	RegisterC10crFieldSync_idMask  = 0x1f000000
+	RegisterC10crFieldSyncidShift = 24
+	RegisterC10crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC10crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldSync_idMask) >> RegisterC10crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC10crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldSyncidMask) >> RegisterC10crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC10crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC10crFieldSync_idMask)|(uint32(value)<<RegisterC10crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC10crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC10crFieldSyncidMask)|(uint32(value)<<RegisterC10crFieldSyncidShift))
 }
 
 // registerC11crType DMAMux - DMA request line multiplexer channel x control register
 type registerC11crType uint32
 
 const (
-	RegisterC11crFieldDmareq_idShift = 0
-	RegisterC11crFieldDmareq_idMask  = 0xff
+	RegisterC11crFieldDmareqidShift = 0
+	RegisterC11crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC11crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldDmareq_idMask) >> RegisterC11crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC11crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldDmareqidMask) >> RegisterC11crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC11crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC11crFieldDmareq_idMask)|(uint32(value)<<RegisterC11crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC11crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC11crFieldDmareqidMask)|(uint32(value)<<RegisterC11crFieldDmareqidShift))
 }
 
 const (
@@ -1472,36 +1472,36 @@ func (r *registerC11crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC11crFieldSync_idShift = 24
-	RegisterC11crFieldSync_idMask  = 0x1f000000
+	RegisterC11crFieldSyncidShift = 24
+	RegisterC11crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC11crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldSync_idMask) >> RegisterC11crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC11crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldSyncidMask) >> RegisterC11crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC11crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC11crFieldSync_idMask)|(uint32(value)<<RegisterC11crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC11crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC11crFieldSyncidMask)|(uint32(value)<<RegisterC11crFieldSyncidShift))
 }
 
 // registerC12crType DMAMux - DMA request line multiplexer channel x control register
 type registerC12crType uint32
 
 const (
-	RegisterC12crFieldDmareq_idShift = 0
-	RegisterC12crFieldDmareq_idMask  = 0xff
+	RegisterC12crFieldDmareqidShift = 0
+	RegisterC12crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC12crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldDmareq_idMask) >> RegisterC12crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC12crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldDmareqidMask) >> RegisterC12crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC12crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC12crFieldDmareq_idMask)|(uint32(value)<<RegisterC12crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC12crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC12crFieldDmareqidMask)|(uint32(value)<<RegisterC12crFieldDmareqidShift))
 }
 
 const (
@@ -1592,36 +1592,36 @@ func (r *registerC12crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC12crFieldSync_idShift = 24
-	RegisterC12crFieldSync_idMask  = 0x1f000000
+	RegisterC12crFieldSyncidShift = 24
+	RegisterC12crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC12crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldSync_idMask) >> RegisterC12crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC12crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldSyncidMask) >> RegisterC12crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC12crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC12crFieldSync_idMask)|(uint32(value)<<RegisterC12crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC12crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC12crFieldSyncidMask)|(uint32(value)<<RegisterC12crFieldSyncidShift))
 }
 
 // registerC13crType DMAMux - DMA request line multiplexer channel x control register
 type registerC13crType uint32
 
 const (
-	RegisterC13crFieldDmareq_idShift = 0
-	RegisterC13crFieldDmareq_idMask  = 0xff
+	RegisterC13crFieldDmareqidShift = 0
+	RegisterC13crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC13crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldDmareq_idMask) >> RegisterC13crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC13crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldDmareqidMask) >> RegisterC13crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC13crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC13crFieldDmareq_idMask)|(uint32(value)<<RegisterC13crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC13crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC13crFieldDmareqidMask)|(uint32(value)<<RegisterC13crFieldDmareqidShift))
 }
 
 const (
@@ -1712,36 +1712,36 @@ func (r *registerC13crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC13crFieldSync_idShift = 24
-	RegisterC13crFieldSync_idMask  = 0x1f000000
+	RegisterC13crFieldSyncidShift = 24
+	RegisterC13crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC13crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldSync_idMask) >> RegisterC13crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC13crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldSyncidMask) >> RegisterC13crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC13crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC13crFieldSync_idMask)|(uint32(value)<<RegisterC13crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC13crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC13crFieldSyncidMask)|(uint32(value)<<RegisterC13crFieldSyncidShift))
 }
 
 // registerC14crType DMAMux - DMA request line multiplexer channel x control register
 type registerC14crType uint32
 
 const (
-	RegisterC14crFieldDmareq_idShift = 0
-	RegisterC14crFieldDmareq_idMask  = 0xff
+	RegisterC14crFieldDmareqidShift = 0
+	RegisterC14crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC14crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldDmareq_idMask) >> RegisterC14crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC14crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldDmareqidMask) >> RegisterC14crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC14crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC14crFieldDmareq_idMask)|(uint32(value)<<RegisterC14crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC14crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC14crFieldDmareqidMask)|(uint32(value)<<RegisterC14crFieldDmareqidShift))
 }
 
 const (
@@ -1832,36 +1832,36 @@ func (r *registerC14crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC14crFieldSync_idShift = 24
-	RegisterC14crFieldSync_idMask  = 0x1f000000
+	RegisterC14crFieldSyncidShift = 24
+	RegisterC14crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC14crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldSync_idMask) >> RegisterC14crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC14crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldSyncidMask) >> RegisterC14crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC14crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC14crFieldSync_idMask)|(uint32(value)<<RegisterC14crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC14crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC14crFieldSyncidMask)|(uint32(value)<<RegisterC14crFieldSyncidShift))
 }
 
 // registerC15crType DMAMux - DMA request line multiplexer channel x control register
 type registerC15crType uint32
 
 const (
-	RegisterC15crFieldDmareq_idShift = 0
-	RegisterC15crFieldDmareq_idMask  = 0xff
+	RegisterC15crFieldDmareqidShift = 0
+	RegisterC15crFieldDmareqidMask  = 0xff
 )
 
-// GetDmareq_id Input DMA request line selected
-func (r *registerC15crType) GetDmareq_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldDmareq_idMask) >> RegisterC15crFieldDmareq_idShift)
+// GetDmareqid Input DMA request line selected
+func (r *registerC15crType) GetDmareqid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldDmareqidMask) >> RegisterC15crFieldDmareqidShift)
 }
 
-// SetDmareq_id Input DMA request line selected
-func (r *registerC15crType) SetDmareq_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC15crFieldDmareq_idMask)|(uint32(value)<<RegisterC15crFieldDmareq_idShift))
+// SetDmareqid Input DMA request line selected
+func (r *registerC15crType) SetDmareqid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC15crFieldDmareqidMask)|(uint32(value)<<RegisterC15crFieldDmareqidShift))
 }
 
 const (
@@ -1952,18 +1952,18 @@ func (r *registerC15crType) SetNbreq(value uint8) {
 }
 
 const (
-	RegisterC15crFieldSync_idShift = 24
-	RegisterC15crFieldSync_idMask  = 0x1f000000
+	RegisterC15crFieldSyncidShift = 24
+	RegisterC15crFieldSyncidMask  = 0x1f000000
 )
 
-// GetSync_id Synchronization input selected
-func (r *registerC15crType) GetSync_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldSync_idMask) >> RegisterC15crFieldSync_idShift)
+// GetSyncid Synchronization input selected
+func (r *registerC15crType) GetSyncid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldSyncidMask) >> RegisterC15crFieldSyncidShift)
 }
 
-// SetSync_id Synchronization input selected
-func (r *registerC15crType) SetSync_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC15crFieldSync_idMask)|(uint32(value)<<RegisterC15crFieldSync_idShift))
+// SetSyncid Synchronization input selected
+func (r *registerC15crType) SetSyncid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC15crFieldSyncidMask)|(uint32(value)<<RegisterC15crFieldSyncidShift))
 }
 
 // registerCsrType DMAMUX request line multiplexer interrupt channel status register
@@ -2006,18 +2006,18 @@ func (r *registerCfrType) SetCsof(value uint16) {
 type registerRg0crType uint32
 
 const (
-	RegisterRg0crFieldSig_idShift = 0
-	RegisterRg0crFieldSig_idMask  = 0x1f
+	RegisterRg0crFieldSigidShift = 0
+	RegisterRg0crFieldSigidMask  = 0x1f
 )
 
-// GetSig_id DMA request trigger input selected
-func (r *registerRg0crType) GetSig_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg0crFieldSig_idMask) >> RegisterRg0crFieldSig_idShift)
+// GetSigid DMA request trigger input selected
+func (r *registerRg0crType) GetSigid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg0crFieldSigidMask) >> RegisterRg0crFieldSigidShift)
 }
 
-// SetSig_id DMA request trigger input selected
-func (r *registerRg0crType) SetSig_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg0crFieldSig_idMask)|(uint32(value)<<RegisterRg0crFieldSig_idShift))
+// SetSigid DMA request trigger input selected
+func (r *registerRg0crType) SetSigid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg0crFieldSigidMask)|(uint32(value)<<RegisterRg0crFieldSigidShift))
 }
 
 const (
@@ -2092,18 +2092,18 @@ func (r *registerRg0crType) SetGnbreq(value uint8) {
 type registerRg1crType uint32
 
 const (
-	RegisterRg1crFieldSig_idShift = 0
-	RegisterRg1crFieldSig_idMask  = 0x1f
+	RegisterRg1crFieldSigidShift = 0
+	RegisterRg1crFieldSigidMask  = 0x1f
 )
 
-// GetSig_id DMA request trigger input selected
-func (r *registerRg1crType) GetSig_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg1crFieldSig_idMask) >> RegisterRg1crFieldSig_idShift)
+// GetSigid DMA request trigger input selected
+func (r *registerRg1crType) GetSigid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg1crFieldSigidMask) >> RegisterRg1crFieldSigidShift)
 }
 
-// SetSig_id DMA request trigger input selected
-func (r *registerRg1crType) SetSig_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg1crFieldSig_idMask)|(uint32(value)<<RegisterRg1crFieldSig_idShift))
+// SetSigid DMA request trigger input selected
+func (r *registerRg1crType) SetSigid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg1crFieldSigidMask)|(uint32(value)<<RegisterRg1crFieldSigidShift))
 }
 
 const (
@@ -2178,18 +2178,18 @@ func (r *registerRg1crType) SetGnbreq(value uint8) {
 type registerRg2crType uint32
 
 const (
-	RegisterRg2crFieldSig_idShift = 0
-	RegisterRg2crFieldSig_idMask  = 0x1f
+	RegisterRg2crFieldSigidShift = 0
+	RegisterRg2crFieldSigidMask  = 0x1f
 )
 
-// GetSig_id DMA request trigger input selected
-func (r *registerRg2crType) GetSig_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg2crFieldSig_idMask) >> RegisterRg2crFieldSig_idShift)
+// GetSigid DMA request trigger input selected
+func (r *registerRg2crType) GetSigid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg2crFieldSigidMask) >> RegisterRg2crFieldSigidShift)
 }
 
-// SetSig_id DMA request trigger input selected
-func (r *registerRg2crType) SetSig_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg2crFieldSig_idMask)|(uint32(value)<<RegisterRg2crFieldSig_idShift))
+// SetSigid DMA request trigger input selected
+func (r *registerRg2crType) SetSigid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg2crFieldSigidMask)|(uint32(value)<<RegisterRg2crFieldSigidShift))
 }
 
 const (
@@ -2264,18 +2264,18 @@ func (r *registerRg2crType) SetGnbreq(value uint8) {
 type registerRg3crType uint32
 
 const (
-	RegisterRg3crFieldSig_idShift = 0
-	RegisterRg3crFieldSig_idMask  = 0x1f
+	RegisterRg3crFieldSigidShift = 0
+	RegisterRg3crFieldSigidMask  = 0x1f
 )
 
-// GetSig_id DMA request trigger input selected
-func (r *registerRg3crType) GetSig_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg3crFieldSig_idMask) >> RegisterRg3crFieldSig_idShift)
+// GetSigid DMA request trigger input selected
+func (r *registerRg3crType) GetSigid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg3crFieldSigidMask) >> RegisterRg3crFieldSigidShift)
 }
 
-// SetSig_id DMA request trigger input selected
-func (r *registerRg3crType) SetSig_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg3crFieldSig_idMask)|(uint32(value)<<RegisterRg3crFieldSig_idShift))
+// SetSigid DMA request trigger input selected
+func (r *registerRg3crType) SetSigid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg3crFieldSigidMask)|(uint32(value)<<RegisterRg3crFieldSigidShift))
 }
 
 const (
@@ -2350,18 +2350,18 @@ func (r *registerRg3crType) SetGnbreq(value uint8) {
 type registerRg4crType uint32
 
 const (
-	RegisterRg4crFieldSig_idShift = 0
-	RegisterRg4crFieldSig_idMask  = 0x1f
+	RegisterRg4crFieldSigidShift = 0
+	RegisterRg4crFieldSigidMask  = 0x1f
 )
 
-// GetSig_id DMA request trigger input selected
-func (r *registerRg4crType) GetSig_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg4crFieldSig_idMask) >> RegisterRg4crFieldSig_idShift)
+// GetSigid DMA request trigger input selected
+func (r *registerRg4crType) GetSigid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg4crFieldSigidMask) >> RegisterRg4crFieldSigidShift)
 }
 
-// SetSig_id DMA request trigger input selected
-func (r *registerRg4crType) SetSig_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg4crFieldSig_idMask)|(uint32(value)<<RegisterRg4crFieldSig_idShift))
+// SetSigid DMA request trigger input selected
+func (r *registerRg4crType) SetSigid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg4crFieldSigidMask)|(uint32(value)<<RegisterRg4crFieldSigidShift))
 }
 
 const (
@@ -2436,18 +2436,18 @@ func (r *registerRg4crType) SetGnbreq(value uint8) {
 type registerRg5crType uint32
 
 const (
-	RegisterRg5crFieldSig_idShift = 0
-	RegisterRg5crFieldSig_idMask  = 0x1f
+	RegisterRg5crFieldSigidShift = 0
+	RegisterRg5crFieldSigidMask  = 0x1f
 )
 
-// GetSig_id DMA request trigger input selected
-func (r *registerRg5crType) GetSig_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg5crFieldSig_idMask) >> RegisterRg5crFieldSig_idShift)
+// GetSigid DMA request trigger input selected
+func (r *registerRg5crType) GetSigid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg5crFieldSigidMask) >> RegisterRg5crFieldSigidShift)
 }
 
-// SetSig_id DMA request trigger input selected
-func (r *registerRg5crType) SetSig_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg5crFieldSig_idMask)|(uint32(value)<<RegisterRg5crFieldSig_idShift))
+// SetSigid DMA request trigger input selected
+func (r *registerRg5crType) SetSigid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg5crFieldSigidMask)|(uint32(value)<<RegisterRg5crFieldSigidShift))
 }
 
 const (
@@ -2522,18 +2522,18 @@ func (r *registerRg5crType) SetGnbreq(value uint8) {
 type registerRg6crType uint32
 
 const (
-	RegisterRg6crFieldSig_idShift = 0
-	RegisterRg6crFieldSig_idMask  = 0x1f
+	RegisterRg6crFieldSigidShift = 0
+	RegisterRg6crFieldSigidMask  = 0x1f
 )
 
-// GetSig_id DMA request trigger input selected
-func (r *registerRg6crType) GetSig_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg6crFieldSig_idMask) >> RegisterRg6crFieldSig_idShift)
+// GetSigid DMA request trigger input selected
+func (r *registerRg6crType) GetSigid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg6crFieldSigidMask) >> RegisterRg6crFieldSigidShift)
 }
 
-// SetSig_id DMA request trigger input selected
-func (r *registerRg6crType) SetSig_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg6crFieldSig_idMask)|(uint32(value)<<RegisterRg6crFieldSig_idShift))
+// SetSigid DMA request trigger input selected
+func (r *registerRg6crType) SetSigid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg6crFieldSigidMask)|(uint32(value)<<RegisterRg6crFieldSigidShift))
 }
 
 const (
@@ -2608,18 +2608,18 @@ func (r *registerRg6crType) SetGnbreq(value uint8) {
 type registerRg7crType uint32
 
 const (
-	RegisterRg7crFieldSig_idShift = 0
-	RegisterRg7crFieldSig_idMask  = 0x1f
+	RegisterRg7crFieldSigidShift = 0
+	RegisterRg7crFieldSigidMask  = 0x1f
 )
 
-// GetSig_id DMA request trigger input selected
-func (r *registerRg7crType) GetSig_id() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg7crFieldSig_idMask) >> RegisterRg7crFieldSig_idShift)
+// GetSigid DMA request trigger input selected
+func (r *registerRg7crType) GetSigid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg7crFieldSigidMask) >> RegisterRg7crFieldSigidShift)
 }
 
-// SetSig_id DMA request trigger input selected
-func (r *registerRg7crType) SetSig_id(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg7crFieldSig_idMask)|(uint32(value)<<RegisterRg7crFieldSig_idShift))
+// SetSigid DMA request trigger input selected
+func (r *registerRg7crType) SetSigid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg7crFieldSigidMask)|(uint32(value)<<RegisterRg7crFieldSigidShift))
 }
 
 const (

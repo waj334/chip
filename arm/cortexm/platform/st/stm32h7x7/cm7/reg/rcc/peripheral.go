@@ -12,91 +12,91 @@ var (
 )
 
 type _rcc struct {
-	Cr            registerCrType
-	Hsicfgr       registerHsicfgrType
-	Crrcr         registerCrrcrType
-	_             [4]byte
-	Cfgr          registerCfgrType
-	_             [4]byte
-	D1cfgr        registerD1cfgrType
-	D2cfgr        registerD2cfgrType
-	D3cfgr        registerD3cfgrType
-	_             [4]byte
-	Pllckselr     registerPllckselrType
-	Pllcfgr       registerPllcfgrType
-	Pll1divr      registerPll1divrType
-	Pll1fracr     registerPll1fracrType
-	Pll2divr      registerPll2divrType
-	Pll2fracr     registerPll2fracrType
-	Pll3divr      registerPll3divrType
-	Pll3fracr     registerPll3fracrType
-	_             [4]byte
-	D1ccipr       registerD1cciprType
-	D2ccip1r      registerD2ccip1rType
-	D2ccip2r      registerD2ccip2rType
-	D3ccipr       registerD3cciprType
-	_             [4]byte
-	Cier          registerCierType
-	Cifr          registerCifrType
-	Cicr          registerCicrType
-	_             [4]byte
-	Bdcr          registerBdcrType
-	Csr           registerCsrType
-	_             [4]byte
-	Ahb3rstr      registerAhb3rstrType
-	Ahb1rstr      registerAhb1rstrType
-	Ahb2rstr      registerAhb2rstrType
-	Ahb4rstr      registerAhb4rstrType
-	Apb3rstr      registerApb3rstrType
-	Apb1lrstr     registerApb1lrstrType
-	Apb1hrstr     registerApb1hrstrType
-	Apb2rstr      registerApb2rstrType
-	Apb4rstr      registerApb4rstrType
-	Gcr           registerGcrType
-	_             [4]byte
-	D3amr         registerD3amrType
-	_             [36]byte
-	Rsr           registerRsrType
-	Ahb3enr       registerAhb3enrType
-	Ahb1enr       registerAhb1enrType
-	Ahb2enr       registerAhb2enrType
-	Ahb4enr       registerAhb4enrType
-	Apb3enr       registerApb3enrType
-	Apb1lenr      registerApb1lenrType
-	Apb1henr      registerApb1henrType
-	Apb2enr       registerApb2enrType
-	Apb4enr       registerApb4enrType
-	_             [4]byte
-	Ahb3lpenr     registerAhb3lpenrType
-	Ahb1lpenr     registerAhb1lpenrType
-	Ahb2lpenr     registerAhb2lpenrType
-	Ahb4lpenr     registerAhb4lpenrType
-	Apb3lpenr     registerApb3lpenrType
-	Apb1llpenr    registerApb1llpenrType
-	Apb1hlpenr    registerApb1hlpenrType
-	Apb2lpenr     registerApb2lpenrType
-	Apb4lpenr     registerApb4lpenrType
-	_             [16]byte
-	C1_rsr        registerC1_rsrType
-	C1_ahb3enr    registerC1_ahb3enrType
-	C1_ahb1enr    registerC1_ahb1enrType
-	C1_ahb2enr    registerC1_ahb2enrType
-	C1_ahb4enr    registerC1_ahb4enrType
-	C1_apb3enr    registerC1_apb3enrType
-	C1_apb1lenr   registerC1_apb1lenrType
-	C1_apb1henr   registerC1_apb1henrType
-	C1_apb2enr    registerC1_apb2enrType
-	C1_apb4enr    registerC1_apb4enrType
-	_             [4]byte
-	C1_ahb3lpenr  registerC1_ahb3lpenrType
-	C1_ahb1lpenr  registerC1_ahb1lpenrType
-	C1_ahb2lpenr  registerC1_ahb2lpenrType
-	C1_ahb4lpenr  registerC1_ahb4lpenrType
-	C1_apb3lpenr  registerC1_apb3lpenrType
-	C1_apb1llpenr registerC1_apb1llpenrType
-	C1_apb1hlpenr registerC1_apb1hlpenrType
-	C1_apb2lpenr  registerC1_apb2lpenrType
-	C1_apb4lpenr  registerC1_apb4lpenrType
+	Cr           registerCrType
+	Hsicfgr      registerHsicfgrType
+	Crrcr        registerCrrcrType
+	_            [4]byte
+	Cfgr         registerCfgrType
+	_            [4]byte
+	D1cfgr       registerD1cfgrType
+	D2cfgr       registerD2cfgrType
+	D3cfgr       registerD3cfgrType
+	_            [4]byte
+	Pllckselr    registerPllckselrType
+	Pllcfgr      registerPllcfgrType
+	Pll1divr     registerPll1divrType
+	Pll1fracr    registerPll1fracrType
+	Pll2divr     registerPll2divrType
+	Pll2fracr    registerPll2fracrType
+	Pll3divr     registerPll3divrType
+	Pll3fracr    registerPll3fracrType
+	_            [4]byte
+	D1ccipr      registerD1cciprType
+	D2ccip1r     registerD2ccip1rType
+	D2ccip2r     registerD2ccip2rType
+	D3ccipr      registerD3cciprType
+	_            [4]byte
+	Cier         registerCierType
+	Cifr         registerCifrType
+	Cicr         registerCicrType
+	_            [4]byte
+	Bdcr         registerBdcrType
+	Csr          registerCsrType
+	_            [4]byte
+	Ahb3rstr     registerAhb3rstrType
+	Ahb1rstr     registerAhb1rstrType
+	Ahb2rstr     registerAhb2rstrType
+	Ahb4rstr     registerAhb4rstrType
+	Apb3rstr     registerApb3rstrType
+	Apb1lrstr    registerApb1lrstrType
+	Apb1hrstr    registerApb1hrstrType
+	Apb2rstr     registerApb2rstrType
+	Apb4rstr     registerApb4rstrType
+	Gcr          registerGcrType
+	_            [4]byte
+	D3amr        registerD3amrType
+	_            [36]byte
+	Rsr          registerRsrType
+	Ahb3enr      registerAhb3enrType
+	Ahb1enr      registerAhb1enrType
+	Ahb2enr      registerAhb2enrType
+	Ahb4enr      registerAhb4enrType
+	Apb3enr      registerApb3enrType
+	Apb1lenr     registerApb1lenrType
+	Apb1henr     registerApb1henrType
+	Apb2enr      registerApb2enrType
+	Apb4enr      registerApb4enrType
+	_            [4]byte
+	Ahb3lpenr    registerAhb3lpenrType
+	Ahb1lpenr    registerAhb1lpenrType
+	Ahb2lpenr    registerAhb2lpenrType
+	Ahb4lpenr    registerAhb4lpenrType
+	Apb3lpenr    registerApb3lpenrType
+	Apb1llpenr   registerApb1llpenrType
+	Apb1hlpenr   registerApb1hlpenrType
+	Apb2lpenr    registerApb2lpenrType
+	Apb4lpenr    registerApb4lpenrType
+	_            [16]byte
+	C1rsr        registerC1rsrType
+	C1ahb3enr    registerC1ahb3enrType
+	C1ahb1enr    registerC1ahb1enrType
+	C1ahb2enr    registerC1ahb2enrType
+	C1ahb4enr    registerC1ahb4enrType
+	C1apb3enr    registerC1apb3enrType
+	C1apb1lenr   registerC1apb1lenrType
+	C1apb1henr   registerC1apb1henrType
+	C1apb2enr    registerC1apb2enrType
+	C1apb4enr    registerC1apb4enrType
+	_            [4]byte
+	C1ahb3lpenr  registerC1ahb3lpenrType
+	C1ahb1lpenr  registerC1ahb1lpenrType
+	C1ahb2lpenr  registerC1ahb2lpenrType
+	C1ahb4lpenr  registerC1ahb4lpenrType
+	C1apb3lpenr  registerC1apb3lpenrType
+	C1apb1llpenr registerC1apb1llpenrType
+	C1apb1hlpenr registerC1apb1hlpenrType
+	C1apb2lpenr  registerC1apb2lpenrType
+	C1apb4lpenr  registerC1apb4lpenrType
 }
 
 // registerCrType clock control register
@@ -2398,21 +2398,21 @@ func (r *registerCicrType) SetHserdyc(value bool) {
 }
 
 const (
-	RegisterCicrFieldHse_ready_interrupt_clearShift = 4
-	RegisterCicrFieldHse_ready_interrupt_clearMask  = 0x10
+	RegisterCicrFieldHsereadyinterruptclearShift = 4
+	RegisterCicrFieldHsereadyinterruptclearMask  = 0x10
 )
 
-// GetHse_ready_interrupt_clear CSI ready Interrupt Clear
-func (r *registerCicrType) GetHse_ready_interrupt_clear() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldHse_ready_interrupt_clearMask) != 0
+// GetHsereadyinterruptclear CSI ready Interrupt Clear
+func (r *registerCicrType) GetHsereadyinterruptclear() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldHsereadyinterruptclearMask) != 0
 }
 
-// SetHse_ready_interrupt_clear CSI ready Interrupt Clear
-func (r *registerCicrType) SetHse_ready_interrupt_clear(value bool) {
+// SetHsereadyinterruptclear CSI ready Interrupt Clear
+func (r *registerCicrType) SetHsereadyinterruptclear(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldHse_ready_interrupt_clearMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldHsereadyinterruptclearMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCicrFieldHse_ready_interrupt_clearMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCicrFieldHsereadyinterruptclearMask)
 	}
 }
 
@@ -8869,4087 +8869,4087 @@ func (r *registerApb4lpenrType) SetSai4lpen(value bool) {
 	}
 }
 
-// registerC1_rsrType RCC Reset Status Register
-type registerC1_rsrType uint32
+// registerC1rsrType RCC Reset Status Register
+type registerC1rsrType uint32
 
 const (
-	RegisterC1_rsrFieldRmvfShift = 16
-	RegisterC1_rsrFieldRmvfMask  = 0x10000
+	RegisterC1rsrFieldRmvfShift = 16
+	RegisterC1rsrFieldRmvfMask  = 0x10000
 )
 
 // GetRmvf Remove reset flag
-func (r *registerC1_rsrType) GetRmvf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldRmvfMask) != 0
+func (r *registerC1rsrType) GetRmvf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldRmvfMask) != 0
 }
 
 // SetRmvf Remove reset flag
-func (r *registerC1_rsrType) SetRmvf(value bool) {
+func (r *registerC1rsrType) SetRmvf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldRmvfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldRmvfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldRmvfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldRmvfMask)
 	}
 }
 
 const (
-	RegisterC1_rsrFieldCpurstfShift = 17
-	RegisterC1_rsrFieldCpurstfMask  = 0x20000
+	RegisterC1rsrFieldCpurstfShift = 17
+	RegisterC1rsrFieldCpurstfMask  = 0x20000
 )
 
 // GetCpurstf CPU reset flag
-func (r *registerC1_rsrType) GetCpurstf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldCpurstfMask) != 0
+func (r *registerC1rsrType) GetCpurstf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldCpurstfMask) != 0
 }
 
 // SetCpurstf CPU reset flag
-func (r *registerC1_rsrType) SetCpurstf(value bool) {
+func (r *registerC1rsrType) SetCpurstf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldCpurstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldCpurstfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldCpurstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldCpurstfMask)
 	}
 }
 
 const (
-	RegisterC1_rsrFieldD1rstfShift = 19
-	RegisterC1_rsrFieldD1rstfMask  = 0x80000
+	RegisterC1rsrFieldD1rstfShift = 19
+	RegisterC1rsrFieldD1rstfMask  = 0x80000
 )
 
 // GetD1rstf D1 domain power switch reset flag
-func (r *registerC1_rsrType) GetD1rstf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldD1rstfMask) != 0
+func (r *registerC1rsrType) GetD1rstf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldD1rstfMask) != 0
 }
 
 // SetD1rstf D1 domain power switch reset flag
-func (r *registerC1_rsrType) SetD1rstf(value bool) {
+func (r *registerC1rsrType) SetD1rstf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldD1rstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldD1rstfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldD1rstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldD1rstfMask)
 	}
 }
 
 const (
-	RegisterC1_rsrFieldD2rstfShift = 20
-	RegisterC1_rsrFieldD2rstfMask  = 0x100000
+	RegisterC1rsrFieldD2rstfShift = 20
+	RegisterC1rsrFieldD2rstfMask  = 0x100000
 )
 
 // GetD2rstf D2 domain power switch reset flag
-func (r *registerC1_rsrType) GetD2rstf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldD2rstfMask) != 0
+func (r *registerC1rsrType) GetD2rstf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldD2rstfMask) != 0
 }
 
 // SetD2rstf D2 domain power switch reset flag
-func (r *registerC1_rsrType) SetD2rstf(value bool) {
+func (r *registerC1rsrType) SetD2rstf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldD2rstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldD2rstfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldD2rstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldD2rstfMask)
 	}
 }
 
 const (
-	RegisterC1_rsrFieldBorrstfShift = 21
-	RegisterC1_rsrFieldBorrstfMask  = 0x200000
+	RegisterC1rsrFieldBorrstfShift = 21
+	RegisterC1rsrFieldBorrstfMask  = 0x200000
 )
 
 // GetBorrstf BOR reset flag
-func (r *registerC1_rsrType) GetBorrstf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldBorrstfMask) != 0
+func (r *registerC1rsrType) GetBorrstf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldBorrstfMask) != 0
 }
 
 // SetBorrstf BOR reset flag
-func (r *registerC1_rsrType) SetBorrstf(value bool) {
+func (r *registerC1rsrType) SetBorrstf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldBorrstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldBorrstfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldBorrstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldBorrstfMask)
 	}
 }
 
 const (
-	RegisterC1_rsrFieldPinrstfShift = 22
-	RegisterC1_rsrFieldPinrstfMask  = 0x400000
+	RegisterC1rsrFieldPinrstfShift = 22
+	RegisterC1rsrFieldPinrstfMask  = 0x400000
 )
 
 // GetPinrstf Pin reset flag (NRST)
-func (r *registerC1_rsrType) GetPinrstf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldPinrstfMask) != 0
+func (r *registerC1rsrType) GetPinrstf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldPinrstfMask) != 0
 }
 
 // SetPinrstf Pin reset flag (NRST)
-func (r *registerC1_rsrType) SetPinrstf(value bool) {
+func (r *registerC1rsrType) SetPinrstf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldPinrstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldPinrstfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldPinrstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldPinrstfMask)
 	}
 }
 
 const (
-	RegisterC1_rsrFieldPorrstfShift = 23
-	RegisterC1_rsrFieldPorrstfMask  = 0x800000
+	RegisterC1rsrFieldPorrstfShift = 23
+	RegisterC1rsrFieldPorrstfMask  = 0x800000
 )
 
 // GetPorrstf POR/PDR reset flag
-func (r *registerC1_rsrType) GetPorrstf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldPorrstfMask) != 0
+func (r *registerC1rsrType) GetPorrstf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldPorrstfMask) != 0
 }
 
 // SetPorrstf POR/PDR reset flag
-func (r *registerC1_rsrType) SetPorrstf(value bool) {
+func (r *registerC1rsrType) SetPorrstf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldPorrstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldPorrstfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldPorrstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldPorrstfMask)
 	}
 }
 
 const (
-	RegisterC1_rsrFieldSftrstfShift = 24
-	RegisterC1_rsrFieldSftrstfMask  = 0x1000000
+	RegisterC1rsrFieldSftrstfShift = 24
+	RegisterC1rsrFieldSftrstfMask  = 0x1000000
 )
 
 // GetSftrstf System reset from CPU reset flag
-func (r *registerC1_rsrType) GetSftrstf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldSftrstfMask) != 0
+func (r *registerC1rsrType) GetSftrstf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldSftrstfMask) != 0
 }
 
 // SetSftrstf System reset from CPU reset flag
-func (r *registerC1_rsrType) SetSftrstf(value bool) {
+func (r *registerC1rsrType) SetSftrstf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldSftrstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldSftrstfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldSftrstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldSftrstfMask)
 	}
 }
 
 const (
-	RegisterC1_rsrFieldIwdg1rstfShift = 26
-	RegisterC1_rsrFieldIwdg1rstfMask  = 0x4000000
+	RegisterC1rsrFieldIwdg1rstfShift = 26
+	RegisterC1rsrFieldIwdg1rstfMask  = 0x4000000
 )
 
 // GetIwdg1rstf Independent Watchdog reset flag
-func (r *registerC1_rsrType) GetIwdg1rstf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldIwdg1rstfMask) != 0
+func (r *registerC1rsrType) GetIwdg1rstf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldIwdg1rstfMask) != 0
 }
 
 // SetIwdg1rstf Independent Watchdog reset flag
-func (r *registerC1_rsrType) SetIwdg1rstf(value bool) {
+func (r *registerC1rsrType) SetIwdg1rstf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldIwdg1rstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldIwdg1rstfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldIwdg1rstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldIwdg1rstfMask)
 	}
 }
 
 const (
-	RegisterC1_rsrFieldWwdg1rstfShift = 28
-	RegisterC1_rsrFieldWwdg1rstfMask  = 0x10000000
+	RegisterC1rsrFieldWwdg1rstfShift = 28
+	RegisterC1rsrFieldWwdg1rstfMask  = 0x10000000
 )
 
 // GetWwdg1rstf Window Watchdog reset flag
-func (r *registerC1_rsrType) GetWwdg1rstf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldWwdg1rstfMask) != 0
+func (r *registerC1rsrType) GetWwdg1rstf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldWwdg1rstfMask) != 0
 }
 
 // SetWwdg1rstf Window Watchdog reset flag
-func (r *registerC1_rsrType) SetWwdg1rstf(value bool) {
+func (r *registerC1rsrType) SetWwdg1rstf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldWwdg1rstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldWwdg1rstfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldWwdg1rstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldWwdg1rstfMask)
 	}
 }
 
 const (
-	RegisterC1_rsrFieldLpwrrstfShift = 30
-	RegisterC1_rsrFieldLpwrrstfMask  = 0x40000000
+	RegisterC1rsrFieldLpwrrstfShift = 30
+	RegisterC1rsrFieldLpwrrstfMask  = 0x40000000
 )
 
 // GetLpwrrstf Reset due to illegal D1 DStandby or CPU CStop flag
-func (r *registerC1_rsrType) GetLpwrrstf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_rsrFieldLpwrrstfMask) != 0
+func (r *registerC1rsrType) GetLpwrrstf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldLpwrrstfMask) != 0
 }
 
 // SetLpwrrstf Reset due to illegal D1 DStandby or CPU CStop flag
-func (r *registerC1_rsrType) SetLpwrrstf(value bool) {
+func (r *registerC1rsrType) SetLpwrrstf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_rsrFieldLpwrrstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldLpwrrstfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_rsrFieldLpwrrstfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1rsrFieldLpwrrstfMask)
 	}
 }
 
-// registerC1_ahb3enrType RCC AHB3 Clock Register
-type registerC1_ahb3enrType uint32
+// registerC1ahb3enrType RCC AHB3 Clock Register
+type registerC1ahb3enrType uint32
 
 const (
-	RegisterC1_ahb3enrFieldMdmaenShift = 0
-	RegisterC1_ahb3enrFieldMdmaenMask  = 0x1
+	RegisterC1ahb3enrFieldMdmaenShift = 0
+	RegisterC1ahb3enrFieldMdmaenMask  = 0x1
 )
 
 // GetMdmaen MDMA Peripheral Clock Enable
-func (r *registerC1_ahb3enrType) GetMdmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3enrFieldMdmaenMask) != 0
+func (r *registerC1ahb3enrType) GetMdmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldMdmaenMask) != 0
 }
 
 // SetMdmaen MDMA Peripheral Clock Enable
-func (r *registerC1_ahb3enrType) SetMdmaen(value bool) {
+func (r *registerC1ahb3enrType) SetMdmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3enrFieldMdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldMdmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3enrFieldMdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3enrFieldMdmaenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3enrFieldDma2denShift = 4
-	RegisterC1_ahb3enrFieldDma2denMask  = 0x10
+	RegisterC1ahb3enrFieldDma2denShift = 4
+	RegisterC1ahb3enrFieldDma2denMask  = 0x10
 )
 
 // GetDma2den DMA2D Peripheral Clock Enable
-func (r *registerC1_ahb3enrType) GetDma2den() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3enrFieldDma2denMask) != 0
+func (r *registerC1ahb3enrType) GetDma2den() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldDma2denMask) != 0
 }
 
 // SetDma2den DMA2D Peripheral Clock Enable
-func (r *registerC1_ahb3enrType) SetDma2den(value bool) {
+func (r *registerC1ahb3enrType) SetDma2den(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3enrFieldDma2denMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldDma2denMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3enrFieldDma2denMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3enrFieldDma2denMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3enrFieldJpgdecenShift = 5
-	RegisterC1_ahb3enrFieldJpgdecenMask  = 0x20
+	RegisterC1ahb3enrFieldJpgdecenShift = 5
+	RegisterC1ahb3enrFieldJpgdecenMask  = 0x20
 )
 
 // GetJpgdecen JPGDEC Peripheral Clock Enable
-func (r *registerC1_ahb3enrType) GetJpgdecen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3enrFieldJpgdecenMask) != 0
+func (r *registerC1ahb3enrType) GetJpgdecen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldJpgdecenMask) != 0
 }
 
 // SetJpgdecen JPGDEC Peripheral Clock Enable
-func (r *registerC1_ahb3enrType) SetJpgdecen(value bool) {
+func (r *registerC1ahb3enrType) SetJpgdecen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3enrFieldJpgdecenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldJpgdecenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3enrFieldJpgdecenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3enrFieldJpgdecenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3enrFieldFmcenShift = 12
-	RegisterC1_ahb3enrFieldFmcenMask  = 0x1000
+	RegisterC1ahb3enrFieldFmcenShift = 12
+	RegisterC1ahb3enrFieldFmcenMask  = 0x1000
 )
 
 // GetFmcen FMC Peripheral Clocks Enable
-func (r *registerC1_ahb3enrType) GetFmcen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3enrFieldFmcenMask) != 0
+func (r *registerC1ahb3enrType) GetFmcen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldFmcenMask) != 0
 }
 
 // SetFmcen FMC Peripheral Clocks Enable
-func (r *registerC1_ahb3enrType) SetFmcen(value bool) {
+func (r *registerC1ahb3enrType) SetFmcen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3enrFieldFmcenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldFmcenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3enrFieldFmcenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3enrFieldFmcenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3enrFieldQspienShift = 14
-	RegisterC1_ahb3enrFieldQspienMask  = 0x4000
+	RegisterC1ahb3enrFieldQspienShift = 14
+	RegisterC1ahb3enrFieldQspienMask  = 0x4000
 )
 
 // GetQspien QUADSPI and QUADSPI Delay Clock Enable
-func (r *registerC1_ahb3enrType) GetQspien() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3enrFieldQspienMask) != 0
+func (r *registerC1ahb3enrType) GetQspien() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldQspienMask) != 0
 }
 
 // SetQspien QUADSPI and QUADSPI Delay Clock Enable
-func (r *registerC1_ahb3enrType) SetQspien(value bool) {
+func (r *registerC1ahb3enrType) SetQspien(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3enrFieldQspienMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldQspienMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3enrFieldQspienMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3enrFieldQspienMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3enrFieldSdmmc1enShift = 16
-	RegisterC1_ahb3enrFieldSdmmc1enMask  = 0x10000
+	RegisterC1ahb3enrFieldSdmmc1enShift = 16
+	RegisterC1ahb3enrFieldSdmmc1enMask  = 0x10000
 )
 
 // GetSdmmc1en SDMMC1 and SDMMC1 Delay Clock Enable
-func (r *registerC1_ahb3enrType) GetSdmmc1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3enrFieldSdmmc1enMask) != 0
+func (r *registerC1ahb3enrType) GetSdmmc1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldSdmmc1enMask) != 0
 }
 
 // SetSdmmc1en SDMMC1 and SDMMC1 Delay Clock Enable
-func (r *registerC1_ahb3enrType) SetSdmmc1en(value bool) {
+func (r *registerC1ahb3enrType) SetSdmmc1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3enrFieldSdmmc1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldSdmmc1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3enrFieldSdmmc1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3enrFieldSdmmc1enMask)
 	}
 }
 
-// registerC1_ahb1enrType RCC AHB1 Clock Register
-type registerC1_ahb1enrType uint32
+// registerC1ahb1enrType RCC AHB1 Clock Register
+type registerC1ahb1enrType uint32
 
 const (
-	RegisterC1_ahb1enrFieldDma1enShift = 0
-	RegisterC1_ahb1enrFieldDma1enMask  = 0x1
+	RegisterC1ahb1enrFieldDma1enShift = 0
+	RegisterC1ahb1enrFieldDma1enMask  = 0x1
 )
 
 // GetDma1en DMA1 Clock Enable
-func (r *registerC1_ahb1enrType) GetDma1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1enrFieldDma1enMask) != 0
+func (r *registerC1ahb1enrType) GetDma1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldDma1enMask) != 0
 }
 
 // SetDma1en DMA1 Clock Enable
-func (r *registerC1_ahb1enrType) SetDma1en(value bool) {
+func (r *registerC1ahb1enrType) SetDma1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1enrFieldDma1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldDma1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1enrFieldDma1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1enrFieldDma1enMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1enrFieldDma2enShift = 1
-	RegisterC1_ahb1enrFieldDma2enMask  = 0x2
+	RegisterC1ahb1enrFieldDma2enShift = 1
+	RegisterC1ahb1enrFieldDma2enMask  = 0x2
 )
 
 // GetDma2en DMA2 Clock Enable
-func (r *registerC1_ahb1enrType) GetDma2en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1enrFieldDma2enMask) != 0
+func (r *registerC1ahb1enrType) GetDma2en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldDma2enMask) != 0
 }
 
 // SetDma2en DMA2 Clock Enable
-func (r *registerC1_ahb1enrType) SetDma2en(value bool) {
+func (r *registerC1ahb1enrType) SetDma2en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1enrFieldDma2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldDma2enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1enrFieldDma2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1enrFieldDma2enMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1enrFieldAdc12enShift = 5
-	RegisterC1_ahb1enrFieldAdc12enMask  = 0x20
+	RegisterC1ahb1enrFieldAdc12enShift = 5
+	RegisterC1ahb1enrFieldAdc12enMask  = 0x20
 )
 
 // GetAdc12en ADC1/2 Peripheral Clocks Enable
-func (r *registerC1_ahb1enrType) GetAdc12en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1enrFieldAdc12enMask) != 0
+func (r *registerC1ahb1enrType) GetAdc12en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldAdc12enMask) != 0
 }
 
 // SetAdc12en ADC1/2 Peripheral Clocks Enable
-func (r *registerC1_ahb1enrType) SetAdc12en(value bool) {
+func (r *registerC1ahb1enrType) SetAdc12en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1enrFieldAdc12enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldAdc12enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1enrFieldAdc12enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1enrFieldAdc12enMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1enrFieldEth1macenShift = 15
-	RegisterC1_ahb1enrFieldEth1macenMask  = 0x8000
+	RegisterC1ahb1enrFieldEth1macenShift = 15
+	RegisterC1ahb1enrFieldEth1macenMask  = 0x8000
 )
 
 // GetEth1macen Ethernet MAC bus interface Clock Enable
-func (r *registerC1_ahb1enrType) GetEth1macen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1enrFieldEth1macenMask) != 0
+func (r *registerC1ahb1enrType) GetEth1macen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldEth1macenMask) != 0
 }
 
 // SetEth1macen Ethernet MAC bus interface Clock Enable
-func (r *registerC1_ahb1enrType) SetEth1macen(value bool) {
+func (r *registerC1ahb1enrType) SetEth1macen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1enrFieldEth1macenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldEth1macenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1enrFieldEth1macenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1enrFieldEth1macenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1enrFieldEth1txenShift = 16
-	RegisterC1_ahb1enrFieldEth1txenMask  = 0x10000
+	RegisterC1ahb1enrFieldEth1txenShift = 16
+	RegisterC1ahb1enrFieldEth1txenMask  = 0x10000
 )
 
 // GetEth1txen Ethernet Transmission Clock Enable
-func (r *registerC1_ahb1enrType) GetEth1txen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1enrFieldEth1txenMask) != 0
+func (r *registerC1ahb1enrType) GetEth1txen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldEth1txenMask) != 0
 }
 
 // SetEth1txen Ethernet Transmission Clock Enable
-func (r *registerC1_ahb1enrType) SetEth1txen(value bool) {
+func (r *registerC1ahb1enrType) SetEth1txen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1enrFieldEth1txenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldEth1txenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1enrFieldEth1txenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1enrFieldEth1txenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1enrFieldEth1rxenShift = 17
-	RegisterC1_ahb1enrFieldEth1rxenMask  = 0x20000
+	RegisterC1ahb1enrFieldEth1rxenShift = 17
+	RegisterC1ahb1enrFieldEth1rxenMask  = 0x20000
 )
 
 // GetEth1rxen Ethernet Reception Clock Enable
-func (r *registerC1_ahb1enrType) GetEth1rxen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1enrFieldEth1rxenMask) != 0
+func (r *registerC1ahb1enrType) GetEth1rxen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldEth1rxenMask) != 0
 }
 
 // SetEth1rxen Ethernet Reception Clock Enable
-func (r *registerC1_ahb1enrType) SetEth1rxen(value bool) {
+func (r *registerC1ahb1enrType) SetEth1rxen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1enrFieldEth1rxenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldEth1rxenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1enrFieldEth1rxenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1enrFieldEth1rxenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1enrFieldUsb1otgenShift = 25
-	RegisterC1_ahb1enrFieldUsb1otgenMask  = 0x2000000
+	RegisterC1ahb1enrFieldUsb1otgenShift = 25
+	RegisterC1ahb1enrFieldUsb1otgenMask  = 0x2000000
 )
 
 // GetUsb1otgen USB1OTG Peripheral Clocks Enable
-func (r *registerC1_ahb1enrType) GetUsb1otgen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1enrFieldUsb1otgenMask) != 0
+func (r *registerC1ahb1enrType) GetUsb1otgen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldUsb1otgenMask) != 0
 }
 
 // SetUsb1otgen USB1OTG Peripheral Clocks Enable
-func (r *registerC1_ahb1enrType) SetUsb1otgen(value bool) {
+func (r *registerC1ahb1enrType) SetUsb1otgen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1enrFieldUsb1otgenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldUsb1otgenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1enrFieldUsb1otgenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1enrFieldUsb1otgenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1enrFieldUsb1ulpienShift = 26
-	RegisterC1_ahb1enrFieldUsb1ulpienMask  = 0x4000000
+	RegisterC1ahb1enrFieldUsb1ulpienShift = 26
+	RegisterC1ahb1enrFieldUsb1ulpienMask  = 0x4000000
 )
 
 // GetUsb1ulpien USB_PHY1 Clocks Enable
-func (r *registerC1_ahb1enrType) GetUsb1ulpien() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1enrFieldUsb1ulpienMask) != 0
+func (r *registerC1ahb1enrType) GetUsb1ulpien() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldUsb1ulpienMask) != 0
 }
 
 // SetUsb1ulpien USB_PHY1 Clocks Enable
-func (r *registerC1_ahb1enrType) SetUsb1ulpien(value bool) {
+func (r *registerC1ahb1enrType) SetUsb1ulpien(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1enrFieldUsb1ulpienMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldUsb1ulpienMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1enrFieldUsb1ulpienMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1enrFieldUsb1ulpienMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1enrFieldUsb2otgenShift = 27
-	RegisterC1_ahb1enrFieldUsb2otgenMask  = 0x8000000
+	RegisterC1ahb1enrFieldUsb2otgenShift = 27
+	RegisterC1ahb1enrFieldUsb2otgenMask  = 0x8000000
 )
 
 // GetUsb2otgen USB2OTG Peripheral Clocks Enable
-func (r *registerC1_ahb1enrType) GetUsb2otgen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1enrFieldUsb2otgenMask) != 0
+func (r *registerC1ahb1enrType) GetUsb2otgen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldUsb2otgenMask) != 0
 }
 
 // SetUsb2otgen USB2OTG Peripheral Clocks Enable
-func (r *registerC1_ahb1enrType) SetUsb2otgen(value bool) {
+func (r *registerC1ahb1enrType) SetUsb2otgen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1enrFieldUsb2otgenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldUsb2otgenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1enrFieldUsb2otgenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1enrFieldUsb2otgenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1enrFieldUsb2ulpienShift = 28
-	RegisterC1_ahb1enrFieldUsb2ulpienMask  = 0x10000000
+	RegisterC1ahb1enrFieldUsb2ulpienShift = 28
+	RegisterC1ahb1enrFieldUsb2ulpienMask  = 0x10000000
 )
 
 // GetUsb2ulpien USB_PHY2 Clocks Enable
-func (r *registerC1_ahb1enrType) GetUsb2ulpien() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1enrFieldUsb2ulpienMask) != 0
+func (r *registerC1ahb1enrType) GetUsb2ulpien() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldUsb2ulpienMask) != 0
 }
 
 // SetUsb2ulpien USB_PHY2 Clocks Enable
-func (r *registerC1_ahb1enrType) SetUsb2ulpien(value bool) {
+func (r *registerC1ahb1enrType) SetUsb2ulpien(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1enrFieldUsb2ulpienMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldUsb2ulpienMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1enrFieldUsb2ulpienMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1enrFieldUsb2ulpienMask)
 	}
 }
 
-// registerC1_ahb2enrType RCC AHB2 Clock Register
-type registerC1_ahb2enrType uint32
+// registerC1ahb2enrType RCC AHB2 Clock Register
+type registerC1ahb2enrType uint32
 
 const (
-	RegisterC1_ahb2enrFieldCamitfenShift = 0
-	RegisterC1_ahb2enrFieldCamitfenMask  = 0x1
+	RegisterC1ahb2enrFieldCamitfenShift = 0
+	RegisterC1ahb2enrFieldCamitfenMask  = 0x1
 )
 
 // GetCamitfen CAMITF peripheral clock enable
-func (r *registerC1_ahb2enrType) GetCamitfen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2enrFieldCamitfenMask) != 0
+func (r *registerC1ahb2enrType) GetCamitfen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldCamitfenMask) != 0
 }
 
 // SetCamitfen CAMITF peripheral clock enable
-func (r *registerC1_ahb2enrType) SetCamitfen(value bool) {
+func (r *registerC1ahb2enrType) SetCamitfen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2enrFieldCamitfenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldCamitfenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2enrFieldCamitfenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2enrFieldCamitfenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2enrFieldCryptenShift = 4
-	RegisterC1_ahb2enrFieldCryptenMask  = 0x10
+	RegisterC1ahb2enrFieldCryptenShift = 4
+	RegisterC1ahb2enrFieldCryptenMask  = 0x10
 )
 
 // GetCrypten CRYPT peripheral clock enable
-func (r *registerC1_ahb2enrType) GetCrypten() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2enrFieldCryptenMask) != 0
+func (r *registerC1ahb2enrType) GetCrypten() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldCryptenMask) != 0
 }
 
 // SetCrypten CRYPT peripheral clock enable
-func (r *registerC1_ahb2enrType) SetCrypten(value bool) {
+func (r *registerC1ahb2enrType) SetCrypten(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2enrFieldCryptenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldCryptenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2enrFieldCryptenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2enrFieldCryptenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2enrFieldHashenShift = 5
-	RegisterC1_ahb2enrFieldHashenMask  = 0x20
+	RegisterC1ahb2enrFieldHashenShift = 5
+	RegisterC1ahb2enrFieldHashenMask  = 0x20
 )
 
 // GetHashen HASH peripheral clock enable
-func (r *registerC1_ahb2enrType) GetHashen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2enrFieldHashenMask) != 0
+func (r *registerC1ahb2enrType) GetHashen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldHashenMask) != 0
 }
 
 // SetHashen HASH peripheral clock enable
-func (r *registerC1_ahb2enrType) SetHashen(value bool) {
+func (r *registerC1ahb2enrType) SetHashen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2enrFieldHashenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldHashenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2enrFieldHashenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2enrFieldHashenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2enrFieldRngenShift = 6
-	RegisterC1_ahb2enrFieldRngenMask  = 0x40
+	RegisterC1ahb2enrFieldRngenShift = 6
+	RegisterC1ahb2enrFieldRngenMask  = 0x40
 )
 
 // GetRngen RNG peripheral clocks enable
-func (r *registerC1_ahb2enrType) GetRngen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2enrFieldRngenMask) != 0
+func (r *registerC1ahb2enrType) GetRngen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldRngenMask) != 0
 }
 
 // SetRngen RNG peripheral clocks enable
-func (r *registerC1_ahb2enrType) SetRngen(value bool) {
+func (r *registerC1ahb2enrType) SetRngen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2enrFieldRngenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldRngenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2enrFieldRngenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2enrFieldRngenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2enrFieldSdmmc2enShift = 9
-	RegisterC1_ahb2enrFieldSdmmc2enMask  = 0x200
+	RegisterC1ahb2enrFieldSdmmc2enShift = 9
+	RegisterC1ahb2enrFieldSdmmc2enMask  = 0x200
 )
 
 // GetSdmmc2en SDMMC2 and SDMMC2 delay clock enable
-func (r *registerC1_ahb2enrType) GetSdmmc2en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2enrFieldSdmmc2enMask) != 0
+func (r *registerC1ahb2enrType) GetSdmmc2en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldSdmmc2enMask) != 0
 }
 
 // SetSdmmc2en SDMMC2 and SDMMC2 delay clock enable
-func (r *registerC1_ahb2enrType) SetSdmmc2en(value bool) {
+func (r *registerC1ahb2enrType) SetSdmmc2en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2enrFieldSdmmc2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldSdmmc2enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2enrFieldSdmmc2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2enrFieldSdmmc2enMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2enrFieldSram1enShift = 29
-	RegisterC1_ahb2enrFieldSram1enMask  = 0x20000000
+	RegisterC1ahb2enrFieldSram1enShift = 29
+	RegisterC1ahb2enrFieldSram1enMask  = 0x20000000
 )
 
 // GetSram1en SRAM1 block enable
-func (r *registerC1_ahb2enrType) GetSram1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2enrFieldSram1enMask) != 0
+func (r *registerC1ahb2enrType) GetSram1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldSram1enMask) != 0
 }
 
 // SetSram1en SRAM1 block enable
-func (r *registerC1_ahb2enrType) SetSram1en(value bool) {
+func (r *registerC1ahb2enrType) SetSram1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2enrFieldSram1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldSram1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2enrFieldSram1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2enrFieldSram1enMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2enrFieldSram2enShift = 30
-	RegisterC1_ahb2enrFieldSram2enMask  = 0x40000000
+	RegisterC1ahb2enrFieldSram2enShift = 30
+	RegisterC1ahb2enrFieldSram2enMask  = 0x40000000
 )
 
 // GetSram2en SRAM2 block enable
-func (r *registerC1_ahb2enrType) GetSram2en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2enrFieldSram2enMask) != 0
+func (r *registerC1ahb2enrType) GetSram2en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldSram2enMask) != 0
 }
 
 // SetSram2en SRAM2 block enable
-func (r *registerC1_ahb2enrType) SetSram2en(value bool) {
+func (r *registerC1ahb2enrType) SetSram2en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2enrFieldSram2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldSram2enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2enrFieldSram2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2enrFieldSram2enMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2enrFieldSram3enShift = 31
-	RegisterC1_ahb2enrFieldSram3enMask  = 0x80000000
+	RegisterC1ahb2enrFieldSram3enShift = 31
+	RegisterC1ahb2enrFieldSram3enMask  = 0x80000000
 )
 
 // GetSram3en SRAM3 block enable
-func (r *registerC1_ahb2enrType) GetSram3en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2enrFieldSram3enMask) != 0
+func (r *registerC1ahb2enrType) GetSram3en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldSram3enMask) != 0
 }
 
 // SetSram3en SRAM3 block enable
-func (r *registerC1_ahb2enrType) SetSram3en(value bool) {
+func (r *registerC1ahb2enrType) SetSram3en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2enrFieldSram3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldSram3enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2enrFieldSram3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2enrFieldSram3enMask)
 	}
 }
 
-// registerC1_ahb4enrType RCC AHB4 Clock Register
-type registerC1_ahb4enrType uint32
+// registerC1ahb4enrType RCC AHB4 Clock Register
+type registerC1ahb4enrType uint32
 
 const (
-	RegisterC1_ahb4enrFieldGpioaenShift = 0
-	RegisterC1_ahb4enrFieldGpioaenMask  = 0x1
+	RegisterC1ahb4enrFieldGpioaenShift = 0
+	RegisterC1ahb4enrFieldGpioaenMask  = 0x1
 )
 
 // GetGpioaen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpioaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpioaenMask) != 0
+func (r *registerC1ahb4enrType) GetGpioaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpioaenMask) != 0
 }
 
 // SetGpioaen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpioaen(value bool) {
+func (r *registerC1ahb4enrType) SetGpioaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpioaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpioaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpioaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpioaenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldGpiobenShift = 1
-	RegisterC1_ahb4enrFieldGpiobenMask  = 0x2
+	RegisterC1ahb4enrFieldGpiobenShift = 1
+	RegisterC1ahb4enrFieldGpiobenMask  = 0x2
 )
 
 // GetGpioben 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpioben() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpiobenMask) != 0
+func (r *registerC1ahb4enrType) GetGpioben() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiobenMask) != 0
 }
 
 // SetGpioben 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpioben(value bool) {
+func (r *registerC1ahb4enrType) SetGpioben(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpiobenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiobenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpiobenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpiobenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldGpiocenShift = 2
-	RegisterC1_ahb4enrFieldGpiocenMask  = 0x4
+	RegisterC1ahb4enrFieldGpiocenShift = 2
+	RegisterC1ahb4enrFieldGpiocenMask  = 0x4
 )
 
 // GetGpiocen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpiocen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpiocenMask) != 0
+func (r *registerC1ahb4enrType) GetGpiocen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiocenMask) != 0
 }
 
 // SetGpiocen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpiocen(value bool) {
+func (r *registerC1ahb4enrType) SetGpiocen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpiocenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiocenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpiocenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpiocenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldGpiodenShift = 3
-	RegisterC1_ahb4enrFieldGpiodenMask  = 0x8
+	RegisterC1ahb4enrFieldGpiodenShift = 3
+	RegisterC1ahb4enrFieldGpiodenMask  = 0x8
 )
 
 // GetGpioden 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpioden() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpiodenMask) != 0
+func (r *registerC1ahb4enrType) GetGpioden() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiodenMask) != 0
 }
 
 // SetGpioden 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpioden(value bool) {
+func (r *registerC1ahb4enrType) SetGpioden(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpiodenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiodenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpiodenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpiodenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldGpioeenShift = 4
-	RegisterC1_ahb4enrFieldGpioeenMask  = 0x10
+	RegisterC1ahb4enrFieldGpioeenShift = 4
+	RegisterC1ahb4enrFieldGpioeenMask  = 0x10
 )
 
 // GetGpioeen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpioeen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpioeenMask) != 0
+func (r *registerC1ahb4enrType) GetGpioeen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpioeenMask) != 0
 }
 
 // SetGpioeen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpioeen(value bool) {
+func (r *registerC1ahb4enrType) SetGpioeen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpioeenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpioeenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpioeenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpioeenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldGpiofenShift = 5
-	RegisterC1_ahb4enrFieldGpiofenMask  = 0x20
+	RegisterC1ahb4enrFieldGpiofenShift = 5
+	RegisterC1ahb4enrFieldGpiofenMask  = 0x20
 )
 
 // GetGpiofen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpiofen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpiofenMask) != 0
+func (r *registerC1ahb4enrType) GetGpiofen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiofenMask) != 0
 }
 
 // SetGpiofen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpiofen(value bool) {
+func (r *registerC1ahb4enrType) SetGpiofen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpiofenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiofenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpiofenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpiofenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldGpiogenShift = 6
-	RegisterC1_ahb4enrFieldGpiogenMask  = 0x40
+	RegisterC1ahb4enrFieldGpiogenShift = 6
+	RegisterC1ahb4enrFieldGpiogenMask  = 0x40
 )
 
 // GetGpiogen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpiogen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpiogenMask) != 0
+func (r *registerC1ahb4enrType) GetGpiogen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiogenMask) != 0
 }
 
 // SetGpiogen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpiogen(value bool) {
+func (r *registerC1ahb4enrType) SetGpiogen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpiogenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiogenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpiogenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpiogenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldGpiohenShift = 7
-	RegisterC1_ahb4enrFieldGpiohenMask  = 0x80
+	RegisterC1ahb4enrFieldGpiohenShift = 7
+	RegisterC1ahb4enrFieldGpiohenMask  = 0x80
 )
 
 // GetGpiohen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpiohen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpiohenMask) != 0
+func (r *registerC1ahb4enrType) GetGpiohen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiohenMask) != 0
 }
 
 // SetGpiohen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpiohen(value bool) {
+func (r *registerC1ahb4enrType) SetGpiohen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpiohenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiohenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpiohenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpiohenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldGpioienShift = 8
-	RegisterC1_ahb4enrFieldGpioienMask  = 0x100
+	RegisterC1ahb4enrFieldGpioienShift = 8
+	RegisterC1ahb4enrFieldGpioienMask  = 0x100
 )
 
 // GetGpioien 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpioien() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpioienMask) != 0
+func (r *registerC1ahb4enrType) GetGpioien() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpioienMask) != 0
 }
 
 // SetGpioien 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpioien(value bool) {
+func (r *registerC1ahb4enrType) SetGpioien(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpioienMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpioienMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpioienMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpioienMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldGpiojenShift = 9
-	RegisterC1_ahb4enrFieldGpiojenMask  = 0x200
+	RegisterC1ahb4enrFieldGpiojenShift = 9
+	RegisterC1ahb4enrFieldGpiojenMask  = 0x200
 )
 
 // GetGpiojen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpiojen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpiojenMask) != 0
+func (r *registerC1ahb4enrType) GetGpiojen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiojenMask) != 0
 }
 
 // SetGpiojen 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpiojen(value bool) {
+func (r *registerC1ahb4enrType) SetGpiojen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpiojenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiojenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpiojenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpiojenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldGpiokenShift = 10
-	RegisterC1_ahb4enrFieldGpiokenMask  = 0x400
+	RegisterC1ahb4enrFieldGpiokenShift = 10
+	RegisterC1ahb4enrFieldGpiokenMask  = 0x400
 )
 
 // GetGpioken 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) GetGpioken() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldGpiokenMask) != 0
+func (r *registerC1ahb4enrType) GetGpioken() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiokenMask) != 0
 }
 
 // SetGpioken 0GPIO peripheral clock enable
-func (r *registerC1_ahb4enrType) SetGpioken(value bool) {
+func (r *registerC1ahb4enrType) SetGpioken(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldGpiokenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiokenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldGpiokenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldGpiokenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldCrcenShift = 19
-	RegisterC1_ahb4enrFieldCrcenMask  = 0x80000
+	RegisterC1ahb4enrFieldCrcenShift = 19
+	RegisterC1ahb4enrFieldCrcenMask  = 0x80000
 )
 
 // GetCrcen CRC peripheral clock enable
-func (r *registerC1_ahb4enrType) GetCrcen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldCrcenMask) != 0
+func (r *registerC1ahb4enrType) GetCrcen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldCrcenMask) != 0
 }
 
 // SetCrcen CRC peripheral clock enable
-func (r *registerC1_ahb4enrType) SetCrcen(value bool) {
+func (r *registerC1ahb4enrType) SetCrcen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldCrcenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldCrcenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldCrcenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldCrcenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldBdmaenShift = 21
-	RegisterC1_ahb4enrFieldBdmaenMask  = 0x200000
+	RegisterC1ahb4enrFieldBdmaenShift = 21
+	RegisterC1ahb4enrFieldBdmaenMask  = 0x200000
 )
 
 // GetBdmaen BDMA and DMAMUX2 Clock Enable
-func (r *registerC1_ahb4enrType) GetBdmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldBdmaenMask) != 0
+func (r *registerC1ahb4enrType) GetBdmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldBdmaenMask) != 0
 }
 
 // SetBdmaen BDMA and DMAMUX2 Clock Enable
-func (r *registerC1_ahb4enrType) SetBdmaen(value bool) {
+func (r *registerC1ahb4enrType) SetBdmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldBdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldBdmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldBdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldBdmaenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldAdc3enShift = 24
-	RegisterC1_ahb4enrFieldAdc3enMask  = 0x1000000
+	RegisterC1ahb4enrFieldAdc3enShift = 24
+	RegisterC1ahb4enrFieldAdc3enMask  = 0x1000000
 )
 
 // GetAdc3en ADC3 Peripheral Clocks Enable
-func (r *registerC1_ahb4enrType) GetAdc3en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldAdc3enMask) != 0
+func (r *registerC1ahb4enrType) GetAdc3en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldAdc3enMask) != 0
 }
 
 // SetAdc3en ADC3 Peripheral Clocks Enable
-func (r *registerC1_ahb4enrType) SetAdc3en(value bool) {
+func (r *registerC1ahb4enrType) SetAdc3en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldAdc3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldAdc3enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldAdc3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldAdc3enMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldHsemenShift = 25
-	RegisterC1_ahb4enrFieldHsemenMask  = 0x2000000
+	RegisterC1ahb4enrFieldHsemenShift = 25
+	RegisterC1ahb4enrFieldHsemenMask  = 0x2000000
 )
 
 // GetHsemen HSEM peripheral clock enable
-func (r *registerC1_ahb4enrType) GetHsemen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldHsemenMask) != 0
+func (r *registerC1ahb4enrType) GetHsemen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldHsemenMask) != 0
 }
 
 // SetHsemen HSEM peripheral clock enable
-func (r *registerC1_ahb4enrType) SetHsemen(value bool) {
+func (r *registerC1ahb4enrType) SetHsemen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldHsemenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldHsemenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldHsemenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldHsemenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4enrFieldBkpramenShift = 28
-	RegisterC1_ahb4enrFieldBkpramenMask  = 0x10000000
+	RegisterC1ahb4enrFieldBkpramenShift = 28
+	RegisterC1ahb4enrFieldBkpramenMask  = 0x10000000
 )
 
 // GetBkpramen Backup RAM Clock Enable
-func (r *registerC1_ahb4enrType) GetBkpramen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4enrFieldBkpramenMask) != 0
+func (r *registerC1ahb4enrType) GetBkpramen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldBkpramenMask) != 0
 }
 
 // SetBkpramen Backup RAM Clock Enable
-func (r *registerC1_ahb4enrType) SetBkpramen(value bool) {
+func (r *registerC1ahb4enrType) SetBkpramen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4enrFieldBkpramenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldBkpramenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4enrFieldBkpramenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4enrFieldBkpramenMask)
 	}
 }
 
-// registerC1_apb3enrType RCC APB3 Clock Register
-type registerC1_apb3enrType uint32
+// registerC1apb3enrType RCC APB3 Clock Register
+type registerC1apb3enrType uint32
 
 const (
-	RegisterC1_apb3enrFieldLtdcenShift = 3
-	RegisterC1_apb3enrFieldLtdcenMask  = 0x8
+	RegisterC1apb3enrFieldLtdcenShift = 3
+	RegisterC1apb3enrFieldLtdcenMask  = 0x8
 )
 
 // GetLtdcen LTDC peripheral clock enable
-func (r *registerC1_apb3enrType) GetLtdcen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb3enrFieldLtdcenMask) != 0
+func (r *registerC1apb3enrType) GetLtdcen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb3enrFieldLtdcenMask) != 0
 }
 
 // SetLtdcen LTDC peripheral clock enable
-func (r *registerC1_apb3enrType) SetLtdcen(value bool) {
+func (r *registerC1apb3enrType) SetLtdcen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb3enrFieldLtdcenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb3enrFieldLtdcenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb3enrFieldLtdcenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb3enrFieldLtdcenMask)
 	}
 }
 
 const (
-	RegisterC1_apb3enrFieldWwdg1enShift = 6
-	RegisterC1_apb3enrFieldWwdg1enMask  = 0x40
+	RegisterC1apb3enrFieldWwdg1enShift = 6
+	RegisterC1apb3enrFieldWwdg1enMask  = 0x40
 )
 
 // GetWwdg1en WWDG1 Clock Enable
-func (r *registerC1_apb3enrType) GetWwdg1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb3enrFieldWwdg1enMask) != 0
+func (r *registerC1apb3enrType) GetWwdg1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb3enrFieldWwdg1enMask) != 0
 }
 
 // SetWwdg1en WWDG1 Clock Enable
-func (r *registerC1_apb3enrType) SetWwdg1en(value bool) {
+func (r *registerC1apb3enrType) SetWwdg1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb3enrFieldWwdg1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb3enrFieldWwdg1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb3enrFieldWwdg1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb3enrFieldWwdg1enMask)
 	}
 }
 
-// registerC1_apb1lenrType RCC APB1 Clock Register
-type registerC1_apb1lenrType uint32
+// registerC1apb1lenrType RCC APB1 Clock Register
+type registerC1apb1lenrType uint32
 
 const (
-	RegisterC1_apb1lenrFieldTim2enShift = 0
-	RegisterC1_apb1lenrFieldTim2enMask  = 0x1
+	RegisterC1apb1lenrFieldTim2enShift = 0
+	RegisterC1apb1lenrFieldTim2enMask  = 0x1
 )
 
 // GetTim2en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) GetTim2en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldTim2enMask) != 0
+func (r *registerC1apb1lenrType) GetTim2en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim2enMask) != 0
 }
 
 // SetTim2en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) SetTim2en(value bool) {
+func (r *registerC1apb1lenrType) SetTim2en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldTim2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim2enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldTim2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldTim2enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldTim3enShift = 1
-	RegisterC1_apb1lenrFieldTim3enMask  = 0x2
+	RegisterC1apb1lenrFieldTim3enShift = 1
+	RegisterC1apb1lenrFieldTim3enMask  = 0x2
 )
 
 // GetTim3en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) GetTim3en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldTim3enMask) != 0
+func (r *registerC1apb1lenrType) GetTim3en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim3enMask) != 0
 }
 
 // SetTim3en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) SetTim3en(value bool) {
+func (r *registerC1apb1lenrType) SetTim3en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldTim3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim3enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldTim3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldTim3enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldTim4enShift = 2
-	RegisterC1_apb1lenrFieldTim4enMask  = 0x4
+	RegisterC1apb1lenrFieldTim4enShift = 2
+	RegisterC1apb1lenrFieldTim4enMask  = 0x4
 )
 
 // GetTim4en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) GetTim4en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldTim4enMask) != 0
+func (r *registerC1apb1lenrType) GetTim4en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim4enMask) != 0
 }
 
 // SetTim4en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) SetTim4en(value bool) {
+func (r *registerC1apb1lenrType) SetTim4en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldTim4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim4enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldTim4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldTim4enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldTim5enShift = 3
-	RegisterC1_apb1lenrFieldTim5enMask  = 0x8
+	RegisterC1apb1lenrFieldTim5enShift = 3
+	RegisterC1apb1lenrFieldTim5enMask  = 0x8
 )
 
 // GetTim5en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) GetTim5en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldTim5enMask) != 0
+func (r *registerC1apb1lenrType) GetTim5en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim5enMask) != 0
 }
 
 // SetTim5en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) SetTim5en(value bool) {
+func (r *registerC1apb1lenrType) SetTim5en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldTim5enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim5enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldTim5enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldTim5enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldTim6enShift = 4
-	RegisterC1_apb1lenrFieldTim6enMask  = 0x10
+	RegisterC1apb1lenrFieldTim6enShift = 4
+	RegisterC1apb1lenrFieldTim6enMask  = 0x10
 )
 
 // GetTim6en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) GetTim6en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldTim6enMask) != 0
+func (r *registerC1apb1lenrType) GetTim6en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim6enMask) != 0
 }
 
 // SetTim6en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) SetTim6en(value bool) {
+func (r *registerC1apb1lenrType) SetTim6en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldTim6enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim6enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldTim6enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldTim6enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldTim7enShift = 5
-	RegisterC1_apb1lenrFieldTim7enMask  = 0x20
+	RegisterC1apb1lenrFieldTim7enShift = 5
+	RegisterC1apb1lenrFieldTim7enMask  = 0x20
 )
 
 // GetTim7en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) GetTim7en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldTim7enMask) != 0
+func (r *registerC1apb1lenrType) GetTim7en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim7enMask) != 0
 }
 
 // SetTim7en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) SetTim7en(value bool) {
+func (r *registerC1apb1lenrType) SetTim7en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldTim7enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim7enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldTim7enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldTim7enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldTim12enShift = 6
-	RegisterC1_apb1lenrFieldTim12enMask  = 0x40
+	RegisterC1apb1lenrFieldTim12enShift = 6
+	RegisterC1apb1lenrFieldTim12enMask  = 0x40
 )
 
 // GetTim12en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) GetTim12en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldTim12enMask) != 0
+func (r *registerC1apb1lenrType) GetTim12en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim12enMask) != 0
 }
 
 // SetTim12en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) SetTim12en(value bool) {
+func (r *registerC1apb1lenrType) SetTim12en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldTim12enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim12enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldTim12enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldTim12enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldTim13enShift = 7
-	RegisterC1_apb1lenrFieldTim13enMask  = 0x80
+	RegisterC1apb1lenrFieldTim13enShift = 7
+	RegisterC1apb1lenrFieldTim13enMask  = 0x80
 )
 
 // GetTim13en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) GetTim13en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldTim13enMask) != 0
+func (r *registerC1apb1lenrType) GetTim13en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim13enMask) != 0
 }
 
 // SetTim13en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) SetTim13en(value bool) {
+func (r *registerC1apb1lenrType) SetTim13en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldTim13enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim13enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldTim13enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldTim13enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldTim14enShift = 8
-	RegisterC1_apb1lenrFieldTim14enMask  = 0x100
+	RegisterC1apb1lenrFieldTim14enShift = 8
+	RegisterC1apb1lenrFieldTim14enMask  = 0x100
 )
 
 // GetTim14en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) GetTim14en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldTim14enMask) != 0
+func (r *registerC1apb1lenrType) GetTim14en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim14enMask) != 0
 }
 
 // SetTim14en TIM peripheral clock enable
-func (r *registerC1_apb1lenrType) SetTim14en(value bool) {
+func (r *registerC1apb1lenrType) SetTim14en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldTim14enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim14enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldTim14enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldTim14enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldLptim1enShift = 9
-	RegisterC1_apb1lenrFieldLptim1enMask  = 0x200
+	RegisterC1apb1lenrFieldLptim1enShift = 9
+	RegisterC1apb1lenrFieldLptim1enMask  = 0x200
 )
 
 // GetLptim1en LPTIM1 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetLptim1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldLptim1enMask) != 0
+func (r *registerC1apb1lenrType) GetLptim1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldLptim1enMask) != 0
 }
 
 // SetLptim1en LPTIM1 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetLptim1en(value bool) {
+func (r *registerC1apb1lenrType) SetLptim1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldLptim1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldLptim1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldLptim1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldLptim1enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldSpi2enShift = 14
-	RegisterC1_apb1lenrFieldSpi2enMask  = 0x4000
+	RegisterC1apb1lenrFieldSpi2enShift = 14
+	RegisterC1apb1lenrFieldSpi2enMask  = 0x4000
 )
 
 // GetSpi2en SPI2 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetSpi2en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldSpi2enMask) != 0
+func (r *registerC1apb1lenrType) GetSpi2en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldSpi2enMask) != 0
 }
 
 // SetSpi2en SPI2 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetSpi2en(value bool) {
+func (r *registerC1apb1lenrType) SetSpi2en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldSpi2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldSpi2enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldSpi2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldSpi2enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldSpi3enShift = 15
-	RegisterC1_apb1lenrFieldSpi3enMask  = 0x8000
+	RegisterC1apb1lenrFieldSpi3enShift = 15
+	RegisterC1apb1lenrFieldSpi3enMask  = 0x8000
 )
 
 // GetSpi3en SPI3 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetSpi3en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldSpi3enMask) != 0
+func (r *registerC1apb1lenrType) GetSpi3en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldSpi3enMask) != 0
 }
 
 // SetSpi3en SPI3 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetSpi3en(value bool) {
+func (r *registerC1apb1lenrType) SetSpi3en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldSpi3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldSpi3enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldSpi3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldSpi3enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldSpdifrxenShift = 16
-	RegisterC1_apb1lenrFieldSpdifrxenMask  = 0x10000
+	RegisterC1apb1lenrFieldSpdifrxenShift = 16
+	RegisterC1apb1lenrFieldSpdifrxenMask  = 0x10000
 )
 
 // GetSpdifrxen SPDIFRX Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetSpdifrxen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldSpdifrxenMask) != 0
+func (r *registerC1apb1lenrType) GetSpdifrxen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldSpdifrxenMask) != 0
 }
 
 // SetSpdifrxen SPDIFRX Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetSpdifrxen(value bool) {
+func (r *registerC1apb1lenrType) SetSpdifrxen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldSpdifrxenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldSpdifrxenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldSpdifrxenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldSpdifrxenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldUsart2enShift = 17
-	RegisterC1_apb1lenrFieldUsart2enMask  = 0x20000
+	RegisterC1apb1lenrFieldUsart2enShift = 17
+	RegisterC1apb1lenrFieldUsart2enMask  = 0x20000
 )
 
 // GetUsart2en USART2 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetUsart2en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldUsart2enMask) != 0
+func (r *registerC1apb1lenrType) GetUsart2en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUsart2enMask) != 0
 }
 
 // SetUsart2en USART2 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetUsart2en(value bool) {
+func (r *registerC1apb1lenrType) SetUsart2en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldUsart2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUsart2enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldUsart2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldUsart2enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldUsart3enShift = 18
-	RegisterC1_apb1lenrFieldUsart3enMask  = 0x40000
+	RegisterC1apb1lenrFieldUsart3enShift = 18
+	RegisterC1apb1lenrFieldUsart3enMask  = 0x40000
 )
 
 // GetUsart3en USART3 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetUsart3en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldUsart3enMask) != 0
+func (r *registerC1apb1lenrType) GetUsart3en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUsart3enMask) != 0
 }
 
 // SetUsart3en USART3 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetUsart3en(value bool) {
+func (r *registerC1apb1lenrType) SetUsart3en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldUsart3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUsart3enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldUsart3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldUsart3enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldUart4enShift = 19
-	RegisterC1_apb1lenrFieldUart4enMask  = 0x80000
+	RegisterC1apb1lenrFieldUart4enShift = 19
+	RegisterC1apb1lenrFieldUart4enMask  = 0x80000
 )
 
 // GetUart4en UART4 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetUart4en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldUart4enMask) != 0
+func (r *registerC1apb1lenrType) GetUart4en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUart4enMask) != 0
 }
 
 // SetUart4en UART4 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetUart4en(value bool) {
+func (r *registerC1apb1lenrType) SetUart4en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldUart4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUart4enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldUart4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldUart4enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldUart5enShift = 20
-	RegisterC1_apb1lenrFieldUart5enMask  = 0x100000
+	RegisterC1apb1lenrFieldUart5enShift = 20
+	RegisterC1apb1lenrFieldUart5enMask  = 0x100000
 )
 
 // GetUart5en UART5 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetUart5en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldUart5enMask) != 0
+func (r *registerC1apb1lenrType) GetUart5en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUart5enMask) != 0
 }
 
 // SetUart5en UART5 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetUart5en(value bool) {
+func (r *registerC1apb1lenrType) SetUart5en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldUart5enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUart5enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldUart5enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldUart5enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldI2c1enShift = 21
-	RegisterC1_apb1lenrFieldI2c1enMask  = 0x200000
+	RegisterC1apb1lenrFieldI2c1enShift = 21
+	RegisterC1apb1lenrFieldI2c1enMask  = 0x200000
 )
 
 // GetI2c1en I2C1 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetI2c1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldI2c1enMask) != 0
+func (r *registerC1apb1lenrType) GetI2c1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldI2c1enMask) != 0
 }
 
 // SetI2c1en I2C1 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetI2c1en(value bool) {
+func (r *registerC1apb1lenrType) SetI2c1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldI2c1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldI2c1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldI2c1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldI2c1enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldI2c2enShift = 22
-	RegisterC1_apb1lenrFieldI2c2enMask  = 0x400000
+	RegisterC1apb1lenrFieldI2c2enShift = 22
+	RegisterC1apb1lenrFieldI2c2enMask  = 0x400000
 )
 
 // GetI2c2en I2C2 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetI2c2en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldI2c2enMask) != 0
+func (r *registerC1apb1lenrType) GetI2c2en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldI2c2enMask) != 0
 }
 
 // SetI2c2en I2C2 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetI2c2en(value bool) {
+func (r *registerC1apb1lenrType) SetI2c2en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldI2c2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldI2c2enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldI2c2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldI2c2enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldI2c3enShift = 23
-	RegisterC1_apb1lenrFieldI2c3enMask  = 0x800000
+	RegisterC1apb1lenrFieldI2c3enShift = 23
+	RegisterC1apb1lenrFieldI2c3enMask  = 0x800000
 )
 
 // GetI2c3en I2C3 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetI2c3en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldI2c3enMask) != 0
+func (r *registerC1apb1lenrType) GetI2c3en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldI2c3enMask) != 0
 }
 
 // SetI2c3en I2C3 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetI2c3en(value bool) {
+func (r *registerC1apb1lenrType) SetI2c3en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldI2c3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldI2c3enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldI2c3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldI2c3enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldHdmicecenShift = 27
-	RegisterC1_apb1lenrFieldHdmicecenMask  = 0x8000000
+	RegisterC1apb1lenrFieldHdmicecenShift = 27
+	RegisterC1apb1lenrFieldHdmicecenMask  = 0x8000000
 )
 
 // GetHdmicecen HDMI-CEC peripheral clock enable
-func (r *registerC1_apb1lenrType) GetHdmicecen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldHdmicecenMask) != 0
+func (r *registerC1apb1lenrType) GetHdmicecen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldHdmicecenMask) != 0
 }
 
 // SetHdmicecen HDMI-CEC peripheral clock enable
-func (r *registerC1_apb1lenrType) SetHdmicecen(value bool) {
+func (r *registerC1apb1lenrType) SetHdmicecen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldHdmicecenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldHdmicecenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldHdmicecenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldHdmicecenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldDac12enShift = 29
-	RegisterC1_apb1lenrFieldDac12enMask  = 0x20000000
+	RegisterC1apb1lenrFieldDac12enShift = 29
+	RegisterC1apb1lenrFieldDac12enMask  = 0x20000000
 )
 
 // GetDac12en DAC1&2 peripheral clock enable
-func (r *registerC1_apb1lenrType) GetDac12en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldDac12enMask) != 0
+func (r *registerC1apb1lenrType) GetDac12en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldDac12enMask) != 0
 }
 
 // SetDac12en DAC1&2 peripheral clock enable
-func (r *registerC1_apb1lenrType) SetDac12en(value bool) {
+func (r *registerC1apb1lenrType) SetDac12en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldDac12enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldDac12enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldDac12enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldDac12enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldUsart7enShift = 30
-	RegisterC1_apb1lenrFieldUsart7enMask  = 0x40000000
+	RegisterC1apb1lenrFieldUsart7enShift = 30
+	RegisterC1apb1lenrFieldUsart7enMask  = 0x40000000
 )
 
 // GetUsart7en USART7 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetUsart7en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldUsart7enMask) != 0
+func (r *registerC1apb1lenrType) GetUsart7en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUsart7enMask) != 0
 }
 
 // SetUsart7en USART7 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetUsart7en(value bool) {
+func (r *registerC1apb1lenrType) SetUsart7en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldUsart7enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUsart7enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldUsart7enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldUsart7enMask)
 	}
 }
 
 const (
-	RegisterC1_apb1lenrFieldUsart8enShift = 31
-	RegisterC1_apb1lenrFieldUsart8enMask  = 0x80000000
+	RegisterC1apb1lenrFieldUsart8enShift = 31
+	RegisterC1apb1lenrFieldUsart8enMask  = 0x80000000
 )
 
 // GetUsart8en USART8 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) GetUsart8en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1lenrFieldUsart8enMask) != 0
+func (r *registerC1apb1lenrType) GetUsart8en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUsart8enMask) != 0
 }
 
 // SetUsart8en USART8 Peripheral Clocks Enable
-func (r *registerC1_apb1lenrType) SetUsart8en(value bool) {
+func (r *registerC1apb1lenrType) SetUsart8en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1lenrFieldUsart8enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUsart8enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1lenrFieldUsart8enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1lenrFieldUsart8enMask)
 	}
 }
 
-// registerC1_apb1henrType RCC APB1 Clock Register
-type registerC1_apb1henrType uint32
+// registerC1apb1henrType RCC APB1 Clock Register
+type registerC1apb1henrType uint32
 
 const (
-	RegisterC1_apb1henrFieldCrsenShift = 1
-	RegisterC1_apb1henrFieldCrsenMask  = 0x2
+	RegisterC1apb1henrFieldCrsenShift = 1
+	RegisterC1apb1henrFieldCrsenMask  = 0x2
 )
 
 // GetCrsen Clock Recovery System peripheral clock enable
-func (r *registerC1_apb1henrType) GetCrsen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1henrFieldCrsenMask) != 0
+func (r *registerC1apb1henrType) GetCrsen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1henrFieldCrsenMask) != 0
 }
 
 // SetCrsen Clock Recovery System peripheral clock enable
-func (r *registerC1_apb1henrType) SetCrsen(value bool) {
+func (r *registerC1apb1henrType) SetCrsen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1henrFieldCrsenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1henrFieldCrsenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1henrFieldCrsenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1henrFieldCrsenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1henrFieldSwpenShift = 2
-	RegisterC1_apb1henrFieldSwpenMask  = 0x4
+	RegisterC1apb1henrFieldSwpenShift = 2
+	RegisterC1apb1henrFieldSwpenMask  = 0x4
 )
 
 // GetSwpen SWPMI Peripheral Clocks Enable
-func (r *registerC1_apb1henrType) GetSwpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1henrFieldSwpenMask) != 0
+func (r *registerC1apb1henrType) GetSwpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1henrFieldSwpenMask) != 0
 }
 
 // SetSwpen SWPMI Peripheral Clocks Enable
-func (r *registerC1_apb1henrType) SetSwpen(value bool) {
+func (r *registerC1apb1henrType) SetSwpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1henrFieldSwpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1henrFieldSwpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1henrFieldSwpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1henrFieldSwpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1henrFieldOpampenShift = 4
-	RegisterC1_apb1henrFieldOpampenMask  = 0x10
+	RegisterC1apb1henrFieldOpampenShift = 4
+	RegisterC1apb1henrFieldOpampenMask  = 0x10
 )
 
 // GetOpampen OPAMP peripheral clock enable
-func (r *registerC1_apb1henrType) GetOpampen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1henrFieldOpampenMask) != 0
+func (r *registerC1apb1henrType) GetOpampen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1henrFieldOpampenMask) != 0
 }
 
 // SetOpampen OPAMP peripheral clock enable
-func (r *registerC1_apb1henrType) SetOpampen(value bool) {
+func (r *registerC1apb1henrType) SetOpampen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1henrFieldOpampenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1henrFieldOpampenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1henrFieldOpampenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1henrFieldOpampenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1henrFieldMdiosenShift = 5
-	RegisterC1_apb1henrFieldMdiosenMask  = 0x20
+	RegisterC1apb1henrFieldMdiosenShift = 5
+	RegisterC1apb1henrFieldMdiosenMask  = 0x20
 )
 
 // GetMdiosen MDIOS peripheral clock enable
-func (r *registerC1_apb1henrType) GetMdiosen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1henrFieldMdiosenMask) != 0
+func (r *registerC1apb1henrType) GetMdiosen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1henrFieldMdiosenMask) != 0
 }
 
 // SetMdiosen MDIOS peripheral clock enable
-func (r *registerC1_apb1henrType) SetMdiosen(value bool) {
+func (r *registerC1apb1henrType) SetMdiosen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1henrFieldMdiosenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1henrFieldMdiosenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1henrFieldMdiosenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1henrFieldMdiosenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1henrFieldFdcanenShift = 8
-	RegisterC1_apb1henrFieldFdcanenMask  = 0x100
+	RegisterC1apb1henrFieldFdcanenShift = 8
+	RegisterC1apb1henrFieldFdcanenMask  = 0x100
 )
 
 // GetFdcanen FDCAN Peripheral Clocks Enable
-func (r *registerC1_apb1henrType) GetFdcanen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1henrFieldFdcanenMask) != 0
+func (r *registerC1apb1henrType) GetFdcanen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1henrFieldFdcanenMask) != 0
 }
 
 // SetFdcanen FDCAN Peripheral Clocks Enable
-func (r *registerC1_apb1henrType) SetFdcanen(value bool) {
+func (r *registerC1apb1henrType) SetFdcanen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1henrFieldFdcanenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1henrFieldFdcanenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1henrFieldFdcanenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1henrFieldFdcanenMask)
 	}
 }
 
-// registerC1_apb2enrType RCC APB2 Clock Register
-type registerC1_apb2enrType uint32
+// registerC1apb2enrType RCC APB2 Clock Register
+type registerC1apb2enrType uint32
 
 const (
-	RegisterC1_apb2enrFieldTim1enShift = 0
-	RegisterC1_apb2enrFieldTim1enMask  = 0x1
+	RegisterC1apb2enrFieldTim1enShift = 0
+	RegisterC1apb2enrFieldTim1enMask  = 0x1
 )
 
 // GetTim1en TIM1 peripheral clock enable
-func (r *registerC1_apb2enrType) GetTim1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldTim1enMask) != 0
+func (r *registerC1apb2enrType) GetTim1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldTim1enMask) != 0
 }
 
 // SetTim1en TIM1 peripheral clock enable
-func (r *registerC1_apb2enrType) SetTim1en(value bool) {
+func (r *registerC1apb2enrType) SetTim1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldTim1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldTim1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldTim1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldTim1enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldTim8enShift = 1
-	RegisterC1_apb2enrFieldTim8enMask  = 0x2
+	RegisterC1apb2enrFieldTim8enShift = 1
+	RegisterC1apb2enrFieldTim8enMask  = 0x2
 )
 
 // GetTim8en TIM8 peripheral clock enable
-func (r *registerC1_apb2enrType) GetTim8en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldTim8enMask) != 0
+func (r *registerC1apb2enrType) GetTim8en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldTim8enMask) != 0
 }
 
 // SetTim8en TIM8 peripheral clock enable
-func (r *registerC1_apb2enrType) SetTim8en(value bool) {
+func (r *registerC1apb2enrType) SetTim8en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldTim8enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldTim8enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldTim8enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldTim8enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldUsart1enShift = 4
-	RegisterC1_apb2enrFieldUsart1enMask  = 0x10
+	RegisterC1apb2enrFieldUsart1enShift = 4
+	RegisterC1apb2enrFieldUsart1enMask  = 0x10
 )
 
 // GetUsart1en USART1 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) GetUsart1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldUsart1enMask) != 0
+func (r *registerC1apb2enrType) GetUsart1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldUsart1enMask) != 0
 }
 
 // SetUsart1en USART1 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) SetUsart1en(value bool) {
+func (r *registerC1apb2enrType) SetUsart1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldUsart1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldUsart1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldUsart1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldUsart1enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldUsart6enShift = 5
-	RegisterC1_apb2enrFieldUsart6enMask  = 0x20
+	RegisterC1apb2enrFieldUsart6enShift = 5
+	RegisterC1apb2enrFieldUsart6enMask  = 0x20
 )
 
 // GetUsart6en USART6 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) GetUsart6en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldUsart6enMask) != 0
+func (r *registerC1apb2enrType) GetUsart6en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldUsart6enMask) != 0
 }
 
 // SetUsart6en USART6 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) SetUsart6en(value bool) {
+func (r *registerC1apb2enrType) SetUsart6en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldUsart6enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldUsart6enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldUsart6enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldUsart6enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldSpi1enShift = 12
-	RegisterC1_apb2enrFieldSpi1enMask  = 0x1000
+	RegisterC1apb2enrFieldSpi1enShift = 12
+	RegisterC1apb2enrFieldSpi1enMask  = 0x1000
 )
 
 // GetSpi1en SPI1 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) GetSpi1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldSpi1enMask) != 0
+func (r *registerC1apb2enrType) GetSpi1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSpi1enMask) != 0
 }
 
 // SetSpi1en SPI1 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) SetSpi1en(value bool) {
+func (r *registerC1apb2enrType) SetSpi1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldSpi1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSpi1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldSpi1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldSpi1enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldSpi4enShift = 13
-	RegisterC1_apb2enrFieldSpi4enMask  = 0x2000
+	RegisterC1apb2enrFieldSpi4enShift = 13
+	RegisterC1apb2enrFieldSpi4enMask  = 0x2000
 )
 
 // GetSpi4en SPI4 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) GetSpi4en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldSpi4enMask) != 0
+func (r *registerC1apb2enrType) GetSpi4en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSpi4enMask) != 0
 }
 
 // SetSpi4en SPI4 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) SetSpi4en(value bool) {
+func (r *registerC1apb2enrType) SetSpi4en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldSpi4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSpi4enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldSpi4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldSpi4enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldTim15enShift = 16
-	RegisterC1_apb2enrFieldTim15enMask  = 0x10000
+	RegisterC1apb2enrFieldTim15enShift = 16
+	RegisterC1apb2enrFieldTim15enMask  = 0x10000
 )
 
 // GetTim15en TIM15 peripheral clock enable
-func (r *registerC1_apb2enrType) GetTim15en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldTim15enMask) != 0
+func (r *registerC1apb2enrType) GetTim15en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldTim15enMask) != 0
 }
 
 // SetTim15en TIM15 peripheral clock enable
-func (r *registerC1_apb2enrType) SetTim15en(value bool) {
+func (r *registerC1apb2enrType) SetTim15en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldTim15enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldTim15enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldTim15enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldTim15enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldTim16enShift = 17
-	RegisterC1_apb2enrFieldTim16enMask  = 0x20000
+	RegisterC1apb2enrFieldTim16enShift = 17
+	RegisterC1apb2enrFieldTim16enMask  = 0x20000
 )
 
 // GetTim16en TIM16 peripheral clock enable
-func (r *registerC1_apb2enrType) GetTim16en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldTim16enMask) != 0
+func (r *registerC1apb2enrType) GetTim16en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldTim16enMask) != 0
 }
 
 // SetTim16en TIM16 peripheral clock enable
-func (r *registerC1_apb2enrType) SetTim16en(value bool) {
+func (r *registerC1apb2enrType) SetTim16en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldTim16enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldTim16enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldTim16enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldTim16enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldTim17enShift = 18
-	RegisterC1_apb2enrFieldTim17enMask  = 0x40000
+	RegisterC1apb2enrFieldTim17enShift = 18
+	RegisterC1apb2enrFieldTim17enMask  = 0x40000
 )
 
 // GetTim17en TIM17 peripheral clock enable
-func (r *registerC1_apb2enrType) GetTim17en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldTim17enMask) != 0
+func (r *registerC1apb2enrType) GetTim17en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldTim17enMask) != 0
 }
 
 // SetTim17en TIM17 peripheral clock enable
-func (r *registerC1_apb2enrType) SetTim17en(value bool) {
+func (r *registerC1apb2enrType) SetTim17en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldTim17enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldTim17enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldTim17enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldTim17enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldSpi5enShift = 20
-	RegisterC1_apb2enrFieldSpi5enMask  = 0x100000
+	RegisterC1apb2enrFieldSpi5enShift = 20
+	RegisterC1apb2enrFieldSpi5enMask  = 0x100000
 )
 
 // GetSpi5en SPI5 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) GetSpi5en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldSpi5enMask) != 0
+func (r *registerC1apb2enrType) GetSpi5en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSpi5enMask) != 0
 }
 
 // SetSpi5en SPI5 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) SetSpi5en(value bool) {
+func (r *registerC1apb2enrType) SetSpi5en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldSpi5enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSpi5enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldSpi5enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldSpi5enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldSai1enShift = 22
-	RegisterC1_apb2enrFieldSai1enMask  = 0x400000
+	RegisterC1apb2enrFieldSai1enShift = 22
+	RegisterC1apb2enrFieldSai1enMask  = 0x400000
 )
 
 // GetSai1en SAI1 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) GetSai1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldSai1enMask) != 0
+func (r *registerC1apb2enrType) GetSai1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSai1enMask) != 0
 }
 
 // SetSai1en SAI1 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) SetSai1en(value bool) {
+func (r *registerC1apb2enrType) SetSai1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldSai1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSai1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldSai1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldSai1enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldSai2enShift = 23
-	RegisterC1_apb2enrFieldSai2enMask  = 0x800000
+	RegisterC1apb2enrFieldSai2enShift = 23
+	RegisterC1apb2enrFieldSai2enMask  = 0x800000
 )
 
 // GetSai2en SAI2 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) GetSai2en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldSai2enMask) != 0
+func (r *registerC1apb2enrType) GetSai2en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSai2enMask) != 0
 }
 
 // SetSai2en SAI2 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) SetSai2en(value bool) {
+func (r *registerC1apb2enrType) SetSai2en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldSai2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSai2enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldSai2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldSai2enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldSai3enShift = 24
-	RegisterC1_apb2enrFieldSai3enMask  = 0x1000000
+	RegisterC1apb2enrFieldSai3enShift = 24
+	RegisterC1apb2enrFieldSai3enMask  = 0x1000000
 )
 
 // GetSai3en SAI3 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) GetSai3en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldSai3enMask) != 0
+func (r *registerC1apb2enrType) GetSai3en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSai3enMask) != 0
 }
 
 // SetSai3en SAI3 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) SetSai3en(value bool) {
+func (r *registerC1apb2enrType) SetSai3en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldSai3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSai3enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldSai3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldSai3enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldDfsdm1enShift = 28
-	RegisterC1_apb2enrFieldDfsdm1enMask  = 0x10000000
+	RegisterC1apb2enrFieldDfsdm1enShift = 28
+	RegisterC1apb2enrFieldDfsdm1enMask  = 0x10000000
 )
 
 // GetDfsdm1en DFSDM1 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) GetDfsdm1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldDfsdm1enMask) != 0
+func (r *registerC1apb2enrType) GetDfsdm1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldDfsdm1enMask) != 0
 }
 
 // SetDfsdm1en DFSDM1 Peripheral Clocks Enable
-func (r *registerC1_apb2enrType) SetDfsdm1en(value bool) {
+func (r *registerC1apb2enrType) SetDfsdm1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldDfsdm1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldDfsdm1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldDfsdm1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldDfsdm1enMask)
 	}
 }
 
 const (
-	RegisterC1_apb2enrFieldHrtimenShift = 29
-	RegisterC1_apb2enrFieldHrtimenMask  = 0x20000000
+	RegisterC1apb2enrFieldHrtimenShift = 29
+	RegisterC1apb2enrFieldHrtimenMask  = 0x20000000
 )
 
 // GetHrtimen HRTIM peripheral clock enable
-func (r *registerC1_apb2enrType) GetHrtimen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2enrFieldHrtimenMask) != 0
+func (r *registerC1apb2enrType) GetHrtimen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldHrtimenMask) != 0
 }
 
 // SetHrtimen HRTIM peripheral clock enable
-func (r *registerC1_apb2enrType) SetHrtimen(value bool) {
+func (r *registerC1apb2enrType) SetHrtimen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2enrFieldHrtimenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldHrtimenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2enrFieldHrtimenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2enrFieldHrtimenMask)
 	}
 }
 
-// registerC1_apb4enrType RCC APB4 Clock Register
-type registerC1_apb4enrType uint32
+// registerC1apb4enrType RCC APB4 Clock Register
+type registerC1apb4enrType uint32
 
 const (
-	RegisterC1_apb4enrFieldSyscfgenShift = 1
-	RegisterC1_apb4enrFieldSyscfgenMask  = 0x2
+	RegisterC1apb4enrFieldSyscfgenShift = 1
+	RegisterC1apb4enrFieldSyscfgenMask  = 0x2
 )
 
 // GetSyscfgen SYSCFG peripheral clock enable
-func (r *registerC1_apb4enrType) GetSyscfgen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldSyscfgenMask) != 0
+func (r *registerC1apb4enrType) GetSyscfgen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldSyscfgenMask) != 0
 }
 
 // SetSyscfgen SYSCFG peripheral clock enable
-func (r *registerC1_apb4enrType) SetSyscfgen(value bool) {
+func (r *registerC1apb4enrType) SetSyscfgen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldSyscfgenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldSyscfgenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldSyscfgenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldSyscfgenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldLpuart1enShift = 3
-	RegisterC1_apb4enrFieldLpuart1enMask  = 0x8
+	RegisterC1apb4enrFieldLpuart1enShift = 3
+	RegisterC1apb4enrFieldLpuart1enMask  = 0x8
 )
 
 // GetLpuart1en LPUART1 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) GetLpuart1en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldLpuart1enMask) != 0
+func (r *registerC1apb4enrType) GetLpuart1en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldLpuart1enMask) != 0
 }
 
 // SetLpuart1en LPUART1 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) SetLpuart1en(value bool) {
+func (r *registerC1apb4enrType) SetLpuart1en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldLpuart1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldLpuart1enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldLpuart1enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldLpuart1enMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldSpi6enShift = 5
-	RegisterC1_apb4enrFieldSpi6enMask  = 0x20
+	RegisterC1apb4enrFieldSpi6enShift = 5
+	RegisterC1apb4enrFieldSpi6enMask  = 0x20
 )
 
 // GetSpi6en SPI6 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) GetSpi6en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldSpi6enMask) != 0
+func (r *registerC1apb4enrType) GetSpi6en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldSpi6enMask) != 0
 }
 
 // SetSpi6en SPI6 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) SetSpi6en(value bool) {
+func (r *registerC1apb4enrType) SetSpi6en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldSpi6enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldSpi6enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldSpi6enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldSpi6enMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldI2c4enShift = 7
-	RegisterC1_apb4enrFieldI2c4enMask  = 0x80
+	RegisterC1apb4enrFieldI2c4enShift = 7
+	RegisterC1apb4enrFieldI2c4enMask  = 0x80
 )
 
 // GetI2c4en I2C4 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) GetI2c4en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldI2c4enMask) != 0
+func (r *registerC1apb4enrType) GetI2c4en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldI2c4enMask) != 0
 }
 
 // SetI2c4en I2C4 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) SetI2c4en(value bool) {
+func (r *registerC1apb4enrType) SetI2c4en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldI2c4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldI2c4enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldI2c4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldI2c4enMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldLptim2enShift = 9
-	RegisterC1_apb4enrFieldLptim2enMask  = 0x200
+	RegisterC1apb4enrFieldLptim2enShift = 9
+	RegisterC1apb4enrFieldLptim2enMask  = 0x200
 )
 
 // GetLptim2en LPTIM2 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) GetLptim2en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldLptim2enMask) != 0
+func (r *registerC1apb4enrType) GetLptim2en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldLptim2enMask) != 0
 }
 
 // SetLptim2en LPTIM2 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) SetLptim2en(value bool) {
+func (r *registerC1apb4enrType) SetLptim2en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldLptim2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldLptim2enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldLptim2enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldLptim2enMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldLptim3enShift = 10
-	RegisterC1_apb4enrFieldLptim3enMask  = 0x400
+	RegisterC1apb4enrFieldLptim3enShift = 10
+	RegisterC1apb4enrFieldLptim3enMask  = 0x400
 )
 
 // GetLptim3en LPTIM3 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) GetLptim3en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldLptim3enMask) != 0
+func (r *registerC1apb4enrType) GetLptim3en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldLptim3enMask) != 0
 }
 
 // SetLptim3en LPTIM3 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) SetLptim3en(value bool) {
+func (r *registerC1apb4enrType) SetLptim3en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldLptim3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldLptim3enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldLptim3enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldLptim3enMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldLptim4enShift = 11
-	RegisterC1_apb4enrFieldLptim4enMask  = 0x800
+	RegisterC1apb4enrFieldLptim4enShift = 11
+	RegisterC1apb4enrFieldLptim4enMask  = 0x800
 )
 
 // GetLptim4en LPTIM4 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) GetLptim4en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldLptim4enMask) != 0
+func (r *registerC1apb4enrType) GetLptim4en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldLptim4enMask) != 0
 }
 
 // SetLptim4en LPTIM4 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) SetLptim4en(value bool) {
+func (r *registerC1apb4enrType) SetLptim4en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldLptim4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldLptim4enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldLptim4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldLptim4enMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldLptim5enShift = 12
-	RegisterC1_apb4enrFieldLptim5enMask  = 0x1000
+	RegisterC1apb4enrFieldLptim5enShift = 12
+	RegisterC1apb4enrFieldLptim5enMask  = 0x1000
 )
 
 // GetLptim5en LPTIM5 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) GetLptim5en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldLptim5enMask) != 0
+func (r *registerC1apb4enrType) GetLptim5en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldLptim5enMask) != 0
 }
 
 // SetLptim5en LPTIM5 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) SetLptim5en(value bool) {
+func (r *registerC1apb4enrType) SetLptim5en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldLptim5enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldLptim5enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldLptim5enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldLptim5enMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldComp12enShift = 14
-	RegisterC1_apb4enrFieldComp12enMask  = 0x4000
+	RegisterC1apb4enrFieldComp12enShift = 14
+	RegisterC1apb4enrFieldComp12enMask  = 0x4000
 )
 
 // GetComp12en COMP1/2 peripheral clock enable
-func (r *registerC1_apb4enrType) GetComp12en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldComp12enMask) != 0
+func (r *registerC1apb4enrType) GetComp12en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldComp12enMask) != 0
 }
 
 // SetComp12en COMP1/2 peripheral clock enable
-func (r *registerC1_apb4enrType) SetComp12en(value bool) {
+func (r *registerC1apb4enrType) SetComp12en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldComp12enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldComp12enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldComp12enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldComp12enMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldVrefenShift = 15
-	RegisterC1_apb4enrFieldVrefenMask  = 0x8000
+	RegisterC1apb4enrFieldVrefenShift = 15
+	RegisterC1apb4enrFieldVrefenMask  = 0x8000
 )
 
 // GetVrefen VREF peripheral clock enable
-func (r *registerC1_apb4enrType) GetVrefen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldVrefenMask) != 0
+func (r *registerC1apb4enrType) GetVrefen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldVrefenMask) != 0
 }
 
 // SetVrefen VREF peripheral clock enable
-func (r *registerC1_apb4enrType) SetVrefen(value bool) {
+func (r *registerC1apb4enrType) SetVrefen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldVrefenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldVrefenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldVrefenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldVrefenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldRtcapbenShift = 16
-	RegisterC1_apb4enrFieldRtcapbenMask  = 0x10000
+	RegisterC1apb4enrFieldRtcapbenShift = 16
+	RegisterC1apb4enrFieldRtcapbenMask  = 0x10000
 )
 
 // GetRtcapben RTC APB Clock Enable
-func (r *registerC1_apb4enrType) GetRtcapben() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldRtcapbenMask) != 0
+func (r *registerC1apb4enrType) GetRtcapben() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldRtcapbenMask) != 0
 }
 
 // SetRtcapben RTC APB Clock Enable
-func (r *registerC1_apb4enrType) SetRtcapben(value bool) {
+func (r *registerC1apb4enrType) SetRtcapben(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldRtcapbenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldRtcapbenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldRtcapbenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldRtcapbenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4enrFieldSai4enShift = 21
-	RegisterC1_apb4enrFieldSai4enMask  = 0x200000
+	RegisterC1apb4enrFieldSai4enShift = 21
+	RegisterC1apb4enrFieldSai4enMask  = 0x200000
 )
 
 // GetSai4en SAI4 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) GetSai4en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4enrFieldSai4enMask) != 0
+func (r *registerC1apb4enrType) GetSai4en() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldSai4enMask) != 0
 }
 
 // SetSai4en SAI4 Peripheral Clocks Enable
-func (r *registerC1_apb4enrType) SetSai4en(value bool) {
+func (r *registerC1apb4enrType) SetSai4en(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4enrFieldSai4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldSai4enMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4enrFieldSai4enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4enrFieldSai4enMask)
 	}
 }
 
-// registerC1_ahb3lpenrType RCC AHB3 Sleep Clock Register
-type registerC1_ahb3lpenrType uint32
+// registerC1ahb3lpenrType RCC AHB3 Sleep Clock Register
+type registerC1ahb3lpenrType uint32
 
 const (
-	RegisterC1_ahb3lpenrFieldMdmalpenShift = 0
-	RegisterC1_ahb3lpenrFieldMdmalpenMask  = 0x1
+	RegisterC1ahb3lpenrFieldMdmalpenShift = 0
+	RegisterC1ahb3lpenrFieldMdmalpenMask  = 0x1
 )
 
 // GetMdmalpen MDMA Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) GetMdmalpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldMdmalpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetMdmalpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldMdmalpenMask) != 0
 }
 
 // SetMdmalpen MDMA Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) SetMdmalpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetMdmalpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldMdmalpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldMdmalpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldMdmalpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldMdmalpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3lpenrFieldDma2dlpenShift = 4
-	RegisterC1_ahb3lpenrFieldDma2dlpenMask  = 0x10
+	RegisterC1ahb3lpenrFieldDma2dlpenShift = 4
+	RegisterC1ahb3lpenrFieldDma2dlpenMask  = 0x10
 )
 
 // GetDma2dlpen DMA2D Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) GetDma2dlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldDma2dlpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetDma2dlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldDma2dlpenMask) != 0
 }
 
 // SetDma2dlpen DMA2D Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) SetDma2dlpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetDma2dlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldDma2dlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldDma2dlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldDma2dlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldDma2dlpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3lpenrFieldJpgdeclpenShift = 5
-	RegisterC1_ahb3lpenrFieldJpgdeclpenMask  = 0x20
+	RegisterC1ahb3lpenrFieldJpgdeclpenShift = 5
+	RegisterC1ahb3lpenrFieldJpgdeclpenMask  = 0x20
 )
 
 // GetJpgdeclpen JPGDEC Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) GetJpgdeclpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldJpgdeclpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetJpgdeclpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldJpgdeclpenMask) != 0
 }
 
 // SetJpgdeclpen JPGDEC Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) SetJpgdeclpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetJpgdeclpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldJpgdeclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldJpgdeclpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldJpgdeclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldJpgdeclpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3lpenrFieldFlitflpenShift = 8
-	RegisterC1_ahb3lpenrFieldFlitflpenMask  = 0x100
+	RegisterC1ahb3lpenrFieldFlitflpenShift = 8
+	RegisterC1ahb3lpenrFieldFlitflpenMask  = 0x100
 )
 
 // GetFlitflpen FLITF Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) GetFlitflpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldFlitflpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetFlitflpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldFlitflpenMask) != 0
 }
 
 // SetFlitflpen FLITF Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) SetFlitflpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetFlitflpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldFlitflpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldFlitflpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldFlitflpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldFlitflpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3lpenrFieldFmclpenShift = 12
-	RegisterC1_ahb3lpenrFieldFmclpenMask  = 0x1000
+	RegisterC1ahb3lpenrFieldFmclpenShift = 12
+	RegisterC1ahb3lpenrFieldFmclpenMask  = 0x1000
 )
 
 // GetFmclpen FMC Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) GetFmclpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldFmclpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetFmclpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldFmclpenMask) != 0
 }
 
 // SetFmclpen FMC Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) SetFmclpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetFmclpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldFmclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldFmclpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldFmclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldFmclpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3lpenrFieldQspilpenShift = 14
-	RegisterC1_ahb3lpenrFieldQspilpenMask  = 0x4000
+	RegisterC1ahb3lpenrFieldQspilpenShift = 14
+	RegisterC1ahb3lpenrFieldQspilpenMask  = 0x4000
 )
 
 // GetQspilpen QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) GetQspilpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldQspilpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetQspilpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldQspilpenMask) != 0
 }
 
 // SetQspilpen QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) SetQspilpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetQspilpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldQspilpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldQspilpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldQspilpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldQspilpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3lpenrFieldSdmmc1lpenShift = 16
-	RegisterC1_ahb3lpenrFieldSdmmc1lpenMask  = 0x10000
+	RegisterC1ahb3lpenrFieldSdmmc1lpenShift = 16
+	RegisterC1ahb3lpenrFieldSdmmc1lpenMask  = 0x10000
 )
 
 // GetSdmmc1lpen SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) GetSdmmc1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldSdmmc1lpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetSdmmc1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldSdmmc1lpenMask) != 0
 }
 
 // SetSdmmc1lpen SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode
-func (r *registerC1_ahb3lpenrType) SetSdmmc1lpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetSdmmc1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldSdmmc1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldSdmmc1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldSdmmc1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldSdmmc1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3lpenrFieldD1dtcm1lpenShift = 28
-	RegisterC1_ahb3lpenrFieldD1dtcm1lpenMask  = 0x10000000
+	RegisterC1ahb3lpenrFieldD1dtcm1lpenShift = 28
+	RegisterC1ahb3lpenrFieldD1dtcm1lpenMask  = 0x10000000
 )
 
 // GetD1dtcm1lpen D1DTCM1 Block Clock Enable During CSleep mode
-func (r *registerC1_ahb3lpenrType) GetD1dtcm1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldD1dtcm1lpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetD1dtcm1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldD1dtcm1lpenMask) != 0
 }
 
 // SetD1dtcm1lpen D1DTCM1 Block Clock Enable During CSleep mode
-func (r *registerC1_ahb3lpenrType) SetD1dtcm1lpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetD1dtcm1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldD1dtcm1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldD1dtcm1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldD1dtcm1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldD1dtcm1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3lpenrFieldDtcm2lpenShift = 29
-	RegisterC1_ahb3lpenrFieldDtcm2lpenMask  = 0x20000000
+	RegisterC1ahb3lpenrFieldDtcm2lpenShift = 29
+	RegisterC1ahb3lpenrFieldDtcm2lpenMask  = 0x20000000
 )
 
 // GetDtcm2lpen D1 DTCM2 Block Clock Enable During CSleep mode
-func (r *registerC1_ahb3lpenrType) GetDtcm2lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldDtcm2lpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetDtcm2lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldDtcm2lpenMask) != 0
 }
 
 // SetDtcm2lpen D1 DTCM2 Block Clock Enable During CSleep mode
-func (r *registerC1_ahb3lpenrType) SetDtcm2lpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetDtcm2lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldDtcm2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldDtcm2lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldDtcm2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldDtcm2lpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3lpenrFieldItcmlpenShift = 30
-	RegisterC1_ahb3lpenrFieldItcmlpenMask  = 0x40000000
+	RegisterC1ahb3lpenrFieldItcmlpenShift = 30
+	RegisterC1ahb3lpenrFieldItcmlpenMask  = 0x40000000
 )
 
 // GetItcmlpen D1ITCM Block Clock Enable During CSleep mode
-func (r *registerC1_ahb3lpenrType) GetItcmlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldItcmlpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetItcmlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldItcmlpenMask) != 0
 }
 
 // SetItcmlpen D1ITCM Block Clock Enable During CSleep mode
-func (r *registerC1_ahb3lpenrType) SetItcmlpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetItcmlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldItcmlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldItcmlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldItcmlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldItcmlpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb3lpenrFieldAxisramlpenShift = 31
-	RegisterC1_ahb3lpenrFieldAxisramlpenMask  = 0x80000000
+	RegisterC1ahb3lpenrFieldAxisramlpenShift = 31
+	RegisterC1ahb3lpenrFieldAxisramlpenMask  = 0x80000000
 )
 
 // GetAxisramlpen AXISRAM Block Clock Enable During CSleep mode
-func (r *registerC1_ahb3lpenrType) GetAxisramlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb3lpenrFieldAxisramlpenMask) != 0
+func (r *registerC1ahb3lpenrType) GetAxisramlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldAxisramlpenMask) != 0
 }
 
 // SetAxisramlpen AXISRAM Block Clock Enable During CSleep mode
-func (r *registerC1_ahb3lpenrType) SetAxisramlpen(value bool) {
+func (r *registerC1ahb3lpenrType) SetAxisramlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb3lpenrFieldAxisramlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldAxisramlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb3lpenrFieldAxisramlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb3lpenrFieldAxisramlpenMask)
 	}
 }
 
-// registerC1_ahb1lpenrType RCC AHB1 Sleep Clock Register
-type registerC1_ahb1lpenrType uint32
+// registerC1ahb1lpenrType RCC AHB1 Sleep Clock Register
+type registerC1ahb1lpenrType uint32
 
 const (
-	RegisterC1_ahb1lpenrFieldDma1lpenShift = 0
-	RegisterC1_ahb1lpenrFieldDma1lpenMask  = 0x1
+	RegisterC1ahb1lpenrFieldDma1lpenShift = 0
+	RegisterC1ahb1lpenrFieldDma1lpenMask  = 0x1
 )
 
 // GetDma1lpen DMA1 Clock Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) GetDma1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1lpenrFieldDma1lpenMask) != 0
+func (r *registerC1ahb1lpenrType) GetDma1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldDma1lpenMask) != 0
 }
 
 // SetDma1lpen DMA1 Clock Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) SetDma1lpen(value bool) {
+func (r *registerC1ahb1lpenrType) SetDma1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1lpenrFieldDma1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldDma1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1lpenrFieldDma1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1lpenrFieldDma1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1lpenrFieldDma2lpenShift = 1
-	RegisterC1_ahb1lpenrFieldDma2lpenMask  = 0x2
+	RegisterC1ahb1lpenrFieldDma2lpenShift = 1
+	RegisterC1ahb1lpenrFieldDma2lpenMask  = 0x2
 )
 
 // GetDma2lpen DMA2 Clock Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) GetDma2lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1lpenrFieldDma2lpenMask) != 0
+func (r *registerC1ahb1lpenrType) GetDma2lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldDma2lpenMask) != 0
 }
 
 // SetDma2lpen DMA2 Clock Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) SetDma2lpen(value bool) {
+func (r *registerC1ahb1lpenrType) SetDma2lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1lpenrFieldDma2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldDma2lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1lpenrFieldDma2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1lpenrFieldDma2lpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1lpenrFieldAdc12lpenShift = 5
-	RegisterC1_ahb1lpenrFieldAdc12lpenMask  = 0x20
+	RegisterC1ahb1lpenrFieldAdc12lpenShift = 5
+	RegisterC1ahb1lpenrFieldAdc12lpenMask  = 0x20
 )
 
 // GetAdc12lpen ADC1/2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) GetAdc12lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1lpenrFieldAdc12lpenMask) != 0
+func (r *registerC1ahb1lpenrType) GetAdc12lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldAdc12lpenMask) != 0
 }
 
 // SetAdc12lpen ADC1/2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) SetAdc12lpen(value bool) {
+func (r *registerC1ahb1lpenrType) SetAdc12lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1lpenrFieldAdc12lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldAdc12lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1lpenrFieldAdc12lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1lpenrFieldAdc12lpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1lpenrFieldEth1maclpenShift = 15
-	RegisterC1_ahb1lpenrFieldEth1maclpenMask  = 0x8000
+	RegisterC1ahb1lpenrFieldEth1maclpenShift = 15
+	RegisterC1ahb1lpenrFieldEth1maclpenMask  = 0x8000
 )
 
 // GetEth1maclpen Ethernet MAC bus interface Clock Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) GetEth1maclpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1lpenrFieldEth1maclpenMask) != 0
+func (r *registerC1ahb1lpenrType) GetEth1maclpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldEth1maclpenMask) != 0
 }
 
 // SetEth1maclpen Ethernet MAC bus interface Clock Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) SetEth1maclpen(value bool) {
+func (r *registerC1ahb1lpenrType) SetEth1maclpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1lpenrFieldEth1maclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldEth1maclpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1lpenrFieldEth1maclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1lpenrFieldEth1maclpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1lpenrFieldEth1txlpenShift = 16
-	RegisterC1_ahb1lpenrFieldEth1txlpenMask  = 0x10000
+	RegisterC1ahb1lpenrFieldEth1txlpenShift = 16
+	RegisterC1ahb1lpenrFieldEth1txlpenMask  = 0x10000
 )
 
 // GetEth1txlpen Ethernet Transmission Clock Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) GetEth1txlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1lpenrFieldEth1txlpenMask) != 0
+func (r *registerC1ahb1lpenrType) GetEth1txlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldEth1txlpenMask) != 0
 }
 
 // SetEth1txlpen Ethernet Transmission Clock Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) SetEth1txlpen(value bool) {
+func (r *registerC1ahb1lpenrType) SetEth1txlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1lpenrFieldEth1txlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldEth1txlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1lpenrFieldEth1txlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1lpenrFieldEth1txlpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1lpenrFieldEth1rxlpenShift = 17
-	RegisterC1_ahb1lpenrFieldEth1rxlpenMask  = 0x20000
+	RegisterC1ahb1lpenrFieldEth1rxlpenShift = 17
+	RegisterC1ahb1lpenrFieldEth1rxlpenMask  = 0x20000
 )
 
 // GetEth1rxlpen Ethernet Reception Clock Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) GetEth1rxlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1lpenrFieldEth1rxlpenMask) != 0
+func (r *registerC1ahb1lpenrType) GetEth1rxlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldEth1rxlpenMask) != 0
 }
 
 // SetEth1rxlpen Ethernet Reception Clock Enable During CSleep Mode
-func (r *registerC1_ahb1lpenrType) SetEth1rxlpen(value bool) {
+func (r *registerC1ahb1lpenrType) SetEth1rxlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1lpenrFieldEth1rxlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldEth1rxlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1lpenrFieldEth1rxlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1lpenrFieldEth1rxlpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1lpenrFieldUsb1otglpenShift = 25
-	RegisterC1_ahb1lpenrFieldUsb1otglpenMask  = 0x2000000
+	RegisterC1ahb1lpenrFieldUsb1otglpenShift = 25
+	RegisterC1ahb1lpenrFieldUsb1otglpenMask  = 0x2000000
 )
 
 // GetUsb1otglpen USB1OTG peripheral clock enable during CSleep mode
-func (r *registerC1_ahb1lpenrType) GetUsb1otglpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1lpenrFieldUsb1otglpenMask) != 0
+func (r *registerC1ahb1lpenrType) GetUsb1otglpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldUsb1otglpenMask) != 0
 }
 
 // SetUsb1otglpen USB1OTG peripheral clock enable during CSleep mode
-func (r *registerC1_ahb1lpenrType) SetUsb1otglpen(value bool) {
+func (r *registerC1ahb1lpenrType) SetUsb1otglpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1lpenrFieldUsb1otglpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldUsb1otglpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1lpenrFieldUsb1otglpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1lpenrFieldUsb1otglpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1lpenrFieldUsb1ulpilpenShift = 26
-	RegisterC1_ahb1lpenrFieldUsb1ulpilpenMask  = 0x4000000
+	RegisterC1ahb1lpenrFieldUsb1ulpilpenShift = 26
+	RegisterC1ahb1lpenrFieldUsb1ulpilpenMask  = 0x4000000
 )
 
 // GetUsb1ulpilpen USB_PHY1 clock enable during CSleep mode
-func (r *registerC1_ahb1lpenrType) GetUsb1ulpilpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1lpenrFieldUsb1ulpilpenMask) != 0
+func (r *registerC1ahb1lpenrType) GetUsb1ulpilpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldUsb1ulpilpenMask) != 0
 }
 
 // SetUsb1ulpilpen USB_PHY1 clock enable during CSleep mode
-func (r *registerC1_ahb1lpenrType) SetUsb1ulpilpen(value bool) {
+func (r *registerC1ahb1lpenrType) SetUsb1ulpilpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1lpenrFieldUsb1ulpilpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldUsb1ulpilpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1lpenrFieldUsb1ulpilpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1lpenrFieldUsb1ulpilpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1lpenrFieldUsb2otglpenShift = 27
-	RegisterC1_ahb1lpenrFieldUsb2otglpenMask  = 0x8000000
+	RegisterC1ahb1lpenrFieldUsb2otglpenShift = 27
+	RegisterC1ahb1lpenrFieldUsb2otglpenMask  = 0x8000000
 )
 
 // GetUsb2otglpen USB2OTG peripheral clock enable during CSleep mode
-func (r *registerC1_ahb1lpenrType) GetUsb2otglpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1lpenrFieldUsb2otglpenMask) != 0
+func (r *registerC1ahb1lpenrType) GetUsb2otglpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldUsb2otglpenMask) != 0
 }
 
 // SetUsb2otglpen USB2OTG peripheral clock enable during CSleep mode
-func (r *registerC1_ahb1lpenrType) SetUsb2otglpen(value bool) {
+func (r *registerC1ahb1lpenrType) SetUsb2otglpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1lpenrFieldUsb2otglpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldUsb2otglpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1lpenrFieldUsb2otglpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1lpenrFieldUsb2otglpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb1lpenrFieldUsb2ulpilpenShift = 28
-	RegisterC1_ahb1lpenrFieldUsb2ulpilpenMask  = 0x10000000
+	RegisterC1ahb1lpenrFieldUsb2ulpilpenShift = 28
+	RegisterC1ahb1lpenrFieldUsb2ulpilpenMask  = 0x10000000
 )
 
 // GetUsb2ulpilpen USB_PHY2 clocks enable during CSleep mode
-func (r *registerC1_ahb1lpenrType) GetUsb2ulpilpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb1lpenrFieldUsb2ulpilpenMask) != 0
+func (r *registerC1ahb1lpenrType) GetUsb2ulpilpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldUsb2ulpilpenMask) != 0
 }
 
 // SetUsb2ulpilpen USB_PHY2 clocks enable during CSleep mode
-func (r *registerC1_ahb1lpenrType) SetUsb2ulpilpen(value bool) {
+func (r *registerC1ahb1lpenrType) SetUsb2ulpilpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb1lpenrFieldUsb2ulpilpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldUsb2ulpilpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb1lpenrFieldUsb2ulpilpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb1lpenrFieldUsb2ulpilpenMask)
 	}
 }
 
-// registerC1_ahb2lpenrType RCC AHB2 Sleep Clock Register
-type registerC1_ahb2lpenrType uint32
+// registerC1ahb2lpenrType RCC AHB2 Sleep Clock Register
+type registerC1ahb2lpenrType uint32
 
 const (
-	RegisterC1_ahb2lpenrFieldCamitflpenShift = 0
-	RegisterC1_ahb2lpenrFieldCamitflpenMask  = 0x1
+	RegisterC1ahb2lpenrFieldCamitflpenShift = 0
+	RegisterC1ahb2lpenrFieldCamitflpenMask  = 0x1
 )
 
 // GetCamitflpen CAMITF peripheral clock enable during CSleep mode
-func (r *registerC1_ahb2lpenrType) GetCamitflpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2lpenrFieldCamitflpenMask) != 0
+func (r *registerC1ahb2lpenrType) GetCamitflpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldCamitflpenMask) != 0
 }
 
 // SetCamitflpen CAMITF peripheral clock enable during CSleep mode
-func (r *registerC1_ahb2lpenrType) SetCamitflpen(value bool) {
+func (r *registerC1ahb2lpenrType) SetCamitflpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2lpenrFieldCamitflpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldCamitflpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2lpenrFieldCamitflpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2lpenrFieldCamitflpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2lpenrFieldCryptlpenShift = 4
-	RegisterC1_ahb2lpenrFieldCryptlpenMask  = 0x10
+	RegisterC1ahb2lpenrFieldCryptlpenShift = 4
+	RegisterC1ahb2lpenrFieldCryptlpenMask  = 0x10
 )
 
 // GetCryptlpen CRYPT peripheral clock enable during CSleep mode
-func (r *registerC1_ahb2lpenrType) GetCryptlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2lpenrFieldCryptlpenMask) != 0
+func (r *registerC1ahb2lpenrType) GetCryptlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldCryptlpenMask) != 0
 }
 
 // SetCryptlpen CRYPT peripheral clock enable during CSleep mode
-func (r *registerC1_ahb2lpenrType) SetCryptlpen(value bool) {
+func (r *registerC1ahb2lpenrType) SetCryptlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2lpenrFieldCryptlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldCryptlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2lpenrFieldCryptlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2lpenrFieldCryptlpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2lpenrFieldHashlpenShift = 5
-	RegisterC1_ahb2lpenrFieldHashlpenMask  = 0x20
+	RegisterC1ahb2lpenrFieldHashlpenShift = 5
+	RegisterC1ahb2lpenrFieldHashlpenMask  = 0x20
 )
 
 // GetHashlpen HASH peripheral clock enable during CSleep mode
-func (r *registerC1_ahb2lpenrType) GetHashlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2lpenrFieldHashlpenMask) != 0
+func (r *registerC1ahb2lpenrType) GetHashlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldHashlpenMask) != 0
 }
 
 // SetHashlpen HASH peripheral clock enable during CSleep mode
-func (r *registerC1_ahb2lpenrType) SetHashlpen(value bool) {
+func (r *registerC1ahb2lpenrType) SetHashlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2lpenrFieldHashlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldHashlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2lpenrFieldHashlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2lpenrFieldHashlpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2lpenrFieldRnglpenShift = 6
-	RegisterC1_ahb2lpenrFieldRnglpenMask  = 0x40
+	RegisterC1ahb2lpenrFieldRnglpenShift = 6
+	RegisterC1ahb2lpenrFieldRnglpenMask  = 0x40
 )
 
 // GetRnglpen RNG peripheral clock enable during CSleep mode
-func (r *registerC1_ahb2lpenrType) GetRnglpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2lpenrFieldRnglpenMask) != 0
+func (r *registerC1ahb2lpenrType) GetRnglpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldRnglpenMask) != 0
 }
 
 // SetRnglpen RNG peripheral clock enable during CSleep mode
-func (r *registerC1_ahb2lpenrType) SetRnglpen(value bool) {
+func (r *registerC1ahb2lpenrType) SetRnglpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2lpenrFieldRnglpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldRnglpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2lpenrFieldRnglpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2lpenrFieldRnglpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2lpenrFieldSdmmc2lpenShift = 9
-	RegisterC1_ahb2lpenrFieldSdmmc2lpenMask  = 0x200
+	RegisterC1ahb2lpenrFieldSdmmc2lpenShift = 9
+	RegisterC1ahb2lpenrFieldSdmmc2lpenMask  = 0x200
 )
 
 // GetSdmmc2lpen SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode
-func (r *registerC1_ahb2lpenrType) GetSdmmc2lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2lpenrFieldSdmmc2lpenMask) != 0
+func (r *registerC1ahb2lpenrType) GetSdmmc2lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldSdmmc2lpenMask) != 0
 }
 
 // SetSdmmc2lpen SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode
-func (r *registerC1_ahb2lpenrType) SetSdmmc2lpen(value bool) {
+func (r *registerC1ahb2lpenrType) SetSdmmc2lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2lpenrFieldSdmmc2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldSdmmc2lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2lpenrFieldSdmmc2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2lpenrFieldSdmmc2lpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2lpenrFieldSram1lpenShift = 29
-	RegisterC1_ahb2lpenrFieldSram1lpenMask  = 0x20000000
+	RegisterC1ahb2lpenrFieldSram1lpenShift = 29
+	RegisterC1ahb2lpenrFieldSram1lpenMask  = 0x20000000
 )
 
 // GetSram1lpen SRAM1 Clock Enable During CSleep Mode
-func (r *registerC1_ahb2lpenrType) GetSram1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2lpenrFieldSram1lpenMask) != 0
+func (r *registerC1ahb2lpenrType) GetSram1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldSram1lpenMask) != 0
 }
 
 // SetSram1lpen SRAM1 Clock Enable During CSleep Mode
-func (r *registerC1_ahb2lpenrType) SetSram1lpen(value bool) {
+func (r *registerC1ahb2lpenrType) SetSram1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2lpenrFieldSram1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldSram1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2lpenrFieldSram1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2lpenrFieldSram1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2lpenrFieldSram2lpenShift = 30
-	RegisterC1_ahb2lpenrFieldSram2lpenMask  = 0x40000000
+	RegisterC1ahb2lpenrFieldSram2lpenShift = 30
+	RegisterC1ahb2lpenrFieldSram2lpenMask  = 0x40000000
 )
 
 // GetSram2lpen SRAM2 Clock Enable During CSleep Mode
-func (r *registerC1_ahb2lpenrType) GetSram2lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2lpenrFieldSram2lpenMask) != 0
+func (r *registerC1ahb2lpenrType) GetSram2lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldSram2lpenMask) != 0
 }
 
 // SetSram2lpen SRAM2 Clock Enable During CSleep Mode
-func (r *registerC1_ahb2lpenrType) SetSram2lpen(value bool) {
+func (r *registerC1ahb2lpenrType) SetSram2lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2lpenrFieldSram2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldSram2lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2lpenrFieldSram2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2lpenrFieldSram2lpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb2lpenrFieldSram3lpenShift = 31
-	RegisterC1_ahb2lpenrFieldSram3lpenMask  = 0x80000000
+	RegisterC1ahb2lpenrFieldSram3lpenShift = 31
+	RegisterC1ahb2lpenrFieldSram3lpenMask  = 0x80000000
 )
 
 // GetSram3lpen SRAM3 Clock Enable During CSleep Mode
-func (r *registerC1_ahb2lpenrType) GetSram3lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb2lpenrFieldSram3lpenMask) != 0
+func (r *registerC1ahb2lpenrType) GetSram3lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldSram3lpenMask) != 0
 }
 
 // SetSram3lpen SRAM3 Clock Enable During CSleep Mode
-func (r *registerC1_ahb2lpenrType) SetSram3lpen(value bool) {
+func (r *registerC1ahb2lpenrType) SetSram3lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb2lpenrFieldSram3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldSram3lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb2lpenrFieldSram3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb2lpenrFieldSram3lpenMask)
 	}
 }
 
-// registerC1_ahb4lpenrType RCC AHB4 Sleep Clock Register
-type registerC1_ahb4lpenrType uint32
+// registerC1ahb4lpenrType RCC AHB4 Sleep Clock Register
+type registerC1ahb4lpenrType uint32
 
 const (
-	RegisterC1_ahb4lpenrFieldGpioalpenShift = 0
-	RegisterC1_ahb4lpenrFieldGpioalpenMask  = 0x1
+	RegisterC1ahb4lpenrFieldGpioalpenShift = 0
+	RegisterC1ahb4lpenrFieldGpioalpenMask  = 0x1
 )
 
 // GetGpioalpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpioalpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpioalpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpioalpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioalpenMask) != 0
 }
 
 // SetGpioalpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpioalpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpioalpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpioalpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioalpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpioalpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpioalpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldGpioblpenShift = 1
-	RegisterC1_ahb4lpenrFieldGpioblpenMask  = 0x2
+	RegisterC1ahb4lpenrFieldGpioblpenShift = 1
+	RegisterC1ahb4lpenrFieldGpioblpenMask  = 0x2
 )
 
 // GetGpioblpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpioblpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpioblpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpioblpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioblpenMask) != 0
 }
 
 // SetGpioblpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpioblpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpioblpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpioblpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioblpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpioblpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpioblpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldGpioclpenShift = 2
-	RegisterC1_ahb4lpenrFieldGpioclpenMask  = 0x4
+	RegisterC1ahb4lpenrFieldGpioclpenShift = 2
+	RegisterC1ahb4lpenrFieldGpioclpenMask  = 0x4
 )
 
 // GetGpioclpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpioclpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpioclpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpioclpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioclpenMask) != 0
 }
 
 // SetGpioclpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpioclpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpioclpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpioclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioclpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpioclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpioclpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldGpiodlpenShift = 3
-	RegisterC1_ahb4lpenrFieldGpiodlpenMask  = 0x8
+	RegisterC1ahb4lpenrFieldGpiodlpenShift = 3
+	RegisterC1ahb4lpenrFieldGpiodlpenMask  = 0x8
 )
 
 // GetGpiodlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpiodlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpiodlpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpiodlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpiodlpenMask) != 0
 }
 
 // SetGpiodlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpiodlpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpiodlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpiodlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpiodlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpiodlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpiodlpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldGpioelpenShift = 4
-	RegisterC1_ahb4lpenrFieldGpioelpenMask  = 0x10
+	RegisterC1ahb4lpenrFieldGpioelpenShift = 4
+	RegisterC1ahb4lpenrFieldGpioelpenMask  = 0x10
 )
 
 // GetGpioelpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpioelpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpioelpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpioelpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioelpenMask) != 0
 }
 
 // SetGpioelpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpioelpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpioelpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpioelpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioelpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpioelpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpioelpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldGpioflpenShift = 5
-	RegisterC1_ahb4lpenrFieldGpioflpenMask  = 0x20
+	RegisterC1ahb4lpenrFieldGpioflpenShift = 5
+	RegisterC1ahb4lpenrFieldGpioflpenMask  = 0x20
 )
 
 // GetGpioflpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpioflpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpioflpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpioflpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioflpenMask) != 0
 }
 
 // SetGpioflpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpioflpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpioflpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpioflpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioflpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpioflpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpioflpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldGpioglpenShift = 6
-	RegisterC1_ahb4lpenrFieldGpioglpenMask  = 0x40
+	RegisterC1ahb4lpenrFieldGpioglpenShift = 6
+	RegisterC1ahb4lpenrFieldGpioglpenMask  = 0x40
 )
 
 // GetGpioglpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpioglpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpioglpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpioglpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioglpenMask) != 0
 }
 
 // SetGpioglpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpioglpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpioglpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpioglpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioglpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpioglpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpioglpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldGpiohlpenShift = 7
-	RegisterC1_ahb4lpenrFieldGpiohlpenMask  = 0x80
+	RegisterC1ahb4lpenrFieldGpiohlpenShift = 7
+	RegisterC1ahb4lpenrFieldGpiohlpenMask  = 0x80
 )
 
 // GetGpiohlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpiohlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpiohlpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpiohlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpiohlpenMask) != 0
 }
 
 // SetGpiohlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpiohlpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpiohlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpiohlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpiohlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpiohlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpiohlpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldGpioilpenShift = 8
-	RegisterC1_ahb4lpenrFieldGpioilpenMask  = 0x100
+	RegisterC1ahb4lpenrFieldGpioilpenShift = 8
+	RegisterC1ahb4lpenrFieldGpioilpenMask  = 0x100
 )
 
 // GetGpioilpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpioilpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpioilpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpioilpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioilpenMask) != 0
 }
 
 // SetGpioilpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpioilpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpioilpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpioilpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioilpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpioilpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpioilpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldGpiojlpenShift = 9
-	RegisterC1_ahb4lpenrFieldGpiojlpenMask  = 0x200
+	RegisterC1ahb4lpenrFieldGpiojlpenShift = 9
+	RegisterC1ahb4lpenrFieldGpiojlpenMask  = 0x200
 )
 
 // GetGpiojlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpiojlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpiojlpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpiojlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpiojlpenMask) != 0
 }
 
 // SetGpiojlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpiojlpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpiojlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpiojlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpiojlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpiojlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpiojlpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldGpioklpenShift = 10
-	RegisterC1_ahb4lpenrFieldGpioklpenMask  = 0x400
+	RegisterC1ahb4lpenrFieldGpioklpenShift = 10
+	RegisterC1ahb4lpenrFieldGpioklpenMask  = 0x400
 )
 
 // GetGpioklpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetGpioklpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldGpioklpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetGpioklpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioklpenMask) != 0
 }
 
 // SetGpioklpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetGpioklpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetGpioklpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldGpioklpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioklpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldGpioklpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldGpioklpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldCrclpenShift = 19
-	RegisterC1_ahb4lpenrFieldCrclpenMask  = 0x80000
+	RegisterC1ahb4lpenrFieldCrclpenShift = 19
+	RegisterC1ahb4lpenrFieldCrclpenMask  = 0x80000
 )
 
 // GetCrclpen CRC peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) GetCrclpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldCrclpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetCrclpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldCrclpenMask) != 0
 }
 
 // SetCrclpen CRC peripheral clock enable during CSleep mode
-func (r *registerC1_ahb4lpenrType) SetCrclpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetCrclpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldCrclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldCrclpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldCrclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldCrclpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldBdmalpenShift = 21
-	RegisterC1_ahb4lpenrFieldBdmalpenMask  = 0x200000
+	RegisterC1ahb4lpenrFieldBdmalpenShift = 21
+	RegisterC1ahb4lpenrFieldBdmalpenMask  = 0x200000
 )
 
 // GetBdmalpen BDMA Clock Enable During CSleep Mode
-func (r *registerC1_ahb4lpenrType) GetBdmalpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldBdmalpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetBdmalpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldBdmalpenMask) != 0
 }
 
 // SetBdmalpen BDMA Clock Enable During CSleep Mode
-func (r *registerC1_ahb4lpenrType) SetBdmalpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetBdmalpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldBdmalpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldBdmalpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldBdmalpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldBdmalpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldAdc3lpenShift = 24
-	RegisterC1_ahb4lpenrFieldAdc3lpenMask  = 0x1000000
+	RegisterC1ahb4lpenrFieldAdc3lpenShift = 24
+	RegisterC1ahb4lpenrFieldAdc3lpenMask  = 0x1000000
 )
 
 // GetAdc3lpen ADC3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_ahb4lpenrType) GetAdc3lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldAdc3lpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetAdc3lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldAdc3lpenMask) != 0
 }
 
 // SetAdc3lpen ADC3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_ahb4lpenrType) SetAdc3lpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetAdc3lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldAdc3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldAdc3lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldAdc3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldAdc3lpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldBkpramlpenShift = 28
-	RegisterC1_ahb4lpenrFieldBkpramlpenMask  = 0x10000000
+	RegisterC1ahb4lpenrFieldBkpramlpenShift = 28
+	RegisterC1ahb4lpenrFieldBkpramlpenMask  = 0x10000000
 )
 
 // GetBkpramlpen Backup RAM Clock Enable During CSleep Mode
-func (r *registerC1_ahb4lpenrType) GetBkpramlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldBkpramlpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetBkpramlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldBkpramlpenMask) != 0
 }
 
 // SetBkpramlpen Backup RAM Clock Enable During CSleep Mode
-func (r *registerC1_ahb4lpenrType) SetBkpramlpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetBkpramlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldBkpramlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldBkpramlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldBkpramlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldBkpramlpenMask)
 	}
 }
 
 const (
-	RegisterC1_ahb4lpenrFieldSram4lpenShift = 29
-	RegisterC1_ahb4lpenrFieldSram4lpenMask  = 0x20000000
+	RegisterC1ahb4lpenrFieldSram4lpenShift = 29
+	RegisterC1ahb4lpenrFieldSram4lpenMask  = 0x20000000
 )
 
 // GetSram4lpen SRAM4 Clock Enable During CSleep Mode
-func (r *registerC1_ahb4lpenrType) GetSram4lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_ahb4lpenrFieldSram4lpenMask) != 0
+func (r *registerC1ahb4lpenrType) GetSram4lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldSram4lpenMask) != 0
 }
 
 // SetSram4lpen SRAM4 Clock Enable During CSleep Mode
-func (r *registerC1_ahb4lpenrType) SetSram4lpen(value bool) {
+func (r *registerC1ahb4lpenrType) SetSram4lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_ahb4lpenrFieldSram4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldSram4lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_ahb4lpenrFieldSram4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1ahb4lpenrFieldSram4lpenMask)
 	}
 }
 
-// registerC1_apb3lpenrType RCC APB3 Sleep Clock Register
-type registerC1_apb3lpenrType uint32
+// registerC1apb3lpenrType RCC APB3 Sleep Clock Register
+type registerC1apb3lpenrType uint32
 
 const (
-	RegisterC1_apb3lpenrFieldLtdclpenShift = 3
-	RegisterC1_apb3lpenrFieldLtdclpenMask  = 0x8
+	RegisterC1apb3lpenrFieldLtdclpenShift = 3
+	RegisterC1apb3lpenrFieldLtdclpenMask  = 0x8
 )
 
 // GetLtdclpen LTDC peripheral clock enable during CSleep mode
-func (r *registerC1_apb3lpenrType) GetLtdclpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb3lpenrFieldLtdclpenMask) != 0
+func (r *registerC1apb3lpenrType) GetLtdclpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb3lpenrFieldLtdclpenMask) != 0
 }
 
 // SetLtdclpen LTDC peripheral clock enable during CSleep mode
-func (r *registerC1_apb3lpenrType) SetLtdclpen(value bool) {
+func (r *registerC1apb3lpenrType) SetLtdclpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb3lpenrFieldLtdclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb3lpenrFieldLtdclpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb3lpenrFieldLtdclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb3lpenrFieldLtdclpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb3lpenrFieldWwdg1lpenShift = 6
-	RegisterC1_apb3lpenrFieldWwdg1lpenMask  = 0x40
+	RegisterC1apb3lpenrFieldWwdg1lpenShift = 6
+	RegisterC1apb3lpenrFieldWwdg1lpenMask  = 0x40
 )
 
 // GetWwdg1lpen WWDG1 Clock Enable During CSleep Mode
-func (r *registerC1_apb3lpenrType) GetWwdg1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb3lpenrFieldWwdg1lpenMask) != 0
+func (r *registerC1apb3lpenrType) GetWwdg1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb3lpenrFieldWwdg1lpenMask) != 0
 }
 
 // SetWwdg1lpen WWDG1 Clock Enable During CSleep Mode
-func (r *registerC1_apb3lpenrType) SetWwdg1lpen(value bool) {
+func (r *registerC1apb3lpenrType) SetWwdg1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb3lpenrFieldWwdg1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb3lpenrFieldWwdg1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb3lpenrFieldWwdg1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb3lpenrFieldWwdg1lpenMask)
 	}
 }
 
-// registerC1_apb1llpenrType RCC APB1 Low Sleep Clock Register
-type registerC1_apb1llpenrType uint32
+// registerC1apb1llpenrType RCC APB1 Low Sleep Clock Register
+type registerC1apb1llpenrType uint32
 
 const (
-	RegisterC1_apb1llpenrFieldTim2lpenShift = 0
-	RegisterC1_apb1llpenrFieldTim2lpenMask  = 0x1
+	RegisterC1apb1llpenrFieldTim2lpenShift = 0
+	RegisterC1apb1llpenrFieldTim2lpenMask  = 0x1
 )
 
 // GetTim2lpen TIM2 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) GetTim2lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldTim2lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetTim2lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim2lpenMask) != 0
 }
 
 // SetTim2lpen TIM2 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) SetTim2lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetTim2lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldTim2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim2lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldTim2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldTim2lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldTim3lpenShift = 1
-	RegisterC1_apb1llpenrFieldTim3lpenMask  = 0x2
+	RegisterC1apb1llpenrFieldTim3lpenShift = 1
+	RegisterC1apb1llpenrFieldTim3lpenMask  = 0x2
 )
 
 // GetTim3lpen TIM3 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) GetTim3lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldTim3lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetTim3lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim3lpenMask) != 0
 }
 
 // SetTim3lpen TIM3 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) SetTim3lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetTim3lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldTim3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim3lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldTim3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldTim3lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldTim4lpenShift = 2
-	RegisterC1_apb1llpenrFieldTim4lpenMask  = 0x4
+	RegisterC1apb1llpenrFieldTim4lpenShift = 2
+	RegisterC1apb1llpenrFieldTim4lpenMask  = 0x4
 )
 
 // GetTim4lpen TIM4 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) GetTim4lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldTim4lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetTim4lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim4lpenMask) != 0
 }
 
 // SetTim4lpen TIM4 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) SetTim4lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetTim4lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldTim4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim4lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldTim4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldTim4lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldTim5lpenShift = 3
-	RegisterC1_apb1llpenrFieldTim5lpenMask  = 0x8
+	RegisterC1apb1llpenrFieldTim5lpenShift = 3
+	RegisterC1apb1llpenrFieldTim5lpenMask  = 0x8
 )
 
 // GetTim5lpen TIM5 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) GetTim5lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldTim5lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetTim5lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim5lpenMask) != 0
 }
 
 // SetTim5lpen TIM5 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) SetTim5lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetTim5lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldTim5lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim5lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldTim5lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldTim5lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldTim6lpenShift = 4
-	RegisterC1_apb1llpenrFieldTim6lpenMask  = 0x10
+	RegisterC1apb1llpenrFieldTim6lpenShift = 4
+	RegisterC1apb1llpenrFieldTim6lpenMask  = 0x10
 )
 
 // GetTim6lpen TIM6 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) GetTim6lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldTim6lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetTim6lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim6lpenMask) != 0
 }
 
 // SetTim6lpen TIM6 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) SetTim6lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetTim6lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldTim6lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim6lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldTim6lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldTim6lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldTim7lpenShift = 5
-	RegisterC1_apb1llpenrFieldTim7lpenMask  = 0x20
+	RegisterC1apb1llpenrFieldTim7lpenShift = 5
+	RegisterC1apb1llpenrFieldTim7lpenMask  = 0x20
 )
 
 // GetTim7lpen TIM7 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) GetTim7lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldTim7lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetTim7lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim7lpenMask) != 0
 }
 
 // SetTim7lpen TIM7 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) SetTim7lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetTim7lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldTim7lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim7lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldTim7lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldTim7lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldTim12lpenShift = 6
-	RegisterC1_apb1llpenrFieldTim12lpenMask  = 0x40
+	RegisterC1apb1llpenrFieldTim12lpenShift = 6
+	RegisterC1apb1llpenrFieldTim12lpenMask  = 0x40
 )
 
 // GetTim12lpen TIM12 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) GetTim12lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldTim12lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetTim12lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim12lpenMask) != 0
 }
 
 // SetTim12lpen TIM12 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) SetTim12lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetTim12lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldTim12lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim12lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldTim12lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldTim12lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldTim13lpenShift = 7
-	RegisterC1_apb1llpenrFieldTim13lpenMask  = 0x80
+	RegisterC1apb1llpenrFieldTim13lpenShift = 7
+	RegisterC1apb1llpenrFieldTim13lpenMask  = 0x80
 )
 
 // GetTim13lpen TIM13 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) GetTim13lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldTim13lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetTim13lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim13lpenMask) != 0
 }
 
 // SetTim13lpen TIM13 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) SetTim13lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetTim13lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldTim13lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim13lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldTim13lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldTim13lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldTim14lpenShift = 8
-	RegisterC1_apb1llpenrFieldTim14lpenMask  = 0x100
+	RegisterC1apb1llpenrFieldTim14lpenShift = 8
+	RegisterC1apb1llpenrFieldTim14lpenMask  = 0x100
 )
 
 // GetTim14lpen TIM14 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) GetTim14lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldTim14lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetTim14lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim14lpenMask) != 0
 }
 
 // SetTim14lpen TIM14 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) SetTim14lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetTim14lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldTim14lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim14lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldTim14lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldTim14lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldLptim1lpenShift = 9
-	RegisterC1_apb1llpenrFieldLptim1lpenMask  = 0x200
+	RegisterC1apb1llpenrFieldLptim1lpenShift = 9
+	RegisterC1apb1llpenrFieldLptim1lpenMask  = 0x200
 )
 
 // GetLptim1lpen LPTIM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetLptim1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldLptim1lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetLptim1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldLptim1lpenMask) != 0
 }
 
 // SetLptim1lpen LPTIM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetLptim1lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetLptim1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldLptim1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldLptim1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldLptim1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldLptim1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldSpi2lpenShift = 14
-	RegisterC1_apb1llpenrFieldSpi2lpenMask  = 0x4000
+	RegisterC1apb1llpenrFieldSpi2lpenShift = 14
+	RegisterC1apb1llpenrFieldSpi2lpenMask  = 0x4000
 )
 
 // GetSpi2lpen SPI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetSpi2lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldSpi2lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetSpi2lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldSpi2lpenMask) != 0
 }
 
 // SetSpi2lpen SPI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetSpi2lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetSpi2lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldSpi2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldSpi2lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldSpi2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldSpi2lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldSpi3lpenShift = 15
-	RegisterC1_apb1llpenrFieldSpi3lpenMask  = 0x8000
+	RegisterC1apb1llpenrFieldSpi3lpenShift = 15
+	RegisterC1apb1llpenrFieldSpi3lpenMask  = 0x8000
 )
 
 // GetSpi3lpen SPI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetSpi3lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldSpi3lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetSpi3lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldSpi3lpenMask) != 0
 }
 
 // SetSpi3lpen SPI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetSpi3lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetSpi3lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldSpi3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldSpi3lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldSpi3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldSpi3lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldSpdifrxlpenShift = 16
-	RegisterC1_apb1llpenrFieldSpdifrxlpenMask  = 0x10000
+	RegisterC1apb1llpenrFieldSpdifrxlpenShift = 16
+	RegisterC1apb1llpenrFieldSpdifrxlpenMask  = 0x10000
 )
 
 // GetSpdifrxlpen SPDIFRX Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetSpdifrxlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldSpdifrxlpenMask) != 0
+func (r *registerC1apb1llpenrType) GetSpdifrxlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldSpdifrxlpenMask) != 0
 }
 
 // SetSpdifrxlpen SPDIFRX Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetSpdifrxlpen(value bool) {
+func (r *registerC1apb1llpenrType) SetSpdifrxlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldSpdifrxlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldSpdifrxlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldSpdifrxlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldSpdifrxlpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldUsart2lpenShift = 17
-	RegisterC1_apb1llpenrFieldUsart2lpenMask  = 0x20000
+	RegisterC1apb1llpenrFieldUsart2lpenShift = 17
+	RegisterC1apb1llpenrFieldUsart2lpenMask  = 0x20000
 )
 
 // GetUsart2lpen USART2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetUsart2lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldUsart2lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetUsart2lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUsart2lpenMask) != 0
 }
 
 // SetUsart2lpen USART2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetUsart2lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetUsart2lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldUsart2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUsart2lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldUsart2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldUsart2lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldUsart3lpenShift = 18
-	RegisterC1_apb1llpenrFieldUsart3lpenMask  = 0x40000
+	RegisterC1apb1llpenrFieldUsart3lpenShift = 18
+	RegisterC1apb1llpenrFieldUsart3lpenMask  = 0x40000
 )
 
 // GetUsart3lpen USART3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetUsart3lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldUsart3lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetUsart3lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUsart3lpenMask) != 0
 }
 
 // SetUsart3lpen USART3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetUsart3lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetUsart3lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldUsart3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUsart3lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldUsart3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldUsart3lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldUart4lpenShift = 19
-	RegisterC1_apb1llpenrFieldUart4lpenMask  = 0x80000
+	RegisterC1apb1llpenrFieldUart4lpenShift = 19
+	RegisterC1apb1llpenrFieldUart4lpenMask  = 0x80000
 )
 
 // GetUart4lpen UART4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetUart4lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldUart4lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetUart4lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUart4lpenMask) != 0
 }
 
 // SetUart4lpen UART4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetUart4lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetUart4lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldUart4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUart4lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldUart4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldUart4lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldUart5lpenShift = 20
-	RegisterC1_apb1llpenrFieldUart5lpenMask  = 0x100000
+	RegisterC1apb1llpenrFieldUart5lpenShift = 20
+	RegisterC1apb1llpenrFieldUart5lpenMask  = 0x100000
 )
 
 // GetUart5lpen UART5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetUart5lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldUart5lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetUart5lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUart5lpenMask) != 0
 }
 
 // SetUart5lpen UART5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetUart5lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetUart5lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldUart5lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUart5lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldUart5lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldUart5lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldI2c1lpenShift = 21
-	RegisterC1_apb1llpenrFieldI2c1lpenMask  = 0x200000
+	RegisterC1apb1llpenrFieldI2c1lpenShift = 21
+	RegisterC1apb1llpenrFieldI2c1lpenMask  = 0x200000
 )
 
 // GetI2c1lpen I2C1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetI2c1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldI2c1lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetI2c1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldI2c1lpenMask) != 0
 }
 
 // SetI2c1lpen I2C1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetI2c1lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetI2c1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldI2c1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldI2c1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldI2c1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldI2c1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldI2c2lpenShift = 22
-	RegisterC1_apb1llpenrFieldI2c2lpenMask  = 0x400000
+	RegisterC1apb1llpenrFieldI2c2lpenShift = 22
+	RegisterC1apb1llpenrFieldI2c2lpenMask  = 0x400000
 )
 
 // GetI2c2lpen I2C2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetI2c2lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldI2c2lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetI2c2lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldI2c2lpenMask) != 0
 }
 
 // SetI2c2lpen I2C2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetI2c2lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetI2c2lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldI2c2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldI2c2lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldI2c2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldI2c2lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldI2c3lpenShift = 23
-	RegisterC1_apb1llpenrFieldI2c3lpenMask  = 0x800000
+	RegisterC1apb1llpenrFieldI2c3lpenShift = 23
+	RegisterC1apb1llpenrFieldI2c3lpenMask  = 0x800000
 )
 
 // GetI2c3lpen I2C3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetI2c3lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldI2c3lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetI2c3lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldI2c3lpenMask) != 0
 }
 
 // SetI2c3lpen I2C3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetI2c3lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetI2c3lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldI2c3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldI2c3lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldI2c3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldI2c3lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldHdmiceclpenShift = 27
-	RegisterC1_apb1llpenrFieldHdmiceclpenMask  = 0x8000000
+	RegisterC1apb1llpenrFieldHdmiceclpenShift = 27
+	RegisterC1apb1llpenrFieldHdmiceclpenMask  = 0x8000000
 )
 
 // GetHdmiceclpen HDMI-CEC Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetHdmiceclpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldHdmiceclpenMask) != 0
+func (r *registerC1apb1llpenrType) GetHdmiceclpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldHdmiceclpenMask) != 0
 }
 
 // SetHdmiceclpen HDMI-CEC Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetHdmiceclpen(value bool) {
+func (r *registerC1apb1llpenrType) SetHdmiceclpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldHdmiceclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldHdmiceclpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldHdmiceclpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldHdmiceclpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldDac12lpenShift = 29
-	RegisterC1_apb1llpenrFieldDac12lpenMask  = 0x20000000
+	RegisterC1apb1llpenrFieldDac12lpenShift = 29
+	RegisterC1apb1llpenrFieldDac12lpenMask  = 0x20000000
 )
 
 // GetDac12lpen DAC1/2 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) GetDac12lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldDac12lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetDac12lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldDac12lpenMask) != 0
 }
 
 // SetDac12lpen DAC1/2 peripheral clock enable during CSleep mode
-func (r *registerC1_apb1llpenrType) SetDac12lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetDac12lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldDac12lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldDac12lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldDac12lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldDac12lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldUsart7lpenShift = 30
-	RegisterC1_apb1llpenrFieldUsart7lpenMask  = 0x40000000
+	RegisterC1apb1llpenrFieldUsart7lpenShift = 30
+	RegisterC1apb1llpenrFieldUsart7lpenMask  = 0x40000000
 )
 
 // GetUsart7lpen USART7 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetUsart7lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldUsart7lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetUsart7lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUsart7lpenMask) != 0
 }
 
 // SetUsart7lpen USART7 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetUsart7lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetUsart7lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldUsart7lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUsart7lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldUsart7lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldUsart7lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1llpenrFieldUsart8lpenShift = 31
-	RegisterC1_apb1llpenrFieldUsart8lpenMask  = 0x80000000
+	RegisterC1apb1llpenrFieldUsart8lpenShift = 31
+	RegisterC1apb1llpenrFieldUsart8lpenMask  = 0x80000000
 )
 
 // GetUsart8lpen USART8 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) GetUsart8lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1llpenrFieldUsart8lpenMask) != 0
+func (r *registerC1apb1llpenrType) GetUsart8lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUsart8lpenMask) != 0
 }
 
 // SetUsart8lpen USART8 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1llpenrType) SetUsart8lpen(value bool) {
+func (r *registerC1apb1llpenrType) SetUsart8lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1llpenrFieldUsart8lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUsart8lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1llpenrFieldUsart8lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1llpenrFieldUsart8lpenMask)
 	}
 }
 
-// registerC1_apb1hlpenrType RCC APB1 High Sleep Clock Register
-type registerC1_apb1hlpenrType uint32
+// registerC1apb1hlpenrType RCC APB1 High Sleep Clock Register
+type registerC1apb1hlpenrType uint32
 
 const (
-	RegisterC1_apb1hlpenrFieldCrslpenShift = 1
-	RegisterC1_apb1hlpenrFieldCrslpenMask  = 0x2
+	RegisterC1apb1hlpenrFieldCrslpenShift = 1
+	RegisterC1apb1hlpenrFieldCrslpenMask  = 0x2
 )
 
 // GetCrslpen Clock Recovery System peripheral clock enable during CSleep mode
-func (r *registerC1_apb1hlpenrType) GetCrslpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1hlpenrFieldCrslpenMask) != 0
+func (r *registerC1apb1hlpenrType) GetCrslpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1hlpenrFieldCrslpenMask) != 0
 }
 
 // SetCrslpen Clock Recovery System peripheral clock enable during CSleep mode
-func (r *registerC1_apb1hlpenrType) SetCrslpen(value bool) {
+func (r *registerC1apb1hlpenrType) SetCrslpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1hlpenrFieldCrslpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1hlpenrFieldCrslpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1hlpenrFieldCrslpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1hlpenrFieldCrslpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1hlpenrFieldSwplpenShift = 2
-	RegisterC1_apb1hlpenrFieldSwplpenMask  = 0x4
+	RegisterC1apb1hlpenrFieldSwplpenShift = 2
+	RegisterC1apb1hlpenrFieldSwplpenMask  = 0x4
 )
 
 // GetSwplpen SWPMI Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1hlpenrType) GetSwplpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1hlpenrFieldSwplpenMask) != 0
+func (r *registerC1apb1hlpenrType) GetSwplpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1hlpenrFieldSwplpenMask) != 0
 }
 
 // SetSwplpen SWPMI Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1hlpenrType) SetSwplpen(value bool) {
+func (r *registerC1apb1hlpenrType) SetSwplpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1hlpenrFieldSwplpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1hlpenrFieldSwplpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1hlpenrFieldSwplpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1hlpenrFieldSwplpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1hlpenrFieldOpamplpenShift = 4
-	RegisterC1_apb1hlpenrFieldOpamplpenMask  = 0x10
+	RegisterC1apb1hlpenrFieldOpamplpenShift = 4
+	RegisterC1apb1hlpenrFieldOpamplpenMask  = 0x10
 )
 
 // GetOpamplpen OPAMP peripheral clock enable during CSleep mode
-func (r *registerC1_apb1hlpenrType) GetOpamplpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1hlpenrFieldOpamplpenMask) != 0
+func (r *registerC1apb1hlpenrType) GetOpamplpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1hlpenrFieldOpamplpenMask) != 0
 }
 
 // SetOpamplpen OPAMP peripheral clock enable during CSleep mode
-func (r *registerC1_apb1hlpenrType) SetOpamplpen(value bool) {
+func (r *registerC1apb1hlpenrType) SetOpamplpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1hlpenrFieldOpamplpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1hlpenrFieldOpamplpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1hlpenrFieldOpamplpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1hlpenrFieldOpamplpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1hlpenrFieldMdioslpenShift = 5
-	RegisterC1_apb1hlpenrFieldMdioslpenMask  = 0x20
+	RegisterC1apb1hlpenrFieldMdioslpenShift = 5
+	RegisterC1apb1hlpenrFieldMdioslpenMask  = 0x20
 )
 
 // GetMdioslpen MDIOS peripheral clock enable during CSleep mode
-func (r *registerC1_apb1hlpenrType) GetMdioslpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1hlpenrFieldMdioslpenMask) != 0
+func (r *registerC1apb1hlpenrType) GetMdioslpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1hlpenrFieldMdioslpenMask) != 0
 }
 
 // SetMdioslpen MDIOS peripheral clock enable during CSleep mode
-func (r *registerC1_apb1hlpenrType) SetMdioslpen(value bool) {
+func (r *registerC1apb1hlpenrType) SetMdioslpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1hlpenrFieldMdioslpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1hlpenrFieldMdioslpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1hlpenrFieldMdioslpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1hlpenrFieldMdioslpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb1hlpenrFieldFdcanlpenShift = 8
-	RegisterC1_apb1hlpenrFieldFdcanlpenMask  = 0x100
+	RegisterC1apb1hlpenrFieldFdcanlpenShift = 8
+	RegisterC1apb1hlpenrFieldFdcanlpenMask  = 0x100
 )
 
 // GetFdcanlpen FDCAN Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1hlpenrType) GetFdcanlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb1hlpenrFieldFdcanlpenMask) != 0
+func (r *registerC1apb1hlpenrType) GetFdcanlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1hlpenrFieldFdcanlpenMask) != 0
 }
 
 // SetFdcanlpen FDCAN Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb1hlpenrType) SetFdcanlpen(value bool) {
+func (r *registerC1apb1hlpenrType) SetFdcanlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb1hlpenrFieldFdcanlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1hlpenrFieldFdcanlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb1hlpenrFieldFdcanlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb1hlpenrFieldFdcanlpenMask)
 	}
 }
 
-// registerC1_apb2lpenrType RCC APB2 Sleep Clock Register
-type registerC1_apb2lpenrType uint32
+// registerC1apb2lpenrType RCC APB2 Sleep Clock Register
+type registerC1apb2lpenrType uint32
 
 const (
-	RegisterC1_apb2lpenrFieldTim1lpenShift = 0
-	RegisterC1_apb2lpenrFieldTim1lpenMask  = 0x1
+	RegisterC1apb2lpenrFieldTim1lpenShift = 0
+	RegisterC1apb2lpenrFieldTim1lpenMask  = 0x1
 )
 
 // GetTim1lpen TIM1 peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) GetTim1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldTim1lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetTim1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldTim1lpenMask) != 0
 }
 
 // SetTim1lpen TIM1 peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) SetTim1lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetTim1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldTim1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldTim1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldTim1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldTim1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldTim8lpenShift = 1
-	RegisterC1_apb2lpenrFieldTim8lpenMask  = 0x2
+	RegisterC1apb2lpenrFieldTim8lpenShift = 1
+	RegisterC1apb2lpenrFieldTim8lpenMask  = 0x2
 )
 
 // GetTim8lpen TIM8 peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) GetTim8lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldTim8lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetTim8lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldTim8lpenMask) != 0
 }
 
 // SetTim8lpen TIM8 peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) SetTim8lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetTim8lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldTim8lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldTim8lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldTim8lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldTim8lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldUsart1lpenShift = 4
-	RegisterC1_apb2lpenrFieldUsart1lpenMask  = 0x10
+	RegisterC1apb2lpenrFieldUsart1lpenShift = 4
+	RegisterC1apb2lpenrFieldUsart1lpenMask  = 0x10
 )
 
 // GetUsart1lpen USART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) GetUsart1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldUsart1lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetUsart1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldUsart1lpenMask) != 0
 }
 
 // SetUsart1lpen USART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) SetUsart1lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetUsart1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldUsart1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldUsart1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldUsart1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldUsart1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldUsart6lpenShift = 5
-	RegisterC1_apb2lpenrFieldUsart6lpenMask  = 0x20
+	RegisterC1apb2lpenrFieldUsart6lpenShift = 5
+	RegisterC1apb2lpenrFieldUsart6lpenMask  = 0x20
 )
 
 // GetUsart6lpen USART6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) GetUsart6lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldUsart6lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetUsart6lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldUsart6lpenMask) != 0
 }
 
 // SetUsart6lpen USART6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) SetUsart6lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetUsart6lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldUsart6lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldUsart6lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldUsart6lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldUsart6lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldSpi1lpenShift = 12
-	RegisterC1_apb2lpenrFieldSpi1lpenMask  = 0x1000
+	RegisterC1apb2lpenrFieldSpi1lpenShift = 12
+	RegisterC1apb2lpenrFieldSpi1lpenMask  = 0x1000
 )
 
 // GetSpi1lpen SPI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) GetSpi1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldSpi1lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetSpi1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSpi1lpenMask) != 0
 }
 
 // SetSpi1lpen SPI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) SetSpi1lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetSpi1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldSpi1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSpi1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldSpi1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldSpi1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldSpi4lpenShift = 13
-	RegisterC1_apb2lpenrFieldSpi4lpenMask  = 0x2000
+	RegisterC1apb2lpenrFieldSpi4lpenShift = 13
+	RegisterC1apb2lpenrFieldSpi4lpenMask  = 0x2000
 )
 
 // GetSpi4lpen SPI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) GetSpi4lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldSpi4lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetSpi4lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSpi4lpenMask) != 0
 }
 
 // SetSpi4lpen SPI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) SetSpi4lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetSpi4lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldSpi4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSpi4lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldSpi4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldSpi4lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldTim15lpenShift = 16
-	RegisterC1_apb2lpenrFieldTim15lpenMask  = 0x10000
+	RegisterC1apb2lpenrFieldTim15lpenShift = 16
+	RegisterC1apb2lpenrFieldTim15lpenMask  = 0x10000
 )
 
 // GetTim15lpen TIM15 peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) GetTim15lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldTim15lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetTim15lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldTim15lpenMask) != 0
 }
 
 // SetTim15lpen TIM15 peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) SetTim15lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetTim15lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldTim15lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldTim15lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldTim15lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldTim15lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldTim16lpenShift = 17
-	RegisterC1_apb2lpenrFieldTim16lpenMask  = 0x20000
+	RegisterC1apb2lpenrFieldTim16lpenShift = 17
+	RegisterC1apb2lpenrFieldTim16lpenMask  = 0x20000
 )
 
 // GetTim16lpen TIM16 peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) GetTim16lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldTim16lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetTim16lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldTim16lpenMask) != 0
 }
 
 // SetTim16lpen TIM16 peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) SetTim16lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetTim16lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldTim16lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldTim16lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldTim16lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldTim16lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldTim17lpenShift = 18
-	RegisterC1_apb2lpenrFieldTim17lpenMask  = 0x40000
+	RegisterC1apb2lpenrFieldTim17lpenShift = 18
+	RegisterC1apb2lpenrFieldTim17lpenMask  = 0x40000
 )
 
 // GetTim17lpen TIM17 peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) GetTim17lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldTim17lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetTim17lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldTim17lpenMask) != 0
 }
 
 // SetTim17lpen TIM17 peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) SetTim17lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetTim17lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldTim17lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldTim17lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldTim17lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldTim17lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldSpi5lpenShift = 20
-	RegisterC1_apb2lpenrFieldSpi5lpenMask  = 0x100000
+	RegisterC1apb2lpenrFieldSpi5lpenShift = 20
+	RegisterC1apb2lpenrFieldSpi5lpenMask  = 0x100000
 )
 
 // GetSpi5lpen SPI5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) GetSpi5lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldSpi5lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetSpi5lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSpi5lpenMask) != 0
 }
 
 // SetSpi5lpen SPI5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) SetSpi5lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetSpi5lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldSpi5lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSpi5lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldSpi5lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldSpi5lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldSai1lpenShift = 22
-	RegisterC1_apb2lpenrFieldSai1lpenMask  = 0x400000
+	RegisterC1apb2lpenrFieldSai1lpenShift = 22
+	RegisterC1apb2lpenrFieldSai1lpenMask  = 0x400000
 )
 
 // GetSai1lpen SAI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) GetSai1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldSai1lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetSai1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSai1lpenMask) != 0
 }
 
 // SetSai1lpen SAI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) SetSai1lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetSai1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldSai1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSai1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldSai1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldSai1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldSai2lpenShift = 23
-	RegisterC1_apb2lpenrFieldSai2lpenMask  = 0x800000
+	RegisterC1apb2lpenrFieldSai2lpenShift = 23
+	RegisterC1apb2lpenrFieldSai2lpenMask  = 0x800000
 )
 
 // GetSai2lpen SAI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) GetSai2lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldSai2lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetSai2lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSai2lpenMask) != 0
 }
 
 // SetSai2lpen SAI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) SetSai2lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetSai2lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldSai2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSai2lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldSai2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldSai2lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldSai3lpenShift = 24
-	RegisterC1_apb2lpenrFieldSai3lpenMask  = 0x1000000
+	RegisterC1apb2lpenrFieldSai3lpenShift = 24
+	RegisterC1apb2lpenrFieldSai3lpenMask  = 0x1000000
 )
 
 // GetSai3lpen SAI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) GetSai3lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldSai3lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetSai3lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSai3lpenMask) != 0
 }
 
 // SetSai3lpen SAI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) SetSai3lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetSai3lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldSai3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSai3lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldSai3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldSai3lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldDfsdm1lpenShift = 28
-	RegisterC1_apb2lpenrFieldDfsdm1lpenMask  = 0x10000000
+	RegisterC1apb2lpenrFieldDfsdm1lpenShift = 28
+	RegisterC1apb2lpenrFieldDfsdm1lpenMask  = 0x10000000
 )
 
 // GetDfsdm1lpen DFSDM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) GetDfsdm1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldDfsdm1lpenMask) != 0
+func (r *registerC1apb2lpenrType) GetDfsdm1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldDfsdm1lpenMask) != 0
 }
 
 // SetDfsdm1lpen DFSDM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb2lpenrType) SetDfsdm1lpen(value bool) {
+func (r *registerC1apb2lpenrType) SetDfsdm1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldDfsdm1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldDfsdm1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldDfsdm1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldDfsdm1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb2lpenrFieldHrtimlpenShift = 29
-	RegisterC1_apb2lpenrFieldHrtimlpenMask  = 0x20000000
+	RegisterC1apb2lpenrFieldHrtimlpenShift = 29
+	RegisterC1apb2lpenrFieldHrtimlpenMask  = 0x20000000
 )
 
 // GetHrtimlpen HRTIM peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) GetHrtimlpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb2lpenrFieldHrtimlpenMask) != 0
+func (r *registerC1apb2lpenrType) GetHrtimlpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldHrtimlpenMask) != 0
 }
 
 // SetHrtimlpen HRTIM peripheral clock enable during CSleep mode
-func (r *registerC1_apb2lpenrType) SetHrtimlpen(value bool) {
+func (r *registerC1apb2lpenrType) SetHrtimlpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb2lpenrFieldHrtimlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldHrtimlpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb2lpenrFieldHrtimlpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb2lpenrFieldHrtimlpenMask)
 	}
 }
 
-// registerC1_apb4lpenrType RCC APB4 Sleep Clock Register
-type registerC1_apb4lpenrType uint32
+// registerC1apb4lpenrType RCC APB4 Sleep Clock Register
+type registerC1apb4lpenrType uint32
 
 const (
-	RegisterC1_apb4lpenrFieldSyscfglpenShift = 1
-	RegisterC1_apb4lpenrFieldSyscfglpenMask  = 0x2
+	RegisterC1apb4lpenrFieldSyscfglpenShift = 1
+	RegisterC1apb4lpenrFieldSyscfglpenMask  = 0x2
 )
 
 // GetSyscfglpen SYSCFG peripheral clock enable during CSleep mode
-func (r *registerC1_apb4lpenrType) GetSyscfglpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldSyscfglpenMask) != 0
+func (r *registerC1apb4lpenrType) GetSyscfglpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldSyscfglpenMask) != 0
 }
 
 // SetSyscfglpen SYSCFG peripheral clock enable during CSleep mode
-func (r *registerC1_apb4lpenrType) SetSyscfglpen(value bool) {
+func (r *registerC1apb4lpenrType) SetSyscfglpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldSyscfglpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldSyscfglpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldSyscfglpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldSyscfglpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldLpuart1lpenShift = 3
-	RegisterC1_apb4lpenrFieldLpuart1lpenMask  = 0x8
+	RegisterC1apb4lpenrFieldLpuart1lpenShift = 3
+	RegisterC1apb4lpenrFieldLpuart1lpenMask  = 0x8
 )
 
 // GetLpuart1lpen LPUART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) GetLpuart1lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldLpuart1lpenMask) != 0
+func (r *registerC1apb4lpenrType) GetLpuart1lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldLpuart1lpenMask) != 0
 }
 
 // SetLpuart1lpen LPUART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) SetLpuart1lpen(value bool) {
+func (r *registerC1apb4lpenrType) SetLpuart1lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldLpuart1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldLpuart1lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldLpuart1lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldLpuart1lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldSpi6lpenShift = 5
-	RegisterC1_apb4lpenrFieldSpi6lpenMask  = 0x20
+	RegisterC1apb4lpenrFieldSpi6lpenShift = 5
+	RegisterC1apb4lpenrFieldSpi6lpenMask  = 0x20
 )
 
 // GetSpi6lpen SPI6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) GetSpi6lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldSpi6lpenMask) != 0
+func (r *registerC1apb4lpenrType) GetSpi6lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldSpi6lpenMask) != 0
 }
 
 // SetSpi6lpen SPI6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) SetSpi6lpen(value bool) {
+func (r *registerC1apb4lpenrType) SetSpi6lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldSpi6lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldSpi6lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldSpi6lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldSpi6lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldI2c4lpenShift = 7
-	RegisterC1_apb4lpenrFieldI2c4lpenMask  = 0x80
+	RegisterC1apb4lpenrFieldI2c4lpenShift = 7
+	RegisterC1apb4lpenrFieldI2c4lpenMask  = 0x80
 )
 
 // GetI2c4lpen I2C4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) GetI2c4lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldI2c4lpenMask) != 0
+func (r *registerC1apb4lpenrType) GetI2c4lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldI2c4lpenMask) != 0
 }
 
 // SetI2c4lpen I2C4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) SetI2c4lpen(value bool) {
+func (r *registerC1apb4lpenrType) SetI2c4lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldI2c4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldI2c4lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldI2c4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldI2c4lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldLptim2lpenShift = 9
-	RegisterC1_apb4lpenrFieldLptim2lpenMask  = 0x200
+	RegisterC1apb4lpenrFieldLptim2lpenShift = 9
+	RegisterC1apb4lpenrFieldLptim2lpenMask  = 0x200
 )
 
 // GetLptim2lpen LPTIM2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) GetLptim2lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldLptim2lpenMask) != 0
+func (r *registerC1apb4lpenrType) GetLptim2lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldLptim2lpenMask) != 0
 }
 
 // SetLptim2lpen LPTIM2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) SetLptim2lpen(value bool) {
+func (r *registerC1apb4lpenrType) SetLptim2lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldLptim2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldLptim2lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldLptim2lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldLptim2lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldLptim3lpenShift = 10
-	RegisterC1_apb4lpenrFieldLptim3lpenMask  = 0x400
+	RegisterC1apb4lpenrFieldLptim3lpenShift = 10
+	RegisterC1apb4lpenrFieldLptim3lpenMask  = 0x400
 )
 
 // GetLptim3lpen LPTIM3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) GetLptim3lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldLptim3lpenMask) != 0
+func (r *registerC1apb4lpenrType) GetLptim3lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldLptim3lpenMask) != 0
 }
 
 // SetLptim3lpen LPTIM3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) SetLptim3lpen(value bool) {
+func (r *registerC1apb4lpenrType) SetLptim3lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldLptim3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldLptim3lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldLptim3lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldLptim3lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldLptim4lpenShift = 11
-	RegisterC1_apb4lpenrFieldLptim4lpenMask  = 0x800
+	RegisterC1apb4lpenrFieldLptim4lpenShift = 11
+	RegisterC1apb4lpenrFieldLptim4lpenMask  = 0x800
 )
 
 // GetLptim4lpen LPTIM4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) GetLptim4lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldLptim4lpenMask) != 0
+func (r *registerC1apb4lpenrType) GetLptim4lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldLptim4lpenMask) != 0
 }
 
 // SetLptim4lpen LPTIM4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) SetLptim4lpen(value bool) {
+func (r *registerC1apb4lpenrType) SetLptim4lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldLptim4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldLptim4lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldLptim4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldLptim4lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldLptim5lpenShift = 12
-	RegisterC1_apb4lpenrFieldLptim5lpenMask  = 0x1000
+	RegisterC1apb4lpenrFieldLptim5lpenShift = 12
+	RegisterC1apb4lpenrFieldLptim5lpenMask  = 0x1000
 )
 
 // GetLptim5lpen LPTIM5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) GetLptim5lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldLptim5lpenMask) != 0
+func (r *registerC1apb4lpenrType) GetLptim5lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldLptim5lpenMask) != 0
 }
 
 // SetLptim5lpen LPTIM5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) SetLptim5lpen(value bool) {
+func (r *registerC1apb4lpenrType) SetLptim5lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldLptim5lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldLptim5lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldLptim5lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldLptim5lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldComp12lpenShift = 14
-	RegisterC1_apb4lpenrFieldComp12lpenMask  = 0x4000
+	RegisterC1apb4lpenrFieldComp12lpenShift = 14
+	RegisterC1apb4lpenrFieldComp12lpenMask  = 0x4000
 )
 
 // GetComp12lpen COMP1/2 peripheral clock enable during CSleep mode
-func (r *registerC1_apb4lpenrType) GetComp12lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldComp12lpenMask) != 0
+func (r *registerC1apb4lpenrType) GetComp12lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldComp12lpenMask) != 0
 }
 
 // SetComp12lpen COMP1/2 peripheral clock enable during CSleep mode
-func (r *registerC1_apb4lpenrType) SetComp12lpen(value bool) {
+func (r *registerC1apb4lpenrType) SetComp12lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldComp12lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldComp12lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldComp12lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldComp12lpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldVreflpenShift = 15
-	RegisterC1_apb4lpenrFieldVreflpenMask  = 0x8000
+	RegisterC1apb4lpenrFieldVreflpenShift = 15
+	RegisterC1apb4lpenrFieldVreflpenMask  = 0x8000
 )
 
 // GetVreflpen VREF peripheral clock enable during CSleep mode
-func (r *registerC1_apb4lpenrType) GetVreflpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldVreflpenMask) != 0
+func (r *registerC1apb4lpenrType) GetVreflpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldVreflpenMask) != 0
 }
 
 // SetVreflpen VREF peripheral clock enable during CSleep mode
-func (r *registerC1_apb4lpenrType) SetVreflpen(value bool) {
+func (r *registerC1apb4lpenrType) SetVreflpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldVreflpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldVreflpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldVreflpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldVreflpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldRtcapblpenShift = 16
-	RegisterC1_apb4lpenrFieldRtcapblpenMask  = 0x10000
+	RegisterC1apb4lpenrFieldRtcapblpenShift = 16
+	RegisterC1apb4lpenrFieldRtcapblpenMask  = 0x10000
 )
 
 // GetRtcapblpen RTC APB Clock Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) GetRtcapblpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldRtcapblpenMask) != 0
+func (r *registerC1apb4lpenrType) GetRtcapblpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldRtcapblpenMask) != 0
 }
 
 // SetRtcapblpen RTC APB Clock Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) SetRtcapblpen(value bool) {
+func (r *registerC1apb4lpenrType) SetRtcapblpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldRtcapblpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldRtcapblpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldRtcapblpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldRtcapblpenMask)
 	}
 }
 
 const (
-	RegisterC1_apb4lpenrFieldSai4lpenShift = 21
-	RegisterC1_apb4lpenrFieldSai4lpenMask  = 0x200000
+	RegisterC1apb4lpenrFieldSai4lpenShift = 21
+	RegisterC1apb4lpenrFieldSai4lpenMask  = 0x200000
 )
 
 // GetSai4lpen SAI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) GetSai4lpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1_apb4lpenrFieldSai4lpenMask) != 0
+func (r *registerC1apb4lpenrType) GetSai4lpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldSai4lpenMask) != 0
 }
 
 // SetSai4lpen SAI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1_apb4lpenrType) SetSai4lpen(value bool) {
+func (r *registerC1apb4lpenrType) SetSai4lpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1_apb4lpenrFieldSai4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldSai4lpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1_apb4lpenrFieldSai4lpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb4lpenrFieldSai4lpenMask)
 	}
 }

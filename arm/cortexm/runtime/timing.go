@@ -1,10 +1,10 @@
-package cortexm
+package runtime
 
 import (
 	"sync/atomic"
 
-	"runtime/arm/cortexm/support/systemControl"
-	"runtime/arm/cortexm/support/systick"
+	"pkg.si-go.dev/chip/arm/cortexm/reg/scb"
+	"pkg.si-go.dev/chip/arm/cortexm/reg/systick"
 )
 
 var _tickCount uint32
@@ -32,10 +32,10 @@ func initSysTick() {
 	systick.Systick.Csr.SetEnable(false)
 
 	// Set PendSV to the lowest priority so that context switching does not occur before other interrupts are serviced.
-	systemcontrol.SystemControl.Shpr3.SetPri14(5)
+	scb.Scb.Shpr3.SetPri14(5)
 
 	// NOTE: The priority for SysTick should be higher than PendSV, but lower than other critical interrupts.
-	systemcontrol.SystemControl.Shpr3.SetPri15(4)
+	scb.Scb.Shpr3.SetPri15(4)
 
 	// TODO: Derive this value from the system clock settings
 	UpdateSysTickFrequency(SysTickFrequency)
@@ -51,8 +51,8 @@ func UpdateSysTickFrequency(value uint32) {
 	systick.Systick.Rvr.SetReload(SysTickFrequency / 1000)
 }
 
-//sigo:interrupt SystickHandler SystickHandler
-func SystickHandler() {
+//sigo:interrupt sysTickHandler SysTickHandler
+func sysTickHandler() {
 	// Atomically increment the tick counter
 	atomic.AddUint32(&_tickCount, 1)
 
@@ -63,5 +63,5 @@ func SystickHandler() {
 //go:export triggerPendSV runtime.schedulerPause
 func triggerPendSV() {
 	// Set the PendSV flag
-	systemcontrol.SystemControl.Icsr.SetPendsvset(true)
+	scb.Scb.Icsr.SetPendsvset(true)
 }

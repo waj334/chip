@@ -624,13 +624,13 @@ func (r *registerSrType) SetDmaudr1(value bool) {
 }
 
 const (
-	RegisterSrFieldCal_flag1Shift = 14
-	RegisterSrFieldCal_flag1Mask  = 0x4000
+	RegisterSrFieldCalflag1Shift = 14
+	RegisterSrFieldCalflag1Mask  = 0x4000
 )
 
-// GetCal_flag1 DAC Channel 1 calibration offset status This bit is set and cleared by hardware
-func (r *registerSrType) GetCal_flag1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSrFieldCal_flag1Mask) != 0
+// GetCalflag1 DAC Channel 1 calibration offset status This bit is set and cleared by hardware
+func (r *registerSrType) GetCalflag1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSrFieldCalflag1Mask) != 0
 }
 
 const (
@@ -663,13 +663,13 @@ func (r *registerSrType) SetDmaudr2(value bool) {
 }
 
 const (
-	RegisterSrFieldCal_flag2Shift = 30
-	RegisterSrFieldCal_flag2Mask  = 0x40000000
+	RegisterSrFieldCalflag2Shift = 30
+	RegisterSrFieldCalflag2Mask  = 0x40000000
 )
 
-// GetCal_flag2 DAC Channel 2 calibration offset status This bit is set and cleared by hardware
-func (r *registerSrType) GetCal_flag2() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSrFieldCal_flag2Mask) != 0
+// GetCalflag2 DAC Channel 2 calibration offset status This bit is set and cleared by hardware
+func (r *registerSrType) GetCalflag2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSrFieldCalflag2Mask) != 0
 }
 
 const (

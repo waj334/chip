@@ -279,9 +279,9 @@ defvar interrupts = [
   Interrupt<"BDMA_CH8", 136, "BDMA channel 8 interrupt">,
   Interrupt<"COMP", 137, "COMP1 and COMP2">,
   Interrupt<"LPTIM2", 138, "LPTIM2 timer interrupt">,
-  Interrupt<"LPTIM3", 139, "LPTIM2 timer interrupt">,
-  Interrupt<"LPTIM4", 140, "LPTIM2 timer interrupt">,
-  Interrupt<"LPTIM5", 141, "LPTIM2 timer interrupt">,
+  Interrupt<"LPTIM3", 139, "LPTIM3 timer interrupt">,
+  Interrupt<"LPTIM4", 140, "LPTIM4 timer interrupt">,
+  Interrupt<"LPTIM5", 141, "LPTIM5 timer interrupt">,
   Interrupt<"LPUART", 142, "LPUART global interrupt">,
   Interrupt<"WWDG2_RST", 143, "Window Watchdog interrupt">,
   Interrupt<"CRS", 144, "Clock Recovery System globa">,
@@ -362,7 +362,7 @@ def STM32H7x7 : Series<"STM32H7x7", CortexM7> {
   let variants = allVariants;
   let peripheralTypes = peripherals;
   let runtimePackages = [
-      "pkg.si-go.dev/chip/arm/cortexm/st/stm32h7x7/cm7/def"
+      "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/def"
   ];
 }
 

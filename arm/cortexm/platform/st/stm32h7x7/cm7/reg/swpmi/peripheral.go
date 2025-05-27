@@ -834,39 +834,39 @@ func (r *registerRdrType) SetRd(value uint32) {
 type registerOrType uint32
 
 const (
-	RegisterOrFieldSwp_tbypShift = 0
-	RegisterOrFieldSwp_tbypMask  = 0x1
+	RegisterOrFieldSwptbypShift = 0
+	RegisterOrFieldSwptbypMask  = 0x1
 )
 
-// GetSwp_tbyp SWP transceiver bypass
-func (r *registerOrType) GetSwp_tbyp() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOrFieldSwp_tbypMask) != 0
+// GetSwptbyp SWP transceiver bypass
+func (r *registerOrType) GetSwptbyp() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOrFieldSwptbypMask) != 0
 }
 
-// SetSwp_tbyp SWP transceiver bypass
-func (r *registerOrType) SetSwp_tbyp(value bool) {
+// SetSwptbyp SWP transceiver bypass
+func (r *registerOrType) SetSwptbyp(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOrFieldSwp_tbypMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOrFieldSwptbypMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOrFieldSwp_tbypMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOrFieldSwptbypMask)
 	}
 }
 
 const (
-	RegisterOrFieldSwp_classShift = 1
-	RegisterOrFieldSwp_classMask  = 0x2
+	RegisterOrFieldSwpclassShift = 1
+	RegisterOrFieldSwpclassMask  = 0x2
 )
 
-// GetSwp_class SWP class selection
-func (r *registerOrType) GetSwp_class() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOrFieldSwp_classMask) != 0
+// GetSwpclass SWP class selection
+func (r *registerOrType) GetSwpclass() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOrFieldSwpclassMask) != 0
 }
 
-// SetSwp_class SWP class selection
-func (r *registerOrType) SetSwp_class(value bool) {
+// SetSwpclass SWP class selection
+func (r *registerOrType) SetSwpclass(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOrFieldSwp_classMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOrFieldSwpclassMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOrFieldSwp_classMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOrFieldSwpclassMask)
 	}
 }

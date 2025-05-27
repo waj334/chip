@@ -678,21 +678,21 @@ func (r *registerCr2Type) SetSlven(value bool) {
 }
 
 const (
-	RegisterCr2FieldDis_nssShift = 3
-	RegisterCr2FieldDis_nssMask  = 0x8
+	RegisterCr2FieldDisnssShift = 3
+	RegisterCr2FieldDisnssMask  = 0x8
 )
 
-// GetDis_nss When the DSI_NSS bit is set, the NSS pin input is ignored
-func (r *registerCr2Type) GetDis_nss() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldDis_nssMask) != 0
+// GetDisnss When the DSI_NSS bit is set, the NSS pin input is ignored
+func (r *registerCr2Type) GetDisnss() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldDisnssMask) != 0
 }
 
-// SetDis_nss When the DSI_NSS bit is set, the NSS pin input is ignored
-func (r *registerCr2Type) SetDis_nss(value bool) {
+// SetDisnss When the DSI_NSS bit is set, the NSS pin input is ignored
+func (r *registerCr2Type) SetDisnss(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldDis_nssMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldDisnssMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCr2FieldDis_nssMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCr2FieldDisnssMask)
 	}
 }
 
@@ -1035,33 +1035,33 @@ func (r *registerCr2Type) SetRtoen(value bool) {
 }
 
 const (
-	RegisterCr2FieldAdd0_3Shift = 24
-	RegisterCr2FieldAdd0_3Mask  = 0xf000000
+	RegisterCr2FieldAdd03Shift = 24
+	RegisterCr2FieldAdd03Mask  = 0xf000000
 )
 
-// GetAdd0_3 Address of the USART node
-func (r *registerCr2Type) GetAdd0_3() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldAdd0_3Mask) >> RegisterCr2FieldAdd0_3Shift)
+// GetAdd03 Address of the USART node
+func (r *registerCr2Type) GetAdd03() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldAdd03Mask) >> RegisterCr2FieldAdd03Shift)
 }
 
-// SetAdd0_3 Address of the USART node
-func (r *registerCr2Type) SetAdd0_3(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCr2FieldAdd0_3Mask)|(uint32(value)<<RegisterCr2FieldAdd0_3Shift))
+// SetAdd03 Address of the USART node
+func (r *registerCr2Type) SetAdd03(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCr2FieldAdd03Mask)|(uint32(value)<<RegisterCr2FieldAdd03Shift))
 }
 
 const (
-	RegisterCr2FieldAdd4_7Shift = 28
-	RegisterCr2FieldAdd4_7Mask  = 0xf0000000
+	RegisterCr2FieldAdd47Shift = 28
+	RegisterCr2FieldAdd47Mask  = 0xf0000000
 )
 
-// GetAdd4_7 Address of the USART node
-func (r *registerCr2Type) GetAdd4_7() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldAdd4_7Mask) >> RegisterCr2FieldAdd4_7Shift)
+// GetAdd47 Address of the USART node
+func (r *registerCr2Type) GetAdd47() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldAdd47Mask) >> RegisterCr2FieldAdd47Shift)
 }
 
-// SetAdd4_7 Address of the USART node
-func (r *registerCr2Type) SetAdd4_7(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCr2FieldAdd4_7Mask)|(uint32(value)<<RegisterCr2FieldAdd4_7Shift))
+// SetAdd47 Address of the USART node
+func (r *registerCr2Type) SetAdd47(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCr2FieldAdd47Mask)|(uint32(value)<<RegisterCr2FieldAdd47Shift))
 }
 
 // registerCr3Type Control register 3
@@ -1511,33 +1511,33 @@ func (r *registerCr3Type) SetTxftcfg(value uint8) {
 type registerBrrType uint32
 
 const (
-	RegisterBrrFieldBrr_0_3Shift = 0
-	RegisterBrrFieldBrr_0_3Mask  = 0xf
+	RegisterBrrFieldBrr03Shift = 0
+	RegisterBrrFieldBrr03Mask  = 0xf
 )
 
-// GetBrr_0_3 DIV_Fraction
-func (r *registerBrrType) GetBrr_0_3() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterBrrFieldBrr_0_3Mask) >> RegisterBrrFieldBrr_0_3Shift)
+// GetBrr03 DIV_Fraction
+func (r *registerBrrType) GetBrr03() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterBrrFieldBrr03Mask) >> RegisterBrrFieldBrr03Shift)
 }
 
-// SetBrr_0_3 DIV_Fraction
-func (r *registerBrrType) SetBrr_0_3(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBrrFieldBrr_0_3Mask)|(uint32(value)<<RegisterBrrFieldBrr_0_3Shift))
+// SetBrr03 DIV_Fraction
+func (r *registerBrrType) SetBrr03(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBrrFieldBrr03Mask)|(uint32(value)<<RegisterBrrFieldBrr03Shift))
 }
 
 const (
-	RegisterBrrFieldBrr_4_15Shift = 4
-	RegisterBrrFieldBrr_4_15Mask  = 0xfff0
+	RegisterBrrFieldBrr415Shift = 4
+	RegisterBrrFieldBrr415Mask  = 0xfff0
 )
 
-// GetBrr_4_15 DIV_Mantissa
-func (r *registerBrrType) GetBrr_4_15() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterBrrFieldBrr_4_15Mask) >> RegisterBrrFieldBrr_4_15Shift)
+// GetBrr415 DIV_Mantissa
+func (r *registerBrrType) GetBrr415() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterBrrFieldBrr415Mask) >> RegisterBrrFieldBrr415Shift)
 }
 
-// SetBrr_4_15 DIV_Mantissa
-func (r *registerBrrType) SetBrr_4_15(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBrrFieldBrr_4_15Mask)|(uint32(value)<<RegisterBrrFieldBrr_4_15Shift))
+// SetBrr415 DIV_Mantissa
+func (r *registerBrrType) SetBrr415(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBrrFieldBrr415Mask)|(uint32(value)<<RegisterBrrFieldBrr415Shift))
 }
 
 // registerGtprType Guard time and prescaler register

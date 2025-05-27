@@ -1,15 +1,15 @@
 .global runtime.currentGoroutine
 .global runtime.lastGoroutine
-.global PendsvHandler
-.type PendsvHandler, %function
-PendsvHandler:
+.global PendSvHandler
+.type PendSvHandler, %function
+PendSvHandler:
     push {lr}                           // Temporarily store LR on the stack since the branch below will NOT restore LR.
     bl runtime.runScheduler             // Choose the next goroutine
 #ifdef __thumb2__
     pop {lr}                            // Restore the previous value of LR
 #else
     pop {r1}
-    mov lr, r0
+    mov lr, r1
 #endif
     cmp r0, #0                          // Check if runScheduler returned false
     beq _restore_and_return             // No context switch should be performed
@@ -82,5 +82,5 @@ _context_switch:
 
 _restore_and_return:
     bx lr                               // Continue executing the last goroutine
-.size PendsvHandler, .-PendsvHandler
+.size PendSvHandler, .-PendSvHandler
 .align 4

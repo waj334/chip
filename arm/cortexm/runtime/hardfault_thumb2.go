@@ -1,6 +1,6 @@
 //go:build thumb2
 
-package cortexm
+package runtime
 
 import (
 	"asm"

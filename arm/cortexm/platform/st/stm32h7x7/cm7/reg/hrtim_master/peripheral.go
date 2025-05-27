@@ -30,18 +30,18 @@ type _hrtim_master struct {
 type registerMcrType uint32
 
 const (
-	RegisterMcrFieldCk_pscShift = 0
-	RegisterMcrFieldCk_pscMask  = 0x7
+	RegisterMcrFieldCkpscShift = 0
+	RegisterMcrFieldCkpscMask  = 0x7
 )
 
-// GetCk_psc HRTIM Master Clock prescaler
-func (r *registerMcrType) GetCk_psc() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMcrFieldCk_pscMask) >> RegisterMcrFieldCk_pscShift)
+// GetCkpsc HRTIM Master Clock prescaler
+func (r *registerMcrType) GetCkpsc() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMcrFieldCkpscMask) >> RegisterMcrFieldCkpscShift)
 }
 
-// SetCk_psc HRTIM Master Clock prescaler
-func (r *registerMcrType) SetCk_psc(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMcrFieldCk_pscMask)|(uint32(value)<<RegisterMcrFieldCk_pscShift))
+// SetCkpsc HRTIM Master Clock prescaler
+func (r *registerMcrType) SetCkpsc(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMcrFieldCkpscMask)|(uint32(value)<<RegisterMcrFieldCkpscShift))
 }
 
 const (
@@ -102,18 +102,18 @@ func (r *registerMcrType) SetHalf(value bool) {
 }
 
 const (
-	RegisterMcrFieldSync_inShift = 8
-	RegisterMcrFieldSync_inMask  = 0x300
+	RegisterMcrFieldSyncinShift = 8
+	RegisterMcrFieldSyncinMask  = 0x300
 )
 
-// GetSync_in ynchronization input
-func (r *registerMcrType) GetSync_in() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMcrFieldSync_inMask) >> RegisterMcrFieldSync_inShift)
+// GetSyncin ynchronization input
+func (r *registerMcrType) GetSyncin() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMcrFieldSyncinMask) >> RegisterMcrFieldSyncinShift)
 }
 
-// SetSync_in ynchronization input
-func (r *registerMcrType) SetSync_in(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMcrFieldSync_inMask)|(uint32(value)<<RegisterMcrFieldSync_inShift))
+// SetSyncin ynchronization input
+func (r *registerMcrType) SetSyncin(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMcrFieldSyncinMask)|(uint32(value)<<RegisterMcrFieldSyncinShift))
 }
 
 const (
@@ -155,33 +155,33 @@ func (r *registerMcrType) SetSyncstrtm(value bool) {
 }
 
 const (
-	RegisterMcrFieldSync_outShift = 12
-	RegisterMcrFieldSync_outMask  = 0x3000
+	RegisterMcrFieldSyncoutShift = 12
+	RegisterMcrFieldSyncoutMask  = 0x3000
 )
 
-// GetSync_out Synchronization output
-func (r *registerMcrType) GetSync_out() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMcrFieldSync_outMask) >> RegisterMcrFieldSync_outShift)
+// GetSyncout Synchronization output
+func (r *registerMcrType) GetSyncout() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMcrFieldSyncoutMask) >> RegisterMcrFieldSyncoutShift)
 }
 
-// SetSync_out Synchronization output
-func (r *registerMcrType) SetSync_out(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMcrFieldSync_outMask)|(uint32(value)<<RegisterMcrFieldSync_outShift))
+// SetSyncout Synchronization output
+func (r *registerMcrType) SetSyncout(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMcrFieldSyncoutMask)|(uint32(value)<<RegisterMcrFieldSyncoutShift))
 }
 
 const (
-	RegisterMcrFieldSync_srcShift = 14
-	RegisterMcrFieldSync_srcMask  = 0xc000
+	RegisterMcrFieldSyncsrcShift = 14
+	RegisterMcrFieldSyncsrcMask  = 0xc000
 )
 
-// GetSync_src Synchronization source
-func (r *registerMcrType) GetSync_src() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMcrFieldSync_srcMask) >> RegisterMcrFieldSync_srcShift)
+// GetSyncsrc Synchronization source
+func (r *registerMcrType) GetSyncsrc() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMcrFieldSyncsrcMask) >> RegisterMcrFieldSyncsrcShift)
 }
 
-// SetSync_src Synchronization source
-func (r *registerMcrType) SetSync_src(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMcrFieldSync_srcMask)|(uint32(value)<<RegisterMcrFieldSync_srcShift))
+// SetSyncsrc Synchronization source
+func (r *registerMcrType) SetSyncsrc(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMcrFieldSyncsrcMask)|(uint32(value)<<RegisterMcrFieldSyncsrcShift))
 }
 
 const (

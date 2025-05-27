@@ -12,5744 +12,5744 @@ var (
 )
 
 type _dsihost struct {
-	Dsi_vr      registerDsi_vrType
-	Dsi_cr      registerDsi_crType
-	Dsi_ccr     registerDsi_ccrType
-	Dsi_lvcidr  registerDsi_lvcidrType
-	Dsi_lcolcr  registerDsi_lcolcrType
-	Dsi_lpcr    registerDsi_lpcrType
-	Dsi_lpmcr   registerDsi_lpmcrType
-	_           [16]byte
-	Dsi_pcr     registerDsi_pcrType
-	Dsi_gvcidr  registerDsi_gvcidrType
-	Dsi_mcr     registerDsi_mcrType
-	Dsi_vmcr    registerDsi_vmcrType
-	Dsi_vpcr    registerDsi_vpcrType
-	Dsi_vccr    registerDsi_vccrType
-	Dsi_vnpcr   registerDsi_vnpcrType
-	Dsi_vhsacr  registerDsi_vhsacrType
-	Dsi_vhbpcr  registerDsi_vhbpcrType
-	Dsi_vlcr    registerDsi_vlcrType
-	Dsi_vvsacr  registerDsi_vvsacrType
-	Dsi_vvbpcr  registerDsi_vvbpcrType
-	Dsi_vvfpcr  registerDsi_vvfpcrType
-	Dsi_vvacr   registerDsi_vvacrType
-	Dsi_lccr    registerDsi_lccrType
-	Dsi_cmcr    registerDsi_cmcrType
-	Dsi_ghcr    registerDsi_ghcrType
-	Dsi_gpdr    registerDsi_gpdrType
-	Dsi_gpsr    registerDsi_gpsrType
-	Dsi_tccr0   registerDsi_tccr0Type
-	Dsi_tccr1   registerDsi_tccr1Type
-	Dsi_tccr2   registerDsi_tccr2Type
-	Dsi_tccr3   registerDsi_tccr3Type
-	Dsi_tccr4   registerDsi_tccr4Type
-	Dsi_tccr5   registerDsi_tccr5Type
-	_           [4]byte
-	Dsi_clcr    registerDsi_clcrType
-	Dsi_cltcr   registerDsi_cltcrType
-	Dsi_dltcr   registerDsi_dltcrType
-	Dsi_pctlr   registerDsi_pctlrType
-	Dsi_pconfr  registerDsi_pconfrType
-	Dsi_pucr    registerDsi_pucrType
-	Dsi_pttcr   registerDsi_pttcrType
-	Dsi_psr     registerDsi_psrType
-	_           [8]byte
-	Dsi_isr0    registerDsi_isr0Type
-	Dsi_isr1    registerDsi_isr1Type
-	Dsi_ier0    registerDsi_ier0Type
-	Dsi_ier1    registerDsi_ier1Type
-	_           [12]byte
-	Dsi_fir0    registerDsi_fir0Type
-	Dsi_fir1    registerDsi_fir1Type
-	_           [32]byte
-	Dsi_vscr    registerDsi_vscrType
-	_           [8]byte
-	Dsi_lcvcidr registerDsi_lcvcidrType
-	Dsi_lcccr   registerDsi_lcccrType
-	_           [4]byte
-	Dsi_lpmccr  registerDsi_lpmccrType
-	_           [28]byte
-	Dsi_vmccr   registerDsi_vmccrType
-	Dsi_vpccr   registerDsi_vpccrType
-	Dsi_vcccr   registerDsi_vcccrType
-	Dsi_vnpccr  registerDsi_vnpccrType
-	Dsi_vhsaccr registerDsi_vhsaccrType
-	Dsi_vhbpccr registerDsi_vhbpccrType
-	Dsi_vlccr   registerDsi_vlccrType
-	Dsi_vvsaccr registerDsi_vvsaccrType
-	Dsi_vvbpccr registerDsi_vvbpccrType
-	Dsi_vvfpccr registerDsi_vvfpccrType
-	Dsi_vvaccr  registerDsi_vvaccrType
-	_           [668]byte
-	Dsi_wcfgr   registerDsi_wcfgrType
-	Dsi_wcr     registerDsi_wcrType
-	Dsi_wier    registerDsi_wierType
-	Dsi_wisr    registerDsi_wisrType
-	Dsi_wifcr   registerDsi_wifcrType
-	_           [4]byte
-	Dsi_wpcr0   registerDsi_wpcr0Type
-	Dsi_wpcr1   registerDsi_wpcr1Type
-	Dsi_wpcr2   registerDsi_wpcr2Type
-	Dsi_wpcr3   registerDsi_wpcr3Type
-	Dsi_wpcr4   registerDsi_wpcr4Type
-	_           [4]byte
-	Dsi_wrpcr   registerDsi_wrpcrType
+	Dsivr      registerDsivrType
+	Dsicr      registerDsicrType
+	Dsiccr     registerDsiccrType
+	Dsilvcidr  registerDsilvcidrType
+	Dsilcolcr  registerDsilcolcrType
+	Dsilpcr    registerDsilpcrType
+	Dsilpmcr   registerDsilpmcrType
+	_          [16]byte
+	Dsipcr     registerDsipcrType
+	Dsigvcidr  registerDsigvcidrType
+	Dsimcr     registerDsimcrType
+	Dsivmcr    registerDsivmcrType
+	Dsivpcr    registerDsivpcrType
+	Dsivccr    registerDsivccrType
+	Dsivnpcr   registerDsivnpcrType
+	Dsivhsacr  registerDsivhsacrType
+	Dsivhbpcr  registerDsivhbpcrType
+	Dsivlcr    registerDsivlcrType
+	Dsivvsacr  registerDsivvsacrType
+	Dsivvbpcr  registerDsivvbpcrType
+	Dsivvfpcr  registerDsivvfpcrType
+	Dsivvacr   registerDsivvacrType
+	Dsilccr    registerDsilccrType
+	Dsicmcr    registerDsicmcrType
+	Dsighcr    registerDsighcrType
+	Dsigpdr    registerDsigpdrType
+	Dsigpsr    registerDsigpsrType
+	Dsitccr0   registerDsitccr0Type
+	Dsitccr1   registerDsitccr1Type
+	Dsitccr2   registerDsitccr2Type
+	Dsitccr3   registerDsitccr3Type
+	Dsitccr4   registerDsitccr4Type
+	Dsitccr5   registerDsitccr5Type
+	_          [4]byte
+	Dsiclcr    registerDsiclcrType
+	Dsicltcr   registerDsicltcrType
+	Dsidltcr   registerDsidltcrType
+	Dsipctlr   registerDsipctlrType
+	Dsipconfr  registerDsipconfrType
+	Dsipucr    registerDsipucrType
+	Dsipttcr   registerDsipttcrType
+	Dsipsr     registerDsipsrType
+	_          [8]byte
+	Dsiisr0    registerDsiisr0Type
+	Dsiisr1    registerDsiisr1Type
+	Dsiier0    registerDsiier0Type
+	Dsiier1    registerDsiier1Type
+	_          [12]byte
+	Dsifir0    registerDsifir0Type
+	Dsifir1    registerDsifir1Type
+	_          [32]byte
+	Dsivscr    registerDsivscrType
+	_          [8]byte
+	Dsilcvcidr registerDsilcvcidrType
+	Dsilcccr   registerDsilcccrType
+	_          [4]byte
+	Dsilpmccr  registerDsilpmccrType
+	_          [28]byte
+	Dsivmccr   registerDsivmccrType
+	Dsivpccr   registerDsivpccrType
+	Dsivcccr   registerDsivcccrType
+	Dsivnpccr  registerDsivnpccrType
+	Dsivhsaccr registerDsivhsaccrType
+	Dsivhbpccr registerDsivhbpccrType
+	Dsivlccr   registerDsivlccrType
+	Dsivvsaccr registerDsivvsaccrType
+	Dsivvbpccr registerDsivvbpccrType
+	Dsivvfpccr registerDsivvfpccrType
+	Dsivvaccr  registerDsivvaccrType
+	_          [668]byte
+	Dsiwcfgr   registerDsiwcfgrType
+	Dsiwcr     registerDsiwcrType
+	Dsiwier    registerDsiwierType
+	Dsiwisr    registerDsiwisrType
+	Dsiwifcr   registerDsiwifcrType
+	_          [4]byte
+	Dsiwpcr0   registerDsiwpcr0Type
+	Dsiwpcr1   registerDsiwpcr1Type
+	Dsiwpcr2   registerDsiwpcr2Type
+	Dsiwpcr3   registerDsiwpcr3Type
+	Dsiwpcr4   registerDsiwpcr4Type
+	_          [4]byte
+	Dsiwrpcr   registerDsiwrpcrType
 }
 
-// registerDsi_vrType DSI Host version register
-type registerDsi_vrType uint32
+// registerDsivrType DSI Host version register
+type registerDsivrType uint32
 
 const (
-	RegisterDsi_vrFieldVersionShift = 0
-	RegisterDsi_vrFieldVersionMask  = 0xffffffff
+	RegisterDsivrFieldVersionShift = 0
+	RegisterDsivrFieldVersionMask  = 0xffffffff
 )
 
 // GetVersion VERSION
-func (r *registerDsi_vrType) GetVersion() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vrFieldVersionMask) >> RegisterDsi_vrFieldVersionShift)
+func (r *registerDsivrType) GetVersion() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDsivrFieldVersionMask) >> RegisterDsivrFieldVersionShift)
 }
 
 // SetVersion VERSION
-func (r *registerDsi_vrType) SetVersion(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vrFieldVersionMask)|(uint32(value)<<RegisterDsi_vrFieldVersionShift))
+func (r *registerDsivrType) SetVersion(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivrFieldVersionMask)|(uint32(value)<<RegisterDsivrFieldVersionShift))
 }
 
-// registerDsi_crType DSI Host control register
-type registerDsi_crType uint32
+// registerDsicrType DSI Host control register
+type registerDsicrType uint32
 
 const (
-	RegisterDsi_crFieldEnShift = 0
-	RegisterDsi_crFieldEnMask  = 0x1
+	RegisterDsicrFieldEnShift = 0
+	RegisterDsicrFieldEnMask  = 0x1
 )
 
 // GetEn EN
-func (r *registerDsi_crType) GetEn() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_crFieldEnMask) != 0
+func (r *registerDsicrType) GetEn() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicrFieldEnMask) != 0
 }
 
 // SetEn EN
-func (r *registerDsi_crType) SetEn(value bool) {
+func (r *registerDsicrType) SetEn(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_crFieldEnMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicrFieldEnMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_crFieldEnMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicrFieldEnMask)
 	}
 }
 
-// registerDsi_ccrType DSI Host clock control register
-type registerDsi_ccrType uint32
+// registerDsiccrType DSI Host clock control register
+type registerDsiccrType uint32
 
 const (
-	RegisterDsi_ccrFieldTxeckdivShift = 0
-	RegisterDsi_ccrFieldTxeckdivMask  = 0xff
+	RegisterDsiccrFieldTxeckdivShift = 0
+	RegisterDsiccrFieldTxeckdivMask  = 0xff
 )
 
 // GetTxeckdiv TXECKDIV
-func (r *registerDsi_ccrType) GetTxeckdiv() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ccrFieldTxeckdivMask) >> RegisterDsi_ccrFieldTxeckdivShift)
+func (r *registerDsiccrType) GetTxeckdiv() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiccrFieldTxeckdivMask) >> RegisterDsiccrFieldTxeckdivShift)
 }
 
 // SetTxeckdiv TXECKDIV
-func (r *registerDsi_ccrType) SetTxeckdiv(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ccrFieldTxeckdivMask)|(uint32(value)<<RegisterDsi_ccrFieldTxeckdivShift))
+func (r *registerDsiccrType) SetTxeckdiv(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiccrFieldTxeckdivMask)|(uint32(value)<<RegisterDsiccrFieldTxeckdivShift))
 }
 
 const (
-	RegisterDsi_ccrFieldTockdivShift = 8
-	RegisterDsi_ccrFieldTockdivMask  = 0xff00
+	RegisterDsiccrFieldTockdivShift = 8
+	RegisterDsiccrFieldTockdivMask  = 0xff00
 )
 
 // GetTockdiv TOCKDIV
-func (r *registerDsi_ccrType) GetTockdiv() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ccrFieldTockdivMask) >> RegisterDsi_ccrFieldTockdivShift)
+func (r *registerDsiccrType) GetTockdiv() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiccrFieldTockdivMask) >> RegisterDsiccrFieldTockdivShift)
 }
 
 // SetTockdiv TOCKDIV
-func (r *registerDsi_ccrType) SetTockdiv(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ccrFieldTockdivMask)|(uint32(value)<<RegisterDsi_ccrFieldTockdivShift))
+func (r *registerDsiccrType) SetTockdiv(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiccrFieldTockdivMask)|(uint32(value)<<RegisterDsiccrFieldTockdivShift))
 }
 
-// registerDsi_lvcidrType DSI Host LTDC VCID register
-type registerDsi_lvcidrType uint32
+// registerDsilvcidrType DSI Host LTDC VCID register
+type registerDsilvcidrType uint32
 
 const (
-	RegisterDsi_lvcidrFieldVcidShift = 0
-	RegisterDsi_lvcidrFieldVcidMask  = 0x3
+	RegisterDsilvcidrFieldVcidShift = 0
+	RegisterDsilvcidrFieldVcidMask  = 0x3
 )
 
 // GetVcid VCID
-func (r *registerDsi_lvcidrType) GetVcid() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lvcidrFieldVcidMask) >> RegisterDsi_lvcidrFieldVcidShift)
+func (r *registerDsilvcidrType) GetVcid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsilvcidrFieldVcidMask) >> RegisterDsilvcidrFieldVcidShift)
 }
 
 // SetVcid VCID
-func (r *registerDsi_lvcidrType) SetVcid(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lvcidrFieldVcidMask)|(uint32(value)<<RegisterDsi_lvcidrFieldVcidShift))
+func (r *registerDsilvcidrType) SetVcid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsilvcidrFieldVcidMask)|(uint32(value)<<RegisterDsilvcidrFieldVcidShift))
 }
 
-// registerDsi_lcolcrType DSI Host LTDC color coding register
-type registerDsi_lcolcrType uint32
+// registerDsilcolcrType DSI Host LTDC color coding register
+type registerDsilcolcrType uint32
 
 const (
-	RegisterDsi_lcolcrFieldColcShift = 0
-	RegisterDsi_lcolcrFieldColcMask  = 0xf
+	RegisterDsilcolcrFieldColcShift = 0
+	RegisterDsilcolcrFieldColcMask  = 0xf
 )
 
 // GetColc COLC
-func (r *registerDsi_lcolcrType) GetColc() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lcolcrFieldColcMask) >> RegisterDsi_lcolcrFieldColcShift)
+func (r *registerDsilcolcrType) GetColc() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsilcolcrFieldColcMask) >> RegisterDsilcolcrFieldColcShift)
 }
 
 // SetColc COLC
-func (r *registerDsi_lcolcrType) SetColc(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lcolcrFieldColcMask)|(uint32(value)<<RegisterDsi_lcolcrFieldColcShift))
+func (r *registerDsilcolcrType) SetColc(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsilcolcrFieldColcMask)|(uint32(value)<<RegisterDsilcolcrFieldColcShift))
 }
 
 const (
-	RegisterDsi_lcolcrFieldLpeShift = 8
-	RegisterDsi_lcolcrFieldLpeMask  = 0x100
+	RegisterDsilcolcrFieldLpeShift = 8
+	RegisterDsilcolcrFieldLpeMask  = 0x100
 )
 
 // GetLpe LPE
-func (r *registerDsi_lcolcrType) GetLpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lcolcrFieldLpeMask) != 0
+func (r *registerDsilcolcrType) GetLpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsilcolcrFieldLpeMask) != 0
 }
 
 // SetLpe LPE
-func (r *registerDsi_lcolcrType) SetLpe(value bool) {
+func (r *registerDsilcolcrType) SetLpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_lcolcrFieldLpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsilcolcrFieldLpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lcolcrFieldLpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsilcolcrFieldLpeMask)
 	}
 }
 
-// registerDsi_lpcrType DSI Host LTDC polarity configuration register
-type registerDsi_lpcrType uint32
+// registerDsilpcrType DSI Host LTDC polarity configuration register
+type registerDsilpcrType uint32
 
 const (
-	RegisterDsi_lpcrFieldDepShift = 0
-	RegisterDsi_lpcrFieldDepMask  = 0x1
+	RegisterDsilpcrFieldDepShift = 0
+	RegisterDsilpcrFieldDepMask  = 0x1
 )
 
 // GetDep DEP
-func (r *registerDsi_lpcrType) GetDep() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lpcrFieldDepMask) != 0
+func (r *registerDsilpcrType) GetDep() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsilpcrFieldDepMask) != 0
 }
 
 // SetDep DEP
-func (r *registerDsi_lpcrType) SetDep(value bool) {
+func (r *registerDsilpcrType) SetDep(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_lpcrFieldDepMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsilpcrFieldDepMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lpcrFieldDepMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsilpcrFieldDepMask)
 	}
 }
 
 const (
-	RegisterDsi_lpcrFieldVspShift = 1
-	RegisterDsi_lpcrFieldVspMask  = 0x2
+	RegisterDsilpcrFieldVspShift = 1
+	RegisterDsilpcrFieldVspMask  = 0x2
 )
 
 // GetVsp VSP
-func (r *registerDsi_lpcrType) GetVsp() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lpcrFieldVspMask) != 0
+func (r *registerDsilpcrType) GetVsp() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsilpcrFieldVspMask) != 0
 }
 
 // SetVsp VSP
-func (r *registerDsi_lpcrType) SetVsp(value bool) {
+func (r *registerDsilpcrType) SetVsp(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_lpcrFieldVspMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsilpcrFieldVspMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lpcrFieldVspMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsilpcrFieldVspMask)
 	}
 }
 
 const (
-	RegisterDsi_lpcrFieldHspShift = 2
-	RegisterDsi_lpcrFieldHspMask  = 0x4
+	RegisterDsilpcrFieldHspShift = 2
+	RegisterDsilpcrFieldHspMask  = 0x4
 )
 
 // GetHsp HSP
-func (r *registerDsi_lpcrType) GetHsp() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lpcrFieldHspMask) != 0
+func (r *registerDsilpcrType) GetHsp() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsilpcrFieldHspMask) != 0
 }
 
 // SetHsp HSP
-func (r *registerDsi_lpcrType) SetHsp(value bool) {
+func (r *registerDsilpcrType) SetHsp(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_lpcrFieldHspMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsilpcrFieldHspMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lpcrFieldHspMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsilpcrFieldHspMask)
 	}
 }
 
-// registerDsi_lpmcrType DSI Host low-power mode configuration register
-type registerDsi_lpmcrType uint32
+// registerDsilpmcrType DSI Host low-power mode configuration register
+type registerDsilpmcrType uint32
 
 const (
-	RegisterDsi_lpmcrFieldVlpsizeShift = 0
-	RegisterDsi_lpmcrFieldVlpsizeMask  = 0xff
+	RegisterDsilpmcrFieldVlpsizeShift = 0
+	RegisterDsilpmcrFieldVlpsizeMask  = 0xff
 )
 
 // GetVlpsize VLPSIZE
-func (r *registerDsi_lpmcrType) GetVlpsize() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lpmcrFieldVlpsizeMask) >> RegisterDsi_lpmcrFieldVlpsizeShift)
+func (r *registerDsilpmcrType) GetVlpsize() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsilpmcrFieldVlpsizeMask) >> RegisterDsilpmcrFieldVlpsizeShift)
 }
 
 // SetVlpsize VLPSIZE
-func (r *registerDsi_lpmcrType) SetVlpsize(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lpmcrFieldVlpsizeMask)|(uint32(value)<<RegisterDsi_lpmcrFieldVlpsizeShift))
+func (r *registerDsilpmcrType) SetVlpsize(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsilpmcrFieldVlpsizeMask)|(uint32(value)<<RegisterDsilpmcrFieldVlpsizeShift))
 }
 
 const (
-	RegisterDsi_lpmcrFieldLpsizeShift = 16
-	RegisterDsi_lpmcrFieldLpsizeMask  = 0xff0000
+	RegisterDsilpmcrFieldLpsizeShift = 16
+	RegisterDsilpmcrFieldLpsizeMask  = 0xff0000
 )
 
 // GetLpsize LPSIZE
-func (r *registerDsi_lpmcrType) GetLpsize() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lpmcrFieldLpsizeMask) >> RegisterDsi_lpmcrFieldLpsizeShift)
+func (r *registerDsilpmcrType) GetLpsize() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsilpmcrFieldLpsizeMask) >> RegisterDsilpmcrFieldLpsizeShift)
 }
 
 // SetLpsize LPSIZE
-func (r *registerDsi_lpmcrType) SetLpsize(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lpmcrFieldLpsizeMask)|(uint32(value)<<RegisterDsi_lpmcrFieldLpsizeShift))
+func (r *registerDsilpmcrType) SetLpsize(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsilpmcrFieldLpsizeMask)|(uint32(value)<<RegisterDsilpmcrFieldLpsizeShift))
 }
 
-// registerDsi_pcrType DSI Host protocol configuration register
-type registerDsi_pcrType uint32
+// registerDsipcrType DSI Host protocol configuration register
+type registerDsipcrType uint32
 
 const (
-	RegisterDsi_pcrFieldEttxeShift = 0
-	RegisterDsi_pcrFieldEttxeMask  = 0x1
+	RegisterDsipcrFieldEttxeShift = 0
+	RegisterDsipcrFieldEttxeMask  = 0x1
 )
 
 // GetEttxe ETTXE
-func (r *registerDsi_pcrType) GetEttxe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pcrFieldEttxeMask) != 0
+func (r *registerDsipcrType) GetEttxe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipcrFieldEttxeMask) != 0
 }
 
 // SetEttxe ETTXE
-func (r *registerDsi_pcrType) SetEttxe(value bool) {
+func (r *registerDsipcrType) SetEttxe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pcrFieldEttxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipcrFieldEttxeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pcrFieldEttxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipcrFieldEttxeMask)
 	}
 }
 
 const (
-	RegisterDsi_pcrFieldEtrxeShift = 1
-	RegisterDsi_pcrFieldEtrxeMask  = 0x2
+	RegisterDsipcrFieldEtrxeShift = 1
+	RegisterDsipcrFieldEtrxeMask  = 0x2
 )
 
 // GetEtrxe ETRXE
-func (r *registerDsi_pcrType) GetEtrxe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pcrFieldEtrxeMask) != 0
+func (r *registerDsipcrType) GetEtrxe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipcrFieldEtrxeMask) != 0
 }
 
 // SetEtrxe ETRXE
-func (r *registerDsi_pcrType) SetEtrxe(value bool) {
+func (r *registerDsipcrType) SetEtrxe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pcrFieldEtrxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipcrFieldEtrxeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pcrFieldEtrxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipcrFieldEtrxeMask)
 	}
 }
 
 const (
-	RegisterDsi_pcrFieldBtaeShift = 2
-	RegisterDsi_pcrFieldBtaeMask  = 0x4
+	RegisterDsipcrFieldBtaeShift = 2
+	RegisterDsipcrFieldBtaeMask  = 0x4
 )
 
 // GetBtae BTAE
-func (r *registerDsi_pcrType) GetBtae() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pcrFieldBtaeMask) != 0
+func (r *registerDsipcrType) GetBtae() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipcrFieldBtaeMask) != 0
 }
 
 // SetBtae BTAE
-func (r *registerDsi_pcrType) SetBtae(value bool) {
+func (r *registerDsipcrType) SetBtae(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pcrFieldBtaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipcrFieldBtaeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pcrFieldBtaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipcrFieldBtaeMask)
 	}
 }
 
 const (
-	RegisterDsi_pcrFieldEccrxeShift = 3
-	RegisterDsi_pcrFieldEccrxeMask  = 0x8
+	RegisterDsipcrFieldEccrxeShift = 3
+	RegisterDsipcrFieldEccrxeMask  = 0x8
 )
 
 // GetEccrxe ECCRXE
-func (r *registerDsi_pcrType) GetEccrxe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pcrFieldEccrxeMask) != 0
+func (r *registerDsipcrType) GetEccrxe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipcrFieldEccrxeMask) != 0
 }
 
 // SetEccrxe ECCRXE
-func (r *registerDsi_pcrType) SetEccrxe(value bool) {
+func (r *registerDsipcrType) SetEccrxe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pcrFieldEccrxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipcrFieldEccrxeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pcrFieldEccrxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipcrFieldEccrxeMask)
 	}
 }
 
 const (
-	RegisterDsi_pcrFieldCrcrxeShift = 4
-	RegisterDsi_pcrFieldCrcrxeMask  = 0x10
+	RegisterDsipcrFieldCrcrxeShift = 4
+	RegisterDsipcrFieldCrcrxeMask  = 0x10
 )
 
 // GetCrcrxe CRCRXE
-func (r *registerDsi_pcrType) GetCrcrxe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pcrFieldCrcrxeMask) != 0
+func (r *registerDsipcrType) GetCrcrxe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipcrFieldCrcrxeMask) != 0
 }
 
 // SetCrcrxe CRCRXE
-func (r *registerDsi_pcrType) SetCrcrxe(value bool) {
+func (r *registerDsipcrType) SetCrcrxe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pcrFieldCrcrxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipcrFieldCrcrxeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pcrFieldCrcrxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipcrFieldCrcrxeMask)
 	}
 }
 
-// registerDsi_gvcidrType DSI Host generic VCID register
-type registerDsi_gvcidrType uint32
+// registerDsigvcidrType DSI Host generic VCID register
+type registerDsigvcidrType uint32
 
 const (
-	RegisterDsi_gvcidrFieldVcidShift = 0
-	RegisterDsi_gvcidrFieldVcidMask  = 0x3
+	RegisterDsigvcidrFieldVcidShift = 0
+	RegisterDsigvcidrFieldVcidMask  = 0x3
 )
 
 // GetVcid VCID
-func (r *registerDsi_gvcidrType) GetVcid() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gvcidrFieldVcidMask) >> RegisterDsi_gvcidrFieldVcidShift)
+func (r *registerDsigvcidrType) GetVcid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsigvcidrFieldVcidMask) >> RegisterDsigvcidrFieldVcidShift)
 }
 
 // SetVcid VCID
-func (r *registerDsi_gvcidrType) SetVcid(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gvcidrFieldVcidMask)|(uint32(value)<<RegisterDsi_gvcidrFieldVcidShift))
+func (r *registerDsigvcidrType) SetVcid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsigvcidrFieldVcidMask)|(uint32(value)<<RegisterDsigvcidrFieldVcidShift))
 }
 
-// registerDsi_mcrType DSI Host mode configuration register
-type registerDsi_mcrType uint32
+// registerDsimcrType DSI Host mode configuration register
+type registerDsimcrType uint32
 
 const (
-	RegisterDsi_mcrFieldCmdmShift = 0
-	RegisterDsi_mcrFieldCmdmMask  = 0x1
+	RegisterDsimcrFieldCmdmShift = 0
+	RegisterDsimcrFieldCmdmMask  = 0x1
 )
 
 // GetCmdm CMDM
-func (r *registerDsi_mcrType) GetCmdm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_mcrFieldCmdmMask) != 0
+func (r *registerDsimcrType) GetCmdm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsimcrFieldCmdmMask) != 0
 }
 
 // SetCmdm CMDM
-func (r *registerDsi_mcrType) SetCmdm(value bool) {
+func (r *registerDsimcrType) SetCmdm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_mcrFieldCmdmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsimcrFieldCmdmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_mcrFieldCmdmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsimcrFieldCmdmMask)
 	}
 }
 
-// registerDsi_vmcrType DSI Host video mode configuration register
-type registerDsi_vmcrType uint32
+// registerDsivmcrType DSI Host video mode configuration register
+type registerDsivmcrType uint32
 
 const (
-	RegisterDsi_vmcrFieldVmtShift = 0
-	RegisterDsi_vmcrFieldVmtMask  = 0x3
+	RegisterDsivmcrFieldVmtShift = 0
+	RegisterDsivmcrFieldVmtMask  = 0x3
 )
 
 // GetVmt VMT
-func (r *registerDsi_vmcrType) GetVmt() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldVmtMask) >> RegisterDsi_vmcrFieldVmtShift)
+func (r *registerDsivmcrType) GetVmt() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldVmtMask) >> RegisterDsivmcrFieldVmtShift)
 }
 
 // SetVmt VMT
-func (r *registerDsi_vmcrType) SetVmt(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldVmtMask)|(uint32(value)<<RegisterDsi_vmcrFieldVmtShift))
+func (r *registerDsivmcrType) SetVmt(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldVmtMask)|(uint32(value)<<RegisterDsivmcrFieldVmtShift))
 }
 
 const (
-	RegisterDsi_vmcrFieldLpvsaeShift = 8
-	RegisterDsi_vmcrFieldLpvsaeMask  = 0x100
+	RegisterDsivmcrFieldLpvsaeShift = 8
+	RegisterDsivmcrFieldLpvsaeMask  = 0x100
 )
 
 // GetLpvsae LPVSAE
-func (r *registerDsi_vmcrType) GetLpvsae() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldLpvsaeMask) != 0
+func (r *registerDsivmcrType) GetLpvsae() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldLpvsaeMask) != 0
 }
 
 // SetLpvsae LPVSAE
-func (r *registerDsi_vmcrType) SetLpvsae(value bool) {
+func (r *registerDsivmcrType) SetLpvsae(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldLpvsaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldLpvsaeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldLpvsaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldLpvsaeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmcrFieldLpvbpeShift = 9
-	RegisterDsi_vmcrFieldLpvbpeMask  = 0x200
+	RegisterDsivmcrFieldLpvbpeShift = 9
+	RegisterDsivmcrFieldLpvbpeMask  = 0x200
 )
 
 // GetLpvbpe LPVBPE
-func (r *registerDsi_vmcrType) GetLpvbpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldLpvbpeMask) != 0
+func (r *registerDsivmcrType) GetLpvbpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldLpvbpeMask) != 0
 }
 
 // SetLpvbpe LPVBPE
-func (r *registerDsi_vmcrType) SetLpvbpe(value bool) {
+func (r *registerDsivmcrType) SetLpvbpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldLpvbpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldLpvbpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldLpvbpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldLpvbpeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmcrFieldLpvfpeShift = 10
-	RegisterDsi_vmcrFieldLpvfpeMask  = 0x400
+	RegisterDsivmcrFieldLpvfpeShift = 10
+	RegisterDsivmcrFieldLpvfpeMask  = 0x400
 )
 
 // GetLpvfpe LPVFPE
-func (r *registerDsi_vmcrType) GetLpvfpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldLpvfpeMask) != 0
+func (r *registerDsivmcrType) GetLpvfpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldLpvfpeMask) != 0
 }
 
 // SetLpvfpe LPVFPE
-func (r *registerDsi_vmcrType) SetLpvfpe(value bool) {
+func (r *registerDsivmcrType) SetLpvfpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldLpvfpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldLpvfpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldLpvfpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldLpvfpeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmcrFieldLpvaeShift = 11
-	RegisterDsi_vmcrFieldLpvaeMask  = 0x800
+	RegisterDsivmcrFieldLpvaeShift = 11
+	RegisterDsivmcrFieldLpvaeMask  = 0x800
 )
 
 // GetLpvae LPVAE
-func (r *registerDsi_vmcrType) GetLpvae() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldLpvaeMask) != 0
+func (r *registerDsivmcrType) GetLpvae() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldLpvaeMask) != 0
 }
 
 // SetLpvae LPVAE
-func (r *registerDsi_vmcrType) SetLpvae(value bool) {
+func (r *registerDsivmcrType) SetLpvae(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldLpvaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldLpvaeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldLpvaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldLpvaeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmcrFieldLphbpeShift = 12
-	RegisterDsi_vmcrFieldLphbpeMask  = 0x1000
+	RegisterDsivmcrFieldLphbpeShift = 12
+	RegisterDsivmcrFieldLphbpeMask  = 0x1000
 )
 
 // GetLphbpe LPHBPE
-func (r *registerDsi_vmcrType) GetLphbpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldLphbpeMask) != 0
+func (r *registerDsivmcrType) GetLphbpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldLphbpeMask) != 0
 }
 
 // SetLphbpe LPHBPE
-func (r *registerDsi_vmcrType) SetLphbpe(value bool) {
+func (r *registerDsivmcrType) SetLphbpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldLphbpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldLphbpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldLphbpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldLphbpeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmcrFieldLphfpeShift = 13
-	RegisterDsi_vmcrFieldLphfpeMask  = 0x2000
+	RegisterDsivmcrFieldLphfpeShift = 13
+	RegisterDsivmcrFieldLphfpeMask  = 0x2000
 )
 
 // GetLphfpe LPHFPE
-func (r *registerDsi_vmcrType) GetLphfpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldLphfpeMask) != 0
+func (r *registerDsivmcrType) GetLphfpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldLphfpeMask) != 0
 }
 
 // SetLphfpe LPHFPE
-func (r *registerDsi_vmcrType) SetLphfpe(value bool) {
+func (r *registerDsivmcrType) SetLphfpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldLphfpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldLphfpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldLphfpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldLphfpeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmcrFieldFbtaaeShift = 14
-	RegisterDsi_vmcrFieldFbtaaeMask  = 0x4000
+	RegisterDsivmcrFieldFbtaaeShift = 14
+	RegisterDsivmcrFieldFbtaaeMask  = 0x4000
 )
 
 // GetFbtaae FBTAAE
-func (r *registerDsi_vmcrType) GetFbtaae() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldFbtaaeMask) != 0
+func (r *registerDsivmcrType) GetFbtaae() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldFbtaaeMask) != 0
 }
 
 // SetFbtaae FBTAAE
-func (r *registerDsi_vmcrType) SetFbtaae(value bool) {
+func (r *registerDsivmcrType) SetFbtaae(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldFbtaaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldFbtaaeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldFbtaaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldFbtaaeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmcrFieldLpceShift = 15
-	RegisterDsi_vmcrFieldLpceMask  = 0x8000
+	RegisterDsivmcrFieldLpceShift = 15
+	RegisterDsivmcrFieldLpceMask  = 0x8000
 )
 
 // GetLpce LPCE
-func (r *registerDsi_vmcrType) GetLpce() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldLpceMask) != 0
+func (r *registerDsivmcrType) GetLpce() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldLpceMask) != 0
 }
 
 // SetLpce LPCE
-func (r *registerDsi_vmcrType) SetLpce(value bool) {
+func (r *registerDsivmcrType) SetLpce(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldLpceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldLpceMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldLpceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldLpceMask)
 	}
 }
 
 const (
-	RegisterDsi_vmcrFieldPgeShift = 16
-	RegisterDsi_vmcrFieldPgeMask  = 0x10000
+	RegisterDsivmcrFieldPgeShift = 16
+	RegisterDsivmcrFieldPgeMask  = 0x10000
 )
 
 // GetPge PGE
-func (r *registerDsi_vmcrType) GetPge() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldPgeMask) != 0
+func (r *registerDsivmcrType) GetPge() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldPgeMask) != 0
 }
 
 // SetPge PGE
-func (r *registerDsi_vmcrType) SetPge(value bool) {
+func (r *registerDsivmcrType) SetPge(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldPgeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldPgeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldPgeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldPgeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmcrFieldPgmShift = 20
-	RegisterDsi_vmcrFieldPgmMask  = 0x100000
+	RegisterDsivmcrFieldPgmShift = 20
+	RegisterDsivmcrFieldPgmMask  = 0x100000
 )
 
 // GetPgm PGM
-func (r *registerDsi_vmcrType) GetPgm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldPgmMask) != 0
+func (r *registerDsivmcrType) GetPgm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldPgmMask) != 0
 }
 
 // SetPgm PGM
-func (r *registerDsi_vmcrType) SetPgm(value bool) {
+func (r *registerDsivmcrType) SetPgm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldPgmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldPgmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldPgmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldPgmMask)
 	}
 }
 
 const (
-	RegisterDsi_vmcrFieldPgoShift = 24
-	RegisterDsi_vmcrFieldPgoMask  = 0x1000000
+	RegisterDsivmcrFieldPgoShift = 24
+	RegisterDsivmcrFieldPgoMask  = 0x1000000
 )
 
 // GetPgo PGO
-func (r *registerDsi_vmcrType) GetPgo() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmcrFieldPgoMask) != 0
+func (r *registerDsivmcrType) GetPgo() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmcrFieldPgoMask) != 0
 }
 
 // SetPgo PGO
-func (r *registerDsi_vmcrType) SetPgo(value bool) {
+func (r *registerDsivmcrType) SetPgo(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmcrFieldPgoMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmcrFieldPgoMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmcrFieldPgoMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmcrFieldPgoMask)
 	}
 }
 
-// registerDsi_vpcrType DSI Host video packet configuration register
-type registerDsi_vpcrType uint32
+// registerDsivpcrType DSI Host video packet configuration register
+type registerDsivpcrType uint32
 
 const (
-	RegisterDsi_vpcrFieldVpsizeShift = 0
-	RegisterDsi_vpcrFieldVpsizeMask  = 0x3fff
+	RegisterDsivpcrFieldVpsizeShift = 0
+	RegisterDsivpcrFieldVpsizeMask  = 0x3fff
 )
 
 // GetVpsize VPSIZE
-func (r *registerDsi_vpcrType) GetVpsize() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vpcrFieldVpsizeMask) >> RegisterDsi_vpcrFieldVpsizeShift)
+func (r *registerDsivpcrType) GetVpsize() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivpcrFieldVpsizeMask) >> RegisterDsivpcrFieldVpsizeShift)
 }
 
 // SetVpsize VPSIZE
-func (r *registerDsi_vpcrType) SetVpsize(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vpcrFieldVpsizeMask)|(uint32(value)<<RegisterDsi_vpcrFieldVpsizeShift))
+func (r *registerDsivpcrType) SetVpsize(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivpcrFieldVpsizeMask)|(uint32(value)<<RegisterDsivpcrFieldVpsizeShift))
 }
 
-// registerDsi_vccrType DSI Host video chunks configuration register
-type registerDsi_vccrType uint32
+// registerDsivccrType DSI Host video chunks configuration register
+type registerDsivccrType uint32
 
 const (
-	RegisterDsi_vccrFieldNumcShift = 0
-	RegisterDsi_vccrFieldNumcMask  = 0x1fff
+	RegisterDsivccrFieldNumcShift = 0
+	RegisterDsivccrFieldNumcMask  = 0x1fff
 )
 
 // GetNumc NUMC
-func (r *registerDsi_vccrType) GetNumc() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vccrFieldNumcMask) >> RegisterDsi_vccrFieldNumcShift)
+func (r *registerDsivccrType) GetNumc() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivccrFieldNumcMask) >> RegisterDsivccrFieldNumcShift)
 }
 
 // SetNumc NUMC
-func (r *registerDsi_vccrType) SetNumc(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vccrFieldNumcMask)|(uint32(value)<<RegisterDsi_vccrFieldNumcShift))
+func (r *registerDsivccrType) SetNumc(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivccrFieldNumcMask)|(uint32(value)<<RegisterDsivccrFieldNumcShift))
 }
 
-// registerDsi_vnpcrType DSI Host video null packet configuration register
-type registerDsi_vnpcrType uint32
+// registerDsivnpcrType DSI Host video null packet configuration register
+type registerDsivnpcrType uint32
 
 const (
-	RegisterDsi_vnpcrFieldNpsizeShift = 0
-	RegisterDsi_vnpcrFieldNpsizeMask  = 0x1fff
+	RegisterDsivnpcrFieldNpsizeShift = 0
+	RegisterDsivnpcrFieldNpsizeMask  = 0x1fff
 )
 
 // GetNpsize NPSIZE
-func (r *registerDsi_vnpcrType) GetNpsize() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vnpcrFieldNpsizeMask) >> RegisterDsi_vnpcrFieldNpsizeShift)
+func (r *registerDsivnpcrType) GetNpsize() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivnpcrFieldNpsizeMask) >> RegisterDsivnpcrFieldNpsizeShift)
 }
 
 // SetNpsize NPSIZE
-func (r *registerDsi_vnpcrType) SetNpsize(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vnpcrFieldNpsizeMask)|(uint32(value)<<RegisterDsi_vnpcrFieldNpsizeShift))
+func (r *registerDsivnpcrType) SetNpsize(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivnpcrFieldNpsizeMask)|(uint32(value)<<RegisterDsivnpcrFieldNpsizeShift))
 }
 
-// registerDsi_vhsacrType DSI Host video HSA configuration register
-type registerDsi_vhsacrType uint32
+// registerDsivhsacrType DSI Host video HSA configuration register
+type registerDsivhsacrType uint32
 
 const (
-	RegisterDsi_vhsacrFieldHsaShift = 0
-	RegisterDsi_vhsacrFieldHsaMask  = 0xfff
+	RegisterDsivhsacrFieldHsaShift = 0
+	RegisterDsivhsacrFieldHsaMask  = 0xfff
 )
 
 // GetHsa HSA
-func (r *registerDsi_vhsacrType) GetHsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vhsacrFieldHsaMask) >> RegisterDsi_vhsacrFieldHsaShift)
+func (r *registerDsivhsacrType) GetHsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivhsacrFieldHsaMask) >> RegisterDsivhsacrFieldHsaShift)
 }
 
 // SetHsa HSA
-func (r *registerDsi_vhsacrType) SetHsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vhsacrFieldHsaMask)|(uint32(value)<<RegisterDsi_vhsacrFieldHsaShift))
+func (r *registerDsivhsacrType) SetHsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivhsacrFieldHsaMask)|(uint32(value)<<RegisterDsivhsacrFieldHsaShift))
 }
 
-// registerDsi_vhbpcrType DSI Host video HBP configuration register
-type registerDsi_vhbpcrType uint32
+// registerDsivhbpcrType DSI Host video HBP configuration register
+type registerDsivhbpcrType uint32
 
 const (
-	RegisterDsi_vhbpcrFieldHbpShift = 0
-	RegisterDsi_vhbpcrFieldHbpMask  = 0xfff
+	RegisterDsivhbpcrFieldHbpShift = 0
+	RegisterDsivhbpcrFieldHbpMask  = 0xfff
 )
 
 // GetHbp HBP
-func (r *registerDsi_vhbpcrType) GetHbp() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vhbpcrFieldHbpMask) >> RegisterDsi_vhbpcrFieldHbpShift)
+func (r *registerDsivhbpcrType) GetHbp() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivhbpcrFieldHbpMask) >> RegisterDsivhbpcrFieldHbpShift)
 }
 
 // SetHbp HBP
-func (r *registerDsi_vhbpcrType) SetHbp(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vhbpcrFieldHbpMask)|(uint32(value)<<RegisterDsi_vhbpcrFieldHbpShift))
+func (r *registerDsivhbpcrType) SetHbp(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivhbpcrFieldHbpMask)|(uint32(value)<<RegisterDsivhbpcrFieldHbpShift))
 }
 
-// registerDsi_vlcrType DSI Host video line configuration register
-type registerDsi_vlcrType uint32
+// registerDsivlcrType DSI Host video line configuration register
+type registerDsivlcrType uint32
 
 const (
-	RegisterDsi_vlcrFieldHlineShift = 0
-	RegisterDsi_vlcrFieldHlineMask  = 0x7fff
+	RegisterDsivlcrFieldHlineShift = 0
+	RegisterDsivlcrFieldHlineMask  = 0x7fff
 )
 
 // GetHline HLINE
-func (r *registerDsi_vlcrType) GetHline() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vlcrFieldHlineMask) >> RegisterDsi_vlcrFieldHlineShift)
+func (r *registerDsivlcrType) GetHline() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivlcrFieldHlineMask) >> RegisterDsivlcrFieldHlineShift)
 }
 
 // SetHline HLINE
-func (r *registerDsi_vlcrType) SetHline(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vlcrFieldHlineMask)|(uint32(value)<<RegisterDsi_vlcrFieldHlineShift))
+func (r *registerDsivlcrType) SetHline(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivlcrFieldHlineMask)|(uint32(value)<<RegisterDsivlcrFieldHlineShift))
 }
 
-// registerDsi_vvsacrType DSI Host video VSA configuration register
-type registerDsi_vvsacrType uint32
+// registerDsivvsacrType DSI Host video VSA configuration register
+type registerDsivvsacrType uint32
 
 const (
-	RegisterDsi_vvsacrFieldVsaShift = 0
-	RegisterDsi_vvsacrFieldVsaMask  = 0x3ff
+	RegisterDsivvsacrFieldVsaShift = 0
+	RegisterDsivvsacrFieldVsaMask  = 0x3ff
 )
 
 // GetVsa VSA
-func (r *registerDsi_vvsacrType) GetVsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vvsacrFieldVsaMask) >> RegisterDsi_vvsacrFieldVsaShift)
+func (r *registerDsivvsacrType) GetVsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivvsacrFieldVsaMask) >> RegisterDsivvsacrFieldVsaShift)
 }
 
 // SetVsa VSA
-func (r *registerDsi_vvsacrType) SetVsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vvsacrFieldVsaMask)|(uint32(value)<<RegisterDsi_vvsacrFieldVsaShift))
+func (r *registerDsivvsacrType) SetVsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivvsacrFieldVsaMask)|(uint32(value)<<RegisterDsivvsacrFieldVsaShift))
 }
 
-// registerDsi_vvbpcrType DSI Host video VBP configuration register
-type registerDsi_vvbpcrType uint32
+// registerDsivvbpcrType DSI Host video VBP configuration register
+type registerDsivvbpcrType uint32
 
 const (
-	RegisterDsi_vvbpcrFieldVbpShift = 0
-	RegisterDsi_vvbpcrFieldVbpMask  = 0x3ff
+	RegisterDsivvbpcrFieldVbpShift = 0
+	RegisterDsivvbpcrFieldVbpMask  = 0x3ff
 )
 
 // GetVbp VBP
-func (r *registerDsi_vvbpcrType) GetVbp() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vvbpcrFieldVbpMask) >> RegisterDsi_vvbpcrFieldVbpShift)
+func (r *registerDsivvbpcrType) GetVbp() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivvbpcrFieldVbpMask) >> RegisterDsivvbpcrFieldVbpShift)
 }
 
 // SetVbp VBP
-func (r *registerDsi_vvbpcrType) SetVbp(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vvbpcrFieldVbpMask)|(uint32(value)<<RegisterDsi_vvbpcrFieldVbpShift))
+func (r *registerDsivvbpcrType) SetVbp(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivvbpcrFieldVbpMask)|(uint32(value)<<RegisterDsivvbpcrFieldVbpShift))
 }
 
-// registerDsi_vvfpcrType DSI Host video VFP configuration register
-type registerDsi_vvfpcrType uint32
+// registerDsivvfpcrType DSI Host video VFP configuration register
+type registerDsivvfpcrType uint32
 
 const (
-	RegisterDsi_vvfpcrFieldVfpShift = 0
-	RegisterDsi_vvfpcrFieldVfpMask  = 0x3ff
+	RegisterDsivvfpcrFieldVfpShift = 0
+	RegisterDsivvfpcrFieldVfpMask  = 0x3ff
 )
 
 // GetVfp VFP
-func (r *registerDsi_vvfpcrType) GetVfp() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vvfpcrFieldVfpMask) >> RegisterDsi_vvfpcrFieldVfpShift)
+func (r *registerDsivvfpcrType) GetVfp() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivvfpcrFieldVfpMask) >> RegisterDsivvfpcrFieldVfpShift)
 }
 
 // SetVfp VFP
-func (r *registerDsi_vvfpcrType) SetVfp(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vvfpcrFieldVfpMask)|(uint32(value)<<RegisterDsi_vvfpcrFieldVfpShift))
+func (r *registerDsivvfpcrType) SetVfp(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivvfpcrFieldVfpMask)|(uint32(value)<<RegisterDsivvfpcrFieldVfpShift))
 }
 
-// registerDsi_vvacrType DSI Host video VA configuration register
-type registerDsi_vvacrType uint32
+// registerDsivvacrType DSI Host video VA configuration register
+type registerDsivvacrType uint32
 
 const (
-	RegisterDsi_vvacrFieldVaShift = 0
-	RegisterDsi_vvacrFieldVaMask  = 0x3fff
+	RegisterDsivvacrFieldVaShift = 0
+	RegisterDsivvacrFieldVaMask  = 0x3fff
 )
 
 // GetVa VA
-func (r *registerDsi_vvacrType) GetVa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vvacrFieldVaMask) >> RegisterDsi_vvacrFieldVaShift)
+func (r *registerDsivvacrType) GetVa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivvacrFieldVaMask) >> RegisterDsivvacrFieldVaShift)
 }
 
 // SetVa VA
-func (r *registerDsi_vvacrType) SetVa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vvacrFieldVaMask)|(uint32(value)<<RegisterDsi_vvacrFieldVaShift))
+func (r *registerDsivvacrType) SetVa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivvacrFieldVaMask)|(uint32(value)<<RegisterDsivvacrFieldVaShift))
 }
 
-// registerDsi_lccrType DSI Host LTDC command configuration register
-type registerDsi_lccrType uint32
+// registerDsilccrType DSI Host LTDC command configuration register
+type registerDsilccrType uint32
 
 const (
-	RegisterDsi_lccrFieldCmdsizeShift = 0
-	RegisterDsi_lccrFieldCmdsizeMask  = 0xffff
+	RegisterDsilccrFieldCmdsizeShift = 0
+	RegisterDsilccrFieldCmdsizeMask  = 0xffff
 )
 
 // GetCmdsize CMDSIZE
-func (r *registerDsi_lccrType) GetCmdsize() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lccrFieldCmdsizeMask) >> RegisterDsi_lccrFieldCmdsizeShift)
+func (r *registerDsilccrType) GetCmdsize() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsilccrFieldCmdsizeMask) >> RegisterDsilccrFieldCmdsizeShift)
 }
 
 // SetCmdsize CMDSIZE
-func (r *registerDsi_lccrType) SetCmdsize(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lccrFieldCmdsizeMask)|(uint32(value)<<RegisterDsi_lccrFieldCmdsizeShift))
+func (r *registerDsilccrType) SetCmdsize(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsilccrFieldCmdsizeMask)|(uint32(value)<<RegisterDsilccrFieldCmdsizeShift))
 }
 
-// registerDsi_cmcrType DSI Host command mode configuration register
-type registerDsi_cmcrType uint32
+// registerDsicmcrType DSI Host command mode configuration register
+type registerDsicmcrType uint32
 
 const (
-	RegisterDsi_cmcrFieldTeareShift = 0
-	RegisterDsi_cmcrFieldTeareMask  = 0x1
+	RegisterDsicmcrFieldTeareShift = 0
+	RegisterDsicmcrFieldTeareMask  = 0x1
 )
 
 // GetTeare TEARE
-func (r *registerDsi_cmcrType) GetTeare() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldTeareMask) != 0
+func (r *registerDsicmcrType) GetTeare() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldTeareMask) != 0
 }
 
 // SetTeare TEARE
-func (r *registerDsi_cmcrType) SetTeare(value bool) {
+func (r *registerDsicmcrType) SetTeare(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldTeareMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldTeareMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldTeareMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldTeareMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldAreShift = 1
-	RegisterDsi_cmcrFieldAreMask  = 0x2
+	RegisterDsicmcrFieldAreShift = 1
+	RegisterDsicmcrFieldAreMask  = 0x2
 )
 
 // GetAre ARE
-func (r *registerDsi_cmcrType) GetAre() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldAreMask) != 0
+func (r *registerDsicmcrType) GetAre() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldAreMask) != 0
 }
 
 // SetAre ARE
-func (r *registerDsi_cmcrType) SetAre(value bool) {
+func (r *registerDsicmcrType) SetAre(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldAreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldAreMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldAreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldAreMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldGsw0txShift = 8
-	RegisterDsi_cmcrFieldGsw0txMask  = 0x100
+	RegisterDsicmcrFieldGsw0txShift = 8
+	RegisterDsicmcrFieldGsw0txMask  = 0x100
 )
 
 // GetGsw0tx GSW0TX
-func (r *registerDsi_cmcrType) GetGsw0tx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldGsw0txMask) != 0
+func (r *registerDsicmcrType) GetGsw0tx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldGsw0txMask) != 0
 }
 
 // SetGsw0tx GSW0TX
-func (r *registerDsi_cmcrType) SetGsw0tx(value bool) {
+func (r *registerDsicmcrType) SetGsw0tx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldGsw0txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldGsw0txMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldGsw0txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldGsw0txMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldGsw1txShift = 9
-	RegisterDsi_cmcrFieldGsw1txMask  = 0x200
+	RegisterDsicmcrFieldGsw1txShift = 9
+	RegisterDsicmcrFieldGsw1txMask  = 0x200
 )
 
 // GetGsw1tx GSW1TX
-func (r *registerDsi_cmcrType) GetGsw1tx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldGsw1txMask) != 0
+func (r *registerDsicmcrType) GetGsw1tx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldGsw1txMask) != 0
 }
 
 // SetGsw1tx GSW1TX
-func (r *registerDsi_cmcrType) SetGsw1tx(value bool) {
+func (r *registerDsicmcrType) SetGsw1tx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldGsw1txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldGsw1txMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldGsw1txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldGsw1txMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldGsw2txShift = 10
-	RegisterDsi_cmcrFieldGsw2txMask  = 0x400
+	RegisterDsicmcrFieldGsw2txShift = 10
+	RegisterDsicmcrFieldGsw2txMask  = 0x400
 )
 
 // GetGsw2tx GSW2TX
-func (r *registerDsi_cmcrType) GetGsw2tx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldGsw2txMask) != 0
+func (r *registerDsicmcrType) GetGsw2tx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldGsw2txMask) != 0
 }
 
 // SetGsw2tx GSW2TX
-func (r *registerDsi_cmcrType) SetGsw2tx(value bool) {
+func (r *registerDsicmcrType) SetGsw2tx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldGsw2txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldGsw2txMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldGsw2txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldGsw2txMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldGsr0txShift = 11
-	RegisterDsi_cmcrFieldGsr0txMask  = 0x800
+	RegisterDsicmcrFieldGsr0txShift = 11
+	RegisterDsicmcrFieldGsr0txMask  = 0x800
 )
 
 // GetGsr0tx GSR0TX
-func (r *registerDsi_cmcrType) GetGsr0tx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldGsr0txMask) != 0
+func (r *registerDsicmcrType) GetGsr0tx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldGsr0txMask) != 0
 }
 
 // SetGsr0tx GSR0TX
-func (r *registerDsi_cmcrType) SetGsr0tx(value bool) {
+func (r *registerDsicmcrType) SetGsr0tx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldGsr0txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldGsr0txMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldGsr0txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldGsr0txMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldGsr1txShift = 12
-	RegisterDsi_cmcrFieldGsr1txMask  = 0x1000
+	RegisterDsicmcrFieldGsr1txShift = 12
+	RegisterDsicmcrFieldGsr1txMask  = 0x1000
 )
 
 // GetGsr1tx GSR1TX
-func (r *registerDsi_cmcrType) GetGsr1tx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldGsr1txMask) != 0
+func (r *registerDsicmcrType) GetGsr1tx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldGsr1txMask) != 0
 }
 
 // SetGsr1tx GSR1TX
-func (r *registerDsi_cmcrType) SetGsr1tx(value bool) {
+func (r *registerDsicmcrType) SetGsr1tx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldGsr1txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldGsr1txMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldGsr1txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldGsr1txMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldGsr2txShift = 13
-	RegisterDsi_cmcrFieldGsr2txMask  = 0x2000
+	RegisterDsicmcrFieldGsr2txShift = 13
+	RegisterDsicmcrFieldGsr2txMask  = 0x2000
 )
 
 // GetGsr2tx GSR2TX
-func (r *registerDsi_cmcrType) GetGsr2tx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldGsr2txMask) != 0
+func (r *registerDsicmcrType) GetGsr2tx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldGsr2txMask) != 0
 }
 
 // SetGsr2tx GSR2TX
-func (r *registerDsi_cmcrType) SetGsr2tx(value bool) {
+func (r *registerDsicmcrType) SetGsr2tx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldGsr2txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldGsr2txMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldGsr2txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldGsr2txMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldGlwtxShift = 14
-	RegisterDsi_cmcrFieldGlwtxMask  = 0x4000
+	RegisterDsicmcrFieldGlwtxShift = 14
+	RegisterDsicmcrFieldGlwtxMask  = 0x4000
 )
 
 // GetGlwtx GLWTX
-func (r *registerDsi_cmcrType) GetGlwtx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldGlwtxMask) != 0
+func (r *registerDsicmcrType) GetGlwtx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldGlwtxMask) != 0
 }
 
 // SetGlwtx GLWTX
-func (r *registerDsi_cmcrType) SetGlwtx(value bool) {
+func (r *registerDsicmcrType) SetGlwtx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldGlwtxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldGlwtxMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldGlwtxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldGlwtxMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldDsw0txShift = 16
-	RegisterDsi_cmcrFieldDsw0txMask  = 0x10000
+	RegisterDsicmcrFieldDsw0txShift = 16
+	RegisterDsicmcrFieldDsw0txMask  = 0x10000
 )
 
 // GetDsw0tx DSW0TX
-func (r *registerDsi_cmcrType) GetDsw0tx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldDsw0txMask) != 0
+func (r *registerDsicmcrType) GetDsw0tx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldDsw0txMask) != 0
 }
 
 // SetDsw0tx DSW0TX
-func (r *registerDsi_cmcrType) SetDsw0tx(value bool) {
+func (r *registerDsicmcrType) SetDsw0tx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldDsw0txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldDsw0txMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldDsw0txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldDsw0txMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldDsw1txShift = 17
-	RegisterDsi_cmcrFieldDsw1txMask  = 0x20000
+	RegisterDsicmcrFieldDsw1txShift = 17
+	RegisterDsicmcrFieldDsw1txMask  = 0x20000
 )
 
 // GetDsw1tx DSW1TX
-func (r *registerDsi_cmcrType) GetDsw1tx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldDsw1txMask) != 0
+func (r *registerDsicmcrType) GetDsw1tx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldDsw1txMask) != 0
 }
 
 // SetDsw1tx DSW1TX
-func (r *registerDsi_cmcrType) SetDsw1tx(value bool) {
+func (r *registerDsicmcrType) SetDsw1tx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldDsw1txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldDsw1txMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldDsw1txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldDsw1txMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldDsr0txShift = 18
-	RegisterDsi_cmcrFieldDsr0txMask  = 0x40000
+	RegisterDsicmcrFieldDsr0txShift = 18
+	RegisterDsicmcrFieldDsr0txMask  = 0x40000
 )
 
 // GetDsr0tx DSR0TX
-func (r *registerDsi_cmcrType) GetDsr0tx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldDsr0txMask) != 0
+func (r *registerDsicmcrType) GetDsr0tx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldDsr0txMask) != 0
 }
 
 // SetDsr0tx DSR0TX
-func (r *registerDsi_cmcrType) SetDsr0tx(value bool) {
+func (r *registerDsicmcrType) SetDsr0tx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldDsr0txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldDsr0txMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldDsr0txMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldDsr0txMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldDlwtxShift = 19
-	RegisterDsi_cmcrFieldDlwtxMask  = 0x80000
+	RegisterDsicmcrFieldDlwtxShift = 19
+	RegisterDsicmcrFieldDlwtxMask  = 0x80000
 )
 
 // GetDlwtx DLWTX
-func (r *registerDsi_cmcrType) GetDlwtx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldDlwtxMask) != 0
+func (r *registerDsicmcrType) GetDlwtx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldDlwtxMask) != 0
 }
 
 // SetDlwtx DLWTX
-func (r *registerDsi_cmcrType) SetDlwtx(value bool) {
+func (r *registerDsicmcrType) SetDlwtx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldDlwtxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldDlwtxMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldDlwtxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldDlwtxMask)
 	}
 }
 
 const (
-	RegisterDsi_cmcrFieldMrdpsShift = 24
-	RegisterDsi_cmcrFieldMrdpsMask  = 0x1000000
+	RegisterDsicmcrFieldMrdpsShift = 24
+	RegisterDsicmcrFieldMrdpsMask  = 0x1000000
 )
 
 // GetMrdps MRDPS
-func (r *registerDsi_cmcrType) GetMrdps() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cmcrFieldMrdpsMask) != 0
+func (r *registerDsicmcrType) GetMrdps() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsicmcrFieldMrdpsMask) != 0
 }
 
 // SetMrdps MRDPS
-func (r *registerDsi_cmcrType) SetMrdps(value bool) {
+func (r *registerDsicmcrType) SetMrdps(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_cmcrFieldMrdpsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsicmcrFieldMrdpsMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cmcrFieldMrdpsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsicmcrFieldMrdpsMask)
 	}
 }
 
-// registerDsi_ghcrType DSI Host generic header configuration register
-type registerDsi_ghcrType uint32
+// registerDsighcrType DSI Host generic header configuration register
+type registerDsighcrType uint32
 
 const (
-	RegisterDsi_ghcrFieldDtShift = 0
-	RegisterDsi_ghcrFieldDtMask  = 0x3f
+	RegisterDsighcrFieldDtShift = 0
+	RegisterDsighcrFieldDtMask  = 0x3f
 )
 
 // GetDt DT
-func (r *registerDsi_ghcrType) GetDt() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ghcrFieldDtMask) >> RegisterDsi_ghcrFieldDtShift)
+func (r *registerDsighcrType) GetDt() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsighcrFieldDtMask) >> RegisterDsighcrFieldDtShift)
 }
 
 // SetDt DT
-func (r *registerDsi_ghcrType) SetDt(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ghcrFieldDtMask)|(uint32(value)<<RegisterDsi_ghcrFieldDtShift))
+func (r *registerDsighcrType) SetDt(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsighcrFieldDtMask)|(uint32(value)<<RegisterDsighcrFieldDtShift))
 }
 
 const (
-	RegisterDsi_ghcrFieldVcidShift = 6
-	RegisterDsi_ghcrFieldVcidMask  = 0xc0
+	RegisterDsighcrFieldVcidShift = 6
+	RegisterDsighcrFieldVcidMask  = 0xc0
 )
 
 // GetVcid VCID
-func (r *registerDsi_ghcrType) GetVcid() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ghcrFieldVcidMask) >> RegisterDsi_ghcrFieldVcidShift)
+func (r *registerDsighcrType) GetVcid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsighcrFieldVcidMask) >> RegisterDsighcrFieldVcidShift)
 }
 
 // SetVcid VCID
-func (r *registerDsi_ghcrType) SetVcid(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ghcrFieldVcidMask)|(uint32(value)<<RegisterDsi_ghcrFieldVcidShift))
+func (r *registerDsighcrType) SetVcid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsighcrFieldVcidMask)|(uint32(value)<<RegisterDsighcrFieldVcidShift))
 }
 
 const (
-	RegisterDsi_ghcrFieldWclsbShift = 8
-	RegisterDsi_ghcrFieldWclsbMask  = 0xff00
+	RegisterDsighcrFieldWclsbShift = 8
+	RegisterDsighcrFieldWclsbMask  = 0xff00
 )
 
 // GetWclsb WCLSB
-func (r *registerDsi_ghcrType) GetWclsb() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ghcrFieldWclsbMask) >> RegisterDsi_ghcrFieldWclsbShift)
+func (r *registerDsighcrType) GetWclsb() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsighcrFieldWclsbMask) >> RegisterDsighcrFieldWclsbShift)
 }
 
 // SetWclsb WCLSB
-func (r *registerDsi_ghcrType) SetWclsb(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ghcrFieldWclsbMask)|(uint32(value)<<RegisterDsi_ghcrFieldWclsbShift))
+func (r *registerDsighcrType) SetWclsb(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsighcrFieldWclsbMask)|(uint32(value)<<RegisterDsighcrFieldWclsbShift))
 }
 
 const (
-	RegisterDsi_ghcrFieldWcmsbShift = 16
-	RegisterDsi_ghcrFieldWcmsbMask  = 0xff0000
+	RegisterDsighcrFieldWcmsbShift = 16
+	RegisterDsighcrFieldWcmsbMask  = 0xff0000
 )
 
 // GetWcmsb WCMSB
-func (r *registerDsi_ghcrType) GetWcmsb() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ghcrFieldWcmsbMask) >> RegisterDsi_ghcrFieldWcmsbShift)
+func (r *registerDsighcrType) GetWcmsb() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsighcrFieldWcmsbMask) >> RegisterDsighcrFieldWcmsbShift)
 }
 
 // SetWcmsb WCMSB
-func (r *registerDsi_ghcrType) SetWcmsb(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ghcrFieldWcmsbMask)|(uint32(value)<<RegisterDsi_ghcrFieldWcmsbShift))
+func (r *registerDsighcrType) SetWcmsb(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsighcrFieldWcmsbMask)|(uint32(value)<<RegisterDsighcrFieldWcmsbShift))
 }
 
-// registerDsi_gpdrType DSI Host generic payload data register
-type registerDsi_gpdrType uint32
+// registerDsigpdrType DSI Host generic payload data register
+type registerDsigpdrType uint32
 
 const (
-	RegisterDsi_gpdrFieldData1Shift = 0
-	RegisterDsi_gpdrFieldData1Mask  = 0xff
+	RegisterDsigpdrFieldData1Shift = 0
+	RegisterDsigpdrFieldData1Mask  = 0xff
 )
 
 // GetData1 DATA1
-func (r *registerDsi_gpdrType) GetData1() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpdrFieldData1Mask) >> RegisterDsi_gpdrFieldData1Shift)
+func (r *registerDsigpdrType) GetData1() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsigpdrFieldData1Mask) >> RegisterDsigpdrFieldData1Shift)
 }
 
 // SetData1 DATA1
-func (r *registerDsi_gpdrType) SetData1(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpdrFieldData1Mask)|(uint32(value)<<RegisterDsi_gpdrFieldData1Shift))
+func (r *registerDsigpdrType) SetData1(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsigpdrFieldData1Mask)|(uint32(value)<<RegisterDsigpdrFieldData1Shift))
 }
 
 const (
-	RegisterDsi_gpdrFieldData2Shift = 8
-	RegisterDsi_gpdrFieldData2Mask  = 0xff00
+	RegisterDsigpdrFieldData2Shift = 8
+	RegisterDsigpdrFieldData2Mask  = 0xff00
 )
 
 // GetData2 DATA2
-func (r *registerDsi_gpdrType) GetData2() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpdrFieldData2Mask) >> RegisterDsi_gpdrFieldData2Shift)
+func (r *registerDsigpdrType) GetData2() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsigpdrFieldData2Mask) >> RegisterDsigpdrFieldData2Shift)
 }
 
 // SetData2 DATA2
-func (r *registerDsi_gpdrType) SetData2(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpdrFieldData2Mask)|(uint32(value)<<RegisterDsi_gpdrFieldData2Shift))
+func (r *registerDsigpdrType) SetData2(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsigpdrFieldData2Mask)|(uint32(value)<<RegisterDsigpdrFieldData2Shift))
 }
 
 const (
-	RegisterDsi_gpdrFieldData3Shift = 16
-	RegisterDsi_gpdrFieldData3Mask  = 0xff0000
+	RegisterDsigpdrFieldData3Shift = 16
+	RegisterDsigpdrFieldData3Mask  = 0xff0000
 )
 
 // GetData3 DATA3
-func (r *registerDsi_gpdrType) GetData3() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpdrFieldData3Mask) >> RegisterDsi_gpdrFieldData3Shift)
+func (r *registerDsigpdrType) GetData3() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsigpdrFieldData3Mask) >> RegisterDsigpdrFieldData3Shift)
 }
 
 // SetData3 DATA3
-func (r *registerDsi_gpdrType) SetData3(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpdrFieldData3Mask)|(uint32(value)<<RegisterDsi_gpdrFieldData3Shift))
+func (r *registerDsigpdrType) SetData3(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsigpdrFieldData3Mask)|(uint32(value)<<RegisterDsigpdrFieldData3Shift))
 }
 
 const (
-	RegisterDsi_gpdrFieldData4Shift = 24
-	RegisterDsi_gpdrFieldData4Mask  = 0xff000000
+	RegisterDsigpdrFieldData4Shift = 24
+	RegisterDsigpdrFieldData4Mask  = 0xff000000
 )
 
 // GetData4 DATA4
-func (r *registerDsi_gpdrType) GetData4() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpdrFieldData4Mask) >> RegisterDsi_gpdrFieldData4Shift)
+func (r *registerDsigpdrType) GetData4() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsigpdrFieldData4Mask) >> RegisterDsigpdrFieldData4Shift)
 }
 
 // SetData4 DATA4
-func (r *registerDsi_gpdrType) SetData4(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpdrFieldData4Mask)|(uint32(value)<<RegisterDsi_gpdrFieldData4Shift))
+func (r *registerDsigpdrType) SetData4(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsigpdrFieldData4Mask)|(uint32(value)<<RegisterDsigpdrFieldData4Shift))
 }
 
-// registerDsi_gpsrType DSI Host generic packet status register
-type registerDsi_gpsrType uint32
+// registerDsigpsrType DSI Host generic packet status register
+type registerDsigpsrType uint32
 
 const (
-	RegisterDsi_gpsrFieldCmdfeShift = 0
-	RegisterDsi_gpsrFieldCmdfeMask  = 0x1
+	RegisterDsigpsrFieldCmdfeShift = 0
+	RegisterDsigpsrFieldCmdfeMask  = 0x1
 )
 
 // GetCmdfe CMDFE
-func (r *registerDsi_gpsrType) GetCmdfe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpsrFieldCmdfeMask) != 0
+func (r *registerDsigpsrType) GetCmdfe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsigpsrFieldCmdfeMask) != 0
 }
 
 // SetCmdfe CMDFE
-func (r *registerDsi_gpsrType) SetCmdfe(value bool) {
+func (r *registerDsigpsrType) SetCmdfe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_gpsrFieldCmdfeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsigpsrFieldCmdfeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpsrFieldCmdfeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsigpsrFieldCmdfeMask)
 	}
 }
 
 const (
-	RegisterDsi_gpsrFieldCmdffShift = 1
-	RegisterDsi_gpsrFieldCmdffMask  = 0x2
+	RegisterDsigpsrFieldCmdffShift = 1
+	RegisterDsigpsrFieldCmdffMask  = 0x2
 )
 
 // GetCmdff CMDFF
-func (r *registerDsi_gpsrType) GetCmdff() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpsrFieldCmdffMask) != 0
+func (r *registerDsigpsrType) GetCmdff() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsigpsrFieldCmdffMask) != 0
 }
 
 // SetCmdff CMDFF
-func (r *registerDsi_gpsrType) SetCmdff(value bool) {
+func (r *registerDsigpsrType) SetCmdff(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_gpsrFieldCmdffMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsigpsrFieldCmdffMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpsrFieldCmdffMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsigpsrFieldCmdffMask)
 	}
 }
 
 const (
-	RegisterDsi_gpsrFieldPwrfeShift = 2
-	RegisterDsi_gpsrFieldPwrfeMask  = 0x4
+	RegisterDsigpsrFieldPwrfeShift = 2
+	RegisterDsigpsrFieldPwrfeMask  = 0x4
 )
 
 // GetPwrfe PWRFE
-func (r *registerDsi_gpsrType) GetPwrfe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpsrFieldPwrfeMask) != 0
+func (r *registerDsigpsrType) GetPwrfe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsigpsrFieldPwrfeMask) != 0
 }
 
 // SetPwrfe PWRFE
-func (r *registerDsi_gpsrType) SetPwrfe(value bool) {
+func (r *registerDsigpsrType) SetPwrfe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_gpsrFieldPwrfeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsigpsrFieldPwrfeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpsrFieldPwrfeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsigpsrFieldPwrfeMask)
 	}
 }
 
 const (
-	RegisterDsi_gpsrFieldPwrffShift = 3
-	RegisterDsi_gpsrFieldPwrffMask  = 0x8
+	RegisterDsigpsrFieldPwrffShift = 3
+	RegisterDsigpsrFieldPwrffMask  = 0x8
 )
 
 // GetPwrff PWRFF
-func (r *registerDsi_gpsrType) GetPwrff() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpsrFieldPwrffMask) != 0
+func (r *registerDsigpsrType) GetPwrff() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsigpsrFieldPwrffMask) != 0
 }
 
 // SetPwrff PWRFF
-func (r *registerDsi_gpsrType) SetPwrff(value bool) {
+func (r *registerDsigpsrType) SetPwrff(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_gpsrFieldPwrffMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsigpsrFieldPwrffMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpsrFieldPwrffMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsigpsrFieldPwrffMask)
 	}
 }
 
 const (
-	RegisterDsi_gpsrFieldPrdfeShift = 4
-	RegisterDsi_gpsrFieldPrdfeMask  = 0x10
+	RegisterDsigpsrFieldPrdfeShift = 4
+	RegisterDsigpsrFieldPrdfeMask  = 0x10
 )
 
 // GetPrdfe PRDFE
-func (r *registerDsi_gpsrType) GetPrdfe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpsrFieldPrdfeMask) != 0
+func (r *registerDsigpsrType) GetPrdfe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsigpsrFieldPrdfeMask) != 0
 }
 
 // SetPrdfe PRDFE
-func (r *registerDsi_gpsrType) SetPrdfe(value bool) {
+func (r *registerDsigpsrType) SetPrdfe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_gpsrFieldPrdfeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsigpsrFieldPrdfeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpsrFieldPrdfeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsigpsrFieldPrdfeMask)
 	}
 }
 
 const (
-	RegisterDsi_gpsrFieldPrdffShift = 5
-	RegisterDsi_gpsrFieldPrdffMask  = 0x20
+	RegisterDsigpsrFieldPrdffShift = 5
+	RegisterDsigpsrFieldPrdffMask  = 0x20
 )
 
 // GetPrdff PRDFF
-func (r *registerDsi_gpsrType) GetPrdff() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpsrFieldPrdffMask) != 0
+func (r *registerDsigpsrType) GetPrdff() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsigpsrFieldPrdffMask) != 0
 }
 
 // SetPrdff PRDFF
-func (r *registerDsi_gpsrType) SetPrdff(value bool) {
+func (r *registerDsigpsrType) SetPrdff(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_gpsrFieldPrdffMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsigpsrFieldPrdffMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpsrFieldPrdffMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsigpsrFieldPrdffMask)
 	}
 }
 
 const (
-	RegisterDsi_gpsrFieldRcbShift = 6
-	RegisterDsi_gpsrFieldRcbMask  = 0x40
+	RegisterDsigpsrFieldRcbShift = 6
+	RegisterDsigpsrFieldRcbMask  = 0x40
 )
 
 // GetRcb RCB
-func (r *registerDsi_gpsrType) GetRcb() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_gpsrFieldRcbMask) != 0
+func (r *registerDsigpsrType) GetRcb() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsigpsrFieldRcbMask) != 0
 }
 
 // SetRcb RCB
-func (r *registerDsi_gpsrType) SetRcb(value bool) {
+func (r *registerDsigpsrType) SetRcb(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_gpsrFieldRcbMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsigpsrFieldRcbMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_gpsrFieldRcbMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsigpsrFieldRcbMask)
 	}
 }
 
-// registerDsi_tccr0Type DSI Host timeout counter configuration register 0
-type registerDsi_tccr0Type uint32
+// registerDsitccr0Type DSI Host timeout counter configuration register 0
+type registerDsitccr0Type uint32
 
 const (
-	RegisterDsi_tccr0FieldLprx_tocntShift = 0
-	RegisterDsi_tccr0FieldLprx_tocntMask  = 0xffff
+	RegisterDsitccr0FieldLprxtocntShift = 0
+	RegisterDsitccr0FieldLprxtocntMask  = 0xffff
 )
 
-// GetLprx_tocnt LPRX_TOCNT
-func (r *registerDsi_tccr0Type) GetLprx_tocnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_tccr0FieldLprx_tocntMask) >> RegisterDsi_tccr0FieldLprx_tocntShift)
+// GetLprxtocnt LPRX_TOCNT
+func (r *registerDsitccr0Type) GetLprxtocnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsitccr0FieldLprxtocntMask) >> RegisterDsitccr0FieldLprxtocntShift)
 }
 
-// SetLprx_tocnt LPRX_TOCNT
-func (r *registerDsi_tccr0Type) SetLprx_tocnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_tccr0FieldLprx_tocntMask)|(uint32(value)<<RegisterDsi_tccr0FieldLprx_tocntShift))
+// SetLprxtocnt LPRX_TOCNT
+func (r *registerDsitccr0Type) SetLprxtocnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsitccr0FieldLprxtocntMask)|(uint32(value)<<RegisterDsitccr0FieldLprxtocntShift))
 }
 
 const (
-	RegisterDsi_tccr0FieldHstx_tocntShift = 16
-	RegisterDsi_tccr0FieldHstx_tocntMask  = 0xffff0000
+	RegisterDsitccr0FieldHstxtocntShift = 16
+	RegisterDsitccr0FieldHstxtocntMask  = 0xffff0000
 )
 
-// GetHstx_tocnt HSTX_TOCNT
-func (r *registerDsi_tccr0Type) GetHstx_tocnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_tccr0FieldHstx_tocntMask) >> RegisterDsi_tccr0FieldHstx_tocntShift)
+// GetHstxtocnt HSTX_TOCNT
+func (r *registerDsitccr0Type) GetHstxtocnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsitccr0FieldHstxtocntMask) >> RegisterDsitccr0FieldHstxtocntShift)
 }
 
-// SetHstx_tocnt HSTX_TOCNT
-func (r *registerDsi_tccr0Type) SetHstx_tocnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_tccr0FieldHstx_tocntMask)|(uint32(value)<<RegisterDsi_tccr0FieldHstx_tocntShift))
+// SetHstxtocnt HSTX_TOCNT
+func (r *registerDsitccr0Type) SetHstxtocnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsitccr0FieldHstxtocntMask)|(uint32(value)<<RegisterDsitccr0FieldHstxtocntShift))
 }
 
-// registerDsi_tccr1Type DSI Host timeout counter configuration register 1
-type registerDsi_tccr1Type uint32
+// registerDsitccr1Type DSI Host timeout counter configuration register 1
+type registerDsitccr1Type uint32
 
 const (
-	RegisterDsi_tccr1FieldHsrd_tocntShift = 0
-	RegisterDsi_tccr1FieldHsrd_tocntMask  = 0xffff
+	RegisterDsitccr1FieldHsrdtocntShift = 0
+	RegisterDsitccr1FieldHsrdtocntMask  = 0xffff
 )
 
-// GetHsrd_tocnt HSRD_TOCNT
-func (r *registerDsi_tccr1Type) GetHsrd_tocnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_tccr1FieldHsrd_tocntMask) >> RegisterDsi_tccr1FieldHsrd_tocntShift)
+// GetHsrdtocnt HSRD_TOCNT
+func (r *registerDsitccr1Type) GetHsrdtocnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsitccr1FieldHsrdtocntMask) >> RegisterDsitccr1FieldHsrdtocntShift)
 }
 
-// SetHsrd_tocnt HSRD_TOCNT
-func (r *registerDsi_tccr1Type) SetHsrd_tocnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_tccr1FieldHsrd_tocntMask)|(uint32(value)<<RegisterDsi_tccr1FieldHsrd_tocntShift))
+// SetHsrdtocnt HSRD_TOCNT
+func (r *registerDsitccr1Type) SetHsrdtocnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsitccr1FieldHsrdtocntMask)|(uint32(value)<<RegisterDsitccr1FieldHsrdtocntShift))
 }
 
-// registerDsi_tccr2Type DSI Host timeout counter configuration register 2
-type registerDsi_tccr2Type uint32
+// registerDsitccr2Type DSI Host timeout counter configuration register 2
+type registerDsitccr2Type uint32
 
 const (
-	RegisterDsi_tccr2FieldLprd_tocntShift = 0
-	RegisterDsi_tccr2FieldLprd_tocntMask  = 0xffff
+	RegisterDsitccr2FieldLprdtocntShift = 0
+	RegisterDsitccr2FieldLprdtocntMask  = 0xffff
 )
 
-// GetLprd_tocnt LPRD_TOCNT
-func (r *registerDsi_tccr2Type) GetLprd_tocnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_tccr2FieldLprd_tocntMask) >> RegisterDsi_tccr2FieldLprd_tocntShift)
+// GetLprdtocnt LPRD_TOCNT
+func (r *registerDsitccr2Type) GetLprdtocnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsitccr2FieldLprdtocntMask) >> RegisterDsitccr2FieldLprdtocntShift)
 }
 
-// SetLprd_tocnt LPRD_TOCNT
-func (r *registerDsi_tccr2Type) SetLprd_tocnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_tccr2FieldLprd_tocntMask)|(uint32(value)<<RegisterDsi_tccr2FieldLprd_tocntShift))
+// SetLprdtocnt LPRD_TOCNT
+func (r *registerDsitccr2Type) SetLprdtocnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsitccr2FieldLprdtocntMask)|(uint32(value)<<RegisterDsitccr2FieldLprdtocntShift))
 }
 
-// registerDsi_tccr3Type DSI Host timeout counter configuration register 3
-type registerDsi_tccr3Type uint32
+// registerDsitccr3Type DSI Host timeout counter configuration register 3
+type registerDsitccr3Type uint32
 
 const (
-	RegisterDsi_tccr3FieldHswr_tocntShift = 0
-	RegisterDsi_tccr3FieldHswr_tocntMask  = 0xffff
+	RegisterDsitccr3FieldHswrtocntShift = 0
+	RegisterDsitccr3FieldHswrtocntMask  = 0xffff
 )
 
-// GetHswr_tocnt HSWR_TOCNT
-func (r *registerDsi_tccr3Type) GetHswr_tocnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_tccr3FieldHswr_tocntMask) >> RegisterDsi_tccr3FieldHswr_tocntShift)
+// GetHswrtocnt HSWR_TOCNT
+func (r *registerDsitccr3Type) GetHswrtocnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsitccr3FieldHswrtocntMask) >> RegisterDsitccr3FieldHswrtocntShift)
 }
 
-// SetHswr_tocnt HSWR_TOCNT
-func (r *registerDsi_tccr3Type) SetHswr_tocnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_tccr3FieldHswr_tocntMask)|(uint32(value)<<RegisterDsi_tccr3FieldHswr_tocntShift))
+// SetHswrtocnt HSWR_TOCNT
+func (r *registerDsitccr3Type) SetHswrtocnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsitccr3FieldHswrtocntMask)|(uint32(value)<<RegisterDsitccr3FieldHswrtocntShift))
 }
 
 const (
-	RegisterDsi_tccr3FieldPmShift = 24
-	RegisterDsi_tccr3FieldPmMask  = 0x1000000
+	RegisterDsitccr3FieldPmShift = 24
+	RegisterDsitccr3FieldPmMask  = 0x1000000
 )
 
 // GetPm PM
-func (r *registerDsi_tccr3Type) GetPm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_tccr3FieldPmMask) != 0
+func (r *registerDsitccr3Type) GetPm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsitccr3FieldPmMask) != 0
 }
 
 // SetPm PM
-func (r *registerDsi_tccr3Type) SetPm(value bool) {
+func (r *registerDsitccr3Type) SetPm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_tccr3FieldPmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsitccr3FieldPmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_tccr3FieldPmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsitccr3FieldPmMask)
 	}
 }
 
-// registerDsi_tccr4Type DSI Host timeout counter configuration register 4
-type registerDsi_tccr4Type uint32
+// registerDsitccr4Type DSI Host timeout counter configuration register 4
+type registerDsitccr4Type uint32
 
 const (
-	RegisterDsi_tccr4FieldLpwr_tocntShift = 0
-	RegisterDsi_tccr4FieldLpwr_tocntMask  = 0xffff
+	RegisterDsitccr4FieldLpwrtocntShift = 0
+	RegisterDsitccr4FieldLpwrtocntMask  = 0xffff
 )
 
-// GetLpwr_tocnt LPWR_TOCNT
-func (r *registerDsi_tccr4Type) GetLpwr_tocnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_tccr4FieldLpwr_tocntMask) >> RegisterDsi_tccr4FieldLpwr_tocntShift)
+// GetLpwrtocnt LPWR_TOCNT
+func (r *registerDsitccr4Type) GetLpwrtocnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsitccr4FieldLpwrtocntMask) >> RegisterDsitccr4FieldLpwrtocntShift)
 }
 
-// SetLpwr_tocnt LPWR_TOCNT
-func (r *registerDsi_tccr4Type) SetLpwr_tocnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_tccr4FieldLpwr_tocntMask)|(uint32(value)<<RegisterDsi_tccr4FieldLpwr_tocntShift))
+// SetLpwrtocnt LPWR_TOCNT
+func (r *registerDsitccr4Type) SetLpwrtocnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsitccr4FieldLpwrtocntMask)|(uint32(value)<<RegisterDsitccr4FieldLpwrtocntShift))
 }
 
-// registerDsi_tccr5Type DSI Host timeout counter configuration register 5
-type registerDsi_tccr5Type uint32
+// registerDsitccr5Type DSI Host timeout counter configuration register 5
+type registerDsitccr5Type uint32
 
 const (
-	RegisterDsi_tccr5FieldBta_tocntShift = 0
-	RegisterDsi_tccr5FieldBta_tocntMask  = 0xffff
+	RegisterDsitccr5FieldBtatocntShift = 0
+	RegisterDsitccr5FieldBtatocntMask  = 0xffff
 )
 
-// GetBta_tocnt BTA_TOCNT
-func (r *registerDsi_tccr5Type) GetBta_tocnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_tccr5FieldBta_tocntMask) >> RegisterDsi_tccr5FieldBta_tocntShift)
+// GetBtatocnt BTA_TOCNT
+func (r *registerDsitccr5Type) GetBtatocnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsitccr5FieldBtatocntMask) >> RegisterDsitccr5FieldBtatocntShift)
 }
 
-// SetBta_tocnt BTA_TOCNT
-func (r *registerDsi_tccr5Type) SetBta_tocnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_tccr5FieldBta_tocntMask)|(uint32(value)<<RegisterDsi_tccr5FieldBta_tocntShift))
+// SetBtatocnt BTA_TOCNT
+func (r *registerDsitccr5Type) SetBtatocnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsitccr5FieldBtatocntMask)|(uint32(value)<<RegisterDsitccr5FieldBtatocntShift))
 }
 
-// registerDsi_clcrType DSI Host clock lane configuration register
-type registerDsi_clcrType uint32
+// registerDsiclcrType DSI Host clock lane configuration register
+type registerDsiclcrType uint32
 
 const (
-	RegisterDsi_clcrFieldDpccShift = 0
-	RegisterDsi_clcrFieldDpccMask  = 0x1
+	RegisterDsiclcrFieldDpccShift = 0
+	RegisterDsiclcrFieldDpccMask  = 0x1
 )
 
 // GetDpcc DPCC
-func (r *registerDsi_clcrType) GetDpcc() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_clcrFieldDpccMask) != 0
+func (r *registerDsiclcrType) GetDpcc() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiclcrFieldDpccMask) != 0
 }
 
 // SetDpcc DPCC
-func (r *registerDsi_clcrType) SetDpcc(value bool) {
+func (r *registerDsiclcrType) SetDpcc(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_clcrFieldDpccMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiclcrFieldDpccMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_clcrFieldDpccMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiclcrFieldDpccMask)
 	}
 }
 
 const (
-	RegisterDsi_clcrFieldAcrShift = 1
-	RegisterDsi_clcrFieldAcrMask  = 0x2
+	RegisterDsiclcrFieldAcrShift = 1
+	RegisterDsiclcrFieldAcrMask  = 0x2
 )
 
 // GetAcr ACR
-func (r *registerDsi_clcrType) GetAcr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_clcrFieldAcrMask) != 0
+func (r *registerDsiclcrType) GetAcr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiclcrFieldAcrMask) != 0
 }
 
 // SetAcr ACR
-func (r *registerDsi_clcrType) SetAcr(value bool) {
+func (r *registerDsiclcrType) SetAcr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_clcrFieldAcrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiclcrFieldAcrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_clcrFieldAcrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiclcrFieldAcrMask)
 	}
 }
 
-// registerDsi_cltcrType DSI Host clock lane timer configuration register
-type registerDsi_cltcrType uint32
+// registerDsicltcrType DSI Host clock lane timer configuration register
+type registerDsicltcrType uint32
 
 const (
-	RegisterDsi_cltcrFieldLp2hs_timeShift = 0
-	RegisterDsi_cltcrFieldLp2hs_timeMask  = 0x3ff
+	RegisterDsicltcrFieldLp2hstimeShift = 0
+	RegisterDsicltcrFieldLp2hstimeMask  = 0x3ff
 )
 
-// GetLp2hs_time LP2HS_TIME
-func (r *registerDsi_cltcrType) GetLp2hs_time() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cltcrFieldLp2hs_timeMask) >> RegisterDsi_cltcrFieldLp2hs_timeShift)
+// GetLp2hstime LP2HS_TIME
+func (r *registerDsicltcrType) GetLp2hstime() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsicltcrFieldLp2hstimeMask) >> RegisterDsicltcrFieldLp2hstimeShift)
 }
 
-// SetLp2hs_time LP2HS_TIME
-func (r *registerDsi_cltcrType) SetLp2hs_time(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cltcrFieldLp2hs_timeMask)|(uint32(value)<<RegisterDsi_cltcrFieldLp2hs_timeShift))
+// SetLp2hstime LP2HS_TIME
+func (r *registerDsicltcrType) SetLp2hstime(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsicltcrFieldLp2hstimeMask)|(uint32(value)<<RegisterDsicltcrFieldLp2hstimeShift))
 }
 
 const (
-	RegisterDsi_cltcrFieldHs2lp_timeShift = 16
-	RegisterDsi_cltcrFieldHs2lp_timeMask  = 0x3ff0000
+	RegisterDsicltcrFieldHs2lptimeShift = 16
+	RegisterDsicltcrFieldHs2lptimeMask  = 0x3ff0000
 )
 
-// GetHs2lp_time HS2LP_TIME
-func (r *registerDsi_cltcrType) GetHs2lp_time() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_cltcrFieldHs2lp_timeMask) >> RegisterDsi_cltcrFieldHs2lp_timeShift)
+// GetHs2lptime HS2LP_TIME
+func (r *registerDsicltcrType) GetHs2lptime() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsicltcrFieldHs2lptimeMask) >> RegisterDsicltcrFieldHs2lptimeShift)
 }
 
-// SetHs2lp_time HS2LP_TIME
-func (r *registerDsi_cltcrType) SetHs2lp_time(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_cltcrFieldHs2lp_timeMask)|(uint32(value)<<RegisterDsi_cltcrFieldHs2lp_timeShift))
+// SetHs2lptime HS2LP_TIME
+func (r *registerDsicltcrType) SetHs2lptime(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsicltcrFieldHs2lptimeMask)|(uint32(value)<<RegisterDsicltcrFieldHs2lptimeShift))
 }
 
-// registerDsi_dltcrType DSI Host data lane timer configuration register
-type registerDsi_dltcrType uint32
+// registerDsidltcrType DSI Host data lane timer configuration register
+type registerDsidltcrType uint32
 
 const (
-	RegisterDsi_dltcrFieldMrd_timeShift = 0
-	RegisterDsi_dltcrFieldMrd_timeMask  = 0x7fff
+	RegisterDsidltcrFieldMrdtimeShift = 0
+	RegisterDsidltcrFieldMrdtimeMask  = 0x7fff
 )
 
-// GetMrd_time Maximum read time
-func (r *registerDsi_dltcrType) GetMrd_time() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_dltcrFieldMrd_timeMask) >> RegisterDsi_dltcrFieldMrd_timeShift)
+// GetMrdtime Maximum read time
+func (r *registerDsidltcrType) GetMrdtime() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsidltcrFieldMrdtimeMask) >> RegisterDsidltcrFieldMrdtimeShift)
 }
 
-// SetMrd_time Maximum read time
-func (r *registerDsi_dltcrType) SetMrd_time(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_dltcrFieldMrd_timeMask)|(uint32(value)<<RegisterDsi_dltcrFieldMrd_timeShift))
+// SetMrdtime Maximum read time
+func (r *registerDsidltcrType) SetMrdtime(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsidltcrFieldMrdtimeMask)|(uint32(value)<<RegisterDsidltcrFieldMrdtimeShift))
 }
 
 const (
-	RegisterDsi_dltcrFieldLp2hs_timeShift = 16
-	RegisterDsi_dltcrFieldLp2hs_timeMask  = 0xff0000
+	RegisterDsidltcrFieldLp2hstimeShift = 16
+	RegisterDsidltcrFieldLp2hstimeMask  = 0xff0000
 )
 
-// GetLp2hs_time LP2HS_TIME
-func (r *registerDsi_dltcrType) GetLp2hs_time() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_dltcrFieldLp2hs_timeMask) >> RegisterDsi_dltcrFieldLp2hs_timeShift)
+// GetLp2hstime LP2HS_TIME
+func (r *registerDsidltcrType) GetLp2hstime() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsidltcrFieldLp2hstimeMask) >> RegisterDsidltcrFieldLp2hstimeShift)
 }
 
-// SetLp2hs_time LP2HS_TIME
-func (r *registerDsi_dltcrType) SetLp2hs_time(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_dltcrFieldLp2hs_timeMask)|(uint32(value)<<RegisterDsi_dltcrFieldLp2hs_timeShift))
+// SetLp2hstime LP2HS_TIME
+func (r *registerDsidltcrType) SetLp2hstime(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsidltcrFieldLp2hstimeMask)|(uint32(value)<<RegisterDsidltcrFieldLp2hstimeShift))
 }
 
 const (
-	RegisterDsi_dltcrFieldHs2lp_timeShift = 24
-	RegisterDsi_dltcrFieldHs2lp_timeMask  = 0xff000000
+	RegisterDsidltcrFieldHs2lptimeShift = 24
+	RegisterDsidltcrFieldHs2lptimeMask  = 0xff000000
 )
 
-// GetHs2lp_time HS2LP_TIME
-func (r *registerDsi_dltcrType) GetHs2lp_time() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_dltcrFieldHs2lp_timeMask) >> RegisterDsi_dltcrFieldHs2lp_timeShift)
+// GetHs2lptime HS2LP_TIME
+func (r *registerDsidltcrType) GetHs2lptime() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsidltcrFieldHs2lptimeMask) >> RegisterDsidltcrFieldHs2lptimeShift)
 }
 
-// SetHs2lp_time HS2LP_TIME
-func (r *registerDsi_dltcrType) SetHs2lp_time(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_dltcrFieldHs2lp_timeMask)|(uint32(value)<<RegisterDsi_dltcrFieldHs2lp_timeShift))
+// SetHs2lptime HS2LP_TIME
+func (r *registerDsidltcrType) SetHs2lptime(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsidltcrFieldHs2lptimeMask)|(uint32(value)<<RegisterDsidltcrFieldHs2lptimeShift))
 }
 
-// registerDsi_pctlrType DSI Host PHY control register
-type registerDsi_pctlrType uint32
+// registerDsipctlrType DSI Host PHY control register
+type registerDsipctlrType uint32
 
 const (
-	RegisterDsi_pctlrFieldDenShift = 1
-	RegisterDsi_pctlrFieldDenMask  = 0x2
+	RegisterDsipctlrFieldDenShift = 1
+	RegisterDsipctlrFieldDenMask  = 0x2
 )
 
 // GetDen DEN
-func (r *registerDsi_pctlrType) GetDen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pctlrFieldDenMask) != 0
+func (r *registerDsipctlrType) GetDen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipctlrFieldDenMask) != 0
 }
 
 // SetDen DEN
-func (r *registerDsi_pctlrType) SetDen(value bool) {
+func (r *registerDsipctlrType) SetDen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pctlrFieldDenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipctlrFieldDenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pctlrFieldDenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipctlrFieldDenMask)
 	}
 }
 
 const (
-	RegisterDsi_pctlrFieldCkeShift = 2
-	RegisterDsi_pctlrFieldCkeMask  = 0x4
+	RegisterDsipctlrFieldCkeShift = 2
+	RegisterDsipctlrFieldCkeMask  = 0x4
 )
 
 // GetCke CKE
-func (r *registerDsi_pctlrType) GetCke() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pctlrFieldCkeMask) != 0
+func (r *registerDsipctlrType) GetCke() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipctlrFieldCkeMask) != 0
 }
 
 // SetCke CKE
-func (r *registerDsi_pctlrType) SetCke(value bool) {
+func (r *registerDsipctlrType) SetCke(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pctlrFieldCkeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipctlrFieldCkeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pctlrFieldCkeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipctlrFieldCkeMask)
 	}
 }
 
-// registerDsi_pconfrType DSI Host PHY configuration register
-type registerDsi_pconfrType uint32
+// registerDsipconfrType DSI Host PHY configuration register
+type registerDsipconfrType uint32
 
 const (
-	RegisterDsi_pconfrFieldNlShift = 0
-	RegisterDsi_pconfrFieldNlMask  = 0x3
+	RegisterDsipconfrFieldNlShift = 0
+	RegisterDsipconfrFieldNlMask  = 0x3
 )
 
 // GetNl NL
-func (r *registerDsi_pconfrType) GetNl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pconfrFieldNlMask) >> RegisterDsi_pconfrFieldNlShift)
+func (r *registerDsipconfrType) GetNl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsipconfrFieldNlMask) >> RegisterDsipconfrFieldNlShift)
 }
 
 // SetNl NL
-func (r *registerDsi_pconfrType) SetNl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pconfrFieldNlMask)|(uint32(value)<<RegisterDsi_pconfrFieldNlShift))
+func (r *registerDsipconfrType) SetNl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsipconfrFieldNlMask)|(uint32(value)<<RegisterDsipconfrFieldNlShift))
 }
 
 const (
-	RegisterDsi_pconfrFieldSw_timeShift = 8
-	RegisterDsi_pconfrFieldSw_timeMask  = 0xff00
+	RegisterDsipconfrFieldSwtimeShift = 8
+	RegisterDsipconfrFieldSwtimeMask  = 0xff00
 )
 
-// GetSw_time SW_TIME
-func (r *registerDsi_pconfrType) GetSw_time() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pconfrFieldSw_timeMask) >> RegisterDsi_pconfrFieldSw_timeShift)
+// GetSwtime SW_TIME
+func (r *registerDsipconfrType) GetSwtime() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsipconfrFieldSwtimeMask) >> RegisterDsipconfrFieldSwtimeShift)
 }
 
-// SetSw_time SW_TIME
-func (r *registerDsi_pconfrType) SetSw_time(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pconfrFieldSw_timeMask)|(uint32(value)<<RegisterDsi_pconfrFieldSw_timeShift))
+// SetSwtime SW_TIME
+func (r *registerDsipconfrType) SetSwtime(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsipconfrFieldSwtimeMask)|(uint32(value)<<RegisterDsipconfrFieldSwtimeShift))
 }
 
-// registerDsi_pucrType DSI Host PHY ULPS control register
-type registerDsi_pucrType uint32
+// registerDsipucrType DSI Host PHY ULPS control register
+type registerDsipucrType uint32
 
 const (
-	RegisterDsi_pucrFieldUrclShift = 0
-	RegisterDsi_pucrFieldUrclMask  = 0x1
+	RegisterDsipucrFieldUrclShift = 0
+	RegisterDsipucrFieldUrclMask  = 0x1
 )
 
 // GetUrcl URCL
-func (r *registerDsi_pucrType) GetUrcl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pucrFieldUrclMask) != 0
+func (r *registerDsipucrType) GetUrcl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipucrFieldUrclMask) != 0
 }
 
 // SetUrcl URCL
-func (r *registerDsi_pucrType) SetUrcl(value bool) {
+func (r *registerDsipucrType) SetUrcl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pucrFieldUrclMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipucrFieldUrclMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pucrFieldUrclMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipucrFieldUrclMask)
 	}
 }
 
 const (
-	RegisterDsi_pucrFieldUeclShift = 1
-	RegisterDsi_pucrFieldUeclMask  = 0x2
+	RegisterDsipucrFieldUeclShift = 1
+	RegisterDsipucrFieldUeclMask  = 0x2
 )
 
 // GetUecl UECL
-func (r *registerDsi_pucrType) GetUecl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pucrFieldUeclMask) != 0
+func (r *registerDsipucrType) GetUecl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipucrFieldUeclMask) != 0
 }
 
 // SetUecl UECL
-func (r *registerDsi_pucrType) SetUecl(value bool) {
+func (r *registerDsipucrType) SetUecl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pucrFieldUeclMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipucrFieldUeclMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pucrFieldUeclMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipucrFieldUeclMask)
 	}
 }
 
 const (
-	RegisterDsi_pucrFieldUrdlShift = 2
-	RegisterDsi_pucrFieldUrdlMask  = 0x4
+	RegisterDsipucrFieldUrdlShift = 2
+	RegisterDsipucrFieldUrdlMask  = 0x4
 )
 
 // GetUrdl URDL
-func (r *registerDsi_pucrType) GetUrdl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pucrFieldUrdlMask) != 0
+func (r *registerDsipucrType) GetUrdl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipucrFieldUrdlMask) != 0
 }
 
 // SetUrdl URDL
-func (r *registerDsi_pucrType) SetUrdl(value bool) {
+func (r *registerDsipucrType) SetUrdl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pucrFieldUrdlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipucrFieldUrdlMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pucrFieldUrdlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipucrFieldUrdlMask)
 	}
 }
 
 const (
-	RegisterDsi_pucrFieldUedlShift = 3
-	RegisterDsi_pucrFieldUedlMask  = 0x8
+	RegisterDsipucrFieldUedlShift = 3
+	RegisterDsipucrFieldUedlMask  = 0x8
 )
 
 // GetUedl UEDL
-func (r *registerDsi_pucrType) GetUedl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pucrFieldUedlMask) != 0
+func (r *registerDsipucrType) GetUedl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipucrFieldUedlMask) != 0
 }
 
 // SetUedl UEDL
-func (r *registerDsi_pucrType) SetUedl(value bool) {
+func (r *registerDsipucrType) SetUedl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_pucrFieldUedlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipucrFieldUedlMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pucrFieldUedlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipucrFieldUedlMask)
 	}
 }
 
-// registerDsi_pttcrType DSI Host PHY TX triggers configuration register
-type registerDsi_pttcrType uint32
+// registerDsipttcrType DSI Host PHY TX triggers configuration register
+type registerDsipttcrType uint32
 
 const (
-	RegisterDsi_pttcrFieldTx_trigShift = 0
-	RegisterDsi_pttcrFieldTx_trigMask  = 0xf
+	RegisterDsipttcrFieldTxtrigShift = 0
+	RegisterDsipttcrFieldTxtrigMask  = 0xf
 )
 
-// GetTx_trig TX_TRIG
-func (r *registerDsi_pttcrType) GetTx_trig() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_pttcrFieldTx_trigMask) >> RegisterDsi_pttcrFieldTx_trigShift)
+// GetTxtrig TX_TRIG
+func (r *registerDsipttcrType) GetTxtrig() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsipttcrFieldTxtrigMask) >> RegisterDsipttcrFieldTxtrigShift)
 }
 
-// SetTx_trig TX_TRIG
-func (r *registerDsi_pttcrType) SetTx_trig(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_pttcrFieldTx_trigMask)|(uint32(value)<<RegisterDsi_pttcrFieldTx_trigShift))
+// SetTxtrig TX_TRIG
+func (r *registerDsipttcrType) SetTxtrig(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsipttcrFieldTxtrigMask)|(uint32(value)<<RegisterDsipttcrFieldTxtrigShift))
 }
 
-// registerDsi_psrType DSI Host PHY status register
-type registerDsi_psrType uint32
+// registerDsipsrType DSI Host PHY status register
+type registerDsipsrType uint32
 
 const (
-	RegisterDsi_psrFieldPdShift = 1
-	RegisterDsi_psrFieldPdMask  = 0x2
+	RegisterDsipsrFieldPdShift = 1
+	RegisterDsipsrFieldPdMask  = 0x2
 )
 
 // GetPd PD
-func (r *registerDsi_psrType) GetPd() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_psrFieldPdMask) != 0
+func (r *registerDsipsrType) GetPd() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipsrFieldPdMask) != 0
 }
 
 // SetPd PD
-func (r *registerDsi_psrType) SetPd(value bool) {
+func (r *registerDsipsrType) SetPd(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_psrFieldPdMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipsrFieldPdMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_psrFieldPdMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipsrFieldPdMask)
 	}
 }
 
 const (
-	RegisterDsi_psrFieldPsscShift = 2
-	RegisterDsi_psrFieldPsscMask  = 0x4
+	RegisterDsipsrFieldPsscShift = 2
+	RegisterDsipsrFieldPsscMask  = 0x4
 )
 
 // GetPssc PSSC
-func (r *registerDsi_psrType) GetPssc() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_psrFieldPsscMask) != 0
+func (r *registerDsipsrType) GetPssc() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipsrFieldPsscMask) != 0
 }
 
 // SetPssc PSSC
-func (r *registerDsi_psrType) SetPssc(value bool) {
+func (r *registerDsipsrType) SetPssc(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_psrFieldPsscMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipsrFieldPsscMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_psrFieldPsscMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipsrFieldPsscMask)
 	}
 }
 
 const (
-	RegisterDsi_psrFieldUancShift = 3
-	RegisterDsi_psrFieldUancMask  = 0x8
+	RegisterDsipsrFieldUancShift = 3
+	RegisterDsipsrFieldUancMask  = 0x8
 )
 
 // GetUanc UANC
-func (r *registerDsi_psrType) GetUanc() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_psrFieldUancMask) != 0
+func (r *registerDsipsrType) GetUanc() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipsrFieldUancMask) != 0
 }
 
 // SetUanc UANC
-func (r *registerDsi_psrType) SetUanc(value bool) {
+func (r *registerDsipsrType) SetUanc(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_psrFieldUancMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipsrFieldUancMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_psrFieldUancMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipsrFieldUancMask)
 	}
 }
 
 const (
-	RegisterDsi_psrFieldPss0Shift = 4
-	RegisterDsi_psrFieldPss0Mask  = 0x10
+	RegisterDsipsrFieldPss0Shift = 4
+	RegisterDsipsrFieldPss0Mask  = 0x10
 )
 
 // GetPss0 PSS0
-func (r *registerDsi_psrType) GetPss0() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_psrFieldPss0Mask) != 0
+func (r *registerDsipsrType) GetPss0() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipsrFieldPss0Mask) != 0
 }
 
 // SetPss0 PSS0
-func (r *registerDsi_psrType) SetPss0(value bool) {
+func (r *registerDsipsrType) SetPss0(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_psrFieldPss0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipsrFieldPss0Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_psrFieldPss0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipsrFieldPss0Mask)
 	}
 }
 
 const (
-	RegisterDsi_psrFieldUan0Shift = 5
-	RegisterDsi_psrFieldUan0Mask  = 0x20
+	RegisterDsipsrFieldUan0Shift = 5
+	RegisterDsipsrFieldUan0Mask  = 0x20
 )
 
 // GetUan0 UAN0
-func (r *registerDsi_psrType) GetUan0() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_psrFieldUan0Mask) != 0
+func (r *registerDsipsrType) GetUan0() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipsrFieldUan0Mask) != 0
 }
 
 // SetUan0 UAN0
-func (r *registerDsi_psrType) SetUan0(value bool) {
+func (r *registerDsipsrType) SetUan0(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_psrFieldUan0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipsrFieldUan0Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_psrFieldUan0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipsrFieldUan0Mask)
 	}
 }
 
 const (
-	RegisterDsi_psrFieldRue0Shift = 6
-	RegisterDsi_psrFieldRue0Mask  = 0x40
+	RegisterDsipsrFieldRue0Shift = 6
+	RegisterDsipsrFieldRue0Mask  = 0x40
 )
 
 // GetRue0 RUE0
-func (r *registerDsi_psrType) GetRue0() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_psrFieldRue0Mask) != 0
+func (r *registerDsipsrType) GetRue0() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipsrFieldRue0Mask) != 0
 }
 
 // SetRue0 RUE0
-func (r *registerDsi_psrType) SetRue0(value bool) {
+func (r *registerDsipsrType) SetRue0(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_psrFieldRue0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipsrFieldRue0Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_psrFieldRue0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipsrFieldRue0Mask)
 	}
 }
 
 const (
-	RegisterDsi_psrFieldPss1Shift = 7
-	RegisterDsi_psrFieldPss1Mask  = 0x80
+	RegisterDsipsrFieldPss1Shift = 7
+	RegisterDsipsrFieldPss1Mask  = 0x80
 )
 
 // GetPss1 PSS1
-func (r *registerDsi_psrType) GetPss1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_psrFieldPss1Mask) != 0
+func (r *registerDsipsrType) GetPss1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipsrFieldPss1Mask) != 0
 }
 
 // SetPss1 PSS1
-func (r *registerDsi_psrType) SetPss1(value bool) {
+func (r *registerDsipsrType) SetPss1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_psrFieldPss1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipsrFieldPss1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_psrFieldPss1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipsrFieldPss1Mask)
 	}
 }
 
 const (
-	RegisterDsi_psrFieldUan1Shift = 8
-	RegisterDsi_psrFieldUan1Mask  = 0x100
+	RegisterDsipsrFieldUan1Shift = 8
+	RegisterDsipsrFieldUan1Mask  = 0x100
 )
 
 // GetUan1 UAN1
-func (r *registerDsi_psrType) GetUan1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_psrFieldUan1Mask) != 0
+func (r *registerDsipsrType) GetUan1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsipsrFieldUan1Mask) != 0
 }
 
 // SetUan1 UAN1
-func (r *registerDsi_psrType) SetUan1(value bool) {
+func (r *registerDsipsrType) SetUan1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_psrFieldUan1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsipsrFieldUan1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_psrFieldUan1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsipsrFieldUan1Mask)
 	}
 }
 
-// registerDsi_isr0Type DSI Host interrupt and status register 0
-type registerDsi_isr0Type uint32
+// registerDsiisr0Type DSI Host interrupt and status register 0
+type registerDsiisr0Type uint32
 
 const (
-	RegisterDsi_isr0FieldAe0Shift = 0
-	RegisterDsi_isr0FieldAe0Mask  = 0x1
+	RegisterDsiisr0FieldAe0Shift = 0
+	RegisterDsiisr0FieldAe0Mask  = 0x1
 )
 
 // GetAe0 AE0
-func (r *registerDsi_isr0Type) GetAe0() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe0Mask) != 0
+func (r *registerDsiisr0Type) GetAe0() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe0Mask) != 0
 }
 
 // SetAe0 AE0
-func (r *registerDsi_isr0Type) SetAe0(value bool) {
+func (r *registerDsiisr0Type) SetAe0(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe0Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe0Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe1Shift = 1
-	RegisterDsi_isr0FieldAe1Mask  = 0x2
+	RegisterDsiisr0FieldAe1Shift = 1
+	RegisterDsiisr0FieldAe1Mask  = 0x2
 )
 
 // GetAe1 AE1
-func (r *registerDsi_isr0Type) GetAe1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe1Mask) != 0
+func (r *registerDsiisr0Type) GetAe1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe1Mask) != 0
 }
 
 // SetAe1 AE1
-func (r *registerDsi_isr0Type) SetAe1(value bool) {
+func (r *registerDsiisr0Type) SetAe1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe1Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe2Shift = 2
-	RegisterDsi_isr0FieldAe2Mask  = 0x4
+	RegisterDsiisr0FieldAe2Shift = 2
+	RegisterDsiisr0FieldAe2Mask  = 0x4
 )
 
 // GetAe2 AE2
-func (r *registerDsi_isr0Type) GetAe2() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe2Mask) != 0
+func (r *registerDsiisr0Type) GetAe2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe2Mask) != 0
 }
 
 // SetAe2 AE2
-func (r *registerDsi_isr0Type) SetAe2(value bool) {
+func (r *registerDsiisr0Type) SetAe2(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe2Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe2Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe3Shift = 3
-	RegisterDsi_isr0FieldAe3Mask  = 0x8
+	RegisterDsiisr0FieldAe3Shift = 3
+	RegisterDsiisr0FieldAe3Mask  = 0x8
 )
 
 // GetAe3 AE3
-func (r *registerDsi_isr0Type) GetAe3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe3Mask) != 0
+func (r *registerDsiisr0Type) GetAe3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe3Mask) != 0
 }
 
 // SetAe3 AE3
-func (r *registerDsi_isr0Type) SetAe3(value bool) {
+func (r *registerDsiisr0Type) SetAe3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe3Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe4Shift = 4
-	RegisterDsi_isr0FieldAe4Mask  = 0x10
+	RegisterDsiisr0FieldAe4Shift = 4
+	RegisterDsiisr0FieldAe4Mask  = 0x10
 )
 
 // GetAe4 AE4
-func (r *registerDsi_isr0Type) GetAe4() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe4Mask) != 0
+func (r *registerDsiisr0Type) GetAe4() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe4Mask) != 0
 }
 
 // SetAe4 AE4
-func (r *registerDsi_isr0Type) SetAe4(value bool) {
+func (r *registerDsiisr0Type) SetAe4(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe4Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe4Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe5Shift = 5
-	RegisterDsi_isr0FieldAe5Mask  = 0x20
+	RegisterDsiisr0FieldAe5Shift = 5
+	RegisterDsiisr0FieldAe5Mask  = 0x20
 )
 
 // GetAe5 AE5
-func (r *registerDsi_isr0Type) GetAe5() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe5Mask) != 0
+func (r *registerDsiisr0Type) GetAe5() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe5Mask) != 0
 }
 
 // SetAe5 AE5
-func (r *registerDsi_isr0Type) SetAe5(value bool) {
+func (r *registerDsiisr0Type) SetAe5(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe5Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe5Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe5Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe5Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe6Shift = 6
-	RegisterDsi_isr0FieldAe6Mask  = 0x40
+	RegisterDsiisr0FieldAe6Shift = 6
+	RegisterDsiisr0FieldAe6Mask  = 0x40
 )
 
 // GetAe6 AE6
-func (r *registerDsi_isr0Type) GetAe6() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe6Mask) != 0
+func (r *registerDsiisr0Type) GetAe6() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe6Mask) != 0
 }
 
 // SetAe6 AE6
-func (r *registerDsi_isr0Type) SetAe6(value bool) {
+func (r *registerDsiisr0Type) SetAe6(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe6Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe6Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe6Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe6Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe7Shift = 7
-	RegisterDsi_isr0FieldAe7Mask  = 0x80
+	RegisterDsiisr0FieldAe7Shift = 7
+	RegisterDsiisr0FieldAe7Mask  = 0x80
 )
 
 // GetAe7 AE7
-func (r *registerDsi_isr0Type) GetAe7() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe7Mask) != 0
+func (r *registerDsiisr0Type) GetAe7() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe7Mask) != 0
 }
 
 // SetAe7 AE7
-func (r *registerDsi_isr0Type) SetAe7(value bool) {
+func (r *registerDsiisr0Type) SetAe7(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe7Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe7Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe7Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe7Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe8Shift = 8
-	RegisterDsi_isr0FieldAe8Mask  = 0x100
+	RegisterDsiisr0FieldAe8Shift = 8
+	RegisterDsiisr0FieldAe8Mask  = 0x100
 )
 
 // GetAe8 AE8
-func (r *registerDsi_isr0Type) GetAe8() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe8Mask) != 0
+func (r *registerDsiisr0Type) GetAe8() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe8Mask) != 0
 }
 
 // SetAe8 AE8
-func (r *registerDsi_isr0Type) SetAe8(value bool) {
+func (r *registerDsiisr0Type) SetAe8(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe8Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe8Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe8Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe8Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe9Shift = 9
-	RegisterDsi_isr0FieldAe9Mask  = 0x200
+	RegisterDsiisr0FieldAe9Shift = 9
+	RegisterDsiisr0FieldAe9Mask  = 0x200
 )
 
 // GetAe9 AE9
-func (r *registerDsi_isr0Type) GetAe9() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe9Mask) != 0
+func (r *registerDsiisr0Type) GetAe9() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe9Mask) != 0
 }
 
 // SetAe9 AE9
-func (r *registerDsi_isr0Type) SetAe9(value bool) {
+func (r *registerDsiisr0Type) SetAe9(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe9Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe9Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe9Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe9Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe10Shift = 10
-	RegisterDsi_isr0FieldAe10Mask  = 0x400
+	RegisterDsiisr0FieldAe10Shift = 10
+	RegisterDsiisr0FieldAe10Mask  = 0x400
 )
 
 // GetAe10 AE10
-func (r *registerDsi_isr0Type) GetAe10() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe10Mask) != 0
+func (r *registerDsiisr0Type) GetAe10() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe10Mask) != 0
 }
 
 // SetAe10 AE10
-func (r *registerDsi_isr0Type) SetAe10(value bool) {
+func (r *registerDsiisr0Type) SetAe10(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe10Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe10Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe10Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe10Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe11Shift = 11
-	RegisterDsi_isr0FieldAe11Mask  = 0x800
+	RegisterDsiisr0FieldAe11Shift = 11
+	RegisterDsiisr0FieldAe11Mask  = 0x800
 )
 
 // GetAe11 AE11
-func (r *registerDsi_isr0Type) GetAe11() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe11Mask) != 0
+func (r *registerDsiisr0Type) GetAe11() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe11Mask) != 0
 }
 
 // SetAe11 AE11
-func (r *registerDsi_isr0Type) SetAe11(value bool) {
+func (r *registerDsiisr0Type) SetAe11(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe11Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe11Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe11Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe11Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe12Shift = 12
-	RegisterDsi_isr0FieldAe12Mask  = 0x1000
+	RegisterDsiisr0FieldAe12Shift = 12
+	RegisterDsiisr0FieldAe12Mask  = 0x1000
 )
 
 // GetAe12 AE12
-func (r *registerDsi_isr0Type) GetAe12() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe12Mask) != 0
+func (r *registerDsiisr0Type) GetAe12() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe12Mask) != 0
 }
 
 // SetAe12 AE12
-func (r *registerDsi_isr0Type) SetAe12(value bool) {
+func (r *registerDsiisr0Type) SetAe12(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe12Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe12Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe12Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe12Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe13Shift = 13
-	RegisterDsi_isr0FieldAe13Mask  = 0x2000
+	RegisterDsiisr0FieldAe13Shift = 13
+	RegisterDsiisr0FieldAe13Mask  = 0x2000
 )
 
 // GetAe13 AE13
-func (r *registerDsi_isr0Type) GetAe13() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe13Mask) != 0
+func (r *registerDsiisr0Type) GetAe13() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe13Mask) != 0
 }
 
 // SetAe13 AE13
-func (r *registerDsi_isr0Type) SetAe13(value bool) {
+func (r *registerDsiisr0Type) SetAe13(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe13Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe13Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe13Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe13Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe14Shift = 14
-	RegisterDsi_isr0FieldAe14Mask  = 0x4000
+	RegisterDsiisr0FieldAe14Shift = 14
+	RegisterDsiisr0FieldAe14Mask  = 0x4000
 )
 
 // GetAe14 AE14
-func (r *registerDsi_isr0Type) GetAe14() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe14Mask) != 0
+func (r *registerDsiisr0Type) GetAe14() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe14Mask) != 0
 }
 
 // SetAe14 AE14
-func (r *registerDsi_isr0Type) SetAe14(value bool) {
+func (r *registerDsiisr0Type) SetAe14(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe14Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe14Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe14Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe14Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldAe15Shift = 15
-	RegisterDsi_isr0FieldAe15Mask  = 0x8000
+	RegisterDsiisr0FieldAe15Shift = 15
+	RegisterDsiisr0FieldAe15Mask  = 0x8000
 )
 
 // GetAe15 AE15
-func (r *registerDsi_isr0Type) GetAe15() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldAe15Mask) != 0
+func (r *registerDsiisr0Type) GetAe15() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldAe15Mask) != 0
 }
 
 // SetAe15 AE15
-func (r *registerDsi_isr0Type) SetAe15(value bool) {
+func (r *registerDsiisr0Type) SetAe15(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldAe15Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldAe15Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldAe15Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldAe15Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldPe0Shift = 16
-	RegisterDsi_isr0FieldPe0Mask  = 0x10000
+	RegisterDsiisr0FieldPe0Shift = 16
+	RegisterDsiisr0FieldPe0Mask  = 0x10000
 )
 
 // GetPe0 PE0
-func (r *registerDsi_isr0Type) GetPe0() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldPe0Mask) != 0
+func (r *registerDsiisr0Type) GetPe0() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldPe0Mask) != 0
 }
 
 // SetPe0 PE0
-func (r *registerDsi_isr0Type) SetPe0(value bool) {
+func (r *registerDsiisr0Type) SetPe0(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldPe0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldPe0Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldPe0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldPe0Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldPe1Shift = 17
-	RegisterDsi_isr0FieldPe1Mask  = 0x20000
+	RegisterDsiisr0FieldPe1Shift = 17
+	RegisterDsiisr0FieldPe1Mask  = 0x20000
 )
 
 // GetPe1 PE1
-func (r *registerDsi_isr0Type) GetPe1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldPe1Mask) != 0
+func (r *registerDsiisr0Type) GetPe1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldPe1Mask) != 0
 }
 
 // SetPe1 PE1
-func (r *registerDsi_isr0Type) SetPe1(value bool) {
+func (r *registerDsiisr0Type) SetPe1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldPe1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldPe1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldPe1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldPe1Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldPe2Shift = 18
-	RegisterDsi_isr0FieldPe2Mask  = 0x40000
+	RegisterDsiisr0FieldPe2Shift = 18
+	RegisterDsiisr0FieldPe2Mask  = 0x40000
 )
 
 // GetPe2 PE2
-func (r *registerDsi_isr0Type) GetPe2() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldPe2Mask) != 0
+func (r *registerDsiisr0Type) GetPe2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldPe2Mask) != 0
 }
 
 // SetPe2 PE2
-func (r *registerDsi_isr0Type) SetPe2(value bool) {
+func (r *registerDsiisr0Type) SetPe2(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldPe2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldPe2Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldPe2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldPe2Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldPe3Shift = 19
-	RegisterDsi_isr0FieldPe3Mask  = 0x80000
+	RegisterDsiisr0FieldPe3Shift = 19
+	RegisterDsiisr0FieldPe3Mask  = 0x80000
 )
 
 // GetPe3 PE3
-func (r *registerDsi_isr0Type) GetPe3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldPe3Mask) != 0
+func (r *registerDsiisr0Type) GetPe3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldPe3Mask) != 0
 }
 
 // SetPe3 PE3
-func (r *registerDsi_isr0Type) SetPe3(value bool) {
+func (r *registerDsiisr0Type) SetPe3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldPe3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldPe3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldPe3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldPe3Mask)
 	}
 }
 
 const (
-	RegisterDsi_isr0FieldPe4Shift = 20
-	RegisterDsi_isr0FieldPe4Mask  = 0x100000
+	RegisterDsiisr0FieldPe4Shift = 20
+	RegisterDsiisr0FieldPe4Mask  = 0x100000
 )
 
 // GetPe4 PE4
-func (r *registerDsi_isr0Type) GetPe4() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr0FieldPe4Mask) != 0
+func (r *registerDsiisr0Type) GetPe4() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr0FieldPe4Mask) != 0
 }
 
 // SetPe4 PE4
-func (r *registerDsi_isr0Type) SetPe4(value bool) {
+func (r *registerDsiisr0Type) SetPe4(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr0FieldPe4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr0FieldPe4Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr0FieldPe4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr0FieldPe4Mask)
 	}
 }
 
-// registerDsi_isr1Type DSI Host interrupt and status register 1
-type registerDsi_isr1Type uint32
+// registerDsiisr1Type DSI Host interrupt and status register 1
+type registerDsiisr1Type uint32
 
 const (
-	RegisterDsi_isr1FieldTohstxShift = 0
-	RegisterDsi_isr1FieldTohstxMask  = 0x1
+	RegisterDsiisr1FieldTohstxShift = 0
+	RegisterDsiisr1FieldTohstxMask  = 0x1
 )
 
 // GetTohstx TOHSTX
-func (r *registerDsi_isr1Type) GetTohstx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldTohstxMask) != 0
+func (r *registerDsiisr1Type) GetTohstx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldTohstxMask) != 0
 }
 
 // SetTohstx TOHSTX
-func (r *registerDsi_isr1Type) SetTohstx(value bool) {
+func (r *registerDsiisr1Type) SetTohstx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldTohstxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldTohstxMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldTohstxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldTohstxMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldTolprxShift = 1
-	RegisterDsi_isr1FieldTolprxMask  = 0x2
+	RegisterDsiisr1FieldTolprxShift = 1
+	RegisterDsiisr1FieldTolprxMask  = 0x2
 )
 
 // GetTolprx TOLPRX
-func (r *registerDsi_isr1Type) GetTolprx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldTolprxMask) != 0
+func (r *registerDsiisr1Type) GetTolprx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldTolprxMask) != 0
 }
 
 // SetTolprx TOLPRX
-func (r *registerDsi_isr1Type) SetTolprx(value bool) {
+func (r *registerDsiisr1Type) SetTolprx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldTolprxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldTolprxMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldTolprxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldTolprxMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldEccseShift = 2
-	RegisterDsi_isr1FieldEccseMask  = 0x4
+	RegisterDsiisr1FieldEccseShift = 2
+	RegisterDsiisr1FieldEccseMask  = 0x4
 )
 
 // GetEccse ECCSE
-func (r *registerDsi_isr1Type) GetEccse() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldEccseMask) != 0
+func (r *registerDsiisr1Type) GetEccse() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldEccseMask) != 0
 }
 
 // SetEccse ECCSE
-func (r *registerDsi_isr1Type) SetEccse(value bool) {
+func (r *registerDsiisr1Type) SetEccse(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldEccseMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldEccseMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldEccseMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldEccseMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldEccmeShift = 3
-	RegisterDsi_isr1FieldEccmeMask  = 0x8
+	RegisterDsiisr1FieldEccmeShift = 3
+	RegisterDsiisr1FieldEccmeMask  = 0x8
 )
 
 // GetEccme ECCME
-func (r *registerDsi_isr1Type) GetEccme() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldEccmeMask) != 0
+func (r *registerDsiisr1Type) GetEccme() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldEccmeMask) != 0
 }
 
 // SetEccme ECCME
-func (r *registerDsi_isr1Type) SetEccme(value bool) {
+func (r *registerDsiisr1Type) SetEccme(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldEccmeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldEccmeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldEccmeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldEccmeMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldCrceShift = 4
-	RegisterDsi_isr1FieldCrceMask  = 0x10
+	RegisterDsiisr1FieldCrceShift = 4
+	RegisterDsiisr1FieldCrceMask  = 0x10
 )
 
 // GetCrce CRCE
-func (r *registerDsi_isr1Type) GetCrce() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldCrceMask) != 0
+func (r *registerDsiisr1Type) GetCrce() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldCrceMask) != 0
 }
 
 // SetCrce CRCE
-func (r *registerDsi_isr1Type) SetCrce(value bool) {
+func (r *registerDsiisr1Type) SetCrce(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldCrceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldCrceMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldCrceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldCrceMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldPseShift = 5
-	RegisterDsi_isr1FieldPseMask  = 0x20
+	RegisterDsiisr1FieldPseShift = 5
+	RegisterDsiisr1FieldPseMask  = 0x20
 )
 
 // GetPse PSE
-func (r *registerDsi_isr1Type) GetPse() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldPseMask) != 0
+func (r *registerDsiisr1Type) GetPse() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldPseMask) != 0
 }
 
 // SetPse PSE
-func (r *registerDsi_isr1Type) SetPse(value bool) {
+func (r *registerDsiisr1Type) SetPse(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldPseMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldPseMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldPseMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldPseMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldEotpeShift = 6
-	RegisterDsi_isr1FieldEotpeMask  = 0x40
+	RegisterDsiisr1FieldEotpeShift = 6
+	RegisterDsiisr1FieldEotpeMask  = 0x40
 )
 
 // GetEotpe EOTPE
-func (r *registerDsi_isr1Type) GetEotpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldEotpeMask) != 0
+func (r *registerDsiisr1Type) GetEotpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldEotpeMask) != 0
 }
 
 // SetEotpe EOTPE
-func (r *registerDsi_isr1Type) SetEotpe(value bool) {
+func (r *registerDsiisr1Type) SetEotpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldEotpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldEotpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldEotpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldEotpeMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldLpwreShift = 7
-	RegisterDsi_isr1FieldLpwreMask  = 0x80
+	RegisterDsiisr1FieldLpwreShift = 7
+	RegisterDsiisr1FieldLpwreMask  = 0x80
 )
 
 // GetLpwre LPWRE
-func (r *registerDsi_isr1Type) GetLpwre() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldLpwreMask) != 0
+func (r *registerDsiisr1Type) GetLpwre() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldLpwreMask) != 0
 }
 
 // SetLpwre LPWRE
-func (r *registerDsi_isr1Type) SetLpwre(value bool) {
+func (r *registerDsiisr1Type) SetLpwre(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldLpwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldLpwreMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldLpwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldLpwreMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldGcwreShift = 8
-	RegisterDsi_isr1FieldGcwreMask  = 0x100
+	RegisterDsiisr1FieldGcwreShift = 8
+	RegisterDsiisr1FieldGcwreMask  = 0x100
 )
 
 // GetGcwre GCWRE
-func (r *registerDsi_isr1Type) GetGcwre() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldGcwreMask) != 0
+func (r *registerDsiisr1Type) GetGcwre() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldGcwreMask) != 0
 }
 
 // SetGcwre GCWRE
-func (r *registerDsi_isr1Type) SetGcwre(value bool) {
+func (r *registerDsiisr1Type) SetGcwre(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldGcwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldGcwreMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldGcwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldGcwreMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldGpwreShift = 9
-	RegisterDsi_isr1FieldGpwreMask  = 0x200
+	RegisterDsiisr1FieldGpwreShift = 9
+	RegisterDsiisr1FieldGpwreMask  = 0x200
 )
 
 // GetGpwre GPWRE
-func (r *registerDsi_isr1Type) GetGpwre() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldGpwreMask) != 0
+func (r *registerDsiisr1Type) GetGpwre() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldGpwreMask) != 0
 }
 
 // SetGpwre GPWRE
-func (r *registerDsi_isr1Type) SetGpwre(value bool) {
+func (r *registerDsiisr1Type) SetGpwre(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldGpwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldGpwreMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldGpwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldGpwreMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldGptxeShift = 10
-	RegisterDsi_isr1FieldGptxeMask  = 0x400
+	RegisterDsiisr1FieldGptxeShift = 10
+	RegisterDsiisr1FieldGptxeMask  = 0x400
 )
 
 // GetGptxe GPTXE
-func (r *registerDsi_isr1Type) GetGptxe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldGptxeMask) != 0
+func (r *registerDsiisr1Type) GetGptxe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldGptxeMask) != 0
 }
 
 // SetGptxe GPTXE
-func (r *registerDsi_isr1Type) SetGptxe(value bool) {
+func (r *registerDsiisr1Type) SetGptxe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldGptxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldGptxeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldGptxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldGptxeMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldGprdeShift = 11
-	RegisterDsi_isr1FieldGprdeMask  = 0x800
+	RegisterDsiisr1FieldGprdeShift = 11
+	RegisterDsiisr1FieldGprdeMask  = 0x800
 )
 
 // GetGprde GPRDE
-func (r *registerDsi_isr1Type) GetGprde() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldGprdeMask) != 0
+func (r *registerDsiisr1Type) GetGprde() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldGprdeMask) != 0
 }
 
 // SetGprde GPRDE
-func (r *registerDsi_isr1Type) SetGprde(value bool) {
+func (r *registerDsiisr1Type) SetGprde(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldGprdeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldGprdeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldGprdeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldGprdeMask)
 	}
 }
 
 const (
-	RegisterDsi_isr1FieldGprxeShift = 12
-	RegisterDsi_isr1FieldGprxeMask  = 0x1000
+	RegisterDsiisr1FieldGprxeShift = 12
+	RegisterDsiisr1FieldGprxeMask  = 0x1000
 )
 
 // GetGprxe GPRXE
-func (r *registerDsi_isr1Type) GetGprxe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_isr1FieldGprxeMask) != 0
+func (r *registerDsiisr1Type) GetGprxe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiisr1FieldGprxeMask) != 0
 }
 
 // SetGprxe GPRXE
-func (r *registerDsi_isr1Type) SetGprxe(value bool) {
+func (r *registerDsiisr1Type) SetGprxe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_isr1FieldGprxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiisr1FieldGprxeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_isr1FieldGprxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiisr1FieldGprxeMask)
 	}
 }
 
-// registerDsi_ier0Type DSI Host interrupt enable register 0
-type registerDsi_ier0Type uint32
+// registerDsiier0Type DSI Host interrupt enable register 0
+type registerDsiier0Type uint32
 
 const (
-	RegisterDsi_ier0FieldAe0ieShift = 0
-	RegisterDsi_ier0FieldAe0ieMask  = 0x1
+	RegisterDsiier0FieldAe0ieShift = 0
+	RegisterDsiier0FieldAe0ieMask  = 0x1
 )
 
 // GetAe0ie AE0IE
-func (r *registerDsi_ier0Type) GetAe0ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe0ieMask) != 0
+func (r *registerDsiier0Type) GetAe0ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe0ieMask) != 0
 }
 
 // SetAe0ie AE0IE
-func (r *registerDsi_ier0Type) SetAe0ie(value bool) {
+func (r *registerDsiier0Type) SetAe0ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe0ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe0ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe0ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe0ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe1ieShift = 1
-	RegisterDsi_ier0FieldAe1ieMask  = 0x2
+	RegisterDsiier0FieldAe1ieShift = 1
+	RegisterDsiier0FieldAe1ieMask  = 0x2
 )
 
 // GetAe1ie AE1IE
-func (r *registerDsi_ier0Type) GetAe1ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe1ieMask) != 0
+func (r *registerDsiier0Type) GetAe1ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe1ieMask) != 0
 }
 
 // SetAe1ie AE1IE
-func (r *registerDsi_ier0Type) SetAe1ie(value bool) {
+func (r *registerDsiier0Type) SetAe1ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe1ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe1ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe1ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe1ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe2ieShift = 2
-	RegisterDsi_ier0FieldAe2ieMask  = 0x4
+	RegisterDsiier0FieldAe2ieShift = 2
+	RegisterDsiier0FieldAe2ieMask  = 0x4
 )
 
 // GetAe2ie AE2IE
-func (r *registerDsi_ier0Type) GetAe2ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe2ieMask) != 0
+func (r *registerDsiier0Type) GetAe2ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe2ieMask) != 0
 }
 
 // SetAe2ie AE2IE
-func (r *registerDsi_ier0Type) SetAe2ie(value bool) {
+func (r *registerDsiier0Type) SetAe2ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe2ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe2ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe2ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe2ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe3ieShift = 3
-	RegisterDsi_ier0FieldAe3ieMask  = 0x8
+	RegisterDsiier0FieldAe3ieShift = 3
+	RegisterDsiier0FieldAe3ieMask  = 0x8
 )
 
 // GetAe3ie AE3IE
-func (r *registerDsi_ier0Type) GetAe3ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe3ieMask) != 0
+func (r *registerDsiier0Type) GetAe3ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe3ieMask) != 0
 }
 
 // SetAe3ie AE3IE
-func (r *registerDsi_ier0Type) SetAe3ie(value bool) {
+func (r *registerDsiier0Type) SetAe3ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe3ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe3ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe3ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe3ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe4ieShift = 4
-	RegisterDsi_ier0FieldAe4ieMask  = 0x10
+	RegisterDsiier0FieldAe4ieShift = 4
+	RegisterDsiier0FieldAe4ieMask  = 0x10
 )
 
 // GetAe4ie AE4IE
-func (r *registerDsi_ier0Type) GetAe4ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe4ieMask) != 0
+func (r *registerDsiier0Type) GetAe4ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe4ieMask) != 0
 }
 
 // SetAe4ie AE4IE
-func (r *registerDsi_ier0Type) SetAe4ie(value bool) {
+func (r *registerDsiier0Type) SetAe4ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe4ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe4ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe4ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe4ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe5ieShift = 5
-	RegisterDsi_ier0FieldAe5ieMask  = 0x20
+	RegisterDsiier0FieldAe5ieShift = 5
+	RegisterDsiier0FieldAe5ieMask  = 0x20
 )
 
 // GetAe5ie AE5IE
-func (r *registerDsi_ier0Type) GetAe5ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe5ieMask) != 0
+func (r *registerDsiier0Type) GetAe5ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe5ieMask) != 0
 }
 
 // SetAe5ie AE5IE
-func (r *registerDsi_ier0Type) SetAe5ie(value bool) {
+func (r *registerDsiier0Type) SetAe5ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe5ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe5ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe5ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe5ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe6ieShift = 6
-	RegisterDsi_ier0FieldAe6ieMask  = 0x40
+	RegisterDsiier0FieldAe6ieShift = 6
+	RegisterDsiier0FieldAe6ieMask  = 0x40
 )
 
 // GetAe6ie AE6IE
-func (r *registerDsi_ier0Type) GetAe6ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe6ieMask) != 0
+func (r *registerDsiier0Type) GetAe6ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe6ieMask) != 0
 }
 
 // SetAe6ie AE6IE
-func (r *registerDsi_ier0Type) SetAe6ie(value bool) {
+func (r *registerDsiier0Type) SetAe6ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe6ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe6ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe6ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe6ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe7ieShift = 7
-	RegisterDsi_ier0FieldAe7ieMask  = 0x80
+	RegisterDsiier0FieldAe7ieShift = 7
+	RegisterDsiier0FieldAe7ieMask  = 0x80
 )
 
 // GetAe7ie AE7IE
-func (r *registerDsi_ier0Type) GetAe7ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe7ieMask) != 0
+func (r *registerDsiier0Type) GetAe7ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe7ieMask) != 0
 }
 
 // SetAe7ie AE7IE
-func (r *registerDsi_ier0Type) SetAe7ie(value bool) {
+func (r *registerDsiier0Type) SetAe7ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe7ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe7ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe7ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe7ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe8ieShift = 8
-	RegisterDsi_ier0FieldAe8ieMask  = 0x100
+	RegisterDsiier0FieldAe8ieShift = 8
+	RegisterDsiier0FieldAe8ieMask  = 0x100
 )
 
 // GetAe8ie AE8IE
-func (r *registerDsi_ier0Type) GetAe8ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe8ieMask) != 0
+func (r *registerDsiier0Type) GetAe8ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe8ieMask) != 0
 }
 
 // SetAe8ie AE8IE
-func (r *registerDsi_ier0Type) SetAe8ie(value bool) {
+func (r *registerDsiier0Type) SetAe8ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe8ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe8ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe8ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe8ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe9ieShift = 9
-	RegisterDsi_ier0FieldAe9ieMask  = 0x200
+	RegisterDsiier0FieldAe9ieShift = 9
+	RegisterDsiier0FieldAe9ieMask  = 0x200
 )
 
 // GetAe9ie AE9IE
-func (r *registerDsi_ier0Type) GetAe9ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe9ieMask) != 0
+func (r *registerDsiier0Type) GetAe9ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe9ieMask) != 0
 }
 
 // SetAe9ie AE9IE
-func (r *registerDsi_ier0Type) SetAe9ie(value bool) {
+func (r *registerDsiier0Type) SetAe9ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe9ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe9ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe9ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe9ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe10ieShift = 10
-	RegisterDsi_ier0FieldAe10ieMask  = 0x400
+	RegisterDsiier0FieldAe10ieShift = 10
+	RegisterDsiier0FieldAe10ieMask  = 0x400
 )
 
 // GetAe10ie AE10IE
-func (r *registerDsi_ier0Type) GetAe10ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe10ieMask) != 0
+func (r *registerDsiier0Type) GetAe10ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe10ieMask) != 0
 }
 
 // SetAe10ie AE10IE
-func (r *registerDsi_ier0Type) SetAe10ie(value bool) {
+func (r *registerDsiier0Type) SetAe10ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe10ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe10ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe10ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe10ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe11ieShift = 11
-	RegisterDsi_ier0FieldAe11ieMask  = 0x800
+	RegisterDsiier0FieldAe11ieShift = 11
+	RegisterDsiier0FieldAe11ieMask  = 0x800
 )
 
 // GetAe11ie AE11IE
-func (r *registerDsi_ier0Type) GetAe11ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe11ieMask) != 0
+func (r *registerDsiier0Type) GetAe11ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe11ieMask) != 0
 }
 
 // SetAe11ie AE11IE
-func (r *registerDsi_ier0Type) SetAe11ie(value bool) {
+func (r *registerDsiier0Type) SetAe11ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe11ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe11ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe11ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe11ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe12ieShift = 12
-	RegisterDsi_ier0FieldAe12ieMask  = 0x1000
+	RegisterDsiier0FieldAe12ieShift = 12
+	RegisterDsiier0FieldAe12ieMask  = 0x1000
 )
 
 // GetAe12ie AE12IE
-func (r *registerDsi_ier0Type) GetAe12ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe12ieMask) != 0
+func (r *registerDsiier0Type) GetAe12ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe12ieMask) != 0
 }
 
 // SetAe12ie AE12IE
-func (r *registerDsi_ier0Type) SetAe12ie(value bool) {
+func (r *registerDsiier0Type) SetAe12ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe12ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe12ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe12ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe12ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe13ieShift = 13
-	RegisterDsi_ier0FieldAe13ieMask  = 0x2000
+	RegisterDsiier0FieldAe13ieShift = 13
+	RegisterDsiier0FieldAe13ieMask  = 0x2000
 )
 
 // GetAe13ie AE13IE
-func (r *registerDsi_ier0Type) GetAe13ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe13ieMask) != 0
+func (r *registerDsiier0Type) GetAe13ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe13ieMask) != 0
 }
 
 // SetAe13ie AE13IE
-func (r *registerDsi_ier0Type) SetAe13ie(value bool) {
+func (r *registerDsiier0Type) SetAe13ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe13ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe13ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe13ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe13ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe14ieShift = 14
-	RegisterDsi_ier0FieldAe14ieMask  = 0x4000
+	RegisterDsiier0FieldAe14ieShift = 14
+	RegisterDsiier0FieldAe14ieMask  = 0x4000
 )
 
 // GetAe14ie AE14IE
-func (r *registerDsi_ier0Type) GetAe14ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe14ieMask) != 0
+func (r *registerDsiier0Type) GetAe14ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe14ieMask) != 0
 }
 
 // SetAe14ie AE14IE
-func (r *registerDsi_ier0Type) SetAe14ie(value bool) {
+func (r *registerDsiier0Type) SetAe14ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe14ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe14ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe14ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe14ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldAe15ieShift = 15
-	RegisterDsi_ier0FieldAe15ieMask  = 0x8000
+	RegisterDsiier0FieldAe15ieShift = 15
+	RegisterDsiier0FieldAe15ieMask  = 0x8000
 )
 
 // GetAe15ie AE15IE
-func (r *registerDsi_ier0Type) GetAe15ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldAe15ieMask) != 0
+func (r *registerDsiier0Type) GetAe15ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldAe15ieMask) != 0
 }
 
 // SetAe15ie AE15IE
-func (r *registerDsi_ier0Type) SetAe15ie(value bool) {
+func (r *registerDsiier0Type) SetAe15ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldAe15ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldAe15ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldAe15ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldAe15ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldPe0ieShift = 16
-	RegisterDsi_ier0FieldPe0ieMask  = 0x10000
+	RegisterDsiier0FieldPe0ieShift = 16
+	RegisterDsiier0FieldPe0ieMask  = 0x10000
 )
 
 // GetPe0ie PE0IE
-func (r *registerDsi_ier0Type) GetPe0ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldPe0ieMask) != 0
+func (r *registerDsiier0Type) GetPe0ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldPe0ieMask) != 0
 }
 
 // SetPe0ie PE0IE
-func (r *registerDsi_ier0Type) SetPe0ie(value bool) {
+func (r *registerDsiier0Type) SetPe0ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldPe0ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldPe0ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldPe0ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldPe0ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldPe1ieShift = 17
-	RegisterDsi_ier0FieldPe1ieMask  = 0x20000
+	RegisterDsiier0FieldPe1ieShift = 17
+	RegisterDsiier0FieldPe1ieMask  = 0x20000
 )
 
 // GetPe1ie PE1IE
-func (r *registerDsi_ier0Type) GetPe1ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldPe1ieMask) != 0
+func (r *registerDsiier0Type) GetPe1ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldPe1ieMask) != 0
 }
 
 // SetPe1ie PE1IE
-func (r *registerDsi_ier0Type) SetPe1ie(value bool) {
+func (r *registerDsiier0Type) SetPe1ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldPe1ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldPe1ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldPe1ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldPe1ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldPe2ieShift = 18
-	RegisterDsi_ier0FieldPe2ieMask  = 0x40000
+	RegisterDsiier0FieldPe2ieShift = 18
+	RegisterDsiier0FieldPe2ieMask  = 0x40000
 )
 
 // GetPe2ie PE2IE
-func (r *registerDsi_ier0Type) GetPe2ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldPe2ieMask) != 0
+func (r *registerDsiier0Type) GetPe2ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldPe2ieMask) != 0
 }
 
 // SetPe2ie PE2IE
-func (r *registerDsi_ier0Type) SetPe2ie(value bool) {
+func (r *registerDsiier0Type) SetPe2ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldPe2ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldPe2ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldPe2ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldPe2ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldPe3ieShift = 19
-	RegisterDsi_ier0FieldPe3ieMask  = 0x80000
+	RegisterDsiier0FieldPe3ieShift = 19
+	RegisterDsiier0FieldPe3ieMask  = 0x80000
 )
 
 // GetPe3ie PE3IE
-func (r *registerDsi_ier0Type) GetPe3ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldPe3ieMask) != 0
+func (r *registerDsiier0Type) GetPe3ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldPe3ieMask) != 0
 }
 
 // SetPe3ie PE3IE
-func (r *registerDsi_ier0Type) SetPe3ie(value bool) {
+func (r *registerDsiier0Type) SetPe3ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldPe3ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldPe3ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldPe3ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldPe3ieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier0FieldPe4ieShift = 20
-	RegisterDsi_ier0FieldPe4ieMask  = 0x100000
+	RegisterDsiier0FieldPe4ieShift = 20
+	RegisterDsiier0FieldPe4ieMask  = 0x100000
 )
 
 // GetPe4ie PE4IE
-func (r *registerDsi_ier0Type) GetPe4ie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier0FieldPe4ieMask) != 0
+func (r *registerDsiier0Type) GetPe4ie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier0FieldPe4ieMask) != 0
 }
 
 // SetPe4ie PE4IE
-func (r *registerDsi_ier0Type) SetPe4ie(value bool) {
+func (r *registerDsiier0Type) SetPe4ie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier0FieldPe4ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier0FieldPe4ieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier0FieldPe4ieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier0FieldPe4ieMask)
 	}
 }
 
-// registerDsi_ier1Type DSI Host interrupt enable register 1
-type registerDsi_ier1Type uint32
+// registerDsiier1Type DSI Host interrupt enable register 1
+type registerDsiier1Type uint32
 
 const (
-	RegisterDsi_ier1FieldTohstxieShift = 0
-	RegisterDsi_ier1FieldTohstxieMask  = 0x1
+	RegisterDsiier1FieldTohstxieShift = 0
+	RegisterDsiier1FieldTohstxieMask  = 0x1
 )
 
 // GetTohstxie TOHSTXIE
-func (r *registerDsi_ier1Type) GetTohstxie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldTohstxieMask) != 0
+func (r *registerDsiier1Type) GetTohstxie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldTohstxieMask) != 0
 }
 
 // SetTohstxie TOHSTXIE
-func (r *registerDsi_ier1Type) SetTohstxie(value bool) {
+func (r *registerDsiier1Type) SetTohstxie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldTohstxieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldTohstxieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldTohstxieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldTohstxieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldTolprxieShift = 1
-	RegisterDsi_ier1FieldTolprxieMask  = 0x2
+	RegisterDsiier1FieldTolprxieShift = 1
+	RegisterDsiier1FieldTolprxieMask  = 0x2
 )
 
 // GetTolprxie TOLPRXIE
-func (r *registerDsi_ier1Type) GetTolprxie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldTolprxieMask) != 0
+func (r *registerDsiier1Type) GetTolprxie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldTolprxieMask) != 0
 }
 
 // SetTolprxie TOLPRXIE
-func (r *registerDsi_ier1Type) SetTolprxie(value bool) {
+func (r *registerDsiier1Type) SetTolprxie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldTolprxieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldTolprxieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldTolprxieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldTolprxieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldEccseieShift = 2
-	RegisterDsi_ier1FieldEccseieMask  = 0x4
+	RegisterDsiier1FieldEccseieShift = 2
+	RegisterDsiier1FieldEccseieMask  = 0x4
 )
 
 // GetEccseie ECCSEIE
-func (r *registerDsi_ier1Type) GetEccseie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldEccseieMask) != 0
+func (r *registerDsiier1Type) GetEccseie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldEccseieMask) != 0
 }
 
 // SetEccseie ECCSEIE
-func (r *registerDsi_ier1Type) SetEccseie(value bool) {
+func (r *registerDsiier1Type) SetEccseie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldEccseieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldEccseieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldEccseieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldEccseieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldEccmeieShift = 3
-	RegisterDsi_ier1FieldEccmeieMask  = 0x8
+	RegisterDsiier1FieldEccmeieShift = 3
+	RegisterDsiier1FieldEccmeieMask  = 0x8
 )
 
 // GetEccmeie ECCMEIE
-func (r *registerDsi_ier1Type) GetEccmeie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldEccmeieMask) != 0
+func (r *registerDsiier1Type) GetEccmeie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldEccmeieMask) != 0
 }
 
 // SetEccmeie ECCMEIE
-func (r *registerDsi_ier1Type) SetEccmeie(value bool) {
+func (r *registerDsiier1Type) SetEccmeie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldEccmeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldEccmeieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldEccmeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldEccmeieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldCrceieShift = 4
-	RegisterDsi_ier1FieldCrceieMask  = 0x10
+	RegisterDsiier1FieldCrceieShift = 4
+	RegisterDsiier1FieldCrceieMask  = 0x10
 )
 
 // GetCrceie CRCEIE
-func (r *registerDsi_ier1Type) GetCrceie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldCrceieMask) != 0
+func (r *registerDsiier1Type) GetCrceie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldCrceieMask) != 0
 }
 
 // SetCrceie CRCEIE
-func (r *registerDsi_ier1Type) SetCrceie(value bool) {
+func (r *registerDsiier1Type) SetCrceie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldCrceieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldCrceieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldCrceieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldCrceieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldPseieShift = 5
-	RegisterDsi_ier1FieldPseieMask  = 0x20
+	RegisterDsiier1FieldPseieShift = 5
+	RegisterDsiier1FieldPseieMask  = 0x20
 )
 
 // GetPseie PSEIE
-func (r *registerDsi_ier1Type) GetPseie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldPseieMask) != 0
+func (r *registerDsiier1Type) GetPseie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldPseieMask) != 0
 }
 
 // SetPseie PSEIE
-func (r *registerDsi_ier1Type) SetPseie(value bool) {
+func (r *registerDsiier1Type) SetPseie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldPseieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldPseieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldPseieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldPseieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldEotpeieShift = 6
-	RegisterDsi_ier1FieldEotpeieMask  = 0x40
+	RegisterDsiier1FieldEotpeieShift = 6
+	RegisterDsiier1FieldEotpeieMask  = 0x40
 )
 
 // GetEotpeie EOTPEIE
-func (r *registerDsi_ier1Type) GetEotpeie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldEotpeieMask) != 0
+func (r *registerDsiier1Type) GetEotpeie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldEotpeieMask) != 0
 }
 
 // SetEotpeie EOTPEIE
-func (r *registerDsi_ier1Type) SetEotpeie(value bool) {
+func (r *registerDsiier1Type) SetEotpeie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldEotpeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldEotpeieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldEotpeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldEotpeieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldLpwreieShift = 7
-	RegisterDsi_ier1FieldLpwreieMask  = 0x80
+	RegisterDsiier1FieldLpwreieShift = 7
+	RegisterDsiier1FieldLpwreieMask  = 0x80
 )
 
 // GetLpwreie LPWREIE
-func (r *registerDsi_ier1Type) GetLpwreie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldLpwreieMask) != 0
+func (r *registerDsiier1Type) GetLpwreie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldLpwreieMask) != 0
 }
 
 // SetLpwreie LPWREIE
-func (r *registerDsi_ier1Type) SetLpwreie(value bool) {
+func (r *registerDsiier1Type) SetLpwreie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldLpwreieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldLpwreieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldLpwreieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldLpwreieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldGcwreieShift = 8
-	RegisterDsi_ier1FieldGcwreieMask  = 0x100
+	RegisterDsiier1FieldGcwreieShift = 8
+	RegisterDsiier1FieldGcwreieMask  = 0x100
 )
 
 // GetGcwreie GCWREIE
-func (r *registerDsi_ier1Type) GetGcwreie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldGcwreieMask) != 0
+func (r *registerDsiier1Type) GetGcwreie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldGcwreieMask) != 0
 }
 
 // SetGcwreie GCWREIE
-func (r *registerDsi_ier1Type) SetGcwreie(value bool) {
+func (r *registerDsiier1Type) SetGcwreie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldGcwreieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldGcwreieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldGcwreieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldGcwreieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldGpwreieShift = 9
-	RegisterDsi_ier1FieldGpwreieMask  = 0x200
+	RegisterDsiier1FieldGpwreieShift = 9
+	RegisterDsiier1FieldGpwreieMask  = 0x200
 )
 
 // GetGpwreie GPWREIE
-func (r *registerDsi_ier1Type) GetGpwreie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldGpwreieMask) != 0
+func (r *registerDsiier1Type) GetGpwreie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldGpwreieMask) != 0
 }
 
 // SetGpwreie GPWREIE
-func (r *registerDsi_ier1Type) SetGpwreie(value bool) {
+func (r *registerDsiier1Type) SetGpwreie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldGpwreieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldGpwreieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldGpwreieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldGpwreieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldGptxeieShift = 10
-	RegisterDsi_ier1FieldGptxeieMask  = 0x400
+	RegisterDsiier1FieldGptxeieShift = 10
+	RegisterDsiier1FieldGptxeieMask  = 0x400
 )
 
 // GetGptxeie GPTXEIE
-func (r *registerDsi_ier1Type) GetGptxeie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldGptxeieMask) != 0
+func (r *registerDsiier1Type) GetGptxeie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldGptxeieMask) != 0
 }
 
 // SetGptxeie GPTXEIE
-func (r *registerDsi_ier1Type) SetGptxeie(value bool) {
+func (r *registerDsiier1Type) SetGptxeie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldGptxeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldGptxeieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldGptxeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldGptxeieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldGprdeieShift = 11
-	RegisterDsi_ier1FieldGprdeieMask  = 0x800
+	RegisterDsiier1FieldGprdeieShift = 11
+	RegisterDsiier1FieldGprdeieMask  = 0x800
 )
 
 // GetGprdeie GPRDEIE
-func (r *registerDsi_ier1Type) GetGprdeie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldGprdeieMask) != 0
+func (r *registerDsiier1Type) GetGprdeie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldGprdeieMask) != 0
 }
 
 // SetGprdeie GPRDEIE
-func (r *registerDsi_ier1Type) SetGprdeie(value bool) {
+func (r *registerDsiier1Type) SetGprdeie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldGprdeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldGprdeieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldGprdeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldGprdeieMask)
 	}
 }
 
 const (
-	RegisterDsi_ier1FieldGprxeieShift = 12
-	RegisterDsi_ier1FieldGprxeieMask  = 0x1000
+	RegisterDsiier1FieldGprxeieShift = 12
+	RegisterDsiier1FieldGprxeieMask  = 0x1000
 )
 
 // GetGprxeie GPRXEIE
-func (r *registerDsi_ier1Type) GetGprxeie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_ier1FieldGprxeieMask) != 0
+func (r *registerDsiier1Type) GetGprxeie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiier1FieldGprxeieMask) != 0
 }
 
 // SetGprxeie GPRXEIE
-func (r *registerDsi_ier1Type) SetGprxeie(value bool) {
+func (r *registerDsiier1Type) SetGprxeie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_ier1FieldGprxeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiier1FieldGprxeieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_ier1FieldGprxeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiier1FieldGprxeieMask)
 	}
 }
 
-// registerDsi_fir0Type DSI Host force interrupt register 0
-type registerDsi_fir0Type uint32
+// registerDsifir0Type DSI Host force interrupt register 0
+type registerDsifir0Type uint32
 
 const (
-	RegisterDsi_fir0FieldFae0Shift = 0
-	RegisterDsi_fir0FieldFae0Mask  = 0x1
+	RegisterDsifir0FieldFae0Shift = 0
+	RegisterDsifir0FieldFae0Mask  = 0x1
 )
 
 // GetFae0 FAE0
-func (r *registerDsi_fir0Type) GetFae0() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae0Mask) != 0
+func (r *registerDsifir0Type) GetFae0() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae0Mask) != 0
 }
 
 // SetFae0 FAE0
-func (r *registerDsi_fir0Type) SetFae0(value bool) {
+func (r *registerDsifir0Type) SetFae0(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae0Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae0Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae1Shift = 1
-	RegisterDsi_fir0FieldFae1Mask  = 0x2
+	RegisterDsifir0FieldFae1Shift = 1
+	RegisterDsifir0FieldFae1Mask  = 0x2
 )
 
 // GetFae1 FAE1
-func (r *registerDsi_fir0Type) GetFae1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae1Mask) != 0
+func (r *registerDsifir0Type) GetFae1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae1Mask) != 0
 }
 
 // SetFae1 FAE1
-func (r *registerDsi_fir0Type) SetFae1(value bool) {
+func (r *registerDsifir0Type) SetFae1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae1Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae2Shift = 2
-	RegisterDsi_fir0FieldFae2Mask  = 0x4
+	RegisterDsifir0FieldFae2Shift = 2
+	RegisterDsifir0FieldFae2Mask  = 0x4
 )
 
 // GetFae2 FAE2
-func (r *registerDsi_fir0Type) GetFae2() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae2Mask) != 0
+func (r *registerDsifir0Type) GetFae2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae2Mask) != 0
 }
 
 // SetFae2 FAE2
-func (r *registerDsi_fir0Type) SetFae2(value bool) {
+func (r *registerDsifir0Type) SetFae2(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae2Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae2Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae3Shift = 3
-	RegisterDsi_fir0FieldFae3Mask  = 0x8
+	RegisterDsifir0FieldFae3Shift = 3
+	RegisterDsifir0FieldFae3Mask  = 0x8
 )
 
 // GetFae3 FAE3
-func (r *registerDsi_fir0Type) GetFae3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae3Mask) != 0
+func (r *registerDsifir0Type) GetFae3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae3Mask) != 0
 }
 
 // SetFae3 FAE3
-func (r *registerDsi_fir0Type) SetFae3(value bool) {
+func (r *registerDsifir0Type) SetFae3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae3Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae4Shift = 4
-	RegisterDsi_fir0FieldFae4Mask  = 0x10
+	RegisterDsifir0FieldFae4Shift = 4
+	RegisterDsifir0FieldFae4Mask  = 0x10
 )
 
 // GetFae4 FAE4
-func (r *registerDsi_fir0Type) GetFae4() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae4Mask) != 0
+func (r *registerDsifir0Type) GetFae4() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae4Mask) != 0
 }
 
 // SetFae4 FAE4
-func (r *registerDsi_fir0Type) SetFae4(value bool) {
+func (r *registerDsifir0Type) SetFae4(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae4Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae4Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae5Shift = 5
-	RegisterDsi_fir0FieldFae5Mask  = 0x20
+	RegisterDsifir0FieldFae5Shift = 5
+	RegisterDsifir0FieldFae5Mask  = 0x20
 )
 
 // GetFae5 FAE5
-func (r *registerDsi_fir0Type) GetFae5() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae5Mask) != 0
+func (r *registerDsifir0Type) GetFae5() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae5Mask) != 0
 }
 
 // SetFae5 FAE5
-func (r *registerDsi_fir0Type) SetFae5(value bool) {
+func (r *registerDsifir0Type) SetFae5(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae5Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae5Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae5Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae5Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae6Shift = 6
-	RegisterDsi_fir0FieldFae6Mask  = 0x40
+	RegisterDsifir0FieldFae6Shift = 6
+	RegisterDsifir0FieldFae6Mask  = 0x40
 )
 
 // GetFae6 FAE6
-func (r *registerDsi_fir0Type) GetFae6() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae6Mask) != 0
+func (r *registerDsifir0Type) GetFae6() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae6Mask) != 0
 }
 
 // SetFae6 FAE6
-func (r *registerDsi_fir0Type) SetFae6(value bool) {
+func (r *registerDsifir0Type) SetFae6(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae6Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae6Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae6Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae6Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae7Shift = 7
-	RegisterDsi_fir0FieldFae7Mask  = 0x80
+	RegisterDsifir0FieldFae7Shift = 7
+	RegisterDsifir0FieldFae7Mask  = 0x80
 )
 
 // GetFae7 FAE7
-func (r *registerDsi_fir0Type) GetFae7() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae7Mask) != 0
+func (r *registerDsifir0Type) GetFae7() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae7Mask) != 0
 }
 
 // SetFae7 FAE7
-func (r *registerDsi_fir0Type) SetFae7(value bool) {
+func (r *registerDsifir0Type) SetFae7(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae7Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae7Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae7Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae7Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae8Shift = 8
-	RegisterDsi_fir0FieldFae8Mask  = 0x100
+	RegisterDsifir0FieldFae8Shift = 8
+	RegisterDsifir0FieldFae8Mask  = 0x100
 )
 
 // GetFae8 FAE8
-func (r *registerDsi_fir0Type) GetFae8() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae8Mask) != 0
+func (r *registerDsifir0Type) GetFae8() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae8Mask) != 0
 }
 
 // SetFae8 FAE8
-func (r *registerDsi_fir0Type) SetFae8(value bool) {
+func (r *registerDsifir0Type) SetFae8(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae8Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae8Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae8Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae8Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae9Shift = 9
-	RegisterDsi_fir0FieldFae9Mask  = 0x200
+	RegisterDsifir0FieldFae9Shift = 9
+	RegisterDsifir0FieldFae9Mask  = 0x200
 )
 
 // GetFae9 FAE9
-func (r *registerDsi_fir0Type) GetFae9() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae9Mask) != 0
+func (r *registerDsifir0Type) GetFae9() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae9Mask) != 0
 }
 
 // SetFae9 FAE9
-func (r *registerDsi_fir0Type) SetFae9(value bool) {
+func (r *registerDsifir0Type) SetFae9(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae9Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae9Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae9Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae9Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae10Shift = 10
-	RegisterDsi_fir0FieldFae10Mask  = 0x400
+	RegisterDsifir0FieldFae10Shift = 10
+	RegisterDsifir0FieldFae10Mask  = 0x400
 )
 
 // GetFae10 FAE10
-func (r *registerDsi_fir0Type) GetFae10() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae10Mask) != 0
+func (r *registerDsifir0Type) GetFae10() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae10Mask) != 0
 }
 
 // SetFae10 FAE10
-func (r *registerDsi_fir0Type) SetFae10(value bool) {
+func (r *registerDsifir0Type) SetFae10(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae10Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae10Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae10Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae10Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae11Shift = 11
-	RegisterDsi_fir0FieldFae11Mask  = 0x800
+	RegisterDsifir0FieldFae11Shift = 11
+	RegisterDsifir0FieldFae11Mask  = 0x800
 )
 
 // GetFae11 FAE11
-func (r *registerDsi_fir0Type) GetFae11() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae11Mask) != 0
+func (r *registerDsifir0Type) GetFae11() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae11Mask) != 0
 }
 
 // SetFae11 FAE11
-func (r *registerDsi_fir0Type) SetFae11(value bool) {
+func (r *registerDsifir0Type) SetFae11(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae11Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae11Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae11Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae11Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae12Shift = 12
-	RegisterDsi_fir0FieldFae12Mask  = 0x1000
+	RegisterDsifir0FieldFae12Shift = 12
+	RegisterDsifir0FieldFae12Mask  = 0x1000
 )
 
 // GetFae12 FAE12
-func (r *registerDsi_fir0Type) GetFae12() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae12Mask) != 0
+func (r *registerDsifir0Type) GetFae12() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae12Mask) != 0
 }
 
 // SetFae12 FAE12
-func (r *registerDsi_fir0Type) SetFae12(value bool) {
+func (r *registerDsifir0Type) SetFae12(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae12Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae12Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae12Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae12Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae13Shift = 13
-	RegisterDsi_fir0FieldFae13Mask  = 0x2000
+	RegisterDsifir0FieldFae13Shift = 13
+	RegisterDsifir0FieldFae13Mask  = 0x2000
 )
 
 // GetFae13 FAE13
-func (r *registerDsi_fir0Type) GetFae13() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae13Mask) != 0
+func (r *registerDsifir0Type) GetFae13() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae13Mask) != 0
 }
 
 // SetFae13 FAE13
-func (r *registerDsi_fir0Type) SetFae13(value bool) {
+func (r *registerDsifir0Type) SetFae13(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae13Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae13Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae13Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae13Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae14Shift = 14
-	RegisterDsi_fir0FieldFae14Mask  = 0x4000
+	RegisterDsifir0FieldFae14Shift = 14
+	RegisterDsifir0FieldFae14Mask  = 0x4000
 )
 
 // GetFae14 FAE14
-func (r *registerDsi_fir0Type) GetFae14() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae14Mask) != 0
+func (r *registerDsifir0Type) GetFae14() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae14Mask) != 0
 }
 
 // SetFae14 FAE14
-func (r *registerDsi_fir0Type) SetFae14(value bool) {
+func (r *registerDsifir0Type) SetFae14(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae14Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae14Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae14Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae14Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFae15Shift = 15
-	RegisterDsi_fir0FieldFae15Mask  = 0x8000
+	RegisterDsifir0FieldFae15Shift = 15
+	RegisterDsifir0FieldFae15Mask  = 0x8000
 )
 
 // GetFae15 FAE15
-func (r *registerDsi_fir0Type) GetFae15() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFae15Mask) != 0
+func (r *registerDsifir0Type) GetFae15() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFae15Mask) != 0
 }
 
 // SetFae15 FAE15
-func (r *registerDsi_fir0Type) SetFae15(value bool) {
+func (r *registerDsifir0Type) SetFae15(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFae15Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFae15Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFae15Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFae15Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFpe0Shift = 16
-	RegisterDsi_fir0FieldFpe0Mask  = 0x10000
+	RegisterDsifir0FieldFpe0Shift = 16
+	RegisterDsifir0FieldFpe0Mask  = 0x10000
 )
 
 // GetFpe0 FPE0
-func (r *registerDsi_fir0Type) GetFpe0() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFpe0Mask) != 0
+func (r *registerDsifir0Type) GetFpe0() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFpe0Mask) != 0
 }
 
 // SetFpe0 FPE0
-func (r *registerDsi_fir0Type) SetFpe0(value bool) {
+func (r *registerDsifir0Type) SetFpe0(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFpe0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFpe0Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFpe0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFpe0Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFpe1Shift = 17
-	RegisterDsi_fir0FieldFpe1Mask  = 0x20000
+	RegisterDsifir0FieldFpe1Shift = 17
+	RegisterDsifir0FieldFpe1Mask  = 0x20000
 )
 
 // GetFpe1 FPE1
-func (r *registerDsi_fir0Type) GetFpe1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFpe1Mask) != 0
+func (r *registerDsifir0Type) GetFpe1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFpe1Mask) != 0
 }
 
 // SetFpe1 FPE1
-func (r *registerDsi_fir0Type) SetFpe1(value bool) {
+func (r *registerDsifir0Type) SetFpe1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFpe1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFpe1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFpe1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFpe1Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFpe2Shift = 18
-	RegisterDsi_fir0FieldFpe2Mask  = 0x40000
+	RegisterDsifir0FieldFpe2Shift = 18
+	RegisterDsifir0FieldFpe2Mask  = 0x40000
 )
 
 // GetFpe2 FPE2
-func (r *registerDsi_fir0Type) GetFpe2() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFpe2Mask) != 0
+func (r *registerDsifir0Type) GetFpe2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFpe2Mask) != 0
 }
 
 // SetFpe2 FPE2
-func (r *registerDsi_fir0Type) SetFpe2(value bool) {
+func (r *registerDsifir0Type) SetFpe2(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFpe2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFpe2Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFpe2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFpe2Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFpe3Shift = 19
-	RegisterDsi_fir0FieldFpe3Mask  = 0x80000
+	RegisterDsifir0FieldFpe3Shift = 19
+	RegisterDsifir0FieldFpe3Mask  = 0x80000
 )
 
 // GetFpe3 FPE3
-func (r *registerDsi_fir0Type) GetFpe3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFpe3Mask) != 0
+func (r *registerDsifir0Type) GetFpe3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFpe3Mask) != 0
 }
 
 // SetFpe3 FPE3
-func (r *registerDsi_fir0Type) SetFpe3(value bool) {
+func (r *registerDsifir0Type) SetFpe3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFpe3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFpe3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFpe3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFpe3Mask)
 	}
 }
 
 const (
-	RegisterDsi_fir0FieldFpe4Shift = 20
-	RegisterDsi_fir0FieldFpe4Mask  = 0x100000
+	RegisterDsifir0FieldFpe4Shift = 20
+	RegisterDsifir0FieldFpe4Mask  = 0x100000
 )
 
 // GetFpe4 FPE4
-func (r *registerDsi_fir0Type) GetFpe4() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir0FieldFpe4Mask) != 0
+func (r *registerDsifir0Type) GetFpe4() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir0FieldFpe4Mask) != 0
 }
 
 // SetFpe4 FPE4
-func (r *registerDsi_fir0Type) SetFpe4(value bool) {
+func (r *registerDsifir0Type) SetFpe4(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir0FieldFpe4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir0FieldFpe4Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir0FieldFpe4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir0FieldFpe4Mask)
 	}
 }
 
-// registerDsi_fir1Type DSI Host force interrupt register 1
-type registerDsi_fir1Type uint32
+// registerDsifir1Type DSI Host force interrupt register 1
+type registerDsifir1Type uint32
 
 const (
-	RegisterDsi_fir1FieldFtohstxShift = 0
-	RegisterDsi_fir1FieldFtohstxMask  = 0x1
+	RegisterDsifir1FieldFtohstxShift = 0
+	RegisterDsifir1FieldFtohstxMask  = 0x1
 )
 
 // GetFtohstx FTOHSTX
-func (r *registerDsi_fir1Type) GetFtohstx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFtohstxMask) != 0
+func (r *registerDsifir1Type) GetFtohstx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFtohstxMask) != 0
 }
 
 // SetFtohstx FTOHSTX
-func (r *registerDsi_fir1Type) SetFtohstx(value bool) {
+func (r *registerDsifir1Type) SetFtohstx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFtohstxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFtohstxMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFtohstxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFtohstxMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFtolprxShift = 1
-	RegisterDsi_fir1FieldFtolprxMask  = 0x2
+	RegisterDsifir1FieldFtolprxShift = 1
+	RegisterDsifir1FieldFtolprxMask  = 0x2
 )
 
 // GetFtolprx FTOLPRX
-func (r *registerDsi_fir1Type) GetFtolprx() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFtolprxMask) != 0
+func (r *registerDsifir1Type) GetFtolprx() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFtolprxMask) != 0
 }
 
 // SetFtolprx FTOLPRX
-func (r *registerDsi_fir1Type) SetFtolprx(value bool) {
+func (r *registerDsifir1Type) SetFtolprx(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFtolprxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFtolprxMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFtolprxMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFtolprxMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFeccseShift = 2
-	RegisterDsi_fir1FieldFeccseMask  = 0x4
+	RegisterDsifir1FieldFeccseShift = 2
+	RegisterDsifir1FieldFeccseMask  = 0x4
 )
 
 // GetFeccse FECCSE
-func (r *registerDsi_fir1Type) GetFeccse() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFeccseMask) != 0
+func (r *registerDsifir1Type) GetFeccse() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFeccseMask) != 0
 }
 
 // SetFeccse FECCSE
-func (r *registerDsi_fir1Type) SetFeccse(value bool) {
+func (r *registerDsifir1Type) SetFeccse(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFeccseMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFeccseMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFeccseMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFeccseMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFeccmeShift = 3
-	RegisterDsi_fir1FieldFeccmeMask  = 0x8
+	RegisterDsifir1FieldFeccmeShift = 3
+	RegisterDsifir1FieldFeccmeMask  = 0x8
 )
 
 // GetFeccme FECCME
-func (r *registerDsi_fir1Type) GetFeccme() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFeccmeMask) != 0
+func (r *registerDsifir1Type) GetFeccme() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFeccmeMask) != 0
 }
 
 // SetFeccme FECCME
-func (r *registerDsi_fir1Type) SetFeccme(value bool) {
+func (r *registerDsifir1Type) SetFeccme(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFeccmeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFeccmeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFeccmeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFeccmeMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFcrceShift = 4
-	RegisterDsi_fir1FieldFcrceMask  = 0x10
+	RegisterDsifir1FieldFcrceShift = 4
+	RegisterDsifir1FieldFcrceMask  = 0x10
 )
 
 // GetFcrce FCRCE
-func (r *registerDsi_fir1Type) GetFcrce() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFcrceMask) != 0
+func (r *registerDsifir1Type) GetFcrce() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFcrceMask) != 0
 }
 
 // SetFcrce FCRCE
-func (r *registerDsi_fir1Type) SetFcrce(value bool) {
+func (r *registerDsifir1Type) SetFcrce(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFcrceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFcrceMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFcrceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFcrceMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFpseShift = 5
-	RegisterDsi_fir1FieldFpseMask  = 0x20
+	RegisterDsifir1FieldFpseShift = 5
+	RegisterDsifir1FieldFpseMask  = 0x20
 )
 
 // GetFpse FPSE
-func (r *registerDsi_fir1Type) GetFpse() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFpseMask) != 0
+func (r *registerDsifir1Type) GetFpse() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFpseMask) != 0
 }
 
 // SetFpse FPSE
-func (r *registerDsi_fir1Type) SetFpse(value bool) {
+func (r *registerDsifir1Type) SetFpse(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFpseMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFpseMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFpseMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFpseMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFeotpeShift = 6
-	RegisterDsi_fir1FieldFeotpeMask  = 0x40
+	RegisterDsifir1FieldFeotpeShift = 6
+	RegisterDsifir1FieldFeotpeMask  = 0x40
 )
 
 // GetFeotpe FEOTPE
-func (r *registerDsi_fir1Type) GetFeotpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFeotpeMask) != 0
+func (r *registerDsifir1Type) GetFeotpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFeotpeMask) != 0
 }
 
 // SetFeotpe FEOTPE
-func (r *registerDsi_fir1Type) SetFeotpe(value bool) {
+func (r *registerDsifir1Type) SetFeotpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFeotpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFeotpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFeotpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFeotpeMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFlpwreShift = 7
-	RegisterDsi_fir1FieldFlpwreMask  = 0x80
+	RegisterDsifir1FieldFlpwreShift = 7
+	RegisterDsifir1FieldFlpwreMask  = 0x80
 )
 
 // GetFlpwre FLPWRE
-func (r *registerDsi_fir1Type) GetFlpwre() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFlpwreMask) != 0
+func (r *registerDsifir1Type) GetFlpwre() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFlpwreMask) != 0
 }
 
 // SetFlpwre FLPWRE
-func (r *registerDsi_fir1Type) SetFlpwre(value bool) {
+func (r *registerDsifir1Type) SetFlpwre(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFlpwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFlpwreMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFlpwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFlpwreMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFgcwreShift = 8
-	RegisterDsi_fir1FieldFgcwreMask  = 0x100
+	RegisterDsifir1FieldFgcwreShift = 8
+	RegisterDsifir1FieldFgcwreMask  = 0x100
 )
 
 // GetFgcwre FGCWRE
-func (r *registerDsi_fir1Type) GetFgcwre() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFgcwreMask) != 0
+func (r *registerDsifir1Type) GetFgcwre() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFgcwreMask) != 0
 }
 
 // SetFgcwre FGCWRE
-func (r *registerDsi_fir1Type) SetFgcwre(value bool) {
+func (r *registerDsifir1Type) SetFgcwre(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFgcwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFgcwreMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFgcwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFgcwreMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFgpwreShift = 9
-	RegisterDsi_fir1FieldFgpwreMask  = 0x200
+	RegisterDsifir1FieldFgpwreShift = 9
+	RegisterDsifir1FieldFgpwreMask  = 0x200
 )
 
 // GetFgpwre FGPWRE
-func (r *registerDsi_fir1Type) GetFgpwre() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFgpwreMask) != 0
+func (r *registerDsifir1Type) GetFgpwre() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFgpwreMask) != 0
 }
 
 // SetFgpwre FGPWRE
-func (r *registerDsi_fir1Type) SetFgpwre(value bool) {
+func (r *registerDsifir1Type) SetFgpwre(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFgpwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFgpwreMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFgpwreMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFgpwreMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFgptxeShift = 10
-	RegisterDsi_fir1FieldFgptxeMask  = 0x400
+	RegisterDsifir1FieldFgptxeShift = 10
+	RegisterDsifir1FieldFgptxeMask  = 0x400
 )
 
 // GetFgptxe FGPTXE
-func (r *registerDsi_fir1Type) GetFgptxe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFgptxeMask) != 0
+func (r *registerDsifir1Type) GetFgptxe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFgptxeMask) != 0
 }
 
 // SetFgptxe FGPTXE
-func (r *registerDsi_fir1Type) SetFgptxe(value bool) {
+func (r *registerDsifir1Type) SetFgptxe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFgptxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFgptxeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFgptxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFgptxeMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFgprdeShift = 11
-	RegisterDsi_fir1FieldFgprdeMask  = 0x800
+	RegisterDsifir1FieldFgprdeShift = 11
+	RegisterDsifir1FieldFgprdeMask  = 0x800
 )
 
 // GetFgprde FGPRDE
-func (r *registerDsi_fir1Type) GetFgprde() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFgprdeMask) != 0
+func (r *registerDsifir1Type) GetFgprde() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFgprdeMask) != 0
 }
 
 // SetFgprde FGPRDE
-func (r *registerDsi_fir1Type) SetFgprde(value bool) {
+func (r *registerDsifir1Type) SetFgprde(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFgprdeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFgprdeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFgprdeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFgprdeMask)
 	}
 }
 
 const (
-	RegisterDsi_fir1FieldFgprxeShift = 12
-	RegisterDsi_fir1FieldFgprxeMask  = 0x1000
+	RegisterDsifir1FieldFgprxeShift = 12
+	RegisterDsifir1FieldFgprxeMask  = 0x1000
 )
 
 // GetFgprxe FGPRXE
-func (r *registerDsi_fir1Type) GetFgprxe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_fir1FieldFgprxeMask) != 0
+func (r *registerDsifir1Type) GetFgprxe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsifir1FieldFgprxeMask) != 0
 }
 
 // SetFgprxe FGPRXE
-func (r *registerDsi_fir1Type) SetFgprxe(value bool) {
+func (r *registerDsifir1Type) SetFgprxe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_fir1FieldFgprxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsifir1FieldFgprxeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_fir1FieldFgprxeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsifir1FieldFgprxeMask)
 	}
 }
 
-// registerDsi_vscrType DSI Host video shadow control register
-type registerDsi_vscrType uint32
+// registerDsivscrType DSI Host video shadow control register
+type registerDsivscrType uint32
 
 const (
-	RegisterDsi_vscrFieldEnShift = 0
-	RegisterDsi_vscrFieldEnMask  = 0x1
+	RegisterDsivscrFieldEnShift = 0
+	RegisterDsivscrFieldEnMask  = 0x1
 )
 
 // GetEn EN
-func (r *registerDsi_vscrType) GetEn() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vscrFieldEnMask) != 0
+func (r *registerDsivscrType) GetEn() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivscrFieldEnMask) != 0
 }
 
 // SetEn EN
-func (r *registerDsi_vscrType) SetEn(value bool) {
+func (r *registerDsivscrType) SetEn(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vscrFieldEnMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivscrFieldEnMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vscrFieldEnMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivscrFieldEnMask)
 	}
 }
 
 const (
-	RegisterDsi_vscrFieldUrShift = 8
-	RegisterDsi_vscrFieldUrMask  = 0x100
+	RegisterDsivscrFieldUrShift = 8
+	RegisterDsivscrFieldUrMask  = 0x100
 )
 
 // GetUr UR
-func (r *registerDsi_vscrType) GetUr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vscrFieldUrMask) != 0
+func (r *registerDsivscrType) GetUr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivscrFieldUrMask) != 0
 }
 
 // SetUr UR
-func (r *registerDsi_vscrType) SetUr(value bool) {
+func (r *registerDsivscrType) SetUr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vscrFieldUrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivscrFieldUrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vscrFieldUrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivscrFieldUrMask)
 	}
 }
 
-// registerDsi_lcvcidrType DSI Host LTDC current VCID register
-type registerDsi_lcvcidrType uint32
+// registerDsilcvcidrType DSI Host LTDC current VCID register
+type registerDsilcvcidrType uint32
 
 const (
-	RegisterDsi_lcvcidrFieldVcidShift = 0
-	RegisterDsi_lcvcidrFieldVcidMask  = 0x3
+	RegisterDsilcvcidrFieldVcidShift = 0
+	RegisterDsilcvcidrFieldVcidMask  = 0x3
 )
 
 // GetVcid VCID
-func (r *registerDsi_lcvcidrType) GetVcid() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lcvcidrFieldVcidMask) >> RegisterDsi_lcvcidrFieldVcidShift)
+func (r *registerDsilcvcidrType) GetVcid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsilcvcidrFieldVcidMask) >> RegisterDsilcvcidrFieldVcidShift)
 }
 
 // SetVcid VCID
-func (r *registerDsi_lcvcidrType) SetVcid(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lcvcidrFieldVcidMask)|(uint32(value)<<RegisterDsi_lcvcidrFieldVcidShift))
+func (r *registerDsilcvcidrType) SetVcid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsilcvcidrFieldVcidMask)|(uint32(value)<<RegisterDsilcvcidrFieldVcidShift))
 }
 
-// registerDsi_lcccrType DSI Host LTDC current color coding register
-type registerDsi_lcccrType uint32
+// registerDsilcccrType DSI Host LTDC current color coding register
+type registerDsilcccrType uint32
 
 const (
-	RegisterDsi_lcccrFieldColcShift = 0
-	RegisterDsi_lcccrFieldColcMask  = 0xf
+	RegisterDsilcccrFieldColcShift = 0
+	RegisterDsilcccrFieldColcMask  = 0xf
 )
 
 // GetColc COLC
-func (r *registerDsi_lcccrType) GetColc() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lcccrFieldColcMask) >> RegisterDsi_lcccrFieldColcShift)
+func (r *registerDsilcccrType) GetColc() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsilcccrFieldColcMask) >> RegisterDsilcccrFieldColcShift)
 }
 
 // SetColc COLC
-func (r *registerDsi_lcccrType) SetColc(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lcccrFieldColcMask)|(uint32(value)<<RegisterDsi_lcccrFieldColcShift))
+func (r *registerDsilcccrType) SetColc(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsilcccrFieldColcMask)|(uint32(value)<<RegisterDsilcccrFieldColcShift))
 }
 
 const (
-	RegisterDsi_lcccrFieldLpeShift = 8
-	RegisterDsi_lcccrFieldLpeMask  = 0x100
+	RegisterDsilcccrFieldLpeShift = 8
+	RegisterDsilcccrFieldLpeMask  = 0x100
 )
 
 // GetLpe LPE
-func (r *registerDsi_lcccrType) GetLpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lcccrFieldLpeMask) != 0
+func (r *registerDsilcccrType) GetLpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsilcccrFieldLpeMask) != 0
 }
 
 // SetLpe LPE
-func (r *registerDsi_lcccrType) SetLpe(value bool) {
+func (r *registerDsilcccrType) SetLpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_lcccrFieldLpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsilcccrFieldLpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lcccrFieldLpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsilcccrFieldLpeMask)
 	}
 }
 
-// registerDsi_lpmccrType DSI Host low-power mode current configuration register
-type registerDsi_lpmccrType uint32
+// registerDsilpmccrType DSI Host low-power mode current configuration register
+type registerDsilpmccrType uint32
 
 const (
-	RegisterDsi_lpmccrFieldVlpsizeShift = 0
-	RegisterDsi_lpmccrFieldVlpsizeMask  = 0xff
+	RegisterDsilpmccrFieldVlpsizeShift = 0
+	RegisterDsilpmccrFieldVlpsizeMask  = 0xff
 )
 
 // GetVlpsize VLPSIZE
-func (r *registerDsi_lpmccrType) GetVlpsize() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lpmccrFieldVlpsizeMask) >> RegisterDsi_lpmccrFieldVlpsizeShift)
+func (r *registerDsilpmccrType) GetVlpsize() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsilpmccrFieldVlpsizeMask) >> RegisterDsilpmccrFieldVlpsizeShift)
 }
 
 // SetVlpsize VLPSIZE
-func (r *registerDsi_lpmccrType) SetVlpsize(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lpmccrFieldVlpsizeMask)|(uint32(value)<<RegisterDsi_lpmccrFieldVlpsizeShift))
+func (r *registerDsilpmccrType) SetVlpsize(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsilpmccrFieldVlpsizeMask)|(uint32(value)<<RegisterDsilpmccrFieldVlpsizeShift))
 }
 
 const (
-	RegisterDsi_lpmccrFieldLpsizeShift = 16
-	RegisterDsi_lpmccrFieldLpsizeMask  = 0xff0000
+	RegisterDsilpmccrFieldLpsizeShift = 16
+	RegisterDsilpmccrFieldLpsizeMask  = 0xff0000
 )
 
 // GetLpsize LPSIZE
-func (r *registerDsi_lpmccrType) GetLpsize() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_lpmccrFieldLpsizeMask) >> RegisterDsi_lpmccrFieldLpsizeShift)
+func (r *registerDsilpmccrType) GetLpsize() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsilpmccrFieldLpsizeMask) >> RegisterDsilpmccrFieldLpsizeShift)
 }
 
 // SetLpsize LPSIZE
-func (r *registerDsi_lpmccrType) SetLpsize(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_lpmccrFieldLpsizeMask)|(uint32(value)<<RegisterDsi_lpmccrFieldLpsizeShift))
+func (r *registerDsilpmccrType) SetLpsize(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsilpmccrFieldLpsizeMask)|(uint32(value)<<RegisterDsilpmccrFieldLpsizeShift))
 }
 
-// registerDsi_vmccrType DSI Host video mode current configuration register
-type registerDsi_vmccrType uint32
+// registerDsivmccrType DSI Host video mode current configuration register
+type registerDsivmccrType uint32
 
 const (
-	RegisterDsi_vmccrFieldVmtShift = 0
-	RegisterDsi_vmccrFieldVmtMask  = 0x3
+	RegisterDsivmccrFieldVmtShift = 0
+	RegisterDsivmccrFieldVmtMask  = 0x3
 )
 
 // GetVmt VMT
-func (r *registerDsi_vmccrType) GetVmt() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmccrFieldVmtMask) >> RegisterDsi_vmccrFieldVmtShift)
+func (r *registerDsivmccrType) GetVmt() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsivmccrFieldVmtMask) >> RegisterDsivmccrFieldVmtShift)
 }
 
 // SetVmt VMT
-func (r *registerDsi_vmccrType) SetVmt(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmccrFieldVmtMask)|(uint32(value)<<RegisterDsi_vmccrFieldVmtShift))
+func (r *registerDsivmccrType) SetVmt(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivmccrFieldVmtMask)|(uint32(value)<<RegisterDsivmccrFieldVmtShift))
 }
 
 const (
-	RegisterDsi_vmccrFieldLpvsaeShift = 2
-	RegisterDsi_vmccrFieldLpvsaeMask  = 0x4
+	RegisterDsivmccrFieldLpvsaeShift = 2
+	RegisterDsivmccrFieldLpvsaeMask  = 0x4
 )
 
 // GetLpvsae LPVSAE
-func (r *registerDsi_vmccrType) GetLpvsae() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmccrFieldLpvsaeMask) != 0
+func (r *registerDsivmccrType) GetLpvsae() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmccrFieldLpvsaeMask) != 0
 }
 
 // SetLpvsae LPVSAE
-func (r *registerDsi_vmccrType) SetLpvsae(value bool) {
+func (r *registerDsivmccrType) SetLpvsae(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmccrFieldLpvsaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmccrFieldLpvsaeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmccrFieldLpvsaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmccrFieldLpvsaeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmccrFieldLpvbpeShift = 3
-	RegisterDsi_vmccrFieldLpvbpeMask  = 0x8
+	RegisterDsivmccrFieldLpvbpeShift = 3
+	RegisterDsivmccrFieldLpvbpeMask  = 0x8
 )
 
 // GetLpvbpe LPVBPE
-func (r *registerDsi_vmccrType) GetLpvbpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmccrFieldLpvbpeMask) != 0
+func (r *registerDsivmccrType) GetLpvbpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmccrFieldLpvbpeMask) != 0
 }
 
 // SetLpvbpe LPVBPE
-func (r *registerDsi_vmccrType) SetLpvbpe(value bool) {
+func (r *registerDsivmccrType) SetLpvbpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmccrFieldLpvbpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmccrFieldLpvbpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmccrFieldLpvbpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmccrFieldLpvbpeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmccrFieldLpvfpeShift = 4
-	RegisterDsi_vmccrFieldLpvfpeMask  = 0x10
+	RegisterDsivmccrFieldLpvfpeShift = 4
+	RegisterDsivmccrFieldLpvfpeMask  = 0x10
 )
 
 // GetLpvfpe LPVFPE
-func (r *registerDsi_vmccrType) GetLpvfpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmccrFieldLpvfpeMask) != 0
+func (r *registerDsivmccrType) GetLpvfpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmccrFieldLpvfpeMask) != 0
 }
 
 // SetLpvfpe LPVFPE
-func (r *registerDsi_vmccrType) SetLpvfpe(value bool) {
+func (r *registerDsivmccrType) SetLpvfpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmccrFieldLpvfpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmccrFieldLpvfpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmccrFieldLpvfpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmccrFieldLpvfpeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmccrFieldLpvaeShift = 5
-	RegisterDsi_vmccrFieldLpvaeMask  = 0x20
+	RegisterDsivmccrFieldLpvaeShift = 5
+	RegisterDsivmccrFieldLpvaeMask  = 0x20
 )
 
 // GetLpvae LPVAE
-func (r *registerDsi_vmccrType) GetLpvae() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmccrFieldLpvaeMask) != 0
+func (r *registerDsivmccrType) GetLpvae() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmccrFieldLpvaeMask) != 0
 }
 
 // SetLpvae LPVAE
-func (r *registerDsi_vmccrType) SetLpvae(value bool) {
+func (r *registerDsivmccrType) SetLpvae(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmccrFieldLpvaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmccrFieldLpvaeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmccrFieldLpvaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmccrFieldLpvaeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmccrFieldLphbpeShift = 6
-	RegisterDsi_vmccrFieldLphbpeMask  = 0x40
+	RegisterDsivmccrFieldLphbpeShift = 6
+	RegisterDsivmccrFieldLphbpeMask  = 0x40
 )
 
 // GetLphbpe LPHBPE
-func (r *registerDsi_vmccrType) GetLphbpe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmccrFieldLphbpeMask) != 0
+func (r *registerDsivmccrType) GetLphbpe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmccrFieldLphbpeMask) != 0
 }
 
 // SetLphbpe LPHBPE
-func (r *registerDsi_vmccrType) SetLphbpe(value bool) {
+func (r *registerDsivmccrType) SetLphbpe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmccrFieldLphbpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmccrFieldLphbpeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmccrFieldLphbpeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmccrFieldLphbpeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmccrFieldLphfeShift = 7
-	RegisterDsi_vmccrFieldLphfeMask  = 0x80
+	RegisterDsivmccrFieldLphfeShift = 7
+	RegisterDsivmccrFieldLphfeMask  = 0x80
 )
 
 // GetLphfe LPHFE
-func (r *registerDsi_vmccrType) GetLphfe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmccrFieldLphfeMask) != 0
+func (r *registerDsivmccrType) GetLphfe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmccrFieldLphfeMask) != 0
 }
 
 // SetLphfe LPHFE
-func (r *registerDsi_vmccrType) SetLphfe(value bool) {
+func (r *registerDsivmccrType) SetLphfe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmccrFieldLphfeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmccrFieldLphfeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmccrFieldLphfeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmccrFieldLphfeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmccrFieldFbtaaeShift = 8
-	RegisterDsi_vmccrFieldFbtaaeMask  = 0x100
+	RegisterDsivmccrFieldFbtaaeShift = 8
+	RegisterDsivmccrFieldFbtaaeMask  = 0x100
 )
 
 // GetFbtaae FBTAAE
-func (r *registerDsi_vmccrType) GetFbtaae() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmccrFieldFbtaaeMask) != 0
+func (r *registerDsivmccrType) GetFbtaae() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmccrFieldFbtaaeMask) != 0
 }
 
 // SetFbtaae FBTAAE
-func (r *registerDsi_vmccrType) SetFbtaae(value bool) {
+func (r *registerDsivmccrType) SetFbtaae(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmccrFieldFbtaaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmccrFieldFbtaaeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmccrFieldFbtaaeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmccrFieldFbtaaeMask)
 	}
 }
 
 const (
-	RegisterDsi_vmccrFieldLpceShift = 9
-	RegisterDsi_vmccrFieldLpceMask  = 0x200
+	RegisterDsivmccrFieldLpceShift = 9
+	RegisterDsivmccrFieldLpceMask  = 0x200
 )
 
 // GetLpce LPCE
-func (r *registerDsi_vmccrType) GetLpce() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vmccrFieldLpceMask) != 0
+func (r *registerDsivmccrType) GetLpce() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsivmccrFieldLpceMask) != 0
 }
 
 // SetLpce LPCE
-func (r *registerDsi_vmccrType) SetLpce(value bool) {
+func (r *registerDsivmccrType) SetLpce(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_vmccrFieldLpceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsivmccrFieldLpceMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vmccrFieldLpceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsivmccrFieldLpceMask)
 	}
 }
 
-// registerDsi_vpccrType DSI Host video packet current configuration register
-type registerDsi_vpccrType uint32
+// registerDsivpccrType DSI Host video packet current configuration register
+type registerDsivpccrType uint32
 
 const (
-	RegisterDsi_vpccrFieldVpsizeShift = 0
-	RegisterDsi_vpccrFieldVpsizeMask  = 0x3fff
+	RegisterDsivpccrFieldVpsizeShift = 0
+	RegisterDsivpccrFieldVpsizeMask  = 0x3fff
 )
 
 // GetVpsize VPSIZE
-func (r *registerDsi_vpccrType) GetVpsize() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vpccrFieldVpsizeMask) >> RegisterDsi_vpccrFieldVpsizeShift)
+func (r *registerDsivpccrType) GetVpsize() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivpccrFieldVpsizeMask) >> RegisterDsivpccrFieldVpsizeShift)
 }
 
 // SetVpsize VPSIZE
-func (r *registerDsi_vpccrType) SetVpsize(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vpccrFieldVpsizeMask)|(uint32(value)<<RegisterDsi_vpccrFieldVpsizeShift))
+func (r *registerDsivpccrType) SetVpsize(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivpccrFieldVpsizeMask)|(uint32(value)<<RegisterDsivpccrFieldVpsizeShift))
 }
 
-// registerDsi_vcccrType DSI Host video chunks current configuration register
-type registerDsi_vcccrType uint32
+// registerDsivcccrType DSI Host video chunks current configuration register
+type registerDsivcccrType uint32
 
 const (
-	RegisterDsi_vcccrFieldNumcShift = 0
-	RegisterDsi_vcccrFieldNumcMask  = 0x1fff
+	RegisterDsivcccrFieldNumcShift = 0
+	RegisterDsivcccrFieldNumcMask  = 0x1fff
 )
 
 // GetNumc NUMC
-func (r *registerDsi_vcccrType) GetNumc() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vcccrFieldNumcMask) >> RegisterDsi_vcccrFieldNumcShift)
+func (r *registerDsivcccrType) GetNumc() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivcccrFieldNumcMask) >> RegisterDsivcccrFieldNumcShift)
 }
 
 // SetNumc NUMC
-func (r *registerDsi_vcccrType) SetNumc(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vcccrFieldNumcMask)|(uint32(value)<<RegisterDsi_vcccrFieldNumcShift))
+func (r *registerDsivcccrType) SetNumc(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivcccrFieldNumcMask)|(uint32(value)<<RegisterDsivcccrFieldNumcShift))
 }
 
-// registerDsi_vnpccrType DSI Host video null packet current configuration register
-type registerDsi_vnpccrType uint32
+// registerDsivnpccrType DSI Host video null packet current configuration register
+type registerDsivnpccrType uint32
 
 const (
-	RegisterDsi_vnpccrFieldNpsizeShift = 0
-	RegisterDsi_vnpccrFieldNpsizeMask  = 0x1fff
+	RegisterDsivnpccrFieldNpsizeShift = 0
+	RegisterDsivnpccrFieldNpsizeMask  = 0x1fff
 )
 
 // GetNpsize NPSIZE
-func (r *registerDsi_vnpccrType) GetNpsize() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vnpccrFieldNpsizeMask) >> RegisterDsi_vnpccrFieldNpsizeShift)
+func (r *registerDsivnpccrType) GetNpsize() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivnpccrFieldNpsizeMask) >> RegisterDsivnpccrFieldNpsizeShift)
 }
 
 // SetNpsize NPSIZE
-func (r *registerDsi_vnpccrType) SetNpsize(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vnpccrFieldNpsizeMask)|(uint32(value)<<RegisterDsi_vnpccrFieldNpsizeShift))
+func (r *registerDsivnpccrType) SetNpsize(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivnpccrFieldNpsizeMask)|(uint32(value)<<RegisterDsivnpccrFieldNpsizeShift))
 }
 
-// registerDsi_vhsaccrType DSI Host video HSA current configuration register
-type registerDsi_vhsaccrType uint32
+// registerDsivhsaccrType DSI Host video HSA current configuration register
+type registerDsivhsaccrType uint32
 
 const (
-	RegisterDsi_vhsaccrFieldHsaShift = 0
-	RegisterDsi_vhsaccrFieldHsaMask  = 0xfff
+	RegisterDsivhsaccrFieldHsaShift = 0
+	RegisterDsivhsaccrFieldHsaMask  = 0xfff
 )
 
 // GetHsa HSA
-func (r *registerDsi_vhsaccrType) GetHsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vhsaccrFieldHsaMask) >> RegisterDsi_vhsaccrFieldHsaShift)
+func (r *registerDsivhsaccrType) GetHsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivhsaccrFieldHsaMask) >> RegisterDsivhsaccrFieldHsaShift)
 }
 
 // SetHsa HSA
-func (r *registerDsi_vhsaccrType) SetHsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vhsaccrFieldHsaMask)|(uint32(value)<<RegisterDsi_vhsaccrFieldHsaShift))
+func (r *registerDsivhsaccrType) SetHsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivhsaccrFieldHsaMask)|(uint32(value)<<RegisterDsivhsaccrFieldHsaShift))
 }
 
-// registerDsi_vhbpccrType DSI Host video HBP current configuration register
-type registerDsi_vhbpccrType uint32
+// registerDsivhbpccrType DSI Host video HBP current configuration register
+type registerDsivhbpccrType uint32
 
 const (
-	RegisterDsi_vhbpccrFieldHbpShift = 0
-	RegisterDsi_vhbpccrFieldHbpMask  = 0xfff
+	RegisterDsivhbpccrFieldHbpShift = 0
+	RegisterDsivhbpccrFieldHbpMask  = 0xfff
 )
 
 // GetHbp HBP
-func (r *registerDsi_vhbpccrType) GetHbp() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vhbpccrFieldHbpMask) >> RegisterDsi_vhbpccrFieldHbpShift)
+func (r *registerDsivhbpccrType) GetHbp() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivhbpccrFieldHbpMask) >> RegisterDsivhbpccrFieldHbpShift)
 }
 
 // SetHbp HBP
-func (r *registerDsi_vhbpccrType) SetHbp(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vhbpccrFieldHbpMask)|(uint32(value)<<RegisterDsi_vhbpccrFieldHbpShift))
+func (r *registerDsivhbpccrType) SetHbp(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivhbpccrFieldHbpMask)|(uint32(value)<<RegisterDsivhbpccrFieldHbpShift))
 }
 
-// registerDsi_vlccrType DSI Host video line current configuration register
-type registerDsi_vlccrType uint32
+// registerDsivlccrType DSI Host video line current configuration register
+type registerDsivlccrType uint32
 
 const (
-	RegisterDsi_vlccrFieldHlineShift = 0
-	RegisterDsi_vlccrFieldHlineMask  = 0x7fff
+	RegisterDsivlccrFieldHlineShift = 0
+	RegisterDsivlccrFieldHlineMask  = 0x7fff
 )
 
 // GetHline HLINE
-func (r *registerDsi_vlccrType) GetHline() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vlccrFieldHlineMask) >> RegisterDsi_vlccrFieldHlineShift)
+func (r *registerDsivlccrType) GetHline() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivlccrFieldHlineMask) >> RegisterDsivlccrFieldHlineShift)
 }
 
 // SetHline HLINE
-func (r *registerDsi_vlccrType) SetHline(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vlccrFieldHlineMask)|(uint32(value)<<RegisterDsi_vlccrFieldHlineShift))
+func (r *registerDsivlccrType) SetHline(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivlccrFieldHlineMask)|(uint32(value)<<RegisterDsivlccrFieldHlineShift))
 }
 
-// registerDsi_vvsaccrType DSI Host video VSA current configuration register
-type registerDsi_vvsaccrType uint32
+// registerDsivvsaccrType DSI Host video VSA current configuration register
+type registerDsivvsaccrType uint32
 
 const (
-	RegisterDsi_vvsaccrFieldVsaShift = 0
-	RegisterDsi_vvsaccrFieldVsaMask  = 0x3ff
+	RegisterDsivvsaccrFieldVsaShift = 0
+	RegisterDsivvsaccrFieldVsaMask  = 0x3ff
 )
 
 // GetVsa VSA
-func (r *registerDsi_vvsaccrType) GetVsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vvsaccrFieldVsaMask) >> RegisterDsi_vvsaccrFieldVsaShift)
+func (r *registerDsivvsaccrType) GetVsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivvsaccrFieldVsaMask) >> RegisterDsivvsaccrFieldVsaShift)
 }
 
 // SetVsa VSA
-func (r *registerDsi_vvsaccrType) SetVsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vvsaccrFieldVsaMask)|(uint32(value)<<RegisterDsi_vvsaccrFieldVsaShift))
+func (r *registerDsivvsaccrType) SetVsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivvsaccrFieldVsaMask)|(uint32(value)<<RegisterDsivvsaccrFieldVsaShift))
 }
 
-// registerDsi_vvbpccrType DSI Host video VBP current configuration register
-type registerDsi_vvbpccrType uint32
+// registerDsivvbpccrType DSI Host video VBP current configuration register
+type registerDsivvbpccrType uint32
 
 const (
-	RegisterDsi_vvbpccrFieldVbpShift = 0
-	RegisterDsi_vvbpccrFieldVbpMask  = 0x3ff
+	RegisterDsivvbpccrFieldVbpShift = 0
+	RegisterDsivvbpccrFieldVbpMask  = 0x3ff
 )
 
 // GetVbp VBP
-func (r *registerDsi_vvbpccrType) GetVbp() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vvbpccrFieldVbpMask) >> RegisterDsi_vvbpccrFieldVbpShift)
+func (r *registerDsivvbpccrType) GetVbp() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivvbpccrFieldVbpMask) >> RegisterDsivvbpccrFieldVbpShift)
 }
 
 // SetVbp VBP
-func (r *registerDsi_vvbpccrType) SetVbp(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vvbpccrFieldVbpMask)|(uint32(value)<<RegisterDsi_vvbpccrFieldVbpShift))
+func (r *registerDsivvbpccrType) SetVbp(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivvbpccrFieldVbpMask)|(uint32(value)<<RegisterDsivvbpccrFieldVbpShift))
 }
 
-// registerDsi_vvfpccrType DSI Host video VFP current configuration register
-type registerDsi_vvfpccrType uint32
+// registerDsivvfpccrType DSI Host video VFP current configuration register
+type registerDsivvfpccrType uint32
 
 const (
-	RegisterDsi_vvfpccrFieldVfpShift = 0
-	RegisterDsi_vvfpccrFieldVfpMask  = 0x3ff
+	RegisterDsivvfpccrFieldVfpShift = 0
+	RegisterDsivvfpccrFieldVfpMask  = 0x3ff
 )
 
 // GetVfp VFP
-func (r *registerDsi_vvfpccrType) GetVfp() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vvfpccrFieldVfpMask) >> RegisterDsi_vvfpccrFieldVfpShift)
+func (r *registerDsivvfpccrType) GetVfp() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivvfpccrFieldVfpMask) >> RegisterDsivvfpccrFieldVfpShift)
 }
 
 // SetVfp VFP
-func (r *registerDsi_vvfpccrType) SetVfp(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vvfpccrFieldVfpMask)|(uint32(value)<<RegisterDsi_vvfpccrFieldVfpShift))
+func (r *registerDsivvfpccrType) SetVfp(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivvfpccrFieldVfpMask)|(uint32(value)<<RegisterDsivvfpccrFieldVfpShift))
 }
 
-// registerDsi_vvaccrType DSI Host video VA current configuration register
-type registerDsi_vvaccrType uint32
+// registerDsivvaccrType DSI Host video VA current configuration register
+type registerDsivvaccrType uint32
 
 const (
-	RegisterDsi_vvaccrFieldVaShift = 0
-	RegisterDsi_vvaccrFieldVaMask  = 0x3fff
+	RegisterDsivvaccrFieldVaShift = 0
+	RegisterDsivvaccrFieldVaMask  = 0x3fff
 )
 
 // GetVa VA
-func (r *registerDsi_vvaccrType) GetVa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_vvaccrFieldVaMask) >> RegisterDsi_vvaccrFieldVaShift)
+func (r *registerDsivvaccrType) GetVa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDsivvaccrFieldVaMask) >> RegisterDsivvaccrFieldVaShift)
 }
 
 // SetVa VA
-func (r *registerDsi_vvaccrType) SetVa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_vvaccrFieldVaMask)|(uint32(value)<<RegisterDsi_vvaccrFieldVaShift))
+func (r *registerDsivvaccrType) SetVa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsivvaccrFieldVaMask)|(uint32(value)<<RegisterDsivvaccrFieldVaShift))
 }
 
-// registerDsi_wcfgrType DSI wrapper configuration register
-type registerDsi_wcfgrType uint32
+// registerDsiwcfgrType DSI wrapper configuration register
+type registerDsiwcfgrType uint32
 
 const (
-	RegisterDsi_wcfgrFieldDsimShift = 0
-	RegisterDsi_wcfgrFieldDsimMask  = 0x1
+	RegisterDsiwcfgrFieldDsimShift = 0
+	RegisterDsiwcfgrFieldDsimMask  = 0x1
 )
 
 // GetDsim DSIM
-func (r *registerDsi_wcfgrType) GetDsim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wcfgrFieldDsimMask) != 0
+func (r *registerDsiwcfgrType) GetDsim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwcfgrFieldDsimMask) != 0
 }
 
 // SetDsim DSIM
-func (r *registerDsi_wcfgrType) SetDsim(value bool) {
+func (r *registerDsiwcfgrType) SetDsim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wcfgrFieldDsimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwcfgrFieldDsimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wcfgrFieldDsimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwcfgrFieldDsimMask)
 	}
 }
 
 const (
-	RegisterDsi_wcfgrFieldColmuxShift = 1
-	RegisterDsi_wcfgrFieldColmuxMask  = 0xe
+	RegisterDsiwcfgrFieldColmuxShift = 1
+	RegisterDsiwcfgrFieldColmuxMask  = 0xe
 )
 
 // GetColmux COLMUX
-func (r *registerDsi_wcfgrType) GetColmux() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wcfgrFieldColmuxMask) >> RegisterDsi_wcfgrFieldColmuxShift)
+func (r *registerDsiwcfgrType) GetColmux() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwcfgrFieldColmuxMask) >> RegisterDsiwcfgrFieldColmuxShift)
 }
 
 // SetColmux COLMUX
-func (r *registerDsi_wcfgrType) SetColmux(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wcfgrFieldColmuxMask)|(uint32(value)<<RegisterDsi_wcfgrFieldColmuxShift))
+func (r *registerDsiwcfgrType) SetColmux(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwcfgrFieldColmuxMask)|(uint32(value)<<RegisterDsiwcfgrFieldColmuxShift))
 }
 
 const (
-	RegisterDsi_wcfgrFieldTesrcShift = 4
-	RegisterDsi_wcfgrFieldTesrcMask  = 0x10
+	RegisterDsiwcfgrFieldTesrcShift = 4
+	RegisterDsiwcfgrFieldTesrcMask  = 0x10
 )
 
 // GetTesrc TESRC
-func (r *registerDsi_wcfgrType) GetTesrc() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wcfgrFieldTesrcMask) != 0
+func (r *registerDsiwcfgrType) GetTesrc() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwcfgrFieldTesrcMask) != 0
 }
 
 // SetTesrc TESRC
-func (r *registerDsi_wcfgrType) SetTesrc(value bool) {
+func (r *registerDsiwcfgrType) SetTesrc(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wcfgrFieldTesrcMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwcfgrFieldTesrcMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wcfgrFieldTesrcMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwcfgrFieldTesrcMask)
 	}
 }
 
 const (
-	RegisterDsi_wcfgrFieldTepolShift = 5
-	RegisterDsi_wcfgrFieldTepolMask  = 0x20
+	RegisterDsiwcfgrFieldTepolShift = 5
+	RegisterDsiwcfgrFieldTepolMask  = 0x20
 )
 
 // GetTepol TEPOL
-func (r *registerDsi_wcfgrType) GetTepol() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wcfgrFieldTepolMask) != 0
+func (r *registerDsiwcfgrType) GetTepol() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwcfgrFieldTepolMask) != 0
 }
 
 // SetTepol TEPOL
-func (r *registerDsi_wcfgrType) SetTepol(value bool) {
+func (r *registerDsiwcfgrType) SetTepol(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wcfgrFieldTepolMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwcfgrFieldTepolMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wcfgrFieldTepolMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwcfgrFieldTepolMask)
 	}
 }
 
 const (
-	RegisterDsi_wcfgrFieldArShift = 6
-	RegisterDsi_wcfgrFieldArMask  = 0x40
+	RegisterDsiwcfgrFieldArShift = 6
+	RegisterDsiwcfgrFieldArMask  = 0x40
 )
 
 // GetAr AR
-func (r *registerDsi_wcfgrType) GetAr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wcfgrFieldArMask) != 0
+func (r *registerDsiwcfgrType) GetAr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwcfgrFieldArMask) != 0
 }
 
 // SetAr AR
-func (r *registerDsi_wcfgrType) SetAr(value bool) {
+func (r *registerDsiwcfgrType) SetAr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wcfgrFieldArMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwcfgrFieldArMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wcfgrFieldArMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwcfgrFieldArMask)
 	}
 }
 
 const (
-	RegisterDsi_wcfgrFieldVspolShift = 7
-	RegisterDsi_wcfgrFieldVspolMask  = 0x80
+	RegisterDsiwcfgrFieldVspolShift = 7
+	RegisterDsiwcfgrFieldVspolMask  = 0x80
 )
 
 // GetVspol VSPOL
-func (r *registerDsi_wcfgrType) GetVspol() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wcfgrFieldVspolMask) != 0
+func (r *registerDsiwcfgrType) GetVspol() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwcfgrFieldVspolMask) != 0
 }
 
 // SetVspol VSPOL
-func (r *registerDsi_wcfgrType) SetVspol(value bool) {
+func (r *registerDsiwcfgrType) SetVspol(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wcfgrFieldVspolMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwcfgrFieldVspolMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wcfgrFieldVspolMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwcfgrFieldVspolMask)
 	}
 }
 
-// registerDsi_wcrType DSI wrapper control register
-type registerDsi_wcrType uint32
+// registerDsiwcrType DSI wrapper control register
+type registerDsiwcrType uint32
 
 const (
-	RegisterDsi_wcrFieldColmShift = 0
-	RegisterDsi_wcrFieldColmMask  = 0x1
+	RegisterDsiwcrFieldColmShift = 0
+	RegisterDsiwcrFieldColmMask  = 0x1
 )
 
 // GetColm COLM
-func (r *registerDsi_wcrType) GetColm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wcrFieldColmMask) != 0
+func (r *registerDsiwcrType) GetColm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwcrFieldColmMask) != 0
 }
 
 // SetColm COLM
-func (r *registerDsi_wcrType) SetColm(value bool) {
+func (r *registerDsiwcrType) SetColm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wcrFieldColmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwcrFieldColmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wcrFieldColmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwcrFieldColmMask)
 	}
 }
 
 const (
-	RegisterDsi_wcrFieldShtdnShift = 1
-	RegisterDsi_wcrFieldShtdnMask  = 0x2
+	RegisterDsiwcrFieldShtdnShift = 1
+	RegisterDsiwcrFieldShtdnMask  = 0x2
 )
 
 // GetShtdn SHTDN
-func (r *registerDsi_wcrType) GetShtdn() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wcrFieldShtdnMask) != 0
+func (r *registerDsiwcrType) GetShtdn() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwcrFieldShtdnMask) != 0
 }
 
 // SetShtdn SHTDN
-func (r *registerDsi_wcrType) SetShtdn(value bool) {
+func (r *registerDsiwcrType) SetShtdn(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wcrFieldShtdnMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwcrFieldShtdnMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wcrFieldShtdnMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwcrFieldShtdnMask)
 	}
 }
 
 const (
-	RegisterDsi_wcrFieldLtdcenShift = 2
-	RegisterDsi_wcrFieldLtdcenMask  = 0x4
+	RegisterDsiwcrFieldLtdcenShift = 2
+	RegisterDsiwcrFieldLtdcenMask  = 0x4
 )
 
 // GetLtdcen LTDCEN
-func (r *registerDsi_wcrType) GetLtdcen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wcrFieldLtdcenMask) != 0
+func (r *registerDsiwcrType) GetLtdcen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwcrFieldLtdcenMask) != 0
 }
 
 // SetLtdcen LTDCEN
-func (r *registerDsi_wcrType) SetLtdcen(value bool) {
+func (r *registerDsiwcrType) SetLtdcen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wcrFieldLtdcenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwcrFieldLtdcenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wcrFieldLtdcenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwcrFieldLtdcenMask)
 	}
 }
 
 const (
-	RegisterDsi_wcrFieldDsienShift = 3
-	RegisterDsi_wcrFieldDsienMask  = 0x8
+	RegisterDsiwcrFieldDsienShift = 3
+	RegisterDsiwcrFieldDsienMask  = 0x8
 )
 
 // GetDsien DSIEN
-func (r *registerDsi_wcrType) GetDsien() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wcrFieldDsienMask) != 0
+func (r *registerDsiwcrType) GetDsien() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwcrFieldDsienMask) != 0
 }
 
 // SetDsien DSIEN
-func (r *registerDsi_wcrType) SetDsien(value bool) {
+func (r *registerDsiwcrType) SetDsien(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wcrFieldDsienMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwcrFieldDsienMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wcrFieldDsienMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwcrFieldDsienMask)
 	}
 }
 
-// registerDsi_wierType DSI wrapper interrupt enable register
-type registerDsi_wierType uint32
+// registerDsiwierType DSI wrapper interrupt enable register
+type registerDsiwierType uint32
 
 const (
-	RegisterDsi_wierFieldTeieShift = 0
-	RegisterDsi_wierFieldTeieMask  = 0x1
+	RegisterDsiwierFieldTeieShift = 0
+	RegisterDsiwierFieldTeieMask  = 0x1
 )
 
 // GetTeie TEIE
-func (r *registerDsi_wierType) GetTeie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wierFieldTeieMask) != 0
+func (r *registerDsiwierType) GetTeie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwierFieldTeieMask) != 0
 }
 
 // SetTeie TEIE
-func (r *registerDsi_wierType) SetTeie(value bool) {
+func (r *registerDsiwierType) SetTeie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wierFieldTeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwierFieldTeieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wierFieldTeieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwierFieldTeieMask)
 	}
 }
 
 const (
-	RegisterDsi_wierFieldErieShift = 1
-	RegisterDsi_wierFieldErieMask  = 0x2
+	RegisterDsiwierFieldErieShift = 1
+	RegisterDsiwierFieldErieMask  = 0x2
 )
 
 // GetErie ERIE
-func (r *registerDsi_wierType) GetErie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wierFieldErieMask) != 0
+func (r *registerDsiwierType) GetErie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwierFieldErieMask) != 0
 }
 
 // SetErie ERIE
-func (r *registerDsi_wierType) SetErie(value bool) {
+func (r *registerDsiwierType) SetErie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wierFieldErieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwierFieldErieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wierFieldErieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwierFieldErieMask)
 	}
 }
 
 const (
-	RegisterDsi_wierFieldPlllieShift = 9
-	RegisterDsi_wierFieldPlllieMask  = 0x200
+	RegisterDsiwierFieldPlllieShift = 9
+	RegisterDsiwierFieldPlllieMask  = 0x200
 )
 
 // GetPlllie PLLLIE
-func (r *registerDsi_wierType) GetPlllie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wierFieldPlllieMask) != 0
+func (r *registerDsiwierType) GetPlllie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwierFieldPlllieMask) != 0
 }
 
 // SetPlllie PLLLIE
-func (r *registerDsi_wierType) SetPlllie(value bool) {
+func (r *registerDsiwierType) SetPlllie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wierFieldPlllieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwierFieldPlllieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wierFieldPlllieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwierFieldPlllieMask)
 	}
 }
 
 const (
-	RegisterDsi_wierFieldPlluieShift = 10
-	RegisterDsi_wierFieldPlluieMask  = 0x400
+	RegisterDsiwierFieldPlluieShift = 10
+	RegisterDsiwierFieldPlluieMask  = 0x400
 )
 
 // GetPlluie PLLUIE
-func (r *registerDsi_wierType) GetPlluie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wierFieldPlluieMask) != 0
+func (r *registerDsiwierType) GetPlluie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwierFieldPlluieMask) != 0
 }
 
 // SetPlluie PLLUIE
-func (r *registerDsi_wierType) SetPlluie(value bool) {
+func (r *registerDsiwierType) SetPlluie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wierFieldPlluieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwierFieldPlluieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wierFieldPlluieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwierFieldPlluieMask)
 	}
 }
 
 const (
-	RegisterDsi_wierFieldRrieShift = 13
-	RegisterDsi_wierFieldRrieMask  = 0x2000
+	RegisterDsiwierFieldRrieShift = 13
+	RegisterDsiwierFieldRrieMask  = 0x2000
 )
 
 // GetRrie RRIE
-func (r *registerDsi_wierType) GetRrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wierFieldRrieMask) != 0
+func (r *registerDsiwierType) GetRrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwierFieldRrieMask) != 0
 }
 
 // SetRrie RRIE
-func (r *registerDsi_wierType) SetRrie(value bool) {
+func (r *registerDsiwierType) SetRrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wierFieldRrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwierFieldRrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wierFieldRrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwierFieldRrieMask)
 	}
 }
 
-// registerDsi_wisrType DSI wrapper interrupt and status register
-type registerDsi_wisrType uint32
+// registerDsiwisrType DSI wrapper interrupt and status register
+type registerDsiwisrType uint32
 
 const (
-	RegisterDsi_wisrFieldTeifShift = 0
-	RegisterDsi_wisrFieldTeifMask  = 0x1
+	RegisterDsiwisrFieldTeifShift = 0
+	RegisterDsiwisrFieldTeifMask  = 0x1
 )
 
 // GetTeif TEIF
-func (r *registerDsi_wisrType) GetTeif() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wisrFieldTeifMask) != 0
+func (r *registerDsiwisrType) GetTeif() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwisrFieldTeifMask) != 0
 }
 
 // SetTeif TEIF
-func (r *registerDsi_wisrType) SetTeif(value bool) {
+func (r *registerDsiwisrType) SetTeif(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wisrFieldTeifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwisrFieldTeifMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wisrFieldTeifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwisrFieldTeifMask)
 	}
 }
 
 const (
-	RegisterDsi_wisrFieldErifShift = 1
-	RegisterDsi_wisrFieldErifMask  = 0x2
+	RegisterDsiwisrFieldErifShift = 1
+	RegisterDsiwisrFieldErifMask  = 0x2
 )
 
 // GetErif ERIF
-func (r *registerDsi_wisrType) GetErif() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wisrFieldErifMask) != 0
+func (r *registerDsiwisrType) GetErif() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwisrFieldErifMask) != 0
 }
 
 // SetErif ERIF
-func (r *registerDsi_wisrType) SetErif(value bool) {
+func (r *registerDsiwisrType) SetErif(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wisrFieldErifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwisrFieldErifMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wisrFieldErifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwisrFieldErifMask)
 	}
 }
 
 const (
-	RegisterDsi_wisrFieldBusyShift = 2
-	RegisterDsi_wisrFieldBusyMask  = 0x4
+	RegisterDsiwisrFieldBusyShift = 2
+	RegisterDsiwisrFieldBusyMask  = 0x4
 )
 
 // GetBusy BUSY
-func (r *registerDsi_wisrType) GetBusy() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wisrFieldBusyMask) != 0
+func (r *registerDsiwisrType) GetBusy() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwisrFieldBusyMask) != 0
 }
 
 // SetBusy BUSY
-func (r *registerDsi_wisrType) SetBusy(value bool) {
+func (r *registerDsiwisrType) SetBusy(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wisrFieldBusyMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwisrFieldBusyMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wisrFieldBusyMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwisrFieldBusyMask)
 	}
 }
 
 const (
-	RegisterDsi_wisrFieldPlllsShift = 8
-	RegisterDsi_wisrFieldPlllsMask  = 0x100
+	RegisterDsiwisrFieldPlllsShift = 8
+	RegisterDsiwisrFieldPlllsMask  = 0x100
 )
 
 // GetPllls PLLLS
-func (r *registerDsi_wisrType) GetPllls() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wisrFieldPlllsMask) != 0
+func (r *registerDsiwisrType) GetPllls() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwisrFieldPlllsMask) != 0
 }
 
 // SetPllls PLLLS
-func (r *registerDsi_wisrType) SetPllls(value bool) {
+func (r *registerDsiwisrType) SetPllls(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wisrFieldPlllsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwisrFieldPlllsMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wisrFieldPlllsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwisrFieldPlllsMask)
 	}
 }
 
 const (
-	RegisterDsi_wisrFieldPlllifShift = 9
-	RegisterDsi_wisrFieldPlllifMask  = 0x200
+	RegisterDsiwisrFieldPlllifShift = 9
+	RegisterDsiwisrFieldPlllifMask  = 0x200
 )
 
 // GetPlllif PLLLIF
-func (r *registerDsi_wisrType) GetPlllif() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wisrFieldPlllifMask) != 0
+func (r *registerDsiwisrType) GetPlllif() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwisrFieldPlllifMask) != 0
 }
 
 // SetPlllif PLLLIF
-func (r *registerDsi_wisrType) SetPlllif(value bool) {
+func (r *registerDsiwisrType) SetPlllif(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wisrFieldPlllifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwisrFieldPlllifMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wisrFieldPlllifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwisrFieldPlllifMask)
 	}
 }
 
 const (
-	RegisterDsi_wisrFieldPlluifShift = 10
-	RegisterDsi_wisrFieldPlluifMask  = 0x400
+	RegisterDsiwisrFieldPlluifShift = 10
+	RegisterDsiwisrFieldPlluifMask  = 0x400
 )
 
 // GetPlluif PLLUIF
-func (r *registerDsi_wisrType) GetPlluif() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wisrFieldPlluifMask) != 0
+func (r *registerDsiwisrType) GetPlluif() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwisrFieldPlluifMask) != 0
 }
 
 // SetPlluif PLLUIF
-func (r *registerDsi_wisrType) SetPlluif(value bool) {
+func (r *registerDsiwisrType) SetPlluif(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wisrFieldPlluifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwisrFieldPlluifMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wisrFieldPlluifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwisrFieldPlluifMask)
 	}
 }
 
 const (
-	RegisterDsi_wisrFieldRrsShift = 12
-	RegisterDsi_wisrFieldRrsMask  = 0x1000
+	RegisterDsiwisrFieldRrsShift = 12
+	RegisterDsiwisrFieldRrsMask  = 0x1000
 )
 
 // GetRrs RRS
-func (r *registerDsi_wisrType) GetRrs() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wisrFieldRrsMask) != 0
+func (r *registerDsiwisrType) GetRrs() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwisrFieldRrsMask) != 0
 }
 
 // SetRrs RRS
-func (r *registerDsi_wisrType) SetRrs(value bool) {
+func (r *registerDsiwisrType) SetRrs(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wisrFieldRrsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwisrFieldRrsMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wisrFieldRrsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwisrFieldRrsMask)
 	}
 }
 
 const (
-	RegisterDsi_wisrFieldRrifShift = 13
-	RegisterDsi_wisrFieldRrifMask  = 0x2000
+	RegisterDsiwisrFieldRrifShift = 13
+	RegisterDsiwisrFieldRrifMask  = 0x2000
 )
 
 // GetRrif RRIF
-func (r *registerDsi_wisrType) GetRrif() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wisrFieldRrifMask) != 0
+func (r *registerDsiwisrType) GetRrif() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwisrFieldRrifMask) != 0
 }
 
 // SetRrif RRIF
-func (r *registerDsi_wisrType) SetRrif(value bool) {
+func (r *registerDsiwisrType) SetRrif(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wisrFieldRrifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwisrFieldRrifMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wisrFieldRrifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwisrFieldRrifMask)
 	}
 }
 
-// registerDsi_wifcrType DSI wrapper interrupt flag clear register
-type registerDsi_wifcrType uint32
+// registerDsiwifcrType DSI wrapper interrupt flag clear register
+type registerDsiwifcrType uint32
 
 const (
-	RegisterDsi_wifcrFieldCteifShift = 0
-	RegisterDsi_wifcrFieldCteifMask  = 0x1
+	RegisterDsiwifcrFieldCteifShift = 0
+	RegisterDsiwifcrFieldCteifMask  = 0x1
 )
 
 // GetCteif CTEIF
-func (r *registerDsi_wifcrType) GetCteif() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wifcrFieldCteifMask) != 0
+func (r *registerDsiwifcrType) GetCteif() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwifcrFieldCteifMask) != 0
 }
 
 // SetCteif CTEIF
-func (r *registerDsi_wifcrType) SetCteif(value bool) {
+func (r *registerDsiwifcrType) SetCteif(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wifcrFieldCteifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwifcrFieldCteifMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wifcrFieldCteifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwifcrFieldCteifMask)
 	}
 }
 
 const (
-	RegisterDsi_wifcrFieldCerifShift = 1
-	RegisterDsi_wifcrFieldCerifMask  = 0x2
+	RegisterDsiwifcrFieldCerifShift = 1
+	RegisterDsiwifcrFieldCerifMask  = 0x2
 )
 
 // GetCerif CERIF
-func (r *registerDsi_wifcrType) GetCerif() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wifcrFieldCerifMask) != 0
+func (r *registerDsiwifcrType) GetCerif() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwifcrFieldCerifMask) != 0
 }
 
 // SetCerif CERIF
-func (r *registerDsi_wifcrType) SetCerif(value bool) {
+func (r *registerDsiwifcrType) SetCerif(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wifcrFieldCerifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwifcrFieldCerifMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wifcrFieldCerifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwifcrFieldCerifMask)
 	}
 }
 
 const (
-	RegisterDsi_wifcrFieldCplllifShift = 9
-	RegisterDsi_wifcrFieldCplllifMask  = 0x200
+	RegisterDsiwifcrFieldCplllifShift = 9
+	RegisterDsiwifcrFieldCplllifMask  = 0x200
 )
 
 // GetCplllif CPLLLIF
-func (r *registerDsi_wifcrType) GetCplllif() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wifcrFieldCplllifMask) != 0
+func (r *registerDsiwifcrType) GetCplllif() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwifcrFieldCplllifMask) != 0
 }
 
 // SetCplllif CPLLLIF
-func (r *registerDsi_wifcrType) SetCplllif(value bool) {
+func (r *registerDsiwifcrType) SetCplllif(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wifcrFieldCplllifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwifcrFieldCplllifMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wifcrFieldCplllifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwifcrFieldCplllifMask)
 	}
 }
 
 const (
-	RegisterDsi_wifcrFieldCplluifShift = 10
-	RegisterDsi_wifcrFieldCplluifMask  = 0x400
+	RegisterDsiwifcrFieldCplluifShift = 10
+	RegisterDsiwifcrFieldCplluifMask  = 0x400
 )
 
 // GetCplluif CPLLUIF
-func (r *registerDsi_wifcrType) GetCplluif() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wifcrFieldCplluifMask) != 0
+func (r *registerDsiwifcrType) GetCplluif() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwifcrFieldCplluifMask) != 0
 }
 
 // SetCplluif CPLLUIF
-func (r *registerDsi_wifcrType) SetCplluif(value bool) {
+func (r *registerDsiwifcrType) SetCplluif(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wifcrFieldCplluifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwifcrFieldCplluifMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wifcrFieldCplluifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwifcrFieldCplluifMask)
 	}
 }
 
 const (
-	RegisterDsi_wifcrFieldCrrifShift = 13
-	RegisterDsi_wifcrFieldCrrifMask  = 0x2000
+	RegisterDsiwifcrFieldCrrifShift = 13
+	RegisterDsiwifcrFieldCrrifMask  = 0x2000
 )
 
 // GetCrrif CRRIF
-func (r *registerDsi_wifcrType) GetCrrif() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wifcrFieldCrrifMask) != 0
+func (r *registerDsiwifcrType) GetCrrif() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwifcrFieldCrrifMask) != 0
 }
 
 // SetCrrif CRRIF
-func (r *registerDsi_wifcrType) SetCrrif(value bool) {
+func (r *registerDsiwifcrType) SetCrrif(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wifcrFieldCrrifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwifcrFieldCrrifMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wifcrFieldCrrifMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwifcrFieldCrrifMask)
 	}
 }
 
-// registerDsi_wpcr0Type DSI wrapper PHY configuration register 0
-type registerDsi_wpcr0Type uint32
+// registerDsiwpcr0Type DSI wrapper PHY configuration register 0
+type registerDsiwpcr0Type uint32
 
 const (
-	RegisterDsi_wpcr0FieldUix4Shift = 0
-	RegisterDsi_wpcr0FieldUix4Mask  = 0x3f
+	RegisterDsiwpcr0FieldUix4Shift = 0
+	RegisterDsiwpcr0FieldUix4Mask  = 0x3f
 )
 
 // GetUix4 UIX4
-func (r *registerDsi_wpcr0Type) GetUix4() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldUix4Mask) >> RegisterDsi_wpcr0FieldUix4Shift)
+func (r *registerDsiwpcr0Type) GetUix4() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldUix4Mask) >> RegisterDsiwpcr0FieldUix4Shift)
 }
 
 // SetUix4 UIX4
-func (r *registerDsi_wpcr0Type) SetUix4(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldUix4Mask)|(uint32(value)<<RegisterDsi_wpcr0FieldUix4Shift))
+func (r *registerDsiwpcr0Type) SetUix4(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldUix4Mask)|(uint32(value)<<RegisterDsiwpcr0FieldUix4Shift))
 }
 
 const (
-	RegisterDsi_wpcr0FieldSwclShift = 6
-	RegisterDsi_wpcr0FieldSwclMask  = 0x40
+	RegisterDsiwpcr0FieldSwclShift = 6
+	RegisterDsiwpcr0FieldSwclMask  = 0x40
 )
 
 // GetSwcl SWCL
-func (r *registerDsi_wpcr0Type) GetSwcl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldSwclMask) != 0
+func (r *registerDsiwpcr0Type) GetSwcl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldSwclMask) != 0
 }
 
 // SetSwcl SWCL
-func (r *registerDsi_wpcr0Type) SetSwcl(value bool) {
+func (r *registerDsiwpcr0Type) SetSwcl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldSwclMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldSwclMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldSwclMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldSwclMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldSwdl0Shift = 7
-	RegisterDsi_wpcr0FieldSwdl0Mask  = 0x80
+	RegisterDsiwpcr0FieldSwdl0Shift = 7
+	RegisterDsiwpcr0FieldSwdl0Mask  = 0x80
 )
 
 // GetSwdl0 SWDL0
-func (r *registerDsi_wpcr0Type) GetSwdl0() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldSwdl0Mask) != 0
+func (r *registerDsiwpcr0Type) GetSwdl0() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldSwdl0Mask) != 0
 }
 
 // SetSwdl0 SWDL0
-func (r *registerDsi_wpcr0Type) SetSwdl0(value bool) {
+func (r *registerDsiwpcr0Type) SetSwdl0(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldSwdl0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldSwdl0Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldSwdl0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldSwdl0Mask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldSwdl1Shift = 8
-	RegisterDsi_wpcr0FieldSwdl1Mask  = 0x100
+	RegisterDsiwpcr0FieldSwdl1Shift = 8
+	RegisterDsiwpcr0FieldSwdl1Mask  = 0x100
 )
 
 // GetSwdl1 SWDL1
-func (r *registerDsi_wpcr0Type) GetSwdl1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldSwdl1Mask) != 0
+func (r *registerDsiwpcr0Type) GetSwdl1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldSwdl1Mask) != 0
 }
 
 // SetSwdl1 SWDL1
-func (r *registerDsi_wpcr0Type) SetSwdl1(value bool) {
+func (r *registerDsiwpcr0Type) SetSwdl1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldSwdl1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldSwdl1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldSwdl1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldSwdl1Mask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldHsiclShift = 9
-	RegisterDsi_wpcr0FieldHsiclMask  = 0x200
+	RegisterDsiwpcr0FieldHsiclShift = 9
+	RegisterDsiwpcr0FieldHsiclMask  = 0x200
 )
 
 // GetHsicl HSICL
-func (r *registerDsi_wpcr0Type) GetHsicl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldHsiclMask) != 0
+func (r *registerDsiwpcr0Type) GetHsicl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldHsiclMask) != 0
 }
 
 // SetHsicl HSICL
-func (r *registerDsi_wpcr0Type) SetHsicl(value bool) {
+func (r *registerDsiwpcr0Type) SetHsicl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldHsiclMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldHsiclMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldHsiclMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldHsiclMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldHsidl0Shift = 10
-	RegisterDsi_wpcr0FieldHsidl0Mask  = 0x400
+	RegisterDsiwpcr0FieldHsidl0Shift = 10
+	RegisterDsiwpcr0FieldHsidl0Mask  = 0x400
 )
 
 // GetHsidl0 HSIDL0
-func (r *registerDsi_wpcr0Type) GetHsidl0() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldHsidl0Mask) != 0
+func (r *registerDsiwpcr0Type) GetHsidl0() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldHsidl0Mask) != 0
 }
 
 // SetHsidl0 HSIDL0
-func (r *registerDsi_wpcr0Type) SetHsidl0(value bool) {
+func (r *registerDsiwpcr0Type) SetHsidl0(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldHsidl0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldHsidl0Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldHsidl0Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldHsidl0Mask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldHsidl1Shift = 11
-	RegisterDsi_wpcr0FieldHsidl1Mask  = 0x800
+	RegisterDsiwpcr0FieldHsidl1Shift = 11
+	RegisterDsiwpcr0FieldHsidl1Mask  = 0x800
 )
 
 // GetHsidl1 HSIDL1
-func (r *registerDsi_wpcr0Type) GetHsidl1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldHsidl1Mask) != 0
+func (r *registerDsiwpcr0Type) GetHsidl1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldHsidl1Mask) != 0
 }
 
 // SetHsidl1 HSIDL1
-func (r *registerDsi_wpcr0Type) SetHsidl1(value bool) {
+func (r *registerDsiwpcr0Type) SetHsidl1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldHsidl1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldHsidl1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldHsidl1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldHsidl1Mask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldFtxsmclShift = 12
-	RegisterDsi_wpcr0FieldFtxsmclMask  = 0x1000
+	RegisterDsiwpcr0FieldFtxsmclShift = 12
+	RegisterDsiwpcr0FieldFtxsmclMask  = 0x1000
 )
 
 // GetFtxsmcl FTXSMCL
-func (r *registerDsi_wpcr0Type) GetFtxsmcl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldFtxsmclMask) != 0
+func (r *registerDsiwpcr0Type) GetFtxsmcl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldFtxsmclMask) != 0
 }
 
 // SetFtxsmcl FTXSMCL
-func (r *registerDsi_wpcr0Type) SetFtxsmcl(value bool) {
+func (r *registerDsiwpcr0Type) SetFtxsmcl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldFtxsmclMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldFtxsmclMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldFtxsmclMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldFtxsmclMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldFtxsmdlShift = 13
-	RegisterDsi_wpcr0FieldFtxsmdlMask  = 0x2000
+	RegisterDsiwpcr0FieldFtxsmdlShift = 13
+	RegisterDsiwpcr0FieldFtxsmdlMask  = 0x2000
 )
 
 // GetFtxsmdl FTXSMDL
-func (r *registerDsi_wpcr0Type) GetFtxsmdl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldFtxsmdlMask) != 0
+func (r *registerDsiwpcr0Type) GetFtxsmdl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldFtxsmdlMask) != 0
 }
 
 // SetFtxsmdl FTXSMDL
-func (r *registerDsi_wpcr0Type) SetFtxsmdl(value bool) {
+func (r *registerDsiwpcr0Type) SetFtxsmdl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldFtxsmdlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldFtxsmdlMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldFtxsmdlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldFtxsmdlMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldCdoffdlShift = 14
-	RegisterDsi_wpcr0FieldCdoffdlMask  = 0x4000
+	RegisterDsiwpcr0FieldCdoffdlShift = 14
+	RegisterDsiwpcr0FieldCdoffdlMask  = 0x4000
 )
 
 // GetCdoffdl CDOFFDL
-func (r *registerDsi_wpcr0Type) GetCdoffdl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldCdoffdlMask) != 0
+func (r *registerDsiwpcr0Type) GetCdoffdl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldCdoffdlMask) != 0
 }
 
 // SetCdoffdl CDOFFDL
-func (r *registerDsi_wpcr0Type) SetCdoffdl(value bool) {
+func (r *registerDsiwpcr0Type) SetCdoffdl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldCdoffdlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldCdoffdlMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldCdoffdlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldCdoffdlMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldTddlShift = 16
-	RegisterDsi_wpcr0FieldTddlMask  = 0x10000
+	RegisterDsiwpcr0FieldTddlShift = 16
+	RegisterDsiwpcr0FieldTddlMask  = 0x10000
 )
 
 // GetTddl TDDL
-func (r *registerDsi_wpcr0Type) GetTddl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldTddlMask) != 0
+func (r *registerDsiwpcr0Type) GetTddl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldTddlMask) != 0
 }
 
 // SetTddl TDDL
-func (r *registerDsi_wpcr0Type) SetTddl(value bool) {
+func (r *registerDsiwpcr0Type) SetTddl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldTddlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldTddlMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldTddlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldTddlMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldPdenShift = 18
-	RegisterDsi_wpcr0FieldPdenMask  = 0x40000
+	RegisterDsiwpcr0FieldPdenShift = 18
+	RegisterDsiwpcr0FieldPdenMask  = 0x40000
 )
 
 // GetPden Pull-down enable
-func (r *registerDsi_wpcr0Type) GetPden() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldPdenMask) != 0
+func (r *registerDsiwpcr0Type) GetPden() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldPdenMask) != 0
 }
 
 // SetPden Pull-down enable
-func (r *registerDsi_wpcr0Type) SetPden(value bool) {
+func (r *registerDsiwpcr0Type) SetPden(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldPdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldPdenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldPdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldPdenMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldTclkprepenShift = 19
-	RegisterDsi_wpcr0FieldTclkprepenMask  = 0x80000
+	RegisterDsiwpcr0FieldTclkprepenShift = 19
+	RegisterDsiwpcr0FieldTclkprepenMask  = 0x80000
 )
 
 // GetTclkprepen Custom time for tCLK-PREPARE enable
-func (r *registerDsi_wpcr0Type) GetTclkprepen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldTclkprepenMask) != 0
+func (r *registerDsiwpcr0Type) GetTclkprepen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldTclkprepenMask) != 0
 }
 
 // SetTclkprepen Custom time for tCLK-PREPARE enable
-func (r *registerDsi_wpcr0Type) SetTclkprepen(value bool) {
+func (r *registerDsiwpcr0Type) SetTclkprepen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldTclkprepenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldTclkprepenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldTclkprepenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldTclkprepenMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldTclkzeroenShift = 20
-	RegisterDsi_wpcr0FieldTclkzeroenMask  = 0x100000
+	RegisterDsiwpcr0FieldTclkzeroenShift = 20
+	RegisterDsiwpcr0FieldTclkzeroenMask  = 0x100000
 )
 
 // GetTclkzeroen Custom time for tCLK-ZERO enable
-func (r *registerDsi_wpcr0Type) GetTclkzeroen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldTclkzeroenMask) != 0
+func (r *registerDsiwpcr0Type) GetTclkzeroen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldTclkzeroenMask) != 0
 }
 
 // SetTclkzeroen Custom time for tCLK-ZERO enable
-func (r *registerDsi_wpcr0Type) SetTclkzeroen(value bool) {
+func (r *registerDsiwpcr0Type) SetTclkzeroen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldTclkzeroenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldTclkzeroenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldTclkzeroenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldTclkzeroenMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldThsprepenShift = 21
-	RegisterDsi_wpcr0FieldThsprepenMask  = 0x200000
+	RegisterDsiwpcr0FieldThsprepenShift = 21
+	RegisterDsiwpcr0FieldThsprepenMask  = 0x200000
 )
 
 // GetThsprepen Custom time for tHS-PREPARE enable
-func (r *registerDsi_wpcr0Type) GetThsprepen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldThsprepenMask) != 0
+func (r *registerDsiwpcr0Type) GetThsprepen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldThsprepenMask) != 0
 }
 
 // SetThsprepen Custom time for tHS-PREPARE enable
-func (r *registerDsi_wpcr0Type) SetThsprepen(value bool) {
+func (r *registerDsiwpcr0Type) SetThsprepen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldThsprepenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldThsprepenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldThsprepenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldThsprepenMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldThstrailenShift = 22
-	RegisterDsi_wpcr0FieldThstrailenMask  = 0x400000
+	RegisterDsiwpcr0FieldThstrailenShift = 22
+	RegisterDsiwpcr0FieldThstrailenMask  = 0x400000
 )
 
 // GetThstrailen Custom time for tHS-TRAIL enable
-func (r *registerDsi_wpcr0Type) GetThstrailen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldThstrailenMask) != 0
+func (r *registerDsiwpcr0Type) GetThstrailen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldThstrailenMask) != 0
 }
 
 // SetThstrailen Custom time for tHS-TRAIL enable
-func (r *registerDsi_wpcr0Type) SetThstrailen(value bool) {
+func (r *registerDsiwpcr0Type) SetThstrailen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldThstrailenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldThstrailenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldThstrailenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldThstrailenMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldThszeroenShift = 23
-	RegisterDsi_wpcr0FieldThszeroenMask  = 0x800000
+	RegisterDsiwpcr0FieldThszeroenShift = 23
+	RegisterDsiwpcr0FieldThszeroenMask  = 0x800000
 )
 
 // GetThszeroen Custom time for tHS-ZERO enable
-func (r *registerDsi_wpcr0Type) GetThszeroen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldThszeroenMask) != 0
+func (r *registerDsiwpcr0Type) GetThszeroen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldThszeroenMask) != 0
 }
 
 // SetThszeroen Custom time for tHS-ZERO enable
-func (r *registerDsi_wpcr0Type) SetThszeroen(value bool) {
+func (r *registerDsiwpcr0Type) SetThszeroen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldThszeroenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldThszeroenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldThszeroenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldThszeroenMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldTlpxdenShift = 24
-	RegisterDsi_wpcr0FieldTlpxdenMask  = 0x1000000
+	RegisterDsiwpcr0FieldTlpxdenShift = 24
+	RegisterDsiwpcr0FieldTlpxdenMask  = 0x1000000
 )
 
 // GetTlpxden Custom time for tLPX for data lanes enable
-func (r *registerDsi_wpcr0Type) GetTlpxden() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldTlpxdenMask) != 0
+func (r *registerDsiwpcr0Type) GetTlpxden() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldTlpxdenMask) != 0
 }
 
 // SetTlpxden Custom time for tLPX for data lanes enable
-func (r *registerDsi_wpcr0Type) SetTlpxden(value bool) {
+func (r *registerDsiwpcr0Type) SetTlpxden(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldTlpxdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldTlpxdenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldTlpxdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldTlpxdenMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldThsexitenShift = 25
-	RegisterDsi_wpcr0FieldThsexitenMask  = 0x2000000
+	RegisterDsiwpcr0FieldThsexitenShift = 25
+	RegisterDsiwpcr0FieldThsexitenMask  = 0x2000000
 )
 
 // GetThsexiten Custom time for tHS-EXIT enable
-func (r *registerDsi_wpcr0Type) GetThsexiten() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldThsexitenMask) != 0
+func (r *registerDsiwpcr0Type) GetThsexiten() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldThsexitenMask) != 0
 }
 
 // SetThsexiten Custom time for tHS-EXIT enable
-func (r *registerDsi_wpcr0Type) SetThsexiten(value bool) {
+func (r *registerDsiwpcr0Type) SetThsexiten(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldThsexitenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldThsexitenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldThsexitenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldThsexitenMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldTlpxcenShift = 26
-	RegisterDsi_wpcr0FieldTlpxcenMask  = 0x4000000
+	RegisterDsiwpcr0FieldTlpxcenShift = 26
+	RegisterDsiwpcr0FieldTlpxcenMask  = 0x4000000
 )
 
 // GetTlpxcen Custom time for tLPX for clock lane enable
-func (r *registerDsi_wpcr0Type) GetTlpxcen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldTlpxcenMask) != 0
+func (r *registerDsiwpcr0Type) GetTlpxcen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldTlpxcenMask) != 0
 }
 
 // SetTlpxcen Custom time for tLPX for clock lane enable
-func (r *registerDsi_wpcr0Type) SetTlpxcen(value bool) {
+func (r *registerDsiwpcr0Type) SetTlpxcen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldTlpxcenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldTlpxcenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldTlpxcenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldTlpxcenMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr0FieldTclkpostenShift = 27
-	RegisterDsi_wpcr0FieldTclkpostenMask  = 0x8000000
+	RegisterDsiwpcr0FieldTclkpostenShift = 27
+	RegisterDsiwpcr0FieldTclkpostenMask  = 0x8000000
 )
 
 // GetTclkposten Custom time for tCLK-POST enable
-func (r *registerDsi_wpcr0Type) GetTclkposten() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr0FieldTclkpostenMask) != 0
+func (r *registerDsiwpcr0Type) GetTclkposten() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr0FieldTclkpostenMask) != 0
 }
 
 // SetTclkposten Custom time for tCLK-POST enable
-func (r *registerDsi_wpcr0Type) SetTclkposten(value bool) {
+func (r *registerDsiwpcr0Type) SetTclkposten(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr0FieldTclkpostenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr0FieldTclkpostenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr0FieldTclkpostenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr0FieldTclkpostenMask)
 	}
 }
 
-// registerDsi_wpcr1Type This register shall be programmed only when DSI is stopped (CR. DSIEN=0 and CR.EN = 0).
-type registerDsi_wpcr1Type uint32
+// registerDsiwpcr1Type This register shall be programmed only when DSI is stopped (CR. DSIEN=0 and CR.EN = 0).
+type registerDsiwpcr1Type uint32
 
 const (
-	RegisterDsi_wpcr1FieldHstxdclShift = 0
-	RegisterDsi_wpcr1FieldHstxdclMask  = 0x3
+	RegisterDsiwpcr1FieldHstxdclShift = 0
+	RegisterDsiwpcr1FieldHstxdclMask  = 0x3
 )
 
 // GetHstxdcl High-speed transmission delay on clock lane
-func (r *registerDsi_wpcr1Type) GetHstxdcl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr1FieldHstxdclMask) >> RegisterDsi_wpcr1FieldHstxdclShift)
+func (r *registerDsiwpcr1Type) GetHstxdcl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr1FieldHstxdclMask) >> RegisterDsiwpcr1FieldHstxdclShift)
 }
 
 // SetHstxdcl High-speed transmission delay on clock lane
-func (r *registerDsi_wpcr1Type) SetHstxdcl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr1FieldHstxdclMask)|(uint32(value)<<RegisterDsi_wpcr1FieldHstxdclShift))
+func (r *registerDsiwpcr1Type) SetHstxdcl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr1FieldHstxdclMask)|(uint32(value)<<RegisterDsiwpcr1FieldHstxdclShift))
 }
 
 const (
-	RegisterDsi_wpcr1FieldHstxddlShift = 2
-	RegisterDsi_wpcr1FieldHstxddlMask  = 0xc
+	RegisterDsiwpcr1FieldHstxddlShift = 2
+	RegisterDsiwpcr1FieldHstxddlMask  = 0xc
 )
 
 // GetHstxddl High-speed transmission delay on data lanes
-func (r *registerDsi_wpcr1Type) GetHstxddl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr1FieldHstxddlMask) >> RegisterDsi_wpcr1FieldHstxddlShift)
+func (r *registerDsiwpcr1Type) GetHstxddl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr1FieldHstxddlMask) >> RegisterDsiwpcr1FieldHstxddlShift)
 }
 
 // SetHstxddl High-speed transmission delay on data lanes
-func (r *registerDsi_wpcr1Type) SetHstxddl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr1FieldHstxddlMask)|(uint32(value)<<RegisterDsi_wpcr1FieldHstxddlShift))
+func (r *registerDsiwpcr1Type) SetHstxddl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr1FieldHstxddlMask)|(uint32(value)<<RegisterDsiwpcr1FieldHstxddlShift))
 }
 
 const (
-	RegisterDsi_wpcr1FieldLpsrcclShift = 6
-	RegisterDsi_wpcr1FieldLpsrcclMask  = 0xc0
+	RegisterDsiwpcr1FieldLpsrcclShift = 6
+	RegisterDsiwpcr1FieldLpsrcclMask  = 0xc0
 )
 
 // GetLpsrccl Low-power transmission slew-rate compensation on clock lane
-func (r *registerDsi_wpcr1Type) GetLpsrccl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr1FieldLpsrcclMask) >> RegisterDsi_wpcr1FieldLpsrcclShift)
+func (r *registerDsiwpcr1Type) GetLpsrccl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr1FieldLpsrcclMask) >> RegisterDsiwpcr1FieldLpsrcclShift)
 }
 
 // SetLpsrccl Low-power transmission slew-rate compensation on clock lane
-func (r *registerDsi_wpcr1Type) SetLpsrccl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr1FieldLpsrcclMask)|(uint32(value)<<RegisterDsi_wpcr1FieldLpsrcclShift))
+func (r *registerDsiwpcr1Type) SetLpsrccl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr1FieldLpsrcclMask)|(uint32(value)<<RegisterDsiwpcr1FieldLpsrcclShift))
 }
 
 const (
-	RegisterDsi_wpcr1FieldLpsrcdlShift = 8
-	RegisterDsi_wpcr1FieldLpsrcdlMask  = 0x300
+	RegisterDsiwpcr1FieldLpsrcdlShift = 8
+	RegisterDsiwpcr1FieldLpsrcdlMask  = 0x300
 )
 
 // GetLpsrcdl Low-power transmission slew-rate compensation on data lanes
-func (r *registerDsi_wpcr1Type) GetLpsrcdl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr1FieldLpsrcdlMask) >> RegisterDsi_wpcr1FieldLpsrcdlShift)
+func (r *registerDsiwpcr1Type) GetLpsrcdl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr1FieldLpsrcdlMask) >> RegisterDsiwpcr1FieldLpsrcdlShift)
 }
 
 // SetLpsrcdl Low-power transmission slew-rate compensation on data lanes
-func (r *registerDsi_wpcr1Type) SetLpsrcdl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr1FieldLpsrcdlMask)|(uint32(value)<<RegisterDsi_wpcr1FieldLpsrcdlShift))
+func (r *registerDsiwpcr1Type) SetLpsrcdl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr1FieldLpsrcdlMask)|(uint32(value)<<RegisterDsiwpcr1FieldLpsrcdlShift))
 }
 
 const (
-	RegisterDsi_wpcr1FieldSddcShift = 12
-	RegisterDsi_wpcr1FieldSddcMask  = 0x1000
+	RegisterDsiwpcr1FieldSddcShift = 12
+	RegisterDsiwpcr1FieldSddcMask  = 0x1000
 )
 
 // GetSddc SDD control
-func (r *registerDsi_wpcr1Type) GetSddc() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr1FieldSddcMask) != 0
+func (r *registerDsiwpcr1Type) GetSddc() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr1FieldSddcMask) != 0
 }
 
 // SetSddc SDD control
-func (r *registerDsi_wpcr1Type) SetSddc(value bool) {
+func (r *registerDsiwpcr1Type) SetSddc(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr1FieldSddcMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr1FieldSddcMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr1FieldSddcMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr1FieldSddcMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr1FieldHstxsrcclShift = 16
-	RegisterDsi_wpcr1FieldHstxsrcclMask  = 0x30000
+	RegisterDsiwpcr1FieldHstxsrcclShift = 16
+	RegisterDsiwpcr1FieldHstxsrcclMask  = 0x30000
 )
 
 // GetHstxsrccl High-speed transmission slew-rate control on clock lane
-func (r *registerDsi_wpcr1Type) GetHstxsrccl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr1FieldHstxsrcclMask) >> RegisterDsi_wpcr1FieldHstxsrcclShift)
+func (r *registerDsiwpcr1Type) GetHstxsrccl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr1FieldHstxsrcclMask) >> RegisterDsiwpcr1FieldHstxsrcclShift)
 }
 
 // SetHstxsrccl High-speed transmission slew-rate control on clock lane
-func (r *registerDsi_wpcr1Type) SetHstxsrccl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr1FieldHstxsrcclMask)|(uint32(value)<<RegisterDsi_wpcr1FieldHstxsrcclShift))
+func (r *registerDsiwpcr1Type) SetHstxsrccl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr1FieldHstxsrcclMask)|(uint32(value)<<RegisterDsiwpcr1FieldHstxsrcclShift))
 }
 
 const (
-	RegisterDsi_wpcr1FieldHstxsrcdlShift = 18
-	RegisterDsi_wpcr1FieldHstxsrcdlMask  = 0xc0000
+	RegisterDsiwpcr1FieldHstxsrcdlShift = 18
+	RegisterDsiwpcr1FieldHstxsrcdlMask  = 0xc0000
 )
 
 // GetHstxsrcdl High-speed transmission slew-rate control on data lanes
-func (r *registerDsi_wpcr1Type) GetHstxsrcdl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr1FieldHstxsrcdlMask) >> RegisterDsi_wpcr1FieldHstxsrcdlShift)
+func (r *registerDsiwpcr1Type) GetHstxsrcdl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr1FieldHstxsrcdlMask) >> RegisterDsiwpcr1FieldHstxsrcdlShift)
 }
 
 // SetHstxsrcdl High-speed transmission slew-rate control on data lanes
-func (r *registerDsi_wpcr1Type) SetHstxsrcdl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr1FieldHstxsrcdlMask)|(uint32(value)<<RegisterDsi_wpcr1FieldHstxsrcdlShift))
+func (r *registerDsiwpcr1Type) SetHstxsrcdl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr1FieldHstxsrcdlMask)|(uint32(value)<<RegisterDsiwpcr1FieldHstxsrcdlShift))
 }
 
 const (
-	RegisterDsi_wpcr1FieldFlprxlpmShift = 22
-	RegisterDsi_wpcr1FieldFlprxlpmMask  = 0x400000
+	RegisterDsiwpcr1FieldFlprxlpmShift = 22
+	RegisterDsiwpcr1FieldFlprxlpmMask  = 0x400000
 )
 
 // GetFlprxlpm Forces LP receiver in low-power mode
-func (r *registerDsi_wpcr1Type) GetFlprxlpm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr1FieldFlprxlpmMask) != 0
+func (r *registerDsiwpcr1Type) GetFlprxlpm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr1FieldFlprxlpmMask) != 0
 }
 
 // SetFlprxlpm Forces LP receiver in low-power mode
-func (r *registerDsi_wpcr1Type) SetFlprxlpm(value bool) {
+func (r *registerDsiwpcr1Type) SetFlprxlpm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wpcr1FieldFlprxlpmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwpcr1FieldFlprxlpmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr1FieldFlprxlpmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr1FieldFlprxlpmMask)
 	}
 }
 
 const (
-	RegisterDsi_wpcr1FieldLprxftShift = 25
-	RegisterDsi_wpcr1FieldLprxftMask  = 0x6000000
+	RegisterDsiwpcr1FieldLprxftShift = 25
+	RegisterDsiwpcr1FieldLprxftMask  = 0x6000000
 )
 
 // GetLprxft Low-power RX low-pass filtering tuning
-func (r *registerDsi_wpcr1Type) GetLprxft() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr1FieldLprxftMask) >> RegisterDsi_wpcr1FieldLprxftShift)
+func (r *registerDsiwpcr1Type) GetLprxft() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr1FieldLprxftMask) >> RegisterDsiwpcr1FieldLprxftShift)
 }
 
 // SetLprxft Low-power RX low-pass filtering tuning
-func (r *registerDsi_wpcr1Type) SetLprxft(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr1FieldLprxftMask)|(uint32(value)<<RegisterDsi_wpcr1FieldLprxftShift))
+func (r *registerDsiwpcr1Type) SetLprxft(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr1FieldLprxftMask)|(uint32(value)<<RegisterDsiwpcr1FieldLprxftShift))
 }
 
-// registerDsi_wpcr2Type DSI wrapper PHY configuration register 2
-type registerDsi_wpcr2Type uint32
+// registerDsiwpcr2Type DSI wrapper PHY configuration register 2
+type registerDsiwpcr2Type uint32
 
 const (
-	RegisterDsi_wpcr2FieldTclkprepShift = 0
-	RegisterDsi_wpcr2FieldTclkprepMask  = 0xff
+	RegisterDsiwpcr2FieldTclkprepShift = 0
+	RegisterDsiwpcr2FieldTclkprepMask  = 0xff
 )
 
 // GetTclkprep TCLKPREP
-func (r *registerDsi_wpcr2Type) GetTclkprep() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr2FieldTclkprepMask) >> RegisterDsi_wpcr2FieldTclkprepShift)
+func (r *registerDsiwpcr2Type) GetTclkprep() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr2FieldTclkprepMask) >> RegisterDsiwpcr2FieldTclkprepShift)
 }
 
 // SetTclkprep TCLKPREP
-func (r *registerDsi_wpcr2Type) SetTclkprep(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr2FieldTclkprepMask)|(uint32(value)<<RegisterDsi_wpcr2FieldTclkprepShift))
+func (r *registerDsiwpcr2Type) SetTclkprep(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr2FieldTclkprepMask)|(uint32(value)<<RegisterDsiwpcr2FieldTclkprepShift))
 }
 
 const (
-	RegisterDsi_wpcr2FieldTclkzeroShift = 8
-	RegisterDsi_wpcr2FieldTclkzeroMask  = 0xff00
+	RegisterDsiwpcr2FieldTclkzeroShift = 8
+	RegisterDsiwpcr2FieldTclkzeroMask  = 0xff00
 )
 
 // GetTclkzero TCLKZERO
-func (r *registerDsi_wpcr2Type) GetTclkzero() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr2FieldTclkzeroMask) >> RegisterDsi_wpcr2FieldTclkzeroShift)
+func (r *registerDsiwpcr2Type) GetTclkzero() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr2FieldTclkzeroMask) >> RegisterDsiwpcr2FieldTclkzeroShift)
 }
 
 // SetTclkzero TCLKZERO
-func (r *registerDsi_wpcr2Type) SetTclkzero(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr2FieldTclkzeroMask)|(uint32(value)<<RegisterDsi_wpcr2FieldTclkzeroShift))
+func (r *registerDsiwpcr2Type) SetTclkzero(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr2FieldTclkzeroMask)|(uint32(value)<<RegisterDsiwpcr2FieldTclkzeroShift))
 }
 
 const (
-	RegisterDsi_wpcr2FieldThsprepShift = 16
-	RegisterDsi_wpcr2FieldThsprepMask  = 0xff0000
+	RegisterDsiwpcr2FieldThsprepShift = 16
+	RegisterDsiwpcr2FieldThsprepMask  = 0xff0000
 )
 
 // GetThsprep THSPREP
-func (r *registerDsi_wpcr2Type) GetThsprep() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr2FieldThsprepMask) >> RegisterDsi_wpcr2FieldThsprepShift)
+func (r *registerDsiwpcr2Type) GetThsprep() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr2FieldThsprepMask) >> RegisterDsiwpcr2FieldThsprepShift)
 }
 
 // SetThsprep THSPREP
-func (r *registerDsi_wpcr2Type) SetThsprep(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr2FieldThsprepMask)|(uint32(value)<<RegisterDsi_wpcr2FieldThsprepShift))
+func (r *registerDsiwpcr2Type) SetThsprep(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr2FieldThsprepMask)|(uint32(value)<<RegisterDsiwpcr2FieldThsprepShift))
 }
 
 const (
-	RegisterDsi_wpcr2FieldThstrailShift = 24
-	RegisterDsi_wpcr2FieldThstrailMask  = 0xff000000
+	RegisterDsiwpcr2FieldThstrailShift = 24
+	RegisterDsiwpcr2FieldThstrailMask  = 0xff000000
 )
 
 // GetThstrail THSTRAIL
-func (r *registerDsi_wpcr2Type) GetThstrail() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr2FieldThstrailMask) >> RegisterDsi_wpcr2FieldThstrailShift)
+func (r *registerDsiwpcr2Type) GetThstrail() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr2FieldThstrailMask) >> RegisterDsiwpcr2FieldThstrailShift)
 }
 
 // SetThstrail THSTRAIL
-func (r *registerDsi_wpcr2Type) SetThstrail(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr2FieldThstrailMask)|(uint32(value)<<RegisterDsi_wpcr2FieldThstrailShift))
+func (r *registerDsiwpcr2Type) SetThstrail(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr2FieldThstrailMask)|(uint32(value)<<RegisterDsiwpcr2FieldThstrailShift))
 }
 
-// registerDsi_wpcr3Type DSI wrapper PHY configuration register 3
-type registerDsi_wpcr3Type uint32
+// registerDsiwpcr3Type DSI wrapper PHY configuration register 3
+type registerDsiwpcr3Type uint32
 
 const (
-	RegisterDsi_wpcr3FieldThszeroShift = 0
-	RegisterDsi_wpcr3FieldThszeroMask  = 0xff
+	RegisterDsiwpcr3FieldThszeroShift = 0
+	RegisterDsiwpcr3FieldThszeroMask  = 0xff
 )
 
 // GetThszero THSZERO
-func (r *registerDsi_wpcr3Type) GetThszero() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr3FieldThszeroMask) >> RegisterDsi_wpcr3FieldThszeroShift)
+func (r *registerDsiwpcr3Type) GetThszero() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr3FieldThszeroMask) >> RegisterDsiwpcr3FieldThszeroShift)
 }
 
 // SetThszero THSZERO
-func (r *registerDsi_wpcr3Type) SetThszero(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr3FieldThszeroMask)|(uint32(value)<<RegisterDsi_wpcr3FieldThszeroShift))
+func (r *registerDsiwpcr3Type) SetThszero(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr3FieldThszeroMask)|(uint32(value)<<RegisterDsiwpcr3FieldThszeroShift))
 }
 
 const (
-	RegisterDsi_wpcr3FieldTlpxdShift = 8
-	RegisterDsi_wpcr3FieldTlpxdMask  = 0xff00
+	RegisterDsiwpcr3FieldTlpxdShift = 8
+	RegisterDsiwpcr3FieldTlpxdMask  = 0xff00
 )
 
 // GetTlpxd TLPXD
-func (r *registerDsi_wpcr3Type) GetTlpxd() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr3FieldTlpxdMask) >> RegisterDsi_wpcr3FieldTlpxdShift)
+func (r *registerDsiwpcr3Type) GetTlpxd() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr3FieldTlpxdMask) >> RegisterDsiwpcr3FieldTlpxdShift)
 }
 
 // SetTlpxd TLPXD
-func (r *registerDsi_wpcr3Type) SetTlpxd(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr3FieldTlpxdMask)|(uint32(value)<<RegisterDsi_wpcr3FieldTlpxdShift))
+func (r *registerDsiwpcr3Type) SetTlpxd(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr3FieldTlpxdMask)|(uint32(value)<<RegisterDsiwpcr3FieldTlpxdShift))
 }
 
 const (
-	RegisterDsi_wpcr3FieldThsexitShift = 16
-	RegisterDsi_wpcr3FieldThsexitMask  = 0xff0000
+	RegisterDsiwpcr3FieldThsexitShift = 16
+	RegisterDsiwpcr3FieldThsexitMask  = 0xff0000
 )
 
 // GetThsexit THSEXIT
-func (r *registerDsi_wpcr3Type) GetThsexit() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr3FieldThsexitMask) >> RegisterDsi_wpcr3FieldThsexitShift)
+func (r *registerDsiwpcr3Type) GetThsexit() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr3FieldThsexitMask) >> RegisterDsiwpcr3FieldThsexitShift)
 }
 
 // SetThsexit THSEXIT
-func (r *registerDsi_wpcr3Type) SetThsexit(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr3FieldThsexitMask)|(uint32(value)<<RegisterDsi_wpcr3FieldThsexitShift))
+func (r *registerDsiwpcr3Type) SetThsexit(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr3FieldThsexitMask)|(uint32(value)<<RegisterDsiwpcr3FieldThsexitShift))
 }
 
 const (
-	RegisterDsi_wpcr3FieldTlpxcShift = 24
-	RegisterDsi_wpcr3FieldTlpxcMask  = 0xff000000
+	RegisterDsiwpcr3FieldTlpxcShift = 24
+	RegisterDsiwpcr3FieldTlpxcMask  = 0xff000000
 )
 
 // GetTlpxc TLPXC
-func (r *registerDsi_wpcr3Type) GetTlpxc() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr3FieldTlpxcMask) >> RegisterDsi_wpcr3FieldTlpxcShift)
+func (r *registerDsiwpcr3Type) GetTlpxc() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr3FieldTlpxcMask) >> RegisterDsiwpcr3FieldTlpxcShift)
 }
 
 // SetTlpxc TLPXC
-func (r *registerDsi_wpcr3Type) SetTlpxc(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr3FieldTlpxcMask)|(uint32(value)<<RegisterDsi_wpcr3FieldTlpxcShift))
+func (r *registerDsiwpcr3Type) SetTlpxc(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr3FieldTlpxcMask)|(uint32(value)<<RegisterDsiwpcr3FieldTlpxcShift))
 }
 
-// registerDsi_wpcr4Type DSI wrapper PHY configuration register 4
-type registerDsi_wpcr4Type uint32
+// registerDsiwpcr4Type DSI wrapper PHY configuration register 4
+type registerDsiwpcr4Type uint32
 
 const (
-	RegisterDsi_wpcr4FieldTclkpostShift = 0
-	RegisterDsi_wpcr4FieldTclkpostMask  = 0xff
+	RegisterDsiwpcr4FieldTclkpostShift = 0
+	RegisterDsiwpcr4FieldTclkpostMask  = 0xff
 )
 
 // GetTclkpost TCLKPOST
-func (r *registerDsi_wpcr4Type) GetTclkpost() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wpcr4FieldTclkpostMask) >> RegisterDsi_wpcr4FieldTclkpostShift)
+func (r *registerDsiwpcr4Type) GetTclkpost() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwpcr4FieldTclkpostMask) >> RegisterDsiwpcr4FieldTclkpostShift)
 }
 
 // SetTclkpost TCLKPOST
-func (r *registerDsi_wpcr4Type) SetTclkpost(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wpcr4FieldTclkpostMask)|(uint32(value)<<RegisterDsi_wpcr4FieldTclkpostShift))
+func (r *registerDsiwpcr4Type) SetTclkpost(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwpcr4FieldTclkpostMask)|(uint32(value)<<RegisterDsiwpcr4FieldTclkpostShift))
 }
 
-// registerDsi_wrpcrType DSI wrapper regulator and PLL control register
-type registerDsi_wrpcrType uint32
+// registerDsiwrpcrType DSI wrapper regulator and PLL control register
+type registerDsiwrpcrType uint32
 
 const (
-	RegisterDsi_wrpcrFieldPllenShift = 0
-	RegisterDsi_wrpcrFieldPllenMask  = 0x1
+	RegisterDsiwrpcrFieldPllenShift = 0
+	RegisterDsiwrpcrFieldPllenMask  = 0x1
 )
 
 // GetPllen PLLEN
-func (r *registerDsi_wrpcrType) GetPllen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wrpcrFieldPllenMask) != 0
+func (r *registerDsiwrpcrType) GetPllen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwrpcrFieldPllenMask) != 0
 }
 
 // SetPllen PLLEN
-func (r *registerDsi_wrpcrType) SetPllen(value bool) {
+func (r *registerDsiwrpcrType) SetPllen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wrpcrFieldPllenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwrpcrFieldPllenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wrpcrFieldPllenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwrpcrFieldPllenMask)
 	}
 }
 
 const (
-	RegisterDsi_wrpcrFieldNdivShift = 2
-	RegisterDsi_wrpcrFieldNdivMask  = 0x1fc
+	RegisterDsiwrpcrFieldNdivShift = 2
+	RegisterDsiwrpcrFieldNdivMask  = 0x1fc
 )
 
 // GetNdiv NDIV
-func (r *registerDsi_wrpcrType) GetNdiv() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wrpcrFieldNdivMask) >> RegisterDsi_wrpcrFieldNdivShift)
+func (r *registerDsiwrpcrType) GetNdiv() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwrpcrFieldNdivMask) >> RegisterDsiwrpcrFieldNdivShift)
 }
 
 // SetNdiv NDIV
-func (r *registerDsi_wrpcrType) SetNdiv(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wrpcrFieldNdivMask)|(uint32(value)<<RegisterDsi_wrpcrFieldNdivShift))
+func (r *registerDsiwrpcrType) SetNdiv(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwrpcrFieldNdivMask)|(uint32(value)<<RegisterDsiwrpcrFieldNdivShift))
 }
 
 const (
-	RegisterDsi_wrpcrFieldIdfShift = 11
-	RegisterDsi_wrpcrFieldIdfMask  = 0x7800
+	RegisterDsiwrpcrFieldIdfShift = 11
+	RegisterDsiwrpcrFieldIdfMask  = 0x7800
 )
 
 // GetIdf IDF
-func (r *registerDsi_wrpcrType) GetIdf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wrpcrFieldIdfMask) >> RegisterDsi_wrpcrFieldIdfShift)
+func (r *registerDsiwrpcrType) GetIdf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwrpcrFieldIdfMask) >> RegisterDsiwrpcrFieldIdfShift)
 }
 
 // SetIdf IDF
-func (r *registerDsi_wrpcrType) SetIdf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wrpcrFieldIdfMask)|(uint32(value)<<RegisterDsi_wrpcrFieldIdfShift))
+func (r *registerDsiwrpcrType) SetIdf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwrpcrFieldIdfMask)|(uint32(value)<<RegisterDsiwrpcrFieldIdfShift))
 }
 
 const (
-	RegisterDsi_wrpcrFieldOdfShift = 16
-	RegisterDsi_wrpcrFieldOdfMask  = 0x30000
+	RegisterDsiwrpcrFieldOdfShift = 16
+	RegisterDsiwrpcrFieldOdfMask  = 0x30000
 )
 
 // GetOdf ODF
-func (r *registerDsi_wrpcrType) GetOdf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wrpcrFieldOdfMask) >> RegisterDsi_wrpcrFieldOdfShift)
+func (r *registerDsiwrpcrType) GetOdf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDsiwrpcrFieldOdfMask) >> RegisterDsiwrpcrFieldOdfShift)
 }
 
 // SetOdf ODF
-func (r *registerDsi_wrpcrType) SetOdf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wrpcrFieldOdfMask)|(uint32(value)<<RegisterDsi_wrpcrFieldOdfShift))
+func (r *registerDsiwrpcrType) SetOdf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDsiwrpcrFieldOdfMask)|(uint32(value)<<RegisterDsiwrpcrFieldOdfShift))
 }
 
 const (
-	RegisterDsi_wrpcrFieldRegenShift = 24
-	RegisterDsi_wrpcrFieldRegenMask  = 0x1000000
+	RegisterDsiwrpcrFieldRegenShift = 24
+	RegisterDsiwrpcrFieldRegenMask  = 0x1000000
 )
 
 // GetRegen REGEN
-func (r *registerDsi_wrpcrType) GetRegen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsi_wrpcrFieldRegenMask) != 0
+func (r *registerDsiwrpcrType) GetRegen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDsiwrpcrFieldRegenMask) != 0
 }
 
 // SetRegen REGEN
-func (r *registerDsi_wrpcrType) SetRegen(value bool) {
+func (r *registerDsiwrpcrType) SetRegen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsi_wrpcrFieldRegenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDsiwrpcrFieldRegenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsi_wrpcrFieldRegenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDsiwrpcrFieldRegenMask)
 	}
 }

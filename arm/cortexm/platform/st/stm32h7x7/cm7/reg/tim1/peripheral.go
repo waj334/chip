@@ -13,35 +13,35 @@ var (
 )
 
 type _tim1 struct {
-	Cr1          registerCr1Type
-	Cr2          registerCr2Type
-	Smcr         registerSmcrType
-	Dier         registerDierType
-	Sr           registerSrType
-	Egr          registerEgrType
-	Ccmr1_output registerCcmr1_outputType
-	Ccmr1_input  registerCcmr1_inputType
-	Ccmr2_output registerCcmr2_outputType
-	Ccmr2_input  registerCcmr2_inputType
-	Ccer         registerCcerType
-	Cnt          registerCntType
-	Psc          registerPscType
-	Arr          registerArrType
-	Rcr          registerRcrType
-	Ccr1         registerCcr1Type
-	Ccr2         registerCcr2Type
-	Ccr3         registerCcr3Type
-	Ccr4         registerCcr4Type
-	Bdtr         registerBdtrType
-	Dcr          registerDcrType
-	Dmar         registerDmarType
-	_            [4]byte
-	Ccmr3_output registerCcmr3_outputType
-	Ccr5         registerCcr5Type
-	Ccr6         registerCcr6Type
-	Af1          registerAf1Type
-	Af2          registerAf2Type
-	Tisel        registerTiselType
+	Cr1         registerCr1Type
+	Cr2         registerCr2Type
+	Smcr        registerSmcrType
+	Dier        registerDierType
+	Sr          registerSrType
+	Egr         registerEgrType
+	Ccmr1output registerCcmr1outputType
+	Ccmr1input  registerCcmr1inputType
+	Ccmr2output registerCcmr2outputType
+	Ccmr2input  registerCcmr2inputType
+	Ccer        registerCcerType
+	Cnt         registerCntType
+	Psc         registerPscType
+	Arr         registerArrType
+	Rcr         registerRcrType
+	Ccr1        registerCcr1Type
+	Ccr2        registerCcr2Type
+	Ccr3        registerCcr3Type
+	Ccr4        registerCcr4Type
+	Bdtr        registerBdtrType
+	Dcr         registerDcrType
+	Dmar        registerDmarType
+	_           [4]byte
+	Ccmr3output registerCcmr3outputType
+	Ccr5        registerCcr5Type
+	Ccr6        registerCcr6Type
+	Af1         registerAf1Type
+	Af2         registerAf2Type
+	Tisel       registerTiselType
 }
 
 // registerCr1Type control register 1
@@ -611,37 +611,37 @@ func (r *registerSmcrType) SetEtp(value bool) {
 }
 
 const (
-	RegisterSmcrFieldSms_3Shift = 16
-	RegisterSmcrFieldSms_3Mask  = 0x10000
+	RegisterSmcrFieldSms3Shift = 16
+	RegisterSmcrFieldSms3Mask  = 0x10000
 )
 
-// GetSms_3 Slave mode selection - bit 3
-func (r *registerSmcrType) GetSms_3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterSmcrFieldSms_3Mask) != 0
+// GetSms3 Slave mode selection - bit 3
+func (r *registerSmcrType) GetSms3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterSmcrFieldSms3Mask) != 0
 }
 
-// SetSms_3 Slave mode selection - bit 3
-func (r *registerSmcrType) SetSms_3(value bool) {
+// SetSms3 Slave mode selection - bit 3
+func (r *registerSmcrType) SetSms3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSmcrFieldSms_3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSmcrFieldSms3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSmcrFieldSms_3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterSmcrFieldSms3Mask)
 	}
 }
 
 const (
-	RegisterSmcrFieldTs_4_3Shift = 20
-	RegisterSmcrFieldTs_4_3Mask  = 0x300000
+	RegisterSmcrFieldTs43Shift = 20
+	RegisterSmcrFieldTs43Mask  = 0x300000
 )
 
-// GetTs_4_3 Trigger selection - bit 4:3
-func (r *registerSmcrType) GetTs_4_3() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSmcrFieldTs_4_3Mask) >> RegisterSmcrFieldTs_4_3Shift)
+// GetTs43 Trigger selection - bit 4:3
+func (r *registerSmcrType) GetTs43() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterSmcrFieldTs43Mask) >> RegisterSmcrFieldTs43Shift)
 }
 
-// SetTs_4_3 Trigger selection - bit 4:3
-func (r *registerSmcrType) SetTs_4_3(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSmcrFieldTs_4_3Mask)|(uint32(value)<<RegisterSmcrFieldTs_4_3Shift))
+// SetTs43 Trigger selection - bit 4:3
+func (r *registerSmcrType) SetTs43(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterSmcrFieldTs43Mask)|(uint32(value)<<RegisterSmcrFieldTs43Shift))
 }
 
 // registerDierType DMA/Interrupt enable register
@@ -1413,620 +1413,620 @@ func (r *registerEgrType) SetB2g(value bool) {
 	}
 }
 
-// registerCcmr1_outputType capture/compare mode register 1 (output mode)
-type registerCcmr1_outputType uint32
+// registerCcmr1outputType capture/compare mode register 1 (output mode)
+type registerCcmr1outputType uint32
 
 const (
-	RegisterCcmr1_outputFieldCc1sShift = 0
-	RegisterCcmr1_outputFieldCc1sMask  = 0x3
+	RegisterCcmr1outputFieldCc1sShift = 0
+	RegisterCcmr1outputFieldCc1sMask  = 0x3
 )
 
 // GetCc1s Capture/Compare 1 selection
-func (r *registerCcmr1_outputType) GetCc1s() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldCc1sMask) >> RegisterCcmr1_outputFieldCc1sShift)
+func (r *registerCcmr1outputType) GetCc1s() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldCc1sMask) >> RegisterCcmr1outputFieldCc1sShift)
 }
 
 // SetCc1s Capture/Compare 1 selection
-func (r *registerCcmr1_outputType) SetCc1s(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldCc1sMask)|(uint32(value)<<RegisterCcmr1_outputFieldCc1sShift))
+func (r *registerCcmr1outputType) SetCc1s(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldCc1sMask)|(uint32(value)<<RegisterCcmr1outputFieldCc1sShift))
 }
 
 const (
-	RegisterCcmr1_outputFieldOc1feShift = 2
-	RegisterCcmr1_outputFieldOc1feMask  = 0x4
+	RegisterCcmr1outputFieldOc1feShift = 2
+	RegisterCcmr1outputFieldOc1feMask  = 0x4
 )
 
 // GetOc1fe Output Compare 1 fast enable
-func (r *registerCcmr1_outputType) GetOc1fe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldOc1feMask) != 0
+func (r *registerCcmr1outputType) GetOc1fe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldOc1feMask) != 0
 }
 
 // SetOc1fe Output Compare 1 fast enable
-func (r *registerCcmr1_outputType) SetOc1fe(value bool) {
+func (r *registerCcmr1outputType) SetOc1fe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1_outputFieldOc1feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1outputFieldOc1feMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldOc1feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldOc1feMask)
 	}
 }
 
 const (
-	RegisterCcmr1_outputFieldOc1peShift = 3
-	RegisterCcmr1_outputFieldOc1peMask  = 0x8
+	RegisterCcmr1outputFieldOc1peShift = 3
+	RegisterCcmr1outputFieldOc1peMask  = 0x8
 )
 
 // GetOc1pe Output Compare 1 preload enable
-func (r *registerCcmr1_outputType) GetOc1pe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldOc1peMask) != 0
+func (r *registerCcmr1outputType) GetOc1pe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldOc1peMask) != 0
 }
 
 // SetOc1pe Output Compare 1 preload enable
-func (r *registerCcmr1_outputType) SetOc1pe(value bool) {
+func (r *registerCcmr1outputType) SetOc1pe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1_outputFieldOc1peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1outputFieldOc1peMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldOc1peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldOc1peMask)
 	}
 }
 
 const (
-	RegisterCcmr1_outputFieldOc1mShift = 4
-	RegisterCcmr1_outputFieldOc1mMask  = 0x70
+	RegisterCcmr1outputFieldOc1mShift = 4
+	RegisterCcmr1outputFieldOc1mMask  = 0x70
 )
 
 // GetOc1m Output Compare 1 mode
-func (r *registerCcmr1_outputType) GetOc1m() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldOc1mMask) >> RegisterCcmr1_outputFieldOc1mShift)
+func (r *registerCcmr1outputType) GetOc1m() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldOc1mMask) >> RegisterCcmr1outputFieldOc1mShift)
 }
 
 // SetOc1m Output Compare 1 mode
-func (r *registerCcmr1_outputType) SetOc1m(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldOc1mMask)|(uint32(value)<<RegisterCcmr1_outputFieldOc1mShift))
+func (r *registerCcmr1outputType) SetOc1m(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldOc1mMask)|(uint32(value)<<RegisterCcmr1outputFieldOc1mShift))
 }
 
 const (
-	RegisterCcmr1_outputFieldOc1ceShift = 7
-	RegisterCcmr1_outputFieldOc1ceMask  = 0x80
+	RegisterCcmr1outputFieldOc1ceShift = 7
+	RegisterCcmr1outputFieldOc1ceMask  = 0x80
 )
 
 // GetOc1ce Output Compare 1 clear enable
-func (r *registerCcmr1_outputType) GetOc1ce() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldOc1ceMask) != 0
+func (r *registerCcmr1outputType) GetOc1ce() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldOc1ceMask) != 0
 }
 
 // SetOc1ce Output Compare 1 clear enable
-func (r *registerCcmr1_outputType) SetOc1ce(value bool) {
+func (r *registerCcmr1outputType) SetOc1ce(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1_outputFieldOc1ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1outputFieldOc1ceMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldOc1ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldOc1ceMask)
 	}
 }
 
 const (
-	RegisterCcmr1_outputFieldCc2sShift = 8
-	RegisterCcmr1_outputFieldCc2sMask  = 0x300
+	RegisterCcmr1outputFieldCc2sShift = 8
+	RegisterCcmr1outputFieldCc2sMask  = 0x300
 )
 
 // GetCc2s Capture/Compare 2 selection
-func (r *registerCcmr1_outputType) GetCc2s() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldCc2sMask) >> RegisterCcmr1_outputFieldCc2sShift)
+func (r *registerCcmr1outputType) GetCc2s() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldCc2sMask) >> RegisterCcmr1outputFieldCc2sShift)
 }
 
 // SetCc2s Capture/Compare 2 selection
-func (r *registerCcmr1_outputType) SetCc2s(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldCc2sMask)|(uint32(value)<<RegisterCcmr1_outputFieldCc2sShift))
+func (r *registerCcmr1outputType) SetCc2s(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldCc2sMask)|(uint32(value)<<RegisterCcmr1outputFieldCc2sShift))
 }
 
 const (
-	RegisterCcmr1_outputFieldOc2feShift = 10
-	RegisterCcmr1_outputFieldOc2feMask  = 0x400
+	RegisterCcmr1outputFieldOc2feShift = 10
+	RegisterCcmr1outputFieldOc2feMask  = 0x400
 )
 
 // GetOc2fe Output Compare 2 fast enable
-func (r *registerCcmr1_outputType) GetOc2fe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldOc2feMask) != 0
+func (r *registerCcmr1outputType) GetOc2fe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldOc2feMask) != 0
 }
 
 // SetOc2fe Output Compare 2 fast enable
-func (r *registerCcmr1_outputType) SetOc2fe(value bool) {
+func (r *registerCcmr1outputType) SetOc2fe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1_outputFieldOc2feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1outputFieldOc2feMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldOc2feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldOc2feMask)
 	}
 }
 
 const (
-	RegisterCcmr1_outputFieldOc2peShift = 11
-	RegisterCcmr1_outputFieldOc2peMask  = 0x800
+	RegisterCcmr1outputFieldOc2peShift = 11
+	RegisterCcmr1outputFieldOc2peMask  = 0x800
 )
 
 // GetOc2pe Output Compare 2 preload enable
-func (r *registerCcmr1_outputType) GetOc2pe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldOc2peMask) != 0
+func (r *registerCcmr1outputType) GetOc2pe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldOc2peMask) != 0
 }
 
 // SetOc2pe Output Compare 2 preload enable
-func (r *registerCcmr1_outputType) SetOc2pe(value bool) {
+func (r *registerCcmr1outputType) SetOc2pe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1_outputFieldOc2peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1outputFieldOc2peMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldOc2peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldOc2peMask)
 	}
 }
 
 const (
-	RegisterCcmr1_outputFieldOc2mShift = 12
-	RegisterCcmr1_outputFieldOc2mMask  = 0x7000
+	RegisterCcmr1outputFieldOc2mShift = 12
+	RegisterCcmr1outputFieldOc2mMask  = 0x7000
 )
 
 // GetOc2m Output Compare 2 mode
-func (r *registerCcmr1_outputType) GetOc2m() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldOc2mMask) >> RegisterCcmr1_outputFieldOc2mShift)
+func (r *registerCcmr1outputType) GetOc2m() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldOc2mMask) >> RegisterCcmr1outputFieldOc2mShift)
 }
 
 // SetOc2m Output Compare 2 mode
-func (r *registerCcmr1_outputType) SetOc2m(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldOc2mMask)|(uint32(value)<<RegisterCcmr1_outputFieldOc2mShift))
+func (r *registerCcmr1outputType) SetOc2m(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldOc2mMask)|(uint32(value)<<RegisterCcmr1outputFieldOc2mShift))
 }
 
 const (
-	RegisterCcmr1_outputFieldOc2ceShift = 15
-	RegisterCcmr1_outputFieldOc2ceMask  = 0x8000
+	RegisterCcmr1outputFieldOc2ceShift = 15
+	RegisterCcmr1outputFieldOc2ceMask  = 0x8000
 )
 
 // GetOc2ce Output Compare 2 clear enable
-func (r *registerCcmr1_outputType) GetOc2ce() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldOc2ceMask) != 0
+func (r *registerCcmr1outputType) GetOc2ce() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldOc2ceMask) != 0
 }
 
 // SetOc2ce Output Compare 2 clear enable
-func (r *registerCcmr1_outputType) SetOc2ce(value bool) {
+func (r *registerCcmr1outputType) SetOc2ce(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1_outputFieldOc2ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1outputFieldOc2ceMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldOc2ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldOc2ceMask)
 	}
 }
 
 const (
-	RegisterCcmr1_outputFieldOc1m_3Shift = 16
-	RegisterCcmr1_outputFieldOc1m_3Mask  = 0x10000
+	RegisterCcmr1outputFieldOc1m3Shift = 16
+	RegisterCcmr1outputFieldOc1m3Mask  = 0x10000
 )
 
-// GetOc1m_3 Output Compare 1 mode - bit 3
-func (r *registerCcmr1_outputType) GetOc1m_3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldOc1m_3Mask) != 0
+// GetOc1m3 Output Compare 1 mode - bit 3
+func (r *registerCcmr1outputType) GetOc1m3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldOc1m3Mask) != 0
 }
 
-// SetOc1m_3 Output Compare 1 mode - bit 3
-func (r *registerCcmr1_outputType) SetOc1m_3(value bool) {
+// SetOc1m3 Output Compare 1 mode - bit 3
+func (r *registerCcmr1outputType) SetOc1m3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1_outputFieldOc1m_3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1outputFieldOc1m3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldOc1m_3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldOc1m3Mask)
 	}
 }
 
 const (
-	RegisterCcmr1_outputFieldOc2m_3Shift = 24
-	RegisterCcmr1_outputFieldOc2m_3Mask  = 0x1000000
+	RegisterCcmr1outputFieldOc2m3Shift = 24
+	RegisterCcmr1outputFieldOc2m3Mask  = 0x1000000
 )
 
-// GetOc2m_3 Output Compare 2 mode - bit 3
-func (r *registerCcmr1_outputType) GetOc2m_3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_outputFieldOc2m_3Mask) != 0
+// GetOc2m3 Output Compare 2 mode - bit 3
+func (r *registerCcmr1outputType) GetOc2m3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1outputFieldOc2m3Mask) != 0
 }
 
-// SetOc2m_3 Output Compare 2 mode - bit 3
-func (r *registerCcmr1_outputType) SetOc2m_3(value bool) {
+// SetOc2m3 Output Compare 2 mode - bit 3
+func (r *registerCcmr1outputType) SetOc2m3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1_outputFieldOc2m_3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr1outputFieldOc2m3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_outputFieldOc2m_3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1outputFieldOc2m3Mask)
 	}
 }
 
-// registerCcmr1_inputType capture/compare mode register 1 (input mode)
-type registerCcmr1_inputType uint32
+// registerCcmr1inputType capture/compare mode register 1 (input mode)
+type registerCcmr1inputType uint32
 
 const (
-	RegisterCcmr1_inputFieldCc1sShift = 0
-	RegisterCcmr1_inputFieldCc1sMask  = 0x3
+	RegisterCcmr1inputFieldCc1sShift = 0
+	RegisterCcmr1inputFieldCc1sMask  = 0x3
 )
 
 // GetCc1s Capture/Compare 1 selection
-func (r *registerCcmr1_inputType) GetCc1s() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_inputFieldCc1sMask) >> RegisterCcmr1_inputFieldCc1sShift)
+func (r *registerCcmr1inputType) GetCc1s() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1inputFieldCc1sMask) >> RegisterCcmr1inputFieldCc1sShift)
 }
 
 // SetCc1s Capture/Compare 1 selection
-func (r *registerCcmr1_inputType) SetCc1s(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_inputFieldCc1sMask)|(uint32(value)<<RegisterCcmr1_inputFieldCc1sShift))
+func (r *registerCcmr1inputType) SetCc1s(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1inputFieldCc1sMask)|(uint32(value)<<RegisterCcmr1inputFieldCc1sShift))
 }
 
 const (
-	RegisterCcmr1_inputFieldIcpcsShift = 2
-	RegisterCcmr1_inputFieldIcpcsMask  = 0xc
+	RegisterCcmr1inputFieldIcpcsShift = 2
+	RegisterCcmr1inputFieldIcpcsMask  = 0xc
 )
 
 // GetIcpcs Input capture 1 prescaler
-func (r *registerCcmr1_inputType) GetIcpcs() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_inputFieldIcpcsMask) >> RegisterCcmr1_inputFieldIcpcsShift)
+func (r *registerCcmr1inputType) GetIcpcs() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1inputFieldIcpcsMask) >> RegisterCcmr1inputFieldIcpcsShift)
 }
 
 // SetIcpcs Input capture 1 prescaler
-func (r *registerCcmr1_inputType) SetIcpcs(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_inputFieldIcpcsMask)|(uint32(value)<<RegisterCcmr1_inputFieldIcpcsShift))
+func (r *registerCcmr1inputType) SetIcpcs(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1inputFieldIcpcsMask)|(uint32(value)<<RegisterCcmr1inputFieldIcpcsShift))
 }
 
 const (
-	RegisterCcmr1_inputFieldIc1fShift = 4
-	RegisterCcmr1_inputFieldIc1fMask  = 0xf0
+	RegisterCcmr1inputFieldIc1fShift = 4
+	RegisterCcmr1inputFieldIc1fMask  = 0xf0
 )
 
 // GetIc1f Input capture 1 filter
-func (r *registerCcmr1_inputType) GetIc1f() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_inputFieldIc1fMask) >> RegisterCcmr1_inputFieldIc1fShift)
+func (r *registerCcmr1inputType) GetIc1f() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1inputFieldIc1fMask) >> RegisterCcmr1inputFieldIc1fShift)
 }
 
 // SetIc1f Input capture 1 filter
-func (r *registerCcmr1_inputType) SetIc1f(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_inputFieldIc1fMask)|(uint32(value)<<RegisterCcmr1_inputFieldIc1fShift))
+func (r *registerCcmr1inputType) SetIc1f(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1inputFieldIc1fMask)|(uint32(value)<<RegisterCcmr1inputFieldIc1fShift))
 }
 
 const (
-	RegisterCcmr1_inputFieldCc2sShift = 8
-	RegisterCcmr1_inputFieldCc2sMask  = 0x300
+	RegisterCcmr1inputFieldCc2sShift = 8
+	RegisterCcmr1inputFieldCc2sMask  = 0x300
 )
 
 // GetCc2s Capture/Compare 2 selection
-func (r *registerCcmr1_inputType) GetCc2s() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_inputFieldCc2sMask) >> RegisterCcmr1_inputFieldCc2sShift)
+func (r *registerCcmr1inputType) GetCc2s() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1inputFieldCc2sMask) >> RegisterCcmr1inputFieldCc2sShift)
 }
 
 // SetCc2s Capture/Compare 2 selection
-func (r *registerCcmr1_inputType) SetCc2s(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_inputFieldCc2sMask)|(uint32(value)<<RegisterCcmr1_inputFieldCc2sShift))
+func (r *registerCcmr1inputType) SetCc2s(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1inputFieldCc2sMask)|(uint32(value)<<RegisterCcmr1inputFieldCc2sShift))
 }
 
 const (
-	RegisterCcmr1_inputFieldIc2pcsShift = 10
-	RegisterCcmr1_inputFieldIc2pcsMask  = 0xc00
+	RegisterCcmr1inputFieldIc2pcsShift = 10
+	RegisterCcmr1inputFieldIc2pcsMask  = 0xc00
 )
 
 // GetIc2pcs Input capture 2 prescaler
-func (r *registerCcmr1_inputType) GetIc2pcs() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_inputFieldIc2pcsMask) >> RegisterCcmr1_inputFieldIc2pcsShift)
+func (r *registerCcmr1inputType) GetIc2pcs() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1inputFieldIc2pcsMask) >> RegisterCcmr1inputFieldIc2pcsShift)
 }
 
 // SetIc2pcs Input capture 2 prescaler
-func (r *registerCcmr1_inputType) SetIc2pcs(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_inputFieldIc2pcsMask)|(uint32(value)<<RegisterCcmr1_inputFieldIc2pcsShift))
+func (r *registerCcmr1inputType) SetIc2pcs(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1inputFieldIc2pcsMask)|(uint32(value)<<RegisterCcmr1inputFieldIc2pcsShift))
 }
 
 const (
-	RegisterCcmr1_inputFieldIc2fShift = 12
-	RegisterCcmr1_inputFieldIc2fMask  = 0xf000
+	RegisterCcmr1inputFieldIc2fShift = 12
+	RegisterCcmr1inputFieldIc2fMask  = 0xf000
 )
 
 // GetIc2f Input capture 2 filter
-func (r *registerCcmr1_inputType) GetIc2f() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1_inputFieldIc2fMask) >> RegisterCcmr1_inputFieldIc2fShift)
+func (r *registerCcmr1inputType) GetIc2f() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr1inputFieldIc2fMask) >> RegisterCcmr1inputFieldIc2fShift)
 }
 
 // SetIc2f Input capture 2 filter
-func (r *registerCcmr1_inputType) SetIc2f(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1_inputFieldIc2fMask)|(uint32(value)<<RegisterCcmr1_inputFieldIc2fShift))
+func (r *registerCcmr1inputType) SetIc2f(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr1inputFieldIc2fMask)|(uint32(value)<<RegisterCcmr1inputFieldIc2fShift))
 }
 
-// registerCcmr2_outputType capture/compare mode register 2 (output mode)
-type registerCcmr2_outputType uint32
+// registerCcmr2outputType capture/compare mode register 2 (output mode)
+type registerCcmr2outputType uint32
 
 const (
-	RegisterCcmr2_outputFieldCc3sShift = 0
-	RegisterCcmr2_outputFieldCc3sMask  = 0x3
+	RegisterCcmr2outputFieldCc3sShift = 0
+	RegisterCcmr2outputFieldCc3sMask  = 0x3
 )
 
 // GetCc3s Capture/Compare 3 selection
-func (r *registerCcmr2_outputType) GetCc3s() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldCc3sMask) >> RegisterCcmr2_outputFieldCc3sShift)
+func (r *registerCcmr2outputType) GetCc3s() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldCc3sMask) >> RegisterCcmr2outputFieldCc3sShift)
 }
 
 // SetCc3s Capture/Compare 3 selection
-func (r *registerCcmr2_outputType) SetCc3s(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldCc3sMask)|(uint32(value)<<RegisterCcmr2_outputFieldCc3sShift))
+func (r *registerCcmr2outputType) SetCc3s(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldCc3sMask)|(uint32(value)<<RegisterCcmr2outputFieldCc3sShift))
 }
 
 const (
-	RegisterCcmr2_outputFieldOc3feShift = 2
-	RegisterCcmr2_outputFieldOc3feMask  = 0x4
+	RegisterCcmr2outputFieldOc3feShift = 2
+	RegisterCcmr2outputFieldOc3feMask  = 0x4
 )
 
 // GetOc3fe Output compare 3 fast enable
-func (r *registerCcmr2_outputType) GetOc3fe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldOc3feMask) != 0
+func (r *registerCcmr2outputType) GetOc3fe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldOc3feMask) != 0
 }
 
 // SetOc3fe Output compare 3 fast enable
-func (r *registerCcmr2_outputType) SetOc3fe(value bool) {
+func (r *registerCcmr2outputType) SetOc3fe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2_outputFieldOc3feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2outputFieldOc3feMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldOc3feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldOc3feMask)
 	}
 }
 
 const (
-	RegisterCcmr2_outputFieldOc3peShift = 3
-	RegisterCcmr2_outputFieldOc3peMask  = 0x8
+	RegisterCcmr2outputFieldOc3peShift = 3
+	RegisterCcmr2outputFieldOc3peMask  = 0x8
 )
 
 // GetOc3pe Output compare 3 preload enable
-func (r *registerCcmr2_outputType) GetOc3pe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldOc3peMask) != 0
+func (r *registerCcmr2outputType) GetOc3pe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldOc3peMask) != 0
 }
 
 // SetOc3pe Output compare 3 preload enable
-func (r *registerCcmr2_outputType) SetOc3pe(value bool) {
+func (r *registerCcmr2outputType) SetOc3pe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2_outputFieldOc3peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2outputFieldOc3peMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldOc3peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldOc3peMask)
 	}
 }
 
 const (
-	RegisterCcmr2_outputFieldOc3mShift = 4
-	RegisterCcmr2_outputFieldOc3mMask  = 0x70
+	RegisterCcmr2outputFieldOc3mShift = 4
+	RegisterCcmr2outputFieldOc3mMask  = 0x70
 )
 
 // GetOc3m Output compare 3 mode
-func (r *registerCcmr2_outputType) GetOc3m() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldOc3mMask) >> RegisterCcmr2_outputFieldOc3mShift)
+func (r *registerCcmr2outputType) GetOc3m() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldOc3mMask) >> RegisterCcmr2outputFieldOc3mShift)
 }
 
 // SetOc3m Output compare 3 mode
-func (r *registerCcmr2_outputType) SetOc3m(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldOc3mMask)|(uint32(value)<<RegisterCcmr2_outputFieldOc3mShift))
+func (r *registerCcmr2outputType) SetOc3m(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldOc3mMask)|(uint32(value)<<RegisterCcmr2outputFieldOc3mShift))
 }
 
 const (
-	RegisterCcmr2_outputFieldOc3ceShift = 7
-	RegisterCcmr2_outputFieldOc3ceMask  = 0x80
+	RegisterCcmr2outputFieldOc3ceShift = 7
+	RegisterCcmr2outputFieldOc3ceMask  = 0x80
 )
 
 // GetOc3ce Output compare 3 clear enable
-func (r *registerCcmr2_outputType) GetOc3ce() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldOc3ceMask) != 0
+func (r *registerCcmr2outputType) GetOc3ce() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldOc3ceMask) != 0
 }
 
 // SetOc3ce Output compare 3 clear enable
-func (r *registerCcmr2_outputType) SetOc3ce(value bool) {
+func (r *registerCcmr2outputType) SetOc3ce(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2_outputFieldOc3ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2outputFieldOc3ceMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldOc3ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldOc3ceMask)
 	}
 }
 
 const (
-	RegisterCcmr2_outputFieldCc4sShift = 8
-	RegisterCcmr2_outputFieldCc4sMask  = 0x300
+	RegisterCcmr2outputFieldCc4sShift = 8
+	RegisterCcmr2outputFieldCc4sMask  = 0x300
 )
 
 // GetCc4s Capture/Compare 4 selection
-func (r *registerCcmr2_outputType) GetCc4s() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldCc4sMask) >> RegisterCcmr2_outputFieldCc4sShift)
+func (r *registerCcmr2outputType) GetCc4s() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldCc4sMask) >> RegisterCcmr2outputFieldCc4sShift)
 }
 
 // SetCc4s Capture/Compare 4 selection
-func (r *registerCcmr2_outputType) SetCc4s(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldCc4sMask)|(uint32(value)<<RegisterCcmr2_outputFieldCc4sShift))
+func (r *registerCcmr2outputType) SetCc4s(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldCc4sMask)|(uint32(value)<<RegisterCcmr2outputFieldCc4sShift))
 }
 
 const (
-	RegisterCcmr2_outputFieldOc4feShift = 10
-	RegisterCcmr2_outputFieldOc4feMask  = 0x400
+	RegisterCcmr2outputFieldOc4feShift = 10
+	RegisterCcmr2outputFieldOc4feMask  = 0x400
 )
 
 // GetOc4fe Output compare 4 fast enable
-func (r *registerCcmr2_outputType) GetOc4fe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldOc4feMask) != 0
+func (r *registerCcmr2outputType) GetOc4fe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldOc4feMask) != 0
 }
 
 // SetOc4fe Output compare 4 fast enable
-func (r *registerCcmr2_outputType) SetOc4fe(value bool) {
+func (r *registerCcmr2outputType) SetOc4fe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2_outputFieldOc4feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2outputFieldOc4feMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldOc4feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldOc4feMask)
 	}
 }
 
 const (
-	RegisterCcmr2_outputFieldOc4peShift = 11
-	RegisterCcmr2_outputFieldOc4peMask  = 0x800
+	RegisterCcmr2outputFieldOc4peShift = 11
+	RegisterCcmr2outputFieldOc4peMask  = 0x800
 )
 
 // GetOc4pe Output compare 4 preload enable
-func (r *registerCcmr2_outputType) GetOc4pe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldOc4peMask) != 0
+func (r *registerCcmr2outputType) GetOc4pe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldOc4peMask) != 0
 }
 
 // SetOc4pe Output compare 4 preload enable
-func (r *registerCcmr2_outputType) SetOc4pe(value bool) {
+func (r *registerCcmr2outputType) SetOc4pe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2_outputFieldOc4peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2outputFieldOc4peMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldOc4peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldOc4peMask)
 	}
 }
 
 const (
-	RegisterCcmr2_outputFieldOc4mShift = 12
-	RegisterCcmr2_outputFieldOc4mMask  = 0x7000
+	RegisterCcmr2outputFieldOc4mShift = 12
+	RegisterCcmr2outputFieldOc4mMask  = 0x7000
 )
 
 // GetOc4m Output compare 4 mode
-func (r *registerCcmr2_outputType) GetOc4m() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldOc4mMask) >> RegisterCcmr2_outputFieldOc4mShift)
+func (r *registerCcmr2outputType) GetOc4m() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldOc4mMask) >> RegisterCcmr2outputFieldOc4mShift)
 }
 
 // SetOc4m Output compare 4 mode
-func (r *registerCcmr2_outputType) SetOc4m(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldOc4mMask)|(uint32(value)<<RegisterCcmr2_outputFieldOc4mShift))
+func (r *registerCcmr2outputType) SetOc4m(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldOc4mMask)|(uint32(value)<<RegisterCcmr2outputFieldOc4mShift))
 }
 
 const (
-	RegisterCcmr2_outputFieldOc4ceShift = 15
-	RegisterCcmr2_outputFieldOc4ceMask  = 0x8000
+	RegisterCcmr2outputFieldOc4ceShift = 15
+	RegisterCcmr2outputFieldOc4ceMask  = 0x8000
 )
 
 // GetOc4ce Output compare 4 clear enable
-func (r *registerCcmr2_outputType) GetOc4ce() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldOc4ceMask) != 0
+func (r *registerCcmr2outputType) GetOc4ce() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldOc4ceMask) != 0
 }
 
 // SetOc4ce Output compare 4 clear enable
-func (r *registerCcmr2_outputType) SetOc4ce(value bool) {
+func (r *registerCcmr2outputType) SetOc4ce(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2_outputFieldOc4ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2outputFieldOc4ceMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldOc4ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldOc4ceMask)
 	}
 }
 
 const (
-	RegisterCcmr2_outputFieldOc3m_3Shift = 16
-	RegisterCcmr2_outputFieldOc3m_3Mask  = 0x10000
+	RegisterCcmr2outputFieldOc3m3Shift = 16
+	RegisterCcmr2outputFieldOc3m3Mask  = 0x10000
 )
 
-// GetOc3m_3 Output Compare 3 mode - bit 3
-func (r *registerCcmr2_outputType) GetOc3m_3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldOc3m_3Mask) != 0
+// GetOc3m3 Output Compare 3 mode - bit 3
+func (r *registerCcmr2outputType) GetOc3m3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldOc3m3Mask) != 0
 }
 
-// SetOc3m_3 Output Compare 3 mode - bit 3
-func (r *registerCcmr2_outputType) SetOc3m_3(value bool) {
+// SetOc3m3 Output Compare 3 mode - bit 3
+func (r *registerCcmr2outputType) SetOc3m3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2_outputFieldOc3m_3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2outputFieldOc3m3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldOc3m_3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldOc3m3Mask)
 	}
 }
 
 const (
-	RegisterCcmr2_outputFieldOc4m_4Shift = 24
-	RegisterCcmr2_outputFieldOc4m_4Mask  = 0x1000000
+	RegisterCcmr2outputFieldOc4m4Shift = 24
+	RegisterCcmr2outputFieldOc4m4Mask  = 0x1000000
 )
 
-// GetOc4m_4 Output Compare 4 mode - bit 3
-func (r *registerCcmr2_outputType) GetOc4m_4() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_outputFieldOc4m_4Mask) != 0
+// GetOc4m4 Output Compare 4 mode - bit 3
+func (r *registerCcmr2outputType) GetOc4m4() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2outputFieldOc4m4Mask) != 0
 }
 
-// SetOc4m_4 Output Compare 4 mode - bit 3
-func (r *registerCcmr2_outputType) SetOc4m_4(value bool) {
+// SetOc4m4 Output Compare 4 mode - bit 3
+func (r *registerCcmr2outputType) SetOc4m4(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2_outputFieldOc4m_4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr2outputFieldOc4m4Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_outputFieldOc4m_4Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2outputFieldOc4m4Mask)
 	}
 }
 
-// registerCcmr2_inputType capture/compare mode register 2 (input mode)
-type registerCcmr2_inputType uint32
+// registerCcmr2inputType capture/compare mode register 2 (input mode)
+type registerCcmr2inputType uint32
 
 const (
-	RegisterCcmr2_inputFieldCc3sShift = 0
-	RegisterCcmr2_inputFieldCc3sMask  = 0x3
+	RegisterCcmr2inputFieldCc3sShift = 0
+	RegisterCcmr2inputFieldCc3sMask  = 0x3
 )
 
 // GetCc3s Capture/compare 3 selection
-func (r *registerCcmr2_inputType) GetCc3s() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_inputFieldCc3sMask) >> RegisterCcmr2_inputFieldCc3sShift)
+func (r *registerCcmr2inputType) GetCc3s() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2inputFieldCc3sMask) >> RegisterCcmr2inputFieldCc3sShift)
 }
 
 // SetCc3s Capture/compare 3 selection
-func (r *registerCcmr2_inputType) SetCc3s(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_inputFieldCc3sMask)|(uint32(value)<<RegisterCcmr2_inputFieldCc3sShift))
+func (r *registerCcmr2inputType) SetCc3s(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2inputFieldCc3sMask)|(uint32(value)<<RegisterCcmr2inputFieldCc3sShift))
 }
 
 const (
-	RegisterCcmr2_inputFieldIc3pscShift = 2
-	RegisterCcmr2_inputFieldIc3pscMask  = 0xc
+	RegisterCcmr2inputFieldIc3pscShift = 2
+	RegisterCcmr2inputFieldIc3pscMask  = 0xc
 )
 
 // GetIc3psc Input capture 3 prescaler
-func (r *registerCcmr2_inputType) GetIc3psc() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_inputFieldIc3pscMask) >> RegisterCcmr2_inputFieldIc3pscShift)
+func (r *registerCcmr2inputType) GetIc3psc() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2inputFieldIc3pscMask) >> RegisterCcmr2inputFieldIc3pscShift)
 }
 
 // SetIc3psc Input capture 3 prescaler
-func (r *registerCcmr2_inputType) SetIc3psc(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_inputFieldIc3pscMask)|(uint32(value)<<RegisterCcmr2_inputFieldIc3pscShift))
+func (r *registerCcmr2inputType) SetIc3psc(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2inputFieldIc3pscMask)|(uint32(value)<<RegisterCcmr2inputFieldIc3pscShift))
 }
 
 const (
-	RegisterCcmr2_inputFieldIc3fShift = 4
-	RegisterCcmr2_inputFieldIc3fMask  = 0xf0
+	RegisterCcmr2inputFieldIc3fShift = 4
+	RegisterCcmr2inputFieldIc3fMask  = 0xf0
 )
 
 // GetIc3f Input capture 3 filter
-func (r *registerCcmr2_inputType) GetIc3f() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_inputFieldIc3fMask) >> RegisterCcmr2_inputFieldIc3fShift)
+func (r *registerCcmr2inputType) GetIc3f() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2inputFieldIc3fMask) >> RegisterCcmr2inputFieldIc3fShift)
 }
 
 // SetIc3f Input capture 3 filter
-func (r *registerCcmr2_inputType) SetIc3f(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_inputFieldIc3fMask)|(uint32(value)<<RegisterCcmr2_inputFieldIc3fShift))
+func (r *registerCcmr2inputType) SetIc3f(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2inputFieldIc3fMask)|(uint32(value)<<RegisterCcmr2inputFieldIc3fShift))
 }
 
 const (
-	RegisterCcmr2_inputFieldCc4sShift = 8
-	RegisterCcmr2_inputFieldCc4sMask  = 0x300
+	RegisterCcmr2inputFieldCc4sShift = 8
+	RegisterCcmr2inputFieldCc4sMask  = 0x300
 )
 
 // GetCc4s Capture/Compare 4 selection
-func (r *registerCcmr2_inputType) GetCc4s() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_inputFieldCc4sMask) >> RegisterCcmr2_inputFieldCc4sShift)
+func (r *registerCcmr2inputType) GetCc4s() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2inputFieldCc4sMask) >> RegisterCcmr2inputFieldCc4sShift)
 }
 
 // SetCc4s Capture/Compare 4 selection
-func (r *registerCcmr2_inputType) SetCc4s(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_inputFieldCc4sMask)|(uint32(value)<<RegisterCcmr2_inputFieldCc4sShift))
+func (r *registerCcmr2inputType) SetCc4s(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2inputFieldCc4sMask)|(uint32(value)<<RegisterCcmr2inputFieldCc4sShift))
 }
 
 const (
-	RegisterCcmr2_inputFieldIc4pscShift = 10
-	RegisterCcmr2_inputFieldIc4pscMask  = 0xc00
+	RegisterCcmr2inputFieldIc4pscShift = 10
+	RegisterCcmr2inputFieldIc4pscMask  = 0xc00
 )
 
 // GetIc4psc Input capture 4 prescaler
-func (r *registerCcmr2_inputType) GetIc4psc() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_inputFieldIc4pscMask) >> RegisterCcmr2_inputFieldIc4pscShift)
+func (r *registerCcmr2inputType) GetIc4psc() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2inputFieldIc4pscMask) >> RegisterCcmr2inputFieldIc4pscShift)
 }
 
 // SetIc4psc Input capture 4 prescaler
-func (r *registerCcmr2_inputType) SetIc4psc(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_inputFieldIc4pscMask)|(uint32(value)<<RegisterCcmr2_inputFieldIc4pscShift))
+func (r *registerCcmr2inputType) SetIc4psc(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2inputFieldIc4pscMask)|(uint32(value)<<RegisterCcmr2inputFieldIc4pscShift))
 }
 
 const (
-	RegisterCcmr2_inputFieldIc4fShift = 12
-	RegisterCcmr2_inputFieldIc4fMask  = 0xf000
+	RegisterCcmr2inputFieldIc4fShift = 12
+	RegisterCcmr2inputFieldIc4fMask  = 0xf000
 )
 
 // GetIc4f Input capture 4 filter
-func (r *registerCcmr2_inputType) GetIc4f() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2_inputFieldIc4fMask) >> RegisterCcmr2_inputFieldIc4fShift)
+func (r *registerCcmr2inputType) GetIc4f() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr2inputFieldIc4fMask) >> RegisterCcmr2inputFieldIc4fShift)
 }
 
 // SetIc4f Input capture 4 filter
-func (r *registerCcmr2_inputType) SetIc4f(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2_inputFieldIc4fMask)|(uint32(value)<<RegisterCcmr2_inputFieldIc4fShift))
+func (r *registerCcmr2inputType) SetIc4f(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr2inputFieldIc4fMask)|(uint32(value)<<RegisterCcmr2inputFieldIc4fShift))
 }
 
 // registerCcerType capture/compare enable register
@@ -2813,188 +2813,188 @@ func (r *registerDmarType) SetDmab(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDmarFieldDmabMask)|(uint32(value)<<RegisterDmarFieldDmabShift))
 }
 
-// registerCcmr3_outputType capture/compare mode register 3 (output mode)
-type registerCcmr3_outputType uint32
+// registerCcmr3outputType capture/compare mode register 3 (output mode)
+type registerCcmr3outputType uint32
 
 const (
-	RegisterCcmr3_outputFieldOc5feShift = 2
-	RegisterCcmr3_outputFieldOc5feMask  = 0x4
+	RegisterCcmr3outputFieldOc5feShift = 2
+	RegisterCcmr3outputFieldOc5feMask  = 0x4
 )
 
 // GetOc5fe Output compare 5 fast enable
-func (r *registerCcmr3_outputType) GetOc5fe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3_outputFieldOc5feMask) != 0
+func (r *registerCcmr3outputType) GetOc5fe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3outputFieldOc5feMask) != 0
 }
 
 // SetOc5fe Output compare 5 fast enable
-func (r *registerCcmr3_outputType) SetOc5fe(value bool) {
+func (r *registerCcmr3outputType) SetOc5fe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3_outputFieldOc5feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3outputFieldOc5feMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3_outputFieldOc5feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3outputFieldOc5feMask)
 	}
 }
 
 const (
-	RegisterCcmr3_outputFieldOc5peShift = 3
-	RegisterCcmr3_outputFieldOc5peMask  = 0x8
+	RegisterCcmr3outputFieldOc5peShift = 3
+	RegisterCcmr3outputFieldOc5peMask  = 0x8
 )
 
 // GetOc5pe Output compare 5 preload enable
-func (r *registerCcmr3_outputType) GetOc5pe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3_outputFieldOc5peMask) != 0
+func (r *registerCcmr3outputType) GetOc5pe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3outputFieldOc5peMask) != 0
 }
 
 // SetOc5pe Output compare 5 preload enable
-func (r *registerCcmr3_outputType) SetOc5pe(value bool) {
+func (r *registerCcmr3outputType) SetOc5pe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3_outputFieldOc5peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3outputFieldOc5peMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3_outputFieldOc5peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3outputFieldOc5peMask)
 	}
 }
 
 const (
-	RegisterCcmr3_outputFieldOc5mShift = 4
-	RegisterCcmr3_outputFieldOc5mMask  = 0x70
+	RegisterCcmr3outputFieldOc5mShift = 4
+	RegisterCcmr3outputFieldOc5mMask  = 0x70
 )
 
 // GetOc5m Output compare 5 mode
-func (r *registerCcmr3_outputType) GetOc5m() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3_outputFieldOc5mMask) >> RegisterCcmr3_outputFieldOc5mShift)
+func (r *registerCcmr3outputType) GetOc5m() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3outputFieldOc5mMask) >> RegisterCcmr3outputFieldOc5mShift)
 }
 
 // SetOc5m Output compare 5 mode
-func (r *registerCcmr3_outputType) SetOc5m(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3_outputFieldOc5mMask)|(uint32(value)<<RegisterCcmr3_outputFieldOc5mShift))
+func (r *registerCcmr3outputType) SetOc5m(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3outputFieldOc5mMask)|(uint32(value)<<RegisterCcmr3outputFieldOc5mShift))
 }
 
 const (
-	RegisterCcmr3_outputFieldOc5ceShift = 7
-	RegisterCcmr3_outputFieldOc5ceMask  = 0x80
+	RegisterCcmr3outputFieldOc5ceShift = 7
+	RegisterCcmr3outputFieldOc5ceMask  = 0x80
 )
 
 // GetOc5ce Output compare 5 clear enable
-func (r *registerCcmr3_outputType) GetOc5ce() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3_outputFieldOc5ceMask) != 0
+func (r *registerCcmr3outputType) GetOc5ce() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3outputFieldOc5ceMask) != 0
 }
 
 // SetOc5ce Output compare 5 clear enable
-func (r *registerCcmr3_outputType) SetOc5ce(value bool) {
+func (r *registerCcmr3outputType) SetOc5ce(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3_outputFieldOc5ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3outputFieldOc5ceMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3_outputFieldOc5ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3outputFieldOc5ceMask)
 	}
 }
 
 const (
-	RegisterCcmr3_outputFieldOc6feShift = 10
-	RegisterCcmr3_outputFieldOc6feMask  = 0x400
+	RegisterCcmr3outputFieldOc6feShift = 10
+	RegisterCcmr3outputFieldOc6feMask  = 0x400
 )
 
 // GetOc6fe Output compare 6 fast enable
-func (r *registerCcmr3_outputType) GetOc6fe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3_outputFieldOc6feMask) != 0
+func (r *registerCcmr3outputType) GetOc6fe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3outputFieldOc6feMask) != 0
 }
 
 // SetOc6fe Output compare 6 fast enable
-func (r *registerCcmr3_outputType) SetOc6fe(value bool) {
+func (r *registerCcmr3outputType) SetOc6fe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3_outputFieldOc6feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3outputFieldOc6feMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3_outputFieldOc6feMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3outputFieldOc6feMask)
 	}
 }
 
 const (
-	RegisterCcmr3_outputFieldOc6peShift = 11
-	RegisterCcmr3_outputFieldOc6peMask  = 0x800
+	RegisterCcmr3outputFieldOc6peShift = 11
+	RegisterCcmr3outputFieldOc6peMask  = 0x800
 )
 
 // GetOc6pe Output compare 6 preload enable
-func (r *registerCcmr3_outputType) GetOc6pe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3_outputFieldOc6peMask) != 0
+func (r *registerCcmr3outputType) GetOc6pe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3outputFieldOc6peMask) != 0
 }
 
 // SetOc6pe Output compare 6 preload enable
-func (r *registerCcmr3_outputType) SetOc6pe(value bool) {
+func (r *registerCcmr3outputType) SetOc6pe(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3_outputFieldOc6peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3outputFieldOc6peMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3_outputFieldOc6peMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3outputFieldOc6peMask)
 	}
 }
 
 const (
-	RegisterCcmr3_outputFieldOc6mShift = 12
-	RegisterCcmr3_outputFieldOc6mMask  = 0x7000
+	RegisterCcmr3outputFieldOc6mShift = 12
+	RegisterCcmr3outputFieldOc6mMask  = 0x7000
 )
 
 // GetOc6m Output compare 6 mode
-func (r *registerCcmr3_outputType) GetOc6m() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3_outputFieldOc6mMask) >> RegisterCcmr3_outputFieldOc6mShift)
+func (r *registerCcmr3outputType) GetOc6m() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3outputFieldOc6mMask) >> RegisterCcmr3outputFieldOc6mShift)
 }
 
 // SetOc6m Output compare 6 mode
-func (r *registerCcmr3_outputType) SetOc6m(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3_outputFieldOc6mMask)|(uint32(value)<<RegisterCcmr3_outputFieldOc6mShift))
+func (r *registerCcmr3outputType) SetOc6m(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3outputFieldOc6mMask)|(uint32(value)<<RegisterCcmr3outputFieldOc6mShift))
 }
 
 const (
-	RegisterCcmr3_outputFieldOc6ceShift = 15
-	RegisterCcmr3_outputFieldOc6ceMask  = 0x8000
+	RegisterCcmr3outputFieldOc6ceShift = 15
+	RegisterCcmr3outputFieldOc6ceMask  = 0x8000
 )
 
 // GetOc6ce Output compare 6 clear enable
-func (r *registerCcmr3_outputType) GetOc6ce() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3_outputFieldOc6ceMask) != 0
+func (r *registerCcmr3outputType) GetOc6ce() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3outputFieldOc6ceMask) != 0
 }
 
 // SetOc6ce Output compare 6 clear enable
-func (r *registerCcmr3_outputType) SetOc6ce(value bool) {
+func (r *registerCcmr3outputType) SetOc6ce(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3_outputFieldOc6ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3outputFieldOc6ceMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3_outputFieldOc6ceMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3outputFieldOc6ceMask)
 	}
 }
 
 const (
-	RegisterCcmr3_outputFieldOc5m3Shift = 16
-	RegisterCcmr3_outputFieldOc5m3Mask  = 0x10000
+	RegisterCcmr3outputFieldOc5m3Shift = 16
+	RegisterCcmr3outputFieldOc5m3Mask  = 0x10000
 )
 
 // GetOc5m3 Output Compare 5 mode
-func (r *registerCcmr3_outputType) GetOc5m3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3_outputFieldOc5m3Mask) != 0
+func (r *registerCcmr3outputType) GetOc5m3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3outputFieldOc5m3Mask) != 0
 }
 
 // SetOc5m3 Output Compare 5 mode
-func (r *registerCcmr3_outputType) SetOc5m3(value bool) {
+func (r *registerCcmr3outputType) SetOc5m3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3_outputFieldOc5m3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3outputFieldOc5m3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3_outputFieldOc5m3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3outputFieldOc5m3Mask)
 	}
 }
 
 const (
-	RegisterCcmr3_outputFieldOc6m3Shift = 24
-	RegisterCcmr3_outputFieldOc6m3Mask  = 0x1000000
+	RegisterCcmr3outputFieldOc6m3Shift = 24
+	RegisterCcmr3outputFieldOc6m3Mask  = 0x1000000
 )
 
 // GetOc6m3 Output Compare 6 mode
-func (r *registerCcmr3_outputType) GetOc6m3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3_outputFieldOc6m3Mask) != 0
+func (r *registerCcmr3outputType) GetOc6m3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcmr3outputFieldOc6m3Mask) != 0
 }
 
 // SetOc6m3 Output Compare 6 mode
-func (r *registerCcmr3_outputType) SetOc6m3(value bool) {
+func (r *registerCcmr3outputType) SetOc6m3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3_outputFieldOc6m3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcmr3outputFieldOc6m3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3_outputFieldOc6m3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCcmr3outputFieldOc6m3Mask)
 	}
 }
 

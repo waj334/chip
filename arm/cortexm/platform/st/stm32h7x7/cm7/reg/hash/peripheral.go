@@ -12,80 +12,80 @@ var (
 )
 
 type _hash struct {
-	Cr       registerCrType
-	Din      registerDinType
-	Str      registerStrType
-	Hr0      registerHr0Type
-	Hr1      registerHr1Type
-	Hr2      registerHr2Type
-	Hr3      registerHr3Type
-	Hr4      registerHr4Type
-	Imr      registerImrType
-	Sr       registerSrType
-	_        [208]byte
-	Csr0     registerCsr0Type
-	Csr1     registerCsr1Type
-	Csr2     registerCsr2Type
-	Csr3     registerCsr3Type
-	Csr4     registerCsr4Type
-	Csr5     registerCsr5Type
-	Csr6     registerCsr6Type
-	Csr7     registerCsr7Type
-	Csr8     registerCsr8Type
-	Csr9     registerCsr9Type
-	Csr10    registerCsr10Type
-	Csr11    registerCsr11Type
-	Csr12    registerCsr12Type
-	Csr13    registerCsr13Type
-	Csr14    registerCsr14Type
-	Csr15    registerCsr15Type
-	Csr16    registerCsr16Type
-	Csr17    registerCsr17Type
-	Csr18    registerCsr18Type
-	Csr19    registerCsr19Type
-	Csr20    registerCsr20Type
-	Csr21    registerCsr21Type
-	Csr22    registerCsr22Type
-	Csr23    registerCsr23Type
-	Csr24    registerCsr24Type
-	Csr25    registerCsr25Type
-	Csr26    registerCsr26Type
-	Csr27    registerCsr27Type
-	Csr28    registerCsr28Type
-	Csr29    registerCsr29Type
-	Csr30    registerCsr30Type
-	Csr31    registerCsr31Type
-	Csr32    registerCsr32Type
-	Csr33    registerCsr33Type
-	Csr34    registerCsr34Type
-	Csr35    registerCsr35Type
-	Csr36    registerCsr36Type
-	Csr37    registerCsr37Type
-	Csr38    registerCsr38Type
-	Csr39    registerCsr39Type
-	Csr40    registerCsr40Type
-	Csr41    registerCsr41Type
-	Csr42    registerCsr42Type
-	Csr43    registerCsr43Type
-	Csr44    registerCsr44Type
-	Csr45    registerCsr45Type
-	Csr46    registerCsr46Type
-	Csr47    registerCsr47Type
-	Csr48    registerCsr48Type
-	Csr49    registerCsr49Type
-	Csr50    registerCsr50Type
-	Csr51    registerCsr51Type
-	Csr52    registerCsr52Type
-	Csr53    registerCsr53Type
-	_        [320]byte
-	Hash_hr0 registerHash_hr0Type
-	Hash_hr1 registerHash_hr1Type
-	Hash_hr2 registerHash_hr2Type
-	Hash_hr3 registerHash_hr3Type
-	Hash_hr4 registerHash_hr4Type
-	Hash_hr5 registerHash_hr5Type
-	Hash_hr6 registerHash_hr6Type
-	Hash_hr7 registerHash_hr7Type
+	Cr      registerCrType
+	Din     registerDinType
+	Str     registerStrType
+	Hr0     registerHr0Type
+	Hr1     registerHr1Type
+	Hr2     registerHr2Type
+	Hr3     registerHr3Type
+	Hr4     registerHr4Type
+	Imr     registerImrType
+	Sr      registerSrType
+	_       [208]byte
+	Csr0    registerCsr0Type
+	Csr1    registerCsr1Type
+	Csr2    registerCsr2Type
+	Csr3    registerCsr3Type
+	Csr4    registerCsr4Type
+	Csr5    registerCsr5Type
+	Csr6    registerCsr6Type
+	Csr7    registerCsr7Type
+	Csr8    registerCsr8Type
+	Csr9    registerCsr9Type
+	Csr10   registerCsr10Type
+	Csr11   registerCsr11Type
+	Csr12   registerCsr12Type
+	Csr13   registerCsr13Type
+	Csr14   registerCsr14Type
+	Csr15   registerCsr15Type
+	Csr16   registerCsr16Type
+	Csr17   registerCsr17Type
+	Csr18   registerCsr18Type
+	Csr19   registerCsr19Type
+	Csr20   registerCsr20Type
+	Csr21   registerCsr21Type
+	Csr22   registerCsr22Type
+	Csr23   registerCsr23Type
+	Csr24   registerCsr24Type
+	Csr25   registerCsr25Type
+	Csr26   registerCsr26Type
+	Csr27   registerCsr27Type
+	Csr28   registerCsr28Type
+	Csr29   registerCsr29Type
+	Csr30   registerCsr30Type
+	Csr31   registerCsr31Type
+	Csr32   registerCsr32Type
+	Csr33   registerCsr33Type
+	Csr34   registerCsr34Type
+	Csr35   registerCsr35Type
+	Csr36   registerCsr36Type
+	Csr37   registerCsr37Type
+	Csr38   registerCsr38Type
+	Csr39   registerCsr39Type
+	Csr40   registerCsr40Type
+	Csr41   registerCsr41Type
+	Csr42   registerCsr42Type
+	Csr43   registerCsr43Type
+	Csr44   registerCsr44Type
+	Csr45   registerCsr45Type
+	Csr46   registerCsr46Type
+	Csr47   registerCsr47Type
+	Csr48   registerCsr48Type
+	Csr49   registerCsr49Type
+	Csr50   registerCsr50Type
+	Csr51   registerCsr51Type
+	Csr52   registerCsr52Type
+	Csr53   registerCsr53Type
+	_       [320]byte
+	Hashhr0 registerHashhr0Type
+	Hashhr1 registerHashhr1Type
+	Hashhr2 registerHashhr2Type
+	Hashhr3 registerHashhr3Type
+	Hashhr4 registerHashhr4Type
+	Hashhr5 registerHashhr5Type
+	Hashhr6 registerHashhr6Type
+	Hashhr7 registerHashhr7Type
 }
 
 // registerCrType control register
@@ -1468,146 +1468,146 @@ func (r *registerCsr53Type) SetCsr53(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCsr53FieldCsr53Mask)|(uint32(value)<<RegisterCsr53FieldCsr53Shift))
 }
 
-// registerHash_hr0Type HASH digest register
-type registerHash_hr0Type uint32
+// registerHashhr0Type HASH digest register
+type registerHashhr0Type uint32
 
 const (
-	RegisterHash_hr0FieldH0Shift = 0
-	RegisterHash_hr0FieldH0Mask  = 0xffffffff
+	RegisterHashhr0FieldH0Shift = 0
+	RegisterHashhr0FieldH0Mask  = 0xffffffff
 )
 
 // GetH0 H0
-func (r *registerHash_hr0Type) GetH0() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHash_hr0FieldH0Mask) >> RegisterHash_hr0FieldH0Shift)
+func (r *registerHashhr0Type) GetH0() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHashhr0FieldH0Mask) >> RegisterHashhr0FieldH0Shift)
 }
 
 // SetH0 H0
-func (r *registerHash_hr0Type) SetH0(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHash_hr0FieldH0Mask)|(uint32(value)<<RegisterHash_hr0FieldH0Shift))
+func (r *registerHashhr0Type) SetH0(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHashhr0FieldH0Mask)|(uint32(value)<<RegisterHashhr0FieldH0Shift))
 }
 
-// registerHash_hr1Type read-only
-type registerHash_hr1Type uint32
+// registerHashhr1Type read-only
+type registerHashhr1Type uint32
 
 const (
-	RegisterHash_hr1FieldH1Shift = 0
-	RegisterHash_hr1FieldH1Mask  = 0xffffffff
+	RegisterHashhr1FieldH1Shift = 0
+	RegisterHashhr1FieldH1Mask  = 0xffffffff
 )
 
 // GetH1 H1
-func (r *registerHash_hr1Type) GetH1() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHash_hr1FieldH1Mask) >> RegisterHash_hr1FieldH1Shift)
+func (r *registerHashhr1Type) GetH1() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHashhr1FieldH1Mask) >> RegisterHashhr1FieldH1Shift)
 }
 
 // SetH1 H1
-func (r *registerHash_hr1Type) SetH1(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHash_hr1FieldH1Mask)|(uint32(value)<<RegisterHash_hr1FieldH1Shift))
+func (r *registerHashhr1Type) SetH1(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHashhr1FieldH1Mask)|(uint32(value)<<RegisterHashhr1FieldH1Shift))
 }
 
-// registerHash_hr2Type read-only
-type registerHash_hr2Type uint32
+// registerHashhr2Type read-only
+type registerHashhr2Type uint32
 
 const (
-	RegisterHash_hr2FieldH2Shift = 0
-	RegisterHash_hr2FieldH2Mask  = 0xffffffff
+	RegisterHashhr2FieldH2Shift = 0
+	RegisterHashhr2FieldH2Mask  = 0xffffffff
 )
 
 // GetH2 H2
-func (r *registerHash_hr2Type) GetH2() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHash_hr2FieldH2Mask) >> RegisterHash_hr2FieldH2Shift)
+func (r *registerHashhr2Type) GetH2() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHashhr2FieldH2Mask) >> RegisterHashhr2FieldH2Shift)
 }
 
 // SetH2 H2
-func (r *registerHash_hr2Type) SetH2(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHash_hr2FieldH2Mask)|(uint32(value)<<RegisterHash_hr2FieldH2Shift))
+func (r *registerHashhr2Type) SetH2(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHashhr2FieldH2Mask)|(uint32(value)<<RegisterHashhr2FieldH2Shift))
 }
 
-// registerHash_hr3Type read-only
-type registerHash_hr3Type uint32
+// registerHashhr3Type read-only
+type registerHashhr3Type uint32
 
 const (
-	RegisterHash_hr3FieldH3Shift = 0
-	RegisterHash_hr3FieldH3Mask  = 0xffffffff
+	RegisterHashhr3FieldH3Shift = 0
+	RegisterHashhr3FieldH3Mask  = 0xffffffff
 )
 
 // GetH3 H3
-func (r *registerHash_hr3Type) GetH3() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHash_hr3FieldH3Mask) >> RegisterHash_hr3FieldH3Shift)
+func (r *registerHashhr3Type) GetH3() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHashhr3FieldH3Mask) >> RegisterHashhr3FieldH3Shift)
 }
 
 // SetH3 H3
-func (r *registerHash_hr3Type) SetH3(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHash_hr3FieldH3Mask)|(uint32(value)<<RegisterHash_hr3FieldH3Shift))
+func (r *registerHashhr3Type) SetH3(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHashhr3FieldH3Mask)|(uint32(value)<<RegisterHashhr3FieldH3Shift))
 }
 
-// registerHash_hr4Type read-only
-type registerHash_hr4Type uint32
+// registerHashhr4Type read-only
+type registerHashhr4Type uint32
 
 const (
-	RegisterHash_hr4FieldH4Shift = 0
-	RegisterHash_hr4FieldH4Mask  = 0xffffffff
+	RegisterHashhr4FieldH4Shift = 0
+	RegisterHashhr4FieldH4Mask  = 0xffffffff
 )
 
 // GetH4 H4
-func (r *registerHash_hr4Type) GetH4() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHash_hr4FieldH4Mask) >> RegisterHash_hr4FieldH4Shift)
+func (r *registerHashhr4Type) GetH4() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHashhr4FieldH4Mask) >> RegisterHashhr4FieldH4Shift)
 }
 
 // SetH4 H4
-func (r *registerHash_hr4Type) SetH4(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHash_hr4FieldH4Mask)|(uint32(value)<<RegisterHash_hr4FieldH4Shift))
+func (r *registerHashhr4Type) SetH4(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHashhr4FieldH4Mask)|(uint32(value)<<RegisterHashhr4FieldH4Shift))
 }
 
-// registerHash_hr5Type read-only
-type registerHash_hr5Type uint32
+// registerHashhr5Type read-only
+type registerHashhr5Type uint32
 
 const (
-	RegisterHash_hr5FieldH5Shift = 0
-	RegisterHash_hr5FieldH5Mask  = 0xffffffff
+	RegisterHashhr5FieldH5Shift = 0
+	RegisterHashhr5FieldH5Mask  = 0xffffffff
 )
 
 // GetH5 H5
-func (r *registerHash_hr5Type) GetH5() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHash_hr5FieldH5Mask) >> RegisterHash_hr5FieldH5Shift)
+func (r *registerHashhr5Type) GetH5() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHashhr5FieldH5Mask) >> RegisterHashhr5FieldH5Shift)
 }
 
 // SetH5 H5
-func (r *registerHash_hr5Type) SetH5(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHash_hr5FieldH5Mask)|(uint32(value)<<RegisterHash_hr5FieldH5Shift))
+func (r *registerHashhr5Type) SetH5(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHashhr5FieldH5Mask)|(uint32(value)<<RegisterHashhr5FieldH5Shift))
 }
 
-// registerHash_hr6Type read-only
-type registerHash_hr6Type uint32
+// registerHashhr6Type read-only
+type registerHashhr6Type uint32
 
 const (
-	RegisterHash_hr6FieldH6Shift = 0
-	RegisterHash_hr6FieldH6Mask  = 0xffffffff
+	RegisterHashhr6FieldH6Shift = 0
+	RegisterHashhr6FieldH6Mask  = 0xffffffff
 )
 
 // GetH6 H6
-func (r *registerHash_hr6Type) GetH6() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHash_hr6FieldH6Mask) >> RegisterHash_hr6FieldH6Shift)
+func (r *registerHashhr6Type) GetH6() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHashhr6FieldH6Mask) >> RegisterHashhr6FieldH6Shift)
 }
 
 // SetH6 H6
-func (r *registerHash_hr6Type) SetH6(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHash_hr6FieldH6Mask)|(uint32(value)<<RegisterHash_hr6FieldH6Shift))
+func (r *registerHashhr6Type) SetH6(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHashhr6FieldH6Mask)|(uint32(value)<<RegisterHashhr6FieldH6Shift))
 }
 
-// registerHash_hr7Type read-only
-type registerHash_hr7Type uint32
+// registerHashhr7Type read-only
+type registerHashhr7Type uint32
 
 const (
-	RegisterHash_hr7FieldH7Shift = 0
-	RegisterHash_hr7FieldH7Mask  = 0xffffffff
+	RegisterHashhr7FieldH7Shift = 0
+	RegisterHashhr7FieldH7Mask  = 0xffffffff
 )
 
 // GetH7 H7
-func (r *registerHash_hr7Type) GetH7() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHash_hr7FieldH7Mask) >> RegisterHash_hr7FieldH7Shift)
+func (r *registerHashhr7Type) GetH7() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHashhr7FieldH7Mask) >> RegisterHashhr7FieldH7Shift)
 }
 
 // SetH7 H7
-func (r *registerHash_hr7Type) SetH7(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHash_hr7FieldH7Mask)|(uint32(value)<<RegisterHash_hr7FieldH7Shift))
+func (r *registerHashhr7Type) SetH7(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHashhr7FieldH7Mask)|(uint32(value)<<RegisterHashhr7FieldH7Shift))
 }

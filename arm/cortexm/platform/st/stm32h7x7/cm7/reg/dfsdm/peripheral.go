@@ -12,125 +12,125 @@ var (
 )
 
 type _dfsdm struct {
-	Ch0cfgr1          registerCh0cfgr1Type
-	Ch0cfgr2          registerCh0cfgr2Type
-	Ch0awscdr         registerCh0awscdrType
-	Ch0wdatr          registerCh0wdatrType
-	Ch0datinr         registerCh0datinrType
-	Ch0dlyr           registerCh0dlyrType
-	_                 [8]byte
-	Ch1cfgr1          registerCh1cfgr1Type
-	Ch1cfgr2          registerCh1cfgr2Type
-	Ch1awscdr         registerCh1awscdrType
-	Ch1wdatr          registerCh1wdatrType
-	Ch1datinr         registerCh1datinrType
-	Ch1dlyr           registerCh1dlyrType
-	_                 [8]byte
-	Ch2cfgr1          registerCh2cfgr1Type
-	Ch2cfgr2          registerCh2cfgr2Type
-	Ch2awscdr         registerCh2awscdrType
-	Ch2wdatr          registerCh2wdatrType
-	Ch2datinr         registerCh2datinrType
-	Ch2dlyr           registerCh2dlyrType
-	_                 [8]byte
-	Ch3cfgr1          registerCh3cfgr1Type
-	Ch3cfgr2          registerCh3cfgr2Type
-	Ch3awscdr         registerCh3awscdrType
-	Ch3wdatr          registerCh3wdatrType
-	Ch3datinr         registerCh3datinrType
-	Ch3dlyr           registerCh3dlyrType
-	_                 [8]byte
-	Ch4cfgr1          registerCh4cfgr1Type
-	Ch4cfgr2          registerCh4cfgr2Type
-	Ch4awscdr         registerCh4awscdrType
-	Ch4wdatr          registerCh4wdatrType
-	Ch4datinr         registerCh4datinrType
-	Ch4dlyr           registerCh4dlyrType
-	_                 [8]byte
-	Ch5cfgr1          registerCh5cfgr1Type
-	Ch5cfgr2          registerCh5cfgr2Type
-	Ch5awscdr         registerCh5awscdrType
-	Ch5wdatr          registerCh5wdatrType
-	Ch5datinr         registerCh5datinrType
-	Ch5dlyr           registerCh5dlyrType
-	_                 [8]byte
-	Ch6cfgr1          registerCh6cfgr1Type
-	Ch6cfgr2          registerCh6cfgr2Type
-	Ch6awscdr         registerCh6awscdrType
-	Ch6wdatr          registerCh6wdatrType
-	Ch6datinr         registerCh6datinrType
-	Ch6dlyr           registerCh6dlyrType
-	_                 [8]byte
-	Ch7cfgr1          registerCh7cfgr1Type
-	Ch7cfgr2          registerCh7cfgr2Type
-	Ch7awscdr         registerCh7awscdrType
-	Ch7wdatr          registerCh7wdatrType
-	Ch7datinr         registerCh7datinrType
-	Ch7dlyr           registerCh7dlyrType
-	_                 [8]byte
-	Dfsdm_flt0cr1     registerDfsdm_flt0cr1Type
-	Dfsdm_flt0cr2     registerDfsdm_flt0cr2Type
-	Dfsdm_flt0isr     registerDfsdm_flt0isrType
-	Dfsdm_flt0icr     registerDfsdm_flt0icrType
-	Dfsdm_flt0jchgr   registerDfsdm_flt0jchgrType
-	Dfsdm_flt0fcr     registerDfsdm_flt0fcrType
-	Dfsdm_flt0jdatar  registerDfsdm_flt0jdatarType
-	Dfsdm_flt0rdatar  registerDfsdm_flt0rdatarType
-	Dfsdm_flt0awhtr   registerDfsdm_flt0awhtrType
-	Dfsdm_flt0awltr   registerDfsdm_flt0awltrType
-	Dfsdm_flt0awsr    registerDfsdm_flt0awsrType
-	Dfsdm_flt0awcfr   registerDfsdm_flt0awcfrType
-	Dfsdm_flt0exmax   registerDfsdm_flt0exmaxType
-	Dfsdm_flt0exmin   registerDfsdm_flt0exminType
-	Dfsdm_flt0cnvtimr registerDfsdm_flt0cnvtimrType
-	_                 [68]byte
-	Dfsdm_flt1cr1     registerDfsdm_flt1cr1Type
-	Dfsdm_flt1cr2     registerDfsdm_flt1cr2Type
-	Dfsdm_flt1isr     registerDfsdm_flt1isrType
-	Dfsdm1_icr        registerDfsdm1_icrType
-	Dfsdm_flt1jchgr   registerDfsdm_flt1jchgrType
-	Dfsdm1_fcr        registerDfsdm1_fcrType
-	Dfsdm_flt1jdatar  registerDfsdm_flt1jdatarType
-	Dfsdm_flt1rdatar  registerDfsdm_flt1rdatarType
-	Dfsdm_flt1awhtr   registerDfsdm_flt1awhtrType
-	Dfsdm_flt1awltr   registerDfsdm_flt1awltrType
-	Dfsdm_flt1awsr    registerDfsdm_flt1awsrType
-	Dfsdm_flt1awcfr   registerDfsdm_flt1awcfrType
-	Dfsdm_flt1exmax   registerDfsdm_flt1exmaxType
-	Dfsdm_flt1exmin   registerDfsdm_flt1exminType
-	Dfsdm_flt1cnvtimr registerDfsdm_flt1cnvtimrType
-	_                 [68]byte
-	Dfsdm_flt2cr1     registerDfsdm_flt2cr1Type
-	Dfsdm_flt2cr2     registerDfsdm_flt2cr2Type
-	Dfsdm_flt2isr     registerDfsdm_flt2isrType
-	Dfsdm_flt2icr     registerDfsdm_flt2icrType
-	Dfsdm_flt2jchgr   registerDfsdm_flt2jchgrType
-	Dfsdm_flt2fcr     registerDfsdm_flt2fcrType
-	Dfsdm_flt2jdatar  registerDfsdm_flt2jdatarType
-	Dfsdm_flt2rdatar  registerDfsdm_flt2rdatarType
-	Dfsdm_flt2awhtr   registerDfsdm_flt2awhtrType
-	Dfsdm_flt2awltr   registerDfsdm_flt2awltrType
-	Dfsdm_flt2awsr    registerDfsdm_flt2awsrType
-	Dfsdm_flt2awcfr   registerDfsdm_flt2awcfrType
-	Dfsdm_flt2exmax   registerDfsdm_flt2exmaxType
-	Dfsdm_flt2exmin   registerDfsdm_flt2exminType
-	Dfsdm_flt2cnvtimr registerDfsdm_flt2cnvtimrType
-	_                 [68]byte
-	Dfsdm_flt3cr1     registerDfsdm_flt3cr1Type
-	Dfsdm_flt3cr2     registerDfsdm_flt3cr2Type
-	Dfsdm_flt3isr     registerDfsdm_flt3isrType
-	Dfsdm_flt3icr     registerDfsdm_flt3icrType
-	Dfsdm_flt3jchgr   registerDfsdm_flt3jchgrType
-	Dfsdm_flt3fcr     registerDfsdm_flt3fcrType
-	Dfsdm_flt3jdatar  registerDfsdm_flt3jdatarType
-	Dfsdm_flt3rdatar  registerDfsdm_flt3rdatarType
-	Dfsdm_flt3awhtr   registerDfsdm_flt3awhtrType
-	Dfsdm_flt3awltr   registerDfsdm_flt3awltrType
-	Dfsdm_flt3awsr    registerDfsdm_flt3awsrType
-	Dfsdm_flt3awcfr   registerDfsdm_flt3awcfrType
-	Dfsdm_flt3exmax   registerDfsdm_flt3exmaxType
-	Dfsdm_flt3exmin   registerDfsdm_flt3exminType
-	Dfsdm_flt3cnvtimr registerDfsdm_flt3cnvtimrType
+	Ch0cfgr1         registerCh0cfgr1Type
+	Ch0cfgr2         registerCh0cfgr2Type
+	Ch0awscdr        registerCh0awscdrType
+	Ch0wdatr         registerCh0wdatrType
+	Ch0datinr        registerCh0datinrType
+	Ch0dlyr          registerCh0dlyrType
+	_                [8]byte
+	Ch1cfgr1         registerCh1cfgr1Type
+	Ch1cfgr2         registerCh1cfgr2Type
+	Ch1awscdr        registerCh1awscdrType
+	Ch1wdatr         registerCh1wdatrType
+	Ch1datinr        registerCh1datinrType
+	Ch1dlyr          registerCh1dlyrType
+	_                [8]byte
+	Ch2cfgr1         registerCh2cfgr1Type
+	Ch2cfgr2         registerCh2cfgr2Type
+	Ch2awscdr        registerCh2awscdrType
+	Ch2wdatr         registerCh2wdatrType
+	Ch2datinr        registerCh2datinrType
+	Ch2dlyr          registerCh2dlyrType
+	_                [8]byte
+	Ch3cfgr1         registerCh3cfgr1Type
+	Ch3cfgr2         registerCh3cfgr2Type
+	Ch3awscdr        registerCh3awscdrType
+	Ch3wdatr         registerCh3wdatrType
+	Ch3datinr        registerCh3datinrType
+	Ch3dlyr          registerCh3dlyrType
+	_                [8]byte
+	Ch4cfgr1         registerCh4cfgr1Type
+	Ch4cfgr2         registerCh4cfgr2Type
+	Ch4awscdr        registerCh4awscdrType
+	Ch4wdatr         registerCh4wdatrType
+	Ch4datinr        registerCh4datinrType
+	Ch4dlyr          registerCh4dlyrType
+	_                [8]byte
+	Ch5cfgr1         registerCh5cfgr1Type
+	Ch5cfgr2         registerCh5cfgr2Type
+	Ch5awscdr        registerCh5awscdrType
+	Ch5wdatr         registerCh5wdatrType
+	Ch5datinr        registerCh5datinrType
+	Ch5dlyr          registerCh5dlyrType
+	_                [8]byte
+	Ch6cfgr1         registerCh6cfgr1Type
+	Ch6cfgr2         registerCh6cfgr2Type
+	Ch6awscdr        registerCh6awscdrType
+	Ch6wdatr         registerCh6wdatrType
+	Ch6datinr        registerCh6datinrType
+	Ch6dlyr          registerCh6dlyrType
+	_                [8]byte
+	Ch7cfgr1         registerCh7cfgr1Type
+	Ch7cfgr2         registerCh7cfgr2Type
+	Ch7awscdr        registerCh7awscdrType
+	Ch7wdatr         registerCh7wdatrType
+	Ch7datinr        registerCh7datinrType
+	Ch7dlyr          registerCh7dlyrType
+	_                [8]byte
+	Dfsdmflt0cr1     registerDfsdmflt0cr1Type
+	Dfsdmflt0cr2     registerDfsdmflt0cr2Type
+	Dfsdmflt0isr     registerDfsdmflt0isrType
+	Dfsdmflt0icr     registerDfsdmflt0icrType
+	Dfsdmflt0jchgr   registerDfsdmflt0jchgrType
+	Dfsdmflt0fcr     registerDfsdmflt0fcrType
+	Dfsdmflt0jdatar  registerDfsdmflt0jdatarType
+	Dfsdmflt0rdatar  registerDfsdmflt0rdatarType
+	Dfsdmflt0awhtr   registerDfsdmflt0awhtrType
+	Dfsdmflt0awltr   registerDfsdmflt0awltrType
+	Dfsdmflt0awsr    registerDfsdmflt0awsrType
+	Dfsdmflt0awcfr   registerDfsdmflt0awcfrType
+	Dfsdmflt0exmax   registerDfsdmflt0exmaxType
+	Dfsdmflt0exmin   registerDfsdmflt0exminType
+	Dfsdmflt0cnvtimr registerDfsdmflt0cnvtimrType
+	_                [68]byte
+	Dfsdmflt1cr1     registerDfsdmflt1cr1Type
+	Dfsdmflt1cr2     registerDfsdmflt1cr2Type
+	Dfsdmflt1isr     registerDfsdmflt1isrType
+	Dfsdm1icr        registerDfsdm1icrType
+	Dfsdmflt1jchgr   registerDfsdmflt1jchgrType
+	Dfsdm1fcr        registerDfsdm1fcrType
+	Dfsdmflt1jdatar  registerDfsdmflt1jdatarType
+	Dfsdmflt1rdatar  registerDfsdmflt1rdatarType
+	Dfsdmflt1awhtr   registerDfsdmflt1awhtrType
+	Dfsdmflt1awltr   registerDfsdmflt1awltrType
+	Dfsdmflt1awsr    registerDfsdmflt1awsrType
+	Dfsdmflt1awcfr   registerDfsdmflt1awcfrType
+	Dfsdmflt1exmax   registerDfsdmflt1exmaxType
+	Dfsdmflt1exmin   registerDfsdmflt1exminType
+	Dfsdmflt1cnvtimr registerDfsdmflt1cnvtimrType
+	_                [68]byte
+	Dfsdmflt2cr1     registerDfsdmflt2cr1Type
+	Dfsdmflt2cr2     registerDfsdmflt2cr2Type
+	Dfsdmflt2isr     registerDfsdmflt2isrType
+	Dfsdmflt2icr     registerDfsdmflt2icrType
+	Dfsdmflt2jchgr   registerDfsdmflt2jchgrType
+	Dfsdmflt2fcr     registerDfsdmflt2fcrType
+	Dfsdmflt2jdatar  registerDfsdmflt2jdatarType
+	Dfsdmflt2rdatar  registerDfsdmflt2rdatarType
+	Dfsdmflt2awhtr   registerDfsdmflt2awhtrType
+	Dfsdmflt2awltr   registerDfsdmflt2awltrType
+	Dfsdmflt2awsr    registerDfsdmflt2awsrType
+	Dfsdmflt2awcfr   registerDfsdmflt2awcfrType
+	Dfsdmflt2exmax   registerDfsdmflt2exmaxType
+	Dfsdmflt2exmin   registerDfsdmflt2exminType
+	Dfsdmflt2cnvtimr registerDfsdmflt2cnvtimrType
+	_                [68]byte
+	Dfsdmflt3cr1     registerDfsdmflt3cr1Type
+	Dfsdmflt3cr2     registerDfsdmflt3cr2Type
+	Dfsdmflt3isr     registerDfsdmflt3isrType
+	Dfsdmflt3icr     registerDfsdmflt3icrType
+	Dfsdmflt3jchgr   registerDfsdmflt3jchgrType
+	Dfsdmflt3fcr     registerDfsdmflt3fcrType
+	Dfsdmflt3jdatar  registerDfsdmflt3jdatarType
+	Dfsdmflt3rdatar  registerDfsdmflt3rdatarType
+	Dfsdmflt3awhtr   registerDfsdmflt3awhtrType
+	Dfsdmflt3awltr   registerDfsdmflt3awltrType
+	Dfsdmflt3awsr    registerDfsdmflt3awsrType
+	Dfsdmflt3awcfr   registerDfsdmflt3awcfrType
+	Dfsdmflt3exmax   registerDfsdmflt3exmaxType
+	Dfsdmflt3exmin   registerDfsdmflt3exminType
+	Dfsdmflt3cnvtimr registerDfsdmflt3cnvtimrType
 }
 
 // registerCh0cfgr1Type channel configuration y register
@@ -2618,4110 +2618,4110 @@ func (r *registerCh7dlyrType) SetPlsskp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCh7dlyrFieldPlsskpMask)|(uint32(value)<<RegisterCh7dlyrFieldPlsskpShift))
 }
 
-// registerDfsdm_flt0cr1Type control register 1
-type registerDfsdm_flt0cr1Type uint32
+// registerDfsdmflt0cr1Type control register 1
+type registerDfsdmflt0cr1Type uint32
 
 const (
-	RegisterDfsdm_flt0cr1FieldDfenShift = 0
-	RegisterDfsdm_flt0cr1FieldDfenMask  = 0x1
+	RegisterDfsdmflt0cr1FieldDfenShift = 0
+	RegisterDfsdmflt0cr1FieldDfenMask  = 0x1
 )
 
 // GetDfen DFSDM enable
-func (r *registerDfsdm_flt0cr1Type) GetDfen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldDfenMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetDfen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldDfenMask) != 0
 }
 
 // SetDfen DFSDM enable
-func (r *registerDfsdm_flt0cr1Type) SetDfen(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetDfen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldDfenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldDfenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldDfenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldDfenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldJswstartShift = 1
-	RegisterDfsdm_flt0cr1FieldJswstartMask  = 0x2
+	RegisterDfsdmflt0cr1FieldJswstartShift = 1
+	RegisterDfsdmflt0cr1FieldJswstartMask  = 0x2
 )
 
 // GetJswstart Start a conversion of the injected group of channels
-func (r *registerDfsdm_flt0cr1Type) GetJswstart() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldJswstartMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetJswstart() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldJswstartMask) != 0
 }
 
 // SetJswstart Start a conversion of the injected group of channels
-func (r *registerDfsdm_flt0cr1Type) SetJswstart(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetJswstart(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldJswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldJswstartMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldJswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldJswstartMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldJsyncShift = 3
-	RegisterDfsdm_flt0cr1FieldJsyncMask  = 0x8
+	RegisterDfsdmflt0cr1FieldJsyncShift = 3
+	RegisterDfsdmflt0cr1FieldJsyncMask  = 0x8
 )
 
 // GetJsync Launch an injected conversion synchronously with the DFSDM0 JSWSTART trigger
-func (r *registerDfsdm_flt0cr1Type) GetJsync() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldJsyncMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetJsync() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldJsyncMask) != 0
 }
 
 // SetJsync Launch an injected conversion synchronously with the DFSDM0 JSWSTART trigger
-func (r *registerDfsdm_flt0cr1Type) SetJsync(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetJsync(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldJsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldJsyncMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldJsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldJsyncMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldJscanShift = 4
-	RegisterDfsdm_flt0cr1FieldJscanMask  = 0x10
+	RegisterDfsdmflt0cr1FieldJscanShift = 4
+	RegisterDfsdmflt0cr1FieldJscanMask  = 0x10
 )
 
 // GetJscan Scanning conversion mode for injected conversions
-func (r *registerDfsdm_flt0cr1Type) GetJscan() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldJscanMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetJscan() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldJscanMask) != 0
 }
 
 // SetJscan Scanning conversion mode for injected conversions
-func (r *registerDfsdm_flt0cr1Type) SetJscan(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetJscan(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldJscanMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldJscanMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldJscanMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldJscanMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldJdmaenShift = 5
-	RegisterDfsdm_flt0cr1FieldJdmaenMask  = 0x20
+	RegisterDfsdmflt0cr1FieldJdmaenShift = 5
+	RegisterDfsdmflt0cr1FieldJdmaenMask  = 0x20
 )
 
 // GetJdmaen DMA channel enabled to read data for the injected channel group
-func (r *registerDfsdm_flt0cr1Type) GetJdmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldJdmaenMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetJdmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldJdmaenMask) != 0
 }
 
 // SetJdmaen DMA channel enabled to read data for the injected channel group
-func (r *registerDfsdm_flt0cr1Type) SetJdmaen(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetJdmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldJdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldJdmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldJdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldJdmaenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldJextselShift = 8
-	RegisterDfsdm_flt0cr1FieldJextselMask  = 0x700
+	RegisterDfsdmflt0cr1FieldJextselShift = 8
+	RegisterDfsdmflt0cr1FieldJextselMask  = 0x700
 )
 
 // GetJextsel Trigger signal selection for launching injected conversions
-func (r *registerDfsdm_flt0cr1Type) GetJextsel() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldJextselMask) >> RegisterDfsdm_flt0cr1FieldJextselShift)
+func (r *registerDfsdmflt0cr1Type) GetJextsel() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldJextselMask) >> RegisterDfsdmflt0cr1FieldJextselShift)
 }
 
 // SetJextsel Trigger signal selection for launching injected conversions
-func (r *registerDfsdm_flt0cr1Type) SetJextsel(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldJextselMask)|(uint32(value)<<RegisterDfsdm_flt0cr1FieldJextselShift))
+func (r *registerDfsdmflt0cr1Type) SetJextsel(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldJextselMask)|(uint32(value)<<RegisterDfsdmflt0cr1FieldJextselShift))
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldJextenShift = 13
-	RegisterDfsdm_flt0cr1FieldJextenMask  = 0x6000
+	RegisterDfsdmflt0cr1FieldJextenShift = 13
+	RegisterDfsdmflt0cr1FieldJextenMask  = 0x6000
 )
 
 // GetJexten Trigger enable and trigger edge selection for injected conversions
-func (r *registerDfsdm_flt0cr1Type) GetJexten() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldJextenMask) >> RegisterDfsdm_flt0cr1FieldJextenShift)
+func (r *registerDfsdmflt0cr1Type) GetJexten() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldJextenMask) >> RegisterDfsdmflt0cr1FieldJextenShift)
 }
 
 // SetJexten Trigger enable and trigger edge selection for injected conversions
-func (r *registerDfsdm_flt0cr1Type) SetJexten(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldJextenMask)|(uint32(value)<<RegisterDfsdm_flt0cr1FieldJextenShift))
+func (r *registerDfsdmflt0cr1Type) SetJexten(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldJextenMask)|(uint32(value)<<RegisterDfsdmflt0cr1FieldJextenShift))
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldRswstartShift = 17
-	RegisterDfsdm_flt0cr1FieldRswstartMask  = 0x20000
+	RegisterDfsdmflt0cr1FieldRswstartShift = 17
+	RegisterDfsdmflt0cr1FieldRswstartMask  = 0x20000
 )
 
 // GetRswstart Software start of a conversion on the regular channel
-func (r *registerDfsdm_flt0cr1Type) GetRswstart() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldRswstartMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetRswstart() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldRswstartMask) != 0
 }
 
 // SetRswstart Software start of a conversion on the regular channel
-func (r *registerDfsdm_flt0cr1Type) SetRswstart(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetRswstart(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldRswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldRswstartMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldRswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldRswstartMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldRcontShift = 18
-	RegisterDfsdm_flt0cr1FieldRcontMask  = 0x40000
+	RegisterDfsdmflt0cr1FieldRcontShift = 18
+	RegisterDfsdmflt0cr1FieldRcontMask  = 0x40000
 )
 
 // GetRcont Continuous mode selection for regular conversions
-func (r *registerDfsdm_flt0cr1Type) GetRcont() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldRcontMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetRcont() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldRcontMask) != 0
 }
 
 // SetRcont Continuous mode selection for regular conversions
-func (r *registerDfsdm_flt0cr1Type) SetRcont(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetRcont(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldRcontMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldRcontMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldRcontMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldRcontMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldRsyncShift = 19
-	RegisterDfsdm_flt0cr1FieldRsyncMask  = 0x80000
+	RegisterDfsdmflt0cr1FieldRsyncShift = 19
+	RegisterDfsdmflt0cr1FieldRsyncMask  = 0x80000
 )
 
 // GetRsync Launch regular conversion synchronously with DFSDM0
-func (r *registerDfsdm_flt0cr1Type) GetRsync() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldRsyncMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetRsync() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldRsyncMask) != 0
 }
 
 // SetRsync Launch regular conversion synchronously with DFSDM0
-func (r *registerDfsdm_flt0cr1Type) SetRsync(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetRsync(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldRsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldRsyncMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldRsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldRsyncMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldRdmaenShift = 21
-	RegisterDfsdm_flt0cr1FieldRdmaenMask  = 0x200000
+	RegisterDfsdmflt0cr1FieldRdmaenShift = 21
+	RegisterDfsdmflt0cr1FieldRdmaenMask  = 0x200000
 )
 
 // GetRdmaen DMA channel enabled to read data for the regular conversion
-func (r *registerDfsdm_flt0cr1Type) GetRdmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldRdmaenMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetRdmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldRdmaenMask) != 0
 }
 
 // SetRdmaen DMA channel enabled to read data for the regular conversion
-func (r *registerDfsdm_flt0cr1Type) SetRdmaen(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetRdmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldRdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldRdmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldRdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldRdmaenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldRchShift = 24
-	RegisterDfsdm_flt0cr1FieldRchMask  = 0x7000000
+	RegisterDfsdmflt0cr1FieldRchShift = 24
+	RegisterDfsdmflt0cr1FieldRchMask  = 0x7000000
 )
 
 // GetRch Regular channel selection
-func (r *registerDfsdm_flt0cr1Type) GetRch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldRchMask) >> RegisterDfsdm_flt0cr1FieldRchShift)
+func (r *registerDfsdmflt0cr1Type) GetRch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldRchMask) >> RegisterDfsdmflt0cr1FieldRchShift)
 }
 
 // SetRch Regular channel selection
-func (r *registerDfsdm_flt0cr1Type) SetRch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldRchMask)|(uint32(value)<<RegisterDfsdm_flt0cr1FieldRchShift))
+func (r *registerDfsdmflt0cr1Type) SetRch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldRchMask)|(uint32(value)<<RegisterDfsdmflt0cr1FieldRchShift))
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldFastShift = 29
-	RegisterDfsdm_flt0cr1FieldFastMask  = 0x20000000
+	RegisterDfsdmflt0cr1FieldFastShift = 29
+	RegisterDfsdmflt0cr1FieldFastMask  = 0x20000000
 )
 
 // GetFast Fast conversion mode selection for regular conversions
-func (r *registerDfsdm_flt0cr1Type) GetFast() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldFastMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetFast() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldFastMask) != 0
 }
 
 // SetFast Fast conversion mode selection for regular conversions
-func (r *registerDfsdm_flt0cr1Type) SetFast(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetFast(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldFastMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldFastMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldFastMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldFastMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr1FieldAwfselShift = 30
-	RegisterDfsdm_flt0cr1FieldAwfselMask  = 0x40000000
+	RegisterDfsdmflt0cr1FieldAwfselShift = 30
+	RegisterDfsdmflt0cr1FieldAwfselMask  = 0x40000000
 )
 
 // GetAwfsel Analog watchdog fast mode select
-func (r *registerDfsdm_flt0cr1Type) GetAwfsel() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr1FieldAwfselMask) != 0
+func (r *registerDfsdmflt0cr1Type) GetAwfsel() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr1FieldAwfselMask) != 0
 }
 
 // SetAwfsel Analog watchdog fast mode select
-func (r *registerDfsdm_flt0cr1Type) SetAwfsel(value bool) {
+func (r *registerDfsdmflt0cr1Type) SetAwfsel(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr1FieldAwfselMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr1FieldAwfselMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr1FieldAwfselMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr1FieldAwfselMask)
 	}
 }
 
-// registerDfsdm_flt0cr2Type control register 2
-type registerDfsdm_flt0cr2Type uint32
+// registerDfsdmflt0cr2Type control register 2
+type registerDfsdmflt0cr2Type uint32
 
 const (
-	RegisterDfsdm_flt0cr2FieldJeocieShift = 0
-	RegisterDfsdm_flt0cr2FieldJeocieMask  = 0x1
+	RegisterDfsdmflt0cr2FieldJeocieShift = 0
+	RegisterDfsdmflt0cr2FieldJeocieMask  = 0x1
 )
 
 // GetJeocie Injected end of conversion interrupt enable
-func (r *registerDfsdm_flt0cr2Type) GetJeocie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr2FieldJeocieMask) != 0
+func (r *registerDfsdmflt0cr2Type) GetJeocie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr2FieldJeocieMask) != 0
 }
 
 // SetJeocie Injected end of conversion interrupt enable
-func (r *registerDfsdm_flt0cr2Type) SetJeocie(value bool) {
+func (r *registerDfsdmflt0cr2Type) SetJeocie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr2FieldJeocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr2FieldJeocieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr2FieldJeocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr2FieldJeocieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr2FieldReocieShift = 1
-	RegisterDfsdm_flt0cr2FieldReocieMask  = 0x2
+	RegisterDfsdmflt0cr2FieldReocieShift = 1
+	RegisterDfsdmflt0cr2FieldReocieMask  = 0x2
 )
 
 // GetReocie Regular end of conversion interrupt enable
-func (r *registerDfsdm_flt0cr2Type) GetReocie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr2FieldReocieMask) != 0
+func (r *registerDfsdmflt0cr2Type) GetReocie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr2FieldReocieMask) != 0
 }
 
 // SetReocie Regular end of conversion interrupt enable
-func (r *registerDfsdm_flt0cr2Type) SetReocie(value bool) {
+func (r *registerDfsdmflt0cr2Type) SetReocie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr2FieldReocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr2FieldReocieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr2FieldReocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr2FieldReocieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr2FieldJovrieShift = 2
-	RegisterDfsdm_flt0cr2FieldJovrieMask  = 0x4
+	RegisterDfsdmflt0cr2FieldJovrieShift = 2
+	RegisterDfsdmflt0cr2FieldJovrieMask  = 0x4
 )
 
 // GetJovrie Injected data overrun interrupt enable
-func (r *registerDfsdm_flt0cr2Type) GetJovrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr2FieldJovrieMask) != 0
+func (r *registerDfsdmflt0cr2Type) GetJovrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr2FieldJovrieMask) != 0
 }
 
 // SetJovrie Injected data overrun interrupt enable
-func (r *registerDfsdm_flt0cr2Type) SetJovrie(value bool) {
+func (r *registerDfsdmflt0cr2Type) SetJovrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr2FieldJovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr2FieldJovrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr2FieldJovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr2FieldJovrieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr2FieldRovrieShift = 3
-	RegisterDfsdm_flt0cr2FieldRovrieMask  = 0x8
+	RegisterDfsdmflt0cr2FieldRovrieShift = 3
+	RegisterDfsdmflt0cr2FieldRovrieMask  = 0x8
 )
 
 // GetRovrie Regular data overrun interrupt enable
-func (r *registerDfsdm_flt0cr2Type) GetRovrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr2FieldRovrieMask) != 0
+func (r *registerDfsdmflt0cr2Type) GetRovrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr2FieldRovrieMask) != 0
 }
 
 // SetRovrie Regular data overrun interrupt enable
-func (r *registerDfsdm_flt0cr2Type) SetRovrie(value bool) {
+func (r *registerDfsdmflt0cr2Type) SetRovrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr2FieldRovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr2FieldRovrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr2FieldRovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr2FieldRovrieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr2FieldAwdieShift = 4
-	RegisterDfsdm_flt0cr2FieldAwdieMask  = 0x10
+	RegisterDfsdmflt0cr2FieldAwdieShift = 4
+	RegisterDfsdmflt0cr2FieldAwdieMask  = 0x10
 )
 
 // GetAwdie Analog watchdog interrupt enable
-func (r *registerDfsdm_flt0cr2Type) GetAwdie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr2FieldAwdieMask) != 0
+func (r *registerDfsdmflt0cr2Type) GetAwdie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr2FieldAwdieMask) != 0
 }
 
 // SetAwdie Analog watchdog interrupt enable
-func (r *registerDfsdm_flt0cr2Type) SetAwdie(value bool) {
+func (r *registerDfsdmflt0cr2Type) SetAwdie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr2FieldAwdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr2FieldAwdieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr2FieldAwdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr2FieldAwdieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr2FieldScdieShift = 5
-	RegisterDfsdm_flt0cr2FieldScdieMask  = 0x20
+	RegisterDfsdmflt0cr2FieldScdieShift = 5
+	RegisterDfsdmflt0cr2FieldScdieMask  = 0x20
 )
 
 // GetScdie Short-circuit detector interrupt enable
-func (r *registerDfsdm_flt0cr2Type) GetScdie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr2FieldScdieMask) != 0
+func (r *registerDfsdmflt0cr2Type) GetScdie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr2FieldScdieMask) != 0
 }
 
 // SetScdie Short-circuit detector interrupt enable
-func (r *registerDfsdm_flt0cr2Type) SetScdie(value bool) {
+func (r *registerDfsdmflt0cr2Type) SetScdie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr2FieldScdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr2FieldScdieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr2FieldScdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr2FieldScdieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr2FieldCkabieShift = 6
-	RegisterDfsdm_flt0cr2FieldCkabieMask  = 0x40
+	RegisterDfsdmflt0cr2FieldCkabieShift = 6
+	RegisterDfsdmflt0cr2FieldCkabieMask  = 0x40
 )
 
 // GetCkabie Clock absence interrupt enable
-func (r *registerDfsdm_flt0cr2Type) GetCkabie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr2FieldCkabieMask) != 0
+func (r *registerDfsdmflt0cr2Type) GetCkabie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr2FieldCkabieMask) != 0
 }
 
 // SetCkabie Clock absence interrupt enable
-func (r *registerDfsdm_flt0cr2Type) SetCkabie(value bool) {
+func (r *registerDfsdmflt0cr2Type) SetCkabie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0cr2FieldCkabieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0cr2FieldCkabieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr2FieldCkabieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr2FieldCkabieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0cr2FieldExchShift = 8
-	RegisterDfsdm_flt0cr2FieldExchMask  = 0xff00
+	RegisterDfsdmflt0cr2FieldExchShift = 8
+	RegisterDfsdmflt0cr2FieldExchMask  = 0xff00
 )
 
 // GetExch Extremes detector channel selection
-func (r *registerDfsdm_flt0cr2Type) GetExch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr2FieldExchMask) >> RegisterDfsdm_flt0cr2FieldExchShift)
+func (r *registerDfsdmflt0cr2Type) GetExch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr2FieldExchMask) >> RegisterDfsdmflt0cr2FieldExchShift)
 }
 
 // SetExch Extremes detector channel selection
-func (r *registerDfsdm_flt0cr2Type) SetExch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr2FieldExchMask)|(uint32(value)<<RegisterDfsdm_flt0cr2FieldExchShift))
+func (r *registerDfsdmflt0cr2Type) SetExch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr2FieldExchMask)|(uint32(value)<<RegisterDfsdmflt0cr2FieldExchShift))
 }
 
 const (
-	RegisterDfsdm_flt0cr2FieldAwdchShift = 16
-	RegisterDfsdm_flt0cr2FieldAwdchMask  = 0xff0000
+	RegisterDfsdmflt0cr2FieldAwdchShift = 16
+	RegisterDfsdmflt0cr2FieldAwdchMask  = 0xff0000
 )
 
 // GetAwdch Analog watchdog channel selection
-func (r *registerDfsdm_flt0cr2Type) GetAwdch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cr2FieldAwdchMask) >> RegisterDfsdm_flt0cr2FieldAwdchShift)
+func (r *registerDfsdmflt0cr2Type) GetAwdch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cr2FieldAwdchMask) >> RegisterDfsdmflt0cr2FieldAwdchShift)
 }
 
 // SetAwdch Analog watchdog channel selection
-func (r *registerDfsdm_flt0cr2Type) SetAwdch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cr2FieldAwdchMask)|(uint32(value)<<RegisterDfsdm_flt0cr2FieldAwdchShift))
+func (r *registerDfsdmflt0cr2Type) SetAwdch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cr2FieldAwdchMask)|(uint32(value)<<RegisterDfsdmflt0cr2FieldAwdchShift))
 }
 
-// registerDfsdm_flt0isrType interrupt and status register
-type registerDfsdm_flt0isrType uint32
+// registerDfsdmflt0isrType interrupt and status register
+type registerDfsdmflt0isrType uint32
 
 const (
-	RegisterDfsdm_flt0isrFieldJeocfShift = 0
-	RegisterDfsdm_flt0isrFieldJeocfMask  = 0x1
+	RegisterDfsdmflt0isrFieldJeocfShift = 0
+	RegisterDfsdmflt0isrFieldJeocfMask  = 0x1
 )
 
 // GetJeocf End of injected conversion flag
-func (r *registerDfsdm_flt0isrType) GetJeocf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0isrFieldJeocfMask) != 0
+func (r *registerDfsdmflt0isrType) GetJeocf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0isrFieldJeocfMask) != 0
 }
 
 // SetJeocf End of injected conversion flag
-func (r *registerDfsdm_flt0isrType) SetJeocf(value bool) {
+func (r *registerDfsdmflt0isrType) SetJeocf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0isrFieldJeocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0isrFieldJeocfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0isrFieldJeocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0isrFieldJeocfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0isrFieldReocfShift = 1
-	RegisterDfsdm_flt0isrFieldReocfMask  = 0x2
+	RegisterDfsdmflt0isrFieldReocfShift = 1
+	RegisterDfsdmflt0isrFieldReocfMask  = 0x2
 )
 
 // GetReocf End of regular conversion flag
-func (r *registerDfsdm_flt0isrType) GetReocf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0isrFieldReocfMask) != 0
+func (r *registerDfsdmflt0isrType) GetReocf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0isrFieldReocfMask) != 0
 }
 
 // SetReocf End of regular conversion flag
-func (r *registerDfsdm_flt0isrType) SetReocf(value bool) {
+func (r *registerDfsdmflt0isrType) SetReocf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0isrFieldReocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0isrFieldReocfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0isrFieldReocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0isrFieldReocfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0isrFieldJovrfShift = 2
-	RegisterDfsdm_flt0isrFieldJovrfMask  = 0x4
+	RegisterDfsdmflt0isrFieldJovrfShift = 2
+	RegisterDfsdmflt0isrFieldJovrfMask  = 0x4
 )
 
 // GetJovrf Injected conversion overrun flag
-func (r *registerDfsdm_flt0isrType) GetJovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0isrFieldJovrfMask) != 0
+func (r *registerDfsdmflt0isrType) GetJovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0isrFieldJovrfMask) != 0
 }
 
 // SetJovrf Injected conversion overrun flag
-func (r *registerDfsdm_flt0isrType) SetJovrf(value bool) {
+func (r *registerDfsdmflt0isrType) SetJovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0isrFieldJovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0isrFieldJovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0isrFieldJovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0isrFieldJovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0isrFieldRovrfShift = 3
-	RegisterDfsdm_flt0isrFieldRovrfMask  = 0x8
+	RegisterDfsdmflt0isrFieldRovrfShift = 3
+	RegisterDfsdmflt0isrFieldRovrfMask  = 0x8
 )
 
 // GetRovrf Regular conversion overrun flag
-func (r *registerDfsdm_flt0isrType) GetRovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0isrFieldRovrfMask) != 0
+func (r *registerDfsdmflt0isrType) GetRovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0isrFieldRovrfMask) != 0
 }
 
 // SetRovrf Regular conversion overrun flag
-func (r *registerDfsdm_flt0isrType) SetRovrf(value bool) {
+func (r *registerDfsdmflt0isrType) SetRovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0isrFieldRovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0isrFieldRovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0isrFieldRovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0isrFieldRovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0isrFieldAwdfShift = 4
-	RegisterDfsdm_flt0isrFieldAwdfMask  = 0x10
+	RegisterDfsdmflt0isrFieldAwdfShift = 4
+	RegisterDfsdmflt0isrFieldAwdfMask  = 0x10
 )
 
 // GetAwdf Analog watchdog
-func (r *registerDfsdm_flt0isrType) GetAwdf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0isrFieldAwdfMask) != 0
+func (r *registerDfsdmflt0isrType) GetAwdf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0isrFieldAwdfMask) != 0
 }
 
 // SetAwdf Analog watchdog
-func (r *registerDfsdm_flt0isrType) SetAwdf(value bool) {
+func (r *registerDfsdmflt0isrType) SetAwdf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0isrFieldAwdfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0isrFieldAwdfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0isrFieldAwdfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0isrFieldAwdfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0isrFieldJcipShift = 13
-	RegisterDfsdm_flt0isrFieldJcipMask  = 0x2000
+	RegisterDfsdmflt0isrFieldJcipShift = 13
+	RegisterDfsdmflt0isrFieldJcipMask  = 0x2000
 )
 
 // GetJcip Injected conversion in progress status
-func (r *registerDfsdm_flt0isrType) GetJcip() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0isrFieldJcipMask) != 0
+func (r *registerDfsdmflt0isrType) GetJcip() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0isrFieldJcipMask) != 0
 }
 
 // SetJcip Injected conversion in progress status
-func (r *registerDfsdm_flt0isrType) SetJcip(value bool) {
+func (r *registerDfsdmflt0isrType) SetJcip(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0isrFieldJcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0isrFieldJcipMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0isrFieldJcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0isrFieldJcipMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0isrFieldRcipShift = 14
-	RegisterDfsdm_flt0isrFieldRcipMask  = 0x4000
+	RegisterDfsdmflt0isrFieldRcipShift = 14
+	RegisterDfsdmflt0isrFieldRcipMask  = 0x4000
 )
 
 // GetRcip Regular conversion in progress status
-func (r *registerDfsdm_flt0isrType) GetRcip() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0isrFieldRcipMask) != 0
+func (r *registerDfsdmflt0isrType) GetRcip() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0isrFieldRcipMask) != 0
 }
 
 // SetRcip Regular conversion in progress status
-func (r *registerDfsdm_flt0isrType) SetRcip(value bool) {
+func (r *registerDfsdmflt0isrType) SetRcip(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0isrFieldRcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0isrFieldRcipMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0isrFieldRcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0isrFieldRcipMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0isrFieldCkabfShift = 16
-	RegisterDfsdm_flt0isrFieldCkabfMask  = 0xff0000
+	RegisterDfsdmflt0isrFieldCkabfShift = 16
+	RegisterDfsdmflt0isrFieldCkabfMask  = 0xff0000
 )
 
 // GetCkabf Clock absence flag
-func (r *registerDfsdm_flt0isrType) GetCkabf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0isrFieldCkabfMask) >> RegisterDfsdm_flt0isrFieldCkabfShift)
+func (r *registerDfsdmflt0isrType) GetCkabf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0isrFieldCkabfMask) >> RegisterDfsdmflt0isrFieldCkabfShift)
 }
 
 // SetCkabf Clock absence flag
-func (r *registerDfsdm_flt0isrType) SetCkabf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0isrFieldCkabfMask)|(uint32(value)<<RegisterDfsdm_flt0isrFieldCkabfShift))
+func (r *registerDfsdmflt0isrType) SetCkabf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0isrFieldCkabfMask)|(uint32(value)<<RegisterDfsdmflt0isrFieldCkabfShift))
 }
 
 const (
-	RegisterDfsdm_flt0isrFieldScdfShift = 24
-	RegisterDfsdm_flt0isrFieldScdfMask  = 0xff000000
+	RegisterDfsdmflt0isrFieldScdfShift = 24
+	RegisterDfsdmflt0isrFieldScdfMask  = 0xff000000
 )
 
 // GetScdf short-circuit detector flag
-func (r *registerDfsdm_flt0isrType) GetScdf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0isrFieldScdfMask) >> RegisterDfsdm_flt0isrFieldScdfShift)
+func (r *registerDfsdmflt0isrType) GetScdf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0isrFieldScdfMask) >> RegisterDfsdmflt0isrFieldScdfShift)
 }
 
 // SetScdf short-circuit detector flag
-func (r *registerDfsdm_flt0isrType) SetScdf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0isrFieldScdfMask)|(uint32(value)<<RegisterDfsdm_flt0isrFieldScdfShift))
+func (r *registerDfsdmflt0isrType) SetScdf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0isrFieldScdfMask)|(uint32(value)<<RegisterDfsdmflt0isrFieldScdfShift))
 }
 
-// registerDfsdm_flt0icrType interrupt flag clear register
-type registerDfsdm_flt0icrType uint32
+// registerDfsdmflt0icrType interrupt flag clear register
+type registerDfsdmflt0icrType uint32
 
 const (
-	RegisterDfsdm_flt0icrFieldClrjovrfShift = 2
-	RegisterDfsdm_flt0icrFieldClrjovrfMask  = 0x4
+	RegisterDfsdmflt0icrFieldClrjovrfShift = 2
+	RegisterDfsdmflt0icrFieldClrjovrfMask  = 0x4
 )
 
 // GetClrjovrf Clear the injected conversion overrun flag
-func (r *registerDfsdm_flt0icrType) GetClrjovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0icrFieldClrjovrfMask) != 0
+func (r *registerDfsdmflt0icrType) GetClrjovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0icrFieldClrjovrfMask) != 0
 }
 
 // SetClrjovrf Clear the injected conversion overrun flag
-func (r *registerDfsdm_flt0icrType) SetClrjovrf(value bool) {
+func (r *registerDfsdmflt0icrType) SetClrjovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0icrFieldClrjovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0icrFieldClrjovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0icrFieldClrjovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0icrFieldClrjovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0icrFieldClrrovrfShift = 3
-	RegisterDfsdm_flt0icrFieldClrrovrfMask  = 0x8
+	RegisterDfsdmflt0icrFieldClrrovrfShift = 3
+	RegisterDfsdmflt0icrFieldClrrovrfMask  = 0x8
 )
 
 // GetClrrovrf Clear the regular conversion overrun flag
-func (r *registerDfsdm_flt0icrType) GetClrrovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0icrFieldClrrovrfMask) != 0
+func (r *registerDfsdmflt0icrType) GetClrrovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0icrFieldClrrovrfMask) != 0
 }
 
 // SetClrrovrf Clear the regular conversion overrun flag
-func (r *registerDfsdm_flt0icrType) SetClrrovrf(value bool) {
+func (r *registerDfsdmflt0icrType) SetClrrovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0icrFieldClrrovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0icrFieldClrrovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0icrFieldClrrovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0icrFieldClrrovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0icrFieldClrckabfShift = 16
-	RegisterDfsdm_flt0icrFieldClrckabfMask  = 0xff0000
+	RegisterDfsdmflt0icrFieldClrckabfShift = 16
+	RegisterDfsdmflt0icrFieldClrckabfMask  = 0xff0000
 )
 
 // GetClrckabf Clear the clock absence flag
-func (r *registerDfsdm_flt0icrType) GetClrckabf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0icrFieldClrckabfMask) >> RegisterDfsdm_flt0icrFieldClrckabfShift)
+func (r *registerDfsdmflt0icrType) GetClrckabf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0icrFieldClrckabfMask) >> RegisterDfsdmflt0icrFieldClrckabfShift)
 }
 
 // SetClrckabf Clear the clock absence flag
-func (r *registerDfsdm_flt0icrType) SetClrckabf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0icrFieldClrckabfMask)|(uint32(value)<<RegisterDfsdm_flt0icrFieldClrckabfShift))
+func (r *registerDfsdmflt0icrType) SetClrckabf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0icrFieldClrckabfMask)|(uint32(value)<<RegisterDfsdmflt0icrFieldClrckabfShift))
 }
 
 const (
-	RegisterDfsdm_flt0icrFieldClrscdfShift = 24
-	RegisterDfsdm_flt0icrFieldClrscdfMask  = 0xff000000
+	RegisterDfsdmflt0icrFieldClrscdfShift = 24
+	RegisterDfsdmflt0icrFieldClrscdfMask  = 0xff000000
 )
 
 // GetClrscdf Clear the short-circuit detector flag
-func (r *registerDfsdm_flt0icrType) GetClrscdf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0icrFieldClrscdfMask) >> RegisterDfsdm_flt0icrFieldClrscdfShift)
+func (r *registerDfsdmflt0icrType) GetClrscdf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0icrFieldClrscdfMask) >> RegisterDfsdmflt0icrFieldClrscdfShift)
 }
 
 // SetClrscdf Clear the short-circuit detector flag
-func (r *registerDfsdm_flt0icrType) SetClrscdf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0icrFieldClrscdfMask)|(uint32(value)<<RegisterDfsdm_flt0icrFieldClrscdfShift))
+func (r *registerDfsdmflt0icrType) SetClrscdf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0icrFieldClrscdfMask)|(uint32(value)<<RegisterDfsdmflt0icrFieldClrscdfShift))
 }
 
-// registerDfsdm_flt0jchgrType injected channel group selection register
-type registerDfsdm_flt0jchgrType uint32
+// registerDfsdmflt0jchgrType injected channel group selection register
+type registerDfsdmflt0jchgrType uint32
 
 const (
-	RegisterDfsdm_flt0jchgrFieldJchgShift = 0
-	RegisterDfsdm_flt0jchgrFieldJchgMask  = 0xff
+	RegisterDfsdmflt0jchgrFieldJchgShift = 0
+	RegisterDfsdmflt0jchgrFieldJchgMask  = 0xff
 )
 
 // GetJchg Injected channel group selection
-func (r *registerDfsdm_flt0jchgrType) GetJchg() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0jchgrFieldJchgMask) >> RegisterDfsdm_flt0jchgrFieldJchgShift)
+func (r *registerDfsdmflt0jchgrType) GetJchg() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0jchgrFieldJchgMask) >> RegisterDfsdmflt0jchgrFieldJchgShift)
 }
 
 // SetJchg Injected channel group selection
-func (r *registerDfsdm_flt0jchgrType) SetJchg(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0jchgrFieldJchgMask)|(uint32(value)<<RegisterDfsdm_flt0jchgrFieldJchgShift))
+func (r *registerDfsdmflt0jchgrType) SetJchg(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0jchgrFieldJchgMask)|(uint32(value)<<RegisterDfsdmflt0jchgrFieldJchgShift))
 }
 
-// registerDfsdm_flt0fcrType filter control register
-type registerDfsdm_flt0fcrType uint32
+// registerDfsdmflt0fcrType filter control register
+type registerDfsdmflt0fcrType uint32
 
 const (
-	RegisterDfsdm_flt0fcrFieldIosrShift = 0
-	RegisterDfsdm_flt0fcrFieldIosrMask  = 0xff
+	RegisterDfsdmflt0fcrFieldIosrShift = 0
+	RegisterDfsdmflt0fcrFieldIosrMask  = 0xff
 )
 
 // GetIosr Integrator oversampling ratio (averaging length)
-func (r *registerDfsdm_flt0fcrType) GetIosr() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0fcrFieldIosrMask) >> RegisterDfsdm_flt0fcrFieldIosrShift)
+func (r *registerDfsdmflt0fcrType) GetIosr() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0fcrFieldIosrMask) >> RegisterDfsdmflt0fcrFieldIosrShift)
 }
 
 // SetIosr Integrator oversampling ratio (averaging length)
-func (r *registerDfsdm_flt0fcrType) SetIosr(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0fcrFieldIosrMask)|(uint32(value)<<RegisterDfsdm_flt0fcrFieldIosrShift))
+func (r *registerDfsdmflt0fcrType) SetIosr(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0fcrFieldIosrMask)|(uint32(value)<<RegisterDfsdmflt0fcrFieldIosrShift))
 }
 
 const (
-	RegisterDfsdm_flt0fcrFieldFosrShift = 16
-	RegisterDfsdm_flt0fcrFieldFosrMask  = 0x3ff0000
+	RegisterDfsdmflt0fcrFieldFosrShift = 16
+	RegisterDfsdmflt0fcrFieldFosrMask  = 0x3ff0000
 )
 
 // GetFosr Sinc filter oversampling ratio (decimation rate)
-func (r *registerDfsdm_flt0fcrType) GetFosr() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0fcrFieldFosrMask) >> RegisterDfsdm_flt0fcrFieldFosrShift)
+func (r *registerDfsdmflt0fcrType) GetFosr() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0fcrFieldFosrMask) >> RegisterDfsdmflt0fcrFieldFosrShift)
 }
 
 // SetFosr Sinc filter oversampling ratio (decimation rate)
-func (r *registerDfsdm_flt0fcrType) SetFosr(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0fcrFieldFosrMask)|(uint32(value)<<RegisterDfsdm_flt0fcrFieldFosrShift))
+func (r *registerDfsdmflt0fcrType) SetFosr(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0fcrFieldFosrMask)|(uint32(value)<<RegisterDfsdmflt0fcrFieldFosrShift))
 }
 
 const (
-	RegisterDfsdm_flt0fcrFieldFordShift = 29
-	RegisterDfsdm_flt0fcrFieldFordMask  = 0xe0000000
+	RegisterDfsdmflt0fcrFieldFordShift = 29
+	RegisterDfsdmflt0fcrFieldFordMask  = 0xe0000000
 )
 
 // GetFord Sinc filter order
-func (r *registerDfsdm_flt0fcrType) GetFord() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0fcrFieldFordMask) >> RegisterDfsdm_flt0fcrFieldFordShift)
+func (r *registerDfsdmflt0fcrType) GetFord() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0fcrFieldFordMask) >> RegisterDfsdmflt0fcrFieldFordShift)
 }
 
 // SetFord Sinc filter order
-func (r *registerDfsdm_flt0fcrType) SetFord(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0fcrFieldFordMask)|(uint32(value)<<RegisterDfsdm_flt0fcrFieldFordShift))
+func (r *registerDfsdmflt0fcrType) SetFord(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0fcrFieldFordMask)|(uint32(value)<<RegisterDfsdmflt0fcrFieldFordShift))
 }
 
-// registerDfsdm_flt0jdatarType data register for injected group
-type registerDfsdm_flt0jdatarType uint32
+// registerDfsdmflt0jdatarType data register for injected group
+type registerDfsdmflt0jdatarType uint32
 
 const (
-	RegisterDfsdm_flt0jdatarFieldJdatachShift = 0
-	RegisterDfsdm_flt0jdatarFieldJdatachMask  = 0x7
+	RegisterDfsdmflt0jdatarFieldJdatachShift = 0
+	RegisterDfsdmflt0jdatarFieldJdatachMask  = 0x7
 )
 
 // GetJdatach Injected channel most recently converted
-func (r *registerDfsdm_flt0jdatarType) GetJdatach() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0jdatarFieldJdatachMask) >> RegisterDfsdm_flt0jdatarFieldJdatachShift)
+func (r *registerDfsdmflt0jdatarType) GetJdatach() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0jdatarFieldJdatachMask) >> RegisterDfsdmflt0jdatarFieldJdatachShift)
 }
 
 // SetJdatach Injected channel most recently converted
-func (r *registerDfsdm_flt0jdatarType) SetJdatach(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0jdatarFieldJdatachMask)|(uint32(value)<<RegisterDfsdm_flt0jdatarFieldJdatachShift))
+func (r *registerDfsdmflt0jdatarType) SetJdatach(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0jdatarFieldJdatachMask)|(uint32(value)<<RegisterDfsdmflt0jdatarFieldJdatachShift))
 }
 
 const (
-	RegisterDfsdm_flt0jdatarFieldJdataShift = 8
-	RegisterDfsdm_flt0jdatarFieldJdataMask  = 0xffffff00
+	RegisterDfsdmflt0jdatarFieldJdataShift = 8
+	RegisterDfsdmflt0jdatarFieldJdataMask  = 0xffffff00
 )
 
 // GetJdata Injected group conversion data
-func (r *registerDfsdm_flt0jdatarType) GetJdata() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0jdatarFieldJdataMask) >> RegisterDfsdm_flt0jdatarFieldJdataShift)
+func (r *registerDfsdmflt0jdatarType) GetJdata() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0jdatarFieldJdataMask) >> RegisterDfsdmflt0jdatarFieldJdataShift)
 }
 
 // SetJdata Injected group conversion data
-func (r *registerDfsdm_flt0jdatarType) SetJdata(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0jdatarFieldJdataMask)|(uint32(value)<<RegisterDfsdm_flt0jdatarFieldJdataShift))
+func (r *registerDfsdmflt0jdatarType) SetJdata(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0jdatarFieldJdataMask)|(uint32(value)<<RegisterDfsdmflt0jdatarFieldJdataShift))
 }
 
-// registerDfsdm_flt0rdatarType data register for the regular channel
-type registerDfsdm_flt0rdatarType uint32
+// registerDfsdmflt0rdatarType data register for the regular channel
+type registerDfsdmflt0rdatarType uint32
 
 const (
-	RegisterDfsdm_flt0rdatarFieldRdatachShift = 0
-	RegisterDfsdm_flt0rdatarFieldRdatachMask  = 0x7
+	RegisterDfsdmflt0rdatarFieldRdatachShift = 0
+	RegisterDfsdmflt0rdatarFieldRdatachMask  = 0x7
 )
 
 // GetRdatach Regular channel most recently converted
-func (r *registerDfsdm_flt0rdatarType) GetRdatach() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0rdatarFieldRdatachMask) >> RegisterDfsdm_flt0rdatarFieldRdatachShift)
+func (r *registerDfsdmflt0rdatarType) GetRdatach() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0rdatarFieldRdatachMask) >> RegisterDfsdmflt0rdatarFieldRdatachShift)
 }
 
 // SetRdatach Regular channel most recently converted
-func (r *registerDfsdm_flt0rdatarType) SetRdatach(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0rdatarFieldRdatachMask)|(uint32(value)<<RegisterDfsdm_flt0rdatarFieldRdatachShift))
+func (r *registerDfsdmflt0rdatarType) SetRdatach(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0rdatarFieldRdatachMask)|(uint32(value)<<RegisterDfsdmflt0rdatarFieldRdatachShift))
 }
 
 const (
-	RegisterDfsdm_flt0rdatarFieldRpendShift = 4
-	RegisterDfsdm_flt0rdatarFieldRpendMask  = 0x10
+	RegisterDfsdmflt0rdatarFieldRpendShift = 4
+	RegisterDfsdmflt0rdatarFieldRpendMask  = 0x10
 )
 
 // GetRpend Regular channel pending data
-func (r *registerDfsdm_flt0rdatarType) GetRpend() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0rdatarFieldRpendMask) != 0
+func (r *registerDfsdmflt0rdatarType) GetRpend() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0rdatarFieldRpendMask) != 0
 }
 
 // SetRpend Regular channel pending data
-func (r *registerDfsdm_flt0rdatarType) SetRpend(value bool) {
+func (r *registerDfsdmflt0rdatarType) SetRpend(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt0rdatarFieldRpendMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt0rdatarFieldRpendMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0rdatarFieldRpendMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0rdatarFieldRpendMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt0rdatarFieldRdataShift = 8
-	RegisterDfsdm_flt0rdatarFieldRdataMask  = 0xffffff00
+	RegisterDfsdmflt0rdatarFieldRdataShift = 8
+	RegisterDfsdmflt0rdatarFieldRdataMask  = 0xffffff00
 )
 
 // GetRdata Regular channel conversion data
-func (r *registerDfsdm_flt0rdatarType) GetRdata() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0rdatarFieldRdataMask) >> RegisterDfsdm_flt0rdatarFieldRdataShift)
+func (r *registerDfsdmflt0rdatarType) GetRdata() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0rdatarFieldRdataMask) >> RegisterDfsdmflt0rdatarFieldRdataShift)
 }
 
 // SetRdata Regular channel conversion data
-func (r *registerDfsdm_flt0rdatarType) SetRdata(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0rdatarFieldRdataMask)|(uint32(value)<<RegisterDfsdm_flt0rdatarFieldRdataShift))
+func (r *registerDfsdmflt0rdatarType) SetRdata(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0rdatarFieldRdataMask)|(uint32(value)<<RegisterDfsdmflt0rdatarFieldRdataShift))
 }
 
-// registerDfsdm_flt0awhtrType analog watchdog high threshold register
-type registerDfsdm_flt0awhtrType uint32
+// registerDfsdmflt0awhtrType analog watchdog high threshold register
+type registerDfsdmflt0awhtrType uint32
 
 const (
-	RegisterDfsdm_flt0awhtrFieldBkawhShift = 0
-	RegisterDfsdm_flt0awhtrFieldBkawhMask  = 0xf
+	RegisterDfsdmflt0awhtrFieldBkawhShift = 0
+	RegisterDfsdmflt0awhtrFieldBkawhMask  = 0xf
 )
 
 // GetBkawh Break signal assignment to analog watchdog high threshold event
-func (r *registerDfsdm_flt0awhtrType) GetBkawh() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0awhtrFieldBkawhMask) >> RegisterDfsdm_flt0awhtrFieldBkawhShift)
+func (r *registerDfsdmflt0awhtrType) GetBkawh() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0awhtrFieldBkawhMask) >> RegisterDfsdmflt0awhtrFieldBkawhShift)
 }
 
 // SetBkawh Break signal assignment to analog watchdog high threshold event
-func (r *registerDfsdm_flt0awhtrType) SetBkawh(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0awhtrFieldBkawhMask)|(uint32(value)<<RegisterDfsdm_flt0awhtrFieldBkawhShift))
+func (r *registerDfsdmflt0awhtrType) SetBkawh(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0awhtrFieldBkawhMask)|(uint32(value)<<RegisterDfsdmflt0awhtrFieldBkawhShift))
 }
 
 const (
-	RegisterDfsdm_flt0awhtrFieldAwhtShift = 8
-	RegisterDfsdm_flt0awhtrFieldAwhtMask  = 0xffffff00
+	RegisterDfsdmflt0awhtrFieldAwhtShift = 8
+	RegisterDfsdmflt0awhtrFieldAwhtMask  = 0xffffff00
 )
 
 // GetAwht Analog watchdog high threshold
-func (r *registerDfsdm_flt0awhtrType) GetAwht() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0awhtrFieldAwhtMask) >> RegisterDfsdm_flt0awhtrFieldAwhtShift)
+func (r *registerDfsdmflt0awhtrType) GetAwht() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0awhtrFieldAwhtMask) >> RegisterDfsdmflt0awhtrFieldAwhtShift)
 }
 
 // SetAwht Analog watchdog high threshold
-func (r *registerDfsdm_flt0awhtrType) SetAwht(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0awhtrFieldAwhtMask)|(uint32(value)<<RegisterDfsdm_flt0awhtrFieldAwhtShift))
+func (r *registerDfsdmflt0awhtrType) SetAwht(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0awhtrFieldAwhtMask)|(uint32(value)<<RegisterDfsdmflt0awhtrFieldAwhtShift))
 }
 
-// registerDfsdm_flt0awltrType analog watchdog low threshold register
-type registerDfsdm_flt0awltrType uint32
+// registerDfsdmflt0awltrType analog watchdog low threshold register
+type registerDfsdmflt0awltrType uint32
 
 const (
-	RegisterDfsdm_flt0awltrFieldBkawlShift = 0
-	RegisterDfsdm_flt0awltrFieldBkawlMask  = 0xf
+	RegisterDfsdmflt0awltrFieldBkawlShift = 0
+	RegisterDfsdmflt0awltrFieldBkawlMask  = 0xf
 )
 
 // GetBkawl Break signal assignment to analog watchdog low threshold event
-func (r *registerDfsdm_flt0awltrType) GetBkawl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0awltrFieldBkawlMask) >> RegisterDfsdm_flt0awltrFieldBkawlShift)
+func (r *registerDfsdmflt0awltrType) GetBkawl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0awltrFieldBkawlMask) >> RegisterDfsdmflt0awltrFieldBkawlShift)
 }
 
 // SetBkawl Break signal assignment to analog watchdog low threshold event
-func (r *registerDfsdm_flt0awltrType) SetBkawl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0awltrFieldBkawlMask)|(uint32(value)<<RegisterDfsdm_flt0awltrFieldBkawlShift))
+func (r *registerDfsdmflt0awltrType) SetBkawl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0awltrFieldBkawlMask)|(uint32(value)<<RegisterDfsdmflt0awltrFieldBkawlShift))
 }
 
 const (
-	RegisterDfsdm_flt0awltrFieldAwltShift = 8
-	RegisterDfsdm_flt0awltrFieldAwltMask  = 0xffffff00
+	RegisterDfsdmflt0awltrFieldAwltShift = 8
+	RegisterDfsdmflt0awltrFieldAwltMask  = 0xffffff00
 )
 
 // GetAwlt Analog watchdog low threshold
-func (r *registerDfsdm_flt0awltrType) GetAwlt() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0awltrFieldAwltMask) >> RegisterDfsdm_flt0awltrFieldAwltShift)
+func (r *registerDfsdmflt0awltrType) GetAwlt() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0awltrFieldAwltMask) >> RegisterDfsdmflt0awltrFieldAwltShift)
 }
 
 // SetAwlt Analog watchdog low threshold
-func (r *registerDfsdm_flt0awltrType) SetAwlt(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0awltrFieldAwltMask)|(uint32(value)<<RegisterDfsdm_flt0awltrFieldAwltShift))
+func (r *registerDfsdmflt0awltrType) SetAwlt(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0awltrFieldAwltMask)|(uint32(value)<<RegisterDfsdmflt0awltrFieldAwltShift))
 }
 
-// registerDfsdm_flt0awsrType analog watchdog status register
-type registerDfsdm_flt0awsrType uint32
+// registerDfsdmflt0awsrType analog watchdog status register
+type registerDfsdmflt0awsrType uint32
 
 const (
-	RegisterDfsdm_flt0awsrFieldAwltfShift = 0
-	RegisterDfsdm_flt0awsrFieldAwltfMask  = 0xff
+	RegisterDfsdmflt0awsrFieldAwltfShift = 0
+	RegisterDfsdmflt0awsrFieldAwltfMask  = 0xff
 )
 
 // GetAwltf Analog watchdog low threshold flag
-func (r *registerDfsdm_flt0awsrType) GetAwltf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0awsrFieldAwltfMask) >> RegisterDfsdm_flt0awsrFieldAwltfShift)
+func (r *registerDfsdmflt0awsrType) GetAwltf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0awsrFieldAwltfMask) >> RegisterDfsdmflt0awsrFieldAwltfShift)
 }
 
 // SetAwltf Analog watchdog low threshold flag
-func (r *registerDfsdm_flt0awsrType) SetAwltf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0awsrFieldAwltfMask)|(uint32(value)<<RegisterDfsdm_flt0awsrFieldAwltfShift))
+func (r *registerDfsdmflt0awsrType) SetAwltf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0awsrFieldAwltfMask)|(uint32(value)<<RegisterDfsdmflt0awsrFieldAwltfShift))
 }
 
 const (
-	RegisterDfsdm_flt0awsrFieldAwhtfShift = 8
-	RegisterDfsdm_flt0awsrFieldAwhtfMask  = 0xff00
+	RegisterDfsdmflt0awsrFieldAwhtfShift = 8
+	RegisterDfsdmflt0awsrFieldAwhtfMask  = 0xff00
 )
 
 // GetAwhtf Analog watchdog high threshold flag
-func (r *registerDfsdm_flt0awsrType) GetAwhtf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0awsrFieldAwhtfMask) >> RegisterDfsdm_flt0awsrFieldAwhtfShift)
+func (r *registerDfsdmflt0awsrType) GetAwhtf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0awsrFieldAwhtfMask) >> RegisterDfsdmflt0awsrFieldAwhtfShift)
 }
 
 // SetAwhtf Analog watchdog high threshold flag
-func (r *registerDfsdm_flt0awsrType) SetAwhtf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0awsrFieldAwhtfMask)|(uint32(value)<<RegisterDfsdm_flt0awsrFieldAwhtfShift))
+func (r *registerDfsdmflt0awsrType) SetAwhtf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0awsrFieldAwhtfMask)|(uint32(value)<<RegisterDfsdmflt0awsrFieldAwhtfShift))
 }
 
-// registerDfsdm_flt0awcfrType analog watchdog clear flag register
-type registerDfsdm_flt0awcfrType uint32
+// registerDfsdmflt0awcfrType analog watchdog clear flag register
+type registerDfsdmflt0awcfrType uint32
 
 const (
-	RegisterDfsdm_flt0awcfrFieldClrawltfShift = 0
-	RegisterDfsdm_flt0awcfrFieldClrawltfMask  = 0xff
+	RegisterDfsdmflt0awcfrFieldClrawltfShift = 0
+	RegisterDfsdmflt0awcfrFieldClrawltfMask  = 0xff
 )
 
 // GetClrawltf Clear the analog watchdog low threshold flag
-func (r *registerDfsdm_flt0awcfrType) GetClrawltf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0awcfrFieldClrawltfMask) >> RegisterDfsdm_flt0awcfrFieldClrawltfShift)
+func (r *registerDfsdmflt0awcfrType) GetClrawltf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0awcfrFieldClrawltfMask) >> RegisterDfsdmflt0awcfrFieldClrawltfShift)
 }
 
 // SetClrawltf Clear the analog watchdog low threshold flag
-func (r *registerDfsdm_flt0awcfrType) SetClrawltf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0awcfrFieldClrawltfMask)|(uint32(value)<<RegisterDfsdm_flt0awcfrFieldClrawltfShift))
+func (r *registerDfsdmflt0awcfrType) SetClrawltf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0awcfrFieldClrawltfMask)|(uint32(value)<<RegisterDfsdmflt0awcfrFieldClrawltfShift))
 }
 
 const (
-	RegisterDfsdm_flt0awcfrFieldClrawhtfShift = 8
-	RegisterDfsdm_flt0awcfrFieldClrawhtfMask  = 0xff00
+	RegisterDfsdmflt0awcfrFieldClrawhtfShift = 8
+	RegisterDfsdmflt0awcfrFieldClrawhtfMask  = 0xff00
 )
 
 // GetClrawhtf Clear the analog watchdog high threshold flag
-func (r *registerDfsdm_flt0awcfrType) GetClrawhtf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0awcfrFieldClrawhtfMask) >> RegisterDfsdm_flt0awcfrFieldClrawhtfShift)
+func (r *registerDfsdmflt0awcfrType) GetClrawhtf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0awcfrFieldClrawhtfMask) >> RegisterDfsdmflt0awcfrFieldClrawhtfShift)
 }
 
 // SetClrawhtf Clear the analog watchdog high threshold flag
-func (r *registerDfsdm_flt0awcfrType) SetClrawhtf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0awcfrFieldClrawhtfMask)|(uint32(value)<<RegisterDfsdm_flt0awcfrFieldClrawhtfShift))
+func (r *registerDfsdmflt0awcfrType) SetClrawhtf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0awcfrFieldClrawhtfMask)|(uint32(value)<<RegisterDfsdmflt0awcfrFieldClrawhtfShift))
 }
 
-// registerDfsdm_flt0exmaxType Extremes detector maximum register
-type registerDfsdm_flt0exmaxType uint32
+// registerDfsdmflt0exmaxType Extremes detector maximum register
+type registerDfsdmflt0exmaxType uint32
 
 const (
-	RegisterDfsdm_flt0exmaxFieldExmaxchShift = 0
-	RegisterDfsdm_flt0exmaxFieldExmaxchMask  = 0x7
+	RegisterDfsdmflt0exmaxFieldExmaxchShift = 0
+	RegisterDfsdmflt0exmaxFieldExmaxchMask  = 0x7
 )
 
 // GetExmaxch Extremes detector maximum data channel
-func (r *registerDfsdm_flt0exmaxType) GetExmaxch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0exmaxFieldExmaxchMask) >> RegisterDfsdm_flt0exmaxFieldExmaxchShift)
+func (r *registerDfsdmflt0exmaxType) GetExmaxch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0exmaxFieldExmaxchMask) >> RegisterDfsdmflt0exmaxFieldExmaxchShift)
 }
 
 // SetExmaxch Extremes detector maximum data channel
-func (r *registerDfsdm_flt0exmaxType) SetExmaxch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0exmaxFieldExmaxchMask)|(uint32(value)<<RegisterDfsdm_flt0exmaxFieldExmaxchShift))
+func (r *registerDfsdmflt0exmaxType) SetExmaxch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0exmaxFieldExmaxchMask)|(uint32(value)<<RegisterDfsdmflt0exmaxFieldExmaxchShift))
 }
 
 const (
-	RegisterDfsdm_flt0exmaxFieldExmaxShift = 8
-	RegisterDfsdm_flt0exmaxFieldExmaxMask  = 0xffffff00
+	RegisterDfsdmflt0exmaxFieldExmaxShift = 8
+	RegisterDfsdmflt0exmaxFieldExmaxMask  = 0xffffff00
 )
 
 // GetExmax Extremes detector maximum value
-func (r *registerDfsdm_flt0exmaxType) GetExmax() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0exmaxFieldExmaxMask) >> RegisterDfsdm_flt0exmaxFieldExmaxShift)
+func (r *registerDfsdmflt0exmaxType) GetExmax() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0exmaxFieldExmaxMask) >> RegisterDfsdmflt0exmaxFieldExmaxShift)
 }
 
 // SetExmax Extremes detector maximum value
-func (r *registerDfsdm_flt0exmaxType) SetExmax(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0exmaxFieldExmaxMask)|(uint32(value)<<RegisterDfsdm_flt0exmaxFieldExmaxShift))
+func (r *registerDfsdmflt0exmaxType) SetExmax(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0exmaxFieldExmaxMask)|(uint32(value)<<RegisterDfsdmflt0exmaxFieldExmaxShift))
 }
 
-// registerDfsdm_flt0exminType Extremes detector minimum register
-type registerDfsdm_flt0exminType uint32
+// registerDfsdmflt0exminType Extremes detector minimum register
+type registerDfsdmflt0exminType uint32
 
 const (
-	RegisterDfsdm_flt0exminFieldExminchShift = 0
-	RegisterDfsdm_flt0exminFieldExminchMask  = 0x7
+	RegisterDfsdmflt0exminFieldExminchShift = 0
+	RegisterDfsdmflt0exminFieldExminchMask  = 0x7
 )
 
 // GetExminch Extremes detector minimum data channel
-func (r *registerDfsdm_flt0exminType) GetExminch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0exminFieldExminchMask) >> RegisterDfsdm_flt0exminFieldExminchShift)
+func (r *registerDfsdmflt0exminType) GetExminch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0exminFieldExminchMask) >> RegisterDfsdmflt0exminFieldExminchShift)
 }
 
 // SetExminch Extremes detector minimum data channel
-func (r *registerDfsdm_flt0exminType) SetExminch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0exminFieldExminchMask)|(uint32(value)<<RegisterDfsdm_flt0exminFieldExminchShift))
+func (r *registerDfsdmflt0exminType) SetExminch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0exminFieldExminchMask)|(uint32(value)<<RegisterDfsdmflt0exminFieldExminchShift))
 }
 
 const (
-	RegisterDfsdm_flt0exminFieldExminShift = 8
-	RegisterDfsdm_flt0exminFieldExminMask  = 0xffffff00
+	RegisterDfsdmflt0exminFieldExminShift = 8
+	RegisterDfsdmflt0exminFieldExminMask  = 0xffffff00
 )
 
 // GetExmin EXMIN
-func (r *registerDfsdm_flt0exminType) GetExmin() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0exminFieldExminMask) >> RegisterDfsdm_flt0exminFieldExminShift)
+func (r *registerDfsdmflt0exminType) GetExmin() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0exminFieldExminMask) >> RegisterDfsdmflt0exminFieldExminShift)
 }
 
 // SetExmin EXMIN
-func (r *registerDfsdm_flt0exminType) SetExmin(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0exminFieldExminMask)|(uint32(value)<<RegisterDfsdm_flt0exminFieldExminShift))
+func (r *registerDfsdmflt0exminType) SetExmin(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0exminFieldExminMask)|(uint32(value)<<RegisterDfsdmflt0exminFieldExminShift))
 }
 
-// registerDfsdm_flt0cnvtimrType conversion timer register
-type registerDfsdm_flt0cnvtimrType uint32
+// registerDfsdmflt0cnvtimrType conversion timer register
+type registerDfsdmflt0cnvtimrType uint32
 
 const (
-	RegisterDfsdm_flt0cnvtimrFieldCnvcntShift = 4
-	RegisterDfsdm_flt0cnvtimrFieldCnvcntMask  = 0xfffffff0
+	RegisterDfsdmflt0cnvtimrFieldCnvcntShift = 4
+	RegisterDfsdmflt0cnvtimrFieldCnvcntMask  = 0xfffffff0
 )
 
 // GetCnvcnt 28-bit timer counting conversion time t = CNVCNT[27:0] / fDFSDM_CKIN
-func (r *registerDfsdm_flt0cnvtimrType) GetCnvcnt() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt0cnvtimrFieldCnvcntMask) >> RegisterDfsdm_flt0cnvtimrFieldCnvcntShift)
+func (r *registerDfsdmflt0cnvtimrType) GetCnvcnt() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt0cnvtimrFieldCnvcntMask) >> RegisterDfsdmflt0cnvtimrFieldCnvcntShift)
 }
 
 // SetCnvcnt 28-bit timer counting conversion time t = CNVCNT[27:0] / fDFSDM_CKIN
-func (r *registerDfsdm_flt0cnvtimrType) SetCnvcnt(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt0cnvtimrFieldCnvcntMask)|(uint32(value)<<RegisterDfsdm_flt0cnvtimrFieldCnvcntShift))
+func (r *registerDfsdmflt0cnvtimrType) SetCnvcnt(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt0cnvtimrFieldCnvcntMask)|(uint32(value)<<RegisterDfsdmflt0cnvtimrFieldCnvcntShift))
 }
 
-// registerDfsdm_flt1cr1Type control register 1
-type registerDfsdm_flt1cr1Type uint32
+// registerDfsdmflt1cr1Type control register 1
+type registerDfsdmflt1cr1Type uint32
 
 const (
-	RegisterDfsdm_flt1cr1FieldDfenShift = 0
-	RegisterDfsdm_flt1cr1FieldDfenMask  = 0x1
+	RegisterDfsdmflt1cr1FieldDfenShift = 0
+	RegisterDfsdmflt1cr1FieldDfenMask  = 0x1
 )
 
 // GetDfen DFSDM enable
-func (r *registerDfsdm_flt1cr1Type) GetDfen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldDfenMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetDfen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldDfenMask) != 0
 }
 
 // SetDfen DFSDM enable
-func (r *registerDfsdm_flt1cr1Type) SetDfen(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetDfen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldDfenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldDfenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldDfenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldDfenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldJswstartShift = 1
-	RegisterDfsdm_flt1cr1FieldJswstartMask  = 0x2
+	RegisterDfsdmflt1cr1FieldJswstartShift = 1
+	RegisterDfsdmflt1cr1FieldJswstartMask  = 0x2
 )
 
 // GetJswstart Start a conversion of the injected group of channels
-func (r *registerDfsdm_flt1cr1Type) GetJswstart() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldJswstartMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetJswstart() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldJswstartMask) != 0
 }
 
 // SetJswstart Start a conversion of the injected group of channels
-func (r *registerDfsdm_flt1cr1Type) SetJswstart(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetJswstart(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldJswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldJswstartMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldJswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldJswstartMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldJsyncShift = 3
-	RegisterDfsdm_flt1cr1FieldJsyncMask  = 0x8
+	RegisterDfsdmflt1cr1FieldJsyncShift = 3
+	RegisterDfsdmflt1cr1FieldJsyncMask  = 0x8
 )
 
 // GetJsync Launch an injected conversion synchronously with the DFSDM0 JSWSTART trigger
-func (r *registerDfsdm_flt1cr1Type) GetJsync() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldJsyncMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetJsync() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldJsyncMask) != 0
 }
 
 // SetJsync Launch an injected conversion synchronously with the DFSDM0 JSWSTART trigger
-func (r *registerDfsdm_flt1cr1Type) SetJsync(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetJsync(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldJsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldJsyncMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldJsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldJsyncMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldJscanShift = 4
-	RegisterDfsdm_flt1cr1FieldJscanMask  = 0x10
+	RegisterDfsdmflt1cr1FieldJscanShift = 4
+	RegisterDfsdmflt1cr1FieldJscanMask  = 0x10
 )
 
 // GetJscan Scanning conversion mode for injected conversions
-func (r *registerDfsdm_flt1cr1Type) GetJscan() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldJscanMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetJscan() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldJscanMask) != 0
 }
 
 // SetJscan Scanning conversion mode for injected conversions
-func (r *registerDfsdm_flt1cr1Type) SetJscan(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetJscan(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldJscanMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldJscanMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldJscanMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldJscanMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldJdmaenShift = 5
-	RegisterDfsdm_flt1cr1FieldJdmaenMask  = 0x20
+	RegisterDfsdmflt1cr1FieldJdmaenShift = 5
+	RegisterDfsdmflt1cr1FieldJdmaenMask  = 0x20
 )
 
 // GetJdmaen DMA channel enabled to read data for the injected channel group
-func (r *registerDfsdm_flt1cr1Type) GetJdmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldJdmaenMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetJdmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldJdmaenMask) != 0
 }
 
 // SetJdmaen DMA channel enabled to read data for the injected channel group
-func (r *registerDfsdm_flt1cr1Type) SetJdmaen(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetJdmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldJdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldJdmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldJdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldJdmaenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldJextselShift = 8
-	RegisterDfsdm_flt1cr1FieldJextselMask  = 0x700
+	RegisterDfsdmflt1cr1FieldJextselShift = 8
+	RegisterDfsdmflt1cr1FieldJextselMask  = 0x700
 )
 
 // GetJextsel Trigger signal selection for launching injected conversions
-func (r *registerDfsdm_flt1cr1Type) GetJextsel() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldJextselMask) >> RegisterDfsdm_flt1cr1FieldJextselShift)
+func (r *registerDfsdmflt1cr1Type) GetJextsel() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldJextselMask) >> RegisterDfsdmflt1cr1FieldJextselShift)
 }
 
 // SetJextsel Trigger signal selection for launching injected conversions
-func (r *registerDfsdm_flt1cr1Type) SetJextsel(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldJextselMask)|(uint32(value)<<RegisterDfsdm_flt1cr1FieldJextselShift))
+func (r *registerDfsdmflt1cr1Type) SetJextsel(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldJextselMask)|(uint32(value)<<RegisterDfsdmflt1cr1FieldJextselShift))
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldJextenShift = 13
-	RegisterDfsdm_flt1cr1FieldJextenMask  = 0x6000
+	RegisterDfsdmflt1cr1FieldJextenShift = 13
+	RegisterDfsdmflt1cr1FieldJextenMask  = 0x6000
 )
 
 // GetJexten Trigger enable and trigger edge selection for injected conversions
-func (r *registerDfsdm_flt1cr1Type) GetJexten() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldJextenMask) >> RegisterDfsdm_flt1cr1FieldJextenShift)
+func (r *registerDfsdmflt1cr1Type) GetJexten() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldJextenMask) >> RegisterDfsdmflt1cr1FieldJextenShift)
 }
 
 // SetJexten Trigger enable and trigger edge selection for injected conversions
-func (r *registerDfsdm_flt1cr1Type) SetJexten(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldJextenMask)|(uint32(value)<<RegisterDfsdm_flt1cr1FieldJextenShift))
+func (r *registerDfsdmflt1cr1Type) SetJexten(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldJextenMask)|(uint32(value)<<RegisterDfsdmflt1cr1FieldJextenShift))
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldRswstartShift = 17
-	RegisterDfsdm_flt1cr1FieldRswstartMask  = 0x20000
+	RegisterDfsdmflt1cr1FieldRswstartShift = 17
+	RegisterDfsdmflt1cr1FieldRswstartMask  = 0x20000
 )
 
 // GetRswstart Software start of a conversion on the regular channel
-func (r *registerDfsdm_flt1cr1Type) GetRswstart() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldRswstartMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetRswstart() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldRswstartMask) != 0
 }
 
 // SetRswstart Software start of a conversion on the regular channel
-func (r *registerDfsdm_flt1cr1Type) SetRswstart(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetRswstart(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldRswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldRswstartMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldRswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldRswstartMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldRcontShift = 18
-	RegisterDfsdm_flt1cr1FieldRcontMask  = 0x40000
+	RegisterDfsdmflt1cr1FieldRcontShift = 18
+	RegisterDfsdmflt1cr1FieldRcontMask  = 0x40000
 )
 
 // GetRcont Continuous mode selection for regular conversions
-func (r *registerDfsdm_flt1cr1Type) GetRcont() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldRcontMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetRcont() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldRcontMask) != 0
 }
 
 // SetRcont Continuous mode selection for regular conversions
-func (r *registerDfsdm_flt1cr1Type) SetRcont(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetRcont(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldRcontMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldRcontMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldRcontMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldRcontMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldRsyncShift = 19
-	RegisterDfsdm_flt1cr1FieldRsyncMask  = 0x80000
+	RegisterDfsdmflt1cr1FieldRsyncShift = 19
+	RegisterDfsdmflt1cr1FieldRsyncMask  = 0x80000
 )
 
 // GetRsync Launch regular conversion synchronously with DFSDM0
-func (r *registerDfsdm_flt1cr1Type) GetRsync() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldRsyncMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetRsync() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldRsyncMask) != 0
 }
 
 // SetRsync Launch regular conversion synchronously with DFSDM0
-func (r *registerDfsdm_flt1cr1Type) SetRsync(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetRsync(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldRsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldRsyncMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldRsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldRsyncMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldRdmaenShift = 21
-	RegisterDfsdm_flt1cr1FieldRdmaenMask  = 0x200000
+	RegisterDfsdmflt1cr1FieldRdmaenShift = 21
+	RegisterDfsdmflt1cr1FieldRdmaenMask  = 0x200000
 )
 
 // GetRdmaen DMA channel enabled to read data for the regular conversion
-func (r *registerDfsdm_flt1cr1Type) GetRdmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldRdmaenMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetRdmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldRdmaenMask) != 0
 }
 
 // SetRdmaen DMA channel enabled to read data for the regular conversion
-func (r *registerDfsdm_flt1cr1Type) SetRdmaen(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetRdmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldRdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldRdmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldRdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldRdmaenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldRchShift = 24
-	RegisterDfsdm_flt1cr1FieldRchMask  = 0x7000000
+	RegisterDfsdmflt1cr1FieldRchShift = 24
+	RegisterDfsdmflt1cr1FieldRchMask  = 0x7000000
 )
 
 // GetRch Regular channel selection
-func (r *registerDfsdm_flt1cr1Type) GetRch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldRchMask) >> RegisterDfsdm_flt1cr1FieldRchShift)
+func (r *registerDfsdmflt1cr1Type) GetRch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldRchMask) >> RegisterDfsdmflt1cr1FieldRchShift)
 }
 
 // SetRch Regular channel selection
-func (r *registerDfsdm_flt1cr1Type) SetRch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldRchMask)|(uint32(value)<<RegisterDfsdm_flt1cr1FieldRchShift))
+func (r *registerDfsdmflt1cr1Type) SetRch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldRchMask)|(uint32(value)<<RegisterDfsdmflt1cr1FieldRchShift))
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldFastShift = 29
-	RegisterDfsdm_flt1cr1FieldFastMask  = 0x20000000
+	RegisterDfsdmflt1cr1FieldFastShift = 29
+	RegisterDfsdmflt1cr1FieldFastMask  = 0x20000000
 )
 
 // GetFast Fast conversion mode selection for regular conversions
-func (r *registerDfsdm_flt1cr1Type) GetFast() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldFastMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetFast() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldFastMask) != 0
 }
 
 // SetFast Fast conversion mode selection for regular conversions
-func (r *registerDfsdm_flt1cr1Type) SetFast(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetFast(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldFastMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldFastMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldFastMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldFastMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr1FieldAwfselShift = 30
-	RegisterDfsdm_flt1cr1FieldAwfselMask  = 0x40000000
+	RegisterDfsdmflt1cr1FieldAwfselShift = 30
+	RegisterDfsdmflt1cr1FieldAwfselMask  = 0x40000000
 )
 
 // GetAwfsel Analog watchdog fast mode select
-func (r *registerDfsdm_flt1cr1Type) GetAwfsel() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr1FieldAwfselMask) != 0
+func (r *registerDfsdmflt1cr1Type) GetAwfsel() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr1FieldAwfselMask) != 0
 }
 
 // SetAwfsel Analog watchdog fast mode select
-func (r *registerDfsdm_flt1cr1Type) SetAwfsel(value bool) {
+func (r *registerDfsdmflt1cr1Type) SetAwfsel(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr1FieldAwfselMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr1FieldAwfselMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr1FieldAwfselMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr1FieldAwfselMask)
 	}
 }
 
-// registerDfsdm_flt1cr2Type control register 2
-type registerDfsdm_flt1cr2Type uint32
+// registerDfsdmflt1cr2Type control register 2
+type registerDfsdmflt1cr2Type uint32
 
 const (
-	RegisterDfsdm_flt1cr2FieldJeocieShift = 0
-	RegisterDfsdm_flt1cr2FieldJeocieMask  = 0x1
+	RegisterDfsdmflt1cr2FieldJeocieShift = 0
+	RegisterDfsdmflt1cr2FieldJeocieMask  = 0x1
 )
 
 // GetJeocie Injected end of conversion interrupt enable
-func (r *registerDfsdm_flt1cr2Type) GetJeocie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr2FieldJeocieMask) != 0
+func (r *registerDfsdmflt1cr2Type) GetJeocie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr2FieldJeocieMask) != 0
 }
 
 // SetJeocie Injected end of conversion interrupt enable
-func (r *registerDfsdm_flt1cr2Type) SetJeocie(value bool) {
+func (r *registerDfsdmflt1cr2Type) SetJeocie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr2FieldJeocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr2FieldJeocieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr2FieldJeocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr2FieldJeocieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr2FieldReocieShift = 1
-	RegisterDfsdm_flt1cr2FieldReocieMask  = 0x2
+	RegisterDfsdmflt1cr2FieldReocieShift = 1
+	RegisterDfsdmflt1cr2FieldReocieMask  = 0x2
 )
 
 // GetReocie Regular end of conversion interrupt enable
-func (r *registerDfsdm_flt1cr2Type) GetReocie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr2FieldReocieMask) != 0
+func (r *registerDfsdmflt1cr2Type) GetReocie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr2FieldReocieMask) != 0
 }
 
 // SetReocie Regular end of conversion interrupt enable
-func (r *registerDfsdm_flt1cr2Type) SetReocie(value bool) {
+func (r *registerDfsdmflt1cr2Type) SetReocie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr2FieldReocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr2FieldReocieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr2FieldReocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr2FieldReocieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr2FieldJovrieShift = 2
-	RegisterDfsdm_flt1cr2FieldJovrieMask  = 0x4
+	RegisterDfsdmflt1cr2FieldJovrieShift = 2
+	RegisterDfsdmflt1cr2FieldJovrieMask  = 0x4
 )
 
 // GetJovrie Injected data overrun interrupt enable
-func (r *registerDfsdm_flt1cr2Type) GetJovrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr2FieldJovrieMask) != 0
+func (r *registerDfsdmflt1cr2Type) GetJovrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr2FieldJovrieMask) != 0
 }
 
 // SetJovrie Injected data overrun interrupt enable
-func (r *registerDfsdm_flt1cr2Type) SetJovrie(value bool) {
+func (r *registerDfsdmflt1cr2Type) SetJovrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr2FieldJovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr2FieldJovrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr2FieldJovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr2FieldJovrieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr2FieldRovrieShift = 3
-	RegisterDfsdm_flt1cr2FieldRovrieMask  = 0x8
+	RegisterDfsdmflt1cr2FieldRovrieShift = 3
+	RegisterDfsdmflt1cr2FieldRovrieMask  = 0x8
 )
 
 // GetRovrie Regular data overrun interrupt enable
-func (r *registerDfsdm_flt1cr2Type) GetRovrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr2FieldRovrieMask) != 0
+func (r *registerDfsdmflt1cr2Type) GetRovrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr2FieldRovrieMask) != 0
 }
 
 // SetRovrie Regular data overrun interrupt enable
-func (r *registerDfsdm_flt1cr2Type) SetRovrie(value bool) {
+func (r *registerDfsdmflt1cr2Type) SetRovrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr2FieldRovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr2FieldRovrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr2FieldRovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr2FieldRovrieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr2FieldAwdieShift = 4
-	RegisterDfsdm_flt1cr2FieldAwdieMask  = 0x10
+	RegisterDfsdmflt1cr2FieldAwdieShift = 4
+	RegisterDfsdmflt1cr2FieldAwdieMask  = 0x10
 )
 
 // GetAwdie Analog watchdog interrupt enable
-func (r *registerDfsdm_flt1cr2Type) GetAwdie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr2FieldAwdieMask) != 0
+func (r *registerDfsdmflt1cr2Type) GetAwdie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr2FieldAwdieMask) != 0
 }
 
 // SetAwdie Analog watchdog interrupt enable
-func (r *registerDfsdm_flt1cr2Type) SetAwdie(value bool) {
+func (r *registerDfsdmflt1cr2Type) SetAwdie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr2FieldAwdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr2FieldAwdieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr2FieldAwdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr2FieldAwdieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr2FieldScdieShift = 5
-	RegisterDfsdm_flt1cr2FieldScdieMask  = 0x20
+	RegisterDfsdmflt1cr2FieldScdieShift = 5
+	RegisterDfsdmflt1cr2FieldScdieMask  = 0x20
 )
 
 // GetScdie Short-circuit detector interrupt enable
-func (r *registerDfsdm_flt1cr2Type) GetScdie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr2FieldScdieMask) != 0
+func (r *registerDfsdmflt1cr2Type) GetScdie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr2FieldScdieMask) != 0
 }
 
 // SetScdie Short-circuit detector interrupt enable
-func (r *registerDfsdm_flt1cr2Type) SetScdie(value bool) {
+func (r *registerDfsdmflt1cr2Type) SetScdie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr2FieldScdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr2FieldScdieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr2FieldScdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr2FieldScdieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr2FieldCkabieShift = 6
-	RegisterDfsdm_flt1cr2FieldCkabieMask  = 0x40
+	RegisterDfsdmflt1cr2FieldCkabieShift = 6
+	RegisterDfsdmflt1cr2FieldCkabieMask  = 0x40
 )
 
 // GetCkabie Clock absence interrupt enable
-func (r *registerDfsdm_flt1cr2Type) GetCkabie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr2FieldCkabieMask) != 0
+func (r *registerDfsdmflt1cr2Type) GetCkabie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr2FieldCkabieMask) != 0
 }
 
 // SetCkabie Clock absence interrupt enable
-func (r *registerDfsdm_flt1cr2Type) SetCkabie(value bool) {
+func (r *registerDfsdmflt1cr2Type) SetCkabie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1cr2FieldCkabieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1cr2FieldCkabieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr2FieldCkabieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr2FieldCkabieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1cr2FieldExchShift = 8
-	RegisterDfsdm_flt1cr2FieldExchMask  = 0xff00
+	RegisterDfsdmflt1cr2FieldExchShift = 8
+	RegisterDfsdmflt1cr2FieldExchMask  = 0xff00
 )
 
 // GetExch Extremes detector channel selection
-func (r *registerDfsdm_flt1cr2Type) GetExch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr2FieldExchMask) >> RegisterDfsdm_flt1cr2FieldExchShift)
+func (r *registerDfsdmflt1cr2Type) GetExch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr2FieldExchMask) >> RegisterDfsdmflt1cr2FieldExchShift)
 }
 
 // SetExch Extremes detector channel selection
-func (r *registerDfsdm_flt1cr2Type) SetExch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr2FieldExchMask)|(uint32(value)<<RegisterDfsdm_flt1cr2FieldExchShift))
+func (r *registerDfsdmflt1cr2Type) SetExch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr2FieldExchMask)|(uint32(value)<<RegisterDfsdmflt1cr2FieldExchShift))
 }
 
 const (
-	RegisterDfsdm_flt1cr2FieldAwdchShift = 16
-	RegisterDfsdm_flt1cr2FieldAwdchMask  = 0xff0000
+	RegisterDfsdmflt1cr2FieldAwdchShift = 16
+	RegisterDfsdmflt1cr2FieldAwdchMask  = 0xff0000
 )
 
 // GetAwdch Analog watchdog channel selection
-func (r *registerDfsdm_flt1cr2Type) GetAwdch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cr2FieldAwdchMask) >> RegisterDfsdm_flt1cr2FieldAwdchShift)
+func (r *registerDfsdmflt1cr2Type) GetAwdch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cr2FieldAwdchMask) >> RegisterDfsdmflt1cr2FieldAwdchShift)
 }
 
 // SetAwdch Analog watchdog channel selection
-func (r *registerDfsdm_flt1cr2Type) SetAwdch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cr2FieldAwdchMask)|(uint32(value)<<RegisterDfsdm_flt1cr2FieldAwdchShift))
+func (r *registerDfsdmflt1cr2Type) SetAwdch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cr2FieldAwdchMask)|(uint32(value)<<RegisterDfsdmflt1cr2FieldAwdchShift))
 }
 
-// registerDfsdm_flt1isrType interrupt and status register
-type registerDfsdm_flt1isrType uint32
+// registerDfsdmflt1isrType interrupt and status register
+type registerDfsdmflt1isrType uint32
 
 const (
-	RegisterDfsdm_flt1isrFieldJeocfShift = 0
-	RegisterDfsdm_flt1isrFieldJeocfMask  = 0x1
+	RegisterDfsdmflt1isrFieldJeocfShift = 0
+	RegisterDfsdmflt1isrFieldJeocfMask  = 0x1
 )
 
 // GetJeocf End of injected conversion flag
-func (r *registerDfsdm_flt1isrType) GetJeocf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1isrFieldJeocfMask) != 0
+func (r *registerDfsdmflt1isrType) GetJeocf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1isrFieldJeocfMask) != 0
 }
 
 // SetJeocf End of injected conversion flag
-func (r *registerDfsdm_flt1isrType) SetJeocf(value bool) {
+func (r *registerDfsdmflt1isrType) SetJeocf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1isrFieldJeocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1isrFieldJeocfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1isrFieldJeocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1isrFieldJeocfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1isrFieldReocfShift = 1
-	RegisterDfsdm_flt1isrFieldReocfMask  = 0x2
+	RegisterDfsdmflt1isrFieldReocfShift = 1
+	RegisterDfsdmflt1isrFieldReocfMask  = 0x2
 )
 
 // GetReocf End of regular conversion flag
-func (r *registerDfsdm_flt1isrType) GetReocf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1isrFieldReocfMask) != 0
+func (r *registerDfsdmflt1isrType) GetReocf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1isrFieldReocfMask) != 0
 }
 
 // SetReocf End of regular conversion flag
-func (r *registerDfsdm_flt1isrType) SetReocf(value bool) {
+func (r *registerDfsdmflt1isrType) SetReocf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1isrFieldReocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1isrFieldReocfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1isrFieldReocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1isrFieldReocfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1isrFieldJovrfShift = 2
-	RegisterDfsdm_flt1isrFieldJovrfMask  = 0x4
+	RegisterDfsdmflt1isrFieldJovrfShift = 2
+	RegisterDfsdmflt1isrFieldJovrfMask  = 0x4
 )
 
 // GetJovrf Injected conversion overrun flag
-func (r *registerDfsdm_flt1isrType) GetJovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1isrFieldJovrfMask) != 0
+func (r *registerDfsdmflt1isrType) GetJovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1isrFieldJovrfMask) != 0
 }
 
 // SetJovrf Injected conversion overrun flag
-func (r *registerDfsdm_flt1isrType) SetJovrf(value bool) {
+func (r *registerDfsdmflt1isrType) SetJovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1isrFieldJovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1isrFieldJovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1isrFieldJovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1isrFieldJovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1isrFieldRovrfShift = 3
-	RegisterDfsdm_flt1isrFieldRovrfMask  = 0x8
+	RegisterDfsdmflt1isrFieldRovrfShift = 3
+	RegisterDfsdmflt1isrFieldRovrfMask  = 0x8
 )
 
 // GetRovrf Regular conversion overrun flag
-func (r *registerDfsdm_flt1isrType) GetRovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1isrFieldRovrfMask) != 0
+func (r *registerDfsdmflt1isrType) GetRovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1isrFieldRovrfMask) != 0
 }
 
 // SetRovrf Regular conversion overrun flag
-func (r *registerDfsdm_flt1isrType) SetRovrf(value bool) {
+func (r *registerDfsdmflt1isrType) SetRovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1isrFieldRovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1isrFieldRovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1isrFieldRovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1isrFieldRovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1isrFieldAwdfShift = 4
-	RegisterDfsdm_flt1isrFieldAwdfMask  = 0x10
+	RegisterDfsdmflt1isrFieldAwdfShift = 4
+	RegisterDfsdmflt1isrFieldAwdfMask  = 0x10
 )
 
 // GetAwdf Analog watchdog
-func (r *registerDfsdm_flt1isrType) GetAwdf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1isrFieldAwdfMask) != 0
+func (r *registerDfsdmflt1isrType) GetAwdf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1isrFieldAwdfMask) != 0
 }
 
 // SetAwdf Analog watchdog
-func (r *registerDfsdm_flt1isrType) SetAwdf(value bool) {
+func (r *registerDfsdmflt1isrType) SetAwdf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1isrFieldAwdfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1isrFieldAwdfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1isrFieldAwdfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1isrFieldAwdfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1isrFieldJcipShift = 13
-	RegisterDfsdm_flt1isrFieldJcipMask  = 0x2000
+	RegisterDfsdmflt1isrFieldJcipShift = 13
+	RegisterDfsdmflt1isrFieldJcipMask  = 0x2000
 )
 
 // GetJcip Injected conversion in progress status
-func (r *registerDfsdm_flt1isrType) GetJcip() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1isrFieldJcipMask) != 0
+func (r *registerDfsdmflt1isrType) GetJcip() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1isrFieldJcipMask) != 0
 }
 
 // SetJcip Injected conversion in progress status
-func (r *registerDfsdm_flt1isrType) SetJcip(value bool) {
+func (r *registerDfsdmflt1isrType) SetJcip(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1isrFieldJcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1isrFieldJcipMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1isrFieldJcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1isrFieldJcipMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1isrFieldRcipShift = 14
-	RegisterDfsdm_flt1isrFieldRcipMask  = 0x4000
+	RegisterDfsdmflt1isrFieldRcipShift = 14
+	RegisterDfsdmflt1isrFieldRcipMask  = 0x4000
 )
 
 // GetRcip Regular conversion in progress status
-func (r *registerDfsdm_flt1isrType) GetRcip() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1isrFieldRcipMask) != 0
+func (r *registerDfsdmflt1isrType) GetRcip() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1isrFieldRcipMask) != 0
 }
 
 // SetRcip Regular conversion in progress status
-func (r *registerDfsdm_flt1isrType) SetRcip(value bool) {
+func (r *registerDfsdmflt1isrType) SetRcip(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1isrFieldRcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1isrFieldRcipMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1isrFieldRcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1isrFieldRcipMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1isrFieldCkabfShift = 16
-	RegisterDfsdm_flt1isrFieldCkabfMask  = 0xff0000
+	RegisterDfsdmflt1isrFieldCkabfShift = 16
+	RegisterDfsdmflt1isrFieldCkabfMask  = 0xff0000
 )
 
 // GetCkabf Clock absence flag
-func (r *registerDfsdm_flt1isrType) GetCkabf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1isrFieldCkabfMask) >> RegisterDfsdm_flt1isrFieldCkabfShift)
+func (r *registerDfsdmflt1isrType) GetCkabf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1isrFieldCkabfMask) >> RegisterDfsdmflt1isrFieldCkabfShift)
 }
 
 // SetCkabf Clock absence flag
-func (r *registerDfsdm_flt1isrType) SetCkabf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1isrFieldCkabfMask)|(uint32(value)<<RegisterDfsdm_flt1isrFieldCkabfShift))
+func (r *registerDfsdmflt1isrType) SetCkabf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1isrFieldCkabfMask)|(uint32(value)<<RegisterDfsdmflt1isrFieldCkabfShift))
 }
 
 const (
-	RegisterDfsdm_flt1isrFieldScdfShift = 24
-	RegisterDfsdm_flt1isrFieldScdfMask  = 0xff000000
+	RegisterDfsdmflt1isrFieldScdfShift = 24
+	RegisterDfsdmflt1isrFieldScdfMask  = 0xff000000
 )
 
 // GetScdf short-circuit detector flag
-func (r *registerDfsdm_flt1isrType) GetScdf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1isrFieldScdfMask) >> RegisterDfsdm_flt1isrFieldScdfShift)
+func (r *registerDfsdmflt1isrType) GetScdf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1isrFieldScdfMask) >> RegisterDfsdmflt1isrFieldScdfShift)
 }
 
 // SetScdf short-circuit detector flag
-func (r *registerDfsdm_flt1isrType) SetScdf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1isrFieldScdfMask)|(uint32(value)<<RegisterDfsdm_flt1isrFieldScdfShift))
+func (r *registerDfsdmflt1isrType) SetScdf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1isrFieldScdfMask)|(uint32(value)<<RegisterDfsdmflt1isrFieldScdfShift))
 }
 
-// registerDfsdm1_icrType interrupt flag clear register
-type registerDfsdm1_icrType uint32
+// registerDfsdm1icrType interrupt flag clear register
+type registerDfsdm1icrType uint32
 
 const (
-	RegisterDfsdm1_icrFieldClrjovrfShift = 2
-	RegisterDfsdm1_icrFieldClrjovrfMask  = 0x4
+	RegisterDfsdm1icrFieldClrjovrfShift = 2
+	RegisterDfsdm1icrFieldClrjovrfMask  = 0x4
 )
 
 // GetClrjovrf Clear the injected conversion overrun flag
-func (r *registerDfsdm1_icrType) GetClrjovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1_icrFieldClrjovrfMask) != 0
+func (r *registerDfsdm1icrType) GetClrjovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1icrFieldClrjovrfMask) != 0
 }
 
 // SetClrjovrf Clear the injected conversion overrun flag
-func (r *registerDfsdm1_icrType) SetClrjovrf(value bool) {
+func (r *registerDfsdm1icrType) SetClrjovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm1_icrFieldClrjovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm1icrFieldClrjovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1_icrFieldClrjovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1icrFieldClrjovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm1_icrFieldClrrovrfShift = 3
-	RegisterDfsdm1_icrFieldClrrovrfMask  = 0x8
+	RegisterDfsdm1icrFieldClrrovrfShift = 3
+	RegisterDfsdm1icrFieldClrrovrfMask  = 0x8
 )
 
 // GetClrrovrf Clear the regular conversion overrun flag
-func (r *registerDfsdm1_icrType) GetClrrovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1_icrFieldClrrovrfMask) != 0
+func (r *registerDfsdm1icrType) GetClrrovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1icrFieldClrrovrfMask) != 0
 }
 
 // SetClrrovrf Clear the regular conversion overrun flag
-func (r *registerDfsdm1_icrType) SetClrrovrf(value bool) {
+func (r *registerDfsdm1icrType) SetClrrovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm1_icrFieldClrrovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm1icrFieldClrrovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1_icrFieldClrrovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1icrFieldClrrovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm1_icrFieldClrckabfShift = 16
-	RegisterDfsdm1_icrFieldClrckabfMask  = 0xff0000
+	RegisterDfsdm1icrFieldClrckabfShift = 16
+	RegisterDfsdm1icrFieldClrckabfMask  = 0xff0000
 )
 
 // GetClrckabf Clear the clock absence flag
-func (r *registerDfsdm1_icrType) GetClrckabf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1_icrFieldClrckabfMask) >> RegisterDfsdm1_icrFieldClrckabfShift)
+func (r *registerDfsdm1icrType) GetClrckabf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1icrFieldClrckabfMask) >> RegisterDfsdm1icrFieldClrckabfShift)
 }
 
 // SetClrckabf Clear the clock absence flag
-func (r *registerDfsdm1_icrType) SetClrckabf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1_icrFieldClrckabfMask)|(uint32(value)<<RegisterDfsdm1_icrFieldClrckabfShift))
+func (r *registerDfsdm1icrType) SetClrckabf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1icrFieldClrckabfMask)|(uint32(value)<<RegisterDfsdm1icrFieldClrckabfShift))
 }
 
 const (
-	RegisterDfsdm1_icrFieldClrscdfShift = 24
-	RegisterDfsdm1_icrFieldClrscdfMask  = 0xff000000
+	RegisterDfsdm1icrFieldClrscdfShift = 24
+	RegisterDfsdm1icrFieldClrscdfMask  = 0xff000000
 )
 
 // GetClrscdf Clear the short-circuit detector flag
-func (r *registerDfsdm1_icrType) GetClrscdf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1_icrFieldClrscdfMask) >> RegisterDfsdm1_icrFieldClrscdfShift)
+func (r *registerDfsdm1icrType) GetClrscdf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1icrFieldClrscdfMask) >> RegisterDfsdm1icrFieldClrscdfShift)
 }
 
 // SetClrscdf Clear the short-circuit detector flag
-func (r *registerDfsdm1_icrType) SetClrscdf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1_icrFieldClrscdfMask)|(uint32(value)<<RegisterDfsdm1_icrFieldClrscdfShift))
+func (r *registerDfsdm1icrType) SetClrscdf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1icrFieldClrscdfMask)|(uint32(value)<<RegisterDfsdm1icrFieldClrscdfShift))
 }
 
-// registerDfsdm_flt1jchgrType injected channel group selection register
-type registerDfsdm_flt1jchgrType uint32
+// registerDfsdmflt1jchgrType injected channel group selection register
+type registerDfsdmflt1jchgrType uint32
 
 const (
-	RegisterDfsdm_flt1jchgrFieldJchgShift = 0
-	RegisterDfsdm_flt1jchgrFieldJchgMask  = 0xff
+	RegisterDfsdmflt1jchgrFieldJchgShift = 0
+	RegisterDfsdmflt1jchgrFieldJchgMask  = 0xff
 )
 
 // GetJchg Injected channel group selection
-func (r *registerDfsdm_flt1jchgrType) GetJchg() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1jchgrFieldJchgMask) >> RegisterDfsdm_flt1jchgrFieldJchgShift)
+func (r *registerDfsdmflt1jchgrType) GetJchg() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1jchgrFieldJchgMask) >> RegisterDfsdmflt1jchgrFieldJchgShift)
 }
 
 // SetJchg Injected channel group selection
-func (r *registerDfsdm_flt1jchgrType) SetJchg(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1jchgrFieldJchgMask)|(uint32(value)<<RegisterDfsdm_flt1jchgrFieldJchgShift))
+func (r *registerDfsdmflt1jchgrType) SetJchg(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1jchgrFieldJchgMask)|(uint32(value)<<RegisterDfsdmflt1jchgrFieldJchgShift))
 }
 
-// registerDfsdm1_fcrType filter control register
-type registerDfsdm1_fcrType uint32
+// registerDfsdm1fcrType filter control register
+type registerDfsdm1fcrType uint32
 
 const (
-	RegisterDfsdm1_fcrFieldIosrShift = 0
-	RegisterDfsdm1_fcrFieldIosrMask  = 0xff
+	RegisterDfsdm1fcrFieldIosrShift = 0
+	RegisterDfsdm1fcrFieldIosrMask  = 0xff
 )
 
 // GetIosr Integrator oversampling ratio (averaging length)
-func (r *registerDfsdm1_fcrType) GetIosr() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1_fcrFieldIosrMask) >> RegisterDfsdm1_fcrFieldIosrShift)
+func (r *registerDfsdm1fcrType) GetIosr() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1fcrFieldIosrMask) >> RegisterDfsdm1fcrFieldIosrShift)
 }
 
 // SetIosr Integrator oversampling ratio (averaging length)
-func (r *registerDfsdm1_fcrType) SetIosr(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1_fcrFieldIosrMask)|(uint32(value)<<RegisterDfsdm1_fcrFieldIosrShift))
+func (r *registerDfsdm1fcrType) SetIosr(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1fcrFieldIosrMask)|(uint32(value)<<RegisterDfsdm1fcrFieldIosrShift))
 }
 
 const (
-	RegisterDfsdm1_fcrFieldFosrShift = 16
-	RegisterDfsdm1_fcrFieldFosrMask  = 0x3ff0000
+	RegisterDfsdm1fcrFieldFosrShift = 16
+	RegisterDfsdm1fcrFieldFosrMask  = 0x3ff0000
 )
 
 // GetFosr Sinc filter oversampling ratio (decimation rate)
-func (r *registerDfsdm1_fcrType) GetFosr() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1_fcrFieldFosrMask) >> RegisterDfsdm1_fcrFieldFosrShift)
+func (r *registerDfsdm1fcrType) GetFosr() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1fcrFieldFosrMask) >> RegisterDfsdm1fcrFieldFosrShift)
 }
 
 // SetFosr Sinc filter oversampling ratio (decimation rate)
-func (r *registerDfsdm1_fcrType) SetFosr(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1_fcrFieldFosrMask)|(uint32(value)<<RegisterDfsdm1_fcrFieldFosrShift))
+func (r *registerDfsdm1fcrType) SetFosr(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1fcrFieldFosrMask)|(uint32(value)<<RegisterDfsdm1fcrFieldFosrShift))
 }
 
 const (
-	RegisterDfsdm1_fcrFieldFordShift = 29
-	RegisterDfsdm1_fcrFieldFordMask  = 0xe0000000
+	RegisterDfsdm1fcrFieldFordShift = 29
+	RegisterDfsdm1fcrFieldFordMask  = 0xe0000000
 )
 
 // GetFord Sinc filter order
-func (r *registerDfsdm1_fcrType) GetFord() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1_fcrFieldFordMask) >> RegisterDfsdm1_fcrFieldFordShift)
+func (r *registerDfsdm1fcrType) GetFord() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm1fcrFieldFordMask) >> RegisterDfsdm1fcrFieldFordShift)
 }
 
 // SetFord Sinc filter order
-func (r *registerDfsdm1_fcrType) SetFord(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1_fcrFieldFordMask)|(uint32(value)<<RegisterDfsdm1_fcrFieldFordShift))
+func (r *registerDfsdm1fcrType) SetFord(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm1fcrFieldFordMask)|(uint32(value)<<RegisterDfsdm1fcrFieldFordShift))
 }
 
-// registerDfsdm_flt1jdatarType data register for injected group
-type registerDfsdm_flt1jdatarType uint32
+// registerDfsdmflt1jdatarType data register for injected group
+type registerDfsdmflt1jdatarType uint32
 
 const (
-	RegisterDfsdm_flt1jdatarFieldJdatachShift = 0
-	RegisterDfsdm_flt1jdatarFieldJdatachMask  = 0x7
+	RegisterDfsdmflt1jdatarFieldJdatachShift = 0
+	RegisterDfsdmflt1jdatarFieldJdatachMask  = 0x7
 )
 
 // GetJdatach Injected channel most recently converted
-func (r *registerDfsdm_flt1jdatarType) GetJdatach() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1jdatarFieldJdatachMask) >> RegisterDfsdm_flt1jdatarFieldJdatachShift)
+func (r *registerDfsdmflt1jdatarType) GetJdatach() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1jdatarFieldJdatachMask) >> RegisterDfsdmflt1jdatarFieldJdatachShift)
 }
 
 // SetJdatach Injected channel most recently converted
-func (r *registerDfsdm_flt1jdatarType) SetJdatach(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1jdatarFieldJdatachMask)|(uint32(value)<<RegisterDfsdm_flt1jdatarFieldJdatachShift))
+func (r *registerDfsdmflt1jdatarType) SetJdatach(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1jdatarFieldJdatachMask)|(uint32(value)<<RegisterDfsdmflt1jdatarFieldJdatachShift))
 }
 
 const (
-	RegisterDfsdm_flt1jdatarFieldJdataShift = 8
-	RegisterDfsdm_flt1jdatarFieldJdataMask  = 0xffffff00
+	RegisterDfsdmflt1jdatarFieldJdataShift = 8
+	RegisterDfsdmflt1jdatarFieldJdataMask  = 0xffffff00
 )
 
 // GetJdata Injected group conversion data
-func (r *registerDfsdm_flt1jdatarType) GetJdata() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1jdatarFieldJdataMask) >> RegisterDfsdm_flt1jdatarFieldJdataShift)
+func (r *registerDfsdmflt1jdatarType) GetJdata() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1jdatarFieldJdataMask) >> RegisterDfsdmflt1jdatarFieldJdataShift)
 }
 
 // SetJdata Injected group conversion data
-func (r *registerDfsdm_flt1jdatarType) SetJdata(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1jdatarFieldJdataMask)|(uint32(value)<<RegisterDfsdm_flt1jdatarFieldJdataShift))
+func (r *registerDfsdmflt1jdatarType) SetJdata(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1jdatarFieldJdataMask)|(uint32(value)<<RegisterDfsdmflt1jdatarFieldJdataShift))
 }
 
-// registerDfsdm_flt1rdatarType data register for the regular channel
-type registerDfsdm_flt1rdatarType uint32
+// registerDfsdmflt1rdatarType data register for the regular channel
+type registerDfsdmflt1rdatarType uint32
 
 const (
-	RegisterDfsdm_flt1rdatarFieldRdatachShift = 0
-	RegisterDfsdm_flt1rdatarFieldRdatachMask  = 0x7
+	RegisterDfsdmflt1rdatarFieldRdatachShift = 0
+	RegisterDfsdmflt1rdatarFieldRdatachMask  = 0x7
 )
 
 // GetRdatach Regular channel most recently converted
-func (r *registerDfsdm_flt1rdatarType) GetRdatach() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1rdatarFieldRdatachMask) >> RegisterDfsdm_flt1rdatarFieldRdatachShift)
+func (r *registerDfsdmflt1rdatarType) GetRdatach() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1rdatarFieldRdatachMask) >> RegisterDfsdmflt1rdatarFieldRdatachShift)
 }
 
 // SetRdatach Regular channel most recently converted
-func (r *registerDfsdm_flt1rdatarType) SetRdatach(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1rdatarFieldRdatachMask)|(uint32(value)<<RegisterDfsdm_flt1rdatarFieldRdatachShift))
+func (r *registerDfsdmflt1rdatarType) SetRdatach(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1rdatarFieldRdatachMask)|(uint32(value)<<RegisterDfsdmflt1rdatarFieldRdatachShift))
 }
 
 const (
-	RegisterDfsdm_flt1rdatarFieldRpendShift = 4
-	RegisterDfsdm_flt1rdatarFieldRpendMask  = 0x10
+	RegisterDfsdmflt1rdatarFieldRpendShift = 4
+	RegisterDfsdmflt1rdatarFieldRpendMask  = 0x10
 )
 
 // GetRpend Regular channel pending data
-func (r *registerDfsdm_flt1rdatarType) GetRpend() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1rdatarFieldRpendMask) != 0
+func (r *registerDfsdmflt1rdatarType) GetRpend() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1rdatarFieldRpendMask) != 0
 }
 
 // SetRpend Regular channel pending data
-func (r *registerDfsdm_flt1rdatarType) SetRpend(value bool) {
+func (r *registerDfsdmflt1rdatarType) SetRpend(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt1rdatarFieldRpendMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt1rdatarFieldRpendMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1rdatarFieldRpendMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1rdatarFieldRpendMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt1rdatarFieldRdataShift = 8
-	RegisterDfsdm_flt1rdatarFieldRdataMask  = 0xffffff00
+	RegisterDfsdmflt1rdatarFieldRdataShift = 8
+	RegisterDfsdmflt1rdatarFieldRdataMask  = 0xffffff00
 )
 
 // GetRdata Regular channel conversion data
-func (r *registerDfsdm_flt1rdatarType) GetRdata() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1rdatarFieldRdataMask) >> RegisterDfsdm_flt1rdatarFieldRdataShift)
+func (r *registerDfsdmflt1rdatarType) GetRdata() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1rdatarFieldRdataMask) >> RegisterDfsdmflt1rdatarFieldRdataShift)
 }
 
 // SetRdata Regular channel conversion data
-func (r *registerDfsdm_flt1rdatarType) SetRdata(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1rdatarFieldRdataMask)|(uint32(value)<<RegisterDfsdm_flt1rdatarFieldRdataShift))
+func (r *registerDfsdmflt1rdatarType) SetRdata(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1rdatarFieldRdataMask)|(uint32(value)<<RegisterDfsdmflt1rdatarFieldRdataShift))
 }
 
-// registerDfsdm_flt1awhtrType analog watchdog high threshold register
-type registerDfsdm_flt1awhtrType uint32
+// registerDfsdmflt1awhtrType analog watchdog high threshold register
+type registerDfsdmflt1awhtrType uint32
 
 const (
-	RegisterDfsdm_flt1awhtrFieldBkawhShift = 0
-	RegisterDfsdm_flt1awhtrFieldBkawhMask  = 0xf
+	RegisterDfsdmflt1awhtrFieldBkawhShift = 0
+	RegisterDfsdmflt1awhtrFieldBkawhMask  = 0xf
 )
 
 // GetBkawh Break signal assignment to analog watchdog high threshold event
-func (r *registerDfsdm_flt1awhtrType) GetBkawh() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1awhtrFieldBkawhMask) >> RegisterDfsdm_flt1awhtrFieldBkawhShift)
+func (r *registerDfsdmflt1awhtrType) GetBkawh() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1awhtrFieldBkawhMask) >> RegisterDfsdmflt1awhtrFieldBkawhShift)
 }
 
 // SetBkawh Break signal assignment to analog watchdog high threshold event
-func (r *registerDfsdm_flt1awhtrType) SetBkawh(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1awhtrFieldBkawhMask)|(uint32(value)<<RegisterDfsdm_flt1awhtrFieldBkawhShift))
+func (r *registerDfsdmflt1awhtrType) SetBkawh(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1awhtrFieldBkawhMask)|(uint32(value)<<RegisterDfsdmflt1awhtrFieldBkawhShift))
 }
 
 const (
-	RegisterDfsdm_flt1awhtrFieldAwhtShift = 8
-	RegisterDfsdm_flt1awhtrFieldAwhtMask  = 0xffffff00
+	RegisterDfsdmflt1awhtrFieldAwhtShift = 8
+	RegisterDfsdmflt1awhtrFieldAwhtMask  = 0xffffff00
 )
 
 // GetAwht Analog watchdog high threshold
-func (r *registerDfsdm_flt1awhtrType) GetAwht() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1awhtrFieldAwhtMask) >> RegisterDfsdm_flt1awhtrFieldAwhtShift)
+func (r *registerDfsdmflt1awhtrType) GetAwht() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1awhtrFieldAwhtMask) >> RegisterDfsdmflt1awhtrFieldAwhtShift)
 }
 
 // SetAwht Analog watchdog high threshold
-func (r *registerDfsdm_flt1awhtrType) SetAwht(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1awhtrFieldAwhtMask)|(uint32(value)<<RegisterDfsdm_flt1awhtrFieldAwhtShift))
+func (r *registerDfsdmflt1awhtrType) SetAwht(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1awhtrFieldAwhtMask)|(uint32(value)<<RegisterDfsdmflt1awhtrFieldAwhtShift))
 }
 
-// registerDfsdm_flt1awltrType analog watchdog low threshold register
-type registerDfsdm_flt1awltrType uint32
+// registerDfsdmflt1awltrType analog watchdog low threshold register
+type registerDfsdmflt1awltrType uint32
 
 const (
-	RegisterDfsdm_flt1awltrFieldBkawlShift = 0
-	RegisterDfsdm_flt1awltrFieldBkawlMask  = 0xf
+	RegisterDfsdmflt1awltrFieldBkawlShift = 0
+	RegisterDfsdmflt1awltrFieldBkawlMask  = 0xf
 )
 
 // GetBkawl Break signal assignment to analog watchdog low threshold event
-func (r *registerDfsdm_flt1awltrType) GetBkawl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1awltrFieldBkawlMask) >> RegisterDfsdm_flt1awltrFieldBkawlShift)
+func (r *registerDfsdmflt1awltrType) GetBkawl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1awltrFieldBkawlMask) >> RegisterDfsdmflt1awltrFieldBkawlShift)
 }
 
 // SetBkawl Break signal assignment to analog watchdog low threshold event
-func (r *registerDfsdm_flt1awltrType) SetBkawl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1awltrFieldBkawlMask)|(uint32(value)<<RegisterDfsdm_flt1awltrFieldBkawlShift))
+func (r *registerDfsdmflt1awltrType) SetBkawl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1awltrFieldBkawlMask)|(uint32(value)<<RegisterDfsdmflt1awltrFieldBkawlShift))
 }
 
 const (
-	RegisterDfsdm_flt1awltrFieldAwltShift = 8
-	RegisterDfsdm_flt1awltrFieldAwltMask  = 0xffffff00
+	RegisterDfsdmflt1awltrFieldAwltShift = 8
+	RegisterDfsdmflt1awltrFieldAwltMask  = 0xffffff00
 )
 
 // GetAwlt Analog watchdog low threshold
-func (r *registerDfsdm_flt1awltrType) GetAwlt() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1awltrFieldAwltMask) >> RegisterDfsdm_flt1awltrFieldAwltShift)
+func (r *registerDfsdmflt1awltrType) GetAwlt() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1awltrFieldAwltMask) >> RegisterDfsdmflt1awltrFieldAwltShift)
 }
 
 // SetAwlt Analog watchdog low threshold
-func (r *registerDfsdm_flt1awltrType) SetAwlt(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1awltrFieldAwltMask)|(uint32(value)<<RegisterDfsdm_flt1awltrFieldAwltShift))
+func (r *registerDfsdmflt1awltrType) SetAwlt(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1awltrFieldAwltMask)|(uint32(value)<<RegisterDfsdmflt1awltrFieldAwltShift))
 }
 
-// registerDfsdm_flt1awsrType analog watchdog status register
-type registerDfsdm_flt1awsrType uint32
+// registerDfsdmflt1awsrType analog watchdog status register
+type registerDfsdmflt1awsrType uint32
 
 const (
-	RegisterDfsdm_flt1awsrFieldAwltfShift = 0
-	RegisterDfsdm_flt1awsrFieldAwltfMask  = 0xff
+	RegisterDfsdmflt1awsrFieldAwltfShift = 0
+	RegisterDfsdmflt1awsrFieldAwltfMask  = 0xff
 )
 
 // GetAwltf Analog watchdog low threshold flag
-func (r *registerDfsdm_flt1awsrType) GetAwltf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1awsrFieldAwltfMask) >> RegisterDfsdm_flt1awsrFieldAwltfShift)
+func (r *registerDfsdmflt1awsrType) GetAwltf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1awsrFieldAwltfMask) >> RegisterDfsdmflt1awsrFieldAwltfShift)
 }
 
 // SetAwltf Analog watchdog low threshold flag
-func (r *registerDfsdm_flt1awsrType) SetAwltf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1awsrFieldAwltfMask)|(uint32(value)<<RegisterDfsdm_flt1awsrFieldAwltfShift))
+func (r *registerDfsdmflt1awsrType) SetAwltf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1awsrFieldAwltfMask)|(uint32(value)<<RegisterDfsdmflt1awsrFieldAwltfShift))
 }
 
 const (
-	RegisterDfsdm_flt1awsrFieldAwhtfShift = 8
-	RegisterDfsdm_flt1awsrFieldAwhtfMask  = 0xff00
+	RegisterDfsdmflt1awsrFieldAwhtfShift = 8
+	RegisterDfsdmflt1awsrFieldAwhtfMask  = 0xff00
 )
 
 // GetAwhtf Analog watchdog high threshold flag
-func (r *registerDfsdm_flt1awsrType) GetAwhtf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1awsrFieldAwhtfMask) >> RegisterDfsdm_flt1awsrFieldAwhtfShift)
+func (r *registerDfsdmflt1awsrType) GetAwhtf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1awsrFieldAwhtfMask) >> RegisterDfsdmflt1awsrFieldAwhtfShift)
 }
 
 // SetAwhtf Analog watchdog high threshold flag
-func (r *registerDfsdm_flt1awsrType) SetAwhtf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1awsrFieldAwhtfMask)|(uint32(value)<<RegisterDfsdm_flt1awsrFieldAwhtfShift))
+func (r *registerDfsdmflt1awsrType) SetAwhtf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1awsrFieldAwhtfMask)|(uint32(value)<<RegisterDfsdmflt1awsrFieldAwhtfShift))
 }
 
-// registerDfsdm_flt1awcfrType analog watchdog clear flag register
-type registerDfsdm_flt1awcfrType uint32
+// registerDfsdmflt1awcfrType analog watchdog clear flag register
+type registerDfsdmflt1awcfrType uint32
 
 const (
-	RegisterDfsdm_flt1awcfrFieldClrawltfShift = 0
-	RegisterDfsdm_flt1awcfrFieldClrawltfMask  = 0xff
+	RegisterDfsdmflt1awcfrFieldClrawltfShift = 0
+	RegisterDfsdmflt1awcfrFieldClrawltfMask  = 0xff
 )
 
 // GetClrawltf Clear the analog watchdog low threshold flag
-func (r *registerDfsdm_flt1awcfrType) GetClrawltf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1awcfrFieldClrawltfMask) >> RegisterDfsdm_flt1awcfrFieldClrawltfShift)
+func (r *registerDfsdmflt1awcfrType) GetClrawltf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1awcfrFieldClrawltfMask) >> RegisterDfsdmflt1awcfrFieldClrawltfShift)
 }
 
 // SetClrawltf Clear the analog watchdog low threshold flag
-func (r *registerDfsdm_flt1awcfrType) SetClrawltf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1awcfrFieldClrawltfMask)|(uint32(value)<<RegisterDfsdm_flt1awcfrFieldClrawltfShift))
+func (r *registerDfsdmflt1awcfrType) SetClrawltf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1awcfrFieldClrawltfMask)|(uint32(value)<<RegisterDfsdmflt1awcfrFieldClrawltfShift))
 }
 
 const (
-	RegisterDfsdm_flt1awcfrFieldClrawhtfShift = 8
-	RegisterDfsdm_flt1awcfrFieldClrawhtfMask  = 0xff00
+	RegisterDfsdmflt1awcfrFieldClrawhtfShift = 8
+	RegisterDfsdmflt1awcfrFieldClrawhtfMask  = 0xff00
 )
 
 // GetClrawhtf Clear the analog watchdog high threshold flag
-func (r *registerDfsdm_flt1awcfrType) GetClrawhtf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1awcfrFieldClrawhtfMask) >> RegisterDfsdm_flt1awcfrFieldClrawhtfShift)
+func (r *registerDfsdmflt1awcfrType) GetClrawhtf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1awcfrFieldClrawhtfMask) >> RegisterDfsdmflt1awcfrFieldClrawhtfShift)
 }
 
 // SetClrawhtf Clear the analog watchdog high threshold flag
-func (r *registerDfsdm_flt1awcfrType) SetClrawhtf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1awcfrFieldClrawhtfMask)|(uint32(value)<<RegisterDfsdm_flt1awcfrFieldClrawhtfShift))
+func (r *registerDfsdmflt1awcfrType) SetClrawhtf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1awcfrFieldClrawhtfMask)|(uint32(value)<<RegisterDfsdmflt1awcfrFieldClrawhtfShift))
 }
 
-// registerDfsdm_flt1exmaxType Extremes detector maximum register
-type registerDfsdm_flt1exmaxType uint32
+// registerDfsdmflt1exmaxType Extremes detector maximum register
+type registerDfsdmflt1exmaxType uint32
 
 const (
-	RegisterDfsdm_flt1exmaxFieldExmaxchShift = 0
-	RegisterDfsdm_flt1exmaxFieldExmaxchMask  = 0x7
+	RegisterDfsdmflt1exmaxFieldExmaxchShift = 0
+	RegisterDfsdmflt1exmaxFieldExmaxchMask  = 0x7
 )
 
 // GetExmaxch Extremes detector maximum data channel
-func (r *registerDfsdm_flt1exmaxType) GetExmaxch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1exmaxFieldExmaxchMask) >> RegisterDfsdm_flt1exmaxFieldExmaxchShift)
+func (r *registerDfsdmflt1exmaxType) GetExmaxch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1exmaxFieldExmaxchMask) >> RegisterDfsdmflt1exmaxFieldExmaxchShift)
 }
 
 // SetExmaxch Extremes detector maximum data channel
-func (r *registerDfsdm_flt1exmaxType) SetExmaxch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1exmaxFieldExmaxchMask)|(uint32(value)<<RegisterDfsdm_flt1exmaxFieldExmaxchShift))
+func (r *registerDfsdmflt1exmaxType) SetExmaxch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1exmaxFieldExmaxchMask)|(uint32(value)<<RegisterDfsdmflt1exmaxFieldExmaxchShift))
 }
 
 const (
-	RegisterDfsdm_flt1exmaxFieldExmaxShift = 8
-	RegisterDfsdm_flt1exmaxFieldExmaxMask  = 0xffffff00
+	RegisterDfsdmflt1exmaxFieldExmaxShift = 8
+	RegisterDfsdmflt1exmaxFieldExmaxMask  = 0xffffff00
 )
 
 // GetExmax Extremes detector maximum value
-func (r *registerDfsdm_flt1exmaxType) GetExmax() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1exmaxFieldExmaxMask) >> RegisterDfsdm_flt1exmaxFieldExmaxShift)
+func (r *registerDfsdmflt1exmaxType) GetExmax() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1exmaxFieldExmaxMask) >> RegisterDfsdmflt1exmaxFieldExmaxShift)
 }
 
 // SetExmax Extremes detector maximum value
-func (r *registerDfsdm_flt1exmaxType) SetExmax(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1exmaxFieldExmaxMask)|(uint32(value)<<RegisterDfsdm_flt1exmaxFieldExmaxShift))
+func (r *registerDfsdmflt1exmaxType) SetExmax(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1exmaxFieldExmaxMask)|(uint32(value)<<RegisterDfsdmflt1exmaxFieldExmaxShift))
 }
 
-// registerDfsdm_flt1exminType Extremes detector minimum register
-type registerDfsdm_flt1exminType uint32
+// registerDfsdmflt1exminType Extremes detector minimum register
+type registerDfsdmflt1exminType uint32
 
 const (
-	RegisterDfsdm_flt1exminFieldExminchShift = 0
-	RegisterDfsdm_flt1exminFieldExminchMask  = 0x7
+	RegisterDfsdmflt1exminFieldExminchShift = 0
+	RegisterDfsdmflt1exminFieldExminchMask  = 0x7
 )
 
 // GetExminch Extremes detector minimum data channel
-func (r *registerDfsdm_flt1exminType) GetExminch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1exminFieldExminchMask) >> RegisterDfsdm_flt1exminFieldExminchShift)
+func (r *registerDfsdmflt1exminType) GetExminch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1exminFieldExminchMask) >> RegisterDfsdmflt1exminFieldExminchShift)
 }
 
 // SetExminch Extremes detector minimum data channel
-func (r *registerDfsdm_flt1exminType) SetExminch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1exminFieldExminchMask)|(uint32(value)<<RegisterDfsdm_flt1exminFieldExminchShift))
+func (r *registerDfsdmflt1exminType) SetExminch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1exminFieldExminchMask)|(uint32(value)<<RegisterDfsdmflt1exminFieldExminchShift))
 }
 
 const (
-	RegisterDfsdm_flt1exminFieldExminShift = 8
-	RegisterDfsdm_flt1exminFieldExminMask  = 0xffffff00
+	RegisterDfsdmflt1exminFieldExminShift = 8
+	RegisterDfsdmflt1exminFieldExminMask  = 0xffffff00
 )
 
 // GetExmin EXMIN
-func (r *registerDfsdm_flt1exminType) GetExmin() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1exminFieldExminMask) >> RegisterDfsdm_flt1exminFieldExminShift)
+func (r *registerDfsdmflt1exminType) GetExmin() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1exminFieldExminMask) >> RegisterDfsdmflt1exminFieldExminShift)
 }
 
 // SetExmin EXMIN
-func (r *registerDfsdm_flt1exminType) SetExmin(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1exminFieldExminMask)|(uint32(value)<<RegisterDfsdm_flt1exminFieldExminShift))
+func (r *registerDfsdmflt1exminType) SetExmin(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1exminFieldExminMask)|(uint32(value)<<RegisterDfsdmflt1exminFieldExminShift))
 }
 
-// registerDfsdm_flt1cnvtimrType conversion timer register
-type registerDfsdm_flt1cnvtimrType uint32
+// registerDfsdmflt1cnvtimrType conversion timer register
+type registerDfsdmflt1cnvtimrType uint32
 
 const (
-	RegisterDfsdm_flt1cnvtimrFieldCnvcntShift = 4
-	RegisterDfsdm_flt1cnvtimrFieldCnvcntMask  = 0xfffffff0
+	RegisterDfsdmflt1cnvtimrFieldCnvcntShift = 4
+	RegisterDfsdmflt1cnvtimrFieldCnvcntMask  = 0xfffffff0
 )
 
 // GetCnvcnt 28-bit timer counting conversion time t = CNVCNT[27:0] / fDFSDM_CKIN
-func (r *registerDfsdm_flt1cnvtimrType) GetCnvcnt() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt1cnvtimrFieldCnvcntMask) >> RegisterDfsdm_flt1cnvtimrFieldCnvcntShift)
+func (r *registerDfsdmflt1cnvtimrType) GetCnvcnt() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt1cnvtimrFieldCnvcntMask) >> RegisterDfsdmflt1cnvtimrFieldCnvcntShift)
 }
 
 // SetCnvcnt 28-bit timer counting conversion time t = CNVCNT[27:0] / fDFSDM_CKIN
-func (r *registerDfsdm_flt1cnvtimrType) SetCnvcnt(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt1cnvtimrFieldCnvcntMask)|(uint32(value)<<RegisterDfsdm_flt1cnvtimrFieldCnvcntShift))
+func (r *registerDfsdmflt1cnvtimrType) SetCnvcnt(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt1cnvtimrFieldCnvcntMask)|(uint32(value)<<RegisterDfsdmflt1cnvtimrFieldCnvcntShift))
 }
 
-// registerDfsdm_flt2cr1Type control register 1
-type registerDfsdm_flt2cr1Type uint32
+// registerDfsdmflt2cr1Type control register 1
+type registerDfsdmflt2cr1Type uint32
 
 const (
-	RegisterDfsdm_flt2cr1FieldDfenShift = 0
-	RegisterDfsdm_flt2cr1FieldDfenMask  = 0x1
+	RegisterDfsdmflt2cr1FieldDfenShift = 0
+	RegisterDfsdmflt2cr1FieldDfenMask  = 0x1
 )
 
 // GetDfen DFSDM enable
-func (r *registerDfsdm_flt2cr1Type) GetDfen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldDfenMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetDfen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldDfenMask) != 0
 }
 
 // SetDfen DFSDM enable
-func (r *registerDfsdm_flt2cr1Type) SetDfen(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetDfen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldDfenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldDfenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldDfenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldDfenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldJswstartShift = 1
-	RegisterDfsdm_flt2cr1FieldJswstartMask  = 0x2
+	RegisterDfsdmflt2cr1FieldJswstartShift = 1
+	RegisterDfsdmflt2cr1FieldJswstartMask  = 0x2
 )
 
 // GetJswstart Start a conversion of the injected group of channels
-func (r *registerDfsdm_flt2cr1Type) GetJswstart() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldJswstartMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetJswstart() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldJswstartMask) != 0
 }
 
 // SetJswstart Start a conversion of the injected group of channels
-func (r *registerDfsdm_flt2cr1Type) SetJswstart(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetJswstart(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldJswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldJswstartMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldJswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldJswstartMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldJsyncShift = 3
-	RegisterDfsdm_flt2cr1FieldJsyncMask  = 0x8
+	RegisterDfsdmflt2cr1FieldJsyncShift = 3
+	RegisterDfsdmflt2cr1FieldJsyncMask  = 0x8
 )
 
 // GetJsync Launch an injected conversion synchronously with the DFSDM0 JSWSTART trigger
-func (r *registerDfsdm_flt2cr1Type) GetJsync() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldJsyncMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetJsync() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldJsyncMask) != 0
 }
 
 // SetJsync Launch an injected conversion synchronously with the DFSDM0 JSWSTART trigger
-func (r *registerDfsdm_flt2cr1Type) SetJsync(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetJsync(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldJsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldJsyncMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldJsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldJsyncMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldJscanShift = 4
-	RegisterDfsdm_flt2cr1FieldJscanMask  = 0x10
+	RegisterDfsdmflt2cr1FieldJscanShift = 4
+	RegisterDfsdmflt2cr1FieldJscanMask  = 0x10
 )
 
 // GetJscan Scanning conversion mode for injected conversions
-func (r *registerDfsdm_flt2cr1Type) GetJscan() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldJscanMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetJscan() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldJscanMask) != 0
 }
 
 // SetJscan Scanning conversion mode for injected conversions
-func (r *registerDfsdm_flt2cr1Type) SetJscan(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetJscan(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldJscanMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldJscanMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldJscanMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldJscanMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldJdmaenShift = 5
-	RegisterDfsdm_flt2cr1FieldJdmaenMask  = 0x20
+	RegisterDfsdmflt2cr1FieldJdmaenShift = 5
+	RegisterDfsdmflt2cr1FieldJdmaenMask  = 0x20
 )
 
 // GetJdmaen DMA channel enabled to read data for the injected channel group
-func (r *registerDfsdm_flt2cr1Type) GetJdmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldJdmaenMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetJdmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldJdmaenMask) != 0
 }
 
 // SetJdmaen DMA channel enabled to read data for the injected channel group
-func (r *registerDfsdm_flt2cr1Type) SetJdmaen(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetJdmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldJdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldJdmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldJdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldJdmaenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldJextselShift = 8
-	RegisterDfsdm_flt2cr1FieldJextselMask  = 0x700
+	RegisterDfsdmflt2cr1FieldJextselShift = 8
+	RegisterDfsdmflt2cr1FieldJextselMask  = 0x700
 )
 
 // GetJextsel Trigger signal selection for launching injected conversions
-func (r *registerDfsdm_flt2cr1Type) GetJextsel() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldJextselMask) >> RegisterDfsdm_flt2cr1FieldJextselShift)
+func (r *registerDfsdmflt2cr1Type) GetJextsel() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldJextselMask) >> RegisterDfsdmflt2cr1FieldJextselShift)
 }
 
 // SetJextsel Trigger signal selection for launching injected conversions
-func (r *registerDfsdm_flt2cr1Type) SetJextsel(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldJextselMask)|(uint32(value)<<RegisterDfsdm_flt2cr1FieldJextselShift))
+func (r *registerDfsdmflt2cr1Type) SetJextsel(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldJextselMask)|(uint32(value)<<RegisterDfsdmflt2cr1FieldJextselShift))
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldJextenShift = 13
-	RegisterDfsdm_flt2cr1FieldJextenMask  = 0x6000
+	RegisterDfsdmflt2cr1FieldJextenShift = 13
+	RegisterDfsdmflt2cr1FieldJextenMask  = 0x6000
 )
 
 // GetJexten Trigger enable and trigger edge selection for injected conversions
-func (r *registerDfsdm_flt2cr1Type) GetJexten() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldJextenMask) >> RegisterDfsdm_flt2cr1FieldJextenShift)
+func (r *registerDfsdmflt2cr1Type) GetJexten() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldJextenMask) >> RegisterDfsdmflt2cr1FieldJextenShift)
 }
 
 // SetJexten Trigger enable and trigger edge selection for injected conversions
-func (r *registerDfsdm_flt2cr1Type) SetJexten(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldJextenMask)|(uint32(value)<<RegisterDfsdm_flt2cr1FieldJextenShift))
+func (r *registerDfsdmflt2cr1Type) SetJexten(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldJextenMask)|(uint32(value)<<RegisterDfsdmflt2cr1FieldJextenShift))
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldRswstartShift = 17
-	RegisterDfsdm_flt2cr1FieldRswstartMask  = 0x20000
+	RegisterDfsdmflt2cr1FieldRswstartShift = 17
+	RegisterDfsdmflt2cr1FieldRswstartMask  = 0x20000
 )
 
 // GetRswstart Software start of a conversion on the regular channel
-func (r *registerDfsdm_flt2cr1Type) GetRswstart() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldRswstartMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetRswstart() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldRswstartMask) != 0
 }
 
 // SetRswstart Software start of a conversion on the regular channel
-func (r *registerDfsdm_flt2cr1Type) SetRswstart(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetRswstart(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldRswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldRswstartMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldRswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldRswstartMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldRcontShift = 18
-	RegisterDfsdm_flt2cr1FieldRcontMask  = 0x40000
+	RegisterDfsdmflt2cr1FieldRcontShift = 18
+	RegisterDfsdmflt2cr1FieldRcontMask  = 0x40000
 )
 
 // GetRcont Continuous mode selection for regular conversions
-func (r *registerDfsdm_flt2cr1Type) GetRcont() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldRcontMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetRcont() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldRcontMask) != 0
 }
 
 // SetRcont Continuous mode selection for regular conversions
-func (r *registerDfsdm_flt2cr1Type) SetRcont(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetRcont(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldRcontMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldRcontMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldRcontMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldRcontMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldRsyncShift = 19
-	RegisterDfsdm_flt2cr1FieldRsyncMask  = 0x80000
+	RegisterDfsdmflt2cr1FieldRsyncShift = 19
+	RegisterDfsdmflt2cr1FieldRsyncMask  = 0x80000
 )
 
 // GetRsync Launch regular conversion synchronously with DFSDM0
-func (r *registerDfsdm_flt2cr1Type) GetRsync() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldRsyncMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetRsync() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldRsyncMask) != 0
 }
 
 // SetRsync Launch regular conversion synchronously with DFSDM0
-func (r *registerDfsdm_flt2cr1Type) SetRsync(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetRsync(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldRsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldRsyncMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldRsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldRsyncMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldRdmaenShift = 21
-	RegisterDfsdm_flt2cr1FieldRdmaenMask  = 0x200000
+	RegisterDfsdmflt2cr1FieldRdmaenShift = 21
+	RegisterDfsdmflt2cr1FieldRdmaenMask  = 0x200000
 )
 
 // GetRdmaen DMA channel enabled to read data for the regular conversion
-func (r *registerDfsdm_flt2cr1Type) GetRdmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldRdmaenMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetRdmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldRdmaenMask) != 0
 }
 
 // SetRdmaen DMA channel enabled to read data for the regular conversion
-func (r *registerDfsdm_flt2cr1Type) SetRdmaen(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetRdmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldRdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldRdmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldRdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldRdmaenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldRchShift = 24
-	RegisterDfsdm_flt2cr1FieldRchMask  = 0x7000000
+	RegisterDfsdmflt2cr1FieldRchShift = 24
+	RegisterDfsdmflt2cr1FieldRchMask  = 0x7000000
 )
 
 // GetRch Regular channel selection
-func (r *registerDfsdm_flt2cr1Type) GetRch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldRchMask) >> RegisterDfsdm_flt2cr1FieldRchShift)
+func (r *registerDfsdmflt2cr1Type) GetRch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldRchMask) >> RegisterDfsdmflt2cr1FieldRchShift)
 }
 
 // SetRch Regular channel selection
-func (r *registerDfsdm_flt2cr1Type) SetRch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldRchMask)|(uint32(value)<<RegisterDfsdm_flt2cr1FieldRchShift))
+func (r *registerDfsdmflt2cr1Type) SetRch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldRchMask)|(uint32(value)<<RegisterDfsdmflt2cr1FieldRchShift))
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldFastShift = 29
-	RegisterDfsdm_flt2cr1FieldFastMask  = 0x20000000
+	RegisterDfsdmflt2cr1FieldFastShift = 29
+	RegisterDfsdmflt2cr1FieldFastMask  = 0x20000000
 )
 
 // GetFast Fast conversion mode selection for regular conversions
-func (r *registerDfsdm_flt2cr1Type) GetFast() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldFastMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetFast() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldFastMask) != 0
 }
 
 // SetFast Fast conversion mode selection for regular conversions
-func (r *registerDfsdm_flt2cr1Type) SetFast(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetFast(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldFastMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldFastMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldFastMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldFastMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr1FieldAwfselShift = 30
-	RegisterDfsdm_flt2cr1FieldAwfselMask  = 0x40000000
+	RegisterDfsdmflt2cr1FieldAwfselShift = 30
+	RegisterDfsdmflt2cr1FieldAwfselMask  = 0x40000000
 )
 
 // GetAwfsel Analog watchdog fast mode select
-func (r *registerDfsdm_flt2cr1Type) GetAwfsel() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr1FieldAwfselMask) != 0
+func (r *registerDfsdmflt2cr1Type) GetAwfsel() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr1FieldAwfselMask) != 0
 }
 
 // SetAwfsel Analog watchdog fast mode select
-func (r *registerDfsdm_flt2cr1Type) SetAwfsel(value bool) {
+func (r *registerDfsdmflt2cr1Type) SetAwfsel(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr1FieldAwfselMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr1FieldAwfselMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr1FieldAwfselMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr1FieldAwfselMask)
 	}
 }
 
-// registerDfsdm_flt2cr2Type control register 2
-type registerDfsdm_flt2cr2Type uint32
+// registerDfsdmflt2cr2Type control register 2
+type registerDfsdmflt2cr2Type uint32
 
 const (
-	RegisterDfsdm_flt2cr2FieldJeocieShift = 0
-	RegisterDfsdm_flt2cr2FieldJeocieMask  = 0x1
+	RegisterDfsdmflt2cr2FieldJeocieShift = 0
+	RegisterDfsdmflt2cr2FieldJeocieMask  = 0x1
 )
 
 // GetJeocie Injected end of conversion interrupt enable
-func (r *registerDfsdm_flt2cr2Type) GetJeocie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr2FieldJeocieMask) != 0
+func (r *registerDfsdmflt2cr2Type) GetJeocie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr2FieldJeocieMask) != 0
 }
 
 // SetJeocie Injected end of conversion interrupt enable
-func (r *registerDfsdm_flt2cr2Type) SetJeocie(value bool) {
+func (r *registerDfsdmflt2cr2Type) SetJeocie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr2FieldJeocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr2FieldJeocieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr2FieldJeocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr2FieldJeocieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr2FieldReocieShift = 1
-	RegisterDfsdm_flt2cr2FieldReocieMask  = 0x2
+	RegisterDfsdmflt2cr2FieldReocieShift = 1
+	RegisterDfsdmflt2cr2FieldReocieMask  = 0x2
 )
 
 // GetReocie Regular end of conversion interrupt enable
-func (r *registerDfsdm_flt2cr2Type) GetReocie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr2FieldReocieMask) != 0
+func (r *registerDfsdmflt2cr2Type) GetReocie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr2FieldReocieMask) != 0
 }
 
 // SetReocie Regular end of conversion interrupt enable
-func (r *registerDfsdm_flt2cr2Type) SetReocie(value bool) {
+func (r *registerDfsdmflt2cr2Type) SetReocie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr2FieldReocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr2FieldReocieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr2FieldReocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr2FieldReocieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr2FieldJovrieShift = 2
-	RegisterDfsdm_flt2cr2FieldJovrieMask  = 0x4
+	RegisterDfsdmflt2cr2FieldJovrieShift = 2
+	RegisterDfsdmflt2cr2FieldJovrieMask  = 0x4
 )
 
 // GetJovrie Injected data overrun interrupt enable
-func (r *registerDfsdm_flt2cr2Type) GetJovrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr2FieldJovrieMask) != 0
+func (r *registerDfsdmflt2cr2Type) GetJovrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr2FieldJovrieMask) != 0
 }
 
 // SetJovrie Injected data overrun interrupt enable
-func (r *registerDfsdm_flt2cr2Type) SetJovrie(value bool) {
+func (r *registerDfsdmflt2cr2Type) SetJovrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr2FieldJovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr2FieldJovrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr2FieldJovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr2FieldJovrieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr2FieldRovrieShift = 3
-	RegisterDfsdm_flt2cr2FieldRovrieMask  = 0x8
+	RegisterDfsdmflt2cr2FieldRovrieShift = 3
+	RegisterDfsdmflt2cr2FieldRovrieMask  = 0x8
 )
 
 // GetRovrie Regular data overrun interrupt enable
-func (r *registerDfsdm_flt2cr2Type) GetRovrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr2FieldRovrieMask) != 0
+func (r *registerDfsdmflt2cr2Type) GetRovrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr2FieldRovrieMask) != 0
 }
 
 // SetRovrie Regular data overrun interrupt enable
-func (r *registerDfsdm_flt2cr2Type) SetRovrie(value bool) {
+func (r *registerDfsdmflt2cr2Type) SetRovrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr2FieldRovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr2FieldRovrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr2FieldRovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr2FieldRovrieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr2FieldAwdieShift = 4
-	RegisterDfsdm_flt2cr2FieldAwdieMask  = 0x10
+	RegisterDfsdmflt2cr2FieldAwdieShift = 4
+	RegisterDfsdmflt2cr2FieldAwdieMask  = 0x10
 )
 
 // GetAwdie Analog watchdog interrupt enable
-func (r *registerDfsdm_flt2cr2Type) GetAwdie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr2FieldAwdieMask) != 0
+func (r *registerDfsdmflt2cr2Type) GetAwdie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr2FieldAwdieMask) != 0
 }
 
 // SetAwdie Analog watchdog interrupt enable
-func (r *registerDfsdm_flt2cr2Type) SetAwdie(value bool) {
+func (r *registerDfsdmflt2cr2Type) SetAwdie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr2FieldAwdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr2FieldAwdieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr2FieldAwdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr2FieldAwdieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr2FieldScdieShift = 5
-	RegisterDfsdm_flt2cr2FieldScdieMask  = 0x20
+	RegisterDfsdmflt2cr2FieldScdieShift = 5
+	RegisterDfsdmflt2cr2FieldScdieMask  = 0x20
 )
 
 // GetScdie Short-circuit detector interrupt enable
-func (r *registerDfsdm_flt2cr2Type) GetScdie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr2FieldScdieMask) != 0
+func (r *registerDfsdmflt2cr2Type) GetScdie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr2FieldScdieMask) != 0
 }
 
 // SetScdie Short-circuit detector interrupt enable
-func (r *registerDfsdm_flt2cr2Type) SetScdie(value bool) {
+func (r *registerDfsdmflt2cr2Type) SetScdie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr2FieldScdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr2FieldScdieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr2FieldScdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr2FieldScdieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr2FieldCkabieShift = 6
-	RegisterDfsdm_flt2cr2FieldCkabieMask  = 0x40
+	RegisterDfsdmflt2cr2FieldCkabieShift = 6
+	RegisterDfsdmflt2cr2FieldCkabieMask  = 0x40
 )
 
 // GetCkabie Clock absence interrupt enable
-func (r *registerDfsdm_flt2cr2Type) GetCkabie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr2FieldCkabieMask) != 0
+func (r *registerDfsdmflt2cr2Type) GetCkabie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr2FieldCkabieMask) != 0
 }
 
 // SetCkabie Clock absence interrupt enable
-func (r *registerDfsdm_flt2cr2Type) SetCkabie(value bool) {
+func (r *registerDfsdmflt2cr2Type) SetCkabie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2cr2FieldCkabieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2cr2FieldCkabieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr2FieldCkabieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr2FieldCkabieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2cr2FieldExchShift = 8
-	RegisterDfsdm_flt2cr2FieldExchMask  = 0xff00
+	RegisterDfsdmflt2cr2FieldExchShift = 8
+	RegisterDfsdmflt2cr2FieldExchMask  = 0xff00
 )
 
 // GetExch Extremes detector channel selection
-func (r *registerDfsdm_flt2cr2Type) GetExch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr2FieldExchMask) >> RegisterDfsdm_flt2cr2FieldExchShift)
+func (r *registerDfsdmflt2cr2Type) GetExch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr2FieldExchMask) >> RegisterDfsdmflt2cr2FieldExchShift)
 }
 
 // SetExch Extremes detector channel selection
-func (r *registerDfsdm_flt2cr2Type) SetExch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr2FieldExchMask)|(uint32(value)<<RegisterDfsdm_flt2cr2FieldExchShift))
+func (r *registerDfsdmflt2cr2Type) SetExch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr2FieldExchMask)|(uint32(value)<<RegisterDfsdmflt2cr2FieldExchShift))
 }
 
 const (
-	RegisterDfsdm_flt2cr2FieldAwdchShift = 16
-	RegisterDfsdm_flt2cr2FieldAwdchMask  = 0xff0000
+	RegisterDfsdmflt2cr2FieldAwdchShift = 16
+	RegisterDfsdmflt2cr2FieldAwdchMask  = 0xff0000
 )
 
 // GetAwdch Analog watchdog channel selection
-func (r *registerDfsdm_flt2cr2Type) GetAwdch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cr2FieldAwdchMask) >> RegisterDfsdm_flt2cr2FieldAwdchShift)
+func (r *registerDfsdmflt2cr2Type) GetAwdch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cr2FieldAwdchMask) >> RegisterDfsdmflt2cr2FieldAwdchShift)
 }
 
 // SetAwdch Analog watchdog channel selection
-func (r *registerDfsdm_flt2cr2Type) SetAwdch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cr2FieldAwdchMask)|(uint32(value)<<RegisterDfsdm_flt2cr2FieldAwdchShift))
+func (r *registerDfsdmflt2cr2Type) SetAwdch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cr2FieldAwdchMask)|(uint32(value)<<RegisterDfsdmflt2cr2FieldAwdchShift))
 }
 
-// registerDfsdm_flt2isrType interrupt and status register
-type registerDfsdm_flt2isrType uint32
+// registerDfsdmflt2isrType interrupt and status register
+type registerDfsdmflt2isrType uint32
 
 const (
-	RegisterDfsdm_flt2isrFieldJeocfShift = 0
-	RegisterDfsdm_flt2isrFieldJeocfMask  = 0x1
+	RegisterDfsdmflt2isrFieldJeocfShift = 0
+	RegisterDfsdmflt2isrFieldJeocfMask  = 0x1
 )
 
 // GetJeocf End of injected conversion flag
-func (r *registerDfsdm_flt2isrType) GetJeocf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2isrFieldJeocfMask) != 0
+func (r *registerDfsdmflt2isrType) GetJeocf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2isrFieldJeocfMask) != 0
 }
 
 // SetJeocf End of injected conversion flag
-func (r *registerDfsdm_flt2isrType) SetJeocf(value bool) {
+func (r *registerDfsdmflt2isrType) SetJeocf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2isrFieldJeocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2isrFieldJeocfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2isrFieldJeocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2isrFieldJeocfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2isrFieldReocfShift = 1
-	RegisterDfsdm_flt2isrFieldReocfMask  = 0x2
+	RegisterDfsdmflt2isrFieldReocfShift = 1
+	RegisterDfsdmflt2isrFieldReocfMask  = 0x2
 )
 
 // GetReocf End of regular conversion flag
-func (r *registerDfsdm_flt2isrType) GetReocf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2isrFieldReocfMask) != 0
+func (r *registerDfsdmflt2isrType) GetReocf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2isrFieldReocfMask) != 0
 }
 
 // SetReocf End of regular conversion flag
-func (r *registerDfsdm_flt2isrType) SetReocf(value bool) {
+func (r *registerDfsdmflt2isrType) SetReocf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2isrFieldReocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2isrFieldReocfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2isrFieldReocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2isrFieldReocfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2isrFieldJovrfShift = 2
-	RegisterDfsdm_flt2isrFieldJovrfMask  = 0x4
+	RegisterDfsdmflt2isrFieldJovrfShift = 2
+	RegisterDfsdmflt2isrFieldJovrfMask  = 0x4
 )
 
 // GetJovrf Injected conversion overrun flag
-func (r *registerDfsdm_flt2isrType) GetJovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2isrFieldJovrfMask) != 0
+func (r *registerDfsdmflt2isrType) GetJovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2isrFieldJovrfMask) != 0
 }
 
 // SetJovrf Injected conversion overrun flag
-func (r *registerDfsdm_flt2isrType) SetJovrf(value bool) {
+func (r *registerDfsdmflt2isrType) SetJovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2isrFieldJovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2isrFieldJovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2isrFieldJovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2isrFieldJovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2isrFieldRovrfShift = 3
-	RegisterDfsdm_flt2isrFieldRovrfMask  = 0x8
+	RegisterDfsdmflt2isrFieldRovrfShift = 3
+	RegisterDfsdmflt2isrFieldRovrfMask  = 0x8
 )
 
 // GetRovrf Regular conversion overrun flag
-func (r *registerDfsdm_flt2isrType) GetRovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2isrFieldRovrfMask) != 0
+func (r *registerDfsdmflt2isrType) GetRovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2isrFieldRovrfMask) != 0
 }
 
 // SetRovrf Regular conversion overrun flag
-func (r *registerDfsdm_flt2isrType) SetRovrf(value bool) {
+func (r *registerDfsdmflt2isrType) SetRovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2isrFieldRovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2isrFieldRovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2isrFieldRovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2isrFieldRovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2isrFieldAwdfShift = 4
-	RegisterDfsdm_flt2isrFieldAwdfMask  = 0x10
+	RegisterDfsdmflt2isrFieldAwdfShift = 4
+	RegisterDfsdmflt2isrFieldAwdfMask  = 0x10
 )
 
 // GetAwdf Analog watchdog
-func (r *registerDfsdm_flt2isrType) GetAwdf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2isrFieldAwdfMask) != 0
+func (r *registerDfsdmflt2isrType) GetAwdf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2isrFieldAwdfMask) != 0
 }
 
 // SetAwdf Analog watchdog
-func (r *registerDfsdm_flt2isrType) SetAwdf(value bool) {
+func (r *registerDfsdmflt2isrType) SetAwdf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2isrFieldAwdfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2isrFieldAwdfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2isrFieldAwdfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2isrFieldAwdfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2isrFieldJcipShift = 13
-	RegisterDfsdm_flt2isrFieldJcipMask  = 0x2000
+	RegisterDfsdmflt2isrFieldJcipShift = 13
+	RegisterDfsdmflt2isrFieldJcipMask  = 0x2000
 )
 
 // GetJcip Injected conversion in progress status
-func (r *registerDfsdm_flt2isrType) GetJcip() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2isrFieldJcipMask) != 0
+func (r *registerDfsdmflt2isrType) GetJcip() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2isrFieldJcipMask) != 0
 }
 
 // SetJcip Injected conversion in progress status
-func (r *registerDfsdm_flt2isrType) SetJcip(value bool) {
+func (r *registerDfsdmflt2isrType) SetJcip(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2isrFieldJcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2isrFieldJcipMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2isrFieldJcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2isrFieldJcipMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2isrFieldRcipShift = 14
-	RegisterDfsdm_flt2isrFieldRcipMask  = 0x4000
+	RegisterDfsdmflt2isrFieldRcipShift = 14
+	RegisterDfsdmflt2isrFieldRcipMask  = 0x4000
 )
 
 // GetRcip Regular conversion in progress status
-func (r *registerDfsdm_flt2isrType) GetRcip() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2isrFieldRcipMask) != 0
+func (r *registerDfsdmflt2isrType) GetRcip() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2isrFieldRcipMask) != 0
 }
 
 // SetRcip Regular conversion in progress status
-func (r *registerDfsdm_flt2isrType) SetRcip(value bool) {
+func (r *registerDfsdmflt2isrType) SetRcip(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2isrFieldRcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2isrFieldRcipMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2isrFieldRcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2isrFieldRcipMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2isrFieldCkabfShift = 16
-	RegisterDfsdm_flt2isrFieldCkabfMask  = 0xff0000
+	RegisterDfsdmflt2isrFieldCkabfShift = 16
+	RegisterDfsdmflt2isrFieldCkabfMask  = 0xff0000
 )
 
 // GetCkabf Clock absence flag
-func (r *registerDfsdm_flt2isrType) GetCkabf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2isrFieldCkabfMask) >> RegisterDfsdm_flt2isrFieldCkabfShift)
+func (r *registerDfsdmflt2isrType) GetCkabf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2isrFieldCkabfMask) >> RegisterDfsdmflt2isrFieldCkabfShift)
 }
 
 // SetCkabf Clock absence flag
-func (r *registerDfsdm_flt2isrType) SetCkabf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2isrFieldCkabfMask)|(uint32(value)<<RegisterDfsdm_flt2isrFieldCkabfShift))
+func (r *registerDfsdmflt2isrType) SetCkabf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2isrFieldCkabfMask)|(uint32(value)<<RegisterDfsdmflt2isrFieldCkabfShift))
 }
 
 const (
-	RegisterDfsdm_flt2isrFieldScdfShift = 24
-	RegisterDfsdm_flt2isrFieldScdfMask  = 0xff000000
+	RegisterDfsdmflt2isrFieldScdfShift = 24
+	RegisterDfsdmflt2isrFieldScdfMask  = 0xff000000
 )
 
 // GetScdf short-circuit detector flag
-func (r *registerDfsdm_flt2isrType) GetScdf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2isrFieldScdfMask) >> RegisterDfsdm_flt2isrFieldScdfShift)
+func (r *registerDfsdmflt2isrType) GetScdf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2isrFieldScdfMask) >> RegisterDfsdmflt2isrFieldScdfShift)
 }
 
 // SetScdf short-circuit detector flag
-func (r *registerDfsdm_flt2isrType) SetScdf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2isrFieldScdfMask)|(uint32(value)<<RegisterDfsdm_flt2isrFieldScdfShift))
+func (r *registerDfsdmflt2isrType) SetScdf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2isrFieldScdfMask)|(uint32(value)<<RegisterDfsdmflt2isrFieldScdfShift))
 }
 
-// registerDfsdm_flt2icrType interrupt flag clear register
-type registerDfsdm_flt2icrType uint32
+// registerDfsdmflt2icrType interrupt flag clear register
+type registerDfsdmflt2icrType uint32
 
 const (
-	RegisterDfsdm_flt2icrFieldClrjovrfShift = 2
-	RegisterDfsdm_flt2icrFieldClrjovrfMask  = 0x4
+	RegisterDfsdmflt2icrFieldClrjovrfShift = 2
+	RegisterDfsdmflt2icrFieldClrjovrfMask  = 0x4
 )
 
 // GetClrjovrf Clear the injected conversion overrun flag
-func (r *registerDfsdm_flt2icrType) GetClrjovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2icrFieldClrjovrfMask) != 0
+func (r *registerDfsdmflt2icrType) GetClrjovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2icrFieldClrjovrfMask) != 0
 }
 
 // SetClrjovrf Clear the injected conversion overrun flag
-func (r *registerDfsdm_flt2icrType) SetClrjovrf(value bool) {
+func (r *registerDfsdmflt2icrType) SetClrjovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2icrFieldClrjovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2icrFieldClrjovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2icrFieldClrjovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2icrFieldClrjovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2icrFieldClrrovrfShift = 3
-	RegisterDfsdm_flt2icrFieldClrrovrfMask  = 0x8
+	RegisterDfsdmflt2icrFieldClrrovrfShift = 3
+	RegisterDfsdmflt2icrFieldClrrovrfMask  = 0x8
 )
 
 // GetClrrovrf Clear the regular conversion overrun flag
-func (r *registerDfsdm_flt2icrType) GetClrrovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2icrFieldClrrovrfMask) != 0
+func (r *registerDfsdmflt2icrType) GetClrrovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2icrFieldClrrovrfMask) != 0
 }
 
 // SetClrrovrf Clear the regular conversion overrun flag
-func (r *registerDfsdm_flt2icrType) SetClrrovrf(value bool) {
+func (r *registerDfsdmflt2icrType) SetClrrovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2icrFieldClrrovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2icrFieldClrrovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2icrFieldClrrovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2icrFieldClrrovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2icrFieldClrckabfShift = 16
-	RegisterDfsdm_flt2icrFieldClrckabfMask  = 0xff0000
+	RegisterDfsdmflt2icrFieldClrckabfShift = 16
+	RegisterDfsdmflt2icrFieldClrckabfMask  = 0xff0000
 )
 
 // GetClrckabf Clear the clock absence flag
-func (r *registerDfsdm_flt2icrType) GetClrckabf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2icrFieldClrckabfMask) >> RegisterDfsdm_flt2icrFieldClrckabfShift)
+func (r *registerDfsdmflt2icrType) GetClrckabf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2icrFieldClrckabfMask) >> RegisterDfsdmflt2icrFieldClrckabfShift)
 }
 
 // SetClrckabf Clear the clock absence flag
-func (r *registerDfsdm_flt2icrType) SetClrckabf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2icrFieldClrckabfMask)|(uint32(value)<<RegisterDfsdm_flt2icrFieldClrckabfShift))
+func (r *registerDfsdmflt2icrType) SetClrckabf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2icrFieldClrckabfMask)|(uint32(value)<<RegisterDfsdmflt2icrFieldClrckabfShift))
 }
 
 const (
-	RegisterDfsdm_flt2icrFieldClrscdfShift = 24
-	RegisterDfsdm_flt2icrFieldClrscdfMask  = 0xff000000
+	RegisterDfsdmflt2icrFieldClrscdfShift = 24
+	RegisterDfsdmflt2icrFieldClrscdfMask  = 0xff000000
 )
 
 // GetClrscdf Clear the short-circuit detector flag
-func (r *registerDfsdm_flt2icrType) GetClrscdf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2icrFieldClrscdfMask) >> RegisterDfsdm_flt2icrFieldClrscdfShift)
+func (r *registerDfsdmflt2icrType) GetClrscdf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2icrFieldClrscdfMask) >> RegisterDfsdmflt2icrFieldClrscdfShift)
 }
 
 // SetClrscdf Clear the short-circuit detector flag
-func (r *registerDfsdm_flt2icrType) SetClrscdf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2icrFieldClrscdfMask)|(uint32(value)<<RegisterDfsdm_flt2icrFieldClrscdfShift))
+func (r *registerDfsdmflt2icrType) SetClrscdf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2icrFieldClrscdfMask)|(uint32(value)<<RegisterDfsdmflt2icrFieldClrscdfShift))
 }
 
-// registerDfsdm_flt2jchgrType injected channel group selection register
-type registerDfsdm_flt2jchgrType uint32
+// registerDfsdmflt2jchgrType injected channel group selection register
+type registerDfsdmflt2jchgrType uint32
 
 const (
-	RegisterDfsdm_flt2jchgrFieldJchgShift = 0
-	RegisterDfsdm_flt2jchgrFieldJchgMask  = 0xff
+	RegisterDfsdmflt2jchgrFieldJchgShift = 0
+	RegisterDfsdmflt2jchgrFieldJchgMask  = 0xff
 )
 
 // GetJchg Injected channel group selection
-func (r *registerDfsdm_flt2jchgrType) GetJchg() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2jchgrFieldJchgMask) >> RegisterDfsdm_flt2jchgrFieldJchgShift)
+func (r *registerDfsdmflt2jchgrType) GetJchg() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2jchgrFieldJchgMask) >> RegisterDfsdmflt2jchgrFieldJchgShift)
 }
 
 // SetJchg Injected channel group selection
-func (r *registerDfsdm_flt2jchgrType) SetJchg(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2jchgrFieldJchgMask)|(uint32(value)<<RegisterDfsdm_flt2jchgrFieldJchgShift))
+func (r *registerDfsdmflt2jchgrType) SetJchg(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2jchgrFieldJchgMask)|(uint32(value)<<RegisterDfsdmflt2jchgrFieldJchgShift))
 }
 
-// registerDfsdm_flt2fcrType filter control register
-type registerDfsdm_flt2fcrType uint32
+// registerDfsdmflt2fcrType filter control register
+type registerDfsdmflt2fcrType uint32
 
 const (
-	RegisterDfsdm_flt2fcrFieldIosrShift = 0
-	RegisterDfsdm_flt2fcrFieldIosrMask  = 0xff
+	RegisterDfsdmflt2fcrFieldIosrShift = 0
+	RegisterDfsdmflt2fcrFieldIosrMask  = 0xff
 )
 
 // GetIosr Integrator oversampling ratio (averaging length)
-func (r *registerDfsdm_flt2fcrType) GetIosr() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2fcrFieldIosrMask) >> RegisterDfsdm_flt2fcrFieldIosrShift)
+func (r *registerDfsdmflt2fcrType) GetIosr() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2fcrFieldIosrMask) >> RegisterDfsdmflt2fcrFieldIosrShift)
 }
 
 // SetIosr Integrator oversampling ratio (averaging length)
-func (r *registerDfsdm_flt2fcrType) SetIosr(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2fcrFieldIosrMask)|(uint32(value)<<RegisterDfsdm_flt2fcrFieldIosrShift))
+func (r *registerDfsdmflt2fcrType) SetIosr(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2fcrFieldIosrMask)|(uint32(value)<<RegisterDfsdmflt2fcrFieldIosrShift))
 }
 
 const (
-	RegisterDfsdm_flt2fcrFieldFosrShift = 16
-	RegisterDfsdm_flt2fcrFieldFosrMask  = 0x3ff0000
+	RegisterDfsdmflt2fcrFieldFosrShift = 16
+	RegisterDfsdmflt2fcrFieldFosrMask  = 0x3ff0000
 )
 
 // GetFosr Sinc filter oversampling ratio (decimation rate)
-func (r *registerDfsdm_flt2fcrType) GetFosr() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2fcrFieldFosrMask) >> RegisterDfsdm_flt2fcrFieldFosrShift)
+func (r *registerDfsdmflt2fcrType) GetFosr() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2fcrFieldFosrMask) >> RegisterDfsdmflt2fcrFieldFosrShift)
 }
 
 // SetFosr Sinc filter oversampling ratio (decimation rate)
-func (r *registerDfsdm_flt2fcrType) SetFosr(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2fcrFieldFosrMask)|(uint32(value)<<RegisterDfsdm_flt2fcrFieldFosrShift))
+func (r *registerDfsdmflt2fcrType) SetFosr(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2fcrFieldFosrMask)|(uint32(value)<<RegisterDfsdmflt2fcrFieldFosrShift))
 }
 
 const (
-	RegisterDfsdm_flt2fcrFieldFordShift = 29
-	RegisterDfsdm_flt2fcrFieldFordMask  = 0xe0000000
+	RegisterDfsdmflt2fcrFieldFordShift = 29
+	RegisterDfsdmflt2fcrFieldFordMask  = 0xe0000000
 )
 
 // GetFord Sinc filter order
-func (r *registerDfsdm_flt2fcrType) GetFord() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2fcrFieldFordMask) >> RegisterDfsdm_flt2fcrFieldFordShift)
+func (r *registerDfsdmflt2fcrType) GetFord() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2fcrFieldFordMask) >> RegisterDfsdmflt2fcrFieldFordShift)
 }
 
 // SetFord Sinc filter order
-func (r *registerDfsdm_flt2fcrType) SetFord(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2fcrFieldFordMask)|(uint32(value)<<RegisterDfsdm_flt2fcrFieldFordShift))
+func (r *registerDfsdmflt2fcrType) SetFord(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2fcrFieldFordMask)|(uint32(value)<<RegisterDfsdmflt2fcrFieldFordShift))
 }
 
-// registerDfsdm_flt2jdatarType data register for injected group
-type registerDfsdm_flt2jdatarType uint32
+// registerDfsdmflt2jdatarType data register for injected group
+type registerDfsdmflt2jdatarType uint32
 
 const (
-	RegisterDfsdm_flt2jdatarFieldJdatachShift = 0
-	RegisterDfsdm_flt2jdatarFieldJdatachMask  = 0x7
+	RegisterDfsdmflt2jdatarFieldJdatachShift = 0
+	RegisterDfsdmflt2jdatarFieldJdatachMask  = 0x7
 )
 
 // GetJdatach Injected channel most recently converted
-func (r *registerDfsdm_flt2jdatarType) GetJdatach() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2jdatarFieldJdatachMask) >> RegisterDfsdm_flt2jdatarFieldJdatachShift)
+func (r *registerDfsdmflt2jdatarType) GetJdatach() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2jdatarFieldJdatachMask) >> RegisterDfsdmflt2jdatarFieldJdatachShift)
 }
 
 // SetJdatach Injected channel most recently converted
-func (r *registerDfsdm_flt2jdatarType) SetJdatach(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2jdatarFieldJdatachMask)|(uint32(value)<<RegisterDfsdm_flt2jdatarFieldJdatachShift))
+func (r *registerDfsdmflt2jdatarType) SetJdatach(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2jdatarFieldJdatachMask)|(uint32(value)<<RegisterDfsdmflt2jdatarFieldJdatachShift))
 }
 
 const (
-	RegisterDfsdm_flt2jdatarFieldJdataShift = 8
-	RegisterDfsdm_flt2jdatarFieldJdataMask  = 0xffffff00
+	RegisterDfsdmflt2jdatarFieldJdataShift = 8
+	RegisterDfsdmflt2jdatarFieldJdataMask  = 0xffffff00
 )
 
 // GetJdata Injected group conversion data
-func (r *registerDfsdm_flt2jdatarType) GetJdata() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2jdatarFieldJdataMask) >> RegisterDfsdm_flt2jdatarFieldJdataShift)
+func (r *registerDfsdmflt2jdatarType) GetJdata() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2jdatarFieldJdataMask) >> RegisterDfsdmflt2jdatarFieldJdataShift)
 }
 
 // SetJdata Injected group conversion data
-func (r *registerDfsdm_flt2jdatarType) SetJdata(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2jdatarFieldJdataMask)|(uint32(value)<<RegisterDfsdm_flt2jdatarFieldJdataShift))
+func (r *registerDfsdmflt2jdatarType) SetJdata(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2jdatarFieldJdataMask)|(uint32(value)<<RegisterDfsdmflt2jdatarFieldJdataShift))
 }
 
-// registerDfsdm_flt2rdatarType data register for the regular channel
-type registerDfsdm_flt2rdatarType uint32
+// registerDfsdmflt2rdatarType data register for the regular channel
+type registerDfsdmflt2rdatarType uint32
 
 const (
-	RegisterDfsdm_flt2rdatarFieldRdatachShift = 0
-	RegisterDfsdm_flt2rdatarFieldRdatachMask  = 0x7
+	RegisterDfsdmflt2rdatarFieldRdatachShift = 0
+	RegisterDfsdmflt2rdatarFieldRdatachMask  = 0x7
 )
 
 // GetRdatach Regular channel most recently converted
-func (r *registerDfsdm_flt2rdatarType) GetRdatach() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2rdatarFieldRdatachMask) >> RegisterDfsdm_flt2rdatarFieldRdatachShift)
+func (r *registerDfsdmflt2rdatarType) GetRdatach() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2rdatarFieldRdatachMask) >> RegisterDfsdmflt2rdatarFieldRdatachShift)
 }
 
 // SetRdatach Regular channel most recently converted
-func (r *registerDfsdm_flt2rdatarType) SetRdatach(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2rdatarFieldRdatachMask)|(uint32(value)<<RegisterDfsdm_flt2rdatarFieldRdatachShift))
+func (r *registerDfsdmflt2rdatarType) SetRdatach(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2rdatarFieldRdatachMask)|(uint32(value)<<RegisterDfsdmflt2rdatarFieldRdatachShift))
 }
 
 const (
-	RegisterDfsdm_flt2rdatarFieldRpendShift = 4
-	RegisterDfsdm_flt2rdatarFieldRpendMask  = 0x10
+	RegisterDfsdmflt2rdatarFieldRpendShift = 4
+	RegisterDfsdmflt2rdatarFieldRpendMask  = 0x10
 )
 
 // GetRpend Regular channel pending data
-func (r *registerDfsdm_flt2rdatarType) GetRpend() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2rdatarFieldRpendMask) != 0
+func (r *registerDfsdmflt2rdatarType) GetRpend() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2rdatarFieldRpendMask) != 0
 }
 
 // SetRpend Regular channel pending data
-func (r *registerDfsdm_flt2rdatarType) SetRpend(value bool) {
+func (r *registerDfsdmflt2rdatarType) SetRpend(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt2rdatarFieldRpendMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt2rdatarFieldRpendMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2rdatarFieldRpendMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2rdatarFieldRpendMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt2rdatarFieldRdataShift = 8
-	RegisterDfsdm_flt2rdatarFieldRdataMask  = 0xffffff00
+	RegisterDfsdmflt2rdatarFieldRdataShift = 8
+	RegisterDfsdmflt2rdatarFieldRdataMask  = 0xffffff00
 )
 
 // GetRdata Regular channel conversion data
-func (r *registerDfsdm_flt2rdatarType) GetRdata() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2rdatarFieldRdataMask) >> RegisterDfsdm_flt2rdatarFieldRdataShift)
+func (r *registerDfsdmflt2rdatarType) GetRdata() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2rdatarFieldRdataMask) >> RegisterDfsdmflt2rdatarFieldRdataShift)
 }
 
 // SetRdata Regular channel conversion data
-func (r *registerDfsdm_flt2rdatarType) SetRdata(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2rdatarFieldRdataMask)|(uint32(value)<<RegisterDfsdm_flt2rdatarFieldRdataShift))
+func (r *registerDfsdmflt2rdatarType) SetRdata(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2rdatarFieldRdataMask)|(uint32(value)<<RegisterDfsdmflt2rdatarFieldRdataShift))
 }
 
-// registerDfsdm_flt2awhtrType analog watchdog high threshold register
-type registerDfsdm_flt2awhtrType uint32
+// registerDfsdmflt2awhtrType analog watchdog high threshold register
+type registerDfsdmflt2awhtrType uint32
 
 const (
-	RegisterDfsdm_flt2awhtrFieldBkawhShift = 0
-	RegisterDfsdm_flt2awhtrFieldBkawhMask  = 0xf
+	RegisterDfsdmflt2awhtrFieldBkawhShift = 0
+	RegisterDfsdmflt2awhtrFieldBkawhMask  = 0xf
 )
 
 // GetBkawh Break signal assignment to analog watchdog high threshold event
-func (r *registerDfsdm_flt2awhtrType) GetBkawh() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2awhtrFieldBkawhMask) >> RegisterDfsdm_flt2awhtrFieldBkawhShift)
+func (r *registerDfsdmflt2awhtrType) GetBkawh() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2awhtrFieldBkawhMask) >> RegisterDfsdmflt2awhtrFieldBkawhShift)
 }
 
 // SetBkawh Break signal assignment to analog watchdog high threshold event
-func (r *registerDfsdm_flt2awhtrType) SetBkawh(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2awhtrFieldBkawhMask)|(uint32(value)<<RegisterDfsdm_flt2awhtrFieldBkawhShift))
+func (r *registerDfsdmflt2awhtrType) SetBkawh(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2awhtrFieldBkawhMask)|(uint32(value)<<RegisterDfsdmflt2awhtrFieldBkawhShift))
 }
 
 const (
-	RegisterDfsdm_flt2awhtrFieldAwhtShift = 8
-	RegisterDfsdm_flt2awhtrFieldAwhtMask  = 0xffffff00
+	RegisterDfsdmflt2awhtrFieldAwhtShift = 8
+	RegisterDfsdmflt2awhtrFieldAwhtMask  = 0xffffff00
 )
 
 // GetAwht Analog watchdog high threshold
-func (r *registerDfsdm_flt2awhtrType) GetAwht() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2awhtrFieldAwhtMask) >> RegisterDfsdm_flt2awhtrFieldAwhtShift)
+func (r *registerDfsdmflt2awhtrType) GetAwht() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2awhtrFieldAwhtMask) >> RegisterDfsdmflt2awhtrFieldAwhtShift)
 }
 
 // SetAwht Analog watchdog high threshold
-func (r *registerDfsdm_flt2awhtrType) SetAwht(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2awhtrFieldAwhtMask)|(uint32(value)<<RegisterDfsdm_flt2awhtrFieldAwhtShift))
+func (r *registerDfsdmflt2awhtrType) SetAwht(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2awhtrFieldAwhtMask)|(uint32(value)<<RegisterDfsdmflt2awhtrFieldAwhtShift))
 }
 
-// registerDfsdm_flt2awltrType analog watchdog low threshold register
-type registerDfsdm_flt2awltrType uint32
+// registerDfsdmflt2awltrType analog watchdog low threshold register
+type registerDfsdmflt2awltrType uint32
 
 const (
-	RegisterDfsdm_flt2awltrFieldBkawlShift = 0
-	RegisterDfsdm_flt2awltrFieldBkawlMask  = 0xf
+	RegisterDfsdmflt2awltrFieldBkawlShift = 0
+	RegisterDfsdmflt2awltrFieldBkawlMask  = 0xf
 )
 
 // GetBkawl Break signal assignment to analog watchdog low threshold event
-func (r *registerDfsdm_flt2awltrType) GetBkawl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2awltrFieldBkawlMask) >> RegisterDfsdm_flt2awltrFieldBkawlShift)
+func (r *registerDfsdmflt2awltrType) GetBkawl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2awltrFieldBkawlMask) >> RegisterDfsdmflt2awltrFieldBkawlShift)
 }
 
 // SetBkawl Break signal assignment to analog watchdog low threshold event
-func (r *registerDfsdm_flt2awltrType) SetBkawl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2awltrFieldBkawlMask)|(uint32(value)<<RegisterDfsdm_flt2awltrFieldBkawlShift))
+func (r *registerDfsdmflt2awltrType) SetBkawl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2awltrFieldBkawlMask)|(uint32(value)<<RegisterDfsdmflt2awltrFieldBkawlShift))
 }
 
 const (
-	RegisterDfsdm_flt2awltrFieldAwltShift = 8
-	RegisterDfsdm_flt2awltrFieldAwltMask  = 0xffffff00
+	RegisterDfsdmflt2awltrFieldAwltShift = 8
+	RegisterDfsdmflt2awltrFieldAwltMask  = 0xffffff00
 )
 
 // GetAwlt Analog watchdog low threshold
-func (r *registerDfsdm_flt2awltrType) GetAwlt() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2awltrFieldAwltMask) >> RegisterDfsdm_flt2awltrFieldAwltShift)
+func (r *registerDfsdmflt2awltrType) GetAwlt() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2awltrFieldAwltMask) >> RegisterDfsdmflt2awltrFieldAwltShift)
 }
 
 // SetAwlt Analog watchdog low threshold
-func (r *registerDfsdm_flt2awltrType) SetAwlt(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2awltrFieldAwltMask)|(uint32(value)<<RegisterDfsdm_flt2awltrFieldAwltShift))
+func (r *registerDfsdmflt2awltrType) SetAwlt(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2awltrFieldAwltMask)|(uint32(value)<<RegisterDfsdmflt2awltrFieldAwltShift))
 }
 
-// registerDfsdm_flt2awsrType analog watchdog status register
-type registerDfsdm_flt2awsrType uint32
+// registerDfsdmflt2awsrType analog watchdog status register
+type registerDfsdmflt2awsrType uint32
 
 const (
-	RegisterDfsdm_flt2awsrFieldAwltfShift = 0
-	RegisterDfsdm_flt2awsrFieldAwltfMask  = 0xff
+	RegisterDfsdmflt2awsrFieldAwltfShift = 0
+	RegisterDfsdmflt2awsrFieldAwltfMask  = 0xff
 )
 
 // GetAwltf Analog watchdog low threshold flag
-func (r *registerDfsdm_flt2awsrType) GetAwltf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2awsrFieldAwltfMask) >> RegisterDfsdm_flt2awsrFieldAwltfShift)
+func (r *registerDfsdmflt2awsrType) GetAwltf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2awsrFieldAwltfMask) >> RegisterDfsdmflt2awsrFieldAwltfShift)
 }
 
 // SetAwltf Analog watchdog low threshold flag
-func (r *registerDfsdm_flt2awsrType) SetAwltf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2awsrFieldAwltfMask)|(uint32(value)<<RegisterDfsdm_flt2awsrFieldAwltfShift))
+func (r *registerDfsdmflt2awsrType) SetAwltf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2awsrFieldAwltfMask)|(uint32(value)<<RegisterDfsdmflt2awsrFieldAwltfShift))
 }
 
 const (
-	RegisterDfsdm_flt2awsrFieldAwhtfShift = 8
-	RegisterDfsdm_flt2awsrFieldAwhtfMask  = 0xff00
+	RegisterDfsdmflt2awsrFieldAwhtfShift = 8
+	RegisterDfsdmflt2awsrFieldAwhtfMask  = 0xff00
 )
 
 // GetAwhtf Analog watchdog high threshold flag
-func (r *registerDfsdm_flt2awsrType) GetAwhtf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2awsrFieldAwhtfMask) >> RegisterDfsdm_flt2awsrFieldAwhtfShift)
+func (r *registerDfsdmflt2awsrType) GetAwhtf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2awsrFieldAwhtfMask) >> RegisterDfsdmflt2awsrFieldAwhtfShift)
 }
 
 // SetAwhtf Analog watchdog high threshold flag
-func (r *registerDfsdm_flt2awsrType) SetAwhtf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2awsrFieldAwhtfMask)|(uint32(value)<<RegisterDfsdm_flt2awsrFieldAwhtfShift))
+func (r *registerDfsdmflt2awsrType) SetAwhtf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2awsrFieldAwhtfMask)|(uint32(value)<<RegisterDfsdmflt2awsrFieldAwhtfShift))
 }
 
-// registerDfsdm_flt2awcfrType analog watchdog clear flag register
-type registerDfsdm_flt2awcfrType uint32
+// registerDfsdmflt2awcfrType analog watchdog clear flag register
+type registerDfsdmflt2awcfrType uint32
 
 const (
-	RegisterDfsdm_flt2awcfrFieldClrawltfShift = 0
-	RegisterDfsdm_flt2awcfrFieldClrawltfMask  = 0xff
+	RegisterDfsdmflt2awcfrFieldClrawltfShift = 0
+	RegisterDfsdmflt2awcfrFieldClrawltfMask  = 0xff
 )
 
 // GetClrawltf Clear the analog watchdog low threshold flag
-func (r *registerDfsdm_flt2awcfrType) GetClrawltf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2awcfrFieldClrawltfMask) >> RegisterDfsdm_flt2awcfrFieldClrawltfShift)
+func (r *registerDfsdmflt2awcfrType) GetClrawltf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2awcfrFieldClrawltfMask) >> RegisterDfsdmflt2awcfrFieldClrawltfShift)
 }
 
 // SetClrawltf Clear the analog watchdog low threshold flag
-func (r *registerDfsdm_flt2awcfrType) SetClrawltf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2awcfrFieldClrawltfMask)|(uint32(value)<<RegisterDfsdm_flt2awcfrFieldClrawltfShift))
+func (r *registerDfsdmflt2awcfrType) SetClrawltf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2awcfrFieldClrawltfMask)|(uint32(value)<<RegisterDfsdmflt2awcfrFieldClrawltfShift))
 }
 
 const (
-	RegisterDfsdm_flt2awcfrFieldClrawhtfShift = 8
-	RegisterDfsdm_flt2awcfrFieldClrawhtfMask  = 0xff00
+	RegisterDfsdmflt2awcfrFieldClrawhtfShift = 8
+	RegisterDfsdmflt2awcfrFieldClrawhtfMask  = 0xff00
 )
 
 // GetClrawhtf Clear the analog watchdog high threshold flag
-func (r *registerDfsdm_flt2awcfrType) GetClrawhtf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2awcfrFieldClrawhtfMask) >> RegisterDfsdm_flt2awcfrFieldClrawhtfShift)
+func (r *registerDfsdmflt2awcfrType) GetClrawhtf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2awcfrFieldClrawhtfMask) >> RegisterDfsdmflt2awcfrFieldClrawhtfShift)
 }
 
 // SetClrawhtf Clear the analog watchdog high threshold flag
-func (r *registerDfsdm_flt2awcfrType) SetClrawhtf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2awcfrFieldClrawhtfMask)|(uint32(value)<<RegisterDfsdm_flt2awcfrFieldClrawhtfShift))
+func (r *registerDfsdmflt2awcfrType) SetClrawhtf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2awcfrFieldClrawhtfMask)|(uint32(value)<<RegisterDfsdmflt2awcfrFieldClrawhtfShift))
 }
 
-// registerDfsdm_flt2exmaxType Extremes detector maximum register
-type registerDfsdm_flt2exmaxType uint32
+// registerDfsdmflt2exmaxType Extremes detector maximum register
+type registerDfsdmflt2exmaxType uint32
 
 const (
-	RegisterDfsdm_flt2exmaxFieldExmaxchShift = 0
-	RegisterDfsdm_flt2exmaxFieldExmaxchMask  = 0x7
+	RegisterDfsdmflt2exmaxFieldExmaxchShift = 0
+	RegisterDfsdmflt2exmaxFieldExmaxchMask  = 0x7
 )
 
 // GetExmaxch Extremes detector maximum data channel
-func (r *registerDfsdm_flt2exmaxType) GetExmaxch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2exmaxFieldExmaxchMask) >> RegisterDfsdm_flt2exmaxFieldExmaxchShift)
+func (r *registerDfsdmflt2exmaxType) GetExmaxch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2exmaxFieldExmaxchMask) >> RegisterDfsdmflt2exmaxFieldExmaxchShift)
 }
 
 // SetExmaxch Extremes detector maximum data channel
-func (r *registerDfsdm_flt2exmaxType) SetExmaxch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2exmaxFieldExmaxchMask)|(uint32(value)<<RegisterDfsdm_flt2exmaxFieldExmaxchShift))
+func (r *registerDfsdmflt2exmaxType) SetExmaxch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2exmaxFieldExmaxchMask)|(uint32(value)<<RegisterDfsdmflt2exmaxFieldExmaxchShift))
 }
 
 const (
-	RegisterDfsdm_flt2exmaxFieldExmaxShift = 8
-	RegisterDfsdm_flt2exmaxFieldExmaxMask  = 0xffffff00
+	RegisterDfsdmflt2exmaxFieldExmaxShift = 8
+	RegisterDfsdmflt2exmaxFieldExmaxMask  = 0xffffff00
 )
 
 // GetExmax Extremes detector maximum value
-func (r *registerDfsdm_flt2exmaxType) GetExmax() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2exmaxFieldExmaxMask) >> RegisterDfsdm_flt2exmaxFieldExmaxShift)
+func (r *registerDfsdmflt2exmaxType) GetExmax() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2exmaxFieldExmaxMask) >> RegisterDfsdmflt2exmaxFieldExmaxShift)
 }
 
 // SetExmax Extremes detector maximum value
-func (r *registerDfsdm_flt2exmaxType) SetExmax(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2exmaxFieldExmaxMask)|(uint32(value)<<RegisterDfsdm_flt2exmaxFieldExmaxShift))
+func (r *registerDfsdmflt2exmaxType) SetExmax(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2exmaxFieldExmaxMask)|(uint32(value)<<RegisterDfsdmflt2exmaxFieldExmaxShift))
 }
 
-// registerDfsdm_flt2exminType Extremes detector minimum register
-type registerDfsdm_flt2exminType uint32
+// registerDfsdmflt2exminType Extremes detector minimum register
+type registerDfsdmflt2exminType uint32
 
 const (
-	RegisterDfsdm_flt2exminFieldExminchShift = 0
-	RegisterDfsdm_flt2exminFieldExminchMask  = 0x7
+	RegisterDfsdmflt2exminFieldExminchShift = 0
+	RegisterDfsdmflt2exminFieldExminchMask  = 0x7
 )
 
 // GetExminch Extremes detector minimum data channel
-func (r *registerDfsdm_flt2exminType) GetExminch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2exminFieldExminchMask) >> RegisterDfsdm_flt2exminFieldExminchShift)
+func (r *registerDfsdmflt2exminType) GetExminch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2exminFieldExminchMask) >> RegisterDfsdmflt2exminFieldExminchShift)
 }
 
 // SetExminch Extremes detector minimum data channel
-func (r *registerDfsdm_flt2exminType) SetExminch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2exminFieldExminchMask)|(uint32(value)<<RegisterDfsdm_flt2exminFieldExminchShift))
+func (r *registerDfsdmflt2exminType) SetExminch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2exminFieldExminchMask)|(uint32(value)<<RegisterDfsdmflt2exminFieldExminchShift))
 }
 
 const (
-	RegisterDfsdm_flt2exminFieldExminShift = 8
-	RegisterDfsdm_flt2exminFieldExminMask  = 0xffffff00
+	RegisterDfsdmflt2exminFieldExminShift = 8
+	RegisterDfsdmflt2exminFieldExminMask  = 0xffffff00
 )
 
 // GetExmin EXMIN
-func (r *registerDfsdm_flt2exminType) GetExmin() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2exminFieldExminMask) >> RegisterDfsdm_flt2exminFieldExminShift)
+func (r *registerDfsdmflt2exminType) GetExmin() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2exminFieldExminMask) >> RegisterDfsdmflt2exminFieldExminShift)
 }
 
 // SetExmin EXMIN
-func (r *registerDfsdm_flt2exminType) SetExmin(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2exminFieldExminMask)|(uint32(value)<<RegisterDfsdm_flt2exminFieldExminShift))
+func (r *registerDfsdmflt2exminType) SetExmin(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2exminFieldExminMask)|(uint32(value)<<RegisterDfsdmflt2exminFieldExminShift))
 }
 
-// registerDfsdm_flt2cnvtimrType conversion timer register
-type registerDfsdm_flt2cnvtimrType uint32
+// registerDfsdmflt2cnvtimrType conversion timer register
+type registerDfsdmflt2cnvtimrType uint32
 
 const (
-	RegisterDfsdm_flt2cnvtimrFieldCnvcntShift = 4
-	RegisterDfsdm_flt2cnvtimrFieldCnvcntMask  = 0xfffffff0
+	RegisterDfsdmflt2cnvtimrFieldCnvcntShift = 4
+	RegisterDfsdmflt2cnvtimrFieldCnvcntMask  = 0xfffffff0
 )
 
 // GetCnvcnt 28-bit timer counting conversion time t = CNVCNT[27:0] / fDFSDM_CKIN
-func (r *registerDfsdm_flt2cnvtimrType) GetCnvcnt() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt2cnvtimrFieldCnvcntMask) >> RegisterDfsdm_flt2cnvtimrFieldCnvcntShift)
+func (r *registerDfsdmflt2cnvtimrType) GetCnvcnt() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt2cnvtimrFieldCnvcntMask) >> RegisterDfsdmflt2cnvtimrFieldCnvcntShift)
 }
 
 // SetCnvcnt 28-bit timer counting conversion time t = CNVCNT[27:0] / fDFSDM_CKIN
-func (r *registerDfsdm_flt2cnvtimrType) SetCnvcnt(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt2cnvtimrFieldCnvcntMask)|(uint32(value)<<RegisterDfsdm_flt2cnvtimrFieldCnvcntShift))
+func (r *registerDfsdmflt2cnvtimrType) SetCnvcnt(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt2cnvtimrFieldCnvcntMask)|(uint32(value)<<RegisterDfsdmflt2cnvtimrFieldCnvcntShift))
 }
 
-// registerDfsdm_flt3cr1Type control register 1
-type registerDfsdm_flt3cr1Type uint32
+// registerDfsdmflt3cr1Type control register 1
+type registerDfsdmflt3cr1Type uint32
 
 const (
-	RegisterDfsdm_flt3cr1FieldDfenShift = 0
-	RegisterDfsdm_flt3cr1FieldDfenMask  = 0x1
+	RegisterDfsdmflt3cr1FieldDfenShift = 0
+	RegisterDfsdmflt3cr1FieldDfenMask  = 0x1
 )
 
 // GetDfen DFSDM enable
-func (r *registerDfsdm_flt3cr1Type) GetDfen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldDfenMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetDfen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldDfenMask) != 0
 }
 
 // SetDfen DFSDM enable
-func (r *registerDfsdm_flt3cr1Type) SetDfen(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetDfen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldDfenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldDfenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldDfenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldDfenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldJswstartShift = 1
-	RegisterDfsdm_flt3cr1FieldJswstartMask  = 0x2
+	RegisterDfsdmflt3cr1FieldJswstartShift = 1
+	RegisterDfsdmflt3cr1FieldJswstartMask  = 0x2
 )
 
 // GetJswstart Start a conversion of the injected group of channels
-func (r *registerDfsdm_flt3cr1Type) GetJswstart() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldJswstartMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetJswstart() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldJswstartMask) != 0
 }
 
 // SetJswstart Start a conversion of the injected group of channels
-func (r *registerDfsdm_flt3cr1Type) SetJswstart(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetJswstart(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldJswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldJswstartMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldJswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldJswstartMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldJsyncShift = 3
-	RegisterDfsdm_flt3cr1FieldJsyncMask  = 0x8
+	RegisterDfsdmflt3cr1FieldJsyncShift = 3
+	RegisterDfsdmflt3cr1FieldJsyncMask  = 0x8
 )
 
 // GetJsync Launch an injected conversion synchronously with the DFSDM0 JSWSTART trigger
-func (r *registerDfsdm_flt3cr1Type) GetJsync() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldJsyncMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetJsync() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldJsyncMask) != 0
 }
 
 // SetJsync Launch an injected conversion synchronously with the DFSDM0 JSWSTART trigger
-func (r *registerDfsdm_flt3cr1Type) SetJsync(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetJsync(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldJsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldJsyncMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldJsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldJsyncMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldJscanShift = 4
-	RegisterDfsdm_flt3cr1FieldJscanMask  = 0x10
+	RegisterDfsdmflt3cr1FieldJscanShift = 4
+	RegisterDfsdmflt3cr1FieldJscanMask  = 0x10
 )
 
 // GetJscan Scanning conversion mode for injected conversions
-func (r *registerDfsdm_flt3cr1Type) GetJscan() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldJscanMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetJscan() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldJscanMask) != 0
 }
 
 // SetJscan Scanning conversion mode for injected conversions
-func (r *registerDfsdm_flt3cr1Type) SetJscan(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetJscan(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldJscanMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldJscanMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldJscanMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldJscanMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldJdmaenShift = 5
-	RegisterDfsdm_flt3cr1FieldJdmaenMask  = 0x20
+	RegisterDfsdmflt3cr1FieldJdmaenShift = 5
+	RegisterDfsdmflt3cr1FieldJdmaenMask  = 0x20
 )
 
 // GetJdmaen DMA channel enabled to read data for the injected channel group
-func (r *registerDfsdm_flt3cr1Type) GetJdmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldJdmaenMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetJdmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldJdmaenMask) != 0
 }
 
 // SetJdmaen DMA channel enabled to read data for the injected channel group
-func (r *registerDfsdm_flt3cr1Type) SetJdmaen(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetJdmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldJdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldJdmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldJdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldJdmaenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldJextselShift = 8
-	RegisterDfsdm_flt3cr1FieldJextselMask  = 0x700
+	RegisterDfsdmflt3cr1FieldJextselShift = 8
+	RegisterDfsdmflt3cr1FieldJextselMask  = 0x700
 )
 
 // GetJextsel Trigger signal selection for launching injected conversions
-func (r *registerDfsdm_flt3cr1Type) GetJextsel() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldJextselMask) >> RegisterDfsdm_flt3cr1FieldJextselShift)
+func (r *registerDfsdmflt3cr1Type) GetJextsel() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldJextselMask) >> RegisterDfsdmflt3cr1FieldJextselShift)
 }
 
 // SetJextsel Trigger signal selection for launching injected conversions
-func (r *registerDfsdm_flt3cr1Type) SetJextsel(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldJextselMask)|(uint32(value)<<RegisterDfsdm_flt3cr1FieldJextselShift))
+func (r *registerDfsdmflt3cr1Type) SetJextsel(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldJextselMask)|(uint32(value)<<RegisterDfsdmflt3cr1FieldJextselShift))
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldJextenShift = 13
-	RegisterDfsdm_flt3cr1FieldJextenMask  = 0x6000
+	RegisterDfsdmflt3cr1FieldJextenShift = 13
+	RegisterDfsdmflt3cr1FieldJextenMask  = 0x6000
 )
 
 // GetJexten Trigger enable and trigger edge selection for injected conversions
-func (r *registerDfsdm_flt3cr1Type) GetJexten() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldJextenMask) >> RegisterDfsdm_flt3cr1FieldJextenShift)
+func (r *registerDfsdmflt3cr1Type) GetJexten() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldJextenMask) >> RegisterDfsdmflt3cr1FieldJextenShift)
 }
 
 // SetJexten Trigger enable and trigger edge selection for injected conversions
-func (r *registerDfsdm_flt3cr1Type) SetJexten(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldJextenMask)|(uint32(value)<<RegisterDfsdm_flt3cr1FieldJextenShift))
+func (r *registerDfsdmflt3cr1Type) SetJexten(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldJextenMask)|(uint32(value)<<RegisterDfsdmflt3cr1FieldJextenShift))
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldRswstartShift = 17
-	RegisterDfsdm_flt3cr1FieldRswstartMask  = 0x20000
+	RegisterDfsdmflt3cr1FieldRswstartShift = 17
+	RegisterDfsdmflt3cr1FieldRswstartMask  = 0x20000
 )
 
 // GetRswstart Software start of a conversion on the regular channel
-func (r *registerDfsdm_flt3cr1Type) GetRswstart() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldRswstartMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetRswstart() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldRswstartMask) != 0
 }
 
 // SetRswstart Software start of a conversion on the regular channel
-func (r *registerDfsdm_flt3cr1Type) SetRswstart(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetRswstart(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldRswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldRswstartMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldRswstartMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldRswstartMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldRcontShift = 18
-	RegisterDfsdm_flt3cr1FieldRcontMask  = 0x40000
+	RegisterDfsdmflt3cr1FieldRcontShift = 18
+	RegisterDfsdmflt3cr1FieldRcontMask  = 0x40000
 )
 
 // GetRcont Continuous mode selection for regular conversions
-func (r *registerDfsdm_flt3cr1Type) GetRcont() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldRcontMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetRcont() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldRcontMask) != 0
 }
 
 // SetRcont Continuous mode selection for regular conversions
-func (r *registerDfsdm_flt3cr1Type) SetRcont(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetRcont(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldRcontMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldRcontMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldRcontMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldRcontMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldRsyncShift = 19
-	RegisterDfsdm_flt3cr1FieldRsyncMask  = 0x80000
+	RegisterDfsdmflt3cr1FieldRsyncShift = 19
+	RegisterDfsdmflt3cr1FieldRsyncMask  = 0x80000
 )
 
 // GetRsync Launch regular conversion synchronously with DFSDM0
-func (r *registerDfsdm_flt3cr1Type) GetRsync() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldRsyncMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetRsync() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldRsyncMask) != 0
 }
 
 // SetRsync Launch regular conversion synchronously with DFSDM0
-func (r *registerDfsdm_flt3cr1Type) SetRsync(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetRsync(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldRsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldRsyncMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldRsyncMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldRsyncMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldRdmaenShift = 21
-	RegisterDfsdm_flt3cr1FieldRdmaenMask  = 0x200000
+	RegisterDfsdmflt3cr1FieldRdmaenShift = 21
+	RegisterDfsdmflt3cr1FieldRdmaenMask  = 0x200000
 )
 
 // GetRdmaen DMA channel enabled to read data for the regular conversion
-func (r *registerDfsdm_flt3cr1Type) GetRdmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldRdmaenMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetRdmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldRdmaenMask) != 0
 }
 
 // SetRdmaen DMA channel enabled to read data for the regular conversion
-func (r *registerDfsdm_flt3cr1Type) SetRdmaen(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetRdmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldRdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldRdmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldRdmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldRdmaenMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldRchShift = 24
-	RegisterDfsdm_flt3cr1FieldRchMask  = 0x7000000
+	RegisterDfsdmflt3cr1FieldRchShift = 24
+	RegisterDfsdmflt3cr1FieldRchMask  = 0x7000000
 )
 
 // GetRch Regular channel selection
-func (r *registerDfsdm_flt3cr1Type) GetRch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldRchMask) >> RegisterDfsdm_flt3cr1FieldRchShift)
+func (r *registerDfsdmflt3cr1Type) GetRch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldRchMask) >> RegisterDfsdmflt3cr1FieldRchShift)
 }
 
 // SetRch Regular channel selection
-func (r *registerDfsdm_flt3cr1Type) SetRch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldRchMask)|(uint32(value)<<RegisterDfsdm_flt3cr1FieldRchShift))
+func (r *registerDfsdmflt3cr1Type) SetRch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldRchMask)|(uint32(value)<<RegisterDfsdmflt3cr1FieldRchShift))
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldFastShift = 29
-	RegisterDfsdm_flt3cr1FieldFastMask  = 0x20000000
+	RegisterDfsdmflt3cr1FieldFastShift = 29
+	RegisterDfsdmflt3cr1FieldFastMask  = 0x20000000
 )
 
 // GetFast Fast conversion mode selection for regular conversions
-func (r *registerDfsdm_flt3cr1Type) GetFast() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldFastMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetFast() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldFastMask) != 0
 }
 
 // SetFast Fast conversion mode selection for regular conversions
-func (r *registerDfsdm_flt3cr1Type) SetFast(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetFast(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldFastMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldFastMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldFastMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldFastMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr1FieldAwfselShift = 30
-	RegisterDfsdm_flt3cr1FieldAwfselMask  = 0x40000000
+	RegisterDfsdmflt3cr1FieldAwfselShift = 30
+	RegisterDfsdmflt3cr1FieldAwfselMask  = 0x40000000
 )
 
 // GetAwfsel Analog watchdog fast mode select
-func (r *registerDfsdm_flt3cr1Type) GetAwfsel() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr1FieldAwfselMask) != 0
+func (r *registerDfsdmflt3cr1Type) GetAwfsel() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr1FieldAwfselMask) != 0
 }
 
 // SetAwfsel Analog watchdog fast mode select
-func (r *registerDfsdm_flt3cr1Type) SetAwfsel(value bool) {
+func (r *registerDfsdmflt3cr1Type) SetAwfsel(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr1FieldAwfselMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr1FieldAwfselMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr1FieldAwfselMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr1FieldAwfselMask)
 	}
 }
 
-// registerDfsdm_flt3cr2Type control register 2
-type registerDfsdm_flt3cr2Type uint32
+// registerDfsdmflt3cr2Type control register 2
+type registerDfsdmflt3cr2Type uint32
 
 const (
-	RegisterDfsdm_flt3cr2FieldJeocieShift = 0
-	RegisterDfsdm_flt3cr2FieldJeocieMask  = 0x1
+	RegisterDfsdmflt3cr2FieldJeocieShift = 0
+	RegisterDfsdmflt3cr2FieldJeocieMask  = 0x1
 )
 
 // GetJeocie Injected end of conversion interrupt enable
-func (r *registerDfsdm_flt3cr2Type) GetJeocie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr2FieldJeocieMask) != 0
+func (r *registerDfsdmflt3cr2Type) GetJeocie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr2FieldJeocieMask) != 0
 }
 
 // SetJeocie Injected end of conversion interrupt enable
-func (r *registerDfsdm_flt3cr2Type) SetJeocie(value bool) {
+func (r *registerDfsdmflt3cr2Type) SetJeocie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr2FieldJeocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr2FieldJeocieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr2FieldJeocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr2FieldJeocieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr2FieldReocieShift = 1
-	RegisterDfsdm_flt3cr2FieldReocieMask  = 0x2
+	RegisterDfsdmflt3cr2FieldReocieShift = 1
+	RegisterDfsdmflt3cr2FieldReocieMask  = 0x2
 )
 
 // GetReocie Regular end of conversion interrupt enable
-func (r *registerDfsdm_flt3cr2Type) GetReocie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr2FieldReocieMask) != 0
+func (r *registerDfsdmflt3cr2Type) GetReocie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr2FieldReocieMask) != 0
 }
 
 // SetReocie Regular end of conversion interrupt enable
-func (r *registerDfsdm_flt3cr2Type) SetReocie(value bool) {
+func (r *registerDfsdmflt3cr2Type) SetReocie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr2FieldReocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr2FieldReocieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr2FieldReocieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr2FieldReocieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr2FieldJovrieShift = 2
-	RegisterDfsdm_flt3cr2FieldJovrieMask  = 0x4
+	RegisterDfsdmflt3cr2FieldJovrieShift = 2
+	RegisterDfsdmflt3cr2FieldJovrieMask  = 0x4
 )
 
 // GetJovrie Injected data overrun interrupt enable
-func (r *registerDfsdm_flt3cr2Type) GetJovrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr2FieldJovrieMask) != 0
+func (r *registerDfsdmflt3cr2Type) GetJovrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr2FieldJovrieMask) != 0
 }
 
 // SetJovrie Injected data overrun interrupt enable
-func (r *registerDfsdm_flt3cr2Type) SetJovrie(value bool) {
+func (r *registerDfsdmflt3cr2Type) SetJovrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr2FieldJovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr2FieldJovrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr2FieldJovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr2FieldJovrieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr2FieldRovrieShift = 3
-	RegisterDfsdm_flt3cr2FieldRovrieMask  = 0x8
+	RegisterDfsdmflt3cr2FieldRovrieShift = 3
+	RegisterDfsdmflt3cr2FieldRovrieMask  = 0x8
 )
 
 // GetRovrie Regular data overrun interrupt enable
-func (r *registerDfsdm_flt3cr2Type) GetRovrie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr2FieldRovrieMask) != 0
+func (r *registerDfsdmflt3cr2Type) GetRovrie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr2FieldRovrieMask) != 0
 }
 
 // SetRovrie Regular data overrun interrupt enable
-func (r *registerDfsdm_flt3cr2Type) SetRovrie(value bool) {
+func (r *registerDfsdmflt3cr2Type) SetRovrie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr2FieldRovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr2FieldRovrieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr2FieldRovrieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr2FieldRovrieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr2FieldAwdieShift = 4
-	RegisterDfsdm_flt3cr2FieldAwdieMask  = 0x10
+	RegisterDfsdmflt3cr2FieldAwdieShift = 4
+	RegisterDfsdmflt3cr2FieldAwdieMask  = 0x10
 )
 
 // GetAwdie Analog watchdog interrupt enable
-func (r *registerDfsdm_flt3cr2Type) GetAwdie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr2FieldAwdieMask) != 0
+func (r *registerDfsdmflt3cr2Type) GetAwdie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr2FieldAwdieMask) != 0
 }
 
 // SetAwdie Analog watchdog interrupt enable
-func (r *registerDfsdm_flt3cr2Type) SetAwdie(value bool) {
+func (r *registerDfsdmflt3cr2Type) SetAwdie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr2FieldAwdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr2FieldAwdieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr2FieldAwdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr2FieldAwdieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr2FieldScdieShift = 5
-	RegisterDfsdm_flt3cr2FieldScdieMask  = 0x20
+	RegisterDfsdmflt3cr2FieldScdieShift = 5
+	RegisterDfsdmflt3cr2FieldScdieMask  = 0x20
 )
 
 // GetScdie Short-circuit detector interrupt enable
-func (r *registerDfsdm_flt3cr2Type) GetScdie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr2FieldScdieMask) != 0
+func (r *registerDfsdmflt3cr2Type) GetScdie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr2FieldScdieMask) != 0
 }
 
 // SetScdie Short-circuit detector interrupt enable
-func (r *registerDfsdm_flt3cr2Type) SetScdie(value bool) {
+func (r *registerDfsdmflt3cr2Type) SetScdie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr2FieldScdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr2FieldScdieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr2FieldScdieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr2FieldScdieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr2FieldCkabieShift = 6
-	RegisterDfsdm_flt3cr2FieldCkabieMask  = 0x40
+	RegisterDfsdmflt3cr2FieldCkabieShift = 6
+	RegisterDfsdmflt3cr2FieldCkabieMask  = 0x40
 )
 
 // GetCkabie Clock absence interrupt enable
-func (r *registerDfsdm_flt3cr2Type) GetCkabie() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr2FieldCkabieMask) != 0
+func (r *registerDfsdmflt3cr2Type) GetCkabie() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr2FieldCkabieMask) != 0
 }
 
 // SetCkabie Clock absence interrupt enable
-func (r *registerDfsdm_flt3cr2Type) SetCkabie(value bool) {
+func (r *registerDfsdmflt3cr2Type) SetCkabie(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3cr2FieldCkabieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3cr2FieldCkabieMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr2FieldCkabieMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr2FieldCkabieMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3cr2FieldExchShift = 8
-	RegisterDfsdm_flt3cr2FieldExchMask  = 0xff00
+	RegisterDfsdmflt3cr2FieldExchShift = 8
+	RegisterDfsdmflt3cr2FieldExchMask  = 0xff00
 )
 
 // GetExch Extremes detector channel selection
-func (r *registerDfsdm_flt3cr2Type) GetExch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr2FieldExchMask) >> RegisterDfsdm_flt3cr2FieldExchShift)
+func (r *registerDfsdmflt3cr2Type) GetExch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr2FieldExchMask) >> RegisterDfsdmflt3cr2FieldExchShift)
 }
 
 // SetExch Extremes detector channel selection
-func (r *registerDfsdm_flt3cr2Type) SetExch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr2FieldExchMask)|(uint32(value)<<RegisterDfsdm_flt3cr2FieldExchShift))
+func (r *registerDfsdmflt3cr2Type) SetExch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr2FieldExchMask)|(uint32(value)<<RegisterDfsdmflt3cr2FieldExchShift))
 }
 
 const (
-	RegisterDfsdm_flt3cr2FieldAwdchShift = 16
-	RegisterDfsdm_flt3cr2FieldAwdchMask  = 0xff0000
+	RegisterDfsdmflt3cr2FieldAwdchShift = 16
+	RegisterDfsdmflt3cr2FieldAwdchMask  = 0xff0000
 )
 
 // GetAwdch Analog watchdog channel selection
-func (r *registerDfsdm_flt3cr2Type) GetAwdch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cr2FieldAwdchMask) >> RegisterDfsdm_flt3cr2FieldAwdchShift)
+func (r *registerDfsdmflt3cr2Type) GetAwdch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cr2FieldAwdchMask) >> RegisterDfsdmflt3cr2FieldAwdchShift)
 }
 
 // SetAwdch Analog watchdog channel selection
-func (r *registerDfsdm_flt3cr2Type) SetAwdch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cr2FieldAwdchMask)|(uint32(value)<<RegisterDfsdm_flt3cr2FieldAwdchShift))
+func (r *registerDfsdmflt3cr2Type) SetAwdch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cr2FieldAwdchMask)|(uint32(value)<<RegisterDfsdmflt3cr2FieldAwdchShift))
 }
 
-// registerDfsdm_flt3isrType interrupt and status register
-type registerDfsdm_flt3isrType uint32
+// registerDfsdmflt3isrType interrupt and status register
+type registerDfsdmflt3isrType uint32
 
 const (
-	RegisterDfsdm_flt3isrFieldJeocfShift = 0
-	RegisterDfsdm_flt3isrFieldJeocfMask  = 0x1
+	RegisterDfsdmflt3isrFieldJeocfShift = 0
+	RegisterDfsdmflt3isrFieldJeocfMask  = 0x1
 )
 
 // GetJeocf End of injected conversion flag
-func (r *registerDfsdm_flt3isrType) GetJeocf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3isrFieldJeocfMask) != 0
+func (r *registerDfsdmflt3isrType) GetJeocf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3isrFieldJeocfMask) != 0
 }
 
 // SetJeocf End of injected conversion flag
-func (r *registerDfsdm_flt3isrType) SetJeocf(value bool) {
+func (r *registerDfsdmflt3isrType) SetJeocf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3isrFieldJeocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3isrFieldJeocfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3isrFieldJeocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3isrFieldJeocfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3isrFieldReocfShift = 1
-	RegisterDfsdm_flt3isrFieldReocfMask  = 0x2
+	RegisterDfsdmflt3isrFieldReocfShift = 1
+	RegisterDfsdmflt3isrFieldReocfMask  = 0x2
 )
 
 // GetReocf End of regular conversion flag
-func (r *registerDfsdm_flt3isrType) GetReocf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3isrFieldReocfMask) != 0
+func (r *registerDfsdmflt3isrType) GetReocf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3isrFieldReocfMask) != 0
 }
 
 // SetReocf End of regular conversion flag
-func (r *registerDfsdm_flt3isrType) SetReocf(value bool) {
+func (r *registerDfsdmflt3isrType) SetReocf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3isrFieldReocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3isrFieldReocfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3isrFieldReocfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3isrFieldReocfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3isrFieldJovrfShift = 2
-	RegisterDfsdm_flt3isrFieldJovrfMask  = 0x4
+	RegisterDfsdmflt3isrFieldJovrfShift = 2
+	RegisterDfsdmflt3isrFieldJovrfMask  = 0x4
 )
 
 // GetJovrf Injected conversion overrun flag
-func (r *registerDfsdm_flt3isrType) GetJovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3isrFieldJovrfMask) != 0
+func (r *registerDfsdmflt3isrType) GetJovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3isrFieldJovrfMask) != 0
 }
 
 // SetJovrf Injected conversion overrun flag
-func (r *registerDfsdm_flt3isrType) SetJovrf(value bool) {
+func (r *registerDfsdmflt3isrType) SetJovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3isrFieldJovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3isrFieldJovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3isrFieldJovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3isrFieldJovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3isrFieldRovrfShift = 3
-	RegisterDfsdm_flt3isrFieldRovrfMask  = 0x8
+	RegisterDfsdmflt3isrFieldRovrfShift = 3
+	RegisterDfsdmflt3isrFieldRovrfMask  = 0x8
 )
 
 // GetRovrf Regular conversion overrun flag
-func (r *registerDfsdm_flt3isrType) GetRovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3isrFieldRovrfMask) != 0
+func (r *registerDfsdmflt3isrType) GetRovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3isrFieldRovrfMask) != 0
 }
 
 // SetRovrf Regular conversion overrun flag
-func (r *registerDfsdm_flt3isrType) SetRovrf(value bool) {
+func (r *registerDfsdmflt3isrType) SetRovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3isrFieldRovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3isrFieldRovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3isrFieldRovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3isrFieldRovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3isrFieldAwdfShift = 4
-	RegisterDfsdm_flt3isrFieldAwdfMask  = 0x10
+	RegisterDfsdmflt3isrFieldAwdfShift = 4
+	RegisterDfsdmflt3isrFieldAwdfMask  = 0x10
 )
 
 // GetAwdf Analog watchdog
-func (r *registerDfsdm_flt3isrType) GetAwdf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3isrFieldAwdfMask) != 0
+func (r *registerDfsdmflt3isrType) GetAwdf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3isrFieldAwdfMask) != 0
 }
 
 // SetAwdf Analog watchdog
-func (r *registerDfsdm_flt3isrType) SetAwdf(value bool) {
+func (r *registerDfsdmflt3isrType) SetAwdf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3isrFieldAwdfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3isrFieldAwdfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3isrFieldAwdfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3isrFieldAwdfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3isrFieldJcipShift = 13
-	RegisterDfsdm_flt3isrFieldJcipMask  = 0x2000
+	RegisterDfsdmflt3isrFieldJcipShift = 13
+	RegisterDfsdmflt3isrFieldJcipMask  = 0x2000
 )
 
 // GetJcip Injected conversion in progress status
-func (r *registerDfsdm_flt3isrType) GetJcip() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3isrFieldJcipMask) != 0
+func (r *registerDfsdmflt3isrType) GetJcip() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3isrFieldJcipMask) != 0
 }
 
 // SetJcip Injected conversion in progress status
-func (r *registerDfsdm_flt3isrType) SetJcip(value bool) {
+func (r *registerDfsdmflt3isrType) SetJcip(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3isrFieldJcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3isrFieldJcipMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3isrFieldJcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3isrFieldJcipMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3isrFieldRcipShift = 14
-	RegisterDfsdm_flt3isrFieldRcipMask  = 0x4000
+	RegisterDfsdmflt3isrFieldRcipShift = 14
+	RegisterDfsdmflt3isrFieldRcipMask  = 0x4000
 )
 
 // GetRcip Regular conversion in progress status
-func (r *registerDfsdm_flt3isrType) GetRcip() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3isrFieldRcipMask) != 0
+func (r *registerDfsdmflt3isrType) GetRcip() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3isrFieldRcipMask) != 0
 }
 
 // SetRcip Regular conversion in progress status
-func (r *registerDfsdm_flt3isrType) SetRcip(value bool) {
+func (r *registerDfsdmflt3isrType) SetRcip(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3isrFieldRcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3isrFieldRcipMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3isrFieldRcipMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3isrFieldRcipMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3isrFieldCkabfShift = 16
-	RegisterDfsdm_flt3isrFieldCkabfMask  = 0xff0000
+	RegisterDfsdmflt3isrFieldCkabfShift = 16
+	RegisterDfsdmflt3isrFieldCkabfMask  = 0xff0000
 )
 
 // GetCkabf Clock absence flag
-func (r *registerDfsdm_flt3isrType) GetCkabf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3isrFieldCkabfMask) >> RegisterDfsdm_flt3isrFieldCkabfShift)
+func (r *registerDfsdmflt3isrType) GetCkabf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3isrFieldCkabfMask) >> RegisterDfsdmflt3isrFieldCkabfShift)
 }
 
 // SetCkabf Clock absence flag
-func (r *registerDfsdm_flt3isrType) SetCkabf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3isrFieldCkabfMask)|(uint32(value)<<RegisterDfsdm_flt3isrFieldCkabfShift))
+func (r *registerDfsdmflt3isrType) SetCkabf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3isrFieldCkabfMask)|(uint32(value)<<RegisterDfsdmflt3isrFieldCkabfShift))
 }
 
 const (
-	RegisterDfsdm_flt3isrFieldScdfShift = 24
-	RegisterDfsdm_flt3isrFieldScdfMask  = 0xff000000
+	RegisterDfsdmflt3isrFieldScdfShift = 24
+	RegisterDfsdmflt3isrFieldScdfMask  = 0xff000000
 )
 
 // GetScdf short-circuit detector flag
-func (r *registerDfsdm_flt3isrType) GetScdf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3isrFieldScdfMask) >> RegisterDfsdm_flt3isrFieldScdfShift)
+func (r *registerDfsdmflt3isrType) GetScdf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3isrFieldScdfMask) >> RegisterDfsdmflt3isrFieldScdfShift)
 }
 
 // SetScdf short-circuit detector flag
-func (r *registerDfsdm_flt3isrType) SetScdf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3isrFieldScdfMask)|(uint32(value)<<RegisterDfsdm_flt3isrFieldScdfShift))
+func (r *registerDfsdmflt3isrType) SetScdf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3isrFieldScdfMask)|(uint32(value)<<RegisterDfsdmflt3isrFieldScdfShift))
 }
 
-// registerDfsdm_flt3icrType interrupt flag clear register
-type registerDfsdm_flt3icrType uint32
+// registerDfsdmflt3icrType interrupt flag clear register
+type registerDfsdmflt3icrType uint32
 
 const (
-	RegisterDfsdm_flt3icrFieldClrjovrfShift = 2
-	RegisterDfsdm_flt3icrFieldClrjovrfMask  = 0x4
+	RegisterDfsdmflt3icrFieldClrjovrfShift = 2
+	RegisterDfsdmflt3icrFieldClrjovrfMask  = 0x4
 )
 
 // GetClrjovrf Clear the injected conversion overrun flag
-func (r *registerDfsdm_flt3icrType) GetClrjovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3icrFieldClrjovrfMask) != 0
+func (r *registerDfsdmflt3icrType) GetClrjovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3icrFieldClrjovrfMask) != 0
 }
 
 // SetClrjovrf Clear the injected conversion overrun flag
-func (r *registerDfsdm_flt3icrType) SetClrjovrf(value bool) {
+func (r *registerDfsdmflt3icrType) SetClrjovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3icrFieldClrjovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3icrFieldClrjovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3icrFieldClrjovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3icrFieldClrjovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3icrFieldClrrovrfShift = 3
-	RegisterDfsdm_flt3icrFieldClrrovrfMask  = 0x8
+	RegisterDfsdmflt3icrFieldClrrovrfShift = 3
+	RegisterDfsdmflt3icrFieldClrrovrfMask  = 0x8
 )
 
 // GetClrrovrf Clear the regular conversion overrun flag
-func (r *registerDfsdm_flt3icrType) GetClrrovrf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3icrFieldClrrovrfMask) != 0
+func (r *registerDfsdmflt3icrType) GetClrrovrf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3icrFieldClrrovrfMask) != 0
 }
 
 // SetClrrovrf Clear the regular conversion overrun flag
-func (r *registerDfsdm_flt3icrType) SetClrrovrf(value bool) {
+func (r *registerDfsdmflt3icrType) SetClrrovrf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3icrFieldClrrovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3icrFieldClrrovrfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3icrFieldClrrovrfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3icrFieldClrrovrfMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3icrFieldClrckabfShift = 16
-	RegisterDfsdm_flt3icrFieldClrckabfMask  = 0xff0000
+	RegisterDfsdmflt3icrFieldClrckabfShift = 16
+	RegisterDfsdmflt3icrFieldClrckabfMask  = 0xff0000
 )
 
 // GetClrckabf Clear the clock absence flag
-func (r *registerDfsdm_flt3icrType) GetClrckabf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3icrFieldClrckabfMask) >> RegisterDfsdm_flt3icrFieldClrckabfShift)
+func (r *registerDfsdmflt3icrType) GetClrckabf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3icrFieldClrckabfMask) >> RegisterDfsdmflt3icrFieldClrckabfShift)
 }
 
 // SetClrckabf Clear the clock absence flag
-func (r *registerDfsdm_flt3icrType) SetClrckabf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3icrFieldClrckabfMask)|(uint32(value)<<RegisterDfsdm_flt3icrFieldClrckabfShift))
+func (r *registerDfsdmflt3icrType) SetClrckabf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3icrFieldClrckabfMask)|(uint32(value)<<RegisterDfsdmflt3icrFieldClrckabfShift))
 }
 
 const (
-	RegisterDfsdm_flt3icrFieldClrscdfShift = 24
-	RegisterDfsdm_flt3icrFieldClrscdfMask  = 0xff000000
+	RegisterDfsdmflt3icrFieldClrscdfShift = 24
+	RegisterDfsdmflt3icrFieldClrscdfMask  = 0xff000000
 )
 
 // GetClrscdf Clear the short-circuit detector flag
-func (r *registerDfsdm_flt3icrType) GetClrscdf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3icrFieldClrscdfMask) >> RegisterDfsdm_flt3icrFieldClrscdfShift)
+func (r *registerDfsdmflt3icrType) GetClrscdf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3icrFieldClrscdfMask) >> RegisterDfsdmflt3icrFieldClrscdfShift)
 }
 
 // SetClrscdf Clear the short-circuit detector flag
-func (r *registerDfsdm_flt3icrType) SetClrscdf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3icrFieldClrscdfMask)|(uint32(value)<<RegisterDfsdm_flt3icrFieldClrscdfShift))
+func (r *registerDfsdmflt3icrType) SetClrscdf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3icrFieldClrscdfMask)|(uint32(value)<<RegisterDfsdmflt3icrFieldClrscdfShift))
 }
 
-// registerDfsdm_flt3jchgrType injected channel group selection register
-type registerDfsdm_flt3jchgrType uint32
+// registerDfsdmflt3jchgrType injected channel group selection register
+type registerDfsdmflt3jchgrType uint32
 
 const (
-	RegisterDfsdm_flt3jchgrFieldJchgShift = 0
-	RegisterDfsdm_flt3jchgrFieldJchgMask  = 0xff
+	RegisterDfsdmflt3jchgrFieldJchgShift = 0
+	RegisterDfsdmflt3jchgrFieldJchgMask  = 0xff
 )
 
 // GetJchg Injected channel group selection
-func (r *registerDfsdm_flt3jchgrType) GetJchg() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3jchgrFieldJchgMask) >> RegisterDfsdm_flt3jchgrFieldJchgShift)
+func (r *registerDfsdmflt3jchgrType) GetJchg() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3jchgrFieldJchgMask) >> RegisterDfsdmflt3jchgrFieldJchgShift)
 }
 
 // SetJchg Injected channel group selection
-func (r *registerDfsdm_flt3jchgrType) SetJchg(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3jchgrFieldJchgMask)|(uint32(value)<<RegisterDfsdm_flt3jchgrFieldJchgShift))
+func (r *registerDfsdmflt3jchgrType) SetJchg(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3jchgrFieldJchgMask)|(uint32(value)<<RegisterDfsdmflt3jchgrFieldJchgShift))
 }
 
-// registerDfsdm_flt3fcrType filter control register
-type registerDfsdm_flt3fcrType uint32
+// registerDfsdmflt3fcrType filter control register
+type registerDfsdmflt3fcrType uint32
 
 const (
-	RegisterDfsdm_flt3fcrFieldIosrShift = 0
-	RegisterDfsdm_flt3fcrFieldIosrMask  = 0xff
+	RegisterDfsdmflt3fcrFieldIosrShift = 0
+	RegisterDfsdmflt3fcrFieldIosrMask  = 0xff
 )
 
 // GetIosr Integrator oversampling ratio (averaging length)
-func (r *registerDfsdm_flt3fcrType) GetIosr() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3fcrFieldIosrMask) >> RegisterDfsdm_flt3fcrFieldIosrShift)
+func (r *registerDfsdmflt3fcrType) GetIosr() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3fcrFieldIosrMask) >> RegisterDfsdmflt3fcrFieldIosrShift)
 }
 
 // SetIosr Integrator oversampling ratio (averaging length)
-func (r *registerDfsdm_flt3fcrType) SetIosr(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3fcrFieldIosrMask)|(uint32(value)<<RegisterDfsdm_flt3fcrFieldIosrShift))
+func (r *registerDfsdmflt3fcrType) SetIosr(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3fcrFieldIosrMask)|(uint32(value)<<RegisterDfsdmflt3fcrFieldIosrShift))
 }
 
 const (
-	RegisterDfsdm_flt3fcrFieldFosrShift = 16
-	RegisterDfsdm_flt3fcrFieldFosrMask  = 0x3ff0000
+	RegisterDfsdmflt3fcrFieldFosrShift = 16
+	RegisterDfsdmflt3fcrFieldFosrMask  = 0x3ff0000
 )
 
 // GetFosr Sinc filter oversampling ratio (decimation rate)
-func (r *registerDfsdm_flt3fcrType) GetFosr() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3fcrFieldFosrMask) >> RegisterDfsdm_flt3fcrFieldFosrShift)
+func (r *registerDfsdmflt3fcrType) GetFosr() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3fcrFieldFosrMask) >> RegisterDfsdmflt3fcrFieldFosrShift)
 }
 
 // SetFosr Sinc filter oversampling ratio (decimation rate)
-func (r *registerDfsdm_flt3fcrType) SetFosr(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3fcrFieldFosrMask)|(uint32(value)<<RegisterDfsdm_flt3fcrFieldFosrShift))
+func (r *registerDfsdmflt3fcrType) SetFosr(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3fcrFieldFosrMask)|(uint32(value)<<RegisterDfsdmflt3fcrFieldFosrShift))
 }
 
 const (
-	RegisterDfsdm_flt3fcrFieldFordShift = 29
-	RegisterDfsdm_flt3fcrFieldFordMask  = 0xe0000000
+	RegisterDfsdmflt3fcrFieldFordShift = 29
+	RegisterDfsdmflt3fcrFieldFordMask  = 0xe0000000
 )
 
 // GetFord Sinc filter order
-func (r *registerDfsdm_flt3fcrType) GetFord() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3fcrFieldFordMask) >> RegisterDfsdm_flt3fcrFieldFordShift)
+func (r *registerDfsdmflt3fcrType) GetFord() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3fcrFieldFordMask) >> RegisterDfsdmflt3fcrFieldFordShift)
 }
 
 // SetFord Sinc filter order
-func (r *registerDfsdm_flt3fcrType) SetFord(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3fcrFieldFordMask)|(uint32(value)<<RegisterDfsdm_flt3fcrFieldFordShift))
+func (r *registerDfsdmflt3fcrType) SetFord(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3fcrFieldFordMask)|(uint32(value)<<RegisterDfsdmflt3fcrFieldFordShift))
 }
 
-// registerDfsdm_flt3jdatarType data register for injected group
-type registerDfsdm_flt3jdatarType uint32
+// registerDfsdmflt3jdatarType data register for injected group
+type registerDfsdmflt3jdatarType uint32
 
 const (
-	RegisterDfsdm_flt3jdatarFieldJdatachShift = 0
-	RegisterDfsdm_flt3jdatarFieldJdatachMask  = 0x7
+	RegisterDfsdmflt3jdatarFieldJdatachShift = 0
+	RegisterDfsdmflt3jdatarFieldJdatachMask  = 0x7
 )
 
 // GetJdatach Injected channel most recently converted
-func (r *registerDfsdm_flt3jdatarType) GetJdatach() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3jdatarFieldJdatachMask) >> RegisterDfsdm_flt3jdatarFieldJdatachShift)
+func (r *registerDfsdmflt3jdatarType) GetJdatach() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3jdatarFieldJdatachMask) >> RegisterDfsdmflt3jdatarFieldJdatachShift)
 }
 
 // SetJdatach Injected channel most recently converted
-func (r *registerDfsdm_flt3jdatarType) SetJdatach(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3jdatarFieldJdatachMask)|(uint32(value)<<RegisterDfsdm_flt3jdatarFieldJdatachShift))
+func (r *registerDfsdmflt3jdatarType) SetJdatach(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3jdatarFieldJdatachMask)|(uint32(value)<<RegisterDfsdmflt3jdatarFieldJdatachShift))
 }
 
 const (
-	RegisterDfsdm_flt3jdatarFieldJdataShift = 8
-	RegisterDfsdm_flt3jdatarFieldJdataMask  = 0xffffff00
+	RegisterDfsdmflt3jdatarFieldJdataShift = 8
+	RegisterDfsdmflt3jdatarFieldJdataMask  = 0xffffff00
 )
 
 // GetJdata Injected group conversion data
-func (r *registerDfsdm_flt3jdatarType) GetJdata() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3jdatarFieldJdataMask) >> RegisterDfsdm_flt3jdatarFieldJdataShift)
+func (r *registerDfsdmflt3jdatarType) GetJdata() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3jdatarFieldJdataMask) >> RegisterDfsdmflt3jdatarFieldJdataShift)
 }
 
 // SetJdata Injected group conversion data
-func (r *registerDfsdm_flt3jdatarType) SetJdata(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3jdatarFieldJdataMask)|(uint32(value)<<RegisterDfsdm_flt3jdatarFieldJdataShift))
+func (r *registerDfsdmflt3jdatarType) SetJdata(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3jdatarFieldJdataMask)|(uint32(value)<<RegisterDfsdmflt3jdatarFieldJdataShift))
 }
 
-// registerDfsdm_flt3rdatarType data register for the regular channel
-type registerDfsdm_flt3rdatarType uint32
+// registerDfsdmflt3rdatarType data register for the regular channel
+type registerDfsdmflt3rdatarType uint32
 
 const (
-	RegisterDfsdm_flt3rdatarFieldRdatachShift = 0
-	RegisterDfsdm_flt3rdatarFieldRdatachMask  = 0x7
+	RegisterDfsdmflt3rdatarFieldRdatachShift = 0
+	RegisterDfsdmflt3rdatarFieldRdatachMask  = 0x7
 )
 
 // GetRdatach Regular channel most recently converted
-func (r *registerDfsdm_flt3rdatarType) GetRdatach() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3rdatarFieldRdatachMask) >> RegisterDfsdm_flt3rdatarFieldRdatachShift)
+func (r *registerDfsdmflt3rdatarType) GetRdatach() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3rdatarFieldRdatachMask) >> RegisterDfsdmflt3rdatarFieldRdatachShift)
 }
 
 // SetRdatach Regular channel most recently converted
-func (r *registerDfsdm_flt3rdatarType) SetRdatach(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3rdatarFieldRdatachMask)|(uint32(value)<<RegisterDfsdm_flt3rdatarFieldRdatachShift))
+func (r *registerDfsdmflt3rdatarType) SetRdatach(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3rdatarFieldRdatachMask)|(uint32(value)<<RegisterDfsdmflt3rdatarFieldRdatachShift))
 }
 
 const (
-	RegisterDfsdm_flt3rdatarFieldRpendShift = 4
-	RegisterDfsdm_flt3rdatarFieldRpendMask  = 0x10
+	RegisterDfsdmflt3rdatarFieldRpendShift = 4
+	RegisterDfsdmflt3rdatarFieldRpendMask  = 0x10
 )
 
 // GetRpend Regular channel pending data
-func (r *registerDfsdm_flt3rdatarType) GetRpend() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3rdatarFieldRpendMask) != 0
+func (r *registerDfsdmflt3rdatarType) GetRpend() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3rdatarFieldRpendMask) != 0
 }
 
 // SetRpend Regular channel pending data
-func (r *registerDfsdm_flt3rdatarType) SetRpend(value bool) {
+func (r *registerDfsdmflt3rdatarType) SetRpend(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdm_flt3rdatarFieldRpendMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDfsdmflt3rdatarFieldRpendMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3rdatarFieldRpendMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3rdatarFieldRpendMask)
 	}
 }
 
 const (
-	RegisterDfsdm_flt3rdatarFieldRdataShift = 8
-	RegisterDfsdm_flt3rdatarFieldRdataMask  = 0xffffff00
+	RegisterDfsdmflt3rdatarFieldRdataShift = 8
+	RegisterDfsdmflt3rdatarFieldRdataMask  = 0xffffff00
 )
 
 // GetRdata Regular channel conversion data
-func (r *registerDfsdm_flt3rdatarType) GetRdata() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3rdatarFieldRdataMask) >> RegisterDfsdm_flt3rdatarFieldRdataShift)
+func (r *registerDfsdmflt3rdatarType) GetRdata() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3rdatarFieldRdataMask) >> RegisterDfsdmflt3rdatarFieldRdataShift)
 }
 
 // SetRdata Regular channel conversion data
-func (r *registerDfsdm_flt3rdatarType) SetRdata(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3rdatarFieldRdataMask)|(uint32(value)<<RegisterDfsdm_flt3rdatarFieldRdataShift))
+func (r *registerDfsdmflt3rdatarType) SetRdata(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3rdatarFieldRdataMask)|(uint32(value)<<RegisterDfsdmflt3rdatarFieldRdataShift))
 }
 
-// registerDfsdm_flt3awhtrType analog watchdog high threshold register
-type registerDfsdm_flt3awhtrType uint32
+// registerDfsdmflt3awhtrType analog watchdog high threshold register
+type registerDfsdmflt3awhtrType uint32
 
 const (
-	RegisterDfsdm_flt3awhtrFieldBkawhShift = 0
-	RegisterDfsdm_flt3awhtrFieldBkawhMask  = 0xf
+	RegisterDfsdmflt3awhtrFieldBkawhShift = 0
+	RegisterDfsdmflt3awhtrFieldBkawhMask  = 0xf
 )
 
 // GetBkawh Break signal assignment to analog watchdog high threshold event
-func (r *registerDfsdm_flt3awhtrType) GetBkawh() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3awhtrFieldBkawhMask) >> RegisterDfsdm_flt3awhtrFieldBkawhShift)
+func (r *registerDfsdmflt3awhtrType) GetBkawh() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3awhtrFieldBkawhMask) >> RegisterDfsdmflt3awhtrFieldBkawhShift)
 }
 
 // SetBkawh Break signal assignment to analog watchdog high threshold event
-func (r *registerDfsdm_flt3awhtrType) SetBkawh(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3awhtrFieldBkawhMask)|(uint32(value)<<RegisterDfsdm_flt3awhtrFieldBkawhShift))
+func (r *registerDfsdmflt3awhtrType) SetBkawh(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3awhtrFieldBkawhMask)|(uint32(value)<<RegisterDfsdmflt3awhtrFieldBkawhShift))
 }
 
 const (
-	RegisterDfsdm_flt3awhtrFieldAwhtShift = 8
-	RegisterDfsdm_flt3awhtrFieldAwhtMask  = 0xffffff00
+	RegisterDfsdmflt3awhtrFieldAwhtShift = 8
+	RegisterDfsdmflt3awhtrFieldAwhtMask  = 0xffffff00
 )
 
 // GetAwht Analog watchdog high threshold
-func (r *registerDfsdm_flt3awhtrType) GetAwht() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3awhtrFieldAwhtMask) >> RegisterDfsdm_flt3awhtrFieldAwhtShift)
+func (r *registerDfsdmflt3awhtrType) GetAwht() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3awhtrFieldAwhtMask) >> RegisterDfsdmflt3awhtrFieldAwhtShift)
 }
 
 // SetAwht Analog watchdog high threshold
-func (r *registerDfsdm_flt3awhtrType) SetAwht(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3awhtrFieldAwhtMask)|(uint32(value)<<RegisterDfsdm_flt3awhtrFieldAwhtShift))
+func (r *registerDfsdmflt3awhtrType) SetAwht(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3awhtrFieldAwhtMask)|(uint32(value)<<RegisterDfsdmflt3awhtrFieldAwhtShift))
 }
 
-// registerDfsdm_flt3awltrType analog watchdog low threshold register
-type registerDfsdm_flt3awltrType uint32
+// registerDfsdmflt3awltrType analog watchdog low threshold register
+type registerDfsdmflt3awltrType uint32
 
 const (
-	RegisterDfsdm_flt3awltrFieldBkawlShift = 0
-	RegisterDfsdm_flt3awltrFieldBkawlMask  = 0xf
+	RegisterDfsdmflt3awltrFieldBkawlShift = 0
+	RegisterDfsdmflt3awltrFieldBkawlMask  = 0xf
 )
 
 // GetBkawl Break signal assignment to analog watchdog low threshold event
-func (r *registerDfsdm_flt3awltrType) GetBkawl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3awltrFieldBkawlMask) >> RegisterDfsdm_flt3awltrFieldBkawlShift)
+func (r *registerDfsdmflt3awltrType) GetBkawl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3awltrFieldBkawlMask) >> RegisterDfsdmflt3awltrFieldBkawlShift)
 }
 
 // SetBkawl Break signal assignment to analog watchdog low threshold event
-func (r *registerDfsdm_flt3awltrType) SetBkawl(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3awltrFieldBkawlMask)|(uint32(value)<<RegisterDfsdm_flt3awltrFieldBkawlShift))
+func (r *registerDfsdmflt3awltrType) SetBkawl(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3awltrFieldBkawlMask)|(uint32(value)<<RegisterDfsdmflt3awltrFieldBkawlShift))
 }
 
 const (
-	RegisterDfsdm_flt3awltrFieldAwltShift = 8
-	RegisterDfsdm_flt3awltrFieldAwltMask  = 0xffffff00
+	RegisterDfsdmflt3awltrFieldAwltShift = 8
+	RegisterDfsdmflt3awltrFieldAwltMask  = 0xffffff00
 )
 
 // GetAwlt Analog watchdog low threshold
-func (r *registerDfsdm_flt3awltrType) GetAwlt() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3awltrFieldAwltMask) >> RegisterDfsdm_flt3awltrFieldAwltShift)
+func (r *registerDfsdmflt3awltrType) GetAwlt() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3awltrFieldAwltMask) >> RegisterDfsdmflt3awltrFieldAwltShift)
 }
 
 // SetAwlt Analog watchdog low threshold
-func (r *registerDfsdm_flt3awltrType) SetAwlt(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3awltrFieldAwltMask)|(uint32(value)<<RegisterDfsdm_flt3awltrFieldAwltShift))
+func (r *registerDfsdmflt3awltrType) SetAwlt(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3awltrFieldAwltMask)|(uint32(value)<<RegisterDfsdmflt3awltrFieldAwltShift))
 }
 
-// registerDfsdm_flt3awsrType analog watchdog status register
-type registerDfsdm_flt3awsrType uint32
+// registerDfsdmflt3awsrType analog watchdog status register
+type registerDfsdmflt3awsrType uint32
 
 const (
-	RegisterDfsdm_flt3awsrFieldAwltfShift = 0
-	RegisterDfsdm_flt3awsrFieldAwltfMask  = 0xff
+	RegisterDfsdmflt3awsrFieldAwltfShift = 0
+	RegisterDfsdmflt3awsrFieldAwltfMask  = 0xff
 )
 
 // GetAwltf Analog watchdog low threshold flag
-func (r *registerDfsdm_flt3awsrType) GetAwltf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3awsrFieldAwltfMask) >> RegisterDfsdm_flt3awsrFieldAwltfShift)
+func (r *registerDfsdmflt3awsrType) GetAwltf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3awsrFieldAwltfMask) >> RegisterDfsdmflt3awsrFieldAwltfShift)
 }
 
 // SetAwltf Analog watchdog low threshold flag
-func (r *registerDfsdm_flt3awsrType) SetAwltf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3awsrFieldAwltfMask)|(uint32(value)<<RegisterDfsdm_flt3awsrFieldAwltfShift))
+func (r *registerDfsdmflt3awsrType) SetAwltf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3awsrFieldAwltfMask)|(uint32(value)<<RegisterDfsdmflt3awsrFieldAwltfShift))
 }
 
 const (
-	RegisterDfsdm_flt3awsrFieldAwhtfShift = 8
-	RegisterDfsdm_flt3awsrFieldAwhtfMask  = 0xff00
+	RegisterDfsdmflt3awsrFieldAwhtfShift = 8
+	RegisterDfsdmflt3awsrFieldAwhtfMask  = 0xff00
 )
 
 // GetAwhtf Analog watchdog high threshold flag
-func (r *registerDfsdm_flt3awsrType) GetAwhtf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3awsrFieldAwhtfMask) >> RegisterDfsdm_flt3awsrFieldAwhtfShift)
+func (r *registerDfsdmflt3awsrType) GetAwhtf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3awsrFieldAwhtfMask) >> RegisterDfsdmflt3awsrFieldAwhtfShift)
 }
 
 // SetAwhtf Analog watchdog high threshold flag
-func (r *registerDfsdm_flt3awsrType) SetAwhtf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3awsrFieldAwhtfMask)|(uint32(value)<<RegisterDfsdm_flt3awsrFieldAwhtfShift))
+func (r *registerDfsdmflt3awsrType) SetAwhtf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3awsrFieldAwhtfMask)|(uint32(value)<<RegisterDfsdmflt3awsrFieldAwhtfShift))
 }
 
-// registerDfsdm_flt3awcfrType analog watchdog clear flag register
-type registerDfsdm_flt3awcfrType uint32
+// registerDfsdmflt3awcfrType analog watchdog clear flag register
+type registerDfsdmflt3awcfrType uint32
 
 const (
-	RegisterDfsdm_flt3awcfrFieldClrawltfShift = 0
-	RegisterDfsdm_flt3awcfrFieldClrawltfMask  = 0xff
+	RegisterDfsdmflt3awcfrFieldClrawltfShift = 0
+	RegisterDfsdmflt3awcfrFieldClrawltfMask  = 0xff
 )
 
 // GetClrawltf Clear the analog watchdog low threshold flag
-func (r *registerDfsdm_flt3awcfrType) GetClrawltf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3awcfrFieldClrawltfMask) >> RegisterDfsdm_flt3awcfrFieldClrawltfShift)
+func (r *registerDfsdmflt3awcfrType) GetClrawltf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3awcfrFieldClrawltfMask) >> RegisterDfsdmflt3awcfrFieldClrawltfShift)
 }
 
 // SetClrawltf Clear the analog watchdog low threshold flag
-func (r *registerDfsdm_flt3awcfrType) SetClrawltf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3awcfrFieldClrawltfMask)|(uint32(value)<<RegisterDfsdm_flt3awcfrFieldClrawltfShift))
+func (r *registerDfsdmflt3awcfrType) SetClrawltf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3awcfrFieldClrawltfMask)|(uint32(value)<<RegisterDfsdmflt3awcfrFieldClrawltfShift))
 }
 
 const (
-	RegisterDfsdm_flt3awcfrFieldClrawhtfShift = 8
-	RegisterDfsdm_flt3awcfrFieldClrawhtfMask  = 0xff00
+	RegisterDfsdmflt3awcfrFieldClrawhtfShift = 8
+	RegisterDfsdmflt3awcfrFieldClrawhtfMask  = 0xff00
 )
 
 // GetClrawhtf Clear the analog watchdog high threshold flag
-func (r *registerDfsdm_flt3awcfrType) GetClrawhtf() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3awcfrFieldClrawhtfMask) >> RegisterDfsdm_flt3awcfrFieldClrawhtfShift)
+func (r *registerDfsdmflt3awcfrType) GetClrawhtf() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3awcfrFieldClrawhtfMask) >> RegisterDfsdmflt3awcfrFieldClrawhtfShift)
 }
 
 // SetClrawhtf Clear the analog watchdog high threshold flag
-func (r *registerDfsdm_flt3awcfrType) SetClrawhtf(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3awcfrFieldClrawhtfMask)|(uint32(value)<<RegisterDfsdm_flt3awcfrFieldClrawhtfShift))
+func (r *registerDfsdmflt3awcfrType) SetClrawhtf(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3awcfrFieldClrawhtfMask)|(uint32(value)<<RegisterDfsdmflt3awcfrFieldClrawhtfShift))
 }
 
-// registerDfsdm_flt3exmaxType Extremes detector maximum register
-type registerDfsdm_flt3exmaxType uint32
+// registerDfsdmflt3exmaxType Extremes detector maximum register
+type registerDfsdmflt3exmaxType uint32
 
 const (
-	RegisterDfsdm_flt3exmaxFieldExmaxchShift = 0
-	RegisterDfsdm_flt3exmaxFieldExmaxchMask  = 0x7
+	RegisterDfsdmflt3exmaxFieldExmaxchShift = 0
+	RegisterDfsdmflt3exmaxFieldExmaxchMask  = 0x7
 )
 
 // GetExmaxch Extremes detector maximum data channel
-func (r *registerDfsdm_flt3exmaxType) GetExmaxch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3exmaxFieldExmaxchMask) >> RegisterDfsdm_flt3exmaxFieldExmaxchShift)
+func (r *registerDfsdmflt3exmaxType) GetExmaxch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3exmaxFieldExmaxchMask) >> RegisterDfsdmflt3exmaxFieldExmaxchShift)
 }
 
 // SetExmaxch Extremes detector maximum data channel
-func (r *registerDfsdm_flt3exmaxType) SetExmaxch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3exmaxFieldExmaxchMask)|(uint32(value)<<RegisterDfsdm_flt3exmaxFieldExmaxchShift))
+func (r *registerDfsdmflt3exmaxType) SetExmaxch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3exmaxFieldExmaxchMask)|(uint32(value)<<RegisterDfsdmflt3exmaxFieldExmaxchShift))
 }
 
 const (
-	RegisterDfsdm_flt3exmaxFieldExmaxShift = 8
-	RegisterDfsdm_flt3exmaxFieldExmaxMask  = 0xffffff00
+	RegisterDfsdmflt3exmaxFieldExmaxShift = 8
+	RegisterDfsdmflt3exmaxFieldExmaxMask  = 0xffffff00
 )
 
 // GetExmax Extremes detector maximum value
-func (r *registerDfsdm_flt3exmaxType) GetExmax() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3exmaxFieldExmaxMask) >> RegisterDfsdm_flt3exmaxFieldExmaxShift)
+func (r *registerDfsdmflt3exmaxType) GetExmax() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3exmaxFieldExmaxMask) >> RegisterDfsdmflt3exmaxFieldExmaxShift)
 }
 
 // SetExmax Extremes detector maximum value
-func (r *registerDfsdm_flt3exmaxType) SetExmax(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3exmaxFieldExmaxMask)|(uint32(value)<<RegisterDfsdm_flt3exmaxFieldExmaxShift))
+func (r *registerDfsdmflt3exmaxType) SetExmax(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3exmaxFieldExmaxMask)|(uint32(value)<<RegisterDfsdmflt3exmaxFieldExmaxShift))
 }
 
-// registerDfsdm_flt3exminType Extremes detector minimum register
-type registerDfsdm_flt3exminType uint32
+// registerDfsdmflt3exminType Extremes detector minimum register
+type registerDfsdmflt3exminType uint32
 
 const (
-	RegisterDfsdm_flt3exminFieldExminchShift = 0
-	RegisterDfsdm_flt3exminFieldExminchMask  = 0x7
+	RegisterDfsdmflt3exminFieldExminchShift = 0
+	RegisterDfsdmflt3exminFieldExminchMask  = 0x7
 )
 
 // GetExminch Extremes detector minimum data channel
-func (r *registerDfsdm_flt3exminType) GetExminch() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3exminFieldExminchMask) >> RegisterDfsdm_flt3exminFieldExminchShift)
+func (r *registerDfsdmflt3exminType) GetExminch() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3exminFieldExminchMask) >> RegisterDfsdmflt3exminFieldExminchShift)
 }
 
 // SetExminch Extremes detector minimum data channel
-func (r *registerDfsdm_flt3exminType) SetExminch(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3exminFieldExminchMask)|(uint32(value)<<RegisterDfsdm_flt3exminFieldExminchShift))
+func (r *registerDfsdmflt3exminType) SetExminch(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3exminFieldExminchMask)|(uint32(value)<<RegisterDfsdmflt3exminFieldExminchShift))
 }
 
 const (
-	RegisterDfsdm_flt3exminFieldExminShift = 8
-	RegisterDfsdm_flt3exminFieldExminMask  = 0xffffff00
+	RegisterDfsdmflt3exminFieldExminShift = 8
+	RegisterDfsdmflt3exminFieldExminMask  = 0xffffff00
 )
 
 // GetExmin EXMIN
-func (r *registerDfsdm_flt3exminType) GetExmin() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3exminFieldExminMask) >> RegisterDfsdm_flt3exminFieldExminShift)
+func (r *registerDfsdmflt3exminType) GetExmin() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3exminFieldExminMask) >> RegisterDfsdmflt3exminFieldExminShift)
 }
 
 // SetExmin EXMIN
-func (r *registerDfsdm_flt3exminType) SetExmin(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3exminFieldExminMask)|(uint32(value)<<RegisterDfsdm_flt3exminFieldExminShift))
+func (r *registerDfsdmflt3exminType) SetExmin(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3exminFieldExminMask)|(uint32(value)<<RegisterDfsdmflt3exminFieldExminShift))
 }
 
-// registerDfsdm_flt3cnvtimrType conversion timer register
-type registerDfsdm_flt3cnvtimrType uint32
+// registerDfsdmflt3cnvtimrType conversion timer register
+type registerDfsdmflt3cnvtimrType uint32
 
 const (
-	RegisterDfsdm_flt3cnvtimrFieldCnvcntShift = 4
-	RegisterDfsdm_flt3cnvtimrFieldCnvcntMask  = 0xfffffff0
+	RegisterDfsdmflt3cnvtimrFieldCnvcntShift = 4
+	RegisterDfsdmflt3cnvtimrFieldCnvcntMask  = 0xfffffff0
 )
 
 // GetCnvcnt 28-bit timer counting conversion time t = CNVCNT[27:0] / fDFSDM_CKIN
-func (r *registerDfsdm_flt3cnvtimrType) GetCnvcnt() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdm_flt3cnvtimrFieldCnvcntMask) >> RegisterDfsdm_flt3cnvtimrFieldCnvcntShift)
+func (r *registerDfsdmflt3cnvtimrType) GetCnvcnt() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDfsdmflt3cnvtimrFieldCnvcntMask) >> RegisterDfsdmflt3cnvtimrFieldCnvcntShift)
 }
 
 // SetCnvcnt 28-bit timer counting conversion time t = CNVCNT[27:0] / fDFSDM_CKIN
-func (r *registerDfsdm_flt3cnvtimrType) SetCnvcnt(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdm_flt3cnvtimrFieldCnvcntMask)|(uint32(value)<<RegisterDfsdm_flt3cnvtimrFieldCnvcntShift))
+func (r *registerDfsdmflt3cnvtimrType) SetCnvcnt(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDfsdmflt3cnvtimrFieldCnvcntMask)|(uint32(value)<<RegisterDfsdmflt3cnvtimrFieldCnvcntShift))
 }

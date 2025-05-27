@@ -57,18 +57,18 @@ type _hrtim_tim struct {
 type registerTimcrType uint32
 
 const (
-	RegisterTimcrFieldCk_pscxShift = 0
-	RegisterTimcrFieldCk_pscxMask  = 0x7
+	RegisterTimcrFieldCkpscxShift = 0
+	RegisterTimcrFieldCkpscxMask  = 0x7
 )
 
-// GetCk_pscx HRTIM Timer x Clock prescaler
-func (r *registerTimcrType) GetCk_pscx() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterTimcrFieldCk_pscxMask) >> RegisterTimcrFieldCk_pscxShift)
+// GetCkpscx HRTIM Timer x Clock prescaler
+func (r *registerTimcrType) GetCkpscx() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterTimcrFieldCkpscxMask) >> RegisterTimcrFieldCkpscxShift)
 }
 
-// SetCk_pscx HRTIM Timer x Clock prescaler
-func (r *registerTimcrType) SetCk_pscx(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTimcrFieldCk_pscxMask)|(uint32(value)<<RegisterTimcrFieldCk_pscxShift))
+// SetCkpscx HRTIM Timer x Clock prescaler
+func (r *registerTimcrType) SetCkpscx(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTimcrFieldCkpscxMask)|(uint32(value)<<RegisterTimcrFieldCkpscxShift))
 }
 
 const (

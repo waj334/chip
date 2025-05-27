@@ -18,2916 +18,2916 @@ var (
 )
 
 type _otg_hs_global struct {
-	Otg_hs_gotgctl         registerOtg_hs_gotgctlType
-	Otg_hs_gotgint         registerOtg_hs_gotgintType
-	Otg_hs_gahbcfg         registerOtg_hs_gahbcfgType
-	Otg_hs_gusbcfg         registerOtg_hs_gusbcfgType
-	Otg_hs_grstctl         registerOtg_hs_grstctlType
-	Otg_hs_gintsts         registerOtg_hs_gintstsType
-	Otg_hs_gintmsk         registerOtg_hs_gintmskType
-	Otg_hs_grxstsr_host    registerOtg_hs_grxstsr_hostType
-	Otg_hs_grxstsr_device  registerOtg_hs_grxstsr_deviceType
-	Otg_hs_grxstsp_host    registerOtg_hs_grxstsp_hostType
-	Otg_hs_grxstsp_device  registerOtg_hs_grxstsp_deviceType
-	Otg_hs_grxfsiz         registerOtg_hs_grxfsizType
-	Otg_hs_hnptxfsiz_host  registerOtg_hs_hnptxfsiz_hostType
-	Otg_hs_dieptxf0_device registerOtg_hs_dieptxf0_deviceType
-	Otg_hs_gnptxsts        registerOtg_hs_gnptxstsType
-	_                      [8]byte
-	Otg_hs_gccfg           registerOtg_hs_gccfgType
-	Otg_hs_cid             registerOtg_hs_cidType
-	_                      [20]byte
-	Otg_hs_glpmcfg         registerOtg_hs_glpmcfgType
-	_                      [168]byte
-	Otg_hs_hptxfsiz        registerOtg_hs_hptxfsizType
-	Otg_hs_dieptxf1        registerOtg_hs_dieptxf1Type
-	Otg_hs_dieptxf2        registerOtg_hs_dieptxf2Type
-	Otg_hs_dieptxf3        registerOtg_hs_dieptxf3Type
-	Otg_hs_dieptxf4        registerOtg_hs_dieptxf4Type
-	Otg_hs_dieptxf5        registerOtg_hs_dieptxf5Type
-	Otg_hs_dieptxf6        registerOtg_hs_dieptxf6Type
-	Otg_hs_dieptxf7        registerOtg_hs_dieptxf7Type
-	Otg_dieptxf8           registerOtg_dieptxf8Type
+	Otghsgotgctl        registerOtghsgotgctlType
+	Otghsgotgint        registerOtghsgotgintType
+	Otghsgahbcfg        registerOtghsgahbcfgType
+	Otghsgusbcfg        registerOtghsgusbcfgType
+	Otghsgrstctl        registerOtghsgrstctlType
+	Otghsgintsts        registerOtghsgintstsType
+	Otghsgintmsk        registerOtghsgintmskType
+	Otghsgrxstsrhost    registerOtghsgrxstsrhostType
+	Otghsgrxstsrdevice  registerOtghsgrxstsrdeviceType
+	Otghsgrxstsphost    registerOtghsgrxstsphostType
+	Otghsgrxstspdevice  registerOtghsgrxstspdeviceType
+	Otghsgrxfsiz        registerOtghsgrxfsizType
+	Otghshnptxfsizhost  registerOtghshnptxfsizhostType
+	Otghsdieptxf0device registerOtghsdieptxf0deviceType
+	Otghsgnptxsts       registerOtghsgnptxstsType
+	_                   [8]byte
+	Otghsgccfg          registerOtghsgccfgType
+	Otghscid            registerOtghscidType
+	_                   [20]byte
+	Otghsglpmcfg        registerOtghsglpmcfgType
+	_                   [168]byte
+	Otghshptxfsiz       registerOtghshptxfsizType
+	Otghsdieptxf1       registerOtghsdieptxf1Type
+	Otghsdieptxf2       registerOtghsdieptxf2Type
+	Otghsdieptxf3       registerOtghsdieptxf3Type
+	Otghsdieptxf4       registerOtghsdieptxf4Type
+	Otghsdieptxf5       registerOtghsdieptxf5Type
+	Otghsdieptxf6       registerOtghsdieptxf6Type
+	Otghsdieptxf7       registerOtghsdieptxf7Type
+	Otgdieptxf8         registerOtgdieptxf8Type
 }
 
-// registerOtg_hs_gotgctlType OTG_HS control and status register
-type registerOtg_hs_gotgctlType uint32
+// registerOtghsgotgctlType OTG_HS control and status register
+type registerOtghsgotgctlType uint32
 
 const (
-	RegisterOtg_hs_gotgctlFieldSrqscsShift = 0
-	RegisterOtg_hs_gotgctlFieldSrqscsMask  = 0x1
+	RegisterOtghsgotgctlFieldSrqscsShift = 0
+	RegisterOtghsgotgctlFieldSrqscsMask  = 0x1
 )
 
 // GetSrqscs Session request success
-func (r *registerOtg_hs_gotgctlType) GetSrqscs() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldSrqscsMask) != 0
+func (r *registerOtghsgotgctlType) GetSrqscs() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldSrqscsMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gotgctlFieldSrqShift = 1
-	RegisterOtg_hs_gotgctlFieldSrqMask  = 0x2
+	RegisterOtghsgotgctlFieldSrqShift = 1
+	RegisterOtghsgotgctlFieldSrqMask  = 0x2
 )
 
 // GetSrq Session request
-func (r *registerOtg_hs_gotgctlType) GetSrq() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldSrqMask) != 0
+func (r *registerOtghsgotgctlType) GetSrq() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldSrqMask) != 0
 }
 
 // SetSrq Session request
-func (r *registerOtg_hs_gotgctlType) SetSrq(value bool) {
+func (r *registerOtghsgotgctlType) SetSrq(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgctlFieldSrqMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgctlFieldSrqMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgctlFieldSrqMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgctlFieldSrqMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgctlFieldHngscsShift = 8
-	RegisterOtg_hs_gotgctlFieldHngscsMask  = 0x100
+	RegisterOtghsgotgctlFieldHngscsShift = 8
+	RegisterOtghsgotgctlFieldHngscsMask  = 0x100
 )
 
 // GetHngscs Host negotiation success
-func (r *registerOtg_hs_gotgctlType) GetHngscs() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldHngscsMask) != 0
+func (r *registerOtghsgotgctlType) GetHngscs() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldHngscsMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gotgctlFieldHnprqShift = 9
-	RegisterOtg_hs_gotgctlFieldHnprqMask  = 0x200
+	RegisterOtghsgotgctlFieldHnprqShift = 9
+	RegisterOtghsgotgctlFieldHnprqMask  = 0x200
 )
 
 // GetHnprq HNP request
-func (r *registerOtg_hs_gotgctlType) GetHnprq() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldHnprqMask) != 0
+func (r *registerOtghsgotgctlType) GetHnprq() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldHnprqMask) != 0
 }
 
 // SetHnprq HNP request
-func (r *registerOtg_hs_gotgctlType) SetHnprq(value bool) {
+func (r *registerOtghsgotgctlType) SetHnprq(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgctlFieldHnprqMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgctlFieldHnprqMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgctlFieldHnprqMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgctlFieldHnprqMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgctlFieldHshnpenShift = 10
-	RegisterOtg_hs_gotgctlFieldHshnpenMask  = 0x400
+	RegisterOtghsgotgctlFieldHshnpenShift = 10
+	RegisterOtghsgotgctlFieldHshnpenMask  = 0x400
 )
 
 // GetHshnpen Host set HNP enable
-func (r *registerOtg_hs_gotgctlType) GetHshnpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldHshnpenMask) != 0
+func (r *registerOtghsgotgctlType) GetHshnpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldHshnpenMask) != 0
 }
 
 // SetHshnpen Host set HNP enable
-func (r *registerOtg_hs_gotgctlType) SetHshnpen(value bool) {
+func (r *registerOtghsgotgctlType) SetHshnpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgctlFieldHshnpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgctlFieldHshnpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgctlFieldHshnpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgctlFieldHshnpenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgctlFieldDhnpenShift = 11
-	RegisterOtg_hs_gotgctlFieldDhnpenMask  = 0x800
+	RegisterOtghsgotgctlFieldDhnpenShift = 11
+	RegisterOtghsgotgctlFieldDhnpenMask  = 0x800
 )
 
 // GetDhnpen Device HNP enabled
-func (r *registerOtg_hs_gotgctlType) GetDhnpen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldDhnpenMask) != 0
+func (r *registerOtghsgotgctlType) GetDhnpen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldDhnpenMask) != 0
 }
 
 // SetDhnpen Device HNP enabled
-func (r *registerOtg_hs_gotgctlType) SetDhnpen(value bool) {
+func (r *registerOtghsgotgctlType) SetDhnpen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgctlFieldDhnpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgctlFieldDhnpenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgctlFieldDhnpenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgctlFieldDhnpenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgctlFieldEhenShift = 12
-	RegisterOtg_hs_gotgctlFieldEhenMask  = 0x1000
+	RegisterOtghsgotgctlFieldEhenShift = 12
+	RegisterOtghsgotgctlFieldEhenMask  = 0x1000
 )
 
 // GetEhen Embedded host enable
-func (r *registerOtg_hs_gotgctlType) GetEhen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldEhenMask) != 0
+func (r *registerOtghsgotgctlType) GetEhen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldEhenMask) != 0
 }
 
 // SetEhen Embedded host enable
-func (r *registerOtg_hs_gotgctlType) SetEhen(value bool) {
+func (r *registerOtghsgotgctlType) SetEhen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgctlFieldEhenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgctlFieldEhenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgctlFieldEhenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgctlFieldEhenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgctlFieldCidstsShift = 16
-	RegisterOtg_hs_gotgctlFieldCidstsMask  = 0x10000
+	RegisterOtghsgotgctlFieldCidstsShift = 16
+	RegisterOtghsgotgctlFieldCidstsMask  = 0x10000
 )
 
 // GetCidsts Connector ID status
-func (r *registerOtg_hs_gotgctlType) GetCidsts() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldCidstsMask) != 0
+func (r *registerOtghsgotgctlType) GetCidsts() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldCidstsMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gotgctlFieldDbctShift = 17
-	RegisterOtg_hs_gotgctlFieldDbctMask  = 0x20000
+	RegisterOtghsgotgctlFieldDbctShift = 17
+	RegisterOtghsgotgctlFieldDbctMask  = 0x20000
 )
 
 // GetDbct Long/short debounce time
-func (r *registerOtg_hs_gotgctlType) GetDbct() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldDbctMask) != 0
+func (r *registerOtghsgotgctlType) GetDbct() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldDbctMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gotgctlFieldAsvldShift = 18
-	RegisterOtg_hs_gotgctlFieldAsvldMask  = 0x40000
+	RegisterOtghsgotgctlFieldAsvldShift = 18
+	RegisterOtghsgotgctlFieldAsvldMask  = 0x40000
 )
 
 // GetAsvld A-session valid
-func (r *registerOtg_hs_gotgctlType) GetAsvld() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldAsvldMask) != 0
+func (r *registerOtghsgotgctlType) GetAsvld() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldAsvldMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gotgctlFieldBsvldShift = 19
-	RegisterOtg_hs_gotgctlFieldBsvldMask  = 0x80000
+	RegisterOtghsgotgctlFieldBsvldShift = 19
+	RegisterOtghsgotgctlFieldBsvldMask  = 0x80000
 )
 
 // GetBsvld B-session valid
-func (r *registerOtg_hs_gotgctlType) GetBsvld() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgctlFieldBsvldMask) != 0
+func (r *registerOtghsgotgctlType) GetBsvld() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgctlFieldBsvldMask) != 0
 }
 
-// registerOtg_hs_gotgintType OTG_HS interrupt register
-type registerOtg_hs_gotgintType uint32
+// registerOtghsgotgintType OTG_HS interrupt register
+type registerOtghsgotgintType uint32
 
 const (
-	RegisterOtg_hs_gotgintFieldSedetShift = 2
-	RegisterOtg_hs_gotgintFieldSedetMask  = 0x4
+	RegisterOtghsgotgintFieldSedetShift = 2
+	RegisterOtghsgotgintFieldSedetMask  = 0x4
 )
 
 // GetSedet Session end detected
-func (r *registerOtg_hs_gotgintType) GetSedet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgintFieldSedetMask) != 0
+func (r *registerOtghsgotgintType) GetSedet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgintFieldSedetMask) != 0
 }
 
 // SetSedet Session end detected
-func (r *registerOtg_hs_gotgintType) SetSedet(value bool) {
+func (r *registerOtghsgotgintType) SetSedet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgintFieldSedetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgintFieldSedetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgintFieldSedetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgintFieldSedetMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgintFieldSrsschgShift = 8
-	RegisterOtg_hs_gotgintFieldSrsschgMask  = 0x100
+	RegisterOtghsgotgintFieldSrsschgShift = 8
+	RegisterOtghsgotgintFieldSrsschgMask  = 0x100
 )
 
 // GetSrsschg Session request success status change
-func (r *registerOtg_hs_gotgintType) GetSrsschg() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgintFieldSrsschgMask) != 0
+func (r *registerOtghsgotgintType) GetSrsschg() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgintFieldSrsschgMask) != 0
 }
 
 // SetSrsschg Session request success status change
-func (r *registerOtg_hs_gotgintType) SetSrsschg(value bool) {
+func (r *registerOtghsgotgintType) SetSrsschg(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgintFieldSrsschgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgintFieldSrsschgMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgintFieldSrsschgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgintFieldSrsschgMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgintFieldHnsschgShift = 9
-	RegisterOtg_hs_gotgintFieldHnsschgMask  = 0x200
+	RegisterOtghsgotgintFieldHnsschgShift = 9
+	RegisterOtghsgotgintFieldHnsschgMask  = 0x200
 )
 
 // GetHnsschg Host negotiation success status change
-func (r *registerOtg_hs_gotgintType) GetHnsschg() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgintFieldHnsschgMask) != 0
+func (r *registerOtghsgotgintType) GetHnsschg() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgintFieldHnsschgMask) != 0
 }
 
 // SetHnsschg Host negotiation success status change
-func (r *registerOtg_hs_gotgintType) SetHnsschg(value bool) {
+func (r *registerOtghsgotgintType) SetHnsschg(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgintFieldHnsschgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgintFieldHnsschgMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgintFieldHnsschgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgintFieldHnsschgMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgintFieldHngdetShift = 17
-	RegisterOtg_hs_gotgintFieldHngdetMask  = 0x20000
+	RegisterOtghsgotgintFieldHngdetShift = 17
+	RegisterOtghsgotgintFieldHngdetMask  = 0x20000
 )
 
 // GetHngdet Host negotiation detected
-func (r *registerOtg_hs_gotgintType) GetHngdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgintFieldHngdetMask) != 0
+func (r *registerOtghsgotgintType) GetHngdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgintFieldHngdetMask) != 0
 }
 
 // SetHngdet Host negotiation detected
-func (r *registerOtg_hs_gotgintType) SetHngdet(value bool) {
+func (r *registerOtghsgotgintType) SetHngdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgintFieldHngdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgintFieldHngdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgintFieldHngdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgintFieldHngdetMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgintFieldAdtochgShift = 18
-	RegisterOtg_hs_gotgintFieldAdtochgMask  = 0x40000
+	RegisterOtghsgotgintFieldAdtochgShift = 18
+	RegisterOtghsgotgintFieldAdtochgMask  = 0x40000
 )
 
 // GetAdtochg A-device timeout change
-func (r *registerOtg_hs_gotgintType) GetAdtochg() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgintFieldAdtochgMask) != 0
+func (r *registerOtghsgotgintType) GetAdtochg() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgintFieldAdtochgMask) != 0
 }
 
 // SetAdtochg A-device timeout change
-func (r *registerOtg_hs_gotgintType) SetAdtochg(value bool) {
+func (r *registerOtghsgotgintType) SetAdtochg(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgintFieldAdtochgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgintFieldAdtochgMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgintFieldAdtochgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgintFieldAdtochgMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgintFieldDbcdneShift = 19
-	RegisterOtg_hs_gotgintFieldDbcdneMask  = 0x80000
+	RegisterOtghsgotgintFieldDbcdneShift = 19
+	RegisterOtghsgotgintFieldDbcdneMask  = 0x80000
 )
 
 // GetDbcdne Debounce done
-func (r *registerOtg_hs_gotgintType) GetDbcdne() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgintFieldDbcdneMask) != 0
+func (r *registerOtghsgotgintType) GetDbcdne() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgintFieldDbcdneMask) != 0
 }
 
 // SetDbcdne Debounce done
-func (r *registerOtg_hs_gotgintType) SetDbcdne(value bool) {
+func (r *registerOtghsgotgintType) SetDbcdne(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgintFieldDbcdneMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgintFieldDbcdneMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgintFieldDbcdneMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgintFieldDbcdneMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gotgintFieldIdchngShift = 20
-	RegisterOtg_hs_gotgintFieldIdchngMask  = 0x100000
+	RegisterOtghsgotgintFieldIdchngShift = 20
+	RegisterOtghsgotgintFieldIdchngMask  = 0x100000
 )
 
 // GetIdchng ID input pin changed
-func (r *registerOtg_hs_gotgintType) GetIdchng() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gotgintFieldIdchngMask) != 0
+func (r *registerOtghsgotgintType) GetIdchng() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgotgintFieldIdchngMask) != 0
 }
 
 // SetIdchng ID input pin changed
-func (r *registerOtg_hs_gotgintType) SetIdchng(value bool) {
+func (r *registerOtghsgotgintType) SetIdchng(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gotgintFieldIdchngMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgotgintFieldIdchngMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gotgintFieldIdchngMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgotgintFieldIdchngMask)
 	}
 }
 
-// registerOtg_hs_gahbcfgType OTG_HS AHB configuration register
-type registerOtg_hs_gahbcfgType uint32
+// registerOtghsgahbcfgType OTG_HS AHB configuration register
+type registerOtghsgahbcfgType uint32
 
 const (
-	RegisterOtg_hs_gahbcfgFieldGintShift = 0
-	RegisterOtg_hs_gahbcfgFieldGintMask  = 0x1
+	RegisterOtghsgahbcfgFieldGintShift = 0
+	RegisterOtghsgahbcfgFieldGintMask  = 0x1
 )
 
 // GetGint Global interrupt mask
-func (r *registerOtg_hs_gahbcfgType) GetGint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gahbcfgFieldGintMask) != 0
+func (r *registerOtghsgahbcfgType) GetGint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgahbcfgFieldGintMask) != 0
 }
 
 // SetGint Global interrupt mask
-func (r *registerOtg_hs_gahbcfgType) SetGint(value bool) {
+func (r *registerOtghsgahbcfgType) SetGint(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gahbcfgFieldGintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgahbcfgFieldGintMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gahbcfgFieldGintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgahbcfgFieldGintMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gahbcfgFieldHbstlenShift = 1
-	RegisterOtg_hs_gahbcfgFieldHbstlenMask  = 0x1e
+	RegisterOtghsgahbcfgFieldHbstlenShift = 1
+	RegisterOtghsgahbcfgFieldHbstlenMask  = 0x1e
 )
 
 // GetHbstlen Burst length/type
-func (r *registerOtg_hs_gahbcfgType) GetHbstlen() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gahbcfgFieldHbstlenMask) >> RegisterOtg_hs_gahbcfgFieldHbstlenShift)
+func (r *registerOtghsgahbcfgType) GetHbstlen() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgahbcfgFieldHbstlenMask) >> RegisterOtghsgahbcfgFieldHbstlenShift)
 }
 
 // SetHbstlen Burst length/type
-func (r *registerOtg_hs_gahbcfgType) SetHbstlen(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gahbcfgFieldHbstlenMask)|(uint32(value)<<RegisterOtg_hs_gahbcfgFieldHbstlenShift))
+func (r *registerOtghsgahbcfgType) SetHbstlen(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgahbcfgFieldHbstlenMask)|(uint32(value)<<RegisterOtghsgahbcfgFieldHbstlenShift))
 }
 
 const (
-	RegisterOtg_hs_gahbcfgFieldDmaenShift = 5
-	RegisterOtg_hs_gahbcfgFieldDmaenMask  = 0x20
+	RegisterOtghsgahbcfgFieldDmaenShift = 5
+	RegisterOtghsgahbcfgFieldDmaenMask  = 0x20
 )
 
 // GetDmaen DMA enable
-func (r *registerOtg_hs_gahbcfgType) GetDmaen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gahbcfgFieldDmaenMask) != 0
+func (r *registerOtghsgahbcfgType) GetDmaen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgahbcfgFieldDmaenMask) != 0
 }
 
 // SetDmaen DMA enable
-func (r *registerOtg_hs_gahbcfgType) SetDmaen(value bool) {
+func (r *registerOtghsgahbcfgType) SetDmaen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gahbcfgFieldDmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgahbcfgFieldDmaenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gahbcfgFieldDmaenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgahbcfgFieldDmaenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gahbcfgFieldTxfelvlShift = 7
-	RegisterOtg_hs_gahbcfgFieldTxfelvlMask  = 0x80
+	RegisterOtghsgahbcfgFieldTxfelvlShift = 7
+	RegisterOtghsgahbcfgFieldTxfelvlMask  = 0x80
 )
 
 // GetTxfelvl TxFIFO empty level
-func (r *registerOtg_hs_gahbcfgType) GetTxfelvl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gahbcfgFieldTxfelvlMask) != 0
+func (r *registerOtghsgahbcfgType) GetTxfelvl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgahbcfgFieldTxfelvlMask) != 0
 }
 
 // SetTxfelvl TxFIFO empty level
-func (r *registerOtg_hs_gahbcfgType) SetTxfelvl(value bool) {
+func (r *registerOtghsgahbcfgType) SetTxfelvl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gahbcfgFieldTxfelvlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgahbcfgFieldTxfelvlMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gahbcfgFieldTxfelvlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgahbcfgFieldTxfelvlMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gahbcfgFieldPtxfelvlShift = 8
-	RegisterOtg_hs_gahbcfgFieldPtxfelvlMask  = 0x100
+	RegisterOtghsgahbcfgFieldPtxfelvlShift = 8
+	RegisterOtghsgahbcfgFieldPtxfelvlMask  = 0x100
 )
 
 // GetPtxfelvl Periodic TxFIFO empty level
-func (r *registerOtg_hs_gahbcfgType) GetPtxfelvl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gahbcfgFieldPtxfelvlMask) != 0
+func (r *registerOtghsgahbcfgType) GetPtxfelvl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgahbcfgFieldPtxfelvlMask) != 0
 }
 
 // SetPtxfelvl Periodic TxFIFO empty level
-func (r *registerOtg_hs_gahbcfgType) SetPtxfelvl(value bool) {
+func (r *registerOtghsgahbcfgType) SetPtxfelvl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gahbcfgFieldPtxfelvlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgahbcfgFieldPtxfelvlMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gahbcfgFieldPtxfelvlMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgahbcfgFieldPtxfelvlMask)
 	}
 }
 
-// registerOtg_hs_gusbcfgType OTG_HS USB configuration register
-type registerOtg_hs_gusbcfgType uint32
+// registerOtghsgusbcfgType OTG_HS USB configuration register
+type registerOtghsgusbcfgType uint32
 
 const (
-	RegisterOtg_hs_gusbcfgFieldTocalShift = 0
-	RegisterOtg_hs_gusbcfgFieldTocalMask  = 0x7
+	RegisterOtghsgusbcfgFieldTocalShift = 0
+	RegisterOtghsgusbcfgFieldTocalMask  = 0x7
 )
 
 // GetTocal FS timeout calibration
-func (r *registerOtg_hs_gusbcfgType) GetTocal() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldTocalMask) >> RegisterOtg_hs_gusbcfgFieldTocalShift)
+func (r *registerOtghsgusbcfgType) GetTocal() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldTocalMask) >> RegisterOtghsgusbcfgFieldTocalShift)
 }
 
 // SetTocal FS timeout calibration
-func (r *registerOtg_hs_gusbcfgType) SetTocal(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldTocalMask)|(uint32(value)<<RegisterOtg_hs_gusbcfgFieldTocalShift))
+func (r *registerOtghsgusbcfgType) SetTocal(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldTocalMask)|(uint32(value)<<RegisterOtghsgusbcfgFieldTocalShift))
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldPhyselShift = 6
-	RegisterOtg_hs_gusbcfgFieldPhyselMask  = 0x40
+	RegisterOtghsgusbcfgFieldPhyselShift = 6
+	RegisterOtghsgusbcfgFieldPhyselMask  = 0x40
 )
 
 // SetPhysel USB 2.0 high-speed ULPI PHY or USB 1.1 full-speed serial transceiver select
-func (r *registerOtg_hs_gusbcfgType) SetPhysel(value bool) {
+func (r *registerOtghsgusbcfgType) SetPhysel(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldPhyselMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldPhyselMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldPhyselMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldPhyselMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldSrpcapShift = 8
-	RegisterOtg_hs_gusbcfgFieldSrpcapMask  = 0x100
+	RegisterOtghsgusbcfgFieldSrpcapShift = 8
+	RegisterOtghsgusbcfgFieldSrpcapMask  = 0x100
 )
 
 // GetSrpcap SRP-capable
-func (r *registerOtg_hs_gusbcfgType) GetSrpcap() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldSrpcapMask) != 0
+func (r *registerOtghsgusbcfgType) GetSrpcap() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldSrpcapMask) != 0
 }
 
 // SetSrpcap SRP-capable
-func (r *registerOtg_hs_gusbcfgType) SetSrpcap(value bool) {
+func (r *registerOtghsgusbcfgType) SetSrpcap(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldSrpcapMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldSrpcapMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldSrpcapMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldSrpcapMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldHnpcapShift = 9
-	RegisterOtg_hs_gusbcfgFieldHnpcapMask  = 0x200
+	RegisterOtghsgusbcfgFieldHnpcapShift = 9
+	RegisterOtghsgusbcfgFieldHnpcapMask  = 0x200
 )
 
 // GetHnpcap HNP-capable
-func (r *registerOtg_hs_gusbcfgType) GetHnpcap() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldHnpcapMask) != 0
+func (r *registerOtghsgusbcfgType) GetHnpcap() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldHnpcapMask) != 0
 }
 
 // SetHnpcap HNP-capable
-func (r *registerOtg_hs_gusbcfgType) SetHnpcap(value bool) {
+func (r *registerOtghsgusbcfgType) SetHnpcap(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldHnpcapMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldHnpcapMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldHnpcapMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldHnpcapMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldTrdtShift = 10
-	RegisterOtg_hs_gusbcfgFieldTrdtMask  = 0x3c00
+	RegisterOtghsgusbcfgFieldTrdtShift = 10
+	RegisterOtghsgusbcfgFieldTrdtMask  = 0x3c00
 )
 
 // GetTrdt USB turnaround time
-func (r *registerOtg_hs_gusbcfgType) GetTrdt() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldTrdtMask) >> RegisterOtg_hs_gusbcfgFieldTrdtShift)
+func (r *registerOtghsgusbcfgType) GetTrdt() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldTrdtMask) >> RegisterOtghsgusbcfgFieldTrdtShift)
 }
 
 // SetTrdt USB turnaround time
-func (r *registerOtg_hs_gusbcfgType) SetTrdt(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldTrdtMask)|(uint32(value)<<RegisterOtg_hs_gusbcfgFieldTrdtShift))
+func (r *registerOtghsgusbcfgType) SetTrdt(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldTrdtMask)|(uint32(value)<<RegisterOtghsgusbcfgFieldTrdtShift))
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldPhylpcsShift = 15
-	RegisterOtg_hs_gusbcfgFieldPhylpcsMask  = 0x8000
+	RegisterOtghsgusbcfgFieldPhylpcsShift = 15
+	RegisterOtghsgusbcfgFieldPhylpcsMask  = 0x8000
 )
 
 // GetPhylpcs PHY Low-power clock select
-func (r *registerOtg_hs_gusbcfgType) GetPhylpcs() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldPhylpcsMask) != 0
+func (r *registerOtghsgusbcfgType) GetPhylpcs() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldPhylpcsMask) != 0
 }
 
 // SetPhylpcs PHY Low-power clock select
-func (r *registerOtg_hs_gusbcfgType) SetPhylpcs(value bool) {
+func (r *registerOtghsgusbcfgType) SetPhylpcs(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldPhylpcsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldPhylpcsMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldPhylpcsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldPhylpcsMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldUlpifslsShift = 17
-	RegisterOtg_hs_gusbcfgFieldUlpifslsMask  = 0x20000
+	RegisterOtghsgusbcfgFieldUlpifslsShift = 17
+	RegisterOtghsgusbcfgFieldUlpifslsMask  = 0x20000
 )
 
 // GetUlpifsls ULPI FS/LS select
-func (r *registerOtg_hs_gusbcfgType) GetUlpifsls() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldUlpifslsMask) != 0
+func (r *registerOtghsgusbcfgType) GetUlpifsls() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldUlpifslsMask) != 0
 }
 
 // SetUlpifsls ULPI FS/LS select
-func (r *registerOtg_hs_gusbcfgType) SetUlpifsls(value bool) {
+func (r *registerOtghsgusbcfgType) SetUlpifsls(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldUlpifslsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldUlpifslsMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldUlpifslsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldUlpifslsMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldUlpiarShift = 18
-	RegisterOtg_hs_gusbcfgFieldUlpiarMask  = 0x40000
+	RegisterOtghsgusbcfgFieldUlpiarShift = 18
+	RegisterOtghsgusbcfgFieldUlpiarMask  = 0x40000
 )
 
 // GetUlpiar ULPI Auto-resume
-func (r *registerOtg_hs_gusbcfgType) GetUlpiar() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldUlpiarMask) != 0
+func (r *registerOtghsgusbcfgType) GetUlpiar() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldUlpiarMask) != 0
 }
 
 // SetUlpiar ULPI Auto-resume
-func (r *registerOtg_hs_gusbcfgType) SetUlpiar(value bool) {
+func (r *registerOtghsgusbcfgType) SetUlpiar(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldUlpiarMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldUlpiarMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldUlpiarMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldUlpiarMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldUlpicsmShift = 19
-	RegisterOtg_hs_gusbcfgFieldUlpicsmMask  = 0x80000
+	RegisterOtghsgusbcfgFieldUlpicsmShift = 19
+	RegisterOtghsgusbcfgFieldUlpicsmMask  = 0x80000
 )
 
 // GetUlpicsm ULPI Clock SuspendM
-func (r *registerOtg_hs_gusbcfgType) GetUlpicsm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldUlpicsmMask) != 0
+func (r *registerOtghsgusbcfgType) GetUlpicsm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldUlpicsmMask) != 0
 }
 
 // SetUlpicsm ULPI Clock SuspendM
-func (r *registerOtg_hs_gusbcfgType) SetUlpicsm(value bool) {
+func (r *registerOtghsgusbcfgType) SetUlpicsm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldUlpicsmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldUlpicsmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldUlpicsmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldUlpicsmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldUlpievbusdShift = 20
-	RegisterOtg_hs_gusbcfgFieldUlpievbusdMask  = 0x100000
+	RegisterOtghsgusbcfgFieldUlpievbusdShift = 20
+	RegisterOtghsgusbcfgFieldUlpievbusdMask  = 0x100000
 )
 
 // GetUlpievbusd ULPI External VBUS Drive
-func (r *registerOtg_hs_gusbcfgType) GetUlpievbusd() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldUlpievbusdMask) != 0
+func (r *registerOtghsgusbcfgType) GetUlpievbusd() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldUlpievbusdMask) != 0
 }
 
 // SetUlpievbusd ULPI External VBUS Drive
-func (r *registerOtg_hs_gusbcfgType) SetUlpievbusd(value bool) {
+func (r *registerOtghsgusbcfgType) SetUlpievbusd(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldUlpievbusdMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldUlpievbusdMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldUlpievbusdMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldUlpievbusdMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldUlpievbusiShift = 21
-	RegisterOtg_hs_gusbcfgFieldUlpievbusiMask  = 0x200000
+	RegisterOtghsgusbcfgFieldUlpievbusiShift = 21
+	RegisterOtghsgusbcfgFieldUlpievbusiMask  = 0x200000
 )
 
 // GetUlpievbusi ULPI external VBUS indicator
-func (r *registerOtg_hs_gusbcfgType) GetUlpievbusi() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldUlpievbusiMask) != 0
+func (r *registerOtghsgusbcfgType) GetUlpievbusi() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldUlpievbusiMask) != 0
 }
 
 // SetUlpievbusi ULPI external VBUS indicator
-func (r *registerOtg_hs_gusbcfgType) SetUlpievbusi(value bool) {
+func (r *registerOtghsgusbcfgType) SetUlpievbusi(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldUlpievbusiMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldUlpievbusiMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldUlpievbusiMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldUlpievbusiMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldTsdpsShift = 22
-	RegisterOtg_hs_gusbcfgFieldTsdpsMask  = 0x400000
+	RegisterOtghsgusbcfgFieldTsdpsShift = 22
+	RegisterOtghsgusbcfgFieldTsdpsMask  = 0x400000
 )
 
 // GetTsdps TermSel DLine pulsing selection
-func (r *registerOtg_hs_gusbcfgType) GetTsdps() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldTsdpsMask) != 0
+func (r *registerOtghsgusbcfgType) GetTsdps() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldTsdpsMask) != 0
 }
 
 // SetTsdps TermSel DLine pulsing selection
-func (r *registerOtg_hs_gusbcfgType) SetTsdps(value bool) {
+func (r *registerOtghsgusbcfgType) SetTsdps(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldTsdpsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldTsdpsMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldTsdpsMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldTsdpsMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldPcciShift = 23
-	RegisterOtg_hs_gusbcfgFieldPcciMask  = 0x800000
+	RegisterOtghsgusbcfgFieldPcciShift = 23
+	RegisterOtghsgusbcfgFieldPcciMask  = 0x800000
 )
 
 // GetPcci Indicator complement
-func (r *registerOtg_hs_gusbcfgType) GetPcci() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldPcciMask) != 0
+func (r *registerOtghsgusbcfgType) GetPcci() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldPcciMask) != 0
 }
 
 // SetPcci Indicator complement
-func (r *registerOtg_hs_gusbcfgType) SetPcci(value bool) {
+func (r *registerOtghsgusbcfgType) SetPcci(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldPcciMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldPcciMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldPcciMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldPcciMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldPtciShift = 24
-	RegisterOtg_hs_gusbcfgFieldPtciMask  = 0x1000000
+	RegisterOtghsgusbcfgFieldPtciShift = 24
+	RegisterOtghsgusbcfgFieldPtciMask  = 0x1000000
 )
 
 // GetPtci Indicator pass through
-func (r *registerOtg_hs_gusbcfgType) GetPtci() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldPtciMask) != 0
+func (r *registerOtghsgusbcfgType) GetPtci() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldPtciMask) != 0
 }
 
 // SetPtci Indicator pass through
-func (r *registerOtg_hs_gusbcfgType) SetPtci(value bool) {
+func (r *registerOtghsgusbcfgType) SetPtci(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldPtciMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldPtciMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldPtciMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldPtciMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldUlpiipdShift = 25
-	RegisterOtg_hs_gusbcfgFieldUlpiipdMask  = 0x2000000
+	RegisterOtghsgusbcfgFieldUlpiipdShift = 25
+	RegisterOtghsgusbcfgFieldUlpiipdMask  = 0x2000000
 )
 
 // GetUlpiipd ULPI interface protect disable
-func (r *registerOtg_hs_gusbcfgType) GetUlpiipd() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldUlpiipdMask) != 0
+func (r *registerOtghsgusbcfgType) GetUlpiipd() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldUlpiipdMask) != 0
 }
 
 // SetUlpiipd ULPI interface protect disable
-func (r *registerOtg_hs_gusbcfgType) SetUlpiipd(value bool) {
+func (r *registerOtghsgusbcfgType) SetUlpiipd(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldUlpiipdMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldUlpiipdMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldUlpiipdMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldUlpiipdMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldFhmodShift = 29
-	RegisterOtg_hs_gusbcfgFieldFhmodMask  = 0x20000000
+	RegisterOtghsgusbcfgFieldFhmodShift = 29
+	RegisterOtghsgusbcfgFieldFhmodMask  = 0x20000000
 )
 
 // GetFhmod Forced host mode
-func (r *registerOtg_hs_gusbcfgType) GetFhmod() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldFhmodMask) != 0
+func (r *registerOtghsgusbcfgType) GetFhmod() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldFhmodMask) != 0
 }
 
 // SetFhmod Forced host mode
-func (r *registerOtg_hs_gusbcfgType) SetFhmod(value bool) {
+func (r *registerOtghsgusbcfgType) SetFhmod(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldFhmodMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldFhmodMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldFhmodMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldFhmodMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gusbcfgFieldFdmodShift = 30
-	RegisterOtg_hs_gusbcfgFieldFdmodMask  = 0x40000000
+	RegisterOtghsgusbcfgFieldFdmodShift = 30
+	RegisterOtghsgusbcfgFieldFdmodMask  = 0x40000000
 )
 
 // GetFdmod Forced peripheral mode
-func (r *registerOtg_hs_gusbcfgType) GetFdmod() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gusbcfgFieldFdmodMask) != 0
+func (r *registerOtghsgusbcfgType) GetFdmod() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgusbcfgFieldFdmodMask) != 0
 }
 
 // SetFdmod Forced peripheral mode
-func (r *registerOtg_hs_gusbcfgType) SetFdmod(value bool) {
+func (r *registerOtghsgusbcfgType) SetFdmod(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gusbcfgFieldFdmodMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgusbcfgFieldFdmodMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gusbcfgFieldFdmodMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgusbcfgFieldFdmodMask)
 	}
 }
 
-// registerOtg_hs_grstctlType OTG_HS reset register
-type registerOtg_hs_grstctlType uint32
+// registerOtghsgrstctlType OTG_HS reset register
+type registerOtghsgrstctlType uint32
 
 const (
-	RegisterOtg_hs_grstctlFieldCsrstShift = 0
-	RegisterOtg_hs_grstctlFieldCsrstMask  = 0x1
+	RegisterOtghsgrstctlFieldCsrstShift = 0
+	RegisterOtghsgrstctlFieldCsrstMask  = 0x1
 )
 
 // GetCsrst Core soft reset
-func (r *registerOtg_hs_grstctlType) GetCsrst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grstctlFieldCsrstMask) != 0
+func (r *registerOtghsgrstctlType) GetCsrst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrstctlFieldCsrstMask) != 0
 }
 
 // SetCsrst Core soft reset
-func (r *registerOtg_hs_grstctlType) SetCsrst(value bool) {
+func (r *registerOtghsgrstctlType) SetCsrst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_grstctlFieldCsrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgrstctlFieldCsrstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grstctlFieldCsrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrstctlFieldCsrstMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_grstctlFieldHsrstShift = 1
-	RegisterOtg_hs_grstctlFieldHsrstMask  = 0x2
+	RegisterOtghsgrstctlFieldHsrstShift = 1
+	RegisterOtghsgrstctlFieldHsrstMask  = 0x2
 )
 
 // GetHsrst HCLK soft reset
-func (r *registerOtg_hs_grstctlType) GetHsrst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grstctlFieldHsrstMask) != 0
+func (r *registerOtghsgrstctlType) GetHsrst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrstctlFieldHsrstMask) != 0
 }
 
 // SetHsrst HCLK soft reset
-func (r *registerOtg_hs_grstctlType) SetHsrst(value bool) {
+func (r *registerOtghsgrstctlType) SetHsrst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_grstctlFieldHsrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgrstctlFieldHsrstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grstctlFieldHsrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrstctlFieldHsrstMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_grstctlFieldFcrstShift = 2
-	RegisterOtg_hs_grstctlFieldFcrstMask  = 0x4
+	RegisterOtghsgrstctlFieldFcrstShift = 2
+	RegisterOtghsgrstctlFieldFcrstMask  = 0x4
 )
 
 // GetFcrst Host frame counter reset
-func (r *registerOtg_hs_grstctlType) GetFcrst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grstctlFieldFcrstMask) != 0
+func (r *registerOtghsgrstctlType) GetFcrst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrstctlFieldFcrstMask) != 0
 }
 
 // SetFcrst Host frame counter reset
-func (r *registerOtg_hs_grstctlType) SetFcrst(value bool) {
+func (r *registerOtghsgrstctlType) SetFcrst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_grstctlFieldFcrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgrstctlFieldFcrstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grstctlFieldFcrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrstctlFieldFcrstMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_grstctlFieldRxfflshShift = 4
-	RegisterOtg_hs_grstctlFieldRxfflshMask  = 0x10
+	RegisterOtghsgrstctlFieldRxfflshShift = 4
+	RegisterOtghsgrstctlFieldRxfflshMask  = 0x10
 )
 
 // GetRxfflsh RxFIFO flush
-func (r *registerOtg_hs_grstctlType) GetRxfflsh() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grstctlFieldRxfflshMask) != 0
+func (r *registerOtghsgrstctlType) GetRxfflsh() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrstctlFieldRxfflshMask) != 0
 }
 
 // SetRxfflsh RxFIFO flush
-func (r *registerOtg_hs_grstctlType) SetRxfflsh(value bool) {
+func (r *registerOtghsgrstctlType) SetRxfflsh(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_grstctlFieldRxfflshMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgrstctlFieldRxfflshMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grstctlFieldRxfflshMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrstctlFieldRxfflshMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_grstctlFieldTxfflshShift = 5
-	RegisterOtg_hs_grstctlFieldTxfflshMask  = 0x20
+	RegisterOtghsgrstctlFieldTxfflshShift = 5
+	RegisterOtghsgrstctlFieldTxfflshMask  = 0x20
 )
 
 // GetTxfflsh TxFIFO flush
-func (r *registerOtg_hs_grstctlType) GetTxfflsh() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grstctlFieldTxfflshMask) != 0
+func (r *registerOtghsgrstctlType) GetTxfflsh() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrstctlFieldTxfflshMask) != 0
 }
 
 // SetTxfflsh TxFIFO flush
-func (r *registerOtg_hs_grstctlType) SetTxfflsh(value bool) {
+func (r *registerOtghsgrstctlType) SetTxfflsh(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_grstctlFieldTxfflshMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgrstctlFieldTxfflshMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grstctlFieldTxfflshMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrstctlFieldTxfflshMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_grstctlFieldTxfnumShift = 6
-	RegisterOtg_hs_grstctlFieldTxfnumMask  = 0x7c0
+	RegisterOtghsgrstctlFieldTxfnumShift = 6
+	RegisterOtghsgrstctlFieldTxfnumMask  = 0x7c0
 )
 
 // GetTxfnum TxFIFO number
-func (r *registerOtg_hs_grstctlType) GetTxfnum() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grstctlFieldTxfnumMask) >> RegisterOtg_hs_grstctlFieldTxfnumShift)
+func (r *registerOtghsgrstctlType) GetTxfnum() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrstctlFieldTxfnumMask) >> RegisterOtghsgrstctlFieldTxfnumShift)
 }
 
 // SetTxfnum TxFIFO number
-func (r *registerOtg_hs_grstctlType) SetTxfnum(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grstctlFieldTxfnumMask)|(uint32(value)<<RegisterOtg_hs_grstctlFieldTxfnumShift))
+func (r *registerOtghsgrstctlType) SetTxfnum(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrstctlFieldTxfnumMask)|(uint32(value)<<RegisterOtghsgrstctlFieldTxfnumShift))
 }
 
 const (
-	RegisterOtg_hs_grstctlFieldDmareqShift = 30
-	RegisterOtg_hs_grstctlFieldDmareqMask  = 0x40000000
+	RegisterOtghsgrstctlFieldDmareqShift = 30
+	RegisterOtghsgrstctlFieldDmareqMask  = 0x40000000
 )
 
 // GetDmareq DMA request signal enabled for USB OTG HS
-func (r *registerOtg_hs_grstctlType) GetDmareq() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grstctlFieldDmareqMask) != 0
+func (r *registerOtghsgrstctlType) GetDmareq() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrstctlFieldDmareqMask) != 0
 }
 
 const (
-	RegisterOtg_hs_grstctlFieldAhbidlShift = 31
-	RegisterOtg_hs_grstctlFieldAhbidlMask  = 0x80000000
+	RegisterOtghsgrstctlFieldAhbidlShift = 31
+	RegisterOtghsgrstctlFieldAhbidlMask  = 0x80000000
 )
 
 // GetAhbidl AHB master idle
-func (r *registerOtg_hs_grstctlType) GetAhbidl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grstctlFieldAhbidlMask) != 0
+func (r *registerOtghsgrstctlType) GetAhbidl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrstctlFieldAhbidlMask) != 0
 }
 
-// registerOtg_hs_gintstsType OTG_HS core interrupt register
-type registerOtg_hs_gintstsType uint32
+// registerOtghsgintstsType OTG_HS core interrupt register
+type registerOtghsgintstsType uint32
 
 const (
-	RegisterOtg_hs_gintstsFieldCmodShift = 0
-	RegisterOtg_hs_gintstsFieldCmodMask  = 0x1
+	RegisterOtghsgintstsFieldCmodShift = 0
+	RegisterOtghsgintstsFieldCmodMask  = 0x1
 )
 
 // GetCmod Current mode of operation
-func (r *registerOtg_hs_gintstsType) GetCmod() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldCmodMask) != 0
+func (r *registerOtghsgintstsType) GetCmod() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldCmodMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldMmisShift = 1
-	RegisterOtg_hs_gintstsFieldMmisMask  = 0x2
+	RegisterOtghsgintstsFieldMmisShift = 1
+	RegisterOtghsgintstsFieldMmisMask  = 0x2
 )
 
 // GetMmis Mode mismatch interrupt
-func (r *registerOtg_hs_gintstsType) GetMmis() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldMmisMask) != 0
+func (r *registerOtghsgintstsType) GetMmis() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldMmisMask) != 0
 }
 
 // SetMmis Mode mismatch interrupt
-func (r *registerOtg_hs_gintstsType) SetMmis(value bool) {
+func (r *registerOtghsgintstsType) SetMmis(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldMmisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldMmisMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldMmisMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldMmisMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldOtgintShift = 2
-	RegisterOtg_hs_gintstsFieldOtgintMask  = 0x4
+	RegisterOtghsgintstsFieldOtgintShift = 2
+	RegisterOtghsgintstsFieldOtgintMask  = 0x4
 )
 
 // GetOtgint OTG interrupt
-func (r *registerOtg_hs_gintstsType) GetOtgint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldOtgintMask) != 0
+func (r *registerOtghsgintstsType) GetOtgint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldOtgintMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldSofShift = 3
-	RegisterOtg_hs_gintstsFieldSofMask  = 0x8
+	RegisterOtghsgintstsFieldSofShift = 3
+	RegisterOtghsgintstsFieldSofMask  = 0x8
 )
 
 // GetSof Start of frame
-func (r *registerOtg_hs_gintstsType) GetSof() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldSofMask) != 0
+func (r *registerOtghsgintstsType) GetSof() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldSofMask) != 0
 }
 
 // SetSof Start of frame
-func (r *registerOtg_hs_gintstsType) SetSof(value bool) {
+func (r *registerOtghsgintstsType) SetSof(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldSofMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldSofMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldSofMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldSofMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldRxflvlShift = 4
-	RegisterOtg_hs_gintstsFieldRxflvlMask  = 0x10
+	RegisterOtghsgintstsFieldRxflvlShift = 4
+	RegisterOtghsgintstsFieldRxflvlMask  = 0x10
 )
 
 // GetRxflvl RxFIFO nonempty
-func (r *registerOtg_hs_gintstsType) GetRxflvl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldRxflvlMask) != 0
+func (r *registerOtghsgintstsType) GetRxflvl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldRxflvlMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldNptxfeShift = 5
-	RegisterOtg_hs_gintstsFieldNptxfeMask  = 0x20
+	RegisterOtghsgintstsFieldNptxfeShift = 5
+	RegisterOtghsgintstsFieldNptxfeMask  = 0x20
 )
 
 // GetNptxfe Nonperiodic TxFIFO empty
-func (r *registerOtg_hs_gintstsType) GetNptxfe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldNptxfeMask) != 0
+func (r *registerOtghsgintstsType) GetNptxfe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldNptxfeMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldGinakeffShift = 6
-	RegisterOtg_hs_gintstsFieldGinakeffMask  = 0x40
+	RegisterOtghsgintstsFieldGinakeffShift = 6
+	RegisterOtghsgintstsFieldGinakeffMask  = 0x40
 )
 
 // GetGinakeff Global IN nonperiodic NAK effective
-func (r *registerOtg_hs_gintstsType) GetGinakeff() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldGinakeffMask) != 0
+func (r *registerOtghsgintstsType) GetGinakeff() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldGinakeffMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldBoutnakeffShift = 7
-	RegisterOtg_hs_gintstsFieldBoutnakeffMask  = 0x80
+	RegisterOtghsgintstsFieldBoutnakeffShift = 7
+	RegisterOtghsgintstsFieldBoutnakeffMask  = 0x80
 )
 
 // GetBoutnakeff Global OUT NAK effective
-func (r *registerOtg_hs_gintstsType) GetBoutnakeff() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldBoutnakeffMask) != 0
+func (r *registerOtghsgintstsType) GetBoutnakeff() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldBoutnakeffMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldEsuspShift = 10
-	RegisterOtg_hs_gintstsFieldEsuspMask  = 0x400
+	RegisterOtghsgintstsFieldEsuspShift = 10
+	RegisterOtghsgintstsFieldEsuspMask  = 0x400
 )
 
 // GetEsusp Early suspend
-func (r *registerOtg_hs_gintstsType) GetEsusp() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldEsuspMask) != 0
+func (r *registerOtghsgintstsType) GetEsusp() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldEsuspMask) != 0
 }
 
 // SetEsusp Early suspend
-func (r *registerOtg_hs_gintstsType) SetEsusp(value bool) {
+func (r *registerOtghsgintstsType) SetEsusp(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldEsuspMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldEsuspMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldEsuspMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldEsuspMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldUsbsuspShift = 11
-	RegisterOtg_hs_gintstsFieldUsbsuspMask  = 0x800
+	RegisterOtghsgintstsFieldUsbsuspShift = 11
+	RegisterOtghsgintstsFieldUsbsuspMask  = 0x800
 )
 
 // GetUsbsusp USB suspend
-func (r *registerOtg_hs_gintstsType) GetUsbsusp() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldUsbsuspMask) != 0
+func (r *registerOtghsgintstsType) GetUsbsusp() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldUsbsuspMask) != 0
 }
 
 // SetUsbsusp USB suspend
-func (r *registerOtg_hs_gintstsType) SetUsbsusp(value bool) {
+func (r *registerOtghsgintstsType) SetUsbsusp(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldUsbsuspMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldUsbsuspMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldUsbsuspMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldUsbsuspMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldUsbrstShift = 12
-	RegisterOtg_hs_gintstsFieldUsbrstMask  = 0x1000
+	RegisterOtghsgintstsFieldUsbrstShift = 12
+	RegisterOtghsgintstsFieldUsbrstMask  = 0x1000
 )
 
 // GetUsbrst USB reset
-func (r *registerOtg_hs_gintstsType) GetUsbrst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldUsbrstMask) != 0
+func (r *registerOtghsgintstsType) GetUsbrst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldUsbrstMask) != 0
 }
 
 // SetUsbrst USB reset
-func (r *registerOtg_hs_gintstsType) SetUsbrst(value bool) {
+func (r *registerOtghsgintstsType) SetUsbrst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldUsbrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldUsbrstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldUsbrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldUsbrstMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldEnumdneShift = 13
-	RegisterOtg_hs_gintstsFieldEnumdneMask  = 0x2000
+	RegisterOtghsgintstsFieldEnumdneShift = 13
+	RegisterOtghsgintstsFieldEnumdneMask  = 0x2000
 )
 
 // GetEnumdne Enumeration done
-func (r *registerOtg_hs_gintstsType) GetEnumdne() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldEnumdneMask) != 0
+func (r *registerOtghsgintstsType) GetEnumdne() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldEnumdneMask) != 0
 }
 
 // SetEnumdne Enumeration done
-func (r *registerOtg_hs_gintstsType) SetEnumdne(value bool) {
+func (r *registerOtghsgintstsType) SetEnumdne(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldEnumdneMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldEnumdneMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldEnumdneMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldEnumdneMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldIsoodrpShift = 14
-	RegisterOtg_hs_gintstsFieldIsoodrpMask  = 0x4000
+	RegisterOtghsgintstsFieldIsoodrpShift = 14
+	RegisterOtghsgintstsFieldIsoodrpMask  = 0x4000
 )
 
 // GetIsoodrp Isochronous OUT packet dropped interrupt
-func (r *registerOtg_hs_gintstsType) GetIsoodrp() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldIsoodrpMask) != 0
+func (r *registerOtghsgintstsType) GetIsoodrp() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldIsoodrpMask) != 0
 }
 
 // SetIsoodrp Isochronous OUT packet dropped interrupt
-func (r *registerOtg_hs_gintstsType) SetIsoodrp(value bool) {
+func (r *registerOtghsgintstsType) SetIsoodrp(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldIsoodrpMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldIsoodrpMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldIsoodrpMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldIsoodrpMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldEopfShift = 15
-	RegisterOtg_hs_gintstsFieldEopfMask  = 0x8000
+	RegisterOtghsgintstsFieldEopfShift = 15
+	RegisterOtghsgintstsFieldEopfMask  = 0x8000
 )
 
 // GetEopf End of periodic frame interrupt
-func (r *registerOtg_hs_gintstsType) GetEopf() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldEopfMask) != 0
+func (r *registerOtghsgintstsType) GetEopf() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldEopfMask) != 0
 }
 
 // SetEopf End of periodic frame interrupt
-func (r *registerOtg_hs_gintstsType) SetEopf(value bool) {
+func (r *registerOtghsgintstsType) SetEopf(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldEopfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldEopfMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldEopfMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldEopfMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldIepintShift = 18
-	RegisterOtg_hs_gintstsFieldIepintMask  = 0x40000
+	RegisterOtghsgintstsFieldIepintShift = 18
+	RegisterOtghsgintstsFieldIepintMask  = 0x40000
 )
 
 // GetIepint IN endpoint interrupt
-func (r *registerOtg_hs_gintstsType) GetIepint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldIepintMask) != 0
+func (r *registerOtghsgintstsType) GetIepint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldIepintMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldOepintShift = 19
-	RegisterOtg_hs_gintstsFieldOepintMask  = 0x80000
+	RegisterOtghsgintstsFieldOepintShift = 19
+	RegisterOtghsgintstsFieldOepintMask  = 0x80000
 )
 
 // GetOepint OUT endpoint interrupt
-func (r *registerOtg_hs_gintstsType) GetOepint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldOepintMask) != 0
+func (r *registerOtghsgintstsType) GetOepint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldOepintMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldIisoixfrShift = 20
-	RegisterOtg_hs_gintstsFieldIisoixfrMask  = 0x100000
+	RegisterOtghsgintstsFieldIisoixfrShift = 20
+	RegisterOtghsgintstsFieldIisoixfrMask  = 0x100000
 )
 
 // GetIisoixfr Incomplete isochronous IN transfer
-func (r *registerOtg_hs_gintstsType) GetIisoixfr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldIisoixfrMask) != 0
+func (r *registerOtghsgintstsType) GetIisoixfr() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldIisoixfrMask) != 0
 }
 
 // SetIisoixfr Incomplete isochronous IN transfer
-func (r *registerOtg_hs_gintstsType) SetIisoixfr(value bool) {
+func (r *registerOtghsgintstsType) SetIisoixfr(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldIisoixfrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldIisoixfrMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldIisoixfrMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldIisoixfrMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldPxfr_incompisooutShift = 21
-	RegisterOtg_hs_gintstsFieldPxfr_incompisooutMask  = 0x200000
+	RegisterOtghsgintstsFieldPxfrincompisooutShift = 21
+	RegisterOtghsgintstsFieldPxfrincompisooutMask  = 0x200000
 )
 
-// GetPxfr_incompisoout Incomplete periodic transfer
-func (r *registerOtg_hs_gintstsType) GetPxfr_incompisoout() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldPxfr_incompisooutMask) != 0
+// GetPxfrincompisoout Incomplete periodic transfer
+func (r *registerOtghsgintstsType) GetPxfrincompisoout() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldPxfrincompisooutMask) != 0
 }
 
-// SetPxfr_incompisoout Incomplete periodic transfer
-func (r *registerOtg_hs_gintstsType) SetPxfr_incompisoout(value bool) {
+// SetPxfrincompisoout Incomplete periodic transfer
+func (r *registerOtghsgintstsType) SetPxfrincompisoout(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldPxfr_incompisooutMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldPxfrincompisooutMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldPxfr_incompisooutMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldPxfrincompisooutMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldDatafsuspShift = 22
-	RegisterOtg_hs_gintstsFieldDatafsuspMask  = 0x400000
+	RegisterOtghsgintstsFieldDatafsuspShift = 22
+	RegisterOtghsgintstsFieldDatafsuspMask  = 0x400000
 )
 
 // GetDatafsusp Data fetch suspended
-func (r *registerOtg_hs_gintstsType) GetDatafsusp() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldDatafsuspMask) != 0
+func (r *registerOtghsgintstsType) GetDatafsusp() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldDatafsuspMask) != 0
 }
 
 // SetDatafsusp Data fetch suspended
-func (r *registerOtg_hs_gintstsType) SetDatafsusp(value bool) {
+func (r *registerOtghsgintstsType) SetDatafsusp(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldDatafsuspMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldDatafsuspMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldDatafsuspMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldDatafsuspMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldHprtintShift = 24
-	RegisterOtg_hs_gintstsFieldHprtintMask  = 0x1000000
+	RegisterOtghsgintstsFieldHprtintShift = 24
+	RegisterOtghsgintstsFieldHprtintMask  = 0x1000000
 )
 
 // GetHprtint Host port interrupt
-func (r *registerOtg_hs_gintstsType) GetHprtint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldHprtintMask) != 0
+func (r *registerOtghsgintstsType) GetHprtint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldHprtintMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldHcintShift = 25
-	RegisterOtg_hs_gintstsFieldHcintMask  = 0x2000000
+	RegisterOtghsgintstsFieldHcintShift = 25
+	RegisterOtghsgintstsFieldHcintMask  = 0x2000000
 )
 
 // GetHcint Host channels interrupt
-func (r *registerOtg_hs_gintstsType) GetHcint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldHcintMask) != 0
+func (r *registerOtghsgintstsType) GetHcint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldHcintMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldPtxfeShift = 26
-	RegisterOtg_hs_gintstsFieldPtxfeMask  = 0x4000000
+	RegisterOtghsgintstsFieldPtxfeShift = 26
+	RegisterOtghsgintstsFieldPtxfeMask  = 0x4000000
 )
 
 // GetPtxfe Periodic TxFIFO empty
-func (r *registerOtg_hs_gintstsType) GetPtxfe() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldPtxfeMask) != 0
+func (r *registerOtghsgintstsType) GetPtxfe() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldPtxfeMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldCidschgShift = 28
-	RegisterOtg_hs_gintstsFieldCidschgMask  = 0x10000000
+	RegisterOtghsgintstsFieldCidschgShift = 28
+	RegisterOtghsgintstsFieldCidschgMask  = 0x10000000
 )
 
 // GetCidschg Connector ID status change
-func (r *registerOtg_hs_gintstsType) GetCidschg() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldCidschgMask) != 0
+func (r *registerOtghsgintstsType) GetCidschg() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldCidschgMask) != 0
 }
 
 // SetCidschg Connector ID status change
-func (r *registerOtg_hs_gintstsType) SetCidschg(value bool) {
+func (r *registerOtghsgintstsType) SetCidschg(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldCidschgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldCidschgMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldCidschgMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldCidschgMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldDiscintShift = 29
-	RegisterOtg_hs_gintstsFieldDiscintMask  = 0x20000000
+	RegisterOtghsgintstsFieldDiscintShift = 29
+	RegisterOtghsgintstsFieldDiscintMask  = 0x20000000
 )
 
 // GetDiscint Disconnect detected interrupt
-func (r *registerOtg_hs_gintstsType) GetDiscint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldDiscintMask) != 0
+func (r *registerOtghsgintstsType) GetDiscint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldDiscintMask) != 0
 }
 
 // SetDiscint Disconnect detected interrupt
-func (r *registerOtg_hs_gintstsType) SetDiscint(value bool) {
+func (r *registerOtghsgintstsType) SetDiscint(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldDiscintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldDiscintMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldDiscintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldDiscintMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldSrqintShift = 30
-	RegisterOtg_hs_gintstsFieldSrqintMask  = 0x40000000
+	RegisterOtghsgintstsFieldSrqintShift = 30
+	RegisterOtghsgintstsFieldSrqintMask  = 0x40000000
 )
 
 // GetSrqint Session request/new session detected interrupt
-func (r *registerOtg_hs_gintstsType) GetSrqint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldSrqintMask) != 0
+func (r *registerOtghsgintstsType) GetSrqint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldSrqintMask) != 0
 }
 
 // SetSrqint Session request/new session detected interrupt
-func (r *registerOtg_hs_gintstsType) SetSrqint(value bool) {
+func (r *registerOtghsgintstsType) SetSrqint(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldSrqintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldSrqintMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldSrqintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldSrqintMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintstsFieldWkuintShift = 31
-	RegisterOtg_hs_gintstsFieldWkuintMask  = 0x80000000
+	RegisterOtghsgintstsFieldWkuintShift = 31
+	RegisterOtghsgintstsFieldWkuintMask  = 0x80000000
 )
 
 // GetWkuint Resume/remote wakeup detected interrupt
-func (r *registerOtg_hs_gintstsType) GetWkuint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintstsFieldWkuintMask) != 0
+func (r *registerOtghsgintstsType) GetWkuint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintstsFieldWkuintMask) != 0
 }
 
 // SetWkuint Resume/remote wakeup detected interrupt
-func (r *registerOtg_hs_gintstsType) SetWkuint(value bool) {
+func (r *registerOtghsgintstsType) SetWkuint(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintstsFieldWkuintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintstsFieldWkuintMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintstsFieldWkuintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintstsFieldWkuintMask)
 	}
 }
 
-// registerOtg_hs_gintmskType OTG_HS interrupt mask register
-type registerOtg_hs_gintmskType uint32
+// registerOtghsgintmskType OTG_HS interrupt mask register
+type registerOtghsgintmskType uint32
 
 const (
-	RegisterOtg_hs_gintmskFieldMmismShift = 1
-	RegisterOtg_hs_gintmskFieldMmismMask  = 0x2
+	RegisterOtghsgintmskFieldMmismShift = 1
+	RegisterOtghsgintmskFieldMmismMask  = 0x2
 )
 
 // GetMmism Mode mismatch interrupt mask
-func (r *registerOtg_hs_gintmskType) GetMmism() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldMmismMask) != 0
+func (r *registerOtghsgintmskType) GetMmism() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldMmismMask) != 0
 }
 
 // SetMmism Mode mismatch interrupt mask
-func (r *registerOtg_hs_gintmskType) SetMmism(value bool) {
+func (r *registerOtghsgintmskType) SetMmism(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldMmismMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldMmismMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldMmismMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldMmismMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldOtgintShift = 2
-	RegisterOtg_hs_gintmskFieldOtgintMask  = 0x4
+	RegisterOtghsgintmskFieldOtgintShift = 2
+	RegisterOtghsgintmskFieldOtgintMask  = 0x4
 )
 
 // GetOtgint OTG interrupt mask
-func (r *registerOtg_hs_gintmskType) GetOtgint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldOtgintMask) != 0
+func (r *registerOtghsgintmskType) GetOtgint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldOtgintMask) != 0
 }
 
 // SetOtgint OTG interrupt mask
-func (r *registerOtg_hs_gintmskType) SetOtgint(value bool) {
+func (r *registerOtghsgintmskType) SetOtgint(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldOtgintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldOtgintMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldOtgintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldOtgintMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldSofmShift = 3
-	RegisterOtg_hs_gintmskFieldSofmMask  = 0x8
+	RegisterOtghsgintmskFieldSofmShift = 3
+	RegisterOtghsgintmskFieldSofmMask  = 0x8
 )
 
 // GetSofm Start of frame mask
-func (r *registerOtg_hs_gintmskType) GetSofm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldSofmMask) != 0
+func (r *registerOtghsgintmskType) GetSofm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldSofmMask) != 0
 }
 
 // SetSofm Start of frame mask
-func (r *registerOtg_hs_gintmskType) SetSofm(value bool) {
+func (r *registerOtghsgintmskType) SetSofm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldSofmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldSofmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldSofmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldSofmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldRxflvlmShift = 4
-	RegisterOtg_hs_gintmskFieldRxflvlmMask  = 0x10
+	RegisterOtghsgintmskFieldRxflvlmShift = 4
+	RegisterOtghsgintmskFieldRxflvlmMask  = 0x10
 )
 
 // GetRxflvlm Receive FIFO nonempty mask
-func (r *registerOtg_hs_gintmskType) GetRxflvlm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldRxflvlmMask) != 0
+func (r *registerOtghsgintmskType) GetRxflvlm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldRxflvlmMask) != 0
 }
 
 // SetRxflvlm Receive FIFO nonempty mask
-func (r *registerOtg_hs_gintmskType) SetRxflvlm(value bool) {
+func (r *registerOtghsgintmskType) SetRxflvlm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldRxflvlmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldRxflvlmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldRxflvlmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldRxflvlmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldNptxfemShift = 5
-	RegisterOtg_hs_gintmskFieldNptxfemMask  = 0x20
+	RegisterOtghsgintmskFieldNptxfemShift = 5
+	RegisterOtghsgintmskFieldNptxfemMask  = 0x20
 )
 
 // GetNptxfem Nonperiodic TxFIFO empty mask
-func (r *registerOtg_hs_gintmskType) GetNptxfem() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldNptxfemMask) != 0
+func (r *registerOtghsgintmskType) GetNptxfem() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldNptxfemMask) != 0
 }
 
 // SetNptxfem Nonperiodic TxFIFO empty mask
-func (r *registerOtg_hs_gintmskType) SetNptxfem(value bool) {
+func (r *registerOtghsgintmskType) SetNptxfem(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldNptxfemMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldNptxfemMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldNptxfemMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldNptxfemMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldGinakeffmShift = 6
-	RegisterOtg_hs_gintmskFieldGinakeffmMask  = 0x40
+	RegisterOtghsgintmskFieldGinakeffmShift = 6
+	RegisterOtghsgintmskFieldGinakeffmMask  = 0x40
 )
 
 // GetGinakeffm Global nonperiodic IN NAK effective mask
-func (r *registerOtg_hs_gintmskType) GetGinakeffm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldGinakeffmMask) != 0
+func (r *registerOtghsgintmskType) GetGinakeffm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldGinakeffmMask) != 0
 }
 
 // SetGinakeffm Global nonperiodic IN NAK effective mask
-func (r *registerOtg_hs_gintmskType) SetGinakeffm(value bool) {
+func (r *registerOtghsgintmskType) SetGinakeffm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldGinakeffmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldGinakeffmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldGinakeffmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldGinakeffmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldGonakeffmShift = 7
-	RegisterOtg_hs_gintmskFieldGonakeffmMask  = 0x80
+	RegisterOtghsgintmskFieldGonakeffmShift = 7
+	RegisterOtghsgintmskFieldGonakeffmMask  = 0x80
 )
 
 // GetGonakeffm Global OUT NAK effective mask
-func (r *registerOtg_hs_gintmskType) GetGonakeffm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldGonakeffmMask) != 0
+func (r *registerOtghsgintmskType) GetGonakeffm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldGonakeffmMask) != 0
 }
 
 // SetGonakeffm Global OUT NAK effective mask
-func (r *registerOtg_hs_gintmskType) SetGonakeffm(value bool) {
+func (r *registerOtghsgintmskType) SetGonakeffm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldGonakeffmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldGonakeffmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldGonakeffmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldGonakeffmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldEsuspmShift = 10
-	RegisterOtg_hs_gintmskFieldEsuspmMask  = 0x400
+	RegisterOtghsgintmskFieldEsuspmShift = 10
+	RegisterOtghsgintmskFieldEsuspmMask  = 0x400
 )
 
 // GetEsuspm Early suspend mask
-func (r *registerOtg_hs_gintmskType) GetEsuspm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldEsuspmMask) != 0
+func (r *registerOtghsgintmskType) GetEsuspm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldEsuspmMask) != 0
 }
 
 // SetEsuspm Early suspend mask
-func (r *registerOtg_hs_gintmskType) SetEsuspm(value bool) {
+func (r *registerOtghsgintmskType) SetEsuspm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldEsuspmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldEsuspmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldEsuspmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldEsuspmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldUsbsuspmShift = 11
-	RegisterOtg_hs_gintmskFieldUsbsuspmMask  = 0x800
+	RegisterOtghsgintmskFieldUsbsuspmShift = 11
+	RegisterOtghsgintmskFieldUsbsuspmMask  = 0x800
 )
 
 // GetUsbsuspm USB suspend mask
-func (r *registerOtg_hs_gintmskType) GetUsbsuspm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldUsbsuspmMask) != 0
+func (r *registerOtghsgintmskType) GetUsbsuspm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldUsbsuspmMask) != 0
 }
 
 // SetUsbsuspm USB suspend mask
-func (r *registerOtg_hs_gintmskType) SetUsbsuspm(value bool) {
+func (r *registerOtghsgintmskType) SetUsbsuspm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldUsbsuspmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldUsbsuspmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldUsbsuspmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldUsbsuspmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldUsbrstShift = 12
-	RegisterOtg_hs_gintmskFieldUsbrstMask  = 0x1000
+	RegisterOtghsgintmskFieldUsbrstShift = 12
+	RegisterOtghsgintmskFieldUsbrstMask  = 0x1000
 )
 
 // GetUsbrst USB reset mask
-func (r *registerOtg_hs_gintmskType) GetUsbrst() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldUsbrstMask) != 0
+func (r *registerOtghsgintmskType) GetUsbrst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldUsbrstMask) != 0
 }
 
 // SetUsbrst USB reset mask
-func (r *registerOtg_hs_gintmskType) SetUsbrst(value bool) {
+func (r *registerOtghsgintmskType) SetUsbrst(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldUsbrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldUsbrstMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldUsbrstMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldUsbrstMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldEnumdnemShift = 13
-	RegisterOtg_hs_gintmskFieldEnumdnemMask  = 0x2000
+	RegisterOtghsgintmskFieldEnumdnemShift = 13
+	RegisterOtghsgintmskFieldEnumdnemMask  = 0x2000
 )
 
 // GetEnumdnem Enumeration done mask
-func (r *registerOtg_hs_gintmskType) GetEnumdnem() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldEnumdnemMask) != 0
+func (r *registerOtghsgintmskType) GetEnumdnem() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldEnumdnemMask) != 0
 }
 
 // SetEnumdnem Enumeration done mask
-func (r *registerOtg_hs_gintmskType) SetEnumdnem(value bool) {
+func (r *registerOtghsgintmskType) SetEnumdnem(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldEnumdnemMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldEnumdnemMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldEnumdnemMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldEnumdnemMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldIsoodrpmShift = 14
-	RegisterOtg_hs_gintmskFieldIsoodrpmMask  = 0x4000
+	RegisterOtghsgintmskFieldIsoodrpmShift = 14
+	RegisterOtghsgintmskFieldIsoodrpmMask  = 0x4000
 )
 
 // GetIsoodrpm Isochronous OUT packet dropped interrupt mask
-func (r *registerOtg_hs_gintmskType) GetIsoodrpm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldIsoodrpmMask) != 0
+func (r *registerOtghsgintmskType) GetIsoodrpm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldIsoodrpmMask) != 0
 }
 
 // SetIsoodrpm Isochronous OUT packet dropped interrupt mask
-func (r *registerOtg_hs_gintmskType) SetIsoodrpm(value bool) {
+func (r *registerOtghsgintmskType) SetIsoodrpm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldIsoodrpmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldIsoodrpmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldIsoodrpmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldIsoodrpmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldEopfmShift = 15
-	RegisterOtg_hs_gintmskFieldEopfmMask  = 0x8000
+	RegisterOtghsgintmskFieldEopfmShift = 15
+	RegisterOtghsgintmskFieldEopfmMask  = 0x8000
 )
 
 // GetEopfm End of periodic frame interrupt mask
-func (r *registerOtg_hs_gintmskType) GetEopfm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldEopfmMask) != 0
+func (r *registerOtghsgintmskType) GetEopfm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldEopfmMask) != 0
 }
 
 // SetEopfm End of periodic frame interrupt mask
-func (r *registerOtg_hs_gintmskType) SetEopfm(value bool) {
+func (r *registerOtghsgintmskType) SetEopfm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldEopfmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldEopfmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldEopfmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldEopfmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldIepintShift = 18
-	RegisterOtg_hs_gintmskFieldIepintMask  = 0x40000
+	RegisterOtghsgintmskFieldIepintShift = 18
+	RegisterOtghsgintmskFieldIepintMask  = 0x40000
 )
 
 // GetIepint IN endpoints interrupt mask
-func (r *registerOtg_hs_gintmskType) GetIepint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldIepintMask) != 0
+func (r *registerOtghsgintmskType) GetIepint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldIepintMask) != 0
 }
 
 // SetIepint IN endpoints interrupt mask
-func (r *registerOtg_hs_gintmskType) SetIepint(value bool) {
+func (r *registerOtghsgintmskType) SetIepint(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldIepintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldIepintMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldIepintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldIepintMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldOepintShift = 19
-	RegisterOtg_hs_gintmskFieldOepintMask  = 0x80000
+	RegisterOtghsgintmskFieldOepintShift = 19
+	RegisterOtghsgintmskFieldOepintMask  = 0x80000
 )
 
 // GetOepint OUT endpoints interrupt mask
-func (r *registerOtg_hs_gintmskType) GetOepint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldOepintMask) != 0
+func (r *registerOtghsgintmskType) GetOepint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldOepintMask) != 0
 }
 
 // SetOepint OUT endpoints interrupt mask
-func (r *registerOtg_hs_gintmskType) SetOepint(value bool) {
+func (r *registerOtghsgintmskType) SetOepint(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldOepintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldOepintMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldOepintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldOepintMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldIisoixfrmShift = 20
-	RegisterOtg_hs_gintmskFieldIisoixfrmMask  = 0x100000
+	RegisterOtghsgintmskFieldIisoixfrmShift = 20
+	RegisterOtghsgintmskFieldIisoixfrmMask  = 0x100000
 )
 
 // GetIisoixfrm Incomplete isochronous IN transfer mask
-func (r *registerOtg_hs_gintmskType) GetIisoixfrm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldIisoixfrmMask) != 0
+func (r *registerOtghsgintmskType) GetIisoixfrm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldIisoixfrmMask) != 0
 }
 
 // SetIisoixfrm Incomplete isochronous IN transfer mask
-func (r *registerOtg_hs_gintmskType) SetIisoixfrm(value bool) {
+func (r *registerOtghsgintmskType) SetIisoixfrm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldIisoixfrmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldIisoixfrmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldIisoixfrmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldIisoixfrmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldPxfrm_iisooxfrmShift = 21
-	RegisterOtg_hs_gintmskFieldPxfrm_iisooxfrmMask  = 0x200000
+	RegisterOtghsgintmskFieldPxfrmiisooxfrmShift = 21
+	RegisterOtghsgintmskFieldPxfrmiisooxfrmMask  = 0x200000
 )
 
-// GetPxfrm_iisooxfrm Incomplete periodic transfer mask
-func (r *registerOtg_hs_gintmskType) GetPxfrm_iisooxfrm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldPxfrm_iisooxfrmMask) != 0
+// GetPxfrmiisooxfrm Incomplete periodic transfer mask
+func (r *registerOtghsgintmskType) GetPxfrmiisooxfrm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldPxfrmiisooxfrmMask) != 0
 }
 
-// SetPxfrm_iisooxfrm Incomplete periodic transfer mask
-func (r *registerOtg_hs_gintmskType) SetPxfrm_iisooxfrm(value bool) {
+// SetPxfrmiisooxfrm Incomplete periodic transfer mask
+func (r *registerOtghsgintmskType) SetPxfrmiisooxfrm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldPxfrm_iisooxfrmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldPxfrmiisooxfrmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldPxfrm_iisooxfrmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldPxfrmiisooxfrmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldFsuspmShift = 22
-	RegisterOtg_hs_gintmskFieldFsuspmMask  = 0x400000
+	RegisterOtghsgintmskFieldFsuspmShift = 22
+	RegisterOtghsgintmskFieldFsuspmMask  = 0x400000
 )
 
 // GetFsuspm Data fetch suspended mask
-func (r *registerOtg_hs_gintmskType) GetFsuspm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldFsuspmMask) != 0
+func (r *registerOtghsgintmskType) GetFsuspm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldFsuspmMask) != 0
 }
 
 // SetFsuspm Data fetch suspended mask
-func (r *registerOtg_hs_gintmskType) SetFsuspm(value bool) {
+func (r *registerOtghsgintmskType) SetFsuspm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldFsuspmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldFsuspmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldFsuspmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldFsuspmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldRstdeShift = 23
-	RegisterOtg_hs_gintmskFieldRstdeMask  = 0x800000
+	RegisterOtghsgintmskFieldRstdeShift = 23
+	RegisterOtghsgintmskFieldRstdeMask  = 0x800000
 )
 
 // GetRstde Reset detected interrupt mask
-func (r *registerOtg_hs_gintmskType) GetRstde() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldRstdeMask) != 0
+func (r *registerOtghsgintmskType) GetRstde() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldRstdeMask) != 0
 }
 
 // SetRstde Reset detected interrupt mask
-func (r *registerOtg_hs_gintmskType) SetRstde(value bool) {
+func (r *registerOtghsgintmskType) SetRstde(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldRstdeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldRstdeMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldRstdeMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldRstdeMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldPrtimShift = 24
-	RegisterOtg_hs_gintmskFieldPrtimMask  = 0x1000000
+	RegisterOtghsgintmskFieldPrtimShift = 24
+	RegisterOtghsgintmskFieldPrtimMask  = 0x1000000
 )
 
 // GetPrtim Host port interrupt mask
-func (r *registerOtg_hs_gintmskType) GetPrtim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldPrtimMask) != 0
+func (r *registerOtghsgintmskType) GetPrtim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldPrtimMask) != 0
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldHcimShift = 25
-	RegisterOtg_hs_gintmskFieldHcimMask  = 0x2000000
+	RegisterOtghsgintmskFieldHcimShift = 25
+	RegisterOtghsgintmskFieldHcimMask  = 0x2000000
 )
 
 // GetHcim Host channels interrupt mask
-func (r *registerOtg_hs_gintmskType) GetHcim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldHcimMask) != 0
+func (r *registerOtghsgintmskType) GetHcim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldHcimMask) != 0
 }
 
 // SetHcim Host channels interrupt mask
-func (r *registerOtg_hs_gintmskType) SetHcim(value bool) {
+func (r *registerOtghsgintmskType) SetHcim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldHcimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldHcimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldHcimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldHcimMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldPtxfemShift = 26
-	RegisterOtg_hs_gintmskFieldPtxfemMask  = 0x4000000
+	RegisterOtghsgintmskFieldPtxfemShift = 26
+	RegisterOtghsgintmskFieldPtxfemMask  = 0x4000000
 )
 
 // GetPtxfem Periodic TxFIFO empty mask
-func (r *registerOtg_hs_gintmskType) GetPtxfem() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldPtxfemMask) != 0
+func (r *registerOtghsgintmskType) GetPtxfem() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldPtxfemMask) != 0
 }
 
 // SetPtxfem Periodic TxFIFO empty mask
-func (r *registerOtg_hs_gintmskType) SetPtxfem(value bool) {
+func (r *registerOtghsgintmskType) SetPtxfem(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldPtxfemMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldPtxfemMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldPtxfemMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldPtxfemMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldLpmintmShift = 27
-	RegisterOtg_hs_gintmskFieldLpmintmMask  = 0x8000000
+	RegisterOtghsgintmskFieldLpmintmShift = 27
+	RegisterOtghsgintmskFieldLpmintmMask  = 0x8000000
 )
 
 // GetLpmintm LPM interrupt mask
-func (r *registerOtg_hs_gintmskType) GetLpmintm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldLpmintmMask) != 0
+func (r *registerOtghsgintmskType) GetLpmintm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldLpmintmMask) != 0
 }
 
 // SetLpmintm LPM interrupt mask
-func (r *registerOtg_hs_gintmskType) SetLpmintm(value bool) {
+func (r *registerOtghsgintmskType) SetLpmintm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldLpmintmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldLpmintmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldLpmintmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldLpmintmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldCidschgmShift = 28
-	RegisterOtg_hs_gintmskFieldCidschgmMask  = 0x10000000
+	RegisterOtghsgintmskFieldCidschgmShift = 28
+	RegisterOtghsgintmskFieldCidschgmMask  = 0x10000000
 )
 
 // GetCidschgm Connector ID status change mask
-func (r *registerOtg_hs_gintmskType) GetCidschgm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldCidschgmMask) != 0
+func (r *registerOtghsgintmskType) GetCidschgm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldCidschgmMask) != 0
 }
 
 // SetCidschgm Connector ID status change mask
-func (r *registerOtg_hs_gintmskType) SetCidschgm(value bool) {
+func (r *registerOtghsgintmskType) SetCidschgm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldCidschgmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldCidschgmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldCidschgmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldCidschgmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldDiscintShift = 29
-	RegisterOtg_hs_gintmskFieldDiscintMask  = 0x20000000
+	RegisterOtghsgintmskFieldDiscintShift = 29
+	RegisterOtghsgintmskFieldDiscintMask  = 0x20000000
 )
 
 // GetDiscint Disconnect detected interrupt mask
-func (r *registerOtg_hs_gintmskType) GetDiscint() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldDiscintMask) != 0
+func (r *registerOtghsgintmskType) GetDiscint() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldDiscintMask) != 0
 }
 
 // SetDiscint Disconnect detected interrupt mask
-func (r *registerOtg_hs_gintmskType) SetDiscint(value bool) {
+func (r *registerOtghsgintmskType) SetDiscint(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldDiscintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldDiscintMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldDiscintMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldDiscintMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldSrqimShift = 30
-	RegisterOtg_hs_gintmskFieldSrqimMask  = 0x40000000
+	RegisterOtghsgintmskFieldSrqimShift = 30
+	RegisterOtghsgintmskFieldSrqimMask  = 0x40000000
 )
 
 // GetSrqim Session request/new session detected interrupt mask
-func (r *registerOtg_hs_gintmskType) GetSrqim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldSrqimMask) != 0
+func (r *registerOtghsgintmskType) GetSrqim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldSrqimMask) != 0
 }
 
 // SetSrqim Session request/new session detected interrupt mask
-func (r *registerOtg_hs_gintmskType) SetSrqim(value bool) {
+func (r *registerOtghsgintmskType) SetSrqim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldSrqimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldSrqimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldSrqimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldSrqimMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gintmskFieldWuimShift = 31
-	RegisterOtg_hs_gintmskFieldWuimMask  = 0x80000000
+	RegisterOtghsgintmskFieldWuimShift = 31
+	RegisterOtghsgintmskFieldWuimMask  = 0x80000000
 )
 
 // GetWuim Resume/remote wakeup detected interrupt mask
-func (r *registerOtg_hs_gintmskType) GetWuim() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gintmskFieldWuimMask) != 0
+func (r *registerOtghsgintmskType) GetWuim() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgintmskFieldWuimMask) != 0
 }
 
 // SetWuim Resume/remote wakeup detected interrupt mask
-func (r *registerOtg_hs_gintmskType) SetWuim(value bool) {
+func (r *registerOtghsgintmskType) SetWuim(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gintmskFieldWuimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgintmskFieldWuimMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gintmskFieldWuimMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgintmskFieldWuimMask)
 	}
 }
 
-// registerOtg_hs_grxstsr_hostType OTG_HS Receive status debug read register (host mode)
-type registerOtg_hs_grxstsr_hostType uint32
+// registerOtghsgrxstsrhostType OTG_HS Receive status debug read register (host mode)
+type registerOtghsgrxstsrhostType uint32
 
 const (
-	RegisterOtg_hs_grxstsr_hostFieldChnumShift = 0
-	RegisterOtg_hs_grxstsr_hostFieldChnumMask  = 0xf
+	RegisterOtghsgrxstsrhostFieldChnumShift = 0
+	RegisterOtghsgrxstsrhostFieldChnumMask  = 0xf
 )
 
 // GetChnum Channel number
-func (r *registerOtg_hs_grxstsr_hostType) GetChnum() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsr_hostFieldChnumMask) >> RegisterOtg_hs_grxstsr_hostFieldChnumShift)
+func (r *registerOtghsgrxstsrhostType) GetChnum() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsrhostFieldChnumMask) >> RegisterOtghsgrxstsrhostFieldChnumShift)
 }
 
 // SetChnum Channel number
-func (r *registerOtg_hs_grxstsr_hostType) SetChnum(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsr_hostFieldChnumMask)|(uint32(value)<<RegisterOtg_hs_grxstsr_hostFieldChnumShift))
+func (r *registerOtghsgrxstsrhostType) SetChnum(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsrhostFieldChnumMask)|(uint32(value)<<RegisterOtghsgrxstsrhostFieldChnumShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsr_hostFieldBcntShift = 4
-	RegisterOtg_hs_grxstsr_hostFieldBcntMask  = 0x7ff0
+	RegisterOtghsgrxstsrhostFieldBcntShift = 4
+	RegisterOtghsgrxstsrhostFieldBcntMask  = 0x7ff0
 )
 
 // GetBcnt Byte count
-func (r *registerOtg_hs_grxstsr_hostType) GetBcnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsr_hostFieldBcntMask) >> RegisterOtg_hs_grxstsr_hostFieldBcntShift)
+func (r *registerOtghsgrxstsrhostType) GetBcnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsrhostFieldBcntMask) >> RegisterOtghsgrxstsrhostFieldBcntShift)
 }
 
 // SetBcnt Byte count
-func (r *registerOtg_hs_grxstsr_hostType) SetBcnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsr_hostFieldBcntMask)|(uint32(value)<<RegisterOtg_hs_grxstsr_hostFieldBcntShift))
+func (r *registerOtghsgrxstsrhostType) SetBcnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsrhostFieldBcntMask)|(uint32(value)<<RegisterOtghsgrxstsrhostFieldBcntShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsr_hostFieldDpidShift = 15
-	RegisterOtg_hs_grxstsr_hostFieldDpidMask  = 0x18000
+	RegisterOtghsgrxstsrhostFieldDpidShift = 15
+	RegisterOtghsgrxstsrhostFieldDpidMask  = 0x18000
 )
 
 // GetDpid Data PID
-func (r *registerOtg_hs_grxstsr_hostType) GetDpid() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsr_hostFieldDpidMask) >> RegisterOtg_hs_grxstsr_hostFieldDpidShift)
+func (r *registerOtghsgrxstsrhostType) GetDpid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsrhostFieldDpidMask) >> RegisterOtghsgrxstsrhostFieldDpidShift)
 }
 
 // SetDpid Data PID
-func (r *registerOtg_hs_grxstsr_hostType) SetDpid(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsr_hostFieldDpidMask)|(uint32(value)<<RegisterOtg_hs_grxstsr_hostFieldDpidShift))
+func (r *registerOtghsgrxstsrhostType) SetDpid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsrhostFieldDpidMask)|(uint32(value)<<RegisterOtghsgrxstsrhostFieldDpidShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsr_hostFieldPktstsShift = 17
-	RegisterOtg_hs_grxstsr_hostFieldPktstsMask  = 0x1e0000
+	RegisterOtghsgrxstsrhostFieldPktstsShift = 17
+	RegisterOtghsgrxstsrhostFieldPktstsMask  = 0x1e0000
 )
 
 // GetPktsts Packet status
-func (r *registerOtg_hs_grxstsr_hostType) GetPktsts() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsr_hostFieldPktstsMask) >> RegisterOtg_hs_grxstsr_hostFieldPktstsShift)
+func (r *registerOtghsgrxstsrhostType) GetPktsts() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsrhostFieldPktstsMask) >> RegisterOtghsgrxstsrhostFieldPktstsShift)
 }
 
 // SetPktsts Packet status
-func (r *registerOtg_hs_grxstsr_hostType) SetPktsts(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsr_hostFieldPktstsMask)|(uint32(value)<<RegisterOtg_hs_grxstsr_hostFieldPktstsShift))
+func (r *registerOtghsgrxstsrhostType) SetPktsts(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsrhostFieldPktstsMask)|(uint32(value)<<RegisterOtghsgrxstsrhostFieldPktstsShift))
 }
 
-// registerOtg_hs_grxstsr_deviceType OTG_HS Receive status debug read register (peripheral mode mode)
-type registerOtg_hs_grxstsr_deviceType uint32
+// registerOtghsgrxstsrdeviceType OTG_HS Receive status debug read register (peripheral mode mode)
+type registerOtghsgrxstsrdeviceType uint32
 
 const (
-	RegisterOtg_hs_grxstsr_deviceFieldEpnumShift = 0
-	RegisterOtg_hs_grxstsr_deviceFieldEpnumMask  = 0xf
+	RegisterOtghsgrxstsrdeviceFieldEpnumShift = 0
+	RegisterOtghsgrxstsrdeviceFieldEpnumMask  = 0xf
 )
 
 // GetEpnum Endpoint number
-func (r *registerOtg_hs_grxstsr_deviceType) GetEpnum() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsr_deviceFieldEpnumMask) >> RegisterOtg_hs_grxstsr_deviceFieldEpnumShift)
+func (r *registerOtghsgrxstsrdeviceType) GetEpnum() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsrdeviceFieldEpnumMask) >> RegisterOtghsgrxstsrdeviceFieldEpnumShift)
 }
 
 // SetEpnum Endpoint number
-func (r *registerOtg_hs_grxstsr_deviceType) SetEpnum(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsr_deviceFieldEpnumMask)|(uint32(value)<<RegisterOtg_hs_grxstsr_deviceFieldEpnumShift))
+func (r *registerOtghsgrxstsrdeviceType) SetEpnum(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsrdeviceFieldEpnumMask)|(uint32(value)<<RegisterOtghsgrxstsrdeviceFieldEpnumShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsr_deviceFieldBcntShift = 4
-	RegisterOtg_hs_grxstsr_deviceFieldBcntMask  = 0x7ff0
+	RegisterOtghsgrxstsrdeviceFieldBcntShift = 4
+	RegisterOtghsgrxstsrdeviceFieldBcntMask  = 0x7ff0
 )
 
 // GetBcnt Byte count
-func (r *registerOtg_hs_grxstsr_deviceType) GetBcnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsr_deviceFieldBcntMask) >> RegisterOtg_hs_grxstsr_deviceFieldBcntShift)
+func (r *registerOtghsgrxstsrdeviceType) GetBcnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsrdeviceFieldBcntMask) >> RegisterOtghsgrxstsrdeviceFieldBcntShift)
 }
 
 // SetBcnt Byte count
-func (r *registerOtg_hs_grxstsr_deviceType) SetBcnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsr_deviceFieldBcntMask)|(uint32(value)<<RegisterOtg_hs_grxstsr_deviceFieldBcntShift))
+func (r *registerOtghsgrxstsrdeviceType) SetBcnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsrdeviceFieldBcntMask)|(uint32(value)<<RegisterOtghsgrxstsrdeviceFieldBcntShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsr_deviceFieldDpidShift = 15
-	RegisterOtg_hs_grxstsr_deviceFieldDpidMask  = 0x18000
+	RegisterOtghsgrxstsrdeviceFieldDpidShift = 15
+	RegisterOtghsgrxstsrdeviceFieldDpidMask  = 0x18000
 )
 
 // GetDpid Data PID
-func (r *registerOtg_hs_grxstsr_deviceType) GetDpid() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsr_deviceFieldDpidMask) >> RegisterOtg_hs_grxstsr_deviceFieldDpidShift)
+func (r *registerOtghsgrxstsrdeviceType) GetDpid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsrdeviceFieldDpidMask) >> RegisterOtghsgrxstsrdeviceFieldDpidShift)
 }
 
 // SetDpid Data PID
-func (r *registerOtg_hs_grxstsr_deviceType) SetDpid(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsr_deviceFieldDpidMask)|(uint32(value)<<RegisterOtg_hs_grxstsr_deviceFieldDpidShift))
+func (r *registerOtghsgrxstsrdeviceType) SetDpid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsrdeviceFieldDpidMask)|(uint32(value)<<RegisterOtghsgrxstsrdeviceFieldDpidShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsr_deviceFieldPktstsShift = 17
-	RegisterOtg_hs_grxstsr_deviceFieldPktstsMask  = 0x1e0000
+	RegisterOtghsgrxstsrdeviceFieldPktstsShift = 17
+	RegisterOtghsgrxstsrdeviceFieldPktstsMask  = 0x1e0000
 )
 
 // GetPktsts Packet status
-func (r *registerOtg_hs_grxstsr_deviceType) GetPktsts() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsr_deviceFieldPktstsMask) >> RegisterOtg_hs_grxstsr_deviceFieldPktstsShift)
+func (r *registerOtghsgrxstsrdeviceType) GetPktsts() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsrdeviceFieldPktstsMask) >> RegisterOtghsgrxstsrdeviceFieldPktstsShift)
 }
 
 // SetPktsts Packet status
-func (r *registerOtg_hs_grxstsr_deviceType) SetPktsts(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsr_deviceFieldPktstsMask)|(uint32(value)<<RegisterOtg_hs_grxstsr_deviceFieldPktstsShift))
+func (r *registerOtghsgrxstsrdeviceType) SetPktsts(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsrdeviceFieldPktstsMask)|(uint32(value)<<RegisterOtghsgrxstsrdeviceFieldPktstsShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsr_deviceFieldFrmnumShift = 21
-	RegisterOtg_hs_grxstsr_deviceFieldFrmnumMask  = 0x1e00000
+	RegisterOtghsgrxstsrdeviceFieldFrmnumShift = 21
+	RegisterOtghsgrxstsrdeviceFieldFrmnumMask  = 0x1e00000
 )
 
 // GetFrmnum Frame number
-func (r *registerOtg_hs_grxstsr_deviceType) GetFrmnum() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsr_deviceFieldFrmnumMask) >> RegisterOtg_hs_grxstsr_deviceFieldFrmnumShift)
+func (r *registerOtghsgrxstsrdeviceType) GetFrmnum() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsrdeviceFieldFrmnumMask) >> RegisterOtghsgrxstsrdeviceFieldFrmnumShift)
 }
 
 // SetFrmnum Frame number
-func (r *registerOtg_hs_grxstsr_deviceType) SetFrmnum(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsr_deviceFieldFrmnumMask)|(uint32(value)<<RegisterOtg_hs_grxstsr_deviceFieldFrmnumShift))
+func (r *registerOtghsgrxstsrdeviceType) SetFrmnum(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsrdeviceFieldFrmnumMask)|(uint32(value)<<RegisterOtghsgrxstsrdeviceFieldFrmnumShift))
 }
 
-// registerOtg_hs_grxstsp_hostType OTG_HS status read and pop register (host mode)
-type registerOtg_hs_grxstsp_hostType uint32
+// registerOtghsgrxstsphostType OTG_HS status read and pop register (host mode)
+type registerOtghsgrxstsphostType uint32
 
 const (
-	RegisterOtg_hs_grxstsp_hostFieldChnumShift = 0
-	RegisterOtg_hs_grxstsp_hostFieldChnumMask  = 0xf
+	RegisterOtghsgrxstsphostFieldChnumShift = 0
+	RegisterOtghsgrxstsphostFieldChnumMask  = 0xf
 )
 
 // GetChnum Channel number
-func (r *registerOtg_hs_grxstsp_hostType) GetChnum() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsp_hostFieldChnumMask) >> RegisterOtg_hs_grxstsp_hostFieldChnumShift)
+func (r *registerOtghsgrxstsphostType) GetChnum() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsphostFieldChnumMask) >> RegisterOtghsgrxstsphostFieldChnumShift)
 }
 
 // SetChnum Channel number
-func (r *registerOtg_hs_grxstsp_hostType) SetChnum(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsp_hostFieldChnumMask)|(uint32(value)<<RegisterOtg_hs_grxstsp_hostFieldChnumShift))
+func (r *registerOtghsgrxstsphostType) SetChnum(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsphostFieldChnumMask)|(uint32(value)<<RegisterOtghsgrxstsphostFieldChnumShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsp_hostFieldBcntShift = 4
-	RegisterOtg_hs_grxstsp_hostFieldBcntMask  = 0x7ff0
+	RegisterOtghsgrxstsphostFieldBcntShift = 4
+	RegisterOtghsgrxstsphostFieldBcntMask  = 0x7ff0
 )
 
 // GetBcnt Byte count
-func (r *registerOtg_hs_grxstsp_hostType) GetBcnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsp_hostFieldBcntMask) >> RegisterOtg_hs_grxstsp_hostFieldBcntShift)
+func (r *registerOtghsgrxstsphostType) GetBcnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsphostFieldBcntMask) >> RegisterOtghsgrxstsphostFieldBcntShift)
 }
 
 // SetBcnt Byte count
-func (r *registerOtg_hs_grxstsp_hostType) SetBcnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsp_hostFieldBcntMask)|(uint32(value)<<RegisterOtg_hs_grxstsp_hostFieldBcntShift))
+func (r *registerOtghsgrxstsphostType) SetBcnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsphostFieldBcntMask)|(uint32(value)<<RegisterOtghsgrxstsphostFieldBcntShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsp_hostFieldDpidShift = 15
-	RegisterOtg_hs_grxstsp_hostFieldDpidMask  = 0x18000
+	RegisterOtghsgrxstsphostFieldDpidShift = 15
+	RegisterOtghsgrxstsphostFieldDpidMask  = 0x18000
 )
 
 // GetDpid Data PID
-func (r *registerOtg_hs_grxstsp_hostType) GetDpid() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsp_hostFieldDpidMask) >> RegisterOtg_hs_grxstsp_hostFieldDpidShift)
+func (r *registerOtghsgrxstsphostType) GetDpid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsphostFieldDpidMask) >> RegisterOtghsgrxstsphostFieldDpidShift)
 }
 
 // SetDpid Data PID
-func (r *registerOtg_hs_grxstsp_hostType) SetDpid(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsp_hostFieldDpidMask)|(uint32(value)<<RegisterOtg_hs_grxstsp_hostFieldDpidShift))
+func (r *registerOtghsgrxstsphostType) SetDpid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsphostFieldDpidMask)|(uint32(value)<<RegisterOtghsgrxstsphostFieldDpidShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsp_hostFieldPktstsShift = 17
-	RegisterOtg_hs_grxstsp_hostFieldPktstsMask  = 0x1e0000
+	RegisterOtghsgrxstsphostFieldPktstsShift = 17
+	RegisterOtghsgrxstsphostFieldPktstsMask  = 0x1e0000
 )
 
 // GetPktsts Packet status
-func (r *registerOtg_hs_grxstsp_hostType) GetPktsts() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsp_hostFieldPktstsMask) >> RegisterOtg_hs_grxstsp_hostFieldPktstsShift)
+func (r *registerOtghsgrxstsphostType) GetPktsts() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstsphostFieldPktstsMask) >> RegisterOtghsgrxstsphostFieldPktstsShift)
 }
 
 // SetPktsts Packet status
-func (r *registerOtg_hs_grxstsp_hostType) SetPktsts(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsp_hostFieldPktstsMask)|(uint32(value)<<RegisterOtg_hs_grxstsp_hostFieldPktstsShift))
+func (r *registerOtghsgrxstsphostType) SetPktsts(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstsphostFieldPktstsMask)|(uint32(value)<<RegisterOtghsgrxstsphostFieldPktstsShift))
 }
 
-// registerOtg_hs_grxstsp_deviceType OTG_HS status read and pop register (peripheral mode)
-type registerOtg_hs_grxstsp_deviceType uint32
+// registerOtghsgrxstspdeviceType OTG_HS status read and pop register (peripheral mode)
+type registerOtghsgrxstspdeviceType uint32
 
 const (
-	RegisterOtg_hs_grxstsp_deviceFieldEpnumShift = 0
-	RegisterOtg_hs_grxstsp_deviceFieldEpnumMask  = 0xf
+	RegisterOtghsgrxstspdeviceFieldEpnumShift = 0
+	RegisterOtghsgrxstspdeviceFieldEpnumMask  = 0xf
 )
 
 // GetEpnum Endpoint number
-func (r *registerOtg_hs_grxstsp_deviceType) GetEpnum() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsp_deviceFieldEpnumMask) >> RegisterOtg_hs_grxstsp_deviceFieldEpnumShift)
+func (r *registerOtghsgrxstspdeviceType) GetEpnum() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstspdeviceFieldEpnumMask) >> RegisterOtghsgrxstspdeviceFieldEpnumShift)
 }
 
 // SetEpnum Endpoint number
-func (r *registerOtg_hs_grxstsp_deviceType) SetEpnum(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsp_deviceFieldEpnumMask)|(uint32(value)<<RegisterOtg_hs_grxstsp_deviceFieldEpnumShift))
+func (r *registerOtghsgrxstspdeviceType) SetEpnum(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstspdeviceFieldEpnumMask)|(uint32(value)<<RegisterOtghsgrxstspdeviceFieldEpnumShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsp_deviceFieldBcntShift = 4
-	RegisterOtg_hs_grxstsp_deviceFieldBcntMask  = 0x7ff0
+	RegisterOtghsgrxstspdeviceFieldBcntShift = 4
+	RegisterOtghsgrxstspdeviceFieldBcntMask  = 0x7ff0
 )
 
 // GetBcnt Byte count
-func (r *registerOtg_hs_grxstsp_deviceType) GetBcnt() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsp_deviceFieldBcntMask) >> RegisterOtg_hs_grxstsp_deviceFieldBcntShift)
+func (r *registerOtghsgrxstspdeviceType) GetBcnt() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstspdeviceFieldBcntMask) >> RegisterOtghsgrxstspdeviceFieldBcntShift)
 }
 
 // SetBcnt Byte count
-func (r *registerOtg_hs_grxstsp_deviceType) SetBcnt(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsp_deviceFieldBcntMask)|(uint32(value)<<RegisterOtg_hs_grxstsp_deviceFieldBcntShift))
+func (r *registerOtghsgrxstspdeviceType) SetBcnt(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstspdeviceFieldBcntMask)|(uint32(value)<<RegisterOtghsgrxstspdeviceFieldBcntShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsp_deviceFieldDpidShift = 15
-	RegisterOtg_hs_grxstsp_deviceFieldDpidMask  = 0x18000
+	RegisterOtghsgrxstspdeviceFieldDpidShift = 15
+	RegisterOtghsgrxstspdeviceFieldDpidMask  = 0x18000
 )
 
 // GetDpid Data PID
-func (r *registerOtg_hs_grxstsp_deviceType) GetDpid() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsp_deviceFieldDpidMask) >> RegisterOtg_hs_grxstsp_deviceFieldDpidShift)
+func (r *registerOtghsgrxstspdeviceType) GetDpid() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstspdeviceFieldDpidMask) >> RegisterOtghsgrxstspdeviceFieldDpidShift)
 }
 
 // SetDpid Data PID
-func (r *registerOtg_hs_grxstsp_deviceType) SetDpid(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsp_deviceFieldDpidMask)|(uint32(value)<<RegisterOtg_hs_grxstsp_deviceFieldDpidShift))
+func (r *registerOtghsgrxstspdeviceType) SetDpid(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstspdeviceFieldDpidMask)|(uint32(value)<<RegisterOtghsgrxstspdeviceFieldDpidShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsp_deviceFieldPktstsShift = 17
-	RegisterOtg_hs_grxstsp_deviceFieldPktstsMask  = 0x1e0000
+	RegisterOtghsgrxstspdeviceFieldPktstsShift = 17
+	RegisterOtghsgrxstspdeviceFieldPktstsMask  = 0x1e0000
 )
 
 // GetPktsts Packet status
-func (r *registerOtg_hs_grxstsp_deviceType) GetPktsts() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsp_deviceFieldPktstsMask) >> RegisterOtg_hs_grxstsp_deviceFieldPktstsShift)
+func (r *registerOtghsgrxstspdeviceType) GetPktsts() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstspdeviceFieldPktstsMask) >> RegisterOtghsgrxstspdeviceFieldPktstsShift)
 }
 
 // SetPktsts Packet status
-func (r *registerOtg_hs_grxstsp_deviceType) SetPktsts(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsp_deviceFieldPktstsMask)|(uint32(value)<<RegisterOtg_hs_grxstsp_deviceFieldPktstsShift))
+func (r *registerOtghsgrxstspdeviceType) SetPktsts(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstspdeviceFieldPktstsMask)|(uint32(value)<<RegisterOtghsgrxstspdeviceFieldPktstsShift))
 }
 
 const (
-	RegisterOtg_hs_grxstsp_deviceFieldFrmnumShift = 21
-	RegisterOtg_hs_grxstsp_deviceFieldFrmnumMask  = 0x1e00000
+	RegisterOtghsgrxstspdeviceFieldFrmnumShift = 21
+	RegisterOtghsgrxstspdeviceFieldFrmnumMask  = 0x1e00000
 )
 
 // GetFrmnum Frame number
-func (r *registerOtg_hs_grxstsp_deviceType) GetFrmnum() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxstsp_deviceFieldFrmnumMask) >> RegisterOtg_hs_grxstsp_deviceFieldFrmnumShift)
+func (r *registerOtghsgrxstspdeviceType) GetFrmnum() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxstspdeviceFieldFrmnumMask) >> RegisterOtghsgrxstspdeviceFieldFrmnumShift)
 }
 
 // SetFrmnum Frame number
-func (r *registerOtg_hs_grxstsp_deviceType) SetFrmnum(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxstsp_deviceFieldFrmnumMask)|(uint32(value)<<RegisterOtg_hs_grxstsp_deviceFieldFrmnumShift))
+func (r *registerOtghsgrxstspdeviceType) SetFrmnum(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxstspdeviceFieldFrmnumMask)|(uint32(value)<<RegisterOtghsgrxstspdeviceFieldFrmnumShift))
 }
 
-// registerOtg_hs_grxfsizType OTG_HS Receive FIFO size register
-type registerOtg_hs_grxfsizType uint32
+// registerOtghsgrxfsizType OTG_HS Receive FIFO size register
+type registerOtghsgrxfsizType uint32
 
 const (
-	RegisterOtg_hs_grxfsizFieldRxfdShift = 0
-	RegisterOtg_hs_grxfsizFieldRxfdMask  = 0xffff
+	RegisterOtghsgrxfsizFieldRxfdShift = 0
+	RegisterOtghsgrxfsizFieldRxfdMask  = 0xffff
 )
 
 // GetRxfd RxFIFO depth
-func (r *registerOtg_hs_grxfsizType) GetRxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_grxfsizFieldRxfdMask) >> RegisterOtg_hs_grxfsizFieldRxfdShift)
+func (r *registerOtghsgrxfsizType) GetRxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgrxfsizFieldRxfdMask) >> RegisterOtghsgrxfsizFieldRxfdShift)
 }
 
 // SetRxfd RxFIFO depth
-func (r *registerOtg_hs_grxfsizType) SetRxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_grxfsizFieldRxfdMask)|(uint32(value)<<RegisterOtg_hs_grxfsizFieldRxfdShift))
+func (r *registerOtghsgrxfsizType) SetRxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgrxfsizFieldRxfdMask)|(uint32(value)<<RegisterOtghsgrxfsizFieldRxfdShift))
 }
 
-// registerOtg_hs_hnptxfsiz_hostType OTG_HS nonperiodic transmit FIFO size register (host mode)
-type registerOtg_hs_hnptxfsiz_hostType uint32
+// registerOtghshnptxfsizhostType OTG_HS nonperiodic transmit FIFO size register (host mode)
+type registerOtghshnptxfsizhostType uint32
 
 const (
-	RegisterOtg_hs_hnptxfsiz_hostFieldNptxfsaShift = 0
-	RegisterOtg_hs_hnptxfsiz_hostFieldNptxfsaMask  = 0xffff
+	RegisterOtghshnptxfsizhostFieldNptxfsaShift = 0
+	RegisterOtghshnptxfsizhostFieldNptxfsaMask  = 0xffff
 )
 
 // GetNptxfsa Nonperiodic transmit RAM start address
-func (r *registerOtg_hs_hnptxfsiz_hostType) GetNptxfsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_hnptxfsiz_hostFieldNptxfsaMask) >> RegisterOtg_hs_hnptxfsiz_hostFieldNptxfsaShift)
+func (r *registerOtghshnptxfsizhostType) GetNptxfsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghshnptxfsizhostFieldNptxfsaMask) >> RegisterOtghshnptxfsizhostFieldNptxfsaShift)
 }
 
 // SetNptxfsa Nonperiodic transmit RAM start address
-func (r *registerOtg_hs_hnptxfsiz_hostType) SetNptxfsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_hnptxfsiz_hostFieldNptxfsaMask)|(uint32(value)<<RegisterOtg_hs_hnptxfsiz_hostFieldNptxfsaShift))
+func (r *registerOtghshnptxfsizhostType) SetNptxfsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghshnptxfsizhostFieldNptxfsaMask)|(uint32(value)<<RegisterOtghshnptxfsizhostFieldNptxfsaShift))
 }
 
 const (
-	RegisterOtg_hs_hnptxfsiz_hostFieldNptxfdShift = 16
-	RegisterOtg_hs_hnptxfsiz_hostFieldNptxfdMask  = 0xffff0000
+	RegisterOtghshnptxfsizhostFieldNptxfdShift = 16
+	RegisterOtghshnptxfsizhostFieldNptxfdMask  = 0xffff0000
 )
 
 // GetNptxfd Nonperiodic TxFIFO depth
-func (r *registerOtg_hs_hnptxfsiz_hostType) GetNptxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_hnptxfsiz_hostFieldNptxfdMask) >> RegisterOtg_hs_hnptxfsiz_hostFieldNptxfdShift)
+func (r *registerOtghshnptxfsizhostType) GetNptxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghshnptxfsizhostFieldNptxfdMask) >> RegisterOtghshnptxfsizhostFieldNptxfdShift)
 }
 
 // SetNptxfd Nonperiodic TxFIFO depth
-func (r *registerOtg_hs_hnptxfsiz_hostType) SetNptxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_hnptxfsiz_hostFieldNptxfdMask)|(uint32(value)<<RegisterOtg_hs_hnptxfsiz_hostFieldNptxfdShift))
+func (r *registerOtghshnptxfsizhostType) SetNptxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghshnptxfsizhostFieldNptxfdMask)|(uint32(value)<<RegisterOtghshnptxfsizhostFieldNptxfdShift))
 }
 
-// registerOtg_hs_dieptxf0_deviceType Endpoint 0 transmit FIFO size (peripheral mode)
-type registerOtg_hs_dieptxf0_deviceType uint32
+// registerOtghsdieptxf0deviceType Endpoint 0 transmit FIFO size (peripheral mode)
+type registerOtghsdieptxf0deviceType uint32
 
 const (
-	RegisterOtg_hs_dieptxf0_deviceFieldTx0fsaShift = 0
-	RegisterOtg_hs_dieptxf0_deviceFieldTx0fsaMask  = 0xffff
+	RegisterOtghsdieptxf0deviceFieldTx0fsaShift = 0
+	RegisterOtghsdieptxf0deviceFieldTx0fsaMask  = 0xffff
 )
 
 // GetTx0fsa Endpoint 0 transmit RAM start address
-func (r *registerOtg_hs_dieptxf0_deviceType) GetTx0fsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf0_deviceFieldTx0fsaMask) >> RegisterOtg_hs_dieptxf0_deviceFieldTx0fsaShift)
+func (r *registerOtghsdieptxf0deviceType) GetTx0fsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf0deviceFieldTx0fsaMask) >> RegisterOtghsdieptxf0deviceFieldTx0fsaShift)
 }
 
 // SetTx0fsa Endpoint 0 transmit RAM start address
-func (r *registerOtg_hs_dieptxf0_deviceType) SetTx0fsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf0_deviceFieldTx0fsaMask)|(uint32(value)<<RegisterOtg_hs_dieptxf0_deviceFieldTx0fsaShift))
+func (r *registerOtghsdieptxf0deviceType) SetTx0fsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf0deviceFieldTx0fsaMask)|(uint32(value)<<RegisterOtghsdieptxf0deviceFieldTx0fsaShift))
 }
 
 const (
-	RegisterOtg_hs_dieptxf0_deviceFieldTx0fdShift = 16
-	RegisterOtg_hs_dieptxf0_deviceFieldTx0fdMask  = 0xffff0000
+	RegisterOtghsdieptxf0deviceFieldTx0fdShift = 16
+	RegisterOtghsdieptxf0deviceFieldTx0fdMask  = 0xffff0000
 )
 
 // GetTx0fd Endpoint 0 TxFIFO depth
-func (r *registerOtg_hs_dieptxf0_deviceType) GetTx0fd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf0_deviceFieldTx0fdMask) >> RegisterOtg_hs_dieptxf0_deviceFieldTx0fdShift)
+func (r *registerOtghsdieptxf0deviceType) GetTx0fd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf0deviceFieldTx0fdMask) >> RegisterOtghsdieptxf0deviceFieldTx0fdShift)
 }
 
 // SetTx0fd Endpoint 0 TxFIFO depth
-func (r *registerOtg_hs_dieptxf0_deviceType) SetTx0fd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf0_deviceFieldTx0fdMask)|(uint32(value)<<RegisterOtg_hs_dieptxf0_deviceFieldTx0fdShift))
+func (r *registerOtghsdieptxf0deviceType) SetTx0fd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf0deviceFieldTx0fdMask)|(uint32(value)<<RegisterOtghsdieptxf0deviceFieldTx0fdShift))
 }
 
-// registerOtg_hs_gnptxstsType OTG_HS nonperiodic transmit FIFO/queue status register
-type registerOtg_hs_gnptxstsType uint32
+// registerOtghsgnptxstsType OTG_HS nonperiodic transmit FIFO/queue status register
+type registerOtghsgnptxstsType uint32
 
 const (
-	RegisterOtg_hs_gnptxstsFieldNptxfsavShift = 0
-	RegisterOtg_hs_gnptxstsFieldNptxfsavMask  = 0xffff
+	RegisterOtghsgnptxstsFieldNptxfsavShift = 0
+	RegisterOtghsgnptxstsFieldNptxfsavMask  = 0xffff
 )
 
 // GetNptxfsav Nonperiodic TxFIFO space available
-func (r *registerOtg_hs_gnptxstsType) GetNptxfsav() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gnptxstsFieldNptxfsavMask) >> RegisterOtg_hs_gnptxstsFieldNptxfsavShift)
+func (r *registerOtghsgnptxstsType) GetNptxfsav() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgnptxstsFieldNptxfsavMask) >> RegisterOtghsgnptxstsFieldNptxfsavShift)
 }
 
 // SetNptxfsav Nonperiodic TxFIFO space available
-func (r *registerOtg_hs_gnptxstsType) SetNptxfsav(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gnptxstsFieldNptxfsavMask)|(uint32(value)<<RegisterOtg_hs_gnptxstsFieldNptxfsavShift))
+func (r *registerOtghsgnptxstsType) SetNptxfsav(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgnptxstsFieldNptxfsavMask)|(uint32(value)<<RegisterOtghsgnptxstsFieldNptxfsavShift))
 }
 
 const (
-	RegisterOtg_hs_gnptxstsFieldNptqxsavShift = 16
-	RegisterOtg_hs_gnptxstsFieldNptqxsavMask  = 0xff0000
+	RegisterOtghsgnptxstsFieldNptqxsavShift = 16
+	RegisterOtghsgnptxstsFieldNptqxsavMask  = 0xff0000
 )
 
 // GetNptqxsav Nonperiodic transmit request queue space available
-func (r *registerOtg_hs_gnptxstsType) GetNptqxsav() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gnptxstsFieldNptqxsavMask) >> RegisterOtg_hs_gnptxstsFieldNptqxsavShift)
+func (r *registerOtghsgnptxstsType) GetNptqxsav() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgnptxstsFieldNptqxsavMask) >> RegisterOtghsgnptxstsFieldNptqxsavShift)
 }
 
 // SetNptqxsav Nonperiodic transmit request queue space available
-func (r *registerOtg_hs_gnptxstsType) SetNptqxsav(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gnptxstsFieldNptqxsavMask)|(uint32(value)<<RegisterOtg_hs_gnptxstsFieldNptqxsavShift))
+func (r *registerOtghsgnptxstsType) SetNptqxsav(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgnptxstsFieldNptqxsavMask)|(uint32(value)<<RegisterOtghsgnptxstsFieldNptqxsavShift))
 }
 
 const (
-	RegisterOtg_hs_gnptxstsFieldNptxqtopShift = 24
-	RegisterOtg_hs_gnptxstsFieldNptxqtopMask  = 0x7f000000
+	RegisterOtghsgnptxstsFieldNptxqtopShift = 24
+	RegisterOtghsgnptxstsFieldNptxqtopMask  = 0x7f000000
 )
 
 // GetNptxqtop Top of the nonperiodic transmit request queue
-func (r *registerOtg_hs_gnptxstsType) GetNptxqtop() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gnptxstsFieldNptxqtopMask) >> RegisterOtg_hs_gnptxstsFieldNptxqtopShift)
+func (r *registerOtghsgnptxstsType) GetNptxqtop() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgnptxstsFieldNptxqtopMask) >> RegisterOtghsgnptxstsFieldNptxqtopShift)
 }
 
 // SetNptxqtop Top of the nonperiodic transmit request queue
-func (r *registerOtg_hs_gnptxstsType) SetNptxqtop(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gnptxstsFieldNptxqtopMask)|(uint32(value)<<RegisterOtg_hs_gnptxstsFieldNptxqtopShift))
+func (r *registerOtghsgnptxstsType) SetNptxqtop(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgnptxstsFieldNptxqtopMask)|(uint32(value)<<RegisterOtghsgnptxstsFieldNptxqtopShift))
 }
 
-// registerOtg_hs_gccfgType OTG_HS general core configuration register
-type registerOtg_hs_gccfgType uint32
+// registerOtghsgccfgType OTG_HS general core configuration register
+type registerOtghsgccfgType uint32
 
 const (
-	RegisterOtg_hs_gccfgFieldDcdetShift = 0
-	RegisterOtg_hs_gccfgFieldDcdetMask  = 0x1
+	RegisterOtghsgccfgFieldDcdetShift = 0
+	RegisterOtghsgccfgFieldDcdetMask  = 0x1
 )
 
 // GetDcdet Data contact detection (DCD) status
-func (r *registerOtg_hs_gccfgType) GetDcdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gccfgFieldDcdetMask) != 0
+func (r *registerOtghsgccfgType) GetDcdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgccfgFieldDcdetMask) != 0
 }
 
 // SetDcdet Data contact detection (DCD) status
-func (r *registerOtg_hs_gccfgType) SetDcdet(value bool) {
+func (r *registerOtghsgccfgType) SetDcdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gccfgFieldDcdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgccfgFieldDcdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gccfgFieldDcdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgccfgFieldDcdetMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gccfgFieldPdetShift = 1
-	RegisterOtg_hs_gccfgFieldPdetMask  = 0x2
+	RegisterOtghsgccfgFieldPdetShift = 1
+	RegisterOtghsgccfgFieldPdetMask  = 0x2
 )
 
 // GetPdet Primary detection (PD) status
-func (r *registerOtg_hs_gccfgType) GetPdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gccfgFieldPdetMask) != 0
+func (r *registerOtghsgccfgType) GetPdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgccfgFieldPdetMask) != 0
 }
 
 // SetPdet Primary detection (PD) status
-func (r *registerOtg_hs_gccfgType) SetPdet(value bool) {
+func (r *registerOtghsgccfgType) SetPdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gccfgFieldPdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgccfgFieldPdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gccfgFieldPdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgccfgFieldPdetMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gccfgFieldSdetShift = 2
-	RegisterOtg_hs_gccfgFieldSdetMask  = 0x4
+	RegisterOtghsgccfgFieldSdetShift = 2
+	RegisterOtghsgccfgFieldSdetMask  = 0x4
 )
 
 // GetSdet Secondary detection (SD) status
-func (r *registerOtg_hs_gccfgType) GetSdet() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gccfgFieldSdetMask) != 0
+func (r *registerOtghsgccfgType) GetSdet() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgccfgFieldSdetMask) != 0
 }
 
 // SetSdet Secondary detection (SD) status
-func (r *registerOtg_hs_gccfgType) SetSdet(value bool) {
+func (r *registerOtghsgccfgType) SetSdet(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gccfgFieldSdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgccfgFieldSdetMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gccfgFieldSdetMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgccfgFieldSdetMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gccfgFieldPs2detShift = 3
-	RegisterOtg_hs_gccfgFieldPs2detMask  = 0x8
+	RegisterOtghsgccfgFieldPs2detShift = 3
+	RegisterOtghsgccfgFieldPs2detMask  = 0x8
 )
 
 // GetPs2det DM pull-up detection status
-func (r *registerOtg_hs_gccfgType) GetPs2det() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gccfgFieldPs2detMask) != 0
+func (r *registerOtghsgccfgType) GetPs2det() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgccfgFieldPs2detMask) != 0
 }
 
 // SetPs2det DM pull-up detection status
-func (r *registerOtg_hs_gccfgType) SetPs2det(value bool) {
+func (r *registerOtghsgccfgType) SetPs2det(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gccfgFieldPs2detMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgccfgFieldPs2detMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gccfgFieldPs2detMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgccfgFieldPs2detMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gccfgFieldPwrdwnShift = 16
-	RegisterOtg_hs_gccfgFieldPwrdwnMask  = 0x10000
+	RegisterOtghsgccfgFieldPwrdwnShift = 16
+	RegisterOtghsgccfgFieldPwrdwnMask  = 0x10000
 )
 
 // GetPwrdwn Power down
-func (r *registerOtg_hs_gccfgType) GetPwrdwn() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gccfgFieldPwrdwnMask) != 0
+func (r *registerOtghsgccfgType) GetPwrdwn() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgccfgFieldPwrdwnMask) != 0
 }
 
 // SetPwrdwn Power down
-func (r *registerOtg_hs_gccfgType) SetPwrdwn(value bool) {
+func (r *registerOtghsgccfgType) SetPwrdwn(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gccfgFieldPwrdwnMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgccfgFieldPwrdwnMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gccfgFieldPwrdwnMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgccfgFieldPwrdwnMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gccfgFieldBcdenShift = 17
-	RegisterOtg_hs_gccfgFieldBcdenMask  = 0x20000
+	RegisterOtghsgccfgFieldBcdenShift = 17
+	RegisterOtghsgccfgFieldBcdenMask  = 0x20000
 )
 
 // GetBcden Battery charging detector (BCD) enable
-func (r *registerOtg_hs_gccfgType) GetBcden() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gccfgFieldBcdenMask) != 0
+func (r *registerOtghsgccfgType) GetBcden() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgccfgFieldBcdenMask) != 0
 }
 
 // SetBcden Battery charging detector (BCD) enable
-func (r *registerOtg_hs_gccfgType) SetBcden(value bool) {
+func (r *registerOtghsgccfgType) SetBcden(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gccfgFieldBcdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgccfgFieldBcdenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gccfgFieldBcdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgccfgFieldBcdenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gccfgFieldDcdenShift = 18
-	RegisterOtg_hs_gccfgFieldDcdenMask  = 0x40000
+	RegisterOtghsgccfgFieldDcdenShift = 18
+	RegisterOtghsgccfgFieldDcdenMask  = 0x40000
 )
 
 // GetDcden Data contact detection (DCD) mode enable
-func (r *registerOtg_hs_gccfgType) GetDcden() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gccfgFieldDcdenMask) != 0
+func (r *registerOtghsgccfgType) GetDcden() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgccfgFieldDcdenMask) != 0
 }
 
 // SetDcden Data contact detection (DCD) mode enable
-func (r *registerOtg_hs_gccfgType) SetDcden(value bool) {
+func (r *registerOtghsgccfgType) SetDcden(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gccfgFieldDcdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgccfgFieldDcdenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gccfgFieldDcdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgccfgFieldDcdenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gccfgFieldPdenShift = 19
-	RegisterOtg_hs_gccfgFieldPdenMask  = 0x80000
+	RegisterOtghsgccfgFieldPdenShift = 19
+	RegisterOtghsgccfgFieldPdenMask  = 0x80000
 )
 
 // GetPden Primary detection (PD) mode enable
-func (r *registerOtg_hs_gccfgType) GetPden() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gccfgFieldPdenMask) != 0
+func (r *registerOtghsgccfgType) GetPden() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgccfgFieldPdenMask) != 0
 }
 
 // SetPden Primary detection (PD) mode enable
-func (r *registerOtg_hs_gccfgType) SetPden(value bool) {
+func (r *registerOtghsgccfgType) SetPden(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gccfgFieldPdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgccfgFieldPdenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gccfgFieldPdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgccfgFieldPdenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gccfgFieldSdenShift = 20
-	RegisterOtg_hs_gccfgFieldSdenMask  = 0x100000
+	RegisterOtghsgccfgFieldSdenShift = 20
+	RegisterOtghsgccfgFieldSdenMask  = 0x100000
 )
 
 // GetSden Secondary detection (SD) mode enable
-func (r *registerOtg_hs_gccfgType) GetSden() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gccfgFieldSdenMask) != 0
+func (r *registerOtghsgccfgType) GetSden() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgccfgFieldSdenMask) != 0
 }
 
 // SetSden Secondary detection (SD) mode enable
-func (r *registerOtg_hs_gccfgType) SetSden(value bool) {
+func (r *registerOtghsgccfgType) SetSden(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gccfgFieldSdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgccfgFieldSdenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gccfgFieldSdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgccfgFieldSdenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_gccfgFieldVbdenShift = 21
-	RegisterOtg_hs_gccfgFieldVbdenMask  = 0x200000
+	RegisterOtghsgccfgFieldVbdenShift = 21
+	RegisterOtghsgccfgFieldVbdenMask  = 0x200000
 )
 
 // GetVbden USB VBUS detection enable
-func (r *registerOtg_hs_gccfgType) GetVbden() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_gccfgFieldVbdenMask) != 0
+func (r *registerOtghsgccfgType) GetVbden() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsgccfgFieldVbdenMask) != 0
 }
 
 // SetVbden USB VBUS detection enable
-func (r *registerOtg_hs_gccfgType) SetVbden(value bool) {
+func (r *registerOtghsgccfgType) SetVbden(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_gccfgFieldVbdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsgccfgFieldVbdenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_gccfgFieldVbdenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsgccfgFieldVbdenMask)
 	}
 }
 
-// registerOtg_hs_cidType OTG_HS core ID register
-type registerOtg_hs_cidType uint32
+// registerOtghscidType OTG_HS core ID register
+type registerOtghscidType uint32
 
 const (
-	RegisterOtg_hs_cidFieldProduct_idShift = 0
-	RegisterOtg_hs_cidFieldProduct_idMask  = 0xffffffff
+	RegisterOtghscidFieldProductidShift = 0
+	RegisterOtghscidFieldProductidMask  = 0xffffffff
 )
 
-// GetProduct_id Product ID field
-func (r *registerOtg_hs_cidType) GetProduct_id() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_cidFieldProduct_idMask) >> RegisterOtg_hs_cidFieldProduct_idShift)
+// GetProductid Product ID field
+func (r *registerOtghscidType) GetProductid() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterOtghscidFieldProductidMask) >> RegisterOtghscidFieldProductidShift)
 }
 
-// SetProduct_id Product ID field
-func (r *registerOtg_hs_cidType) SetProduct_id(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_cidFieldProduct_idMask)|(uint32(value)<<RegisterOtg_hs_cidFieldProduct_idShift))
+// SetProductid Product ID field
+func (r *registerOtghscidType) SetProductid(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghscidFieldProductidMask)|(uint32(value)<<RegisterOtghscidFieldProductidShift))
 }
 
-// registerOtg_hs_glpmcfgType OTG core LPM configuration register
-type registerOtg_hs_glpmcfgType uint32
+// registerOtghsglpmcfgType OTG core LPM configuration register
+type registerOtghsglpmcfgType uint32
 
 const (
-	RegisterOtg_hs_glpmcfgFieldLpmenShift = 0
-	RegisterOtg_hs_glpmcfgFieldLpmenMask  = 0x1
+	RegisterOtghsglpmcfgFieldLpmenShift = 0
+	RegisterOtghsglpmcfgFieldLpmenMask  = 0x1
 )
 
 // GetLpmen LPM support enable
-func (r *registerOtg_hs_glpmcfgType) GetLpmen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldLpmenMask) != 0
+func (r *registerOtghsglpmcfgType) GetLpmen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldLpmenMask) != 0
 }
 
 // SetLpmen LPM support enable
-func (r *registerOtg_hs_glpmcfgType) SetLpmen(value bool) {
+func (r *registerOtghsglpmcfgType) SetLpmen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_glpmcfgFieldLpmenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsglpmcfgFieldLpmenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_glpmcfgFieldLpmenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsglpmcfgFieldLpmenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldLpmackShift = 1
-	RegisterOtg_hs_glpmcfgFieldLpmackMask  = 0x2
+	RegisterOtghsglpmcfgFieldLpmackShift = 1
+	RegisterOtghsglpmcfgFieldLpmackMask  = 0x2
 )
 
 // GetLpmack LPM token acknowledge enable
-func (r *registerOtg_hs_glpmcfgType) GetLpmack() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldLpmackMask) != 0
+func (r *registerOtghsglpmcfgType) GetLpmack() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldLpmackMask) != 0
 }
 
 // SetLpmack LPM token acknowledge enable
-func (r *registerOtg_hs_glpmcfgType) SetLpmack(value bool) {
+func (r *registerOtghsglpmcfgType) SetLpmack(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_glpmcfgFieldLpmackMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsglpmcfgFieldLpmackMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_glpmcfgFieldLpmackMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsglpmcfgFieldLpmackMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldBeslShift = 2
-	RegisterOtg_hs_glpmcfgFieldBeslMask  = 0x3c
+	RegisterOtghsglpmcfgFieldBeslShift = 2
+	RegisterOtghsglpmcfgFieldBeslMask  = 0x3c
 )
 
 // GetBesl Best effort service latency
-func (r *registerOtg_hs_glpmcfgType) GetBesl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldBeslMask) >> RegisterOtg_hs_glpmcfgFieldBeslShift)
+func (r *registerOtghsglpmcfgType) GetBesl() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldBeslMask) >> RegisterOtghsglpmcfgFieldBeslShift)
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldRemwakeShift = 6
-	RegisterOtg_hs_glpmcfgFieldRemwakeMask  = 0x40
+	RegisterOtghsglpmcfgFieldRemwakeShift = 6
+	RegisterOtghsglpmcfgFieldRemwakeMask  = 0x40
 )
 
 // GetRemwake bRemoteWake value
-func (r *registerOtg_hs_glpmcfgType) GetRemwake() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldRemwakeMask) != 0
+func (r *registerOtghsglpmcfgType) GetRemwake() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldRemwakeMask) != 0
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldL1ssenShift = 7
-	RegisterOtg_hs_glpmcfgFieldL1ssenMask  = 0x80
+	RegisterOtghsglpmcfgFieldL1ssenShift = 7
+	RegisterOtghsglpmcfgFieldL1ssenMask  = 0x80
 )
 
 // GetL1ssen L1 Shallow Sleep enable
-func (r *registerOtg_hs_glpmcfgType) GetL1ssen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldL1ssenMask) != 0
+func (r *registerOtghsglpmcfgType) GetL1ssen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldL1ssenMask) != 0
 }
 
 // SetL1ssen L1 Shallow Sleep enable
-func (r *registerOtg_hs_glpmcfgType) SetL1ssen(value bool) {
+func (r *registerOtghsglpmcfgType) SetL1ssen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_glpmcfgFieldL1ssenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsglpmcfgFieldL1ssenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_glpmcfgFieldL1ssenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsglpmcfgFieldL1ssenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldBeslthrsShift = 8
-	RegisterOtg_hs_glpmcfgFieldBeslthrsMask  = 0xf00
+	RegisterOtghsglpmcfgFieldBeslthrsShift = 8
+	RegisterOtghsglpmcfgFieldBeslthrsMask  = 0xf00
 )
 
 // GetBeslthrs BESL threshold
-func (r *registerOtg_hs_glpmcfgType) GetBeslthrs() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldBeslthrsMask) >> RegisterOtg_hs_glpmcfgFieldBeslthrsShift)
+func (r *registerOtghsglpmcfgType) GetBeslthrs() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldBeslthrsMask) >> RegisterOtghsglpmcfgFieldBeslthrsShift)
 }
 
 // SetBeslthrs BESL threshold
-func (r *registerOtg_hs_glpmcfgType) SetBeslthrs(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_glpmcfgFieldBeslthrsMask)|(uint32(value)<<RegisterOtg_hs_glpmcfgFieldBeslthrsShift))
+func (r *registerOtghsglpmcfgType) SetBeslthrs(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsglpmcfgFieldBeslthrsMask)|(uint32(value)<<RegisterOtghsglpmcfgFieldBeslthrsShift))
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldL1dsenShift = 12
-	RegisterOtg_hs_glpmcfgFieldL1dsenMask  = 0x1000
+	RegisterOtghsglpmcfgFieldL1dsenShift = 12
+	RegisterOtghsglpmcfgFieldL1dsenMask  = 0x1000
 )
 
 // GetL1dsen L1 deep sleep enable
-func (r *registerOtg_hs_glpmcfgType) GetL1dsen() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldL1dsenMask) != 0
+func (r *registerOtghsglpmcfgType) GetL1dsen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldL1dsenMask) != 0
 }
 
 // SetL1dsen L1 deep sleep enable
-func (r *registerOtg_hs_glpmcfgType) SetL1dsen(value bool) {
+func (r *registerOtghsglpmcfgType) SetL1dsen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_glpmcfgFieldL1dsenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsglpmcfgFieldL1dsenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_glpmcfgFieldL1dsenMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsglpmcfgFieldL1dsenMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldLpmrstShift = 13
-	RegisterOtg_hs_glpmcfgFieldLpmrstMask  = 0x6000
+	RegisterOtghsglpmcfgFieldLpmrstShift = 13
+	RegisterOtghsglpmcfgFieldLpmrstMask  = 0x6000
 )
 
 // GetLpmrst LPM response
-func (r *registerOtg_hs_glpmcfgType) GetLpmrst() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldLpmrstMask) >> RegisterOtg_hs_glpmcfgFieldLpmrstShift)
+func (r *registerOtghsglpmcfgType) GetLpmrst() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldLpmrstMask) >> RegisterOtghsglpmcfgFieldLpmrstShift)
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldSlpstsShift = 15
-	RegisterOtg_hs_glpmcfgFieldSlpstsMask  = 0x8000
+	RegisterOtghsglpmcfgFieldSlpstsShift = 15
+	RegisterOtghsglpmcfgFieldSlpstsMask  = 0x8000
 )
 
 // GetSlpsts Port sleep status
-func (r *registerOtg_hs_glpmcfgType) GetSlpsts() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldSlpstsMask) != 0
+func (r *registerOtghsglpmcfgType) GetSlpsts() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldSlpstsMask) != 0
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldL1rsmokShift = 16
-	RegisterOtg_hs_glpmcfgFieldL1rsmokMask  = 0x10000
+	RegisterOtghsglpmcfgFieldL1rsmokShift = 16
+	RegisterOtghsglpmcfgFieldL1rsmokMask  = 0x10000
 )
 
 // GetL1rsmok Sleep State Resume OK
-func (r *registerOtg_hs_glpmcfgType) GetL1rsmok() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldL1rsmokMask) != 0
+func (r *registerOtghsglpmcfgType) GetL1rsmok() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldL1rsmokMask) != 0
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldLpmchidxShift = 17
-	RegisterOtg_hs_glpmcfgFieldLpmchidxMask  = 0x1e0000
+	RegisterOtghsglpmcfgFieldLpmchidxShift = 17
+	RegisterOtghsglpmcfgFieldLpmchidxMask  = 0x1e0000
 )
 
 // GetLpmchidx LPM Channel Index
-func (r *registerOtg_hs_glpmcfgType) GetLpmchidx() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldLpmchidxMask) >> RegisterOtg_hs_glpmcfgFieldLpmchidxShift)
+func (r *registerOtghsglpmcfgType) GetLpmchidx() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldLpmchidxMask) >> RegisterOtghsglpmcfgFieldLpmchidxShift)
 }
 
 // SetLpmchidx LPM Channel Index
-func (r *registerOtg_hs_glpmcfgType) SetLpmchidx(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_glpmcfgFieldLpmchidxMask)|(uint32(value)<<RegisterOtg_hs_glpmcfgFieldLpmchidxShift))
+func (r *registerOtghsglpmcfgType) SetLpmchidx(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsglpmcfgFieldLpmchidxMask)|(uint32(value)<<RegisterOtghsglpmcfgFieldLpmchidxShift))
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldLpmrcntShift = 21
-	RegisterOtg_hs_glpmcfgFieldLpmrcntMask  = 0xe00000
+	RegisterOtghsglpmcfgFieldLpmrcntShift = 21
+	RegisterOtghsglpmcfgFieldLpmrcntMask  = 0xe00000
 )
 
 // GetLpmrcnt LPM retry count
-func (r *registerOtg_hs_glpmcfgType) GetLpmrcnt() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldLpmrcntMask) >> RegisterOtg_hs_glpmcfgFieldLpmrcntShift)
+func (r *registerOtghsglpmcfgType) GetLpmrcnt() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldLpmrcntMask) >> RegisterOtghsglpmcfgFieldLpmrcntShift)
 }
 
 // SetLpmrcnt LPM retry count
-func (r *registerOtg_hs_glpmcfgType) SetLpmrcnt(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_glpmcfgFieldLpmrcntMask)|(uint32(value)<<RegisterOtg_hs_glpmcfgFieldLpmrcntShift))
+func (r *registerOtghsglpmcfgType) SetLpmrcnt(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsglpmcfgFieldLpmrcntMask)|(uint32(value)<<RegisterOtghsglpmcfgFieldLpmrcntShift))
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldSndlpmShift = 24
-	RegisterOtg_hs_glpmcfgFieldSndlpmMask  = 0x1000000
+	RegisterOtghsglpmcfgFieldSndlpmShift = 24
+	RegisterOtghsglpmcfgFieldSndlpmMask  = 0x1000000
 )
 
 // GetSndlpm Send LPM transaction
-func (r *registerOtg_hs_glpmcfgType) GetSndlpm() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldSndlpmMask) != 0
+func (r *registerOtghsglpmcfgType) GetSndlpm() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldSndlpmMask) != 0
 }
 
 // SetSndlpm Send LPM transaction
-func (r *registerOtg_hs_glpmcfgType) SetSndlpm(value bool) {
+func (r *registerOtghsglpmcfgType) SetSndlpm(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_glpmcfgFieldSndlpmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsglpmcfgFieldSndlpmMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_glpmcfgFieldSndlpmMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsglpmcfgFieldSndlpmMask)
 	}
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldLpmrcntstsShift = 25
-	RegisterOtg_hs_glpmcfgFieldLpmrcntstsMask  = 0xe000000
+	RegisterOtghsglpmcfgFieldLpmrcntstsShift = 25
+	RegisterOtghsglpmcfgFieldLpmrcntstsMask  = 0xe000000
 )
 
 // GetLpmrcntsts LPM retry count status
-func (r *registerOtg_hs_glpmcfgType) GetLpmrcntsts() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldLpmrcntstsMask) >> RegisterOtg_hs_glpmcfgFieldLpmrcntstsShift)
+func (r *registerOtghsglpmcfgType) GetLpmrcntsts() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldLpmrcntstsMask) >> RegisterOtghsglpmcfgFieldLpmrcntstsShift)
 }
 
 const (
-	RegisterOtg_hs_glpmcfgFieldEnbeslShift = 28
-	RegisterOtg_hs_glpmcfgFieldEnbeslMask  = 0x10000000
+	RegisterOtghsglpmcfgFieldEnbeslShift = 28
+	RegisterOtghsglpmcfgFieldEnbeslMask  = 0x10000000
 )
 
 // GetEnbesl Enable best effort service latency
-func (r *registerOtg_hs_glpmcfgType) GetEnbesl() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_glpmcfgFieldEnbeslMask) != 0
+func (r *registerOtghsglpmcfgType) GetEnbesl() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghsglpmcfgFieldEnbeslMask) != 0
 }
 
 // SetEnbesl Enable best effort service latency
-func (r *registerOtg_hs_glpmcfgType) SetEnbesl(value bool) {
+func (r *registerOtghsglpmcfgType) SetEnbesl(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtg_hs_glpmcfgFieldEnbeslMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghsglpmcfgFieldEnbeslMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_glpmcfgFieldEnbeslMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterOtghsglpmcfgFieldEnbeslMask)
 	}
 }
 
-// registerOtg_hs_hptxfsizType OTG_HS Host periodic transmit FIFO size register
-type registerOtg_hs_hptxfsizType uint32
+// registerOtghshptxfsizType OTG_HS Host periodic transmit FIFO size register
+type registerOtghshptxfsizType uint32
 
 const (
-	RegisterOtg_hs_hptxfsizFieldPtxsaShift = 0
-	RegisterOtg_hs_hptxfsizFieldPtxsaMask  = 0xffff
+	RegisterOtghshptxfsizFieldPtxsaShift = 0
+	RegisterOtghshptxfsizFieldPtxsaMask  = 0xffff
 )
 
 // GetPtxsa Host periodic TxFIFO start address
-func (r *registerOtg_hs_hptxfsizType) GetPtxsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_hptxfsizFieldPtxsaMask) >> RegisterOtg_hs_hptxfsizFieldPtxsaShift)
+func (r *registerOtghshptxfsizType) GetPtxsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghshptxfsizFieldPtxsaMask) >> RegisterOtghshptxfsizFieldPtxsaShift)
 }
 
 // SetPtxsa Host periodic TxFIFO start address
-func (r *registerOtg_hs_hptxfsizType) SetPtxsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_hptxfsizFieldPtxsaMask)|(uint32(value)<<RegisterOtg_hs_hptxfsizFieldPtxsaShift))
+func (r *registerOtghshptxfsizType) SetPtxsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghshptxfsizFieldPtxsaMask)|(uint32(value)<<RegisterOtghshptxfsizFieldPtxsaShift))
 }
 
 const (
-	RegisterOtg_hs_hptxfsizFieldPtxfdShift = 16
-	RegisterOtg_hs_hptxfsizFieldPtxfdMask  = 0xffff0000
+	RegisterOtghshptxfsizFieldPtxfdShift = 16
+	RegisterOtghshptxfsizFieldPtxfdMask  = 0xffff0000
 )
 
 // GetPtxfd Host periodic TxFIFO depth
-func (r *registerOtg_hs_hptxfsizType) GetPtxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_hptxfsizFieldPtxfdMask) >> RegisterOtg_hs_hptxfsizFieldPtxfdShift)
+func (r *registerOtghshptxfsizType) GetPtxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghshptxfsizFieldPtxfdMask) >> RegisterOtghshptxfsizFieldPtxfdShift)
 }
 
 // SetPtxfd Host periodic TxFIFO depth
-func (r *registerOtg_hs_hptxfsizType) SetPtxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_hptxfsizFieldPtxfdMask)|(uint32(value)<<RegisterOtg_hs_hptxfsizFieldPtxfdShift))
+func (r *registerOtghshptxfsizType) SetPtxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghshptxfsizFieldPtxfdMask)|(uint32(value)<<RegisterOtghshptxfsizFieldPtxfdShift))
 }
 
-// registerOtg_hs_dieptxf1Type OTG_HS device IN endpoint transmit FIFO size register
-type registerOtg_hs_dieptxf1Type uint32
+// registerOtghsdieptxf1Type OTG_HS device IN endpoint transmit FIFO size register
+type registerOtghsdieptxf1Type uint32
 
 const (
-	RegisterOtg_hs_dieptxf1FieldIneptxsaShift = 0
-	RegisterOtg_hs_dieptxf1FieldIneptxsaMask  = 0xffff
+	RegisterOtghsdieptxf1FieldIneptxsaShift = 0
+	RegisterOtghsdieptxf1FieldIneptxsaMask  = 0xffff
 )
 
 // GetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf1Type) GetIneptxsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf1FieldIneptxsaMask) >> RegisterOtg_hs_dieptxf1FieldIneptxsaShift)
+func (r *registerOtghsdieptxf1Type) GetIneptxsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf1FieldIneptxsaMask) >> RegisterOtghsdieptxf1FieldIneptxsaShift)
 }
 
 // SetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf1Type) SetIneptxsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf1FieldIneptxsaMask)|(uint32(value)<<RegisterOtg_hs_dieptxf1FieldIneptxsaShift))
+func (r *registerOtghsdieptxf1Type) SetIneptxsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf1FieldIneptxsaMask)|(uint32(value)<<RegisterOtghsdieptxf1FieldIneptxsaShift))
 }
 
 const (
-	RegisterOtg_hs_dieptxf1FieldIneptxfdShift = 16
-	RegisterOtg_hs_dieptxf1FieldIneptxfdMask  = 0xffff0000
+	RegisterOtghsdieptxf1FieldIneptxfdShift = 16
+	RegisterOtghsdieptxf1FieldIneptxfdMask  = 0xffff0000
 )
 
 // GetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf1Type) GetIneptxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf1FieldIneptxfdMask) >> RegisterOtg_hs_dieptxf1FieldIneptxfdShift)
+func (r *registerOtghsdieptxf1Type) GetIneptxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf1FieldIneptxfdMask) >> RegisterOtghsdieptxf1FieldIneptxfdShift)
 }
 
 // SetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf1Type) SetIneptxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf1FieldIneptxfdMask)|(uint32(value)<<RegisterOtg_hs_dieptxf1FieldIneptxfdShift))
+func (r *registerOtghsdieptxf1Type) SetIneptxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf1FieldIneptxfdMask)|(uint32(value)<<RegisterOtghsdieptxf1FieldIneptxfdShift))
 }
 
-// registerOtg_hs_dieptxf2Type OTG_HS device IN endpoint transmit FIFO size register
-type registerOtg_hs_dieptxf2Type uint32
+// registerOtghsdieptxf2Type OTG_HS device IN endpoint transmit FIFO size register
+type registerOtghsdieptxf2Type uint32
 
 const (
-	RegisterOtg_hs_dieptxf2FieldIneptxsaShift = 0
-	RegisterOtg_hs_dieptxf2FieldIneptxsaMask  = 0xffff
+	RegisterOtghsdieptxf2FieldIneptxsaShift = 0
+	RegisterOtghsdieptxf2FieldIneptxsaMask  = 0xffff
 )
 
 // GetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf2Type) GetIneptxsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf2FieldIneptxsaMask) >> RegisterOtg_hs_dieptxf2FieldIneptxsaShift)
+func (r *registerOtghsdieptxf2Type) GetIneptxsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf2FieldIneptxsaMask) >> RegisterOtghsdieptxf2FieldIneptxsaShift)
 }
 
 // SetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf2Type) SetIneptxsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf2FieldIneptxsaMask)|(uint32(value)<<RegisterOtg_hs_dieptxf2FieldIneptxsaShift))
+func (r *registerOtghsdieptxf2Type) SetIneptxsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf2FieldIneptxsaMask)|(uint32(value)<<RegisterOtghsdieptxf2FieldIneptxsaShift))
 }
 
 const (
-	RegisterOtg_hs_dieptxf2FieldIneptxfdShift = 16
-	RegisterOtg_hs_dieptxf2FieldIneptxfdMask  = 0xffff0000
+	RegisterOtghsdieptxf2FieldIneptxfdShift = 16
+	RegisterOtghsdieptxf2FieldIneptxfdMask  = 0xffff0000
 )
 
 // GetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf2Type) GetIneptxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf2FieldIneptxfdMask) >> RegisterOtg_hs_dieptxf2FieldIneptxfdShift)
+func (r *registerOtghsdieptxf2Type) GetIneptxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf2FieldIneptxfdMask) >> RegisterOtghsdieptxf2FieldIneptxfdShift)
 }
 
 // SetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf2Type) SetIneptxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf2FieldIneptxfdMask)|(uint32(value)<<RegisterOtg_hs_dieptxf2FieldIneptxfdShift))
+func (r *registerOtghsdieptxf2Type) SetIneptxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf2FieldIneptxfdMask)|(uint32(value)<<RegisterOtghsdieptxf2FieldIneptxfdShift))
 }
 
-// registerOtg_hs_dieptxf3Type OTG_HS device IN endpoint transmit FIFO size register
-type registerOtg_hs_dieptxf3Type uint32
+// registerOtghsdieptxf3Type OTG_HS device IN endpoint transmit FIFO size register
+type registerOtghsdieptxf3Type uint32
 
 const (
-	RegisterOtg_hs_dieptxf3FieldIneptxsaShift = 0
-	RegisterOtg_hs_dieptxf3FieldIneptxsaMask  = 0xffff
+	RegisterOtghsdieptxf3FieldIneptxsaShift = 0
+	RegisterOtghsdieptxf3FieldIneptxsaMask  = 0xffff
 )
 
 // GetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf3Type) GetIneptxsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf3FieldIneptxsaMask) >> RegisterOtg_hs_dieptxf3FieldIneptxsaShift)
+func (r *registerOtghsdieptxf3Type) GetIneptxsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf3FieldIneptxsaMask) >> RegisterOtghsdieptxf3FieldIneptxsaShift)
 }
 
 // SetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf3Type) SetIneptxsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf3FieldIneptxsaMask)|(uint32(value)<<RegisterOtg_hs_dieptxf3FieldIneptxsaShift))
+func (r *registerOtghsdieptxf3Type) SetIneptxsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf3FieldIneptxsaMask)|(uint32(value)<<RegisterOtghsdieptxf3FieldIneptxsaShift))
 }
 
 const (
-	RegisterOtg_hs_dieptxf3FieldIneptxfdShift = 16
-	RegisterOtg_hs_dieptxf3FieldIneptxfdMask  = 0xffff0000
+	RegisterOtghsdieptxf3FieldIneptxfdShift = 16
+	RegisterOtghsdieptxf3FieldIneptxfdMask  = 0xffff0000
 )
 
 // GetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf3Type) GetIneptxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf3FieldIneptxfdMask) >> RegisterOtg_hs_dieptxf3FieldIneptxfdShift)
+func (r *registerOtghsdieptxf3Type) GetIneptxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf3FieldIneptxfdMask) >> RegisterOtghsdieptxf3FieldIneptxfdShift)
 }
 
 // SetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf3Type) SetIneptxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf3FieldIneptxfdMask)|(uint32(value)<<RegisterOtg_hs_dieptxf3FieldIneptxfdShift))
+func (r *registerOtghsdieptxf3Type) SetIneptxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf3FieldIneptxfdMask)|(uint32(value)<<RegisterOtghsdieptxf3FieldIneptxfdShift))
 }
 
-// registerOtg_hs_dieptxf4Type OTG_HS device IN endpoint transmit FIFO size register
-type registerOtg_hs_dieptxf4Type uint32
+// registerOtghsdieptxf4Type OTG_HS device IN endpoint transmit FIFO size register
+type registerOtghsdieptxf4Type uint32
 
 const (
-	RegisterOtg_hs_dieptxf4FieldIneptxsaShift = 0
-	RegisterOtg_hs_dieptxf4FieldIneptxsaMask  = 0xffff
+	RegisterOtghsdieptxf4FieldIneptxsaShift = 0
+	RegisterOtghsdieptxf4FieldIneptxsaMask  = 0xffff
 )
 
 // GetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf4Type) GetIneptxsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf4FieldIneptxsaMask) >> RegisterOtg_hs_dieptxf4FieldIneptxsaShift)
+func (r *registerOtghsdieptxf4Type) GetIneptxsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf4FieldIneptxsaMask) >> RegisterOtghsdieptxf4FieldIneptxsaShift)
 }
 
 // SetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf4Type) SetIneptxsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf4FieldIneptxsaMask)|(uint32(value)<<RegisterOtg_hs_dieptxf4FieldIneptxsaShift))
+func (r *registerOtghsdieptxf4Type) SetIneptxsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf4FieldIneptxsaMask)|(uint32(value)<<RegisterOtghsdieptxf4FieldIneptxsaShift))
 }
 
 const (
-	RegisterOtg_hs_dieptxf4FieldIneptxfdShift = 16
-	RegisterOtg_hs_dieptxf4FieldIneptxfdMask  = 0xffff0000
+	RegisterOtghsdieptxf4FieldIneptxfdShift = 16
+	RegisterOtghsdieptxf4FieldIneptxfdMask  = 0xffff0000
 )
 
 // GetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf4Type) GetIneptxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf4FieldIneptxfdMask) >> RegisterOtg_hs_dieptxf4FieldIneptxfdShift)
+func (r *registerOtghsdieptxf4Type) GetIneptxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf4FieldIneptxfdMask) >> RegisterOtghsdieptxf4FieldIneptxfdShift)
 }
 
 // SetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf4Type) SetIneptxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf4FieldIneptxfdMask)|(uint32(value)<<RegisterOtg_hs_dieptxf4FieldIneptxfdShift))
+func (r *registerOtghsdieptxf4Type) SetIneptxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf4FieldIneptxfdMask)|(uint32(value)<<RegisterOtghsdieptxf4FieldIneptxfdShift))
 }
 
-// registerOtg_hs_dieptxf5Type OTG_HS device IN endpoint transmit FIFO size register
-type registerOtg_hs_dieptxf5Type uint32
+// registerOtghsdieptxf5Type OTG_HS device IN endpoint transmit FIFO size register
+type registerOtghsdieptxf5Type uint32
 
 const (
-	RegisterOtg_hs_dieptxf5FieldIneptxsaShift = 0
-	RegisterOtg_hs_dieptxf5FieldIneptxsaMask  = 0xffff
+	RegisterOtghsdieptxf5FieldIneptxsaShift = 0
+	RegisterOtghsdieptxf5FieldIneptxsaMask  = 0xffff
 )
 
 // GetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf5Type) GetIneptxsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf5FieldIneptxsaMask) >> RegisterOtg_hs_dieptxf5FieldIneptxsaShift)
+func (r *registerOtghsdieptxf5Type) GetIneptxsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf5FieldIneptxsaMask) >> RegisterOtghsdieptxf5FieldIneptxsaShift)
 }
 
 // SetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf5Type) SetIneptxsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf5FieldIneptxsaMask)|(uint32(value)<<RegisterOtg_hs_dieptxf5FieldIneptxsaShift))
+func (r *registerOtghsdieptxf5Type) SetIneptxsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf5FieldIneptxsaMask)|(uint32(value)<<RegisterOtghsdieptxf5FieldIneptxsaShift))
 }
 
 const (
-	RegisterOtg_hs_dieptxf5FieldIneptxfdShift = 16
-	RegisterOtg_hs_dieptxf5FieldIneptxfdMask  = 0xffff0000
+	RegisterOtghsdieptxf5FieldIneptxfdShift = 16
+	RegisterOtghsdieptxf5FieldIneptxfdMask  = 0xffff0000
 )
 
 // GetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf5Type) GetIneptxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf5FieldIneptxfdMask) >> RegisterOtg_hs_dieptxf5FieldIneptxfdShift)
+func (r *registerOtghsdieptxf5Type) GetIneptxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf5FieldIneptxfdMask) >> RegisterOtghsdieptxf5FieldIneptxfdShift)
 }
 
 // SetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf5Type) SetIneptxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf5FieldIneptxfdMask)|(uint32(value)<<RegisterOtg_hs_dieptxf5FieldIneptxfdShift))
+func (r *registerOtghsdieptxf5Type) SetIneptxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf5FieldIneptxfdMask)|(uint32(value)<<RegisterOtghsdieptxf5FieldIneptxfdShift))
 }
 
-// registerOtg_hs_dieptxf6Type OTG_HS device IN endpoint transmit FIFO size register
-type registerOtg_hs_dieptxf6Type uint32
+// registerOtghsdieptxf6Type OTG_HS device IN endpoint transmit FIFO size register
+type registerOtghsdieptxf6Type uint32
 
 const (
-	RegisterOtg_hs_dieptxf6FieldIneptxsaShift = 0
-	RegisterOtg_hs_dieptxf6FieldIneptxsaMask  = 0xffff
+	RegisterOtghsdieptxf6FieldIneptxsaShift = 0
+	RegisterOtghsdieptxf6FieldIneptxsaMask  = 0xffff
 )
 
 // GetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf6Type) GetIneptxsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf6FieldIneptxsaMask) >> RegisterOtg_hs_dieptxf6FieldIneptxsaShift)
+func (r *registerOtghsdieptxf6Type) GetIneptxsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf6FieldIneptxsaMask) >> RegisterOtghsdieptxf6FieldIneptxsaShift)
 }
 
 // SetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf6Type) SetIneptxsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf6FieldIneptxsaMask)|(uint32(value)<<RegisterOtg_hs_dieptxf6FieldIneptxsaShift))
+func (r *registerOtghsdieptxf6Type) SetIneptxsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf6FieldIneptxsaMask)|(uint32(value)<<RegisterOtghsdieptxf6FieldIneptxsaShift))
 }
 
 const (
-	RegisterOtg_hs_dieptxf6FieldIneptxfdShift = 16
-	RegisterOtg_hs_dieptxf6FieldIneptxfdMask  = 0xffff0000
+	RegisterOtghsdieptxf6FieldIneptxfdShift = 16
+	RegisterOtghsdieptxf6FieldIneptxfdMask  = 0xffff0000
 )
 
 // GetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf6Type) GetIneptxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf6FieldIneptxfdMask) >> RegisterOtg_hs_dieptxf6FieldIneptxfdShift)
+func (r *registerOtghsdieptxf6Type) GetIneptxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf6FieldIneptxfdMask) >> RegisterOtghsdieptxf6FieldIneptxfdShift)
 }
 
 // SetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf6Type) SetIneptxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf6FieldIneptxfdMask)|(uint32(value)<<RegisterOtg_hs_dieptxf6FieldIneptxfdShift))
+func (r *registerOtghsdieptxf6Type) SetIneptxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf6FieldIneptxfdMask)|(uint32(value)<<RegisterOtghsdieptxf6FieldIneptxfdShift))
 }
 
-// registerOtg_hs_dieptxf7Type OTG_HS device IN endpoint transmit FIFO size register
-type registerOtg_hs_dieptxf7Type uint32
+// registerOtghsdieptxf7Type OTG_HS device IN endpoint transmit FIFO size register
+type registerOtghsdieptxf7Type uint32
 
 const (
-	RegisterOtg_hs_dieptxf7FieldIneptxsaShift = 0
-	RegisterOtg_hs_dieptxf7FieldIneptxsaMask  = 0xffff
+	RegisterOtghsdieptxf7FieldIneptxsaShift = 0
+	RegisterOtghsdieptxf7FieldIneptxsaMask  = 0xffff
 )
 
 // GetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf7Type) GetIneptxsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf7FieldIneptxsaMask) >> RegisterOtg_hs_dieptxf7FieldIneptxsaShift)
+func (r *registerOtghsdieptxf7Type) GetIneptxsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf7FieldIneptxsaMask) >> RegisterOtghsdieptxf7FieldIneptxsaShift)
 }
 
 // SetIneptxsa IN endpoint FIFOx transmit RAM start address
-func (r *registerOtg_hs_dieptxf7Type) SetIneptxsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf7FieldIneptxsaMask)|(uint32(value)<<RegisterOtg_hs_dieptxf7FieldIneptxsaShift))
+func (r *registerOtghsdieptxf7Type) SetIneptxsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf7FieldIneptxsaMask)|(uint32(value)<<RegisterOtghsdieptxf7FieldIneptxsaShift))
 }
 
 const (
-	RegisterOtg_hs_dieptxf7FieldIneptxfdShift = 16
-	RegisterOtg_hs_dieptxf7FieldIneptxfdMask  = 0xffff0000
+	RegisterOtghsdieptxf7FieldIneptxfdShift = 16
+	RegisterOtghsdieptxf7FieldIneptxfdMask  = 0xffff0000
 )
 
 // GetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf7Type) GetIneptxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_hs_dieptxf7FieldIneptxfdMask) >> RegisterOtg_hs_dieptxf7FieldIneptxfdShift)
+func (r *registerOtghsdieptxf7Type) GetIneptxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtghsdieptxf7FieldIneptxfdMask) >> RegisterOtghsdieptxf7FieldIneptxfdShift)
 }
 
 // SetIneptxfd IN endpoint TxFIFO depth
-func (r *registerOtg_hs_dieptxf7Type) SetIneptxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_hs_dieptxf7FieldIneptxfdMask)|(uint32(value)<<RegisterOtg_hs_dieptxf7FieldIneptxfdShift))
+func (r *registerOtghsdieptxf7Type) SetIneptxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtghsdieptxf7FieldIneptxfdMask)|(uint32(value)<<RegisterOtghsdieptxf7FieldIneptxfdShift))
 }
 
-type registerOtg_dieptxf8Type uint32
+type registerOtgdieptxf8Type uint32
 
 const (
-	RegisterOtg_dieptxf8FieldIneptxsaShift = 0
-	RegisterOtg_dieptxf8FieldIneptxsaMask  = 0xffff
+	RegisterOtgdieptxf8FieldIneptxsaShift = 0
+	RegisterOtgdieptxf8FieldIneptxsaMask  = 0xffff
 )
 
 // GetIneptxsa IN endpoint FIFOx transmit RAM start address This field contains the memory start address for IN endpoint transmit FIFOx. The address must be aligned with a 32-bit memory location.
-func (r *registerOtg_dieptxf8Type) GetIneptxsa() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_dieptxf8FieldIneptxsaMask) >> RegisterOtg_dieptxf8FieldIneptxsaShift)
+func (r *registerOtgdieptxf8Type) GetIneptxsa() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtgdieptxf8FieldIneptxsaMask) >> RegisterOtgdieptxf8FieldIneptxsaShift)
 }
 
 // SetIneptxsa IN endpoint FIFOx transmit RAM start address This field contains the memory start address for IN endpoint transmit FIFOx. The address must be aligned with a 32-bit memory location.
-func (r *registerOtg_dieptxf8Type) SetIneptxsa(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_dieptxf8FieldIneptxsaMask)|(uint32(value)<<RegisterOtg_dieptxf8FieldIneptxsaShift))
+func (r *registerOtgdieptxf8Type) SetIneptxsa(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtgdieptxf8FieldIneptxsaMask)|(uint32(value)<<RegisterOtgdieptxf8FieldIneptxsaShift))
 }
 
 const (
-	RegisterOtg_dieptxf8FieldIneptxfdShift = 16
-	RegisterOtg_dieptxf8FieldIneptxfdMask  = 0xffff0000
+	RegisterOtgdieptxf8FieldIneptxfdShift = 16
+	RegisterOtgdieptxf8FieldIneptxfdMask  = 0xffff0000
 )
 
 // GetIneptxfd IN endpoint Tx FIFO depth This value is in terms of 32-bit words. Minimum value is 16
-func (r *registerOtg_dieptxf8Type) GetIneptxfd() uint16 {
-	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtg_dieptxf8FieldIneptxfdMask) >> RegisterOtg_dieptxf8FieldIneptxfdShift)
+func (r *registerOtgdieptxf8Type) GetIneptxfd() uint16 {
+	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterOtgdieptxf8FieldIneptxfdMask) >> RegisterOtgdieptxf8FieldIneptxfdShift)
 }
 
 // SetIneptxfd IN endpoint Tx FIFO depth This value is in terms of 32-bit words. Minimum value is 16
-func (r *registerOtg_dieptxf8Type) SetIneptxfd(value uint16) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtg_dieptxf8FieldIneptxfdMask)|(uint32(value)<<RegisterOtg_dieptxf8FieldIneptxfdShift))
+func (r *registerOtgdieptxf8Type) SetIneptxfd(value uint16) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOtgdieptxf8FieldIneptxfdMask)|(uint32(value)<<RegisterOtgdieptxf8FieldIneptxfdShift))
 }

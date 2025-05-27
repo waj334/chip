@@ -1,6 +1,6 @@
 //go:build arm && !fpu
 
-package cortexm
+package runtime
 
 type extendedFrame struct {
 	// This part of the stack stackFrame should not be considered when the FPU is disabled.

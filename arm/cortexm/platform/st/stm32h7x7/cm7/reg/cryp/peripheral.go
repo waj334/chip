@@ -151,18 +151,18 @@ func (r *registerCrType) SetCrypen(value bool) {
 }
 
 const (
-	RegisterCrFieldGcm_ccmphShift = 16
-	RegisterCrFieldGcm_ccmphMask  = 0x30000
+	RegisterCrFieldGcmccmphShift = 16
+	RegisterCrFieldGcmccmphMask  = 0x30000
 )
 
-// GetGcm_ccmph GCM_CCMPH
-func (r *registerCrType) GetGcm_ccmph() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldGcm_ccmphMask) >> RegisterCrFieldGcm_ccmphShift)
+// GetGcmccmph GCM_CCMPH
+func (r *registerCrType) GetGcmccmph() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldGcmccmphMask) >> RegisterCrFieldGcmccmphShift)
 }
 
-// SetGcm_ccmph GCM_CCMPH
-func (r *registerCrType) SetGcm_ccmph(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldGcm_ccmphMask)|(uint32(value)<<RegisterCrFieldGcm_ccmphShift))
+// SetGcmccmph GCM_CCMPH
+func (r *registerCrType) SetGcmccmph(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldGcmccmphMask)|(uint32(value)<<RegisterCrFieldGcmccmphShift))
 }
 
 const (

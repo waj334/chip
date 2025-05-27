@@ -608,21 +608,21 @@ func (r *registerCr2Type) SetSadd9(value bool) {
 }
 
 const (
-	RegisterCr2FieldRd_wrnShift = 10
-	RegisterCr2FieldRd_wrnMask  = 0x400
+	RegisterCr2FieldRdwrnShift = 10
+	RegisterCr2FieldRdwrnMask  = 0x400
 )
 
-// GetRd_wrn Transfer direction (master mode) Note: Changing this bit when the START bit is set is not allowed.
-func (r *registerCr2Type) GetRd_wrn() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldRd_wrnMask) != 0
+// GetRdwrn Transfer direction (master mode) Note: Changing this bit when the START bit is set is not allowed.
+func (r *registerCr2Type) GetRdwrn() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldRdwrnMask) != 0
 }
 
-// SetRd_wrn Transfer direction (master mode) Note: Changing this bit when the START bit is set is not allowed.
-func (r *registerCr2Type) SetRd_wrn(value bool) {
+// SetRdwrn Transfer direction (master mode) Note: Changing this bit when the START bit is set is not allowed.
+func (r *registerCr2Type) SetRdwrn(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldRd_wrnMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldRdwrnMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCr2FieldRd_wrnMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCr2FieldRdwrnMask)
 	}
 }
 

@@ -1,4 +1,4 @@
-package cortexm
+package runtime
 
 import (
 	"asm"

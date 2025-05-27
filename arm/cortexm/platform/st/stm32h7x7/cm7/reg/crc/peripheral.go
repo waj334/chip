@@ -94,36 +94,36 @@ func (r *registerCrType) SetPolysize(value uint8) {
 }
 
 const (
-	RegisterCrFieldRev_inShift = 5
-	RegisterCrFieldRev_inMask  = 0x60
+	RegisterCrFieldRevinShift = 5
+	RegisterCrFieldRevinMask  = 0x60
 )
 
-// GetRev_in Reverse input data
-func (r *registerCrType) GetRev_in() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldRev_inMask) >> RegisterCrFieldRev_inShift)
+// GetRevin Reverse input data
+func (r *registerCrType) GetRevin() uint8 {
+	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldRevinMask) >> RegisterCrFieldRevinShift)
 }
 
-// SetRev_in Reverse input data
-func (r *registerCrType) SetRev_in(value uint8) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldRev_inMask)|(uint32(value)<<RegisterCrFieldRev_inShift))
+// SetRevin Reverse input data
+func (r *registerCrType) SetRevin(value uint8) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldRevinMask)|(uint32(value)<<RegisterCrFieldRevinShift))
 }
 
 const (
-	RegisterCrFieldRev_outShift = 7
-	RegisterCrFieldRev_outMask  = 0x80
+	RegisterCrFieldRevoutShift = 7
+	RegisterCrFieldRevoutMask  = 0x80
 )
 
-// GetRev_out Reverse output data
-func (r *registerCrType) GetRev_out() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldRev_outMask) != 0
+// GetRevout Reverse output data
+func (r *registerCrType) GetRevout() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldRevoutMask) != 0
 }
 
-// SetRev_out Reverse output data
-func (r *registerCrType) SetRev_out(value bool) {
+// SetRevout Reverse output data
+func (r *registerCrType) SetRevout(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldRev_outMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldRevoutMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldRev_outMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldRevoutMask)
 	}
 }
 
@@ -131,18 +131,18 @@ func (r *registerCrType) SetRev_out(value bool) {
 type registerInitType uint32
 
 const (
-	RegisterInitFieldCrc_initShift = 0
-	RegisterInitFieldCrc_initMask  = 0xffffffff
+	RegisterInitFieldCrcinitShift = 0
+	RegisterInitFieldCrcinitMask  = 0xffffffff
 )
 
-// GetCrc_init Programmable initial CRC value
-func (r *registerInitType) GetCrc_init() uint32 {
-	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterInitFieldCrc_initMask) >> RegisterInitFieldCrc_initShift)
+// GetCrcinit Programmable initial CRC value
+func (r *registerInitType) GetCrcinit() uint32 {
+	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterInitFieldCrcinitMask) >> RegisterInitFieldCrcinitShift)
 }
 
-// SetCrc_init Programmable initial CRC value
-func (r *registerInitType) SetCrc_init(value uint32) {
-	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterInitFieldCrc_initMask)|(uint32(value)<<RegisterInitFieldCrc_initShift))
+// SetCrcinit Programmable initial CRC value
+func (r *registerInitType) SetCrcinit(value uint32) {
+	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterInitFieldCrcinitMask)|(uint32(value)<<RegisterInitFieldCrcinitShift))
 }
 
 // registerPolType CRC polynomial

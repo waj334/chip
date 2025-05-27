@@ -479,59 +479,59 @@ func (r *registerCr3Type) GetUsb33rdy() bool {
 type registerCpucrType uint32
 
 const (
-	RegisterCpucrFieldPdds_d1Shift = 0
-	RegisterCpucrFieldPdds_d1Mask  = 0x1
+	RegisterCpucrFieldPddsd1Shift = 0
+	RegisterCpucrFieldPddsd1Mask  = 0x1
 )
 
-// GetPdds_d1 D1 domain Power Down Deepsleep selection. This bit allows CPU1 to define the Deepsleep mode for D1 domain.
-func (r *registerCpucrType) GetPdds_d1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldPdds_d1Mask) != 0
+// GetPddsd1 D1 domain Power Down Deepsleep selection. This bit allows CPU1 to define the Deepsleep mode for D1 domain.
+func (r *registerCpucrType) GetPddsd1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldPddsd1Mask) != 0
 }
 
-// SetPdds_d1 D1 domain Power Down Deepsleep selection. This bit allows CPU1 to define the Deepsleep mode for D1 domain.
-func (r *registerCpucrType) SetPdds_d1(value bool) {
+// SetPddsd1 D1 domain Power Down Deepsleep selection. This bit allows CPU1 to define the Deepsleep mode for D1 domain.
+func (r *registerCpucrType) SetPddsd1(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpucrFieldPdds_d1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpucrFieldPddsd1Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCpucrFieldPdds_d1Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCpucrFieldPddsd1Mask)
 	}
 }
 
 const (
-	RegisterCpucrFieldPdds_d2Shift = 1
-	RegisterCpucrFieldPdds_d2Mask  = 0x2
+	RegisterCpucrFieldPddsd2Shift = 1
+	RegisterCpucrFieldPddsd2Mask  = 0x2
 )
 
-// GetPdds_d2 D2 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for D2 domain.
-func (r *registerCpucrType) GetPdds_d2() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldPdds_d2Mask) != 0
+// GetPddsd2 D2 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for D2 domain.
+func (r *registerCpucrType) GetPddsd2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldPddsd2Mask) != 0
 }
 
-// SetPdds_d2 D2 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for D2 domain.
-func (r *registerCpucrType) SetPdds_d2(value bool) {
+// SetPddsd2 D2 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for D2 domain.
+func (r *registerCpucrType) SetPddsd2(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpucrFieldPdds_d2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpucrFieldPddsd2Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCpucrFieldPdds_d2Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCpucrFieldPddsd2Mask)
 	}
 }
 
 const (
-	RegisterCpucrFieldPdds_d3Shift = 2
-	RegisterCpucrFieldPdds_d3Mask  = 0x4
+	RegisterCpucrFieldPddsd3Shift = 2
+	RegisterCpucrFieldPddsd3Mask  = 0x4
 )
 
-// GetPdds_d3 System D3 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for System D3 domain.
-func (r *registerCpucrType) GetPdds_d3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldPdds_d3Mask) != 0
+// GetPddsd3 System D3 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for System D3 domain.
+func (r *registerCpucrType) GetPddsd3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldPddsd3Mask) != 0
 }
 
-// SetPdds_d3 System D3 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for System D3 domain.
-func (r *registerCpucrType) SetPdds_d3(value bool) {
+// SetPddsd3 System D3 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for System D3 domain.
+func (r *registerCpucrType) SetPddsd3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpucrFieldPdds_d3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpucrFieldPddsd3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCpucrFieldPdds_d3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCpucrFieldPddsd3Mask)
 	}
 }
 
@@ -556,23 +556,23 @@ func (r *registerCpucrType) GetSbf() bool {
 }
 
 const (
-	RegisterCpucrFieldSbf_d1Shift = 7
-	RegisterCpucrFieldSbf_d1Mask  = 0x80
+	RegisterCpucrFieldSbfd1Shift = 7
+	RegisterCpucrFieldSbfd1Mask  = 0x80
 )
 
-// GetSbf_d1 D1 domain DStandby flag This bit is set by hardware and cleared by any system reset or by setting the CPU1 CSSF bit. Once set, this bit can be cleared only when the D1 domain is no longer in DStandby mode.
-func (r *registerCpucrType) GetSbf_d1() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldSbf_d1Mask) != 0
+// GetSbfd1 D1 domain DStandby flag This bit is set by hardware and cleared by any system reset or by setting the CPU1 CSSF bit. Once set, this bit can be cleared only when the D1 domain is no longer in DStandby mode.
+func (r *registerCpucrType) GetSbfd1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldSbfd1Mask) != 0
 }
 
 const (
-	RegisterCpucrFieldSbf_d2Shift = 8
-	RegisterCpucrFieldSbf_d2Mask  = 0x100
+	RegisterCpucrFieldSbfd2Shift = 8
+	RegisterCpucrFieldSbfd2Mask  = 0x100
 )
 
-// GetSbf_d2 D2 domain DStandby flag This bit is set by hardware and cleared by any system reset or by setting the CPU1 CSSF bit. Once set, this bit can be cleared only when the D2 domain is no longer in DStandby mode.
-func (r *registerCpucrType) GetSbf_d2() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldSbf_d2Mask) != 0
+// GetSbfd2 D2 domain DStandby flag This bit is set by hardware and cleared by any system reset or by setting the CPU1 CSSF bit. Once set, this bit can be cleared only when the D2 domain is no longer in DStandby mode.
+func (r *registerCpucrType) GetSbfd2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldSbfd2Mask) != 0
 }
 
 const (
@@ -595,21 +595,21 @@ func (r *registerCpucrType) SetCssf(value bool) {
 }
 
 const (
-	RegisterCpucrFieldRun_d3Shift = 11
-	RegisterCpucrFieldRun_d3Mask  = 0x800
+	RegisterCpucrFieldRund3Shift = 11
+	RegisterCpucrFieldRund3Mask  = 0x800
 )
 
-// GetRun_d3 Keep system D3 domain in Run mode regardless of the CPU sub-systems modes
-func (r *registerCpucrType) GetRun_d3() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldRun_d3Mask) != 0
+// GetRund3 Keep system D3 domain in Run mode regardless of the CPU sub-systems modes
+func (r *registerCpucrType) GetRund3() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpucrFieldRund3Mask) != 0
 }
 
-// SetRun_d3 Keep system D3 domain in Run mode regardless of the CPU sub-systems modes
-func (r *registerCpucrType) SetRun_d3(value bool) {
+// SetRund3 Keep system D3 domain in Run mode regardless of the CPU sub-systems modes
+func (r *registerCpucrType) SetRund3(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpucrFieldRun_d3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpucrFieldRund3Mask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCpucrFieldRun_d3Mask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterCpucrFieldRund3Mask)
 	}
 }
 

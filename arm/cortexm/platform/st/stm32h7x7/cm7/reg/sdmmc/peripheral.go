@@ -191,21 +191,21 @@ func (r *registerClkcrType) SetNegedge(value bool) {
 }
 
 const (
-	RegisterClkcrFieldHwfc_enShift = 17
-	RegisterClkcrFieldHwfc_enMask  = 0x20000
+	RegisterClkcrFieldHwfcenShift = 17
+	RegisterClkcrFieldHwfcenMask  = 0x20000
 )
 
-// GetHwfc_en Hardware flow control enable This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) When Hardware flow control is enabled, the meaning of the TXFIFOE and RXFIFOF flags change, please see SDMMC status register definition in Section56.8.11.
-func (r *registerClkcrType) GetHwfc_en() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterClkcrFieldHwfc_enMask) != 0
+// GetHwfcen Hardware flow control enable This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) When Hardware flow control is enabled, the meaning of the TXFIFOE and RXFIFOF flags change, please see SDMMC status register definition in Section56.8.11.
+func (r *registerClkcrType) GetHwfcen() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterClkcrFieldHwfcenMask) != 0
 }
 
-// SetHwfc_en Hardware flow control enable This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) When Hardware flow control is enabled, the meaning of the TXFIFOE and RXFIFOF flags change, please see SDMMC status register definition in Section56.8.11.
-func (r *registerClkcrType) SetHwfc_en(value bool) {
+// SetHwfcen Hardware flow control enable This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) When Hardware flow control is enabled, the meaning of the TXFIFOE and RXFIFOF flags change, please see SDMMC status register definition in Section56.8.11.
+func (r *registerClkcrType) SetHwfcen(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterClkcrFieldHwfc_enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterClkcrFieldHwfcenMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterClkcrFieldHwfc_enMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterClkcrFieldHwfcenMask)
 	}
 }
 
