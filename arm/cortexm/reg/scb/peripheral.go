@@ -24,9 +24,6 @@ type _scb struct {
 	Shpr3   registerShpr3Type
 	Shcsr   registerShcsrType
 	Cfsr    registerCfsrType
-	Mmfsr   registerMmfsrType
-	Bfsr    registerBfsrType
-	Ufsr    registerUfsrType
 	Hfsr    registerHfsrType
 	_       [4]byte
 	Mmfar   registerMmfarType
@@ -45,7 +42,6 @@ type _scb struct {
 	Idisar2 registerIdisar2Type
 	Idisar3 registerIdisar3Type
 	Idisar4 registerIdisar4Type
-	Idisar5 registerIdisar5Type
 	Clidr   registerClidrType
 	_       [4]byte
 	Ctr     registerCtrType
@@ -1316,376 +1312,6 @@ func (r *registerCfsrType) GetUsagefault() uint16 {
 // SetUsagefault Provides information on UsageFault exceptions
 func (r *registerCfsrType) SetUsagefault(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfsrFieldUsagefaultMask)|(uint32(value)<<RegisterCfsrFieldUsagefaultShift))
-}
-
-// registerMmfsrType Indicates the cause of memory access faults
-type registerMmfsrType uint32
-
-const (
-	RegisterMmfsrFieldIaccviolShift = 0
-	RegisterMmfsrFieldIaccviolMask  = 0x1
-)
-
-// GetIaccviol Instruction access violation flag
-func (r *registerMmfsrType) GetIaccviol() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmfsrFieldIaccviolMask) != 0
-}
-
-// SetIaccviol Instruction access violation flag
-func (r *registerMmfsrType) SetIaccviol(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmfsrFieldIaccviolMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmfsrFieldIaccviolMask)
-	}
-}
-
-const (
-	RegisterMmfsrFieldDaccviolShift = 1
-	RegisterMmfsrFieldDaccviolMask  = 0x2
-)
-
-// GetDaccviol Data access violation flag
-func (r *registerMmfsrType) GetDaccviol() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmfsrFieldDaccviolMask) != 0
-}
-
-// SetDaccviol Data access violation flag
-func (r *registerMmfsrType) SetDaccviol(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmfsrFieldDaccviolMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmfsrFieldDaccviolMask)
-	}
-}
-
-const (
-	RegisterMmfsrFieldMunstkerrShift = 3
-	RegisterMmfsrFieldMunstkerrMask  = 0x8
-)
-
-// GetMunstkerr MemManage fault on unstacking for a return from exception
-func (r *registerMmfsrType) GetMunstkerr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmfsrFieldMunstkerrMask) != 0
-}
-
-// SetMunstkerr MemManage fault on unstacking for a return from exception
-func (r *registerMmfsrType) SetMunstkerr(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmfsrFieldMunstkerrMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmfsrFieldMunstkerrMask)
-	}
-}
-
-const (
-	RegisterMmfsrFieldMstkerrShift = 4
-	RegisterMmfsrFieldMstkerrMask  = 0x10
-)
-
-// GetMstkerr MemManage fault on stacking for exception entry
-func (r *registerMmfsrType) GetMstkerr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmfsrFieldMstkerrMask) != 0
-}
-
-// SetMstkerr MemManage fault on stacking for exception entry
-func (r *registerMmfsrType) SetMstkerr(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmfsrFieldMstkerrMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmfsrFieldMstkerrMask)
-	}
-}
-
-const (
-	RegisterMmfsrFieldMlsperrShift = 5
-	RegisterMmfsrFieldMlsperrMask  = 0x20
-)
-
-// GetMlsperr MemManage lazy state preservation error flag
-func (r *registerMmfsrType) GetMlsperr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmfsrFieldMlsperrMask) != 0
-}
-
-// SetMlsperr MemManage lazy state preservation error flag
-func (r *registerMmfsrType) SetMlsperr(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmfsrFieldMlsperrMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmfsrFieldMlsperrMask)
-	}
-}
-
-const (
-	RegisterMmfsrFieldMmarvalidShift = 7
-	RegisterMmfsrFieldMmarvalidMask  = 0x80
-)
-
-// GetMmarvalid MemManage Fault Address Register (MMFAR) valid flag
-func (r *registerMmfsrType) GetMmarvalid() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterMmfsrFieldMmarvalidMask) != 0
-}
-
-// SetMmarvalid MemManage Fault Address Register (MMFAR) valid flag
-func (r *registerMmfsrType) SetMmarvalid(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMmfsrFieldMmarvalidMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterMmfsrFieldMmarvalidMask)
-	}
-}
-
-// registerBfsrType Indicate the cause of a bus access fault
-type registerBfsrType uint32
-
-const (
-	RegisterBfsrFieldIbuserrShift = 0
-	RegisterBfsrFieldIbuserrMask  = 0x1
-)
-
-// GetIbuserr Instruction bus error
-func (r *registerBfsrType) GetIbuserr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterBfsrFieldIbuserrMask) != 0
-}
-
-// SetIbuserr Instruction bus error
-func (r *registerBfsrType) SetIbuserr(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBfsrFieldIbuserrMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterBfsrFieldIbuserrMask)
-	}
-}
-
-const (
-	RegisterBfsrFieldPreciserrShift = 1
-	RegisterBfsrFieldPreciserrMask  = 0x2
-)
-
-// GetPreciserr Precise data bus error
-func (r *registerBfsrType) GetPreciserr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterBfsrFieldPreciserrMask) != 0
-}
-
-// SetPreciserr Precise data bus error
-func (r *registerBfsrType) SetPreciserr(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBfsrFieldPreciserrMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterBfsrFieldPreciserrMask)
-	}
-}
-
-const (
-	RegisterBfsrFieldUnstkerrShift = 3
-	RegisterBfsrFieldUnstkerrMask  = 0x8
-)
-
-// GetUnstkerr BusFault on unstacking for a return from exception
-func (r *registerBfsrType) GetUnstkerr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterBfsrFieldUnstkerrMask) != 0
-}
-
-// SetUnstkerr BusFault on unstacking for a return from exception
-func (r *registerBfsrType) SetUnstkerr(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBfsrFieldUnstkerrMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterBfsrFieldUnstkerrMask)
-	}
-}
-
-const (
-	RegisterBfsrFieldStkerrShift = 4
-	RegisterBfsrFieldStkerrMask  = 0x10
-)
-
-// GetStkerr BusFault on stacking for exception entry
-func (r *registerBfsrType) GetStkerr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterBfsrFieldStkerrMask) != 0
-}
-
-// SetStkerr BusFault on stacking for exception entry
-func (r *registerBfsrType) SetStkerr(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBfsrFieldStkerrMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterBfsrFieldStkerrMask)
-	}
-}
-
-const (
-	RegisterBfsrFieldLsperrShift = 5
-	RegisterBfsrFieldLsperrMask  = 0x20
-)
-
-// GetLsperr Lazy state preservation error
-func (r *registerBfsrType) GetLsperr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterBfsrFieldLsperrMask) != 0
-}
-
-// SetLsperr Lazy state preservation error
-func (r *registerBfsrType) SetLsperr(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBfsrFieldLsperrMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterBfsrFieldLsperrMask)
-	}
-}
-
-const (
-	RegisterBfsrFieldBfarvalidShift = 7
-	RegisterBfsrFieldBfarvalidMask  = 0x80
-)
-
-// GetBfarvalid BusFault Address Register (BFAR) valid flag.
-func (r *registerBfsrType) GetBfarvalid() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterBfsrFieldBfarvalidMask) != 0
-}
-
-// SetBfarvalid BusFault Address Register (BFAR) valid flag.
-func (r *registerBfsrType) SetBfarvalid(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBfsrFieldBfarvalidMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterBfsrFieldBfarvalidMask)
-	}
-}
-
-// registerUfsrType Indicates the cause of a UsageFault
-type registerUfsrType uint32
-
-const (
-	RegisterUfsrFieldUndefinstrShift = 0
-	RegisterUfsrFieldUndefinstrMask  = 0x1
-)
-
-// GetUndefinstr Undefined instruction flag. Sticky flag indicating whether an undefined instruction error has occurred.
-func (r *registerUfsrType) GetUndefinstr() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUfsrFieldUndefinstrMask) != 0
-}
-
-// SetUndefinstr Undefined instruction flag. Sticky flag indicating whether an undefined instruction error has occurred.
-func (r *registerUfsrType) SetUndefinstr(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUfsrFieldUndefinstrMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUfsrFieldUndefinstrMask)
-	}
-}
-
-const (
-	RegisterUfsrFieldInvstateShift = 1
-	RegisterUfsrFieldInvstateMask  = 0x2
-)
-
-// GetInvstate Invalid state flag. Sticky flag indicating whether an EPSR.T or EPSR.IT validity error has occurred.
-func (r *registerUfsrType) GetInvstate() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUfsrFieldInvstateMask) != 0
-}
-
-// SetInvstate Invalid state flag. Sticky flag indicating whether an EPSR.T or EPSR.IT validity error has occurred.
-func (r *registerUfsrType) SetInvstate(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUfsrFieldInvstateMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUfsrFieldInvstateMask)
-	}
-}
-
-const (
-	RegisterUfsrFieldInvpcShift = 2
-	RegisterUfsrFieldInvpcMask  = 0x4
-)
-
-// GetInvpc Invalid PC flag. Sticky flag indicating whether an integrity check error has occurred.
-func (r *registerUfsrType) GetInvpc() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUfsrFieldInvpcMask) != 0
-}
-
-// SetInvpc Invalid PC flag. Sticky flag indicating whether an integrity check error has occurred.
-func (r *registerUfsrType) SetInvpc(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUfsrFieldInvpcMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUfsrFieldInvpcMask)
-	}
-}
-
-const (
-	RegisterUfsrFieldNocpShift = 3
-	RegisterUfsrFieldNocpMask  = 0x8
-)
-
-// GetNocp No coprocessor flag. Sticky flag indicating whether a coprocessor disabled or not present error has occurred.
-func (r *registerUfsrType) GetNocp() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUfsrFieldNocpMask) != 0
-}
-
-// SetNocp No coprocessor flag. Sticky flag indicating whether a coprocessor disabled or not present error has occurred.
-func (r *registerUfsrType) SetNocp(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUfsrFieldNocpMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUfsrFieldNocpMask)
-	}
-}
-
-const (
-	RegisterUfsrFieldStkofShift = 4
-	RegisterUfsrFieldStkofMask  = 0x10
-)
-
-// GetStkof Stack overflow flag. Sticky flag indicating whether a stack overflow error has occurred.
-func (r *registerUfsrType) GetStkof() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUfsrFieldStkofMask) != 0
-}
-
-// SetStkof Stack overflow flag. Sticky flag indicating whether a stack overflow error has occurred.
-func (r *registerUfsrType) SetStkof(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUfsrFieldStkofMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUfsrFieldStkofMask)
-	}
-}
-
-const (
-	RegisterUfsrFieldUnalignedShift = 8
-	RegisterUfsrFieldUnalignedMask  = 0x100
-)
-
-// GetUnaligned Unaligned access flag. Sticky flag indicating whether an unaligned access error has occurred.
-func (r *registerUfsrType) GetUnaligned() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUfsrFieldUnalignedMask) != 0
-}
-
-// SetUnaligned Unaligned access flag. Sticky flag indicating whether an unaligned access error has occurred.
-func (r *registerUfsrType) SetUnaligned(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUfsrFieldUnalignedMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUfsrFieldUnalignedMask)
-	}
-}
-
-const (
-	RegisterUfsrFieldDivbyzeroShift = 9
-	RegisterUfsrFieldDivbyzeroMask  = 0x200
-)
-
-// GetDivbyzero Divide by zero flag. Sticky flag indicating whether an integer division by zero error has occurred.
-func (r *registerUfsrType) GetDivbyzero() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterUfsrFieldDivbyzeroMask) != 0
-}
-
-// SetDivbyzero Divide by zero flag. Sticky flag indicating whether an integer division by zero error has occurred.
-func (r *registerUfsrType) SetDivbyzero(value bool) {
-	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterUfsrFieldDivbyzeroMask)
-	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterUfsrFieldDivbyzeroMask)
-	}
 }
 
 // registerHfsrType Gives information about events that activate the HardFault handler
@@ -2961,9 +2587,6 @@ func (r *registerIdisar4Type) SetPsrm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIdisar4FieldPsrmMask)|(uint32(value)<<RegisterIdisar4FieldPsrmShift))
 }
 
-// registerIdisar5Type Gives information about the implemented instruction set. This register is Reserved, RES0
-type registerIdisar5Type uint32
-
 // registerClidrType The CLIDR identifies the type of caches implemented and the level of coherency and unification
 type registerClidrType uint32
 
@@ -3305,7 +2928,7 @@ const (
 	RegisterCpacrFieldCp10EnumUnprivileged RegisterCpacrFieldCp_10EnumType = 0x1
 
 	// RegisterCpacrFieldCp10EnumFull Full access to the FP Extension.
-	RegisterCpacrFieldCp10EnumFull RegisterCpacrFieldCp_10EnumType = 0x2
+	RegisterCpacrFieldCp10EnumFull RegisterCpacrFieldCp_10EnumType = 0x3
 
 	RegisterCpacrFieldCp10Shift = 20
 	RegisterCpacrFieldCp10Mask  = 0x300000
@@ -3331,7 +2954,7 @@ const (
 	RegisterCpacrFieldCp11EnumUnprivileged RegisterCpacrFieldCp_11EnumType = 0x1
 
 	// RegisterCpacrFieldCp11EnumFull Full access to the FP Extension.
-	RegisterCpacrFieldCp11EnumFull RegisterCpacrFieldCp_11EnumType = 0x2
+	RegisterCpacrFieldCp11EnumFull RegisterCpacrFieldCp_11EnumType = 0x3
 
 	RegisterCpacrFieldCp11Shift = 22
 	RegisterCpacrFieldCp11Mask  = 0xc00000

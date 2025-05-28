@@ -8,7 +8,6 @@ import (
 //sigo:extern _goroutineStackSize runtime._goroutineStackSize
 var _goroutineStackSize uintptr
 
-const stackFrameSize = unsafe.Sizeof(stackFrame{})
 const basicFrameSize = unsafe.Sizeof(basicFrame{})
 const basicGoroutineContextSize = unsafe.Sizeof(basicGoroutineContext{})
 
@@ -57,36 +56,19 @@ type _goroutine struct {
 
 //go:export initGoroutine runtime.initGoroutine
 func initGoroutine(gptr unsafe.Pointer) {
-	bfs := uintptr(unsafe.Sizeof(basicFrame{}))
-	gbfs := uintptr(unsafe.Sizeof(basicGoroutineContext{}))
-
 	g := (*_goroutine)(gptr)
 
 	// Calculate the top of the stack past the registers
 	// NOTE: The stack grows from the highest address to the lowest address on Cortex-M
-	estack := (*stackFrame)(unsafe.Add(g.stack, _goroutineStackSize-bfs))
+	estack := (*stackFrame)(unsafe.Add(g.stack, _goroutineStackSize-basicFrameSize))
 
 	// Set up the call to startGoroutine.
 	estack.PSR = defaultPsrValue
 	estack.PC = uintptr(nonstandard.PointerOf(startGoroutine)) | thumbEnabledBit
-	estack.LR = 0xFFFF_FFFF
 	estack.R0 = uintptr(gptr)
-	estack.R1 = 0xABAB_ABAB
-	estack.R2 = 0xCDCD_CDCD
-	estack.R3 = 0xEFEF_EFEF
-	estack.R12 = 0xAEAE_AEAE
 
-	// Subtract 2 stack stackFrame lengths to account for unstacking R4 - R11 during the initial context switch.
-	g.stack = unsafe.Add(unsafe.Pointer(estack), -int32(gbfs))
+	g.stack = unsafe.Add(unsafe.Pointer(estack), -int32(basicGoroutineContextSize))
 	ctx := (*goroutineContext)(g.stack)
-	ctx.R4 = 0x0101_0101
-	ctx.R5 = 0x0202_0202
-	ctx.R6 = 0x0303_0303
-	ctx.R7 = 0x0404_0404
-	ctx.R8 = 0x0505_0505
-	ctx.R9 = 0x0606_0606
-	ctx.R10 = 0x0707_0707
-	ctx.R11 = 0x0808_0808
 	ctx.LR = 0xFFFF_FFFD
 }
 
