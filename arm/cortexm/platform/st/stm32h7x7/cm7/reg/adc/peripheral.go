@@ -844,7 +844,30 @@ func (r *registerCfgrType) SetDmngt(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldDmngtMask)|(uint32(value)<<RegisterCfgrFieldDmngtShift))
 }
 
+type RegisterCfgrFieldResEnumType uint8
+
 const (
+	// RegisterCfgrFieldResEnumResolution16bit 16 bits
+	RegisterCfgrFieldResEnumResolution16bit RegisterCfgrFieldResEnumType = 0x0
+
+	// RegisterCfgrFieldResEnumResolution14bitl 14 bits in legacy mode (not optimized power consumption)
+	RegisterCfgrFieldResEnumResolution14bitl RegisterCfgrFieldResEnumType = 0x1
+
+	// RegisterCfgrFieldResEnumResolution12bitl 12 bits in legacy mode (not optimized power consumption)
+	RegisterCfgrFieldResEnumResolution12bitl RegisterCfgrFieldResEnumType = 0x2
+
+	// RegisterCfgrFieldResEnumResolution14bit 14 bits
+	RegisterCfgrFieldResEnumResolution14bit RegisterCfgrFieldResEnumType = 0x5
+
+	// RegisterCfgrFieldResEnumResolution12bit 12 bits
+	RegisterCfgrFieldResEnumResolution12bit RegisterCfgrFieldResEnumType = 0x6
+
+	// RegisterCfgrFieldResEnumResolution10bit 10 bits
+	RegisterCfgrFieldResEnumResolution10bit RegisterCfgrFieldResEnumType = 0x3
+
+	// RegisterCfgrFieldResEnumResolution8bit 8 bits
+	RegisterCfgrFieldResEnumResolution8bit RegisterCfgrFieldResEnumType = 0x7
+
 	RegisterCfgrFieldResShift = 2
 	RegisterCfgrFieldResMask  = 0x1c
 )
@@ -855,7 +878,7 @@ func (r *registerCfgrType) GetRes() uint8 {
 }
 
 // SetRes ADC data resolution
-func (r *registerCfgrType) SetRes(value uint8) {
+func (r *registerCfgrType) SetRes(value RegisterCfgrFieldResEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldResMask)|(uint32(value)<<RegisterCfgrFieldResShift))
 }
 

@@ -54,7 +54,15 @@ def ADCPeripheral : PeripheralType<"ADC", "Analog to Digital Converter"> {
     ], "ADC control register">,
     Register<"CFGR", 0xc, 32, [
       Field<"DMNGT", 0, 2, ReadWrite, "ADC DMA transfer enable">,
-      Field<"RES", 2, 3, ReadWrite, "ADC data resolution">,
+      Field<"RES", 2, 3, ReadWrite, "ADC data resolution", [
+        Enum<"Resolution16Bit", 0, "16 bits">,
+        Enum<"Resolution14BitL", 1, "14 bits in legacy mode (not optimized power consumption)">,
+        Enum<"Resolution12BitL", 2, "12 bits in legacy mode (not optimized power consumption)">,
+        Enum<"Resolution14Bit", 5, "14 bits">,
+        Enum<"Resolution12Bit", 6, "12 bits">,
+        Enum<"Resolution10Bit", 3, "10 bits">,
+        Enum<"Resolution8Bit", 7, "8 bits">,
+      ]>,
       Field<"EXTSEL", 5, 5, ReadWrite, "ADC group regular external trigger source">,
       Field<"EXTEN", 10, 2, ReadWrite, "ADC group regular external trigger polarity">,
       Field<"OVRMOD", 12, 1, ReadWrite, "ADC group regular overrun configuration">,

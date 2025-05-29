@@ -99,6 +99,12 @@ class RepeatingRegister<string Name, int Count, int Offset, int Width, list<Fiel
 class PeripheralType<string Name, string Description = ""> : Object<Name, Description> {
     list<Register> registers;
     int accessWidth = 32;
+    int count = 1;
+    string arrayLabel = "";
+}
+
+class RepeatingPeripheralType<string Name, int Count, string Description = ""> : PeripheralType<Name, Description> {
+    int count = Count;
 }
 
 class PeripheralInstance<string Name, int Base, PeripheralType Type, string Description = "", list<string> Tags = []>
