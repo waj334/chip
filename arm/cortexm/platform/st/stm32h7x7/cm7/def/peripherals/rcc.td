@@ -3,6 +3,21 @@
 
 include "base.td"
 
+defvar EnumRGE = [
+    Enum<"1To2MHz", 0, "The PLLn input (refn_ck) clock range frequency is between 1 and 2 MHz (default after reset)">,
+    Enum<"2To4MHz", 1, "The PLLn input (refn_ck) clock range frequency is between 2 and 4 MHz">,
+    Enum<"4To8MHz", 2, "The PLLn input (refn_ck) clock range frequency is between 4 and 8 MHz">,
+    Enum<"8To16MHz", 3, "The PLLn input (refn_ck) clock range frequency is between 8 and 16 MHz">,
+];
+
+class DividerEnumList<int Start, int End, int Base, string Subject> {
+  list<Enum> values = !foreach(i, !range(Start, !add(End,1)),
+    Enum<"Div" # !shl(1, i),
+         !add(Base, i),
+         !strconcat(Subject, " / " # !cast<string>(!shl(1, i)))>
+  );
+}
+
 def RCCPeripheral : PeripheralType<"RCC", "Reset and clock control"> {
   let accessWidth = 32;
   let registers = [
@@ -38,8 +53,18 @@ def RCCPeripheral : PeripheralType<"RCC", "Reset and clock control"> {
       Field<"RC48CAL", 0, 10, ReadWrite, "Internal RC 48 MHz clock calibration">,
     ], "RCC Clock Recovery RC Register">,
     Register<"CFGR", 0x10, 32, [
-      Field<"SW", 0, 3, ReadWrite, "System clock switch">,
-      Field<"SWS", 3, 3, ReadWrite, "System clock switch status">,
+      Field<"SW", 0, 3, ReadWrite, "System clock switch", [
+        Enum<"HSI", 0, "HSI selected as system clock (hsi_ck) (default after reset)">,
+        Enum<"CSI", 1, "CSI selected as system clock (csi_ck)">,
+        Enum<"HSE", 2, "HSE selected as system clock (hse_ck)">,
+        Enum<"PLL1", 3, "PLL1 selected as system clock (pll1_p_ck)">,
+      ]>,
+      Field<"SWS", 3, 3, ReadWrite, "System clock switch status", [
+        Enum<"HSI", 0, "HSI selected as system clock (hsi_ck) (default after reset)">,
+        Enum<"CSI", 1, "CSI selected as system clock (csi_ck)">,
+        Enum<"HSE", 2, "HSE selected as system clock (hse_ck)">,
+        Enum<"PLL1", 3, "PLL1 selected as system clock (pll1_p_ck)">,
+      ]>,
       Field<"STOPWUCK", 6, 1, ReadWrite, "System clock selection after a wake up from system Stop">,
       Field<"STOPKERWUCK", 7, 1, ReadWrite, "Kernel clock selection after a wake up from system Stop">,
       Field<"RTCPRE", 8, 6, ReadWrite, "HSE division factor for RTC clock">,
@@ -51,19 +76,24 @@ def RCCPeripheral : PeripheralType<"RCC", "Reset and clock control"> {
       Field<"MCO2SEL", 29, 3, ReadWrite, "Micro-controller clock output 2">,
     ], "RCC Clock Configuration Register">,
     Register<"D1CFGR", 0x18, 32, [
-      Field<"HPRE", 0, 4, ReadWrite, "D1 domain AHB prescaler">,
-      Field<"D1PPRE", 4, 3, ReadWrite, "D1 domain APB3 prescaler">,
-      Field<"D1CPRE", 8, 4, ReadWrite, "D1 domain Core prescaler">,
+      Field<"HPRE", 0, 4, ReadWrite, "D1 domain AHB prescaler", DividerEnumList<0, 9, 7, "rcc_hclk3 = sys_d1cpre_ck">.values>,
+      Field<"D1PPRE", 4, 3, ReadWrite, "D1 domain APB3 prescaler", DividerEnumList<0, 4, 3, "rcc_pclk3 = rcc_hclk3">.values>,
+      Field<"D1CPRE", 8, 4, ReadWrite, "D1 domain Core prescaler", DividerEnumList<0, 9, 7, "sys_ck">.values>,
     ], "RCC Domain 1 Clock Configuration Register">,
     Register<"D2CFGR", 0x1c, 32, [
-      Field<"D2PPRE1", 4, 3, ReadWrite, "D2 domain APB1 prescaler">,
-      Field<"D2PPRE2", 8, 3, ReadWrite, "D2 domain APB2 prescaler">,
+      Field<"D2PPRE1", 4, 3, ReadWrite, "D2 domain APB1 prescaler", DividerEnumList<0, 4, 3, "rcc_pclk2 = rcc_hclk1">.values>,
+      Field<"D2PPRE2", 8, 3, ReadWrite, "D2 domain APB2 prescaler", DividerEnumList<0, 4, 3, "rcc_pclk1 = rcc_hclk1">.values>,
     ], "RCC Domain 2 Clock Configuration Register">,
     Register<"D3CFGR", 0x20, 32, [
-      Field<"D3PPRE", 4, 3, ReadWrite, "D3 domain APB4 prescaler">,
+      Field<"D3PPRE", 4, 3, ReadWrite, "D3 domain APB4 prescaler", DividerEnumList<0, 4, 3, "rcc_pclk4 = rcc_hclk4">.values>,
     ], "RCC Domain 3 Clock Configuration Register">,
     Register<"PLLCKSELR", 0x28, 32, [
-      Field<"PLLSRC", 0, 2, ReadWrite, "DIVMx and PLLs clock source selection">,
+      Field<"PLLSRC", 0, 2, ReadWrite, "DIVMx and PLLs clock source selection", [
+        Enum<"HSI", 0, "HSI selected as PLL clock (hsi_ck) (default after reset)">,
+        Enum<"CSI", 1, "CSI selected as PLL clock (csi_ck)">,
+        Enum<"HSE", 2, "HSE selected as PLL clock (hse_ck)">,
+        Enum<"NoClock", 3, "No clock send to DIVMx divider and PLLs">,
+      ]>,
       Field<"DIVM1", 4, 6, ReadWrite, "Prescaler for PLL1">,
       Field<"DIVM2", 12, 6, ReadWrite, "Prescaler for PLL2">,
       Field<"DIVM3", 20, 6, ReadWrite, "Prescaler for PLL3">,
@@ -71,13 +101,13 @@ def RCCPeripheral : PeripheralType<"RCC", "Reset and clock control"> {
     Register<"PLLCFGR", 0x2c, 32, [
       Field<"PLL1FRACEN", 0, 1, ReadWrite, "PLL1 fractional latch enable">,
       Field<"PLL1VCOSEL", 1, 1, ReadWrite, "PLL1 VCO selection">,
-      Field<"PLL1RGE", 2, 2, ReadWrite, "PLL1 input frequency range">,
+      Field<"PLL1RGE", 2, 2, ReadWrite, "PLL1 input frequency range", EnumRGE>,
       Field<"PLL2FRACEN", 4, 1, ReadWrite, "PLL2 fractional latch enable">,
       Field<"PLL2VCOSEL", 5, 1, ReadWrite, "PLL2 VCO selection">,
-      Field<"PLL2RGE", 6, 2, ReadWrite, "PLL2 input frequency range">,
+      Field<"PLL2RGE", 6, 2, ReadWrite, "PLL2 input frequency range", EnumRGE>,
       Field<"PLL3FRACEN", 8, 1, ReadWrite, "PLL3 fractional latch enable">,
       Field<"PLL3VCOSEL", 9, 1, ReadWrite, "PLL3 VCO selection">,
-      Field<"PLL3RGE", 10, 2, ReadWrite, "PLL3 input frequency range">,
+      Field<"PLL3RGE", 10, 2, ReadWrite, "PLL3 input frequency range", EnumRGE>,
       Field<"DIVP1EN", 16, 1, ReadWrite, "PLL1 DIVP divider output enable">,
       Field<"DIVQ1EN", 17, 1, ReadWrite, "PLL1 DIVQ divider output enable">,
       Field<"DIVR1EN", 18, 1, ReadWrite, "PLL1 DIVR divider output enable">,

@@ -41,7 +41,7 @@ func (a _adc) Configure(config Config) error {
 
 	// Validate configuration.
 	if config.Resolution > Resolution16Bit {
-		return peripheral.ErrInvalidConfig
+		return hal.ErrInvalidConfig
 	}
 
 	mutex[a].Lock()

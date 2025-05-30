@@ -54,7 +54,11 @@ def PWRPeripheral : PeripheralType<"PWR", "PWR"> {
     ], "This register allows controlling CPU1 power.">,
     Register<"D3CR", 0x18, 32, [
       Field<"VOSRDY", 13, 1, Read, "VOS Ready bit for VCORE voltage scaling output selection. This bit is set to 1 by hardware when Bypass mode is selected in PWR control register 3 (PWR_CR3).">,
-      Field<"VOS", 14, 2, ReadWrite, "Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling.">,
+      Field<"VOS", 14, 2, ReadWrite, "Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling.", [
+        Enum<"Scale3", 1, "(default)">,
+        Enum<"Scale2", 2>,
+        Enum<"Scale1", 3>,
+      ]>,
     ], "This register allows controlling D3 domain power.Following reset VOSRDY will be read 1 by software">,
     Register<"WKUPCR", 0x20, 32, [
       Field<"WKUPC", 0, 6, ReadWrite, "Clear Wakeup pin flag for WKUP. These bits are always read as 0.">,

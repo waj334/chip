@@ -626,18 +626,26 @@ func (r *registerD3crType) GetVosrdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3crFieldVosrdyMask) != 0
 }
 
+type RegisterD3crFieldVosEnumType uint8
+
 const (
+	// RegisterD3crFieldVosEnumScale3 (default)
+	RegisterD3crFieldVosEnumScale3 RegisterD3crFieldVosEnumType = 0x1
+
+	RegisterD3crFieldVosEnumScale2 RegisterD3crFieldVosEnumType = 0x2
+	RegisterD3crFieldVosEnumScale1 RegisterD3crFieldVosEnumType = 0x3
+
 	RegisterD3crFieldVosShift = 14
 	RegisterD3crFieldVosMask  = 0xc000
 )
 
 // GetVos Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling.
-func (r *registerD3crType) GetVos() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3crFieldVosMask) >> RegisterD3crFieldVosShift)
+func (r *registerD3crType) GetVos() RegisterD3crFieldVosEnumType {
+	return RegisterD3crFieldVosEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD3crFieldVosMask) >> RegisterD3crFieldVosShift)
 }
 
 // SetVos Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling.
-func (r *registerD3crType) SetVos(value uint8) {
+func (r *registerD3crType) SetVos(value RegisterD3crFieldVosEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3crFieldVosMask)|(uint32(value)<<RegisterD3crFieldVosShift))
 }
 

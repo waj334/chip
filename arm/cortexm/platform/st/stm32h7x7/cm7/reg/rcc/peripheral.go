@@ -565,33 +565,61 @@ func (r *registerCrrcrType) SetRc48cal(value uint16) {
 // registerCfgrType RCC Clock Configuration Register
 type registerCfgrType uint32
 
+type RegisterCfgrFieldSwEnumType uint8
+
 const (
+	// RegisterCfgrFieldSwEnumHsi HSI selected as system clock (hsi_ck) (default after reset)
+	RegisterCfgrFieldSwEnumHsi RegisterCfgrFieldSwEnumType = 0x0
+
+	// RegisterCfgrFieldSwEnumCsi CSI selected as system clock (csi_ck)
+	RegisterCfgrFieldSwEnumCsi RegisterCfgrFieldSwEnumType = 0x1
+
+	// RegisterCfgrFieldSwEnumHse HSE selected as system clock (hse_ck)
+	RegisterCfgrFieldSwEnumHse RegisterCfgrFieldSwEnumType = 0x2
+
+	// RegisterCfgrFieldSwEnumPll1 PLL1 selected as system clock (pll1_p_ck)
+	RegisterCfgrFieldSwEnumPll1 RegisterCfgrFieldSwEnumType = 0x3
+
 	RegisterCfgrFieldSwShift = 0
 	RegisterCfgrFieldSwMask  = 0x7
 )
 
 // GetSw System clock switch
-func (r *registerCfgrType) GetSw() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldSwMask) >> RegisterCfgrFieldSwShift)
+func (r *registerCfgrType) GetSw() RegisterCfgrFieldSwEnumType {
+	return RegisterCfgrFieldSwEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldSwMask) >> RegisterCfgrFieldSwShift)
 }
 
 // SetSw System clock switch
-func (r *registerCfgrType) SetSw(value uint8) {
+func (r *registerCfgrType) SetSw(value RegisterCfgrFieldSwEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldSwMask)|(uint32(value)<<RegisterCfgrFieldSwShift))
 }
 
+type RegisterCfgrFieldSwsEnumType uint8
+
 const (
+	// RegisterCfgrFieldSwsEnumHsi HSI selected as system clock (hsi_ck) (default after reset)
+	RegisterCfgrFieldSwsEnumHsi RegisterCfgrFieldSwsEnumType = 0x0
+
+	// RegisterCfgrFieldSwsEnumCsi CSI selected as system clock (csi_ck)
+	RegisterCfgrFieldSwsEnumCsi RegisterCfgrFieldSwsEnumType = 0x1
+
+	// RegisterCfgrFieldSwsEnumHse HSE selected as system clock (hse_ck)
+	RegisterCfgrFieldSwsEnumHse RegisterCfgrFieldSwsEnumType = 0x2
+
+	// RegisterCfgrFieldSwsEnumPll1 PLL1 selected as system clock (pll1_p_ck)
+	RegisterCfgrFieldSwsEnumPll1 RegisterCfgrFieldSwsEnumType = 0x3
+
 	RegisterCfgrFieldSwsShift = 3
 	RegisterCfgrFieldSwsMask  = 0x38
 )
 
 // GetSws System clock switch status
-func (r *registerCfgrType) GetSws() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldSwsMask) >> RegisterCfgrFieldSwsShift)
+func (r *registerCfgrType) GetSws() RegisterCfgrFieldSwsEnumType {
+	return RegisterCfgrFieldSwsEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldSwsMask) >> RegisterCfgrFieldSwsShift)
 }
 
 // SetSws System clock switch status
-func (r *registerCfgrType) SetSws(value uint8) {
+func (r *registerCfgrType) SetSws(value RegisterCfgrFieldSwsEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldSwsMask)|(uint32(value)<<RegisterCfgrFieldSwsShift))
 }
 
@@ -749,117 +777,263 @@ func (r *registerCfgrType) SetMco2sel(value uint8) {
 // registerD1cfgrType RCC Domain 1 Clock Configuration Register
 type registerD1cfgrType uint32
 
+type RegisterD1cfgrFieldHpreEnumType uint8
+
 const (
+	// RegisterD1cfgrFieldHpreEnumDiv1 rcc_hclk3 = sys_d1cpre_ck / 1
+	RegisterD1cfgrFieldHpreEnumDiv1 RegisterD1cfgrFieldHpreEnumType = 0x7
+
+	// RegisterD1cfgrFieldHpreEnumDiv2 rcc_hclk3 = sys_d1cpre_ck / 2
+	RegisterD1cfgrFieldHpreEnumDiv2 RegisterD1cfgrFieldHpreEnumType = 0x8
+
+	// RegisterD1cfgrFieldHpreEnumDiv4 rcc_hclk3 = sys_d1cpre_ck / 4
+	RegisterD1cfgrFieldHpreEnumDiv4 RegisterD1cfgrFieldHpreEnumType = 0x9
+
+	// RegisterD1cfgrFieldHpreEnumDiv8 rcc_hclk3 = sys_d1cpre_ck / 8
+	RegisterD1cfgrFieldHpreEnumDiv8 RegisterD1cfgrFieldHpreEnumType = 0xa
+
+	// RegisterD1cfgrFieldHpreEnumDiv16 rcc_hclk3 = sys_d1cpre_ck / 16
+	RegisterD1cfgrFieldHpreEnumDiv16 RegisterD1cfgrFieldHpreEnumType = 0xb
+
+	// RegisterD1cfgrFieldHpreEnumDiv32 rcc_hclk3 = sys_d1cpre_ck / 32
+	RegisterD1cfgrFieldHpreEnumDiv32 RegisterD1cfgrFieldHpreEnumType = 0xc
+
+	// RegisterD1cfgrFieldHpreEnumDiv64 rcc_hclk3 = sys_d1cpre_ck / 64
+	RegisterD1cfgrFieldHpreEnumDiv64 RegisterD1cfgrFieldHpreEnumType = 0xd
+
+	// RegisterD1cfgrFieldHpreEnumDiv128 rcc_hclk3 = sys_d1cpre_ck / 128
+	RegisterD1cfgrFieldHpreEnumDiv128 RegisterD1cfgrFieldHpreEnumType = 0xe
+
+	// RegisterD1cfgrFieldHpreEnumDiv256 rcc_hclk3 = sys_d1cpre_ck / 256
+	RegisterD1cfgrFieldHpreEnumDiv256 RegisterD1cfgrFieldHpreEnumType = 0xf
+
+	// RegisterD1cfgrFieldHpreEnumDiv512 rcc_hclk3 = sys_d1cpre_ck / 512
+	RegisterD1cfgrFieldHpreEnumDiv512 RegisterD1cfgrFieldHpreEnumType = 0x10
+
 	RegisterD1cfgrFieldHpreShift = 0
 	RegisterD1cfgrFieldHpreMask  = 0xf
 )
 
 // GetHpre D1 domain AHB prescaler
-func (r *registerD1cfgrType) GetHpre() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD1cfgrFieldHpreMask) >> RegisterD1cfgrFieldHpreShift)
+func (r *registerD1cfgrType) GetHpre() RegisterD1cfgrFieldHpreEnumType {
+	return RegisterD1cfgrFieldHpreEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD1cfgrFieldHpreMask) >> RegisterD1cfgrFieldHpreShift)
 }
 
 // SetHpre D1 domain AHB prescaler
-func (r *registerD1cfgrType) SetHpre(value uint8) {
+func (r *registerD1cfgrType) SetHpre(value RegisterD1cfgrFieldHpreEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD1cfgrFieldHpreMask)|(uint32(value)<<RegisterD1cfgrFieldHpreShift))
 }
 
+type RegisterD1cfgrFieldD1ppreEnumType uint8
+
 const (
+	// RegisterD1cfgrFieldD1ppreEnumDiv1 rcc_pclk3 = rcc_hclk3 / 1
+	RegisterD1cfgrFieldD1ppreEnumDiv1 RegisterD1cfgrFieldD1ppreEnumType = 0x3
+
+	// RegisterD1cfgrFieldD1ppreEnumDiv2 rcc_pclk3 = rcc_hclk3 / 2
+	RegisterD1cfgrFieldD1ppreEnumDiv2 RegisterD1cfgrFieldD1ppreEnumType = 0x4
+
+	// RegisterD1cfgrFieldD1ppreEnumDiv4 rcc_pclk3 = rcc_hclk3 / 4
+	RegisterD1cfgrFieldD1ppreEnumDiv4 RegisterD1cfgrFieldD1ppreEnumType = 0x5
+
+	// RegisterD1cfgrFieldD1ppreEnumDiv8 rcc_pclk3 = rcc_hclk3 / 8
+	RegisterD1cfgrFieldD1ppreEnumDiv8 RegisterD1cfgrFieldD1ppreEnumType = 0x6
+
+	// RegisterD1cfgrFieldD1ppreEnumDiv16 rcc_pclk3 = rcc_hclk3 / 16
+	RegisterD1cfgrFieldD1ppreEnumDiv16 RegisterD1cfgrFieldD1ppreEnumType = 0x7
+
 	RegisterD1cfgrFieldD1ppreShift = 4
 	RegisterD1cfgrFieldD1ppreMask  = 0x70
 )
 
 // GetD1ppre D1 domain APB3 prescaler
-func (r *registerD1cfgrType) GetD1ppre() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD1cfgrFieldD1ppreMask) >> RegisterD1cfgrFieldD1ppreShift)
+func (r *registerD1cfgrType) GetD1ppre() RegisterD1cfgrFieldD1ppreEnumType {
+	return RegisterD1cfgrFieldD1ppreEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD1cfgrFieldD1ppreMask) >> RegisterD1cfgrFieldD1ppreShift)
 }
 
 // SetD1ppre D1 domain APB3 prescaler
-func (r *registerD1cfgrType) SetD1ppre(value uint8) {
+func (r *registerD1cfgrType) SetD1ppre(value RegisterD1cfgrFieldD1ppreEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD1cfgrFieldD1ppreMask)|(uint32(value)<<RegisterD1cfgrFieldD1ppreShift))
 }
 
+type RegisterD1cfgrFieldD1cpreEnumType uint8
+
 const (
+	// RegisterD1cfgrFieldD1cpreEnumDiv1 sys_ck / 1
+	RegisterD1cfgrFieldD1cpreEnumDiv1 RegisterD1cfgrFieldD1cpreEnumType = 0x7
+
+	// RegisterD1cfgrFieldD1cpreEnumDiv2 sys_ck / 2
+	RegisterD1cfgrFieldD1cpreEnumDiv2 RegisterD1cfgrFieldD1cpreEnumType = 0x8
+
+	// RegisterD1cfgrFieldD1cpreEnumDiv4 sys_ck / 4
+	RegisterD1cfgrFieldD1cpreEnumDiv4 RegisterD1cfgrFieldD1cpreEnumType = 0x9
+
+	// RegisterD1cfgrFieldD1cpreEnumDiv8 sys_ck / 8
+	RegisterD1cfgrFieldD1cpreEnumDiv8 RegisterD1cfgrFieldD1cpreEnumType = 0xa
+
+	// RegisterD1cfgrFieldD1cpreEnumDiv16 sys_ck / 16
+	RegisterD1cfgrFieldD1cpreEnumDiv16 RegisterD1cfgrFieldD1cpreEnumType = 0xb
+
+	// RegisterD1cfgrFieldD1cpreEnumDiv32 sys_ck / 32
+	RegisterD1cfgrFieldD1cpreEnumDiv32 RegisterD1cfgrFieldD1cpreEnumType = 0xc
+
+	// RegisterD1cfgrFieldD1cpreEnumDiv64 sys_ck / 64
+	RegisterD1cfgrFieldD1cpreEnumDiv64 RegisterD1cfgrFieldD1cpreEnumType = 0xd
+
+	// RegisterD1cfgrFieldD1cpreEnumDiv128 sys_ck / 128
+	RegisterD1cfgrFieldD1cpreEnumDiv128 RegisterD1cfgrFieldD1cpreEnumType = 0xe
+
+	// RegisterD1cfgrFieldD1cpreEnumDiv256 sys_ck / 256
+	RegisterD1cfgrFieldD1cpreEnumDiv256 RegisterD1cfgrFieldD1cpreEnumType = 0xf
+
+	// RegisterD1cfgrFieldD1cpreEnumDiv512 sys_ck / 512
+	RegisterD1cfgrFieldD1cpreEnumDiv512 RegisterD1cfgrFieldD1cpreEnumType = 0x10
+
 	RegisterD1cfgrFieldD1cpreShift = 8
 	RegisterD1cfgrFieldD1cpreMask  = 0xf00
 )
 
 // GetD1cpre D1 domain Core prescaler
-func (r *registerD1cfgrType) GetD1cpre() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD1cfgrFieldD1cpreMask) >> RegisterD1cfgrFieldD1cpreShift)
+func (r *registerD1cfgrType) GetD1cpre() RegisterD1cfgrFieldD1cpreEnumType {
+	return RegisterD1cfgrFieldD1cpreEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD1cfgrFieldD1cpreMask) >> RegisterD1cfgrFieldD1cpreShift)
 }
 
 // SetD1cpre D1 domain Core prescaler
-func (r *registerD1cfgrType) SetD1cpre(value uint8) {
+func (r *registerD1cfgrType) SetD1cpre(value RegisterD1cfgrFieldD1cpreEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD1cfgrFieldD1cpreMask)|(uint32(value)<<RegisterD1cfgrFieldD1cpreShift))
 }
 
 // registerD2cfgrType RCC Domain 2 Clock Configuration Register
 type registerD2cfgrType uint32
 
+type RegisterD2cfgrFieldD2ppre1EnumType uint8
+
 const (
+	// RegisterD2cfgrFieldD2ppre1EnumDiv1 rcc_pclk2 = rcc_hclk1 / 1
+	RegisterD2cfgrFieldD2ppre1EnumDiv1 RegisterD2cfgrFieldD2ppre1EnumType = 0x3
+
+	// RegisterD2cfgrFieldD2ppre1EnumDiv2 rcc_pclk2 = rcc_hclk1 / 2
+	RegisterD2cfgrFieldD2ppre1EnumDiv2 RegisterD2cfgrFieldD2ppre1EnumType = 0x4
+
+	// RegisterD2cfgrFieldD2ppre1EnumDiv4 rcc_pclk2 = rcc_hclk1 / 4
+	RegisterD2cfgrFieldD2ppre1EnumDiv4 RegisterD2cfgrFieldD2ppre1EnumType = 0x5
+
+	// RegisterD2cfgrFieldD2ppre1EnumDiv8 rcc_pclk2 = rcc_hclk1 / 8
+	RegisterD2cfgrFieldD2ppre1EnumDiv8 RegisterD2cfgrFieldD2ppre1EnumType = 0x6
+
+	// RegisterD2cfgrFieldD2ppre1EnumDiv16 rcc_pclk2 = rcc_hclk1 / 16
+	RegisterD2cfgrFieldD2ppre1EnumDiv16 RegisterD2cfgrFieldD2ppre1EnumType = 0x7
+
 	RegisterD2cfgrFieldD2ppre1Shift = 4
 	RegisterD2cfgrFieldD2ppre1Mask  = 0x70
 )
 
 // GetD2ppre1 D2 domain APB1 prescaler
-func (r *registerD2cfgrType) GetD2ppre1() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2cfgrFieldD2ppre1Mask) >> RegisterD2cfgrFieldD2ppre1Shift)
+func (r *registerD2cfgrType) GetD2ppre1() RegisterD2cfgrFieldD2ppre1EnumType {
+	return RegisterD2cfgrFieldD2ppre1EnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD2cfgrFieldD2ppre1Mask) >> RegisterD2cfgrFieldD2ppre1Shift)
 }
 
 // SetD2ppre1 D2 domain APB1 prescaler
-func (r *registerD2cfgrType) SetD2ppre1(value uint8) {
+func (r *registerD2cfgrType) SetD2ppre1(value RegisterD2cfgrFieldD2ppre1EnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2cfgrFieldD2ppre1Mask)|(uint32(value)<<RegisterD2cfgrFieldD2ppre1Shift))
 }
 
+type RegisterD2cfgrFieldD2ppre2EnumType uint8
+
 const (
+	// RegisterD2cfgrFieldD2ppre2EnumDiv1 rcc_pclk1 = rcc_hclk1 / 1
+	RegisterD2cfgrFieldD2ppre2EnumDiv1 RegisterD2cfgrFieldD2ppre2EnumType = 0x3
+
+	// RegisterD2cfgrFieldD2ppre2EnumDiv2 rcc_pclk1 = rcc_hclk1 / 2
+	RegisterD2cfgrFieldD2ppre2EnumDiv2 RegisterD2cfgrFieldD2ppre2EnumType = 0x4
+
+	// RegisterD2cfgrFieldD2ppre2EnumDiv4 rcc_pclk1 = rcc_hclk1 / 4
+	RegisterD2cfgrFieldD2ppre2EnumDiv4 RegisterD2cfgrFieldD2ppre2EnumType = 0x5
+
+	// RegisterD2cfgrFieldD2ppre2EnumDiv8 rcc_pclk1 = rcc_hclk1 / 8
+	RegisterD2cfgrFieldD2ppre2EnumDiv8 RegisterD2cfgrFieldD2ppre2EnumType = 0x6
+
+	// RegisterD2cfgrFieldD2ppre2EnumDiv16 rcc_pclk1 = rcc_hclk1 / 16
+	RegisterD2cfgrFieldD2ppre2EnumDiv16 RegisterD2cfgrFieldD2ppre2EnumType = 0x7
+
 	RegisterD2cfgrFieldD2ppre2Shift = 8
 	RegisterD2cfgrFieldD2ppre2Mask  = 0x700
 )
 
 // GetD2ppre2 D2 domain APB2 prescaler
-func (r *registerD2cfgrType) GetD2ppre2() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2cfgrFieldD2ppre2Mask) >> RegisterD2cfgrFieldD2ppre2Shift)
+func (r *registerD2cfgrType) GetD2ppre2() RegisterD2cfgrFieldD2ppre2EnumType {
+	return RegisterD2cfgrFieldD2ppre2EnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD2cfgrFieldD2ppre2Mask) >> RegisterD2cfgrFieldD2ppre2Shift)
 }
 
 // SetD2ppre2 D2 domain APB2 prescaler
-func (r *registerD2cfgrType) SetD2ppre2(value uint8) {
+func (r *registerD2cfgrType) SetD2ppre2(value RegisterD2cfgrFieldD2ppre2EnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2cfgrFieldD2ppre2Mask)|(uint32(value)<<RegisterD2cfgrFieldD2ppre2Shift))
 }
 
 // registerD3cfgrType RCC Domain 3 Clock Configuration Register
 type registerD3cfgrType uint32
 
+type RegisterD3cfgrFieldD3ppreEnumType uint8
+
 const (
+	// RegisterD3cfgrFieldD3ppreEnumDiv1 rcc_pclk4 = rcc_hclk4 / 1
+	RegisterD3cfgrFieldD3ppreEnumDiv1 RegisterD3cfgrFieldD3ppreEnumType = 0x3
+
+	// RegisterD3cfgrFieldD3ppreEnumDiv2 rcc_pclk4 = rcc_hclk4 / 2
+	RegisterD3cfgrFieldD3ppreEnumDiv2 RegisterD3cfgrFieldD3ppreEnumType = 0x4
+
+	// RegisterD3cfgrFieldD3ppreEnumDiv4 rcc_pclk4 = rcc_hclk4 / 4
+	RegisterD3cfgrFieldD3ppreEnumDiv4 RegisterD3cfgrFieldD3ppreEnumType = 0x5
+
+	// RegisterD3cfgrFieldD3ppreEnumDiv8 rcc_pclk4 = rcc_hclk4 / 8
+	RegisterD3cfgrFieldD3ppreEnumDiv8 RegisterD3cfgrFieldD3ppreEnumType = 0x6
+
+	// RegisterD3cfgrFieldD3ppreEnumDiv16 rcc_pclk4 = rcc_hclk4 / 16
+	RegisterD3cfgrFieldD3ppreEnumDiv16 RegisterD3cfgrFieldD3ppreEnumType = 0x7
+
 	RegisterD3cfgrFieldD3ppreShift = 4
 	RegisterD3cfgrFieldD3ppreMask  = 0x70
 )
 
 // GetD3ppre D3 domain APB4 prescaler
-func (r *registerD3cfgrType) GetD3ppre() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3cfgrFieldD3ppreMask) >> RegisterD3cfgrFieldD3ppreShift)
+func (r *registerD3cfgrType) GetD3ppre() RegisterD3cfgrFieldD3ppreEnumType {
+	return RegisterD3cfgrFieldD3ppreEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD3cfgrFieldD3ppreMask) >> RegisterD3cfgrFieldD3ppreShift)
 }
 
 // SetD3ppre D3 domain APB4 prescaler
-func (r *registerD3cfgrType) SetD3ppre(value uint8) {
+func (r *registerD3cfgrType) SetD3ppre(value RegisterD3cfgrFieldD3ppreEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3cfgrFieldD3ppreMask)|(uint32(value)<<RegisterD3cfgrFieldD3ppreShift))
 }
 
 // registerPllckselrType RCC PLLs Clock Source Selection Register
 type registerPllckselrType uint32
 
+type RegisterPllckselrFieldPllsrcEnumType uint8
+
 const (
+	// RegisterPllckselrFieldPllsrcEnumHsi HSI selected as PLL clock (hsi_ck) (default after reset)
+	RegisterPllckselrFieldPllsrcEnumHsi RegisterPllckselrFieldPllsrcEnumType = 0x0
+
+	// RegisterPllckselrFieldPllsrcEnumCsi CSI selected as PLL clock (csi_ck)
+	RegisterPllckselrFieldPllsrcEnumCsi RegisterPllckselrFieldPllsrcEnumType = 0x1
+
+	// RegisterPllckselrFieldPllsrcEnumHse HSE selected as PLL clock (hse_ck)
+	RegisterPllckselrFieldPllsrcEnumHse RegisterPllckselrFieldPllsrcEnumType = 0x2
+
+	// RegisterPllckselrFieldPllsrcEnumNoclock No clock send to DIVMx divider and PLLs
+	RegisterPllckselrFieldPllsrcEnumNoclock RegisterPllckselrFieldPllsrcEnumType = 0x3
+
 	RegisterPllckselrFieldPllsrcShift = 0
 	RegisterPllckselrFieldPllsrcMask  = 0x3
 )
 
 // GetPllsrc DIVMx and PLLs clock source selection
-func (r *registerPllckselrType) GetPllsrc() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPllckselrFieldPllsrcMask) >> RegisterPllckselrFieldPllsrcShift)
+func (r *registerPllckselrType) GetPllsrc() RegisterPllckselrFieldPllsrcEnumType {
+	return RegisterPllckselrFieldPllsrcEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterPllckselrFieldPllsrcMask) >> RegisterPllckselrFieldPllsrcShift)
 }
 
 // SetPllsrc DIVMx and PLLs clock source selection
-func (r *registerPllckselrType) SetPllsrc(value uint8) {
+func (r *registerPllckselrType) SetPllsrc(value RegisterPllckselrFieldPllsrcEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllckselrFieldPllsrcMask)|(uint32(value)<<RegisterPllckselrFieldPllsrcShift))
 }
 
@@ -949,18 +1123,32 @@ func (r *registerPllcfgrType) SetPll1vcosel(value bool) {
 	}
 }
 
+type RegisterPllcfgrFieldPll1rgeEnumType uint8
+
 const (
+	// RegisterPllcfgrFieldPll1rgeEnum1to2mhz The PLLn input (refn_ck) clock range frequency is between 1 and 2 MHz (default after reset)
+	RegisterPllcfgrFieldPll1rgeEnum1to2mhz RegisterPllcfgrFieldPll1rgeEnumType = 0x0
+
+	// RegisterPllcfgrFieldPll1rgeEnum2to4mhz The PLLn input (refn_ck) clock range frequency is between 2 and 4 MHz
+	RegisterPllcfgrFieldPll1rgeEnum2to4mhz RegisterPllcfgrFieldPll1rgeEnumType = 0x1
+
+	// RegisterPllcfgrFieldPll1rgeEnum4to8mhz The PLLn input (refn_ck) clock range frequency is between 4 and 8 MHz
+	RegisterPllcfgrFieldPll1rgeEnum4to8mhz RegisterPllcfgrFieldPll1rgeEnumType = 0x2
+
+	// RegisterPllcfgrFieldPll1rgeEnum8to16mhz The PLLn input (refn_ck) clock range frequency is between 8 and 16 MHz
+	RegisterPllcfgrFieldPll1rgeEnum8to16mhz RegisterPllcfgrFieldPll1rgeEnumType = 0x3
+
 	RegisterPllcfgrFieldPll1rgeShift = 2
 	RegisterPllcfgrFieldPll1rgeMask  = 0xc
 )
 
 // GetPll1rge PLL1 input frequency range
-func (r *registerPllcfgrType) GetPll1rge() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll1rgeMask) >> RegisterPllcfgrFieldPll1rgeShift)
+func (r *registerPllcfgrType) GetPll1rge() RegisterPllcfgrFieldPll1rgeEnumType {
+	return RegisterPllcfgrFieldPll1rgeEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll1rgeMask) >> RegisterPllcfgrFieldPll1rgeShift)
 }
 
 // SetPll1rge PLL1 input frequency range
-func (r *registerPllcfgrType) SetPll1rge(value uint8) {
+func (r *registerPllcfgrType) SetPll1rge(value RegisterPllcfgrFieldPll1rgeEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllcfgrFieldPll1rgeMask)|(uint32(value)<<RegisterPllcfgrFieldPll1rgeShift))
 }
 
@@ -1002,18 +1190,32 @@ func (r *registerPllcfgrType) SetPll2vcosel(value bool) {
 	}
 }
 
+type RegisterPllcfgrFieldPll2rgeEnumType uint8
+
 const (
+	// RegisterPllcfgrFieldPll2rgeEnum1to2mhz The PLLn input (refn_ck) clock range frequency is between 1 and 2 MHz (default after reset)
+	RegisterPllcfgrFieldPll2rgeEnum1to2mhz RegisterPllcfgrFieldPll2rgeEnumType = 0x0
+
+	// RegisterPllcfgrFieldPll2rgeEnum2to4mhz The PLLn input (refn_ck) clock range frequency is between 2 and 4 MHz
+	RegisterPllcfgrFieldPll2rgeEnum2to4mhz RegisterPllcfgrFieldPll2rgeEnumType = 0x1
+
+	// RegisterPllcfgrFieldPll2rgeEnum4to8mhz The PLLn input (refn_ck) clock range frequency is between 4 and 8 MHz
+	RegisterPllcfgrFieldPll2rgeEnum4to8mhz RegisterPllcfgrFieldPll2rgeEnumType = 0x2
+
+	// RegisterPllcfgrFieldPll2rgeEnum8to16mhz The PLLn input (refn_ck) clock range frequency is between 8 and 16 MHz
+	RegisterPllcfgrFieldPll2rgeEnum8to16mhz RegisterPllcfgrFieldPll2rgeEnumType = 0x3
+
 	RegisterPllcfgrFieldPll2rgeShift = 6
 	RegisterPllcfgrFieldPll2rgeMask  = 0xc0
 )
 
 // GetPll2rge PLL2 input frequency range
-func (r *registerPllcfgrType) GetPll2rge() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll2rgeMask) >> RegisterPllcfgrFieldPll2rgeShift)
+func (r *registerPllcfgrType) GetPll2rge() RegisterPllcfgrFieldPll2rgeEnumType {
+	return RegisterPllcfgrFieldPll2rgeEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll2rgeMask) >> RegisterPllcfgrFieldPll2rgeShift)
 }
 
 // SetPll2rge PLL2 input frequency range
-func (r *registerPllcfgrType) SetPll2rge(value uint8) {
+func (r *registerPllcfgrType) SetPll2rge(value RegisterPllcfgrFieldPll2rgeEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllcfgrFieldPll2rgeMask)|(uint32(value)<<RegisterPllcfgrFieldPll2rgeShift))
 }
 
@@ -1055,18 +1257,32 @@ func (r *registerPllcfgrType) SetPll3vcosel(value bool) {
 	}
 }
 
+type RegisterPllcfgrFieldPll3rgeEnumType uint8
+
 const (
+	// RegisterPllcfgrFieldPll3rgeEnum1to2mhz The PLLn input (refn_ck) clock range frequency is between 1 and 2 MHz (default after reset)
+	RegisterPllcfgrFieldPll3rgeEnum1to2mhz RegisterPllcfgrFieldPll3rgeEnumType = 0x0
+
+	// RegisterPllcfgrFieldPll3rgeEnum2to4mhz The PLLn input (refn_ck) clock range frequency is between 2 and 4 MHz
+	RegisterPllcfgrFieldPll3rgeEnum2to4mhz RegisterPllcfgrFieldPll3rgeEnumType = 0x1
+
+	// RegisterPllcfgrFieldPll3rgeEnum4to8mhz The PLLn input (refn_ck) clock range frequency is between 4 and 8 MHz
+	RegisterPllcfgrFieldPll3rgeEnum4to8mhz RegisterPllcfgrFieldPll3rgeEnumType = 0x2
+
+	// RegisterPllcfgrFieldPll3rgeEnum8to16mhz The PLLn input (refn_ck) clock range frequency is between 8 and 16 MHz
+	RegisterPllcfgrFieldPll3rgeEnum8to16mhz RegisterPllcfgrFieldPll3rgeEnumType = 0x3
+
 	RegisterPllcfgrFieldPll3rgeShift = 10
 	RegisterPllcfgrFieldPll3rgeMask  = 0xc00
 )
 
 // GetPll3rge PLL3 input frequency range
-func (r *registerPllcfgrType) GetPll3rge() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll3rgeMask) >> RegisterPllcfgrFieldPll3rgeShift)
+func (r *registerPllcfgrType) GetPll3rge() RegisterPllcfgrFieldPll3rgeEnumType {
+	return RegisterPllcfgrFieldPll3rgeEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll3rgeMask) >> RegisterPllcfgrFieldPll3rgeShift)
 }
 
 // SetPll3rge PLL3 input frequency range
-func (r *registerPllcfgrType) SetPll3rge(value uint8) {
+func (r *registerPllcfgrType) SetPll3rge(value RegisterPllcfgrFieldPll3rgeEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllcfgrFieldPll3rgeMask)|(uint32(value)<<RegisterPllcfgrFieldPll3rgeShift))
 }
 

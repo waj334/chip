@@ -129,7 +129,7 @@ const (
 	LsiFrequencyHz = 32_000
 )
 
-func DefaultClocks() {
+func ConfigureClocks() {
 	state := cortexm.DisableInterrupts()
 
 	// Enable the LDO.
@@ -137,9 +137,9 @@ func DefaultClocks() {
 	// pwr.Pwr.Cr3.SetLdoen(true)
 
 	// NOTE: VOS0 can only be activated in VOS1 mode.
-	if pwr.Pwr.D3cr.GetVos() != pwr.D3crVosScale1 {
+	if pwr.Pwr.D3cr.GetVos() != pwr.RegisterD3crFieldVosEnumScale1 {
 		// Set the LDO voltage scaler to 1.
-		pwr.Pwr.D3cr.SetVos(pwr.D3crVosScale1)
+		pwr.Pwr.D3cr.SetVos(pwr.RegisterD3crFieldVosEnumScale1)
 	}
 
 	// Disable the step-down converter.
@@ -195,7 +195,7 @@ func DefaultClocks() {
 	switch PllSource {
 	case ClockSourceHse:
 		// Select the external clock source.
-		rcc.Rcc.Pllckselr.SetPllsrc(rcc.PllckselrPllsrcHse)
+		rcc.Rcc.Pllckselr.SetPllsrc(rcc.RegisterPllckselrFieldPllsrcEnumHse)
 		PllSourceFrequencyHz = HseFrequencyHz
 
 		fDivm1 = HseFrequencyHz / Divm1FrequencyHz
@@ -207,7 +207,7 @@ func DefaultClocks() {
 		rcc.Rcc.Pllckselr.SetDivm3(uint8(fDivm3))
 	case ClockSourceHsi:
 		// Select the internal clock source.
-		rcc.Rcc.Pllckselr.SetPllsrc(rcc.PllckselrPllsrcHsi)
+		rcc.Rcc.Pllckselr.SetPllsrc(rcc.RegisterPllckselrFieldPllsrcEnumHsi)
 		PllSourceFrequencyHz = HsiFrequencyHz
 
 		fDivm1 = HsiFrequencyHz / Divm1FrequencyHz
@@ -219,7 +219,7 @@ func DefaultClocks() {
 		rcc.Rcc.Pllckselr.SetDivm3(uint8(fDivm3))
 	case ClockSourceCsi:
 		// Select the CSI clock source.
-		rcc.Rcc.Pllckselr.SetPllsrc(rcc.PllckselrPllsrcCsi)
+		rcc.Rcc.Pllckselr.SetPllsrc(rcc.RegisterPllckselrFieldPllsrcEnumCsi)
 		PllSourceFrequencyHz = CsiFrequencyHz
 
 		fDivm1 = CsiFrequencyHz / Divm1FrequencyHz
@@ -249,21 +249,21 @@ func DefaultClocks() {
 
 	switch {
 	case PllSourceFrequencyHz < 2_000_000:
-		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.PllcfgrPll1rge1To2mhz)
-		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.PllcfgrPll2rge1To2mhz)
-		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.PllcfgrPll3rge1To2mhz)
+		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.RegisterPllcfgrFieldPll1rgeEnum1to2mhz)
+		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.RegisterPllcfgrFieldPll2rgeEnum1to2mhz)
+		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.RegisterPllcfgrFieldPll3rgeEnum1to2mhz)
 	case PllSourceFrequencyHz < 4_000_000:
-		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.PllcfgrPll1rge2To4mhz)
-		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.PllcfgrPll2rge2To4mhz)
-		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.PllcfgrPll3rge2To4mhz)
+		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.RegisterPllcfgrFieldPll1rgeEnum2to4mhz)
+		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.RegisterPllcfgrFieldPll2rgeEnum2to4mhz)
+		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.RegisterPllcfgrFieldPll3rgeEnum2to4mhz)
 	case PllSourceFrequencyHz < 8_000_000:
-		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.PllcfgrPll1rge4To8mhz)
-		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.PllcfgrPll2rge4To8mhz)
-		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.PllcfgrPll3rge4To8mhz)
+		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.RegisterPllcfgrFieldPll1rgeEnum4to8mhz)
+		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.RegisterPllcfgrFieldPll2rgeEnum4to8mhz)
+		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.RegisterPllcfgrFieldPll3rgeEnum4to8mhz)
 	default:
-		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.PllcfgrPll1rge8To16mhz)
-		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.PllcfgrPll2rge8To16mhz)
-		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.PllcfgrPll3rge8To16mhz)
+		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.RegisterPllcfgrFieldPll1rgeEnum8to16mhz)
+		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.RegisterPllcfgrFieldPll2rgeEnum8to16mhz)
+		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.RegisterPllcfgrFieldPll3rgeEnum8to16mhz)
 	}
 
 	// Configure PLL1 clock source.
@@ -315,7 +315,6 @@ func DefaultClocks() {
 	rcc.Rcc.Pll3divr.SetDivr3(uint8(divr3))
 	rcc.Rcc.Pllcfgr.SetPll3fracen(false)
 	rcc.Rcc.Pll3fracr.SetFracn3(0)
-	rcc.Rcc.Pllcfgr.SetPll3rge(rcc.PllcfgrPll3rge8To16mhz)
 	rcc.Rcc.Pllcfgr.SetPll3vcosel(true)
 	rcc.Rcc.Pllcfgr.SetDivp3en(true)
 	rcc.Rcc.Pllcfgr.SetDivq3en(true)
@@ -330,23 +329,23 @@ func DefaultClocks() {
 	// Set D1 domain Core prescaler.
 	switch D1cpre {
 	case Div1:
-		rcc.Rcc.D1cfgr.SetD1cpre(rcc.D1cfgrD1cpreDiv1)
+		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv1)
 	case Div2:
-		rcc.Rcc.D1cfgr.SetD1cpre(rcc.D1cfgrD1cpreDiv2)
+		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv2)
 	case Div4:
-		rcc.Rcc.D1cfgr.SetD1cpre(rcc.D1cfgrD1cpreDiv4)
+		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv4)
 	case Div8:
-		rcc.Rcc.D1cfgr.SetD1cpre(rcc.D1cfgrD1cpreDiv8)
+		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv8)
 	case Div16:
-		rcc.Rcc.D1cfgr.SetD1cpre(rcc.D1cfgrD1cpreDiv16)
+		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv16)
 	case Div64:
-		rcc.Rcc.D1cfgr.SetD1cpre(rcc.D1cfgrD1cpreDiv64)
+		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv64)
 	case Div128:
-		rcc.Rcc.D1cfgr.SetD1cpre(rcc.D1cfgrD1cpreDiv128)
+		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv128)
 	case Div256:
-		rcc.Rcc.D1cfgr.SetD1cpre(rcc.D1cfgrD1cpreDiv256)
+		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv256)
 	case Div512:
-		rcc.Rcc.D1cfgr.SetD1cpre(rcc.D1cfgrD1cpreDiv512)
+		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv512)
 	default:
 		panic("invalid divider value")
 	}
@@ -354,23 +353,23 @@ func DefaultClocks() {
 	// Set D1 domain AHB prescaler.
 	switch Hpre {
 	case Div1:
-		rcc.Rcc.D1cfgr.SetHpre(rcc.D1cfgrHpreDiv1)
+		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv1)
 	case Div2:
-		rcc.Rcc.D1cfgr.SetHpre(rcc.D1cfgrHpreDiv2)
+		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv2)
 	case Div4:
-		rcc.Rcc.D1cfgr.SetHpre(rcc.D1cfgrHpreDiv4)
+		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv4)
 	case Div8:
-		rcc.Rcc.D1cfgr.SetHpre(rcc.D1cfgrHpreDiv8)
+		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv8)
 	case Div16:
-		rcc.Rcc.D1cfgr.SetHpre(rcc.D1cfgrHpreDiv16)
+		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv16)
 	case Div64:
-		rcc.Rcc.D1cfgr.SetHpre(rcc.D1cfgrHpreDiv64)
+		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv64)
 	case Div128:
-		rcc.Rcc.D1cfgr.SetHpre(rcc.D1cfgrHpreDiv128)
+		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv128)
 	case Div256:
-		rcc.Rcc.D1cfgr.SetHpre(rcc.D1cfgrHpreDiv256)
+		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv256)
 	case Div512:
-		rcc.Rcc.D1cfgr.SetHpre(rcc.D1cfgrHpreDiv512)
+		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv512)
 	default:
 		panic("invalid divider value")
 	}
@@ -378,15 +377,15 @@ func DefaultClocks() {
 	// Set D1 domain APB3 prescaler.
 	switch D1ppre {
 	case Div1:
-		rcc.Rcc.D1cfgr.SetD1ppre(rcc.D1cfgrD1ppreDiv1)
+		rcc.Rcc.D1cfgr.SetD1ppre(rcc.RegisterD1cfgrFieldD1ppreEnumDiv1)
 	case Div2:
-		rcc.Rcc.D1cfgr.SetD1ppre(rcc.D1cfgrD1ppreDiv2)
+		rcc.Rcc.D1cfgr.SetD1ppre(rcc.RegisterD1cfgrFieldD1ppreEnumDiv2)
 	case Div4:
-		rcc.Rcc.D1cfgr.SetD1ppre(rcc.D1cfgrD1ppreDiv4)
+		rcc.Rcc.D1cfgr.SetD1ppre(rcc.RegisterD1cfgrFieldD1ppreEnumDiv4)
 	case Div8:
-		rcc.Rcc.D1cfgr.SetD1ppre(rcc.D1cfgrD1ppreDiv8)
+		rcc.Rcc.D1cfgr.SetD1ppre(rcc.RegisterD1cfgrFieldD1ppreEnumDiv8)
 	case Div16:
-		rcc.Rcc.D1cfgr.SetD1ppre(rcc.D1cfgrD1ppreDiv16)
+		rcc.Rcc.D1cfgr.SetD1ppre(rcc.RegisterD1cfgrFieldD1ppreEnumDiv16)
 	default:
 		panic("invalid divider value")
 	}
@@ -394,15 +393,15 @@ func DefaultClocks() {
 	// Set D2 domain APB1 prescaler.
 	switch D2ppre1 {
 	case Div1:
-		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.D2cfgrD2ppre1Div1)
+		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.RegisterD2cfgrFieldD2ppre1EnumDiv1)
 	case Div2:
-		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.D2cfgrD2ppre1Div2)
+		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.RegisterD2cfgrFieldD2ppre1EnumDiv2)
 	case Div4:
-		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.D2cfgrD2ppre1Div4)
+		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.RegisterD2cfgrFieldD2ppre1EnumDiv4)
 	case Div8:
-		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.D2cfgrD2ppre1Div8)
+		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.RegisterD2cfgrFieldD2ppre1EnumDiv8)
 	case Div16:
-		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.D2cfgrD2ppre1Div16)
+		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.RegisterD2cfgrFieldD2ppre1EnumDiv16)
 	default:
 		panic("invalid divider value")
 	}
@@ -410,15 +409,15 @@ func DefaultClocks() {
 	// Set D2 domain APB2 prescaler.
 	switch D2ppre2 {
 	case Div1:
-		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.D2cfgrD2ppre2Div1)
+		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.RegisterD2cfgrFieldD2ppre2EnumDiv1)
 	case Div2:
-		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.D2cfgrD2ppre2Div2)
+		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.RegisterD2cfgrFieldD2ppre2EnumDiv2)
 	case Div4:
-		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.D2cfgrD2ppre2Div4)
+		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.RegisterD2cfgrFieldD2ppre2EnumDiv4)
 	case Div8:
-		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.D2cfgrD2ppre2Div8)
+		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.RegisterD2cfgrFieldD2ppre2EnumDiv8)
 	case Div16:
-		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.D2cfgrD2ppre2Div16)
+		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.RegisterD2cfgrFieldD2ppre2EnumDiv16)
 	default:
 		panic("invalid divider value")
 	}
@@ -426,15 +425,15 @@ func DefaultClocks() {
 	// Set D3 domain APB4 prescaler.
 	switch D3ppre {
 	case Div1:
-		rcc.Rcc.D3cfgr.SetD3ppre(rcc.D3cfgrD3ppreDiv1)
+		rcc.Rcc.D3cfgr.SetD3ppre(rcc.RegisterD3cfgrFieldD3ppreEnumDiv1)
 	case Div2:
-		rcc.Rcc.D3cfgr.SetD3ppre(rcc.D3cfgrD3ppreDiv2)
+		rcc.Rcc.D3cfgr.SetD3ppre(rcc.RegisterD3cfgrFieldD3ppreEnumDiv2)
 	case Div4:
-		rcc.Rcc.D3cfgr.SetD3ppre(rcc.D3cfgrD3ppreDiv4)
+		rcc.Rcc.D3cfgr.SetD3ppre(rcc.RegisterD3cfgrFieldD3ppreEnumDiv4)
 	case Div8:
-		rcc.Rcc.D3cfgr.SetD3ppre(rcc.D3cfgrD3ppreDiv8)
+		rcc.Rcc.D3cfgr.SetD3ppre(rcc.RegisterD3cfgrFieldD3ppreEnumDiv8)
 	case Div16:
-		rcc.Rcc.D3cfgr.SetD3ppre(rcc.D3cfgrD3ppreDiv16)
+		rcc.Rcc.D3cfgr.SetD3ppre(rcc.RegisterD3cfgrFieldD3ppreEnumDiv16)
 	default:
 		panic("invalid divider value")
 	}
@@ -444,8 +443,8 @@ func DefaultClocks() {
 	}
 
 	// Set the System Clock source to PLL1.
-	rcc.Rcc.Cfgr.SetSw(rcc.CfgrSwPll1)
-	for rcc.Rcc.Cfgr.GetSws() != uint8(rcc.CfgrSwPll1) {
+	rcc.Rcc.Cfgr.SetSw(rcc.RegisterCfgrFieldSwEnumPll1)
+	for rcc.Rcc.Cfgr.GetSws() != rcc.RegisterCfgrFieldSwsEnumPll1 {
 	}
 
 	// Set flash wait state for 480Mhz.

@@ -873,8 +873,8 @@ const (
 )
 
 // GetRes ADC data resolution
-func (r *registerCfgrType) GetRes() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldResMask) >> RegisterCfgrFieldResShift)
+func (r *registerCfgrType) GetRes() RegisterCfgrFieldResEnumType {
+	return RegisterCfgrFieldResEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldResMask) >> RegisterCfgrFieldResShift)
 }
 
 // SetRes ADC data resolution
