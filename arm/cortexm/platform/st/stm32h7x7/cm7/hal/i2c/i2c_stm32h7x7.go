@@ -1,14 +1,16 @@
 package i2c
 
 import (
-	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/pin"
-	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/i2c"
-	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
-	"pkg.si-go.dev/chip/core/hal"
-	. "pkg.si-go.dev/chip/core/hal/pin"
 	"sync"
 	"time"
 	"volatile"
+
+	corehal "pkg.si-go.dev/chip/core/hal"
+	corepin "pkg.si-go.dev/chip/core/hal/pin"
+
+	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/pin"
+	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/i2c"
+	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
 )
 
 type _error int
@@ -69,7 +71,7 @@ type _i2c struct {
 	mutex sync.Mutex
 }
 
-func altFunction(p pin.Pin, instance *_i2c, wantSCL bool) (pin.Mode, error) {
+func altFunction(p pin.Pin, instance *_i2c, wantSCL bool) (corepin.Mode, error) {
 	if instance == I2C4 {
 		if wantSCL {
 			switch p {
@@ -99,7 +101,7 @@ func altFunction(p pin.Pin, instance *_i2c, wantSCL bool) (pin.Mode, error) {
 			}
 		}
 	}
-	return 0, hal.ErrInvalidPinout
+	return 0, corehal.ErrInvalidPinout
 }
 
 func (i *_i2c) Configure(config Config) error {
@@ -142,7 +144,7 @@ func (i *_i2c) Configure(config Config) error {
 	if alt, err := altFunction(config.SDA, i, false); err != nil {
 		return err
 	} else {
-		config.SDA.SetMode(AltFunction | alt)
+		config.SDA.SetMode(pin.AltFunction | alt)
 	}
 
 	config.SDA.SetOutputMode(pin.OpenDrain)

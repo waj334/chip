@@ -1,16 +1,18 @@
 package uart
 
 import (
-	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7"
-	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/pin"
-	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
-	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/usart"
-	"pkg.si-go.dev/chip/core/hal"
-	halpin "pkg.si-go.dev/chip/core/hal/pin"
 	"runtime"
 	"sync"
 	"time"
 	"volatile"
+
+	corehal "pkg.si-go.dev/chip/core/hal"
+	corepin "pkg.si-go.dev/chip/core/hal/pin"
+
+	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal"
+	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/pin"
+	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
+	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/usart"
 )
 
 type _error int
@@ -70,7 +72,7 @@ const (
 	_CK
 )
 
-func altFunction(p pin.Pin, t int, instance *_uart) (mode pin.Mode, err error) {
+func altFunction(p pin.Pin, t int, instance *_uart) (mode corepin.Mode, err error) {
 	tt := 0
 	switch instance {
 	case UART1:
@@ -260,7 +262,7 @@ func altFunction(p pin.Pin, t int, instance *_uart) (mode pin.Mode, err error) {
 	}
 
 	if mode == 0 || tt != t {
-		err = hal.ErrInvalidPinout
+		err = corehal.ErrInvalidPinout
 	}
 	return
 }
@@ -273,7 +275,7 @@ func (u *_uart) Configure(cfg Config) error {
 	for p.Cr1.GetUe() {
 	}
 
-	var altTX, altRX, altCTS, altRTS, altCK halpin.Mode
+	var altTX, altRX, altCTS, altRTS, altCK corepin.Mode
 	var err error
 
 	if cfg.TX != 0 {
@@ -359,9 +361,9 @@ func (u *_uart) Configure(cfg Config) error {
 	var sourceClockHz uint64
 	switch u {
 	case UART1, UART6:
-		sourceClockHz = stm32h7x7.Usart16SourceFrequencyHz
+		sourceClockHz = hal.Usart16SourceFrequencyHz
 	case UART2, UART3, UART4, UART5, UART7, UART8:
-		sourceClockHz = stm32h7x7.Usart234578SourceFrequencyHz
+		sourceClockHz = hal.Usart234578SourceFrequencyHz
 	}
 	div := sourceClockHz / uint64(cfg.Baud)
 

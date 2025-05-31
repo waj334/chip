@@ -3,9 +3,11 @@
 package dac
 
 import (
-	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/dac"
-	"pkg.si-go.dev/chip/core/hal"
 	"sync"
+
+	corehal "pkg.si-go.dev/chip/core/hal"
+
+	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/dac"
 )
 
 const (
@@ -39,11 +41,11 @@ type _dac uint8
 func (d _dac) Configure(config Config) error {
 	// Validate the configuration.
 	if config.Resolution > Resolution12BitL {
-		return hal.ErrInvalidConfig
+		return corehal.ErrInvalidConfig
 	}
 
 	if d > DAC2 {
-		return hal.ErrInvalidPinout
+		return corehal.ErrInvalidPinout
 	}
 
 	mutex[d].Lock()
@@ -69,7 +71,7 @@ func (d _dac) Write(value uint) error {
 	case DAC1:
 		if !dac.Dac.Cr.GetEn1() {
 			mutex[d].Unlock()
-			return hal.ErrInvalidState
+			return corehal.ErrInvalidState
 		}
 		switch resolution[d] {
 		case Resolution8Bit:
@@ -84,7 +86,7 @@ func (d _dac) Write(value uint) error {
 	case DAC2:
 		if !dac.Dac.Cr.GetEn2() {
 			mutex[d].Unlock()
-			return hal.ErrInvalidState
+			return corehal.ErrInvalidState
 		}
 		switch resolution[d] {
 		case Resolution8Bit:

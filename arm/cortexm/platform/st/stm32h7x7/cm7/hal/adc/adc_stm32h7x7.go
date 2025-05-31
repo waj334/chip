@@ -3,12 +3,14 @@
 package adc
 
 import (
-	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/adc"
-	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/pwr"
-	"pkg.si-go.dev/chip/core/hal"
 	"runtime"
 	"sync"
 	"time"
+
+	corehal "pkg.si-go.dev/chip/core/hal"
+
+	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/adc"
+	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/pwr"
 )
 
 const (
@@ -41,7 +43,7 @@ func (a _adc) Configure(config Config) error {
 
 	// Validate configuration.
 	if config.Resolution > Resolution16Bit {
-		return hal.ErrInvalidConfig
+		return corehal.ErrInvalidConfig
 	}
 
 	mutex[a].Lock()
@@ -122,7 +124,7 @@ func (a _adc) Read(channel int) (uint, error) {
 	// The _adc must be enabled.
 	if !instance.Cr.GetAden() {
 		mutex[a].Unlock()
-		return 0, hal.ErrInvalidState
+		return 0, corehal.ErrInvalidState
 	}
 
 	if instance.Isr.GetEoc() {

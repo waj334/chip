@@ -3,14 +3,16 @@
 package pin
 
 import (
+	"volatile"
+
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/adc"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/dac"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/exti"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/gpio"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/syscfg"
-	hal "pkg.si-go.dev/chip/core/hal/pin"
-	"volatile"
+
+	corepin "pkg.si-go.dev/chip/core/hal/pin"
 )
 
 const (
@@ -91,44 +93,44 @@ const (
 	adcInn18 = 0x0130_0000
 	adcInn19 = 0x0140_0000
 
-	Input       hal.Mode = 0x0
-	Output      hal.Mode = 0x1
-	AltFunction hal.Mode = 0x2
-	Analog      hal.Mode = 0x3
+	Input       corepin.Mode = 0x0
+	Output      corepin.Mode = 0x1
+	AltFunction corepin.Mode = 0x2
+	Analog      corepin.Mode = 0x3
 
-	Alt0  hal.Mode = 0x00
-	Alt1  hal.Mode = 0x10
-	Alt2  hal.Mode = 0x20
-	Alt3  hal.Mode = 0x30
-	Alt4  hal.Mode = 0x40
-	Alt5  hal.Mode = 0x50
-	Alt6  hal.Mode = 0x60
-	Alt7  hal.Mode = 0x70
-	Alt8  hal.Mode = 0x80
-	Alt9  hal.Mode = 0x90
-	Alt10 hal.Mode = 0xA0
-	Alt11 hal.Mode = 0xB0
-	Alt12 hal.Mode = 0xC0
-	Alt13 hal.Mode = 0xD0
-	Alt14 hal.Mode = 0xE0
-	Alt15 hal.Mode = 0xF0
+	Alt0  corepin.Mode = 0x00
+	Alt1  corepin.Mode = 0x10
+	Alt2  corepin.Mode = 0x20
+	Alt3  corepin.Mode = 0x30
+	Alt4  corepin.Mode = 0x40
+	Alt5  corepin.Mode = 0x50
+	Alt6  corepin.Mode = 0x60
+	Alt7  corepin.Mode = 0x70
+	Alt8  corepin.Mode = 0x80
+	Alt9  corepin.Mode = 0x90
+	Alt10 corepin.Mode = 0xA0
+	Alt11 corepin.Mode = 0xB0
+	Alt12 corepin.Mode = 0xC0
+	Alt13 corepin.Mode = 0xD0
+	Alt14 corepin.Mode = 0xE0
+	Alt15 corepin.Mode = 0xF0
 
-	NoEdge      hal.IRQMode = 0
-	RisingEdge  hal.IRQMode = 1
-	FallingEdge hal.IRQMode = 2
-	BothEdges   hal.IRQMode = 3
+	NoEdge      corepin.IRQMode = 0
+	RisingEdge  corepin.IRQMode = 1
+	FallingEdge corepin.IRQMode = 2
+	BothEdges   corepin.IRQMode = 3
 
-	NoPull   hal.PullMode = 0
-	PullUp   hal.PullMode = 1
-	PullDown hal.PullMode = 2
+	NoPull   corepin.PullMode = 0
+	PullUp   corepin.PullMode = 1
+	PullDown corepin.PullMode = 2
 
-	PushPull  hal.OutputMode = 0
-	OpenDrain hal.OutputMode = 1
+	PushPull  corepin.OutputMode = 0
+	OpenDrain corepin.OutputMode = 1
 
-	LowSpeed      hal.SpeedMode = 0
-	MediumSpeed   hal.SpeedMode = 1
-	HighSpeed     hal.SpeedMode = 2
-	VeryHighSpeed hal.SpeedMode = 3
+	LowSpeed      corepin.SpeedMode = 0
+	MediumSpeed   corepin.SpeedMode = 1
+	HighSpeed     corepin.SpeedMode = 2
+	VeryHighSpeed corepin.SpeedMode = 3
 )
 
 // GPIO group A
@@ -357,8 +359,10 @@ var (
 
 type handler struct {
 	pin Pin
-	fn  hal.InterruptHandler[Pin]
+	fn  corepin.InterruptHandler[Pin]
 }
+
+type Mode corepin.Mode
 
 type Pin uint32
 
@@ -454,7 +458,7 @@ func (p Pin) Value() (value uint, err error) {
 	return
 }
 
-func (p Pin) SetInterrupt(mode hal.IRQMode, fn hal.InterruptHandler[Pin]) {
+func (p Pin) SetInterrupt(mode corepin.IRQMode, fn corepin.InterruptHandler[Pin]) {
 	group := uint8(p.group())
 	pin := p.number()
 	mask := uint32(1 << pin)
@@ -577,7 +581,7 @@ func (p Pin) ClearInterrupt() {
 	handlerFuncs[pin] = handler{}
 }
 
-func (p Pin) SetMode(mode hal.Mode) {
+func (p Pin) SetMode(mode corepin.Mode) {
 	pinMode := mode & 0x3
 	alt := (mode >> 4) & 0xF
 
@@ -606,15 +610,15 @@ func (p Pin) SetMode(mode hal.Mode) {
 	}
 }
 
-func (p Pin) GetMode() hal.Mode {
+func (p Pin) GetMode() corepin.Mode {
 	group := gpio.Instances[p.group()]
 	n := p.number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
-	return hal.Mode((volatile.LoadUint32((*uint32)(&group.Moder)) & mask) >> offsetInBits)
+	return corepin.Mode((volatile.LoadUint32((*uint32)(&group.Moder)) & mask) >> offsetInBits)
 }
 
-func (p Pin) SetOutputMode(mode hal.OutputMode) {
+func (p Pin) SetOutputMode(mode corepin.OutputMode) {
 	group := gpio.Instances[p.group()]
 	n := p.number()
 	mask := uint32(0x1) << n
@@ -622,14 +626,14 @@ func (p Pin) SetOutputMode(mode hal.OutputMode) {
 		(volatile.LoadUint32((*uint32)(&group.Otyper))&^mask)|(uint32(mode)<<n))
 }
 
-func (p Pin) GetOutputMode() hal.OutputMode {
+func (p Pin) GetOutputMode() corepin.OutputMode {
 	group := gpio.Instances[p.group()]
 	n := p.number()
 	mask := uint32(0x1) << n
-	return hal.OutputMode((volatile.LoadUint32((*uint32)(&group.Otyper)) & mask) >> n)
+	return corepin.OutputMode((volatile.LoadUint32((*uint32)(&group.Otyper)) & mask) >> n)
 }
 
-func (p Pin) SetSpeedMode(speed hal.SpeedMode) {
+func (p Pin) SetSpeedMode(speed corepin.SpeedMode) {
 	group := gpio.Instances[p.group()]
 	n := p.number()
 	offsetInBits := uint32(2 * n)
@@ -638,15 +642,15 @@ func (p Pin) SetSpeedMode(speed hal.SpeedMode) {
 		(volatile.LoadUint32((*uint32)(&group.Ospeedr))&^mask)|(uint32(speed)<<offsetInBits))
 }
 
-func (p Pin) GetSpeedMode() hal.SpeedMode {
+func (p Pin) GetSpeedMode() corepin.SpeedMode {
 	group := gpio.Instances[p.group()]
 	n := p.number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
-	return hal.SpeedMode((volatile.LoadUint32((*uint32)(&group.Ospeedr)) & mask) >> offsetInBits)
+	return corepin.SpeedMode((volatile.LoadUint32((*uint32)(&group.Ospeedr)) & mask) >> offsetInBits)
 }
 
-func (p Pin) SetPullMode(mode hal.PullMode) {
+func (p Pin) SetPullMode(mode corepin.PullMode) {
 	group := gpio.Instances[p.group()]
 	n := p.number()
 	offsetInBits := uint32(2 * n)
@@ -655,12 +659,12 @@ func (p Pin) SetPullMode(mode hal.PullMode) {
 		(volatile.LoadUint32((*uint32)(&group.Pupdr))&^mask)|(uint32(mode)<<offsetInBits))
 }
 
-func (p Pin) GetPullMode() hal.PullMode {
+func (p Pin) GetPullMode() corepin.PullMode {
 	group := gpio.Instances[p.group()]
 	n := p.number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
-	return hal.PullMode((volatile.LoadUint32((*uint32)(&group.Pupdr)) & mask) >> offsetInBits)
+	return corepin.PullMode((volatile.LoadUint32((*uint32)(&group.Pupdr)) & mask) >> offsetInBits)
 }
 
 //sigo:interrupt exti0Handler Exti0Handler

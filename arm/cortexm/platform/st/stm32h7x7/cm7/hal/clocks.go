@@ -3,11 +3,12 @@
 package hal
 
 import (
+	cortexm "pkg.si-go.dev/chip/arm/cortexm/runtime"
+
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/flash"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/pwr"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/syscfg"
-	cortexm "pkg.si-go.dev/chip/arm/cortexm/runtime"
 )
 
 type ClockSource uint8
