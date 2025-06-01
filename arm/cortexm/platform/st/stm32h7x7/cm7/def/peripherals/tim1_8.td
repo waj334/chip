@@ -1,9 +1,9 @@
-#ifndef _PERIPHERALS_TIM1_TD
-#define _PERIPHERALS_TIM1_TD
+#ifndef _PERIPHERALS_TIM1_8_TD
+#define _PERIPHERALS_TIM1_8_TD
 
 include "base.td"
 
-def TIM1Peripheral : PeripheralType<"TIM1", "Advanced-timers"> {
+def TIM1_8Peripheral : PeripheralType<"TIM1_8", "Advanced-timers"> {
   let accessWidth = 32;
   let registers = [
     Register<"CR1", 0x0, 32, [
@@ -232,7 +232,7 @@ def TIM1Peripheral : PeripheralType<"TIM1", "Advanced-timers"> {
       Field<"BKCMP1P", 10, 1, ReadWrite, "BRK COMP1 input polarity">,
       Field<"BKCMP2P", 11, 1, ReadWrite, "BRK COMP2 input polarity">,
       Field<"ETRSEL", 14, 4, ReadWrite, "ETR source selection">,
-    ], "TIM1 alternate function option register 1">,
+    ], "alternate function option register 1">,
     Register<"AF2", 0x64, 32, [
       Field<"BK2INE", 0, 1, ReadWrite, "BRK2 BKIN input enable">,
       Field<"BK2CMP1E", 1, 1, ReadWrite, "BRK2 COMP1 enable">,
@@ -241,18 +241,20 @@ def TIM1Peripheral : PeripheralType<"TIM1", "Advanced-timers"> {
       Field<"BK2INP", 9, 1, ReadWrite, "BRK2 BKIN2 input polarity">,
       Field<"BK2CMP1P", 10, 1, ReadWrite, "BRK2 COMP1 input polarit">,
       Field<"BK2CMP2P", 11, 1, ReadWrite, "BRK2 COMP2 input polarity">,
-    ], "TIM1 Alternate function odfsdm1_breakster 2">,
+    ], "Alternate function odfsdm1_breakster 2">,
     Register<"TISEL", 0x68, 32, [
       Field<"TI1SEL", 0, 4, ReadWrite, "selects TI1[0] to TI1[15] input">,
       Field<"TI2SEL", 8, 4, ReadWrite, "selects TI2[0] to TI2[15] input">,
       Field<"TI3SEL", 16, 4, ReadWrite, "selects TI3[0] to TI3[15] input">,
       Field<"TI4SEL", 24, 4, ReadWrite, "selects TI4[0] to TI4[15] input">,
-    ], "TIM1 timer input selection register">,
+    ], "timer input selection register">,
   ];
 }
 
-class TIM1Instance<string Name, int Base> : PeripheralInstance<Name, Base, TIM1Peripheral>;
-def TIM1 : TIM1Instance<"TIM1", 0x40010000>;
-def TIM8 : TIM1Instance<"TIM8", 0x40010400>;
+class TIM1_8Instance<string Name, int Base> : PeripheralInstance<Name, Base, TIM1_8Peripheral>;
+def TIM1 : TIM1_8Instance<"TIM1", 0x40010000>;
+def TIM8 : TIM1_8Instance<"TIM8", 0x40010400>;
 
-#endif // _PERIPHERALS_TIM1_TD
+def TIM1_8PeripheralGroup : PeripheralGroup<[ TIM1, TIM8 ]>;
+
+#endif // _PERIPHERALS_TIM1_8_TD

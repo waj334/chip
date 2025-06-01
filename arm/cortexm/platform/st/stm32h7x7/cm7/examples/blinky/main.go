@@ -21,7 +21,6 @@ func main() {
 	LEDR.SetMode(pin.Output)
 	LEDB.SetMode(pin.Output)
 	LEDG.SetMode(pin.Output)
-
 	for {
 		LEDR.Toggle()
 		time.Sleep(time.Millisecond * 500)

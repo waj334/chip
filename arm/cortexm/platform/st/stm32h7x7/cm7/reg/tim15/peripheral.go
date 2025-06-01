@@ -33,7 +33,7 @@ type _tim15 struct {
 	Dcr         registerDcrType
 	Dmar        registerDmarType
 	_           [16]byte
-	Af1         registerAf1Type
+	Af          registerAfType
 	_           [4]byte
 	Tisel       registerTiselType
 }
@@ -1628,143 +1628,143 @@ func (r *registerDmarType) SetDmab(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDmarFieldDmabMask)|(uint32(value)<<RegisterDmarFieldDmabShift))
 }
 
-// registerAf1Type TIM15 alternate fdfsdm1_breakon register 1
-type registerAf1Type uint32
+// registerAfType alternate fdfsdm1_breakon register 1
+type registerAfType uint32
 
 const (
-	RegisterAf1FieldBkineShift = 0
-	RegisterAf1FieldBkineMask  = 0x1
+	RegisterAfFieldBkineShift = 0
+	RegisterAfFieldBkineMask  = 0x1
 )
 
 // GetBkine BRK BKIN input enable
-func (r *registerAf1Type) GetBkine() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterAf1FieldBkineMask) != 0
+func (r *registerAfType) GetBkine() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterAfFieldBkineMask) != 0
 }
 
 // SetBkine BRK BKIN input enable
-func (r *registerAf1Type) SetBkine(value bool) {
+func (r *registerAfType) SetBkine(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAf1FieldBkineMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAfFieldBkineMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAf1FieldBkineMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAfFieldBkineMask)
 	}
 }
 
 const (
-	RegisterAf1FieldBkcmp1eShift = 1
-	RegisterAf1FieldBkcmp1eMask  = 0x2
+	RegisterAfFieldBkcmp1eShift = 1
+	RegisterAfFieldBkcmp1eMask  = 0x2
 )
 
 // GetBkcmp1e BRK COMP1 enable
-func (r *registerAf1Type) GetBkcmp1e() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterAf1FieldBkcmp1eMask) != 0
+func (r *registerAfType) GetBkcmp1e() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterAfFieldBkcmp1eMask) != 0
 }
 
 // SetBkcmp1e BRK COMP1 enable
-func (r *registerAf1Type) SetBkcmp1e(value bool) {
+func (r *registerAfType) SetBkcmp1e(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAf1FieldBkcmp1eMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAfFieldBkcmp1eMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAf1FieldBkcmp1eMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAfFieldBkcmp1eMask)
 	}
 }
 
 const (
-	RegisterAf1FieldBkcmp2eShift = 2
-	RegisterAf1FieldBkcmp2eMask  = 0x4
+	RegisterAfFieldBkcmp2eShift = 2
+	RegisterAfFieldBkcmp2eMask  = 0x4
 )
 
 // GetBkcmp2e BRK COMP2 enable
-func (r *registerAf1Type) GetBkcmp2e() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterAf1FieldBkcmp2eMask) != 0
+func (r *registerAfType) GetBkcmp2e() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterAfFieldBkcmp2eMask) != 0
 }
 
 // SetBkcmp2e BRK COMP2 enable
-func (r *registerAf1Type) SetBkcmp2e(value bool) {
+func (r *registerAfType) SetBkcmp2e(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAf1FieldBkcmp2eMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAfFieldBkcmp2eMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAf1FieldBkcmp2eMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAfFieldBkcmp2eMask)
 	}
 }
 
 const (
-	RegisterAf1FieldBkdf1bk0eShift = 8
-	RegisterAf1FieldBkdf1bk0eMask  = 0x100
+	RegisterAfFieldBkdf1bk0eShift = 8
+	RegisterAfFieldBkdf1bk0eMask  = 0x100
 )
 
 // GetBkdf1bk0e BRK dfsdm1_break[0] enable
-func (r *registerAf1Type) GetBkdf1bk0e() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterAf1FieldBkdf1bk0eMask) != 0
+func (r *registerAfType) GetBkdf1bk0e() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterAfFieldBkdf1bk0eMask) != 0
 }
 
 // SetBkdf1bk0e BRK dfsdm1_break[0] enable
-func (r *registerAf1Type) SetBkdf1bk0e(value bool) {
+func (r *registerAfType) SetBkdf1bk0e(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAf1FieldBkdf1bk0eMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAfFieldBkdf1bk0eMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAf1FieldBkdf1bk0eMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAfFieldBkdf1bk0eMask)
 	}
 }
 
 const (
-	RegisterAf1FieldBkinpShift = 9
-	RegisterAf1FieldBkinpMask  = 0x200
+	RegisterAfFieldBkinpShift = 9
+	RegisterAfFieldBkinpMask  = 0x200
 )
 
 // GetBkinp BRK BKIN input polarity
-func (r *registerAf1Type) GetBkinp() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterAf1FieldBkinpMask) != 0
+func (r *registerAfType) GetBkinp() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterAfFieldBkinpMask) != 0
 }
 
 // SetBkinp BRK BKIN input polarity
-func (r *registerAf1Type) SetBkinp(value bool) {
+func (r *registerAfType) SetBkinp(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAf1FieldBkinpMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAfFieldBkinpMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAf1FieldBkinpMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAfFieldBkinpMask)
 	}
 }
 
 const (
-	RegisterAf1FieldBkcmp1pShift = 10
-	RegisterAf1FieldBkcmp1pMask  = 0x400
+	RegisterAfFieldBkcmp1pShift = 10
+	RegisterAfFieldBkcmp1pMask  = 0x400
 )
 
 // GetBkcmp1p BRK COMP1 input polarity
-func (r *registerAf1Type) GetBkcmp1p() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterAf1FieldBkcmp1pMask) != 0
+func (r *registerAfType) GetBkcmp1p() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterAfFieldBkcmp1pMask) != 0
 }
 
 // SetBkcmp1p BRK COMP1 input polarity
-func (r *registerAf1Type) SetBkcmp1p(value bool) {
+func (r *registerAfType) SetBkcmp1p(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAf1FieldBkcmp1pMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAfFieldBkcmp1pMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAf1FieldBkcmp1pMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAfFieldBkcmp1pMask)
 	}
 }
 
 const (
-	RegisterAf1FieldBkcmp2pShift = 11
-	RegisterAf1FieldBkcmp2pMask  = 0x800
+	RegisterAfFieldBkcmp2pShift = 11
+	RegisterAfFieldBkcmp2pMask  = 0x800
 )
 
 // GetBkcmp2p BRK COMP2 input polarity
-func (r *registerAf1Type) GetBkcmp2p() bool {
-	return (volatile.LoadUint32((*uint32)(r)) & RegisterAf1FieldBkcmp2pMask) != 0
+func (r *registerAfType) GetBkcmp2p() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterAfFieldBkcmp2pMask) != 0
 }
 
 // SetBkcmp2p BRK COMP2 input polarity
-func (r *registerAf1Type) SetBkcmp2p(value bool) {
+func (r *registerAfType) SetBkcmp2p(value bool) {
 	if value {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAf1FieldBkcmp2pMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAfFieldBkcmp2pMask)
 	} else {
-		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAf1FieldBkcmp2pMask)
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterAfFieldBkcmp2pMask)
 	}
 }
 
-// registerTiselType TIM15 input selection register
+// registerTiselType input selection register
 type registerTiselType uint32
 
 const (

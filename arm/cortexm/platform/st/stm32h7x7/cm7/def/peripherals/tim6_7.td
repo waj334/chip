@@ -1,9 +1,9 @@
-#ifndef _PERIPHERALS_TIM6_TD
-#define _PERIPHERALS_TIM6_TD
+#ifndef _PERIPHERALS_TIM6_7_TD
+#define _PERIPHERALS_TIM6_7_TD
 
 include "base.td"
 
-def TIM6Peripheral : PeripheralType<"TIM6", "Basic timers"> {
+def TIM6_7Peripheral : PeripheralType<"TIM6_7", "Basic timers"> {
   let accessWidth = 32;
   let registers = [
     Register<"CR1", 0x0, 32, [
@@ -40,8 +40,10 @@ def TIM6Peripheral : PeripheralType<"TIM6", "Basic timers"> {
   ];
 }
 
-class TIM6Instance<string Name, int Base> : PeripheralInstance<Name, Base, TIM6Peripheral>;
-def TIM6 : TIM6Instance<"TIM6", 0x40001000>;
-def TIM7 : TIM6Instance<"TIM7", 0x40001400>;
+class TIM6_7Instance<string Name, int Base> : PeripheralInstance<Name, Base, TIM6_7Peripheral>;
+def TIM6 : TIM6_7Instance<"TIM6", 0x40001000>;
+def TIM7 : TIM6_7Instance<"TIM7", 0x40001400>;
 
-#endif // _PERIPHERALS_TIM6_TD
+def TIM6_7PeripheralGroup : PeripheralGroup<[ TIM6, TIM7 ]>;
+
+#endif // _PERIPHERALS_TIM6_7_TD

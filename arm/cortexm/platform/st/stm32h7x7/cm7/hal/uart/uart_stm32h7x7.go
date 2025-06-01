@@ -18,9 +18,17 @@ import (
 type _error int
 
 const (
-	errTimeout _error = -1
+	UART1 _uart = 0
+	UART2 _uart = 1
+	UART3 _uart = 2
+	UART4 _uart = 3
+	UART5 _uart = 4
+	UART6 _uart = 5
+	UART7 _uart = 6
+	UART8 _uart = 7
 
-	defaultTimeout = 100 * time.Millisecond
+	errTimeout     _error = -1
+	defaultTimeout        = 100 * time.Millisecond
 )
 
 func (e _error) Error() string {
@@ -35,20 +43,10 @@ func (e _error) Error() string {
 }
 
 var (
-	UART1 = &_uart{index: 0}
-	UART2 = &_uart{index: 1}
-	UART3 = &_uart{index: 2}
-	UART4 = &_uart{index: 3}
-	UART5 = &_uart{index: 4}
-	UART6 = &_uart{index: 5}
-	UART7 = &_uart{index: 6}
-	UART8 = &_uart{index: 7}
+	mutex [8]sync.Mutex
 )
 
-type _uart struct {
-	index uint8
-	mutex sync.Mutex
-}
+type _uart uint8
 
 type Config struct {
 	Enable          bool
@@ -72,7 +70,7 @@ const (
 	_CK
 )
 
-func altFunction(p pin.Pin, t int, instance *_uart) (mode corepin.Mode, err error) {
+func altFunction(p pin.Pin, t int, instance _uart) (mode corepin.Mode, err error) {
 	tt := 0
 	switch instance {
 	case UART1:
@@ -267,8 +265,8 @@ func altFunction(p pin.Pin, t int, instance *_uart) (mode corepin.Mode, err erro
 	return
 }
 
-func (u *_uart) Configure(cfg Config) error {
-	p := usart.Instances[u.index]
+func (u _uart) Configure(cfg Config) error {
+	p := usart.Instances[u]
 
 	// Disable the peripheral first.
 	p.Cr1.SetUe(false)
@@ -314,7 +312,7 @@ func (u *_uart) Configure(cfg Config) error {
 	}
 
 	// Enable/disable the respective USART peripheral clock.
-	switch u.index {
+	switch u {
 	case 0:
 		rcc.Rcc.Apb2enr.SetUsart1en(cfg.Enable)
 	case 1:
@@ -388,14 +386,15 @@ func (u *_uart) Configure(cfg Config) error {
 	return nil
 }
 
-func (u *_uart) Read(s []byte) (n int, err error) {
-	u.mutex.Lock()
-	defer u.mutex.Unlock()
+func (u _uart) Read(s []byte) (n int, err error) {
+	mutex := &mutex[u]
+	mutex.Lock()
 
-	p := usart.Instances[u.index]
+	p := usart.Instances[u]
 	remaining := len(s)
 
 	if remaining == 0 {
+		mutex.Unlock()
 		return 0, nil
 	}
 
@@ -406,17 +405,19 @@ func (u *_uart) Read(s []byte) (n int, err error) {
 		remaining--
 	}
 
+	mutex.Unlock()
 	return n, nil
 }
 
-func (u *_uart) Write(s []byte) (n int, err error) {
-	u.mutex.Lock()
-	defer u.mutex.Unlock()
+func (u _uart) Write(s []byte) (n int, err error) {
+	mutex := &mutex[u]
+	mutex.Lock()
 
-	p := usart.Instances[u.index]
+	p := usart.Instances[u]
 	remaining := len(s)
 
 	if remaining == 0 {
+		mutex.Unlock()
 		return 0, nil
 	}
 
@@ -434,14 +435,16 @@ func (u *_uart) Write(s []byte) (n int, err error) {
 	deadline := time.Now().Add(defaultTimeout)
 	for !p.Isr.GetTc() {
 		if time.Now().After(deadline) {
+			mutex.Unlock()
 			return n, errTimeout
 		}
 		runtime.Gosched()
 	}
 
+	mutex.Unlock()
 	return n, nil
 }
 
-func (u *_uart) WriteString(s string) (n int, err error) {
+func (u _uart) WriteString(s string) (n int, err error) {
 	return u.Write([]byte(s))
 }

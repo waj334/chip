@@ -60,12 +60,12 @@ const (
 
 var (
 	Divn1Prescaler = 60
-	Divn2Prescaler = 16
+	Divn2Prescaler = 200
 	Divn3Prescaler = 16
 
-	Divm1FrequencyHz uint64 = 16_000_000
-	Divm2FrequencyHz uint64 = 16_000_000
-	Divm3FrequencyHz uint64 = 16_000_000
+	Divm1 uint8 = 4
+	Divm2 uint8 = 32
+	Divm3 uint8 = 16
 
 	Divp1FrequencyHz uint64 = 480_000_000
 	Divq1FrequencyHz uint64 = 480_000_000
@@ -85,7 +85,7 @@ var (
 	D2ppre1   = Div2
 	D2ppre2   = Div2
 	D3ppre    = Div2
-	DivRtcHse = Div2
+	DivRtcHse = Div32
 
 	cpu1FrequencyHz = Divp1FrequencyHz / uint64(D1cpre)
 	HpreFrequencyHz = Divp1FrequencyHz / uint64(Hpre)
@@ -110,17 +110,23 @@ var (
 	I2c4SourceFrequencyHz        uint64 = Pclk4FrequencyHz
 	Usart16SourceFrequencyHz     uint64 = Pclk2FrequencyHz
 	Usart234578SourceFrequencyHz uint64 = Pclk1FrequencyHz
-	RtcSourceFrequencyHz         uint64 = LsiFrequencyHz
+	RtcSourceFrequencyHz         uint64 = LseFrequencyHz
+	Spi123SourceFrequencyHz      uint64 = Divq1FrequencyHz
+	Spi45SourceFrequencyHz       uint64 = HsiFrequencyHz
+	Spi6SourceFrequencyHz        uint64 = HsiFrequencyHz
 
 	PllSource         = ClockSourceHsi
 	I2c13Source       = ClockSourcePclk1
 	I2c4Source        = ClockSourcePclk4
 	Usart234578Source = ClockSourcePclk1
 	Usart16Source     = ClockSourcePclk2
-	RtcClockSource    = ClockSourceLsi
+	RtcClockSource    = ClockSourceLse
+	Spi123ClockSource = ClockSourcePll1q
+	Spi45ClockSource  = ClockSourceHsi
+	Spi6ClockSource   = ClockSourceHsi
 
-	EnableHSE = false
-	EnableLSE = false
+	EnableHse = false
+	EnableLse = false
 )
 
 const (
@@ -157,14 +163,14 @@ func ConfigureClocks() {
 	for !pwr.Pwr.D3cr.GetVosrdy() {
 	}
 
-	if EnableHSE {
+	if EnableHse {
 		// Enable the HSE clock source.
 		rcc.Rcc.Cr.SetHseon(true)
 		for !rcc.Rcc.Cr.GetHserdy() {
 		}
 	}
 
-	if EnableLSE {
+	if EnableLse {
 		// Enable the LSE clock source.
 		rcc.Rcc.Bdcr.SetLseon(true)
 		for !rcc.Rcc.Bdcr.GetLseon() {
@@ -189,52 +195,28 @@ func ConfigureClocks() {
 		RtcSourceFrequencyHz = HseFrequencyHz / uint64(DivRtcHse)
 	}
 
-	var fDivm1 uint64
-	var fDivm2 uint64
-	var fDivm3 uint64
-
 	switch PllSource {
 	case ClockSourceHse:
 		// Select the external clock source.
 		rcc.Rcc.Pllckselr.SetPllsrc(rcc.RegisterPllckselrFieldPllsrcEnumHse)
 		PllSourceFrequencyHz = HseFrequencyHz
-
-		fDivm1 = HseFrequencyHz / Divm1FrequencyHz
-		fDivm2 = HseFrequencyHz / Divm2FrequencyHz
-		fDivm3 = HseFrequencyHz / Divm3FrequencyHz
-
-		rcc.Rcc.Pllckselr.SetDivm1(uint8(fDivm1))
-		rcc.Rcc.Pllckselr.SetDivm2(uint8(fDivm2))
-		rcc.Rcc.Pllckselr.SetDivm3(uint8(fDivm3))
 	case ClockSourceHsi:
 		// Select the internal clock source.
 		rcc.Rcc.Pllckselr.SetPllsrc(rcc.RegisterPllckselrFieldPllsrcEnumHsi)
 		PllSourceFrequencyHz = HsiFrequencyHz
-
-		fDivm1 = HsiFrequencyHz / Divm1FrequencyHz
-		fDivm2 = HsiFrequencyHz / Divm2FrequencyHz
-		fDivm3 = HsiFrequencyHz / Divm3FrequencyHz
-
-		rcc.Rcc.Pllckselr.SetDivm1(uint8(fDivm1))
-		rcc.Rcc.Pllckselr.SetDivm2(uint8(fDivm2))
-		rcc.Rcc.Pllckselr.SetDivm3(uint8(fDivm3))
 	case ClockSourceCsi:
 		// Select the CSI clock source.
 		rcc.Rcc.Pllckselr.SetPllsrc(rcc.RegisterPllckselrFieldPllsrcEnumCsi)
 		PllSourceFrequencyHz = CsiFrequencyHz
-
-		fDivm1 = CsiFrequencyHz / Divm1FrequencyHz
-		fDivm2 = CsiFrequencyHz / Divm2FrequencyHz
-		fDivm3 = CsiFrequencyHz / Divm3FrequencyHz
-
-		rcc.Rcc.Pllckselr.SetDivm1(uint8(fDivm1))
-		rcc.Rcc.Pllckselr.SetDivm2(uint8(fDivm2))
-		rcc.Rcc.Pllckselr.SetDivm3(uint8(fDivm3))
 	}
 
-	fDivn1 := uint64(Divn1Prescaler) * (PllSourceFrequencyHz / fDivm1)
-	fDivn2 := uint64(Divn2Prescaler) * (PllSourceFrequencyHz / fDivm2)
-	fDivn3 := uint64(Divn3Prescaler) * (PllSourceFrequencyHz / fDivm3)
+	rcc.Rcc.Pllckselr.SetDivm1(Divm1)
+	rcc.Rcc.Pllckselr.SetDivm2(Divm2)
+	rcc.Rcc.Pllckselr.SetDivm3(Divm3)
+
+	fDivn1 := uint64(Divn1Prescaler) * (PllSourceFrequencyHz / uint64(Divm1))
+	fDivn2 := uint64(Divn2Prescaler) * (PllSourceFrequencyHz / uint64(Divm2))
+	fDivn3 := uint64(Divn3Prescaler) * (PllSourceFrequencyHz / uint64(Divm3))
 
 	divp1 := max(1, (fDivn1/Divp1FrequencyHz)-1)
 	divq1 := max(1, (fDivn1/Divq1FrequencyHz)-1)
@@ -582,7 +564,105 @@ func ConfigureClocks() {
 		}
 	}
 
+	if Spi123ClockSource != ClockSourceNone {
+		switch Spi123ClockSource {
+		case ClockSourcePll1q:
+			rcc.Rcc.D2ccip1r.SetSpi123src(0)
+			Spi123SourceFrequencyHz = Divq1FrequencyHz
+		case ClockSourcePll2p:
+			rcc.Rcc.D2ccip1r.SetSpi123src(1)
+			Spi123SourceFrequencyHz = Divp2FrequencyHz
+		case ClockSourcePll3p:
+			rcc.Rcc.D2ccip1r.SetSpi123src(2)
+			Spi123SourceFrequencyHz = Divp3FrequencyHz
+		case ClockSourceI2sCkin:
+			rcc.Rcc.D2ccip1r.SetSpi123src(3)
+			// TODO: Derive frequency
+		case ClockSourcePerCk:
+			rcc.Rcc.D2ccip1r.SetSpi123src(4)
+			// TODO: Derive frequency
+		}
+	}
+
+	if Spi45ClockSource != ClockSourceNone {
+		switch Spi45ClockSource {
+		case ClockSourcePclk2:
+			rcc.Rcc.D2ccip1r.SetSpi45src(0)
+			Spi45SourceFrequencyHz = Pclk2FrequencyHz
+		case ClockSourcePll2q:
+			rcc.Rcc.D2ccip1r.SetSpi45src(1)
+			Spi45SourceFrequencyHz = Divq2FrequencyHz
+		case ClockSourcePll3q:
+			rcc.Rcc.D2ccip1r.SetSpi45src(2)
+			Spi45SourceFrequencyHz = Divq3FrequencyHz
+		case ClockSourceHsi:
+			rcc.Rcc.D2ccip1r.SetSpi45src(3)
+			Spi45SourceFrequencyHz = HsiFrequencyHz
+		case ClockSourceCsi:
+			rcc.Rcc.D2ccip1r.SetSpi45src(4)
+			Spi45SourceFrequencyHz = CsiFrequencyHz
+		case ClockSourceHse:
+			rcc.Rcc.D2ccip1r.SetSpi45src(5)
+			Spi45SourceFrequencyHz = HseFrequencyHz
+		}
+	}
+
+	if Spi6ClockSource != ClockSourceNone {
+		switch Spi6ClockSource {
+		case ClockSourcePclk4:
+			rcc.Rcc.D3ccipr.SetSpi6src(0)
+			Spi6SourceFrequencyHz = Pclk4FrequencyHz
+		case ClockSourcePll2q:
+			rcc.Rcc.D3ccipr.SetSpi6src(1)
+			Spi6SourceFrequencyHz = Divq2FrequencyHz
+		case ClockSourcePll3q:
+			rcc.Rcc.D3ccipr.SetSpi6src(2)
+			Spi6SourceFrequencyHz = Divq3FrequencyHz
+		case ClockSourceHsi:
+			rcc.Rcc.D3ccipr.SetSpi6src(3)
+			Spi6SourceFrequencyHz = HsiFrequencyHz
+		case ClockSourceCsi:
+			rcc.Rcc.D3ccipr.SetSpi6src(4)
+			Spi6SourceFrequencyHz = CsiFrequencyHz
+		case ClockSourceHse:
+			rcc.Rcc.D3ccipr.SetSpi6src(5)
+			Spi6SourceFrequencyHz = HseFrequencyHz
+		}
+	}
+
+	if RtcClockSource != ClockSourceNone {
+		switch RtcClockSource {
+		case ClockSourceLse:
+			rcc.Rcc.Bdcr.SetRtcsrc(1)
+			RtcSourceFrequencyHz = LseFrequencyHz
+		case ClockSourceLsi:
+			rcc.Rcc.Bdcr.SetRtcsrc(2)
+			RtcSourceFrequencyHz = LsiFrequencyHz
+		case ClockSourceHseRtc:
+			rcc.Rcc.Bdcr.SetRtcsrc(3)
+			RtcSourceFrequencyHz = HseFrequencyHz / uint64(DivRtcHse)
+		}
+	}
+
 	// Update the SysTick frequency to match the CPU clock frequency.
 	cortexm.UpdateSysTickFrequency(uint32(Divp1FrequencyHz))
 	cortexm.EnableInterrupts(state)
+}
+
+func TimerMultiplier(d2ppre Divider) uint64 {
+	timpre := rcc.Rcc.Cfgr.GetTimpre()
+	switch d2ppre {
+	case Div1:
+		return 1
+	case Div2:
+		return 2
+	case Div4, Div8, Div16:
+		if timpre {
+			return 4
+		} else {
+			return 2
+		}
+	default:
+		panic("invalid divider value")
+	}
 }

@@ -129,7 +129,7 @@ def TIM15Peripheral : PeripheralType<"TIM15", "General purpose timers"> {
     Register<"DMAR", 0x4c, 32, [
       Field<"DMAB", 0, 16, ReadWrite, "DMA register for burst accesses">,
     ], "DMA address for full transfer">,
-    Register<"AF1", 0x60, 32, [
+    Register<"AF", 0x60, 32, [
       Field<"BKINE", 0, 1, ReadWrite, "BRK BKIN input enable">,
       Field<"BKCMP1E", 1, 1, ReadWrite, "BRK COMP1 enable">,
       Field<"BKCMP2E", 2, 1, ReadWrite, "BRK COMP2 enable">,
@@ -137,11 +137,11 @@ def TIM15Peripheral : PeripheralType<"TIM15", "General purpose timers"> {
       Field<"BKINP", 9, 1, ReadWrite, "BRK BKIN input polarity">,
       Field<"BKCMP1P", 10, 1, ReadWrite, "BRK COMP1 input polarity">,
       Field<"BKCMP2P", 11, 1, ReadWrite, "BRK COMP2 input polarity">,
-    ], "TIM15 alternate fdfsdm1_breakon register 1">,
+    ], "alternate fdfsdm1_breakon register 1">,
     Register<"TISEL", 0x68, 32, [
       Field<"TI1SEL", 0, 4, ReadWrite, "selects TI1[0] to TI1[15] input">,
       Field<"TI2SEL", 8, 4, ReadWrite, "selects TI2[0] to TI2[15] input">,
-    ], "TIM15 input selection register">,
+    ], "input selection register">,
   ];
 }
 

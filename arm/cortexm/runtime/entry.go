@@ -53,6 +53,8 @@ func initMemory() {
 //sigo:interrupt _entry ResetHandler
 //sigo:required _entry
 func _entry() {
+	state := DisableInterrupts()
+
 	// Initialize the global variables.
 	initMemory()
 
@@ -80,7 +82,7 @@ func _entry() {
 	initSysTick()
 
 	// Enable interrupts.
-	EnableInterrupts(InterruptState())
+	EnableInterrupts(state)
 
 	// Schedule goroutines.
 	triggerPendSV()

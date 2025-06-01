@@ -1,6 +1,6 @@
 //go:build arm && cortexm && armv7m && armv7em && thumb && (stm32h747ag || stm32h747ig || stm32h747bg || stm32h747xg || stm32h747zi || stm32h747ai || stm32h747ii || stm32h747bi || stm32h747xi || stm32h757zi || stm32h757ai || stm32h757ii || stm32h757bi || stm32h757xi)
 
-package tim6
+package tim6_7
 
 import (
 	"unsafe"
@@ -8,11 +8,16 @@ import (
 )
 
 var (
-	Tim6 = (*_tim6)(unsafe.Pointer(uintptr(0x40001000)))
-	Tim7 = (*_tim6)(unsafe.Pointer(uintptr(0x40001400)))
+	Tim6 = (*_tim6_7)(unsafe.Pointer(uintptr(0x40001000)))
+	Tim7 = (*_tim6_7)(unsafe.Pointer(uintptr(0x40001400)))
+
+	Instances = [2]*_tim6_7{
+		Tim6,
+		Tim7,
+	}
 )
 
-type _tim6 struct {
+type _tim6_7 struct {
 	Cr1  registerCr1Type
 	Cr2  registerCr2Type
 	_    [4]byte

@@ -1,12 +1,12 @@
-#ifndef _PERIPHERALS_TIM17_TD
-#define _PERIPHERALS_TIM17_TD
+#ifndef _PERIPHERALS_TIM16_17_TD
+#define _PERIPHERALS_TIM16_17_TD
 
 include "base.td"
 
-def TIM17Peripheral : PeripheralType<"TIM17", "General-purpose-timers"> {
+def TIM16_17Peripheral : PeripheralType<"TIM16_17", "General-purpose-timers"> {
   let accessWidth = 32;
   let registers = [
-    Register<"CR1", 0x0, 32, [
+    Register<"CR", 0x0, 32, [
       Field<"CEN", 0, 1, ReadWrite, "Counter enable">,
       Field<"UDIS", 1, 1, ReadWrite, "Update disable">,
       Field<"URS", 2, 1, ReadWrite, "Update request source">,
@@ -24,43 +24,41 @@ def TIM17Peripheral : PeripheralType<"TIM17", "General-purpose-timers"> {
     ], "control register 2">,
     Register<"DIER", 0xc, 32, [
       Field<"UIE", 0, 1, ReadWrite, "Update interrupt enable">,
-      Field<"CC1IE", 1, 1, ReadWrite, "Capture/Compare 1 interrupt enable">,
+      Field<"CCIE", 1, 1, ReadWrite, "Capture/Compare interrupt enable">,
       Field<"COMIE", 5, 1, ReadWrite, "COM interrupt enable">,
       Field<"BIE", 7, 1, ReadWrite, "Break interrupt enable">,
       Field<"UDE", 8, 1, ReadWrite, "Update DMA request enable">,
-      Field<"CC1DE", 9, 1, ReadWrite, "Capture/Compare 1 DMA request enable">,
+      Field<"CCDE", 9, 1, ReadWrite, "Capture/Compare DMA request enable">,
       Field<"COMDE", 13, 1, ReadWrite, "COM DMA request enable">,
     ], "DMA/Interrupt enable register">,
     Register<"SR", 0x10, 32, [
       Field<"UIF", 0, 1, ReadWrite, "Update interrupt flag">,
-      Field<"CC1IF", 1, 1, ReadWrite, "Capture/compare 1 interrupt flag">,
+      Field<"CCIF", 1, 1, ReadWrite, "Capture/compare interrupt flag">,
       Field<"COMIF", 5, 1, ReadWrite, "COM interrupt flag">,
       Field<"BIF", 7, 1, ReadWrite, "Break interrupt flag">,
-      Field<"CC1OF", 9, 1, ReadWrite, "Capture/Compare 1 overcapture flag">,
+      Field<"CCOF", 9, 1, ReadWrite, "Capture/Compare overcapture flag">,
     ], "status register">,
     Register<"EGR", 0x14, 32, [
       Field<"UG", 0, 1, ReadWrite, "Update generation">,
-      Field<"CC1G", 1, 1, ReadWrite, "Capture/compare 1 generation">,
+      Field<"CCG", 1, 1, ReadWrite, "Capture/compare generation">,
       Field<"COMG", 5, 1, ReadWrite, "Capture/Compare control update generation">,
       Field<"BG", 7, 1, ReadWrite, "Break generation">,
     ], "event generation register">,
-    Register<"CCMR1_OUTPUT", 0x18, 32, [
-      Field<"CC1S", 0, 2, ReadWrite, "Capture/Compare 1 selection">,
-      Field<"OC1FE", 2, 1, ReadWrite, "Output Compare 1 fast enable">,
-      Field<"OC1PE", 3, 1, ReadWrite, "Output Compare 1 preload enable">,
-      Field<"OC1M", 4, 3, ReadWrite, "Output Compare 1 mode">,
-      Field<"OC1M_3", 16, 1, ReadWrite, "Output Compare 1 mode">,
-    ], "capture/compare mode register (output mode)">,
-    Register<"CCMR1_INPUT", 0x18, 32, [
-      Field<"CC1S", 0, 2, ReadWrite, "Capture/Compare 1 selection">,
-      Field<"IC1PSC", 2, 2, ReadWrite, "Input capture 1 prescaler">,
-      Field<"IC1F", 4, 4, ReadWrite, "Input capture 1 filter">,
-    ], "capture/compare mode register 1 (input mode)">,
+    Register<"CCMR", 0x18, 32, [
+      Field<"CCS", 0, 2, ReadWrite, "Capture/Compare selection">,
+      Field<"OCFE", 2, 1, ReadWrite, "Output Compare fast enable">,
+      Field<"OCPE", 3, 1, ReadWrite, "Output Compare preload enable">,
+      Field<"OCM", 4, 3, ReadWrite, "Output Compare mode">,
+      Field<"OCM_3", 16, 1, ReadWrite, "Output Compare mode">,
+      Field<"CCS", 0, 2, ReadWrite, "Capture/Compare selection">,
+      Field<"ICPSC", 2, 2, ReadWrite, "Input capture prescaler">,
+      Field<"ICF", 4, 4, ReadWrite, "Input capture filter">,
+    ], "capture/compare mode register">,
     Register<"CCER", 0x20, 32, [
-      Field<"CC1E", 0, 1, ReadWrite, "Capture/Compare 1 output enable">,
-      Field<"CC1P", 1, 1, ReadWrite, "Capture/Compare 1 output Polarity">,
-      Field<"CC1NE", 2, 1, ReadWrite, "Capture/Compare 1 complementary output enable">,
-      Field<"CC1NP", 3, 1, ReadWrite, "Capture/Compare 1 output Polarity">,
+      Field<"CCE", 0, 1, ReadWrite, "Capture/Compare output enable">,
+      Field<"CCP", 1, 1, ReadWrite, "Capture/Compare output Polarity">,
+      Field<"CCNE", 2, 1, ReadWrite, "Capture/Compare complementary output enable">,
+      Field<"CCNP", 3, 1, ReadWrite, "Capture/Compare output Polarity">,
     ], "capture/compare enable register">,
     Register<"CNT", 0x24, 32, [
       Field<"CNT", 0, 16, ReadWrite, "counter value">,
@@ -75,8 +73,8 @@ def TIM17Peripheral : PeripheralType<"TIM17", "General-purpose-timers"> {
     Register<"RCR", 0x30, 32, [
       Field<"REP", 0, 8, ReadWrite, "Repetition counter value">,
     ], "repetition counter register">,
-    Register<"CCR1", 0x34, 32, [
-      Field<"CCR1", 0, 16, ReadWrite, "Capture/Compare 1 value">,
+    Register<"CCR", 0x34, 32, [
+      Field<"CCR", 0, 16, ReadWrite, "Capture/Compare value">,
     ], "capture/compare register 1">,
     Register<"BDTR", 0x44, 32, [
       Field<"DTG", 0, 8, ReadWrite, "Dead-time generator setup">,
@@ -96,7 +94,7 @@ def TIM17Peripheral : PeripheralType<"TIM17", "General-purpose-timers"> {
     Register<"DMAR", 0x4c, 32, [
       Field<"DMAB", 0, 16, ReadWrite, "DMA register for burst accesses">,
     ], "DMA address for full transfer">,
-    Register<"TIM17_AF1", 0x60, 32, [
+    Register<"AF", 0x60, 32, [
       Field<"BKINE", 0, 1, ReadWrite, "BRK BKIN input enable">,
       Field<"BKCMP1E", 1, 1, ReadWrite, "BRK COMP1 enable">,
       Field<"BKCMP2E", 2, 1, ReadWrite, "BRK COMP2 enable">,
@@ -104,14 +102,17 @@ def TIM17Peripheral : PeripheralType<"TIM17", "General-purpose-timers"> {
       Field<"BKINP", 9, 1, ReadWrite, "BRK BKIN input polarity">,
       Field<"BKCMP1P", 10, 1, ReadWrite, "BRK COMP1 input polarity">,
       Field<"BKCMP2P", 11, 1, ReadWrite, "BRK COMP2 input polarity">,
-    ], "TIM17 alternate function register 1">,
-    Register<"TIM17_TISEL", 0x68, 32, [
+    ], "alternate function register 1">,
+    Register<"TISEL", 0x68, 32, [
       Field<"TI1SEL", 0, 4, ReadWrite, "selects TI1[0] to TI1[15] input">,
-    ], "TIM17 input selection register">,
+    ], "input selection register">,
   ];
 }
 
-class TIM17Instance<string Name, int Base> : PeripheralInstance<Name, Base, TIM17Peripheral>;
-def TIM17 : TIM17Instance<"TIM17", 0x40014800>;
+class TIM16_17Instance<string Name, int Base> : PeripheralInstance<Name, Base, TIM16_17Peripheral>;
+def TIM16 : TIM16_17Instance<"TIM16", 0x40014400>;
+def TIM17 : TIM16_17Instance<"TIM17", 0x40014800>;
 
-#endif // _PERIPHERALS_TIM17_TD
+def TIM16_17Group : PeripheralGroup<[ TIM16, TIM17 ]>;
+
+#endif // _PERIPHERALS_TIM16_17_TD
