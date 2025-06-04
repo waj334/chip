@@ -20,11 +20,10 @@ var (
 	Gpioj = (*_gpio)(unsafe.Pointer(uintptr(0x58022400)))
 	Gpiok = (*_gpio)(unsafe.Pointer(uintptr(0x58022800)))
 
-	Instances = [12]*_gpio{
+	Instances = [11]*_gpio{
 		Gpioa,
 		Gpiob,
 		Gpioc,
-		Gpiod,
 		Gpiod,
 		Gpioe,
 		Gpiof,

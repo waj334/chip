@@ -1,9 +1,9 @@
-#ifndef _PERIPHERALS_TIM2_TD
-#define _PERIPHERALS_TIM2_TD
+#ifndef _PERIPHERALS_TIM2_3_4_5_TD
+#define _PERIPHERALS_TIM2_3_4_5_TD
 
 include "base.td"
 
-def TIM2Peripheral : PeripheralType<"TIM2", "General purpose timers"> {
+def TIM2_3_4_5Peripheral : PeripheralType<"TIM2_3_4_5", "General purpose timers"> {
   let accessWidth = 32;
   let registers = [
     Register<"CR1", 0x0, 32, [
@@ -67,7 +67,7 @@ def TIM2Peripheral : PeripheralType<"TIM2", "General purpose timers"> {
       Field<"CC4G", 4, 1, ReadWrite, "Capture/compare 4 generation">,
       Field<"TG", 6, 1, ReadWrite, "Trigger generation">,
     ], "event generation register">,
-    Register<"CCMR1_OUTPUT", 0x18, 32, [
+    Register<"CCMR1", 0x18, 32, [
       Field<"CC1S", 0, 2, ReadWrite, "CC1S">,
       Field<"OC1FE", 2, 1, ReadWrite, "OC1FE">,
       Field<"OC1PE", 3, 1, ReadWrite, "OC1PE">,
@@ -80,16 +80,12 @@ def TIM2Peripheral : PeripheralType<"TIM2", "General purpose timers"> {
       Field<"OC2CE", 15, 1, ReadWrite, "OC2CE">,
       Field<"OC1M_3", 16, 1, ReadWrite, "Output Compare 1 mode - bit 3">,
       Field<"OC2M_3", 24, 1, ReadWrite, "Output Compare 2 mode - bit 3">,
-    ], "capture/compare mode register 1 (output mode)">,
-    Register<"CCMR1_INPUT", 0x18, 32, [
-      Field<"CC1S", 0, 2, ReadWrite, "Capture/Compare 1 selection">,
       Field<"ICPCS", 2, 2, ReadWrite, "Input capture 1 prescaler">,
       Field<"IC1F", 4, 4, ReadWrite, "Input capture 1 filter">,
-      Field<"CC2S", 8, 2, ReadWrite, "Capture/Compare 2 selection">,
       Field<"IC2PCS", 10, 2, ReadWrite, "Input capture 2 prescaler">,
       Field<"IC2F", 12, 4, ReadWrite, "Input capture 2 filter">,
-    ], "capture/compare mode register 1 (input mode)">,
-    Register<"CCMR2_OUTPUT", 0x1c, 32, [
+    ], "capture/compare mode register 1">,
+    Register<"CCMR2", 0x1c, 32, [
       Field<"CC3S", 0, 2, ReadWrite, "CC3S">,
       Field<"OC3FE", 2, 1, ReadWrite, "OC3FE">,
       Field<"OC3PE", 3, 1, ReadWrite, "OC3PE">,
@@ -102,15 +98,11 @@ def TIM2Peripheral : PeripheralType<"TIM2", "General purpose timers"> {
       Field<"OC4CE", 15, 1, ReadWrite, "OC4CE">,
       Field<"OC3M_3", 16, 1, ReadWrite, "Output Compare 1 mode - bit 3">,
       Field<"OC4M_3", 24, 1, ReadWrite, "Output Compare 2 mode - bit 3">,
-    ], "capture/compare mode register 2 (output mode)">,
-    Register<"CCMR2_INPUT", 0x1c, 32, [
-      Field<"CC3S", 0, 2, ReadWrite, "Capture/compare 3 selection">,
       Field<"IC3PSC", 2, 2, ReadWrite, "Input capture 3 prescaler">,
       Field<"IC3F", 4, 4, ReadWrite, "Input capture 3 filter">,
-      Field<"CC4S", 8, 2, ReadWrite, "Capture/Compare 4 selection">,
       Field<"IC4PSC", 10, 2, ReadWrite, "Input capture 4 prescaler">,
       Field<"IC4F", 12, 4, ReadWrite, "Input capture 4 filter">,
-    ], "capture/compare mode register 2 (input mode)">,
+    ], "capture/compare mode register 2">,
     Register<"CCER", 0x20, 32, [
       Field<"CC1E", 0, 1, ReadWrite, "Capture/Compare 1 output enable">,
       Field<"CC1P", 1, 1, ReadWrite, "Capture/Compare 1 output Polarity">,
@@ -161,23 +153,22 @@ def TIM2Peripheral : PeripheralType<"TIM2", "General purpose timers"> {
     ], "DMA address for full transfer">,
     Register<"AF1", 0x60, 32, [
       Field<"ETRSEL", 14, 4, ReadWrite, "ETR source selection">,
-    ], "TIM alternate function option register 1">,
+    ], "alternate function option register 1">,
     Register<"TISEL", 0x68, 32, [
       Field<"TI1SEL", 0, 4, ReadWrite, "TI1[0] to TI1[15] input selection">,
       Field<"TI2SEL", 8, 4, ReadWrite, "TI2[0] to TI2[15] input selection">,
       Field<"TI3SEL", 16, 4, ReadWrite, "TI3[0] to TI3[15] input selection">,
       Field<"TI4SEL", 24, 4, ReadWrite, "TI4[0] to TI4[15] input selection">,
-    ], "TIM timer input selection register">,
+    ], "timer input selection register">,
   ];
 }
 
-class TIM2Instance<string Name, int Base> : PeripheralInstance<Name, Base, TIM2Peripheral>;
-def TIM2 : TIM2Instance<"TIM2", 0x40000000>;
-def TIM3 : TIM2Instance<"TIM3", 0x40000400>;
-def TIM4 : TIM2Instance<"TIM4", 0x40000800>;
-def TIM5 : TIM2Instance<"TIM5", 0x40000c00>;
-def TIM12 : TIM2Instance<"TIM12", 0x40001800>;
-def TIM13 : TIM2Instance<"TIM13", 0x40001c00>;
-def TIM14 : TIM2Instance<"TIM14", 0x40002000>;
+class TIM2_3_4_5Instance<string Name, int Base> : PeripheralInstance<Name, Base, TIM2_3_4_5Peripheral>;
+def TIM2 : TIM2_3_4_5Instance<"TIM2", 0x40000000>;
+def TIM3 : TIM2_3_4_5Instance<"TIM3", 0x40000400>;
+def TIM4 : TIM2_3_4_5Instance<"TIM4", 0x40000800>;
+def TIM5 : TIM2_3_4_5Instance<"TIM5", 0x40000c00>;
 
-#endif // _PERIPHERALS_TIM2_TD
+def TIM2_3_4_5PeripheralGroup : PeripheralGroup<[ TIM2, TIM3, TIM4,TIM5 ]>;
+
+#endif // _PERIPHERALS_TIM2_3_4_5_TD

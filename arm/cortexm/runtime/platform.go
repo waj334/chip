@@ -30,7 +30,6 @@ func exec(args unsafe.Pointer, fn unsafe.Pointer)
 func EnableInterrupts(state uint32) {
 	asm.Inline(`
 		msr PRIMASK, {{state}}
-		cpsie i
 	`, asm.In(state))
 }
 

@@ -1,6 +1,6 @@
 //go:build arm && cortexm && armv7m && armv7em && thumb && (stm32h747ag || stm32h747ig || stm32h747bg || stm32h747xg || stm32h747zi || stm32h747ai || stm32h747ii || stm32h747bi || stm32h747xi || stm32h757zi || stm32h757ai || stm32h757ii || stm32h757bi || stm32h757xi)
 
-package tim1
+package tim1_8
 
 import (
 	"unsafe"
@@ -8,11 +8,16 @@ import (
 )
 
 var (
-	Tim1 = (*_tim1)(unsafe.Pointer(uintptr(0x40010000)))
-	Tim8 = (*_tim1)(unsafe.Pointer(uintptr(0x40010400)))
+	Tim1 = (*_tim1_8)(unsafe.Pointer(uintptr(0x40010000)))
+	Tim8 = (*_tim1_8)(unsafe.Pointer(uintptr(0x40010400)))
+
+	Instances = [2]*_tim1_8{
+		Tim1,
+		Tim8,
+	}
 )
 
-type _tim1 struct {
+type _tim1_8 struct {
 	Cr1         registerCr1Type
 	Cr2         registerCr2Type
 	Smcr        registerSmcrType
@@ -3091,7 +3096,7 @@ func (r *registerCcr6Type) SetCcr6(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr6FieldCcr6Mask)|(uint32(value)<<RegisterCcr6FieldCcr6Shift))
 }
 
-// registerAf1Type TIM1 alternate function option register 1
+// registerAf1Type alternate function option register 1
 type registerAf1Type uint32
 
 const (
@@ -3242,7 +3247,7 @@ func (r *registerAf1Type) SetEtrsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAf1FieldEtrselMask)|(uint32(value)<<RegisterAf1FieldEtrselShift))
 }
 
-// registerAf2Type TIM1 Alternate function odfsdm1_breakster 2
+// registerAf2Type Alternate function odfsdm1_breakster 2
 type registerAf2Type uint32
 
 const (
@@ -3378,7 +3383,7 @@ func (r *registerAf2Type) SetBk2cmp2p(value bool) {
 	}
 }
 
-// registerTiselType TIM1 timer input selection register
+// registerTiselType timer input selection register
 type registerTiselType uint32
 
 const (

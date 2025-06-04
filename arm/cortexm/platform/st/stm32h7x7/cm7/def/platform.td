@@ -65,12 +65,13 @@ include "peripherals/spdifrx.td"
 include "peripherals/spi.td"
 include "peripherals/swpmi.td"
 include "peripherals/syscfg.td"
-include "peripherals/tim1.td"
+include "peripherals/tim1_8.td"
+include "peripherals/tim2_3_4_5.td"
+include "peripherals/tim6_7.td"
+include "peripherals/tim12.td"
+include "peripherals/tim13_14.td"
 include "peripherals/tim15.td"
-include "peripherals/tim16.td"
-include "peripherals/tim17.td"
-include "peripherals/tim2.td"
-include "peripherals/tim6.td"
+include "peripherals/tim16_17.td"
 include "peripherals/usart.td"
 include "peripherals/vrefbuf.td"
 include "peripherals/wwdg.td"
@@ -134,12 +135,13 @@ defvar peripherals = [
   SPIPeripheral,
   SWPMIPeripheral,
   SYSCFGPeripheral,
-  TIM1Peripheral,
+  TIM1_8Peripheral,
+  TIM2_3_4_5Peripheral,
+  TIM6_7Peripheral,
+  TIM12Peripheral,
+  TIM13_14Peripheral,
   TIM15Peripheral,
-  TIM16Peripheral,
-  TIM17Peripheral,
-  TIM2Peripheral,
-  TIM6Peripheral,
+  TIM15Peripheral,
   USARTPeripheral,
   VREFBUFPeripheral,
   WWDGPeripheral,
