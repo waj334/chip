@@ -4,14 +4,14 @@
 .type PendSvHandler, %function
 PendSvHandler:
     push {lr}                           // Temporarily store LR on the stack since the branch below will NOT restore LR.
-    bl runtime.runScheduler             // Choose the next goroutine
+    bl runtime.schedule             // Choose the next goroutine
 #ifdef __thumb2__
     pop {lr}                            // Restore the previous value of LR
 #else
     pop {r1}
     mov lr, r1
 #endif
-    cmp r0, #0                          // Check if runScheduler returned false
+    cmp r0, #0                          // Check if runtime.schedule returned false
     beq _restore_and_return             // No context switch should be performed
 
     ldr r0, =runtime.currentGoroutine   // Load the address of the current goroutine pointer into R0

@@ -65,11 +65,11 @@ func sysTickHandler() {
 	}
 
 	// Trigger a PendSV interrupt to run the scheduler
-	triggerPendSV()
+	gosched()
 }
 
-//go:export triggerPendSV runtime.schedulerPause
-func triggerPendSV() {
+//go:export gosched runtime.gosched
+func gosched() {
 	// Set the PendSV flag
 	scb.Scb.Icsr.SetPendsvset(true)
 }

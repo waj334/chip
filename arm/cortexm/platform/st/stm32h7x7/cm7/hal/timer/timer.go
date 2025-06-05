@@ -1,17 +1,22 @@
+//go:build stm32h7x7
+
 package timer
 
 import (
+	"sync"
+	"time"
+
 	stm32h7x7 "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
 	tim "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/tim2_3_4_5"
 	"pkg.si-go.dev/chip/arm/cortexm/runtime"
-	"time"
 )
 
 var base [4]uint64
 var alarms [4]*alarmEntry
 var alarmQueues [4]*alarmEntry
+var mutex [4]sync.Mutex
 
 const (
 	TIM2 _tim32 = iota
@@ -38,6 +43,8 @@ type Config struct {
 }
 
 func (t _tim32) Configure(config Config) error {
+	mutex := &mutex[t]
+	mutex.Lock()
 	state := runtime.DisableInterrupts()
 	_t := tim.Instances[t]
 
@@ -100,6 +107,7 @@ func (t _tim32) Configure(config Config) error {
 	}
 
 	if !config.Enable {
+		mutex.Unlock()
 		runtime.EnableInterrupts(state)
 		return nil
 	}
@@ -144,11 +152,14 @@ func (t _tim32) Configure(config Config) error {
 	for !_t.Cr1.GetCen() {
 	}
 
+	mutex.Unlock()
 	runtime.EnableInterrupts(state)
 	return nil
 }
 
 func (t _tim32) Reset(tick uint64) {
+	mutex := &mutex[t]
+	mutex.Lock()
 	_t := tim.Instances[t]
 	_t.Cnt.SetCntl(uint16(tick))
 	_t.Cnt.SetCnth(uint16(tick >> 16))
@@ -157,20 +168,24 @@ func (t _tim32) Reset(tick uint64) {
 	_t.Cr1.SetCen(true)
 	for !_t.Cr1.GetCen() {
 	}
+	mutex.Unlock()
 }
 
 func (t _tim32) Stop() {
+	mutex := &mutex[t]
+	mutex.Lock()
 	_t := tim.Instances[t]
 	_t.Cr1.SetCen(false)
 	for _t.Cr1.GetCen() {
 	}
+	mutex.Unlock()
 }
 
 func (t _tim32) Tick() uint64 {
-	_t := tim.Instances[t]
-	b := base[t]
-	tick := uint64(uint32(_t.Cnt.GetCntl()) | (uint32(_t.Cnt.GetCnth()) << 16))
-	result := b + tick
+	mutex := &mutex[t]
+	mutex.Lock()
+	result := t.tick()
+	mutex.Unlock()
 	return result
 }
 
@@ -184,10 +199,12 @@ func (t _tim32) Resolution() time.Duration {
 }
 
 func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
-	state := runtime.DisableInterrupts()
-	now := t.Tick()
+	criticalSection := sync.NewCriticalSection(&mutex[t])
+	criticalSection.Begin()
+
+	now := t.tick()
 	if fn == nil || deadline <= now {
-		runtime.EnableInterrupts(state)
+		criticalSection.End()
 		fn(now)
 		return
 	}
@@ -198,7 +215,7 @@ func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
 			entry := &alarmEntry{deadline: deadline, callback: fn, channel: ch}
 			alarms[ch] = entry
 			armCompare(t, ch, deadline)
-			runtime.EnableInterrupts(state)
+			criticalSection.End()
 			return
 		}
 	}
@@ -206,7 +223,15 @@ func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
 	// No channels available. Queue it.
 	entry := &alarmEntry{deadline: deadline, callback: fn, channel: -1}
 	insertQueuedAlarm(t, entry)
-	runtime.EnableInterrupts(state)
+	criticalSection.End()
+}
+
+func (t _tim32) tick() uint64 {
+	_t := tim.Instances[t]
+	b := base[t]
+	tick := uint64(uint32(_t.Cnt.GetCntl()) | (uint32(_t.Cnt.GetCnth()) << 16))
+	result := b + tick
+	return result
 }
 
 //sigo:interrupt tim2Handler Tim2Handler
@@ -230,7 +255,9 @@ func tim5Handler() {
 }
 
 func interrupt(instance _tim32) {
-	state := runtime.DisableInterrupts()
+	criticalSection := sync.NewCriticalSection(&mutex[instance])
+	criticalSection.Begin()
+
 	_t := tim.Instances[instance]
 	alarmQueue := alarmQueues[instance]
 
@@ -296,7 +323,8 @@ func interrupt(instance _tim32) {
 			}
 		}
 	}
-	runtime.EnableInterrupts(state)
+
+	criticalSection.End()
 }
 
 func insertQueuedAlarm(instance _tim32, entry *alarmEntry) {
