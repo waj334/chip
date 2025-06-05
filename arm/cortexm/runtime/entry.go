@@ -85,5 +85,5 @@ func _entry() {
 	EnableInterrupts(state)
 
 	// Schedule goroutines.
-	triggerPendSV()
+	gosched()
 }

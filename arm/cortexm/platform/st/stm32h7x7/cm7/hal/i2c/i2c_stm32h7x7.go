@@ -1,3 +1,5 @@
+//go:build stm32h7x7
+
 package i2c
 
 import (
@@ -106,7 +108,6 @@ func altFunction(p pin.Pin, instance *_i2c, wantSCL bool) (corepin.Mode, error) 
 
 func (i *_i2c) Configure(config Config) error {
 	i.mutex.Lock()
-	defer i.mutex.Unlock()
 
 	p := i2c.Instances[i.index]
 	i.clockFrequency = config.ClockFrequency
@@ -137,11 +138,13 @@ func (i *_i2c) Configure(config Config) error {
 	}
 
 	if !config.Enabled {
+		i.mutex.Unlock()
 		return nil
 	}
 
 	// Configure the GPIO pins.
 	if alt, err := altFunction(config.SDA, i, false); err != nil {
+		i.mutex.Unlock()
 		return err
 	} else {
 		config.SDA.SetMode(pin.AltFunction | alt)
@@ -151,6 +154,7 @@ func (i *_i2c) Configure(config Config) error {
 	config.SDA.SetSpeedMode(pin.HighSpeed)
 
 	if alt, err := altFunction(config.SCL, i, true); err != nil {
+		i.mutex.Unlock()
 		return err
 	} else {
 		config.SCL.SetMode(pin.AltFunction | alt)
@@ -167,27 +171,28 @@ func (i *_i2c) Configure(config Config) error {
 	for !p.Cr1.GetPe() {
 	}
 
+	i.mutex.Unlock()
 	return nil
 }
 
 func (i *_i2c) Read(b []byte) (n int, err error) {
 	i.mutex.Lock()
-	defer i.mutex.Unlock()
 	n, err = i.readAddress(i.address, b)
+	i.mutex.Unlock()
 	return n, err
 }
 
 func (i *_i2c) Write(b []byte) (n int, err error) {
 	i.mutex.Lock()
-	defer i.mutex.Unlock()
 	n, err = i.writeAddress(i.address, b)
+	i.mutex.Unlock()
 	return n, err
 }
 
 func (i *_i2c) SetAddress(addr uint16) {
 	i.mutex.Lock()
-	defer i.mutex.Unlock()
 	i.address = addr
+	i.mutex.Unlock()
 }
 
 func (i *_i2c) SetClockFrequency(clockSpeedHz uint32) bool {
@@ -197,14 +202,13 @@ func (i *_i2c) SetClockFrequency(clockSpeedHz uint32) bool {
 
 func (i *_i2c) GetClockFrequency() uint32 {
 	i.mutex.Lock()
-	defer i.mutex.Unlock()
 	result := i.clockFrequency
+	i.mutex.Unlock()
 	return result
 }
 
 func (i *_i2c) SetTiming(clockSpeedHz uint32, timing uint32) {
 	i.mutex.Lock()
-	defer i.mutex.Unlock()
 	p := i2c.Instances[i.index]
 
 	// Disable the peripheral.
@@ -218,27 +222,28 @@ func (i *_i2c) SetTiming(clockSpeedHz uint32, timing uint32) {
 
 	i.clockFrequency = clockSpeedHz
 	i.timing = timing
+	i.mutex.Unlock()
 }
 
 func (i *_i2c) GetTiming() (uint32, uint32) {
 	i.mutex.Lock()
-	defer i.mutex.Unlock()
 	f := i.clockFrequency
 	timing := i.timing
+	i.mutex.Unlock()
 	return f, timing
 }
 
 func (i *_i2c) WriteAddress(addr uint16, b []byte) (n int, err error) {
 	i.mutex.Lock()
-	defer i.mutex.Unlock()
 	n, err = i.writeAddress(addr, b)
+	i.mutex.Unlock()
 	return n, err
 }
 
 func (i *_i2c) ReadAddress(addr uint16, b []byte) (n int, err error) {
 	i.mutex.Lock()
-	defer i.mutex.Unlock()
 	n, err = i.readAddress(addr, b)
+	i.mutex.Unlock()
 	return n, err
 }
 

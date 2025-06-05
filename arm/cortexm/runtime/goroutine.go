@@ -90,6 +90,6 @@ func startGoroutine(g *_goroutine) {
 	// Busy loop until another task can be run.
 	for {
 		// Trigger a context switch.
-		triggerPendSV()
+		gosched()
 	}
 }
