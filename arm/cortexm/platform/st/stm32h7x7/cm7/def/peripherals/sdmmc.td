@@ -7,7 +7,11 @@ def SDMMCPeripheral : PeripheralType<"SDMMC", "SDMMC"> {
   let accessWidth = 32;
   let registers = [
     Register<"POWER", 0x0, 32, [
-      Field<"PWRCTRL", 0, 2, ReadWrite, "SDMMC state control bits. These bits can only be written when the SDMMC is not in the power-on state (PWRCTRL?11). These bits are used to define the functional state of the SDMMC signals: Any further write will be ignored, PWRCTRL value will keep 11.">,
+      Field<"PWRCTRL", 0, 2, ReadWrite, "SDMMC state control bits. These bits can only be written when the SDMMC is not in the power-on state (PWRCTRL?11). These bits are used to define the functional state of the SDMMC signals: Any further write will be ignored, PWRCTRL value will keep 11.", [
+        Enum<"PowerOff", 0x0, "After reset, Reset: the SDMMC is disabled and the clock to the Card is stopped, SDMMC_D[7:0], and SDMMC_CMD are HiZ and SDMMC_CK is driven low. When written 00, power-off: the SDMMC is disabled and the clock to the card is stopped, SDMMC_D[7:0], SDMMC_CMD and SDMMC_CK are driven high.">,
+        Enum<"PowerCycle", 0x2, "Power-cycle, the SDMMC is disabled and the clock to the card is stopped, SDMMC_D[7:0], SDMMC_CMD and SDMMC_CK are driven low.">,
+        Enum<"PowerOn", 0x3, "Power-on: the card is clocked, The first 74 SDMMC_CK cycles the SDMMC is still disabled. After the 74 cycles the SDMMC is enabled and the SDMMC_D[7:0], SDMMC_CMD and SDMMC_CK are controlled according the SDMMC operation.">,
+      ]>,
       Field<"VSWITCH", 2, 1, ReadWrite, "Voltage switch sequence start. This bit is used to start the timing critical section of the voltage switch sequence:">,
       Field<"VSWITCHEN", 3, 1, ReadWrite, "Voltage switch procedure enable. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). This bit is used to stop the SDMMC_CK after the voltage switch command response:">,
       Field<"DIRPOL", 4, 1, ReadWrite, "Data and command direction signals polarity selection. This bit can only be written when the SDMMC is in the power-off state (PWRCTRL = 00).">,

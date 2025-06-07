@@ -1,7 +1,7 @@
 package hal
 
 type Interrupt interface {
-	EnableIRQ()
-	DisableIRQ()
+	Enable()
+	Disable()
 	SetPriority(priority uint8)
 }
