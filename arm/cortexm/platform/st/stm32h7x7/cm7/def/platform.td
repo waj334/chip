@@ -267,7 +267,7 @@ defvar interrupts = [
   Interrupt<"MDIOS", 120, "MDIOS global interrupt">,
   Interrupt<"JPEG", 121, "JPEG global interrupt">,
   Interrupt<"MDMA", 122, "MDMA">,
-  Interrupt<"SDMMC", 124, "SDMMC global interrupt">,
+  Interrupt<"SDMMC2", 124, "SDMMC2 global interrupt">,
   Interrupt<"HSEM0", 125, "HSEM global interrupt 1">,
   Interrupt<"ADC3", 127, "ADC3 global interrupt">,
   Interrupt<"DMAMUX2_OVR", 128, "DMAMUX2 overrun interrupt">,

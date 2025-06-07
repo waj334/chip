@@ -12,11 +12,34 @@ var (
 )
 
 type _art struct {
-	Ctr registerCtrType
+	Ctr RegisterCtrType
 }
 
-// registerCtrType control register
-type registerCtrType uint32
+// RegisterCtrType control register
+type RegisterCtrType uint32
+
+func (r *RegisterCtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCtrFieldEnShift = 0
@@ -24,12 +47,12 @@ const (
 )
 
 // GetEn Cache enable
-func (r *registerCtrType) GetEn() bool {
+func (r *RegisterCtrType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCtrFieldEnMask) != 0
 }
 
 // SetEn Cache enable
-func (r *registerCtrType) SetEn(value bool) {
+func (r *RegisterCtrType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCtrFieldEnMask)
 	} else {
@@ -43,11 +66,11 @@ const (
 )
 
 // GetPcacheaddr Cacheable page index
-func (r *registerCtrType) GetPcacheaddr() uint16 {
+func (r *RegisterCtrType) GetPcacheaddr() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCtrFieldPcacheaddrMask) >> RegisterCtrFieldPcacheaddrShift)
 }
 
 // SetPcacheaddr Cacheable page index
-func (r *registerCtrType) SetPcacheaddr(value uint16) {
+func (r *RegisterCtrType) SetPcacheaddr(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCtrFieldPcacheaddrMask)|(uint32(value)<<RegisterCtrFieldPcacheaddrShift))
 }

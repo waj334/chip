@@ -18,47 +18,81 @@ var (
 )
 
 type _sdmmc struct {
-	Power      registerPowerType
-	Clkcr      registerClkcrType
-	Argr       registerArgrType
-	Cmdr       registerCmdrType
-	Respcmdr   registerRespcmdrType
-	Resp1r     registerResp1rType
-	Resp2r     registerResp2rType
-	Resp3r     registerResp3rType
-	Resp4r     registerResp4rType
-	Dtimer     registerDtimerType
-	Dlenr      registerDlenrType
-	Dctrl      registerDctrlType
-	Dcntr      registerDcntrType
-	Star       registerStarType
-	Icr        registerIcrType
-	Maskr      registerMaskrType
-	Acktimer   registerAcktimerType
+	Power      RegisterPowerType
+	Clkcr      RegisterClkcrType
+	Argr       RegisterArgrType
+	Cmdr       RegisterCmdrType
+	Respcmdr   RegisterRespcmdrType
+	Resp1r     RegisterResp1rType
+	Resp2r     RegisterResp2rType
+	Resp3r     RegisterResp3rType
+	Resp4r     RegisterResp4rType
+	Dtimer     RegisterDtimerType
+	Dlenr      RegisterDlenrType
+	Dctrl      RegisterDctrlType
+	Dcntr      RegisterDcntrType
+	Star       RegisterStarType
+	Icr        RegisterIcrType
+	Maskr      RegisterMaskrType
+	Acktimer   RegisterAcktimerType
 	_          [12]byte
-	Idmactrlr  registerIdmactrlrType
-	Idmabsizer registerIdmabsizerType
-	Idmabase0r registerIdmabase0rType
-	Idmabase1r registerIdmabase1rType
+	Idmactrlr  RegisterIdmactrlrType
+	Idmabsizer RegisterIdmabsizerType
+	Idmabase0r RegisterIdmabase0rType
+	Idmabase1r RegisterIdmabase1rType
 	_          [32]byte
-	Fifor      registerFiforType
+	Fifor      RegisterFiforType
 }
 
-// registerPowerType SDMMC power control register
-type registerPowerType uint32
+// RegisterPowerType SDMMC power control register
+type RegisterPowerType uint32
+
+func (r *RegisterPowerType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPowerType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPowerType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPowerType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPowerType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+type RegisterPowerFieldPwrctrlEnumType uint8
 
 const (
+	// RegisterPowerFieldPwrctrlEnumPoweroff After reset, Reset: the SDMMC is disabled and the clock to the Card is stopped, SDMMC_D[7:0], and SDMMC_CMD are HiZ and SDMMC_CK is driven low. When written 00, power-off: the SDMMC is disabled and the clock to the card is stopped, SDMMC_D[7:0], SDMMC_CMD and SDMMC_CK are driven high.
+	RegisterPowerFieldPwrctrlEnumPoweroff RegisterPowerFieldPwrctrlEnumType = 0x0
+
+	// RegisterPowerFieldPwrctrlEnumPowercycle Power-cycle, the SDMMC is disabled and the clock to the card is stopped, SDMMC_D[7:0], SDMMC_CMD and SDMMC_CK are driven low.
+	RegisterPowerFieldPwrctrlEnumPowercycle RegisterPowerFieldPwrctrlEnumType = 0x2
+
+	// RegisterPowerFieldPwrctrlEnumPoweron Power-on: the card is clocked, The first 74 SDMMC_CK cycles the SDMMC is still disabled. After the 74 cycles the SDMMC is enabled and the SDMMC_D[7:0], SDMMC_CMD and SDMMC_CK are controlled according the SDMMC operation.
+	RegisterPowerFieldPwrctrlEnumPoweron RegisterPowerFieldPwrctrlEnumType = 0x3
+
 	RegisterPowerFieldPwrctrlShift = 0
 	RegisterPowerFieldPwrctrlMask  = 0x3
 )
 
 // GetPwrctrl SDMMC state control bits. These bits can only be written when the SDMMC is not in the power-on state (PWRCTRL?11). These bits are used to define the functional state of the SDMMC signals: Any further write will be ignored, PWRCTRL value will keep 11.
-func (r *registerPowerType) GetPwrctrl() uint8 {
-	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPowerFieldPwrctrlMask) >> RegisterPowerFieldPwrctrlShift)
+func (r *RegisterPowerType) GetPwrctrl() RegisterPowerFieldPwrctrlEnumType {
+	return RegisterPowerFieldPwrctrlEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterPowerFieldPwrctrlMask) >> RegisterPowerFieldPwrctrlShift)
 }
 
 // SetPwrctrl SDMMC state control bits. These bits can only be written when the SDMMC is not in the power-on state (PWRCTRL?11). These bits are used to define the functional state of the SDMMC signals: Any further write will be ignored, PWRCTRL value will keep 11.
-func (r *registerPowerType) SetPwrctrl(value uint8) {
+func (r *RegisterPowerType) SetPwrctrl(value RegisterPowerFieldPwrctrlEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPowerFieldPwrctrlMask)|(uint32(value)<<RegisterPowerFieldPwrctrlShift))
 }
 
@@ -68,12 +102,12 @@ const (
 )
 
 // GetVswitch Voltage switch sequence start. This bit is used to start the timing critical section of the voltage switch sequence:
-func (r *registerPowerType) GetVswitch() bool {
+func (r *RegisterPowerType) GetVswitch() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPowerFieldVswitchMask) != 0
 }
 
 // SetVswitch Voltage switch sequence start. This bit is used to start the timing critical section of the voltage switch sequence:
-func (r *registerPowerType) SetVswitch(value bool) {
+func (r *RegisterPowerType) SetVswitch(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPowerFieldVswitchMask)
 	} else {
@@ -87,12 +121,12 @@ const (
 )
 
 // GetVswitchen Voltage switch procedure enable. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). This bit is used to stop the SDMMC_CK after the voltage switch command response:
-func (r *registerPowerType) GetVswitchen() bool {
+func (r *RegisterPowerType) GetVswitchen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPowerFieldVswitchenMask) != 0
 }
 
 // SetVswitchen Voltage switch procedure enable. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). This bit is used to stop the SDMMC_CK after the voltage switch command response:
-func (r *registerPowerType) SetVswitchen(value bool) {
+func (r *RegisterPowerType) SetVswitchen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPowerFieldVswitchenMask)
 	} else {
@@ -106,12 +140,12 @@ const (
 )
 
 // GetDirpol Data and command direction signals polarity selection. This bit can only be written when the SDMMC is in the power-off state (PWRCTRL = 00).
-func (r *registerPowerType) GetDirpol() bool {
+func (r *RegisterPowerType) GetDirpol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPowerFieldDirpolMask) != 0
 }
 
 // SetDirpol Data and command direction signals polarity selection. This bit can only be written when the SDMMC is in the power-off state (PWRCTRL = 00).
-func (r *registerPowerType) SetDirpol(value bool) {
+func (r *RegisterPowerType) SetDirpol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPowerFieldDirpolMask)
 	} else {
@@ -119,8 +153,31 @@ func (r *registerPowerType) SetDirpol(value bool) {
 	}
 }
 
-// registerClkcrType The SDMMC_CLKCR register controls the SDMMC_CK output clock, the SDMMC_RX_CLK receive clock, and the bus width.
-type registerClkcrType uint32
+// RegisterClkcrType The SDMMC_CLKCR register controls the SDMMC_CK output clock, the SDMMC_RX_CLK receive clock, and the bus width.
+type RegisterClkcrType uint32
+
+func (r *RegisterClkcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterClkcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterClkcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterClkcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterClkcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterClkcrFieldClkdivShift = 0
@@ -128,12 +185,12 @@ const (
 )
 
 // GetClkdiv Clock divide factor This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0). This field defines the divide factor between the input clock (SDMMCCLK) and the output clock (SDMMC_CK): SDMMC_CK frequency = SDMMCCLK / [2 * CLKDIV]. 0xx: etc.. xxx: etc..
-func (r *registerClkcrType) GetClkdiv() uint16 {
+func (r *RegisterClkcrType) GetClkdiv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterClkcrFieldClkdivMask) >> RegisterClkcrFieldClkdivShift)
 }
 
 // SetClkdiv Clock divide factor This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0). This field defines the divide factor between the input clock (SDMMCCLK) and the output clock (SDMMC_CK): SDMMC_CK frequency = SDMMCCLK / [2 * CLKDIV]. 0xx: etc.. xxx: etc..
-func (r *registerClkcrType) SetClkdiv(value uint16) {
+func (r *RegisterClkcrType) SetClkdiv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterClkcrFieldClkdivMask)|(uint32(value)<<RegisterClkcrFieldClkdivShift))
 }
 
@@ -143,12 +200,12 @@ const (
 )
 
 // GetPwrsav Power saving configuration bit This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) For power saving, the SDMMC_CK clock output can be disabled when the bus is idle by setting PWRSAV:
-func (r *registerClkcrType) GetPwrsav() bool {
+func (r *RegisterClkcrType) GetPwrsav() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterClkcrFieldPwrsavMask) != 0
 }
 
 // SetPwrsav Power saving configuration bit This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) For power saving, the SDMMC_CK clock output can be disabled when the bus is idle by setting PWRSAV:
-func (r *registerClkcrType) SetPwrsav(value bool) {
+func (r *RegisterClkcrType) SetPwrsav(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterClkcrFieldPwrsavMask)
 	} else {
@@ -162,12 +219,12 @@ const (
 )
 
 // GetWidbus Wide bus mode enable bit This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)
-func (r *registerClkcrType) GetWidbus() uint8 {
+func (r *RegisterClkcrType) GetWidbus() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterClkcrFieldWidbusMask) >> RegisterClkcrFieldWidbusShift)
 }
 
 // SetWidbus Wide bus mode enable bit This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)
-func (r *registerClkcrType) SetWidbus(value uint8) {
+func (r *RegisterClkcrType) SetWidbus(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterClkcrFieldWidbusMask)|(uint32(value)<<RegisterClkcrFieldWidbusShift))
 }
 
@@ -177,12 +234,12 @@ const (
 )
 
 // GetNegedge SDMMC_CK dephasing selection bit for data and Command. This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0). When clock division = 1 (CLKDIV = 0), this bit has no effect. Data and Command change on SDMMC_CK falling edge. When clock division &gt;1 (CLKDIV &gt; 0) &amp; DDR = 0: - SDMMC_CK edge occurs on SDMMCCLK rising edge. When clock division >1 (CLKDIV > 0) & DDR = 1: - Data changed on the SDMMCCLK falling edge succeeding a SDMMC_CK edge. - SDMMC_CK edge occurs on SDMMCCLK rising edge. - Data changed on the SDMMC_CK falling edge succeeding a SDMMC_CK edge. - SDMMC_CK edge occurs on SDMMCCLK rising edge.
-func (r *registerClkcrType) GetNegedge() bool {
+func (r *RegisterClkcrType) GetNegedge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterClkcrFieldNegedgeMask) != 0
 }
 
 // SetNegedge SDMMC_CK dephasing selection bit for data and Command. This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0). When clock division = 1 (CLKDIV = 0), this bit has no effect. Data and Command change on SDMMC_CK falling edge. When clock division &gt;1 (CLKDIV &gt; 0) &amp; DDR = 0: - SDMMC_CK edge occurs on SDMMCCLK rising edge. When clock division >1 (CLKDIV > 0) & DDR = 1: - Data changed on the SDMMCCLK falling edge succeeding a SDMMC_CK edge. - SDMMC_CK edge occurs on SDMMCCLK rising edge. - Data changed on the SDMMC_CK falling edge succeeding a SDMMC_CK edge. - SDMMC_CK edge occurs on SDMMCCLK rising edge.
-func (r *registerClkcrType) SetNegedge(value bool) {
+func (r *RegisterClkcrType) SetNegedge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterClkcrFieldNegedgeMask)
 	} else {
@@ -196,12 +253,12 @@ const (
 )
 
 // GetHwfcen Hardware flow control enable This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) When Hardware flow control is enabled, the meaning of the TXFIFOE and RXFIFOF flags change, please see SDMMC status register definition in Section56.8.11.
-func (r *registerClkcrType) GetHwfcen() bool {
+func (r *RegisterClkcrType) GetHwfcen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterClkcrFieldHwfcenMask) != 0
 }
 
 // SetHwfcen Hardware flow control enable This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) When Hardware flow control is enabled, the meaning of the TXFIFOE and RXFIFOF flags change, please see SDMMC status register definition in Section56.8.11.
-func (r *registerClkcrType) SetHwfcen(value bool) {
+func (r *RegisterClkcrType) SetHwfcen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterClkcrFieldHwfcenMask)
 	} else {
@@ -215,12 +272,12 @@ const (
 )
 
 // GetDdr Data rate signaling selection This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) DDR rate shall only be selected with 4-bit or 8-bit wide bus mode. (WIDBUS &gt; 00). DDR = 1 has no effect when WIDBUS = 00 (1-bit wide bus). DDR rate shall only be selected with clock division &gt;1. (CLKDIV &gt; 0)
-func (r *registerClkcrType) GetDdr() bool {
+func (r *RegisterClkcrType) GetDdr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterClkcrFieldDdrMask) != 0
 }
 
 // SetDdr Data rate signaling selection This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) DDR rate shall only be selected with 4-bit or 8-bit wide bus mode. (WIDBUS &gt; 00). DDR = 1 has no effect when WIDBUS = 00 (1-bit wide bus). DDR rate shall only be selected with clock division &gt;1. (CLKDIV &gt; 0)
-func (r *registerClkcrType) SetDdr(value bool) {
+func (r *RegisterClkcrType) SetDdr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterClkcrFieldDdrMask)
 	} else {
@@ -234,12 +291,12 @@ const (
 )
 
 // GetBusspeed Bus speed mode selection between DS, HS, SDR12, SDR25 and SDR50, DDR50, SDR104. This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)
-func (r *registerClkcrType) GetBusspeed() bool {
+func (r *RegisterClkcrType) GetBusspeed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterClkcrFieldBusspeedMask) != 0
 }
 
 // SetBusspeed Bus speed mode selection between DS, HS, SDR12, SDR25 and SDR50, DDR50, SDR104. This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)
-func (r *registerClkcrType) SetBusspeed(value bool) {
+func (r *RegisterClkcrType) SetBusspeed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterClkcrFieldBusspeedMask)
 	} else {
@@ -253,17 +310,40 @@ const (
 )
 
 // GetSelclkrx Receive clock selection. These bits can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)
-func (r *registerClkcrType) GetSelclkrx() uint8 {
+func (r *RegisterClkcrType) GetSelclkrx() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterClkcrFieldSelclkrxMask) >> RegisterClkcrFieldSelclkrxShift)
 }
 
 // SetSelclkrx Receive clock selection. These bits can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)
-func (r *registerClkcrType) SetSelclkrx(value uint8) {
+func (r *RegisterClkcrType) SetSelclkrx(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterClkcrFieldSelclkrxMask)|(uint32(value)<<RegisterClkcrFieldSelclkrxShift))
 }
 
-// registerArgrType The SDMMC_ARGR register contains a 32-bit command argument, which is sent to a card as part of a command message.
-type registerArgrType uint32
+// RegisterArgrType The SDMMC_ARGR register contains a 32-bit command argument, which is sent to a card as part of a command message.
+type RegisterArgrType uint32
+
+func (r *RegisterArgrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterArgrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterArgrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterArgrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterArgrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterArgrFieldCmdargShift = 0
@@ -271,17 +351,40 @@ const (
 )
 
 // GetCmdarg Command argument. These bits can only be written by firmware when CPSM is disabled (CPSMEN = 0). Command argument sent to a card as part of a command message. If a command contains an argument, it must be loaded into this register before writing a command to the command register.
-func (r *registerArgrType) GetCmdarg() uint32 {
+func (r *RegisterArgrType) GetCmdarg() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterArgrFieldCmdargMask) >> RegisterArgrFieldCmdargShift)
 }
 
 // SetCmdarg Command argument. These bits can only be written by firmware when CPSM is disabled (CPSMEN = 0). Command argument sent to a card as part of a command message. If a command contains an argument, it must be loaded into this register before writing a command to the command register.
-func (r *registerArgrType) SetCmdarg(value uint32) {
+func (r *RegisterArgrType) SetCmdarg(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterArgrFieldCmdargMask)|(uint32(value)<<RegisterArgrFieldCmdargShift))
 }
 
-// registerCmdrType The SDMMC_CMDR register contains the command index and command type bits. The command index is sent to a card as part of a command message. The command type bits control the command path state machine (CPSM).
-type registerCmdrType uint32
+// RegisterCmdrType The SDMMC_CMDR register contains the command index and command type bits. The command index is sent to a card as part of a command message. The command type bits control the command path state machine (CPSM).
+type RegisterCmdrType uint32
+
+func (r *RegisterCmdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCmdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCmdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCmdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCmdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCmdrFieldCmdindexShift = 0
@@ -289,12 +392,12 @@ const (
 )
 
 // GetCmdindex Command index. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). The command index is sent to the card as part of a command message.
-func (r *registerCmdrType) GetCmdindex() uint8 {
+func (r *RegisterCmdrType) GetCmdindex() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldCmdindexMask) >> RegisterCmdrFieldCmdindexShift)
 }
 
 // SetCmdindex Command index. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). The command index is sent to the card as part of a command message.
-func (r *registerCmdrType) SetCmdindex(value uint8) {
+func (r *RegisterCmdrType) SetCmdindex(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCmdrFieldCmdindexMask)|(uint32(value)<<RegisterCmdrFieldCmdindexShift))
 }
 
@@ -304,12 +407,12 @@ const (
 )
 
 // GetCmdtrans The CPSM treats the command as a data transfer command, stops the interrupt period, and signals DataEnable to the DPSM This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). If this bit is set, the CPSM issues an end of interrupt period and issues DataEnable signal to the DPSM when the command is sent.
-func (r *registerCmdrType) GetCmdtrans() bool {
+func (r *RegisterCmdrType) GetCmdtrans() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldCmdtransMask) != 0
 }
 
 // SetCmdtrans The CPSM treats the command as a data transfer command, stops the interrupt period, and signals DataEnable to the DPSM This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). If this bit is set, the CPSM issues an end of interrupt period and issues DataEnable signal to the DPSM when the command is sent.
-func (r *registerCmdrType) SetCmdtrans(value bool) {
+func (r *RegisterCmdrType) SetCmdtrans(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCmdrFieldCmdtransMask)
 	} else {
@@ -323,12 +426,12 @@ const (
 )
 
 // GetCmdstop The CPSM treats the command as a Stop Transmission command and signals Abort to the DPSM. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). If this bit is set, the CPSM issues the Abort signal to the DPSM when the command is sent.
-func (r *registerCmdrType) GetCmdstop() bool {
+func (r *RegisterCmdrType) GetCmdstop() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldCmdstopMask) != 0
 }
 
 // SetCmdstop The CPSM treats the command as a Stop Transmission command and signals Abort to the DPSM. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). If this bit is set, the CPSM issues the Abort signal to the DPSM when the command is sent.
-func (r *registerCmdrType) SetCmdstop(value bool) {
+func (r *RegisterCmdrType) SetCmdstop(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCmdrFieldCmdstopMask)
 	} else {
@@ -342,12 +445,12 @@ const (
 )
 
 // GetWaitresp Wait for response bits. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). They are used to configure whether the CPSM is to wait for a response, and if yes, which kind of response.
-func (r *registerCmdrType) GetWaitresp() uint8 {
+func (r *RegisterCmdrType) GetWaitresp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldWaitrespMask) >> RegisterCmdrFieldWaitrespShift)
 }
 
 // SetWaitresp Wait for response bits. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). They are used to configure whether the CPSM is to wait for a response, and if yes, which kind of response.
-func (r *registerCmdrType) SetWaitresp(value uint8) {
+func (r *RegisterCmdrType) SetWaitresp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCmdrFieldWaitrespMask)|(uint32(value)<<RegisterCmdrFieldWaitrespShift))
 }
 
@@ -357,12 +460,12 @@ const (
 )
 
 // GetWaitint CPSM waits for interrupt request. If this bit is set, the CPSM disables command timeout and waits for an card interrupt request (Response). If this bit is cleared in the CPSM Wait state, will cause the abort of the interrupt mode.
-func (r *registerCmdrType) GetWaitint() bool {
+func (r *RegisterCmdrType) GetWaitint() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldWaitintMask) != 0
 }
 
 // SetWaitint CPSM waits for interrupt request. If this bit is set, the CPSM disables command timeout and waits for an card interrupt request (Response). If this bit is cleared in the CPSM Wait state, will cause the abort of the interrupt mode.
-func (r *registerCmdrType) SetWaitint(value bool) {
+func (r *RegisterCmdrType) SetWaitint(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCmdrFieldWaitintMask)
 	} else {
@@ -376,12 +479,12 @@ const (
 )
 
 // GetWaitpend CPSM Waits for end of data transfer (CmdPend internal signal) from DPSM. This bit when set, the CPSM waits for the end of data transfer trigger before it starts sending a command. WAITPEND is only taken into account when DTMODE = MMC stream data transfer, WIDBUS = 1-bit wide bus mode, DPSMACT = 1 and DTDIR = from host to card.
-func (r *registerCmdrType) GetWaitpend() bool {
+func (r *RegisterCmdrType) GetWaitpend() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldWaitpendMask) != 0
 }
 
 // SetWaitpend CPSM Waits for end of data transfer (CmdPend internal signal) from DPSM. This bit when set, the CPSM waits for the end of data transfer trigger before it starts sending a command. WAITPEND is only taken into account when DTMODE = MMC stream data transfer, WIDBUS = 1-bit wide bus mode, DPSMACT = 1 and DTDIR = from host to card.
-func (r *registerCmdrType) SetWaitpend(value bool) {
+func (r *RegisterCmdrType) SetWaitpend(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCmdrFieldWaitpendMask)
 	} else {
@@ -395,12 +498,12 @@ const (
 )
 
 // GetCpsmen Command path state machine (CPSM) Enable bit This bit is written 1 by firmware, and cleared by hardware when the CPSM enters the Idle state. If this bit is set, the CPSM is enabled. When DTEN = 1, no command will be transfered nor boot procedure will be started. CPSMEN is cleared to 0.
-func (r *registerCmdrType) GetCpsmen() bool {
+func (r *RegisterCmdrType) GetCpsmen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldCpsmenMask) != 0
 }
 
 // SetCpsmen Command path state machine (CPSM) Enable bit This bit is written 1 by firmware, and cleared by hardware when the CPSM enters the Idle state. If this bit is set, the CPSM is enabled. When DTEN = 1, no command will be transfered nor boot procedure will be started. CPSMEN is cleared to 0.
-func (r *registerCmdrType) SetCpsmen(value bool) {
+func (r *RegisterCmdrType) SetCpsmen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCmdrFieldCpsmenMask)
 	} else {
@@ -414,12 +517,12 @@ const (
 )
 
 // GetDthold Hold new data block transmission and reception in the DPSM. If this bit is set, the DPSM will not move from the Wait_S state to the Send state or from the Wait_R state to the Receive state.
-func (r *registerCmdrType) GetDthold() bool {
+func (r *RegisterCmdrType) GetDthold() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldDtholdMask) != 0
 }
 
 // SetDthold Hold new data block transmission and reception in the DPSM. If this bit is set, the DPSM will not move from the Wait_S state to the Send state or from the Wait_R state to the Receive state.
-func (r *registerCmdrType) SetDthold(value bool) {
+func (r *RegisterCmdrType) SetDthold(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCmdrFieldDtholdMask)
 	} else {
@@ -433,12 +536,12 @@ const (
 )
 
 // GetBootmode Select the boot mode procedure to be used. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0)
-func (r *registerCmdrType) GetBootmode() bool {
+func (r *RegisterCmdrType) GetBootmode() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldBootmodeMask) != 0
 }
 
 // SetBootmode Select the boot mode procedure to be used. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0)
-func (r *registerCmdrType) SetBootmode(value bool) {
+func (r *RegisterCmdrType) SetBootmode(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCmdrFieldBootmodeMask)
 	} else {
@@ -452,12 +555,12 @@ const (
 )
 
 // GetBooten Enable boot mode procedure.
-func (r *registerCmdrType) GetBooten() bool {
+func (r *RegisterCmdrType) GetBooten() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldBootenMask) != 0
 }
 
 // SetBooten Enable boot mode procedure.
-func (r *registerCmdrType) SetBooten(value bool) {
+func (r *RegisterCmdrType) SetBooten(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCmdrFieldBootenMask)
 	} else {
@@ -471,12 +574,12 @@ const (
 )
 
 // GetCmdsuspend The CPSM treats the command as a Suspend or Resume command and signals interrupt period start/end. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). CMDSUSPEND = 1 and CMDTRANS = 0 Suspend command, start interrupt period when response bit BS=0. CMDSUSPEND = 1 and CMDTRANS = 1 Resume command with data, end interrupt period when response bit DF=1.
-func (r *registerCmdrType) GetCmdsuspend() bool {
+func (r *RegisterCmdrType) GetCmdsuspend() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCmdrFieldCmdsuspendMask) != 0
 }
 
 // SetCmdsuspend The CPSM treats the command as a Suspend or Resume command and signals interrupt period start/end. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). CMDSUSPEND = 1 and CMDTRANS = 0 Suspend command, start interrupt period when response bit BS=0. CMDSUSPEND = 1 and CMDTRANS = 1 Resume command with data, end interrupt period when response bit DF=1.
-func (r *registerCmdrType) SetCmdsuspend(value bool) {
+func (r *RegisterCmdrType) SetCmdsuspend(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCmdrFieldCmdsuspendMask)
 	} else {
@@ -484,8 +587,31 @@ func (r *registerCmdrType) SetCmdsuspend(value bool) {
 	}
 }
 
-// registerRespcmdrType SDMMC command response register
-type registerRespcmdrType uint32
+// RegisterRespcmdrType SDMMC command response register
+type RegisterRespcmdrType uint32
+
+func (r *RegisterRespcmdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRespcmdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRespcmdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRespcmdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRespcmdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRespcmdrFieldRespcmdShift = 0
@@ -493,17 +619,40 @@ const (
 )
 
 // GetRespcmd Response command index
-func (r *registerRespcmdrType) GetRespcmd() uint8 {
+func (r *RegisterRespcmdrType) GetRespcmd() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRespcmdrFieldRespcmdMask) >> RegisterRespcmdrFieldRespcmdShift)
 }
 
 // SetRespcmd Response command index
-func (r *registerRespcmdrType) SetRespcmd(value uint8) {
+func (r *RegisterRespcmdrType) SetRespcmd(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRespcmdrFieldRespcmdMask)|(uint32(value)<<RegisterRespcmdrFieldRespcmdShift))
 }
 
-// registerResp1rType The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-type registerResp1rType uint32
+// RegisterResp1rType The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
+type RegisterResp1rType uint32
+
+func (r *RegisterResp1rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterResp1rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterResp1rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterResp1rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterResp1rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterResp1rFieldCardstatus1Shift = 0
@@ -511,17 +660,40 @@ const (
 )
 
 // GetCardstatus1 see Table 432
-func (r *registerResp1rType) GetCardstatus1() uint32 {
+func (r *RegisterResp1rType) GetCardstatus1() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterResp1rFieldCardstatus1Mask) >> RegisterResp1rFieldCardstatus1Shift)
 }
 
 // SetCardstatus1 see Table 432
-func (r *registerResp1rType) SetCardstatus1(value uint32) {
+func (r *RegisterResp1rType) SetCardstatus1(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterResp1rFieldCardstatus1Mask)|(uint32(value)<<RegisterResp1rFieldCardstatus1Shift))
 }
 
-// registerResp2rType The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-type registerResp2rType uint32
+// RegisterResp2rType The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
+type RegisterResp2rType uint32
+
+func (r *RegisterResp2rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterResp2rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterResp2rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterResp2rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterResp2rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterResp2rFieldCardstatus2Shift = 0
@@ -529,17 +701,40 @@ const (
 )
 
 // GetCardstatus2 see Table404.
-func (r *registerResp2rType) GetCardstatus2() uint32 {
+func (r *RegisterResp2rType) GetCardstatus2() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterResp2rFieldCardstatus2Mask) >> RegisterResp2rFieldCardstatus2Shift)
 }
 
 // SetCardstatus2 see Table404.
-func (r *registerResp2rType) SetCardstatus2(value uint32) {
+func (r *RegisterResp2rType) SetCardstatus2(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterResp2rFieldCardstatus2Mask)|(uint32(value)<<RegisterResp2rFieldCardstatus2Shift))
 }
 
-// registerResp3rType The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-type registerResp3rType uint32
+// RegisterResp3rType The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
+type RegisterResp3rType uint32
+
+func (r *RegisterResp3rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterResp3rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterResp3rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterResp3rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterResp3rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterResp3rFieldCardstatus3Shift = 0
@@ -547,17 +742,40 @@ const (
 )
 
 // GetCardstatus3 see Table404.
-func (r *registerResp3rType) GetCardstatus3() uint32 {
+func (r *RegisterResp3rType) GetCardstatus3() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterResp3rFieldCardstatus3Mask) >> RegisterResp3rFieldCardstatus3Shift)
 }
 
 // SetCardstatus3 see Table404.
-func (r *registerResp3rType) SetCardstatus3(value uint32) {
+func (r *RegisterResp3rType) SetCardstatus3(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterResp3rFieldCardstatus3Mask)|(uint32(value)<<RegisterResp3rFieldCardstatus3Shift))
 }
 
-// registerResp4rType The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-type registerResp4rType uint32
+// RegisterResp4rType The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
+type RegisterResp4rType uint32
+
+func (r *RegisterResp4rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterResp4rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterResp4rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterResp4rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterResp4rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterResp4rFieldCardstatus4Shift = 0
@@ -565,17 +783,40 @@ const (
 )
 
 // GetCardstatus4 see Table404.
-func (r *registerResp4rType) GetCardstatus4() uint32 {
+func (r *RegisterResp4rType) GetCardstatus4() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterResp4rFieldCardstatus4Mask) >> RegisterResp4rFieldCardstatus4Shift)
 }
 
 // SetCardstatus4 see Table404.
-func (r *registerResp4rType) SetCardstatus4(value uint32) {
+func (r *RegisterResp4rType) SetCardstatus4(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterResp4rFieldCardstatus4Mask)|(uint32(value)<<RegisterResp4rFieldCardstatus4Shift))
 }
 
-// registerDtimerType The SDMMC_DTIMER register contains the data timeout period, in card bus clock periods. A counter loads the value from the SDMMC_DTIMER register, and starts decrementing when the data path state machine (DPSM) enters the Wait_R or Busy state. If the timer reaches 0 while the DPSM is in either of these states, the timeout status flag is set.
-type registerDtimerType uint32
+// RegisterDtimerType The SDMMC_DTIMER register contains the data timeout period, in card bus clock periods. A counter loads the value from the SDMMC_DTIMER register, and starts decrementing when the data path state machine (DPSM) enters the Wait_R or Busy state. If the timer reaches 0 while the DPSM is in either of these states, the timeout status flag is set.
+type RegisterDtimerType uint32
+
+func (r *RegisterDtimerType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDtimerType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDtimerType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDtimerType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDtimerType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDtimerFieldDatatimeShift = 0
@@ -583,17 +824,40 @@ const (
 )
 
 // GetDatatime Data and R1b busy timeout period This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0). Data and R1b busy timeout period expressed in card bus clock periods.
-func (r *registerDtimerType) GetDatatime() uint32 {
+func (r *RegisterDtimerType) GetDatatime() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDtimerFieldDatatimeMask) >> RegisterDtimerFieldDatatimeShift)
 }
 
 // SetDatatime Data and R1b busy timeout period This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0). Data and R1b busy timeout period expressed in card bus clock periods.
-func (r *registerDtimerType) SetDatatime(value uint32) {
+func (r *RegisterDtimerType) SetDatatime(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDtimerFieldDatatimeMask)|(uint32(value)<<RegisterDtimerFieldDatatimeShift))
 }
 
-// registerDlenrType The SDMMC_DLENR register contains the number of data bytes to be transferred. The value is loaded into the data counter when data transfer starts.
-type registerDlenrType uint32
+// RegisterDlenrType The SDMMC_DLENR register contains the number of data bytes to be transferred. The value is loaded into the data counter when data transfer starts.
+type RegisterDlenrType uint32
+
+func (r *RegisterDlenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDlenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDlenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDlenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDlenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDlenrFieldDatalengthShift = 0
@@ -601,17 +865,40 @@ const (
 )
 
 // GetDatalength Data length value This register can only be written by firmware when DPSM is inactive (DPSMACT = 0). Number of data bytes to be transferred. When DDR = 1 DATALENGTH is truncated to a multiple of 2. (The last odd byte is not transfered) When DATALENGTH = 0 no data will be transfered, when requested by a CPSMEN and CMDTRANS = 1 also no command will be transfered. DTEN and CPSMEN are cleared to 0.
-func (r *registerDlenrType) GetDatalength() uint32 {
+func (r *RegisterDlenrType) GetDatalength() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDlenrFieldDatalengthMask) >> RegisterDlenrFieldDatalengthShift)
 }
 
 // SetDatalength Data length value This register can only be written by firmware when DPSM is inactive (DPSMACT = 0). Number of data bytes to be transferred. When DDR = 1 DATALENGTH is truncated to a multiple of 2. (The last odd byte is not transfered) When DATALENGTH = 0 no data will be transfered, when requested by a CPSMEN and CMDTRANS = 1 also no command will be transfered. DTEN and CPSMEN are cleared to 0.
-func (r *registerDlenrType) SetDatalength(value uint32) {
+func (r *RegisterDlenrType) SetDatalength(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDlenrFieldDatalengthMask)|(uint32(value)<<RegisterDlenrFieldDatalengthShift))
 }
 
-// registerDctrlType The SDMMC_DCTRL register control the data path state machine (DPSM).
-type registerDctrlType uint32
+// RegisterDctrlType The SDMMC_DCTRL register control the data path state machine (DPSM).
+type RegisterDctrlType uint32
+
+func (r *RegisterDctrlType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDctrlType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDctrlType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDctrlType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDctrlType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDctrlFieldDtenShift = 0
@@ -619,12 +906,12 @@ const (
 )
 
 // GetDten Data transfer enable bit This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). This bit is cleared by Hardware when data transfer completes. This bit shall only be used to transfer data when no associated data transfer command is used, i.e. shall not be used with SD or eMMC cards.
-func (r *registerDctrlType) GetDten() bool {
+func (r *RegisterDctrlType) GetDten() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDctrlFieldDtenMask) != 0
 }
 
 // SetDten Data transfer enable bit This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). This bit is cleared by Hardware when data transfer completes. This bit shall only be used to transfer data when no associated data transfer command is used, i.e. shall not be used with SD or eMMC cards.
-func (r *registerDctrlType) SetDten(value bool) {
+func (r *RegisterDctrlType) SetDten(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDctrlFieldDtenMask)
 	} else {
@@ -638,12 +925,12 @@ const (
 )
 
 // GetDtdir Data transfer direction selection This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerDctrlType) GetDtdir() bool {
+func (r *RegisterDctrlType) GetDtdir() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDctrlFieldDtdirMask) != 0
 }
 
 // SetDtdir Data transfer direction selection This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerDctrlType) SetDtdir(value bool) {
+func (r *RegisterDctrlType) SetDtdir(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDctrlFieldDtdirMask)
 	} else {
@@ -657,12 +944,12 @@ const (
 )
 
 // GetDtmode Data transfer mode selection. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerDctrlType) GetDtmode() uint8 {
+func (r *RegisterDctrlType) GetDtmode() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDctrlFieldDtmodeMask) >> RegisterDctrlFieldDtmodeShift)
 }
 
 // SetDtmode Data transfer mode selection. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerDctrlType) SetDtmode(value uint8) {
+func (r *RegisterDctrlType) SetDtmode(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDctrlFieldDtmodeMask)|(uint32(value)<<RegisterDctrlFieldDtmodeShift))
 }
 
@@ -672,12 +959,12 @@ const (
 )
 
 // GetDblocksize Data block size This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). Define the data block length when the block data transfer mode is selected: When DATALENGTH is not a multiple of DBLOCKSIZE, the transfered data is truncated at a multiple of DBLOCKSIZE. (Any remain data will not be transfered.) When DDR = 1, DBLOCKSIZE = 0000 shall not be used. (No data will be transfered)
-func (r *registerDctrlType) GetDblocksize() uint8 {
+func (r *RegisterDctrlType) GetDblocksize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDctrlFieldDblocksizeMask) >> RegisterDctrlFieldDblocksizeShift)
 }
 
 // SetDblocksize Data block size This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). Define the data block length when the block data transfer mode is selected: When DATALENGTH is not a multiple of DBLOCKSIZE, the transfered data is truncated at a multiple of DBLOCKSIZE. (Any remain data will not be transfered.) When DDR = 1, DBLOCKSIZE = 0000 shall not be used. (No data will be transfered)
-func (r *registerDctrlType) SetDblocksize(value uint8) {
+func (r *RegisterDctrlType) SetDblocksize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDctrlFieldDblocksizeMask)|(uint32(value)<<RegisterDctrlFieldDblocksizeShift))
 }
 
@@ -687,12 +974,12 @@ const (
 )
 
 // GetRwstart Read wait start. If this bit is set, read wait operation starts.
-func (r *registerDctrlType) GetRwstart() bool {
+func (r *RegisterDctrlType) GetRwstart() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDctrlFieldRwstartMask) != 0
 }
 
 // SetRwstart Read wait start. If this bit is set, read wait operation starts.
-func (r *registerDctrlType) SetRwstart(value bool) {
+func (r *RegisterDctrlType) SetRwstart(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDctrlFieldRwstartMask)
 	} else {
@@ -706,12 +993,12 @@ const (
 )
 
 // GetRwstop Read wait stop This bit is written by firmware and auto cleared by hardware when the DPSM moves from the READ_WAIT state to the WAIT_R or IDLE state.
-func (r *registerDctrlType) GetRwstop() bool {
+func (r *RegisterDctrlType) GetRwstop() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDctrlFieldRwstopMask) != 0
 }
 
 // SetRwstop Read wait stop This bit is written by firmware and auto cleared by hardware when the DPSM moves from the READ_WAIT state to the WAIT_R or IDLE state.
-func (r *registerDctrlType) SetRwstop(value bool) {
+func (r *RegisterDctrlType) SetRwstop(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDctrlFieldRwstopMask)
 	} else {
@@ -725,12 +1012,12 @@ const (
 )
 
 // GetRwmod Read wait mode. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerDctrlType) GetRwmod() bool {
+func (r *RegisterDctrlType) GetRwmod() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDctrlFieldRwmodMask) != 0
 }
 
 // SetRwmod Read wait mode. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerDctrlType) SetRwmod(value bool) {
+func (r *RegisterDctrlType) SetRwmod(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDctrlFieldRwmodMask)
 	} else {
@@ -744,12 +1031,12 @@ const (
 )
 
 // GetSdioen SD I/O interrupt enable functions This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). If this bit is set, the DPSM enables the SD I/O card specific interrupt operation.
-func (r *registerDctrlType) GetSdioen() bool {
+func (r *RegisterDctrlType) GetSdioen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDctrlFieldSdioenMask) != 0
 }
 
 // SetSdioen SD I/O interrupt enable functions This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). If this bit is set, the DPSM enables the SD I/O card specific interrupt operation.
-func (r *registerDctrlType) SetSdioen(value bool) {
+func (r *RegisterDctrlType) SetSdioen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDctrlFieldSdioenMask)
 	} else {
@@ -763,12 +1050,12 @@ const (
 )
 
 // GetBootacken Enable the reception of the boot acknowledgment. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerDctrlType) GetBootacken() bool {
+func (r *RegisterDctrlType) GetBootacken() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDctrlFieldBootackenMask) != 0
 }
 
 // SetBootacken Enable the reception of the boot acknowledgment. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerDctrlType) SetBootacken(value bool) {
+func (r *RegisterDctrlType) SetBootacken(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDctrlFieldBootackenMask)
 	} else {
@@ -782,12 +1069,12 @@ const (
 )
 
 // GetFiforst FIFO reset, will flush any remaining data. This bit can only be written by firmware when IDMAEN= 0 and DPSM is active (DPSMACT = 1). This bit will only take effect when a transfer error or transfer hold occurs.
-func (r *registerDctrlType) GetFiforst() bool {
+func (r *RegisterDctrlType) GetFiforst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDctrlFieldFiforstMask) != 0
 }
 
 // SetFiforst FIFO reset, will flush any remaining data. This bit can only be written by firmware when IDMAEN= 0 and DPSM is active (DPSMACT = 1). This bit will only take effect when a transfer error or transfer hold occurs.
-func (r *registerDctrlType) SetFiforst(value bool) {
+func (r *RegisterDctrlType) SetFiforst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDctrlFieldFiforstMask)
 	} else {
@@ -795,8 +1082,31 @@ func (r *registerDctrlType) SetFiforst(value bool) {
 	}
 }
 
-// registerDcntrType The SDMMC_DCNTR register loads the value from the data length register (see SDMMC_DLENR) when the DPSM moves from the Idle state to the Wait_R or Wait_S state. As data is transferred, the counter decrements the value until it reaches 0. The DPSM then moves to the Idle state and when there has been no error, the data status end flag (DATAEND) is set.
-type registerDcntrType uint32
+// RegisterDcntrType The SDMMC_DCNTR register loads the value from the data length register (see SDMMC_DLENR) when the DPSM moves from the Idle state to the Wait_R or Wait_S state. As data is transferred, the counter decrements the value until it reaches 0. The DPSM then moves to the Idle state and when there has been no error, the data status end flag (DATAEND) is set.
+type RegisterDcntrType uint32
+
+func (r *RegisterDcntrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDcntrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDcntrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDcntrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDcntrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDcntrFieldDatacountShift = 0
@@ -804,17 +1114,40 @@ const (
 )
 
 // GetDatacount Data count value When read, the number of remaining data bytes to be transferred is returned. Write has no effect.
-func (r *registerDcntrType) GetDatacount() uint32 {
+func (r *RegisterDcntrType) GetDatacount() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDcntrFieldDatacountMask) >> RegisterDcntrFieldDatacountShift)
 }
 
 // SetDatacount Data count value When read, the number of remaining data bytes to be transferred is returned. Write has no effect.
-func (r *registerDcntrType) SetDatacount(value uint32) {
+func (r *RegisterDcntrType) SetDatacount(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDcntrFieldDatacountMask)|(uint32(value)<<RegisterDcntrFieldDatacountShift))
 }
 
-// registerStarType The SDMMC_STAR register is a read-only register. It contains two types of flag:Static flags (bits [29,21,11:0]): these bits remain asserted until they are cleared by writing to the SDMMC interrupt Clear register (see SDMMC_ICR)Dynamic flags (bits [20:12]): these bits change state depending on the state of the underlying logic (for example, FIFO full and empty flags are asserted and de-asserted as data while written to the FIFO)
-type registerStarType uint32
+// RegisterStarType The SDMMC_STAR register is a read-only register. It contains two types of flag:Static flags (bits [29,21,11:0]): these bits remain asserted until they are cleared by writing to the SDMMC interrupt Clear register (see SDMMC_ICR)Dynamic flags (bits [20:12]): these bits change state depending on the state of the underlying logic (for example, FIFO full and empty flags are asserted and de-asserted as data while written to the FIFO)
+type RegisterStarType uint32
+
+func (r *RegisterStarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterStarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterStarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterStarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterStarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterStarFieldCcrcfailShift = 0
@@ -822,12 +1155,12 @@ const (
 )
 
 // GetCcrcfail Command response received (CRC check failed). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetCcrcfail() bool {
+func (r *RegisterStarType) GetCcrcfail() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldCcrcfailMask) != 0
 }
 
 // SetCcrcfail Command response received (CRC check failed). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetCcrcfail(value bool) {
+func (r *RegisterStarType) SetCcrcfail(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldCcrcfailMask)
 	} else {
@@ -841,12 +1174,12 @@ const (
 )
 
 // GetDcrcfail Data block sent/received (CRC check failed). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetDcrcfail() bool {
+func (r *RegisterStarType) GetDcrcfail() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldDcrcfailMask) != 0
 }
 
 // SetDcrcfail Data block sent/received (CRC check failed). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetDcrcfail(value bool) {
+func (r *RegisterStarType) SetDcrcfail(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldDcrcfailMask)
 	} else {
@@ -860,12 +1193,12 @@ const (
 )
 
 // GetCtimeout Command response timeout. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR. The Command Timeout period has a fixed value of 64 SDMMC_CK clock periods.
-func (r *registerStarType) GetCtimeout() bool {
+func (r *RegisterStarType) GetCtimeout() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldCtimeoutMask) != 0
 }
 
 // SetCtimeout Command response timeout. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR. The Command Timeout period has a fixed value of 64 SDMMC_CK clock periods.
-func (r *registerStarType) SetCtimeout(value bool) {
+func (r *RegisterStarType) SetCtimeout(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldCtimeoutMask)
 	} else {
@@ -879,12 +1212,12 @@ const (
 )
 
 // GetDtimeout Data timeout. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetDtimeout() bool {
+func (r *RegisterStarType) GetDtimeout() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldDtimeoutMask) != 0
 }
 
 // SetDtimeout Data timeout. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetDtimeout(value bool) {
+func (r *RegisterStarType) SetDtimeout(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldDtimeoutMask)
 	} else {
@@ -898,12 +1231,12 @@ const (
 )
 
 // GetTxunderr Transmit FIFO underrun error or IDMA read transfer error. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetTxunderr() bool {
+func (r *RegisterStarType) GetTxunderr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldTxunderrMask) != 0
 }
 
 // SetTxunderr Transmit FIFO underrun error or IDMA read transfer error. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetTxunderr(value bool) {
+func (r *RegisterStarType) SetTxunderr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldTxunderrMask)
 	} else {
@@ -917,12 +1250,12 @@ const (
 )
 
 // GetRxoverr Received FIFO overrun error or IDMA write transfer error. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetRxoverr() bool {
+func (r *RegisterStarType) GetRxoverr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldRxoverrMask) != 0
 }
 
 // SetRxoverr Received FIFO overrun error or IDMA write transfer error. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetRxoverr(value bool) {
+func (r *RegisterStarType) SetRxoverr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldRxoverrMask)
 	} else {
@@ -936,12 +1269,12 @@ const (
 )
 
 // GetCmdrend Command response received (CRC check passed, or no CRC). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetCmdrend() bool {
+func (r *RegisterStarType) GetCmdrend() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldCmdrendMask) != 0
 }
 
 // SetCmdrend Command response received (CRC check passed, or no CRC). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetCmdrend(value bool) {
+func (r *RegisterStarType) SetCmdrend(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldCmdrendMask)
 	} else {
@@ -955,12 +1288,12 @@ const (
 )
 
 // GetCmdsent Command sent (no response required). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetCmdsent() bool {
+func (r *RegisterStarType) GetCmdsent() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldCmdsentMask) != 0
 }
 
 // SetCmdsent Command sent (no response required). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetCmdsent(value bool) {
+func (r *RegisterStarType) SetCmdsent(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldCmdsentMask)
 	} else {
@@ -974,12 +1307,12 @@ const (
 )
 
 // GetDataend Data transfer ended correctly. (data counter, DATACOUNT is zero and no errors occur). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetDataend() bool {
+func (r *RegisterStarType) GetDataend() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldDataendMask) != 0
 }
 
 // SetDataend Data transfer ended correctly. (data counter, DATACOUNT is zero and no errors occur). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetDataend(value bool) {
+func (r *RegisterStarType) SetDataend(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldDataendMask)
 	} else {
@@ -993,12 +1326,12 @@ const (
 )
 
 // GetDhold Data transfer Hold. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetDhold() bool {
+func (r *RegisterStarType) GetDhold() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldDholdMask) != 0
 }
 
 // SetDhold Data transfer Hold. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetDhold(value bool) {
+func (r *RegisterStarType) SetDhold(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldDholdMask)
 	} else {
@@ -1012,12 +1345,12 @@ const (
 )
 
 // GetDbckend Data block sent/received. (CRC check passed) and DPSM moves to the READWAIT state. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetDbckend() bool {
+func (r *RegisterStarType) GetDbckend() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldDbckendMask) != 0
 }
 
 // SetDbckend Data block sent/received. (CRC check passed) and DPSM moves to the READWAIT state. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetDbckend(value bool) {
+func (r *RegisterStarType) SetDbckend(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldDbckendMask)
 	} else {
@@ -1031,12 +1364,12 @@ const (
 )
 
 // GetDabort Data transfer aborted by CMD12. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetDabort() bool {
+func (r *RegisterStarType) GetDabort() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldDabortMask) != 0
 }
 
 // SetDabort Data transfer aborted by CMD12. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetDabort(value bool) {
+func (r *RegisterStarType) SetDabort(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldDabortMask)
 	} else {
@@ -1050,12 +1383,12 @@ const (
 )
 
 // GetDpsmact Data path state machine active, i.e. not in Idle state. This is a hardware status flag only, does not generate an interrupt.
-func (r *registerStarType) GetDpsmact() bool {
+func (r *RegisterStarType) GetDpsmact() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldDpsmactMask) != 0
 }
 
 // SetDpsmact Data path state machine active, i.e. not in Idle state. This is a hardware status flag only, does not generate an interrupt.
-func (r *registerStarType) SetDpsmact(value bool) {
+func (r *RegisterStarType) SetDpsmact(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldDpsmactMask)
 	} else {
@@ -1069,12 +1402,12 @@ const (
 )
 
 // GetCpsmact Command path state machine active, i.e. not in Idle state. This is a hardware status flag only, does not generate an interrupt.
-func (r *registerStarType) GetCpsmact() bool {
+func (r *RegisterStarType) GetCpsmact() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldCpsmactMask) != 0
 }
 
 // SetCpsmact Command path state machine active, i.e. not in Idle state. This is a hardware status flag only, does not generate an interrupt.
-func (r *registerStarType) SetCpsmact(value bool) {
+func (r *RegisterStarType) SetCpsmact(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldCpsmactMask)
 	} else {
@@ -1088,12 +1421,12 @@ const (
 )
 
 // GetTxfifohe Transmit FIFO half empty At least half the number of words can be written into the FIFO. This bit is cleared when the FIFO becomes half+1 full.
-func (r *registerStarType) GetTxfifohe() bool {
+func (r *RegisterStarType) GetTxfifohe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldTxfifoheMask) != 0
 }
 
 // SetTxfifohe Transmit FIFO half empty At least half the number of words can be written into the FIFO. This bit is cleared when the FIFO becomes half+1 full.
-func (r *registerStarType) SetTxfifohe(value bool) {
+func (r *RegisterStarType) SetTxfifohe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldTxfifoheMask)
 	} else {
@@ -1107,12 +1440,12 @@ const (
 )
 
 // GetRxfifohf Receive FIFO half full There are at least half the number of words in the FIFO. This bit is cleared when the FIFO becomes half+1 empty.
-func (r *registerStarType) GetRxfifohf() bool {
+func (r *RegisterStarType) GetRxfifohf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldRxfifohfMask) != 0
 }
 
 // SetRxfifohf Receive FIFO half full There are at least half the number of words in the FIFO. This bit is cleared when the FIFO becomes half+1 empty.
-func (r *registerStarType) SetRxfifohf(value bool) {
+func (r *RegisterStarType) SetRxfifohf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldRxfifohfMask)
 	} else {
@@ -1126,12 +1459,12 @@ const (
 )
 
 // GetTxfifof Transmit FIFO full This is a hardware status flag only, does not generate an interrupt. This bit is cleared when one FIFO location becomes empty.
-func (r *registerStarType) GetTxfifof() bool {
+func (r *RegisterStarType) GetTxfifof() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldTxfifofMask) != 0
 }
 
 // SetTxfifof Transmit FIFO full This is a hardware status flag only, does not generate an interrupt. This bit is cleared when one FIFO location becomes empty.
-func (r *registerStarType) SetTxfifof(value bool) {
+func (r *RegisterStarType) SetTxfifof(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldTxfifofMask)
 	} else {
@@ -1145,12 +1478,12 @@ const (
 )
 
 // GetRxfifof Receive FIFO full This bit is cleared when one FIFO location becomes empty.
-func (r *registerStarType) GetRxfifof() bool {
+func (r *RegisterStarType) GetRxfifof() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldRxfifofMask) != 0
 }
 
 // SetRxfifof Receive FIFO full This bit is cleared when one FIFO location becomes empty.
-func (r *registerStarType) SetRxfifof(value bool) {
+func (r *RegisterStarType) SetRxfifof(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldRxfifofMask)
 	} else {
@@ -1164,12 +1497,12 @@ const (
 )
 
 // GetTxfifoe Transmit FIFO empty This bit is cleared when one FIFO location becomes full.
-func (r *registerStarType) GetTxfifoe() bool {
+func (r *RegisterStarType) GetTxfifoe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldTxfifoeMask) != 0
 }
 
 // SetTxfifoe Transmit FIFO empty This bit is cleared when one FIFO location becomes full.
-func (r *registerStarType) SetTxfifoe(value bool) {
+func (r *RegisterStarType) SetTxfifoe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldTxfifoeMask)
 	} else {
@@ -1183,12 +1516,12 @@ const (
 )
 
 // GetRxfifoe Receive FIFO empty This is a hardware status flag only, does not generate an interrupt. This bit is cleared when one FIFO location becomes full.
-func (r *registerStarType) GetRxfifoe() bool {
+func (r *RegisterStarType) GetRxfifoe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldRxfifoeMask) != 0
 }
 
 // SetRxfifoe Receive FIFO empty This is a hardware status flag only, does not generate an interrupt. This bit is cleared when one FIFO location becomes full.
-func (r *registerStarType) SetRxfifoe(value bool) {
+func (r *RegisterStarType) SetRxfifoe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldRxfifoeMask)
 	} else {
@@ -1202,12 +1535,12 @@ const (
 )
 
 // GetBusyd0 Inverted value of SDMMC_D0 line (Busy), sampled at the end of a CMD response and a second time 2 SDMMC_CK cycles after the CMD response. This bit is reset to not busy when the SDMMCD0 line changes from busy to not busy. This bit does not signal busy due to data transfer. This is a hardware status flag only, it does not generate an interrupt.
-func (r *registerStarType) GetBusyd0() bool {
+func (r *RegisterStarType) GetBusyd0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldBusyd0Mask) != 0
 }
 
 // SetBusyd0 Inverted value of SDMMC_D0 line (Busy), sampled at the end of a CMD response and a second time 2 SDMMC_CK cycles after the CMD response. This bit is reset to not busy when the SDMMCD0 line changes from busy to not busy. This bit does not signal busy due to data transfer. This is a hardware status flag only, it does not generate an interrupt.
-func (r *registerStarType) SetBusyd0(value bool) {
+func (r *RegisterStarType) SetBusyd0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldBusyd0Mask)
 	} else {
@@ -1221,12 +1554,12 @@ const (
 )
 
 // GetBusyd0end end of SDMMC_D0 Busy following a CMD response detected. This indicates only end of busy following a CMD response. This bit does not signal busy due to data transfer. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetBusyd0end() bool {
+func (r *RegisterStarType) GetBusyd0end() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldBusyd0endMask) != 0
 }
 
 // SetBusyd0end end of SDMMC_D0 Busy following a CMD response detected. This indicates only end of busy following a CMD response. This bit does not signal busy due to data transfer. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetBusyd0end(value bool) {
+func (r *RegisterStarType) SetBusyd0end(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldBusyd0endMask)
 	} else {
@@ -1240,12 +1573,12 @@ const (
 )
 
 // GetSdioit SDIO interrupt received. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetSdioit() bool {
+func (r *RegisterStarType) GetSdioit() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldSdioitMask) != 0
 }
 
 // SetSdioit SDIO interrupt received. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetSdioit(value bool) {
+func (r *RegisterStarType) SetSdioit(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldSdioitMask)
 	} else {
@@ -1259,12 +1592,12 @@ const (
 )
 
 // GetAckfail Boot acknowledgment received (boot acknowledgment check fail). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetAckfail() bool {
+func (r *RegisterStarType) GetAckfail() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldAckfailMask) != 0
 }
 
 // SetAckfail Boot acknowledgment received (boot acknowledgment check fail). Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetAckfail(value bool) {
+func (r *RegisterStarType) SetAckfail(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldAckfailMask)
 	} else {
@@ -1278,12 +1611,12 @@ const (
 )
 
 // GetAcktimeout Boot acknowledgment timeout. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetAcktimeout() bool {
+func (r *RegisterStarType) GetAcktimeout() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldAcktimeoutMask) != 0
 }
 
 // SetAcktimeout Boot acknowledgment timeout. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetAcktimeout(value bool) {
+func (r *RegisterStarType) SetAcktimeout(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldAcktimeoutMask)
 	} else {
@@ -1297,12 +1630,12 @@ const (
 )
 
 // GetVswend Voltage switch critical timing section completion. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetVswend() bool {
+func (r *RegisterStarType) GetVswend() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldVswendMask) != 0
 }
 
 // SetVswend Voltage switch critical timing section completion. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetVswend(value bool) {
+func (r *RegisterStarType) SetVswend(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldVswendMask)
 	} else {
@@ -1316,12 +1649,12 @@ const (
 )
 
 // GetCkstop SDMMC_CK stopped in Voltage switch procedure. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetCkstop() bool {
+func (r *RegisterStarType) GetCkstop() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldCkstopMask) != 0
 }
 
 // SetCkstop SDMMC_CK stopped in Voltage switch procedure. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetCkstop(value bool) {
+func (r *RegisterStarType) SetCkstop(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldCkstopMask)
 	} else {
@@ -1335,12 +1668,12 @@ const (
 )
 
 // GetIdmate IDMA transfer error. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetIdmate() bool {
+func (r *RegisterStarType) GetIdmate() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldIdmateMask) != 0
 }
 
 // SetIdmate IDMA transfer error. Interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetIdmate(value bool) {
+func (r *RegisterStarType) SetIdmate(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldIdmateMask)
 	} else {
@@ -1354,12 +1687,12 @@ const (
 )
 
 // GetIdmabtc IDMA buffer transfer complete. interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) GetIdmabtc() bool {
+func (r *RegisterStarType) GetIdmabtc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterStarFieldIdmabtcMask) != 0
 }
 
 // SetIdmabtc IDMA buffer transfer complete. interrupt flag is cleared by writing corresponding interrupt clear bit in SDMMC_ICR.
-func (r *registerStarType) SetIdmabtc(value bool) {
+func (r *RegisterStarType) SetIdmabtc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterStarFieldIdmabtcMask)
 	} else {
@@ -1367,8 +1700,31 @@ func (r *registerStarType) SetIdmabtc(value bool) {
 	}
 }
 
-// registerIcrType The SDMMC_ICR register is a write-only register. Writing a bit with 1 clears the corresponding bit in the SDMMC_STAR status register.
-type registerIcrType uint32
+// RegisterIcrType The SDMMC_ICR register is a write-only register. Writing a bit with 1 clears the corresponding bit in the SDMMC_STAR status register.
+type RegisterIcrType uint32
+
+func (r *RegisterIcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIcrFieldCcrcfailcShift = 0
@@ -1376,12 +1732,12 @@ const (
 )
 
 // GetCcrcfailc CCRCFAIL flag clear bit Set by software to clear the CCRCFAIL flag.
-func (r *registerIcrType) GetCcrcfailc() bool {
+func (r *RegisterIcrType) GetCcrcfailc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldCcrcfailcMask) != 0
 }
 
 // SetCcrcfailc CCRCFAIL flag clear bit Set by software to clear the CCRCFAIL flag.
-func (r *registerIcrType) SetCcrcfailc(value bool) {
+func (r *RegisterIcrType) SetCcrcfailc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldCcrcfailcMask)
 	} else {
@@ -1395,12 +1751,12 @@ const (
 )
 
 // GetDcrcfailc DCRCFAIL flag clear bit Set by software to clear the DCRCFAIL flag.
-func (r *registerIcrType) GetDcrcfailc() bool {
+func (r *RegisterIcrType) GetDcrcfailc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldDcrcfailcMask) != 0
 }
 
 // SetDcrcfailc DCRCFAIL flag clear bit Set by software to clear the DCRCFAIL flag.
-func (r *registerIcrType) SetDcrcfailc(value bool) {
+func (r *RegisterIcrType) SetDcrcfailc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldDcrcfailcMask)
 	} else {
@@ -1414,12 +1770,12 @@ const (
 )
 
 // GetCtimeoutc CTIMEOUT flag clear bit Set by software to clear the CTIMEOUT flag.
-func (r *registerIcrType) GetCtimeoutc() bool {
+func (r *RegisterIcrType) GetCtimeoutc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldCtimeoutcMask) != 0
 }
 
 // SetCtimeoutc CTIMEOUT flag clear bit Set by software to clear the CTIMEOUT flag.
-func (r *registerIcrType) SetCtimeoutc(value bool) {
+func (r *RegisterIcrType) SetCtimeoutc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldCtimeoutcMask)
 	} else {
@@ -1433,12 +1789,12 @@ const (
 )
 
 // GetDtimeoutc DTIMEOUT flag clear bit Set by software to clear the DTIMEOUT flag.
-func (r *registerIcrType) GetDtimeoutc() bool {
+func (r *RegisterIcrType) GetDtimeoutc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldDtimeoutcMask) != 0
 }
 
 // SetDtimeoutc DTIMEOUT flag clear bit Set by software to clear the DTIMEOUT flag.
-func (r *registerIcrType) SetDtimeoutc(value bool) {
+func (r *RegisterIcrType) SetDtimeoutc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldDtimeoutcMask)
 	} else {
@@ -1452,12 +1808,12 @@ const (
 )
 
 // GetTxunderrc TXUNDERR flag clear bit Set by software to clear TXUNDERR flag.
-func (r *registerIcrType) GetTxunderrc() bool {
+func (r *RegisterIcrType) GetTxunderrc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldTxunderrcMask) != 0
 }
 
 // SetTxunderrc TXUNDERR flag clear bit Set by software to clear TXUNDERR flag.
-func (r *registerIcrType) SetTxunderrc(value bool) {
+func (r *RegisterIcrType) SetTxunderrc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldTxunderrcMask)
 	} else {
@@ -1471,12 +1827,12 @@ const (
 )
 
 // GetRxoverrc RXOVERR flag clear bit Set by software to clear the RXOVERR flag.
-func (r *registerIcrType) GetRxoverrc() bool {
+func (r *RegisterIcrType) GetRxoverrc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldRxoverrcMask) != 0
 }
 
 // SetRxoverrc RXOVERR flag clear bit Set by software to clear the RXOVERR flag.
-func (r *registerIcrType) SetRxoverrc(value bool) {
+func (r *RegisterIcrType) SetRxoverrc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldRxoverrcMask)
 	} else {
@@ -1490,12 +1846,12 @@ const (
 )
 
 // GetCmdrendc CMDREND flag clear bit Set by software to clear the CMDREND flag.
-func (r *registerIcrType) GetCmdrendc() bool {
+func (r *RegisterIcrType) GetCmdrendc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldCmdrendcMask) != 0
 }
 
 // SetCmdrendc CMDREND flag clear bit Set by software to clear the CMDREND flag.
-func (r *registerIcrType) SetCmdrendc(value bool) {
+func (r *RegisterIcrType) SetCmdrendc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldCmdrendcMask)
 	} else {
@@ -1509,12 +1865,12 @@ const (
 )
 
 // GetCmdsentc CMDSENT flag clear bit Set by software to clear the CMDSENT flag.
-func (r *registerIcrType) GetCmdsentc() bool {
+func (r *RegisterIcrType) GetCmdsentc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldCmdsentcMask) != 0
 }
 
 // SetCmdsentc CMDSENT flag clear bit Set by software to clear the CMDSENT flag.
-func (r *registerIcrType) SetCmdsentc(value bool) {
+func (r *RegisterIcrType) SetCmdsentc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldCmdsentcMask)
 	} else {
@@ -1528,12 +1884,12 @@ const (
 )
 
 // GetDataendc DATAEND flag clear bit Set by software to clear the DATAEND flag.
-func (r *registerIcrType) GetDataendc() bool {
+func (r *RegisterIcrType) GetDataendc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldDataendcMask) != 0
 }
 
 // SetDataendc DATAEND flag clear bit Set by software to clear the DATAEND flag.
-func (r *registerIcrType) SetDataendc(value bool) {
+func (r *RegisterIcrType) SetDataendc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldDataendcMask)
 	} else {
@@ -1547,12 +1903,12 @@ const (
 )
 
 // GetDholdc DHOLD flag clear bit Set by software to clear the DHOLD flag.
-func (r *registerIcrType) GetDholdc() bool {
+func (r *RegisterIcrType) GetDholdc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldDholdcMask) != 0
 }
 
 // SetDholdc DHOLD flag clear bit Set by software to clear the DHOLD flag.
-func (r *registerIcrType) SetDholdc(value bool) {
+func (r *RegisterIcrType) SetDholdc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldDholdcMask)
 	} else {
@@ -1566,12 +1922,12 @@ const (
 )
 
 // GetDbckendc DBCKEND flag clear bit Set by software to clear the DBCKEND flag.
-func (r *registerIcrType) GetDbckendc() bool {
+func (r *RegisterIcrType) GetDbckendc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldDbckendcMask) != 0
 }
 
 // SetDbckendc DBCKEND flag clear bit Set by software to clear the DBCKEND flag.
-func (r *registerIcrType) SetDbckendc(value bool) {
+func (r *RegisterIcrType) SetDbckendc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldDbckendcMask)
 	} else {
@@ -1585,12 +1941,12 @@ const (
 )
 
 // GetDabortc DABORT flag clear bit Set by software to clear the DABORT flag.
-func (r *registerIcrType) GetDabortc() bool {
+func (r *RegisterIcrType) GetDabortc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldDabortcMask) != 0
 }
 
 // SetDabortc DABORT flag clear bit Set by software to clear the DABORT flag.
-func (r *registerIcrType) SetDabortc(value bool) {
+func (r *RegisterIcrType) SetDabortc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldDabortcMask)
 	} else {
@@ -1604,12 +1960,12 @@ const (
 )
 
 // GetBusyd0endc BUSYD0END flag clear bit Set by software to clear the BUSYD0END flag.
-func (r *registerIcrType) GetBusyd0endc() bool {
+func (r *RegisterIcrType) GetBusyd0endc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldBusyd0endcMask) != 0
 }
 
 // SetBusyd0endc BUSYD0END flag clear bit Set by software to clear the BUSYD0END flag.
-func (r *registerIcrType) SetBusyd0endc(value bool) {
+func (r *RegisterIcrType) SetBusyd0endc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldBusyd0endcMask)
 	} else {
@@ -1623,12 +1979,12 @@ const (
 )
 
 // GetSdioitc SDIOIT flag clear bit Set by software to clear the SDIOIT flag.
-func (r *registerIcrType) GetSdioitc() bool {
+func (r *RegisterIcrType) GetSdioitc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldSdioitcMask) != 0
 }
 
 // SetSdioitc SDIOIT flag clear bit Set by software to clear the SDIOIT flag.
-func (r *registerIcrType) SetSdioitc(value bool) {
+func (r *RegisterIcrType) SetSdioitc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldSdioitcMask)
 	} else {
@@ -1642,12 +1998,12 @@ const (
 )
 
 // GetAckfailc ACKFAIL flag clear bit Set by software to clear the ACKFAIL flag.
-func (r *registerIcrType) GetAckfailc() bool {
+func (r *RegisterIcrType) GetAckfailc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldAckfailcMask) != 0
 }
 
 // SetAckfailc ACKFAIL flag clear bit Set by software to clear the ACKFAIL flag.
-func (r *registerIcrType) SetAckfailc(value bool) {
+func (r *RegisterIcrType) SetAckfailc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldAckfailcMask)
 	} else {
@@ -1661,12 +2017,12 @@ const (
 )
 
 // GetAcktimeoutc ACKTIMEOUT flag clear bit Set by software to clear the ACKTIMEOUT flag.
-func (r *registerIcrType) GetAcktimeoutc() bool {
+func (r *RegisterIcrType) GetAcktimeoutc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldAcktimeoutcMask) != 0
 }
 
 // SetAcktimeoutc ACKTIMEOUT flag clear bit Set by software to clear the ACKTIMEOUT flag.
-func (r *registerIcrType) SetAcktimeoutc(value bool) {
+func (r *RegisterIcrType) SetAcktimeoutc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldAcktimeoutcMask)
 	} else {
@@ -1680,12 +2036,12 @@ const (
 )
 
 // GetVswendc VSWEND flag clear bit Set by software to clear the VSWEND flag.
-func (r *registerIcrType) GetVswendc() bool {
+func (r *RegisterIcrType) GetVswendc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldVswendcMask) != 0
 }
 
 // SetVswendc VSWEND flag clear bit Set by software to clear the VSWEND flag.
-func (r *registerIcrType) SetVswendc(value bool) {
+func (r *RegisterIcrType) SetVswendc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldVswendcMask)
 	} else {
@@ -1699,12 +2055,12 @@ const (
 )
 
 // GetCkstopc CKSTOP flag clear bit Set by software to clear the CKSTOP flag.
-func (r *registerIcrType) GetCkstopc() bool {
+func (r *RegisterIcrType) GetCkstopc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldCkstopcMask) != 0
 }
 
 // SetCkstopc CKSTOP flag clear bit Set by software to clear the CKSTOP flag.
-func (r *registerIcrType) SetCkstopc(value bool) {
+func (r *RegisterIcrType) SetCkstopc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldCkstopcMask)
 	} else {
@@ -1718,12 +2074,12 @@ const (
 )
 
 // GetIdmatec IDMA transfer error clear bit Set by software to clear the IDMATE flag.
-func (r *registerIcrType) GetIdmatec() bool {
+func (r *RegisterIcrType) GetIdmatec() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldIdmatecMask) != 0
 }
 
 // SetIdmatec IDMA transfer error clear bit Set by software to clear the IDMATE flag.
-func (r *registerIcrType) SetIdmatec(value bool) {
+func (r *RegisterIcrType) SetIdmatec(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldIdmatecMask)
 	} else {
@@ -1737,12 +2093,12 @@ const (
 )
 
 // GetIdmabtcc IDMA buffer transfer complete clear bit Set by software to clear the IDMABTC flag.
-func (r *registerIcrType) GetIdmabtcc() bool {
+func (r *RegisterIcrType) GetIdmabtcc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldIdmabtccMask) != 0
 }
 
 // SetIdmabtcc IDMA buffer transfer complete clear bit Set by software to clear the IDMABTC flag.
-func (r *registerIcrType) SetIdmabtcc(value bool) {
+func (r *RegisterIcrType) SetIdmabtcc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldIdmabtccMask)
 	} else {
@@ -1750,8 +2106,31 @@ func (r *registerIcrType) SetIdmabtcc(value bool) {
 	}
 }
 
-// registerMaskrType The interrupt mask register determines which status flags generate an interrupt request by setting the corresponding bit to 1.
-type registerMaskrType uint32
+// RegisterMaskrType The interrupt mask register determines which status flags generate an interrupt request by setting the corresponding bit to 1.
+type RegisterMaskrType uint32
+
+func (r *RegisterMaskrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMaskrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMaskrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMaskrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMaskrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMaskrFieldCcrcfailieShift = 0
@@ -1759,12 +2138,12 @@ const (
 )
 
 // GetCcrcfailie Command CRC fail interrupt enable Set and cleared by software to enable/disable interrupt caused by command CRC failure.
-func (r *registerMaskrType) GetCcrcfailie() bool {
+func (r *RegisterMaskrType) GetCcrcfailie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldCcrcfailieMask) != 0
 }
 
 // SetCcrcfailie Command CRC fail interrupt enable Set and cleared by software to enable/disable interrupt caused by command CRC failure.
-func (r *registerMaskrType) SetCcrcfailie(value bool) {
+func (r *RegisterMaskrType) SetCcrcfailie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldCcrcfailieMask)
 	} else {
@@ -1778,12 +2157,12 @@ const (
 )
 
 // GetDcrcfailie Data CRC fail interrupt enable Set and cleared by software to enable/disable interrupt caused by data CRC failure.
-func (r *registerMaskrType) GetDcrcfailie() bool {
+func (r *RegisterMaskrType) GetDcrcfailie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldDcrcfailieMask) != 0
 }
 
 // SetDcrcfailie Data CRC fail interrupt enable Set and cleared by software to enable/disable interrupt caused by data CRC failure.
-func (r *registerMaskrType) SetDcrcfailie(value bool) {
+func (r *RegisterMaskrType) SetDcrcfailie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldDcrcfailieMask)
 	} else {
@@ -1797,12 +2176,12 @@ const (
 )
 
 // GetCtimeoutie Command timeout interrupt enable Set and cleared by software to enable/disable interrupt caused by command timeout.
-func (r *registerMaskrType) GetCtimeoutie() bool {
+func (r *RegisterMaskrType) GetCtimeoutie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldCtimeoutieMask) != 0
 }
 
 // SetCtimeoutie Command timeout interrupt enable Set and cleared by software to enable/disable interrupt caused by command timeout.
-func (r *registerMaskrType) SetCtimeoutie(value bool) {
+func (r *RegisterMaskrType) SetCtimeoutie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldCtimeoutieMask)
 	} else {
@@ -1816,12 +2195,12 @@ const (
 )
 
 // GetDtimeoutie Data timeout interrupt enable Set and cleared by software to enable/disable interrupt caused by data timeout.
-func (r *registerMaskrType) GetDtimeoutie() bool {
+func (r *RegisterMaskrType) GetDtimeoutie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldDtimeoutieMask) != 0
 }
 
 // SetDtimeoutie Data timeout interrupt enable Set and cleared by software to enable/disable interrupt caused by data timeout.
-func (r *registerMaskrType) SetDtimeoutie(value bool) {
+func (r *RegisterMaskrType) SetDtimeoutie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldDtimeoutieMask)
 	} else {
@@ -1835,12 +2214,12 @@ const (
 )
 
 // GetTxunderrie Tx FIFO underrun error interrupt enable Set and cleared by software to enable/disable interrupt caused by Tx FIFO underrun error.
-func (r *registerMaskrType) GetTxunderrie() bool {
+func (r *RegisterMaskrType) GetTxunderrie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldTxunderrieMask) != 0
 }
 
 // SetTxunderrie Tx FIFO underrun error interrupt enable Set and cleared by software to enable/disable interrupt caused by Tx FIFO underrun error.
-func (r *registerMaskrType) SetTxunderrie(value bool) {
+func (r *RegisterMaskrType) SetTxunderrie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldTxunderrieMask)
 	} else {
@@ -1854,12 +2233,12 @@ const (
 )
 
 // GetRxoverrie Rx FIFO overrun error interrupt enable Set and cleared by software to enable/disable interrupt caused by Rx FIFO overrun error.
-func (r *registerMaskrType) GetRxoverrie() bool {
+func (r *RegisterMaskrType) GetRxoverrie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldRxoverrieMask) != 0
 }
 
 // SetRxoverrie Rx FIFO overrun error interrupt enable Set and cleared by software to enable/disable interrupt caused by Rx FIFO overrun error.
-func (r *registerMaskrType) SetRxoverrie(value bool) {
+func (r *RegisterMaskrType) SetRxoverrie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldRxoverrieMask)
 	} else {
@@ -1873,12 +2252,12 @@ const (
 )
 
 // GetCmdrendie Command response received interrupt enable Set and cleared by software to enable/disable interrupt caused by receiving command response.
-func (r *registerMaskrType) GetCmdrendie() bool {
+func (r *RegisterMaskrType) GetCmdrendie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldCmdrendieMask) != 0
 }
 
 // SetCmdrendie Command response received interrupt enable Set and cleared by software to enable/disable interrupt caused by receiving command response.
-func (r *registerMaskrType) SetCmdrendie(value bool) {
+func (r *RegisterMaskrType) SetCmdrendie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldCmdrendieMask)
 	} else {
@@ -1892,12 +2271,12 @@ const (
 )
 
 // GetCmdsentie Command sent interrupt enable Set and cleared by software to enable/disable interrupt caused by sending command.
-func (r *registerMaskrType) GetCmdsentie() bool {
+func (r *RegisterMaskrType) GetCmdsentie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldCmdsentieMask) != 0
 }
 
 // SetCmdsentie Command sent interrupt enable Set and cleared by software to enable/disable interrupt caused by sending command.
-func (r *registerMaskrType) SetCmdsentie(value bool) {
+func (r *RegisterMaskrType) SetCmdsentie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldCmdsentieMask)
 	} else {
@@ -1911,12 +2290,12 @@ const (
 )
 
 // GetDataendie Data end interrupt enable Set and cleared by software to enable/disable interrupt caused by data end.
-func (r *registerMaskrType) GetDataendie() bool {
+func (r *RegisterMaskrType) GetDataendie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldDataendieMask) != 0
 }
 
 // SetDataendie Data end interrupt enable Set and cleared by software to enable/disable interrupt caused by data end.
-func (r *registerMaskrType) SetDataendie(value bool) {
+func (r *RegisterMaskrType) SetDataendie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldDataendieMask)
 	} else {
@@ -1930,12 +2309,12 @@ const (
 )
 
 // GetDholdie Data hold interrupt enable Set and cleared by software to enable/disable the interrupt generated when sending new data is hold in the DPSM Wait_S state.
-func (r *registerMaskrType) GetDholdie() bool {
+func (r *RegisterMaskrType) GetDholdie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldDholdieMask) != 0
 }
 
 // SetDholdie Data hold interrupt enable Set and cleared by software to enable/disable the interrupt generated when sending new data is hold in the DPSM Wait_S state.
-func (r *registerMaskrType) SetDholdie(value bool) {
+func (r *RegisterMaskrType) SetDholdie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldDholdieMask)
 	} else {
@@ -1949,12 +2328,12 @@ const (
 )
 
 // GetDbckendie Data block end interrupt enable Set and cleared by software to enable/disable interrupt caused by data block end.
-func (r *registerMaskrType) GetDbckendie() bool {
+func (r *RegisterMaskrType) GetDbckendie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldDbckendieMask) != 0
 }
 
 // SetDbckendie Data block end interrupt enable Set and cleared by software to enable/disable interrupt caused by data block end.
-func (r *registerMaskrType) SetDbckendie(value bool) {
+func (r *RegisterMaskrType) SetDbckendie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldDbckendieMask)
 	} else {
@@ -1968,12 +2347,12 @@ const (
 )
 
 // GetDabortie Data transfer aborted interrupt enable Set and cleared by software to enable/disable interrupt caused by a data transfer being aborted.
-func (r *registerMaskrType) GetDabortie() bool {
+func (r *RegisterMaskrType) GetDabortie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldDabortieMask) != 0
 }
 
 // SetDabortie Data transfer aborted interrupt enable Set and cleared by software to enable/disable interrupt caused by a data transfer being aborted.
-func (r *registerMaskrType) SetDabortie(value bool) {
+func (r *RegisterMaskrType) SetDabortie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldDabortieMask)
 	} else {
@@ -1987,12 +2366,12 @@ const (
 )
 
 // GetTxfifoheie Tx FIFO half empty interrupt enable Set and cleared by software to enable/disable interrupt caused by Tx FIFO half empty.
-func (r *registerMaskrType) GetTxfifoheie() bool {
+func (r *RegisterMaskrType) GetTxfifoheie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldTxfifoheieMask) != 0
 }
 
 // SetTxfifoheie Tx FIFO half empty interrupt enable Set and cleared by software to enable/disable interrupt caused by Tx FIFO half empty.
-func (r *registerMaskrType) SetTxfifoheie(value bool) {
+func (r *RegisterMaskrType) SetTxfifoheie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldTxfifoheieMask)
 	} else {
@@ -2006,12 +2385,12 @@ const (
 )
 
 // GetRxfifohfie Rx FIFO half full interrupt enable Set and cleared by software to enable/disable interrupt caused by Rx FIFO half full.
-func (r *registerMaskrType) GetRxfifohfie() bool {
+func (r *RegisterMaskrType) GetRxfifohfie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldRxfifohfieMask) != 0
 }
 
 // SetRxfifohfie Rx FIFO half full interrupt enable Set and cleared by software to enable/disable interrupt caused by Rx FIFO half full.
-func (r *registerMaskrType) SetRxfifohfie(value bool) {
+func (r *RegisterMaskrType) SetRxfifohfie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldRxfifohfieMask)
 	} else {
@@ -2025,12 +2404,12 @@ const (
 )
 
 // GetRxfifofie Rx FIFO full interrupt enable Set and cleared by software to enable/disable interrupt caused by Rx FIFO full.
-func (r *registerMaskrType) GetRxfifofie() bool {
+func (r *RegisterMaskrType) GetRxfifofie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldRxfifofieMask) != 0
 }
 
 // SetRxfifofie Rx FIFO full interrupt enable Set and cleared by software to enable/disable interrupt caused by Rx FIFO full.
-func (r *registerMaskrType) SetRxfifofie(value bool) {
+func (r *RegisterMaskrType) SetRxfifofie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldRxfifofieMask)
 	} else {
@@ -2044,12 +2423,12 @@ const (
 )
 
 // GetTxfifoeie Tx FIFO empty interrupt enable Set and cleared by software to enable/disable interrupt caused by Tx FIFO empty.
-func (r *registerMaskrType) GetTxfifoeie() bool {
+func (r *RegisterMaskrType) GetTxfifoeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldTxfifoeieMask) != 0
 }
 
 // SetTxfifoeie Tx FIFO empty interrupt enable Set and cleared by software to enable/disable interrupt caused by Tx FIFO empty.
-func (r *registerMaskrType) SetTxfifoeie(value bool) {
+func (r *RegisterMaskrType) SetTxfifoeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldTxfifoeieMask)
 	} else {
@@ -2063,12 +2442,12 @@ const (
 )
 
 // GetBusyd0endie BUSYD0END interrupt enable Set and cleared by software to enable/disable the interrupt generated when SDMMC_D0 signal changes from busy to NOT busy following a CMD response.
-func (r *registerMaskrType) GetBusyd0endie() bool {
+func (r *RegisterMaskrType) GetBusyd0endie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldBusyd0endieMask) != 0
 }
 
 // SetBusyd0endie BUSYD0END interrupt enable Set and cleared by software to enable/disable the interrupt generated when SDMMC_D0 signal changes from busy to NOT busy following a CMD response.
-func (r *registerMaskrType) SetBusyd0endie(value bool) {
+func (r *RegisterMaskrType) SetBusyd0endie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldBusyd0endieMask)
 	} else {
@@ -2082,12 +2461,12 @@ const (
 )
 
 // GetSdioitie SDIO mode interrupt received interrupt enable Set and cleared by software to enable/disable the interrupt generated when receiving the SDIO mode interrupt.
-func (r *registerMaskrType) GetSdioitie() bool {
+func (r *RegisterMaskrType) GetSdioitie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldSdioitieMask) != 0
 }
 
 // SetSdioitie SDIO mode interrupt received interrupt enable Set and cleared by software to enable/disable the interrupt generated when receiving the SDIO mode interrupt.
-func (r *registerMaskrType) SetSdioitie(value bool) {
+func (r *RegisterMaskrType) SetSdioitie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldSdioitieMask)
 	} else {
@@ -2101,12 +2480,12 @@ const (
 )
 
 // GetAckfailie Acknowledgment Fail interrupt enable Set and cleared by software to enable/disable interrupt caused by acknowledgment Fail.
-func (r *registerMaskrType) GetAckfailie() bool {
+func (r *RegisterMaskrType) GetAckfailie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldAckfailieMask) != 0
 }
 
 // SetAckfailie Acknowledgment Fail interrupt enable Set and cleared by software to enable/disable interrupt caused by acknowledgment Fail.
-func (r *registerMaskrType) SetAckfailie(value bool) {
+func (r *RegisterMaskrType) SetAckfailie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldAckfailieMask)
 	} else {
@@ -2120,12 +2499,12 @@ const (
 )
 
 // GetAcktimeoutie Acknowledgment timeout interrupt enable Set and cleared by software to enable/disable interrupt caused by acknowledgment timeout.
-func (r *registerMaskrType) GetAcktimeoutie() bool {
+func (r *RegisterMaskrType) GetAcktimeoutie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldAcktimeoutieMask) != 0
 }
 
 // SetAcktimeoutie Acknowledgment timeout interrupt enable Set and cleared by software to enable/disable interrupt caused by acknowledgment timeout.
-func (r *registerMaskrType) SetAcktimeoutie(value bool) {
+func (r *RegisterMaskrType) SetAcktimeoutie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldAcktimeoutieMask)
 	} else {
@@ -2139,12 +2518,12 @@ const (
 )
 
 // GetVswendie Voltage switch critical timing section completion interrupt enable Set and cleared by software to enable/disable the interrupt generated when voltage switch critical timing section completion.
-func (r *registerMaskrType) GetVswendie() bool {
+func (r *RegisterMaskrType) GetVswendie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldVswendieMask) != 0
 }
 
 // SetVswendie Voltage switch critical timing section completion interrupt enable Set and cleared by software to enable/disable the interrupt generated when voltage switch critical timing section completion.
-func (r *registerMaskrType) SetVswendie(value bool) {
+func (r *RegisterMaskrType) SetVswendie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldVswendieMask)
 	} else {
@@ -2158,12 +2537,12 @@ const (
 )
 
 // GetCkstopie Voltage Switch clock stopped interrupt enable Set and cleared by software to enable/disable interrupt caused by Voltage Switch clock stopped.
-func (r *registerMaskrType) GetCkstopie() bool {
+func (r *RegisterMaskrType) GetCkstopie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldCkstopieMask) != 0
 }
 
 // SetCkstopie Voltage Switch clock stopped interrupt enable Set and cleared by software to enable/disable interrupt caused by Voltage Switch clock stopped.
-func (r *registerMaskrType) SetCkstopie(value bool) {
+func (r *RegisterMaskrType) SetCkstopie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldCkstopieMask)
 	} else {
@@ -2177,12 +2556,12 @@ const (
 )
 
 // GetIdmabtcie IDMA buffer transfer complete interrupt enable Set and cleared by software to enable/disable the interrupt generated when the IDMA has transferred all data belonging to a memory buffer.
-func (r *registerMaskrType) GetIdmabtcie() bool {
+func (r *RegisterMaskrType) GetIdmabtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskrFieldIdmabtcieMask) != 0
 }
 
 // SetIdmabtcie IDMA buffer transfer complete interrupt enable Set and cleared by software to enable/disable the interrupt generated when the IDMA has transferred all data belonging to a memory buffer.
-func (r *registerMaskrType) SetIdmabtcie(value bool) {
+func (r *RegisterMaskrType) SetIdmabtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskrFieldIdmabtcieMask)
 	} else {
@@ -2190,8 +2569,31 @@ func (r *registerMaskrType) SetIdmabtcie(value bool) {
 	}
 }
 
-// registerAcktimerType The SDMMC_ACKTIMER register contains the acknowledgment timeout period, in SDMMC_CK bus clock periods. A counter loads the value from the SDMMC_ACKTIMER register, and starts decrementing when the data path state machine (DPSM) enters the Wait_Ack state. If the timer reaches 0 while the DPSM is in this states, the acknowledgment timeout status flag is set.
-type registerAcktimerType uint32
+// RegisterAcktimerType The SDMMC_ACKTIMER register contains the acknowledgment timeout period, in SDMMC_CK bus clock periods. A counter loads the value from the SDMMC_ACKTIMER register, and starts decrementing when the data path state machine (DPSM) enters the Wait_Ack state. If the timer reaches 0 while the DPSM is in this states, the acknowledgment timeout status flag is set.
+type RegisterAcktimerType uint32
+
+func (r *RegisterAcktimerType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAcktimerType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAcktimerType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAcktimerType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAcktimerType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAcktimerFieldAcktimeShift = 0
@@ -2199,17 +2601,40 @@ const (
 )
 
 // GetAcktime Boot acknowledgment timeout period This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). Boot acknowledgment timeout period expressed in card bus clock periods.
-func (r *registerAcktimerType) GetAcktime() uint32 {
+func (r *RegisterAcktimerType) GetAcktime() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterAcktimerFieldAcktimeMask) >> RegisterAcktimerFieldAcktimeShift)
 }
 
 // SetAcktime Boot acknowledgment timeout period This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). Boot acknowledgment timeout period expressed in card bus clock periods.
-func (r *registerAcktimerType) SetAcktime(value uint32) {
+func (r *RegisterAcktimerType) SetAcktime(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAcktimerFieldAcktimeMask)|(uint32(value)<<RegisterAcktimerFieldAcktimeShift))
 }
 
-// registerIdmactrlrType The receive and transmit FIFOs can be read or written as 32-bit wide registers. The FIFOs contain 32 entries on 32 sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO.
-type registerIdmactrlrType uint32
+// RegisterIdmactrlrType The receive and transmit FIFOs can be read or written as 32-bit wide registers. The FIFOs contain 32 entries on 32 sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO.
+type RegisterIdmactrlrType uint32
+
+func (r *RegisterIdmactrlrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIdmactrlrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIdmactrlrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIdmactrlrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIdmactrlrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIdmactrlrFieldIdmaenShift = 0
@@ -2217,12 +2642,12 @@ const (
 )
 
 // GetIdmaen IDMA enable This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerIdmactrlrType) GetIdmaen() bool {
+func (r *RegisterIdmactrlrType) GetIdmaen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdmactrlrFieldIdmaenMask) != 0
 }
 
 // SetIdmaen IDMA enable This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerIdmactrlrType) SetIdmaen(value bool) {
+func (r *RegisterIdmactrlrType) SetIdmaen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdmactrlrFieldIdmaenMask)
 	} else {
@@ -2236,12 +2661,12 @@ const (
 )
 
 // GetIdmabmode Buffer mode selection. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerIdmactrlrType) GetIdmabmode() bool {
+func (r *RegisterIdmactrlrType) GetIdmabmode() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdmactrlrFieldIdmabmodeMask) != 0
 }
 
 // SetIdmabmode Buffer mode selection. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerIdmactrlrType) SetIdmabmode(value bool) {
+func (r *RegisterIdmactrlrType) SetIdmabmode(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdmactrlrFieldIdmabmodeMask)
 	} else {
@@ -2255,12 +2680,12 @@ const (
 )
 
 // GetIdmabact Double buffer mode active buffer indication This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). When IDMA is enabled this bit is toggled by hardware.
-func (r *registerIdmactrlrType) GetIdmabact() bool {
+func (r *RegisterIdmactrlrType) GetIdmabact() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdmactrlrFieldIdmabactMask) != 0
 }
 
 // SetIdmabact Double buffer mode active buffer indication This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). When IDMA is enabled this bit is toggled by hardware.
-func (r *registerIdmactrlrType) SetIdmabact(value bool) {
+func (r *RegisterIdmactrlrType) SetIdmabact(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdmactrlrFieldIdmabactMask)
 	} else {
@@ -2268,8 +2693,31 @@ func (r *registerIdmactrlrType) SetIdmabact(value bool) {
 	}
 }
 
-// registerIdmabsizerType The SDMMC_IDMABSIZER register contains the buffers size when in double buffer configuration.
-type registerIdmabsizerType uint32
+// RegisterIdmabsizerType The SDMMC_IDMABSIZER register contains the buffers size when in double buffer configuration.
+type RegisterIdmabsizerType uint32
+
+func (r *RegisterIdmabsizerType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIdmabsizerType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIdmabsizerType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIdmabsizerType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIdmabsizerType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIdmabsizerFieldIdmabndtShift = 5
@@ -2277,17 +2725,40 @@ const (
 )
 
 // GetIdmabndt Number of transfers per buffer. This 8-bit value shall be multiplied by 8 to get the size of the buffer in 32-bit words and by 32 to get the size of the buffer in bytes. Example: IDMABNDT = 0x01: buffer size = 8 words = 32 bytes. These bits can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerIdmabsizerType) GetIdmabndt() uint8 {
+func (r *RegisterIdmabsizerType) GetIdmabndt() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterIdmabsizerFieldIdmabndtMask) >> RegisterIdmabsizerFieldIdmabndtShift)
 }
 
 // SetIdmabndt Number of transfers per buffer. This 8-bit value shall be multiplied by 8 to get the size of the buffer in 32-bit words and by 32 to get the size of the buffer in bytes. Example: IDMABNDT = 0x01: buffer size = 8 words = 32 bytes. These bits can only be written by firmware when DPSM is inactive (DPSMACT = 0).
-func (r *registerIdmabsizerType) SetIdmabndt(value uint8) {
+func (r *RegisterIdmabsizerType) SetIdmabndt(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIdmabsizerFieldIdmabndtMask)|(uint32(value)<<RegisterIdmabsizerFieldIdmabndtShift))
 }
 
-// registerIdmabase0rType The SDMMC_IDMABASE0R register contains the memory buffer base address in single buffer configuration and the buffer 0 base address in double buffer configuration.
-type registerIdmabase0rType uint32
+// RegisterIdmabase0rType The SDMMC_IDMABASE0R register contains the memory buffer base address in single buffer configuration and the buffer 0 base address in double buffer configuration.
+type RegisterIdmabase0rType uint32
+
+func (r *RegisterIdmabase0rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIdmabase0rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIdmabase0rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIdmabase0rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIdmabase0rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIdmabase0rFieldIdmabase0Shift = 0
@@ -2295,17 +2766,40 @@ const (
 )
 
 // GetIdmabase0 Buffer 0 memory base address bits [31:2], shall be word aligned (bit [1:0] are always 0 and read only). This register can be written by firmware when DPSM is inactive (DPSMACT = 0), and can dynamically be written by firmware when DPSM active (DPSMACT = 1) and memory buffer 0 is inactive (IDMABACT = 1).
-func (r *registerIdmabase0rType) GetIdmabase0() uint32 {
+func (r *RegisterIdmabase0rType) GetIdmabase0() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterIdmabase0rFieldIdmabase0Mask) >> RegisterIdmabase0rFieldIdmabase0Shift)
 }
 
 // SetIdmabase0 Buffer 0 memory base address bits [31:2], shall be word aligned (bit [1:0] are always 0 and read only). This register can be written by firmware when DPSM is inactive (DPSMACT = 0), and can dynamically be written by firmware when DPSM active (DPSMACT = 1) and memory buffer 0 is inactive (IDMABACT = 1).
-func (r *registerIdmabase0rType) SetIdmabase0(value uint32) {
+func (r *RegisterIdmabase0rType) SetIdmabase0(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIdmabase0rFieldIdmabase0Mask)|(uint32(value)<<RegisterIdmabase0rFieldIdmabase0Shift))
 }
 
-// registerIdmabase1rType The SDMMC_IDMABASE1R register contains the double buffer configuration second buffer memory base address.
-type registerIdmabase1rType uint32
+// RegisterIdmabase1rType The SDMMC_IDMABASE1R register contains the double buffer configuration second buffer memory base address.
+type RegisterIdmabase1rType uint32
+
+func (r *RegisterIdmabase1rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIdmabase1rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIdmabase1rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIdmabase1rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIdmabase1rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIdmabase1rFieldIdmabase1Shift = 0
@@ -2313,17 +2807,40 @@ const (
 )
 
 // GetIdmabase1 Buffer 1 memory base address, shall be word aligned (bit [1:0] are always 0 and read only). This register can be written by firmware when DPSM is inactive (DPSMACT = 0), and can dynamically be written by firmware when DPSM active (DPSMACT = 1) and memory buffer 1 is inactive (IDMABACT = 0).
-func (r *registerIdmabase1rType) GetIdmabase1() uint32 {
+func (r *RegisterIdmabase1rType) GetIdmabase1() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterIdmabase1rFieldIdmabase1Mask) >> RegisterIdmabase1rFieldIdmabase1Shift)
 }
 
 // SetIdmabase1 Buffer 1 memory base address, shall be word aligned (bit [1:0] are always 0 and read only). This register can be written by firmware when DPSM is inactive (DPSMACT = 0), and can dynamically be written by firmware when DPSM active (DPSMACT = 1) and memory buffer 1 is inactive (IDMABACT = 0).
-func (r *registerIdmabase1rType) SetIdmabase1(value uint32) {
+func (r *RegisterIdmabase1rType) SetIdmabase1(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIdmabase1rFieldIdmabase1Mask)|(uint32(value)<<RegisterIdmabase1rFieldIdmabase1Shift))
 }
 
-// registerFiforType The receive and transmit FIFOs can be only read or written as word (32-bit) wide registers. The FIFOs contain 16 entries on sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO.When accessing SDMMC_FIFOR with half word or byte access an AHB bus fault is generated.
-type registerFiforType uint32
+// RegisterFiforType The receive and transmit FIFOs can be only read or written as word (32-bit) wide registers. The FIFOs contain 16 entries on sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO.When accessing SDMMC_FIFOR with half word or byte access an AHB bus fault is generated.
+type RegisterFiforType uint32
+
+func (r *RegisterFiforType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFiforType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFiforType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFiforType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFiforType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFiforFieldFifodataShift = 0
@@ -2331,11 +2848,11 @@ const (
 )
 
 // GetFifodata Receive and transmit FIFO data This register can only be read or written by firmware when the DPSM is active (DPSMACT=1). The FIFO data occupies 16 entries of 32-bit words.
-func (r *registerFiforType) GetFifodata() uint32 {
+func (r *RegisterFiforType) GetFifodata() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFiforFieldFifodataMask) >> RegisterFiforFieldFifodataShift)
 }
 
 // SetFifodata Receive and transmit FIFO data This register can only be read or written by firmware when the DPSM is active (DPSMACT=1). The FIFO data occupies 16 entries of 32-bit words.
-func (r *registerFiforType) SetFifodata(value uint32) {
+func (r *RegisterFiforType) SetFifodata(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFiforFieldFifodataMask)|(uint32(value)<<RegisterFiforFieldFifodataShift))
 }

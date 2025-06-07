@@ -12,21 +12,44 @@ var (
 )
 
 type _dcmi struct {
-	Cr     registerCrType
-	Sr     registerSrType
-	Ris    registerRisType
-	Ier    registerIerType
-	Mis    registerMisType
-	Icr    registerIcrType
-	Escr   registerEscrType
-	Esur   registerEsurType
-	Cwstrt registerCwstrtType
-	Cwsize registerCwsizeType
-	Dr     registerDrType
+	Cr     RegisterCrType
+	Sr     RegisterSrType
+	Ris    RegisterRisType
+	Ier    RegisterIerType
+	Mis    RegisterMisType
+	Icr    RegisterIcrType
+	Escr   RegisterEscrType
+	Esur   RegisterEsurType
+	Cwstrt RegisterCwstrtType
+	Cwsize RegisterCwsizeType
+	Dr     RegisterDrType
 }
 
-// registerCrType control register 1
-type registerCrType uint32
+// RegisterCrType control register 1
+type RegisterCrType uint32
+
+func (r *RegisterCrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCrFieldCaptureShift = 0
@@ -34,12 +57,12 @@ const (
 )
 
 // GetCapture Capture enable
-func (r *registerCrType) GetCapture() bool {
+func (r *RegisterCrType) GetCapture() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldCaptureMask) != 0
 }
 
 // SetCapture Capture enable
-func (r *registerCrType) SetCapture(value bool) {
+func (r *RegisterCrType) SetCapture(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldCaptureMask)
 	} else {
@@ -53,12 +76,12 @@ const (
 )
 
 // GetCm Capture mode
-func (r *registerCrType) GetCm() bool {
+func (r *RegisterCrType) GetCm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldCmMask) != 0
 }
 
 // SetCm Capture mode
-func (r *registerCrType) SetCm(value bool) {
+func (r *RegisterCrType) SetCm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldCmMask)
 	} else {
@@ -72,12 +95,12 @@ const (
 )
 
 // GetCrop Crop feature
-func (r *registerCrType) GetCrop() bool {
+func (r *RegisterCrType) GetCrop() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldCropMask) != 0
 }
 
 // SetCrop Crop feature
-func (r *registerCrType) SetCrop(value bool) {
+func (r *RegisterCrType) SetCrop(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldCropMask)
 	} else {
@@ -91,12 +114,12 @@ const (
 )
 
 // GetJpeg JPEG format
-func (r *registerCrType) GetJpeg() bool {
+func (r *RegisterCrType) GetJpeg() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldJpegMask) != 0
 }
 
 // SetJpeg JPEG format
-func (r *registerCrType) SetJpeg(value bool) {
+func (r *RegisterCrType) SetJpeg(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldJpegMask)
 	} else {
@@ -110,12 +133,12 @@ const (
 )
 
 // GetEss Embedded synchronization select
-func (r *registerCrType) GetEss() bool {
+func (r *RegisterCrType) GetEss() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldEssMask) != 0
 }
 
 // SetEss Embedded synchronization select
-func (r *registerCrType) SetEss(value bool) {
+func (r *RegisterCrType) SetEss(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldEssMask)
 	} else {
@@ -129,12 +152,12 @@ const (
 )
 
 // GetPckpol Pixel clock polarity
-func (r *registerCrType) GetPckpol() bool {
+func (r *RegisterCrType) GetPckpol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldPckpolMask) != 0
 }
 
 // SetPckpol Pixel clock polarity
-func (r *registerCrType) SetPckpol(value bool) {
+func (r *RegisterCrType) SetPckpol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldPckpolMask)
 	} else {
@@ -148,12 +171,12 @@ const (
 )
 
 // GetHspol Horizontal synchronization polarity
-func (r *registerCrType) GetHspol() bool {
+func (r *RegisterCrType) GetHspol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldHspolMask) != 0
 }
 
 // SetHspol Horizontal synchronization polarity
-func (r *registerCrType) SetHspol(value bool) {
+func (r *RegisterCrType) SetHspol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldHspolMask)
 	} else {
@@ -167,12 +190,12 @@ const (
 )
 
 // GetVspol Vertical synchronization polarity
-func (r *registerCrType) GetVspol() bool {
+func (r *RegisterCrType) GetVspol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldVspolMask) != 0
 }
 
 // SetVspol Vertical synchronization polarity
-func (r *registerCrType) SetVspol(value bool) {
+func (r *RegisterCrType) SetVspol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldVspolMask)
 	} else {
@@ -186,12 +209,12 @@ const (
 )
 
 // GetFcrc Frame capture rate control
-func (r *registerCrType) GetFcrc() uint8 {
+func (r *RegisterCrType) GetFcrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldFcrcMask) >> RegisterCrFieldFcrcShift)
 }
 
 // SetFcrc Frame capture rate control
-func (r *registerCrType) SetFcrc(value uint8) {
+func (r *RegisterCrType) SetFcrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldFcrcMask)|(uint32(value)<<RegisterCrFieldFcrcShift))
 }
 
@@ -201,12 +224,12 @@ const (
 )
 
 // GetEdm Extended data mode
-func (r *registerCrType) GetEdm() uint8 {
+func (r *RegisterCrType) GetEdm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldEdmMask) >> RegisterCrFieldEdmShift)
 }
 
 // SetEdm Extended data mode
-func (r *registerCrType) SetEdm(value uint8) {
+func (r *RegisterCrType) SetEdm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldEdmMask)|(uint32(value)<<RegisterCrFieldEdmShift))
 }
 
@@ -216,12 +239,12 @@ const (
 )
 
 // GetEnable DCMI enable
-func (r *registerCrType) GetEnable() bool {
+func (r *RegisterCrType) GetEnable() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldEnableMask) != 0
 }
 
 // SetEnable DCMI enable
-func (r *registerCrType) SetEnable(value bool) {
+func (r *RegisterCrType) SetEnable(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldEnableMask)
 	} else {
@@ -235,12 +258,12 @@ const (
 )
 
 // GetBsm Byte Select mode
-func (r *registerCrType) GetBsm() uint8 {
+func (r *RegisterCrType) GetBsm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldBsmMask) >> RegisterCrFieldBsmShift)
 }
 
 // SetBsm Byte Select mode
-func (r *registerCrType) SetBsm(value uint8) {
+func (r *RegisterCrType) SetBsm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldBsmMask)|(uint32(value)<<RegisterCrFieldBsmShift))
 }
 
@@ -250,12 +273,12 @@ const (
 )
 
 // GetOebs Odd/Even Byte Select (Byte Select Start)
-func (r *registerCrType) GetOebs() bool {
+func (r *RegisterCrType) GetOebs() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldOebsMask) != 0
 }
 
 // SetOebs Odd/Even Byte Select (Byte Select Start)
-func (r *registerCrType) SetOebs(value bool) {
+func (r *RegisterCrType) SetOebs(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldOebsMask)
 	} else {
@@ -269,12 +292,12 @@ const (
 )
 
 // GetLsm Line Select mode
-func (r *registerCrType) GetLsm() bool {
+func (r *RegisterCrType) GetLsm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldLsmMask) != 0
 }
 
 // SetLsm Line Select mode
-func (r *registerCrType) SetLsm(value bool) {
+func (r *RegisterCrType) SetLsm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldLsmMask)
 	} else {
@@ -288,12 +311,12 @@ const (
 )
 
 // GetOels Odd/Even Line Select (Line Select Start)
-func (r *registerCrType) GetOels() bool {
+func (r *RegisterCrType) GetOels() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldOelsMask) != 0
 }
 
 // SetOels Odd/Even Line Select (Line Select Start)
-func (r *registerCrType) SetOels(value bool) {
+func (r *RegisterCrType) SetOels(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldOelsMask)
 	} else {
@@ -301,8 +324,31 @@ func (r *registerCrType) SetOels(value bool) {
 	}
 }
 
-// registerSrType status register
-type registerSrType uint32
+// RegisterSrType status register
+type RegisterSrType uint32
+
+func (r *RegisterSrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterSrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterSrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterSrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterSrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterSrFieldHsyncShift = 0
@@ -310,12 +356,12 @@ const (
 )
 
 // GetHsync HSYNC
-func (r *registerSrType) GetHsync() bool {
+func (r *RegisterSrType) GetHsync() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSrFieldHsyncMask) != 0
 }
 
 // SetHsync HSYNC
-func (r *registerSrType) SetHsync(value bool) {
+func (r *RegisterSrType) SetHsync(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSrFieldHsyncMask)
 	} else {
@@ -329,12 +375,12 @@ const (
 )
 
 // GetVsync VSYNC
-func (r *registerSrType) GetVsync() bool {
+func (r *RegisterSrType) GetVsync() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSrFieldVsyncMask) != 0
 }
 
 // SetVsync VSYNC
-func (r *registerSrType) SetVsync(value bool) {
+func (r *RegisterSrType) SetVsync(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSrFieldVsyncMask)
 	} else {
@@ -348,12 +394,12 @@ const (
 )
 
 // GetFne FIFO not empty
-func (r *registerSrType) GetFne() bool {
+func (r *RegisterSrType) GetFne() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSrFieldFneMask) != 0
 }
 
 // SetFne FIFO not empty
-func (r *registerSrType) SetFne(value bool) {
+func (r *RegisterSrType) SetFne(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSrFieldFneMask)
 	} else {
@@ -361,8 +407,31 @@ func (r *registerSrType) SetFne(value bool) {
 	}
 }
 
-// registerRisType raw interrupt status register
-type registerRisType uint32
+// RegisterRisType raw interrupt status register
+type RegisterRisType uint32
+
+func (r *RegisterRisType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRisType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRisType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRisType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRisType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRisFieldFramerisShift = 0
@@ -370,12 +439,12 @@ const (
 )
 
 // GetFrameris Capture complete raw interrupt status
-func (r *registerRisType) GetFrameris() bool {
+func (r *RegisterRisType) GetFrameris() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRisFieldFramerisMask) != 0
 }
 
 // SetFrameris Capture complete raw interrupt status
-func (r *registerRisType) SetFrameris(value bool) {
+func (r *RegisterRisType) SetFrameris(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRisFieldFramerisMask)
 	} else {
@@ -389,12 +458,12 @@ const (
 )
 
 // GetOvrris Overrun raw interrupt status
-func (r *registerRisType) GetOvrris() bool {
+func (r *RegisterRisType) GetOvrris() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRisFieldOvrrisMask) != 0
 }
 
 // SetOvrris Overrun raw interrupt status
-func (r *registerRisType) SetOvrris(value bool) {
+func (r *RegisterRisType) SetOvrris(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRisFieldOvrrisMask)
 	} else {
@@ -408,12 +477,12 @@ const (
 )
 
 // GetErrris Synchronization error raw interrupt status
-func (r *registerRisType) GetErrris() bool {
+func (r *RegisterRisType) GetErrris() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRisFieldErrrisMask) != 0
 }
 
 // SetErrris Synchronization error raw interrupt status
-func (r *registerRisType) SetErrris(value bool) {
+func (r *RegisterRisType) SetErrris(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRisFieldErrrisMask)
 	} else {
@@ -427,12 +496,12 @@ const (
 )
 
 // GetVsyncris VSYNC raw interrupt status
-func (r *registerRisType) GetVsyncris() bool {
+func (r *RegisterRisType) GetVsyncris() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRisFieldVsyncrisMask) != 0
 }
 
 // SetVsyncris VSYNC raw interrupt status
-func (r *registerRisType) SetVsyncris(value bool) {
+func (r *RegisterRisType) SetVsyncris(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRisFieldVsyncrisMask)
 	} else {
@@ -446,12 +515,12 @@ const (
 )
 
 // GetLineris Line raw interrupt status
-func (r *registerRisType) GetLineris() bool {
+func (r *RegisterRisType) GetLineris() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRisFieldLinerisMask) != 0
 }
 
 // SetLineris Line raw interrupt status
-func (r *registerRisType) SetLineris(value bool) {
+func (r *RegisterRisType) SetLineris(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRisFieldLinerisMask)
 	} else {
@@ -459,8 +528,31 @@ func (r *registerRisType) SetLineris(value bool) {
 	}
 }
 
-// registerIerType interrupt enable register
-type registerIerType uint32
+// RegisterIerType interrupt enable register
+type RegisterIerType uint32
+
+func (r *RegisterIerType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIerType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIerType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIerType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIerType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIerFieldFrameieShift = 0
@@ -468,12 +560,12 @@ const (
 )
 
 // GetFrameie Capture complete interrupt enable
-func (r *registerIerType) GetFrameie() bool {
+func (r *RegisterIerType) GetFrameie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldFrameieMask) != 0
 }
 
 // SetFrameie Capture complete interrupt enable
-func (r *registerIerType) SetFrameie(value bool) {
+func (r *RegisterIerType) SetFrameie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldFrameieMask)
 	} else {
@@ -487,12 +579,12 @@ const (
 )
 
 // GetOvrie Overrun interrupt enable
-func (r *registerIerType) GetOvrie() bool {
+func (r *RegisterIerType) GetOvrie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldOvrieMask) != 0
 }
 
 // SetOvrie Overrun interrupt enable
-func (r *registerIerType) SetOvrie(value bool) {
+func (r *RegisterIerType) SetOvrie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldOvrieMask)
 	} else {
@@ -506,12 +598,12 @@ const (
 )
 
 // GetErrie Synchronization error interrupt enable
-func (r *registerIerType) GetErrie() bool {
+func (r *RegisterIerType) GetErrie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldErrieMask) != 0
 }
 
 // SetErrie Synchronization error interrupt enable
-func (r *registerIerType) SetErrie(value bool) {
+func (r *RegisterIerType) SetErrie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldErrieMask)
 	} else {
@@ -525,12 +617,12 @@ const (
 )
 
 // GetVsyncie VSYNC interrupt enable
-func (r *registerIerType) GetVsyncie() bool {
+func (r *RegisterIerType) GetVsyncie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldVsyncieMask) != 0
 }
 
 // SetVsyncie VSYNC interrupt enable
-func (r *registerIerType) SetVsyncie(value bool) {
+func (r *RegisterIerType) SetVsyncie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldVsyncieMask)
 	} else {
@@ -544,12 +636,12 @@ const (
 )
 
 // GetLineie Line interrupt enable
-func (r *registerIerType) GetLineie() bool {
+func (r *RegisterIerType) GetLineie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldLineieMask) != 0
 }
 
 // SetLineie Line interrupt enable
-func (r *registerIerType) SetLineie(value bool) {
+func (r *RegisterIerType) SetLineie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldLineieMask)
 	} else {
@@ -557,8 +649,31 @@ func (r *registerIerType) SetLineie(value bool) {
 	}
 }
 
-// registerMisType masked interrupt status register
-type registerMisType uint32
+// RegisterMisType masked interrupt status register
+type RegisterMisType uint32
+
+func (r *RegisterMisType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMisType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMisType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMisType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMisType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMisFieldFramemisShift = 0
@@ -566,12 +681,12 @@ const (
 )
 
 // GetFramemis Capture complete masked interrupt status
-func (r *registerMisType) GetFramemis() bool {
+func (r *RegisterMisType) GetFramemis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMisFieldFramemisMask) != 0
 }
 
 // SetFramemis Capture complete masked interrupt status
-func (r *registerMisType) SetFramemis(value bool) {
+func (r *RegisterMisType) SetFramemis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMisFieldFramemisMask)
 	} else {
@@ -585,12 +700,12 @@ const (
 )
 
 // GetOvrmis Overrun masked interrupt status
-func (r *registerMisType) GetOvrmis() bool {
+func (r *RegisterMisType) GetOvrmis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMisFieldOvrmisMask) != 0
 }
 
 // SetOvrmis Overrun masked interrupt status
-func (r *registerMisType) SetOvrmis(value bool) {
+func (r *RegisterMisType) SetOvrmis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMisFieldOvrmisMask)
 	} else {
@@ -604,12 +719,12 @@ const (
 )
 
 // GetErrmis Synchronization error masked interrupt status
-func (r *registerMisType) GetErrmis() bool {
+func (r *RegisterMisType) GetErrmis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMisFieldErrmisMask) != 0
 }
 
 // SetErrmis Synchronization error masked interrupt status
-func (r *registerMisType) SetErrmis(value bool) {
+func (r *RegisterMisType) SetErrmis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMisFieldErrmisMask)
 	} else {
@@ -623,12 +738,12 @@ const (
 )
 
 // GetVsyncmis VSYNC masked interrupt status
-func (r *registerMisType) GetVsyncmis() bool {
+func (r *RegisterMisType) GetVsyncmis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMisFieldVsyncmisMask) != 0
 }
 
 // SetVsyncmis VSYNC masked interrupt status
-func (r *registerMisType) SetVsyncmis(value bool) {
+func (r *RegisterMisType) SetVsyncmis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMisFieldVsyncmisMask)
 	} else {
@@ -642,12 +757,12 @@ const (
 )
 
 // GetLinemis Line masked interrupt status
-func (r *registerMisType) GetLinemis() bool {
+func (r *RegisterMisType) GetLinemis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMisFieldLinemisMask) != 0
 }
 
 // SetLinemis Line masked interrupt status
-func (r *registerMisType) SetLinemis(value bool) {
+func (r *RegisterMisType) SetLinemis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMisFieldLinemisMask)
 	} else {
@@ -655,8 +770,31 @@ func (r *registerMisType) SetLinemis(value bool) {
 	}
 }
 
-// registerIcrType interrupt clear register
-type registerIcrType uint32
+// RegisterIcrType interrupt clear register
+type RegisterIcrType uint32
+
+func (r *RegisterIcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIcrFieldFrameiscShift = 0
@@ -664,12 +802,12 @@ const (
 )
 
 // GetFrameisc Capture complete interrupt status clear
-func (r *registerIcrType) GetFrameisc() bool {
+func (r *RegisterIcrType) GetFrameisc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldFrameiscMask) != 0
 }
 
 // SetFrameisc Capture complete interrupt status clear
-func (r *registerIcrType) SetFrameisc(value bool) {
+func (r *RegisterIcrType) SetFrameisc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldFrameiscMask)
 	} else {
@@ -683,12 +821,12 @@ const (
 )
 
 // GetOvrisc Overrun interrupt status clear
-func (r *registerIcrType) GetOvrisc() bool {
+func (r *RegisterIcrType) GetOvrisc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldOvriscMask) != 0
 }
 
 // SetOvrisc Overrun interrupt status clear
-func (r *registerIcrType) SetOvrisc(value bool) {
+func (r *RegisterIcrType) SetOvrisc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldOvriscMask)
 	} else {
@@ -702,12 +840,12 @@ const (
 )
 
 // GetErrisc Synchronization error interrupt status clear
-func (r *registerIcrType) GetErrisc() bool {
+func (r *RegisterIcrType) GetErrisc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldErriscMask) != 0
 }
 
 // SetErrisc Synchronization error interrupt status clear
-func (r *registerIcrType) SetErrisc(value bool) {
+func (r *RegisterIcrType) SetErrisc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldErriscMask)
 	} else {
@@ -721,12 +859,12 @@ const (
 )
 
 // GetVsyncisc Vertical synch interrupt status clear
-func (r *registerIcrType) GetVsyncisc() bool {
+func (r *RegisterIcrType) GetVsyncisc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldVsynciscMask) != 0
 }
 
 // SetVsyncisc Vertical synch interrupt status clear
-func (r *registerIcrType) SetVsyncisc(value bool) {
+func (r *RegisterIcrType) SetVsyncisc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldVsynciscMask)
 	} else {
@@ -740,12 +878,12 @@ const (
 )
 
 // GetLineisc line interrupt status clear
-func (r *registerIcrType) GetLineisc() bool {
+func (r *RegisterIcrType) GetLineisc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldLineiscMask) != 0
 }
 
 // SetLineisc line interrupt status clear
-func (r *registerIcrType) SetLineisc(value bool) {
+func (r *RegisterIcrType) SetLineisc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldLineiscMask)
 	} else {
@@ -753,8 +891,31 @@ func (r *registerIcrType) SetLineisc(value bool) {
 	}
 }
 
-// registerEscrType embedded synchronization code register
-type registerEscrType uint32
+// RegisterEscrType embedded synchronization code register
+type RegisterEscrType uint32
+
+func (r *RegisterEscrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterEscrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterEscrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterEscrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterEscrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterEscrFieldFscShift = 0
@@ -762,12 +923,12 @@ const (
 )
 
 // GetFsc Frame start delimiter code
-func (r *registerEscrType) GetFsc() uint8 {
+func (r *RegisterEscrType) GetFsc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEscrFieldFscMask) >> RegisterEscrFieldFscShift)
 }
 
 // SetFsc Frame start delimiter code
-func (r *registerEscrType) SetFsc(value uint8) {
+func (r *RegisterEscrType) SetFsc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEscrFieldFscMask)|(uint32(value)<<RegisterEscrFieldFscShift))
 }
 
@@ -777,12 +938,12 @@ const (
 )
 
 // GetLsc Line start delimiter code
-func (r *registerEscrType) GetLsc() uint8 {
+func (r *RegisterEscrType) GetLsc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEscrFieldLscMask) >> RegisterEscrFieldLscShift)
 }
 
 // SetLsc Line start delimiter code
-func (r *registerEscrType) SetLsc(value uint8) {
+func (r *RegisterEscrType) SetLsc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEscrFieldLscMask)|(uint32(value)<<RegisterEscrFieldLscShift))
 }
 
@@ -792,12 +953,12 @@ const (
 )
 
 // GetLec Line end delimiter code
-func (r *registerEscrType) GetLec() uint8 {
+func (r *RegisterEscrType) GetLec() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEscrFieldLecMask) >> RegisterEscrFieldLecShift)
 }
 
 // SetLec Line end delimiter code
-func (r *registerEscrType) SetLec(value uint8) {
+func (r *RegisterEscrType) SetLec(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEscrFieldLecMask)|(uint32(value)<<RegisterEscrFieldLecShift))
 }
 
@@ -807,17 +968,40 @@ const (
 )
 
 // GetFec Frame end delimiter code
-func (r *registerEscrType) GetFec() uint8 {
+func (r *RegisterEscrType) GetFec() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEscrFieldFecMask) >> RegisterEscrFieldFecShift)
 }
 
 // SetFec Frame end delimiter code
-func (r *registerEscrType) SetFec(value uint8) {
+func (r *RegisterEscrType) SetFec(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEscrFieldFecMask)|(uint32(value)<<RegisterEscrFieldFecShift))
 }
 
-// registerEsurType embedded synchronization unmask register
-type registerEsurType uint32
+// RegisterEsurType embedded synchronization unmask register
+type RegisterEsurType uint32
+
+func (r *RegisterEsurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterEsurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterEsurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterEsurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterEsurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterEsurFieldFsuShift = 0
@@ -825,12 +1009,12 @@ const (
 )
 
 // GetFsu Frame start delimiter unmask
-func (r *registerEsurType) GetFsu() uint8 {
+func (r *RegisterEsurType) GetFsu() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEsurFieldFsuMask) >> RegisterEsurFieldFsuShift)
 }
 
 // SetFsu Frame start delimiter unmask
-func (r *registerEsurType) SetFsu(value uint8) {
+func (r *RegisterEsurType) SetFsu(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEsurFieldFsuMask)|(uint32(value)<<RegisterEsurFieldFsuShift))
 }
 
@@ -840,12 +1024,12 @@ const (
 )
 
 // GetLsu Line start delimiter unmask
-func (r *registerEsurType) GetLsu() uint8 {
+func (r *RegisterEsurType) GetLsu() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEsurFieldLsuMask) >> RegisterEsurFieldLsuShift)
 }
 
 // SetLsu Line start delimiter unmask
-func (r *registerEsurType) SetLsu(value uint8) {
+func (r *RegisterEsurType) SetLsu(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEsurFieldLsuMask)|(uint32(value)<<RegisterEsurFieldLsuShift))
 }
 
@@ -855,12 +1039,12 @@ const (
 )
 
 // GetLeu Line end delimiter unmask
-func (r *registerEsurType) GetLeu() uint8 {
+func (r *RegisterEsurType) GetLeu() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEsurFieldLeuMask) >> RegisterEsurFieldLeuShift)
 }
 
 // SetLeu Line end delimiter unmask
-func (r *registerEsurType) SetLeu(value uint8) {
+func (r *RegisterEsurType) SetLeu(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEsurFieldLeuMask)|(uint32(value)<<RegisterEsurFieldLeuShift))
 }
 
@@ -870,17 +1054,40 @@ const (
 )
 
 // GetFeu Frame end delimiter unmask
-func (r *registerEsurType) GetFeu() uint8 {
+func (r *RegisterEsurType) GetFeu() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEsurFieldFeuMask) >> RegisterEsurFieldFeuShift)
 }
 
 // SetFeu Frame end delimiter unmask
-func (r *registerEsurType) SetFeu(value uint8) {
+func (r *RegisterEsurType) SetFeu(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEsurFieldFeuMask)|(uint32(value)<<RegisterEsurFieldFeuShift))
 }
 
-// registerCwstrtType crop window start
-type registerCwstrtType uint32
+// RegisterCwstrtType crop window start
+type RegisterCwstrtType uint32
+
+func (r *RegisterCwstrtType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCwstrtType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCwstrtType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCwstrtType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCwstrtType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCwstrtFieldHoffcntShift = 0
@@ -888,12 +1095,12 @@ const (
 )
 
 // GetHoffcnt Horizontal offset count
-func (r *registerCwstrtType) GetHoffcnt() uint16 {
+func (r *RegisterCwstrtType) GetHoffcnt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCwstrtFieldHoffcntMask) >> RegisterCwstrtFieldHoffcntShift)
 }
 
 // SetHoffcnt Horizontal offset count
-func (r *registerCwstrtType) SetHoffcnt(value uint16) {
+func (r *RegisterCwstrtType) SetHoffcnt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCwstrtFieldHoffcntMask)|(uint32(value)<<RegisterCwstrtFieldHoffcntShift))
 }
 
@@ -903,17 +1110,40 @@ const (
 )
 
 // GetVst Vertical start line count
-func (r *registerCwstrtType) GetVst() uint16 {
+func (r *RegisterCwstrtType) GetVst() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCwstrtFieldVstMask) >> RegisterCwstrtFieldVstShift)
 }
 
 // SetVst Vertical start line count
-func (r *registerCwstrtType) SetVst(value uint16) {
+func (r *RegisterCwstrtType) SetVst(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCwstrtFieldVstMask)|(uint32(value)<<RegisterCwstrtFieldVstShift))
 }
 
-// registerCwsizeType crop window size
-type registerCwsizeType uint32
+// RegisterCwsizeType crop window size
+type RegisterCwsizeType uint32
+
+func (r *RegisterCwsizeType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCwsizeType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCwsizeType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCwsizeType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCwsizeType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCwsizeFieldCapcntShift = 0
@@ -921,12 +1151,12 @@ const (
 )
 
 // GetCapcnt Capture count
-func (r *registerCwsizeType) GetCapcnt() uint16 {
+func (r *RegisterCwsizeType) GetCapcnt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCwsizeFieldCapcntMask) >> RegisterCwsizeFieldCapcntShift)
 }
 
 // SetCapcnt Capture count
-func (r *registerCwsizeType) SetCapcnt(value uint16) {
+func (r *RegisterCwsizeType) SetCapcnt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCwsizeFieldCapcntMask)|(uint32(value)<<RegisterCwsizeFieldCapcntShift))
 }
 
@@ -936,17 +1166,40 @@ const (
 )
 
 // GetVline Vertical line count
-func (r *registerCwsizeType) GetVline() uint16 {
+func (r *RegisterCwsizeType) GetVline() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCwsizeFieldVlineMask) >> RegisterCwsizeFieldVlineShift)
 }
 
 // SetVline Vertical line count
-func (r *registerCwsizeType) SetVline(value uint16) {
+func (r *RegisterCwsizeType) SetVline(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCwsizeFieldVlineMask)|(uint32(value)<<RegisterCwsizeFieldVlineShift))
 }
 
-// registerDrType data register
-type registerDrType uint32
+// RegisterDrType data register
+type RegisterDrType uint32
+
+func (r *RegisterDrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDrFieldByte0Shift = 0
@@ -954,12 +1207,12 @@ const (
 )
 
 // GetByte0 Data byte 0
-func (r *registerDrType) GetByte0() uint8 {
+func (r *RegisterDrType) GetByte0() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDrFieldByte0Mask) >> RegisterDrFieldByte0Shift)
 }
 
 // SetByte0 Data byte 0
-func (r *registerDrType) SetByte0(value uint8) {
+func (r *RegisterDrType) SetByte0(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDrFieldByte0Mask)|(uint32(value)<<RegisterDrFieldByte0Shift))
 }
 
@@ -969,12 +1222,12 @@ const (
 )
 
 // GetByte1 Data byte 1
-func (r *registerDrType) GetByte1() uint8 {
+func (r *RegisterDrType) GetByte1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDrFieldByte1Mask) >> RegisterDrFieldByte1Shift)
 }
 
 // SetByte1 Data byte 1
-func (r *registerDrType) SetByte1(value uint8) {
+func (r *RegisterDrType) SetByte1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDrFieldByte1Mask)|(uint32(value)<<RegisterDrFieldByte1Shift))
 }
 
@@ -984,12 +1237,12 @@ const (
 )
 
 // GetByte2 Data byte 2
-func (r *registerDrType) GetByte2() uint8 {
+func (r *RegisterDrType) GetByte2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDrFieldByte2Mask) >> RegisterDrFieldByte2Shift)
 }
 
 // SetByte2 Data byte 2
-func (r *registerDrType) SetByte2(value uint8) {
+func (r *RegisterDrType) SetByte2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDrFieldByte2Mask)|(uint32(value)<<RegisterDrFieldByte2Shift))
 }
 
@@ -999,11 +1252,11 @@ const (
 )
 
 // GetByte3 Data byte 3
-func (r *registerDrType) GetByte3() uint8 {
+func (r *RegisterDrType) GetByte3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDrFieldByte3Mask) >> RegisterDrFieldByte3Shift)
 }
 
 // SetByte3 Data byte 3
-func (r *registerDrType) SetByte3(value uint8) {
+func (r *RegisterDrType) SetByte3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDrFieldByte3Mask)|(uint32(value)<<RegisterDrFieldByte3Shift))
 }

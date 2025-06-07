@@ -12,16 +12,39 @@ var (
 )
 
 type _crc struct {
-	Dr   registerDrType
-	Idr  registerIdrType
-	Cr   registerCrType
+	Dr   RegisterDrType
+	Idr  RegisterIdrType
+	Cr   RegisterCrType
 	_    [4]byte
-	Init registerInitType
-	Pol  registerPolType
+	Init RegisterInitType
+	Pol  RegisterPolType
 }
 
-// registerDrType Data register
-type registerDrType uint32
+// RegisterDrType Data register
+type RegisterDrType uint32
+
+func (r *RegisterDrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDrFieldDrShift = 0
@@ -29,17 +52,40 @@ const (
 )
 
 // GetDr Data Register
-func (r *registerDrType) GetDr() uint32 {
+func (r *RegisterDrType) GetDr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDrFieldDrMask) >> RegisterDrFieldDrShift)
 }
 
 // SetDr Data Register
-func (r *registerDrType) SetDr(value uint32) {
+func (r *RegisterDrType) SetDr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDrFieldDrMask)|(uint32(value)<<RegisterDrFieldDrShift))
 }
 
-// registerIdrType Independent Data register
-type registerIdrType uint32
+// RegisterIdrType Independent Data register
+type RegisterIdrType uint32
+
+func (r *RegisterIdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIdrFieldIdrShift = 0
@@ -47,17 +93,40 @@ const (
 )
 
 // GetIdr Independent Data register
-func (r *registerIdrType) GetIdr() uint32 {
+func (r *RegisterIdrType) GetIdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldIdrMask) >> RegisterIdrFieldIdrShift)
 }
 
 // SetIdr Independent Data register
-func (r *registerIdrType) SetIdr(value uint32) {
+func (r *RegisterIdrType) SetIdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIdrFieldIdrMask)|(uint32(value)<<RegisterIdrFieldIdrShift))
 }
 
-// registerCrType Control register
-type registerCrType uint32
+// RegisterCrType Control register
+type RegisterCrType uint32
+
+func (r *RegisterCrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCrFieldResetShift = 0
@@ -65,12 +134,12 @@ const (
 )
 
 // GetReset RESET bit
-func (r *registerCrType) GetReset() bool {
+func (r *RegisterCrType) GetReset() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldResetMask) != 0
 }
 
 // SetReset RESET bit
-func (r *registerCrType) SetReset(value bool) {
+func (r *RegisterCrType) SetReset(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldResetMask)
 	} else {
@@ -84,12 +153,12 @@ const (
 )
 
 // GetPolysize Polynomial size
-func (r *registerCrType) GetPolysize() uint8 {
+func (r *RegisterCrType) GetPolysize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldPolysizeMask) >> RegisterCrFieldPolysizeShift)
 }
 
 // SetPolysize Polynomial size
-func (r *registerCrType) SetPolysize(value uint8) {
+func (r *RegisterCrType) SetPolysize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldPolysizeMask)|(uint32(value)<<RegisterCrFieldPolysizeShift))
 }
 
@@ -99,12 +168,12 @@ const (
 )
 
 // GetRevin Reverse input data
-func (r *registerCrType) GetRevin() uint8 {
+func (r *RegisterCrType) GetRevin() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldRevinMask) >> RegisterCrFieldRevinShift)
 }
 
 // SetRevin Reverse input data
-func (r *registerCrType) SetRevin(value uint8) {
+func (r *RegisterCrType) SetRevin(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldRevinMask)|(uint32(value)<<RegisterCrFieldRevinShift))
 }
 
@@ -114,12 +183,12 @@ const (
 )
 
 // GetRevout Reverse output data
-func (r *registerCrType) GetRevout() bool {
+func (r *RegisterCrType) GetRevout() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldRevoutMask) != 0
 }
 
 // SetRevout Reverse output data
-func (r *registerCrType) SetRevout(value bool) {
+func (r *RegisterCrType) SetRevout(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldRevoutMask)
 	} else {
@@ -127,8 +196,31 @@ func (r *registerCrType) SetRevout(value bool) {
 	}
 }
 
-// registerInitType Initial CRC value
-type registerInitType uint32
+// RegisterInitType Initial CRC value
+type RegisterInitType uint32
+
+func (r *RegisterInitType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterInitType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterInitType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterInitType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterInitType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterInitFieldCrcinitShift = 0
@@ -136,17 +228,40 @@ const (
 )
 
 // GetCrcinit Programmable initial CRC value
-func (r *registerInitType) GetCrcinit() uint32 {
+func (r *RegisterInitType) GetCrcinit() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterInitFieldCrcinitMask) >> RegisterInitFieldCrcinitShift)
 }
 
 // SetCrcinit Programmable initial CRC value
-func (r *registerInitType) SetCrcinit(value uint32) {
+func (r *RegisterInitType) SetCrcinit(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterInitFieldCrcinitMask)|(uint32(value)<<RegisterInitFieldCrcinitShift))
 }
 
-// registerPolType CRC polynomial
-type registerPolType uint32
+// RegisterPolType CRC polynomial
+type RegisterPolType uint32
+
+func (r *RegisterPolType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPolType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPolType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPolType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPolType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPolFieldPolShift = 0
@@ -154,11 +269,11 @@ const (
 )
 
 // GetPol Programmable polynomial
-func (r *registerPolType) GetPol() uint32 {
+func (r *RegisterPolType) GetPol() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterPolFieldPolMask) >> RegisterPolFieldPolShift)
 }
 
 // SetPol Programmable polynomial
-func (r *registerPolType) SetPol(value uint32) {
+func (r *RegisterPolType) SetPol(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPolFieldPolMask)|(uint32(value)<<RegisterPolFieldPolShift))
 }

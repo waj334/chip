@@ -12,51 +12,74 @@ var (
 )
 
 type _bdma struct {
-	Isr    registerIsrType
-	Ifcr   registerIfcrType
-	Ccr1   registerCcr1Type
-	Cndtr1 registerCndtr1Type
-	Cpar1  registerCpar1Type
-	Cmar1  registerCmar1Type
+	Isr    RegisterIsrType
+	Ifcr   RegisterIfcrType
+	Ccr1   RegisterCcr1Type
+	Cndtr1 RegisterCndtr1Type
+	Cpar1  RegisterCpar1Type
+	Cmar1  RegisterCmar1Type
 	_      [4]byte
-	Ccr2   registerCcr2Type
-	Cndtr2 registerCndtr2Type
-	Cpar2  registerCpar2Type
-	Cmar2  registerCmar2Type
+	Ccr2   RegisterCcr2Type
+	Cndtr2 RegisterCndtr2Type
+	Cpar2  RegisterCpar2Type
+	Cmar2  RegisterCmar2Type
 	_      [4]byte
-	Ccr3   registerCcr3Type
-	Cndtr3 registerCndtr3Type
-	Cpar3  registerCpar3Type
-	Cmar3  registerCmar3Type
+	Ccr3   RegisterCcr3Type
+	Cndtr3 RegisterCndtr3Type
+	Cpar3  RegisterCpar3Type
+	Cmar3  RegisterCmar3Type
 	_      [4]byte
-	Ccr4   registerCcr4Type
-	Cndtr4 registerCndtr4Type
-	Cpar4  registerCpar4Type
-	Cmar4  registerCmar4Type
+	Ccr4   RegisterCcr4Type
+	Cndtr4 RegisterCndtr4Type
+	Cpar4  RegisterCpar4Type
+	Cmar4  RegisterCmar4Type
 	_      [4]byte
-	Ccr5   registerCcr5Type
-	Cndtr5 registerCndtr5Type
-	Cpar5  registerCpar5Type
-	Cmar5  registerCmar5Type
+	Ccr5   RegisterCcr5Type
+	Cndtr5 RegisterCndtr5Type
+	Cpar5  RegisterCpar5Type
+	Cmar5  RegisterCmar5Type
 	_      [4]byte
-	Ccr6   registerCcr6Type
-	Cndtr6 registerCndtr6Type
-	Cpar6  registerCpar6Type
-	Cmar6  registerCmar6Type
+	Ccr6   RegisterCcr6Type
+	Cndtr6 RegisterCndtr6Type
+	Cpar6  RegisterCpar6Type
+	Cmar6  RegisterCmar6Type
 	_      [4]byte
-	Ccr7   registerCcr7Type
-	Cndtr7 registerCndtr7Type
-	Cpar7  registerCpar7Type
-	Cmar7  registerCmar7Type
+	Ccr7   RegisterCcr7Type
+	Cndtr7 RegisterCndtr7Type
+	Cpar7  RegisterCpar7Type
+	Cmar7  RegisterCmar7Type
 	_      [4]byte
-	Ccr8   registerCcr8Type
-	Cndtr8 registerCndtr8Type
-	Cpar8  registerCpar8Type
-	Cmar8  registerCmar8Type
+	Ccr8   RegisterCcr8Type
+	Cndtr8 RegisterCndtr8Type
+	Cpar8  RegisterCpar8Type
+	Cmar8  RegisterCmar8Type
 }
 
-// registerIsrType DMA interrupt status register
-type registerIsrType uint32
+// RegisterIsrType DMA interrupt status register
+type RegisterIsrType uint32
+
+func (r *RegisterIsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIsrFieldGif1Shift = 0
@@ -64,12 +87,12 @@ const (
 )
 
 // GetGif1 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetGif1() bool {
+func (r *RegisterIsrType) GetGif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldGif1Mask) != 0
 }
 
 // SetGif1 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetGif1(value bool) {
+func (r *RegisterIsrType) SetGif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldGif1Mask)
 	} else {
@@ -83,12 +106,12 @@ const (
 )
 
 // GetTcif1 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTcif1() bool {
+func (r *RegisterIsrType) GetTcif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTcif1Mask) != 0
 }
 
 // SetTcif1 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTcif1(value bool) {
+func (r *RegisterIsrType) SetTcif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTcif1Mask)
 	} else {
@@ -102,12 +125,12 @@ const (
 )
 
 // GetHtif1 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetHtif1() bool {
+func (r *RegisterIsrType) GetHtif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldHtif1Mask) != 0
 }
 
 // SetHtif1 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetHtif1(value bool) {
+func (r *RegisterIsrType) SetHtif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldHtif1Mask)
 	} else {
@@ -121,12 +144,12 @@ const (
 )
 
 // GetTeif1 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTeif1() bool {
+func (r *RegisterIsrType) GetTeif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTeif1Mask) != 0
 }
 
 // SetTeif1 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTeif1(value bool) {
+func (r *RegisterIsrType) SetTeif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTeif1Mask)
 	} else {
@@ -140,12 +163,12 @@ const (
 )
 
 // GetGif2 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetGif2() bool {
+func (r *RegisterIsrType) GetGif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldGif2Mask) != 0
 }
 
 // SetGif2 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetGif2(value bool) {
+func (r *RegisterIsrType) SetGif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldGif2Mask)
 	} else {
@@ -159,12 +182,12 @@ const (
 )
 
 // GetTcif2 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTcif2() bool {
+func (r *RegisterIsrType) GetTcif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTcif2Mask) != 0
 }
 
 // SetTcif2 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTcif2(value bool) {
+func (r *RegisterIsrType) SetTcif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTcif2Mask)
 	} else {
@@ -178,12 +201,12 @@ const (
 )
 
 // GetHtif2 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetHtif2() bool {
+func (r *RegisterIsrType) GetHtif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldHtif2Mask) != 0
 }
 
 // SetHtif2 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetHtif2(value bool) {
+func (r *RegisterIsrType) SetHtif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldHtif2Mask)
 	} else {
@@ -197,12 +220,12 @@ const (
 )
 
 // GetTeif2 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTeif2() bool {
+func (r *RegisterIsrType) GetTeif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTeif2Mask) != 0
 }
 
 // SetTeif2 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTeif2(value bool) {
+func (r *RegisterIsrType) SetTeif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTeif2Mask)
 	} else {
@@ -216,12 +239,12 @@ const (
 )
 
 // GetGif3 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetGif3() bool {
+func (r *RegisterIsrType) GetGif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldGif3Mask) != 0
 }
 
 // SetGif3 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetGif3(value bool) {
+func (r *RegisterIsrType) SetGif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldGif3Mask)
 	} else {
@@ -235,12 +258,12 @@ const (
 )
 
 // GetTcif3 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTcif3() bool {
+func (r *RegisterIsrType) GetTcif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTcif3Mask) != 0
 }
 
 // SetTcif3 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTcif3(value bool) {
+func (r *RegisterIsrType) SetTcif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTcif3Mask)
 	} else {
@@ -254,12 +277,12 @@ const (
 )
 
 // GetHtif3 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetHtif3() bool {
+func (r *RegisterIsrType) GetHtif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldHtif3Mask) != 0
 }
 
 // SetHtif3 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetHtif3(value bool) {
+func (r *RegisterIsrType) SetHtif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldHtif3Mask)
 	} else {
@@ -273,12 +296,12 @@ const (
 )
 
 // GetTeif3 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTeif3() bool {
+func (r *RegisterIsrType) GetTeif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTeif3Mask) != 0
 }
 
 // SetTeif3 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTeif3(value bool) {
+func (r *RegisterIsrType) SetTeif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTeif3Mask)
 	} else {
@@ -292,12 +315,12 @@ const (
 )
 
 // GetGif4 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetGif4() bool {
+func (r *RegisterIsrType) GetGif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldGif4Mask) != 0
 }
 
 // SetGif4 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetGif4(value bool) {
+func (r *RegisterIsrType) SetGif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldGif4Mask)
 	} else {
@@ -311,12 +334,12 @@ const (
 )
 
 // GetTcif4 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTcif4() bool {
+func (r *RegisterIsrType) GetTcif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTcif4Mask) != 0
 }
 
 // SetTcif4 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTcif4(value bool) {
+func (r *RegisterIsrType) SetTcif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTcif4Mask)
 	} else {
@@ -330,12 +353,12 @@ const (
 )
 
 // GetHtif4 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetHtif4() bool {
+func (r *RegisterIsrType) GetHtif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldHtif4Mask) != 0
 }
 
 // SetHtif4 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetHtif4(value bool) {
+func (r *RegisterIsrType) SetHtif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldHtif4Mask)
 	} else {
@@ -349,12 +372,12 @@ const (
 )
 
 // GetTeif4 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTeif4() bool {
+func (r *RegisterIsrType) GetTeif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTeif4Mask) != 0
 }
 
 // SetTeif4 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTeif4(value bool) {
+func (r *RegisterIsrType) SetTeif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTeif4Mask)
 	} else {
@@ -368,12 +391,12 @@ const (
 )
 
 // GetGif5 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetGif5() bool {
+func (r *RegisterIsrType) GetGif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldGif5Mask) != 0
 }
 
 // SetGif5 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetGif5(value bool) {
+func (r *RegisterIsrType) SetGif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldGif5Mask)
 	} else {
@@ -387,12 +410,12 @@ const (
 )
 
 // GetTcif5 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTcif5() bool {
+func (r *RegisterIsrType) GetTcif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTcif5Mask) != 0
 }
 
 // SetTcif5 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTcif5(value bool) {
+func (r *RegisterIsrType) SetTcif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTcif5Mask)
 	} else {
@@ -406,12 +429,12 @@ const (
 )
 
 // GetHtif5 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetHtif5() bool {
+func (r *RegisterIsrType) GetHtif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldHtif5Mask) != 0
 }
 
 // SetHtif5 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetHtif5(value bool) {
+func (r *RegisterIsrType) SetHtif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldHtif5Mask)
 	} else {
@@ -425,12 +448,12 @@ const (
 )
 
 // GetTeif5 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTeif5() bool {
+func (r *RegisterIsrType) GetTeif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTeif5Mask) != 0
 }
 
 // SetTeif5 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTeif5(value bool) {
+func (r *RegisterIsrType) SetTeif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTeif5Mask)
 	} else {
@@ -444,12 +467,12 @@ const (
 )
 
 // GetGif6 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetGif6() bool {
+func (r *RegisterIsrType) GetGif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldGif6Mask) != 0
 }
 
 // SetGif6 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetGif6(value bool) {
+func (r *RegisterIsrType) SetGif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldGif6Mask)
 	} else {
@@ -463,12 +486,12 @@ const (
 )
 
 // GetTcif6 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTcif6() bool {
+func (r *RegisterIsrType) GetTcif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTcif6Mask) != 0
 }
 
 // SetTcif6 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTcif6(value bool) {
+func (r *RegisterIsrType) SetTcif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTcif6Mask)
 	} else {
@@ -482,12 +505,12 @@ const (
 )
 
 // GetHtif6 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetHtif6() bool {
+func (r *RegisterIsrType) GetHtif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldHtif6Mask) != 0
 }
 
 // SetHtif6 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetHtif6(value bool) {
+func (r *RegisterIsrType) SetHtif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldHtif6Mask)
 	} else {
@@ -501,12 +524,12 @@ const (
 )
 
 // GetTeif6 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTeif6() bool {
+func (r *RegisterIsrType) GetTeif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTeif6Mask) != 0
 }
 
 // SetTeif6 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTeif6(value bool) {
+func (r *RegisterIsrType) SetTeif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTeif6Mask)
 	} else {
@@ -520,12 +543,12 @@ const (
 )
 
 // GetGif7 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetGif7() bool {
+func (r *RegisterIsrType) GetGif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldGif7Mask) != 0
 }
 
 // SetGif7 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetGif7(value bool) {
+func (r *RegisterIsrType) SetGif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldGif7Mask)
 	} else {
@@ -539,12 +562,12 @@ const (
 )
 
 // GetTcif7 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTcif7() bool {
+func (r *RegisterIsrType) GetTcif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTcif7Mask) != 0
 }
 
 // SetTcif7 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTcif7(value bool) {
+func (r *RegisterIsrType) SetTcif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTcif7Mask)
 	} else {
@@ -558,12 +581,12 @@ const (
 )
 
 // GetHtif7 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetHtif7() bool {
+func (r *RegisterIsrType) GetHtif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldHtif7Mask) != 0
 }
 
 // SetHtif7 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetHtif7(value bool) {
+func (r *RegisterIsrType) SetHtif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldHtif7Mask)
 	} else {
@@ -577,12 +600,12 @@ const (
 )
 
 // GetTeif7 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTeif7() bool {
+func (r *RegisterIsrType) GetTeif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTeif7Mask) != 0
 }
 
 // SetTeif7 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTeif7(value bool) {
+func (r *RegisterIsrType) SetTeif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTeif7Mask)
 	} else {
@@ -596,12 +619,12 @@ const (
 )
 
 // GetGif8 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetGif8() bool {
+func (r *RegisterIsrType) GetGif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldGif8Mask) != 0
 }
 
 // SetGif8 Channel x global interrupt flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetGif8(value bool) {
+func (r *RegisterIsrType) SetGif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldGif8Mask)
 	} else {
@@ -615,12 +638,12 @@ const (
 )
 
 // GetTcif8 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTcif8() bool {
+func (r *RegisterIsrType) GetTcif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTcif8Mask) != 0
 }
 
 // SetTcif8 Channel x transfer complete flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTcif8(value bool) {
+func (r *RegisterIsrType) SetTcif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTcif8Mask)
 	} else {
@@ -634,12 +657,12 @@ const (
 )
 
 // GetHtif8 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetHtif8() bool {
+func (r *RegisterIsrType) GetHtif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldHtif8Mask) != 0
 }
 
 // SetHtif8 Channel x half transfer flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetHtif8(value bool) {
+func (r *RegisterIsrType) SetHtif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldHtif8Mask)
 	} else {
@@ -653,12 +676,12 @@ const (
 )
 
 // GetTeif8 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) GetTeif8() bool {
+func (r *RegisterIsrType) GetTeif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldTeif8Mask) != 0
 }
 
 // SetTeif8 Channel x transfer error flag (x = 1..8) This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCR register.
-func (r *registerIsrType) SetTeif8(value bool) {
+func (r *RegisterIsrType) SetTeif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldTeif8Mask)
 	} else {
@@ -666,8 +689,31 @@ func (r *registerIsrType) SetTeif8(value bool) {
 	}
 }
 
-// registerIfcrType DMA interrupt flag clear register
-type registerIfcrType uint32
+// RegisterIfcrType DMA interrupt flag clear register
+type RegisterIfcrType uint32
+
+func (r *RegisterIfcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIfcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIfcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIfcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIfcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIfcrFieldCgif1Shift = 0
@@ -675,12 +721,12 @@ const (
 )
 
 // GetCgif1 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCgif1() bool {
+func (r *RegisterIfcrType) GetCgif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCgif1Mask) != 0
 }
 
 // SetCgif1 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCgif1(value bool) {
+func (r *RegisterIfcrType) SetCgif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCgif1Mask)
 	} else {
@@ -694,12 +740,12 @@ const (
 )
 
 // GetCtcif1 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCtcif1() bool {
+func (r *RegisterIfcrType) GetCtcif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCtcif1Mask) != 0
 }
 
 // SetCtcif1 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCtcif1(value bool) {
+func (r *RegisterIfcrType) SetCtcif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCtcif1Mask)
 	} else {
@@ -713,12 +759,12 @@ const (
 )
 
 // GetChtif1 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetChtif1() bool {
+func (r *RegisterIfcrType) GetChtif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldChtif1Mask) != 0
 }
 
 // SetChtif1 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetChtif1(value bool) {
+func (r *RegisterIfcrType) SetChtif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldChtif1Mask)
 	} else {
@@ -732,12 +778,12 @@ const (
 )
 
 // GetCteif1 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCteif1() bool {
+func (r *RegisterIfcrType) GetCteif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCteif1Mask) != 0
 }
 
 // SetCteif1 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCteif1(value bool) {
+func (r *RegisterIfcrType) SetCteif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCteif1Mask)
 	} else {
@@ -751,12 +797,12 @@ const (
 )
 
 // GetCgif2 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCgif2() bool {
+func (r *RegisterIfcrType) GetCgif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCgif2Mask) != 0
 }
 
 // SetCgif2 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCgif2(value bool) {
+func (r *RegisterIfcrType) SetCgif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCgif2Mask)
 	} else {
@@ -770,12 +816,12 @@ const (
 )
 
 // GetCtcif2 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCtcif2() bool {
+func (r *RegisterIfcrType) GetCtcif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCtcif2Mask) != 0
 }
 
 // SetCtcif2 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCtcif2(value bool) {
+func (r *RegisterIfcrType) SetCtcif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCtcif2Mask)
 	} else {
@@ -789,12 +835,12 @@ const (
 )
 
 // GetChtif2 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetChtif2() bool {
+func (r *RegisterIfcrType) GetChtif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldChtif2Mask) != 0
 }
 
 // SetChtif2 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetChtif2(value bool) {
+func (r *RegisterIfcrType) SetChtif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldChtif2Mask)
 	} else {
@@ -808,12 +854,12 @@ const (
 )
 
 // GetCteif2 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCteif2() bool {
+func (r *RegisterIfcrType) GetCteif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCteif2Mask) != 0
 }
 
 // SetCteif2 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCteif2(value bool) {
+func (r *RegisterIfcrType) SetCteif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCteif2Mask)
 	} else {
@@ -827,12 +873,12 @@ const (
 )
 
 // GetCgif3 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCgif3() bool {
+func (r *RegisterIfcrType) GetCgif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCgif3Mask) != 0
 }
 
 // SetCgif3 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCgif3(value bool) {
+func (r *RegisterIfcrType) SetCgif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCgif3Mask)
 	} else {
@@ -846,12 +892,12 @@ const (
 )
 
 // GetCtcif3 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCtcif3() bool {
+func (r *RegisterIfcrType) GetCtcif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCtcif3Mask) != 0
 }
 
 // SetCtcif3 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCtcif3(value bool) {
+func (r *RegisterIfcrType) SetCtcif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCtcif3Mask)
 	} else {
@@ -865,12 +911,12 @@ const (
 )
 
 // GetChtif3 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetChtif3() bool {
+func (r *RegisterIfcrType) GetChtif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldChtif3Mask) != 0
 }
 
 // SetChtif3 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetChtif3(value bool) {
+func (r *RegisterIfcrType) SetChtif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldChtif3Mask)
 	} else {
@@ -884,12 +930,12 @@ const (
 )
 
 // GetCteif3 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCteif3() bool {
+func (r *RegisterIfcrType) GetCteif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCteif3Mask) != 0
 }
 
 // SetCteif3 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCteif3(value bool) {
+func (r *RegisterIfcrType) SetCteif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCteif3Mask)
 	} else {
@@ -903,12 +949,12 @@ const (
 )
 
 // GetCgif4 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCgif4() bool {
+func (r *RegisterIfcrType) GetCgif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCgif4Mask) != 0
 }
 
 // SetCgif4 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCgif4(value bool) {
+func (r *RegisterIfcrType) SetCgif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCgif4Mask)
 	} else {
@@ -922,12 +968,12 @@ const (
 )
 
 // GetCtcif4 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCtcif4() bool {
+func (r *RegisterIfcrType) GetCtcif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCtcif4Mask) != 0
 }
 
 // SetCtcif4 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCtcif4(value bool) {
+func (r *RegisterIfcrType) SetCtcif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCtcif4Mask)
 	} else {
@@ -941,12 +987,12 @@ const (
 )
 
 // GetChtif4 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetChtif4() bool {
+func (r *RegisterIfcrType) GetChtif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldChtif4Mask) != 0
 }
 
 // SetChtif4 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetChtif4(value bool) {
+func (r *RegisterIfcrType) SetChtif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldChtif4Mask)
 	} else {
@@ -960,12 +1006,12 @@ const (
 )
 
 // GetCteif4 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCteif4() bool {
+func (r *RegisterIfcrType) GetCteif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCteif4Mask) != 0
 }
 
 // SetCteif4 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCteif4(value bool) {
+func (r *RegisterIfcrType) SetCteif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCteif4Mask)
 	} else {
@@ -979,12 +1025,12 @@ const (
 )
 
 // GetCgif5 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCgif5() bool {
+func (r *RegisterIfcrType) GetCgif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCgif5Mask) != 0
 }
 
 // SetCgif5 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCgif5(value bool) {
+func (r *RegisterIfcrType) SetCgif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCgif5Mask)
 	} else {
@@ -998,12 +1044,12 @@ const (
 )
 
 // GetCtcif5 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCtcif5() bool {
+func (r *RegisterIfcrType) GetCtcif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCtcif5Mask) != 0
 }
 
 // SetCtcif5 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCtcif5(value bool) {
+func (r *RegisterIfcrType) SetCtcif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCtcif5Mask)
 	} else {
@@ -1017,12 +1063,12 @@ const (
 )
 
 // GetChtif5 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetChtif5() bool {
+func (r *RegisterIfcrType) GetChtif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldChtif5Mask) != 0
 }
 
 // SetChtif5 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetChtif5(value bool) {
+func (r *RegisterIfcrType) SetChtif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldChtif5Mask)
 	} else {
@@ -1036,12 +1082,12 @@ const (
 )
 
 // GetCteif5 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCteif5() bool {
+func (r *RegisterIfcrType) GetCteif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCteif5Mask) != 0
 }
 
 // SetCteif5 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCteif5(value bool) {
+func (r *RegisterIfcrType) SetCteif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCteif5Mask)
 	} else {
@@ -1055,12 +1101,12 @@ const (
 )
 
 // GetCgif6 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCgif6() bool {
+func (r *RegisterIfcrType) GetCgif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCgif6Mask) != 0
 }
 
 // SetCgif6 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCgif6(value bool) {
+func (r *RegisterIfcrType) SetCgif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCgif6Mask)
 	} else {
@@ -1074,12 +1120,12 @@ const (
 )
 
 // GetCtcif6 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCtcif6() bool {
+func (r *RegisterIfcrType) GetCtcif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCtcif6Mask) != 0
 }
 
 // SetCtcif6 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCtcif6(value bool) {
+func (r *RegisterIfcrType) SetCtcif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCtcif6Mask)
 	} else {
@@ -1093,12 +1139,12 @@ const (
 )
 
 // GetChtif6 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetChtif6() bool {
+func (r *RegisterIfcrType) GetChtif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldChtif6Mask) != 0
 }
 
 // SetChtif6 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetChtif6(value bool) {
+func (r *RegisterIfcrType) SetChtif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldChtif6Mask)
 	} else {
@@ -1112,12 +1158,12 @@ const (
 )
 
 // GetCteif6 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCteif6() bool {
+func (r *RegisterIfcrType) GetCteif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCteif6Mask) != 0
 }
 
 // SetCteif6 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCteif6(value bool) {
+func (r *RegisterIfcrType) SetCteif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCteif6Mask)
 	} else {
@@ -1131,12 +1177,12 @@ const (
 )
 
 // GetCgif7 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCgif7() bool {
+func (r *RegisterIfcrType) GetCgif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCgif7Mask) != 0
 }
 
 // SetCgif7 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCgif7(value bool) {
+func (r *RegisterIfcrType) SetCgif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCgif7Mask)
 	} else {
@@ -1150,12 +1196,12 @@ const (
 )
 
 // GetCtcif7 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCtcif7() bool {
+func (r *RegisterIfcrType) GetCtcif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCtcif7Mask) != 0
 }
 
 // SetCtcif7 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCtcif7(value bool) {
+func (r *RegisterIfcrType) SetCtcif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCtcif7Mask)
 	} else {
@@ -1169,12 +1215,12 @@ const (
 )
 
 // GetChtif7 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetChtif7() bool {
+func (r *RegisterIfcrType) GetChtif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldChtif7Mask) != 0
 }
 
 // SetChtif7 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetChtif7(value bool) {
+func (r *RegisterIfcrType) SetChtif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldChtif7Mask)
 	} else {
@@ -1188,12 +1234,12 @@ const (
 )
 
 // GetCteif7 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCteif7() bool {
+func (r *RegisterIfcrType) GetCteif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCteif7Mask) != 0
 }
 
 // SetCteif7 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCteif7(value bool) {
+func (r *RegisterIfcrType) SetCteif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCteif7Mask)
 	} else {
@@ -1207,12 +1253,12 @@ const (
 )
 
 // GetCgif8 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCgif8() bool {
+func (r *RegisterIfcrType) GetCgif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCgif8Mask) != 0
 }
 
 // SetCgif8 Channel x global interrupt clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCgif8(value bool) {
+func (r *RegisterIfcrType) SetCgif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCgif8Mask)
 	} else {
@@ -1226,12 +1272,12 @@ const (
 )
 
 // GetCtcif8 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCtcif8() bool {
+func (r *RegisterIfcrType) GetCtcif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCtcif8Mask) != 0
 }
 
 // SetCtcif8 Channel x transfer complete clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCtcif8(value bool) {
+func (r *RegisterIfcrType) SetCtcif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCtcif8Mask)
 	} else {
@@ -1245,12 +1291,12 @@ const (
 )
 
 // GetChtif8 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetChtif8() bool {
+func (r *RegisterIfcrType) GetChtif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldChtif8Mask) != 0
 }
 
 // SetChtif8 Channel x half transfer clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetChtif8(value bool) {
+func (r *RegisterIfcrType) SetChtif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldChtif8Mask)
 	} else {
@@ -1264,12 +1310,12 @@ const (
 )
 
 // GetCteif8 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) GetCteif8() bool {
+func (r *RegisterIfcrType) GetCteif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIfcrFieldCteif8Mask) != 0
 }
 
 // SetCteif8 Channel x transfer error clear This bit is set and cleared by software.
-func (r *registerIfcrType) SetCteif8(value bool) {
+func (r *RegisterIfcrType) SetCteif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIfcrFieldCteif8Mask)
 	} else {
@@ -1277,8 +1323,31 @@ func (r *registerIfcrType) SetCteif8(value bool) {
 	}
 }
 
-// registerCcr1Type DMA channel x configuration register
-type registerCcr1Type uint32
+// RegisterCcr1Type DMA channel x configuration register
+type RegisterCcr1Type uint32
+
+func (r *RegisterCcr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCcr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCcr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCcr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCcr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCcr1FieldEnShift = 0
@@ -1286,12 +1355,12 @@ const (
 )
 
 // GetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr1Type) GetEn() bool {
+func (r *RegisterCcr1Type) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldEnMask) != 0
 }
 
 // SetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr1Type) SetEn(value bool) {
+func (r *RegisterCcr1Type) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr1FieldEnMask)
 	} else {
@@ -1305,12 +1374,12 @@ const (
 )
 
 // GetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr1Type) GetTcie() bool {
+func (r *RegisterCcr1Type) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldTcieMask) != 0
 }
 
 // SetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr1Type) SetTcie(value bool) {
+func (r *RegisterCcr1Type) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr1FieldTcieMask)
 	} else {
@@ -1324,12 +1393,12 @@ const (
 )
 
 // GetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr1Type) GetHtie() bool {
+func (r *RegisterCcr1Type) GetHtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldHtieMask) != 0
 }
 
 // SetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr1Type) SetHtie(value bool) {
+func (r *RegisterCcr1Type) SetHtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr1FieldHtieMask)
 	} else {
@@ -1343,12 +1412,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr1Type) GetTeie() bool {
+func (r *RegisterCcr1Type) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr1Type) SetTeie(value bool) {
+func (r *RegisterCcr1Type) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr1FieldTeieMask)
 	} else {
@@ -1362,12 +1431,12 @@ const (
 )
 
 // GetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr1Type) GetDir() bool {
+func (r *RegisterCcr1Type) GetDir() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldDirMask) != 0
 }
 
 // SetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr1Type) SetDir(value bool) {
+func (r *RegisterCcr1Type) SetDir(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr1FieldDirMask)
 	} else {
@@ -1381,12 +1450,12 @@ const (
 )
 
 // GetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr1Type) GetCirc() bool {
+func (r *RegisterCcr1Type) GetCirc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldCircMask) != 0
 }
 
 // SetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr1Type) SetCirc(value bool) {
+func (r *RegisterCcr1Type) SetCirc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr1FieldCircMask)
 	} else {
@@ -1400,12 +1469,12 @@ const (
 )
 
 // GetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr1Type) GetPinc() bool {
+func (r *RegisterCcr1Type) GetPinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldPincMask) != 0
 }
 
 // SetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr1Type) SetPinc(value bool) {
+func (r *RegisterCcr1Type) SetPinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr1FieldPincMask)
 	} else {
@@ -1419,12 +1488,12 @@ const (
 )
 
 // GetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr1Type) GetMinc() bool {
+func (r *RegisterCcr1Type) GetMinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldMincMask) != 0
 }
 
 // SetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr1Type) SetMinc(value bool) {
+func (r *RegisterCcr1Type) SetMinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr1FieldMincMask)
 	} else {
@@ -1438,12 +1507,12 @@ const (
 )
 
 // GetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr1Type) GetPsize() uint8 {
+func (r *RegisterCcr1Type) GetPsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldPsizeMask) >> RegisterCcr1FieldPsizeShift)
 }
 
 // SetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr1Type) SetPsize(value uint8) {
+func (r *RegisterCcr1Type) SetPsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr1FieldPsizeMask)|(uint32(value)<<RegisterCcr1FieldPsizeShift))
 }
 
@@ -1453,12 +1522,12 @@ const (
 )
 
 // GetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr1Type) GetMsize() uint8 {
+func (r *RegisterCcr1Type) GetMsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldMsizeMask) >> RegisterCcr1FieldMsizeShift)
 }
 
 // SetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr1Type) SetMsize(value uint8) {
+func (r *RegisterCcr1Type) SetMsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr1FieldMsizeMask)|(uint32(value)<<RegisterCcr1FieldMsizeShift))
 }
 
@@ -1468,12 +1537,12 @@ const (
 )
 
 // GetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr1Type) GetPl() uint8 {
+func (r *RegisterCcr1Type) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldPlMask) >> RegisterCcr1FieldPlShift)
 }
 
 // SetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr1Type) SetPl(value uint8) {
+func (r *RegisterCcr1Type) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr1FieldPlMask)|(uint32(value)<<RegisterCcr1FieldPlShift))
 }
 
@@ -1483,12 +1552,12 @@ const (
 )
 
 // GetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr1Type) GetMem2mem() bool {
+func (r *RegisterCcr1Type) GetMem2mem() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr1FieldMem2memMask) != 0
 }
 
 // SetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr1Type) SetMem2mem(value bool) {
+func (r *RegisterCcr1Type) SetMem2mem(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr1FieldMem2memMask)
 	} else {
@@ -1496,8 +1565,31 @@ func (r *registerCcr1Type) SetMem2mem(value bool) {
 	}
 }
 
-// registerCndtr1Type DMA channel x number of data register
-type registerCndtr1Type uint32
+// RegisterCndtr1Type DMA channel x number of data register
+type RegisterCndtr1Type uint32
+
+func (r *RegisterCndtr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCndtr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCndtr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCndtr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCndtr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCndtr1FieldNdtShift = 0
@@ -1505,17 +1597,40 @@ const (
 )
 
 // GetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr1Type) GetNdt() uint16 {
+func (r *RegisterCndtr1Type) GetNdt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCndtr1FieldNdtMask) >> RegisterCndtr1FieldNdtShift)
 }
 
 // SetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr1Type) SetNdt(value uint16) {
+func (r *RegisterCndtr1Type) SetNdt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCndtr1FieldNdtMask)|(uint32(value)<<RegisterCndtr1FieldNdtShift))
 }
 
-// registerCpar1Type This register must not be written when the channel is enabled.
-type registerCpar1Type uint32
+// RegisterCpar1Type This register must not be written when the channel is enabled.
+type RegisterCpar1Type uint32
+
+func (r *RegisterCpar1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpar1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpar1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpar1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpar1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpar1FieldPaShift = 0
@@ -1523,17 +1638,40 @@ const (
 )
 
 // GetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar1Type) GetPa() uint32 {
+func (r *RegisterCpar1Type) GetPa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCpar1FieldPaMask) >> RegisterCpar1FieldPaShift)
 }
 
 // SetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar1Type) SetPa(value uint32) {
+func (r *RegisterCpar1Type) SetPa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCpar1FieldPaMask)|(uint32(value)<<RegisterCpar1FieldPaShift))
 }
 
-// registerCmar1Type This register must not be written when the channel is enabled.
-type registerCmar1Type uint32
+// RegisterCmar1Type This register must not be written when the channel is enabled.
+type RegisterCmar1Type uint32
+
+func (r *RegisterCmar1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCmar1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCmar1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCmar1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCmar1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCmar1FieldMaShift = 0
@@ -1541,17 +1679,40 @@ const (
 )
 
 // GetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar1Type) GetMa() uint32 {
+func (r *RegisterCmar1Type) GetMa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCmar1FieldMaMask) >> RegisterCmar1FieldMaShift)
 }
 
 // SetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar1Type) SetMa(value uint32) {
+func (r *RegisterCmar1Type) SetMa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCmar1FieldMaMask)|(uint32(value)<<RegisterCmar1FieldMaShift))
 }
 
-// registerCcr2Type DMA channel x configuration register
-type registerCcr2Type uint32
+// RegisterCcr2Type DMA channel x configuration register
+type RegisterCcr2Type uint32
+
+func (r *RegisterCcr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCcr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCcr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCcr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCcr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCcr2FieldEnShift = 0
@@ -1559,12 +1720,12 @@ const (
 )
 
 // GetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr2Type) GetEn() bool {
+func (r *RegisterCcr2Type) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldEnMask) != 0
 }
 
 // SetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr2Type) SetEn(value bool) {
+func (r *RegisterCcr2Type) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr2FieldEnMask)
 	} else {
@@ -1578,12 +1739,12 @@ const (
 )
 
 // GetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr2Type) GetTcie() bool {
+func (r *RegisterCcr2Type) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldTcieMask) != 0
 }
 
 // SetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr2Type) SetTcie(value bool) {
+func (r *RegisterCcr2Type) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr2FieldTcieMask)
 	} else {
@@ -1597,12 +1758,12 @@ const (
 )
 
 // GetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr2Type) GetHtie() bool {
+func (r *RegisterCcr2Type) GetHtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldHtieMask) != 0
 }
 
 // SetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr2Type) SetHtie(value bool) {
+func (r *RegisterCcr2Type) SetHtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr2FieldHtieMask)
 	} else {
@@ -1616,12 +1777,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr2Type) GetTeie() bool {
+func (r *RegisterCcr2Type) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr2Type) SetTeie(value bool) {
+func (r *RegisterCcr2Type) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr2FieldTeieMask)
 	} else {
@@ -1635,12 +1796,12 @@ const (
 )
 
 // GetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr2Type) GetDir() bool {
+func (r *RegisterCcr2Type) GetDir() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldDirMask) != 0
 }
 
 // SetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr2Type) SetDir(value bool) {
+func (r *RegisterCcr2Type) SetDir(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr2FieldDirMask)
 	} else {
@@ -1654,12 +1815,12 @@ const (
 )
 
 // GetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr2Type) GetCirc() bool {
+func (r *RegisterCcr2Type) GetCirc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldCircMask) != 0
 }
 
 // SetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr2Type) SetCirc(value bool) {
+func (r *RegisterCcr2Type) SetCirc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr2FieldCircMask)
 	} else {
@@ -1673,12 +1834,12 @@ const (
 )
 
 // GetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr2Type) GetPinc() bool {
+func (r *RegisterCcr2Type) GetPinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldPincMask) != 0
 }
 
 // SetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr2Type) SetPinc(value bool) {
+func (r *RegisterCcr2Type) SetPinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr2FieldPincMask)
 	} else {
@@ -1692,12 +1853,12 @@ const (
 )
 
 // GetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr2Type) GetMinc() bool {
+func (r *RegisterCcr2Type) GetMinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldMincMask) != 0
 }
 
 // SetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr2Type) SetMinc(value bool) {
+func (r *RegisterCcr2Type) SetMinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr2FieldMincMask)
 	} else {
@@ -1711,12 +1872,12 @@ const (
 )
 
 // GetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr2Type) GetPsize() uint8 {
+func (r *RegisterCcr2Type) GetPsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldPsizeMask) >> RegisterCcr2FieldPsizeShift)
 }
 
 // SetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr2Type) SetPsize(value uint8) {
+func (r *RegisterCcr2Type) SetPsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr2FieldPsizeMask)|(uint32(value)<<RegisterCcr2FieldPsizeShift))
 }
 
@@ -1726,12 +1887,12 @@ const (
 )
 
 // GetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr2Type) GetMsize() uint8 {
+func (r *RegisterCcr2Type) GetMsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldMsizeMask) >> RegisterCcr2FieldMsizeShift)
 }
 
 // SetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr2Type) SetMsize(value uint8) {
+func (r *RegisterCcr2Type) SetMsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr2FieldMsizeMask)|(uint32(value)<<RegisterCcr2FieldMsizeShift))
 }
 
@@ -1741,12 +1902,12 @@ const (
 )
 
 // GetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr2Type) GetPl() uint8 {
+func (r *RegisterCcr2Type) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldPlMask) >> RegisterCcr2FieldPlShift)
 }
 
 // SetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr2Type) SetPl(value uint8) {
+func (r *RegisterCcr2Type) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr2FieldPlMask)|(uint32(value)<<RegisterCcr2FieldPlShift))
 }
 
@@ -1756,12 +1917,12 @@ const (
 )
 
 // GetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr2Type) GetMem2mem() bool {
+func (r *RegisterCcr2Type) GetMem2mem() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr2FieldMem2memMask) != 0
 }
 
 // SetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr2Type) SetMem2mem(value bool) {
+func (r *RegisterCcr2Type) SetMem2mem(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr2FieldMem2memMask)
 	} else {
@@ -1769,8 +1930,31 @@ func (r *registerCcr2Type) SetMem2mem(value bool) {
 	}
 }
 
-// registerCndtr2Type DMA channel x number of data register
-type registerCndtr2Type uint32
+// RegisterCndtr2Type DMA channel x number of data register
+type RegisterCndtr2Type uint32
+
+func (r *RegisterCndtr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCndtr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCndtr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCndtr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCndtr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCndtr2FieldNdtShift = 0
@@ -1778,17 +1962,40 @@ const (
 )
 
 // GetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr2Type) GetNdt() uint16 {
+func (r *RegisterCndtr2Type) GetNdt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCndtr2FieldNdtMask) >> RegisterCndtr2FieldNdtShift)
 }
 
 // SetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr2Type) SetNdt(value uint16) {
+func (r *RegisterCndtr2Type) SetNdt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCndtr2FieldNdtMask)|(uint32(value)<<RegisterCndtr2FieldNdtShift))
 }
 
-// registerCpar2Type This register must not be written when the channel is enabled.
-type registerCpar2Type uint32
+// RegisterCpar2Type This register must not be written when the channel is enabled.
+type RegisterCpar2Type uint32
+
+func (r *RegisterCpar2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpar2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpar2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpar2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpar2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpar2FieldPaShift = 0
@@ -1796,17 +2003,40 @@ const (
 )
 
 // GetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar2Type) GetPa() uint32 {
+func (r *RegisterCpar2Type) GetPa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCpar2FieldPaMask) >> RegisterCpar2FieldPaShift)
 }
 
 // SetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar2Type) SetPa(value uint32) {
+func (r *RegisterCpar2Type) SetPa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCpar2FieldPaMask)|(uint32(value)<<RegisterCpar2FieldPaShift))
 }
 
-// registerCmar2Type This register must not be written when the channel is enabled.
-type registerCmar2Type uint32
+// RegisterCmar2Type This register must not be written when the channel is enabled.
+type RegisterCmar2Type uint32
+
+func (r *RegisterCmar2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCmar2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCmar2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCmar2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCmar2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCmar2FieldMaShift = 0
@@ -1814,17 +2044,40 @@ const (
 )
 
 // GetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar2Type) GetMa() uint32 {
+func (r *RegisterCmar2Type) GetMa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCmar2FieldMaMask) >> RegisterCmar2FieldMaShift)
 }
 
 // SetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar2Type) SetMa(value uint32) {
+func (r *RegisterCmar2Type) SetMa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCmar2FieldMaMask)|(uint32(value)<<RegisterCmar2FieldMaShift))
 }
 
-// registerCcr3Type DMA channel x configuration register
-type registerCcr3Type uint32
+// RegisterCcr3Type DMA channel x configuration register
+type RegisterCcr3Type uint32
+
+func (r *RegisterCcr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCcr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCcr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCcr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCcr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCcr3FieldEnShift = 0
@@ -1832,12 +2085,12 @@ const (
 )
 
 // GetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr3Type) GetEn() bool {
+func (r *RegisterCcr3Type) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldEnMask) != 0
 }
 
 // SetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr3Type) SetEn(value bool) {
+func (r *RegisterCcr3Type) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr3FieldEnMask)
 	} else {
@@ -1851,12 +2104,12 @@ const (
 )
 
 // GetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr3Type) GetTcie() bool {
+func (r *RegisterCcr3Type) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldTcieMask) != 0
 }
 
 // SetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr3Type) SetTcie(value bool) {
+func (r *RegisterCcr3Type) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr3FieldTcieMask)
 	} else {
@@ -1870,12 +2123,12 @@ const (
 )
 
 // GetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr3Type) GetHtie() bool {
+func (r *RegisterCcr3Type) GetHtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldHtieMask) != 0
 }
 
 // SetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr3Type) SetHtie(value bool) {
+func (r *RegisterCcr3Type) SetHtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr3FieldHtieMask)
 	} else {
@@ -1889,12 +2142,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr3Type) GetTeie() bool {
+func (r *RegisterCcr3Type) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr3Type) SetTeie(value bool) {
+func (r *RegisterCcr3Type) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr3FieldTeieMask)
 	} else {
@@ -1908,12 +2161,12 @@ const (
 )
 
 // GetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr3Type) GetDir() bool {
+func (r *RegisterCcr3Type) GetDir() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldDirMask) != 0
 }
 
 // SetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr3Type) SetDir(value bool) {
+func (r *RegisterCcr3Type) SetDir(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr3FieldDirMask)
 	} else {
@@ -1927,12 +2180,12 @@ const (
 )
 
 // GetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr3Type) GetCirc() bool {
+func (r *RegisterCcr3Type) GetCirc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldCircMask) != 0
 }
 
 // SetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr3Type) SetCirc(value bool) {
+func (r *RegisterCcr3Type) SetCirc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr3FieldCircMask)
 	} else {
@@ -1946,12 +2199,12 @@ const (
 )
 
 // GetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr3Type) GetPinc() bool {
+func (r *RegisterCcr3Type) GetPinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldPincMask) != 0
 }
 
 // SetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr3Type) SetPinc(value bool) {
+func (r *RegisterCcr3Type) SetPinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr3FieldPincMask)
 	} else {
@@ -1965,12 +2218,12 @@ const (
 )
 
 // GetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr3Type) GetMinc() bool {
+func (r *RegisterCcr3Type) GetMinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldMincMask) != 0
 }
 
 // SetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr3Type) SetMinc(value bool) {
+func (r *RegisterCcr3Type) SetMinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr3FieldMincMask)
 	} else {
@@ -1984,12 +2237,12 @@ const (
 )
 
 // GetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr3Type) GetPsize() uint8 {
+func (r *RegisterCcr3Type) GetPsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldPsizeMask) >> RegisterCcr3FieldPsizeShift)
 }
 
 // SetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr3Type) SetPsize(value uint8) {
+func (r *RegisterCcr3Type) SetPsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr3FieldPsizeMask)|(uint32(value)<<RegisterCcr3FieldPsizeShift))
 }
 
@@ -1999,12 +2252,12 @@ const (
 )
 
 // GetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr3Type) GetMsize() uint8 {
+func (r *RegisterCcr3Type) GetMsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldMsizeMask) >> RegisterCcr3FieldMsizeShift)
 }
 
 // SetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr3Type) SetMsize(value uint8) {
+func (r *RegisterCcr3Type) SetMsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr3FieldMsizeMask)|(uint32(value)<<RegisterCcr3FieldMsizeShift))
 }
 
@@ -2014,12 +2267,12 @@ const (
 )
 
 // GetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr3Type) GetPl() uint8 {
+func (r *RegisterCcr3Type) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldPlMask) >> RegisterCcr3FieldPlShift)
 }
 
 // SetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr3Type) SetPl(value uint8) {
+func (r *RegisterCcr3Type) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr3FieldPlMask)|(uint32(value)<<RegisterCcr3FieldPlShift))
 }
 
@@ -2029,12 +2282,12 @@ const (
 )
 
 // GetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr3Type) GetMem2mem() bool {
+func (r *RegisterCcr3Type) GetMem2mem() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr3FieldMem2memMask) != 0
 }
 
 // SetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr3Type) SetMem2mem(value bool) {
+func (r *RegisterCcr3Type) SetMem2mem(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr3FieldMem2memMask)
 	} else {
@@ -2042,8 +2295,31 @@ func (r *registerCcr3Type) SetMem2mem(value bool) {
 	}
 }
 
-// registerCndtr3Type DMA channel x number of data register
-type registerCndtr3Type uint32
+// RegisterCndtr3Type DMA channel x number of data register
+type RegisterCndtr3Type uint32
+
+func (r *RegisterCndtr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCndtr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCndtr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCndtr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCndtr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCndtr3FieldNdtShift = 0
@@ -2051,17 +2327,40 @@ const (
 )
 
 // GetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr3Type) GetNdt() uint16 {
+func (r *RegisterCndtr3Type) GetNdt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCndtr3FieldNdtMask) >> RegisterCndtr3FieldNdtShift)
 }
 
 // SetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr3Type) SetNdt(value uint16) {
+func (r *RegisterCndtr3Type) SetNdt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCndtr3FieldNdtMask)|(uint32(value)<<RegisterCndtr3FieldNdtShift))
 }
 
-// registerCpar3Type This register must not be written when the channel is enabled.
-type registerCpar3Type uint32
+// RegisterCpar3Type This register must not be written when the channel is enabled.
+type RegisterCpar3Type uint32
+
+func (r *RegisterCpar3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpar3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpar3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpar3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpar3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpar3FieldPaShift = 0
@@ -2069,17 +2368,40 @@ const (
 )
 
 // GetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar3Type) GetPa() uint32 {
+func (r *RegisterCpar3Type) GetPa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCpar3FieldPaMask) >> RegisterCpar3FieldPaShift)
 }
 
 // SetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar3Type) SetPa(value uint32) {
+func (r *RegisterCpar3Type) SetPa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCpar3FieldPaMask)|(uint32(value)<<RegisterCpar3FieldPaShift))
 }
 
-// registerCmar3Type This register must not be written when the channel is enabled.
-type registerCmar3Type uint32
+// RegisterCmar3Type This register must not be written when the channel is enabled.
+type RegisterCmar3Type uint32
+
+func (r *RegisterCmar3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCmar3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCmar3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCmar3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCmar3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCmar3FieldMaShift = 0
@@ -2087,17 +2409,40 @@ const (
 )
 
 // GetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar3Type) GetMa() uint32 {
+func (r *RegisterCmar3Type) GetMa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCmar3FieldMaMask) >> RegisterCmar3FieldMaShift)
 }
 
 // SetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar3Type) SetMa(value uint32) {
+func (r *RegisterCmar3Type) SetMa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCmar3FieldMaMask)|(uint32(value)<<RegisterCmar3FieldMaShift))
 }
 
-// registerCcr4Type DMA channel x configuration register
-type registerCcr4Type uint32
+// RegisterCcr4Type DMA channel x configuration register
+type RegisterCcr4Type uint32
+
+func (r *RegisterCcr4Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCcr4Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCcr4Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCcr4Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCcr4Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCcr4FieldEnShift = 0
@@ -2105,12 +2450,12 @@ const (
 )
 
 // GetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr4Type) GetEn() bool {
+func (r *RegisterCcr4Type) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldEnMask) != 0
 }
 
 // SetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr4Type) SetEn(value bool) {
+func (r *RegisterCcr4Type) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr4FieldEnMask)
 	} else {
@@ -2124,12 +2469,12 @@ const (
 )
 
 // GetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr4Type) GetTcie() bool {
+func (r *RegisterCcr4Type) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldTcieMask) != 0
 }
 
 // SetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr4Type) SetTcie(value bool) {
+func (r *RegisterCcr4Type) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr4FieldTcieMask)
 	} else {
@@ -2143,12 +2488,12 @@ const (
 )
 
 // GetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr4Type) GetHtie() bool {
+func (r *RegisterCcr4Type) GetHtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldHtieMask) != 0
 }
 
 // SetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr4Type) SetHtie(value bool) {
+func (r *RegisterCcr4Type) SetHtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr4FieldHtieMask)
 	} else {
@@ -2162,12 +2507,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr4Type) GetTeie() bool {
+func (r *RegisterCcr4Type) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr4Type) SetTeie(value bool) {
+func (r *RegisterCcr4Type) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr4FieldTeieMask)
 	} else {
@@ -2181,12 +2526,12 @@ const (
 )
 
 // GetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr4Type) GetDir() bool {
+func (r *RegisterCcr4Type) GetDir() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldDirMask) != 0
 }
 
 // SetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr4Type) SetDir(value bool) {
+func (r *RegisterCcr4Type) SetDir(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr4FieldDirMask)
 	} else {
@@ -2200,12 +2545,12 @@ const (
 )
 
 // GetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr4Type) GetCirc() bool {
+func (r *RegisterCcr4Type) GetCirc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldCircMask) != 0
 }
 
 // SetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr4Type) SetCirc(value bool) {
+func (r *RegisterCcr4Type) SetCirc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr4FieldCircMask)
 	} else {
@@ -2219,12 +2564,12 @@ const (
 )
 
 // GetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr4Type) GetPinc() bool {
+func (r *RegisterCcr4Type) GetPinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldPincMask) != 0
 }
 
 // SetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr4Type) SetPinc(value bool) {
+func (r *RegisterCcr4Type) SetPinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr4FieldPincMask)
 	} else {
@@ -2238,12 +2583,12 @@ const (
 )
 
 // GetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr4Type) GetMinc() bool {
+func (r *RegisterCcr4Type) GetMinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldMincMask) != 0
 }
 
 // SetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr4Type) SetMinc(value bool) {
+func (r *RegisterCcr4Type) SetMinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr4FieldMincMask)
 	} else {
@@ -2257,12 +2602,12 @@ const (
 )
 
 // GetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr4Type) GetPsize() uint8 {
+func (r *RegisterCcr4Type) GetPsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldPsizeMask) >> RegisterCcr4FieldPsizeShift)
 }
 
 // SetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr4Type) SetPsize(value uint8) {
+func (r *RegisterCcr4Type) SetPsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr4FieldPsizeMask)|(uint32(value)<<RegisterCcr4FieldPsizeShift))
 }
 
@@ -2272,12 +2617,12 @@ const (
 )
 
 // GetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr4Type) GetMsize() uint8 {
+func (r *RegisterCcr4Type) GetMsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldMsizeMask) >> RegisterCcr4FieldMsizeShift)
 }
 
 // SetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr4Type) SetMsize(value uint8) {
+func (r *RegisterCcr4Type) SetMsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr4FieldMsizeMask)|(uint32(value)<<RegisterCcr4FieldMsizeShift))
 }
 
@@ -2287,12 +2632,12 @@ const (
 )
 
 // GetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr4Type) GetPl() uint8 {
+func (r *RegisterCcr4Type) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldPlMask) >> RegisterCcr4FieldPlShift)
 }
 
 // SetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr4Type) SetPl(value uint8) {
+func (r *RegisterCcr4Type) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr4FieldPlMask)|(uint32(value)<<RegisterCcr4FieldPlShift))
 }
 
@@ -2302,12 +2647,12 @@ const (
 )
 
 // GetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr4Type) GetMem2mem() bool {
+func (r *RegisterCcr4Type) GetMem2mem() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr4FieldMem2memMask) != 0
 }
 
 // SetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr4Type) SetMem2mem(value bool) {
+func (r *RegisterCcr4Type) SetMem2mem(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr4FieldMem2memMask)
 	} else {
@@ -2315,8 +2660,31 @@ func (r *registerCcr4Type) SetMem2mem(value bool) {
 	}
 }
 
-// registerCndtr4Type DMA channel x number of data register
-type registerCndtr4Type uint32
+// RegisterCndtr4Type DMA channel x number of data register
+type RegisterCndtr4Type uint32
+
+func (r *RegisterCndtr4Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCndtr4Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCndtr4Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCndtr4Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCndtr4Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCndtr4FieldNdtShift = 0
@@ -2324,17 +2692,40 @@ const (
 )
 
 // GetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr4Type) GetNdt() uint16 {
+func (r *RegisterCndtr4Type) GetNdt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCndtr4FieldNdtMask) >> RegisterCndtr4FieldNdtShift)
 }
 
 // SetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr4Type) SetNdt(value uint16) {
+func (r *RegisterCndtr4Type) SetNdt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCndtr4FieldNdtMask)|(uint32(value)<<RegisterCndtr4FieldNdtShift))
 }
 
-// registerCpar4Type This register must not be written when the channel is enabled.
-type registerCpar4Type uint32
+// RegisterCpar4Type This register must not be written when the channel is enabled.
+type RegisterCpar4Type uint32
+
+func (r *RegisterCpar4Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpar4Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpar4Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpar4Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpar4Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpar4FieldPaShift = 0
@@ -2342,17 +2733,40 @@ const (
 )
 
 // GetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar4Type) GetPa() uint32 {
+func (r *RegisterCpar4Type) GetPa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCpar4FieldPaMask) >> RegisterCpar4FieldPaShift)
 }
 
 // SetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar4Type) SetPa(value uint32) {
+func (r *RegisterCpar4Type) SetPa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCpar4FieldPaMask)|(uint32(value)<<RegisterCpar4FieldPaShift))
 }
 
-// registerCmar4Type This register must not be written when the channel is enabled.
-type registerCmar4Type uint32
+// RegisterCmar4Type This register must not be written when the channel is enabled.
+type RegisterCmar4Type uint32
+
+func (r *RegisterCmar4Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCmar4Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCmar4Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCmar4Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCmar4Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCmar4FieldMaShift = 0
@@ -2360,17 +2774,40 @@ const (
 )
 
 // GetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar4Type) GetMa() uint32 {
+func (r *RegisterCmar4Type) GetMa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCmar4FieldMaMask) >> RegisterCmar4FieldMaShift)
 }
 
 // SetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar4Type) SetMa(value uint32) {
+func (r *RegisterCmar4Type) SetMa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCmar4FieldMaMask)|(uint32(value)<<RegisterCmar4FieldMaShift))
 }
 
-// registerCcr5Type DMA channel x configuration register
-type registerCcr5Type uint32
+// RegisterCcr5Type DMA channel x configuration register
+type RegisterCcr5Type uint32
+
+func (r *RegisterCcr5Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCcr5Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCcr5Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCcr5Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCcr5Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCcr5FieldEnShift = 0
@@ -2378,12 +2815,12 @@ const (
 )
 
 // GetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr5Type) GetEn() bool {
+func (r *RegisterCcr5Type) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldEnMask) != 0
 }
 
 // SetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr5Type) SetEn(value bool) {
+func (r *RegisterCcr5Type) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr5FieldEnMask)
 	} else {
@@ -2397,12 +2834,12 @@ const (
 )
 
 // GetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr5Type) GetTcie() bool {
+func (r *RegisterCcr5Type) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldTcieMask) != 0
 }
 
 // SetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr5Type) SetTcie(value bool) {
+func (r *RegisterCcr5Type) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr5FieldTcieMask)
 	} else {
@@ -2416,12 +2853,12 @@ const (
 )
 
 // GetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr5Type) GetHtie() bool {
+func (r *RegisterCcr5Type) GetHtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldHtieMask) != 0
 }
 
 // SetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr5Type) SetHtie(value bool) {
+func (r *RegisterCcr5Type) SetHtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr5FieldHtieMask)
 	} else {
@@ -2435,12 +2872,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr5Type) GetTeie() bool {
+func (r *RegisterCcr5Type) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr5Type) SetTeie(value bool) {
+func (r *RegisterCcr5Type) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr5FieldTeieMask)
 	} else {
@@ -2454,12 +2891,12 @@ const (
 )
 
 // GetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr5Type) GetDir() bool {
+func (r *RegisterCcr5Type) GetDir() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldDirMask) != 0
 }
 
 // SetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr5Type) SetDir(value bool) {
+func (r *RegisterCcr5Type) SetDir(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr5FieldDirMask)
 	} else {
@@ -2473,12 +2910,12 @@ const (
 )
 
 // GetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr5Type) GetCirc() bool {
+func (r *RegisterCcr5Type) GetCirc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldCircMask) != 0
 }
 
 // SetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr5Type) SetCirc(value bool) {
+func (r *RegisterCcr5Type) SetCirc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr5FieldCircMask)
 	} else {
@@ -2492,12 +2929,12 @@ const (
 )
 
 // GetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr5Type) GetPinc() bool {
+func (r *RegisterCcr5Type) GetPinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldPincMask) != 0
 }
 
 // SetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr5Type) SetPinc(value bool) {
+func (r *RegisterCcr5Type) SetPinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr5FieldPincMask)
 	} else {
@@ -2511,12 +2948,12 @@ const (
 )
 
 // GetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr5Type) GetMinc() bool {
+func (r *RegisterCcr5Type) GetMinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldMincMask) != 0
 }
 
 // SetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr5Type) SetMinc(value bool) {
+func (r *RegisterCcr5Type) SetMinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr5FieldMincMask)
 	} else {
@@ -2530,12 +2967,12 @@ const (
 )
 
 // GetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr5Type) GetPsize() uint8 {
+func (r *RegisterCcr5Type) GetPsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldPsizeMask) >> RegisterCcr5FieldPsizeShift)
 }
 
 // SetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr5Type) SetPsize(value uint8) {
+func (r *RegisterCcr5Type) SetPsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr5FieldPsizeMask)|(uint32(value)<<RegisterCcr5FieldPsizeShift))
 }
 
@@ -2545,12 +2982,12 @@ const (
 )
 
 // GetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr5Type) GetMsize() uint8 {
+func (r *RegisterCcr5Type) GetMsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldMsizeMask) >> RegisterCcr5FieldMsizeShift)
 }
 
 // SetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr5Type) SetMsize(value uint8) {
+func (r *RegisterCcr5Type) SetMsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr5FieldMsizeMask)|(uint32(value)<<RegisterCcr5FieldMsizeShift))
 }
 
@@ -2560,12 +2997,12 @@ const (
 )
 
 // GetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr5Type) GetPl() uint8 {
+func (r *RegisterCcr5Type) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldPlMask) >> RegisterCcr5FieldPlShift)
 }
 
 // SetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr5Type) SetPl(value uint8) {
+func (r *RegisterCcr5Type) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr5FieldPlMask)|(uint32(value)<<RegisterCcr5FieldPlShift))
 }
 
@@ -2575,12 +3012,12 @@ const (
 )
 
 // GetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr5Type) GetMem2mem() bool {
+func (r *RegisterCcr5Type) GetMem2mem() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr5FieldMem2memMask) != 0
 }
 
 // SetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr5Type) SetMem2mem(value bool) {
+func (r *RegisterCcr5Type) SetMem2mem(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr5FieldMem2memMask)
 	} else {
@@ -2588,8 +3025,31 @@ func (r *registerCcr5Type) SetMem2mem(value bool) {
 	}
 }
 
-// registerCndtr5Type DMA channel x number of data register
-type registerCndtr5Type uint32
+// RegisterCndtr5Type DMA channel x number of data register
+type RegisterCndtr5Type uint32
+
+func (r *RegisterCndtr5Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCndtr5Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCndtr5Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCndtr5Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCndtr5Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCndtr5FieldNdtShift = 0
@@ -2597,17 +3057,40 @@ const (
 )
 
 // GetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr5Type) GetNdt() uint16 {
+func (r *RegisterCndtr5Type) GetNdt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCndtr5FieldNdtMask) >> RegisterCndtr5FieldNdtShift)
 }
 
 // SetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr5Type) SetNdt(value uint16) {
+func (r *RegisterCndtr5Type) SetNdt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCndtr5FieldNdtMask)|(uint32(value)<<RegisterCndtr5FieldNdtShift))
 }
 
-// registerCpar5Type This register must not be written when the channel is enabled.
-type registerCpar5Type uint32
+// RegisterCpar5Type This register must not be written when the channel is enabled.
+type RegisterCpar5Type uint32
+
+func (r *RegisterCpar5Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpar5Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpar5Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpar5Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpar5Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpar5FieldPaShift = 0
@@ -2615,17 +3098,40 @@ const (
 )
 
 // GetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar5Type) GetPa() uint32 {
+func (r *RegisterCpar5Type) GetPa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCpar5FieldPaMask) >> RegisterCpar5FieldPaShift)
 }
 
 // SetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar5Type) SetPa(value uint32) {
+func (r *RegisterCpar5Type) SetPa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCpar5FieldPaMask)|(uint32(value)<<RegisterCpar5FieldPaShift))
 }
 
-// registerCmar5Type This register must not be written when the channel is enabled.
-type registerCmar5Type uint32
+// RegisterCmar5Type This register must not be written when the channel is enabled.
+type RegisterCmar5Type uint32
+
+func (r *RegisterCmar5Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCmar5Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCmar5Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCmar5Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCmar5Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCmar5FieldMaShift = 0
@@ -2633,17 +3139,40 @@ const (
 )
 
 // GetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar5Type) GetMa() uint32 {
+func (r *RegisterCmar5Type) GetMa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCmar5FieldMaMask) >> RegisterCmar5FieldMaShift)
 }
 
 // SetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar5Type) SetMa(value uint32) {
+func (r *RegisterCmar5Type) SetMa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCmar5FieldMaMask)|(uint32(value)<<RegisterCmar5FieldMaShift))
 }
 
-// registerCcr6Type DMA channel x configuration register
-type registerCcr6Type uint32
+// RegisterCcr6Type DMA channel x configuration register
+type RegisterCcr6Type uint32
+
+func (r *RegisterCcr6Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCcr6Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCcr6Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCcr6Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCcr6Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCcr6FieldEnShift = 0
@@ -2651,12 +3180,12 @@ const (
 )
 
 // GetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr6Type) GetEn() bool {
+func (r *RegisterCcr6Type) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldEnMask) != 0
 }
 
 // SetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr6Type) SetEn(value bool) {
+func (r *RegisterCcr6Type) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr6FieldEnMask)
 	} else {
@@ -2670,12 +3199,12 @@ const (
 )
 
 // GetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr6Type) GetTcie() bool {
+func (r *RegisterCcr6Type) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldTcieMask) != 0
 }
 
 // SetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr6Type) SetTcie(value bool) {
+func (r *RegisterCcr6Type) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr6FieldTcieMask)
 	} else {
@@ -2689,12 +3218,12 @@ const (
 )
 
 // GetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr6Type) GetHtie() bool {
+func (r *RegisterCcr6Type) GetHtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldHtieMask) != 0
 }
 
 // SetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr6Type) SetHtie(value bool) {
+func (r *RegisterCcr6Type) SetHtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr6FieldHtieMask)
 	} else {
@@ -2708,12 +3237,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr6Type) GetTeie() bool {
+func (r *RegisterCcr6Type) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr6Type) SetTeie(value bool) {
+func (r *RegisterCcr6Type) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr6FieldTeieMask)
 	} else {
@@ -2727,12 +3256,12 @@ const (
 )
 
 // GetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr6Type) GetDir() bool {
+func (r *RegisterCcr6Type) GetDir() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldDirMask) != 0
 }
 
 // SetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr6Type) SetDir(value bool) {
+func (r *RegisterCcr6Type) SetDir(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr6FieldDirMask)
 	} else {
@@ -2746,12 +3275,12 @@ const (
 )
 
 // GetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr6Type) GetCirc() bool {
+func (r *RegisterCcr6Type) GetCirc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldCircMask) != 0
 }
 
 // SetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr6Type) SetCirc(value bool) {
+func (r *RegisterCcr6Type) SetCirc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr6FieldCircMask)
 	} else {
@@ -2765,12 +3294,12 @@ const (
 )
 
 // GetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr6Type) GetPinc() bool {
+func (r *RegisterCcr6Type) GetPinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldPincMask) != 0
 }
 
 // SetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr6Type) SetPinc(value bool) {
+func (r *RegisterCcr6Type) SetPinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr6FieldPincMask)
 	} else {
@@ -2784,12 +3313,12 @@ const (
 )
 
 // GetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr6Type) GetMinc() bool {
+func (r *RegisterCcr6Type) GetMinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldMincMask) != 0
 }
 
 // SetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr6Type) SetMinc(value bool) {
+func (r *RegisterCcr6Type) SetMinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr6FieldMincMask)
 	} else {
@@ -2803,12 +3332,12 @@ const (
 )
 
 // GetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr6Type) GetPsize() uint8 {
+func (r *RegisterCcr6Type) GetPsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldPsizeMask) >> RegisterCcr6FieldPsizeShift)
 }
 
 // SetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr6Type) SetPsize(value uint8) {
+func (r *RegisterCcr6Type) SetPsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr6FieldPsizeMask)|(uint32(value)<<RegisterCcr6FieldPsizeShift))
 }
 
@@ -2818,12 +3347,12 @@ const (
 )
 
 // GetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr6Type) GetMsize() uint8 {
+func (r *RegisterCcr6Type) GetMsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldMsizeMask) >> RegisterCcr6FieldMsizeShift)
 }
 
 // SetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr6Type) SetMsize(value uint8) {
+func (r *RegisterCcr6Type) SetMsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr6FieldMsizeMask)|(uint32(value)<<RegisterCcr6FieldMsizeShift))
 }
 
@@ -2833,12 +3362,12 @@ const (
 )
 
 // GetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr6Type) GetPl() uint8 {
+func (r *RegisterCcr6Type) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldPlMask) >> RegisterCcr6FieldPlShift)
 }
 
 // SetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr6Type) SetPl(value uint8) {
+func (r *RegisterCcr6Type) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr6FieldPlMask)|(uint32(value)<<RegisterCcr6FieldPlShift))
 }
 
@@ -2848,12 +3377,12 @@ const (
 )
 
 // GetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr6Type) GetMem2mem() bool {
+func (r *RegisterCcr6Type) GetMem2mem() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr6FieldMem2memMask) != 0
 }
 
 // SetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr6Type) SetMem2mem(value bool) {
+func (r *RegisterCcr6Type) SetMem2mem(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr6FieldMem2memMask)
 	} else {
@@ -2861,8 +3390,31 @@ func (r *registerCcr6Type) SetMem2mem(value bool) {
 	}
 }
 
-// registerCndtr6Type DMA channel x number of data register
-type registerCndtr6Type uint32
+// RegisterCndtr6Type DMA channel x number of data register
+type RegisterCndtr6Type uint32
+
+func (r *RegisterCndtr6Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCndtr6Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCndtr6Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCndtr6Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCndtr6Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCndtr6FieldNdtShift = 0
@@ -2870,17 +3422,40 @@ const (
 )
 
 // GetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr6Type) GetNdt() uint16 {
+func (r *RegisterCndtr6Type) GetNdt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCndtr6FieldNdtMask) >> RegisterCndtr6FieldNdtShift)
 }
 
 // SetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr6Type) SetNdt(value uint16) {
+func (r *RegisterCndtr6Type) SetNdt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCndtr6FieldNdtMask)|(uint32(value)<<RegisterCndtr6FieldNdtShift))
 }
 
-// registerCpar6Type This register must not be written when the channel is enabled.
-type registerCpar6Type uint32
+// RegisterCpar6Type This register must not be written when the channel is enabled.
+type RegisterCpar6Type uint32
+
+func (r *RegisterCpar6Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpar6Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpar6Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpar6Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpar6Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpar6FieldPaShift = 0
@@ -2888,17 +3463,40 @@ const (
 )
 
 // GetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar6Type) GetPa() uint32 {
+func (r *RegisterCpar6Type) GetPa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCpar6FieldPaMask) >> RegisterCpar6FieldPaShift)
 }
 
 // SetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar6Type) SetPa(value uint32) {
+func (r *RegisterCpar6Type) SetPa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCpar6FieldPaMask)|(uint32(value)<<RegisterCpar6FieldPaShift))
 }
 
-// registerCmar6Type This register must not be written when the channel is enabled.
-type registerCmar6Type uint32
+// RegisterCmar6Type This register must not be written when the channel is enabled.
+type RegisterCmar6Type uint32
+
+func (r *RegisterCmar6Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCmar6Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCmar6Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCmar6Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCmar6Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCmar6FieldMaShift = 0
@@ -2906,17 +3504,40 @@ const (
 )
 
 // GetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar6Type) GetMa() uint32 {
+func (r *RegisterCmar6Type) GetMa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCmar6FieldMaMask) >> RegisterCmar6FieldMaShift)
 }
 
 // SetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar6Type) SetMa(value uint32) {
+func (r *RegisterCmar6Type) SetMa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCmar6FieldMaMask)|(uint32(value)<<RegisterCmar6FieldMaShift))
 }
 
-// registerCcr7Type DMA channel x configuration register
-type registerCcr7Type uint32
+// RegisterCcr7Type DMA channel x configuration register
+type RegisterCcr7Type uint32
+
+func (r *RegisterCcr7Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCcr7Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCcr7Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCcr7Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCcr7Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCcr7FieldEnShift = 0
@@ -2924,12 +3545,12 @@ const (
 )
 
 // GetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr7Type) GetEn() bool {
+func (r *RegisterCcr7Type) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldEnMask) != 0
 }
 
 // SetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr7Type) SetEn(value bool) {
+func (r *RegisterCcr7Type) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr7FieldEnMask)
 	} else {
@@ -2943,12 +3564,12 @@ const (
 )
 
 // GetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr7Type) GetTcie() bool {
+func (r *RegisterCcr7Type) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldTcieMask) != 0
 }
 
 // SetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr7Type) SetTcie(value bool) {
+func (r *RegisterCcr7Type) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr7FieldTcieMask)
 	} else {
@@ -2962,12 +3583,12 @@ const (
 )
 
 // GetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr7Type) GetHtie() bool {
+func (r *RegisterCcr7Type) GetHtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldHtieMask) != 0
 }
 
 // SetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr7Type) SetHtie(value bool) {
+func (r *RegisterCcr7Type) SetHtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr7FieldHtieMask)
 	} else {
@@ -2981,12 +3602,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr7Type) GetTeie() bool {
+func (r *RegisterCcr7Type) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr7Type) SetTeie(value bool) {
+func (r *RegisterCcr7Type) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr7FieldTeieMask)
 	} else {
@@ -3000,12 +3621,12 @@ const (
 )
 
 // GetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr7Type) GetDir() bool {
+func (r *RegisterCcr7Type) GetDir() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldDirMask) != 0
 }
 
 // SetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr7Type) SetDir(value bool) {
+func (r *RegisterCcr7Type) SetDir(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr7FieldDirMask)
 	} else {
@@ -3019,12 +3640,12 @@ const (
 )
 
 // GetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr7Type) GetCirc() bool {
+func (r *RegisterCcr7Type) GetCirc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldCircMask) != 0
 }
 
 // SetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr7Type) SetCirc(value bool) {
+func (r *RegisterCcr7Type) SetCirc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr7FieldCircMask)
 	} else {
@@ -3038,12 +3659,12 @@ const (
 )
 
 // GetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr7Type) GetPinc() bool {
+func (r *RegisterCcr7Type) GetPinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldPincMask) != 0
 }
 
 // SetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr7Type) SetPinc(value bool) {
+func (r *RegisterCcr7Type) SetPinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr7FieldPincMask)
 	} else {
@@ -3057,12 +3678,12 @@ const (
 )
 
 // GetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr7Type) GetMinc() bool {
+func (r *RegisterCcr7Type) GetMinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldMincMask) != 0
 }
 
 // SetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr7Type) SetMinc(value bool) {
+func (r *RegisterCcr7Type) SetMinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr7FieldMincMask)
 	} else {
@@ -3076,12 +3697,12 @@ const (
 )
 
 // GetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr7Type) GetPsize() uint8 {
+func (r *RegisterCcr7Type) GetPsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldPsizeMask) >> RegisterCcr7FieldPsizeShift)
 }
 
 // SetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr7Type) SetPsize(value uint8) {
+func (r *RegisterCcr7Type) SetPsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr7FieldPsizeMask)|(uint32(value)<<RegisterCcr7FieldPsizeShift))
 }
 
@@ -3091,12 +3712,12 @@ const (
 )
 
 // GetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr7Type) GetMsize() uint8 {
+func (r *RegisterCcr7Type) GetMsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldMsizeMask) >> RegisterCcr7FieldMsizeShift)
 }
 
 // SetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr7Type) SetMsize(value uint8) {
+func (r *RegisterCcr7Type) SetMsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr7FieldMsizeMask)|(uint32(value)<<RegisterCcr7FieldMsizeShift))
 }
 
@@ -3106,12 +3727,12 @@ const (
 )
 
 // GetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr7Type) GetPl() uint8 {
+func (r *RegisterCcr7Type) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldPlMask) >> RegisterCcr7FieldPlShift)
 }
 
 // SetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr7Type) SetPl(value uint8) {
+func (r *RegisterCcr7Type) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr7FieldPlMask)|(uint32(value)<<RegisterCcr7FieldPlShift))
 }
 
@@ -3121,12 +3742,12 @@ const (
 )
 
 // GetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr7Type) GetMem2mem() bool {
+func (r *RegisterCcr7Type) GetMem2mem() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr7FieldMem2memMask) != 0
 }
 
 // SetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr7Type) SetMem2mem(value bool) {
+func (r *RegisterCcr7Type) SetMem2mem(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr7FieldMem2memMask)
 	} else {
@@ -3134,8 +3755,31 @@ func (r *registerCcr7Type) SetMem2mem(value bool) {
 	}
 }
 
-// registerCndtr7Type DMA channel x number of data register
-type registerCndtr7Type uint32
+// RegisterCndtr7Type DMA channel x number of data register
+type RegisterCndtr7Type uint32
+
+func (r *RegisterCndtr7Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCndtr7Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCndtr7Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCndtr7Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCndtr7Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCndtr7FieldNdtShift = 0
@@ -3143,17 +3787,40 @@ const (
 )
 
 // GetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr7Type) GetNdt() uint16 {
+func (r *RegisterCndtr7Type) GetNdt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCndtr7FieldNdtMask) >> RegisterCndtr7FieldNdtShift)
 }
 
 // SetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr7Type) SetNdt(value uint16) {
+func (r *RegisterCndtr7Type) SetNdt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCndtr7FieldNdtMask)|(uint32(value)<<RegisterCndtr7FieldNdtShift))
 }
 
-// registerCpar7Type This register must not be written when the channel is enabled.
-type registerCpar7Type uint32
+// RegisterCpar7Type This register must not be written when the channel is enabled.
+type RegisterCpar7Type uint32
+
+func (r *RegisterCpar7Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpar7Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpar7Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpar7Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpar7Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpar7FieldPaShift = 0
@@ -3161,17 +3828,40 @@ const (
 )
 
 // GetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar7Type) GetPa() uint32 {
+func (r *RegisterCpar7Type) GetPa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCpar7FieldPaMask) >> RegisterCpar7FieldPaShift)
 }
 
 // SetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar7Type) SetPa(value uint32) {
+func (r *RegisterCpar7Type) SetPa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCpar7FieldPaMask)|(uint32(value)<<RegisterCpar7FieldPaShift))
 }
 
-// registerCmar7Type This register must not be written when the channel is enabled.
-type registerCmar7Type uint32
+// RegisterCmar7Type This register must not be written when the channel is enabled.
+type RegisterCmar7Type uint32
+
+func (r *RegisterCmar7Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCmar7Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCmar7Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCmar7Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCmar7Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCmar7FieldMaShift = 0
@@ -3179,17 +3869,40 @@ const (
 )
 
 // GetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar7Type) GetMa() uint32 {
+func (r *RegisterCmar7Type) GetMa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCmar7FieldMaMask) >> RegisterCmar7FieldMaShift)
 }
 
 // SetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar7Type) SetMa(value uint32) {
+func (r *RegisterCmar7Type) SetMa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCmar7FieldMaMask)|(uint32(value)<<RegisterCmar7FieldMaShift))
 }
 
-// registerCcr8Type DMA channel x configuration register
-type registerCcr8Type uint32
+// RegisterCcr8Type DMA channel x configuration register
+type RegisterCcr8Type uint32
+
+func (r *RegisterCcr8Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCcr8Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCcr8Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCcr8Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCcr8Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCcr8FieldEnShift = 0
@@ -3197,12 +3910,12 @@ const (
 )
 
 // GetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr8Type) GetEn() bool {
+func (r *RegisterCcr8Type) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldEnMask) != 0
 }
 
 // SetEn Channel enable This bit is set and cleared by software.
-func (r *registerCcr8Type) SetEn(value bool) {
+func (r *RegisterCcr8Type) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr8FieldEnMask)
 	} else {
@@ -3216,12 +3929,12 @@ const (
 )
 
 // GetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr8Type) GetTcie() bool {
+func (r *RegisterCcr8Type) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldTcieMask) != 0
 }
 
 // SetTcie Transfer complete interrupt enable This bit is set and cleared by software.
-func (r *registerCcr8Type) SetTcie(value bool) {
+func (r *RegisterCcr8Type) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr8FieldTcieMask)
 	} else {
@@ -3235,12 +3948,12 @@ const (
 )
 
 // GetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr8Type) GetHtie() bool {
+func (r *RegisterCcr8Type) GetHtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldHtieMask) != 0
 }
 
 // SetHtie Half transfer interrupt enable This bit is set and cleared by software.
-func (r *registerCcr8Type) SetHtie(value bool) {
+func (r *RegisterCcr8Type) SetHtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr8FieldHtieMask)
 	} else {
@@ -3254,12 +3967,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr8Type) GetTeie() bool {
+func (r *RegisterCcr8Type) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerCcr8Type) SetTeie(value bool) {
+func (r *RegisterCcr8Type) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr8FieldTeieMask)
 	} else {
@@ -3273,12 +3986,12 @@ const (
 )
 
 // GetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr8Type) GetDir() bool {
+func (r *RegisterCcr8Type) GetDir() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldDirMask) != 0
 }
 
 // SetDir Data transfer direction This bit is set and cleared by software.
-func (r *registerCcr8Type) SetDir(value bool) {
+func (r *RegisterCcr8Type) SetDir(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr8FieldDirMask)
 	} else {
@@ -3292,12 +4005,12 @@ const (
 )
 
 // GetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr8Type) GetCirc() bool {
+func (r *RegisterCcr8Type) GetCirc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldCircMask) != 0
 }
 
 // SetCirc Circular mode This bit is set and cleared by software.
-func (r *registerCcr8Type) SetCirc(value bool) {
+func (r *RegisterCcr8Type) SetCirc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr8FieldCircMask)
 	} else {
@@ -3311,12 +4024,12 @@ const (
 )
 
 // GetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr8Type) GetPinc() bool {
+func (r *RegisterCcr8Type) GetPinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldPincMask) != 0
 }
 
 // SetPinc Peripheral increment mode This bit is set and cleared by software.
-func (r *registerCcr8Type) SetPinc(value bool) {
+func (r *RegisterCcr8Type) SetPinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr8FieldPincMask)
 	} else {
@@ -3330,12 +4043,12 @@ const (
 )
 
 // GetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr8Type) GetMinc() bool {
+func (r *RegisterCcr8Type) GetMinc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldMincMask) != 0
 }
 
 // SetMinc Memory increment mode This bit is set and cleared by software.
-func (r *registerCcr8Type) SetMinc(value bool) {
+func (r *RegisterCcr8Type) SetMinc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr8FieldMincMask)
 	} else {
@@ -3349,12 +4062,12 @@ const (
 )
 
 // GetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr8Type) GetPsize() uint8 {
+func (r *RegisterCcr8Type) GetPsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldPsizeMask) >> RegisterCcr8FieldPsizeShift)
 }
 
 // SetPsize Peripheral size These bits are set and cleared by software.
-func (r *registerCcr8Type) SetPsize(value uint8) {
+func (r *RegisterCcr8Type) SetPsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr8FieldPsizeMask)|(uint32(value)<<RegisterCcr8FieldPsizeShift))
 }
 
@@ -3364,12 +4077,12 @@ const (
 )
 
 // GetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr8Type) GetMsize() uint8 {
+func (r *RegisterCcr8Type) GetMsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldMsizeMask) >> RegisterCcr8FieldMsizeShift)
 }
 
 // SetMsize Memory size These bits are set and cleared by software.
-func (r *registerCcr8Type) SetMsize(value uint8) {
+func (r *RegisterCcr8Type) SetMsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr8FieldMsizeMask)|(uint32(value)<<RegisterCcr8FieldMsizeShift))
 }
 
@@ -3379,12 +4092,12 @@ const (
 )
 
 // GetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr8Type) GetPl() uint8 {
+func (r *RegisterCcr8Type) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldPlMask) >> RegisterCcr8FieldPlShift)
 }
 
 // SetPl Channel priority level These bits are set and cleared by software.
-func (r *registerCcr8Type) SetPl(value uint8) {
+func (r *RegisterCcr8Type) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcr8FieldPlMask)|(uint32(value)<<RegisterCcr8FieldPlShift))
 }
 
@@ -3394,12 +4107,12 @@ const (
 )
 
 // GetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr8Type) GetMem2mem() bool {
+func (r *RegisterCcr8Type) GetMem2mem() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcr8FieldMem2memMask) != 0
 }
 
 // SetMem2mem Memory to memory mode This bit is set and cleared by software.
-func (r *registerCcr8Type) SetMem2mem(value bool) {
+func (r *RegisterCcr8Type) SetMem2mem(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcr8FieldMem2memMask)
 	} else {
@@ -3407,8 +4120,31 @@ func (r *registerCcr8Type) SetMem2mem(value bool) {
 	}
 }
 
-// registerCndtr8Type DMA channel x number of data register
-type registerCndtr8Type uint32
+// RegisterCndtr8Type DMA channel x number of data register
+type RegisterCndtr8Type uint32
+
+func (r *RegisterCndtr8Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCndtr8Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCndtr8Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCndtr8Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCndtr8Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCndtr8FieldNdtShift = 0
@@ -3416,17 +4152,40 @@ const (
 )
 
 // GetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr8Type) GetNdt() uint16 {
+func (r *RegisterCndtr8Type) GetNdt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCndtr8FieldNdtMask) >> RegisterCndtr8FieldNdtShift)
 }
 
 // SetNdt Number of data to transfer Number of data to be transferred (0 up to 65535). This register can only be written when the channel is disabled. Once the channel is enabled, this register is read-only, indicating the remaining bytes to be transmitted. This register decrements after each DMA transfer. Once the transfer is completed, this register can either stay at zero or be reloaded automatically by the value previously programmed if the channel is configured in auto-reload mode. If this register is zero, no transaction can be served whether the channel is enabled or not.
-func (r *registerCndtr8Type) SetNdt(value uint16) {
+func (r *RegisterCndtr8Type) SetNdt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCndtr8FieldNdtMask)|(uint32(value)<<RegisterCndtr8FieldNdtShift))
 }
 
-// registerCpar8Type This register must not be written when the channel is enabled.
-type registerCpar8Type uint32
+// RegisterCpar8Type This register must not be written when the channel is enabled.
+type RegisterCpar8Type uint32
+
+func (r *RegisterCpar8Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpar8Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpar8Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpar8Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpar8Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpar8FieldPaShift = 0
@@ -3434,17 +4193,40 @@ const (
 )
 
 // GetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar8Type) GetPa() uint32 {
+func (r *RegisterCpar8Type) GetPa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCpar8FieldPaMask) >> RegisterCpar8FieldPaShift)
 }
 
 // SetPa Peripheral address Base address of the peripheral data register from/to which the data will be read/written. When PSIZE is 01 (16-bit), the PA[0] bit is ignored. Access is automatically aligned to a half-word address. When PSIZE is 10 (32-bit), PA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCpar8Type) SetPa(value uint32) {
+func (r *RegisterCpar8Type) SetPa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCpar8FieldPaMask)|(uint32(value)<<RegisterCpar8FieldPaShift))
 }
 
-// registerCmar8Type This register must not be written when the channel is enabled.
-type registerCmar8Type uint32
+// RegisterCmar8Type This register must not be written when the channel is enabled.
+type RegisterCmar8Type uint32
+
+func (r *RegisterCmar8Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCmar8Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCmar8Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCmar8Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCmar8Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCmar8FieldMaShift = 0
@@ -3452,11 +4234,11 @@ const (
 )
 
 // GetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar8Type) GetMa() uint32 {
+func (r *RegisterCmar8Type) GetMa() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCmar8FieldMaMask) >> RegisterCmar8FieldMaShift)
 }
 
 // SetMa Memory address Base address of the memory area from/to which the data will be read/written. When MSIZE is 01 (16-bit), the MA[0] bit is ignored. Access is automatically aligned to a half-word address. When MSIZE is 10 (32-bit), MA[1:0] are ignored. Access is automatically aligned to a word address.
-func (r *registerCmar8Type) SetMa(value uint32) {
+func (r *RegisterCmar8Type) SetMa(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCmar8FieldMaMask)|(uint32(value)<<RegisterCmar8FieldMaShift))
 }

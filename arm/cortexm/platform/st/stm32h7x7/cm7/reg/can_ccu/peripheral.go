@@ -12,16 +12,39 @@ var (
 )
 
 type _can_ccu struct {
-	Crel  registerCrelType
-	Ccfg  registerCcfgType
-	Cstat registerCstatType
-	Cwd   registerCwdType
-	Ir    registerIrType
-	Ie    registerIeType
+	Crel  RegisterCrelType
+	Ccfg  RegisterCcfgType
+	Cstat RegisterCstatType
+	Cwd   RegisterCwdType
+	Ir    RegisterIrType
+	Ie    RegisterIeType
 }
 
-// registerCrelType Clock Calibration Unit Core Release Register
-type registerCrelType uint32
+// RegisterCrelType Clock Calibration Unit Core Release Register
+type RegisterCrelType uint32
+
+func (r *RegisterCrelType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCrelType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCrelType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCrelType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCrelType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCrelFieldDayShift = 0
@@ -29,12 +52,12 @@ const (
 )
 
 // GetDay Time Stamp Day
-func (r *registerCrelType) GetDay() uint8 {
+func (r *RegisterCrelType) GetDay() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrelFieldDayMask) >> RegisterCrelFieldDayShift)
 }
 
 // SetDay Time Stamp Day
-func (r *registerCrelType) SetDay(value uint8) {
+func (r *RegisterCrelType) SetDay(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrelFieldDayMask)|(uint32(value)<<RegisterCrelFieldDayShift))
 }
 
@@ -44,12 +67,12 @@ const (
 )
 
 // GetMon Time Stamp Month
-func (r *registerCrelType) GetMon() uint8 {
+func (r *RegisterCrelType) GetMon() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrelFieldMonMask) >> RegisterCrelFieldMonShift)
 }
 
 // SetMon Time Stamp Month
-func (r *registerCrelType) SetMon(value uint8) {
+func (r *RegisterCrelType) SetMon(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrelFieldMonMask)|(uint32(value)<<RegisterCrelFieldMonShift))
 }
 
@@ -59,12 +82,12 @@ const (
 )
 
 // GetYear Time Stamp Year
-func (r *registerCrelType) GetYear() uint8 {
+func (r *RegisterCrelType) GetYear() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrelFieldYearMask) >> RegisterCrelFieldYearShift)
 }
 
 // SetYear Time Stamp Year
-func (r *registerCrelType) SetYear(value uint8) {
+func (r *RegisterCrelType) SetYear(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrelFieldYearMask)|(uint32(value)<<RegisterCrelFieldYearShift))
 }
 
@@ -74,12 +97,12 @@ const (
 )
 
 // GetSubstep Sub-step of Core Release
-func (r *registerCrelType) GetSubstep() uint8 {
+func (r *RegisterCrelType) GetSubstep() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrelFieldSubstepMask) >> RegisterCrelFieldSubstepShift)
 }
 
 // SetSubstep Sub-step of Core Release
-func (r *registerCrelType) SetSubstep(value uint8) {
+func (r *RegisterCrelType) SetSubstep(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrelFieldSubstepMask)|(uint32(value)<<RegisterCrelFieldSubstepShift))
 }
 
@@ -89,12 +112,12 @@ const (
 )
 
 // GetStep Step of Core Release
-func (r *registerCrelType) GetStep() uint8 {
+func (r *RegisterCrelType) GetStep() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrelFieldStepMask) >> RegisterCrelFieldStepShift)
 }
 
 // SetStep Step of Core Release
-func (r *registerCrelType) SetStep(value uint8) {
+func (r *RegisterCrelType) SetStep(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrelFieldStepMask)|(uint32(value)<<RegisterCrelFieldStepShift))
 }
 
@@ -104,17 +127,40 @@ const (
 )
 
 // GetRel Core Release
-func (r *registerCrelType) GetRel() uint8 {
+func (r *RegisterCrelType) GetRel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrelFieldRelMask) >> RegisterCrelFieldRelShift)
 }
 
 // SetRel Core Release
-func (r *registerCrelType) SetRel(value uint8) {
+func (r *RegisterCrelType) SetRel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrelFieldRelMask)|(uint32(value)<<RegisterCrelFieldRelShift))
 }
 
-// registerCcfgType Calibration Configuration Register
-type registerCcfgType uint32
+// RegisterCcfgType Calibration Configuration Register
+type RegisterCcfgType uint32
+
+func (r *RegisterCcfgType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCcfgType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCcfgType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCcfgType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCcfgType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCcfgFieldTqbtShift = 0
@@ -122,12 +168,12 @@ const (
 )
 
 // GetTqbt Time Quanta per Bit Time
-func (r *registerCcfgType) GetTqbt() uint8 {
+func (r *RegisterCcfgType) GetTqbt() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcfgFieldTqbtMask) >> RegisterCcfgFieldTqbtShift)
 }
 
 // SetTqbt Time Quanta per Bit Time
-func (r *registerCcfgType) SetTqbt(value uint8) {
+func (r *RegisterCcfgType) SetTqbt(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcfgFieldTqbtMask)|(uint32(value)<<RegisterCcfgFieldTqbtShift))
 }
 
@@ -137,12 +183,12 @@ const (
 )
 
 // GetBcc Bypass Clock Calibration
-func (r *registerCcfgType) GetBcc() bool {
+func (r *RegisterCcfgType) GetBcc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcfgFieldBccMask) != 0
 }
 
 // SetBcc Bypass Clock Calibration
-func (r *registerCcfgType) SetBcc(value bool) {
+func (r *RegisterCcfgType) SetBcc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcfgFieldBccMask)
 	} else {
@@ -156,12 +202,12 @@ const (
 )
 
 // GetCfl Calibration Field Length
-func (r *registerCcfgType) GetCfl() bool {
+func (r *RegisterCcfgType) GetCfl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcfgFieldCflMask) != 0
 }
 
 // SetCfl Calibration Field Length
-func (r *registerCcfgType) SetCfl(value bool) {
+func (r *RegisterCcfgType) SetCfl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcfgFieldCflMask)
 	} else {
@@ -175,12 +221,12 @@ const (
 )
 
 // GetOcpm Oscillator Clock Periods Minimum
-func (r *registerCcfgType) GetOcpm() uint8 {
+func (r *RegisterCcfgType) GetOcpm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcfgFieldOcpmMask) >> RegisterCcfgFieldOcpmShift)
 }
 
 // SetOcpm Oscillator Clock Periods Minimum
-func (r *registerCcfgType) SetOcpm(value uint8) {
+func (r *RegisterCcfgType) SetOcpm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcfgFieldOcpmMask)|(uint32(value)<<RegisterCcfgFieldOcpmShift))
 }
 
@@ -190,12 +236,12 @@ const (
 )
 
 // GetCdiv Clock Divider
-func (r *registerCcfgType) GetCdiv() uint8 {
+func (r *RegisterCcfgType) GetCdiv() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCcfgFieldCdivMask) >> RegisterCcfgFieldCdivShift)
 }
 
 // SetCdiv Clock Divider
-func (r *registerCcfgType) SetCdiv(value uint8) {
+func (r *RegisterCcfgType) SetCdiv(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCcfgFieldCdivMask)|(uint32(value)<<RegisterCcfgFieldCdivShift))
 }
 
@@ -205,12 +251,12 @@ const (
 )
 
 // GetSwr Software Reset
-func (r *registerCcfgType) GetSwr() bool {
+func (r *RegisterCcfgType) GetSwr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCcfgFieldSwrMask) != 0
 }
 
 // SetSwr Software Reset
-func (r *registerCcfgType) SetSwr(value bool) {
+func (r *RegisterCcfgType) SetSwr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCcfgFieldSwrMask)
 	} else {
@@ -218,8 +264,31 @@ func (r *registerCcfgType) SetSwr(value bool) {
 	}
 }
 
-// registerCstatType Calibration Status Register
-type registerCstatType uint32
+// RegisterCstatType Calibration Status Register
+type RegisterCstatType uint32
+
+func (r *RegisterCstatType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCstatType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCstatType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCstatType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCstatType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCstatFieldOcpcShift = 0
@@ -227,12 +296,12 @@ const (
 )
 
 // GetOcpc Oscillator Clock Period Counter
-func (r *registerCstatType) GetOcpc() uint32 {
+func (r *RegisterCstatType) GetOcpc() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterCstatFieldOcpcMask) >> RegisterCstatFieldOcpcShift)
 }
 
 // SetOcpc Oscillator Clock Period Counter
-func (r *registerCstatType) SetOcpc(value uint32) {
+func (r *RegisterCstatType) SetOcpc(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCstatFieldOcpcMask)|(uint32(value)<<RegisterCstatFieldOcpcShift))
 }
 
@@ -242,12 +311,12 @@ const (
 )
 
 // GetTqc Time Quanta Counter
-func (r *registerCstatType) GetTqc() uint16 {
+func (r *RegisterCstatType) GetTqc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCstatFieldTqcMask) >> RegisterCstatFieldTqcShift)
 }
 
 // SetTqc Time Quanta Counter
-func (r *registerCstatType) SetTqc(value uint16) {
+func (r *RegisterCstatType) SetTqc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCstatFieldTqcMask)|(uint32(value)<<RegisterCstatFieldTqcShift))
 }
 
@@ -257,17 +326,40 @@ const (
 )
 
 // GetCals Calibration State
-func (r *registerCstatType) GetCals() uint8 {
+func (r *RegisterCstatType) GetCals() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCstatFieldCalsMask) >> RegisterCstatFieldCalsShift)
 }
 
 // SetCals Calibration State
-func (r *registerCstatType) SetCals(value uint8) {
+func (r *RegisterCstatType) SetCals(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCstatFieldCalsMask)|(uint32(value)<<RegisterCstatFieldCalsShift))
 }
 
-// registerCwdType Calibration Watchdog Register
-type registerCwdType uint32
+// RegisterCwdType Calibration Watchdog Register
+type RegisterCwdType uint32
+
+func (r *RegisterCwdType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCwdType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCwdType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCwdType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCwdType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCwdFieldWdcShift = 0
@@ -275,12 +367,12 @@ const (
 )
 
 // GetWdc WDC
-func (r *registerCwdType) GetWdc() uint16 {
+func (r *RegisterCwdType) GetWdc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCwdFieldWdcMask) >> RegisterCwdFieldWdcShift)
 }
 
 // SetWdc WDC
-func (r *registerCwdType) SetWdc(value uint16) {
+func (r *RegisterCwdType) SetWdc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCwdFieldWdcMask)|(uint32(value)<<RegisterCwdFieldWdcShift))
 }
 
@@ -290,17 +382,40 @@ const (
 )
 
 // GetWdv WDV
-func (r *registerCwdType) GetWdv() uint16 {
+func (r *RegisterCwdType) GetWdv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCwdFieldWdvMask) >> RegisterCwdFieldWdvShift)
 }
 
 // SetWdv WDV
-func (r *registerCwdType) SetWdv(value uint16) {
+func (r *RegisterCwdType) SetWdv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCwdFieldWdvMask)|(uint32(value)<<RegisterCwdFieldWdvShift))
 }
 
-// registerIrType Clock Calibration Unit Interrupt Register
-type registerIrType uint32
+// RegisterIrType Clock Calibration Unit Interrupt Register
+type RegisterIrType uint32
+
+func (r *RegisterIrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIrFieldCweShift = 0
@@ -308,12 +423,12 @@ const (
 )
 
 // GetCwe Calibration Watchdog Event
-func (r *registerIrType) GetCwe() bool {
+func (r *RegisterIrType) GetCwe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIrFieldCweMask) != 0
 }
 
 // SetCwe Calibration Watchdog Event
-func (r *registerIrType) SetCwe(value bool) {
+func (r *RegisterIrType) SetCwe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIrFieldCweMask)
 	} else {
@@ -327,12 +442,12 @@ const (
 )
 
 // GetCsc Calibration State Changed
-func (r *registerIrType) GetCsc() bool {
+func (r *RegisterIrType) GetCsc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIrFieldCscMask) != 0
 }
 
 // SetCsc Calibration State Changed
-func (r *registerIrType) SetCsc(value bool) {
+func (r *RegisterIrType) SetCsc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIrFieldCscMask)
 	} else {
@@ -340,8 +455,31 @@ func (r *registerIrType) SetCsc(value bool) {
 	}
 }
 
-// registerIeType Clock Calibration Unit Interrupt Enable Register
-type registerIeType uint32
+// RegisterIeType Clock Calibration Unit Interrupt Enable Register
+type RegisterIeType uint32
+
+func (r *RegisterIeType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIeType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIeType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIeType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIeType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIeFieldCweeShift = 0
@@ -349,12 +487,12 @@ const (
 )
 
 // GetCwee Calibration Watchdog Event Enable
-func (r *registerIeType) GetCwee() bool {
+func (r *RegisterIeType) GetCwee() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIeFieldCweeMask) != 0
 }
 
 // SetCwee Calibration Watchdog Event Enable
-func (r *registerIeType) SetCwee(value bool) {
+func (r *RegisterIeType) SetCwee(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIeFieldCweeMask)
 	} else {
@@ -368,12 +506,12 @@ const (
 )
 
 // GetCsce Calibration State Changed Enable
-func (r *registerIeType) GetCsce() bool {
+func (r *RegisterIeType) GetCsce() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIeFieldCsceMask) != 0
 }
 
 // SetCsce Calibration State Changed Enable
-func (r *registerIeType) SetCsce(value bool) {
+func (r *RegisterIeType) SetCsce(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIeFieldCsceMask)
 	} else {

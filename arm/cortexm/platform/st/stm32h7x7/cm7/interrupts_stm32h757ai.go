@@ -392,8 +392,8 @@ const (
 	// IrqMdma MDMA
 	IrqMdma runtime.Interrupt = 122
 
-	// IrqSdmmc SDMMC global interrupt
-	IrqSdmmc runtime.Interrupt = 124
+	// IrqSdmmc2 SDMMC2 global interrupt
+	IrqSdmmc2 runtime.Interrupt = 124
 
 	// IrqHsem0 HSEM global interrupt 1
 	IrqHsem0 runtime.Interrupt = 125

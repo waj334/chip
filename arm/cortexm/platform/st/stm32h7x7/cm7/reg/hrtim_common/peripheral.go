@@ -12,35 +12,58 @@ var (
 )
 
 type _hrtim_common struct {
-	Cr1     registerCr1Type
-	Cr2     registerCr2Type
-	Isr     registerIsrType
-	Icr     registerIcrType
-	Ier     registerIerType
-	Oenr    registerOenrType
-	Disr    registerDisrType
-	Odsr    registerOdsrType
-	Bmcr    registerBmcrType
-	Bmtrg   registerBmtrgType
-	Bmcmpr6 registerBmcmpr6Type
-	Bmper   registerBmperType
-	Eecr1   registerEecr1Type
-	Eecr2   registerEecr2Type
-	Eecr3   registerEecr3Type
-	Adc1r   registerAdc1rType
-	Adc2r   registerAdc2rType
-	Adc3r   registerAdc3rType
-	Adc4r   registerAdc4rType
-	Dllcr   registerDllcrType
-	Fltinr1 registerFltinr1Type
-	Fltinr2 registerFltinr2Type
-	Bdmupdr registerBdmupdrType
-	Bdtxupr registerBdtxuprType
-	Bdmadr  registerBdmadrType
+	Cr1     RegisterCr1Type
+	Cr2     RegisterCr2Type
+	Isr     RegisterIsrType
+	Icr     RegisterIcrType
+	Ier     RegisterIerType
+	Oenr    RegisterOenrType
+	Disr    RegisterDisrType
+	Odsr    RegisterOdsrType
+	Bmcr    RegisterBmcrType
+	Bmtrg   RegisterBmtrgType
+	Bmcmpr6 RegisterBmcmpr6Type
+	Bmper   RegisterBmperType
+	Eecr1   RegisterEecr1Type
+	Eecr2   RegisterEecr2Type
+	Eecr3   RegisterEecr3Type
+	Adc1r   RegisterAdc1rType
+	Adc2r   RegisterAdc2rType
+	Adc3r   RegisterAdc3rType
+	Adc4r   RegisterAdc4rType
+	Dllcr   RegisterDllcrType
+	Fltinr1 RegisterFltinr1Type
+	Fltinr2 RegisterFltinr2Type
+	Bdmupdr RegisterBdmupdrType
+	Bdtxupr RegisterBdtxuprType
+	Bdmadr  RegisterBdmadrType
 }
 
-// registerCr1Type Control Register 1
-type registerCr1Type uint32
+// RegisterCr1Type Control Register 1
+type RegisterCr1Type uint32
+
+func (r *RegisterCr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCr1FieldMudisShift = 0
@@ -48,12 +71,12 @@ const (
 )
 
 // GetMudis Master Update Disable
-func (r *registerCr1Type) GetMudis() bool {
+func (r *RegisterCr1Type) GetMudis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldMudisMask) != 0
 }
 
 // SetMudis Master Update Disable
-func (r *registerCr1Type) SetMudis(value bool) {
+func (r *RegisterCr1Type) SetMudis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr1FieldMudisMask)
 	} else {
@@ -67,12 +90,12 @@ const (
 )
 
 // GetTaudis Timer A Update Disable
-func (r *registerCr1Type) GetTaudis() bool {
+func (r *RegisterCr1Type) GetTaudis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldTaudisMask) != 0
 }
 
 // SetTaudis Timer A Update Disable
-func (r *registerCr1Type) SetTaudis(value bool) {
+func (r *RegisterCr1Type) SetTaudis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr1FieldTaudisMask)
 	} else {
@@ -86,12 +109,12 @@ const (
 )
 
 // GetTbudis Timer B Update Disable
-func (r *registerCr1Type) GetTbudis() bool {
+func (r *RegisterCr1Type) GetTbudis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldTbudisMask) != 0
 }
 
 // SetTbudis Timer B Update Disable
-func (r *registerCr1Type) SetTbudis(value bool) {
+func (r *RegisterCr1Type) SetTbudis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr1FieldTbudisMask)
 	} else {
@@ -105,12 +128,12 @@ const (
 )
 
 // GetTcudis Timer C Update Disable
-func (r *registerCr1Type) GetTcudis() bool {
+func (r *RegisterCr1Type) GetTcudis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldTcudisMask) != 0
 }
 
 // SetTcudis Timer C Update Disable
-func (r *registerCr1Type) SetTcudis(value bool) {
+func (r *RegisterCr1Type) SetTcudis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr1FieldTcudisMask)
 	} else {
@@ -124,12 +147,12 @@ const (
 )
 
 // GetTdudis Timer D Update Disable
-func (r *registerCr1Type) GetTdudis() bool {
+func (r *RegisterCr1Type) GetTdudis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldTdudisMask) != 0
 }
 
 // SetTdudis Timer D Update Disable
-func (r *registerCr1Type) SetTdudis(value bool) {
+func (r *RegisterCr1Type) SetTdudis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr1FieldTdudisMask)
 	} else {
@@ -143,12 +166,12 @@ const (
 )
 
 // GetTeudis Timer E Update Disable
-func (r *registerCr1Type) GetTeudis() bool {
+func (r *RegisterCr1Type) GetTeudis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldTeudisMask) != 0
 }
 
 // SetTeudis Timer E Update Disable
-func (r *registerCr1Type) SetTeudis(value bool) {
+func (r *RegisterCr1Type) SetTeudis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr1FieldTeudisMask)
 	} else {
@@ -162,12 +185,12 @@ const (
 )
 
 // GetAd1usrc ADC Trigger 1 Update Source
-func (r *registerCr1Type) GetAd1usrc() uint8 {
+func (r *RegisterCr1Type) GetAd1usrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldAd1usrcMask) >> RegisterCr1FieldAd1usrcShift)
 }
 
 // SetAd1usrc ADC Trigger 1 Update Source
-func (r *registerCr1Type) SetAd1usrc(value uint8) {
+func (r *RegisterCr1Type) SetAd1usrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCr1FieldAd1usrcMask)|(uint32(value)<<RegisterCr1FieldAd1usrcShift))
 }
 
@@ -177,12 +200,12 @@ const (
 )
 
 // GetAd2usrc ADC Trigger 2 Update Source
-func (r *registerCr1Type) GetAd2usrc() uint8 {
+func (r *RegisterCr1Type) GetAd2usrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldAd2usrcMask) >> RegisterCr1FieldAd2usrcShift)
 }
 
 // SetAd2usrc ADC Trigger 2 Update Source
-func (r *registerCr1Type) SetAd2usrc(value uint8) {
+func (r *RegisterCr1Type) SetAd2usrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCr1FieldAd2usrcMask)|(uint32(value)<<RegisterCr1FieldAd2usrcShift))
 }
 
@@ -192,12 +215,12 @@ const (
 )
 
 // GetAd3usrc ADC Trigger 3 Update Source
-func (r *registerCr1Type) GetAd3usrc() uint8 {
+func (r *RegisterCr1Type) GetAd3usrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldAd3usrcMask) >> RegisterCr1FieldAd3usrcShift)
 }
 
 // SetAd3usrc ADC Trigger 3 Update Source
-func (r *registerCr1Type) SetAd3usrc(value uint8) {
+func (r *RegisterCr1Type) SetAd3usrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCr1FieldAd3usrcMask)|(uint32(value)<<RegisterCr1FieldAd3usrcShift))
 }
 
@@ -207,17 +230,40 @@ const (
 )
 
 // GetAd4usrc ADC Trigger 4 Update Source
-func (r *registerCr1Type) GetAd4usrc() uint8 {
+func (r *RegisterCr1Type) GetAd4usrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCr1FieldAd4usrcMask) >> RegisterCr1FieldAd4usrcShift)
 }
 
 // SetAd4usrc ADC Trigger 4 Update Source
-func (r *registerCr1Type) SetAd4usrc(value uint8) {
+func (r *RegisterCr1Type) SetAd4usrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCr1FieldAd4usrcMask)|(uint32(value)<<RegisterCr1FieldAd4usrcShift))
 }
 
-// registerCr2Type Control Register 2
-type registerCr2Type uint32
+// RegisterCr2Type Control Register 2
+type RegisterCr2Type uint32
+
+func (r *RegisterCr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCr2FieldMswuShift = 0
@@ -225,12 +271,12 @@ const (
 )
 
 // GetMswu Master Timer Software update
-func (r *registerCr2Type) GetMswu() bool {
+func (r *RegisterCr2Type) GetMswu() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldMswuMask) != 0
 }
 
 // SetMswu Master Timer Software update
-func (r *registerCr2Type) SetMswu(value bool) {
+func (r *RegisterCr2Type) SetMswu(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldMswuMask)
 	} else {
@@ -244,12 +290,12 @@ const (
 )
 
 // GetTaswu Timer A Software update
-func (r *registerCr2Type) GetTaswu() bool {
+func (r *RegisterCr2Type) GetTaswu() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldTaswuMask) != 0
 }
 
 // SetTaswu Timer A Software update
-func (r *registerCr2Type) SetTaswu(value bool) {
+func (r *RegisterCr2Type) SetTaswu(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldTaswuMask)
 	} else {
@@ -263,12 +309,12 @@ const (
 )
 
 // GetTbswu Timer B Software Update
-func (r *registerCr2Type) GetTbswu() bool {
+func (r *RegisterCr2Type) GetTbswu() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldTbswuMask) != 0
 }
 
 // SetTbswu Timer B Software Update
-func (r *registerCr2Type) SetTbswu(value bool) {
+func (r *RegisterCr2Type) SetTbswu(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldTbswuMask)
 	} else {
@@ -282,12 +328,12 @@ const (
 )
 
 // GetTcswu Timer C Software Update
-func (r *registerCr2Type) GetTcswu() bool {
+func (r *RegisterCr2Type) GetTcswu() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldTcswuMask) != 0
 }
 
 // SetTcswu Timer C Software Update
-func (r *registerCr2Type) SetTcswu(value bool) {
+func (r *RegisterCr2Type) SetTcswu(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldTcswuMask)
 	} else {
@@ -301,12 +347,12 @@ const (
 )
 
 // GetTdswu Timer D Software Update
-func (r *registerCr2Type) GetTdswu() bool {
+func (r *RegisterCr2Type) GetTdswu() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldTdswuMask) != 0
 }
 
 // SetTdswu Timer D Software Update
-func (r *registerCr2Type) SetTdswu(value bool) {
+func (r *RegisterCr2Type) SetTdswu(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldTdswuMask)
 	} else {
@@ -320,12 +366,12 @@ const (
 )
 
 // GetTeswu Timer E Software Update
-func (r *registerCr2Type) GetTeswu() bool {
+func (r *RegisterCr2Type) GetTeswu() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldTeswuMask) != 0
 }
 
 // SetTeswu Timer E Software Update
-func (r *registerCr2Type) SetTeswu(value bool) {
+func (r *RegisterCr2Type) SetTeswu(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldTeswuMask)
 	} else {
@@ -339,12 +385,12 @@ const (
 )
 
 // GetMrst Master Counter software reset
-func (r *registerCr2Type) GetMrst() bool {
+func (r *RegisterCr2Type) GetMrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldMrstMask) != 0
 }
 
 // SetMrst Master Counter software reset
-func (r *registerCr2Type) SetMrst(value bool) {
+func (r *RegisterCr2Type) SetMrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldMrstMask)
 	} else {
@@ -358,12 +404,12 @@ const (
 )
 
 // GetTarst Timer A counter software reset
-func (r *registerCr2Type) GetTarst() bool {
+func (r *RegisterCr2Type) GetTarst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldTarstMask) != 0
 }
 
 // SetTarst Timer A counter software reset
-func (r *registerCr2Type) SetTarst(value bool) {
+func (r *RegisterCr2Type) SetTarst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldTarstMask)
 	} else {
@@ -377,12 +423,12 @@ const (
 )
 
 // GetTbrst Timer B counter software reset
-func (r *registerCr2Type) GetTbrst() bool {
+func (r *RegisterCr2Type) GetTbrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldTbrstMask) != 0
 }
 
 // SetTbrst Timer B counter software reset
-func (r *registerCr2Type) SetTbrst(value bool) {
+func (r *RegisterCr2Type) SetTbrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldTbrstMask)
 	} else {
@@ -396,12 +442,12 @@ const (
 )
 
 // GetTcrst Timer C counter software reset
-func (r *registerCr2Type) GetTcrst() bool {
+func (r *RegisterCr2Type) GetTcrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldTcrstMask) != 0
 }
 
 // SetTcrst Timer C counter software reset
-func (r *registerCr2Type) SetTcrst(value bool) {
+func (r *RegisterCr2Type) SetTcrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldTcrstMask)
 	} else {
@@ -415,12 +461,12 @@ const (
 )
 
 // GetTdrst Timer D counter software reset
-func (r *registerCr2Type) GetTdrst() bool {
+func (r *RegisterCr2Type) GetTdrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldTdrstMask) != 0
 }
 
 // SetTdrst Timer D counter software reset
-func (r *registerCr2Type) SetTdrst(value bool) {
+func (r *RegisterCr2Type) SetTdrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldTdrstMask)
 	} else {
@@ -434,12 +480,12 @@ const (
 )
 
 // GetTerst Timer E counter software reset
-func (r *registerCr2Type) GetTerst() bool {
+func (r *RegisterCr2Type) GetTerst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCr2FieldTerstMask) != 0
 }
 
 // SetTerst Timer E counter software reset
-func (r *registerCr2Type) SetTerst(value bool) {
+func (r *RegisterCr2Type) SetTerst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCr2FieldTerstMask)
 	} else {
@@ -447,8 +493,31 @@ func (r *registerCr2Type) SetTerst(value bool) {
 	}
 }
 
-// registerIsrType Interrupt Status Register
-type registerIsrType uint32
+// RegisterIsrType Interrupt Status Register
+type RegisterIsrType uint32
+
+func (r *RegisterIsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIsrFieldFlt1Shift = 0
@@ -456,7 +525,7 @@ const (
 )
 
 // GetFlt1 Fault 1 Interrupt Flag
-func (r *registerIsrType) GetFlt1() bool {
+func (r *RegisterIsrType) GetFlt1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldFlt1Mask) != 0
 }
 
@@ -466,7 +535,7 @@ const (
 )
 
 // GetFlt2 Fault 2 Interrupt Flag
-func (r *registerIsrType) GetFlt2() bool {
+func (r *RegisterIsrType) GetFlt2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldFlt2Mask) != 0
 }
 
@@ -476,7 +545,7 @@ const (
 )
 
 // GetFlt3 Fault 3 Interrupt Flag
-func (r *registerIsrType) GetFlt3() bool {
+func (r *RegisterIsrType) GetFlt3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldFlt3Mask) != 0
 }
 
@@ -486,7 +555,7 @@ const (
 )
 
 // GetFlt4 Fault 4 Interrupt Flag
-func (r *registerIsrType) GetFlt4() bool {
+func (r *RegisterIsrType) GetFlt4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldFlt4Mask) != 0
 }
 
@@ -496,7 +565,7 @@ const (
 )
 
 // GetFlt5 Fault 5 Interrupt Flag
-func (r *registerIsrType) GetFlt5() bool {
+func (r *RegisterIsrType) GetFlt5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldFlt5Mask) != 0
 }
 
@@ -506,12 +575,12 @@ const (
 )
 
 // GetSysflt System Fault Interrupt Flag
-func (r *registerIsrType) GetSysflt() bool {
+func (r *RegisterIsrType) GetSysflt() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldSysfltMask) != 0
 }
 
 // SetSysflt System Fault Interrupt Flag
-func (r *registerIsrType) SetSysflt(value bool) {
+func (r *RegisterIsrType) SetSysflt(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIsrFieldSysfltMask)
 	} else {
@@ -525,7 +594,7 @@ const (
 )
 
 // GetDllrdy DLL Ready Interrupt Flag
-func (r *registerIsrType) GetDllrdy() bool {
+func (r *RegisterIsrType) GetDllrdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldDllrdyMask) != 0
 }
 
@@ -535,12 +604,35 @@ const (
 )
 
 // GetBmper Burst mode Period Interrupt Flag
-func (r *registerIsrType) GetBmper() bool {
+func (r *RegisterIsrType) GetBmper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIsrFieldBmperMask) != 0
 }
 
-// registerIcrType Interrupt Clear Register
-type registerIcrType uint32
+// RegisterIcrType Interrupt Clear Register
+type RegisterIcrType uint32
+
+func (r *RegisterIcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIcrFieldFlt1cShift = 0
@@ -548,7 +640,7 @@ const (
 )
 
 // SetFlt1c Fault 1 Interrupt Flag Clear
-func (r *registerIcrType) SetFlt1c(value bool) {
+func (r *RegisterIcrType) SetFlt1c(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldFlt1cMask)
 	} else {
@@ -562,7 +654,7 @@ const (
 )
 
 // SetFlt2c Fault 2 Interrupt Flag Clear
-func (r *registerIcrType) SetFlt2c(value bool) {
+func (r *RegisterIcrType) SetFlt2c(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldFlt2cMask)
 	} else {
@@ -576,7 +668,7 @@ const (
 )
 
 // SetFlt3c Fault 3 Interrupt Flag Clear
-func (r *registerIcrType) SetFlt3c(value bool) {
+func (r *RegisterIcrType) SetFlt3c(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldFlt3cMask)
 	} else {
@@ -590,7 +682,7 @@ const (
 )
 
 // SetFlt4c Fault 4 Interrupt Flag Clear
-func (r *registerIcrType) SetFlt4c(value bool) {
+func (r *RegisterIcrType) SetFlt4c(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldFlt4cMask)
 	} else {
@@ -604,7 +696,7 @@ const (
 )
 
 // SetFlt5c Fault 5 Interrupt Flag Clear
-func (r *registerIcrType) SetFlt5c(value bool) {
+func (r *RegisterIcrType) SetFlt5c(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldFlt5cMask)
 	} else {
@@ -618,12 +710,12 @@ const (
 )
 
 // GetSysfltc System Fault Interrupt Flag Clear
-func (r *registerIcrType) GetSysfltc() bool {
+func (r *RegisterIcrType) GetSysfltc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIcrFieldSysfltcMask) != 0
 }
 
 // SetSysfltc System Fault Interrupt Flag Clear
-func (r *registerIcrType) SetSysfltc(value bool) {
+func (r *RegisterIcrType) SetSysfltc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldSysfltcMask)
 	} else {
@@ -637,7 +729,7 @@ const (
 )
 
 // SetDllrdyc DLL Ready Interrupt flag Clear
-func (r *registerIcrType) SetDllrdyc(value bool) {
+func (r *RegisterIcrType) SetDllrdyc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldDllrdycMask)
 	} else {
@@ -651,7 +743,7 @@ const (
 )
 
 // SetBmperc Burst mode period flag Clear
-func (r *registerIcrType) SetBmperc(value bool) {
+func (r *RegisterIcrType) SetBmperc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIcrFieldBmpercMask)
 	} else {
@@ -659,8 +751,31 @@ func (r *registerIcrType) SetBmperc(value bool) {
 	}
 }
 
-// registerIerType Interrupt Enable Register
-type registerIerType uint32
+// RegisterIerType Interrupt Enable Register
+type RegisterIerType uint32
+
+func (r *RegisterIerType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIerType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIerType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIerType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIerType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIerFieldFlt1ieShift = 0
@@ -668,12 +783,12 @@ const (
 )
 
 // GetFlt1ie Fault 1 Interrupt Enable
-func (r *registerIerType) GetFlt1ie() bool {
+func (r *RegisterIerType) GetFlt1ie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldFlt1ieMask) != 0
 }
 
 // SetFlt1ie Fault 1 Interrupt Enable
-func (r *registerIerType) SetFlt1ie(value bool) {
+func (r *RegisterIerType) SetFlt1ie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldFlt1ieMask)
 	} else {
@@ -687,12 +802,12 @@ const (
 )
 
 // GetFlt2ie Fault 2 Interrupt Enable
-func (r *registerIerType) GetFlt2ie() bool {
+func (r *RegisterIerType) GetFlt2ie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldFlt2ieMask) != 0
 }
 
 // SetFlt2ie Fault 2 Interrupt Enable
-func (r *registerIerType) SetFlt2ie(value bool) {
+func (r *RegisterIerType) SetFlt2ie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldFlt2ieMask)
 	} else {
@@ -706,12 +821,12 @@ const (
 )
 
 // GetFlt3ie Fault 3 Interrupt Enable
-func (r *registerIerType) GetFlt3ie() bool {
+func (r *RegisterIerType) GetFlt3ie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldFlt3ieMask) != 0
 }
 
 // SetFlt3ie Fault 3 Interrupt Enable
-func (r *registerIerType) SetFlt3ie(value bool) {
+func (r *RegisterIerType) SetFlt3ie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldFlt3ieMask)
 	} else {
@@ -725,12 +840,12 @@ const (
 )
 
 // GetFlt4ie Fault 4 Interrupt Enable
-func (r *registerIerType) GetFlt4ie() bool {
+func (r *RegisterIerType) GetFlt4ie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldFlt4ieMask) != 0
 }
 
 // SetFlt4ie Fault 4 Interrupt Enable
-func (r *registerIerType) SetFlt4ie(value bool) {
+func (r *RegisterIerType) SetFlt4ie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldFlt4ieMask)
 	} else {
@@ -744,12 +859,12 @@ const (
 )
 
 // GetFlt5ie Fault 5 Interrupt Enable
-func (r *registerIerType) GetFlt5ie() bool {
+func (r *RegisterIerType) GetFlt5ie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldFlt5ieMask) != 0
 }
 
 // SetFlt5ie Fault 5 Interrupt Enable
-func (r *registerIerType) SetFlt5ie(value bool) {
+func (r *RegisterIerType) SetFlt5ie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldFlt5ieMask)
 	} else {
@@ -763,12 +878,12 @@ const (
 )
 
 // GetSysflte System Fault Interrupt Enable
-func (r *registerIerType) GetSysflte() bool {
+func (r *RegisterIerType) GetSysflte() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldSysflteMask) != 0
 }
 
 // SetSysflte System Fault Interrupt Enable
-func (r *registerIerType) SetSysflte(value bool) {
+func (r *RegisterIerType) SetSysflte(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldSysflteMask)
 	} else {
@@ -782,12 +897,12 @@ const (
 )
 
 // GetDllrdyie DLL Ready Interrupt Enable
-func (r *registerIerType) GetDllrdyie() bool {
+func (r *RegisterIerType) GetDllrdyie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldDllrdyieMask) != 0
 }
 
 // SetDllrdyie DLL Ready Interrupt Enable
-func (r *registerIerType) SetDllrdyie(value bool) {
+func (r *RegisterIerType) SetDllrdyie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldDllrdyieMask)
 	} else {
@@ -801,12 +916,12 @@ const (
 )
 
 // GetBmperie Burst mode period Interrupt Enable
-func (r *registerIerType) GetBmperie() bool {
+func (r *RegisterIerType) GetBmperie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldBmperieMask) != 0
 }
 
 // SetBmperie Burst mode period Interrupt Enable
-func (r *registerIerType) SetBmperie(value bool) {
+func (r *RegisterIerType) SetBmperie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldBmperieMask)
 	} else {
@@ -814,8 +929,31 @@ func (r *registerIerType) SetBmperie(value bool) {
 	}
 }
 
-// registerOenrType Output Enable Register
-type registerOenrType uint32
+// RegisterOenrType Output Enable Register
+type RegisterOenrType uint32
+
+func (r *RegisterOenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOenrFieldTa1oenShift = 0
@@ -823,12 +961,12 @@ const (
 )
 
 // GetTa1oen Timer A Output 1 Enable
-func (r *registerOenrType) GetTa1oen() bool {
+func (r *RegisterOenrType) GetTa1oen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOenrFieldTa1oenMask) != 0
 }
 
 // SetTa1oen Timer A Output 1 Enable
-func (r *registerOenrType) SetTa1oen(value bool) {
+func (r *RegisterOenrType) SetTa1oen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOenrFieldTa1oenMask)
 	} else {
@@ -842,12 +980,12 @@ const (
 )
 
 // GetTa2oen Timer A Output 2 Enable
-func (r *registerOenrType) GetTa2oen() bool {
+func (r *RegisterOenrType) GetTa2oen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOenrFieldTa2oenMask) != 0
 }
 
 // SetTa2oen Timer A Output 2 Enable
-func (r *registerOenrType) SetTa2oen(value bool) {
+func (r *RegisterOenrType) SetTa2oen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOenrFieldTa2oenMask)
 	} else {
@@ -861,12 +999,12 @@ const (
 )
 
 // GetTb1oen Timer B Output 1 Enable
-func (r *registerOenrType) GetTb1oen() bool {
+func (r *RegisterOenrType) GetTb1oen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOenrFieldTb1oenMask) != 0
 }
 
 // SetTb1oen Timer B Output 1 Enable
-func (r *registerOenrType) SetTb1oen(value bool) {
+func (r *RegisterOenrType) SetTb1oen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOenrFieldTb1oenMask)
 	} else {
@@ -880,12 +1018,12 @@ const (
 )
 
 // GetTb2oen Timer B Output 2 Enable
-func (r *registerOenrType) GetTb2oen() bool {
+func (r *RegisterOenrType) GetTb2oen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOenrFieldTb2oenMask) != 0
 }
 
 // SetTb2oen Timer B Output 2 Enable
-func (r *registerOenrType) SetTb2oen(value bool) {
+func (r *RegisterOenrType) SetTb2oen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOenrFieldTb2oenMask)
 	} else {
@@ -899,12 +1037,12 @@ const (
 )
 
 // GetTc1oen Timer C Output 1 Enable
-func (r *registerOenrType) GetTc1oen() bool {
+func (r *RegisterOenrType) GetTc1oen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOenrFieldTc1oenMask) != 0
 }
 
 // SetTc1oen Timer C Output 1 Enable
-func (r *registerOenrType) SetTc1oen(value bool) {
+func (r *RegisterOenrType) SetTc1oen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOenrFieldTc1oenMask)
 	} else {
@@ -918,12 +1056,12 @@ const (
 )
 
 // GetTc2oen Timer C Output 2 Enable
-func (r *registerOenrType) GetTc2oen() bool {
+func (r *RegisterOenrType) GetTc2oen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOenrFieldTc2oenMask) != 0
 }
 
 // SetTc2oen Timer C Output 2 Enable
-func (r *registerOenrType) SetTc2oen(value bool) {
+func (r *RegisterOenrType) SetTc2oen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOenrFieldTc2oenMask)
 	} else {
@@ -937,12 +1075,12 @@ const (
 )
 
 // GetTd1oen Timer D Output 1 Enable
-func (r *registerOenrType) GetTd1oen() bool {
+func (r *RegisterOenrType) GetTd1oen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOenrFieldTd1oenMask) != 0
 }
 
 // SetTd1oen Timer D Output 1 Enable
-func (r *registerOenrType) SetTd1oen(value bool) {
+func (r *RegisterOenrType) SetTd1oen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOenrFieldTd1oenMask)
 	} else {
@@ -956,12 +1094,12 @@ const (
 )
 
 // GetTd2oen Timer D Output 2 Enable
-func (r *registerOenrType) GetTd2oen() bool {
+func (r *RegisterOenrType) GetTd2oen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOenrFieldTd2oenMask) != 0
 }
 
 // SetTd2oen Timer D Output 2 Enable
-func (r *registerOenrType) SetTd2oen(value bool) {
+func (r *RegisterOenrType) SetTd2oen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOenrFieldTd2oenMask)
 	} else {
@@ -975,12 +1113,12 @@ const (
 )
 
 // GetTe1oen Timer E Output 1 Enable
-func (r *registerOenrType) GetTe1oen() bool {
+func (r *RegisterOenrType) GetTe1oen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOenrFieldTe1oenMask) != 0
 }
 
 // SetTe1oen Timer E Output 1 Enable
-func (r *registerOenrType) SetTe1oen(value bool) {
+func (r *RegisterOenrType) SetTe1oen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOenrFieldTe1oenMask)
 	} else {
@@ -994,12 +1132,12 @@ const (
 )
 
 // GetTe2oen Timer E Output 2 Enable
-func (r *registerOenrType) GetTe2oen() bool {
+func (r *RegisterOenrType) GetTe2oen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOenrFieldTe2oenMask) != 0
 }
 
 // SetTe2oen Timer E Output 2 Enable
-func (r *registerOenrType) SetTe2oen(value bool) {
+func (r *RegisterOenrType) SetTe2oen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOenrFieldTe2oenMask)
 	} else {
@@ -1007,8 +1145,31 @@ func (r *registerOenrType) SetTe2oen(value bool) {
 	}
 }
 
-// registerDisrType DISR
-type registerDisrType uint32
+// RegisterDisrType DISR
+type RegisterDisrType uint32
+
+func (r *RegisterDisrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDisrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDisrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDisrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDisrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDisrFieldTa1odisShift = 0
@@ -1016,12 +1177,12 @@ const (
 )
 
 // GetTa1odis TA1ODIS
-func (r *registerDisrType) GetTa1odis() bool {
+func (r *RegisterDisrType) GetTa1odis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDisrFieldTa1odisMask) != 0
 }
 
 // SetTa1odis TA1ODIS
-func (r *registerDisrType) SetTa1odis(value bool) {
+func (r *RegisterDisrType) SetTa1odis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDisrFieldTa1odisMask)
 	} else {
@@ -1035,12 +1196,12 @@ const (
 )
 
 // GetTa2odis TA2ODIS
-func (r *registerDisrType) GetTa2odis() bool {
+func (r *RegisterDisrType) GetTa2odis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDisrFieldTa2odisMask) != 0
 }
 
 // SetTa2odis TA2ODIS
-func (r *registerDisrType) SetTa2odis(value bool) {
+func (r *RegisterDisrType) SetTa2odis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDisrFieldTa2odisMask)
 	} else {
@@ -1054,12 +1215,12 @@ const (
 )
 
 // GetTb1odis TB1ODIS
-func (r *registerDisrType) GetTb1odis() bool {
+func (r *RegisterDisrType) GetTb1odis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDisrFieldTb1odisMask) != 0
 }
 
 // SetTb1odis TB1ODIS
-func (r *registerDisrType) SetTb1odis(value bool) {
+func (r *RegisterDisrType) SetTb1odis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDisrFieldTb1odisMask)
 	} else {
@@ -1073,12 +1234,12 @@ const (
 )
 
 // GetTb2odis TB2ODIS
-func (r *registerDisrType) GetTb2odis() bool {
+func (r *RegisterDisrType) GetTb2odis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDisrFieldTb2odisMask) != 0
 }
 
 // SetTb2odis TB2ODIS
-func (r *registerDisrType) SetTb2odis(value bool) {
+func (r *RegisterDisrType) SetTb2odis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDisrFieldTb2odisMask)
 	} else {
@@ -1092,12 +1253,12 @@ const (
 )
 
 // GetTc1odis TC1ODIS
-func (r *registerDisrType) GetTc1odis() bool {
+func (r *RegisterDisrType) GetTc1odis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDisrFieldTc1odisMask) != 0
 }
 
 // SetTc1odis TC1ODIS
-func (r *registerDisrType) SetTc1odis(value bool) {
+func (r *RegisterDisrType) SetTc1odis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDisrFieldTc1odisMask)
 	} else {
@@ -1111,12 +1272,12 @@ const (
 )
 
 // GetTc2odis TC2ODIS
-func (r *registerDisrType) GetTc2odis() bool {
+func (r *RegisterDisrType) GetTc2odis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDisrFieldTc2odisMask) != 0
 }
 
 // SetTc2odis TC2ODIS
-func (r *registerDisrType) SetTc2odis(value bool) {
+func (r *RegisterDisrType) SetTc2odis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDisrFieldTc2odisMask)
 	} else {
@@ -1130,12 +1291,12 @@ const (
 )
 
 // GetTd1odis TD1ODIS
-func (r *registerDisrType) GetTd1odis() bool {
+func (r *RegisterDisrType) GetTd1odis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDisrFieldTd1odisMask) != 0
 }
 
 // SetTd1odis TD1ODIS
-func (r *registerDisrType) SetTd1odis(value bool) {
+func (r *RegisterDisrType) SetTd1odis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDisrFieldTd1odisMask)
 	} else {
@@ -1149,12 +1310,12 @@ const (
 )
 
 // GetTd2odis TD2ODIS
-func (r *registerDisrType) GetTd2odis() bool {
+func (r *RegisterDisrType) GetTd2odis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDisrFieldTd2odisMask) != 0
 }
 
 // SetTd2odis TD2ODIS
-func (r *registerDisrType) SetTd2odis(value bool) {
+func (r *RegisterDisrType) SetTd2odis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDisrFieldTd2odisMask)
 	} else {
@@ -1168,12 +1329,12 @@ const (
 )
 
 // GetTe1odis TE1ODIS
-func (r *registerDisrType) GetTe1odis() bool {
+func (r *RegisterDisrType) GetTe1odis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDisrFieldTe1odisMask) != 0
 }
 
 // SetTe1odis TE1ODIS
-func (r *registerDisrType) SetTe1odis(value bool) {
+func (r *RegisterDisrType) SetTe1odis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDisrFieldTe1odisMask)
 	} else {
@@ -1187,12 +1348,12 @@ const (
 )
 
 // GetTe2odis TE2ODIS
-func (r *registerDisrType) GetTe2odis() bool {
+func (r *RegisterDisrType) GetTe2odis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDisrFieldTe2odisMask) != 0
 }
 
 // SetTe2odis TE2ODIS
-func (r *registerDisrType) SetTe2odis(value bool) {
+func (r *RegisterDisrType) SetTe2odis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDisrFieldTe2odisMask)
 	} else {
@@ -1200,8 +1361,31 @@ func (r *registerDisrType) SetTe2odis(value bool) {
 	}
 }
 
-// registerOdsrType Output Disable Status Register
-type registerOdsrType uint32
+// RegisterOdsrType Output Disable Status Register
+type RegisterOdsrType uint32
+
+func (r *RegisterOdsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOdsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOdsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOdsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOdsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOdsrFieldTa1odsShift = 0
@@ -1209,12 +1393,12 @@ const (
 )
 
 // GetTa1ods Timer A Output 1 disable status
-func (r *registerOdsrType) GetTa1ods() bool {
+func (r *RegisterOdsrType) GetTa1ods() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdsrFieldTa1odsMask) != 0
 }
 
 // SetTa1ods Timer A Output 1 disable status
-func (r *registerOdsrType) SetTa1ods(value bool) {
+func (r *RegisterOdsrType) SetTa1ods(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdsrFieldTa1odsMask)
 	} else {
@@ -1228,12 +1412,12 @@ const (
 )
 
 // GetTa2ods Timer A Output 2 disable status
-func (r *registerOdsrType) GetTa2ods() bool {
+func (r *RegisterOdsrType) GetTa2ods() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdsrFieldTa2odsMask) != 0
 }
 
 // SetTa2ods Timer A Output 2 disable status
-func (r *registerOdsrType) SetTa2ods(value bool) {
+func (r *RegisterOdsrType) SetTa2ods(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdsrFieldTa2odsMask)
 	} else {
@@ -1247,12 +1431,12 @@ const (
 )
 
 // GetTb1ods Timer B Output 1 disable status
-func (r *registerOdsrType) GetTb1ods() bool {
+func (r *RegisterOdsrType) GetTb1ods() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdsrFieldTb1odsMask) != 0
 }
 
 // SetTb1ods Timer B Output 1 disable status
-func (r *registerOdsrType) SetTb1ods(value bool) {
+func (r *RegisterOdsrType) SetTb1ods(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdsrFieldTb1odsMask)
 	} else {
@@ -1266,12 +1450,12 @@ const (
 )
 
 // GetTb2ods Timer B Output 2 disable status
-func (r *registerOdsrType) GetTb2ods() bool {
+func (r *RegisterOdsrType) GetTb2ods() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdsrFieldTb2odsMask) != 0
 }
 
 // SetTb2ods Timer B Output 2 disable status
-func (r *registerOdsrType) SetTb2ods(value bool) {
+func (r *RegisterOdsrType) SetTb2ods(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdsrFieldTb2odsMask)
 	} else {
@@ -1285,12 +1469,12 @@ const (
 )
 
 // GetTc1ods Timer C Output 1 disable status
-func (r *registerOdsrType) GetTc1ods() bool {
+func (r *RegisterOdsrType) GetTc1ods() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdsrFieldTc1odsMask) != 0
 }
 
 // SetTc1ods Timer C Output 1 disable status
-func (r *registerOdsrType) SetTc1ods(value bool) {
+func (r *RegisterOdsrType) SetTc1ods(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdsrFieldTc1odsMask)
 	} else {
@@ -1304,12 +1488,12 @@ const (
 )
 
 // GetTc2ods Timer C Output 2 disable status
-func (r *registerOdsrType) GetTc2ods() bool {
+func (r *RegisterOdsrType) GetTc2ods() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdsrFieldTc2odsMask) != 0
 }
 
 // SetTc2ods Timer C Output 2 disable status
-func (r *registerOdsrType) SetTc2ods(value bool) {
+func (r *RegisterOdsrType) SetTc2ods(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdsrFieldTc2odsMask)
 	} else {
@@ -1323,12 +1507,12 @@ const (
 )
 
 // GetTd1ods Timer D Output 1 disable status
-func (r *registerOdsrType) GetTd1ods() bool {
+func (r *RegisterOdsrType) GetTd1ods() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdsrFieldTd1odsMask) != 0
 }
 
 // SetTd1ods Timer D Output 1 disable status
-func (r *registerOdsrType) SetTd1ods(value bool) {
+func (r *RegisterOdsrType) SetTd1ods(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdsrFieldTd1odsMask)
 	} else {
@@ -1342,12 +1526,12 @@ const (
 )
 
 // GetTd2ods Timer D Output 2 disable status
-func (r *registerOdsrType) GetTd2ods() bool {
+func (r *RegisterOdsrType) GetTd2ods() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdsrFieldTd2odsMask) != 0
 }
 
 // SetTd2ods Timer D Output 2 disable status
-func (r *registerOdsrType) SetTd2ods(value bool) {
+func (r *RegisterOdsrType) SetTd2ods(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdsrFieldTd2odsMask)
 	} else {
@@ -1361,12 +1545,12 @@ const (
 )
 
 // GetTe1ods Timer E Output 1 disable status
-func (r *registerOdsrType) GetTe1ods() bool {
+func (r *RegisterOdsrType) GetTe1ods() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdsrFieldTe1odsMask) != 0
 }
 
 // SetTe1ods Timer E Output 1 disable status
-func (r *registerOdsrType) SetTe1ods(value bool) {
+func (r *RegisterOdsrType) SetTe1ods(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdsrFieldTe1odsMask)
 	} else {
@@ -1380,12 +1564,12 @@ const (
 )
 
 // GetTe2ods Timer E Output 2 disable status
-func (r *registerOdsrType) GetTe2ods() bool {
+func (r *RegisterOdsrType) GetTe2ods() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdsrFieldTe2odsMask) != 0
 }
 
 // SetTe2ods Timer E Output 2 disable status
-func (r *registerOdsrType) SetTe2ods(value bool) {
+func (r *RegisterOdsrType) SetTe2ods(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdsrFieldTe2odsMask)
 	} else {
@@ -1393,8 +1577,31 @@ func (r *registerOdsrType) SetTe2ods(value bool) {
 	}
 }
 
-// registerBmcrType Burst Mode Control Register
-type registerBmcrType uint32
+// RegisterBmcrType Burst Mode Control Register
+type RegisterBmcrType uint32
+
+func (r *RegisterBmcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterBmcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterBmcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterBmcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterBmcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterBmcrFieldBmeShift = 0
@@ -1402,12 +1609,12 @@ const (
 )
 
 // GetBme Burst Mode enable
-func (r *registerBmcrType) GetBme() bool {
+func (r *RegisterBmcrType) GetBme() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldBmeMask) != 0
 }
 
 // SetBme Burst Mode enable
-func (r *registerBmcrType) SetBme(value bool) {
+func (r *RegisterBmcrType) SetBme(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmcrFieldBmeMask)
 	} else {
@@ -1421,12 +1628,12 @@ const (
 )
 
 // GetBmom Burst Mode operating mode
-func (r *registerBmcrType) GetBmom() bool {
+func (r *RegisterBmcrType) GetBmom() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldBmomMask) != 0
 }
 
 // SetBmom Burst Mode operating mode
-func (r *registerBmcrType) SetBmom(value bool) {
+func (r *RegisterBmcrType) SetBmom(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmcrFieldBmomMask)
 	} else {
@@ -1440,12 +1647,12 @@ const (
 )
 
 // GetBmclk Burst Mode Clock source
-func (r *registerBmcrType) GetBmclk() uint8 {
+func (r *RegisterBmcrType) GetBmclk() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldBmclkMask) >> RegisterBmcrFieldBmclkShift)
 }
 
 // SetBmclk Burst Mode Clock source
-func (r *registerBmcrType) SetBmclk(value uint8) {
+func (r *RegisterBmcrType) SetBmclk(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBmcrFieldBmclkMask)|(uint32(value)<<RegisterBmcrFieldBmclkShift))
 }
 
@@ -1455,12 +1662,12 @@ const (
 )
 
 // GetBmprsc Burst Mode Prescaler
-func (r *registerBmcrType) GetBmprsc() uint8 {
+func (r *RegisterBmcrType) GetBmprsc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldBmprscMask) >> RegisterBmcrFieldBmprscShift)
 }
 
 // SetBmprsc Burst Mode Prescaler
-func (r *registerBmcrType) SetBmprsc(value uint8) {
+func (r *RegisterBmcrType) SetBmprsc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBmcrFieldBmprscMask)|(uint32(value)<<RegisterBmcrFieldBmprscShift))
 }
 
@@ -1470,12 +1677,12 @@ const (
 )
 
 // GetBmpren Burst Mode Preload Enable
-func (r *registerBmcrType) GetBmpren() bool {
+func (r *RegisterBmcrType) GetBmpren() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldBmprenMask) != 0
 }
 
 // SetBmpren Burst Mode Preload Enable
-func (r *registerBmcrType) SetBmpren(value bool) {
+func (r *RegisterBmcrType) SetBmpren(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmcrFieldBmprenMask)
 	} else {
@@ -1489,12 +1696,12 @@ const (
 )
 
 // GetMtbm Master Timer Burst Mode
-func (r *registerBmcrType) GetMtbm() bool {
+func (r *RegisterBmcrType) GetMtbm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldMtbmMask) != 0
 }
 
 // SetMtbm Master Timer Burst Mode
-func (r *registerBmcrType) SetMtbm(value bool) {
+func (r *RegisterBmcrType) SetMtbm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmcrFieldMtbmMask)
 	} else {
@@ -1508,12 +1715,12 @@ const (
 )
 
 // GetTabm Timer A Burst Mode
-func (r *registerBmcrType) GetTabm() bool {
+func (r *RegisterBmcrType) GetTabm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldTabmMask) != 0
 }
 
 // SetTabm Timer A Burst Mode
-func (r *registerBmcrType) SetTabm(value bool) {
+func (r *RegisterBmcrType) SetTabm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmcrFieldTabmMask)
 	} else {
@@ -1527,12 +1734,12 @@ const (
 )
 
 // GetTbbm Timer B Burst Mode
-func (r *registerBmcrType) GetTbbm() bool {
+func (r *RegisterBmcrType) GetTbbm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldTbbmMask) != 0
 }
 
 // SetTbbm Timer B Burst Mode
-func (r *registerBmcrType) SetTbbm(value bool) {
+func (r *RegisterBmcrType) SetTbbm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmcrFieldTbbmMask)
 	} else {
@@ -1546,12 +1753,12 @@ const (
 )
 
 // GetTcbm Timer C Burst Mode
-func (r *registerBmcrType) GetTcbm() bool {
+func (r *RegisterBmcrType) GetTcbm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldTcbmMask) != 0
 }
 
 // SetTcbm Timer C Burst Mode
-func (r *registerBmcrType) SetTcbm(value bool) {
+func (r *RegisterBmcrType) SetTcbm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmcrFieldTcbmMask)
 	} else {
@@ -1565,12 +1772,12 @@ const (
 )
 
 // GetTdbm Timer D Burst Mode
-func (r *registerBmcrType) GetTdbm() bool {
+func (r *RegisterBmcrType) GetTdbm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldTdbmMask) != 0
 }
 
 // SetTdbm Timer D Burst Mode
-func (r *registerBmcrType) SetTdbm(value bool) {
+func (r *RegisterBmcrType) SetTdbm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmcrFieldTdbmMask)
 	} else {
@@ -1584,12 +1791,12 @@ const (
 )
 
 // GetTebm Timer E Burst Mode
-func (r *registerBmcrType) GetTebm() bool {
+func (r *RegisterBmcrType) GetTebm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldTebmMask) != 0
 }
 
 // SetTebm Timer E Burst Mode
-func (r *registerBmcrType) SetTebm(value bool) {
+func (r *RegisterBmcrType) SetTebm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmcrFieldTebmMask)
 	} else {
@@ -1603,12 +1810,12 @@ const (
 )
 
 // GetBmstat Burst Mode Status
-func (r *registerBmcrType) GetBmstat() bool {
+func (r *RegisterBmcrType) GetBmstat() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmcrFieldBmstatMask) != 0
 }
 
 // SetBmstat Burst Mode Status
-func (r *registerBmcrType) SetBmstat(value bool) {
+func (r *RegisterBmcrType) SetBmstat(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmcrFieldBmstatMask)
 	} else {
@@ -1616,8 +1823,31 @@ func (r *registerBmcrType) SetBmstat(value bool) {
 	}
 }
 
-// registerBmtrgType BMTRG
-type registerBmtrgType uint32
+// RegisterBmtrgType BMTRG
+type RegisterBmtrgType uint32
+
+func (r *RegisterBmtrgType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterBmtrgType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterBmtrgType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterBmtrgType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterBmtrgType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterBmtrgFieldSwShift = 0
@@ -1625,12 +1855,12 @@ const (
 )
 
 // GetSw SW
-func (r *registerBmtrgType) GetSw() bool {
+func (r *RegisterBmtrgType) GetSw() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldSwMask) != 0
 }
 
 // SetSw SW
-func (r *registerBmtrgType) SetSw(value bool) {
+func (r *RegisterBmtrgType) SetSw(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldSwMask)
 	} else {
@@ -1644,12 +1874,12 @@ const (
 )
 
 // GetMstrst MSTRST
-func (r *registerBmtrgType) GetMstrst() bool {
+func (r *RegisterBmtrgType) GetMstrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldMstrstMask) != 0
 }
 
 // SetMstrst MSTRST
-func (r *registerBmtrgType) SetMstrst(value bool) {
+func (r *RegisterBmtrgType) SetMstrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldMstrstMask)
 	} else {
@@ -1663,12 +1893,12 @@ const (
 )
 
 // GetMstrep MSTREP
-func (r *registerBmtrgType) GetMstrep() bool {
+func (r *RegisterBmtrgType) GetMstrep() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldMstrepMask) != 0
 }
 
 // SetMstrep MSTREP
-func (r *registerBmtrgType) SetMstrep(value bool) {
+func (r *RegisterBmtrgType) SetMstrep(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldMstrepMask)
 	} else {
@@ -1682,12 +1912,12 @@ const (
 )
 
 // GetMstcmp1 MSTCMP1
-func (r *registerBmtrgType) GetMstcmp1() bool {
+func (r *RegisterBmtrgType) GetMstcmp1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldMstcmp1Mask) != 0
 }
 
 // SetMstcmp1 MSTCMP1
-func (r *registerBmtrgType) SetMstcmp1(value bool) {
+func (r *RegisterBmtrgType) SetMstcmp1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldMstcmp1Mask)
 	} else {
@@ -1701,12 +1931,12 @@ const (
 )
 
 // GetMstcmp2 MSTCMP2
-func (r *registerBmtrgType) GetMstcmp2() bool {
+func (r *RegisterBmtrgType) GetMstcmp2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldMstcmp2Mask) != 0
 }
 
 // SetMstcmp2 MSTCMP2
-func (r *registerBmtrgType) SetMstcmp2(value bool) {
+func (r *RegisterBmtrgType) SetMstcmp2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldMstcmp2Mask)
 	} else {
@@ -1720,12 +1950,12 @@ const (
 )
 
 // GetMstcmp3 MSTCMP3
-func (r *registerBmtrgType) GetMstcmp3() bool {
+func (r *RegisterBmtrgType) GetMstcmp3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldMstcmp3Mask) != 0
 }
 
 // SetMstcmp3 MSTCMP3
-func (r *registerBmtrgType) SetMstcmp3(value bool) {
+func (r *RegisterBmtrgType) SetMstcmp3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldMstcmp3Mask)
 	} else {
@@ -1739,12 +1969,12 @@ const (
 )
 
 // GetMstcmp4 MSTCMP4
-func (r *registerBmtrgType) GetMstcmp4() bool {
+func (r *RegisterBmtrgType) GetMstcmp4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldMstcmp4Mask) != 0
 }
 
 // SetMstcmp4 MSTCMP4
-func (r *registerBmtrgType) SetMstcmp4(value bool) {
+func (r *RegisterBmtrgType) SetMstcmp4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldMstcmp4Mask)
 	} else {
@@ -1758,12 +1988,12 @@ const (
 )
 
 // GetTarst TARST
-func (r *registerBmtrgType) GetTarst() bool {
+func (r *RegisterBmtrgType) GetTarst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTarstMask) != 0
 }
 
 // SetTarst TARST
-func (r *registerBmtrgType) SetTarst(value bool) {
+func (r *RegisterBmtrgType) SetTarst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTarstMask)
 	} else {
@@ -1777,12 +2007,12 @@ const (
 )
 
 // GetTarep TAREP
-func (r *registerBmtrgType) GetTarep() bool {
+func (r *RegisterBmtrgType) GetTarep() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTarepMask) != 0
 }
 
 // SetTarep TAREP
-func (r *registerBmtrgType) SetTarep(value bool) {
+func (r *RegisterBmtrgType) SetTarep(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTarepMask)
 	} else {
@@ -1796,12 +2026,12 @@ const (
 )
 
 // GetTacmp1 TACMP1
-func (r *registerBmtrgType) GetTacmp1() bool {
+func (r *RegisterBmtrgType) GetTacmp1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTacmp1Mask) != 0
 }
 
 // SetTacmp1 TACMP1
-func (r *registerBmtrgType) SetTacmp1(value bool) {
+func (r *RegisterBmtrgType) SetTacmp1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTacmp1Mask)
 	} else {
@@ -1815,12 +2045,12 @@ const (
 )
 
 // GetTacmp2 TACMP2
-func (r *registerBmtrgType) GetTacmp2() bool {
+func (r *RegisterBmtrgType) GetTacmp2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTacmp2Mask) != 0
 }
 
 // SetTacmp2 TACMP2
-func (r *registerBmtrgType) SetTacmp2(value bool) {
+func (r *RegisterBmtrgType) SetTacmp2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTacmp2Mask)
 	} else {
@@ -1834,12 +2064,12 @@ const (
 )
 
 // GetTbrst TBRST
-func (r *registerBmtrgType) GetTbrst() bool {
+func (r *RegisterBmtrgType) GetTbrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTbrstMask) != 0
 }
 
 // SetTbrst TBRST
-func (r *registerBmtrgType) SetTbrst(value bool) {
+func (r *RegisterBmtrgType) SetTbrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTbrstMask)
 	} else {
@@ -1853,12 +2083,12 @@ const (
 )
 
 // GetTbrep TBREP
-func (r *registerBmtrgType) GetTbrep() bool {
+func (r *RegisterBmtrgType) GetTbrep() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTbrepMask) != 0
 }
 
 // SetTbrep TBREP
-func (r *registerBmtrgType) SetTbrep(value bool) {
+func (r *RegisterBmtrgType) SetTbrep(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTbrepMask)
 	} else {
@@ -1872,12 +2102,12 @@ const (
 )
 
 // GetTbcmp1 TBCMP1
-func (r *registerBmtrgType) GetTbcmp1() bool {
+func (r *RegisterBmtrgType) GetTbcmp1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTbcmp1Mask) != 0
 }
 
 // SetTbcmp1 TBCMP1
-func (r *registerBmtrgType) SetTbcmp1(value bool) {
+func (r *RegisterBmtrgType) SetTbcmp1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTbcmp1Mask)
 	} else {
@@ -1891,12 +2121,12 @@ const (
 )
 
 // GetTbcmp2 TBCMP2
-func (r *registerBmtrgType) GetTbcmp2() bool {
+func (r *RegisterBmtrgType) GetTbcmp2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTbcmp2Mask) != 0
 }
 
 // SetTbcmp2 TBCMP2
-func (r *registerBmtrgType) SetTbcmp2(value bool) {
+func (r *RegisterBmtrgType) SetTbcmp2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTbcmp2Mask)
 	} else {
@@ -1910,12 +2140,12 @@ const (
 )
 
 // GetTcrst TCRST
-func (r *registerBmtrgType) GetTcrst() bool {
+func (r *RegisterBmtrgType) GetTcrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTcrstMask) != 0
 }
 
 // SetTcrst TCRST
-func (r *registerBmtrgType) SetTcrst(value bool) {
+func (r *RegisterBmtrgType) SetTcrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTcrstMask)
 	} else {
@@ -1929,12 +2159,12 @@ const (
 )
 
 // GetTcrep TCREP
-func (r *registerBmtrgType) GetTcrep() bool {
+func (r *RegisterBmtrgType) GetTcrep() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTcrepMask) != 0
 }
 
 // SetTcrep TCREP
-func (r *registerBmtrgType) SetTcrep(value bool) {
+func (r *RegisterBmtrgType) SetTcrep(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTcrepMask)
 	} else {
@@ -1948,12 +2178,12 @@ const (
 )
 
 // GetTccmp1 TCCMP1
-func (r *registerBmtrgType) GetTccmp1() bool {
+func (r *RegisterBmtrgType) GetTccmp1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTccmp1Mask) != 0
 }
 
 // SetTccmp1 TCCMP1
-func (r *registerBmtrgType) SetTccmp1(value bool) {
+func (r *RegisterBmtrgType) SetTccmp1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTccmp1Mask)
 	} else {
@@ -1967,12 +2197,12 @@ const (
 )
 
 // GetTccmp2 TCCMP2
-func (r *registerBmtrgType) GetTccmp2() bool {
+func (r *RegisterBmtrgType) GetTccmp2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTccmp2Mask) != 0
 }
 
 // SetTccmp2 TCCMP2
-func (r *registerBmtrgType) SetTccmp2(value bool) {
+func (r *RegisterBmtrgType) SetTccmp2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTccmp2Mask)
 	} else {
@@ -1986,12 +2216,12 @@ const (
 )
 
 // GetTdrst TDRST
-func (r *registerBmtrgType) GetTdrst() bool {
+func (r *RegisterBmtrgType) GetTdrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTdrstMask) != 0
 }
 
 // SetTdrst TDRST
-func (r *registerBmtrgType) SetTdrst(value bool) {
+func (r *RegisterBmtrgType) SetTdrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTdrstMask)
 	} else {
@@ -2005,12 +2235,12 @@ const (
 )
 
 // GetTdrep TDREP
-func (r *registerBmtrgType) GetTdrep() bool {
+func (r *RegisterBmtrgType) GetTdrep() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTdrepMask) != 0
 }
 
 // SetTdrep TDREP
-func (r *registerBmtrgType) SetTdrep(value bool) {
+func (r *RegisterBmtrgType) SetTdrep(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTdrepMask)
 	} else {
@@ -2024,12 +2254,12 @@ const (
 )
 
 // GetTdcmp1 TDCMP1
-func (r *registerBmtrgType) GetTdcmp1() bool {
+func (r *RegisterBmtrgType) GetTdcmp1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTdcmp1Mask) != 0
 }
 
 // SetTdcmp1 TDCMP1
-func (r *registerBmtrgType) SetTdcmp1(value bool) {
+func (r *RegisterBmtrgType) SetTdcmp1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTdcmp1Mask)
 	} else {
@@ -2043,12 +2273,12 @@ const (
 )
 
 // GetTdcmp2 TDCMP2
-func (r *registerBmtrgType) GetTdcmp2() bool {
+func (r *RegisterBmtrgType) GetTdcmp2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTdcmp2Mask) != 0
 }
 
 // SetTdcmp2 TDCMP2
-func (r *registerBmtrgType) SetTdcmp2(value bool) {
+func (r *RegisterBmtrgType) SetTdcmp2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTdcmp2Mask)
 	} else {
@@ -2062,12 +2292,12 @@ const (
 )
 
 // GetTerst TERST
-func (r *registerBmtrgType) GetTerst() bool {
+func (r *RegisterBmtrgType) GetTerst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTerstMask) != 0
 }
 
 // SetTerst TERST
-func (r *registerBmtrgType) SetTerst(value bool) {
+func (r *RegisterBmtrgType) SetTerst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTerstMask)
 	} else {
@@ -2081,12 +2311,12 @@ const (
 )
 
 // GetTerep TEREP
-func (r *registerBmtrgType) GetTerep() bool {
+func (r *RegisterBmtrgType) GetTerep() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTerepMask) != 0
 }
 
 // SetTerep TEREP
-func (r *registerBmtrgType) SetTerep(value bool) {
+func (r *RegisterBmtrgType) SetTerep(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTerepMask)
 	} else {
@@ -2100,12 +2330,12 @@ const (
 )
 
 // GetTecmp1 TECMP1
-func (r *registerBmtrgType) GetTecmp1() bool {
+func (r *RegisterBmtrgType) GetTecmp1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTecmp1Mask) != 0
 }
 
 // SetTecmp1 TECMP1
-func (r *registerBmtrgType) SetTecmp1(value bool) {
+func (r *RegisterBmtrgType) SetTecmp1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTecmp1Mask)
 	} else {
@@ -2119,12 +2349,12 @@ const (
 )
 
 // GetTecmp2 TECMP2
-func (r *registerBmtrgType) GetTecmp2() bool {
+func (r *RegisterBmtrgType) GetTecmp2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldTecmp2Mask) != 0
 }
 
 // SetTecmp2 TECMP2
-func (r *registerBmtrgType) SetTecmp2(value bool) {
+func (r *RegisterBmtrgType) SetTecmp2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldTecmp2Mask)
 	} else {
@@ -2138,12 +2368,12 @@ const (
 )
 
 // GetOchpev OCHPEV
-func (r *registerBmtrgType) GetOchpev() bool {
+func (r *RegisterBmtrgType) GetOchpev() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBmtrgFieldOchpevMask) != 0
 }
 
 // SetOchpev OCHPEV
-func (r *registerBmtrgType) SetOchpev(value bool) {
+func (r *RegisterBmtrgType) SetOchpev(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBmtrgFieldOchpevMask)
 	} else {
@@ -2151,8 +2381,31 @@ func (r *registerBmtrgType) SetOchpev(value bool) {
 	}
 }
 
-// registerBmcmpr6Type BMCMPR6
-type registerBmcmpr6Type uint32
+// RegisterBmcmpr6Type BMCMPR6
+type RegisterBmcmpr6Type uint32
+
+func (r *RegisterBmcmpr6Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterBmcmpr6Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterBmcmpr6Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterBmcmpr6Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterBmcmpr6Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterBmcmpr6FieldBmcmpShift = 0
@@ -2160,17 +2413,40 @@ const (
 )
 
 // GetBmcmp BMCMP
-func (r *registerBmcmpr6Type) GetBmcmp() uint16 {
+func (r *RegisterBmcmpr6Type) GetBmcmp() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterBmcmpr6FieldBmcmpMask) >> RegisterBmcmpr6FieldBmcmpShift)
 }
 
 // SetBmcmp BMCMP
-func (r *registerBmcmpr6Type) SetBmcmp(value uint16) {
+func (r *RegisterBmcmpr6Type) SetBmcmp(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBmcmpr6FieldBmcmpMask)|(uint32(value)<<RegisterBmcmpr6FieldBmcmpShift))
 }
 
-// registerBmperType Burst Mode Period Register
-type registerBmperType uint32
+// RegisterBmperType Burst Mode Period Register
+type RegisterBmperType uint32
+
+func (r *RegisterBmperType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterBmperType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterBmperType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterBmperType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterBmperType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterBmperFieldBmperShift = 0
@@ -2178,17 +2454,40 @@ const (
 )
 
 // GetBmper Burst mode Period
-func (r *registerBmperType) GetBmper() uint16 {
+func (r *RegisterBmperType) GetBmper() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterBmperFieldBmperMask) >> RegisterBmperFieldBmperShift)
 }
 
 // SetBmper Burst mode Period
-func (r *registerBmperType) SetBmper(value uint16) {
+func (r *RegisterBmperType) SetBmper(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBmperFieldBmperMask)|(uint32(value)<<RegisterBmperFieldBmperShift))
 }
 
-// registerEecr1Type Timer External Event Control Register 1
-type registerEecr1Type uint32
+// RegisterEecr1Type Timer External Event Control Register 1
+type RegisterEecr1Type uint32
+
+func (r *RegisterEecr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterEecr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterEecr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterEecr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterEecr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterEecr1FieldEe1srcShift = 0
@@ -2196,12 +2495,12 @@ const (
 )
 
 // GetEe1src External Event 1 Source
-func (r *registerEecr1Type) GetEe1src() uint8 {
+func (r *RegisterEecr1Type) GetEe1src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe1srcMask) >> RegisterEecr1FieldEe1srcShift)
 }
 
 // SetEe1src External Event 1 Source
-func (r *registerEecr1Type) SetEe1src(value uint8) {
+func (r *RegisterEecr1Type) SetEe1src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr1FieldEe1srcMask)|(uint32(value)<<RegisterEecr1FieldEe1srcShift))
 }
 
@@ -2211,12 +2510,12 @@ const (
 )
 
 // GetEe1pol External Event 1 Polarity
-func (r *registerEecr1Type) GetEe1pol() bool {
+func (r *RegisterEecr1Type) GetEe1pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe1polMask) != 0
 }
 
 // SetEe1pol External Event 1 Polarity
-func (r *registerEecr1Type) SetEe1pol(value bool) {
+func (r *RegisterEecr1Type) SetEe1pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr1FieldEe1polMask)
 	} else {
@@ -2230,12 +2529,12 @@ const (
 )
 
 // GetEe1sns External Event 1 Sensitivity
-func (r *registerEecr1Type) GetEe1sns() uint8 {
+func (r *RegisterEecr1Type) GetEe1sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe1snsMask) >> RegisterEecr1FieldEe1snsShift)
 }
 
 // SetEe1sns External Event 1 Sensitivity
-func (r *registerEecr1Type) SetEe1sns(value uint8) {
+func (r *RegisterEecr1Type) SetEe1sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr1FieldEe1snsMask)|(uint32(value)<<RegisterEecr1FieldEe1snsShift))
 }
 
@@ -2245,12 +2544,12 @@ const (
 )
 
 // GetEe1fast External Event 1 Fast mode
-func (r *registerEecr1Type) GetEe1fast() bool {
+func (r *RegisterEecr1Type) GetEe1fast() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe1fastMask) != 0
 }
 
 // SetEe1fast External Event 1 Fast mode
-func (r *registerEecr1Type) SetEe1fast(value bool) {
+func (r *RegisterEecr1Type) SetEe1fast(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr1FieldEe1fastMask)
 	} else {
@@ -2264,12 +2563,12 @@ const (
 )
 
 // GetEe2src External Event 2 Source
-func (r *registerEecr1Type) GetEe2src() uint8 {
+func (r *RegisterEecr1Type) GetEe2src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe2srcMask) >> RegisterEecr1FieldEe2srcShift)
 }
 
 // SetEe2src External Event 2 Source
-func (r *registerEecr1Type) SetEe2src(value uint8) {
+func (r *RegisterEecr1Type) SetEe2src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr1FieldEe2srcMask)|(uint32(value)<<RegisterEecr1FieldEe2srcShift))
 }
 
@@ -2279,12 +2578,12 @@ const (
 )
 
 // GetEe2pol External Event 2 Polarity
-func (r *registerEecr1Type) GetEe2pol() bool {
+func (r *RegisterEecr1Type) GetEe2pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe2polMask) != 0
 }
 
 // SetEe2pol External Event 2 Polarity
-func (r *registerEecr1Type) SetEe2pol(value bool) {
+func (r *RegisterEecr1Type) SetEe2pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr1FieldEe2polMask)
 	} else {
@@ -2298,12 +2597,12 @@ const (
 )
 
 // GetEe2sns External Event 2 Sensitivity
-func (r *registerEecr1Type) GetEe2sns() uint8 {
+func (r *RegisterEecr1Type) GetEe2sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe2snsMask) >> RegisterEecr1FieldEe2snsShift)
 }
 
 // SetEe2sns External Event 2 Sensitivity
-func (r *registerEecr1Type) SetEe2sns(value uint8) {
+func (r *RegisterEecr1Type) SetEe2sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr1FieldEe2snsMask)|(uint32(value)<<RegisterEecr1FieldEe2snsShift))
 }
 
@@ -2313,12 +2612,12 @@ const (
 )
 
 // GetEe2fast External Event 2 Fast mode
-func (r *registerEecr1Type) GetEe2fast() bool {
+func (r *RegisterEecr1Type) GetEe2fast() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe2fastMask) != 0
 }
 
 // SetEe2fast External Event 2 Fast mode
-func (r *registerEecr1Type) SetEe2fast(value bool) {
+func (r *RegisterEecr1Type) SetEe2fast(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr1FieldEe2fastMask)
 	} else {
@@ -2332,12 +2631,12 @@ const (
 )
 
 // GetEe3src External Event 3 Source
-func (r *registerEecr1Type) GetEe3src() uint8 {
+func (r *RegisterEecr1Type) GetEe3src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe3srcMask) >> RegisterEecr1FieldEe3srcShift)
 }
 
 // SetEe3src External Event 3 Source
-func (r *registerEecr1Type) SetEe3src(value uint8) {
+func (r *RegisterEecr1Type) SetEe3src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr1FieldEe3srcMask)|(uint32(value)<<RegisterEecr1FieldEe3srcShift))
 }
 
@@ -2347,12 +2646,12 @@ const (
 )
 
 // GetEe3pol External Event 3 Polarity
-func (r *registerEecr1Type) GetEe3pol() bool {
+func (r *RegisterEecr1Type) GetEe3pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe3polMask) != 0
 }
 
 // SetEe3pol External Event 3 Polarity
-func (r *registerEecr1Type) SetEe3pol(value bool) {
+func (r *RegisterEecr1Type) SetEe3pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr1FieldEe3polMask)
 	} else {
@@ -2366,12 +2665,12 @@ const (
 )
 
 // GetEe3sns External Event 3 Sensitivity
-func (r *registerEecr1Type) GetEe3sns() uint8 {
+func (r *RegisterEecr1Type) GetEe3sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe3snsMask) >> RegisterEecr1FieldEe3snsShift)
 }
 
 // SetEe3sns External Event 3 Sensitivity
-func (r *registerEecr1Type) SetEe3sns(value uint8) {
+func (r *RegisterEecr1Type) SetEe3sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr1FieldEe3snsMask)|(uint32(value)<<RegisterEecr1FieldEe3snsShift))
 }
 
@@ -2381,12 +2680,12 @@ const (
 )
 
 // GetEe3fast External Event 3 Fast mode
-func (r *registerEecr1Type) GetEe3fast() bool {
+func (r *RegisterEecr1Type) GetEe3fast() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe3fastMask) != 0
 }
 
 // SetEe3fast External Event 3 Fast mode
-func (r *registerEecr1Type) SetEe3fast(value bool) {
+func (r *RegisterEecr1Type) SetEe3fast(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr1FieldEe3fastMask)
 	} else {
@@ -2400,12 +2699,12 @@ const (
 )
 
 // GetEe4src External Event 4 Source
-func (r *registerEecr1Type) GetEe4src() uint8 {
+func (r *RegisterEecr1Type) GetEe4src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe4srcMask) >> RegisterEecr1FieldEe4srcShift)
 }
 
 // SetEe4src External Event 4 Source
-func (r *registerEecr1Type) SetEe4src(value uint8) {
+func (r *RegisterEecr1Type) SetEe4src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr1FieldEe4srcMask)|(uint32(value)<<RegisterEecr1FieldEe4srcShift))
 }
 
@@ -2415,12 +2714,12 @@ const (
 )
 
 // GetEe4pol External Event 4 Polarity
-func (r *registerEecr1Type) GetEe4pol() bool {
+func (r *RegisterEecr1Type) GetEe4pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe4polMask) != 0
 }
 
 // SetEe4pol External Event 4 Polarity
-func (r *registerEecr1Type) SetEe4pol(value bool) {
+func (r *RegisterEecr1Type) SetEe4pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr1FieldEe4polMask)
 	} else {
@@ -2434,12 +2733,12 @@ const (
 )
 
 // GetEe4sns External Event 4 Sensitivity
-func (r *registerEecr1Type) GetEe4sns() uint8 {
+func (r *RegisterEecr1Type) GetEe4sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe4snsMask) >> RegisterEecr1FieldEe4snsShift)
 }
 
 // SetEe4sns External Event 4 Sensitivity
-func (r *registerEecr1Type) SetEe4sns(value uint8) {
+func (r *RegisterEecr1Type) SetEe4sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr1FieldEe4snsMask)|(uint32(value)<<RegisterEecr1FieldEe4snsShift))
 }
 
@@ -2449,12 +2748,12 @@ const (
 )
 
 // GetEe4fast External Event 4 Fast mode
-func (r *registerEecr1Type) GetEe4fast() bool {
+func (r *RegisterEecr1Type) GetEe4fast() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe4fastMask) != 0
 }
 
 // SetEe4fast External Event 4 Fast mode
-func (r *registerEecr1Type) SetEe4fast(value bool) {
+func (r *RegisterEecr1Type) SetEe4fast(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr1FieldEe4fastMask)
 	} else {
@@ -2468,12 +2767,12 @@ const (
 )
 
 // GetEe5src External Event 5 Source
-func (r *registerEecr1Type) GetEe5src() uint8 {
+func (r *RegisterEecr1Type) GetEe5src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe5srcMask) >> RegisterEecr1FieldEe5srcShift)
 }
 
 // SetEe5src External Event 5 Source
-func (r *registerEecr1Type) SetEe5src(value uint8) {
+func (r *RegisterEecr1Type) SetEe5src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr1FieldEe5srcMask)|(uint32(value)<<RegisterEecr1FieldEe5srcShift))
 }
 
@@ -2483,12 +2782,12 @@ const (
 )
 
 // GetEe5pol External Event 5 Polarity
-func (r *registerEecr1Type) GetEe5pol() bool {
+func (r *RegisterEecr1Type) GetEe5pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe5polMask) != 0
 }
 
 // SetEe5pol External Event 5 Polarity
-func (r *registerEecr1Type) SetEe5pol(value bool) {
+func (r *RegisterEecr1Type) SetEe5pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr1FieldEe5polMask)
 	} else {
@@ -2502,12 +2801,12 @@ const (
 )
 
 // GetEe5sns External Event 5 Sensitivity
-func (r *registerEecr1Type) GetEe5sns() uint8 {
+func (r *RegisterEecr1Type) GetEe5sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe5snsMask) >> RegisterEecr1FieldEe5snsShift)
 }
 
 // SetEe5sns External Event 5 Sensitivity
-func (r *registerEecr1Type) SetEe5sns(value uint8) {
+func (r *RegisterEecr1Type) SetEe5sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr1FieldEe5snsMask)|(uint32(value)<<RegisterEecr1FieldEe5snsShift))
 }
 
@@ -2517,12 +2816,12 @@ const (
 )
 
 // GetEe5fast External Event 5 Fast mode
-func (r *registerEecr1Type) GetEe5fast() bool {
+func (r *RegisterEecr1Type) GetEe5fast() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr1FieldEe5fastMask) != 0
 }
 
 // SetEe5fast External Event 5 Fast mode
-func (r *registerEecr1Type) SetEe5fast(value bool) {
+func (r *RegisterEecr1Type) SetEe5fast(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr1FieldEe5fastMask)
 	} else {
@@ -2530,8 +2829,31 @@ func (r *registerEecr1Type) SetEe5fast(value bool) {
 	}
 }
 
-// registerEecr2Type Timer External Event Control Register 2
-type registerEecr2Type uint32
+// RegisterEecr2Type Timer External Event Control Register 2
+type RegisterEecr2Type uint32
+
+func (r *RegisterEecr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterEecr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterEecr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterEecr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterEecr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterEecr2FieldEe6srcShift = 0
@@ -2539,12 +2861,12 @@ const (
 )
 
 // GetEe6src External Event 6 Source
-func (r *registerEecr2Type) GetEe6src() uint8 {
+func (r *RegisterEecr2Type) GetEe6src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe6srcMask) >> RegisterEecr2FieldEe6srcShift)
 }
 
 // SetEe6src External Event 6 Source
-func (r *registerEecr2Type) SetEe6src(value uint8) {
+func (r *RegisterEecr2Type) SetEe6src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr2FieldEe6srcMask)|(uint32(value)<<RegisterEecr2FieldEe6srcShift))
 }
 
@@ -2554,12 +2876,12 @@ const (
 )
 
 // GetEe6pol External Event 6 Polarity
-func (r *registerEecr2Type) GetEe6pol() bool {
+func (r *RegisterEecr2Type) GetEe6pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe6polMask) != 0
 }
 
 // SetEe6pol External Event 6 Polarity
-func (r *registerEecr2Type) SetEe6pol(value bool) {
+func (r *RegisterEecr2Type) SetEe6pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr2FieldEe6polMask)
 	} else {
@@ -2573,12 +2895,12 @@ const (
 )
 
 // GetEe6sns External Event 6 Sensitivity
-func (r *registerEecr2Type) GetEe6sns() uint8 {
+func (r *RegisterEecr2Type) GetEe6sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe6snsMask) >> RegisterEecr2FieldEe6snsShift)
 }
 
 // SetEe6sns External Event 6 Sensitivity
-func (r *registerEecr2Type) SetEe6sns(value uint8) {
+func (r *RegisterEecr2Type) SetEe6sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr2FieldEe6snsMask)|(uint32(value)<<RegisterEecr2FieldEe6snsShift))
 }
 
@@ -2588,12 +2910,12 @@ const (
 )
 
 // GetEe7src External Event 7 Source
-func (r *registerEecr2Type) GetEe7src() uint8 {
+func (r *RegisterEecr2Type) GetEe7src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe7srcMask) >> RegisterEecr2FieldEe7srcShift)
 }
 
 // SetEe7src External Event 7 Source
-func (r *registerEecr2Type) SetEe7src(value uint8) {
+func (r *RegisterEecr2Type) SetEe7src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr2FieldEe7srcMask)|(uint32(value)<<RegisterEecr2FieldEe7srcShift))
 }
 
@@ -2603,12 +2925,12 @@ const (
 )
 
 // GetEe7pol External Event 7 Polarity
-func (r *registerEecr2Type) GetEe7pol() bool {
+func (r *RegisterEecr2Type) GetEe7pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe7polMask) != 0
 }
 
 // SetEe7pol External Event 7 Polarity
-func (r *registerEecr2Type) SetEe7pol(value bool) {
+func (r *RegisterEecr2Type) SetEe7pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr2FieldEe7polMask)
 	} else {
@@ -2622,12 +2944,12 @@ const (
 )
 
 // GetEe7sns External Event 7 Sensitivity
-func (r *registerEecr2Type) GetEe7sns() uint8 {
+func (r *RegisterEecr2Type) GetEe7sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe7snsMask) >> RegisterEecr2FieldEe7snsShift)
 }
 
 // SetEe7sns External Event 7 Sensitivity
-func (r *registerEecr2Type) SetEe7sns(value uint8) {
+func (r *RegisterEecr2Type) SetEe7sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr2FieldEe7snsMask)|(uint32(value)<<RegisterEecr2FieldEe7snsShift))
 }
 
@@ -2637,12 +2959,12 @@ const (
 )
 
 // GetEe8src External Event 8 Source
-func (r *registerEecr2Type) GetEe8src() uint8 {
+func (r *RegisterEecr2Type) GetEe8src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe8srcMask) >> RegisterEecr2FieldEe8srcShift)
 }
 
 // SetEe8src External Event 8 Source
-func (r *registerEecr2Type) SetEe8src(value uint8) {
+func (r *RegisterEecr2Type) SetEe8src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr2FieldEe8srcMask)|(uint32(value)<<RegisterEecr2FieldEe8srcShift))
 }
 
@@ -2652,12 +2974,12 @@ const (
 )
 
 // GetEe8pol External Event 8 Polarity
-func (r *registerEecr2Type) GetEe8pol() bool {
+func (r *RegisterEecr2Type) GetEe8pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe8polMask) != 0
 }
 
 // SetEe8pol External Event 8 Polarity
-func (r *registerEecr2Type) SetEe8pol(value bool) {
+func (r *RegisterEecr2Type) SetEe8pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr2FieldEe8polMask)
 	} else {
@@ -2671,12 +2993,12 @@ const (
 )
 
 // GetEe8sns External Event 8 Sensitivity
-func (r *registerEecr2Type) GetEe8sns() uint8 {
+func (r *RegisterEecr2Type) GetEe8sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe8snsMask) >> RegisterEecr2FieldEe8snsShift)
 }
 
 // SetEe8sns External Event 8 Sensitivity
-func (r *registerEecr2Type) SetEe8sns(value uint8) {
+func (r *RegisterEecr2Type) SetEe8sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr2FieldEe8snsMask)|(uint32(value)<<RegisterEecr2FieldEe8snsShift))
 }
 
@@ -2686,12 +3008,12 @@ const (
 )
 
 // GetEe9src External Event 9 Source
-func (r *registerEecr2Type) GetEe9src() uint8 {
+func (r *RegisterEecr2Type) GetEe9src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe9srcMask) >> RegisterEecr2FieldEe9srcShift)
 }
 
 // SetEe9src External Event 9 Source
-func (r *registerEecr2Type) SetEe9src(value uint8) {
+func (r *RegisterEecr2Type) SetEe9src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr2FieldEe9srcMask)|(uint32(value)<<RegisterEecr2FieldEe9srcShift))
 }
 
@@ -2701,12 +3023,12 @@ const (
 )
 
 // GetEe9pol External Event 9 Polarity
-func (r *registerEecr2Type) GetEe9pol() bool {
+func (r *RegisterEecr2Type) GetEe9pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe9polMask) != 0
 }
 
 // SetEe9pol External Event 9 Polarity
-func (r *registerEecr2Type) SetEe9pol(value bool) {
+func (r *RegisterEecr2Type) SetEe9pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr2FieldEe9polMask)
 	} else {
@@ -2720,12 +3042,12 @@ const (
 )
 
 // GetEe9sns External Event 9 Sensitivity
-func (r *registerEecr2Type) GetEe9sns() uint8 {
+func (r *RegisterEecr2Type) GetEe9sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe9snsMask) >> RegisterEecr2FieldEe9snsShift)
 }
 
 // SetEe9sns External Event 9 Sensitivity
-func (r *registerEecr2Type) SetEe9sns(value uint8) {
+func (r *RegisterEecr2Type) SetEe9sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr2FieldEe9snsMask)|(uint32(value)<<RegisterEecr2FieldEe9snsShift))
 }
 
@@ -2735,12 +3057,12 @@ const (
 )
 
 // GetEe10src External Event 10 Source
-func (r *registerEecr2Type) GetEe10src() uint8 {
+func (r *RegisterEecr2Type) GetEe10src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe10srcMask) >> RegisterEecr2FieldEe10srcShift)
 }
 
 // SetEe10src External Event 10 Source
-func (r *registerEecr2Type) SetEe10src(value uint8) {
+func (r *RegisterEecr2Type) SetEe10src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr2FieldEe10srcMask)|(uint32(value)<<RegisterEecr2FieldEe10srcShift))
 }
 
@@ -2750,12 +3072,12 @@ const (
 )
 
 // GetEe10pol External Event 10 Polarity
-func (r *registerEecr2Type) GetEe10pol() bool {
+func (r *RegisterEecr2Type) GetEe10pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe10polMask) != 0
 }
 
 // SetEe10pol External Event 10 Polarity
-func (r *registerEecr2Type) SetEe10pol(value bool) {
+func (r *RegisterEecr2Type) SetEe10pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr2FieldEe10polMask)
 	} else {
@@ -2769,17 +3091,40 @@ const (
 )
 
 // GetEe10sns External Event 10 Sensitivity
-func (r *registerEecr2Type) GetEe10sns() uint8 {
+func (r *RegisterEecr2Type) GetEe10sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr2FieldEe10snsMask) >> RegisterEecr2FieldEe10snsShift)
 }
 
 // SetEe10sns External Event 10 Sensitivity
-func (r *registerEecr2Type) SetEe10sns(value uint8) {
+func (r *RegisterEecr2Type) SetEe10sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr2FieldEe10snsMask)|(uint32(value)<<RegisterEecr2FieldEe10snsShift))
 }
 
-// registerEecr3Type Timer External Event Control Register 3
-type registerEecr3Type uint32
+// RegisterEecr3Type Timer External Event Control Register 3
+type RegisterEecr3Type uint32
+
+func (r *RegisterEecr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterEecr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterEecr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterEecr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterEecr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterEecr3FieldEe6srcShift = 0
@@ -2787,12 +3132,12 @@ const (
 )
 
 // GetEe6src EE6SRC
-func (r *registerEecr3Type) GetEe6src() uint8 {
+func (r *RegisterEecr3Type) GetEe6src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe6srcMask) >> RegisterEecr3FieldEe6srcShift)
 }
 
 // SetEe6src EE6SRC
-func (r *registerEecr3Type) SetEe6src(value uint8) {
+func (r *RegisterEecr3Type) SetEe6src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr3FieldEe6srcMask)|(uint32(value)<<RegisterEecr3FieldEe6srcShift))
 }
 
@@ -2802,12 +3147,12 @@ const (
 )
 
 // GetEe6pol EE6POL
-func (r *registerEecr3Type) GetEe6pol() bool {
+func (r *RegisterEecr3Type) GetEe6pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe6polMask) != 0
 }
 
 // SetEe6pol EE6POL
-func (r *registerEecr3Type) SetEe6pol(value bool) {
+func (r *RegisterEecr3Type) SetEe6pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr3FieldEe6polMask)
 	} else {
@@ -2821,12 +3166,12 @@ const (
 )
 
 // GetEe6sns EE6SNS
-func (r *registerEecr3Type) GetEe6sns() uint8 {
+func (r *RegisterEecr3Type) GetEe6sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe6snsMask) >> RegisterEecr3FieldEe6snsShift)
 }
 
 // SetEe6sns EE6SNS
-func (r *registerEecr3Type) SetEe6sns(value uint8) {
+func (r *RegisterEecr3Type) SetEe6sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr3FieldEe6snsMask)|(uint32(value)<<RegisterEecr3FieldEe6snsShift))
 }
 
@@ -2836,12 +3181,12 @@ const (
 )
 
 // GetEe7src EE7SRC
-func (r *registerEecr3Type) GetEe7src() uint8 {
+func (r *RegisterEecr3Type) GetEe7src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe7srcMask) >> RegisterEecr3FieldEe7srcShift)
 }
 
 // SetEe7src EE7SRC
-func (r *registerEecr3Type) SetEe7src(value uint8) {
+func (r *RegisterEecr3Type) SetEe7src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr3FieldEe7srcMask)|(uint32(value)<<RegisterEecr3FieldEe7srcShift))
 }
 
@@ -2851,12 +3196,12 @@ const (
 )
 
 // GetEe7pol EE7POL
-func (r *registerEecr3Type) GetEe7pol() bool {
+func (r *RegisterEecr3Type) GetEe7pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe7polMask) != 0
 }
 
 // SetEe7pol EE7POL
-func (r *registerEecr3Type) SetEe7pol(value bool) {
+func (r *RegisterEecr3Type) SetEe7pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr3FieldEe7polMask)
 	} else {
@@ -2870,12 +3215,12 @@ const (
 )
 
 // GetEe7sns EE7SNS
-func (r *registerEecr3Type) GetEe7sns() uint8 {
+func (r *RegisterEecr3Type) GetEe7sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe7snsMask) >> RegisterEecr3FieldEe7snsShift)
 }
 
 // SetEe7sns EE7SNS
-func (r *registerEecr3Type) SetEe7sns(value uint8) {
+func (r *RegisterEecr3Type) SetEe7sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr3FieldEe7snsMask)|(uint32(value)<<RegisterEecr3FieldEe7snsShift))
 }
 
@@ -2885,12 +3230,12 @@ const (
 )
 
 // GetEe8src EE8SRC
-func (r *registerEecr3Type) GetEe8src() uint8 {
+func (r *RegisterEecr3Type) GetEe8src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe8srcMask) >> RegisterEecr3FieldEe8srcShift)
 }
 
 // SetEe8src EE8SRC
-func (r *registerEecr3Type) SetEe8src(value uint8) {
+func (r *RegisterEecr3Type) SetEe8src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr3FieldEe8srcMask)|(uint32(value)<<RegisterEecr3FieldEe8srcShift))
 }
 
@@ -2900,12 +3245,12 @@ const (
 )
 
 // GetEe8pol EE8POL
-func (r *registerEecr3Type) GetEe8pol() bool {
+func (r *RegisterEecr3Type) GetEe8pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe8polMask) != 0
 }
 
 // SetEe8pol EE8POL
-func (r *registerEecr3Type) SetEe8pol(value bool) {
+func (r *RegisterEecr3Type) SetEe8pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr3FieldEe8polMask)
 	} else {
@@ -2919,12 +3264,12 @@ const (
 )
 
 // GetEe8sns EE8SNS
-func (r *registerEecr3Type) GetEe8sns() uint8 {
+func (r *RegisterEecr3Type) GetEe8sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe8snsMask) >> RegisterEecr3FieldEe8snsShift)
 }
 
 // SetEe8sns EE8SNS
-func (r *registerEecr3Type) SetEe8sns(value uint8) {
+func (r *RegisterEecr3Type) SetEe8sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr3FieldEe8snsMask)|(uint32(value)<<RegisterEecr3FieldEe8snsShift))
 }
 
@@ -2934,12 +3279,12 @@ const (
 )
 
 // GetEe9src EE9SRC
-func (r *registerEecr3Type) GetEe9src() uint8 {
+func (r *RegisterEecr3Type) GetEe9src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe9srcMask) >> RegisterEecr3FieldEe9srcShift)
 }
 
 // SetEe9src EE9SRC
-func (r *registerEecr3Type) SetEe9src(value uint8) {
+func (r *RegisterEecr3Type) SetEe9src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr3FieldEe9srcMask)|(uint32(value)<<RegisterEecr3FieldEe9srcShift))
 }
 
@@ -2949,12 +3294,12 @@ const (
 )
 
 // GetEe9pol EE9POL
-func (r *registerEecr3Type) GetEe9pol() bool {
+func (r *RegisterEecr3Type) GetEe9pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe9polMask) != 0
 }
 
 // SetEe9pol EE9POL
-func (r *registerEecr3Type) SetEe9pol(value bool) {
+func (r *RegisterEecr3Type) SetEe9pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr3FieldEe9polMask)
 	} else {
@@ -2968,12 +3313,12 @@ const (
 )
 
 // GetEe9sns EE9SNS
-func (r *registerEecr3Type) GetEe9sns() uint8 {
+func (r *RegisterEecr3Type) GetEe9sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe9snsMask) >> RegisterEecr3FieldEe9snsShift)
 }
 
 // SetEe9sns EE9SNS
-func (r *registerEecr3Type) SetEe9sns(value uint8) {
+func (r *RegisterEecr3Type) SetEe9sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr3FieldEe9snsMask)|(uint32(value)<<RegisterEecr3FieldEe9snsShift))
 }
 
@@ -2983,12 +3328,12 @@ const (
 )
 
 // GetEe10src EE10SRC
-func (r *registerEecr3Type) GetEe10src() uint8 {
+func (r *RegisterEecr3Type) GetEe10src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe10srcMask) >> RegisterEecr3FieldEe10srcShift)
 }
 
 // SetEe10src EE10SRC
-func (r *registerEecr3Type) SetEe10src(value uint8) {
+func (r *RegisterEecr3Type) SetEe10src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr3FieldEe10srcMask)|(uint32(value)<<RegisterEecr3FieldEe10srcShift))
 }
 
@@ -2998,12 +3343,12 @@ const (
 )
 
 // GetEe10pol EE10POL
-func (r *registerEecr3Type) GetEe10pol() bool {
+func (r *RegisterEecr3Type) GetEe10pol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe10polMask) != 0
 }
 
 // SetEe10pol EE10POL
-func (r *registerEecr3Type) SetEe10pol(value bool) {
+func (r *RegisterEecr3Type) SetEe10pol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterEecr3FieldEe10polMask)
 	} else {
@@ -3017,17 +3362,40 @@ const (
 )
 
 // GetEe10sns EE10SNS
-func (r *registerEecr3Type) GetEe10sns() uint8 {
+func (r *RegisterEecr3Type) GetEe10sns() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterEecr3FieldEe10snsMask) >> RegisterEecr3FieldEe10snsShift)
 }
 
 // SetEe10sns EE10SNS
-func (r *registerEecr3Type) SetEe10sns(value uint8) {
+func (r *RegisterEecr3Type) SetEe10sns(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterEecr3FieldEe10snsMask)|(uint32(value)<<RegisterEecr3FieldEe10snsShift))
 }
 
-// registerAdc1rType ADC Trigger 1 Register
-type registerAdc1rType uint32
+// RegisterAdc1rType ADC Trigger 1 Register
+type RegisterAdc1rType uint32
+
+func (r *RegisterAdc1rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAdc1rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAdc1rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAdc1rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAdc1rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAdc1rFieldAd1mc1Shift = 0
@@ -3035,12 +3403,12 @@ const (
 )
 
 // GetAd1mc1 ADC trigger 1 on Master Compare 1
-func (r *registerAdc1rType) GetAd1mc1() bool {
+func (r *RegisterAdc1rType) GetAd1mc1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1mc1Mask) != 0
 }
 
 // SetAd1mc1 ADC trigger 1 on Master Compare 1
-func (r *registerAdc1rType) SetAd1mc1(value bool) {
+func (r *RegisterAdc1rType) SetAd1mc1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1mc1Mask)
 	} else {
@@ -3054,12 +3422,12 @@ const (
 )
 
 // GetAd1mc2 ADC trigger 1 on Master Compare 2
-func (r *registerAdc1rType) GetAd1mc2() bool {
+func (r *RegisterAdc1rType) GetAd1mc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1mc2Mask) != 0
 }
 
 // SetAd1mc2 ADC trigger 1 on Master Compare 2
-func (r *registerAdc1rType) SetAd1mc2(value bool) {
+func (r *RegisterAdc1rType) SetAd1mc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1mc2Mask)
 	} else {
@@ -3073,12 +3441,12 @@ const (
 )
 
 // GetAd1mc3 ADC trigger 1 on Master Compare 3
-func (r *registerAdc1rType) GetAd1mc3() bool {
+func (r *RegisterAdc1rType) GetAd1mc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1mc3Mask) != 0
 }
 
 // SetAd1mc3 ADC trigger 1 on Master Compare 3
-func (r *registerAdc1rType) SetAd1mc3(value bool) {
+func (r *RegisterAdc1rType) SetAd1mc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1mc3Mask)
 	} else {
@@ -3092,12 +3460,12 @@ const (
 )
 
 // GetAd1mc4 ADC trigger 1 on Master Compare 4
-func (r *registerAdc1rType) GetAd1mc4() bool {
+func (r *RegisterAdc1rType) GetAd1mc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1mc4Mask) != 0
 }
 
 // SetAd1mc4 ADC trigger 1 on Master Compare 4
-func (r *registerAdc1rType) SetAd1mc4(value bool) {
+func (r *RegisterAdc1rType) SetAd1mc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1mc4Mask)
 	} else {
@@ -3111,12 +3479,12 @@ const (
 )
 
 // GetAd1mper ADC trigger 1 on Master Period
-func (r *registerAdc1rType) GetAd1mper() bool {
+func (r *RegisterAdc1rType) GetAd1mper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1mperMask) != 0
 }
 
 // SetAd1mper ADC trigger 1 on Master Period
-func (r *registerAdc1rType) SetAd1mper(value bool) {
+func (r *RegisterAdc1rType) SetAd1mper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1mperMask)
 	} else {
@@ -3130,12 +3498,12 @@ const (
 )
 
 // GetAd1eev1 ADC trigger 1 on External Event 1
-func (r *registerAdc1rType) GetAd1eev1() bool {
+func (r *RegisterAdc1rType) GetAd1eev1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1eev1Mask) != 0
 }
 
 // SetAd1eev1 ADC trigger 1 on External Event 1
-func (r *registerAdc1rType) SetAd1eev1(value bool) {
+func (r *RegisterAdc1rType) SetAd1eev1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1eev1Mask)
 	} else {
@@ -3149,12 +3517,12 @@ const (
 )
 
 // GetAd1eev2 ADC trigger 1 on External Event 2
-func (r *registerAdc1rType) GetAd1eev2() bool {
+func (r *RegisterAdc1rType) GetAd1eev2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1eev2Mask) != 0
 }
 
 // SetAd1eev2 ADC trigger 1 on External Event 2
-func (r *registerAdc1rType) SetAd1eev2(value bool) {
+func (r *RegisterAdc1rType) SetAd1eev2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1eev2Mask)
 	} else {
@@ -3168,12 +3536,12 @@ const (
 )
 
 // GetAd1eev3 ADC trigger 1 on External Event 3
-func (r *registerAdc1rType) GetAd1eev3() bool {
+func (r *RegisterAdc1rType) GetAd1eev3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1eev3Mask) != 0
 }
 
 // SetAd1eev3 ADC trigger 1 on External Event 3
-func (r *registerAdc1rType) SetAd1eev3(value bool) {
+func (r *RegisterAdc1rType) SetAd1eev3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1eev3Mask)
 	} else {
@@ -3187,12 +3555,12 @@ const (
 )
 
 // GetAd1eev4 ADC trigger 1 on External Event 4
-func (r *registerAdc1rType) GetAd1eev4() bool {
+func (r *RegisterAdc1rType) GetAd1eev4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1eev4Mask) != 0
 }
 
 // SetAd1eev4 ADC trigger 1 on External Event 4
-func (r *registerAdc1rType) SetAd1eev4(value bool) {
+func (r *RegisterAdc1rType) SetAd1eev4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1eev4Mask)
 	} else {
@@ -3206,12 +3574,12 @@ const (
 )
 
 // GetAd1eev5 ADC trigger 1 on External Event 5
-func (r *registerAdc1rType) GetAd1eev5() bool {
+func (r *RegisterAdc1rType) GetAd1eev5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1eev5Mask) != 0
 }
 
 // SetAd1eev5 ADC trigger 1 on External Event 5
-func (r *registerAdc1rType) SetAd1eev5(value bool) {
+func (r *RegisterAdc1rType) SetAd1eev5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1eev5Mask)
 	} else {
@@ -3225,12 +3593,12 @@ const (
 )
 
 // GetAd1tac2 ADC trigger 1 on Timer A compare 2
-func (r *registerAdc1rType) GetAd1tac2() bool {
+func (r *RegisterAdc1rType) GetAd1tac2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tac2Mask) != 0
 }
 
 // SetAd1tac2 ADC trigger 1 on Timer A compare 2
-func (r *registerAdc1rType) SetAd1tac2(value bool) {
+func (r *RegisterAdc1rType) SetAd1tac2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tac2Mask)
 	} else {
@@ -3244,12 +3612,12 @@ const (
 )
 
 // GetAd1tac3 ADC trigger 1 on Timer A compare 3
-func (r *registerAdc1rType) GetAd1tac3() bool {
+func (r *RegisterAdc1rType) GetAd1tac3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tac3Mask) != 0
 }
 
 // SetAd1tac3 ADC trigger 1 on Timer A compare 3
-func (r *registerAdc1rType) SetAd1tac3(value bool) {
+func (r *RegisterAdc1rType) SetAd1tac3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tac3Mask)
 	} else {
@@ -3263,12 +3631,12 @@ const (
 )
 
 // GetAd1tac4 ADC trigger 1 on Timer A compare 4
-func (r *registerAdc1rType) GetAd1tac4() bool {
+func (r *RegisterAdc1rType) GetAd1tac4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tac4Mask) != 0
 }
 
 // SetAd1tac4 ADC trigger 1 on Timer A compare 4
-func (r *registerAdc1rType) SetAd1tac4(value bool) {
+func (r *RegisterAdc1rType) SetAd1tac4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tac4Mask)
 	} else {
@@ -3282,12 +3650,12 @@ const (
 )
 
 // GetAd1taper ADC trigger 1 on Timer A Period
-func (r *registerAdc1rType) GetAd1taper() bool {
+func (r *RegisterAdc1rType) GetAd1taper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1taperMask) != 0
 }
 
 // SetAd1taper ADC trigger 1 on Timer A Period
-func (r *registerAdc1rType) SetAd1taper(value bool) {
+func (r *RegisterAdc1rType) SetAd1taper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1taperMask)
 	} else {
@@ -3301,12 +3669,12 @@ const (
 )
 
 // GetAd1tarst ADC trigger 1 on Timer A Reset
-func (r *registerAdc1rType) GetAd1tarst() bool {
+func (r *RegisterAdc1rType) GetAd1tarst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tarstMask) != 0
 }
 
 // SetAd1tarst ADC trigger 1 on Timer A Reset
-func (r *registerAdc1rType) SetAd1tarst(value bool) {
+func (r *RegisterAdc1rType) SetAd1tarst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tarstMask)
 	} else {
@@ -3320,12 +3688,12 @@ const (
 )
 
 // GetAd1tbc2 ADC trigger 1 on Timer B compare 2
-func (r *registerAdc1rType) GetAd1tbc2() bool {
+func (r *RegisterAdc1rType) GetAd1tbc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tbc2Mask) != 0
 }
 
 // SetAd1tbc2 ADC trigger 1 on Timer B compare 2
-func (r *registerAdc1rType) SetAd1tbc2(value bool) {
+func (r *RegisterAdc1rType) SetAd1tbc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tbc2Mask)
 	} else {
@@ -3339,12 +3707,12 @@ const (
 )
 
 // GetAd1tbc3 ADC trigger 1 on Timer B compare 3
-func (r *registerAdc1rType) GetAd1tbc3() bool {
+func (r *RegisterAdc1rType) GetAd1tbc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tbc3Mask) != 0
 }
 
 // SetAd1tbc3 ADC trigger 1 on Timer B compare 3
-func (r *registerAdc1rType) SetAd1tbc3(value bool) {
+func (r *RegisterAdc1rType) SetAd1tbc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tbc3Mask)
 	} else {
@@ -3358,12 +3726,12 @@ const (
 )
 
 // GetAd1tbc4 ADC trigger 1 on Timer B compare 4
-func (r *registerAdc1rType) GetAd1tbc4() bool {
+func (r *RegisterAdc1rType) GetAd1tbc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tbc4Mask) != 0
 }
 
 // SetAd1tbc4 ADC trigger 1 on Timer B compare 4
-func (r *registerAdc1rType) SetAd1tbc4(value bool) {
+func (r *RegisterAdc1rType) SetAd1tbc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tbc4Mask)
 	} else {
@@ -3377,12 +3745,12 @@ const (
 )
 
 // GetAd1tbper ADC trigger 1 on Timer B Period
-func (r *registerAdc1rType) GetAd1tbper() bool {
+func (r *RegisterAdc1rType) GetAd1tbper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tbperMask) != 0
 }
 
 // SetAd1tbper ADC trigger 1 on Timer B Period
-func (r *registerAdc1rType) SetAd1tbper(value bool) {
+func (r *RegisterAdc1rType) SetAd1tbper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tbperMask)
 	} else {
@@ -3396,12 +3764,12 @@ const (
 )
 
 // GetAd1tbrst ADC trigger 1 on Timer B Reset
-func (r *registerAdc1rType) GetAd1tbrst() bool {
+func (r *RegisterAdc1rType) GetAd1tbrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tbrstMask) != 0
 }
 
 // SetAd1tbrst ADC trigger 1 on Timer B Reset
-func (r *registerAdc1rType) SetAd1tbrst(value bool) {
+func (r *RegisterAdc1rType) SetAd1tbrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tbrstMask)
 	} else {
@@ -3415,12 +3783,12 @@ const (
 )
 
 // GetAd1tcc2 ADC trigger 1 on Timer C compare 2
-func (r *registerAdc1rType) GetAd1tcc2() bool {
+func (r *RegisterAdc1rType) GetAd1tcc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tcc2Mask) != 0
 }
 
 // SetAd1tcc2 ADC trigger 1 on Timer C compare 2
-func (r *registerAdc1rType) SetAd1tcc2(value bool) {
+func (r *RegisterAdc1rType) SetAd1tcc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tcc2Mask)
 	} else {
@@ -3434,12 +3802,12 @@ const (
 )
 
 // GetAd1tcc3 ADC trigger 1 on Timer C compare 3
-func (r *registerAdc1rType) GetAd1tcc3() bool {
+func (r *RegisterAdc1rType) GetAd1tcc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tcc3Mask) != 0
 }
 
 // SetAd1tcc3 ADC trigger 1 on Timer C compare 3
-func (r *registerAdc1rType) SetAd1tcc3(value bool) {
+func (r *RegisterAdc1rType) SetAd1tcc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tcc3Mask)
 	} else {
@@ -3453,12 +3821,12 @@ const (
 )
 
 // GetAd1tcc4 ADC trigger 1 on Timer C compare 4
-func (r *registerAdc1rType) GetAd1tcc4() bool {
+func (r *RegisterAdc1rType) GetAd1tcc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tcc4Mask) != 0
 }
 
 // SetAd1tcc4 ADC trigger 1 on Timer C compare 4
-func (r *registerAdc1rType) SetAd1tcc4(value bool) {
+func (r *RegisterAdc1rType) SetAd1tcc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tcc4Mask)
 	} else {
@@ -3472,12 +3840,12 @@ const (
 )
 
 // GetAd1tcper ADC trigger 1 on Timer C Period
-func (r *registerAdc1rType) GetAd1tcper() bool {
+func (r *RegisterAdc1rType) GetAd1tcper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tcperMask) != 0
 }
 
 // SetAd1tcper ADC trigger 1 on Timer C Period
-func (r *registerAdc1rType) SetAd1tcper(value bool) {
+func (r *RegisterAdc1rType) SetAd1tcper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tcperMask)
 	} else {
@@ -3491,12 +3859,12 @@ const (
 )
 
 // GetAd1tdc2 ADC trigger 1 on Timer D compare 2
-func (r *registerAdc1rType) GetAd1tdc2() bool {
+func (r *RegisterAdc1rType) GetAd1tdc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tdc2Mask) != 0
 }
 
 // SetAd1tdc2 ADC trigger 1 on Timer D compare 2
-func (r *registerAdc1rType) SetAd1tdc2(value bool) {
+func (r *RegisterAdc1rType) SetAd1tdc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tdc2Mask)
 	} else {
@@ -3510,12 +3878,12 @@ const (
 )
 
 // GetAd1tdc3 ADC trigger 1 on Timer D compare 3
-func (r *registerAdc1rType) GetAd1tdc3() bool {
+func (r *RegisterAdc1rType) GetAd1tdc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tdc3Mask) != 0
 }
 
 // SetAd1tdc3 ADC trigger 1 on Timer D compare 3
-func (r *registerAdc1rType) SetAd1tdc3(value bool) {
+func (r *RegisterAdc1rType) SetAd1tdc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tdc3Mask)
 	} else {
@@ -3529,12 +3897,12 @@ const (
 )
 
 // GetAd1tdc4 ADC trigger 1 on Timer D compare 4
-func (r *registerAdc1rType) GetAd1tdc4() bool {
+func (r *RegisterAdc1rType) GetAd1tdc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tdc4Mask) != 0
 }
 
 // SetAd1tdc4 ADC trigger 1 on Timer D compare 4
-func (r *registerAdc1rType) SetAd1tdc4(value bool) {
+func (r *RegisterAdc1rType) SetAd1tdc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tdc4Mask)
 	} else {
@@ -3548,12 +3916,12 @@ const (
 )
 
 // GetAd1tdper ADC trigger 1 on Timer D Period
-func (r *registerAdc1rType) GetAd1tdper() bool {
+func (r *RegisterAdc1rType) GetAd1tdper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tdperMask) != 0
 }
 
 // SetAd1tdper ADC trigger 1 on Timer D Period
-func (r *registerAdc1rType) SetAd1tdper(value bool) {
+func (r *RegisterAdc1rType) SetAd1tdper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tdperMask)
 	} else {
@@ -3567,12 +3935,12 @@ const (
 )
 
 // GetAd1tec2 ADC trigger 1 on Timer E compare 2
-func (r *registerAdc1rType) GetAd1tec2() bool {
+func (r *RegisterAdc1rType) GetAd1tec2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tec2Mask) != 0
 }
 
 // SetAd1tec2 ADC trigger 1 on Timer E compare 2
-func (r *registerAdc1rType) SetAd1tec2(value bool) {
+func (r *RegisterAdc1rType) SetAd1tec2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tec2Mask)
 	} else {
@@ -3586,12 +3954,12 @@ const (
 )
 
 // GetAd1tec3 ADC trigger 1 on Timer E compare 3
-func (r *registerAdc1rType) GetAd1tec3() bool {
+func (r *RegisterAdc1rType) GetAd1tec3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tec3Mask) != 0
 }
 
 // SetAd1tec3 ADC trigger 1 on Timer E compare 3
-func (r *registerAdc1rType) SetAd1tec3(value bool) {
+func (r *RegisterAdc1rType) SetAd1tec3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tec3Mask)
 	} else {
@@ -3605,12 +3973,12 @@ const (
 )
 
 // GetAd1tec4 ADC trigger 1 on Timer E compare 4
-func (r *registerAdc1rType) GetAd1tec4() bool {
+func (r *RegisterAdc1rType) GetAd1tec4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1tec4Mask) != 0
 }
 
 // SetAd1tec4 ADC trigger 1 on Timer E compare 4
-func (r *registerAdc1rType) SetAd1tec4(value bool) {
+func (r *RegisterAdc1rType) SetAd1tec4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1tec4Mask)
 	} else {
@@ -3624,12 +3992,12 @@ const (
 )
 
 // GetAd1teper ADC trigger 1 on Timer E Period
-func (r *registerAdc1rType) GetAd1teper() bool {
+func (r *RegisterAdc1rType) GetAd1teper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc1rFieldAd1teperMask) != 0
 }
 
 // SetAd1teper ADC trigger 1 on Timer E Period
-func (r *registerAdc1rType) SetAd1teper(value bool) {
+func (r *RegisterAdc1rType) SetAd1teper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc1rFieldAd1teperMask)
 	} else {
@@ -3637,8 +4005,31 @@ func (r *registerAdc1rType) SetAd1teper(value bool) {
 	}
 }
 
-// registerAdc2rType ADC Trigger 2 Register
-type registerAdc2rType uint32
+// RegisterAdc2rType ADC Trigger 2 Register
+type RegisterAdc2rType uint32
+
+func (r *RegisterAdc2rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAdc2rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAdc2rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAdc2rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAdc2rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAdc2rFieldAd2mc1Shift = 0
@@ -3646,12 +4037,12 @@ const (
 )
 
 // GetAd2mc1 ADC trigger 2 on Master Compare 1
-func (r *registerAdc2rType) GetAd2mc1() bool {
+func (r *RegisterAdc2rType) GetAd2mc1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2mc1Mask) != 0
 }
 
 // SetAd2mc1 ADC trigger 2 on Master Compare 1
-func (r *registerAdc2rType) SetAd2mc1(value bool) {
+func (r *RegisterAdc2rType) SetAd2mc1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2mc1Mask)
 	} else {
@@ -3665,12 +4056,12 @@ const (
 )
 
 // GetAd2mc2 ADC trigger 2 on Master Compare 2
-func (r *registerAdc2rType) GetAd2mc2() bool {
+func (r *RegisterAdc2rType) GetAd2mc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2mc2Mask) != 0
 }
 
 // SetAd2mc2 ADC trigger 2 on Master Compare 2
-func (r *registerAdc2rType) SetAd2mc2(value bool) {
+func (r *RegisterAdc2rType) SetAd2mc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2mc2Mask)
 	} else {
@@ -3684,12 +4075,12 @@ const (
 )
 
 // GetAd2mc3 ADC trigger 2 on Master Compare 3
-func (r *registerAdc2rType) GetAd2mc3() bool {
+func (r *RegisterAdc2rType) GetAd2mc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2mc3Mask) != 0
 }
 
 // SetAd2mc3 ADC trigger 2 on Master Compare 3
-func (r *registerAdc2rType) SetAd2mc3(value bool) {
+func (r *RegisterAdc2rType) SetAd2mc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2mc3Mask)
 	} else {
@@ -3703,12 +4094,12 @@ const (
 )
 
 // GetAd2mc4 ADC trigger 2 on Master Compare 4
-func (r *registerAdc2rType) GetAd2mc4() bool {
+func (r *RegisterAdc2rType) GetAd2mc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2mc4Mask) != 0
 }
 
 // SetAd2mc4 ADC trigger 2 on Master Compare 4
-func (r *registerAdc2rType) SetAd2mc4(value bool) {
+func (r *RegisterAdc2rType) SetAd2mc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2mc4Mask)
 	} else {
@@ -3722,12 +4113,12 @@ const (
 )
 
 // GetAd2mper ADC trigger 2 on Master Period
-func (r *registerAdc2rType) GetAd2mper() bool {
+func (r *RegisterAdc2rType) GetAd2mper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2mperMask) != 0
 }
 
 // SetAd2mper ADC trigger 2 on Master Period
-func (r *registerAdc2rType) SetAd2mper(value bool) {
+func (r *RegisterAdc2rType) SetAd2mper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2mperMask)
 	} else {
@@ -3741,12 +4132,12 @@ const (
 )
 
 // GetAd2eev6 ADC trigger 2 on External Event 6
-func (r *registerAdc2rType) GetAd2eev6() bool {
+func (r *RegisterAdc2rType) GetAd2eev6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2eev6Mask) != 0
 }
 
 // SetAd2eev6 ADC trigger 2 on External Event 6
-func (r *registerAdc2rType) SetAd2eev6(value bool) {
+func (r *RegisterAdc2rType) SetAd2eev6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2eev6Mask)
 	} else {
@@ -3760,12 +4151,12 @@ const (
 )
 
 // GetAd2eev7 ADC trigger 2 on External Event 7
-func (r *registerAdc2rType) GetAd2eev7() bool {
+func (r *RegisterAdc2rType) GetAd2eev7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2eev7Mask) != 0
 }
 
 // SetAd2eev7 ADC trigger 2 on External Event 7
-func (r *registerAdc2rType) SetAd2eev7(value bool) {
+func (r *RegisterAdc2rType) SetAd2eev7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2eev7Mask)
 	} else {
@@ -3779,12 +4170,12 @@ const (
 )
 
 // GetAd2eev8 ADC trigger 2 on External Event 8
-func (r *registerAdc2rType) GetAd2eev8() bool {
+func (r *RegisterAdc2rType) GetAd2eev8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2eev8Mask) != 0
 }
 
 // SetAd2eev8 ADC trigger 2 on External Event 8
-func (r *registerAdc2rType) SetAd2eev8(value bool) {
+func (r *RegisterAdc2rType) SetAd2eev8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2eev8Mask)
 	} else {
@@ -3798,12 +4189,12 @@ const (
 )
 
 // GetAd2eev9 ADC trigger 2 on External Event 9
-func (r *registerAdc2rType) GetAd2eev9() bool {
+func (r *RegisterAdc2rType) GetAd2eev9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2eev9Mask) != 0
 }
 
 // SetAd2eev9 ADC trigger 2 on External Event 9
-func (r *registerAdc2rType) SetAd2eev9(value bool) {
+func (r *RegisterAdc2rType) SetAd2eev9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2eev9Mask)
 	} else {
@@ -3817,12 +4208,12 @@ const (
 )
 
 // GetAd2eev10 ADC trigger 2 on External Event 10
-func (r *registerAdc2rType) GetAd2eev10() bool {
+func (r *RegisterAdc2rType) GetAd2eev10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2eev10Mask) != 0
 }
 
 // SetAd2eev10 ADC trigger 2 on External Event 10
-func (r *registerAdc2rType) SetAd2eev10(value bool) {
+func (r *RegisterAdc2rType) SetAd2eev10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2eev10Mask)
 	} else {
@@ -3836,12 +4227,12 @@ const (
 )
 
 // GetAd2tac2 ADC trigger 2 on Timer A compare 2
-func (r *registerAdc2rType) GetAd2tac2() bool {
+func (r *RegisterAdc2rType) GetAd2tac2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tac2Mask) != 0
 }
 
 // SetAd2tac2 ADC trigger 2 on Timer A compare 2
-func (r *registerAdc2rType) SetAd2tac2(value bool) {
+func (r *RegisterAdc2rType) SetAd2tac2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tac2Mask)
 	} else {
@@ -3855,12 +4246,12 @@ const (
 )
 
 // GetAd2tac3 ADC trigger 2 on Timer A compare 3
-func (r *registerAdc2rType) GetAd2tac3() bool {
+func (r *RegisterAdc2rType) GetAd2tac3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tac3Mask) != 0
 }
 
 // SetAd2tac3 ADC trigger 2 on Timer A compare 3
-func (r *registerAdc2rType) SetAd2tac3(value bool) {
+func (r *RegisterAdc2rType) SetAd2tac3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tac3Mask)
 	} else {
@@ -3874,12 +4265,12 @@ const (
 )
 
 // GetAd2tac4 ADC trigger 2 on Timer A compare 4
-func (r *registerAdc2rType) GetAd2tac4() bool {
+func (r *RegisterAdc2rType) GetAd2tac4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tac4Mask) != 0
 }
 
 // SetAd2tac4 ADC trigger 2 on Timer A compare 4
-func (r *registerAdc2rType) SetAd2tac4(value bool) {
+func (r *RegisterAdc2rType) SetAd2tac4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tac4Mask)
 	} else {
@@ -3893,12 +4284,12 @@ const (
 )
 
 // GetAd2taper ADC trigger 2 on Timer A Period
-func (r *registerAdc2rType) GetAd2taper() bool {
+func (r *RegisterAdc2rType) GetAd2taper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2taperMask) != 0
 }
 
 // SetAd2taper ADC trigger 2 on Timer A Period
-func (r *registerAdc2rType) SetAd2taper(value bool) {
+func (r *RegisterAdc2rType) SetAd2taper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2taperMask)
 	} else {
@@ -3912,12 +4303,12 @@ const (
 )
 
 // GetAd2tbc2 ADC trigger 2 on Timer B compare 2
-func (r *registerAdc2rType) GetAd2tbc2() bool {
+func (r *RegisterAdc2rType) GetAd2tbc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tbc2Mask) != 0
 }
 
 // SetAd2tbc2 ADC trigger 2 on Timer B compare 2
-func (r *registerAdc2rType) SetAd2tbc2(value bool) {
+func (r *RegisterAdc2rType) SetAd2tbc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tbc2Mask)
 	} else {
@@ -3931,12 +4322,12 @@ const (
 )
 
 // GetAd2tbc3 ADC trigger 2 on Timer B compare 3
-func (r *registerAdc2rType) GetAd2tbc3() bool {
+func (r *RegisterAdc2rType) GetAd2tbc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tbc3Mask) != 0
 }
 
 // SetAd2tbc3 ADC trigger 2 on Timer B compare 3
-func (r *registerAdc2rType) SetAd2tbc3(value bool) {
+func (r *RegisterAdc2rType) SetAd2tbc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tbc3Mask)
 	} else {
@@ -3950,12 +4341,12 @@ const (
 )
 
 // GetAd2tbc4 ADC trigger 2 on Timer B compare 4
-func (r *registerAdc2rType) GetAd2tbc4() bool {
+func (r *RegisterAdc2rType) GetAd2tbc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tbc4Mask) != 0
 }
 
 // SetAd2tbc4 ADC trigger 2 on Timer B compare 4
-func (r *registerAdc2rType) SetAd2tbc4(value bool) {
+func (r *RegisterAdc2rType) SetAd2tbc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tbc4Mask)
 	} else {
@@ -3969,12 +4360,12 @@ const (
 )
 
 // GetAd2tbper ADC trigger 2 on Timer B Period
-func (r *registerAdc2rType) GetAd2tbper() bool {
+func (r *RegisterAdc2rType) GetAd2tbper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tbperMask) != 0
 }
 
 // SetAd2tbper ADC trigger 2 on Timer B Period
-func (r *registerAdc2rType) SetAd2tbper(value bool) {
+func (r *RegisterAdc2rType) SetAd2tbper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tbperMask)
 	} else {
@@ -3988,12 +4379,12 @@ const (
 )
 
 // GetAd2tcc2 ADC trigger 2 on Timer C compare 2
-func (r *registerAdc2rType) GetAd2tcc2() bool {
+func (r *RegisterAdc2rType) GetAd2tcc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tcc2Mask) != 0
 }
 
 // SetAd2tcc2 ADC trigger 2 on Timer C compare 2
-func (r *registerAdc2rType) SetAd2tcc2(value bool) {
+func (r *RegisterAdc2rType) SetAd2tcc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tcc2Mask)
 	} else {
@@ -4007,12 +4398,12 @@ const (
 )
 
 // GetAd2tcc3 ADC trigger 2 on Timer C compare 3
-func (r *registerAdc2rType) GetAd2tcc3() bool {
+func (r *RegisterAdc2rType) GetAd2tcc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tcc3Mask) != 0
 }
 
 // SetAd2tcc3 ADC trigger 2 on Timer C compare 3
-func (r *registerAdc2rType) SetAd2tcc3(value bool) {
+func (r *RegisterAdc2rType) SetAd2tcc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tcc3Mask)
 	} else {
@@ -4026,12 +4417,12 @@ const (
 )
 
 // GetAd2tcc4 ADC trigger 2 on Timer C compare 4
-func (r *registerAdc2rType) GetAd2tcc4() bool {
+func (r *RegisterAdc2rType) GetAd2tcc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tcc4Mask) != 0
 }
 
 // SetAd2tcc4 ADC trigger 2 on Timer C compare 4
-func (r *registerAdc2rType) SetAd2tcc4(value bool) {
+func (r *RegisterAdc2rType) SetAd2tcc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tcc4Mask)
 	} else {
@@ -4045,12 +4436,12 @@ const (
 )
 
 // GetAd2tcper ADC trigger 2 on Timer C Period
-func (r *registerAdc2rType) GetAd2tcper() bool {
+func (r *RegisterAdc2rType) GetAd2tcper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tcperMask) != 0
 }
 
 // SetAd2tcper ADC trigger 2 on Timer C Period
-func (r *registerAdc2rType) SetAd2tcper(value bool) {
+func (r *RegisterAdc2rType) SetAd2tcper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tcperMask)
 	} else {
@@ -4064,12 +4455,12 @@ const (
 )
 
 // GetAd2tcrst ADC trigger 2 on Timer C Reset
-func (r *registerAdc2rType) GetAd2tcrst() bool {
+func (r *RegisterAdc2rType) GetAd2tcrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tcrstMask) != 0
 }
 
 // SetAd2tcrst ADC trigger 2 on Timer C Reset
-func (r *registerAdc2rType) SetAd2tcrst(value bool) {
+func (r *RegisterAdc2rType) SetAd2tcrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tcrstMask)
 	} else {
@@ -4083,12 +4474,12 @@ const (
 )
 
 // GetAd2tdc2 ADC trigger 2 on Timer D compare 2
-func (r *registerAdc2rType) GetAd2tdc2() bool {
+func (r *RegisterAdc2rType) GetAd2tdc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tdc2Mask) != 0
 }
 
 // SetAd2tdc2 ADC trigger 2 on Timer D compare 2
-func (r *registerAdc2rType) SetAd2tdc2(value bool) {
+func (r *RegisterAdc2rType) SetAd2tdc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tdc2Mask)
 	} else {
@@ -4102,12 +4493,12 @@ const (
 )
 
 // GetAd2tdc3 ADC trigger 2 on Timer D compare 3
-func (r *registerAdc2rType) GetAd2tdc3() bool {
+func (r *RegisterAdc2rType) GetAd2tdc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tdc3Mask) != 0
 }
 
 // SetAd2tdc3 ADC trigger 2 on Timer D compare 3
-func (r *registerAdc2rType) SetAd2tdc3(value bool) {
+func (r *RegisterAdc2rType) SetAd2tdc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tdc3Mask)
 	} else {
@@ -4121,12 +4512,12 @@ const (
 )
 
 // GetAd2tdc4 ADC trigger 2 on Timer D compare 4
-func (r *registerAdc2rType) GetAd2tdc4() bool {
+func (r *RegisterAdc2rType) GetAd2tdc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tdc4Mask) != 0
 }
 
 // SetAd2tdc4 ADC trigger 2 on Timer D compare 4
-func (r *registerAdc2rType) SetAd2tdc4(value bool) {
+func (r *RegisterAdc2rType) SetAd2tdc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tdc4Mask)
 	} else {
@@ -4140,12 +4531,12 @@ const (
 )
 
 // GetAd2tdper ADC trigger 2 on Timer D Period
-func (r *registerAdc2rType) GetAd2tdper() bool {
+func (r *RegisterAdc2rType) GetAd2tdper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tdperMask) != 0
 }
 
 // SetAd2tdper ADC trigger 2 on Timer D Period
-func (r *registerAdc2rType) SetAd2tdper(value bool) {
+func (r *RegisterAdc2rType) SetAd2tdper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tdperMask)
 	} else {
@@ -4159,12 +4550,12 @@ const (
 )
 
 // GetAd2tdrst ADC trigger 2 on Timer D Reset
-func (r *registerAdc2rType) GetAd2tdrst() bool {
+func (r *RegisterAdc2rType) GetAd2tdrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tdrstMask) != 0
 }
 
 // SetAd2tdrst ADC trigger 2 on Timer D Reset
-func (r *registerAdc2rType) SetAd2tdrst(value bool) {
+func (r *RegisterAdc2rType) SetAd2tdrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tdrstMask)
 	} else {
@@ -4178,12 +4569,12 @@ const (
 )
 
 // GetAd2tec2 ADC trigger 2 on Timer E compare 2
-func (r *registerAdc2rType) GetAd2tec2() bool {
+func (r *RegisterAdc2rType) GetAd2tec2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tec2Mask) != 0
 }
 
 // SetAd2tec2 ADC trigger 2 on Timer E compare 2
-func (r *registerAdc2rType) SetAd2tec2(value bool) {
+func (r *RegisterAdc2rType) SetAd2tec2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tec2Mask)
 	} else {
@@ -4197,12 +4588,12 @@ const (
 )
 
 // GetAd2tec3 ADC trigger 2 on Timer E compare 3
-func (r *registerAdc2rType) GetAd2tec3() bool {
+func (r *RegisterAdc2rType) GetAd2tec3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tec3Mask) != 0
 }
 
 // SetAd2tec3 ADC trigger 2 on Timer E compare 3
-func (r *registerAdc2rType) SetAd2tec3(value bool) {
+func (r *RegisterAdc2rType) SetAd2tec3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tec3Mask)
 	} else {
@@ -4216,12 +4607,12 @@ const (
 )
 
 // GetAd2tec4 ADC trigger 2 on Timer E compare 4
-func (r *registerAdc2rType) GetAd2tec4() bool {
+func (r *RegisterAdc2rType) GetAd2tec4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2tec4Mask) != 0
 }
 
 // SetAd2tec4 ADC trigger 2 on Timer E compare 4
-func (r *registerAdc2rType) SetAd2tec4(value bool) {
+func (r *RegisterAdc2rType) SetAd2tec4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2tec4Mask)
 	} else {
@@ -4235,12 +4626,12 @@ const (
 )
 
 // GetAd2terst ADC trigger 2 on Timer E Reset
-func (r *registerAdc2rType) GetAd2terst() bool {
+func (r *RegisterAdc2rType) GetAd2terst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc2rFieldAd2terstMask) != 0
 }
 
 // SetAd2terst ADC trigger 2 on Timer E Reset
-func (r *registerAdc2rType) SetAd2terst(value bool) {
+func (r *RegisterAdc2rType) SetAd2terst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc2rFieldAd2terstMask)
 	} else {
@@ -4248,8 +4639,31 @@ func (r *registerAdc2rType) SetAd2terst(value bool) {
 	}
 }
 
-// registerAdc3rType ADC Trigger 3 Register
-type registerAdc3rType uint32
+// RegisterAdc3rType ADC Trigger 3 Register
+type RegisterAdc3rType uint32
+
+func (r *RegisterAdc3rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAdc3rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAdc3rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAdc3rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAdc3rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAdc3rFieldAd1mc1Shift = 0
@@ -4257,12 +4671,12 @@ const (
 )
 
 // GetAd1mc1 AD1MC1
-func (r *registerAdc3rType) GetAd1mc1() bool {
+func (r *RegisterAdc3rType) GetAd1mc1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1mc1Mask) != 0
 }
 
 // SetAd1mc1 AD1MC1
-func (r *registerAdc3rType) SetAd1mc1(value bool) {
+func (r *RegisterAdc3rType) SetAd1mc1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1mc1Mask)
 	} else {
@@ -4276,12 +4690,12 @@ const (
 )
 
 // GetAd1mc2 AD1MC2
-func (r *registerAdc3rType) GetAd1mc2() bool {
+func (r *RegisterAdc3rType) GetAd1mc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1mc2Mask) != 0
 }
 
 // SetAd1mc2 AD1MC2
-func (r *registerAdc3rType) SetAd1mc2(value bool) {
+func (r *RegisterAdc3rType) SetAd1mc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1mc2Mask)
 	} else {
@@ -4295,12 +4709,12 @@ const (
 )
 
 // GetAd1mc3 AD1MC3
-func (r *registerAdc3rType) GetAd1mc3() bool {
+func (r *RegisterAdc3rType) GetAd1mc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1mc3Mask) != 0
 }
 
 // SetAd1mc3 AD1MC3
-func (r *registerAdc3rType) SetAd1mc3(value bool) {
+func (r *RegisterAdc3rType) SetAd1mc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1mc3Mask)
 	} else {
@@ -4314,12 +4728,12 @@ const (
 )
 
 // GetAd1mc4 AD1MC4
-func (r *registerAdc3rType) GetAd1mc4() bool {
+func (r *RegisterAdc3rType) GetAd1mc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1mc4Mask) != 0
 }
 
 // SetAd1mc4 AD1MC4
-func (r *registerAdc3rType) SetAd1mc4(value bool) {
+func (r *RegisterAdc3rType) SetAd1mc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1mc4Mask)
 	} else {
@@ -4333,12 +4747,12 @@ const (
 )
 
 // GetAd1mper AD1MPER
-func (r *registerAdc3rType) GetAd1mper() bool {
+func (r *RegisterAdc3rType) GetAd1mper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1mperMask) != 0
 }
 
 // SetAd1mper AD1MPER
-func (r *registerAdc3rType) SetAd1mper(value bool) {
+func (r *RegisterAdc3rType) SetAd1mper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1mperMask)
 	} else {
@@ -4352,12 +4766,12 @@ const (
 )
 
 // GetAd1eev1 AD1EEV1
-func (r *registerAdc3rType) GetAd1eev1() bool {
+func (r *RegisterAdc3rType) GetAd1eev1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1eev1Mask) != 0
 }
 
 // SetAd1eev1 AD1EEV1
-func (r *registerAdc3rType) SetAd1eev1(value bool) {
+func (r *RegisterAdc3rType) SetAd1eev1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1eev1Mask)
 	} else {
@@ -4371,12 +4785,12 @@ const (
 )
 
 // GetAd1eev2 AD1EEV2
-func (r *registerAdc3rType) GetAd1eev2() bool {
+func (r *RegisterAdc3rType) GetAd1eev2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1eev2Mask) != 0
 }
 
 // SetAd1eev2 AD1EEV2
-func (r *registerAdc3rType) SetAd1eev2(value bool) {
+func (r *RegisterAdc3rType) SetAd1eev2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1eev2Mask)
 	} else {
@@ -4390,12 +4804,12 @@ const (
 )
 
 // GetAd1eev3 AD1EEV3
-func (r *registerAdc3rType) GetAd1eev3() bool {
+func (r *RegisterAdc3rType) GetAd1eev3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1eev3Mask) != 0
 }
 
 // SetAd1eev3 AD1EEV3
-func (r *registerAdc3rType) SetAd1eev3(value bool) {
+func (r *RegisterAdc3rType) SetAd1eev3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1eev3Mask)
 	} else {
@@ -4409,12 +4823,12 @@ const (
 )
 
 // GetAd1eev4 AD1EEV4
-func (r *registerAdc3rType) GetAd1eev4() bool {
+func (r *RegisterAdc3rType) GetAd1eev4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1eev4Mask) != 0
 }
 
 // SetAd1eev4 AD1EEV4
-func (r *registerAdc3rType) SetAd1eev4(value bool) {
+func (r *RegisterAdc3rType) SetAd1eev4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1eev4Mask)
 	} else {
@@ -4428,12 +4842,12 @@ const (
 )
 
 // GetAd1eev5 AD1EEV5
-func (r *registerAdc3rType) GetAd1eev5() bool {
+func (r *RegisterAdc3rType) GetAd1eev5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1eev5Mask) != 0
 }
 
 // SetAd1eev5 AD1EEV5
-func (r *registerAdc3rType) SetAd1eev5(value bool) {
+func (r *RegisterAdc3rType) SetAd1eev5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1eev5Mask)
 	} else {
@@ -4447,12 +4861,12 @@ const (
 )
 
 // GetAd1tac2 AD1TAC2
-func (r *registerAdc3rType) GetAd1tac2() bool {
+func (r *RegisterAdc3rType) GetAd1tac2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tac2Mask) != 0
 }
 
 // SetAd1tac2 AD1TAC2
-func (r *registerAdc3rType) SetAd1tac2(value bool) {
+func (r *RegisterAdc3rType) SetAd1tac2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tac2Mask)
 	} else {
@@ -4466,12 +4880,12 @@ const (
 )
 
 // GetAd1tac3 AD1TAC3
-func (r *registerAdc3rType) GetAd1tac3() bool {
+func (r *RegisterAdc3rType) GetAd1tac3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tac3Mask) != 0
 }
 
 // SetAd1tac3 AD1TAC3
-func (r *registerAdc3rType) SetAd1tac3(value bool) {
+func (r *RegisterAdc3rType) SetAd1tac3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tac3Mask)
 	} else {
@@ -4485,12 +4899,12 @@ const (
 )
 
 // GetAd1tac4 AD1TAC4
-func (r *registerAdc3rType) GetAd1tac4() bool {
+func (r *RegisterAdc3rType) GetAd1tac4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tac4Mask) != 0
 }
 
 // SetAd1tac4 AD1TAC4
-func (r *registerAdc3rType) SetAd1tac4(value bool) {
+func (r *RegisterAdc3rType) SetAd1tac4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tac4Mask)
 	} else {
@@ -4504,12 +4918,12 @@ const (
 )
 
 // GetAd1taper AD1TAPER
-func (r *registerAdc3rType) GetAd1taper() bool {
+func (r *RegisterAdc3rType) GetAd1taper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1taperMask) != 0
 }
 
 // SetAd1taper AD1TAPER
-func (r *registerAdc3rType) SetAd1taper(value bool) {
+func (r *RegisterAdc3rType) SetAd1taper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1taperMask)
 	} else {
@@ -4523,12 +4937,12 @@ const (
 )
 
 // GetAd1tarst AD1TARST
-func (r *registerAdc3rType) GetAd1tarst() bool {
+func (r *RegisterAdc3rType) GetAd1tarst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tarstMask) != 0
 }
 
 // SetAd1tarst AD1TARST
-func (r *registerAdc3rType) SetAd1tarst(value bool) {
+func (r *RegisterAdc3rType) SetAd1tarst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tarstMask)
 	} else {
@@ -4542,12 +4956,12 @@ const (
 )
 
 // GetAd1tbc2 AD1TBC2
-func (r *registerAdc3rType) GetAd1tbc2() bool {
+func (r *RegisterAdc3rType) GetAd1tbc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tbc2Mask) != 0
 }
 
 // SetAd1tbc2 AD1TBC2
-func (r *registerAdc3rType) SetAd1tbc2(value bool) {
+func (r *RegisterAdc3rType) SetAd1tbc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tbc2Mask)
 	} else {
@@ -4561,12 +4975,12 @@ const (
 )
 
 // GetAd1tbc3 AD1TBC3
-func (r *registerAdc3rType) GetAd1tbc3() bool {
+func (r *RegisterAdc3rType) GetAd1tbc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tbc3Mask) != 0
 }
 
 // SetAd1tbc3 AD1TBC3
-func (r *registerAdc3rType) SetAd1tbc3(value bool) {
+func (r *RegisterAdc3rType) SetAd1tbc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tbc3Mask)
 	} else {
@@ -4580,12 +4994,12 @@ const (
 )
 
 // GetAd1tbc4 AD1TBC4
-func (r *registerAdc3rType) GetAd1tbc4() bool {
+func (r *RegisterAdc3rType) GetAd1tbc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tbc4Mask) != 0
 }
 
 // SetAd1tbc4 AD1TBC4
-func (r *registerAdc3rType) SetAd1tbc4(value bool) {
+func (r *RegisterAdc3rType) SetAd1tbc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tbc4Mask)
 	} else {
@@ -4599,12 +5013,12 @@ const (
 )
 
 // GetAd1tbper AD1TBPER
-func (r *registerAdc3rType) GetAd1tbper() bool {
+func (r *RegisterAdc3rType) GetAd1tbper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tbperMask) != 0
 }
 
 // SetAd1tbper AD1TBPER
-func (r *registerAdc3rType) SetAd1tbper(value bool) {
+func (r *RegisterAdc3rType) SetAd1tbper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tbperMask)
 	} else {
@@ -4618,12 +5032,12 @@ const (
 )
 
 // GetAd1tbrst AD1TBRST
-func (r *registerAdc3rType) GetAd1tbrst() bool {
+func (r *RegisterAdc3rType) GetAd1tbrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tbrstMask) != 0
 }
 
 // SetAd1tbrst AD1TBRST
-func (r *registerAdc3rType) SetAd1tbrst(value bool) {
+func (r *RegisterAdc3rType) SetAd1tbrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tbrstMask)
 	} else {
@@ -4637,12 +5051,12 @@ const (
 )
 
 // GetAd1tcc2 AD1TCC2
-func (r *registerAdc3rType) GetAd1tcc2() bool {
+func (r *RegisterAdc3rType) GetAd1tcc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tcc2Mask) != 0
 }
 
 // SetAd1tcc2 AD1TCC2
-func (r *registerAdc3rType) SetAd1tcc2(value bool) {
+func (r *RegisterAdc3rType) SetAd1tcc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tcc2Mask)
 	} else {
@@ -4656,12 +5070,12 @@ const (
 )
 
 // GetAd1tcc3 AD1TCC3
-func (r *registerAdc3rType) GetAd1tcc3() bool {
+func (r *RegisterAdc3rType) GetAd1tcc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tcc3Mask) != 0
 }
 
 // SetAd1tcc3 AD1TCC3
-func (r *registerAdc3rType) SetAd1tcc3(value bool) {
+func (r *RegisterAdc3rType) SetAd1tcc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tcc3Mask)
 	} else {
@@ -4675,12 +5089,12 @@ const (
 )
 
 // GetAd1tcc4 AD1TCC4
-func (r *registerAdc3rType) GetAd1tcc4() bool {
+func (r *RegisterAdc3rType) GetAd1tcc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tcc4Mask) != 0
 }
 
 // SetAd1tcc4 AD1TCC4
-func (r *registerAdc3rType) SetAd1tcc4(value bool) {
+func (r *RegisterAdc3rType) SetAd1tcc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tcc4Mask)
 	} else {
@@ -4694,12 +5108,12 @@ const (
 )
 
 // GetAd1tcper AD1TCPER
-func (r *registerAdc3rType) GetAd1tcper() bool {
+func (r *RegisterAdc3rType) GetAd1tcper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tcperMask) != 0
 }
 
 // SetAd1tcper AD1TCPER
-func (r *registerAdc3rType) SetAd1tcper(value bool) {
+func (r *RegisterAdc3rType) SetAd1tcper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tcperMask)
 	} else {
@@ -4713,12 +5127,12 @@ const (
 )
 
 // GetAd1tdc2 AD1TDC2
-func (r *registerAdc3rType) GetAd1tdc2() bool {
+func (r *RegisterAdc3rType) GetAd1tdc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tdc2Mask) != 0
 }
 
 // SetAd1tdc2 AD1TDC2
-func (r *registerAdc3rType) SetAd1tdc2(value bool) {
+func (r *RegisterAdc3rType) SetAd1tdc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tdc2Mask)
 	} else {
@@ -4732,12 +5146,12 @@ const (
 )
 
 // GetAd1tdc3 AD1TDC3
-func (r *registerAdc3rType) GetAd1tdc3() bool {
+func (r *RegisterAdc3rType) GetAd1tdc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tdc3Mask) != 0
 }
 
 // SetAd1tdc3 AD1TDC3
-func (r *registerAdc3rType) SetAd1tdc3(value bool) {
+func (r *RegisterAdc3rType) SetAd1tdc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tdc3Mask)
 	} else {
@@ -4751,12 +5165,12 @@ const (
 )
 
 // GetAd1tdc4 AD1TDC4
-func (r *registerAdc3rType) GetAd1tdc4() bool {
+func (r *RegisterAdc3rType) GetAd1tdc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tdc4Mask) != 0
 }
 
 // SetAd1tdc4 AD1TDC4
-func (r *registerAdc3rType) SetAd1tdc4(value bool) {
+func (r *RegisterAdc3rType) SetAd1tdc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tdc4Mask)
 	} else {
@@ -4770,12 +5184,12 @@ const (
 )
 
 // GetAd1tdper AD1TDPER
-func (r *registerAdc3rType) GetAd1tdper() bool {
+func (r *RegisterAdc3rType) GetAd1tdper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tdperMask) != 0
 }
 
 // SetAd1tdper AD1TDPER
-func (r *registerAdc3rType) SetAd1tdper(value bool) {
+func (r *RegisterAdc3rType) SetAd1tdper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tdperMask)
 	} else {
@@ -4789,12 +5203,12 @@ const (
 )
 
 // GetAd1tec2 AD1TEC2
-func (r *registerAdc3rType) GetAd1tec2() bool {
+func (r *RegisterAdc3rType) GetAd1tec2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tec2Mask) != 0
 }
 
 // SetAd1tec2 AD1TEC2
-func (r *registerAdc3rType) SetAd1tec2(value bool) {
+func (r *RegisterAdc3rType) SetAd1tec2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tec2Mask)
 	} else {
@@ -4808,12 +5222,12 @@ const (
 )
 
 // GetAd1tec3 AD1TEC3
-func (r *registerAdc3rType) GetAd1tec3() bool {
+func (r *RegisterAdc3rType) GetAd1tec3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tec3Mask) != 0
 }
 
 // SetAd1tec3 AD1TEC3
-func (r *registerAdc3rType) SetAd1tec3(value bool) {
+func (r *RegisterAdc3rType) SetAd1tec3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tec3Mask)
 	} else {
@@ -4827,12 +5241,12 @@ const (
 )
 
 // GetAd1tec4 AD1TEC4
-func (r *registerAdc3rType) GetAd1tec4() bool {
+func (r *RegisterAdc3rType) GetAd1tec4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1tec4Mask) != 0
 }
 
 // SetAd1tec4 AD1TEC4
-func (r *registerAdc3rType) SetAd1tec4(value bool) {
+func (r *RegisterAdc3rType) SetAd1tec4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1tec4Mask)
 	} else {
@@ -4846,12 +5260,12 @@ const (
 )
 
 // GetAd1teper AD1TEPER
-func (r *registerAdc3rType) GetAd1teper() bool {
+func (r *RegisterAdc3rType) GetAd1teper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc3rFieldAd1teperMask) != 0
 }
 
 // SetAd1teper AD1TEPER
-func (r *registerAdc3rType) SetAd1teper(value bool) {
+func (r *RegisterAdc3rType) SetAd1teper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc3rFieldAd1teperMask)
 	} else {
@@ -4859,8 +5273,31 @@ func (r *registerAdc3rType) SetAd1teper(value bool) {
 	}
 }
 
-// registerAdc4rType ADC Trigger 4 Register
-type registerAdc4rType uint32
+// RegisterAdc4rType ADC Trigger 4 Register
+type RegisterAdc4rType uint32
+
+func (r *RegisterAdc4rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAdc4rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAdc4rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAdc4rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAdc4rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAdc4rFieldAd2mc1Shift = 0
@@ -4868,12 +5305,12 @@ const (
 )
 
 // GetAd2mc1 AD2MC1
-func (r *registerAdc4rType) GetAd2mc1() bool {
+func (r *RegisterAdc4rType) GetAd2mc1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2mc1Mask) != 0
 }
 
 // SetAd2mc1 AD2MC1
-func (r *registerAdc4rType) SetAd2mc1(value bool) {
+func (r *RegisterAdc4rType) SetAd2mc1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2mc1Mask)
 	} else {
@@ -4887,12 +5324,12 @@ const (
 )
 
 // GetAd2mc2 AD2MC2
-func (r *registerAdc4rType) GetAd2mc2() bool {
+func (r *RegisterAdc4rType) GetAd2mc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2mc2Mask) != 0
 }
 
 // SetAd2mc2 AD2MC2
-func (r *registerAdc4rType) SetAd2mc2(value bool) {
+func (r *RegisterAdc4rType) SetAd2mc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2mc2Mask)
 	} else {
@@ -4906,12 +5343,12 @@ const (
 )
 
 // GetAd2mc3 AD2MC3
-func (r *registerAdc4rType) GetAd2mc3() bool {
+func (r *RegisterAdc4rType) GetAd2mc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2mc3Mask) != 0
 }
 
 // SetAd2mc3 AD2MC3
-func (r *registerAdc4rType) SetAd2mc3(value bool) {
+func (r *RegisterAdc4rType) SetAd2mc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2mc3Mask)
 	} else {
@@ -4925,12 +5362,12 @@ const (
 )
 
 // GetAd2mc4 AD2MC4
-func (r *registerAdc4rType) GetAd2mc4() bool {
+func (r *RegisterAdc4rType) GetAd2mc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2mc4Mask) != 0
 }
 
 // SetAd2mc4 AD2MC4
-func (r *registerAdc4rType) SetAd2mc4(value bool) {
+func (r *RegisterAdc4rType) SetAd2mc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2mc4Mask)
 	} else {
@@ -4944,12 +5381,12 @@ const (
 )
 
 // GetAd2mper AD2MPER
-func (r *registerAdc4rType) GetAd2mper() bool {
+func (r *RegisterAdc4rType) GetAd2mper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2mperMask) != 0
 }
 
 // SetAd2mper AD2MPER
-func (r *registerAdc4rType) SetAd2mper(value bool) {
+func (r *RegisterAdc4rType) SetAd2mper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2mperMask)
 	} else {
@@ -4963,12 +5400,12 @@ const (
 )
 
 // GetAd2eev6 AD2EEV6
-func (r *registerAdc4rType) GetAd2eev6() bool {
+func (r *RegisterAdc4rType) GetAd2eev6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2eev6Mask) != 0
 }
 
 // SetAd2eev6 AD2EEV6
-func (r *registerAdc4rType) SetAd2eev6(value bool) {
+func (r *RegisterAdc4rType) SetAd2eev6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2eev6Mask)
 	} else {
@@ -4982,12 +5419,12 @@ const (
 )
 
 // GetAd2eev7 AD2EEV7
-func (r *registerAdc4rType) GetAd2eev7() bool {
+func (r *RegisterAdc4rType) GetAd2eev7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2eev7Mask) != 0
 }
 
 // SetAd2eev7 AD2EEV7
-func (r *registerAdc4rType) SetAd2eev7(value bool) {
+func (r *RegisterAdc4rType) SetAd2eev7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2eev7Mask)
 	} else {
@@ -5001,12 +5438,12 @@ const (
 )
 
 // GetAd2eev8 AD2EEV8
-func (r *registerAdc4rType) GetAd2eev8() bool {
+func (r *RegisterAdc4rType) GetAd2eev8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2eev8Mask) != 0
 }
 
 // SetAd2eev8 AD2EEV8
-func (r *registerAdc4rType) SetAd2eev8(value bool) {
+func (r *RegisterAdc4rType) SetAd2eev8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2eev8Mask)
 	} else {
@@ -5020,12 +5457,12 @@ const (
 )
 
 // GetAd2eev9 AD2EEV9
-func (r *registerAdc4rType) GetAd2eev9() bool {
+func (r *RegisterAdc4rType) GetAd2eev9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2eev9Mask) != 0
 }
 
 // SetAd2eev9 AD2EEV9
-func (r *registerAdc4rType) SetAd2eev9(value bool) {
+func (r *RegisterAdc4rType) SetAd2eev9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2eev9Mask)
 	} else {
@@ -5039,12 +5476,12 @@ const (
 )
 
 // GetAd2eev10 AD2EEV10
-func (r *registerAdc4rType) GetAd2eev10() bool {
+func (r *RegisterAdc4rType) GetAd2eev10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2eev10Mask) != 0
 }
 
 // SetAd2eev10 AD2EEV10
-func (r *registerAdc4rType) SetAd2eev10(value bool) {
+func (r *RegisterAdc4rType) SetAd2eev10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2eev10Mask)
 	} else {
@@ -5058,12 +5495,12 @@ const (
 )
 
 // GetAd2tac2 AD2TAC2
-func (r *registerAdc4rType) GetAd2tac2() bool {
+func (r *RegisterAdc4rType) GetAd2tac2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tac2Mask) != 0
 }
 
 // SetAd2tac2 AD2TAC2
-func (r *registerAdc4rType) SetAd2tac2(value bool) {
+func (r *RegisterAdc4rType) SetAd2tac2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tac2Mask)
 	} else {
@@ -5077,12 +5514,12 @@ const (
 )
 
 // GetAd2tac3 AD2TAC3
-func (r *registerAdc4rType) GetAd2tac3() bool {
+func (r *RegisterAdc4rType) GetAd2tac3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tac3Mask) != 0
 }
 
 // SetAd2tac3 AD2TAC3
-func (r *registerAdc4rType) SetAd2tac3(value bool) {
+func (r *RegisterAdc4rType) SetAd2tac3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tac3Mask)
 	} else {
@@ -5096,12 +5533,12 @@ const (
 )
 
 // GetAd2tac4 AD2TAC4
-func (r *registerAdc4rType) GetAd2tac4() bool {
+func (r *RegisterAdc4rType) GetAd2tac4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tac4Mask) != 0
 }
 
 // SetAd2tac4 AD2TAC4
-func (r *registerAdc4rType) SetAd2tac4(value bool) {
+func (r *RegisterAdc4rType) SetAd2tac4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tac4Mask)
 	} else {
@@ -5115,12 +5552,12 @@ const (
 )
 
 // GetAd2taper AD2TAPER
-func (r *registerAdc4rType) GetAd2taper() bool {
+func (r *RegisterAdc4rType) GetAd2taper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2taperMask) != 0
 }
 
 // SetAd2taper AD2TAPER
-func (r *registerAdc4rType) SetAd2taper(value bool) {
+func (r *RegisterAdc4rType) SetAd2taper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2taperMask)
 	} else {
@@ -5134,12 +5571,12 @@ const (
 )
 
 // GetAd2tbc2 AD2TBC2
-func (r *registerAdc4rType) GetAd2tbc2() bool {
+func (r *RegisterAdc4rType) GetAd2tbc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tbc2Mask) != 0
 }
 
 // SetAd2tbc2 AD2TBC2
-func (r *registerAdc4rType) SetAd2tbc2(value bool) {
+func (r *RegisterAdc4rType) SetAd2tbc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tbc2Mask)
 	} else {
@@ -5153,12 +5590,12 @@ const (
 )
 
 // GetAd2tbc3 AD2TBC3
-func (r *registerAdc4rType) GetAd2tbc3() bool {
+func (r *RegisterAdc4rType) GetAd2tbc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tbc3Mask) != 0
 }
 
 // SetAd2tbc3 AD2TBC3
-func (r *registerAdc4rType) SetAd2tbc3(value bool) {
+func (r *RegisterAdc4rType) SetAd2tbc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tbc3Mask)
 	} else {
@@ -5172,12 +5609,12 @@ const (
 )
 
 // GetAd2tbc4 AD2TBC4
-func (r *registerAdc4rType) GetAd2tbc4() bool {
+func (r *RegisterAdc4rType) GetAd2tbc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tbc4Mask) != 0
 }
 
 // SetAd2tbc4 AD2TBC4
-func (r *registerAdc4rType) SetAd2tbc4(value bool) {
+func (r *RegisterAdc4rType) SetAd2tbc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tbc4Mask)
 	} else {
@@ -5191,12 +5628,12 @@ const (
 )
 
 // GetAd2tbper AD2TBPER
-func (r *registerAdc4rType) GetAd2tbper() bool {
+func (r *RegisterAdc4rType) GetAd2tbper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tbperMask) != 0
 }
 
 // SetAd2tbper AD2TBPER
-func (r *registerAdc4rType) SetAd2tbper(value bool) {
+func (r *RegisterAdc4rType) SetAd2tbper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tbperMask)
 	} else {
@@ -5210,12 +5647,12 @@ const (
 )
 
 // GetAd2tcc2 AD2TCC2
-func (r *registerAdc4rType) GetAd2tcc2() bool {
+func (r *RegisterAdc4rType) GetAd2tcc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tcc2Mask) != 0
 }
 
 // SetAd2tcc2 AD2TCC2
-func (r *registerAdc4rType) SetAd2tcc2(value bool) {
+func (r *RegisterAdc4rType) SetAd2tcc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tcc2Mask)
 	} else {
@@ -5229,12 +5666,12 @@ const (
 )
 
 // GetAd2tcc3 AD2TCC3
-func (r *registerAdc4rType) GetAd2tcc3() bool {
+func (r *RegisterAdc4rType) GetAd2tcc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tcc3Mask) != 0
 }
 
 // SetAd2tcc3 AD2TCC3
-func (r *registerAdc4rType) SetAd2tcc3(value bool) {
+func (r *RegisterAdc4rType) SetAd2tcc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tcc3Mask)
 	} else {
@@ -5248,12 +5685,12 @@ const (
 )
 
 // GetAd2tcc4 AD2TCC4
-func (r *registerAdc4rType) GetAd2tcc4() bool {
+func (r *RegisterAdc4rType) GetAd2tcc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tcc4Mask) != 0
 }
 
 // SetAd2tcc4 AD2TCC4
-func (r *registerAdc4rType) SetAd2tcc4(value bool) {
+func (r *RegisterAdc4rType) SetAd2tcc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tcc4Mask)
 	} else {
@@ -5267,12 +5704,12 @@ const (
 )
 
 // GetAd2tcper AD2TCPER
-func (r *registerAdc4rType) GetAd2tcper() bool {
+func (r *RegisterAdc4rType) GetAd2tcper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tcperMask) != 0
 }
 
 // SetAd2tcper AD2TCPER
-func (r *registerAdc4rType) SetAd2tcper(value bool) {
+func (r *RegisterAdc4rType) SetAd2tcper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tcperMask)
 	} else {
@@ -5286,12 +5723,12 @@ const (
 )
 
 // GetAd2tcrst AD2TCRST
-func (r *registerAdc4rType) GetAd2tcrst() bool {
+func (r *RegisterAdc4rType) GetAd2tcrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tcrstMask) != 0
 }
 
 // SetAd2tcrst AD2TCRST
-func (r *registerAdc4rType) SetAd2tcrst(value bool) {
+func (r *RegisterAdc4rType) SetAd2tcrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tcrstMask)
 	} else {
@@ -5305,12 +5742,12 @@ const (
 )
 
 // GetAd2tdc2 AD2TDC2
-func (r *registerAdc4rType) GetAd2tdc2() bool {
+func (r *RegisterAdc4rType) GetAd2tdc2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tdc2Mask) != 0
 }
 
 // SetAd2tdc2 AD2TDC2
-func (r *registerAdc4rType) SetAd2tdc2(value bool) {
+func (r *RegisterAdc4rType) SetAd2tdc2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tdc2Mask)
 	} else {
@@ -5324,12 +5761,12 @@ const (
 )
 
 // GetAd2tdc3 AD2TDC3
-func (r *registerAdc4rType) GetAd2tdc3() bool {
+func (r *RegisterAdc4rType) GetAd2tdc3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tdc3Mask) != 0
 }
 
 // SetAd2tdc3 AD2TDC3
-func (r *registerAdc4rType) SetAd2tdc3(value bool) {
+func (r *RegisterAdc4rType) SetAd2tdc3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tdc3Mask)
 	} else {
@@ -5343,12 +5780,12 @@ const (
 )
 
 // GetAd2tdc4 AD2TDC4
-func (r *registerAdc4rType) GetAd2tdc4() bool {
+func (r *RegisterAdc4rType) GetAd2tdc4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tdc4Mask) != 0
 }
 
 // SetAd2tdc4 AD2TDC4
-func (r *registerAdc4rType) SetAd2tdc4(value bool) {
+func (r *RegisterAdc4rType) SetAd2tdc4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tdc4Mask)
 	} else {
@@ -5362,12 +5799,12 @@ const (
 )
 
 // GetAd2tdper AD2TDPER
-func (r *registerAdc4rType) GetAd2tdper() bool {
+func (r *RegisterAdc4rType) GetAd2tdper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tdperMask) != 0
 }
 
 // SetAd2tdper AD2TDPER
-func (r *registerAdc4rType) SetAd2tdper(value bool) {
+func (r *RegisterAdc4rType) SetAd2tdper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tdperMask)
 	} else {
@@ -5381,12 +5818,12 @@ const (
 )
 
 // GetAd2tdrst AD2TDRST
-func (r *registerAdc4rType) GetAd2tdrst() bool {
+func (r *RegisterAdc4rType) GetAd2tdrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tdrstMask) != 0
 }
 
 // SetAd2tdrst AD2TDRST
-func (r *registerAdc4rType) SetAd2tdrst(value bool) {
+func (r *RegisterAdc4rType) SetAd2tdrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tdrstMask)
 	} else {
@@ -5400,12 +5837,12 @@ const (
 )
 
 // GetAd2tec2 AD2TEC2
-func (r *registerAdc4rType) GetAd2tec2() bool {
+func (r *RegisterAdc4rType) GetAd2tec2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tec2Mask) != 0
 }
 
 // SetAd2tec2 AD2TEC2
-func (r *registerAdc4rType) SetAd2tec2(value bool) {
+func (r *RegisterAdc4rType) SetAd2tec2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tec2Mask)
 	} else {
@@ -5419,12 +5856,12 @@ const (
 )
 
 // GetAd2tec3 AD2TEC3
-func (r *registerAdc4rType) GetAd2tec3() bool {
+func (r *RegisterAdc4rType) GetAd2tec3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tec3Mask) != 0
 }
 
 // SetAd2tec3 AD2TEC3
-func (r *registerAdc4rType) SetAd2tec3(value bool) {
+func (r *RegisterAdc4rType) SetAd2tec3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tec3Mask)
 	} else {
@@ -5438,12 +5875,12 @@ const (
 )
 
 // GetAd2tec4 AD2TEC4
-func (r *registerAdc4rType) GetAd2tec4() bool {
+func (r *RegisterAdc4rType) GetAd2tec4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2tec4Mask) != 0
 }
 
 // SetAd2tec4 AD2TEC4
-func (r *registerAdc4rType) SetAd2tec4(value bool) {
+func (r *RegisterAdc4rType) SetAd2tec4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2tec4Mask)
 	} else {
@@ -5457,12 +5894,12 @@ const (
 )
 
 // GetAd2terst AD2TERST
-func (r *registerAdc4rType) GetAd2terst() bool {
+func (r *RegisterAdc4rType) GetAd2terst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAdc4rFieldAd2terstMask) != 0
 }
 
 // SetAd2terst AD2TERST
-func (r *registerAdc4rType) SetAd2terst(value bool) {
+func (r *RegisterAdc4rType) SetAd2terst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAdc4rFieldAd2terstMask)
 	} else {
@@ -5470,8 +5907,31 @@ func (r *registerAdc4rType) SetAd2terst(value bool) {
 	}
 }
 
-// registerDllcrType DLL Control Register
-type registerDllcrType uint32
+// RegisterDllcrType DLL Control Register
+type RegisterDllcrType uint32
+
+func (r *RegisterDllcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDllcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDllcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDllcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDllcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDllcrFieldCalShift = 0
@@ -5479,12 +5939,12 @@ const (
 )
 
 // GetCal DLL Calibration Start
-func (r *registerDllcrType) GetCal() bool {
+func (r *RegisterDllcrType) GetCal() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDllcrFieldCalMask) != 0
 }
 
 // SetCal DLL Calibration Start
-func (r *registerDllcrType) SetCal(value bool) {
+func (r *RegisterDllcrType) SetCal(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDllcrFieldCalMask)
 	} else {
@@ -5498,12 +5958,12 @@ const (
 )
 
 // GetCalen DLL Calibration Enable
-func (r *registerDllcrType) GetCalen() bool {
+func (r *RegisterDllcrType) GetCalen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDllcrFieldCalenMask) != 0
 }
 
 // SetCalen DLL Calibration Enable
-func (r *registerDllcrType) SetCalen(value bool) {
+func (r *RegisterDllcrType) SetCalen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDllcrFieldCalenMask)
 	} else {
@@ -5517,17 +5977,40 @@ const (
 )
 
 // GetCalrte DLL Calibration rate
-func (r *registerDllcrType) GetCalrte() uint8 {
+func (r *RegisterDllcrType) GetCalrte() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDllcrFieldCalrteMask) >> RegisterDllcrFieldCalrteShift)
 }
 
 // SetCalrte DLL Calibration rate
-func (r *registerDllcrType) SetCalrte(value uint8) {
+func (r *RegisterDllcrType) SetCalrte(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDllcrFieldCalrteMask)|(uint32(value)<<RegisterDllcrFieldCalrteShift))
 }
 
-// registerFltinr1Type HRTIM Fault Input Register 1
-type registerFltinr1Type uint32
+// RegisterFltinr1Type HRTIM Fault Input Register 1
+type RegisterFltinr1Type uint32
+
+func (r *RegisterFltinr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFltinr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFltinr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFltinr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFltinr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFltinr1FieldFlt1eShift = 0
@@ -5535,12 +6018,12 @@ const (
 )
 
 // GetFlt1e FLT1E
-func (r *registerFltinr1Type) GetFlt1e() bool {
+func (r *RegisterFltinr1Type) GetFlt1e() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt1eMask) != 0
 }
 
 // SetFlt1e FLT1E
-func (r *registerFltinr1Type) SetFlt1e(value bool) {
+func (r *RegisterFltinr1Type) SetFlt1e(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt1eMask)
 	} else {
@@ -5554,12 +6037,12 @@ const (
 )
 
 // GetFlt1p FLT1P
-func (r *registerFltinr1Type) GetFlt1p() bool {
+func (r *RegisterFltinr1Type) GetFlt1p() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt1pMask) != 0
 }
 
 // SetFlt1p FLT1P
-func (r *registerFltinr1Type) SetFlt1p(value bool) {
+func (r *RegisterFltinr1Type) SetFlt1p(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt1pMask)
 	} else {
@@ -5573,12 +6056,12 @@ const (
 )
 
 // GetFlt1src FLT1SRC
-func (r *registerFltinr1Type) GetFlt1src() bool {
+func (r *RegisterFltinr1Type) GetFlt1src() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt1srcMask) != 0
 }
 
 // SetFlt1src FLT1SRC
-func (r *registerFltinr1Type) SetFlt1src(value bool) {
+func (r *RegisterFltinr1Type) SetFlt1src(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt1srcMask)
 	} else {
@@ -5592,12 +6075,12 @@ const (
 )
 
 // GetFlt1f FLT1F
-func (r *registerFltinr1Type) GetFlt1f() uint8 {
+func (r *RegisterFltinr1Type) GetFlt1f() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt1fMask) >> RegisterFltinr1FieldFlt1fShift)
 }
 
 // SetFlt1f FLT1F
-func (r *registerFltinr1Type) SetFlt1f(value uint8) {
+func (r *RegisterFltinr1Type) SetFlt1f(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFltinr1FieldFlt1fMask)|(uint32(value)<<RegisterFltinr1FieldFlt1fShift))
 }
 
@@ -5607,12 +6090,12 @@ const (
 )
 
 // GetFlt1lck FLT1LCK
-func (r *registerFltinr1Type) GetFlt1lck() bool {
+func (r *RegisterFltinr1Type) GetFlt1lck() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt1lckMask) != 0
 }
 
 // SetFlt1lck FLT1LCK
-func (r *registerFltinr1Type) SetFlt1lck(value bool) {
+func (r *RegisterFltinr1Type) SetFlt1lck(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt1lckMask)
 	} else {
@@ -5626,12 +6109,12 @@ const (
 )
 
 // GetFlt2e FLT2E
-func (r *registerFltinr1Type) GetFlt2e() bool {
+func (r *RegisterFltinr1Type) GetFlt2e() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt2eMask) != 0
 }
 
 // SetFlt2e FLT2E
-func (r *registerFltinr1Type) SetFlt2e(value bool) {
+func (r *RegisterFltinr1Type) SetFlt2e(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt2eMask)
 	} else {
@@ -5645,12 +6128,12 @@ const (
 )
 
 // GetFlt2p FLT2P
-func (r *registerFltinr1Type) GetFlt2p() bool {
+func (r *RegisterFltinr1Type) GetFlt2p() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt2pMask) != 0
 }
 
 // SetFlt2p FLT2P
-func (r *registerFltinr1Type) SetFlt2p(value bool) {
+func (r *RegisterFltinr1Type) SetFlt2p(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt2pMask)
 	} else {
@@ -5664,12 +6147,12 @@ const (
 )
 
 // GetFlt2src FLT2SRC
-func (r *registerFltinr1Type) GetFlt2src() bool {
+func (r *RegisterFltinr1Type) GetFlt2src() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt2srcMask) != 0
 }
 
 // SetFlt2src FLT2SRC
-func (r *registerFltinr1Type) SetFlt2src(value bool) {
+func (r *RegisterFltinr1Type) SetFlt2src(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt2srcMask)
 	} else {
@@ -5683,12 +6166,12 @@ const (
 )
 
 // GetFlt2f FLT2F
-func (r *registerFltinr1Type) GetFlt2f() uint8 {
+func (r *RegisterFltinr1Type) GetFlt2f() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt2fMask) >> RegisterFltinr1FieldFlt2fShift)
 }
 
 // SetFlt2f FLT2F
-func (r *registerFltinr1Type) SetFlt2f(value uint8) {
+func (r *RegisterFltinr1Type) SetFlt2f(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFltinr1FieldFlt2fMask)|(uint32(value)<<RegisterFltinr1FieldFlt2fShift))
 }
 
@@ -5698,12 +6181,12 @@ const (
 )
 
 // GetFlt2lck FLT2LCK
-func (r *registerFltinr1Type) GetFlt2lck() bool {
+func (r *RegisterFltinr1Type) GetFlt2lck() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt2lckMask) != 0
 }
 
 // SetFlt2lck FLT2LCK
-func (r *registerFltinr1Type) SetFlt2lck(value bool) {
+func (r *RegisterFltinr1Type) SetFlt2lck(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt2lckMask)
 	} else {
@@ -5717,12 +6200,12 @@ const (
 )
 
 // GetFlt3e FLT3E
-func (r *registerFltinr1Type) GetFlt3e() bool {
+func (r *RegisterFltinr1Type) GetFlt3e() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt3eMask) != 0
 }
 
 // SetFlt3e FLT3E
-func (r *registerFltinr1Type) SetFlt3e(value bool) {
+func (r *RegisterFltinr1Type) SetFlt3e(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt3eMask)
 	} else {
@@ -5736,12 +6219,12 @@ const (
 )
 
 // GetFlt3p FLT3P
-func (r *registerFltinr1Type) GetFlt3p() bool {
+func (r *RegisterFltinr1Type) GetFlt3p() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt3pMask) != 0
 }
 
 // SetFlt3p FLT3P
-func (r *registerFltinr1Type) SetFlt3p(value bool) {
+func (r *RegisterFltinr1Type) SetFlt3p(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt3pMask)
 	} else {
@@ -5755,12 +6238,12 @@ const (
 )
 
 // GetFlt3src FLT3SRC
-func (r *registerFltinr1Type) GetFlt3src() bool {
+func (r *RegisterFltinr1Type) GetFlt3src() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt3srcMask) != 0
 }
 
 // SetFlt3src FLT3SRC
-func (r *registerFltinr1Type) SetFlt3src(value bool) {
+func (r *RegisterFltinr1Type) SetFlt3src(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt3srcMask)
 	} else {
@@ -5774,12 +6257,12 @@ const (
 )
 
 // GetFlt3f FLT3F
-func (r *registerFltinr1Type) GetFlt3f() uint8 {
+func (r *RegisterFltinr1Type) GetFlt3f() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt3fMask) >> RegisterFltinr1FieldFlt3fShift)
 }
 
 // SetFlt3f FLT3F
-func (r *registerFltinr1Type) SetFlt3f(value uint8) {
+func (r *RegisterFltinr1Type) SetFlt3f(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFltinr1FieldFlt3fMask)|(uint32(value)<<RegisterFltinr1FieldFlt3fShift))
 }
 
@@ -5789,12 +6272,12 @@ const (
 )
 
 // GetFlt3lck FLT3LCK
-func (r *registerFltinr1Type) GetFlt3lck() bool {
+func (r *RegisterFltinr1Type) GetFlt3lck() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt3lckMask) != 0
 }
 
 // SetFlt3lck FLT3LCK
-func (r *registerFltinr1Type) SetFlt3lck(value bool) {
+func (r *RegisterFltinr1Type) SetFlt3lck(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt3lckMask)
 	} else {
@@ -5808,12 +6291,12 @@ const (
 )
 
 // GetFlt4e FLT4E
-func (r *registerFltinr1Type) GetFlt4e() bool {
+func (r *RegisterFltinr1Type) GetFlt4e() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt4eMask) != 0
 }
 
 // SetFlt4e FLT4E
-func (r *registerFltinr1Type) SetFlt4e(value bool) {
+func (r *RegisterFltinr1Type) SetFlt4e(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt4eMask)
 	} else {
@@ -5827,12 +6310,12 @@ const (
 )
 
 // GetFlt4p FLT4P
-func (r *registerFltinr1Type) GetFlt4p() bool {
+func (r *RegisterFltinr1Type) GetFlt4p() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt4pMask) != 0
 }
 
 // SetFlt4p FLT4P
-func (r *registerFltinr1Type) SetFlt4p(value bool) {
+func (r *RegisterFltinr1Type) SetFlt4p(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt4pMask)
 	} else {
@@ -5846,12 +6329,12 @@ const (
 )
 
 // GetFlt4src FLT4SRC
-func (r *registerFltinr1Type) GetFlt4src() bool {
+func (r *RegisterFltinr1Type) GetFlt4src() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt4srcMask) != 0
 }
 
 // SetFlt4src FLT4SRC
-func (r *registerFltinr1Type) SetFlt4src(value bool) {
+func (r *RegisterFltinr1Type) SetFlt4src(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt4srcMask)
 	} else {
@@ -5865,12 +6348,12 @@ const (
 )
 
 // GetFlt4f FLT4F
-func (r *registerFltinr1Type) GetFlt4f() uint8 {
+func (r *RegisterFltinr1Type) GetFlt4f() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt4fMask) >> RegisterFltinr1FieldFlt4fShift)
 }
 
 // SetFlt4f FLT4F
-func (r *registerFltinr1Type) SetFlt4f(value uint8) {
+func (r *RegisterFltinr1Type) SetFlt4f(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFltinr1FieldFlt4fMask)|(uint32(value)<<RegisterFltinr1FieldFlt4fShift))
 }
 
@@ -5880,12 +6363,12 @@ const (
 )
 
 // GetFlt4lck FLT4LCK
-func (r *registerFltinr1Type) GetFlt4lck() bool {
+func (r *RegisterFltinr1Type) GetFlt4lck() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr1FieldFlt4lckMask) != 0
 }
 
 // SetFlt4lck FLT4LCK
-func (r *registerFltinr1Type) SetFlt4lck(value bool) {
+func (r *RegisterFltinr1Type) SetFlt4lck(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr1FieldFlt4lckMask)
 	} else {
@@ -5893,8 +6376,31 @@ func (r *registerFltinr1Type) SetFlt4lck(value bool) {
 	}
 }
 
-// registerFltinr2Type HRTIM Fault Input Register 2
-type registerFltinr2Type uint32
+// RegisterFltinr2Type HRTIM Fault Input Register 2
+type RegisterFltinr2Type uint32
+
+func (r *RegisterFltinr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFltinr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFltinr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFltinr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFltinr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFltinr2FieldFlt5eShift = 0
@@ -5902,12 +6408,12 @@ const (
 )
 
 // GetFlt5e FLT5E
-func (r *registerFltinr2Type) GetFlt5e() bool {
+func (r *RegisterFltinr2Type) GetFlt5e() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr2FieldFlt5eMask) != 0
 }
 
 // SetFlt5e FLT5E
-func (r *registerFltinr2Type) SetFlt5e(value bool) {
+func (r *RegisterFltinr2Type) SetFlt5e(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr2FieldFlt5eMask)
 	} else {
@@ -5921,12 +6427,12 @@ const (
 )
 
 // GetFlt5p FLT5P
-func (r *registerFltinr2Type) GetFlt5p() bool {
+func (r *RegisterFltinr2Type) GetFlt5p() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr2FieldFlt5pMask) != 0
 }
 
 // SetFlt5p FLT5P
-func (r *registerFltinr2Type) SetFlt5p(value bool) {
+func (r *RegisterFltinr2Type) SetFlt5p(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr2FieldFlt5pMask)
 	} else {
@@ -5940,12 +6446,12 @@ const (
 )
 
 // GetFlt5src FLT5SRC
-func (r *registerFltinr2Type) GetFlt5src() bool {
+func (r *RegisterFltinr2Type) GetFlt5src() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr2FieldFlt5srcMask) != 0
 }
 
 // SetFlt5src FLT5SRC
-func (r *registerFltinr2Type) SetFlt5src(value bool) {
+func (r *RegisterFltinr2Type) SetFlt5src(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr2FieldFlt5srcMask)
 	} else {
@@ -5959,12 +6465,12 @@ const (
 )
 
 // GetFlt5f FLT5F
-func (r *registerFltinr2Type) GetFlt5f() uint8 {
+func (r *RegisterFltinr2Type) GetFlt5f() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFltinr2FieldFlt5fMask) >> RegisterFltinr2FieldFlt5fShift)
 }
 
 // SetFlt5f FLT5F
-func (r *registerFltinr2Type) SetFlt5f(value uint8) {
+func (r *RegisterFltinr2Type) SetFlt5f(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFltinr2FieldFlt5fMask)|(uint32(value)<<RegisterFltinr2FieldFlt5fShift))
 }
 
@@ -5974,12 +6480,12 @@ const (
 )
 
 // GetFlt5lck FLT5LCK
-func (r *registerFltinr2Type) GetFlt5lck() bool {
+func (r *RegisterFltinr2Type) GetFlt5lck() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFltinr2FieldFlt5lckMask) != 0
 }
 
 // SetFlt5lck FLT5LCK
-func (r *registerFltinr2Type) SetFlt5lck(value bool) {
+func (r *RegisterFltinr2Type) SetFlt5lck(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFltinr2FieldFlt5lckMask)
 	} else {
@@ -5993,17 +6499,40 @@ const (
 )
 
 // GetFltsd FLTSD
-func (r *registerFltinr2Type) GetFltsd() uint8 {
+func (r *RegisterFltinr2Type) GetFltsd() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFltinr2FieldFltsdMask) >> RegisterFltinr2FieldFltsdShift)
 }
 
 // SetFltsd FLTSD
-func (r *registerFltinr2Type) SetFltsd(value uint8) {
+func (r *RegisterFltinr2Type) SetFltsd(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFltinr2FieldFltsdMask)|(uint32(value)<<RegisterFltinr2FieldFltsdShift))
 }
 
-// registerBdmupdrType BDMUPDR
-type registerBdmupdrType uint32
+// RegisterBdmupdrType BDMUPDR
+type RegisterBdmupdrType uint32
+
+func (r *RegisterBdmupdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterBdmupdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterBdmupdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterBdmupdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterBdmupdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterBdmupdrFieldMcrShift = 0
@@ -6011,12 +6540,12 @@ const (
 )
 
 // GetMcr MCR
-func (r *registerBdmupdrType) GetMcr() bool {
+func (r *RegisterBdmupdrType) GetMcr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdmupdrFieldMcrMask) != 0
 }
 
 // SetMcr MCR
-func (r *registerBdmupdrType) SetMcr(value bool) {
+func (r *RegisterBdmupdrType) SetMcr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdmupdrFieldMcrMask)
 	} else {
@@ -6030,12 +6559,12 @@ const (
 )
 
 // GetMicr MICR
-func (r *registerBdmupdrType) GetMicr() bool {
+func (r *RegisterBdmupdrType) GetMicr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdmupdrFieldMicrMask) != 0
 }
 
 // SetMicr MICR
-func (r *registerBdmupdrType) SetMicr(value bool) {
+func (r *RegisterBdmupdrType) SetMicr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdmupdrFieldMicrMask)
 	} else {
@@ -6049,12 +6578,12 @@ const (
 )
 
 // GetMdier MDIER
-func (r *registerBdmupdrType) GetMdier() bool {
+func (r *RegisterBdmupdrType) GetMdier() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdmupdrFieldMdierMask) != 0
 }
 
 // SetMdier MDIER
-func (r *registerBdmupdrType) SetMdier(value bool) {
+func (r *RegisterBdmupdrType) SetMdier(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdmupdrFieldMdierMask)
 	} else {
@@ -6068,12 +6597,12 @@ const (
 )
 
 // GetMcnt MCNT
-func (r *registerBdmupdrType) GetMcnt() bool {
+func (r *RegisterBdmupdrType) GetMcnt() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdmupdrFieldMcntMask) != 0
 }
 
 // SetMcnt MCNT
-func (r *registerBdmupdrType) SetMcnt(value bool) {
+func (r *RegisterBdmupdrType) SetMcnt(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdmupdrFieldMcntMask)
 	} else {
@@ -6087,12 +6616,12 @@ const (
 )
 
 // GetMper MPER
-func (r *registerBdmupdrType) GetMper() bool {
+func (r *RegisterBdmupdrType) GetMper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdmupdrFieldMperMask) != 0
 }
 
 // SetMper MPER
-func (r *registerBdmupdrType) SetMper(value bool) {
+func (r *RegisterBdmupdrType) SetMper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdmupdrFieldMperMask)
 	} else {
@@ -6106,12 +6635,12 @@ const (
 )
 
 // GetMrep MREP
-func (r *registerBdmupdrType) GetMrep() bool {
+func (r *RegisterBdmupdrType) GetMrep() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdmupdrFieldMrepMask) != 0
 }
 
 // SetMrep MREP
-func (r *registerBdmupdrType) SetMrep(value bool) {
+func (r *RegisterBdmupdrType) SetMrep(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdmupdrFieldMrepMask)
 	} else {
@@ -6125,12 +6654,12 @@ const (
 )
 
 // GetMcmp1 MCMP1
-func (r *registerBdmupdrType) GetMcmp1() bool {
+func (r *RegisterBdmupdrType) GetMcmp1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdmupdrFieldMcmp1Mask) != 0
 }
 
 // SetMcmp1 MCMP1
-func (r *registerBdmupdrType) SetMcmp1(value bool) {
+func (r *RegisterBdmupdrType) SetMcmp1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdmupdrFieldMcmp1Mask)
 	} else {
@@ -6144,12 +6673,12 @@ const (
 )
 
 // GetMcmp2 MCMP2
-func (r *registerBdmupdrType) GetMcmp2() bool {
+func (r *RegisterBdmupdrType) GetMcmp2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdmupdrFieldMcmp2Mask) != 0
 }
 
 // SetMcmp2 MCMP2
-func (r *registerBdmupdrType) SetMcmp2(value bool) {
+func (r *RegisterBdmupdrType) SetMcmp2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdmupdrFieldMcmp2Mask)
 	} else {
@@ -6163,12 +6692,12 @@ const (
 )
 
 // GetMcmp3 MCMP3
-func (r *registerBdmupdrType) GetMcmp3() bool {
+func (r *RegisterBdmupdrType) GetMcmp3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdmupdrFieldMcmp3Mask) != 0
 }
 
 // SetMcmp3 MCMP3
-func (r *registerBdmupdrType) SetMcmp3(value bool) {
+func (r *RegisterBdmupdrType) SetMcmp3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdmupdrFieldMcmp3Mask)
 	} else {
@@ -6182,12 +6711,12 @@ const (
 )
 
 // GetMcmp4 MCMP4
-func (r *registerBdmupdrType) GetMcmp4() bool {
+func (r *RegisterBdmupdrType) GetMcmp4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdmupdrFieldMcmp4Mask) != 0
 }
 
 // SetMcmp4 MCMP4
-func (r *registerBdmupdrType) SetMcmp4(value bool) {
+func (r *RegisterBdmupdrType) SetMcmp4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdmupdrFieldMcmp4Mask)
 	} else {
@@ -6195,8 +6724,31 @@ func (r *registerBdmupdrType) SetMcmp4(value bool) {
 	}
 }
 
-// registerBdtxuprType Burst DMA Timerx update Register
-type registerBdtxuprType uint32
+// RegisterBdtxuprType Burst DMA Timerx update Register
+type RegisterBdtxuprType uint32
+
+func (r *RegisterBdtxuprType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterBdtxuprType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterBdtxuprType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterBdtxuprType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterBdtxuprType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterBdtxuprFieldTimxcrShift = 0
@@ -6204,12 +6756,12 @@ const (
 )
 
 // GetTimxcr HRTIM_TIMxCR register update enable
-func (r *registerBdtxuprType) GetTimxcr() bool {
+func (r *RegisterBdtxuprType) GetTimxcr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxcrMask) != 0
 }
 
 // SetTimxcr HRTIM_TIMxCR register update enable
-func (r *registerBdtxuprType) SetTimxcr(value bool) {
+func (r *RegisterBdtxuprType) SetTimxcr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxcrMask)
 	} else {
@@ -6223,12 +6775,12 @@ const (
 )
 
 // GetTimxicr HRTIM_TIMxICR register update enable
-func (r *registerBdtxuprType) GetTimxicr() bool {
+func (r *RegisterBdtxuprType) GetTimxicr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxicrMask) != 0
 }
 
 // SetTimxicr HRTIM_TIMxICR register update enable
-func (r *registerBdtxuprType) SetTimxicr(value bool) {
+func (r *RegisterBdtxuprType) SetTimxicr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxicrMask)
 	} else {
@@ -6242,12 +6794,12 @@ const (
 )
 
 // GetTimxdier HRTIM_TIMxDIER register update enable
-func (r *registerBdtxuprType) GetTimxdier() bool {
+func (r *RegisterBdtxuprType) GetTimxdier() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxdierMask) != 0
 }
 
 // SetTimxdier HRTIM_TIMxDIER register update enable
-func (r *registerBdtxuprType) SetTimxdier(value bool) {
+func (r *RegisterBdtxuprType) SetTimxdier(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxdierMask)
 	} else {
@@ -6261,12 +6813,12 @@ const (
 )
 
 // GetTimxcnt HRTIM_CNTxR register update enable
-func (r *registerBdtxuprType) GetTimxcnt() bool {
+func (r *RegisterBdtxuprType) GetTimxcnt() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxcntMask) != 0
 }
 
 // SetTimxcnt HRTIM_CNTxR register update enable
-func (r *registerBdtxuprType) SetTimxcnt(value bool) {
+func (r *RegisterBdtxuprType) SetTimxcnt(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxcntMask)
 	} else {
@@ -6280,12 +6832,12 @@ const (
 )
 
 // GetTimxper HRTIM_PERxR register update enable
-func (r *registerBdtxuprType) GetTimxper() bool {
+func (r *RegisterBdtxuprType) GetTimxper() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxperMask) != 0
 }
 
 // SetTimxper HRTIM_PERxR register update enable
-func (r *registerBdtxuprType) SetTimxper(value bool) {
+func (r *RegisterBdtxuprType) SetTimxper(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxperMask)
 	} else {
@@ -6299,12 +6851,12 @@ const (
 )
 
 // GetTimxrep HRTIM_REPxR register update enable
-func (r *registerBdtxuprType) GetTimxrep() bool {
+func (r *RegisterBdtxuprType) GetTimxrep() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxrepMask) != 0
 }
 
 // SetTimxrep HRTIM_REPxR register update enable
-func (r *registerBdtxuprType) SetTimxrep(value bool) {
+func (r *RegisterBdtxuprType) SetTimxrep(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxrepMask)
 	} else {
@@ -6318,12 +6870,12 @@ const (
 )
 
 // GetTimxcmp1 HRTIM_CMP1xR register update enable
-func (r *registerBdtxuprType) GetTimxcmp1() bool {
+func (r *RegisterBdtxuprType) GetTimxcmp1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxcmp1Mask) != 0
 }
 
 // SetTimxcmp1 HRTIM_CMP1xR register update enable
-func (r *registerBdtxuprType) SetTimxcmp1(value bool) {
+func (r *RegisterBdtxuprType) SetTimxcmp1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxcmp1Mask)
 	} else {
@@ -6337,12 +6889,12 @@ const (
 )
 
 // GetTimxcmp2 HRTIM_CMP2xR register update enable
-func (r *registerBdtxuprType) GetTimxcmp2() bool {
+func (r *RegisterBdtxuprType) GetTimxcmp2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxcmp2Mask) != 0
 }
 
 // SetTimxcmp2 HRTIM_CMP2xR register update enable
-func (r *registerBdtxuprType) SetTimxcmp2(value bool) {
+func (r *RegisterBdtxuprType) SetTimxcmp2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxcmp2Mask)
 	} else {
@@ -6356,12 +6908,12 @@ const (
 )
 
 // GetTimxcmp3 HRTIM_CMP3xR register update enable
-func (r *registerBdtxuprType) GetTimxcmp3() bool {
+func (r *RegisterBdtxuprType) GetTimxcmp3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxcmp3Mask) != 0
 }
 
 // SetTimxcmp3 HRTIM_CMP3xR register update enable
-func (r *registerBdtxuprType) SetTimxcmp3(value bool) {
+func (r *RegisterBdtxuprType) SetTimxcmp3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxcmp3Mask)
 	} else {
@@ -6375,12 +6927,12 @@ const (
 )
 
 // GetTimxcmp4 HRTIM_CMP4xR register update enable
-func (r *registerBdtxuprType) GetTimxcmp4() bool {
+func (r *RegisterBdtxuprType) GetTimxcmp4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxcmp4Mask) != 0
 }
 
 // SetTimxcmp4 HRTIM_CMP4xR register update enable
-func (r *registerBdtxuprType) SetTimxcmp4(value bool) {
+func (r *RegisterBdtxuprType) SetTimxcmp4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxcmp4Mask)
 	} else {
@@ -6394,12 +6946,12 @@ const (
 )
 
 // GetTimxdtxr HRTIM_DTxR register update enable
-func (r *registerBdtxuprType) GetTimxdtxr() bool {
+func (r *RegisterBdtxuprType) GetTimxdtxr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxdtxrMask) != 0
 }
 
 // SetTimxdtxr HRTIM_DTxR register update enable
-func (r *registerBdtxuprType) SetTimxdtxr(value bool) {
+func (r *RegisterBdtxuprType) SetTimxdtxr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxdtxrMask)
 	} else {
@@ -6413,12 +6965,12 @@ const (
 )
 
 // GetTimxset1r HRTIM_SET1xR register update enable
-func (r *registerBdtxuprType) GetTimxset1r() bool {
+func (r *RegisterBdtxuprType) GetTimxset1r() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxset1rMask) != 0
 }
 
 // SetTimxset1r HRTIM_SET1xR register update enable
-func (r *registerBdtxuprType) SetTimxset1r(value bool) {
+func (r *RegisterBdtxuprType) SetTimxset1r(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxset1rMask)
 	} else {
@@ -6432,12 +6984,12 @@ const (
 )
 
 // GetTimxrst1r HRTIM_RST1xR register update enable
-func (r *registerBdtxuprType) GetTimxrst1r() bool {
+func (r *RegisterBdtxuprType) GetTimxrst1r() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxrst1rMask) != 0
 }
 
 // SetTimxrst1r HRTIM_RST1xR register update enable
-func (r *registerBdtxuprType) SetTimxrst1r(value bool) {
+func (r *RegisterBdtxuprType) SetTimxrst1r(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxrst1rMask)
 	} else {
@@ -6451,12 +7003,12 @@ const (
 )
 
 // GetTimxset2r HRTIM_SET2xR register update enable
-func (r *registerBdtxuprType) GetTimxset2r() bool {
+func (r *RegisterBdtxuprType) GetTimxset2r() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxset2rMask) != 0
 }
 
 // SetTimxset2r HRTIM_SET2xR register update enable
-func (r *registerBdtxuprType) SetTimxset2r(value bool) {
+func (r *RegisterBdtxuprType) SetTimxset2r(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxset2rMask)
 	} else {
@@ -6470,12 +7022,12 @@ const (
 )
 
 // GetTimxrst2r HRTIM_RST2xR register update enable
-func (r *registerBdtxuprType) GetTimxrst2r() bool {
+func (r *RegisterBdtxuprType) GetTimxrst2r() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxrst2rMask) != 0
 }
 
 // SetTimxrst2r HRTIM_RST2xR register update enable
-func (r *registerBdtxuprType) SetTimxrst2r(value bool) {
+func (r *RegisterBdtxuprType) SetTimxrst2r(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxrst2rMask)
 	} else {
@@ -6489,12 +7041,12 @@ const (
 )
 
 // GetTimxeefr1 HRTIM_EEFxR1 register update enable
-func (r *registerBdtxuprType) GetTimxeefr1() bool {
+func (r *RegisterBdtxuprType) GetTimxeefr1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxeefr1Mask) != 0
 }
 
 // SetTimxeefr1 HRTIM_EEFxR1 register update enable
-func (r *registerBdtxuprType) SetTimxeefr1(value bool) {
+func (r *RegisterBdtxuprType) SetTimxeefr1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxeefr1Mask)
 	} else {
@@ -6508,12 +7060,12 @@ const (
 )
 
 // GetTimxeefr2 HRTIM_EEFxR2 register update enable
-func (r *registerBdtxuprType) GetTimxeefr2() bool {
+func (r *RegisterBdtxuprType) GetTimxeefr2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxeefr2Mask) != 0
 }
 
 // SetTimxeefr2 HRTIM_EEFxR2 register update enable
-func (r *registerBdtxuprType) SetTimxeefr2(value bool) {
+func (r *RegisterBdtxuprType) SetTimxeefr2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxeefr2Mask)
 	} else {
@@ -6527,12 +7079,12 @@ const (
 )
 
 // GetTimxrstr HRTIM_RSTxR register update enable
-func (r *registerBdtxuprType) GetTimxrstr() bool {
+func (r *RegisterBdtxuprType) GetTimxrstr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxrstrMask) != 0
 }
 
 // SetTimxrstr HRTIM_RSTxR register update enable
-func (r *registerBdtxuprType) SetTimxrstr(value bool) {
+func (r *RegisterBdtxuprType) SetTimxrstr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxrstrMask)
 	} else {
@@ -6546,12 +7098,12 @@ const (
 )
 
 // GetTimxchpr HRTIM_CHPxR register update enable
-func (r *registerBdtxuprType) GetTimxchpr() bool {
+func (r *RegisterBdtxuprType) GetTimxchpr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxchprMask) != 0
 }
 
 // SetTimxchpr HRTIM_CHPxR register update enable
-func (r *registerBdtxuprType) SetTimxchpr(value bool) {
+func (r *RegisterBdtxuprType) SetTimxchpr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxchprMask)
 	} else {
@@ -6565,12 +7117,12 @@ const (
 )
 
 // GetTimxoutr HRTIM_OUTxR register update enable
-func (r *registerBdtxuprType) GetTimxoutr() bool {
+func (r *RegisterBdtxuprType) GetTimxoutr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxoutrMask) != 0
 }
 
 // SetTimxoutr HRTIM_OUTxR register update enable
-func (r *registerBdtxuprType) SetTimxoutr(value bool) {
+func (r *RegisterBdtxuprType) SetTimxoutr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxoutrMask)
 	} else {
@@ -6584,12 +7136,12 @@ const (
 )
 
 // GetTimxfltr HRTIM_FLTxR register update enable
-func (r *registerBdtxuprType) GetTimxfltr() bool {
+func (r *RegisterBdtxuprType) GetTimxfltr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdtxuprFieldTimxfltrMask) != 0
 }
 
 // SetTimxfltr HRTIM_FLTxR register update enable
-func (r *registerBdtxuprType) SetTimxfltr(value bool) {
+func (r *RegisterBdtxuprType) SetTimxfltr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdtxuprFieldTimxfltrMask)
 	} else {
@@ -6597,8 +7149,31 @@ func (r *registerBdtxuprType) SetTimxfltr(value bool) {
 	}
 }
 
-// registerBdmadrType Burst DMA Data Register
-type registerBdmadrType uint32
+// RegisterBdmadrType Burst DMA Data Register
+type RegisterBdmadrType uint32
+
+func (r *RegisterBdmadrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterBdmadrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterBdmadrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterBdmadrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterBdmadrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterBdmadrFieldBdmadrShift = 0
@@ -6606,11 +7181,11 @@ const (
 )
 
 // GetBdmadr Burst DMA Data register
-func (r *registerBdmadrType) GetBdmadr() uint32 {
+func (r *RegisterBdmadrType) GetBdmadr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterBdmadrFieldBdmadrMask) >> RegisterBdmadrFieldBdmadrShift)
 }
 
 // SetBdmadr Burst DMA Data register
-func (r *registerBdmadrType) SetBdmadr(value uint32) {
+func (r *RegisterBdmadrType) SetBdmadr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBdmadrFieldBdmadrMask)|(uint32(value)<<RegisterBdmadrFieldBdmadrShift))
 }

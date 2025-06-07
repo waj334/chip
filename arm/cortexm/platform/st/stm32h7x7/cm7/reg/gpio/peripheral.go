@@ -36,20 +36,43 @@ var (
 )
 
 type _gpio struct {
-	Moder   registerModerType
-	Otyper  registerOtyperType
-	Ospeedr registerOspeedrType
-	Pupdr   registerPupdrType
-	Idr     registerIdrType
-	Odr     registerOdrType
-	Bsrr    registerBsrrType
-	Lckr    registerLckrType
-	Afrl    registerAfrlType
-	Afrh    registerAfrhType
+	Moder   RegisterModerType
+	Otyper  RegisterOtyperType
+	Ospeedr RegisterOspeedrType
+	Pupdr   RegisterPupdrType
+	Idr     RegisterIdrType
+	Odr     RegisterOdrType
+	Bsrr    RegisterBsrrType
+	Lckr    RegisterLckrType
+	Afrl    RegisterAfrlType
+	Afrh    RegisterAfrhType
 }
 
-// registerModerType GPIO port mode register
-type registerModerType uint32
+// RegisterModerType GPIO port mode register
+type RegisterModerType uint32
+
+func (r *RegisterModerType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterModerType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterModerType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterModerType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterModerType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterModerFieldMode0Shift = 0
@@ -57,12 +80,12 @@ const (
 )
 
 // GetMode0 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode0() uint8 {
+func (r *RegisterModerType) GetMode0() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode0Mask) >> RegisterModerFieldMode0Shift)
 }
 
 // SetMode0 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode0(value uint8) {
+func (r *RegisterModerType) SetMode0(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode0Mask)|(uint32(value)<<RegisterModerFieldMode0Shift))
 }
 
@@ -72,12 +95,12 @@ const (
 )
 
 // GetMode1 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode1() uint8 {
+func (r *RegisterModerType) GetMode1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode1Mask) >> RegisterModerFieldMode1Shift)
 }
 
 // SetMode1 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode1(value uint8) {
+func (r *RegisterModerType) SetMode1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode1Mask)|(uint32(value)<<RegisterModerFieldMode1Shift))
 }
 
@@ -87,12 +110,12 @@ const (
 )
 
 // GetMode2 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode2() uint8 {
+func (r *RegisterModerType) GetMode2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode2Mask) >> RegisterModerFieldMode2Shift)
 }
 
 // SetMode2 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode2(value uint8) {
+func (r *RegisterModerType) SetMode2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode2Mask)|(uint32(value)<<RegisterModerFieldMode2Shift))
 }
 
@@ -102,12 +125,12 @@ const (
 )
 
 // GetMode3 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode3() uint8 {
+func (r *RegisterModerType) GetMode3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode3Mask) >> RegisterModerFieldMode3Shift)
 }
 
 // SetMode3 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode3(value uint8) {
+func (r *RegisterModerType) SetMode3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode3Mask)|(uint32(value)<<RegisterModerFieldMode3Shift))
 }
 
@@ -117,12 +140,12 @@ const (
 )
 
 // GetMode4 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode4() uint8 {
+func (r *RegisterModerType) GetMode4() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode4Mask) >> RegisterModerFieldMode4Shift)
 }
 
 // SetMode4 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode4(value uint8) {
+func (r *RegisterModerType) SetMode4(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode4Mask)|(uint32(value)<<RegisterModerFieldMode4Shift))
 }
 
@@ -132,12 +155,12 @@ const (
 )
 
 // GetMode5 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode5() uint8 {
+func (r *RegisterModerType) GetMode5() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode5Mask) >> RegisterModerFieldMode5Shift)
 }
 
 // SetMode5 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode5(value uint8) {
+func (r *RegisterModerType) SetMode5(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode5Mask)|(uint32(value)<<RegisterModerFieldMode5Shift))
 }
 
@@ -147,12 +170,12 @@ const (
 )
 
 // GetMode6 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode6() uint8 {
+func (r *RegisterModerType) GetMode6() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode6Mask) >> RegisterModerFieldMode6Shift)
 }
 
 // SetMode6 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode6(value uint8) {
+func (r *RegisterModerType) SetMode6(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode6Mask)|(uint32(value)<<RegisterModerFieldMode6Shift))
 }
 
@@ -162,12 +185,12 @@ const (
 )
 
 // GetMode7 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode7() uint8 {
+func (r *RegisterModerType) GetMode7() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode7Mask) >> RegisterModerFieldMode7Shift)
 }
 
 // SetMode7 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode7(value uint8) {
+func (r *RegisterModerType) SetMode7(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode7Mask)|(uint32(value)<<RegisterModerFieldMode7Shift))
 }
 
@@ -177,12 +200,12 @@ const (
 )
 
 // GetMode8 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode8() uint8 {
+func (r *RegisterModerType) GetMode8() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode8Mask) >> RegisterModerFieldMode8Shift)
 }
 
 // SetMode8 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode8(value uint8) {
+func (r *RegisterModerType) SetMode8(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode8Mask)|(uint32(value)<<RegisterModerFieldMode8Shift))
 }
 
@@ -192,12 +215,12 @@ const (
 )
 
 // GetMode9 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode9() uint8 {
+func (r *RegisterModerType) GetMode9() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode9Mask) >> RegisterModerFieldMode9Shift)
 }
 
 // SetMode9 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode9(value uint8) {
+func (r *RegisterModerType) SetMode9(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode9Mask)|(uint32(value)<<RegisterModerFieldMode9Shift))
 }
 
@@ -207,12 +230,12 @@ const (
 )
 
 // GetMode10 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode10() uint8 {
+func (r *RegisterModerType) GetMode10() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode10Mask) >> RegisterModerFieldMode10Shift)
 }
 
 // SetMode10 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode10(value uint8) {
+func (r *RegisterModerType) SetMode10(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode10Mask)|(uint32(value)<<RegisterModerFieldMode10Shift))
 }
 
@@ -222,12 +245,12 @@ const (
 )
 
 // GetMode11 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode11() uint8 {
+func (r *RegisterModerType) GetMode11() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode11Mask) >> RegisterModerFieldMode11Shift)
 }
 
 // SetMode11 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode11(value uint8) {
+func (r *RegisterModerType) SetMode11(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode11Mask)|(uint32(value)<<RegisterModerFieldMode11Shift))
 }
 
@@ -237,12 +260,12 @@ const (
 )
 
 // GetMode12 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode12() uint8 {
+func (r *RegisterModerType) GetMode12() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode12Mask) >> RegisterModerFieldMode12Shift)
 }
 
 // SetMode12 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode12(value uint8) {
+func (r *RegisterModerType) SetMode12(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode12Mask)|(uint32(value)<<RegisterModerFieldMode12Shift))
 }
 
@@ -252,12 +275,12 @@ const (
 )
 
 // GetMode13 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode13() uint8 {
+func (r *RegisterModerType) GetMode13() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode13Mask) >> RegisterModerFieldMode13Shift)
 }
 
 // SetMode13 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode13(value uint8) {
+func (r *RegisterModerType) SetMode13(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode13Mask)|(uint32(value)<<RegisterModerFieldMode13Shift))
 }
 
@@ -267,12 +290,12 @@ const (
 )
 
 // GetMode14 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode14() uint8 {
+func (r *RegisterModerType) GetMode14() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode14Mask) >> RegisterModerFieldMode14Shift)
 }
 
 // SetMode14 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode14(value uint8) {
+func (r *RegisterModerType) SetMode14(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode14Mask)|(uint32(value)<<RegisterModerFieldMode14Shift))
 }
 
@@ -282,17 +305,40 @@ const (
 )
 
 // GetMode15 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) GetMode15() uint8 {
+func (r *RegisterModerType) GetMode15() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterModerFieldMode15Mask) >> RegisterModerFieldMode15Shift)
 }
 
 // SetMode15 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O mode.
-func (r *registerModerType) SetMode15(value uint8) {
+func (r *RegisterModerType) SetMode15(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterModerFieldMode15Mask)|(uint32(value)<<RegisterModerFieldMode15Shift))
 }
 
-// registerOtyperType GPIO port output type register
-type registerOtyperType uint32
+// RegisterOtyperType GPIO port output type register
+type RegisterOtyperType uint32
+
+func (r *RegisterOtyperType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOtyperType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOtyperType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOtyperType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOtyperType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOtyperFieldOt0Shift = 0
@@ -300,12 +346,12 @@ const (
 )
 
 // GetOt0 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt0() bool {
+func (r *RegisterOtyperType) GetOt0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt0Mask) != 0
 }
 
 // SetOt0 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt0(value bool) {
+func (r *RegisterOtyperType) SetOt0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt0Mask)
 	} else {
@@ -319,12 +365,12 @@ const (
 )
 
 // GetOt1 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt1() bool {
+func (r *RegisterOtyperType) GetOt1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt1Mask) != 0
 }
 
 // SetOt1 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt1(value bool) {
+func (r *RegisterOtyperType) SetOt1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt1Mask)
 	} else {
@@ -338,12 +384,12 @@ const (
 )
 
 // GetOt2 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt2() bool {
+func (r *RegisterOtyperType) GetOt2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt2Mask) != 0
 }
 
 // SetOt2 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt2(value bool) {
+func (r *RegisterOtyperType) SetOt2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt2Mask)
 	} else {
@@ -357,12 +403,12 @@ const (
 )
 
 // GetOt3 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt3() bool {
+func (r *RegisterOtyperType) GetOt3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt3Mask) != 0
 }
 
 // SetOt3 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt3(value bool) {
+func (r *RegisterOtyperType) SetOt3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt3Mask)
 	} else {
@@ -376,12 +422,12 @@ const (
 )
 
 // GetOt4 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt4() bool {
+func (r *RegisterOtyperType) GetOt4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt4Mask) != 0
 }
 
 // SetOt4 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt4(value bool) {
+func (r *RegisterOtyperType) SetOt4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt4Mask)
 	} else {
@@ -395,12 +441,12 @@ const (
 )
 
 // GetOt5 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt5() bool {
+func (r *RegisterOtyperType) GetOt5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt5Mask) != 0
 }
 
 // SetOt5 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt5(value bool) {
+func (r *RegisterOtyperType) SetOt5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt5Mask)
 	} else {
@@ -414,12 +460,12 @@ const (
 )
 
 // GetOt6 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt6() bool {
+func (r *RegisterOtyperType) GetOt6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt6Mask) != 0
 }
 
 // SetOt6 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt6(value bool) {
+func (r *RegisterOtyperType) SetOt6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt6Mask)
 	} else {
@@ -433,12 +479,12 @@ const (
 )
 
 // GetOt7 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt7() bool {
+func (r *RegisterOtyperType) GetOt7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt7Mask) != 0
 }
 
 // SetOt7 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt7(value bool) {
+func (r *RegisterOtyperType) SetOt7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt7Mask)
 	} else {
@@ -452,12 +498,12 @@ const (
 )
 
 // GetOt8 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt8() bool {
+func (r *RegisterOtyperType) GetOt8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt8Mask) != 0
 }
 
 // SetOt8 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt8(value bool) {
+func (r *RegisterOtyperType) SetOt8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt8Mask)
 	} else {
@@ -471,12 +517,12 @@ const (
 )
 
 // GetOt9 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt9() bool {
+func (r *RegisterOtyperType) GetOt9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt9Mask) != 0
 }
 
 // SetOt9 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt9(value bool) {
+func (r *RegisterOtyperType) SetOt9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt9Mask)
 	} else {
@@ -490,12 +536,12 @@ const (
 )
 
 // GetOt10 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt10() bool {
+func (r *RegisterOtyperType) GetOt10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt10Mask) != 0
 }
 
 // SetOt10 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt10(value bool) {
+func (r *RegisterOtyperType) SetOt10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt10Mask)
 	} else {
@@ -509,12 +555,12 @@ const (
 )
 
 // GetOt11 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt11() bool {
+func (r *RegisterOtyperType) GetOt11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt11Mask) != 0
 }
 
 // SetOt11 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt11(value bool) {
+func (r *RegisterOtyperType) SetOt11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt11Mask)
 	} else {
@@ -528,12 +574,12 @@ const (
 )
 
 // GetOt12 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt12() bool {
+func (r *RegisterOtyperType) GetOt12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt12Mask) != 0
 }
 
 // SetOt12 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt12(value bool) {
+func (r *RegisterOtyperType) SetOt12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt12Mask)
 	} else {
@@ -547,12 +593,12 @@ const (
 )
 
 // GetOt13 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt13() bool {
+func (r *RegisterOtyperType) GetOt13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt13Mask) != 0
 }
 
 // SetOt13 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt13(value bool) {
+func (r *RegisterOtyperType) SetOt13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt13Mask)
 	} else {
@@ -566,12 +612,12 @@ const (
 )
 
 // GetOt14 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt14() bool {
+func (r *RegisterOtyperType) GetOt14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt14Mask) != 0
 }
 
 // SetOt14 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt14(value bool) {
+func (r *RegisterOtyperType) SetOt14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt14Mask)
 	} else {
@@ -585,12 +631,12 @@ const (
 )
 
 // GetOt15 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) GetOt15() bool {
+func (r *RegisterOtyperType) GetOt15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtyperFieldOt15Mask) != 0
 }
 
 // SetOt15 Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output type.
-func (r *registerOtyperType) SetOt15(value bool) {
+func (r *RegisterOtyperType) SetOt15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtyperFieldOt15Mask)
 	} else {
@@ -598,8 +644,31 @@ func (r *registerOtyperType) SetOt15(value bool) {
 	}
 }
 
-// registerOspeedrType GPIO port output speed register
-type registerOspeedrType uint32
+// RegisterOspeedrType GPIO port output speed register
+type RegisterOspeedrType uint32
+
+func (r *RegisterOspeedrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOspeedrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOspeedrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOspeedrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOspeedrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOspeedrFieldOspeed0Shift = 0
@@ -607,12 +676,12 @@ const (
 )
 
 // GetOspeed0 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed0() uint8 {
+func (r *RegisterOspeedrType) GetOspeed0() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed0Mask) >> RegisterOspeedrFieldOspeed0Shift)
 }
 
 // SetOspeed0 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed0(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed0(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed0Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed0Shift))
 }
 
@@ -622,12 +691,12 @@ const (
 )
 
 // GetOspeed1 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed1() uint8 {
+func (r *RegisterOspeedrType) GetOspeed1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed1Mask) >> RegisterOspeedrFieldOspeed1Shift)
 }
 
 // SetOspeed1 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed1(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed1Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed1Shift))
 }
 
@@ -637,12 +706,12 @@ const (
 )
 
 // GetOspeed2 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed2() uint8 {
+func (r *RegisterOspeedrType) GetOspeed2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed2Mask) >> RegisterOspeedrFieldOspeed2Shift)
 }
 
 // SetOspeed2 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed2(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed2Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed2Shift))
 }
 
@@ -652,12 +721,12 @@ const (
 )
 
 // GetOspeed3 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed3() uint8 {
+func (r *RegisterOspeedrType) GetOspeed3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed3Mask) >> RegisterOspeedrFieldOspeed3Shift)
 }
 
 // SetOspeed3 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed3(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed3Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed3Shift))
 }
 
@@ -667,12 +736,12 @@ const (
 )
 
 // GetOspeed4 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed4() uint8 {
+func (r *RegisterOspeedrType) GetOspeed4() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed4Mask) >> RegisterOspeedrFieldOspeed4Shift)
 }
 
 // SetOspeed4 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed4(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed4(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed4Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed4Shift))
 }
 
@@ -682,12 +751,12 @@ const (
 )
 
 // GetOspeed5 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed5() uint8 {
+func (r *RegisterOspeedrType) GetOspeed5() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed5Mask) >> RegisterOspeedrFieldOspeed5Shift)
 }
 
 // SetOspeed5 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed5(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed5(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed5Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed5Shift))
 }
 
@@ -697,12 +766,12 @@ const (
 )
 
 // GetOspeed6 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed6() uint8 {
+func (r *RegisterOspeedrType) GetOspeed6() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed6Mask) >> RegisterOspeedrFieldOspeed6Shift)
 }
 
 // SetOspeed6 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed6(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed6(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed6Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed6Shift))
 }
 
@@ -712,12 +781,12 @@ const (
 )
 
 // GetOspeed7 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed7() uint8 {
+func (r *RegisterOspeedrType) GetOspeed7() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed7Mask) >> RegisterOspeedrFieldOspeed7Shift)
 }
 
 // SetOspeed7 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed7(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed7(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed7Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed7Shift))
 }
 
@@ -727,12 +796,12 @@ const (
 )
 
 // GetOspeed8 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed8() uint8 {
+func (r *RegisterOspeedrType) GetOspeed8() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed8Mask) >> RegisterOspeedrFieldOspeed8Shift)
 }
 
 // SetOspeed8 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed8(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed8(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed8Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed8Shift))
 }
 
@@ -742,12 +811,12 @@ const (
 )
 
 // GetOspeed9 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed9() uint8 {
+func (r *RegisterOspeedrType) GetOspeed9() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed9Mask) >> RegisterOspeedrFieldOspeed9Shift)
 }
 
 // SetOspeed9 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed9(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed9(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed9Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed9Shift))
 }
 
@@ -757,12 +826,12 @@ const (
 )
 
 // GetOspeed10 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed10() uint8 {
+func (r *RegisterOspeedrType) GetOspeed10() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed10Mask) >> RegisterOspeedrFieldOspeed10Shift)
 }
 
 // SetOspeed10 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed10(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed10(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed10Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed10Shift))
 }
 
@@ -772,12 +841,12 @@ const (
 )
 
 // GetOspeed11 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed11() uint8 {
+func (r *RegisterOspeedrType) GetOspeed11() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed11Mask) >> RegisterOspeedrFieldOspeed11Shift)
 }
 
 // SetOspeed11 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed11(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed11(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed11Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed11Shift))
 }
 
@@ -787,12 +856,12 @@ const (
 )
 
 // GetOspeed12 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed12() uint8 {
+func (r *RegisterOspeedrType) GetOspeed12() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed12Mask) >> RegisterOspeedrFieldOspeed12Shift)
 }
 
 // SetOspeed12 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed12(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed12(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed12Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed12Shift))
 }
 
@@ -802,12 +871,12 @@ const (
 )
 
 // GetOspeed13 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed13() uint8 {
+func (r *RegisterOspeedrType) GetOspeed13() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed13Mask) >> RegisterOspeedrFieldOspeed13Shift)
 }
 
 // SetOspeed13 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed13(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed13(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed13Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed13Shift))
 }
 
@@ -817,12 +886,12 @@ const (
 )
 
 // GetOspeed14 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed14() uint8 {
+func (r *RegisterOspeedrType) GetOspeed14() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed14Mask) >> RegisterOspeedrFieldOspeed14Shift)
 }
 
 // SetOspeed14 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed14(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed14(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed14Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed14Shift))
 }
 
@@ -832,17 +901,40 @@ const (
 )
 
 // GetOspeed15 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) GetOspeed15() uint8 {
+func (r *RegisterOspeedrType) GetOspeed15() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOspeedrFieldOspeed15Mask) >> RegisterOspeedrFieldOspeed15Shift)
 }
 
 // SetOspeed15 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O output speed. Note: Refer to the device datasheet for the frequency specifications and the power supply and load conditions for each speed.
-func (r *registerOspeedrType) SetOspeed15(value uint8) {
+func (r *RegisterOspeedrType) SetOspeed15(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOspeedrFieldOspeed15Mask)|(uint32(value)<<RegisterOspeedrFieldOspeed15Shift))
 }
 
-// registerPupdrType GPIO port pull-up/pull-down register
-type registerPupdrType uint32
+// RegisterPupdrType GPIO port pull-up/pull-down register
+type RegisterPupdrType uint32
+
+func (r *RegisterPupdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPupdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPupdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPupdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPupdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPupdrFieldPupd0Shift = 0
@@ -850,12 +942,12 @@ const (
 )
 
 // GetPupd0 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd0() uint8 {
+func (r *RegisterPupdrType) GetPupd0() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd0Mask) >> RegisterPupdrFieldPupd0Shift)
 }
 
 // SetPupd0 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd0(value uint8) {
+func (r *RegisterPupdrType) SetPupd0(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd0Mask)|(uint32(value)<<RegisterPupdrFieldPupd0Shift))
 }
 
@@ -865,12 +957,12 @@ const (
 )
 
 // GetPupd1 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd1() uint8 {
+func (r *RegisterPupdrType) GetPupd1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd1Mask) >> RegisterPupdrFieldPupd1Shift)
 }
 
 // SetPupd1 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd1(value uint8) {
+func (r *RegisterPupdrType) SetPupd1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd1Mask)|(uint32(value)<<RegisterPupdrFieldPupd1Shift))
 }
 
@@ -880,12 +972,12 @@ const (
 )
 
 // GetPupd2 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd2() uint8 {
+func (r *RegisterPupdrType) GetPupd2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd2Mask) >> RegisterPupdrFieldPupd2Shift)
 }
 
 // SetPupd2 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd2(value uint8) {
+func (r *RegisterPupdrType) SetPupd2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd2Mask)|(uint32(value)<<RegisterPupdrFieldPupd2Shift))
 }
 
@@ -895,12 +987,12 @@ const (
 )
 
 // GetPupd3 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd3() uint8 {
+func (r *RegisterPupdrType) GetPupd3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd3Mask) >> RegisterPupdrFieldPupd3Shift)
 }
 
 // SetPupd3 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd3(value uint8) {
+func (r *RegisterPupdrType) SetPupd3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd3Mask)|(uint32(value)<<RegisterPupdrFieldPupd3Shift))
 }
 
@@ -910,12 +1002,12 @@ const (
 )
 
 // GetPupd4 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd4() uint8 {
+func (r *RegisterPupdrType) GetPupd4() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd4Mask) >> RegisterPupdrFieldPupd4Shift)
 }
 
 // SetPupd4 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd4(value uint8) {
+func (r *RegisterPupdrType) SetPupd4(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd4Mask)|(uint32(value)<<RegisterPupdrFieldPupd4Shift))
 }
 
@@ -925,12 +1017,12 @@ const (
 )
 
 // GetPupd5 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd5() uint8 {
+func (r *RegisterPupdrType) GetPupd5() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd5Mask) >> RegisterPupdrFieldPupd5Shift)
 }
 
 // SetPupd5 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd5(value uint8) {
+func (r *RegisterPupdrType) SetPupd5(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd5Mask)|(uint32(value)<<RegisterPupdrFieldPupd5Shift))
 }
 
@@ -940,12 +1032,12 @@ const (
 )
 
 // GetPupd6 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd6() uint8 {
+func (r *RegisterPupdrType) GetPupd6() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd6Mask) >> RegisterPupdrFieldPupd6Shift)
 }
 
 // SetPupd6 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd6(value uint8) {
+func (r *RegisterPupdrType) SetPupd6(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd6Mask)|(uint32(value)<<RegisterPupdrFieldPupd6Shift))
 }
 
@@ -955,12 +1047,12 @@ const (
 )
 
 // GetPupd7 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd7() uint8 {
+func (r *RegisterPupdrType) GetPupd7() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd7Mask) >> RegisterPupdrFieldPupd7Shift)
 }
 
 // SetPupd7 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd7(value uint8) {
+func (r *RegisterPupdrType) SetPupd7(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd7Mask)|(uint32(value)<<RegisterPupdrFieldPupd7Shift))
 }
 
@@ -970,12 +1062,12 @@ const (
 )
 
 // GetPupd8 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd8() uint8 {
+func (r *RegisterPupdrType) GetPupd8() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd8Mask) >> RegisterPupdrFieldPupd8Shift)
 }
 
 // SetPupd8 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd8(value uint8) {
+func (r *RegisterPupdrType) SetPupd8(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd8Mask)|(uint32(value)<<RegisterPupdrFieldPupd8Shift))
 }
 
@@ -985,12 +1077,12 @@ const (
 )
 
 // GetPupd9 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd9() uint8 {
+func (r *RegisterPupdrType) GetPupd9() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd9Mask) >> RegisterPupdrFieldPupd9Shift)
 }
 
 // SetPupd9 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd9(value uint8) {
+func (r *RegisterPupdrType) SetPupd9(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd9Mask)|(uint32(value)<<RegisterPupdrFieldPupd9Shift))
 }
 
@@ -1000,12 +1092,12 @@ const (
 )
 
 // GetPupd10 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd10() uint8 {
+func (r *RegisterPupdrType) GetPupd10() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd10Mask) >> RegisterPupdrFieldPupd10Shift)
 }
 
 // SetPupd10 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd10(value uint8) {
+func (r *RegisterPupdrType) SetPupd10(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd10Mask)|(uint32(value)<<RegisterPupdrFieldPupd10Shift))
 }
 
@@ -1015,12 +1107,12 @@ const (
 )
 
 // GetPupd11 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd11() uint8 {
+func (r *RegisterPupdrType) GetPupd11() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd11Mask) >> RegisterPupdrFieldPupd11Shift)
 }
 
 // SetPupd11 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd11(value uint8) {
+func (r *RegisterPupdrType) SetPupd11(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd11Mask)|(uint32(value)<<RegisterPupdrFieldPupd11Shift))
 }
 
@@ -1030,12 +1122,12 @@ const (
 )
 
 // GetPupd12 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd12() uint8 {
+func (r *RegisterPupdrType) GetPupd12() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd12Mask) >> RegisterPupdrFieldPupd12Shift)
 }
 
 // SetPupd12 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd12(value uint8) {
+func (r *RegisterPupdrType) SetPupd12(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd12Mask)|(uint32(value)<<RegisterPupdrFieldPupd12Shift))
 }
 
@@ -1045,12 +1137,12 @@ const (
 )
 
 // GetPupd13 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd13() uint8 {
+func (r *RegisterPupdrType) GetPupd13() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd13Mask) >> RegisterPupdrFieldPupd13Shift)
 }
 
 // SetPupd13 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd13(value uint8) {
+func (r *RegisterPupdrType) SetPupd13(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd13Mask)|(uint32(value)<<RegisterPupdrFieldPupd13Shift))
 }
 
@@ -1060,12 +1152,12 @@ const (
 )
 
 // GetPupd14 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd14() uint8 {
+func (r *RegisterPupdrType) GetPupd14() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd14Mask) >> RegisterPupdrFieldPupd14Shift)
 }
 
 // SetPupd14 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd14(value uint8) {
+func (r *RegisterPupdrType) SetPupd14(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd14Mask)|(uint32(value)<<RegisterPupdrFieldPupd14Shift))
 }
 
@@ -1075,17 +1167,40 @@ const (
 )
 
 // GetPupd15 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) GetPupd15() uint8 {
+func (r *RegisterPupdrType) GetPupd15() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPupdrFieldPupd15Mask) >> RegisterPupdrFieldPupd15Shift)
 }
 
 // SetPupd15 [1:0]: Port x configuration bits (y = 0..15) These bits are written by software to configure the I/O pull-up or pull-down
-func (r *registerPupdrType) SetPupd15(value uint8) {
+func (r *RegisterPupdrType) SetPupd15(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPupdrFieldPupd15Mask)|(uint32(value)<<RegisterPupdrFieldPupd15Shift))
 }
 
-// registerIdrType GPIO port input data register
-type registerIdrType uint32
+// RegisterIdrType GPIO port input data register
+type RegisterIdrType uint32
+
+func (r *RegisterIdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIdrFieldId0Shift = 0
@@ -1093,12 +1208,12 @@ const (
 )
 
 // GetId0 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId0() bool {
+func (r *RegisterIdrType) GetId0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId0Mask) != 0
 }
 
 // SetId0 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId0(value bool) {
+func (r *RegisterIdrType) SetId0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId0Mask)
 	} else {
@@ -1112,12 +1227,12 @@ const (
 )
 
 // GetId1 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId1() bool {
+func (r *RegisterIdrType) GetId1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId1Mask) != 0
 }
 
 // SetId1 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId1(value bool) {
+func (r *RegisterIdrType) SetId1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId1Mask)
 	} else {
@@ -1131,12 +1246,12 @@ const (
 )
 
 // GetId2 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId2() bool {
+func (r *RegisterIdrType) GetId2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId2Mask) != 0
 }
 
 // SetId2 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId2(value bool) {
+func (r *RegisterIdrType) SetId2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId2Mask)
 	} else {
@@ -1150,12 +1265,12 @@ const (
 )
 
 // GetId3 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId3() bool {
+func (r *RegisterIdrType) GetId3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId3Mask) != 0
 }
 
 // SetId3 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId3(value bool) {
+func (r *RegisterIdrType) SetId3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId3Mask)
 	} else {
@@ -1169,12 +1284,12 @@ const (
 )
 
 // GetId4 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId4() bool {
+func (r *RegisterIdrType) GetId4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId4Mask) != 0
 }
 
 // SetId4 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId4(value bool) {
+func (r *RegisterIdrType) SetId4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId4Mask)
 	} else {
@@ -1188,12 +1303,12 @@ const (
 )
 
 // GetId5 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId5() bool {
+func (r *RegisterIdrType) GetId5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId5Mask) != 0
 }
 
 // SetId5 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId5(value bool) {
+func (r *RegisterIdrType) SetId5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId5Mask)
 	} else {
@@ -1207,12 +1322,12 @@ const (
 )
 
 // GetId6 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId6() bool {
+func (r *RegisterIdrType) GetId6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId6Mask) != 0
 }
 
 // SetId6 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId6(value bool) {
+func (r *RegisterIdrType) SetId6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId6Mask)
 	} else {
@@ -1226,12 +1341,12 @@ const (
 )
 
 // GetId7 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId7() bool {
+func (r *RegisterIdrType) GetId7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId7Mask) != 0
 }
 
 // SetId7 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId7(value bool) {
+func (r *RegisterIdrType) SetId7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId7Mask)
 	} else {
@@ -1245,12 +1360,12 @@ const (
 )
 
 // GetId8 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId8() bool {
+func (r *RegisterIdrType) GetId8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId8Mask) != 0
 }
 
 // SetId8 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId8(value bool) {
+func (r *RegisterIdrType) SetId8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId8Mask)
 	} else {
@@ -1264,12 +1379,12 @@ const (
 )
 
 // GetId9 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId9() bool {
+func (r *RegisterIdrType) GetId9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId9Mask) != 0
 }
 
 // SetId9 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId9(value bool) {
+func (r *RegisterIdrType) SetId9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId9Mask)
 	} else {
@@ -1283,12 +1398,12 @@ const (
 )
 
 // GetId10 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId10() bool {
+func (r *RegisterIdrType) GetId10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId10Mask) != 0
 }
 
 // SetId10 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId10(value bool) {
+func (r *RegisterIdrType) SetId10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId10Mask)
 	} else {
@@ -1302,12 +1417,12 @@ const (
 )
 
 // GetId11 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId11() bool {
+func (r *RegisterIdrType) GetId11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId11Mask) != 0
 }
 
 // SetId11 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId11(value bool) {
+func (r *RegisterIdrType) SetId11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId11Mask)
 	} else {
@@ -1321,12 +1436,12 @@ const (
 )
 
 // GetId12 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId12() bool {
+func (r *RegisterIdrType) GetId12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId12Mask) != 0
 }
 
 // SetId12 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId12(value bool) {
+func (r *RegisterIdrType) SetId12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId12Mask)
 	} else {
@@ -1340,12 +1455,12 @@ const (
 )
 
 // GetId13 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId13() bool {
+func (r *RegisterIdrType) GetId13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId13Mask) != 0
 }
 
 // SetId13 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId13(value bool) {
+func (r *RegisterIdrType) SetId13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId13Mask)
 	} else {
@@ -1359,12 +1474,12 @@ const (
 )
 
 // GetId14 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId14() bool {
+func (r *RegisterIdrType) GetId14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId14Mask) != 0
 }
 
 // SetId14 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId14(value bool) {
+func (r *RegisterIdrType) SetId14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId14Mask)
 	} else {
@@ -1378,12 +1493,12 @@ const (
 )
 
 // GetId15 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) GetId15() bool {
+func (r *RegisterIdrType) GetId15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIdrFieldId15Mask) != 0
 }
 
 // SetId15 Port input data bit (y = 0..15) These bits are read-only. They contain the input value of the corresponding I/O port.
-func (r *registerIdrType) SetId15(value bool) {
+func (r *RegisterIdrType) SetId15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIdrFieldId15Mask)
 	} else {
@@ -1391,8 +1506,31 @@ func (r *registerIdrType) SetId15(value bool) {
 	}
 }
 
-// registerOdrType GPIO port output data register
-type registerOdrType uint32
+// RegisterOdrType GPIO port output data register
+type RegisterOdrType uint32
+
+func (r *RegisterOdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOdrFieldOd0Shift = 0
@@ -1400,12 +1538,12 @@ const (
 )
 
 // GetOd0 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd0() bool {
+func (r *RegisterOdrType) GetOd0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd0Mask) != 0
 }
 
 // SetOd0 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd0(value bool) {
+func (r *RegisterOdrType) SetOd0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd0Mask)
 	} else {
@@ -1419,12 +1557,12 @@ const (
 )
 
 // GetOd1 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd1() bool {
+func (r *RegisterOdrType) GetOd1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd1Mask) != 0
 }
 
 // SetOd1 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd1(value bool) {
+func (r *RegisterOdrType) SetOd1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd1Mask)
 	} else {
@@ -1438,12 +1576,12 @@ const (
 )
 
 // GetOd2 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd2() bool {
+func (r *RegisterOdrType) GetOd2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd2Mask) != 0
 }
 
 // SetOd2 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd2(value bool) {
+func (r *RegisterOdrType) SetOd2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd2Mask)
 	} else {
@@ -1457,12 +1595,12 @@ const (
 )
 
 // GetOd3 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd3() bool {
+func (r *RegisterOdrType) GetOd3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd3Mask) != 0
 }
 
 // SetOd3 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd3(value bool) {
+func (r *RegisterOdrType) SetOd3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd3Mask)
 	} else {
@@ -1476,12 +1614,12 @@ const (
 )
 
 // GetOd4 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd4() bool {
+func (r *RegisterOdrType) GetOd4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd4Mask) != 0
 }
 
 // SetOd4 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd4(value bool) {
+func (r *RegisterOdrType) SetOd4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd4Mask)
 	} else {
@@ -1495,12 +1633,12 @@ const (
 )
 
 // GetOd5 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd5() bool {
+func (r *RegisterOdrType) GetOd5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd5Mask) != 0
 }
 
 // SetOd5 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd5(value bool) {
+func (r *RegisterOdrType) SetOd5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd5Mask)
 	} else {
@@ -1514,12 +1652,12 @@ const (
 )
 
 // GetOd6 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd6() bool {
+func (r *RegisterOdrType) GetOd6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd6Mask) != 0
 }
 
 // SetOd6 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd6(value bool) {
+func (r *RegisterOdrType) SetOd6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd6Mask)
 	} else {
@@ -1533,12 +1671,12 @@ const (
 )
 
 // GetOd7 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd7() bool {
+func (r *RegisterOdrType) GetOd7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd7Mask) != 0
 }
 
 // SetOd7 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd7(value bool) {
+func (r *RegisterOdrType) SetOd7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd7Mask)
 	} else {
@@ -1552,12 +1690,12 @@ const (
 )
 
 // GetOd8 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd8() bool {
+func (r *RegisterOdrType) GetOd8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd8Mask) != 0
 }
 
 // SetOd8 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd8(value bool) {
+func (r *RegisterOdrType) SetOd8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd8Mask)
 	} else {
@@ -1571,12 +1709,12 @@ const (
 )
 
 // GetOd9 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd9() bool {
+func (r *RegisterOdrType) GetOd9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd9Mask) != 0
 }
 
 // SetOd9 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd9(value bool) {
+func (r *RegisterOdrType) SetOd9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd9Mask)
 	} else {
@@ -1590,12 +1728,12 @@ const (
 )
 
 // GetOd10 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd10() bool {
+func (r *RegisterOdrType) GetOd10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd10Mask) != 0
 }
 
 // SetOd10 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd10(value bool) {
+func (r *RegisterOdrType) SetOd10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd10Mask)
 	} else {
@@ -1609,12 +1747,12 @@ const (
 )
 
 // GetOd11 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd11() bool {
+func (r *RegisterOdrType) GetOd11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd11Mask) != 0
 }
 
 // SetOd11 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd11(value bool) {
+func (r *RegisterOdrType) SetOd11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd11Mask)
 	} else {
@@ -1628,12 +1766,12 @@ const (
 )
 
 // GetOd12 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd12() bool {
+func (r *RegisterOdrType) GetOd12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd12Mask) != 0
 }
 
 // SetOd12 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd12(value bool) {
+func (r *RegisterOdrType) SetOd12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd12Mask)
 	} else {
@@ -1647,12 +1785,12 @@ const (
 )
 
 // GetOd13 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd13() bool {
+func (r *RegisterOdrType) GetOd13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd13Mask) != 0
 }
 
 // SetOd13 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd13(value bool) {
+func (r *RegisterOdrType) SetOd13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd13Mask)
 	} else {
@@ -1666,12 +1804,12 @@ const (
 )
 
 // GetOd14 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd14() bool {
+func (r *RegisterOdrType) GetOd14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd14Mask) != 0
 }
 
 // SetOd14 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd14(value bool) {
+func (r *RegisterOdrType) SetOd14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd14Mask)
 	} else {
@@ -1685,12 +1823,12 @@ const (
 )
 
 // GetOd15 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) GetOd15() bool {
+func (r *RegisterOdrType) GetOd15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOdrFieldOd15Mask) != 0
 }
 
 // SetOd15 Port output data bit These bits can be read and written by software. Note: For atomic bit set/reset, the OD bits can be individually set and/or reset by writing to the GPIOx_BSRR or GPIOx_BRR registers (x = A..F).
-func (r *registerOdrType) SetOd15(value bool) {
+func (r *RegisterOdrType) SetOd15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOdrFieldOd15Mask)
 	} else {
@@ -1698,8 +1836,31 @@ func (r *registerOdrType) SetOd15(value bool) {
 	}
 }
 
-// registerBsrrType GPIO port bit set/reset register
-type registerBsrrType uint32
+// RegisterBsrrType GPIO port bit set/reset register
+type RegisterBsrrType uint32
+
+func (r *RegisterBsrrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterBsrrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterBsrrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterBsrrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterBsrrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterBsrrFieldBs0Shift = 0
@@ -1707,12 +1868,12 @@ const (
 )
 
 // GetBs0 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs0() bool {
+func (r *RegisterBsrrType) GetBs0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs0Mask) != 0
 }
 
 // SetBs0 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs0(value bool) {
+func (r *RegisterBsrrType) SetBs0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs0Mask)
 	} else {
@@ -1726,12 +1887,12 @@ const (
 )
 
 // GetBs1 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs1() bool {
+func (r *RegisterBsrrType) GetBs1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs1Mask) != 0
 }
 
 // SetBs1 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs1(value bool) {
+func (r *RegisterBsrrType) SetBs1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs1Mask)
 	} else {
@@ -1745,12 +1906,12 @@ const (
 )
 
 // GetBs2 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs2() bool {
+func (r *RegisterBsrrType) GetBs2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs2Mask) != 0
 }
 
 // SetBs2 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs2(value bool) {
+func (r *RegisterBsrrType) SetBs2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs2Mask)
 	} else {
@@ -1764,12 +1925,12 @@ const (
 )
 
 // GetBs3 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs3() bool {
+func (r *RegisterBsrrType) GetBs3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs3Mask) != 0
 }
 
 // SetBs3 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs3(value bool) {
+func (r *RegisterBsrrType) SetBs3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs3Mask)
 	} else {
@@ -1783,12 +1944,12 @@ const (
 )
 
 // GetBs4 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs4() bool {
+func (r *RegisterBsrrType) GetBs4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs4Mask) != 0
 }
 
 // SetBs4 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs4(value bool) {
+func (r *RegisterBsrrType) SetBs4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs4Mask)
 	} else {
@@ -1802,12 +1963,12 @@ const (
 )
 
 // GetBs5 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs5() bool {
+func (r *RegisterBsrrType) GetBs5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs5Mask) != 0
 }
 
 // SetBs5 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs5(value bool) {
+func (r *RegisterBsrrType) SetBs5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs5Mask)
 	} else {
@@ -1821,12 +1982,12 @@ const (
 )
 
 // GetBs6 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs6() bool {
+func (r *RegisterBsrrType) GetBs6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs6Mask) != 0
 }
 
 // SetBs6 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs6(value bool) {
+func (r *RegisterBsrrType) SetBs6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs6Mask)
 	} else {
@@ -1840,12 +2001,12 @@ const (
 )
 
 // GetBs7 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs7() bool {
+func (r *RegisterBsrrType) GetBs7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs7Mask) != 0
 }
 
 // SetBs7 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs7(value bool) {
+func (r *RegisterBsrrType) SetBs7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs7Mask)
 	} else {
@@ -1859,12 +2020,12 @@ const (
 )
 
 // GetBs8 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs8() bool {
+func (r *RegisterBsrrType) GetBs8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs8Mask) != 0
 }
 
 // SetBs8 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs8(value bool) {
+func (r *RegisterBsrrType) SetBs8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs8Mask)
 	} else {
@@ -1878,12 +2039,12 @@ const (
 )
 
 // GetBs9 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs9() bool {
+func (r *RegisterBsrrType) GetBs9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs9Mask) != 0
 }
 
 // SetBs9 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs9(value bool) {
+func (r *RegisterBsrrType) SetBs9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs9Mask)
 	} else {
@@ -1897,12 +2058,12 @@ const (
 )
 
 // GetBs10 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs10() bool {
+func (r *RegisterBsrrType) GetBs10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs10Mask) != 0
 }
 
 // SetBs10 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs10(value bool) {
+func (r *RegisterBsrrType) SetBs10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs10Mask)
 	} else {
@@ -1916,12 +2077,12 @@ const (
 )
 
 // GetBs11 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs11() bool {
+func (r *RegisterBsrrType) GetBs11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs11Mask) != 0
 }
 
 // SetBs11 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs11(value bool) {
+func (r *RegisterBsrrType) SetBs11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs11Mask)
 	} else {
@@ -1935,12 +2096,12 @@ const (
 )
 
 // GetBs12 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs12() bool {
+func (r *RegisterBsrrType) GetBs12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs12Mask) != 0
 }
 
 // SetBs12 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs12(value bool) {
+func (r *RegisterBsrrType) SetBs12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs12Mask)
 	} else {
@@ -1954,12 +2115,12 @@ const (
 )
 
 // GetBs13 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs13() bool {
+func (r *RegisterBsrrType) GetBs13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs13Mask) != 0
 }
 
 // SetBs13 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs13(value bool) {
+func (r *RegisterBsrrType) SetBs13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs13Mask)
 	} else {
@@ -1973,12 +2134,12 @@ const (
 )
 
 // GetBs14 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs14() bool {
+func (r *RegisterBsrrType) GetBs14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs14Mask) != 0
 }
 
 // SetBs14 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs14(value bool) {
+func (r *RegisterBsrrType) SetBs14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs14Mask)
 	} else {
@@ -1992,12 +2153,12 @@ const (
 )
 
 // GetBs15 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) GetBs15() bool {
+func (r *RegisterBsrrType) GetBs15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBs15Mask) != 0
 }
 
 // SetBs15 Port x set bit y (y= 0..15) These bits are write-only. A read to these bits returns the value 0x0000.
-func (r *registerBsrrType) SetBs15(value bool) {
+func (r *RegisterBsrrType) SetBs15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBs15Mask)
 	} else {
@@ -2011,12 +2172,12 @@ const (
 )
 
 // GetBr0 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr0() bool {
+func (r *RegisterBsrrType) GetBr0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr0Mask) != 0
 }
 
 // SetBr0 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr0(value bool) {
+func (r *RegisterBsrrType) SetBr0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr0Mask)
 	} else {
@@ -2030,12 +2191,12 @@ const (
 )
 
 // GetBr1 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr1() bool {
+func (r *RegisterBsrrType) GetBr1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr1Mask) != 0
 }
 
 // SetBr1 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr1(value bool) {
+func (r *RegisterBsrrType) SetBr1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr1Mask)
 	} else {
@@ -2049,12 +2210,12 @@ const (
 )
 
 // GetBr2 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr2() bool {
+func (r *RegisterBsrrType) GetBr2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr2Mask) != 0
 }
 
 // SetBr2 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr2(value bool) {
+func (r *RegisterBsrrType) SetBr2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr2Mask)
 	} else {
@@ -2068,12 +2229,12 @@ const (
 )
 
 // GetBr3 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr3() bool {
+func (r *RegisterBsrrType) GetBr3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr3Mask) != 0
 }
 
 // SetBr3 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr3(value bool) {
+func (r *RegisterBsrrType) SetBr3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr3Mask)
 	} else {
@@ -2087,12 +2248,12 @@ const (
 )
 
 // GetBr4 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr4() bool {
+func (r *RegisterBsrrType) GetBr4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr4Mask) != 0
 }
 
 // SetBr4 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr4(value bool) {
+func (r *RegisterBsrrType) SetBr4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr4Mask)
 	} else {
@@ -2106,12 +2267,12 @@ const (
 )
 
 // GetBr5 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr5() bool {
+func (r *RegisterBsrrType) GetBr5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr5Mask) != 0
 }
 
 // SetBr5 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr5(value bool) {
+func (r *RegisterBsrrType) SetBr5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr5Mask)
 	} else {
@@ -2125,12 +2286,12 @@ const (
 )
 
 // GetBr6 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr6() bool {
+func (r *RegisterBsrrType) GetBr6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr6Mask) != 0
 }
 
 // SetBr6 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr6(value bool) {
+func (r *RegisterBsrrType) SetBr6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr6Mask)
 	} else {
@@ -2144,12 +2305,12 @@ const (
 )
 
 // GetBr7 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr7() bool {
+func (r *RegisterBsrrType) GetBr7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr7Mask) != 0
 }
 
 // SetBr7 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr7(value bool) {
+func (r *RegisterBsrrType) SetBr7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr7Mask)
 	} else {
@@ -2163,12 +2324,12 @@ const (
 )
 
 // GetBr8 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr8() bool {
+func (r *RegisterBsrrType) GetBr8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr8Mask) != 0
 }
 
 // SetBr8 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr8(value bool) {
+func (r *RegisterBsrrType) SetBr8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr8Mask)
 	} else {
@@ -2182,12 +2343,12 @@ const (
 )
 
 // GetBr9 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr9() bool {
+func (r *RegisterBsrrType) GetBr9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr9Mask) != 0
 }
 
 // SetBr9 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr9(value bool) {
+func (r *RegisterBsrrType) SetBr9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr9Mask)
 	} else {
@@ -2201,12 +2362,12 @@ const (
 )
 
 // GetBr10 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr10() bool {
+func (r *RegisterBsrrType) GetBr10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr10Mask) != 0
 }
 
 // SetBr10 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr10(value bool) {
+func (r *RegisterBsrrType) SetBr10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr10Mask)
 	} else {
@@ -2220,12 +2381,12 @@ const (
 )
 
 // GetBr11 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr11() bool {
+func (r *RegisterBsrrType) GetBr11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr11Mask) != 0
 }
 
 // SetBr11 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr11(value bool) {
+func (r *RegisterBsrrType) SetBr11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr11Mask)
 	} else {
@@ -2239,12 +2400,12 @@ const (
 )
 
 // GetBr12 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr12() bool {
+func (r *RegisterBsrrType) GetBr12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr12Mask) != 0
 }
 
 // SetBr12 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr12(value bool) {
+func (r *RegisterBsrrType) SetBr12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr12Mask)
 	} else {
@@ -2258,12 +2419,12 @@ const (
 )
 
 // GetBr13 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr13() bool {
+func (r *RegisterBsrrType) GetBr13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr13Mask) != 0
 }
 
 // SetBr13 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr13(value bool) {
+func (r *RegisterBsrrType) SetBr13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr13Mask)
 	} else {
@@ -2277,12 +2438,12 @@ const (
 )
 
 // GetBr14 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr14() bool {
+func (r *RegisterBsrrType) GetBr14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr14Mask) != 0
 }
 
 // SetBr14 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr14(value bool) {
+func (r *RegisterBsrrType) SetBr14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr14Mask)
 	} else {
@@ -2296,12 +2457,12 @@ const (
 )
 
 // GetBr15 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) GetBr15() bool {
+func (r *RegisterBsrrType) GetBr15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBsrrFieldBr15Mask) != 0
 }
 
 // SetBr15 Port x reset bit y (y = 0..15) These bits are write-only. A read to these bits returns the value 0x0000. Note: If both BSx and BRx are set, BSx has priority.
-func (r *registerBsrrType) SetBr15(value bool) {
+func (r *RegisterBsrrType) SetBr15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBsrrFieldBr15Mask)
 	} else {
@@ -2309,8 +2470,31 @@ func (r *registerBsrrType) SetBr15(value bool) {
 	}
 }
 
-// registerLckrType This register is used to lock the configuration of the port bits when a correct write sequence is applied to bit 16 (LCKK). The value of bits [15:0] is used to lock the configuration of the GPIO. During the write sequence, the value of LCKR[15:0] must not change. When the LOCK sequence has been applied on a port bit, the value of this port bit can no longer be modified until the next MCU reset or peripheral reset.A specific write sequence is used to write to the GPIOx_LCKR register. Only word access (32-bit long) is allowed during this locking sequence.Each lock bit freezes a specific configuration register (control and alternate function registers).
-type registerLckrType uint32
+// RegisterLckrType This register is used to lock the configuration of the port bits when a correct write sequence is applied to bit 16 (LCKK). The value of bits [15:0] is used to lock the configuration of the GPIO. During the write sequence, the value of LCKR[15:0] must not change. When the LOCK sequence has been applied on a port bit, the value of this port bit can no longer be modified until the next MCU reset or peripheral reset.A specific write sequence is used to write to the GPIOx_LCKR register. Only word access (32-bit long) is allowed during this locking sequence.Each lock bit freezes a specific configuration register (control and alternate function registers).
+type RegisterLckrType uint32
+
+func (r *RegisterLckrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterLckrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterLckrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterLckrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterLckrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterLckrFieldLck0Shift = 0
@@ -2318,12 +2502,12 @@ const (
 )
 
 // GetLck0 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck0() bool {
+func (r *RegisterLckrType) GetLck0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck0Mask) != 0
 }
 
 // SetLck0 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck0(value bool) {
+func (r *RegisterLckrType) SetLck0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck0Mask)
 	} else {
@@ -2337,12 +2521,12 @@ const (
 )
 
 // GetLck1 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck1() bool {
+func (r *RegisterLckrType) GetLck1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck1Mask) != 0
 }
 
 // SetLck1 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck1(value bool) {
+func (r *RegisterLckrType) SetLck1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck1Mask)
 	} else {
@@ -2356,12 +2540,12 @@ const (
 )
 
 // GetLck2 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck2() bool {
+func (r *RegisterLckrType) GetLck2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck2Mask) != 0
 }
 
 // SetLck2 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck2(value bool) {
+func (r *RegisterLckrType) SetLck2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck2Mask)
 	} else {
@@ -2375,12 +2559,12 @@ const (
 )
 
 // GetLck3 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck3() bool {
+func (r *RegisterLckrType) GetLck3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck3Mask) != 0
 }
 
 // SetLck3 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck3(value bool) {
+func (r *RegisterLckrType) SetLck3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck3Mask)
 	} else {
@@ -2394,12 +2578,12 @@ const (
 )
 
 // GetLck4 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck4() bool {
+func (r *RegisterLckrType) GetLck4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck4Mask) != 0
 }
 
 // SetLck4 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck4(value bool) {
+func (r *RegisterLckrType) SetLck4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck4Mask)
 	} else {
@@ -2413,12 +2597,12 @@ const (
 )
 
 // GetLck5 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck5() bool {
+func (r *RegisterLckrType) GetLck5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck5Mask) != 0
 }
 
 // SetLck5 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck5(value bool) {
+func (r *RegisterLckrType) SetLck5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck5Mask)
 	} else {
@@ -2432,12 +2616,12 @@ const (
 )
 
 // GetLck6 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck6() bool {
+func (r *RegisterLckrType) GetLck6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck6Mask) != 0
 }
 
 // SetLck6 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck6(value bool) {
+func (r *RegisterLckrType) SetLck6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck6Mask)
 	} else {
@@ -2451,12 +2635,12 @@ const (
 )
 
 // GetLck7 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck7() bool {
+func (r *RegisterLckrType) GetLck7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck7Mask) != 0
 }
 
 // SetLck7 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck7(value bool) {
+func (r *RegisterLckrType) SetLck7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck7Mask)
 	} else {
@@ -2470,12 +2654,12 @@ const (
 )
 
 // GetLck8 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck8() bool {
+func (r *RegisterLckrType) GetLck8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck8Mask) != 0
 }
 
 // SetLck8 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck8(value bool) {
+func (r *RegisterLckrType) SetLck8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck8Mask)
 	} else {
@@ -2489,12 +2673,12 @@ const (
 )
 
 // GetLck9 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck9() bool {
+func (r *RegisterLckrType) GetLck9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck9Mask) != 0
 }
 
 // SetLck9 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck9(value bool) {
+func (r *RegisterLckrType) SetLck9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck9Mask)
 	} else {
@@ -2508,12 +2692,12 @@ const (
 )
 
 // GetLck10 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck10() bool {
+func (r *RegisterLckrType) GetLck10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck10Mask) != 0
 }
 
 // SetLck10 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck10(value bool) {
+func (r *RegisterLckrType) SetLck10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck10Mask)
 	} else {
@@ -2527,12 +2711,12 @@ const (
 )
 
 // GetLck11 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck11() bool {
+func (r *RegisterLckrType) GetLck11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck11Mask) != 0
 }
 
 // SetLck11 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck11(value bool) {
+func (r *RegisterLckrType) SetLck11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck11Mask)
 	} else {
@@ -2546,12 +2730,12 @@ const (
 )
 
 // GetLck12 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck12() bool {
+func (r *RegisterLckrType) GetLck12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck12Mask) != 0
 }
 
 // SetLck12 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck12(value bool) {
+func (r *RegisterLckrType) SetLck12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck12Mask)
 	} else {
@@ -2565,12 +2749,12 @@ const (
 )
 
 // GetLck13 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck13() bool {
+func (r *RegisterLckrType) GetLck13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck13Mask) != 0
 }
 
 // SetLck13 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck13(value bool) {
+func (r *RegisterLckrType) SetLck13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck13Mask)
 	} else {
@@ -2584,12 +2768,12 @@ const (
 )
 
 // GetLck14 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck14() bool {
+func (r *RegisterLckrType) GetLck14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck14Mask) != 0
 }
 
 // SetLck14 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck14(value bool) {
+func (r *RegisterLckrType) SetLck14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck14Mask)
 	} else {
@@ -2603,12 +2787,12 @@ const (
 )
 
 // GetLck15 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) GetLck15() bool {
+func (r *RegisterLckrType) GetLck15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLck15Mask) != 0
 }
 
 // SetLck15 Port x lock bit y (y= 0..15) These bits are read/write but can only be written when the LCKK bit is 0.
-func (r *registerLckrType) SetLck15(value bool) {
+func (r *RegisterLckrType) SetLck15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLck15Mask)
 	} else {
@@ -2622,12 +2806,12 @@ const (
 )
 
 // GetLckk Lock key This bit can be read any time. It can only be modified using the lock key write sequence. LOCK key write sequence: WR LCKR[16] = 1 + LCKR[15:0] WR LCKR[16] = 0 + LCKR[15:0] WR LCKR[16] = 1 + LCKR[15:0] RD LCKR RD LCKR[16] = 1 (this read operation is optional but it confirms that the lock is active) Note: During the LOCK key write sequence, the value of LCK[15:0] must not change. Any error in the lock sequence aborts the lock. After the first lock sequence on any bit of the port, any read access on the LCKK bit will return 1 until the next MCU reset or peripheral reset.
-func (r *registerLckrType) GetLckk() bool {
+func (r *RegisterLckrType) GetLckk() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterLckrFieldLckkMask) != 0
 }
 
 // SetLckk Lock key This bit can be read any time. It can only be modified using the lock key write sequence. LOCK key write sequence: WR LCKR[16] = 1 + LCKR[15:0] WR LCKR[16] = 0 + LCKR[15:0] WR LCKR[16] = 1 + LCKR[15:0] RD LCKR RD LCKR[16] = 1 (this read operation is optional but it confirms that the lock is active) Note: During the LOCK key write sequence, the value of LCK[15:0] must not change. Any error in the lock sequence aborts the lock. After the first lock sequence on any bit of the port, any read access on the LCKK bit will return 1 until the next MCU reset or peripheral reset.
-func (r *registerLckrType) SetLckk(value bool) {
+func (r *RegisterLckrType) SetLckk(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterLckrFieldLckkMask)
 	} else {
@@ -2635,8 +2819,31 @@ func (r *registerLckrType) SetLckk(value bool) {
 	}
 }
 
-// registerAfrlType GPIO alternate function low register
-type registerAfrlType uint32
+// RegisterAfrlType GPIO alternate function low register
+type RegisterAfrlType uint32
+
+func (r *RegisterAfrlType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAfrlType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAfrlType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAfrlType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAfrlType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAfrlFieldAfsel0Shift = 0
@@ -2644,12 +2851,12 @@ const (
 )
 
 // GetAfsel0 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) GetAfsel0() uint8 {
+func (r *RegisterAfrlType) GetAfsel0() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrlFieldAfsel0Mask) >> RegisterAfrlFieldAfsel0Shift)
 }
 
 // SetAfsel0 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) SetAfsel0(value uint8) {
+func (r *RegisterAfrlType) SetAfsel0(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrlFieldAfsel0Mask)|(uint32(value)<<RegisterAfrlFieldAfsel0Shift))
 }
 
@@ -2659,12 +2866,12 @@ const (
 )
 
 // GetAfsel1 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) GetAfsel1() uint8 {
+func (r *RegisterAfrlType) GetAfsel1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrlFieldAfsel1Mask) >> RegisterAfrlFieldAfsel1Shift)
 }
 
 // SetAfsel1 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) SetAfsel1(value uint8) {
+func (r *RegisterAfrlType) SetAfsel1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrlFieldAfsel1Mask)|(uint32(value)<<RegisterAfrlFieldAfsel1Shift))
 }
 
@@ -2674,12 +2881,12 @@ const (
 )
 
 // GetAfsel2 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) GetAfsel2() uint8 {
+func (r *RegisterAfrlType) GetAfsel2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrlFieldAfsel2Mask) >> RegisterAfrlFieldAfsel2Shift)
 }
 
 // SetAfsel2 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) SetAfsel2(value uint8) {
+func (r *RegisterAfrlType) SetAfsel2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrlFieldAfsel2Mask)|(uint32(value)<<RegisterAfrlFieldAfsel2Shift))
 }
 
@@ -2689,12 +2896,12 @@ const (
 )
 
 // GetAfsel3 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) GetAfsel3() uint8 {
+func (r *RegisterAfrlType) GetAfsel3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrlFieldAfsel3Mask) >> RegisterAfrlFieldAfsel3Shift)
 }
 
 // SetAfsel3 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) SetAfsel3(value uint8) {
+func (r *RegisterAfrlType) SetAfsel3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrlFieldAfsel3Mask)|(uint32(value)<<RegisterAfrlFieldAfsel3Shift))
 }
 
@@ -2704,12 +2911,12 @@ const (
 )
 
 // GetAfsel4 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) GetAfsel4() uint8 {
+func (r *RegisterAfrlType) GetAfsel4() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrlFieldAfsel4Mask) >> RegisterAfrlFieldAfsel4Shift)
 }
 
 // SetAfsel4 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) SetAfsel4(value uint8) {
+func (r *RegisterAfrlType) SetAfsel4(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrlFieldAfsel4Mask)|(uint32(value)<<RegisterAfrlFieldAfsel4Shift))
 }
 
@@ -2719,12 +2926,12 @@ const (
 )
 
 // GetAfsel5 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) GetAfsel5() uint8 {
+func (r *RegisterAfrlType) GetAfsel5() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrlFieldAfsel5Mask) >> RegisterAfrlFieldAfsel5Shift)
 }
 
 // SetAfsel5 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) SetAfsel5(value uint8) {
+func (r *RegisterAfrlType) SetAfsel5(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrlFieldAfsel5Mask)|(uint32(value)<<RegisterAfrlFieldAfsel5Shift))
 }
 
@@ -2734,12 +2941,12 @@ const (
 )
 
 // GetAfsel6 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) GetAfsel6() uint8 {
+func (r *RegisterAfrlType) GetAfsel6() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrlFieldAfsel6Mask) >> RegisterAfrlFieldAfsel6Shift)
 }
 
 // SetAfsel6 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) SetAfsel6(value uint8) {
+func (r *RegisterAfrlType) SetAfsel6(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrlFieldAfsel6Mask)|(uint32(value)<<RegisterAfrlFieldAfsel6Shift))
 }
 
@@ -2749,17 +2956,40 @@ const (
 )
 
 // GetAfsel7 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) GetAfsel7() uint8 {
+func (r *RegisterAfrlType) GetAfsel7() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrlFieldAfsel7Mask) >> RegisterAfrlFieldAfsel7Shift)
 }
 
 // SetAfsel7 [3:0]: Alternate function selection for port x pin y (y = 0..7) These bits are written by software to configure alternate function I/Os AFSELy selection:
-func (r *registerAfrlType) SetAfsel7(value uint8) {
+func (r *RegisterAfrlType) SetAfsel7(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrlFieldAfsel7Mask)|(uint32(value)<<RegisterAfrlFieldAfsel7Shift))
 }
 
-// registerAfrhType GPIO alternate function high register
-type registerAfrhType uint32
+// RegisterAfrhType GPIO alternate function high register
+type RegisterAfrhType uint32
+
+func (r *RegisterAfrhType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAfrhType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAfrhType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAfrhType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAfrhType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAfrhFieldAfsel8Shift = 0
@@ -2767,12 +2997,12 @@ const (
 )
 
 // GetAfsel8 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) GetAfsel8() uint8 {
+func (r *RegisterAfrhType) GetAfsel8() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrhFieldAfsel8Mask) >> RegisterAfrhFieldAfsel8Shift)
 }
 
 // SetAfsel8 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) SetAfsel8(value uint8) {
+func (r *RegisterAfrhType) SetAfsel8(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrhFieldAfsel8Mask)|(uint32(value)<<RegisterAfrhFieldAfsel8Shift))
 }
 
@@ -2782,12 +3012,12 @@ const (
 )
 
 // GetAfsel9 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) GetAfsel9() uint8 {
+func (r *RegisterAfrhType) GetAfsel9() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrhFieldAfsel9Mask) >> RegisterAfrhFieldAfsel9Shift)
 }
 
 // SetAfsel9 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) SetAfsel9(value uint8) {
+func (r *RegisterAfrhType) SetAfsel9(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrhFieldAfsel9Mask)|(uint32(value)<<RegisterAfrhFieldAfsel9Shift))
 }
 
@@ -2797,12 +3027,12 @@ const (
 )
 
 // GetAfsel10 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) GetAfsel10() uint8 {
+func (r *RegisterAfrhType) GetAfsel10() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrhFieldAfsel10Mask) >> RegisterAfrhFieldAfsel10Shift)
 }
 
 // SetAfsel10 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) SetAfsel10(value uint8) {
+func (r *RegisterAfrhType) SetAfsel10(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrhFieldAfsel10Mask)|(uint32(value)<<RegisterAfrhFieldAfsel10Shift))
 }
 
@@ -2812,12 +3042,12 @@ const (
 )
 
 // GetAfsel11 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) GetAfsel11() uint8 {
+func (r *RegisterAfrhType) GetAfsel11() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrhFieldAfsel11Mask) >> RegisterAfrhFieldAfsel11Shift)
 }
 
 // SetAfsel11 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) SetAfsel11(value uint8) {
+func (r *RegisterAfrhType) SetAfsel11(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrhFieldAfsel11Mask)|(uint32(value)<<RegisterAfrhFieldAfsel11Shift))
 }
 
@@ -2827,12 +3057,12 @@ const (
 )
 
 // GetAfsel12 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) GetAfsel12() uint8 {
+func (r *RegisterAfrhType) GetAfsel12() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrhFieldAfsel12Mask) >> RegisterAfrhFieldAfsel12Shift)
 }
 
 // SetAfsel12 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) SetAfsel12(value uint8) {
+func (r *RegisterAfrhType) SetAfsel12(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrhFieldAfsel12Mask)|(uint32(value)<<RegisterAfrhFieldAfsel12Shift))
 }
 
@@ -2842,12 +3072,12 @@ const (
 )
 
 // GetAfsel13 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) GetAfsel13() uint8 {
+func (r *RegisterAfrhType) GetAfsel13() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrhFieldAfsel13Mask) >> RegisterAfrhFieldAfsel13Shift)
 }
 
 // SetAfsel13 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) SetAfsel13(value uint8) {
+func (r *RegisterAfrhType) SetAfsel13(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrhFieldAfsel13Mask)|(uint32(value)<<RegisterAfrhFieldAfsel13Shift))
 }
 
@@ -2857,12 +3087,12 @@ const (
 )
 
 // GetAfsel14 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) GetAfsel14() uint8 {
+func (r *RegisterAfrhType) GetAfsel14() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrhFieldAfsel14Mask) >> RegisterAfrhFieldAfsel14Shift)
 }
 
 // SetAfsel14 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) SetAfsel14(value uint8) {
+func (r *RegisterAfrhType) SetAfsel14(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrhFieldAfsel14Mask)|(uint32(value)<<RegisterAfrhFieldAfsel14Shift))
 }
 
@@ -2872,11 +3102,11 @@ const (
 )
 
 // GetAfsel15 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) GetAfsel15() uint8 {
+func (r *RegisterAfrhType) GetAfsel15() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAfrhFieldAfsel15Mask) >> RegisterAfrhFieldAfsel15Shift)
 }
 
 // SetAfsel15 [3:0]: Alternate function selection for port x pin y (y = 8..15) These bits are written by software to configure alternate function I/Os
-func (r *registerAfrhType) SetAfsel15(value uint8) {
+func (r *RegisterAfrhType) SetAfsel15(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAfrhFieldAfsel15Mask)|(uint32(value)<<RegisterAfrhFieldAfsel15Shift))
 }

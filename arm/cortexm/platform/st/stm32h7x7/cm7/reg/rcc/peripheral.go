@@ -12,95 +12,118 @@ var (
 )
 
 type _rcc struct {
-	Cr           registerCrType
-	Hsicfgr      registerHsicfgrType
-	Crrcr        registerCrrcrType
+	Cr           RegisterCrType
+	Hsicfgr      RegisterHsicfgrType
+	Crrcr        RegisterCrrcrType
 	_            [4]byte
-	Cfgr         registerCfgrType
+	Cfgr         RegisterCfgrType
 	_            [4]byte
-	D1cfgr       registerD1cfgrType
-	D2cfgr       registerD2cfgrType
-	D3cfgr       registerD3cfgrType
+	D1cfgr       RegisterD1cfgrType
+	D2cfgr       RegisterD2cfgrType
+	D3cfgr       RegisterD3cfgrType
 	_            [4]byte
-	Pllckselr    registerPllckselrType
-	Pllcfgr      registerPllcfgrType
-	Pll1divr     registerPll1divrType
-	Pll1fracr    registerPll1fracrType
-	Pll2divr     registerPll2divrType
-	Pll2fracr    registerPll2fracrType
-	Pll3divr     registerPll3divrType
-	Pll3fracr    registerPll3fracrType
+	Pllckselr    RegisterPllckselrType
+	Pllcfgr      RegisterPllcfgrType
+	Pll1divr     RegisterPll1divrType
+	Pll1fracr    RegisterPll1fracrType
+	Pll2divr     RegisterPll2divrType
+	Pll2fracr    RegisterPll2fracrType
+	Pll3divr     RegisterPll3divrType
+	Pll3fracr    RegisterPll3fracrType
 	_            [4]byte
-	D1ccipr      registerD1cciprType
-	D2ccip1r     registerD2ccip1rType
-	D2ccip2r     registerD2ccip2rType
-	D3ccipr      registerD3cciprType
+	D1ccipr      RegisterD1cciprType
+	D2ccip1r     RegisterD2ccip1rType
+	D2ccip2r     RegisterD2ccip2rType
+	D3ccipr      RegisterD3cciprType
 	_            [4]byte
-	Cier         registerCierType
-	Cifr         registerCifrType
-	Cicr         registerCicrType
+	Cier         RegisterCierType
+	Cifr         RegisterCifrType
+	Cicr         RegisterCicrType
 	_            [4]byte
-	Bdcr         registerBdcrType
-	Csr          registerCsrType
+	Bdcr         RegisterBdcrType
+	Csr          RegisterCsrType
 	_            [4]byte
-	Ahb3rstr     registerAhb3rstrType
-	Ahb1rstr     registerAhb1rstrType
-	Ahb2rstr     registerAhb2rstrType
-	Ahb4rstr     registerAhb4rstrType
-	Apb3rstr     registerApb3rstrType
-	Apb1lrstr    registerApb1lrstrType
-	Apb1hrstr    registerApb1hrstrType
-	Apb2rstr     registerApb2rstrType
-	Apb4rstr     registerApb4rstrType
-	Gcr          registerGcrType
+	Ahb3rstr     RegisterAhb3rstrType
+	Ahb1rstr     RegisterAhb1rstrType
+	Ahb2rstr     RegisterAhb2rstrType
+	Ahb4rstr     RegisterAhb4rstrType
+	Apb3rstr     RegisterApb3rstrType
+	Apb1lrstr    RegisterApb1lrstrType
+	Apb1hrstr    RegisterApb1hrstrType
+	Apb2rstr     RegisterApb2rstrType
+	Apb4rstr     RegisterApb4rstrType
+	Gcr          RegisterGcrType
 	_            [4]byte
-	D3amr        registerD3amrType
+	D3amr        RegisterD3amrType
 	_            [36]byte
-	Rsr          registerRsrType
-	Ahb3enr      registerAhb3enrType
-	Ahb1enr      registerAhb1enrType
-	Ahb2enr      registerAhb2enrType
-	Ahb4enr      registerAhb4enrType
-	Apb3enr      registerApb3enrType
-	Apb1lenr     registerApb1lenrType
-	Apb1henr     registerApb1henrType
-	Apb2enr      registerApb2enrType
-	Apb4enr      registerApb4enrType
+	Rsr          RegisterRsrType
+	Ahb3enr      RegisterAhb3enrType
+	Ahb1enr      RegisterAhb1enrType
+	Ahb2enr      RegisterAhb2enrType
+	Ahb4enr      RegisterAhb4enrType
+	Apb3enr      RegisterApb3enrType
+	Apb1lenr     RegisterApb1lenrType
+	Apb1henr     RegisterApb1henrType
+	Apb2enr      RegisterApb2enrType
+	Apb4enr      RegisterApb4enrType
 	_            [4]byte
-	Ahb3lpenr    registerAhb3lpenrType
-	Ahb1lpenr    registerAhb1lpenrType
-	Ahb2lpenr    registerAhb2lpenrType
-	Ahb4lpenr    registerAhb4lpenrType
-	Apb3lpenr    registerApb3lpenrType
-	Apb1llpenr   registerApb1llpenrType
-	Apb1hlpenr   registerApb1hlpenrType
-	Apb2lpenr    registerApb2lpenrType
-	Apb4lpenr    registerApb4lpenrType
+	Ahb3lpenr    RegisterAhb3lpenrType
+	Ahb1lpenr    RegisterAhb1lpenrType
+	Ahb2lpenr    RegisterAhb2lpenrType
+	Ahb4lpenr    RegisterAhb4lpenrType
+	Apb3lpenr    RegisterApb3lpenrType
+	Apb1llpenr   RegisterApb1llpenrType
+	Apb1hlpenr   RegisterApb1hlpenrType
+	Apb2lpenr    RegisterApb2lpenrType
+	Apb4lpenr    RegisterApb4lpenrType
 	_            [16]byte
-	C1rsr        registerC1rsrType
-	C1ahb3enr    registerC1ahb3enrType
-	C1ahb1enr    registerC1ahb1enrType
-	C1ahb2enr    registerC1ahb2enrType
-	C1ahb4enr    registerC1ahb4enrType
-	C1apb3enr    registerC1apb3enrType
-	C1apb1lenr   registerC1apb1lenrType
-	C1apb1henr   registerC1apb1henrType
-	C1apb2enr    registerC1apb2enrType
-	C1apb4enr    registerC1apb4enrType
+	C1rsr        RegisterC1rsrType
+	C1ahb3enr    RegisterC1ahb3enrType
+	C1ahb1enr    RegisterC1ahb1enrType
+	C1ahb2enr    RegisterC1ahb2enrType
+	C1ahb4enr    RegisterC1ahb4enrType
+	C1apb3enr    RegisterC1apb3enrType
+	C1apb1lenr   RegisterC1apb1lenrType
+	C1apb1henr   RegisterC1apb1henrType
+	C1apb2enr    RegisterC1apb2enrType
+	C1apb4enr    RegisterC1apb4enrType
 	_            [4]byte
-	C1ahb3lpenr  registerC1ahb3lpenrType
-	C1ahb1lpenr  registerC1ahb1lpenrType
-	C1ahb2lpenr  registerC1ahb2lpenrType
-	C1ahb4lpenr  registerC1ahb4lpenrType
-	C1apb3lpenr  registerC1apb3lpenrType
-	C1apb1llpenr registerC1apb1llpenrType
-	C1apb1hlpenr registerC1apb1hlpenrType
-	C1apb2lpenr  registerC1apb2lpenrType
-	C1apb4lpenr  registerC1apb4lpenrType
+	C1ahb3lpenr  RegisterC1ahb3lpenrType
+	C1ahb1lpenr  RegisterC1ahb1lpenrType
+	C1ahb2lpenr  RegisterC1ahb2lpenrType
+	C1ahb4lpenr  RegisterC1ahb4lpenrType
+	C1apb3lpenr  RegisterC1apb3lpenrType
+	C1apb1llpenr RegisterC1apb1llpenrType
+	C1apb1hlpenr RegisterC1apb1hlpenrType
+	C1apb2lpenr  RegisterC1apb2lpenrType
+	C1apb4lpenr  RegisterC1apb4lpenrType
 }
 
-// registerCrType clock control register
-type registerCrType uint32
+// RegisterCrType clock control register
+type RegisterCrType uint32
+
+func (r *RegisterCrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCrFieldHsionShift = 0
@@ -108,12 +131,12 @@ const (
 )
 
 // GetHsion Internal high-speed clock enable
-func (r *registerCrType) GetHsion() bool {
+func (r *RegisterCrType) GetHsion() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldHsionMask) != 0
 }
 
 // SetHsion Internal high-speed clock enable
-func (r *registerCrType) SetHsion(value bool) {
+func (r *RegisterCrType) SetHsion(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldHsionMask)
 	} else {
@@ -127,12 +150,12 @@ const (
 )
 
 // GetHsikeron High Speed Internal clock enable in Stop mode
-func (r *registerCrType) GetHsikeron() bool {
+func (r *RegisterCrType) GetHsikeron() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldHsikeronMask) != 0
 }
 
 // SetHsikeron High Speed Internal clock enable in Stop mode
-func (r *registerCrType) SetHsikeron(value bool) {
+func (r *RegisterCrType) SetHsikeron(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldHsikeronMask)
 	} else {
@@ -146,12 +169,12 @@ const (
 )
 
 // GetHsirdy HSI clock ready flag
-func (r *registerCrType) GetHsirdy() bool {
+func (r *RegisterCrType) GetHsirdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldHsirdyMask) != 0
 }
 
 // SetHsirdy HSI clock ready flag
-func (r *registerCrType) SetHsirdy(value bool) {
+func (r *RegisterCrType) SetHsirdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldHsirdyMask)
 	} else {
@@ -165,12 +188,12 @@ const (
 )
 
 // GetHsidiv HSI clock divider
-func (r *registerCrType) GetHsidiv() uint8 {
+func (r *RegisterCrType) GetHsidiv() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldHsidivMask) >> RegisterCrFieldHsidivShift)
 }
 
 // SetHsidiv HSI clock divider
-func (r *registerCrType) SetHsidiv(value uint8) {
+func (r *RegisterCrType) SetHsidiv(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrFieldHsidivMask)|(uint32(value)<<RegisterCrFieldHsidivShift))
 }
 
@@ -180,12 +203,12 @@ const (
 )
 
 // GetHsidivf HSI divider flag
-func (r *registerCrType) GetHsidivf() bool {
+func (r *RegisterCrType) GetHsidivf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldHsidivfMask) != 0
 }
 
 // SetHsidivf HSI divider flag
-func (r *registerCrType) SetHsidivf(value bool) {
+func (r *RegisterCrType) SetHsidivf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldHsidivfMask)
 	} else {
@@ -199,12 +222,12 @@ const (
 )
 
 // GetCsion CSI clock enable
-func (r *registerCrType) GetCsion() bool {
+func (r *RegisterCrType) GetCsion() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldCsionMask) != 0
 }
 
 // SetCsion CSI clock enable
-func (r *registerCrType) SetCsion(value bool) {
+func (r *RegisterCrType) SetCsion(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldCsionMask)
 	} else {
@@ -218,12 +241,12 @@ const (
 )
 
 // GetCsirdy CSI clock ready flag
-func (r *registerCrType) GetCsirdy() bool {
+func (r *RegisterCrType) GetCsirdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldCsirdyMask) != 0
 }
 
 // SetCsirdy CSI clock ready flag
-func (r *registerCrType) SetCsirdy(value bool) {
+func (r *RegisterCrType) SetCsirdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldCsirdyMask)
 	} else {
@@ -237,12 +260,12 @@ const (
 )
 
 // GetCsikeron CSI clock enable in Stop mode
-func (r *registerCrType) GetCsikeron() bool {
+func (r *RegisterCrType) GetCsikeron() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldCsikeronMask) != 0
 }
 
 // SetCsikeron CSI clock enable in Stop mode
-func (r *registerCrType) SetCsikeron(value bool) {
+func (r *RegisterCrType) SetCsikeron(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldCsikeronMask)
 	} else {
@@ -256,12 +279,12 @@ const (
 )
 
 // GetRc48on RC48 clock enable
-func (r *registerCrType) GetRc48on() bool {
+func (r *RegisterCrType) GetRc48on() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldRc48onMask) != 0
 }
 
 // SetRc48on RC48 clock enable
-func (r *registerCrType) SetRc48on(value bool) {
+func (r *RegisterCrType) SetRc48on(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldRc48onMask)
 	} else {
@@ -275,12 +298,12 @@ const (
 )
 
 // GetRc48rdy RC48 clock ready flag
-func (r *registerCrType) GetRc48rdy() bool {
+func (r *RegisterCrType) GetRc48rdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldRc48rdyMask) != 0
 }
 
 // SetRc48rdy RC48 clock ready flag
-func (r *registerCrType) SetRc48rdy(value bool) {
+func (r *RegisterCrType) SetRc48rdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldRc48rdyMask)
 	} else {
@@ -294,12 +317,12 @@ const (
 )
 
 // GetD1ckrdy D1 domain clocks ready flag
-func (r *registerCrType) GetD1ckrdy() bool {
+func (r *RegisterCrType) GetD1ckrdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldD1ckrdyMask) != 0
 }
 
 // SetD1ckrdy D1 domain clocks ready flag
-func (r *registerCrType) SetD1ckrdy(value bool) {
+func (r *RegisterCrType) SetD1ckrdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldD1ckrdyMask)
 	} else {
@@ -313,12 +336,12 @@ const (
 )
 
 // GetD2ckrdy D2 domain clocks ready flag
-func (r *registerCrType) GetD2ckrdy() bool {
+func (r *RegisterCrType) GetD2ckrdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldD2ckrdyMask) != 0
 }
 
 // SetD2ckrdy D2 domain clocks ready flag
-func (r *registerCrType) SetD2ckrdy(value bool) {
+func (r *RegisterCrType) SetD2ckrdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldD2ckrdyMask)
 	} else {
@@ -332,12 +355,12 @@ const (
 )
 
 // GetHseon HSE clock enable
-func (r *registerCrType) GetHseon() bool {
+func (r *RegisterCrType) GetHseon() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldHseonMask) != 0
 }
 
 // SetHseon HSE clock enable
-func (r *registerCrType) SetHseon(value bool) {
+func (r *RegisterCrType) SetHseon(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldHseonMask)
 	} else {
@@ -351,12 +374,12 @@ const (
 )
 
 // GetHserdy HSE clock ready flag
-func (r *registerCrType) GetHserdy() bool {
+func (r *RegisterCrType) GetHserdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldHserdyMask) != 0
 }
 
 // SetHserdy HSE clock ready flag
-func (r *registerCrType) SetHserdy(value bool) {
+func (r *RegisterCrType) SetHserdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldHserdyMask)
 	} else {
@@ -370,12 +393,12 @@ const (
 )
 
 // GetHsebyp HSE clock bypass
-func (r *registerCrType) GetHsebyp() bool {
+func (r *RegisterCrType) GetHsebyp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldHsebypMask) != 0
 }
 
 // SetHsebyp HSE clock bypass
-func (r *registerCrType) SetHsebyp(value bool) {
+func (r *RegisterCrType) SetHsebyp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldHsebypMask)
 	} else {
@@ -389,12 +412,12 @@ const (
 )
 
 // GetHsecsson HSE Clock Security System enable
-func (r *registerCrType) GetHsecsson() bool {
+func (r *RegisterCrType) GetHsecsson() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldHsecssonMask) != 0
 }
 
 // SetHsecsson HSE Clock Security System enable
-func (r *registerCrType) SetHsecsson(value bool) {
+func (r *RegisterCrType) SetHsecsson(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldHsecssonMask)
 	} else {
@@ -408,12 +431,12 @@ const (
 )
 
 // GetPll1on PLL1 enable
-func (r *registerCrType) GetPll1on() bool {
+func (r *RegisterCrType) GetPll1on() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldPll1onMask) != 0
 }
 
 // SetPll1on PLL1 enable
-func (r *registerCrType) SetPll1on(value bool) {
+func (r *RegisterCrType) SetPll1on(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldPll1onMask)
 	} else {
@@ -427,12 +450,12 @@ const (
 )
 
 // GetPll1rdy PLL1 clock ready flag
-func (r *registerCrType) GetPll1rdy() bool {
+func (r *RegisterCrType) GetPll1rdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldPll1rdyMask) != 0
 }
 
 // SetPll1rdy PLL1 clock ready flag
-func (r *registerCrType) SetPll1rdy(value bool) {
+func (r *RegisterCrType) SetPll1rdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldPll1rdyMask)
 	} else {
@@ -446,12 +469,12 @@ const (
 )
 
 // GetPll2on PLL2 enable
-func (r *registerCrType) GetPll2on() bool {
+func (r *RegisterCrType) GetPll2on() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldPll2onMask) != 0
 }
 
 // SetPll2on PLL2 enable
-func (r *registerCrType) SetPll2on(value bool) {
+func (r *RegisterCrType) SetPll2on(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldPll2onMask)
 	} else {
@@ -465,12 +488,12 @@ const (
 )
 
 // GetPll2rdy PLL2 clock ready flag
-func (r *registerCrType) GetPll2rdy() bool {
+func (r *RegisterCrType) GetPll2rdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldPll2rdyMask) != 0
 }
 
 // SetPll2rdy PLL2 clock ready flag
-func (r *registerCrType) SetPll2rdy(value bool) {
+func (r *RegisterCrType) SetPll2rdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldPll2rdyMask)
 	} else {
@@ -484,12 +507,12 @@ const (
 )
 
 // GetPll3on PLL3 enable
-func (r *registerCrType) GetPll3on() bool {
+func (r *RegisterCrType) GetPll3on() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldPll3onMask) != 0
 }
 
 // SetPll3on PLL3 enable
-func (r *registerCrType) SetPll3on(value bool) {
+func (r *RegisterCrType) SetPll3on(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldPll3onMask)
 	} else {
@@ -503,12 +526,12 @@ const (
 )
 
 // GetPll3rdy PLL3 clock ready flag
-func (r *registerCrType) GetPll3rdy() bool {
+func (r *RegisterCrType) GetPll3rdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldPll3rdyMask) != 0
 }
 
 // SetPll3rdy PLL3 clock ready flag
-func (r *registerCrType) SetPll3rdy(value bool) {
+func (r *RegisterCrType) SetPll3rdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldPll3rdyMask)
 	} else {
@@ -516,8 +539,31 @@ func (r *registerCrType) SetPll3rdy(value bool) {
 	}
 }
 
-// registerHsicfgrType RCC HSI configuration register
-type registerHsicfgrType uint32
+// RegisterHsicfgrType RCC HSI configuration register
+type RegisterHsicfgrType uint32
+
+func (r *RegisterHsicfgrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsicfgrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsicfgrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsicfgrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsicfgrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsicfgrFieldHsicalShift = 0
@@ -525,7 +571,7 @@ const (
 )
 
 // GetHsical HSI clock calibration
-func (r *registerHsicfgrType) GetHsical() uint16 {
+func (r *RegisterHsicfgrType) GetHsical() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterHsicfgrFieldHsicalMask) >> RegisterHsicfgrFieldHsicalShift)
 }
 
@@ -535,17 +581,40 @@ const (
 )
 
 // GetHsitrim HSI clock trimming
-func (r *registerHsicfgrType) GetHsitrim() uint8 {
+func (r *RegisterHsicfgrType) GetHsitrim() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsicfgrFieldHsitrimMask) >> RegisterHsicfgrFieldHsitrimShift)
 }
 
 // SetHsitrim HSI clock trimming
-func (r *registerHsicfgrType) SetHsitrim(value uint8) {
+func (r *RegisterHsicfgrType) SetHsitrim(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsicfgrFieldHsitrimMask)|(uint32(value)<<RegisterHsicfgrFieldHsitrimShift))
 }
 
-// registerCrrcrType RCC Clock Recovery RC Register
-type registerCrrcrType uint32
+// RegisterCrrcrType RCC Clock Recovery RC Register
+type RegisterCrrcrType uint32
+
+func (r *RegisterCrrcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCrrcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCrrcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCrrcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCrrcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCrrcrFieldRc48calShift = 0
@@ -553,17 +622,40 @@ const (
 )
 
 // GetRc48cal Internal RC 48 MHz clock calibration
-func (r *registerCrrcrType) GetRc48cal() uint16 {
+func (r *RegisterCrrcrType) GetRc48cal() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCrrcrFieldRc48calMask) >> RegisterCrrcrFieldRc48calShift)
 }
 
 // SetRc48cal Internal RC 48 MHz clock calibration
-func (r *registerCrrcrType) SetRc48cal(value uint16) {
+func (r *RegisterCrrcrType) SetRc48cal(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCrrcrFieldRc48calMask)|(uint32(value)<<RegisterCrrcrFieldRc48calShift))
 }
 
-// registerCfgrType RCC Clock Configuration Register
-type registerCfgrType uint32
+// RegisterCfgrType RCC Clock Configuration Register
+type RegisterCfgrType uint32
+
+func (r *RegisterCfgrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCfgrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCfgrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCfgrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCfgrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 type RegisterCfgrFieldSwEnumType uint8
 
@@ -585,12 +677,12 @@ const (
 )
 
 // GetSw System clock switch
-func (r *registerCfgrType) GetSw() RegisterCfgrFieldSwEnumType {
+func (r *RegisterCfgrType) GetSw() RegisterCfgrFieldSwEnumType {
 	return RegisterCfgrFieldSwEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldSwMask) >> RegisterCfgrFieldSwShift)
 }
 
 // SetSw System clock switch
-func (r *registerCfgrType) SetSw(value RegisterCfgrFieldSwEnumType) {
+func (r *RegisterCfgrType) SetSw(value RegisterCfgrFieldSwEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldSwMask)|(uint32(value)<<RegisterCfgrFieldSwShift))
 }
 
@@ -614,12 +706,12 @@ const (
 )
 
 // GetSws System clock switch status
-func (r *registerCfgrType) GetSws() RegisterCfgrFieldSwsEnumType {
+func (r *RegisterCfgrType) GetSws() RegisterCfgrFieldSwsEnumType {
 	return RegisterCfgrFieldSwsEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldSwsMask) >> RegisterCfgrFieldSwsShift)
 }
 
 // SetSws System clock switch status
-func (r *registerCfgrType) SetSws(value RegisterCfgrFieldSwsEnumType) {
+func (r *RegisterCfgrType) SetSws(value RegisterCfgrFieldSwsEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldSwsMask)|(uint32(value)<<RegisterCfgrFieldSwsShift))
 }
 
@@ -629,12 +721,12 @@ const (
 )
 
 // GetStopwuck System clock selection after a wake up from system Stop
-func (r *registerCfgrType) GetStopwuck() bool {
+func (r *RegisterCfgrType) GetStopwuck() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldStopwuckMask) != 0
 }
 
 // SetStopwuck System clock selection after a wake up from system Stop
-func (r *registerCfgrType) SetStopwuck(value bool) {
+func (r *RegisterCfgrType) SetStopwuck(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCfgrFieldStopwuckMask)
 	} else {
@@ -648,12 +740,12 @@ const (
 )
 
 // GetStopkerwuck Kernel clock selection after a wake up from system Stop
-func (r *registerCfgrType) GetStopkerwuck() bool {
+func (r *RegisterCfgrType) GetStopkerwuck() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldStopkerwuckMask) != 0
 }
 
 // SetStopkerwuck Kernel clock selection after a wake up from system Stop
-func (r *registerCfgrType) SetStopkerwuck(value bool) {
+func (r *RegisterCfgrType) SetStopkerwuck(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCfgrFieldStopkerwuckMask)
 	} else {
@@ -667,12 +759,12 @@ const (
 )
 
 // GetRtcpre HSE division factor for RTC clock
-func (r *registerCfgrType) GetRtcpre() uint8 {
+func (r *RegisterCfgrType) GetRtcpre() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldRtcpreMask) >> RegisterCfgrFieldRtcpreShift)
 }
 
 // SetRtcpre HSE division factor for RTC clock
-func (r *registerCfgrType) SetRtcpre(value uint8) {
+func (r *RegisterCfgrType) SetRtcpre(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldRtcpreMask)|(uint32(value)<<RegisterCfgrFieldRtcpreShift))
 }
 
@@ -682,12 +774,12 @@ const (
 )
 
 // GetHrtimsel High Resolution Timer clock prescaler selection
-func (r *registerCfgrType) GetHrtimsel() bool {
+func (r *RegisterCfgrType) GetHrtimsel() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldHrtimselMask) != 0
 }
 
 // SetHrtimsel High Resolution Timer clock prescaler selection
-func (r *registerCfgrType) SetHrtimsel(value bool) {
+func (r *RegisterCfgrType) SetHrtimsel(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCfgrFieldHrtimselMask)
 	} else {
@@ -701,12 +793,12 @@ const (
 )
 
 // GetTimpre Timers clocks prescaler selection
-func (r *registerCfgrType) GetTimpre() bool {
+func (r *RegisterCfgrType) GetTimpre() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldTimpreMask) != 0
 }
 
 // SetTimpre Timers clocks prescaler selection
-func (r *registerCfgrType) SetTimpre(value bool) {
+func (r *RegisterCfgrType) SetTimpre(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCfgrFieldTimpreMask)
 	} else {
@@ -720,12 +812,12 @@ const (
 )
 
 // GetMco1pre MCO1 prescaler
-func (r *registerCfgrType) GetMco1pre() uint8 {
+func (r *RegisterCfgrType) GetMco1pre() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldMco1preMask) >> RegisterCfgrFieldMco1preShift)
 }
 
 // SetMco1pre MCO1 prescaler
-func (r *registerCfgrType) SetMco1pre(value uint8) {
+func (r *RegisterCfgrType) SetMco1pre(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldMco1preMask)|(uint32(value)<<RegisterCfgrFieldMco1preShift))
 }
 
@@ -735,12 +827,12 @@ const (
 )
 
 // GetMco1sel Micro-controller clock output 1
-func (r *registerCfgrType) GetMco1sel() uint8 {
+func (r *RegisterCfgrType) GetMco1sel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldMco1selMask) >> RegisterCfgrFieldMco1selShift)
 }
 
 // SetMco1sel Micro-controller clock output 1
-func (r *registerCfgrType) SetMco1sel(value uint8) {
+func (r *RegisterCfgrType) SetMco1sel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldMco1selMask)|(uint32(value)<<RegisterCfgrFieldMco1selShift))
 }
 
@@ -750,12 +842,12 @@ const (
 )
 
 // GetMco2pre MCO2 prescaler
-func (r *registerCfgrType) GetMco2pre() uint8 {
+func (r *RegisterCfgrType) GetMco2pre() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldMco2preMask) >> RegisterCfgrFieldMco2preShift)
 }
 
 // SetMco2pre MCO2 prescaler
-func (r *registerCfgrType) SetMco2pre(value uint8) {
+func (r *RegisterCfgrType) SetMco2pre(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldMco2preMask)|(uint32(value)<<RegisterCfgrFieldMco2preShift))
 }
 
@@ -765,17 +857,40 @@ const (
 )
 
 // GetMco2sel Micro-controller clock output 2
-func (r *registerCfgrType) GetMco2sel() uint8 {
+func (r *RegisterCfgrType) GetMco2sel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldMco2selMask) >> RegisterCfgrFieldMco2selShift)
 }
 
 // SetMco2sel Micro-controller clock output 2
-func (r *registerCfgrType) SetMco2sel(value uint8) {
+func (r *RegisterCfgrType) SetMco2sel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldMco2selMask)|(uint32(value)<<RegisterCfgrFieldMco2selShift))
 }
 
-// registerD1cfgrType RCC Domain 1 Clock Configuration Register
-type registerD1cfgrType uint32
+// RegisterD1cfgrType RCC Domain 1 Clock Configuration Register
+type RegisterD1cfgrType uint32
+
+func (r *RegisterD1cfgrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD1cfgrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD1cfgrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD1cfgrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD1cfgrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 type RegisterD1cfgrFieldHpreEnumType uint8
 
@@ -815,12 +930,12 @@ const (
 )
 
 // GetHpre D1 domain AHB prescaler
-func (r *registerD1cfgrType) GetHpre() RegisterD1cfgrFieldHpreEnumType {
+func (r *RegisterD1cfgrType) GetHpre() RegisterD1cfgrFieldHpreEnumType {
 	return RegisterD1cfgrFieldHpreEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD1cfgrFieldHpreMask) >> RegisterD1cfgrFieldHpreShift)
 }
 
 // SetHpre D1 domain AHB prescaler
-func (r *registerD1cfgrType) SetHpre(value RegisterD1cfgrFieldHpreEnumType) {
+func (r *RegisterD1cfgrType) SetHpre(value RegisterD1cfgrFieldHpreEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD1cfgrFieldHpreMask)|(uint32(value)<<RegisterD1cfgrFieldHpreShift))
 }
 
@@ -847,12 +962,12 @@ const (
 )
 
 // GetD1ppre D1 domain APB3 prescaler
-func (r *registerD1cfgrType) GetD1ppre() RegisterD1cfgrFieldD1ppreEnumType {
+func (r *RegisterD1cfgrType) GetD1ppre() RegisterD1cfgrFieldD1ppreEnumType {
 	return RegisterD1cfgrFieldD1ppreEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD1cfgrFieldD1ppreMask) >> RegisterD1cfgrFieldD1ppreShift)
 }
 
 // SetD1ppre D1 domain APB3 prescaler
-func (r *registerD1cfgrType) SetD1ppre(value RegisterD1cfgrFieldD1ppreEnumType) {
+func (r *RegisterD1cfgrType) SetD1ppre(value RegisterD1cfgrFieldD1ppreEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD1cfgrFieldD1ppreMask)|(uint32(value)<<RegisterD1cfgrFieldD1ppreShift))
 }
 
@@ -894,17 +1009,40 @@ const (
 )
 
 // GetD1cpre D1 domain Core prescaler
-func (r *registerD1cfgrType) GetD1cpre() RegisterD1cfgrFieldD1cpreEnumType {
+func (r *RegisterD1cfgrType) GetD1cpre() RegisterD1cfgrFieldD1cpreEnumType {
 	return RegisterD1cfgrFieldD1cpreEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD1cfgrFieldD1cpreMask) >> RegisterD1cfgrFieldD1cpreShift)
 }
 
 // SetD1cpre D1 domain Core prescaler
-func (r *registerD1cfgrType) SetD1cpre(value RegisterD1cfgrFieldD1cpreEnumType) {
+func (r *RegisterD1cfgrType) SetD1cpre(value RegisterD1cfgrFieldD1cpreEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD1cfgrFieldD1cpreMask)|(uint32(value)<<RegisterD1cfgrFieldD1cpreShift))
 }
 
-// registerD2cfgrType RCC Domain 2 Clock Configuration Register
-type registerD2cfgrType uint32
+// RegisterD2cfgrType RCC Domain 2 Clock Configuration Register
+type RegisterD2cfgrType uint32
+
+func (r *RegisterD2cfgrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD2cfgrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD2cfgrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD2cfgrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD2cfgrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 type RegisterD2cfgrFieldD2ppre1EnumType uint8
 
@@ -929,12 +1067,12 @@ const (
 )
 
 // GetD2ppre1 D2 domain APB1 prescaler
-func (r *registerD2cfgrType) GetD2ppre1() RegisterD2cfgrFieldD2ppre1EnumType {
+func (r *RegisterD2cfgrType) GetD2ppre1() RegisterD2cfgrFieldD2ppre1EnumType {
 	return RegisterD2cfgrFieldD2ppre1EnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD2cfgrFieldD2ppre1Mask) >> RegisterD2cfgrFieldD2ppre1Shift)
 }
 
 // SetD2ppre1 D2 domain APB1 prescaler
-func (r *registerD2cfgrType) SetD2ppre1(value RegisterD2cfgrFieldD2ppre1EnumType) {
+func (r *RegisterD2cfgrType) SetD2ppre1(value RegisterD2cfgrFieldD2ppre1EnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2cfgrFieldD2ppre1Mask)|(uint32(value)<<RegisterD2cfgrFieldD2ppre1Shift))
 }
 
@@ -961,17 +1099,40 @@ const (
 )
 
 // GetD2ppre2 D2 domain APB2 prescaler
-func (r *registerD2cfgrType) GetD2ppre2() RegisterD2cfgrFieldD2ppre2EnumType {
+func (r *RegisterD2cfgrType) GetD2ppre2() RegisterD2cfgrFieldD2ppre2EnumType {
 	return RegisterD2cfgrFieldD2ppre2EnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD2cfgrFieldD2ppre2Mask) >> RegisterD2cfgrFieldD2ppre2Shift)
 }
 
 // SetD2ppre2 D2 domain APB2 prescaler
-func (r *registerD2cfgrType) SetD2ppre2(value RegisterD2cfgrFieldD2ppre2EnumType) {
+func (r *RegisterD2cfgrType) SetD2ppre2(value RegisterD2cfgrFieldD2ppre2EnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2cfgrFieldD2ppre2Mask)|(uint32(value)<<RegisterD2cfgrFieldD2ppre2Shift))
 }
 
-// registerD3cfgrType RCC Domain 3 Clock Configuration Register
-type registerD3cfgrType uint32
+// RegisterD3cfgrType RCC Domain 3 Clock Configuration Register
+type RegisterD3cfgrType uint32
+
+func (r *RegisterD3cfgrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3cfgrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3cfgrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3cfgrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3cfgrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 type RegisterD3cfgrFieldD3ppreEnumType uint8
 
@@ -996,17 +1157,40 @@ const (
 )
 
 // GetD3ppre D3 domain APB4 prescaler
-func (r *registerD3cfgrType) GetD3ppre() RegisterD3cfgrFieldD3ppreEnumType {
+func (r *RegisterD3cfgrType) GetD3ppre() RegisterD3cfgrFieldD3ppreEnumType {
 	return RegisterD3cfgrFieldD3ppreEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterD3cfgrFieldD3ppreMask) >> RegisterD3cfgrFieldD3ppreShift)
 }
 
 // SetD3ppre D3 domain APB4 prescaler
-func (r *registerD3cfgrType) SetD3ppre(value RegisterD3cfgrFieldD3ppreEnumType) {
+func (r *RegisterD3cfgrType) SetD3ppre(value RegisterD3cfgrFieldD3ppreEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3cfgrFieldD3ppreMask)|(uint32(value)<<RegisterD3cfgrFieldD3ppreShift))
 }
 
-// registerPllckselrType RCC PLLs Clock Source Selection Register
-type registerPllckselrType uint32
+// RegisterPllckselrType RCC PLLs Clock Source Selection Register
+type RegisterPllckselrType uint32
+
+func (r *RegisterPllckselrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPllckselrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPllckselrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPllckselrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPllckselrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 type RegisterPllckselrFieldPllsrcEnumType uint8
 
@@ -1028,12 +1212,12 @@ const (
 )
 
 // GetPllsrc DIVMx and PLLs clock source selection
-func (r *registerPllckselrType) GetPllsrc() RegisterPllckselrFieldPllsrcEnumType {
+func (r *RegisterPllckselrType) GetPllsrc() RegisterPllckselrFieldPllsrcEnumType {
 	return RegisterPllckselrFieldPllsrcEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterPllckselrFieldPllsrcMask) >> RegisterPllckselrFieldPllsrcShift)
 }
 
 // SetPllsrc DIVMx and PLLs clock source selection
-func (r *registerPllckselrType) SetPllsrc(value RegisterPllckselrFieldPllsrcEnumType) {
+func (r *RegisterPllckselrType) SetPllsrc(value RegisterPllckselrFieldPllsrcEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllckselrFieldPllsrcMask)|(uint32(value)<<RegisterPllckselrFieldPllsrcShift))
 }
 
@@ -1043,12 +1227,12 @@ const (
 )
 
 // GetDivm1 Prescaler for PLL1
-func (r *registerPllckselrType) GetDivm1() uint8 {
+func (r *RegisterPllckselrType) GetDivm1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPllckselrFieldDivm1Mask) >> RegisterPllckselrFieldDivm1Shift)
 }
 
 // SetDivm1 Prescaler for PLL1
-func (r *registerPllckselrType) SetDivm1(value uint8) {
+func (r *RegisterPllckselrType) SetDivm1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllckselrFieldDivm1Mask)|(uint32(value)<<RegisterPllckselrFieldDivm1Shift))
 }
 
@@ -1058,12 +1242,12 @@ const (
 )
 
 // GetDivm2 Prescaler for PLL2
-func (r *registerPllckselrType) GetDivm2() uint8 {
+func (r *RegisterPllckselrType) GetDivm2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPllckselrFieldDivm2Mask) >> RegisterPllckselrFieldDivm2Shift)
 }
 
 // SetDivm2 Prescaler for PLL2
-func (r *registerPllckselrType) SetDivm2(value uint8) {
+func (r *RegisterPllckselrType) SetDivm2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllckselrFieldDivm2Mask)|(uint32(value)<<RegisterPllckselrFieldDivm2Shift))
 }
 
@@ -1073,17 +1257,40 @@ const (
 )
 
 // GetDivm3 Prescaler for PLL3
-func (r *registerPllckselrType) GetDivm3() uint8 {
+func (r *RegisterPllckselrType) GetDivm3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPllckselrFieldDivm3Mask) >> RegisterPllckselrFieldDivm3Shift)
 }
 
 // SetDivm3 Prescaler for PLL3
-func (r *registerPllckselrType) SetDivm3(value uint8) {
+func (r *RegisterPllckselrType) SetDivm3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllckselrFieldDivm3Mask)|(uint32(value)<<RegisterPllckselrFieldDivm3Shift))
 }
 
-// registerPllcfgrType RCC PLLs Configuration Register
-type registerPllcfgrType uint32
+// RegisterPllcfgrType RCC PLLs Configuration Register
+type RegisterPllcfgrType uint32
+
+func (r *RegisterPllcfgrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPllcfgrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPllcfgrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPllcfgrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPllcfgrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPllcfgrFieldPll1fracenShift = 0
@@ -1091,12 +1298,12 @@ const (
 )
 
 // GetPll1fracen PLL1 fractional latch enable
-func (r *registerPllcfgrType) GetPll1fracen() bool {
+func (r *RegisterPllcfgrType) GetPll1fracen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll1fracenMask) != 0
 }
 
 // SetPll1fracen PLL1 fractional latch enable
-func (r *registerPllcfgrType) SetPll1fracen(value bool) {
+func (r *RegisterPllcfgrType) SetPll1fracen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldPll1fracenMask)
 	} else {
@@ -1110,12 +1317,12 @@ const (
 )
 
 // GetPll1vcosel PLL1 VCO selection
-func (r *registerPllcfgrType) GetPll1vcosel() bool {
+func (r *RegisterPllcfgrType) GetPll1vcosel() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll1vcoselMask) != 0
 }
 
 // SetPll1vcosel PLL1 VCO selection
-func (r *registerPllcfgrType) SetPll1vcosel(value bool) {
+func (r *RegisterPllcfgrType) SetPll1vcosel(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldPll1vcoselMask)
 	} else {
@@ -1143,12 +1350,12 @@ const (
 )
 
 // GetPll1rge PLL1 input frequency range
-func (r *registerPllcfgrType) GetPll1rge() RegisterPllcfgrFieldPll1rgeEnumType {
+func (r *RegisterPllcfgrType) GetPll1rge() RegisterPllcfgrFieldPll1rgeEnumType {
 	return RegisterPllcfgrFieldPll1rgeEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll1rgeMask) >> RegisterPllcfgrFieldPll1rgeShift)
 }
 
 // SetPll1rge PLL1 input frequency range
-func (r *registerPllcfgrType) SetPll1rge(value RegisterPllcfgrFieldPll1rgeEnumType) {
+func (r *RegisterPllcfgrType) SetPll1rge(value RegisterPllcfgrFieldPll1rgeEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllcfgrFieldPll1rgeMask)|(uint32(value)<<RegisterPllcfgrFieldPll1rgeShift))
 }
 
@@ -1158,12 +1365,12 @@ const (
 )
 
 // GetPll2fracen PLL2 fractional latch enable
-func (r *registerPllcfgrType) GetPll2fracen() bool {
+func (r *RegisterPllcfgrType) GetPll2fracen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll2fracenMask) != 0
 }
 
 // SetPll2fracen PLL2 fractional latch enable
-func (r *registerPllcfgrType) SetPll2fracen(value bool) {
+func (r *RegisterPllcfgrType) SetPll2fracen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldPll2fracenMask)
 	} else {
@@ -1177,12 +1384,12 @@ const (
 )
 
 // GetPll2vcosel PLL2 VCO selection
-func (r *registerPllcfgrType) GetPll2vcosel() bool {
+func (r *RegisterPllcfgrType) GetPll2vcosel() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll2vcoselMask) != 0
 }
 
 // SetPll2vcosel PLL2 VCO selection
-func (r *registerPllcfgrType) SetPll2vcosel(value bool) {
+func (r *RegisterPllcfgrType) SetPll2vcosel(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldPll2vcoselMask)
 	} else {
@@ -1210,12 +1417,12 @@ const (
 )
 
 // GetPll2rge PLL2 input frequency range
-func (r *registerPllcfgrType) GetPll2rge() RegisterPllcfgrFieldPll2rgeEnumType {
+func (r *RegisterPllcfgrType) GetPll2rge() RegisterPllcfgrFieldPll2rgeEnumType {
 	return RegisterPllcfgrFieldPll2rgeEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll2rgeMask) >> RegisterPllcfgrFieldPll2rgeShift)
 }
 
 // SetPll2rge PLL2 input frequency range
-func (r *registerPllcfgrType) SetPll2rge(value RegisterPllcfgrFieldPll2rgeEnumType) {
+func (r *RegisterPllcfgrType) SetPll2rge(value RegisterPllcfgrFieldPll2rgeEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllcfgrFieldPll2rgeMask)|(uint32(value)<<RegisterPllcfgrFieldPll2rgeShift))
 }
 
@@ -1225,12 +1432,12 @@ const (
 )
 
 // GetPll3fracen PLL3 fractional latch enable
-func (r *registerPllcfgrType) GetPll3fracen() bool {
+func (r *RegisterPllcfgrType) GetPll3fracen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll3fracenMask) != 0
 }
 
 // SetPll3fracen PLL3 fractional latch enable
-func (r *registerPllcfgrType) SetPll3fracen(value bool) {
+func (r *RegisterPllcfgrType) SetPll3fracen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldPll3fracenMask)
 	} else {
@@ -1244,12 +1451,12 @@ const (
 )
 
 // GetPll3vcosel PLL3 VCO selection
-func (r *registerPllcfgrType) GetPll3vcosel() bool {
+func (r *RegisterPllcfgrType) GetPll3vcosel() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll3vcoselMask) != 0
 }
 
 // SetPll3vcosel PLL3 VCO selection
-func (r *registerPllcfgrType) SetPll3vcosel(value bool) {
+func (r *RegisterPllcfgrType) SetPll3vcosel(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldPll3vcoselMask)
 	} else {
@@ -1277,12 +1484,12 @@ const (
 )
 
 // GetPll3rge PLL3 input frequency range
-func (r *registerPllcfgrType) GetPll3rge() RegisterPllcfgrFieldPll3rgeEnumType {
+func (r *RegisterPllcfgrType) GetPll3rge() RegisterPllcfgrFieldPll3rgeEnumType {
 	return RegisterPllcfgrFieldPll3rgeEnumType((volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldPll3rgeMask) >> RegisterPllcfgrFieldPll3rgeShift)
 }
 
 // SetPll3rge PLL3 input frequency range
-func (r *registerPllcfgrType) SetPll3rge(value RegisterPllcfgrFieldPll3rgeEnumType) {
+func (r *RegisterPllcfgrType) SetPll3rge(value RegisterPllcfgrFieldPll3rgeEnumType) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPllcfgrFieldPll3rgeMask)|(uint32(value)<<RegisterPllcfgrFieldPll3rgeShift))
 }
 
@@ -1292,12 +1499,12 @@ const (
 )
 
 // GetDivp1en PLL1 DIVP divider output enable
-func (r *registerPllcfgrType) GetDivp1en() bool {
+func (r *RegisterPllcfgrType) GetDivp1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldDivp1enMask) != 0
 }
 
 // SetDivp1en PLL1 DIVP divider output enable
-func (r *registerPllcfgrType) SetDivp1en(value bool) {
+func (r *RegisterPllcfgrType) SetDivp1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldDivp1enMask)
 	} else {
@@ -1311,12 +1518,12 @@ const (
 )
 
 // GetDivq1en PLL1 DIVQ divider output enable
-func (r *registerPllcfgrType) GetDivq1en() bool {
+func (r *RegisterPllcfgrType) GetDivq1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldDivq1enMask) != 0
 }
 
 // SetDivq1en PLL1 DIVQ divider output enable
-func (r *registerPllcfgrType) SetDivq1en(value bool) {
+func (r *RegisterPllcfgrType) SetDivq1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldDivq1enMask)
 	} else {
@@ -1330,12 +1537,12 @@ const (
 )
 
 // GetDivr1en PLL1 DIVR divider output enable
-func (r *registerPllcfgrType) GetDivr1en() bool {
+func (r *RegisterPllcfgrType) GetDivr1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldDivr1enMask) != 0
 }
 
 // SetDivr1en PLL1 DIVR divider output enable
-func (r *registerPllcfgrType) SetDivr1en(value bool) {
+func (r *RegisterPllcfgrType) SetDivr1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldDivr1enMask)
 	} else {
@@ -1349,12 +1556,12 @@ const (
 )
 
 // GetDivp2en PLL2 DIVP divider output enable
-func (r *registerPllcfgrType) GetDivp2en() bool {
+func (r *RegisterPllcfgrType) GetDivp2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldDivp2enMask) != 0
 }
 
 // SetDivp2en PLL2 DIVP divider output enable
-func (r *registerPllcfgrType) SetDivp2en(value bool) {
+func (r *RegisterPllcfgrType) SetDivp2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldDivp2enMask)
 	} else {
@@ -1368,12 +1575,12 @@ const (
 )
 
 // GetDivq2en PLL2 DIVQ divider output enable
-func (r *registerPllcfgrType) GetDivq2en() bool {
+func (r *RegisterPllcfgrType) GetDivq2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldDivq2enMask) != 0
 }
 
 // SetDivq2en PLL2 DIVQ divider output enable
-func (r *registerPllcfgrType) SetDivq2en(value bool) {
+func (r *RegisterPllcfgrType) SetDivq2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldDivq2enMask)
 	} else {
@@ -1387,12 +1594,12 @@ const (
 )
 
 // GetDivr2en PLL2 DIVR divider output enable
-func (r *registerPllcfgrType) GetDivr2en() bool {
+func (r *RegisterPllcfgrType) GetDivr2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldDivr2enMask) != 0
 }
 
 // SetDivr2en PLL2 DIVR divider output enable
-func (r *registerPllcfgrType) SetDivr2en(value bool) {
+func (r *RegisterPllcfgrType) SetDivr2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldDivr2enMask)
 	} else {
@@ -1406,12 +1613,12 @@ const (
 )
 
 // GetDivp3en PLL3 DIVP divider output enable
-func (r *registerPllcfgrType) GetDivp3en() bool {
+func (r *RegisterPllcfgrType) GetDivp3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldDivp3enMask) != 0
 }
 
 // SetDivp3en PLL3 DIVP divider output enable
-func (r *registerPllcfgrType) SetDivp3en(value bool) {
+func (r *RegisterPllcfgrType) SetDivp3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldDivp3enMask)
 	} else {
@@ -1425,12 +1632,12 @@ const (
 )
 
 // GetDivq3en PLL3 DIVQ divider output enable
-func (r *registerPllcfgrType) GetDivq3en() bool {
+func (r *RegisterPllcfgrType) GetDivq3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldDivq3enMask) != 0
 }
 
 // SetDivq3en PLL3 DIVQ divider output enable
-func (r *registerPllcfgrType) SetDivq3en(value bool) {
+func (r *RegisterPllcfgrType) SetDivq3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldDivq3enMask)
 	} else {
@@ -1444,12 +1651,12 @@ const (
 )
 
 // GetDivr3en PLL3 DIVR divider output enable
-func (r *registerPllcfgrType) GetDivr3en() bool {
+func (r *RegisterPllcfgrType) GetDivr3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPllcfgrFieldDivr3enMask) != 0
 }
 
 // SetDivr3en PLL3 DIVR divider output enable
-func (r *registerPllcfgrType) SetDivr3en(value bool) {
+func (r *RegisterPllcfgrType) SetDivr3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPllcfgrFieldDivr3enMask)
 	} else {
@@ -1457,8 +1664,31 @@ func (r *registerPllcfgrType) SetDivr3en(value bool) {
 	}
 }
 
-// registerPll1divrType RCC PLL1 Dividers Configuration Register
-type registerPll1divrType uint32
+// RegisterPll1divrType RCC PLL1 Dividers Configuration Register
+type RegisterPll1divrType uint32
+
+func (r *RegisterPll1divrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPll1divrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPll1divrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPll1divrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPll1divrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPll1divrFieldDivn1Shift = 0
@@ -1466,12 +1696,12 @@ const (
 )
 
 // GetDivn1 Multiplication factor for PLL1 VCO
-func (r *registerPll1divrType) GetDivn1() uint16 {
+func (r *RegisterPll1divrType) GetDivn1() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterPll1divrFieldDivn1Mask) >> RegisterPll1divrFieldDivn1Shift)
 }
 
 // SetDivn1 Multiplication factor for PLL1 VCO
-func (r *registerPll1divrType) SetDivn1(value uint16) {
+func (r *RegisterPll1divrType) SetDivn1(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll1divrFieldDivn1Mask)|(uint32(value)<<RegisterPll1divrFieldDivn1Shift))
 }
 
@@ -1481,12 +1711,12 @@ const (
 )
 
 // GetDivp1 PLL1 DIVP division factor
-func (r *registerPll1divrType) GetDivp1() uint8 {
+func (r *RegisterPll1divrType) GetDivp1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPll1divrFieldDivp1Mask) >> RegisterPll1divrFieldDivp1Shift)
 }
 
 // SetDivp1 PLL1 DIVP division factor
-func (r *registerPll1divrType) SetDivp1(value uint8) {
+func (r *RegisterPll1divrType) SetDivp1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll1divrFieldDivp1Mask)|(uint32(value)<<RegisterPll1divrFieldDivp1Shift))
 }
 
@@ -1496,12 +1726,12 @@ const (
 )
 
 // GetDivq1 PLL1 DIVQ division factor
-func (r *registerPll1divrType) GetDivq1() uint8 {
+func (r *RegisterPll1divrType) GetDivq1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPll1divrFieldDivq1Mask) >> RegisterPll1divrFieldDivq1Shift)
 }
 
 // SetDivq1 PLL1 DIVQ division factor
-func (r *registerPll1divrType) SetDivq1(value uint8) {
+func (r *RegisterPll1divrType) SetDivq1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll1divrFieldDivq1Mask)|(uint32(value)<<RegisterPll1divrFieldDivq1Shift))
 }
 
@@ -1511,17 +1741,40 @@ const (
 )
 
 // GetDivr1 PLL1 DIVR division factor
-func (r *registerPll1divrType) GetDivr1() uint8 {
+func (r *RegisterPll1divrType) GetDivr1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPll1divrFieldDivr1Mask) >> RegisterPll1divrFieldDivr1Shift)
 }
 
 // SetDivr1 PLL1 DIVR division factor
-func (r *registerPll1divrType) SetDivr1(value uint8) {
+func (r *RegisterPll1divrType) SetDivr1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll1divrFieldDivr1Mask)|(uint32(value)<<RegisterPll1divrFieldDivr1Shift))
 }
 
-// registerPll1fracrType RCC PLL1 Fractional Divider Register
-type registerPll1fracrType uint32
+// RegisterPll1fracrType RCC PLL1 Fractional Divider Register
+type RegisterPll1fracrType uint32
+
+func (r *RegisterPll1fracrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPll1fracrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPll1fracrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPll1fracrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPll1fracrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPll1fracrFieldFracn1Shift = 3
@@ -1529,17 +1782,40 @@ const (
 )
 
 // GetFracn1 Fractional part of the multiplication factor for PLL1 VCO
-func (r *registerPll1fracrType) GetFracn1() uint16 {
+func (r *RegisterPll1fracrType) GetFracn1() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterPll1fracrFieldFracn1Mask) >> RegisterPll1fracrFieldFracn1Shift)
 }
 
 // SetFracn1 Fractional part of the multiplication factor for PLL1 VCO
-func (r *registerPll1fracrType) SetFracn1(value uint16) {
+func (r *RegisterPll1fracrType) SetFracn1(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll1fracrFieldFracn1Mask)|(uint32(value)<<RegisterPll1fracrFieldFracn1Shift))
 }
 
-// registerPll2divrType RCC PLL2 Dividers Configuration Register
-type registerPll2divrType uint32
+// RegisterPll2divrType RCC PLL2 Dividers Configuration Register
+type RegisterPll2divrType uint32
+
+func (r *RegisterPll2divrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPll2divrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPll2divrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPll2divrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPll2divrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPll2divrFieldDivn2Shift = 0
@@ -1547,12 +1823,12 @@ const (
 )
 
 // GetDivn2 Multiplication factor for PLL1 VCO
-func (r *registerPll2divrType) GetDivn2() uint16 {
+func (r *RegisterPll2divrType) GetDivn2() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterPll2divrFieldDivn2Mask) >> RegisterPll2divrFieldDivn2Shift)
 }
 
 // SetDivn2 Multiplication factor for PLL1 VCO
-func (r *registerPll2divrType) SetDivn2(value uint16) {
+func (r *RegisterPll2divrType) SetDivn2(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll2divrFieldDivn2Mask)|(uint32(value)<<RegisterPll2divrFieldDivn2Shift))
 }
 
@@ -1562,12 +1838,12 @@ const (
 )
 
 // GetDivp2 PLL1 DIVP division factor
-func (r *registerPll2divrType) GetDivp2() uint8 {
+func (r *RegisterPll2divrType) GetDivp2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPll2divrFieldDivp2Mask) >> RegisterPll2divrFieldDivp2Shift)
 }
 
 // SetDivp2 PLL1 DIVP division factor
-func (r *registerPll2divrType) SetDivp2(value uint8) {
+func (r *RegisterPll2divrType) SetDivp2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll2divrFieldDivp2Mask)|(uint32(value)<<RegisterPll2divrFieldDivp2Shift))
 }
 
@@ -1577,12 +1853,12 @@ const (
 )
 
 // GetDivq2 PLL1 DIVQ division factor
-func (r *registerPll2divrType) GetDivq2() uint8 {
+func (r *RegisterPll2divrType) GetDivq2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPll2divrFieldDivq2Mask) >> RegisterPll2divrFieldDivq2Shift)
 }
 
 // SetDivq2 PLL1 DIVQ division factor
-func (r *registerPll2divrType) SetDivq2(value uint8) {
+func (r *RegisterPll2divrType) SetDivq2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll2divrFieldDivq2Mask)|(uint32(value)<<RegisterPll2divrFieldDivq2Shift))
 }
 
@@ -1592,17 +1868,40 @@ const (
 )
 
 // GetDivr2 PLL1 DIVR division factor
-func (r *registerPll2divrType) GetDivr2() uint8 {
+func (r *RegisterPll2divrType) GetDivr2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPll2divrFieldDivr2Mask) >> RegisterPll2divrFieldDivr2Shift)
 }
 
 // SetDivr2 PLL1 DIVR division factor
-func (r *registerPll2divrType) SetDivr2(value uint8) {
+func (r *RegisterPll2divrType) SetDivr2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll2divrFieldDivr2Mask)|(uint32(value)<<RegisterPll2divrFieldDivr2Shift))
 }
 
-// registerPll2fracrType RCC PLL2 Fractional Divider Register
-type registerPll2fracrType uint32
+// RegisterPll2fracrType RCC PLL2 Fractional Divider Register
+type RegisterPll2fracrType uint32
+
+func (r *RegisterPll2fracrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPll2fracrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPll2fracrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPll2fracrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPll2fracrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPll2fracrFieldFracn2Shift = 3
@@ -1610,17 +1909,40 @@ const (
 )
 
 // GetFracn2 Fractional part of the multiplication factor for PLL VCO
-func (r *registerPll2fracrType) GetFracn2() uint16 {
+func (r *RegisterPll2fracrType) GetFracn2() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterPll2fracrFieldFracn2Mask) >> RegisterPll2fracrFieldFracn2Shift)
 }
 
 // SetFracn2 Fractional part of the multiplication factor for PLL VCO
-func (r *registerPll2fracrType) SetFracn2(value uint16) {
+func (r *RegisterPll2fracrType) SetFracn2(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll2fracrFieldFracn2Mask)|(uint32(value)<<RegisterPll2fracrFieldFracn2Shift))
 }
 
-// registerPll3divrType RCC PLL3 Dividers Configuration Register
-type registerPll3divrType uint32
+// RegisterPll3divrType RCC PLL3 Dividers Configuration Register
+type RegisterPll3divrType uint32
+
+func (r *RegisterPll3divrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPll3divrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPll3divrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPll3divrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPll3divrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPll3divrFieldDivn3Shift = 0
@@ -1628,12 +1950,12 @@ const (
 )
 
 // GetDivn3 Multiplication factor for PLL1 VCO
-func (r *registerPll3divrType) GetDivn3() uint16 {
+func (r *RegisterPll3divrType) GetDivn3() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterPll3divrFieldDivn3Mask) >> RegisterPll3divrFieldDivn3Shift)
 }
 
 // SetDivn3 Multiplication factor for PLL1 VCO
-func (r *registerPll3divrType) SetDivn3(value uint16) {
+func (r *RegisterPll3divrType) SetDivn3(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll3divrFieldDivn3Mask)|(uint32(value)<<RegisterPll3divrFieldDivn3Shift))
 }
 
@@ -1643,12 +1965,12 @@ const (
 )
 
 // GetDivp3 PLL DIVP division factor
-func (r *registerPll3divrType) GetDivp3() uint8 {
+func (r *RegisterPll3divrType) GetDivp3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPll3divrFieldDivp3Mask) >> RegisterPll3divrFieldDivp3Shift)
 }
 
 // SetDivp3 PLL DIVP division factor
-func (r *registerPll3divrType) SetDivp3(value uint8) {
+func (r *RegisterPll3divrType) SetDivp3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll3divrFieldDivp3Mask)|(uint32(value)<<RegisterPll3divrFieldDivp3Shift))
 }
 
@@ -1658,12 +1980,12 @@ const (
 )
 
 // GetDivq3 PLL DIVQ division factor
-func (r *registerPll3divrType) GetDivq3() uint8 {
+func (r *RegisterPll3divrType) GetDivq3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPll3divrFieldDivq3Mask) >> RegisterPll3divrFieldDivq3Shift)
 }
 
 // SetDivq3 PLL DIVQ division factor
-func (r *registerPll3divrType) SetDivq3(value uint8) {
+func (r *RegisterPll3divrType) SetDivq3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll3divrFieldDivq3Mask)|(uint32(value)<<RegisterPll3divrFieldDivq3Shift))
 }
 
@@ -1673,17 +1995,40 @@ const (
 )
 
 // GetDivr3 PLL DIVR division factor
-func (r *registerPll3divrType) GetDivr3() uint8 {
+func (r *RegisterPll3divrType) GetDivr3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPll3divrFieldDivr3Mask) >> RegisterPll3divrFieldDivr3Shift)
 }
 
 // SetDivr3 PLL DIVR division factor
-func (r *registerPll3divrType) SetDivr3(value uint8) {
+func (r *RegisterPll3divrType) SetDivr3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll3divrFieldDivr3Mask)|(uint32(value)<<RegisterPll3divrFieldDivr3Shift))
 }
 
-// registerPll3fracrType RCC PLL3 Fractional Divider Register
-type registerPll3fracrType uint32
+// RegisterPll3fracrType RCC PLL3 Fractional Divider Register
+type RegisterPll3fracrType uint32
+
+func (r *RegisterPll3fracrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPll3fracrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPll3fracrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPll3fracrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPll3fracrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPll3fracrFieldFracn3Shift = 3
@@ -1691,17 +2036,40 @@ const (
 )
 
 // GetFracn3 Fractional part of the multiplication factor for PLL3 VCO
-func (r *registerPll3fracrType) GetFracn3() uint16 {
+func (r *RegisterPll3fracrType) GetFracn3() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterPll3fracrFieldFracn3Mask) >> RegisterPll3fracrFieldFracn3Shift)
 }
 
 // SetFracn3 Fractional part of the multiplication factor for PLL3 VCO
-func (r *registerPll3fracrType) SetFracn3(value uint16) {
+func (r *RegisterPll3fracrType) SetFracn3(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPll3fracrFieldFracn3Mask)|(uint32(value)<<RegisterPll3fracrFieldFracn3Shift))
 }
 
-// registerD1cciprType RCC Domain 1 Kernel Clock Configuration Register
-type registerD1cciprType uint32
+// RegisterD1cciprType RCC Domain 1 Kernel Clock Configuration Register
+type RegisterD1cciprType uint32
+
+func (r *RegisterD1cciprType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD1cciprType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD1cciprType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD1cciprType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD1cciprType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD1cciprFieldFmcsrcShift = 0
@@ -1709,12 +2077,12 @@ const (
 )
 
 // GetFmcsrc FMC kernel clock source selection
-func (r *registerD1cciprType) GetFmcsrc() uint8 {
+func (r *RegisterD1cciprType) GetFmcsrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD1cciprFieldFmcsrcMask) >> RegisterD1cciprFieldFmcsrcShift)
 }
 
 // SetFmcsrc FMC kernel clock source selection
-func (r *registerD1cciprType) SetFmcsrc(value uint8) {
+func (r *RegisterD1cciprType) SetFmcsrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD1cciprFieldFmcsrcMask)|(uint32(value)<<RegisterD1cciprFieldFmcsrcShift))
 }
 
@@ -1724,12 +2092,12 @@ const (
 )
 
 // GetQspisrc QUADSPI kernel clock source selection
-func (r *registerD1cciprType) GetQspisrc() uint8 {
+func (r *RegisterD1cciprType) GetQspisrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD1cciprFieldQspisrcMask) >> RegisterD1cciprFieldQspisrcShift)
 }
 
 // SetQspisrc QUADSPI kernel clock source selection
-func (r *registerD1cciprType) SetQspisrc(value uint8) {
+func (r *RegisterD1cciprType) SetQspisrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD1cciprFieldQspisrcMask)|(uint32(value)<<RegisterD1cciprFieldQspisrcShift))
 }
 
@@ -1739,12 +2107,12 @@ const (
 )
 
 // GetSdmmcsrc SDMMC kernel clock source selection
-func (r *registerD1cciprType) GetSdmmcsrc() bool {
+func (r *RegisterD1cciprType) GetSdmmcsrc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD1cciprFieldSdmmcsrcMask) != 0
 }
 
 // SetSdmmcsrc SDMMC kernel clock source selection
-func (r *registerD1cciprType) SetSdmmcsrc(value bool) {
+func (r *RegisterD1cciprType) SetSdmmcsrc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD1cciprFieldSdmmcsrcMask)
 	} else {
@@ -1758,17 +2126,40 @@ const (
 )
 
 // GetCkpersrc per_ck clock source selection
-func (r *registerD1cciprType) GetCkpersrc() uint8 {
+func (r *RegisterD1cciprType) GetCkpersrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD1cciprFieldCkpersrcMask) >> RegisterD1cciprFieldCkpersrcShift)
 }
 
 // SetCkpersrc per_ck clock source selection
-func (r *registerD1cciprType) SetCkpersrc(value uint8) {
+func (r *RegisterD1cciprType) SetCkpersrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD1cciprFieldCkpersrcMask)|(uint32(value)<<RegisterD1cciprFieldCkpersrcShift))
 }
 
-// registerD2ccip1rType RCC Domain 2 Kernel Clock Configuration Register
-type registerD2ccip1rType uint32
+// RegisterD2ccip1rType RCC Domain 2 Kernel Clock Configuration Register
+type RegisterD2ccip1rType uint32
+
+func (r *RegisterD2ccip1rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD2ccip1rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD2ccip1rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD2ccip1rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD2ccip1rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD2ccip1rFieldSai1srcShift = 0
@@ -1776,12 +2167,12 @@ const (
 )
 
 // GetSai1src SAI1 and DFSDM1 kernel Aclk clock source selection
-func (r *registerD2ccip1rType) GetSai1src() uint8 {
+func (r *RegisterD2ccip1rType) GetSai1src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip1rFieldSai1srcMask) >> RegisterD2ccip1rFieldSai1srcShift)
 }
 
 // SetSai1src SAI1 and DFSDM1 kernel Aclk clock source selection
-func (r *registerD2ccip1rType) SetSai1src(value uint8) {
+func (r *RegisterD2ccip1rType) SetSai1src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip1rFieldSai1srcMask)|(uint32(value)<<RegisterD2ccip1rFieldSai1srcShift))
 }
 
@@ -1791,12 +2182,12 @@ const (
 )
 
 // GetSai23src SAI2 and SAI3 kernel clock source selection
-func (r *registerD2ccip1rType) GetSai23src() uint8 {
+func (r *RegisterD2ccip1rType) GetSai23src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip1rFieldSai23srcMask) >> RegisterD2ccip1rFieldSai23srcShift)
 }
 
 // SetSai23src SAI2 and SAI3 kernel clock source selection
-func (r *registerD2ccip1rType) SetSai23src(value uint8) {
+func (r *RegisterD2ccip1rType) SetSai23src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip1rFieldSai23srcMask)|(uint32(value)<<RegisterD2ccip1rFieldSai23srcShift))
 }
 
@@ -1806,12 +2197,12 @@ const (
 )
 
 // GetSpi123src SPI/I2S1,2 and 3 kernel clock source selection
-func (r *registerD2ccip1rType) GetSpi123src() uint8 {
+func (r *RegisterD2ccip1rType) GetSpi123src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip1rFieldSpi123srcMask) >> RegisterD2ccip1rFieldSpi123srcShift)
 }
 
 // SetSpi123src SPI/I2S1,2 and 3 kernel clock source selection
-func (r *registerD2ccip1rType) SetSpi123src(value uint8) {
+func (r *RegisterD2ccip1rType) SetSpi123src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip1rFieldSpi123srcMask)|(uint32(value)<<RegisterD2ccip1rFieldSpi123srcShift))
 }
 
@@ -1821,12 +2212,12 @@ const (
 )
 
 // GetSpi45src SPI4 and 5 kernel clock source selection
-func (r *registerD2ccip1rType) GetSpi45src() uint8 {
+func (r *RegisterD2ccip1rType) GetSpi45src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip1rFieldSpi45srcMask) >> RegisterD2ccip1rFieldSpi45srcShift)
 }
 
 // SetSpi45src SPI4 and 5 kernel clock source selection
-func (r *registerD2ccip1rType) SetSpi45src(value uint8) {
+func (r *RegisterD2ccip1rType) SetSpi45src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip1rFieldSpi45srcMask)|(uint32(value)<<RegisterD2ccip1rFieldSpi45srcShift))
 }
 
@@ -1836,12 +2227,12 @@ const (
 )
 
 // GetSpdifsrc SPDIFRX kernel clock source selection
-func (r *registerD2ccip1rType) GetSpdifsrc() uint8 {
+func (r *RegisterD2ccip1rType) GetSpdifsrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip1rFieldSpdifsrcMask) >> RegisterD2ccip1rFieldSpdifsrcShift)
 }
 
 // SetSpdifsrc SPDIFRX kernel clock source selection
-func (r *registerD2ccip1rType) SetSpdifsrc(value uint8) {
+func (r *RegisterD2ccip1rType) SetSpdifsrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip1rFieldSpdifsrcMask)|(uint32(value)<<RegisterD2ccip1rFieldSpdifsrcShift))
 }
 
@@ -1851,12 +2242,12 @@ const (
 )
 
 // GetDfsdm1src DFSDM1 kernel Clk clock source selection
-func (r *registerD2ccip1rType) GetDfsdm1src() bool {
+func (r *RegisterD2ccip1rType) GetDfsdm1src() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip1rFieldDfsdm1srcMask) != 0
 }
 
 // SetDfsdm1src DFSDM1 kernel Clk clock source selection
-func (r *registerD2ccip1rType) SetDfsdm1src(value bool) {
+func (r *RegisterD2ccip1rType) SetDfsdm1src(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD2ccip1rFieldDfsdm1srcMask)
 	} else {
@@ -1870,12 +2261,12 @@ const (
 )
 
 // GetFdcansrc FDCAN kernel clock source selection
-func (r *registerD2ccip1rType) GetFdcansrc() uint8 {
+func (r *RegisterD2ccip1rType) GetFdcansrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip1rFieldFdcansrcMask) >> RegisterD2ccip1rFieldFdcansrcShift)
 }
 
 // SetFdcansrc FDCAN kernel clock source selection
-func (r *registerD2ccip1rType) SetFdcansrc(value uint8) {
+func (r *RegisterD2ccip1rType) SetFdcansrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip1rFieldFdcansrcMask)|(uint32(value)<<RegisterD2ccip1rFieldFdcansrcShift))
 }
 
@@ -1885,12 +2276,12 @@ const (
 )
 
 // GetSwpsrc SWPMI kernel clock source selection
-func (r *registerD2ccip1rType) GetSwpsrc() bool {
+func (r *RegisterD2ccip1rType) GetSwpsrc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip1rFieldSwpsrcMask) != 0
 }
 
 // SetSwpsrc SWPMI kernel clock source selection
-func (r *registerD2ccip1rType) SetSwpsrc(value bool) {
+func (r *RegisterD2ccip1rType) SetSwpsrc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD2ccip1rFieldSwpsrcMask)
 	} else {
@@ -1898,8 +2289,31 @@ func (r *registerD2ccip1rType) SetSwpsrc(value bool) {
 	}
 }
 
-// registerD2ccip2rType RCC Domain 2 Kernel Clock Configuration Register
-type registerD2ccip2rType uint32
+// RegisterD2ccip2rType RCC Domain 2 Kernel Clock Configuration Register
+type RegisterD2ccip2rType uint32
+
+func (r *RegisterD2ccip2rType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD2ccip2rType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD2ccip2rType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD2ccip2rType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD2ccip2rType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD2ccip2rFieldUsart234578srcShift = 0
@@ -1907,12 +2321,12 @@ const (
 )
 
 // GetUsart234578src USART2/3, UART4,5, 7/8 (APB1) kernel clock source selection
-func (r *registerD2ccip2rType) GetUsart234578src() uint8 {
+func (r *RegisterD2ccip2rType) GetUsart234578src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip2rFieldUsart234578srcMask) >> RegisterD2ccip2rFieldUsart234578srcShift)
 }
 
 // SetUsart234578src USART2/3, UART4,5, 7/8 (APB1) kernel clock source selection
-func (r *registerD2ccip2rType) SetUsart234578src(value uint8) {
+func (r *RegisterD2ccip2rType) SetUsart234578src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip2rFieldUsart234578srcMask)|(uint32(value)<<RegisterD2ccip2rFieldUsart234578srcShift))
 }
 
@@ -1922,12 +2336,12 @@ const (
 )
 
 // GetUsart16src USART1 and 6 kernel clock source selection
-func (r *registerD2ccip2rType) GetUsart16src() uint8 {
+func (r *RegisterD2ccip2rType) GetUsart16src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip2rFieldUsart16srcMask) >> RegisterD2ccip2rFieldUsart16srcShift)
 }
 
 // SetUsart16src USART1 and 6 kernel clock source selection
-func (r *registerD2ccip2rType) SetUsart16src(value uint8) {
+func (r *RegisterD2ccip2rType) SetUsart16src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip2rFieldUsart16srcMask)|(uint32(value)<<RegisterD2ccip2rFieldUsart16srcShift))
 }
 
@@ -1937,12 +2351,12 @@ const (
 )
 
 // GetRngsrc RNG kernel clock source selection
-func (r *registerD2ccip2rType) GetRngsrc() uint8 {
+func (r *RegisterD2ccip2rType) GetRngsrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip2rFieldRngsrcMask) >> RegisterD2ccip2rFieldRngsrcShift)
 }
 
 // SetRngsrc RNG kernel clock source selection
-func (r *registerD2ccip2rType) SetRngsrc(value uint8) {
+func (r *RegisterD2ccip2rType) SetRngsrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip2rFieldRngsrcMask)|(uint32(value)<<RegisterD2ccip2rFieldRngsrcShift))
 }
 
@@ -1952,12 +2366,12 @@ const (
 )
 
 // GetI2c123src I2C1,2,3 kernel clock source selection
-func (r *registerD2ccip2rType) GetI2c123src() uint8 {
+func (r *RegisterD2ccip2rType) GetI2c123src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip2rFieldI2c123srcMask) >> RegisterD2ccip2rFieldI2c123srcShift)
 }
 
 // SetI2c123src I2C1,2,3 kernel clock source selection
-func (r *registerD2ccip2rType) SetI2c123src(value uint8) {
+func (r *RegisterD2ccip2rType) SetI2c123src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip2rFieldI2c123srcMask)|(uint32(value)<<RegisterD2ccip2rFieldI2c123srcShift))
 }
 
@@ -1967,12 +2381,12 @@ const (
 )
 
 // GetUsbsrc USBOTG 1 and 2 kernel clock source selection
-func (r *registerD2ccip2rType) GetUsbsrc() uint8 {
+func (r *RegisterD2ccip2rType) GetUsbsrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip2rFieldUsbsrcMask) >> RegisterD2ccip2rFieldUsbsrcShift)
 }
 
 // SetUsbsrc USBOTG 1 and 2 kernel clock source selection
-func (r *registerD2ccip2rType) SetUsbsrc(value uint8) {
+func (r *RegisterD2ccip2rType) SetUsbsrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip2rFieldUsbsrcMask)|(uint32(value)<<RegisterD2ccip2rFieldUsbsrcShift))
 }
 
@@ -1982,12 +2396,12 @@ const (
 )
 
 // GetCecsrc HDMI-CEC kernel clock source selection
-func (r *registerD2ccip2rType) GetCecsrc() uint8 {
+func (r *RegisterD2ccip2rType) GetCecsrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip2rFieldCecsrcMask) >> RegisterD2ccip2rFieldCecsrcShift)
 }
 
 // SetCecsrc HDMI-CEC kernel clock source selection
-func (r *registerD2ccip2rType) SetCecsrc(value uint8) {
+func (r *RegisterD2ccip2rType) SetCecsrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip2rFieldCecsrcMask)|(uint32(value)<<RegisterD2ccip2rFieldCecsrcShift))
 }
 
@@ -1997,17 +2411,40 @@ const (
 )
 
 // GetLptim1src LPTIM1 kernel clock source selection
-func (r *registerD2ccip2rType) GetLptim1src() uint8 {
+func (r *RegisterD2ccip2rType) GetLptim1src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD2ccip2rFieldLptim1srcMask) >> RegisterD2ccip2rFieldLptim1srcShift)
 }
 
 // SetLptim1src LPTIM1 kernel clock source selection
-func (r *registerD2ccip2rType) SetLptim1src(value uint8) {
+func (r *RegisterD2ccip2rType) SetLptim1src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD2ccip2rFieldLptim1srcMask)|(uint32(value)<<RegisterD2ccip2rFieldLptim1srcShift))
 }
 
-// registerD3cciprType RCC Domain 3 Kernel Clock Configuration Register
-type registerD3cciprType uint32
+// RegisterD3cciprType RCC Domain 3 Kernel Clock Configuration Register
+type RegisterD3cciprType uint32
+
+func (r *RegisterD3cciprType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3cciprType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3cciprType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3cciprType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3cciprType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD3cciprFieldLpuart1srcShift = 0
@@ -2015,12 +2452,12 @@ const (
 )
 
 // GetLpuart1src LPUART1 kernel clock source selection
-func (r *registerD3cciprType) GetLpuart1src() uint8 {
+func (r *RegisterD3cciprType) GetLpuart1src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3cciprFieldLpuart1srcMask) >> RegisterD3cciprFieldLpuart1srcShift)
 }
 
 // SetLpuart1src LPUART1 kernel clock source selection
-func (r *registerD3cciprType) SetLpuart1src(value uint8) {
+func (r *RegisterD3cciprType) SetLpuart1src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3cciprFieldLpuart1srcMask)|(uint32(value)<<RegisterD3cciprFieldLpuart1srcShift))
 }
 
@@ -2030,12 +2467,12 @@ const (
 )
 
 // GetI2c4src I2C4 kernel clock source selection
-func (r *registerD3cciprType) GetI2c4src() uint8 {
+func (r *RegisterD3cciprType) GetI2c4src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3cciprFieldI2c4srcMask) >> RegisterD3cciprFieldI2c4srcShift)
 }
 
 // SetI2c4src I2C4 kernel clock source selection
-func (r *registerD3cciprType) SetI2c4src(value uint8) {
+func (r *RegisterD3cciprType) SetI2c4src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3cciprFieldI2c4srcMask)|(uint32(value)<<RegisterD3cciprFieldI2c4srcShift))
 }
 
@@ -2045,12 +2482,12 @@ const (
 )
 
 // GetLptim2src LPTIM2 kernel clock source selection
-func (r *registerD3cciprType) GetLptim2src() uint8 {
+func (r *RegisterD3cciprType) GetLptim2src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3cciprFieldLptim2srcMask) >> RegisterD3cciprFieldLptim2srcShift)
 }
 
 // SetLptim2src LPTIM2 kernel clock source selection
-func (r *registerD3cciprType) SetLptim2src(value uint8) {
+func (r *RegisterD3cciprType) SetLptim2src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3cciprFieldLptim2srcMask)|(uint32(value)<<RegisterD3cciprFieldLptim2srcShift))
 }
 
@@ -2060,12 +2497,12 @@ const (
 )
 
 // GetLptim345src LPTIM3,4,5 kernel clock source selection
-func (r *registerD3cciprType) GetLptim345src() uint8 {
+func (r *RegisterD3cciprType) GetLptim345src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3cciprFieldLptim345srcMask) >> RegisterD3cciprFieldLptim345srcShift)
 }
 
 // SetLptim345src LPTIM3,4,5 kernel clock source selection
-func (r *registerD3cciprType) SetLptim345src(value uint8) {
+func (r *RegisterD3cciprType) SetLptim345src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3cciprFieldLptim345srcMask)|(uint32(value)<<RegisterD3cciprFieldLptim345srcShift))
 }
 
@@ -2075,12 +2512,12 @@ const (
 )
 
 // GetAdcsrc SAR ADC kernel clock source selection
-func (r *registerD3cciprType) GetAdcsrc() uint8 {
+func (r *RegisterD3cciprType) GetAdcsrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3cciprFieldAdcsrcMask) >> RegisterD3cciprFieldAdcsrcShift)
 }
 
 // SetAdcsrc SAR ADC kernel clock source selection
-func (r *registerD3cciprType) SetAdcsrc(value uint8) {
+func (r *RegisterD3cciprType) SetAdcsrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3cciprFieldAdcsrcMask)|(uint32(value)<<RegisterD3cciprFieldAdcsrcShift))
 }
 
@@ -2090,12 +2527,12 @@ const (
 )
 
 // GetSai4asrc Sub-Block A of SAI4 kernel clock source selection
-func (r *registerD3cciprType) GetSai4asrc() uint8 {
+func (r *RegisterD3cciprType) GetSai4asrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3cciprFieldSai4asrcMask) >> RegisterD3cciprFieldSai4asrcShift)
 }
 
 // SetSai4asrc Sub-Block A of SAI4 kernel clock source selection
-func (r *registerD3cciprType) SetSai4asrc(value uint8) {
+func (r *RegisterD3cciprType) SetSai4asrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3cciprFieldSai4asrcMask)|(uint32(value)<<RegisterD3cciprFieldSai4asrcShift))
 }
 
@@ -2105,12 +2542,12 @@ const (
 )
 
 // GetSai4bsrc Sub-Block B of SAI4 kernel clock source selection
-func (r *registerD3cciprType) GetSai4bsrc() uint8 {
+func (r *RegisterD3cciprType) GetSai4bsrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3cciprFieldSai4bsrcMask) >> RegisterD3cciprFieldSai4bsrcShift)
 }
 
 // SetSai4bsrc Sub-Block B of SAI4 kernel clock source selection
-func (r *registerD3cciprType) SetSai4bsrc(value uint8) {
+func (r *RegisterD3cciprType) SetSai4bsrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3cciprFieldSai4bsrcMask)|(uint32(value)<<RegisterD3cciprFieldSai4bsrcShift))
 }
 
@@ -2120,17 +2557,40 @@ const (
 )
 
 // GetSpi6src SPI6 kernel clock source selection
-func (r *registerD3cciprType) GetSpi6src() uint8 {
+func (r *RegisterD3cciprType) GetSpi6src() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3cciprFieldSpi6srcMask) >> RegisterD3cciprFieldSpi6srcShift)
 }
 
 // SetSpi6src SPI6 kernel clock source selection
-func (r *registerD3cciprType) SetSpi6src(value uint8) {
+func (r *RegisterD3cciprType) SetSpi6src(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3cciprFieldSpi6srcMask)|(uint32(value)<<RegisterD3cciprFieldSpi6srcShift))
 }
 
-// registerCierType RCC Clock Source Interrupt Enable Register
-type registerCierType uint32
+// RegisterCierType RCC Clock Source Interrupt Enable Register
+type RegisterCierType uint32
+
+func (r *RegisterCierType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCierType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCierType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCierType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCierType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCierFieldLsirdyieShift = 0
@@ -2138,12 +2598,12 @@ const (
 )
 
 // GetLsirdyie LSI ready Interrupt Enable
-func (r *registerCierType) GetLsirdyie() bool {
+func (r *RegisterCierType) GetLsirdyie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCierFieldLsirdyieMask) != 0
 }
 
 // SetLsirdyie LSI ready Interrupt Enable
-func (r *registerCierType) SetLsirdyie(value bool) {
+func (r *RegisterCierType) SetLsirdyie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCierFieldLsirdyieMask)
 	} else {
@@ -2157,12 +2617,12 @@ const (
 )
 
 // GetLserdyie LSE ready Interrupt Enable
-func (r *registerCierType) GetLserdyie() bool {
+func (r *RegisterCierType) GetLserdyie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCierFieldLserdyieMask) != 0
 }
 
 // SetLserdyie LSE ready Interrupt Enable
-func (r *registerCierType) SetLserdyie(value bool) {
+func (r *RegisterCierType) SetLserdyie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCierFieldLserdyieMask)
 	} else {
@@ -2176,12 +2636,12 @@ const (
 )
 
 // GetHsirdyie HSI ready Interrupt Enable
-func (r *registerCierType) GetHsirdyie() bool {
+func (r *RegisterCierType) GetHsirdyie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCierFieldHsirdyieMask) != 0
 }
 
 // SetHsirdyie HSI ready Interrupt Enable
-func (r *registerCierType) SetHsirdyie(value bool) {
+func (r *RegisterCierType) SetHsirdyie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCierFieldHsirdyieMask)
 	} else {
@@ -2195,12 +2655,12 @@ const (
 )
 
 // GetHserdyie HSE ready Interrupt Enable
-func (r *registerCierType) GetHserdyie() bool {
+func (r *RegisterCierType) GetHserdyie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCierFieldHserdyieMask) != 0
 }
 
 // SetHserdyie HSE ready Interrupt Enable
-func (r *registerCierType) SetHserdyie(value bool) {
+func (r *RegisterCierType) SetHserdyie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCierFieldHserdyieMask)
 	} else {
@@ -2214,12 +2674,12 @@ const (
 )
 
 // GetCsirdyie CSI ready Interrupt Enable
-func (r *registerCierType) GetCsirdyie() bool {
+func (r *RegisterCierType) GetCsirdyie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCierFieldCsirdyieMask) != 0
 }
 
 // SetCsirdyie CSI ready Interrupt Enable
-func (r *registerCierType) SetCsirdyie(value bool) {
+func (r *RegisterCierType) SetCsirdyie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCierFieldCsirdyieMask)
 	} else {
@@ -2233,12 +2693,12 @@ const (
 )
 
 // GetRc48rdyie RC48 ready Interrupt Enable
-func (r *registerCierType) GetRc48rdyie() bool {
+func (r *RegisterCierType) GetRc48rdyie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCierFieldRc48rdyieMask) != 0
 }
 
 // SetRc48rdyie RC48 ready Interrupt Enable
-func (r *registerCierType) SetRc48rdyie(value bool) {
+func (r *RegisterCierType) SetRc48rdyie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCierFieldRc48rdyieMask)
 	} else {
@@ -2252,12 +2712,12 @@ const (
 )
 
 // GetPll1rdyie PLL1 ready Interrupt Enable
-func (r *registerCierType) GetPll1rdyie() bool {
+func (r *RegisterCierType) GetPll1rdyie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCierFieldPll1rdyieMask) != 0
 }
 
 // SetPll1rdyie PLL1 ready Interrupt Enable
-func (r *registerCierType) SetPll1rdyie(value bool) {
+func (r *RegisterCierType) SetPll1rdyie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCierFieldPll1rdyieMask)
 	} else {
@@ -2271,12 +2731,12 @@ const (
 )
 
 // GetPll2rdyie PLL2 ready Interrupt Enable
-func (r *registerCierType) GetPll2rdyie() bool {
+func (r *RegisterCierType) GetPll2rdyie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCierFieldPll2rdyieMask) != 0
 }
 
 // SetPll2rdyie PLL2 ready Interrupt Enable
-func (r *registerCierType) SetPll2rdyie(value bool) {
+func (r *RegisterCierType) SetPll2rdyie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCierFieldPll2rdyieMask)
 	} else {
@@ -2290,12 +2750,12 @@ const (
 )
 
 // GetPll3rdyie PLL3 ready Interrupt Enable
-func (r *registerCierType) GetPll3rdyie() bool {
+func (r *RegisterCierType) GetPll3rdyie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCierFieldPll3rdyieMask) != 0
 }
 
 // SetPll3rdyie PLL3 ready Interrupt Enable
-func (r *registerCierType) SetPll3rdyie(value bool) {
+func (r *RegisterCierType) SetPll3rdyie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCierFieldPll3rdyieMask)
 	} else {
@@ -2309,12 +2769,12 @@ const (
 )
 
 // GetLsecssie LSE clock security system Interrupt Enable
-func (r *registerCierType) GetLsecssie() bool {
+func (r *RegisterCierType) GetLsecssie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCierFieldLsecssieMask) != 0
 }
 
 // SetLsecssie LSE clock security system Interrupt Enable
-func (r *registerCierType) SetLsecssie(value bool) {
+func (r *RegisterCierType) SetLsecssie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCierFieldLsecssieMask)
 	} else {
@@ -2322,8 +2782,31 @@ func (r *registerCierType) SetLsecssie(value bool) {
 	}
 }
 
-// registerCifrType RCC Clock Source Interrupt Flag Register
-type registerCifrType uint32
+// RegisterCifrType RCC Clock Source Interrupt Flag Register
+type RegisterCifrType uint32
+
+func (r *RegisterCifrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCifrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCifrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCifrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCifrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCifrFieldLsirdyfShift = 0
@@ -2331,12 +2814,12 @@ const (
 )
 
 // GetLsirdyf LSI ready Interrupt Flag
-func (r *registerCifrType) GetLsirdyf() bool {
+func (r *RegisterCifrType) GetLsirdyf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldLsirdyfMask) != 0
 }
 
 // SetLsirdyf LSI ready Interrupt Flag
-func (r *registerCifrType) SetLsirdyf(value bool) {
+func (r *RegisterCifrType) SetLsirdyf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldLsirdyfMask)
 	} else {
@@ -2350,12 +2833,12 @@ const (
 )
 
 // GetLserdyf LSE ready Interrupt Flag
-func (r *registerCifrType) GetLserdyf() bool {
+func (r *RegisterCifrType) GetLserdyf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldLserdyfMask) != 0
 }
 
 // SetLserdyf LSE ready Interrupt Flag
-func (r *registerCifrType) SetLserdyf(value bool) {
+func (r *RegisterCifrType) SetLserdyf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldLserdyfMask)
 	} else {
@@ -2369,12 +2852,12 @@ const (
 )
 
 // GetHsirdyf HSI ready Interrupt Flag
-func (r *registerCifrType) GetHsirdyf() bool {
+func (r *RegisterCifrType) GetHsirdyf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldHsirdyfMask) != 0
 }
 
 // SetHsirdyf HSI ready Interrupt Flag
-func (r *registerCifrType) SetHsirdyf(value bool) {
+func (r *RegisterCifrType) SetHsirdyf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldHsirdyfMask)
 	} else {
@@ -2388,12 +2871,12 @@ const (
 )
 
 // GetHserdyf HSE ready Interrupt Flag
-func (r *registerCifrType) GetHserdyf() bool {
+func (r *RegisterCifrType) GetHserdyf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldHserdyfMask) != 0
 }
 
 // SetHserdyf HSE ready Interrupt Flag
-func (r *registerCifrType) SetHserdyf(value bool) {
+func (r *RegisterCifrType) SetHserdyf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldHserdyfMask)
 	} else {
@@ -2407,12 +2890,12 @@ const (
 )
 
 // GetCsirdy CSI ready Interrupt Flag
-func (r *registerCifrType) GetCsirdy() bool {
+func (r *RegisterCifrType) GetCsirdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldCsirdyMask) != 0
 }
 
 // SetCsirdy CSI ready Interrupt Flag
-func (r *registerCifrType) SetCsirdy(value bool) {
+func (r *RegisterCifrType) SetCsirdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldCsirdyMask)
 	} else {
@@ -2426,12 +2909,12 @@ const (
 )
 
 // GetRc48rdyf RC48 ready Interrupt Flag
-func (r *registerCifrType) GetRc48rdyf() bool {
+func (r *RegisterCifrType) GetRc48rdyf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldRc48rdyfMask) != 0
 }
 
 // SetRc48rdyf RC48 ready Interrupt Flag
-func (r *registerCifrType) SetRc48rdyf(value bool) {
+func (r *RegisterCifrType) SetRc48rdyf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldRc48rdyfMask)
 	} else {
@@ -2445,12 +2928,12 @@ const (
 )
 
 // GetPll1rdyf PLL1 ready Interrupt Flag
-func (r *registerCifrType) GetPll1rdyf() bool {
+func (r *RegisterCifrType) GetPll1rdyf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldPll1rdyfMask) != 0
 }
 
 // SetPll1rdyf PLL1 ready Interrupt Flag
-func (r *registerCifrType) SetPll1rdyf(value bool) {
+func (r *RegisterCifrType) SetPll1rdyf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldPll1rdyfMask)
 	} else {
@@ -2464,12 +2947,12 @@ const (
 )
 
 // GetPll2rdyf PLL2 ready Interrupt Flag
-func (r *registerCifrType) GetPll2rdyf() bool {
+func (r *RegisterCifrType) GetPll2rdyf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldPll2rdyfMask) != 0
 }
 
 // SetPll2rdyf PLL2 ready Interrupt Flag
-func (r *registerCifrType) SetPll2rdyf(value bool) {
+func (r *RegisterCifrType) SetPll2rdyf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldPll2rdyfMask)
 	} else {
@@ -2483,12 +2966,12 @@ const (
 )
 
 // GetPll3rdyf PLL3 ready Interrupt Flag
-func (r *registerCifrType) GetPll3rdyf() bool {
+func (r *RegisterCifrType) GetPll3rdyf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldPll3rdyfMask) != 0
 }
 
 // SetPll3rdyf PLL3 ready Interrupt Flag
-func (r *registerCifrType) SetPll3rdyf(value bool) {
+func (r *RegisterCifrType) SetPll3rdyf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldPll3rdyfMask)
 	} else {
@@ -2502,12 +2985,12 @@ const (
 )
 
 // GetLsecssf LSE clock security system Interrupt Flag
-func (r *registerCifrType) GetLsecssf() bool {
+func (r *RegisterCifrType) GetLsecssf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldLsecssfMask) != 0
 }
 
 // SetLsecssf LSE clock security system Interrupt Flag
-func (r *registerCifrType) SetLsecssf(value bool) {
+func (r *RegisterCifrType) SetLsecssf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldLsecssfMask)
 	} else {
@@ -2521,12 +3004,12 @@ const (
 )
 
 // GetHsecssf HSE clock security system Interrupt Flag
-func (r *registerCifrType) GetHsecssf() bool {
+func (r *RegisterCifrType) GetHsecssf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCifrFieldHsecssfMask) != 0
 }
 
 // SetHsecssf HSE clock security system Interrupt Flag
-func (r *registerCifrType) SetHsecssf(value bool) {
+func (r *RegisterCifrType) SetHsecssf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCifrFieldHsecssfMask)
 	} else {
@@ -2534,8 +3017,31 @@ func (r *registerCifrType) SetHsecssf(value bool) {
 	}
 }
 
-// registerCicrType RCC Clock Source Interrupt Clear Register
-type registerCicrType uint32
+// RegisterCicrType RCC Clock Source Interrupt Clear Register
+type RegisterCicrType uint32
+
+func (r *RegisterCicrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCicrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCicrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCicrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCicrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCicrFieldLsirdycShift = 0
@@ -2543,12 +3049,12 @@ const (
 )
 
 // GetLsirdyc LSI ready Interrupt Clear
-func (r *registerCicrType) GetLsirdyc() bool {
+func (r *RegisterCicrType) GetLsirdyc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldLsirdycMask) != 0
 }
 
 // SetLsirdyc LSI ready Interrupt Clear
-func (r *registerCicrType) SetLsirdyc(value bool) {
+func (r *RegisterCicrType) SetLsirdyc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldLsirdycMask)
 	} else {
@@ -2562,12 +3068,12 @@ const (
 )
 
 // GetLserdyc LSE ready Interrupt Clear
-func (r *registerCicrType) GetLserdyc() bool {
+func (r *RegisterCicrType) GetLserdyc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldLserdycMask) != 0
 }
 
 // SetLserdyc LSE ready Interrupt Clear
-func (r *registerCicrType) SetLserdyc(value bool) {
+func (r *RegisterCicrType) SetLserdyc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldLserdycMask)
 	} else {
@@ -2581,12 +3087,12 @@ const (
 )
 
 // GetHsirdyc HSI ready Interrupt Clear
-func (r *registerCicrType) GetHsirdyc() bool {
+func (r *RegisterCicrType) GetHsirdyc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldHsirdycMask) != 0
 }
 
 // SetHsirdyc HSI ready Interrupt Clear
-func (r *registerCicrType) SetHsirdyc(value bool) {
+func (r *RegisterCicrType) SetHsirdyc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldHsirdycMask)
 	} else {
@@ -2600,12 +3106,12 @@ const (
 )
 
 // GetHserdyc HSE ready Interrupt Clear
-func (r *registerCicrType) GetHserdyc() bool {
+func (r *RegisterCicrType) GetHserdyc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldHserdycMask) != 0
 }
 
 // SetHserdyc HSE ready Interrupt Clear
-func (r *registerCicrType) SetHserdyc(value bool) {
+func (r *RegisterCicrType) SetHserdyc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldHserdycMask)
 	} else {
@@ -2619,12 +3125,12 @@ const (
 )
 
 // GetHsereadyinterruptclear CSI ready Interrupt Clear
-func (r *registerCicrType) GetHsereadyinterruptclear() bool {
+func (r *RegisterCicrType) GetHsereadyinterruptclear() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldHsereadyinterruptclearMask) != 0
 }
 
 // SetHsereadyinterruptclear CSI ready Interrupt Clear
-func (r *registerCicrType) SetHsereadyinterruptclear(value bool) {
+func (r *RegisterCicrType) SetHsereadyinterruptclear(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldHsereadyinterruptclearMask)
 	} else {
@@ -2638,12 +3144,12 @@ const (
 )
 
 // GetRc48rdyc RC48 ready Interrupt Clear
-func (r *registerCicrType) GetRc48rdyc() bool {
+func (r *RegisterCicrType) GetRc48rdyc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldRc48rdycMask) != 0
 }
 
 // SetRc48rdyc RC48 ready Interrupt Clear
-func (r *registerCicrType) SetRc48rdyc(value bool) {
+func (r *RegisterCicrType) SetRc48rdyc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldRc48rdycMask)
 	} else {
@@ -2657,12 +3163,12 @@ const (
 )
 
 // GetPll1rdyc PLL1 ready Interrupt Clear
-func (r *registerCicrType) GetPll1rdyc() bool {
+func (r *RegisterCicrType) GetPll1rdyc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldPll1rdycMask) != 0
 }
 
 // SetPll1rdyc PLL1 ready Interrupt Clear
-func (r *registerCicrType) SetPll1rdyc(value bool) {
+func (r *RegisterCicrType) SetPll1rdyc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldPll1rdycMask)
 	} else {
@@ -2676,12 +3182,12 @@ const (
 )
 
 // GetPll2rdyc PLL2 ready Interrupt Clear
-func (r *registerCicrType) GetPll2rdyc() bool {
+func (r *RegisterCicrType) GetPll2rdyc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldPll2rdycMask) != 0
 }
 
 // SetPll2rdyc PLL2 ready Interrupt Clear
-func (r *registerCicrType) SetPll2rdyc(value bool) {
+func (r *RegisterCicrType) SetPll2rdyc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldPll2rdycMask)
 	} else {
@@ -2695,12 +3201,12 @@ const (
 )
 
 // GetPll3rdyc PLL3 ready Interrupt Clear
-func (r *registerCicrType) GetPll3rdyc() bool {
+func (r *RegisterCicrType) GetPll3rdyc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldPll3rdycMask) != 0
 }
 
 // SetPll3rdyc PLL3 ready Interrupt Clear
-func (r *registerCicrType) SetPll3rdyc(value bool) {
+func (r *RegisterCicrType) SetPll3rdyc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldPll3rdycMask)
 	} else {
@@ -2714,12 +3220,12 @@ const (
 )
 
 // GetLsecssc LSE clock security system Interrupt Clear
-func (r *registerCicrType) GetLsecssc() bool {
+func (r *RegisterCicrType) GetLsecssc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldLsecsscMask) != 0
 }
 
 // SetLsecssc LSE clock security system Interrupt Clear
-func (r *registerCicrType) SetLsecssc(value bool) {
+func (r *RegisterCicrType) SetLsecssc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldLsecsscMask)
 	} else {
@@ -2733,12 +3239,12 @@ const (
 )
 
 // GetHsecssc HSE clock security system Interrupt Clear
-func (r *registerCicrType) GetHsecssc() bool {
+func (r *RegisterCicrType) GetHsecssc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCicrFieldHsecsscMask) != 0
 }
 
 // SetHsecssc HSE clock security system Interrupt Clear
-func (r *registerCicrType) SetHsecssc(value bool) {
+func (r *RegisterCicrType) SetHsecssc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCicrFieldHsecsscMask)
 	} else {
@@ -2746,8 +3252,31 @@ func (r *registerCicrType) SetHsecssc(value bool) {
 	}
 }
 
-// registerBdcrType RCC Backup Domain Control Register
-type registerBdcrType uint32
+// RegisterBdcrType RCC Backup Domain Control Register
+type RegisterBdcrType uint32
+
+func (r *RegisterBdcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterBdcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterBdcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterBdcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterBdcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterBdcrFieldLseonShift = 0
@@ -2755,12 +3284,12 @@ const (
 )
 
 // GetLseon LSE oscillator enabled
-func (r *registerBdcrType) GetLseon() bool {
+func (r *RegisterBdcrType) GetLseon() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdcrFieldLseonMask) != 0
 }
 
 // SetLseon LSE oscillator enabled
-func (r *registerBdcrType) SetLseon(value bool) {
+func (r *RegisterBdcrType) SetLseon(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdcrFieldLseonMask)
 	} else {
@@ -2774,12 +3303,12 @@ const (
 )
 
 // GetLserdy LSE oscillator ready
-func (r *registerBdcrType) GetLserdy() bool {
+func (r *RegisterBdcrType) GetLserdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdcrFieldLserdyMask) != 0
 }
 
 // SetLserdy LSE oscillator ready
-func (r *registerBdcrType) SetLserdy(value bool) {
+func (r *RegisterBdcrType) SetLserdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdcrFieldLserdyMask)
 	} else {
@@ -2793,12 +3322,12 @@ const (
 )
 
 // GetLsebyp LSE oscillator bypass
-func (r *registerBdcrType) GetLsebyp() bool {
+func (r *RegisterBdcrType) GetLsebyp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdcrFieldLsebypMask) != 0
 }
 
 // SetLsebyp LSE oscillator bypass
-func (r *registerBdcrType) SetLsebyp(value bool) {
+func (r *RegisterBdcrType) SetLsebyp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdcrFieldLsebypMask)
 	} else {
@@ -2812,12 +3341,12 @@ const (
 )
 
 // GetLsedrv LSE oscillator driving capability
-func (r *registerBdcrType) GetLsedrv() uint8 {
+func (r *RegisterBdcrType) GetLsedrv() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterBdcrFieldLsedrvMask) >> RegisterBdcrFieldLsedrvShift)
 }
 
 // SetLsedrv LSE oscillator driving capability
-func (r *registerBdcrType) SetLsedrv(value uint8) {
+func (r *RegisterBdcrType) SetLsedrv(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBdcrFieldLsedrvMask)|(uint32(value)<<RegisterBdcrFieldLsedrvShift))
 }
 
@@ -2827,12 +3356,12 @@ const (
 )
 
 // GetLsecsson LSE clock security system enable
-func (r *registerBdcrType) GetLsecsson() bool {
+func (r *RegisterBdcrType) GetLsecsson() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdcrFieldLsecssonMask) != 0
 }
 
 // SetLsecsson LSE clock security system enable
-func (r *registerBdcrType) SetLsecsson(value bool) {
+func (r *RegisterBdcrType) SetLsecsson(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdcrFieldLsecssonMask)
 	} else {
@@ -2846,12 +3375,12 @@ const (
 )
 
 // GetLsecssd LSE clock security system failure detection
-func (r *registerBdcrType) GetLsecssd() bool {
+func (r *RegisterBdcrType) GetLsecssd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdcrFieldLsecssdMask) != 0
 }
 
 // SetLsecssd LSE clock security system failure detection
-func (r *registerBdcrType) SetLsecssd(value bool) {
+func (r *RegisterBdcrType) SetLsecssd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdcrFieldLsecssdMask)
 	} else {
@@ -2865,12 +3394,12 @@ const (
 )
 
 // GetRtcsrc RTC clock source selection
-func (r *registerBdcrType) GetRtcsrc() uint8 {
+func (r *RegisterBdcrType) GetRtcsrc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterBdcrFieldRtcsrcMask) >> RegisterBdcrFieldRtcsrcShift)
 }
 
 // SetRtcsrc RTC clock source selection
-func (r *registerBdcrType) SetRtcsrc(value uint8) {
+func (r *RegisterBdcrType) SetRtcsrc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterBdcrFieldRtcsrcMask)|(uint32(value)<<RegisterBdcrFieldRtcsrcShift))
 }
 
@@ -2880,12 +3409,12 @@ const (
 )
 
 // GetRtcen RTC clock enable
-func (r *registerBdcrType) GetRtcen() bool {
+func (r *RegisterBdcrType) GetRtcen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdcrFieldRtcenMask) != 0
 }
 
 // SetRtcen RTC clock enable
-func (r *registerBdcrType) SetRtcen(value bool) {
+func (r *RegisterBdcrType) SetRtcen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdcrFieldRtcenMask)
 	} else {
@@ -2899,12 +3428,12 @@ const (
 )
 
 // GetVswrst VSwitch domain software reset
-func (r *registerBdcrType) GetVswrst() bool {
+func (r *RegisterBdcrType) GetVswrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterBdcrFieldVswrstMask) != 0
 }
 
 // SetVswrst VSwitch domain software reset
-func (r *registerBdcrType) SetVswrst(value bool) {
+func (r *RegisterBdcrType) SetVswrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterBdcrFieldVswrstMask)
 	} else {
@@ -2912,8 +3441,31 @@ func (r *registerBdcrType) SetVswrst(value bool) {
 	}
 }
 
-// registerCsrType RCC Clock Control and Status Register
-type registerCsrType uint32
+// RegisterCsrType RCC Clock Control and Status Register
+type RegisterCsrType uint32
+
+func (r *RegisterCsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCsrFieldLsionShift = 0
@@ -2921,12 +3473,12 @@ const (
 )
 
 // GetLsion LSI oscillator enable
-func (r *registerCsrType) GetLsion() bool {
+func (r *RegisterCsrType) GetLsion() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldLsionMask) != 0
 }
 
 // SetLsion LSI oscillator enable
-func (r *registerCsrType) SetLsion(value bool) {
+func (r *RegisterCsrType) SetLsion(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldLsionMask)
 	} else {
@@ -2940,12 +3492,12 @@ const (
 )
 
 // GetLsirdy LSI oscillator ready
-func (r *registerCsrType) GetLsirdy() bool {
+func (r *RegisterCsrType) GetLsirdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldLsirdyMask) != 0
 }
 
 // SetLsirdy LSI oscillator ready
-func (r *registerCsrType) SetLsirdy(value bool) {
+func (r *RegisterCsrType) SetLsirdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCsrFieldLsirdyMask)
 	} else {
@@ -2953,8 +3505,31 @@ func (r *registerCsrType) SetLsirdy(value bool) {
 	}
 }
 
-// registerAhb3rstrType RCC AHB3 Reset Register
-type registerAhb3rstrType uint32
+// RegisterAhb3rstrType RCC AHB3 Reset Register
+type RegisterAhb3rstrType uint32
+
+func (r *RegisterAhb3rstrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb3rstrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb3rstrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb3rstrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb3rstrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb3rstrFieldMdmarstShift = 0
@@ -2962,12 +3537,12 @@ const (
 )
 
 // GetMdmarst MDMA block reset
-func (r *registerAhb3rstrType) GetMdmarst() bool {
+func (r *RegisterAhb3rstrType) GetMdmarst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3rstrFieldMdmarstMask) != 0
 }
 
 // SetMdmarst MDMA block reset
-func (r *registerAhb3rstrType) SetMdmarst(value bool) {
+func (r *RegisterAhb3rstrType) SetMdmarst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3rstrFieldMdmarstMask)
 	} else {
@@ -2981,12 +3556,12 @@ const (
 )
 
 // GetDma2drst DMA2D block reset
-func (r *registerAhb3rstrType) GetDma2drst() bool {
+func (r *RegisterAhb3rstrType) GetDma2drst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3rstrFieldDma2drstMask) != 0
 }
 
 // SetDma2drst DMA2D block reset
-func (r *registerAhb3rstrType) SetDma2drst(value bool) {
+func (r *RegisterAhb3rstrType) SetDma2drst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3rstrFieldDma2drstMask)
 	} else {
@@ -3000,12 +3575,12 @@ const (
 )
 
 // GetJpgdecrst JPGDEC block reset
-func (r *registerAhb3rstrType) GetJpgdecrst() bool {
+func (r *RegisterAhb3rstrType) GetJpgdecrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3rstrFieldJpgdecrstMask) != 0
 }
 
 // SetJpgdecrst JPGDEC block reset
-func (r *registerAhb3rstrType) SetJpgdecrst(value bool) {
+func (r *RegisterAhb3rstrType) SetJpgdecrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3rstrFieldJpgdecrstMask)
 	} else {
@@ -3019,12 +3594,12 @@ const (
 )
 
 // GetFmcrst FMC block reset
-func (r *registerAhb3rstrType) GetFmcrst() bool {
+func (r *RegisterAhb3rstrType) GetFmcrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3rstrFieldFmcrstMask) != 0
 }
 
 // SetFmcrst FMC block reset
-func (r *registerAhb3rstrType) SetFmcrst(value bool) {
+func (r *RegisterAhb3rstrType) SetFmcrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3rstrFieldFmcrstMask)
 	} else {
@@ -3038,12 +3613,12 @@ const (
 )
 
 // GetQspirst QUADSPI and QUADSPI delay block reset
-func (r *registerAhb3rstrType) GetQspirst() bool {
+func (r *RegisterAhb3rstrType) GetQspirst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3rstrFieldQspirstMask) != 0
 }
 
 // SetQspirst QUADSPI and QUADSPI delay block reset
-func (r *registerAhb3rstrType) SetQspirst(value bool) {
+func (r *RegisterAhb3rstrType) SetQspirst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3rstrFieldQspirstMask)
 	} else {
@@ -3057,12 +3632,12 @@ const (
 )
 
 // GetSdmmc1rst SDMMC1 and SDMMC1 delay block reset
-func (r *registerAhb3rstrType) GetSdmmc1rst() bool {
+func (r *RegisterAhb3rstrType) GetSdmmc1rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3rstrFieldSdmmc1rstMask) != 0
 }
 
 // SetSdmmc1rst SDMMC1 and SDMMC1 delay block reset
-func (r *registerAhb3rstrType) SetSdmmc1rst(value bool) {
+func (r *RegisterAhb3rstrType) SetSdmmc1rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3rstrFieldSdmmc1rstMask)
 	} else {
@@ -3076,12 +3651,12 @@ const (
 )
 
 // GetCpurst CPU reset
-func (r *registerAhb3rstrType) GetCpurst() bool {
+func (r *RegisterAhb3rstrType) GetCpurst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3rstrFieldCpurstMask) != 0
 }
 
 // SetCpurst CPU reset
-func (r *registerAhb3rstrType) SetCpurst(value bool) {
+func (r *RegisterAhb3rstrType) SetCpurst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3rstrFieldCpurstMask)
 	} else {
@@ -3089,8 +3664,31 @@ func (r *registerAhb3rstrType) SetCpurst(value bool) {
 	}
 }
 
-// registerAhb1rstrType RCC AHB1 Peripheral Reset Register
-type registerAhb1rstrType uint32
+// RegisterAhb1rstrType RCC AHB1 Peripheral Reset Register
+type RegisterAhb1rstrType uint32
+
+func (r *RegisterAhb1rstrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb1rstrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb1rstrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb1rstrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb1rstrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb1rstrFieldDma1rstShift = 0
@@ -3098,12 +3696,12 @@ const (
 )
 
 // GetDma1rst DMA1 block reset
-func (r *registerAhb1rstrType) GetDma1rst() bool {
+func (r *RegisterAhb1rstrType) GetDma1rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1rstrFieldDma1rstMask) != 0
 }
 
 // SetDma1rst DMA1 block reset
-func (r *registerAhb1rstrType) SetDma1rst(value bool) {
+func (r *RegisterAhb1rstrType) SetDma1rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1rstrFieldDma1rstMask)
 	} else {
@@ -3117,12 +3715,12 @@ const (
 )
 
 // GetDma2rst DMA2 block reset
-func (r *registerAhb1rstrType) GetDma2rst() bool {
+func (r *RegisterAhb1rstrType) GetDma2rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1rstrFieldDma2rstMask) != 0
 }
 
 // SetDma2rst DMA2 block reset
-func (r *registerAhb1rstrType) SetDma2rst(value bool) {
+func (r *RegisterAhb1rstrType) SetDma2rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1rstrFieldDma2rstMask)
 	} else {
@@ -3136,12 +3734,12 @@ const (
 )
 
 // GetAdc12rst ADC1&2 block reset
-func (r *registerAhb1rstrType) GetAdc12rst() bool {
+func (r *RegisterAhb1rstrType) GetAdc12rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1rstrFieldAdc12rstMask) != 0
 }
 
 // SetAdc12rst ADC1&2 block reset
-func (r *registerAhb1rstrType) SetAdc12rst(value bool) {
+func (r *RegisterAhb1rstrType) SetAdc12rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1rstrFieldAdc12rstMask)
 	} else {
@@ -3155,12 +3753,12 @@ const (
 )
 
 // GetEth1macrst ETH1MAC block reset
-func (r *registerAhb1rstrType) GetEth1macrst() bool {
+func (r *RegisterAhb1rstrType) GetEth1macrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1rstrFieldEth1macrstMask) != 0
 }
 
 // SetEth1macrst ETH1MAC block reset
-func (r *registerAhb1rstrType) SetEth1macrst(value bool) {
+func (r *RegisterAhb1rstrType) SetEth1macrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1rstrFieldEth1macrstMask)
 	} else {
@@ -3174,12 +3772,12 @@ const (
 )
 
 // GetUsb1otgrst USB1OTG block reset
-func (r *registerAhb1rstrType) GetUsb1otgrst() bool {
+func (r *RegisterAhb1rstrType) GetUsb1otgrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1rstrFieldUsb1otgrstMask) != 0
 }
 
 // SetUsb1otgrst USB1OTG block reset
-func (r *registerAhb1rstrType) SetUsb1otgrst(value bool) {
+func (r *RegisterAhb1rstrType) SetUsb1otgrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1rstrFieldUsb1otgrstMask)
 	} else {
@@ -3193,12 +3791,12 @@ const (
 )
 
 // GetUsb2otgrst USB2OTG block reset
-func (r *registerAhb1rstrType) GetUsb2otgrst() bool {
+func (r *RegisterAhb1rstrType) GetUsb2otgrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1rstrFieldUsb2otgrstMask) != 0
 }
 
 // SetUsb2otgrst USB2OTG block reset
-func (r *registerAhb1rstrType) SetUsb2otgrst(value bool) {
+func (r *RegisterAhb1rstrType) SetUsb2otgrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1rstrFieldUsb2otgrstMask)
 	} else {
@@ -3206,8 +3804,31 @@ func (r *registerAhb1rstrType) SetUsb2otgrst(value bool) {
 	}
 }
 
-// registerAhb2rstrType RCC AHB2 Peripheral Reset Register
-type registerAhb2rstrType uint32
+// RegisterAhb2rstrType RCC AHB2 Peripheral Reset Register
+type RegisterAhb2rstrType uint32
+
+func (r *RegisterAhb2rstrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb2rstrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb2rstrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb2rstrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb2rstrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb2rstrFieldCamitfrstShift = 0
@@ -3215,12 +3836,12 @@ const (
 )
 
 // GetCamitfrst CAMITF block reset
-func (r *registerAhb2rstrType) GetCamitfrst() bool {
+func (r *RegisterAhb2rstrType) GetCamitfrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2rstrFieldCamitfrstMask) != 0
 }
 
 // SetCamitfrst CAMITF block reset
-func (r *registerAhb2rstrType) SetCamitfrst(value bool) {
+func (r *RegisterAhb2rstrType) SetCamitfrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2rstrFieldCamitfrstMask)
 	} else {
@@ -3234,12 +3855,12 @@ const (
 )
 
 // GetCryptrst Cryptography block reset
-func (r *registerAhb2rstrType) GetCryptrst() bool {
+func (r *RegisterAhb2rstrType) GetCryptrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2rstrFieldCryptrstMask) != 0
 }
 
 // SetCryptrst Cryptography block reset
-func (r *registerAhb2rstrType) SetCryptrst(value bool) {
+func (r *RegisterAhb2rstrType) SetCryptrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2rstrFieldCryptrstMask)
 	} else {
@@ -3253,12 +3874,12 @@ const (
 )
 
 // GetHashrst Hash block reset
-func (r *registerAhb2rstrType) GetHashrst() bool {
+func (r *RegisterAhb2rstrType) GetHashrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2rstrFieldHashrstMask) != 0
 }
 
 // SetHashrst Hash block reset
-func (r *registerAhb2rstrType) SetHashrst(value bool) {
+func (r *RegisterAhb2rstrType) SetHashrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2rstrFieldHashrstMask)
 	} else {
@@ -3272,12 +3893,12 @@ const (
 )
 
 // GetRngrst Random Number Generator block reset
-func (r *registerAhb2rstrType) GetRngrst() bool {
+func (r *RegisterAhb2rstrType) GetRngrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2rstrFieldRngrstMask) != 0
 }
 
 // SetRngrst Random Number Generator block reset
-func (r *registerAhb2rstrType) SetRngrst(value bool) {
+func (r *RegisterAhb2rstrType) SetRngrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2rstrFieldRngrstMask)
 	} else {
@@ -3291,12 +3912,12 @@ const (
 )
 
 // GetSdmmc2rst SDMMC2 and SDMMC2 Delay block reset
-func (r *registerAhb2rstrType) GetSdmmc2rst() bool {
+func (r *RegisterAhb2rstrType) GetSdmmc2rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2rstrFieldSdmmc2rstMask) != 0
 }
 
 // SetSdmmc2rst SDMMC2 and SDMMC2 Delay block reset
-func (r *registerAhb2rstrType) SetSdmmc2rst(value bool) {
+func (r *RegisterAhb2rstrType) SetSdmmc2rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2rstrFieldSdmmc2rstMask)
 	} else {
@@ -3304,8 +3925,31 @@ func (r *registerAhb2rstrType) SetSdmmc2rst(value bool) {
 	}
 }
 
-// registerAhb4rstrType RCC AHB4 Peripheral Reset Register
-type registerAhb4rstrType uint32
+// RegisterAhb4rstrType RCC AHB4 Peripheral Reset Register
+type RegisterAhb4rstrType uint32
+
+func (r *RegisterAhb4rstrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb4rstrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb4rstrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb4rstrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb4rstrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb4rstrFieldGpioarstShift = 0
@@ -3313,12 +3957,12 @@ const (
 )
 
 // GetGpioarst GPIO block reset
-func (r *registerAhb4rstrType) GetGpioarst() bool {
+func (r *RegisterAhb4rstrType) GetGpioarst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpioarstMask) != 0
 }
 
 // SetGpioarst GPIO block reset
-func (r *registerAhb4rstrType) SetGpioarst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpioarst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpioarstMask)
 	} else {
@@ -3332,12 +3976,12 @@ const (
 )
 
 // GetGpiobrst GPIO block reset
-func (r *registerAhb4rstrType) GetGpiobrst() bool {
+func (r *RegisterAhb4rstrType) GetGpiobrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpiobrstMask) != 0
 }
 
 // SetGpiobrst GPIO block reset
-func (r *registerAhb4rstrType) SetGpiobrst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpiobrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpiobrstMask)
 	} else {
@@ -3351,12 +3995,12 @@ const (
 )
 
 // GetGpiocrst GPIO block reset
-func (r *registerAhb4rstrType) GetGpiocrst() bool {
+func (r *RegisterAhb4rstrType) GetGpiocrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpiocrstMask) != 0
 }
 
 // SetGpiocrst GPIO block reset
-func (r *registerAhb4rstrType) SetGpiocrst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpiocrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpiocrstMask)
 	} else {
@@ -3370,12 +4014,12 @@ const (
 )
 
 // GetGpiodrst GPIO block reset
-func (r *registerAhb4rstrType) GetGpiodrst() bool {
+func (r *RegisterAhb4rstrType) GetGpiodrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpiodrstMask) != 0
 }
 
 // SetGpiodrst GPIO block reset
-func (r *registerAhb4rstrType) SetGpiodrst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpiodrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpiodrstMask)
 	} else {
@@ -3389,12 +4033,12 @@ const (
 )
 
 // GetGpioerst GPIO block reset
-func (r *registerAhb4rstrType) GetGpioerst() bool {
+func (r *RegisterAhb4rstrType) GetGpioerst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpioerstMask) != 0
 }
 
 // SetGpioerst GPIO block reset
-func (r *registerAhb4rstrType) SetGpioerst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpioerst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpioerstMask)
 	} else {
@@ -3408,12 +4052,12 @@ const (
 )
 
 // GetGpiofrst GPIO block reset
-func (r *registerAhb4rstrType) GetGpiofrst() bool {
+func (r *RegisterAhb4rstrType) GetGpiofrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpiofrstMask) != 0
 }
 
 // SetGpiofrst GPIO block reset
-func (r *registerAhb4rstrType) SetGpiofrst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpiofrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpiofrstMask)
 	} else {
@@ -3427,12 +4071,12 @@ const (
 )
 
 // GetGpiogrst GPIO block reset
-func (r *registerAhb4rstrType) GetGpiogrst() bool {
+func (r *RegisterAhb4rstrType) GetGpiogrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpiogrstMask) != 0
 }
 
 // SetGpiogrst GPIO block reset
-func (r *registerAhb4rstrType) SetGpiogrst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpiogrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpiogrstMask)
 	} else {
@@ -3446,12 +4090,12 @@ const (
 )
 
 // GetGpiohrst GPIO block reset
-func (r *registerAhb4rstrType) GetGpiohrst() bool {
+func (r *RegisterAhb4rstrType) GetGpiohrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpiohrstMask) != 0
 }
 
 // SetGpiohrst GPIO block reset
-func (r *registerAhb4rstrType) SetGpiohrst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpiohrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpiohrstMask)
 	} else {
@@ -3465,12 +4109,12 @@ const (
 )
 
 // GetGpioirst GPIO block reset
-func (r *registerAhb4rstrType) GetGpioirst() bool {
+func (r *RegisterAhb4rstrType) GetGpioirst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpioirstMask) != 0
 }
 
 // SetGpioirst GPIO block reset
-func (r *registerAhb4rstrType) SetGpioirst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpioirst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpioirstMask)
 	} else {
@@ -3484,12 +4128,12 @@ const (
 )
 
 // GetGpiojrst GPIO block reset
-func (r *registerAhb4rstrType) GetGpiojrst() bool {
+func (r *RegisterAhb4rstrType) GetGpiojrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpiojrstMask) != 0
 }
 
 // SetGpiojrst GPIO block reset
-func (r *registerAhb4rstrType) SetGpiojrst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpiojrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpiojrstMask)
 	} else {
@@ -3503,12 +4147,12 @@ const (
 )
 
 // GetGpiokrst GPIO block reset
-func (r *registerAhb4rstrType) GetGpiokrst() bool {
+func (r *RegisterAhb4rstrType) GetGpiokrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldGpiokrstMask) != 0
 }
 
 // SetGpiokrst GPIO block reset
-func (r *registerAhb4rstrType) SetGpiokrst(value bool) {
+func (r *RegisterAhb4rstrType) SetGpiokrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldGpiokrstMask)
 	} else {
@@ -3522,12 +4166,12 @@ const (
 )
 
 // GetCrcrst CRC block reset
-func (r *registerAhb4rstrType) GetCrcrst() bool {
+func (r *RegisterAhb4rstrType) GetCrcrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldCrcrstMask) != 0
 }
 
 // SetCrcrst CRC block reset
-func (r *registerAhb4rstrType) SetCrcrst(value bool) {
+func (r *RegisterAhb4rstrType) SetCrcrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldCrcrstMask)
 	} else {
@@ -3541,12 +4185,12 @@ const (
 )
 
 // GetBdmarst BDMA block reset
-func (r *registerAhb4rstrType) GetBdmarst() bool {
+func (r *RegisterAhb4rstrType) GetBdmarst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldBdmarstMask) != 0
 }
 
 // SetBdmarst BDMA block reset
-func (r *registerAhb4rstrType) SetBdmarst(value bool) {
+func (r *RegisterAhb4rstrType) SetBdmarst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldBdmarstMask)
 	} else {
@@ -3560,12 +4204,12 @@ const (
 )
 
 // GetAdc3rst ADC3 block reset
-func (r *registerAhb4rstrType) GetAdc3rst() bool {
+func (r *RegisterAhb4rstrType) GetAdc3rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldAdc3rstMask) != 0
 }
 
 // SetAdc3rst ADC3 block reset
-func (r *registerAhb4rstrType) SetAdc3rst(value bool) {
+func (r *RegisterAhb4rstrType) SetAdc3rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldAdc3rstMask)
 	} else {
@@ -3579,12 +4223,12 @@ const (
 )
 
 // GetHsemrst HSEM block reset
-func (r *registerAhb4rstrType) GetHsemrst() bool {
+func (r *RegisterAhb4rstrType) GetHsemrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4rstrFieldHsemrstMask) != 0
 }
 
 // SetHsemrst HSEM block reset
-func (r *registerAhb4rstrType) SetHsemrst(value bool) {
+func (r *RegisterAhb4rstrType) SetHsemrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4rstrFieldHsemrstMask)
 	} else {
@@ -3592,8 +4236,31 @@ func (r *registerAhb4rstrType) SetHsemrst(value bool) {
 	}
 }
 
-// registerApb3rstrType RCC APB3 Peripheral Reset Register
-type registerApb3rstrType uint32
+// RegisterApb3rstrType RCC APB3 Peripheral Reset Register
+type RegisterApb3rstrType uint32
+
+func (r *RegisterApb3rstrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb3rstrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb3rstrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb3rstrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb3rstrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb3rstrFieldLtdcrstShift = 3
@@ -3601,12 +4268,12 @@ const (
 )
 
 // GetLtdcrst LTDC block reset
-func (r *registerApb3rstrType) GetLtdcrst() bool {
+func (r *RegisterApb3rstrType) GetLtdcrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb3rstrFieldLtdcrstMask) != 0
 }
 
 // SetLtdcrst LTDC block reset
-func (r *registerApb3rstrType) SetLtdcrst(value bool) {
+func (r *RegisterApb3rstrType) SetLtdcrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb3rstrFieldLtdcrstMask)
 	} else {
@@ -3614,8 +4281,31 @@ func (r *registerApb3rstrType) SetLtdcrst(value bool) {
 	}
 }
 
-// registerApb1lrstrType RCC APB1 Peripheral Reset Register
-type registerApb1lrstrType uint32
+// RegisterApb1lrstrType RCC APB1 Peripheral Reset Register
+type RegisterApb1lrstrType uint32
+
+func (r *RegisterApb1lrstrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb1lrstrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb1lrstrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb1lrstrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb1lrstrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb1lrstrFieldTim2rstShift = 0
@@ -3623,12 +4313,12 @@ const (
 )
 
 // GetTim2rst TIM block reset
-func (r *registerApb1lrstrType) GetTim2rst() bool {
+func (r *RegisterApb1lrstrType) GetTim2rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldTim2rstMask) != 0
 }
 
 // SetTim2rst TIM block reset
-func (r *registerApb1lrstrType) SetTim2rst(value bool) {
+func (r *RegisterApb1lrstrType) SetTim2rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldTim2rstMask)
 	} else {
@@ -3642,12 +4332,12 @@ const (
 )
 
 // GetTim3rst TIM block reset
-func (r *registerApb1lrstrType) GetTim3rst() bool {
+func (r *RegisterApb1lrstrType) GetTim3rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldTim3rstMask) != 0
 }
 
 // SetTim3rst TIM block reset
-func (r *registerApb1lrstrType) SetTim3rst(value bool) {
+func (r *RegisterApb1lrstrType) SetTim3rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldTim3rstMask)
 	} else {
@@ -3661,12 +4351,12 @@ const (
 )
 
 // GetTim4rst TIM block reset
-func (r *registerApb1lrstrType) GetTim4rst() bool {
+func (r *RegisterApb1lrstrType) GetTim4rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldTim4rstMask) != 0
 }
 
 // SetTim4rst TIM block reset
-func (r *registerApb1lrstrType) SetTim4rst(value bool) {
+func (r *RegisterApb1lrstrType) SetTim4rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldTim4rstMask)
 	} else {
@@ -3680,12 +4370,12 @@ const (
 )
 
 // GetTim5rst TIM block reset
-func (r *registerApb1lrstrType) GetTim5rst() bool {
+func (r *RegisterApb1lrstrType) GetTim5rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldTim5rstMask) != 0
 }
 
 // SetTim5rst TIM block reset
-func (r *registerApb1lrstrType) SetTim5rst(value bool) {
+func (r *RegisterApb1lrstrType) SetTim5rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldTim5rstMask)
 	} else {
@@ -3699,12 +4389,12 @@ const (
 )
 
 // GetTim6rst TIM block reset
-func (r *registerApb1lrstrType) GetTim6rst() bool {
+func (r *RegisterApb1lrstrType) GetTim6rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldTim6rstMask) != 0
 }
 
 // SetTim6rst TIM block reset
-func (r *registerApb1lrstrType) SetTim6rst(value bool) {
+func (r *RegisterApb1lrstrType) SetTim6rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldTim6rstMask)
 	} else {
@@ -3718,12 +4408,12 @@ const (
 )
 
 // GetTim7rst TIM block reset
-func (r *registerApb1lrstrType) GetTim7rst() bool {
+func (r *RegisterApb1lrstrType) GetTim7rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldTim7rstMask) != 0
 }
 
 // SetTim7rst TIM block reset
-func (r *registerApb1lrstrType) SetTim7rst(value bool) {
+func (r *RegisterApb1lrstrType) SetTim7rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldTim7rstMask)
 	} else {
@@ -3737,12 +4427,12 @@ const (
 )
 
 // GetTim12rst TIM block reset
-func (r *registerApb1lrstrType) GetTim12rst() bool {
+func (r *RegisterApb1lrstrType) GetTim12rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldTim12rstMask) != 0
 }
 
 // SetTim12rst TIM block reset
-func (r *registerApb1lrstrType) SetTim12rst(value bool) {
+func (r *RegisterApb1lrstrType) SetTim12rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldTim12rstMask)
 	} else {
@@ -3756,12 +4446,12 @@ const (
 )
 
 // GetTim13rst TIM block reset
-func (r *registerApb1lrstrType) GetTim13rst() bool {
+func (r *RegisterApb1lrstrType) GetTim13rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldTim13rstMask) != 0
 }
 
 // SetTim13rst TIM block reset
-func (r *registerApb1lrstrType) SetTim13rst(value bool) {
+func (r *RegisterApb1lrstrType) SetTim13rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldTim13rstMask)
 	} else {
@@ -3775,12 +4465,12 @@ const (
 )
 
 // GetTim14rst TIM block reset
-func (r *registerApb1lrstrType) GetTim14rst() bool {
+func (r *RegisterApb1lrstrType) GetTim14rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldTim14rstMask) != 0
 }
 
 // SetTim14rst TIM block reset
-func (r *registerApb1lrstrType) SetTim14rst(value bool) {
+func (r *RegisterApb1lrstrType) SetTim14rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldTim14rstMask)
 	} else {
@@ -3794,12 +4484,12 @@ const (
 )
 
 // GetLptim1rst TIM block reset
-func (r *registerApb1lrstrType) GetLptim1rst() bool {
+func (r *RegisterApb1lrstrType) GetLptim1rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldLptim1rstMask) != 0
 }
 
 // SetLptim1rst TIM block reset
-func (r *registerApb1lrstrType) SetLptim1rst(value bool) {
+func (r *RegisterApb1lrstrType) SetLptim1rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldLptim1rstMask)
 	} else {
@@ -3813,12 +4503,12 @@ const (
 )
 
 // GetSpi2rst SPI2 block reset
-func (r *registerApb1lrstrType) GetSpi2rst() bool {
+func (r *RegisterApb1lrstrType) GetSpi2rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldSpi2rstMask) != 0
 }
 
 // SetSpi2rst SPI2 block reset
-func (r *registerApb1lrstrType) SetSpi2rst(value bool) {
+func (r *RegisterApb1lrstrType) SetSpi2rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldSpi2rstMask)
 	} else {
@@ -3832,12 +4522,12 @@ const (
 )
 
 // GetSpi3rst SPI3 block reset
-func (r *registerApb1lrstrType) GetSpi3rst() bool {
+func (r *RegisterApb1lrstrType) GetSpi3rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldSpi3rstMask) != 0
 }
 
 // SetSpi3rst SPI3 block reset
-func (r *registerApb1lrstrType) SetSpi3rst(value bool) {
+func (r *RegisterApb1lrstrType) SetSpi3rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldSpi3rstMask)
 	} else {
@@ -3851,12 +4541,12 @@ const (
 )
 
 // GetSpdifrxrst SPDIFRX block reset
-func (r *registerApb1lrstrType) GetSpdifrxrst() bool {
+func (r *RegisterApb1lrstrType) GetSpdifrxrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldSpdifrxrstMask) != 0
 }
 
 // SetSpdifrxrst SPDIFRX block reset
-func (r *registerApb1lrstrType) SetSpdifrxrst(value bool) {
+func (r *RegisterApb1lrstrType) SetSpdifrxrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldSpdifrxrstMask)
 	} else {
@@ -3870,12 +4560,12 @@ const (
 )
 
 // GetUsart2rst USART2 block reset
-func (r *registerApb1lrstrType) GetUsart2rst() bool {
+func (r *RegisterApb1lrstrType) GetUsart2rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldUsart2rstMask) != 0
 }
 
 // SetUsart2rst USART2 block reset
-func (r *registerApb1lrstrType) SetUsart2rst(value bool) {
+func (r *RegisterApb1lrstrType) SetUsart2rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldUsart2rstMask)
 	} else {
@@ -3889,12 +4579,12 @@ const (
 )
 
 // GetUsart3rst USART3 block reset
-func (r *registerApb1lrstrType) GetUsart3rst() bool {
+func (r *RegisterApb1lrstrType) GetUsart3rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldUsart3rstMask) != 0
 }
 
 // SetUsart3rst USART3 block reset
-func (r *registerApb1lrstrType) SetUsart3rst(value bool) {
+func (r *RegisterApb1lrstrType) SetUsart3rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldUsart3rstMask)
 	} else {
@@ -3908,12 +4598,12 @@ const (
 )
 
 // GetUart4rst UART4 block reset
-func (r *registerApb1lrstrType) GetUart4rst() bool {
+func (r *RegisterApb1lrstrType) GetUart4rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldUart4rstMask) != 0
 }
 
 // SetUart4rst UART4 block reset
-func (r *registerApb1lrstrType) SetUart4rst(value bool) {
+func (r *RegisterApb1lrstrType) SetUart4rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldUart4rstMask)
 	} else {
@@ -3927,12 +4617,12 @@ const (
 )
 
 // GetUart5rst UART5 block reset
-func (r *registerApb1lrstrType) GetUart5rst() bool {
+func (r *RegisterApb1lrstrType) GetUart5rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldUart5rstMask) != 0
 }
 
 // SetUart5rst UART5 block reset
-func (r *registerApb1lrstrType) SetUart5rst(value bool) {
+func (r *RegisterApb1lrstrType) SetUart5rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldUart5rstMask)
 	} else {
@@ -3946,12 +4636,12 @@ const (
 )
 
 // GetI2c1rst I2C1 block reset
-func (r *registerApb1lrstrType) GetI2c1rst() bool {
+func (r *RegisterApb1lrstrType) GetI2c1rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldI2c1rstMask) != 0
 }
 
 // SetI2c1rst I2C1 block reset
-func (r *registerApb1lrstrType) SetI2c1rst(value bool) {
+func (r *RegisterApb1lrstrType) SetI2c1rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldI2c1rstMask)
 	} else {
@@ -3965,12 +4655,12 @@ const (
 )
 
 // GetI2c2rst I2C2 block reset
-func (r *registerApb1lrstrType) GetI2c2rst() bool {
+func (r *RegisterApb1lrstrType) GetI2c2rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldI2c2rstMask) != 0
 }
 
 // SetI2c2rst I2C2 block reset
-func (r *registerApb1lrstrType) SetI2c2rst(value bool) {
+func (r *RegisterApb1lrstrType) SetI2c2rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldI2c2rstMask)
 	} else {
@@ -3984,12 +4674,12 @@ const (
 )
 
 // GetI2c3rst I2C3 block reset
-func (r *registerApb1lrstrType) GetI2c3rst() bool {
+func (r *RegisterApb1lrstrType) GetI2c3rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldI2c3rstMask) != 0
 }
 
 // SetI2c3rst I2C3 block reset
-func (r *registerApb1lrstrType) SetI2c3rst(value bool) {
+func (r *RegisterApb1lrstrType) SetI2c3rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldI2c3rstMask)
 	} else {
@@ -4003,12 +4693,12 @@ const (
 )
 
 // GetHdmicecrst HDMI-CEC block reset
-func (r *registerApb1lrstrType) GetHdmicecrst() bool {
+func (r *RegisterApb1lrstrType) GetHdmicecrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldHdmicecrstMask) != 0
 }
 
 // SetHdmicecrst HDMI-CEC block reset
-func (r *registerApb1lrstrType) SetHdmicecrst(value bool) {
+func (r *RegisterApb1lrstrType) SetHdmicecrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldHdmicecrstMask)
 	} else {
@@ -4022,12 +4712,12 @@ const (
 )
 
 // GetDac12rst DAC1 and 2 Blocks Reset
-func (r *registerApb1lrstrType) GetDac12rst() bool {
+func (r *RegisterApb1lrstrType) GetDac12rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldDac12rstMask) != 0
 }
 
 // SetDac12rst DAC1 and 2 Blocks Reset
-func (r *registerApb1lrstrType) SetDac12rst(value bool) {
+func (r *RegisterApb1lrstrType) SetDac12rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldDac12rstMask)
 	} else {
@@ -4041,12 +4731,12 @@ const (
 )
 
 // GetUsart7rst USART7 block reset
-func (r *registerApb1lrstrType) GetUsart7rst() bool {
+func (r *RegisterApb1lrstrType) GetUsart7rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldUsart7rstMask) != 0
 }
 
 // SetUsart7rst USART7 block reset
-func (r *registerApb1lrstrType) SetUsart7rst(value bool) {
+func (r *RegisterApb1lrstrType) SetUsart7rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldUsart7rstMask)
 	} else {
@@ -4060,12 +4750,12 @@ const (
 )
 
 // GetUsart8rst USART8 block reset
-func (r *registerApb1lrstrType) GetUsart8rst() bool {
+func (r *RegisterApb1lrstrType) GetUsart8rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lrstrFieldUsart8rstMask) != 0
 }
 
 // SetUsart8rst USART8 block reset
-func (r *registerApb1lrstrType) SetUsart8rst(value bool) {
+func (r *RegisterApb1lrstrType) SetUsart8rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lrstrFieldUsart8rstMask)
 	} else {
@@ -4073,8 +4763,31 @@ func (r *registerApb1lrstrType) SetUsart8rst(value bool) {
 	}
 }
 
-// registerApb1hrstrType RCC APB1 Peripheral Reset Register
-type registerApb1hrstrType uint32
+// RegisterApb1hrstrType RCC APB1 Peripheral Reset Register
+type RegisterApb1hrstrType uint32
+
+func (r *RegisterApb1hrstrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb1hrstrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb1hrstrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb1hrstrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb1hrstrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb1hrstrFieldCrsrstShift = 1
@@ -4082,12 +4795,12 @@ const (
 )
 
 // GetCrsrst Clock Recovery System reset
-func (r *registerApb1hrstrType) GetCrsrst() bool {
+func (r *RegisterApb1hrstrType) GetCrsrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1hrstrFieldCrsrstMask) != 0
 }
 
 // SetCrsrst Clock Recovery System reset
-func (r *registerApb1hrstrType) SetCrsrst(value bool) {
+func (r *RegisterApb1hrstrType) SetCrsrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1hrstrFieldCrsrstMask)
 	} else {
@@ -4101,12 +4814,12 @@ const (
 )
 
 // GetSwprst SWPMI block reset
-func (r *registerApb1hrstrType) GetSwprst() bool {
+func (r *RegisterApb1hrstrType) GetSwprst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1hrstrFieldSwprstMask) != 0
 }
 
 // SetSwprst SWPMI block reset
-func (r *registerApb1hrstrType) SetSwprst(value bool) {
+func (r *RegisterApb1hrstrType) SetSwprst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1hrstrFieldSwprstMask)
 	} else {
@@ -4120,12 +4833,12 @@ const (
 )
 
 // GetOpamprst OPAMP block reset
-func (r *registerApb1hrstrType) GetOpamprst() bool {
+func (r *RegisterApb1hrstrType) GetOpamprst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1hrstrFieldOpamprstMask) != 0
 }
 
 // SetOpamprst OPAMP block reset
-func (r *registerApb1hrstrType) SetOpamprst(value bool) {
+func (r *RegisterApb1hrstrType) SetOpamprst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1hrstrFieldOpamprstMask)
 	} else {
@@ -4139,12 +4852,12 @@ const (
 )
 
 // GetMdiosrst MDIOS block reset
-func (r *registerApb1hrstrType) GetMdiosrst() bool {
+func (r *RegisterApb1hrstrType) GetMdiosrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1hrstrFieldMdiosrstMask) != 0
 }
 
 // SetMdiosrst MDIOS block reset
-func (r *registerApb1hrstrType) SetMdiosrst(value bool) {
+func (r *RegisterApb1hrstrType) SetMdiosrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1hrstrFieldMdiosrstMask)
 	} else {
@@ -4158,12 +4871,12 @@ const (
 )
 
 // GetFdcanrst FDCAN block reset
-func (r *registerApb1hrstrType) GetFdcanrst() bool {
+func (r *RegisterApb1hrstrType) GetFdcanrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1hrstrFieldFdcanrstMask) != 0
 }
 
 // SetFdcanrst FDCAN block reset
-func (r *registerApb1hrstrType) SetFdcanrst(value bool) {
+func (r *RegisterApb1hrstrType) SetFdcanrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1hrstrFieldFdcanrstMask)
 	} else {
@@ -4171,8 +4884,31 @@ func (r *registerApb1hrstrType) SetFdcanrst(value bool) {
 	}
 }
 
-// registerApb2rstrType RCC APB2 Peripheral Reset Register
-type registerApb2rstrType uint32
+// RegisterApb2rstrType RCC APB2 Peripheral Reset Register
+type RegisterApb2rstrType uint32
+
+func (r *RegisterApb2rstrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb2rstrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb2rstrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb2rstrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb2rstrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb2rstrFieldTim1rstShift = 0
@@ -4180,12 +4916,12 @@ const (
 )
 
 // GetTim1rst TIM1 block reset
-func (r *registerApb2rstrType) GetTim1rst() bool {
+func (r *RegisterApb2rstrType) GetTim1rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldTim1rstMask) != 0
 }
 
 // SetTim1rst TIM1 block reset
-func (r *registerApb2rstrType) SetTim1rst(value bool) {
+func (r *RegisterApb2rstrType) SetTim1rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldTim1rstMask)
 	} else {
@@ -4199,12 +4935,12 @@ const (
 )
 
 // GetTim8rst TIM8 block reset
-func (r *registerApb2rstrType) GetTim8rst() bool {
+func (r *RegisterApb2rstrType) GetTim8rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldTim8rstMask) != 0
 }
 
 // SetTim8rst TIM8 block reset
-func (r *registerApb2rstrType) SetTim8rst(value bool) {
+func (r *RegisterApb2rstrType) SetTim8rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldTim8rstMask)
 	} else {
@@ -4218,12 +4954,12 @@ const (
 )
 
 // GetUsart1rst USART1 block reset
-func (r *registerApb2rstrType) GetUsart1rst() bool {
+func (r *RegisterApb2rstrType) GetUsart1rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldUsart1rstMask) != 0
 }
 
 // SetUsart1rst USART1 block reset
-func (r *registerApb2rstrType) SetUsart1rst(value bool) {
+func (r *RegisterApb2rstrType) SetUsart1rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldUsart1rstMask)
 	} else {
@@ -4237,12 +4973,12 @@ const (
 )
 
 // GetUsart6rst USART6 block reset
-func (r *registerApb2rstrType) GetUsart6rst() bool {
+func (r *RegisterApb2rstrType) GetUsart6rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldUsart6rstMask) != 0
 }
 
 // SetUsart6rst USART6 block reset
-func (r *registerApb2rstrType) SetUsart6rst(value bool) {
+func (r *RegisterApb2rstrType) SetUsart6rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldUsart6rstMask)
 	} else {
@@ -4256,12 +4992,12 @@ const (
 )
 
 // GetSpi1rst SPI1 block reset
-func (r *registerApb2rstrType) GetSpi1rst() bool {
+func (r *RegisterApb2rstrType) GetSpi1rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldSpi1rstMask) != 0
 }
 
 // SetSpi1rst SPI1 block reset
-func (r *registerApb2rstrType) SetSpi1rst(value bool) {
+func (r *RegisterApb2rstrType) SetSpi1rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldSpi1rstMask)
 	} else {
@@ -4275,12 +5011,12 @@ const (
 )
 
 // GetSpi4rst SPI4 block reset
-func (r *registerApb2rstrType) GetSpi4rst() bool {
+func (r *RegisterApb2rstrType) GetSpi4rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldSpi4rstMask) != 0
 }
 
 // SetSpi4rst SPI4 block reset
-func (r *registerApb2rstrType) SetSpi4rst(value bool) {
+func (r *RegisterApb2rstrType) SetSpi4rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldSpi4rstMask)
 	} else {
@@ -4294,12 +5030,12 @@ const (
 )
 
 // GetTim15rst TIM15 block reset
-func (r *registerApb2rstrType) GetTim15rst() bool {
+func (r *RegisterApb2rstrType) GetTim15rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldTim15rstMask) != 0
 }
 
 // SetTim15rst TIM15 block reset
-func (r *registerApb2rstrType) SetTim15rst(value bool) {
+func (r *RegisterApb2rstrType) SetTim15rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldTim15rstMask)
 	} else {
@@ -4313,12 +5049,12 @@ const (
 )
 
 // GetTim16rst TIM16 block reset
-func (r *registerApb2rstrType) GetTim16rst() bool {
+func (r *RegisterApb2rstrType) GetTim16rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldTim16rstMask) != 0
 }
 
 // SetTim16rst TIM16 block reset
-func (r *registerApb2rstrType) SetTim16rst(value bool) {
+func (r *RegisterApb2rstrType) SetTim16rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldTim16rstMask)
 	} else {
@@ -4332,12 +5068,12 @@ const (
 )
 
 // GetTim17rst TIM17 block reset
-func (r *registerApb2rstrType) GetTim17rst() bool {
+func (r *RegisterApb2rstrType) GetTim17rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldTim17rstMask) != 0
 }
 
 // SetTim17rst TIM17 block reset
-func (r *registerApb2rstrType) SetTim17rst(value bool) {
+func (r *RegisterApb2rstrType) SetTim17rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldTim17rstMask)
 	} else {
@@ -4351,12 +5087,12 @@ const (
 )
 
 // GetSpi5rst SPI5 block reset
-func (r *registerApb2rstrType) GetSpi5rst() bool {
+func (r *RegisterApb2rstrType) GetSpi5rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldSpi5rstMask) != 0
 }
 
 // SetSpi5rst SPI5 block reset
-func (r *registerApb2rstrType) SetSpi5rst(value bool) {
+func (r *RegisterApb2rstrType) SetSpi5rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldSpi5rstMask)
 	} else {
@@ -4370,12 +5106,12 @@ const (
 )
 
 // GetSai1rst SAI1 block reset
-func (r *registerApb2rstrType) GetSai1rst() bool {
+func (r *RegisterApb2rstrType) GetSai1rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldSai1rstMask) != 0
 }
 
 // SetSai1rst SAI1 block reset
-func (r *registerApb2rstrType) SetSai1rst(value bool) {
+func (r *RegisterApb2rstrType) SetSai1rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldSai1rstMask)
 	} else {
@@ -4389,12 +5125,12 @@ const (
 )
 
 // GetSai2rst SAI2 block reset
-func (r *registerApb2rstrType) GetSai2rst() bool {
+func (r *RegisterApb2rstrType) GetSai2rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldSai2rstMask) != 0
 }
 
 // SetSai2rst SAI2 block reset
-func (r *registerApb2rstrType) SetSai2rst(value bool) {
+func (r *RegisterApb2rstrType) SetSai2rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldSai2rstMask)
 	} else {
@@ -4408,12 +5144,12 @@ const (
 )
 
 // GetSai3rst SAI3 block reset
-func (r *registerApb2rstrType) GetSai3rst() bool {
+func (r *RegisterApb2rstrType) GetSai3rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldSai3rstMask) != 0
 }
 
 // SetSai3rst SAI3 block reset
-func (r *registerApb2rstrType) SetSai3rst(value bool) {
+func (r *RegisterApb2rstrType) SetSai3rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldSai3rstMask)
 	} else {
@@ -4427,12 +5163,12 @@ const (
 )
 
 // GetDfsdm1rst DFSDM1 block reset
-func (r *registerApb2rstrType) GetDfsdm1rst() bool {
+func (r *RegisterApb2rstrType) GetDfsdm1rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldDfsdm1rstMask) != 0
 }
 
 // SetDfsdm1rst DFSDM1 block reset
-func (r *registerApb2rstrType) SetDfsdm1rst(value bool) {
+func (r *RegisterApb2rstrType) SetDfsdm1rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldDfsdm1rstMask)
 	} else {
@@ -4446,12 +5182,12 @@ const (
 )
 
 // GetHrtimrst HRTIM block reset
-func (r *registerApb2rstrType) GetHrtimrst() bool {
+func (r *RegisterApb2rstrType) GetHrtimrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2rstrFieldHrtimrstMask) != 0
 }
 
 // SetHrtimrst HRTIM block reset
-func (r *registerApb2rstrType) SetHrtimrst(value bool) {
+func (r *RegisterApb2rstrType) SetHrtimrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2rstrFieldHrtimrstMask)
 	} else {
@@ -4459,8 +5195,31 @@ func (r *registerApb2rstrType) SetHrtimrst(value bool) {
 	}
 }
 
-// registerApb4rstrType RCC APB4 Peripheral Reset Register
-type registerApb4rstrType uint32
+// RegisterApb4rstrType RCC APB4 Peripheral Reset Register
+type RegisterApb4rstrType uint32
+
+func (r *RegisterApb4rstrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb4rstrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb4rstrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb4rstrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb4rstrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb4rstrFieldSyscfgrstShift = 1
@@ -4468,12 +5227,12 @@ const (
 )
 
 // GetSyscfgrst SYSCFG block reset
-func (r *registerApb4rstrType) GetSyscfgrst() bool {
+func (r *RegisterApb4rstrType) GetSyscfgrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldSyscfgrstMask) != 0
 }
 
 // SetSyscfgrst SYSCFG block reset
-func (r *registerApb4rstrType) SetSyscfgrst(value bool) {
+func (r *RegisterApb4rstrType) SetSyscfgrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldSyscfgrstMask)
 	} else {
@@ -4487,12 +5246,12 @@ const (
 )
 
 // GetLpuart1rst LPUART1 block reset
-func (r *registerApb4rstrType) GetLpuart1rst() bool {
+func (r *RegisterApb4rstrType) GetLpuart1rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldLpuart1rstMask) != 0
 }
 
 // SetLpuart1rst LPUART1 block reset
-func (r *registerApb4rstrType) SetLpuart1rst(value bool) {
+func (r *RegisterApb4rstrType) SetLpuart1rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldLpuart1rstMask)
 	} else {
@@ -4506,12 +5265,12 @@ const (
 )
 
 // GetSpi6rst SPI6 block reset
-func (r *registerApb4rstrType) GetSpi6rst() bool {
+func (r *RegisterApb4rstrType) GetSpi6rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldSpi6rstMask) != 0
 }
 
 // SetSpi6rst SPI6 block reset
-func (r *registerApb4rstrType) SetSpi6rst(value bool) {
+func (r *RegisterApb4rstrType) SetSpi6rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldSpi6rstMask)
 	} else {
@@ -4525,12 +5284,12 @@ const (
 )
 
 // GetI2c4rst I2C4 block reset
-func (r *registerApb4rstrType) GetI2c4rst() bool {
+func (r *RegisterApb4rstrType) GetI2c4rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldI2c4rstMask) != 0
 }
 
 // SetI2c4rst I2C4 block reset
-func (r *registerApb4rstrType) SetI2c4rst(value bool) {
+func (r *RegisterApb4rstrType) SetI2c4rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldI2c4rstMask)
 	} else {
@@ -4544,12 +5303,12 @@ const (
 )
 
 // GetLptim2rst LPTIM2 block reset
-func (r *registerApb4rstrType) GetLptim2rst() bool {
+func (r *RegisterApb4rstrType) GetLptim2rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldLptim2rstMask) != 0
 }
 
 // SetLptim2rst LPTIM2 block reset
-func (r *registerApb4rstrType) SetLptim2rst(value bool) {
+func (r *RegisterApb4rstrType) SetLptim2rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldLptim2rstMask)
 	} else {
@@ -4563,12 +5322,12 @@ const (
 )
 
 // GetLptim3rst LPTIM3 block reset
-func (r *registerApb4rstrType) GetLptim3rst() bool {
+func (r *RegisterApb4rstrType) GetLptim3rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldLptim3rstMask) != 0
 }
 
 // SetLptim3rst LPTIM3 block reset
-func (r *registerApb4rstrType) SetLptim3rst(value bool) {
+func (r *RegisterApb4rstrType) SetLptim3rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldLptim3rstMask)
 	} else {
@@ -4582,12 +5341,12 @@ const (
 )
 
 // GetLptim4rst LPTIM4 block reset
-func (r *registerApb4rstrType) GetLptim4rst() bool {
+func (r *RegisterApb4rstrType) GetLptim4rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldLptim4rstMask) != 0
 }
 
 // SetLptim4rst LPTIM4 block reset
-func (r *registerApb4rstrType) SetLptim4rst(value bool) {
+func (r *RegisterApb4rstrType) SetLptim4rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldLptim4rstMask)
 	} else {
@@ -4601,12 +5360,12 @@ const (
 )
 
 // GetLptim5rst LPTIM5 block reset
-func (r *registerApb4rstrType) GetLptim5rst() bool {
+func (r *RegisterApb4rstrType) GetLptim5rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldLptim5rstMask) != 0
 }
 
 // SetLptim5rst LPTIM5 block reset
-func (r *registerApb4rstrType) SetLptim5rst(value bool) {
+func (r *RegisterApb4rstrType) SetLptim5rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldLptim5rstMask)
 	} else {
@@ -4620,12 +5379,12 @@ const (
 )
 
 // GetComp12rst COMP12 Blocks Reset
-func (r *registerApb4rstrType) GetComp12rst() bool {
+func (r *RegisterApb4rstrType) GetComp12rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldComp12rstMask) != 0
 }
 
 // SetComp12rst COMP12 Blocks Reset
-func (r *registerApb4rstrType) SetComp12rst(value bool) {
+func (r *RegisterApb4rstrType) SetComp12rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldComp12rstMask)
 	} else {
@@ -4639,12 +5398,12 @@ const (
 )
 
 // GetVrefrst VREF block reset
-func (r *registerApb4rstrType) GetVrefrst() bool {
+func (r *RegisterApb4rstrType) GetVrefrst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldVrefrstMask) != 0
 }
 
 // SetVrefrst VREF block reset
-func (r *registerApb4rstrType) SetVrefrst(value bool) {
+func (r *RegisterApb4rstrType) SetVrefrst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldVrefrstMask)
 	} else {
@@ -4658,12 +5417,12 @@ const (
 )
 
 // GetSai4rst SAI4 block reset
-func (r *registerApb4rstrType) GetSai4rst() bool {
+func (r *RegisterApb4rstrType) GetSai4rst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4rstrFieldSai4rstMask) != 0
 }
 
 // SetSai4rst SAI4 block reset
-func (r *registerApb4rstrType) SetSai4rst(value bool) {
+func (r *RegisterApb4rstrType) SetSai4rst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4rstrFieldSai4rstMask)
 	} else {
@@ -4671,8 +5430,31 @@ func (r *registerApb4rstrType) SetSai4rst(value bool) {
 	}
 }
 
-// registerGcrType RCC Global Control Register
-type registerGcrType uint32
+// RegisterGcrType RCC Global Control Register
+type RegisterGcrType uint32
+
+func (r *RegisterGcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterGcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterGcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterGcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterGcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterGcrFieldWw1rscShift = 0
@@ -4680,12 +5462,12 @@ const (
 )
 
 // GetWw1rsc WWDG1 reset scope control
-func (r *registerGcrType) GetWw1rsc() bool {
+func (r *RegisterGcrType) GetWw1rsc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterGcrFieldWw1rscMask) != 0
 }
 
 // SetWw1rsc WWDG1 reset scope control
-func (r *registerGcrType) SetWw1rsc(value bool) {
+func (r *RegisterGcrType) SetWw1rsc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterGcrFieldWw1rscMask)
 	} else {
@@ -4693,8 +5475,31 @@ func (r *registerGcrType) SetWw1rsc(value bool) {
 	}
 }
 
-// registerD3amrType RCC D3 Autonomous mode Register
-type registerD3amrType uint32
+// RegisterD3amrType RCC D3 Autonomous mode Register
+type RegisterD3amrType uint32
+
+func (r *RegisterD3amrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3amrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3amrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3amrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3amrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD3amrFieldBdmaamenShift = 0
@@ -4702,12 +5507,12 @@ const (
 )
 
 // GetBdmaamen BDMA and DMAMUX Autonomous mode enable
-func (r *registerD3amrType) GetBdmaamen() bool {
+func (r *RegisterD3amrType) GetBdmaamen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldBdmaamenMask) != 0
 }
 
 // SetBdmaamen BDMA and DMAMUX Autonomous mode enable
-func (r *registerD3amrType) SetBdmaamen(value bool) {
+func (r *RegisterD3amrType) SetBdmaamen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldBdmaamenMask)
 	} else {
@@ -4721,12 +5526,12 @@ const (
 )
 
 // GetLpuart1amen LPUART1 Autonomous mode enable
-func (r *registerD3amrType) GetLpuart1amen() bool {
+func (r *RegisterD3amrType) GetLpuart1amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldLpuart1amenMask) != 0
 }
 
 // SetLpuart1amen LPUART1 Autonomous mode enable
-func (r *registerD3amrType) SetLpuart1amen(value bool) {
+func (r *RegisterD3amrType) SetLpuart1amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldLpuart1amenMask)
 	} else {
@@ -4740,12 +5545,12 @@ const (
 )
 
 // GetSpi6amen SPI6 Autonomous mode enable
-func (r *registerD3amrType) GetSpi6amen() bool {
+func (r *RegisterD3amrType) GetSpi6amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldSpi6amenMask) != 0
 }
 
 // SetSpi6amen SPI6 Autonomous mode enable
-func (r *registerD3amrType) SetSpi6amen(value bool) {
+func (r *RegisterD3amrType) SetSpi6amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldSpi6amenMask)
 	} else {
@@ -4759,12 +5564,12 @@ const (
 )
 
 // GetI2c4amen I2C4 Autonomous mode enable
-func (r *registerD3amrType) GetI2c4amen() bool {
+func (r *RegisterD3amrType) GetI2c4amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldI2c4amenMask) != 0
 }
 
 // SetI2c4amen I2C4 Autonomous mode enable
-func (r *registerD3amrType) SetI2c4amen(value bool) {
+func (r *RegisterD3amrType) SetI2c4amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldI2c4amenMask)
 	} else {
@@ -4778,12 +5583,12 @@ const (
 )
 
 // GetLptim2amen LPTIM2 Autonomous mode enable
-func (r *registerD3amrType) GetLptim2amen() bool {
+func (r *RegisterD3amrType) GetLptim2amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldLptim2amenMask) != 0
 }
 
 // SetLptim2amen LPTIM2 Autonomous mode enable
-func (r *registerD3amrType) SetLptim2amen(value bool) {
+func (r *RegisterD3amrType) SetLptim2amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldLptim2amenMask)
 	} else {
@@ -4797,12 +5602,12 @@ const (
 )
 
 // GetLptim3amen LPTIM3 Autonomous mode enable
-func (r *registerD3amrType) GetLptim3amen() bool {
+func (r *RegisterD3amrType) GetLptim3amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldLptim3amenMask) != 0
 }
 
 // SetLptim3amen LPTIM3 Autonomous mode enable
-func (r *registerD3amrType) SetLptim3amen(value bool) {
+func (r *RegisterD3amrType) SetLptim3amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldLptim3amenMask)
 	} else {
@@ -4816,12 +5621,12 @@ const (
 )
 
 // GetLptim4amen LPTIM4 Autonomous mode enable
-func (r *registerD3amrType) GetLptim4amen() bool {
+func (r *RegisterD3amrType) GetLptim4amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldLptim4amenMask) != 0
 }
 
 // SetLptim4amen LPTIM4 Autonomous mode enable
-func (r *registerD3amrType) SetLptim4amen(value bool) {
+func (r *RegisterD3amrType) SetLptim4amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldLptim4amenMask)
 	} else {
@@ -4835,12 +5640,12 @@ const (
 )
 
 // GetLptim5amen LPTIM5 Autonomous mode enable
-func (r *registerD3amrType) GetLptim5amen() bool {
+func (r *RegisterD3amrType) GetLptim5amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldLptim5amenMask) != 0
 }
 
 // SetLptim5amen LPTIM5 Autonomous mode enable
-func (r *registerD3amrType) SetLptim5amen(value bool) {
+func (r *RegisterD3amrType) SetLptim5amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldLptim5amenMask)
 	} else {
@@ -4854,12 +5659,12 @@ const (
 )
 
 // GetComp12amen COMP12 Autonomous mode enable
-func (r *registerD3amrType) GetComp12amen() bool {
+func (r *RegisterD3amrType) GetComp12amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldComp12amenMask) != 0
 }
 
 // SetComp12amen COMP12 Autonomous mode enable
-func (r *registerD3amrType) SetComp12amen(value bool) {
+func (r *RegisterD3amrType) SetComp12amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldComp12amenMask)
 	} else {
@@ -4873,12 +5678,12 @@ const (
 )
 
 // GetVrefamen VREF Autonomous mode enable
-func (r *registerD3amrType) GetVrefamen() bool {
+func (r *RegisterD3amrType) GetVrefamen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldVrefamenMask) != 0
 }
 
 // SetVrefamen VREF Autonomous mode enable
-func (r *registerD3amrType) SetVrefamen(value bool) {
+func (r *RegisterD3amrType) SetVrefamen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldVrefamenMask)
 	} else {
@@ -4892,12 +5697,12 @@ const (
 )
 
 // GetRtcamen RTC Autonomous mode enable
-func (r *registerD3amrType) GetRtcamen() bool {
+func (r *RegisterD3amrType) GetRtcamen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldRtcamenMask) != 0
 }
 
 // SetRtcamen RTC Autonomous mode enable
-func (r *registerD3amrType) SetRtcamen(value bool) {
+func (r *RegisterD3amrType) SetRtcamen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldRtcamenMask)
 	} else {
@@ -4911,12 +5716,12 @@ const (
 )
 
 // GetCrcamen CRC Autonomous mode enable
-func (r *registerD3amrType) GetCrcamen() bool {
+func (r *RegisterD3amrType) GetCrcamen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldCrcamenMask) != 0
 }
 
 // SetCrcamen CRC Autonomous mode enable
-func (r *registerD3amrType) SetCrcamen(value bool) {
+func (r *RegisterD3amrType) SetCrcamen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldCrcamenMask)
 	} else {
@@ -4930,12 +5735,12 @@ const (
 )
 
 // GetSai4amen SAI4 Autonomous mode enable
-func (r *registerD3amrType) GetSai4amen() bool {
+func (r *RegisterD3amrType) GetSai4amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldSai4amenMask) != 0
 }
 
 // SetSai4amen SAI4 Autonomous mode enable
-func (r *registerD3amrType) SetSai4amen(value bool) {
+func (r *RegisterD3amrType) SetSai4amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldSai4amenMask)
 	} else {
@@ -4949,12 +5754,12 @@ const (
 )
 
 // GetAdc3amen ADC3 Autonomous mode enable
-func (r *registerD3amrType) GetAdc3amen() bool {
+func (r *RegisterD3amrType) GetAdc3amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldAdc3amenMask) != 0
 }
 
 // SetAdc3amen ADC3 Autonomous mode enable
-func (r *registerD3amrType) SetAdc3amen(value bool) {
+func (r *RegisterD3amrType) SetAdc3amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldAdc3amenMask)
 	} else {
@@ -4968,12 +5773,12 @@ const (
 )
 
 // GetBkpsramamen Backup RAM Autonomous mode enable
-func (r *registerD3amrType) GetBkpsramamen() bool {
+func (r *RegisterD3amrType) GetBkpsramamen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldBkpsramamenMask) != 0
 }
 
 // SetBkpsramamen Backup RAM Autonomous mode enable
-func (r *registerD3amrType) SetBkpsramamen(value bool) {
+func (r *RegisterD3amrType) SetBkpsramamen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldBkpsramamenMask)
 	} else {
@@ -4987,12 +5792,12 @@ const (
 )
 
 // GetSram4amen SRAM4 Autonomous mode enable
-func (r *registerD3amrType) GetSram4amen() bool {
+func (r *RegisterD3amrType) GetSram4amen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3amrFieldSram4amenMask) != 0
 }
 
 // SetSram4amen SRAM4 Autonomous mode enable
-func (r *registerD3amrType) SetSram4amen(value bool) {
+func (r *RegisterD3amrType) SetSram4amen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3amrFieldSram4amenMask)
 	} else {
@@ -5000,8 +5805,31 @@ func (r *registerD3amrType) SetSram4amen(value bool) {
 	}
 }
 
-// registerRsrType RCC Reset Status Register
-type registerRsrType uint32
+// RegisterRsrType RCC Reset Status Register
+type RegisterRsrType uint32
+
+func (r *RegisterRsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRsrFieldRmvfShift = 16
@@ -5009,12 +5837,12 @@ const (
 )
 
 // GetRmvf Remove reset flag
-func (r *registerRsrType) GetRmvf() bool {
+func (r *RegisterRsrType) GetRmvf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldRmvfMask) != 0
 }
 
 // SetRmvf Remove reset flag
-func (r *registerRsrType) SetRmvf(value bool) {
+func (r *RegisterRsrType) SetRmvf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldRmvfMask)
 	} else {
@@ -5028,12 +5856,12 @@ const (
 )
 
 // GetCpurstf CPU reset flag
-func (r *registerRsrType) GetCpurstf() bool {
+func (r *RegisterRsrType) GetCpurstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldCpurstfMask) != 0
 }
 
 // SetCpurstf CPU reset flag
-func (r *registerRsrType) SetCpurstf(value bool) {
+func (r *RegisterRsrType) SetCpurstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldCpurstfMask)
 	} else {
@@ -5047,12 +5875,12 @@ const (
 )
 
 // GetD1rstf D1 domain power switch reset flag
-func (r *registerRsrType) GetD1rstf() bool {
+func (r *RegisterRsrType) GetD1rstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldD1rstfMask) != 0
 }
 
 // SetD1rstf D1 domain power switch reset flag
-func (r *registerRsrType) SetD1rstf(value bool) {
+func (r *RegisterRsrType) SetD1rstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldD1rstfMask)
 	} else {
@@ -5066,12 +5894,12 @@ const (
 )
 
 // GetD2rstf D2 domain power switch reset flag
-func (r *registerRsrType) GetD2rstf() bool {
+func (r *RegisterRsrType) GetD2rstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldD2rstfMask) != 0
 }
 
 // SetD2rstf D2 domain power switch reset flag
-func (r *registerRsrType) SetD2rstf(value bool) {
+func (r *RegisterRsrType) SetD2rstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldD2rstfMask)
 	} else {
@@ -5085,12 +5913,12 @@ const (
 )
 
 // GetBorrstf BOR reset flag
-func (r *registerRsrType) GetBorrstf() bool {
+func (r *RegisterRsrType) GetBorrstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldBorrstfMask) != 0
 }
 
 // SetBorrstf BOR reset flag
-func (r *registerRsrType) SetBorrstf(value bool) {
+func (r *RegisterRsrType) SetBorrstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldBorrstfMask)
 	} else {
@@ -5104,12 +5932,12 @@ const (
 )
 
 // GetPinrstf Pin reset flag (NRST)
-func (r *registerRsrType) GetPinrstf() bool {
+func (r *RegisterRsrType) GetPinrstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldPinrstfMask) != 0
 }
 
 // SetPinrstf Pin reset flag (NRST)
-func (r *registerRsrType) SetPinrstf(value bool) {
+func (r *RegisterRsrType) SetPinrstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldPinrstfMask)
 	} else {
@@ -5123,12 +5951,12 @@ const (
 )
 
 // GetPorrstf POR/PDR reset flag
-func (r *registerRsrType) GetPorrstf() bool {
+func (r *RegisterRsrType) GetPorrstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldPorrstfMask) != 0
 }
 
 // SetPorrstf POR/PDR reset flag
-func (r *registerRsrType) SetPorrstf(value bool) {
+func (r *RegisterRsrType) SetPorrstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldPorrstfMask)
 	} else {
@@ -5142,12 +5970,12 @@ const (
 )
 
 // GetSftrstf System reset from CPU reset flag
-func (r *registerRsrType) GetSftrstf() bool {
+func (r *RegisterRsrType) GetSftrstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldSftrstfMask) != 0
 }
 
 // SetSftrstf System reset from CPU reset flag
-func (r *registerRsrType) SetSftrstf(value bool) {
+func (r *RegisterRsrType) SetSftrstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldSftrstfMask)
 	} else {
@@ -5161,12 +5989,12 @@ const (
 )
 
 // GetIwdg1rstf Independent Watchdog reset flag
-func (r *registerRsrType) GetIwdg1rstf() bool {
+func (r *RegisterRsrType) GetIwdg1rstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldIwdg1rstfMask) != 0
 }
 
 // SetIwdg1rstf Independent Watchdog reset flag
-func (r *registerRsrType) SetIwdg1rstf(value bool) {
+func (r *RegisterRsrType) SetIwdg1rstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldIwdg1rstfMask)
 	} else {
@@ -5180,12 +6008,12 @@ const (
 )
 
 // GetWwdg1rstf Window Watchdog reset flag
-func (r *registerRsrType) GetWwdg1rstf() bool {
+func (r *RegisterRsrType) GetWwdg1rstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldWwdg1rstfMask) != 0
 }
 
 // SetWwdg1rstf Window Watchdog reset flag
-func (r *registerRsrType) SetWwdg1rstf(value bool) {
+func (r *RegisterRsrType) SetWwdg1rstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldWwdg1rstfMask)
 	} else {
@@ -5199,12 +6027,12 @@ const (
 )
 
 // GetLpwrrstf Reset due to illegal D1 DStandby or CPU CStop flag
-func (r *registerRsrType) GetLpwrrstf() bool {
+func (r *RegisterRsrType) GetLpwrrstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRsrFieldLpwrrstfMask) != 0
 }
 
 // SetLpwrrstf Reset due to illegal D1 DStandby or CPU CStop flag
-func (r *registerRsrType) SetLpwrrstf(value bool) {
+func (r *RegisterRsrType) SetLpwrrstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRsrFieldLpwrrstfMask)
 	} else {
@@ -5212,8 +6040,31 @@ func (r *registerRsrType) SetLpwrrstf(value bool) {
 	}
 }
 
-// registerAhb3enrType RCC AHB3 Clock Register
-type registerAhb3enrType uint32
+// RegisterAhb3enrType RCC AHB3 Clock Register
+type RegisterAhb3enrType uint32
+
+func (r *RegisterAhb3enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb3enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb3enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb3enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb3enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb3enrFieldMdmaenShift = 0
@@ -5221,12 +6072,12 @@ const (
 )
 
 // GetMdmaen MDMA Peripheral Clock Enable
-func (r *registerAhb3enrType) GetMdmaen() bool {
+func (r *RegisterAhb3enrType) GetMdmaen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3enrFieldMdmaenMask) != 0
 }
 
 // SetMdmaen MDMA Peripheral Clock Enable
-func (r *registerAhb3enrType) SetMdmaen(value bool) {
+func (r *RegisterAhb3enrType) SetMdmaen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3enrFieldMdmaenMask)
 	} else {
@@ -5240,12 +6091,12 @@ const (
 )
 
 // GetDma2den DMA2D Peripheral Clock Enable
-func (r *registerAhb3enrType) GetDma2den() bool {
+func (r *RegisterAhb3enrType) GetDma2den() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3enrFieldDma2denMask) != 0
 }
 
 // SetDma2den DMA2D Peripheral Clock Enable
-func (r *registerAhb3enrType) SetDma2den(value bool) {
+func (r *RegisterAhb3enrType) SetDma2den(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3enrFieldDma2denMask)
 	} else {
@@ -5259,12 +6110,12 @@ const (
 )
 
 // GetJpgdecen JPGDEC Peripheral Clock Enable
-func (r *registerAhb3enrType) GetJpgdecen() bool {
+func (r *RegisterAhb3enrType) GetJpgdecen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3enrFieldJpgdecenMask) != 0
 }
 
 // SetJpgdecen JPGDEC Peripheral Clock Enable
-func (r *registerAhb3enrType) SetJpgdecen(value bool) {
+func (r *RegisterAhb3enrType) SetJpgdecen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3enrFieldJpgdecenMask)
 	} else {
@@ -5278,12 +6129,12 @@ const (
 )
 
 // GetFmcen FMC Peripheral Clocks Enable
-func (r *registerAhb3enrType) GetFmcen() bool {
+func (r *RegisterAhb3enrType) GetFmcen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3enrFieldFmcenMask) != 0
 }
 
 // SetFmcen FMC Peripheral Clocks Enable
-func (r *registerAhb3enrType) SetFmcen(value bool) {
+func (r *RegisterAhb3enrType) SetFmcen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3enrFieldFmcenMask)
 	} else {
@@ -5297,12 +6148,12 @@ const (
 )
 
 // GetQspien QUADSPI and QUADSPI Delay Clock Enable
-func (r *registerAhb3enrType) GetQspien() bool {
+func (r *RegisterAhb3enrType) GetQspien() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3enrFieldQspienMask) != 0
 }
 
 // SetQspien QUADSPI and QUADSPI Delay Clock Enable
-func (r *registerAhb3enrType) SetQspien(value bool) {
+func (r *RegisterAhb3enrType) SetQspien(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3enrFieldQspienMask)
 	} else {
@@ -5316,12 +6167,12 @@ const (
 )
 
 // GetSdmmc1en SDMMC1 and SDMMC1 Delay Clock Enable
-func (r *registerAhb3enrType) GetSdmmc1en() bool {
+func (r *RegisterAhb3enrType) GetSdmmc1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3enrFieldSdmmc1enMask) != 0
 }
 
 // SetSdmmc1en SDMMC1 and SDMMC1 Delay Clock Enable
-func (r *registerAhb3enrType) SetSdmmc1en(value bool) {
+func (r *RegisterAhb3enrType) SetSdmmc1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3enrFieldSdmmc1enMask)
 	} else {
@@ -5329,8 +6180,31 @@ func (r *registerAhb3enrType) SetSdmmc1en(value bool) {
 	}
 }
 
-// registerAhb1enrType RCC AHB1 Clock Register
-type registerAhb1enrType uint32
+// RegisterAhb1enrType RCC AHB1 Clock Register
+type RegisterAhb1enrType uint32
+
+func (r *RegisterAhb1enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb1enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb1enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb1enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb1enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb1enrFieldDma1enShift = 0
@@ -5338,12 +6212,12 @@ const (
 )
 
 // GetDma1en DMA1 Clock Enable
-func (r *registerAhb1enrType) GetDma1en() bool {
+func (r *RegisterAhb1enrType) GetDma1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1enrFieldDma1enMask) != 0
 }
 
 // SetDma1en DMA1 Clock Enable
-func (r *registerAhb1enrType) SetDma1en(value bool) {
+func (r *RegisterAhb1enrType) SetDma1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1enrFieldDma1enMask)
 	} else {
@@ -5357,12 +6231,12 @@ const (
 )
 
 // GetDma2en DMA2 Clock Enable
-func (r *registerAhb1enrType) GetDma2en() bool {
+func (r *RegisterAhb1enrType) GetDma2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1enrFieldDma2enMask) != 0
 }
 
 // SetDma2en DMA2 Clock Enable
-func (r *registerAhb1enrType) SetDma2en(value bool) {
+func (r *RegisterAhb1enrType) SetDma2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1enrFieldDma2enMask)
 	} else {
@@ -5376,12 +6250,12 @@ const (
 )
 
 // GetAdc12en ADC1/2 Peripheral Clocks Enable
-func (r *registerAhb1enrType) GetAdc12en() bool {
+func (r *RegisterAhb1enrType) GetAdc12en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1enrFieldAdc12enMask) != 0
 }
 
 // SetAdc12en ADC1/2 Peripheral Clocks Enable
-func (r *registerAhb1enrType) SetAdc12en(value bool) {
+func (r *RegisterAhb1enrType) SetAdc12en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1enrFieldAdc12enMask)
 	} else {
@@ -5395,12 +6269,12 @@ const (
 )
 
 // GetEth1macen Ethernet MAC bus interface Clock Enable
-func (r *registerAhb1enrType) GetEth1macen() bool {
+func (r *RegisterAhb1enrType) GetEth1macen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1enrFieldEth1macenMask) != 0
 }
 
 // SetEth1macen Ethernet MAC bus interface Clock Enable
-func (r *registerAhb1enrType) SetEth1macen(value bool) {
+func (r *RegisterAhb1enrType) SetEth1macen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1enrFieldEth1macenMask)
 	} else {
@@ -5414,12 +6288,12 @@ const (
 )
 
 // GetEth1txen Ethernet Transmission Clock Enable
-func (r *registerAhb1enrType) GetEth1txen() bool {
+func (r *RegisterAhb1enrType) GetEth1txen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1enrFieldEth1txenMask) != 0
 }
 
 // SetEth1txen Ethernet Transmission Clock Enable
-func (r *registerAhb1enrType) SetEth1txen(value bool) {
+func (r *RegisterAhb1enrType) SetEth1txen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1enrFieldEth1txenMask)
 	} else {
@@ -5433,12 +6307,12 @@ const (
 )
 
 // GetEth1rxen Ethernet Reception Clock Enable
-func (r *registerAhb1enrType) GetEth1rxen() bool {
+func (r *RegisterAhb1enrType) GetEth1rxen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1enrFieldEth1rxenMask) != 0
 }
 
 // SetEth1rxen Ethernet Reception Clock Enable
-func (r *registerAhb1enrType) SetEth1rxen(value bool) {
+func (r *RegisterAhb1enrType) SetEth1rxen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1enrFieldEth1rxenMask)
 	} else {
@@ -5452,12 +6326,12 @@ const (
 )
 
 // GetUsb1otgen USB1OTG Peripheral Clocks Enable
-func (r *registerAhb1enrType) GetUsb1otgen() bool {
+func (r *RegisterAhb1enrType) GetUsb1otgen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1enrFieldUsb1otgenMask) != 0
 }
 
 // SetUsb1otgen USB1OTG Peripheral Clocks Enable
-func (r *registerAhb1enrType) SetUsb1otgen(value bool) {
+func (r *RegisterAhb1enrType) SetUsb1otgen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1enrFieldUsb1otgenMask)
 	} else {
@@ -5471,12 +6345,12 @@ const (
 )
 
 // GetUsb1ulpien USB_PHY1 Clocks Enable
-func (r *registerAhb1enrType) GetUsb1ulpien() bool {
+func (r *RegisterAhb1enrType) GetUsb1ulpien() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1enrFieldUsb1ulpienMask) != 0
 }
 
 // SetUsb1ulpien USB_PHY1 Clocks Enable
-func (r *registerAhb1enrType) SetUsb1ulpien(value bool) {
+func (r *RegisterAhb1enrType) SetUsb1ulpien(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1enrFieldUsb1ulpienMask)
 	} else {
@@ -5490,12 +6364,12 @@ const (
 )
 
 // GetUsb2otgen USB2OTG Peripheral Clocks Enable
-func (r *registerAhb1enrType) GetUsb2otgen() bool {
+func (r *RegisterAhb1enrType) GetUsb2otgen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1enrFieldUsb2otgenMask) != 0
 }
 
 // SetUsb2otgen USB2OTG Peripheral Clocks Enable
-func (r *registerAhb1enrType) SetUsb2otgen(value bool) {
+func (r *RegisterAhb1enrType) SetUsb2otgen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1enrFieldUsb2otgenMask)
 	} else {
@@ -5509,12 +6383,12 @@ const (
 )
 
 // GetUsb2ulpien USB_PHY2 Clocks Enable
-func (r *registerAhb1enrType) GetUsb2ulpien() bool {
+func (r *RegisterAhb1enrType) GetUsb2ulpien() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1enrFieldUsb2ulpienMask) != 0
 }
 
 // SetUsb2ulpien USB_PHY2 Clocks Enable
-func (r *registerAhb1enrType) SetUsb2ulpien(value bool) {
+func (r *RegisterAhb1enrType) SetUsb2ulpien(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1enrFieldUsb2ulpienMask)
 	} else {
@@ -5522,8 +6396,31 @@ func (r *registerAhb1enrType) SetUsb2ulpien(value bool) {
 	}
 }
 
-// registerAhb2enrType RCC AHB2 Clock Register
-type registerAhb2enrType uint32
+// RegisterAhb2enrType RCC AHB2 Clock Register
+type RegisterAhb2enrType uint32
+
+func (r *RegisterAhb2enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb2enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb2enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb2enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb2enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb2enrFieldCamitfenShift = 0
@@ -5531,12 +6428,12 @@ const (
 )
 
 // GetCamitfen CAMITF peripheral clock enable
-func (r *registerAhb2enrType) GetCamitfen() bool {
+func (r *RegisterAhb2enrType) GetCamitfen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2enrFieldCamitfenMask) != 0
 }
 
 // SetCamitfen CAMITF peripheral clock enable
-func (r *registerAhb2enrType) SetCamitfen(value bool) {
+func (r *RegisterAhb2enrType) SetCamitfen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2enrFieldCamitfenMask)
 	} else {
@@ -5550,12 +6447,12 @@ const (
 )
 
 // GetCrypten CRYPT peripheral clock enable
-func (r *registerAhb2enrType) GetCrypten() bool {
+func (r *RegisterAhb2enrType) GetCrypten() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2enrFieldCryptenMask) != 0
 }
 
 // SetCrypten CRYPT peripheral clock enable
-func (r *registerAhb2enrType) SetCrypten(value bool) {
+func (r *RegisterAhb2enrType) SetCrypten(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2enrFieldCryptenMask)
 	} else {
@@ -5569,12 +6466,12 @@ const (
 )
 
 // GetHashen HASH peripheral clock enable
-func (r *registerAhb2enrType) GetHashen() bool {
+func (r *RegisterAhb2enrType) GetHashen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2enrFieldHashenMask) != 0
 }
 
 // SetHashen HASH peripheral clock enable
-func (r *registerAhb2enrType) SetHashen(value bool) {
+func (r *RegisterAhb2enrType) SetHashen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2enrFieldHashenMask)
 	} else {
@@ -5588,12 +6485,12 @@ const (
 )
 
 // GetRngen RNG peripheral clocks enable
-func (r *registerAhb2enrType) GetRngen() bool {
+func (r *RegisterAhb2enrType) GetRngen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2enrFieldRngenMask) != 0
 }
 
 // SetRngen RNG peripheral clocks enable
-func (r *registerAhb2enrType) SetRngen(value bool) {
+func (r *RegisterAhb2enrType) SetRngen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2enrFieldRngenMask)
 	} else {
@@ -5607,12 +6504,12 @@ const (
 )
 
 // GetSdmmc2en SDMMC2 and SDMMC2 delay clock enable
-func (r *registerAhb2enrType) GetSdmmc2en() bool {
+func (r *RegisterAhb2enrType) GetSdmmc2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2enrFieldSdmmc2enMask) != 0
 }
 
 // SetSdmmc2en SDMMC2 and SDMMC2 delay clock enable
-func (r *registerAhb2enrType) SetSdmmc2en(value bool) {
+func (r *RegisterAhb2enrType) SetSdmmc2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2enrFieldSdmmc2enMask)
 	} else {
@@ -5626,12 +6523,12 @@ const (
 )
 
 // GetSram1en SRAM1 block enable
-func (r *registerAhb2enrType) GetSram1en() bool {
+func (r *RegisterAhb2enrType) GetSram1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2enrFieldSram1enMask) != 0
 }
 
 // SetSram1en SRAM1 block enable
-func (r *registerAhb2enrType) SetSram1en(value bool) {
+func (r *RegisterAhb2enrType) SetSram1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2enrFieldSram1enMask)
 	} else {
@@ -5645,12 +6542,12 @@ const (
 )
 
 // GetSram2en SRAM2 block enable
-func (r *registerAhb2enrType) GetSram2en() bool {
+func (r *RegisterAhb2enrType) GetSram2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2enrFieldSram2enMask) != 0
 }
 
 // SetSram2en SRAM2 block enable
-func (r *registerAhb2enrType) SetSram2en(value bool) {
+func (r *RegisterAhb2enrType) SetSram2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2enrFieldSram2enMask)
 	} else {
@@ -5664,12 +6561,12 @@ const (
 )
 
 // GetSram3en SRAM3 block enable
-func (r *registerAhb2enrType) GetSram3en() bool {
+func (r *RegisterAhb2enrType) GetSram3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2enrFieldSram3enMask) != 0
 }
 
 // SetSram3en SRAM3 block enable
-func (r *registerAhb2enrType) SetSram3en(value bool) {
+func (r *RegisterAhb2enrType) SetSram3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2enrFieldSram3enMask)
 	} else {
@@ -5677,8 +6574,31 @@ func (r *registerAhb2enrType) SetSram3en(value bool) {
 	}
 }
 
-// registerAhb4enrType RCC AHB4 Clock Register
-type registerAhb4enrType uint32
+// RegisterAhb4enrType RCC AHB4 Clock Register
+type RegisterAhb4enrType uint32
+
+func (r *RegisterAhb4enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb4enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb4enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb4enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb4enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb4enrFieldGpioaenShift = 0
@@ -5686,12 +6606,12 @@ const (
 )
 
 // GetGpioaen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpioaen() bool {
+func (r *RegisterAhb4enrType) GetGpioaen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpioaenMask) != 0
 }
 
 // SetGpioaen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpioaen(value bool) {
+func (r *RegisterAhb4enrType) SetGpioaen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpioaenMask)
 	} else {
@@ -5705,12 +6625,12 @@ const (
 )
 
 // GetGpioben 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpioben() bool {
+func (r *RegisterAhb4enrType) GetGpioben() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpiobenMask) != 0
 }
 
 // SetGpioben 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpioben(value bool) {
+func (r *RegisterAhb4enrType) SetGpioben(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpiobenMask)
 	} else {
@@ -5724,12 +6644,12 @@ const (
 )
 
 // GetGpiocen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpiocen() bool {
+func (r *RegisterAhb4enrType) GetGpiocen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpiocenMask) != 0
 }
 
 // SetGpiocen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpiocen(value bool) {
+func (r *RegisterAhb4enrType) SetGpiocen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpiocenMask)
 	} else {
@@ -5743,12 +6663,12 @@ const (
 )
 
 // GetGpioden 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpioden() bool {
+func (r *RegisterAhb4enrType) GetGpioden() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpiodenMask) != 0
 }
 
 // SetGpioden 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpioden(value bool) {
+func (r *RegisterAhb4enrType) SetGpioden(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpiodenMask)
 	} else {
@@ -5762,12 +6682,12 @@ const (
 )
 
 // GetGpioeen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpioeen() bool {
+func (r *RegisterAhb4enrType) GetGpioeen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpioeenMask) != 0
 }
 
 // SetGpioeen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpioeen(value bool) {
+func (r *RegisterAhb4enrType) SetGpioeen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpioeenMask)
 	} else {
@@ -5781,12 +6701,12 @@ const (
 )
 
 // GetGpiofen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpiofen() bool {
+func (r *RegisterAhb4enrType) GetGpiofen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpiofenMask) != 0
 }
 
 // SetGpiofen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpiofen(value bool) {
+func (r *RegisterAhb4enrType) SetGpiofen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpiofenMask)
 	} else {
@@ -5800,12 +6720,12 @@ const (
 )
 
 // GetGpiogen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpiogen() bool {
+func (r *RegisterAhb4enrType) GetGpiogen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpiogenMask) != 0
 }
 
 // SetGpiogen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpiogen(value bool) {
+func (r *RegisterAhb4enrType) SetGpiogen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpiogenMask)
 	} else {
@@ -5819,12 +6739,12 @@ const (
 )
 
 // GetGpiohen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpiohen() bool {
+func (r *RegisterAhb4enrType) GetGpiohen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpiohenMask) != 0
 }
 
 // SetGpiohen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpiohen(value bool) {
+func (r *RegisterAhb4enrType) SetGpiohen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpiohenMask)
 	} else {
@@ -5838,12 +6758,12 @@ const (
 )
 
 // GetGpioien 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpioien() bool {
+func (r *RegisterAhb4enrType) GetGpioien() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpioienMask) != 0
 }
 
 // SetGpioien 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpioien(value bool) {
+func (r *RegisterAhb4enrType) SetGpioien(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpioienMask)
 	} else {
@@ -5857,12 +6777,12 @@ const (
 )
 
 // GetGpiojen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpiojen() bool {
+func (r *RegisterAhb4enrType) GetGpiojen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpiojenMask) != 0
 }
 
 // SetGpiojen 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpiojen(value bool) {
+func (r *RegisterAhb4enrType) SetGpiojen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpiojenMask)
 	} else {
@@ -5876,12 +6796,12 @@ const (
 )
 
 // GetGpioken 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) GetGpioken() bool {
+func (r *RegisterAhb4enrType) GetGpioken() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldGpiokenMask) != 0
 }
 
 // SetGpioken 0GPIO peripheral clock enable
-func (r *registerAhb4enrType) SetGpioken(value bool) {
+func (r *RegisterAhb4enrType) SetGpioken(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldGpiokenMask)
 	} else {
@@ -5895,12 +6815,12 @@ const (
 )
 
 // GetCrcen CRC peripheral clock enable
-func (r *registerAhb4enrType) GetCrcen() bool {
+func (r *RegisterAhb4enrType) GetCrcen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldCrcenMask) != 0
 }
 
 // SetCrcen CRC peripheral clock enable
-func (r *registerAhb4enrType) SetCrcen(value bool) {
+func (r *RegisterAhb4enrType) SetCrcen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldCrcenMask)
 	} else {
@@ -5914,12 +6834,12 @@ const (
 )
 
 // GetBdmaen BDMA and DMAMUX2 Clock Enable
-func (r *registerAhb4enrType) GetBdmaen() bool {
+func (r *RegisterAhb4enrType) GetBdmaen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldBdmaenMask) != 0
 }
 
 // SetBdmaen BDMA and DMAMUX2 Clock Enable
-func (r *registerAhb4enrType) SetBdmaen(value bool) {
+func (r *RegisterAhb4enrType) SetBdmaen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldBdmaenMask)
 	} else {
@@ -5933,12 +6853,12 @@ const (
 )
 
 // GetAdc3en ADC3 Peripheral Clocks Enable
-func (r *registerAhb4enrType) GetAdc3en() bool {
+func (r *RegisterAhb4enrType) GetAdc3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldAdc3enMask) != 0
 }
 
 // SetAdc3en ADC3 Peripheral Clocks Enable
-func (r *registerAhb4enrType) SetAdc3en(value bool) {
+func (r *RegisterAhb4enrType) SetAdc3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldAdc3enMask)
 	} else {
@@ -5952,12 +6872,12 @@ const (
 )
 
 // GetHsemen HSEM peripheral clock enable
-func (r *registerAhb4enrType) GetHsemen() bool {
+func (r *RegisterAhb4enrType) GetHsemen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldHsemenMask) != 0
 }
 
 // SetHsemen HSEM peripheral clock enable
-func (r *registerAhb4enrType) SetHsemen(value bool) {
+func (r *RegisterAhb4enrType) SetHsemen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldHsemenMask)
 	} else {
@@ -5971,12 +6891,12 @@ const (
 )
 
 // GetBkpramen Backup RAM Clock Enable
-func (r *registerAhb4enrType) GetBkpramen() bool {
+func (r *RegisterAhb4enrType) GetBkpramen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4enrFieldBkpramenMask) != 0
 }
 
 // SetBkpramen Backup RAM Clock Enable
-func (r *registerAhb4enrType) SetBkpramen(value bool) {
+func (r *RegisterAhb4enrType) SetBkpramen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4enrFieldBkpramenMask)
 	} else {
@@ -5984,8 +6904,31 @@ func (r *registerAhb4enrType) SetBkpramen(value bool) {
 	}
 }
 
-// registerApb3enrType RCC APB3 Clock Register
-type registerApb3enrType uint32
+// RegisterApb3enrType RCC APB3 Clock Register
+type RegisterApb3enrType uint32
+
+func (r *RegisterApb3enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb3enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb3enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb3enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb3enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb3enrFieldLtdcenShift = 3
@@ -5993,12 +6936,12 @@ const (
 )
 
 // GetLtdcen LTDC peripheral clock enable
-func (r *registerApb3enrType) GetLtdcen() bool {
+func (r *RegisterApb3enrType) GetLtdcen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb3enrFieldLtdcenMask) != 0
 }
 
 // SetLtdcen LTDC peripheral clock enable
-func (r *registerApb3enrType) SetLtdcen(value bool) {
+func (r *RegisterApb3enrType) SetLtdcen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb3enrFieldLtdcenMask)
 	} else {
@@ -6012,12 +6955,12 @@ const (
 )
 
 // GetWwdg1en WWDG1 Clock Enable
-func (r *registerApb3enrType) GetWwdg1en() bool {
+func (r *RegisterApb3enrType) GetWwdg1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb3enrFieldWwdg1enMask) != 0
 }
 
 // SetWwdg1en WWDG1 Clock Enable
-func (r *registerApb3enrType) SetWwdg1en(value bool) {
+func (r *RegisterApb3enrType) SetWwdg1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb3enrFieldWwdg1enMask)
 	} else {
@@ -6025,8 +6968,31 @@ func (r *registerApb3enrType) SetWwdg1en(value bool) {
 	}
 }
 
-// registerApb1lenrType RCC APB1 Clock Register
-type registerApb1lenrType uint32
+// RegisterApb1lenrType RCC APB1 Clock Register
+type RegisterApb1lenrType uint32
+
+func (r *RegisterApb1lenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb1lenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb1lenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb1lenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb1lenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb1lenrFieldTim2enShift = 0
@@ -6034,12 +7000,12 @@ const (
 )
 
 // GetTim2en TIM peripheral clock enable
-func (r *registerApb1lenrType) GetTim2en() bool {
+func (r *RegisterApb1lenrType) GetTim2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldTim2enMask) != 0
 }
 
 // SetTim2en TIM peripheral clock enable
-func (r *registerApb1lenrType) SetTim2en(value bool) {
+func (r *RegisterApb1lenrType) SetTim2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldTim2enMask)
 	} else {
@@ -6053,12 +7019,12 @@ const (
 )
 
 // GetTim3en TIM peripheral clock enable
-func (r *registerApb1lenrType) GetTim3en() bool {
+func (r *RegisterApb1lenrType) GetTim3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldTim3enMask) != 0
 }
 
 // SetTim3en TIM peripheral clock enable
-func (r *registerApb1lenrType) SetTim3en(value bool) {
+func (r *RegisterApb1lenrType) SetTim3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldTim3enMask)
 	} else {
@@ -6072,12 +7038,12 @@ const (
 )
 
 // GetTim4en TIM peripheral clock enable
-func (r *registerApb1lenrType) GetTim4en() bool {
+func (r *RegisterApb1lenrType) GetTim4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldTim4enMask) != 0
 }
 
 // SetTim4en TIM peripheral clock enable
-func (r *registerApb1lenrType) SetTim4en(value bool) {
+func (r *RegisterApb1lenrType) SetTim4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldTim4enMask)
 	} else {
@@ -6091,12 +7057,12 @@ const (
 )
 
 // GetTim5en TIM peripheral clock enable
-func (r *registerApb1lenrType) GetTim5en() bool {
+func (r *RegisterApb1lenrType) GetTim5en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldTim5enMask) != 0
 }
 
 // SetTim5en TIM peripheral clock enable
-func (r *registerApb1lenrType) SetTim5en(value bool) {
+func (r *RegisterApb1lenrType) SetTim5en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldTim5enMask)
 	} else {
@@ -6110,12 +7076,12 @@ const (
 )
 
 // GetTim6en TIM peripheral clock enable
-func (r *registerApb1lenrType) GetTim6en() bool {
+func (r *RegisterApb1lenrType) GetTim6en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldTim6enMask) != 0
 }
 
 // SetTim6en TIM peripheral clock enable
-func (r *registerApb1lenrType) SetTim6en(value bool) {
+func (r *RegisterApb1lenrType) SetTim6en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldTim6enMask)
 	} else {
@@ -6129,12 +7095,12 @@ const (
 )
 
 // GetTim7en TIM peripheral clock enable
-func (r *registerApb1lenrType) GetTim7en() bool {
+func (r *RegisterApb1lenrType) GetTim7en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldTim7enMask) != 0
 }
 
 // SetTim7en TIM peripheral clock enable
-func (r *registerApb1lenrType) SetTim7en(value bool) {
+func (r *RegisterApb1lenrType) SetTim7en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldTim7enMask)
 	} else {
@@ -6148,12 +7114,12 @@ const (
 )
 
 // GetTim12en TIM peripheral clock enable
-func (r *registerApb1lenrType) GetTim12en() bool {
+func (r *RegisterApb1lenrType) GetTim12en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldTim12enMask) != 0
 }
 
 // SetTim12en TIM peripheral clock enable
-func (r *registerApb1lenrType) SetTim12en(value bool) {
+func (r *RegisterApb1lenrType) SetTim12en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldTim12enMask)
 	} else {
@@ -6167,12 +7133,12 @@ const (
 )
 
 // GetTim13en TIM peripheral clock enable
-func (r *registerApb1lenrType) GetTim13en() bool {
+func (r *RegisterApb1lenrType) GetTim13en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldTim13enMask) != 0
 }
 
 // SetTim13en TIM peripheral clock enable
-func (r *registerApb1lenrType) SetTim13en(value bool) {
+func (r *RegisterApb1lenrType) SetTim13en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldTim13enMask)
 	} else {
@@ -6186,12 +7152,12 @@ const (
 )
 
 // GetTim14en TIM peripheral clock enable
-func (r *registerApb1lenrType) GetTim14en() bool {
+func (r *RegisterApb1lenrType) GetTim14en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldTim14enMask) != 0
 }
 
 // SetTim14en TIM peripheral clock enable
-func (r *registerApb1lenrType) SetTim14en(value bool) {
+func (r *RegisterApb1lenrType) SetTim14en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldTim14enMask)
 	} else {
@@ -6205,12 +7171,12 @@ const (
 )
 
 // GetLptim1en LPTIM1 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetLptim1en() bool {
+func (r *RegisterApb1lenrType) GetLptim1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldLptim1enMask) != 0
 }
 
 // SetLptim1en LPTIM1 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetLptim1en(value bool) {
+func (r *RegisterApb1lenrType) SetLptim1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldLptim1enMask)
 	} else {
@@ -6224,12 +7190,12 @@ const (
 )
 
 // GetSpi2en SPI2 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetSpi2en() bool {
+func (r *RegisterApb1lenrType) GetSpi2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldSpi2enMask) != 0
 }
 
 // SetSpi2en SPI2 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetSpi2en(value bool) {
+func (r *RegisterApb1lenrType) SetSpi2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldSpi2enMask)
 	} else {
@@ -6243,12 +7209,12 @@ const (
 )
 
 // GetSpi3en SPI3 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetSpi3en() bool {
+func (r *RegisterApb1lenrType) GetSpi3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldSpi3enMask) != 0
 }
 
 // SetSpi3en SPI3 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetSpi3en(value bool) {
+func (r *RegisterApb1lenrType) SetSpi3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldSpi3enMask)
 	} else {
@@ -6262,12 +7228,12 @@ const (
 )
 
 // GetSpdifrxen SPDIFRX Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetSpdifrxen() bool {
+func (r *RegisterApb1lenrType) GetSpdifrxen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldSpdifrxenMask) != 0
 }
 
 // SetSpdifrxen SPDIFRX Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetSpdifrxen(value bool) {
+func (r *RegisterApb1lenrType) SetSpdifrxen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldSpdifrxenMask)
 	} else {
@@ -6281,12 +7247,12 @@ const (
 )
 
 // GetUsart2en USART2 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetUsart2en() bool {
+func (r *RegisterApb1lenrType) GetUsart2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldUsart2enMask) != 0
 }
 
 // SetUsart2en USART2 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetUsart2en(value bool) {
+func (r *RegisterApb1lenrType) SetUsart2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldUsart2enMask)
 	} else {
@@ -6300,12 +7266,12 @@ const (
 )
 
 // GetUsart3en USART3 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetUsart3en() bool {
+func (r *RegisterApb1lenrType) GetUsart3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldUsart3enMask) != 0
 }
 
 // SetUsart3en USART3 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetUsart3en(value bool) {
+func (r *RegisterApb1lenrType) SetUsart3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldUsart3enMask)
 	} else {
@@ -6319,12 +7285,12 @@ const (
 )
 
 // GetUart4en UART4 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetUart4en() bool {
+func (r *RegisterApb1lenrType) GetUart4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldUart4enMask) != 0
 }
 
 // SetUart4en UART4 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetUart4en(value bool) {
+func (r *RegisterApb1lenrType) SetUart4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldUart4enMask)
 	} else {
@@ -6338,12 +7304,12 @@ const (
 )
 
 // GetUart5en UART5 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetUart5en() bool {
+func (r *RegisterApb1lenrType) GetUart5en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldUart5enMask) != 0
 }
 
 // SetUart5en UART5 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetUart5en(value bool) {
+func (r *RegisterApb1lenrType) SetUart5en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldUart5enMask)
 	} else {
@@ -6357,12 +7323,12 @@ const (
 )
 
 // GetI2c1en I2C1 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetI2c1en() bool {
+func (r *RegisterApb1lenrType) GetI2c1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldI2c1enMask) != 0
 }
 
 // SetI2c1en I2C1 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetI2c1en(value bool) {
+func (r *RegisterApb1lenrType) SetI2c1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldI2c1enMask)
 	} else {
@@ -6376,12 +7342,12 @@ const (
 )
 
 // GetI2c2en I2C2 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetI2c2en() bool {
+func (r *RegisterApb1lenrType) GetI2c2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldI2c2enMask) != 0
 }
 
 // SetI2c2en I2C2 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetI2c2en(value bool) {
+func (r *RegisterApb1lenrType) SetI2c2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldI2c2enMask)
 	} else {
@@ -6395,12 +7361,12 @@ const (
 )
 
 // GetI2c3en I2C3 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetI2c3en() bool {
+func (r *RegisterApb1lenrType) GetI2c3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldI2c3enMask) != 0
 }
 
 // SetI2c3en I2C3 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetI2c3en(value bool) {
+func (r *RegisterApb1lenrType) SetI2c3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldI2c3enMask)
 	} else {
@@ -6414,12 +7380,12 @@ const (
 )
 
 // GetHdmicecen HDMI-CEC peripheral clock enable
-func (r *registerApb1lenrType) GetHdmicecen() bool {
+func (r *RegisterApb1lenrType) GetHdmicecen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldHdmicecenMask) != 0
 }
 
 // SetHdmicecen HDMI-CEC peripheral clock enable
-func (r *registerApb1lenrType) SetHdmicecen(value bool) {
+func (r *RegisterApb1lenrType) SetHdmicecen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldHdmicecenMask)
 	} else {
@@ -6433,12 +7399,12 @@ const (
 )
 
 // GetDac12en DAC1&2 peripheral clock enable
-func (r *registerApb1lenrType) GetDac12en() bool {
+func (r *RegisterApb1lenrType) GetDac12en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldDac12enMask) != 0
 }
 
 // SetDac12en DAC1&2 peripheral clock enable
-func (r *registerApb1lenrType) SetDac12en(value bool) {
+func (r *RegisterApb1lenrType) SetDac12en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldDac12enMask)
 	} else {
@@ -6452,12 +7418,12 @@ const (
 )
 
 // GetUsart7en USART7 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetUsart7en() bool {
+func (r *RegisterApb1lenrType) GetUsart7en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldUsart7enMask) != 0
 }
 
 // SetUsart7en USART7 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetUsart7en(value bool) {
+func (r *RegisterApb1lenrType) SetUsart7en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldUsart7enMask)
 	} else {
@@ -6471,12 +7437,12 @@ const (
 )
 
 // GetUsart8en USART8 Peripheral Clocks Enable
-func (r *registerApb1lenrType) GetUsart8en() bool {
+func (r *RegisterApb1lenrType) GetUsart8en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lenrFieldUsart8enMask) != 0
 }
 
 // SetUsart8en USART8 Peripheral Clocks Enable
-func (r *registerApb1lenrType) SetUsart8en(value bool) {
+func (r *RegisterApb1lenrType) SetUsart8en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lenrFieldUsart8enMask)
 	} else {
@@ -6484,8 +7450,31 @@ func (r *registerApb1lenrType) SetUsart8en(value bool) {
 	}
 }
 
-// registerApb1henrType RCC APB1 Clock Register
-type registerApb1henrType uint32
+// RegisterApb1henrType RCC APB1 Clock Register
+type RegisterApb1henrType uint32
+
+func (r *RegisterApb1henrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb1henrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb1henrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb1henrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb1henrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb1henrFieldCrsenShift = 1
@@ -6493,12 +7482,12 @@ const (
 )
 
 // GetCrsen Clock Recovery System peripheral clock enable
-func (r *registerApb1henrType) GetCrsen() bool {
+func (r *RegisterApb1henrType) GetCrsen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1henrFieldCrsenMask) != 0
 }
 
 // SetCrsen Clock Recovery System peripheral clock enable
-func (r *registerApb1henrType) SetCrsen(value bool) {
+func (r *RegisterApb1henrType) SetCrsen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1henrFieldCrsenMask)
 	} else {
@@ -6512,12 +7501,12 @@ const (
 )
 
 // GetSwpen SWPMI Peripheral Clocks Enable
-func (r *registerApb1henrType) GetSwpen() bool {
+func (r *RegisterApb1henrType) GetSwpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1henrFieldSwpenMask) != 0
 }
 
 // SetSwpen SWPMI Peripheral Clocks Enable
-func (r *registerApb1henrType) SetSwpen(value bool) {
+func (r *RegisterApb1henrType) SetSwpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1henrFieldSwpenMask)
 	} else {
@@ -6531,12 +7520,12 @@ const (
 )
 
 // GetOpampen OPAMP peripheral clock enable
-func (r *registerApb1henrType) GetOpampen() bool {
+func (r *RegisterApb1henrType) GetOpampen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1henrFieldOpampenMask) != 0
 }
 
 // SetOpampen OPAMP peripheral clock enable
-func (r *registerApb1henrType) SetOpampen(value bool) {
+func (r *RegisterApb1henrType) SetOpampen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1henrFieldOpampenMask)
 	} else {
@@ -6550,12 +7539,12 @@ const (
 )
 
 // GetMdiosen MDIOS peripheral clock enable
-func (r *registerApb1henrType) GetMdiosen() bool {
+func (r *RegisterApb1henrType) GetMdiosen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1henrFieldMdiosenMask) != 0
 }
 
 // SetMdiosen MDIOS peripheral clock enable
-func (r *registerApb1henrType) SetMdiosen(value bool) {
+func (r *RegisterApb1henrType) SetMdiosen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1henrFieldMdiosenMask)
 	} else {
@@ -6569,12 +7558,12 @@ const (
 )
 
 // GetFdcanen FDCAN Peripheral Clocks Enable
-func (r *registerApb1henrType) GetFdcanen() bool {
+func (r *RegisterApb1henrType) GetFdcanen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1henrFieldFdcanenMask) != 0
 }
 
 // SetFdcanen FDCAN Peripheral Clocks Enable
-func (r *registerApb1henrType) SetFdcanen(value bool) {
+func (r *RegisterApb1henrType) SetFdcanen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1henrFieldFdcanenMask)
 	} else {
@@ -6582,8 +7571,31 @@ func (r *registerApb1henrType) SetFdcanen(value bool) {
 	}
 }
 
-// registerApb2enrType RCC APB2 Clock Register
-type registerApb2enrType uint32
+// RegisterApb2enrType RCC APB2 Clock Register
+type RegisterApb2enrType uint32
+
+func (r *RegisterApb2enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb2enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb2enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb2enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb2enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb2enrFieldTim1enShift = 0
@@ -6591,12 +7603,12 @@ const (
 )
 
 // GetTim1en TIM1 peripheral clock enable
-func (r *registerApb2enrType) GetTim1en() bool {
+func (r *RegisterApb2enrType) GetTim1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldTim1enMask) != 0
 }
 
 // SetTim1en TIM1 peripheral clock enable
-func (r *registerApb2enrType) SetTim1en(value bool) {
+func (r *RegisterApb2enrType) SetTim1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldTim1enMask)
 	} else {
@@ -6610,12 +7622,12 @@ const (
 )
 
 // GetTim8en TIM8 peripheral clock enable
-func (r *registerApb2enrType) GetTim8en() bool {
+func (r *RegisterApb2enrType) GetTim8en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldTim8enMask) != 0
 }
 
 // SetTim8en TIM8 peripheral clock enable
-func (r *registerApb2enrType) SetTim8en(value bool) {
+func (r *RegisterApb2enrType) SetTim8en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldTim8enMask)
 	} else {
@@ -6629,12 +7641,12 @@ const (
 )
 
 // GetUsart1en USART1 Peripheral Clocks Enable
-func (r *registerApb2enrType) GetUsart1en() bool {
+func (r *RegisterApb2enrType) GetUsart1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldUsart1enMask) != 0
 }
 
 // SetUsart1en USART1 Peripheral Clocks Enable
-func (r *registerApb2enrType) SetUsart1en(value bool) {
+func (r *RegisterApb2enrType) SetUsart1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldUsart1enMask)
 	} else {
@@ -6648,12 +7660,12 @@ const (
 )
 
 // GetUsart6en USART6 Peripheral Clocks Enable
-func (r *registerApb2enrType) GetUsart6en() bool {
+func (r *RegisterApb2enrType) GetUsart6en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldUsart6enMask) != 0
 }
 
 // SetUsart6en USART6 Peripheral Clocks Enable
-func (r *registerApb2enrType) SetUsart6en(value bool) {
+func (r *RegisterApb2enrType) SetUsart6en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldUsart6enMask)
 	} else {
@@ -6667,12 +7679,12 @@ const (
 )
 
 // GetSpi1en SPI1 Peripheral Clocks Enable
-func (r *registerApb2enrType) GetSpi1en() bool {
+func (r *RegisterApb2enrType) GetSpi1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldSpi1enMask) != 0
 }
 
 // SetSpi1en SPI1 Peripheral Clocks Enable
-func (r *registerApb2enrType) SetSpi1en(value bool) {
+func (r *RegisterApb2enrType) SetSpi1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldSpi1enMask)
 	} else {
@@ -6686,12 +7698,12 @@ const (
 )
 
 // GetSpi4en SPI4 Peripheral Clocks Enable
-func (r *registerApb2enrType) GetSpi4en() bool {
+func (r *RegisterApb2enrType) GetSpi4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldSpi4enMask) != 0
 }
 
 // SetSpi4en SPI4 Peripheral Clocks Enable
-func (r *registerApb2enrType) SetSpi4en(value bool) {
+func (r *RegisterApb2enrType) SetSpi4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldSpi4enMask)
 	} else {
@@ -6705,12 +7717,12 @@ const (
 )
 
 // GetTim15en TIM15 peripheral clock enable
-func (r *registerApb2enrType) GetTim15en() bool {
+func (r *RegisterApb2enrType) GetTim15en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldTim15enMask) != 0
 }
 
 // SetTim15en TIM15 peripheral clock enable
-func (r *registerApb2enrType) SetTim15en(value bool) {
+func (r *RegisterApb2enrType) SetTim15en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldTim15enMask)
 	} else {
@@ -6724,12 +7736,12 @@ const (
 )
 
 // GetTim16en TIM16 peripheral clock enable
-func (r *registerApb2enrType) GetTim16en() bool {
+func (r *RegisterApb2enrType) GetTim16en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldTim16enMask) != 0
 }
 
 // SetTim16en TIM16 peripheral clock enable
-func (r *registerApb2enrType) SetTim16en(value bool) {
+func (r *RegisterApb2enrType) SetTim16en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldTim16enMask)
 	} else {
@@ -6743,12 +7755,12 @@ const (
 )
 
 // GetTim17en TIM17 peripheral clock enable
-func (r *registerApb2enrType) GetTim17en() bool {
+func (r *RegisterApb2enrType) GetTim17en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldTim17enMask) != 0
 }
 
 // SetTim17en TIM17 peripheral clock enable
-func (r *registerApb2enrType) SetTim17en(value bool) {
+func (r *RegisterApb2enrType) SetTim17en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldTim17enMask)
 	} else {
@@ -6762,12 +7774,12 @@ const (
 )
 
 // GetSpi5en SPI5 Peripheral Clocks Enable
-func (r *registerApb2enrType) GetSpi5en() bool {
+func (r *RegisterApb2enrType) GetSpi5en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldSpi5enMask) != 0
 }
 
 // SetSpi5en SPI5 Peripheral Clocks Enable
-func (r *registerApb2enrType) SetSpi5en(value bool) {
+func (r *RegisterApb2enrType) SetSpi5en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldSpi5enMask)
 	} else {
@@ -6781,12 +7793,12 @@ const (
 )
 
 // GetSai1en SAI1 Peripheral Clocks Enable
-func (r *registerApb2enrType) GetSai1en() bool {
+func (r *RegisterApb2enrType) GetSai1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldSai1enMask) != 0
 }
 
 // SetSai1en SAI1 Peripheral Clocks Enable
-func (r *registerApb2enrType) SetSai1en(value bool) {
+func (r *RegisterApb2enrType) SetSai1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldSai1enMask)
 	} else {
@@ -6800,12 +7812,12 @@ const (
 )
 
 // GetSai2en SAI2 Peripheral Clocks Enable
-func (r *registerApb2enrType) GetSai2en() bool {
+func (r *RegisterApb2enrType) GetSai2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldSai2enMask) != 0
 }
 
 // SetSai2en SAI2 Peripheral Clocks Enable
-func (r *registerApb2enrType) SetSai2en(value bool) {
+func (r *RegisterApb2enrType) SetSai2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldSai2enMask)
 	} else {
@@ -6819,12 +7831,12 @@ const (
 )
 
 // GetSai3en SAI3 Peripheral Clocks Enable
-func (r *registerApb2enrType) GetSai3en() bool {
+func (r *RegisterApb2enrType) GetSai3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldSai3enMask) != 0
 }
 
 // SetSai3en SAI3 Peripheral Clocks Enable
-func (r *registerApb2enrType) SetSai3en(value bool) {
+func (r *RegisterApb2enrType) SetSai3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldSai3enMask)
 	} else {
@@ -6838,12 +7850,12 @@ const (
 )
 
 // GetDfsdm1en DFSDM1 Peripheral Clocks Enable
-func (r *registerApb2enrType) GetDfsdm1en() bool {
+func (r *RegisterApb2enrType) GetDfsdm1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldDfsdm1enMask) != 0
 }
 
 // SetDfsdm1en DFSDM1 Peripheral Clocks Enable
-func (r *registerApb2enrType) SetDfsdm1en(value bool) {
+func (r *RegisterApb2enrType) SetDfsdm1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldDfsdm1enMask)
 	} else {
@@ -6857,12 +7869,12 @@ const (
 )
 
 // GetHrtimen HRTIM peripheral clock enable
-func (r *registerApb2enrType) GetHrtimen() bool {
+func (r *RegisterApb2enrType) GetHrtimen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2enrFieldHrtimenMask) != 0
 }
 
 // SetHrtimen HRTIM peripheral clock enable
-func (r *registerApb2enrType) SetHrtimen(value bool) {
+func (r *RegisterApb2enrType) SetHrtimen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2enrFieldHrtimenMask)
 	} else {
@@ -6870,8 +7882,31 @@ func (r *registerApb2enrType) SetHrtimen(value bool) {
 	}
 }
 
-// registerApb4enrType RCC APB4 Clock Register
-type registerApb4enrType uint32
+// RegisterApb4enrType RCC APB4 Clock Register
+type RegisterApb4enrType uint32
+
+func (r *RegisterApb4enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb4enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb4enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb4enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb4enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb4enrFieldSyscfgenShift = 1
@@ -6879,12 +7914,12 @@ const (
 )
 
 // GetSyscfgen SYSCFG peripheral clock enable
-func (r *registerApb4enrType) GetSyscfgen() bool {
+func (r *RegisterApb4enrType) GetSyscfgen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldSyscfgenMask) != 0
 }
 
 // SetSyscfgen SYSCFG peripheral clock enable
-func (r *registerApb4enrType) SetSyscfgen(value bool) {
+func (r *RegisterApb4enrType) SetSyscfgen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldSyscfgenMask)
 	} else {
@@ -6898,12 +7933,12 @@ const (
 )
 
 // GetLpuart1en LPUART1 Peripheral Clocks Enable
-func (r *registerApb4enrType) GetLpuart1en() bool {
+func (r *RegisterApb4enrType) GetLpuart1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldLpuart1enMask) != 0
 }
 
 // SetLpuart1en LPUART1 Peripheral Clocks Enable
-func (r *registerApb4enrType) SetLpuart1en(value bool) {
+func (r *RegisterApb4enrType) SetLpuart1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldLpuart1enMask)
 	} else {
@@ -6917,12 +7952,12 @@ const (
 )
 
 // GetSpi6en SPI6 Peripheral Clocks Enable
-func (r *registerApb4enrType) GetSpi6en() bool {
+func (r *RegisterApb4enrType) GetSpi6en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldSpi6enMask) != 0
 }
 
 // SetSpi6en SPI6 Peripheral Clocks Enable
-func (r *registerApb4enrType) SetSpi6en(value bool) {
+func (r *RegisterApb4enrType) SetSpi6en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldSpi6enMask)
 	} else {
@@ -6936,12 +7971,12 @@ const (
 )
 
 // GetI2c4en I2C4 Peripheral Clocks Enable
-func (r *registerApb4enrType) GetI2c4en() bool {
+func (r *RegisterApb4enrType) GetI2c4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldI2c4enMask) != 0
 }
 
 // SetI2c4en I2C4 Peripheral Clocks Enable
-func (r *registerApb4enrType) SetI2c4en(value bool) {
+func (r *RegisterApb4enrType) SetI2c4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldI2c4enMask)
 	} else {
@@ -6955,12 +7990,12 @@ const (
 )
 
 // GetLptim2en LPTIM2 Peripheral Clocks Enable
-func (r *registerApb4enrType) GetLptim2en() bool {
+func (r *RegisterApb4enrType) GetLptim2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldLptim2enMask) != 0
 }
 
 // SetLptim2en LPTIM2 Peripheral Clocks Enable
-func (r *registerApb4enrType) SetLptim2en(value bool) {
+func (r *RegisterApb4enrType) SetLptim2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldLptim2enMask)
 	} else {
@@ -6974,12 +8009,12 @@ const (
 )
 
 // GetLptim3en LPTIM3 Peripheral Clocks Enable
-func (r *registerApb4enrType) GetLptim3en() bool {
+func (r *RegisterApb4enrType) GetLptim3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldLptim3enMask) != 0
 }
 
 // SetLptim3en LPTIM3 Peripheral Clocks Enable
-func (r *registerApb4enrType) SetLptim3en(value bool) {
+func (r *RegisterApb4enrType) SetLptim3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldLptim3enMask)
 	} else {
@@ -6993,12 +8028,12 @@ const (
 )
 
 // GetLptim4en LPTIM4 Peripheral Clocks Enable
-func (r *registerApb4enrType) GetLptim4en() bool {
+func (r *RegisterApb4enrType) GetLptim4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldLptim4enMask) != 0
 }
 
 // SetLptim4en LPTIM4 Peripheral Clocks Enable
-func (r *registerApb4enrType) SetLptim4en(value bool) {
+func (r *RegisterApb4enrType) SetLptim4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldLptim4enMask)
 	} else {
@@ -7012,12 +8047,12 @@ const (
 )
 
 // GetLptim5en LPTIM5 Peripheral Clocks Enable
-func (r *registerApb4enrType) GetLptim5en() bool {
+func (r *RegisterApb4enrType) GetLptim5en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldLptim5enMask) != 0
 }
 
 // SetLptim5en LPTIM5 Peripheral Clocks Enable
-func (r *registerApb4enrType) SetLptim5en(value bool) {
+func (r *RegisterApb4enrType) SetLptim5en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldLptim5enMask)
 	} else {
@@ -7031,12 +8066,12 @@ const (
 )
 
 // GetComp12en COMP1/2 peripheral clock enable
-func (r *registerApb4enrType) GetComp12en() bool {
+func (r *RegisterApb4enrType) GetComp12en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldComp12enMask) != 0
 }
 
 // SetComp12en COMP1/2 peripheral clock enable
-func (r *registerApb4enrType) SetComp12en(value bool) {
+func (r *RegisterApb4enrType) SetComp12en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldComp12enMask)
 	} else {
@@ -7050,12 +8085,12 @@ const (
 )
 
 // GetVrefen VREF peripheral clock enable
-func (r *registerApb4enrType) GetVrefen() bool {
+func (r *RegisterApb4enrType) GetVrefen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldVrefenMask) != 0
 }
 
 // SetVrefen VREF peripheral clock enable
-func (r *registerApb4enrType) SetVrefen(value bool) {
+func (r *RegisterApb4enrType) SetVrefen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldVrefenMask)
 	} else {
@@ -7069,12 +8104,12 @@ const (
 )
 
 // GetRtcapben RTC APB Clock Enable
-func (r *registerApb4enrType) GetRtcapben() bool {
+func (r *RegisterApb4enrType) GetRtcapben() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldRtcapbenMask) != 0
 }
 
 // SetRtcapben RTC APB Clock Enable
-func (r *registerApb4enrType) SetRtcapben(value bool) {
+func (r *RegisterApb4enrType) SetRtcapben(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldRtcapbenMask)
 	} else {
@@ -7088,12 +8123,12 @@ const (
 )
 
 // GetSai4en SAI4 Peripheral Clocks Enable
-func (r *registerApb4enrType) GetSai4en() bool {
+func (r *RegisterApb4enrType) GetSai4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4enrFieldSai4enMask) != 0
 }
 
 // SetSai4en SAI4 Peripheral Clocks Enable
-func (r *registerApb4enrType) SetSai4en(value bool) {
+func (r *RegisterApb4enrType) SetSai4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4enrFieldSai4enMask)
 	} else {
@@ -7101,8 +8136,31 @@ func (r *registerApb4enrType) SetSai4en(value bool) {
 	}
 }
 
-// registerAhb3lpenrType RCC AHB3 Sleep Clock Register
-type registerAhb3lpenrType uint32
+// RegisterAhb3lpenrType RCC AHB3 Sleep Clock Register
+type RegisterAhb3lpenrType uint32
+
+func (r *RegisterAhb3lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb3lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb3lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb3lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb3lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb3lpenrFieldMdmalpenShift = 0
@@ -7110,12 +8168,12 @@ const (
 )
 
 // GetMdmalpen MDMA Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) GetMdmalpen() bool {
+func (r *RegisterAhb3lpenrType) GetMdmalpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldMdmalpenMask) != 0
 }
 
 // SetMdmalpen MDMA Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) SetMdmalpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetMdmalpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldMdmalpenMask)
 	} else {
@@ -7129,12 +8187,12 @@ const (
 )
 
 // GetDma2dlpen DMA2D Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) GetDma2dlpen() bool {
+func (r *RegisterAhb3lpenrType) GetDma2dlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldDma2dlpenMask) != 0
 }
 
 // SetDma2dlpen DMA2D Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) SetDma2dlpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetDma2dlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldDma2dlpenMask)
 	} else {
@@ -7148,12 +8206,12 @@ const (
 )
 
 // GetJpgdeclpen JPGDEC Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) GetJpgdeclpen() bool {
+func (r *RegisterAhb3lpenrType) GetJpgdeclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldJpgdeclpenMask) != 0
 }
 
 // SetJpgdeclpen JPGDEC Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) SetJpgdeclpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetJpgdeclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldJpgdeclpenMask)
 	} else {
@@ -7167,12 +8225,12 @@ const (
 )
 
 // GetFlitflpen FLITF Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) GetFlitflpen() bool {
+func (r *RegisterAhb3lpenrType) GetFlitflpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldFlitflpenMask) != 0
 }
 
 // SetFlitflpen FLITF Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) SetFlitflpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetFlitflpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldFlitflpenMask)
 	} else {
@@ -7186,12 +8244,12 @@ const (
 )
 
 // GetFmclpen FMC Peripheral Clocks Enable During CSleep Mode
-func (r *registerAhb3lpenrType) GetFmclpen() bool {
+func (r *RegisterAhb3lpenrType) GetFmclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldFmclpenMask) != 0
 }
 
 // SetFmclpen FMC Peripheral Clocks Enable During CSleep Mode
-func (r *registerAhb3lpenrType) SetFmclpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetFmclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldFmclpenMask)
 	} else {
@@ -7205,12 +8263,12 @@ const (
 )
 
 // GetQspilpen QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) GetQspilpen() bool {
+func (r *RegisterAhb3lpenrType) GetQspilpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldQspilpenMask) != 0
 }
 
 // SetQspilpen QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) SetQspilpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetQspilpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldQspilpenMask)
 	} else {
@@ -7224,12 +8282,12 @@ const (
 )
 
 // GetSdmmc1lpen SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) GetSdmmc1lpen() bool {
+func (r *RegisterAhb3lpenrType) GetSdmmc1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldSdmmc1lpenMask) != 0
 }
 
 // SetSdmmc1lpen SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode
-func (r *registerAhb3lpenrType) SetSdmmc1lpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetSdmmc1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldSdmmc1lpenMask)
 	} else {
@@ -7243,12 +8301,12 @@ const (
 )
 
 // GetD1dtcm1lpen D1DTCM1 Block Clock Enable During CSleep mode
-func (r *registerAhb3lpenrType) GetD1dtcm1lpen() bool {
+func (r *RegisterAhb3lpenrType) GetD1dtcm1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldD1dtcm1lpenMask) != 0
 }
 
 // SetD1dtcm1lpen D1DTCM1 Block Clock Enable During CSleep mode
-func (r *registerAhb3lpenrType) SetD1dtcm1lpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetD1dtcm1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldD1dtcm1lpenMask)
 	} else {
@@ -7262,12 +8320,12 @@ const (
 )
 
 // GetDtcm2lpen D1 DTCM2 Block Clock Enable During CSleep mode
-func (r *registerAhb3lpenrType) GetDtcm2lpen() bool {
+func (r *RegisterAhb3lpenrType) GetDtcm2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldDtcm2lpenMask) != 0
 }
 
 // SetDtcm2lpen D1 DTCM2 Block Clock Enable During CSleep mode
-func (r *registerAhb3lpenrType) SetDtcm2lpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetDtcm2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldDtcm2lpenMask)
 	} else {
@@ -7281,12 +8339,12 @@ const (
 )
 
 // GetItcmlpen D1ITCM Block Clock Enable During CSleep mode
-func (r *registerAhb3lpenrType) GetItcmlpen() bool {
+func (r *RegisterAhb3lpenrType) GetItcmlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldItcmlpenMask) != 0
 }
 
 // SetItcmlpen D1ITCM Block Clock Enable During CSleep mode
-func (r *registerAhb3lpenrType) SetItcmlpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetItcmlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldItcmlpenMask)
 	} else {
@@ -7300,12 +8358,12 @@ const (
 )
 
 // GetAxisramlpen AXISRAM Block Clock Enable During CSleep mode
-func (r *registerAhb3lpenrType) GetAxisramlpen() bool {
+func (r *RegisterAhb3lpenrType) GetAxisramlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb3lpenrFieldAxisramlpenMask) != 0
 }
 
 // SetAxisramlpen AXISRAM Block Clock Enable During CSleep mode
-func (r *registerAhb3lpenrType) SetAxisramlpen(value bool) {
+func (r *RegisterAhb3lpenrType) SetAxisramlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb3lpenrFieldAxisramlpenMask)
 	} else {
@@ -7313,8 +8371,31 @@ func (r *registerAhb3lpenrType) SetAxisramlpen(value bool) {
 	}
 }
 
-// registerAhb1lpenrType RCC AHB1 Sleep Clock Register
-type registerAhb1lpenrType uint32
+// RegisterAhb1lpenrType RCC AHB1 Sleep Clock Register
+type RegisterAhb1lpenrType uint32
+
+func (r *RegisterAhb1lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb1lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb1lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb1lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb1lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb1lpenrFieldDma1lpenShift = 0
@@ -7322,12 +8403,12 @@ const (
 )
 
 // GetDma1lpen DMA1 Clock Enable During CSleep Mode
-func (r *registerAhb1lpenrType) GetDma1lpen() bool {
+func (r *RegisterAhb1lpenrType) GetDma1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1lpenrFieldDma1lpenMask) != 0
 }
 
 // SetDma1lpen DMA1 Clock Enable During CSleep Mode
-func (r *registerAhb1lpenrType) SetDma1lpen(value bool) {
+func (r *RegisterAhb1lpenrType) SetDma1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1lpenrFieldDma1lpenMask)
 	} else {
@@ -7341,12 +8422,12 @@ const (
 )
 
 // GetDma2lpen DMA2 Clock Enable During CSleep Mode
-func (r *registerAhb1lpenrType) GetDma2lpen() bool {
+func (r *RegisterAhb1lpenrType) GetDma2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1lpenrFieldDma2lpenMask) != 0
 }
 
 // SetDma2lpen DMA2 Clock Enable During CSleep Mode
-func (r *registerAhb1lpenrType) SetDma2lpen(value bool) {
+func (r *RegisterAhb1lpenrType) SetDma2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1lpenrFieldDma2lpenMask)
 	} else {
@@ -7360,12 +8441,12 @@ const (
 )
 
 // GetAdc12lpen ADC1/2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerAhb1lpenrType) GetAdc12lpen() bool {
+func (r *RegisterAhb1lpenrType) GetAdc12lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1lpenrFieldAdc12lpenMask) != 0
 }
 
 // SetAdc12lpen ADC1/2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerAhb1lpenrType) SetAdc12lpen(value bool) {
+func (r *RegisterAhb1lpenrType) SetAdc12lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1lpenrFieldAdc12lpenMask)
 	} else {
@@ -7379,12 +8460,12 @@ const (
 )
 
 // GetEth1maclpen Ethernet MAC bus interface Clock Enable During CSleep Mode
-func (r *registerAhb1lpenrType) GetEth1maclpen() bool {
+func (r *RegisterAhb1lpenrType) GetEth1maclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1lpenrFieldEth1maclpenMask) != 0
 }
 
 // SetEth1maclpen Ethernet MAC bus interface Clock Enable During CSleep Mode
-func (r *registerAhb1lpenrType) SetEth1maclpen(value bool) {
+func (r *RegisterAhb1lpenrType) SetEth1maclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1lpenrFieldEth1maclpenMask)
 	} else {
@@ -7398,12 +8479,12 @@ const (
 )
 
 // GetEth1txlpen Ethernet Transmission Clock Enable During CSleep Mode
-func (r *registerAhb1lpenrType) GetEth1txlpen() bool {
+func (r *RegisterAhb1lpenrType) GetEth1txlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1lpenrFieldEth1txlpenMask) != 0
 }
 
 // SetEth1txlpen Ethernet Transmission Clock Enable During CSleep Mode
-func (r *registerAhb1lpenrType) SetEth1txlpen(value bool) {
+func (r *RegisterAhb1lpenrType) SetEth1txlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1lpenrFieldEth1txlpenMask)
 	} else {
@@ -7417,12 +8498,12 @@ const (
 )
 
 // GetEth1rxlpen Ethernet Reception Clock Enable During CSleep Mode
-func (r *registerAhb1lpenrType) GetEth1rxlpen() bool {
+func (r *RegisterAhb1lpenrType) GetEth1rxlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1lpenrFieldEth1rxlpenMask) != 0
 }
 
 // SetEth1rxlpen Ethernet Reception Clock Enable During CSleep Mode
-func (r *registerAhb1lpenrType) SetEth1rxlpen(value bool) {
+func (r *RegisterAhb1lpenrType) SetEth1rxlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1lpenrFieldEth1rxlpenMask)
 	} else {
@@ -7436,12 +8517,12 @@ const (
 )
 
 // GetUsb1otglpen USB1OTG peripheral clock enable during CSleep mode
-func (r *registerAhb1lpenrType) GetUsb1otglpen() bool {
+func (r *RegisterAhb1lpenrType) GetUsb1otglpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1lpenrFieldUsb1otglpenMask) != 0
 }
 
 // SetUsb1otglpen USB1OTG peripheral clock enable during CSleep mode
-func (r *registerAhb1lpenrType) SetUsb1otglpen(value bool) {
+func (r *RegisterAhb1lpenrType) SetUsb1otglpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1lpenrFieldUsb1otglpenMask)
 	} else {
@@ -7455,12 +8536,12 @@ const (
 )
 
 // GetUsb1ulpilpen USB_PHY1 clock enable during CSleep mode
-func (r *registerAhb1lpenrType) GetUsb1ulpilpen() bool {
+func (r *RegisterAhb1lpenrType) GetUsb1ulpilpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1lpenrFieldUsb1ulpilpenMask) != 0
 }
 
 // SetUsb1ulpilpen USB_PHY1 clock enable during CSleep mode
-func (r *registerAhb1lpenrType) SetUsb1ulpilpen(value bool) {
+func (r *RegisterAhb1lpenrType) SetUsb1ulpilpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1lpenrFieldUsb1ulpilpenMask)
 	} else {
@@ -7474,12 +8555,12 @@ const (
 )
 
 // GetUsb2otglpen USB2OTG peripheral clock enable during CSleep mode
-func (r *registerAhb1lpenrType) GetUsb2otglpen() bool {
+func (r *RegisterAhb1lpenrType) GetUsb2otglpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1lpenrFieldUsb2otglpenMask) != 0
 }
 
 // SetUsb2otglpen USB2OTG peripheral clock enable during CSleep mode
-func (r *registerAhb1lpenrType) SetUsb2otglpen(value bool) {
+func (r *RegisterAhb1lpenrType) SetUsb2otglpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1lpenrFieldUsb2otglpenMask)
 	} else {
@@ -7493,12 +8574,12 @@ const (
 )
 
 // GetUsb2ulpilpen USB_PHY2 clocks enable during CSleep mode
-func (r *registerAhb1lpenrType) GetUsb2ulpilpen() bool {
+func (r *RegisterAhb1lpenrType) GetUsb2ulpilpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb1lpenrFieldUsb2ulpilpenMask) != 0
 }
 
 // SetUsb2ulpilpen USB_PHY2 clocks enable during CSleep mode
-func (r *registerAhb1lpenrType) SetUsb2ulpilpen(value bool) {
+func (r *RegisterAhb1lpenrType) SetUsb2ulpilpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb1lpenrFieldUsb2ulpilpenMask)
 	} else {
@@ -7506,8 +8587,31 @@ func (r *registerAhb1lpenrType) SetUsb2ulpilpen(value bool) {
 	}
 }
 
-// registerAhb2lpenrType RCC AHB2 Sleep Clock Register
-type registerAhb2lpenrType uint32
+// RegisterAhb2lpenrType RCC AHB2 Sleep Clock Register
+type RegisterAhb2lpenrType uint32
+
+func (r *RegisterAhb2lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb2lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb2lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb2lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb2lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb2lpenrFieldCamitflpenShift = 0
@@ -7515,12 +8619,12 @@ const (
 )
 
 // GetCamitflpen CAMITF peripheral clock enable during CSleep mode
-func (r *registerAhb2lpenrType) GetCamitflpen() bool {
+func (r *RegisterAhb2lpenrType) GetCamitflpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2lpenrFieldCamitflpenMask) != 0
 }
 
 // SetCamitflpen CAMITF peripheral clock enable during CSleep mode
-func (r *registerAhb2lpenrType) SetCamitflpen(value bool) {
+func (r *RegisterAhb2lpenrType) SetCamitflpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2lpenrFieldCamitflpenMask)
 	} else {
@@ -7534,12 +8638,12 @@ const (
 )
 
 // GetCryptlpen CRYPT peripheral clock enable during CSleep mode
-func (r *registerAhb2lpenrType) GetCryptlpen() bool {
+func (r *RegisterAhb2lpenrType) GetCryptlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2lpenrFieldCryptlpenMask) != 0
 }
 
 // SetCryptlpen CRYPT peripheral clock enable during CSleep mode
-func (r *registerAhb2lpenrType) SetCryptlpen(value bool) {
+func (r *RegisterAhb2lpenrType) SetCryptlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2lpenrFieldCryptlpenMask)
 	} else {
@@ -7553,12 +8657,12 @@ const (
 )
 
 // GetHashlpen HASH peripheral clock enable during CSleep mode
-func (r *registerAhb2lpenrType) GetHashlpen() bool {
+func (r *RegisterAhb2lpenrType) GetHashlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2lpenrFieldHashlpenMask) != 0
 }
 
 // SetHashlpen HASH peripheral clock enable during CSleep mode
-func (r *registerAhb2lpenrType) SetHashlpen(value bool) {
+func (r *RegisterAhb2lpenrType) SetHashlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2lpenrFieldHashlpenMask)
 	} else {
@@ -7572,12 +8676,12 @@ const (
 )
 
 // GetRnglpen RNG peripheral clock enable during CSleep mode
-func (r *registerAhb2lpenrType) GetRnglpen() bool {
+func (r *RegisterAhb2lpenrType) GetRnglpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2lpenrFieldRnglpenMask) != 0
 }
 
 // SetRnglpen RNG peripheral clock enable during CSleep mode
-func (r *registerAhb2lpenrType) SetRnglpen(value bool) {
+func (r *RegisterAhb2lpenrType) SetRnglpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2lpenrFieldRnglpenMask)
 	} else {
@@ -7591,12 +8695,12 @@ const (
 )
 
 // GetSdmmc2lpen SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode
-func (r *registerAhb2lpenrType) GetSdmmc2lpen() bool {
+func (r *RegisterAhb2lpenrType) GetSdmmc2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2lpenrFieldSdmmc2lpenMask) != 0
 }
 
 // SetSdmmc2lpen SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode
-func (r *registerAhb2lpenrType) SetSdmmc2lpen(value bool) {
+func (r *RegisterAhb2lpenrType) SetSdmmc2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2lpenrFieldSdmmc2lpenMask)
 	} else {
@@ -7610,12 +8714,12 @@ const (
 )
 
 // GetSram1lpen SRAM1 Clock Enable During CSleep Mode
-func (r *registerAhb2lpenrType) GetSram1lpen() bool {
+func (r *RegisterAhb2lpenrType) GetSram1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2lpenrFieldSram1lpenMask) != 0
 }
 
 // SetSram1lpen SRAM1 Clock Enable During CSleep Mode
-func (r *registerAhb2lpenrType) SetSram1lpen(value bool) {
+func (r *RegisterAhb2lpenrType) SetSram1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2lpenrFieldSram1lpenMask)
 	} else {
@@ -7629,12 +8733,12 @@ const (
 )
 
 // GetSram2lpen SRAM2 Clock Enable During CSleep Mode
-func (r *registerAhb2lpenrType) GetSram2lpen() bool {
+func (r *RegisterAhb2lpenrType) GetSram2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2lpenrFieldSram2lpenMask) != 0
 }
 
 // SetSram2lpen SRAM2 Clock Enable During CSleep Mode
-func (r *registerAhb2lpenrType) SetSram2lpen(value bool) {
+func (r *RegisterAhb2lpenrType) SetSram2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2lpenrFieldSram2lpenMask)
 	} else {
@@ -7648,12 +8752,12 @@ const (
 )
 
 // GetSram3lpen SRAM3 Clock Enable During CSleep Mode
-func (r *registerAhb2lpenrType) GetSram3lpen() bool {
+func (r *RegisterAhb2lpenrType) GetSram3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb2lpenrFieldSram3lpenMask) != 0
 }
 
 // SetSram3lpen SRAM3 Clock Enable During CSleep Mode
-func (r *registerAhb2lpenrType) SetSram3lpen(value bool) {
+func (r *RegisterAhb2lpenrType) SetSram3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb2lpenrFieldSram3lpenMask)
 	} else {
@@ -7661,8 +8765,31 @@ func (r *registerAhb2lpenrType) SetSram3lpen(value bool) {
 	}
 }
 
-// registerAhb4lpenrType RCC AHB4 Sleep Clock Register
-type registerAhb4lpenrType uint32
+// RegisterAhb4lpenrType RCC AHB4 Sleep Clock Register
+type RegisterAhb4lpenrType uint32
+
+func (r *RegisterAhb4lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAhb4lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAhb4lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAhb4lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAhb4lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAhb4lpenrFieldGpioalpenShift = 0
@@ -7670,12 +8797,12 @@ const (
 )
 
 // GetGpioalpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpioalpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpioalpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpioalpenMask) != 0
 }
 
 // SetGpioalpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpioalpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpioalpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpioalpenMask)
 	} else {
@@ -7689,12 +8816,12 @@ const (
 )
 
 // GetGpioblpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpioblpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpioblpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpioblpenMask) != 0
 }
 
 // SetGpioblpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpioblpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpioblpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpioblpenMask)
 	} else {
@@ -7708,12 +8835,12 @@ const (
 )
 
 // GetGpioclpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpioclpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpioclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpioclpenMask) != 0
 }
 
 // SetGpioclpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpioclpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpioclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpioclpenMask)
 	} else {
@@ -7727,12 +8854,12 @@ const (
 )
 
 // GetGpiodlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpiodlpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpiodlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpiodlpenMask) != 0
 }
 
 // SetGpiodlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpiodlpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpiodlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpiodlpenMask)
 	} else {
@@ -7746,12 +8873,12 @@ const (
 )
 
 // GetGpioelpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpioelpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpioelpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpioelpenMask) != 0
 }
 
 // SetGpioelpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpioelpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpioelpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpioelpenMask)
 	} else {
@@ -7765,12 +8892,12 @@ const (
 )
 
 // GetGpioflpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpioflpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpioflpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpioflpenMask) != 0
 }
 
 // SetGpioflpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpioflpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpioflpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpioflpenMask)
 	} else {
@@ -7784,12 +8911,12 @@ const (
 )
 
 // GetGpioglpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpioglpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpioglpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpioglpenMask) != 0
 }
 
 // SetGpioglpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpioglpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpioglpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpioglpenMask)
 	} else {
@@ -7803,12 +8930,12 @@ const (
 )
 
 // GetGpiohlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpiohlpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpiohlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpiohlpenMask) != 0
 }
 
 // SetGpiohlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpiohlpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpiohlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpiohlpenMask)
 	} else {
@@ -7822,12 +8949,12 @@ const (
 )
 
 // GetGpioilpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpioilpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpioilpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpioilpenMask) != 0
 }
 
 // SetGpioilpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpioilpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpioilpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpioilpenMask)
 	} else {
@@ -7841,12 +8968,12 @@ const (
 )
 
 // GetGpiojlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpiojlpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpiojlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpiojlpenMask) != 0
 }
 
 // SetGpiojlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpiojlpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpiojlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpiojlpenMask)
 	} else {
@@ -7860,12 +8987,12 @@ const (
 )
 
 // GetGpioklpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetGpioklpen() bool {
+func (r *RegisterAhb4lpenrType) GetGpioklpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldGpioklpenMask) != 0
 }
 
 // SetGpioklpen GPIO peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetGpioklpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetGpioklpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldGpioklpenMask)
 	} else {
@@ -7879,12 +9006,12 @@ const (
 )
 
 // GetCrclpen CRC peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) GetCrclpen() bool {
+func (r *RegisterAhb4lpenrType) GetCrclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldCrclpenMask) != 0
 }
 
 // SetCrclpen CRC peripheral clock enable during CSleep mode
-func (r *registerAhb4lpenrType) SetCrclpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetCrclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldCrclpenMask)
 	} else {
@@ -7898,12 +9025,12 @@ const (
 )
 
 // GetBdmalpen BDMA Clock Enable During CSleep Mode
-func (r *registerAhb4lpenrType) GetBdmalpen() bool {
+func (r *RegisterAhb4lpenrType) GetBdmalpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldBdmalpenMask) != 0
 }
 
 // SetBdmalpen BDMA Clock Enable During CSleep Mode
-func (r *registerAhb4lpenrType) SetBdmalpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetBdmalpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldBdmalpenMask)
 	} else {
@@ -7917,12 +9044,12 @@ const (
 )
 
 // GetAdc3lpen ADC3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerAhb4lpenrType) GetAdc3lpen() bool {
+func (r *RegisterAhb4lpenrType) GetAdc3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldAdc3lpenMask) != 0
 }
 
 // SetAdc3lpen ADC3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerAhb4lpenrType) SetAdc3lpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetAdc3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldAdc3lpenMask)
 	} else {
@@ -7936,12 +9063,12 @@ const (
 )
 
 // GetBkpramlpen Backup RAM Clock Enable During CSleep Mode
-func (r *registerAhb4lpenrType) GetBkpramlpen() bool {
+func (r *RegisterAhb4lpenrType) GetBkpramlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldBkpramlpenMask) != 0
 }
 
 // SetBkpramlpen Backup RAM Clock Enable During CSleep Mode
-func (r *registerAhb4lpenrType) SetBkpramlpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetBkpramlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldBkpramlpenMask)
 	} else {
@@ -7955,12 +9082,12 @@ const (
 )
 
 // GetSram4lpen SRAM4 Clock Enable During CSleep Mode
-func (r *registerAhb4lpenrType) GetSram4lpen() bool {
+func (r *RegisterAhb4lpenrType) GetSram4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAhb4lpenrFieldSram4lpenMask) != 0
 }
 
 // SetSram4lpen SRAM4 Clock Enable During CSleep Mode
-func (r *registerAhb4lpenrType) SetSram4lpen(value bool) {
+func (r *RegisterAhb4lpenrType) SetSram4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAhb4lpenrFieldSram4lpenMask)
 	} else {
@@ -7968,8 +9095,31 @@ func (r *registerAhb4lpenrType) SetSram4lpen(value bool) {
 	}
 }
 
-// registerApb3lpenrType RCC APB3 Sleep Clock Register
-type registerApb3lpenrType uint32
+// RegisterApb3lpenrType RCC APB3 Sleep Clock Register
+type RegisterApb3lpenrType uint32
+
+func (r *RegisterApb3lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb3lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb3lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb3lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb3lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb3lpenrFieldLtdclpenShift = 3
@@ -7977,12 +9127,12 @@ const (
 )
 
 // GetLtdclpen LTDC peripheral clock enable during CSleep mode
-func (r *registerApb3lpenrType) GetLtdclpen() bool {
+func (r *RegisterApb3lpenrType) GetLtdclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb3lpenrFieldLtdclpenMask) != 0
 }
 
 // SetLtdclpen LTDC peripheral clock enable during CSleep mode
-func (r *registerApb3lpenrType) SetLtdclpen(value bool) {
+func (r *RegisterApb3lpenrType) SetLtdclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb3lpenrFieldLtdclpenMask)
 	} else {
@@ -7996,12 +9146,12 @@ const (
 )
 
 // GetWwdg1lpen WWDG1 Clock Enable During CSleep Mode
-func (r *registerApb3lpenrType) GetWwdg1lpen() bool {
+func (r *RegisterApb3lpenrType) GetWwdg1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb3lpenrFieldWwdg1lpenMask) != 0
 }
 
 // SetWwdg1lpen WWDG1 Clock Enable During CSleep Mode
-func (r *registerApb3lpenrType) SetWwdg1lpen(value bool) {
+func (r *RegisterApb3lpenrType) SetWwdg1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb3lpenrFieldWwdg1lpenMask)
 	} else {
@@ -8009,8 +9159,31 @@ func (r *registerApb3lpenrType) SetWwdg1lpen(value bool) {
 	}
 }
 
-// registerApb1llpenrType RCC APB1 Low Sleep Clock Register
-type registerApb1llpenrType uint32
+// RegisterApb1llpenrType RCC APB1 Low Sleep Clock Register
+type RegisterApb1llpenrType uint32
+
+func (r *RegisterApb1llpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb1llpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb1llpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb1llpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb1llpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb1llpenrFieldTim2lpenShift = 0
@@ -8018,12 +9191,12 @@ const (
 )
 
 // GetTim2lpen TIM2 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) GetTim2lpen() bool {
+func (r *RegisterApb1llpenrType) GetTim2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldTim2lpenMask) != 0
 }
 
 // SetTim2lpen TIM2 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) SetTim2lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetTim2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldTim2lpenMask)
 	} else {
@@ -8037,12 +9210,12 @@ const (
 )
 
 // GetTim3lpen TIM3 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) GetTim3lpen() bool {
+func (r *RegisterApb1llpenrType) GetTim3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldTim3lpenMask) != 0
 }
 
 // SetTim3lpen TIM3 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) SetTim3lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetTim3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldTim3lpenMask)
 	} else {
@@ -8056,12 +9229,12 @@ const (
 )
 
 // GetTim4lpen TIM4 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) GetTim4lpen() bool {
+func (r *RegisterApb1llpenrType) GetTim4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldTim4lpenMask) != 0
 }
 
 // SetTim4lpen TIM4 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) SetTim4lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetTim4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldTim4lpenMask)
 	} else {
@@ -8075,12 +9248,12 @@ const (
 )
 
 // GetTim5lpen TIM5 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) GetTim5lpen() bool {
+func (r *RegisterApb1llpenrType) GetTim5lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldTim5lpenMask) != 0
 }
 
 // SetTim5lpen TIM5 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) SetTim5lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetTim5lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldTim5lpenMask)
 	} else {
@@ -8094,12 +9267,12 @@ const (
 )
 
 // GetTim6lpen TIM6 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) GetTim6lpen() bool {
+func (r *RegisterApb1llpenrType) GetTim6lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldTim6lpenMask) != 0
 }
 
 // SetTim6lpen TIM6 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) SetTim6lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetTim6lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldTim6lpenMask)
 	} else {
@@ -8113,12 +9286,12 @@ const (
 )
 
 // GetTim7lpen TIM7 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) GetTim7lpen() bool {
+func (r *RegisterApb1llpenrType) GetTim7lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldTim7lpenMask) != 0
 }
 
 // SetTim7lpen TIM7 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) SetTim7lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetTim7lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldTim7lpenMask)
 	} else {
@@ -8132,12 +9305,12 @@ const (
 )
 
 // GetTim12lpen TIM12 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) GetTim12lpen() bool {
+func (r *RegisterApb1llpenrType) GetTim12lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldTim12lpenMask) != 0
 }
 
 // SetTim12lpen TIM12 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) SetTim12lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetTim12lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldTim12lpenMask)
 	} else {
@@ -8151,12 +9324,12 @@ const (
 )
 
 // GetTim13lpen TIM13 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) GetTim13lpen() bool {
+func (r *RegisterApb1llpenrType) GetTim13lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldTim13lpenMask) != 0
 }
 
 // SetTim13lpen TIM13 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) SetTim13lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetTim13lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldTim13lpenMask)
 	} else {
@@ -8170,12 +9343,12 @@ const (
 )
 
 // GetTim14lpen TIM14 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) GetTim14lpen() bool {
+func (r *RegisterApb1llpenrType) GetTim14lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldTim14lpenMask) != 0
 }
 
 // SetTim14lpen TIM14 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) SetTim14lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetTim14lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldTim14lpenMask)
 	} else {
@@ -8189,12 +9362,12 @@ const (
 )
 
 // GetLptim1lpen LPTIM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetLptim1lpen() bool {
+func (r *RegisterApb1llpenrType) GetLptim1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldLptim1lpenMask) != 0
 }
 
 // SetLptim1lpen LPTIM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetLptim1lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetLptim1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldLptim1lpenMask)
 	} else {
@@ -8208,12 +9381,12 @@ const (
 )
 
 // GetSpi2lpen SPI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetSpi2lpen() bool {
+func (r *RegisterApb1llpenrType) GetSpi2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldSpi2lpenMask) != 0
 }
 
 // SetSpi2lpen SPI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetSpi2lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetSpi2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldSpi2lpenMask)
 	} else {
@@ -8227,12 +9400,12 @@ const (
 )
 
 // GetSpi3lpen SPI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetSpi3lpen() bool {
+func (r *RegisterApb1llpenrType) GetSpi3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldSpi3lpenMask) != 0
 }
 
 // SetSpi3lpen SPI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetSpi3lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetSpi3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldSpi3lpenMask)
 	} else {
@@ -8246,12 +9419,12 @@ const (
 )
 
 // GetSpdifrxlpen SPDIFRX Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetSpdifrxlpen() bool {
+func (r *RegisterApb1llpenrType) GetSpdifrxlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldSpdifrxlpenMask) != 0
 }
 
 // SetSpdifrxlpen SPDIFRX Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetSpdifrxlpen(value bool) {
+func (r *RegisterApb1llpenrType) SetSpdifrxlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldSpdifrxlpenMask)
 	} else {
@@ -8265,12 +9438,12 @@ const (
 )
 
 // GetUsart2lpen USART2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetUsart2lpen() bool {
+func (r *RegisterApb1llpenrType) GetUsart2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldUsart2lpenMask) != 0
 }
 
 // SetUsart2lpen USART2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetUsart2lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetUsart2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldUsart2lpenMask)
 	} else {
@@ -8284,12 +9457,12 @@ const (
 )
 
 // GetUsart3lpen USART3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetUsart3lpen() bool {
+func (r *RegisterApb1llpenrType) GetUsart3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldUsart3lpenMask) != 0
 }
 
 // SetUsart3lpen USART3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetUsart3lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetUsart3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldUsart3lpenMask)
 	} else {
@@ -8303,12 +9476,12 @@ const (
 )
 
 // GetUart4lpen UART4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetUart4lpen() bool {
+func (r *RegisterApb1llpenrType) GetUart4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldUart4lpenMask) != 0
 }
 
 // SetUart4lpen UART4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetUart4lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetUart4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldUart4lpenMask)
 	} else {
@@ -8322,12 +9495,12 @@ const (
 )
 
 // GetUart5lpen UART5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetUart5lpen() bool {
+func (r *RegisterApb1llpenrType) GetUart5lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldUart5lpenMask) != 0
 }
 
 // SetUart5lpen UART5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetUart5lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetUart5lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldUart5lpenMask)
 	} else {
@@ -8341,12 +9514,12 @@ const (
 )
 
 // GetI2c1lpen I2C1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetI2c1lpen() bool {
+func (r *RegisterApb1llpenrType) GetI2c1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldI2c1lpenMask) != 0
 }
 
 // SetI2c1lpen I2C1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetI2c1lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetI2c1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldI2c1lpenMask)
 	} else {
@@ -8360,12 +9533,12 @@ const (
 )
 
 // GetI2c2lpen I2C2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetI2c2lpen() bool {
+func (r *RegisterApb1llpenrType) GetI2c2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldI2c2lpenMask) != 0
 }
 
 // SetI2c2lpen I2C2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetI2c2lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetI2c2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldI2c2lpenMask)
 	} else {
@@ -8379,12 +9552,12 @@ const (
 )
 
 // GetI2c3lpen I2C3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetI2c3lpen() bool {
+func (r *RegisterApb1llpenrType) GetI2c3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldI2c3lpenMask) != 0
 }
 
 // SetI2c3lpen I2C3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetI2c3lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetI2c3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldI2c3lpenMask)
 	} else {
@@ -8398,12 +9571,12 @@ const (
 )
 
 // GetHdmiceclpen HDMI-CEC Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetHdmiceclpen() bool {
+func (r *RegisterApb1llpenrType) GetHdmiceclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldHdmiceclpenMask) != 0
 }
 
 // SetHdmiceclpen HDMI-CEC Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetHdmiceclpen(value bool) {
+func (r *RegisterApb1llpenrType) SetHdmiceclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldHdmiceclpenMask)
 	} else {
@@ -8417,12 +9590,12 @@ const (
 )
 
 // GetDac12lpen DAC1/2 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) GetDac12lpen() bool {
+func (r *RegisterApb1llpenrType) GetDac12lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldDac12lpenMask) != 0
 }
 
 // SetDac12lpen DAC1/2 peripheral clock enable during CSleep mode
-func (r *registerApb1llpenrType) SetDac12lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetDac12lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldDac12lpenMask)
 	} else {
@@ -8436,12 +9609,12 @@ const (
 )
 
 // GetUsart7lpen USART7 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetUsart7lpen() bool {
+func (r *RegisterApb1llpenrType) GetUsart7lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldUsart7lpenMask) != 0
 }
 
 // SetUsart7lpen USART7 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetUsart7lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetUsart7lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldUsart7lpenMask)
 	} else {
@@ -8455,12 +9628,12 @@ const (
 )
 
 // GetUsart8lpen USART8 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) GetUsart8lpen() bool {
+func (r *RegisterApb1llpenrType) GetUsart8lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1llpenrFieldUsart8lpenMask) != 0
 }
 
 // SetUsart8lpen USART8 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1llpenrType) SetUsart8lpen(value bool) {
+func (r *RegisterApb1llpenrType) SetUsart8lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1llpenrFieldUsart8lpenMask)
 	} else {
@@ -8468,8 +9641,31 @@ func (r *registerApb1llpenrType) SetUsart8lpen(value bool) {
 	}
 }
 
-// registerApb1hlpenrType RCC APB1 High Sleep Clock Register
-type registerApb1hlpenrType uint32
+// RegisterApb1hlpenrType RCC APB1 High Sleep Clock Register
+type RegisterApb1hlpenrType uint32
+
+func (r *RegisterApb1hlpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb1hlpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb1hlpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb1hlpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb1hlpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb1hlpenrFieldCrslpenShift = 1
@@ -8477,12 +9673,12 @@ const (
 )
 
 // GetCrslpen Clock Recovery System peripheral clock enable during CSleep mode
-func (r *registerApb1hlpenrType) GetCrslpen() bool {
+func (r *RegisterApb1hlpenrType) GetCrslpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1hlpenrFieldCrslpenMask) != 0
 }
 
 // SetCrslpen Clock Recovery System peripheral clock enable during CSleep mode
-func (r *registerApb1hlpenrType) SetCrslpen(value bool) {
+func (r *RegisterApb1hlpenrType) SetCrslpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1hlpenrFieldCrslpenMask)
 	} else {
@@ -8496,12 +9692,12 @@ const (
 )
 
 // GetSwplpen SWPMI Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1hlpenrType) GetSwplpen() bool {
+func (r *RegisterApb1hlpenrType) GetSwplpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1hlpenrFieldSwplpenMask) != 0
 }
 
 // SetSwplpen SWPMI Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1hlpenrType) SetSwplpen(value bool) {
+func (r *RegisterApb1hlpenrType) SetSwplpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1hlpenrFieldSwplpenMask)
 	} else {
@@ -8515,12 +9711,12 @@ const (
 )
 
 // GetOpamplpen OPAMP peripheral clock enable during CSleep mode
-func (r *registerApb1hlpenrType) GetOpamplpen() bool {
+func (r *RegisterApb1hlpenrType) GetOpamplpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1hlpenrFieldOpamplpenMask) != 0
 }
 
 // SetOpamplpen OPAMP peripheral clock enable during CSleep mode
-func (r *registerApb1hlpenrType) SetOpamplpen(value bool) {
+func (r *RegisterApb1hlpenrType) SetOpamplpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1hlpenrFieldOpamplpenMask)
 	} else {
@@ -8534,12 +9730,12 @@ const (
 )
 
 // GetMdioslpen MDIOS peripheral clock enable during CSleep mode
-func (r *registerApb1hlpenrType) GetMdioslpen() bool {
+func (r *RegisterApb1hlpenrType) GetMdioslpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1hlpenrFieldMdioslpenMask) != 0
 }
 
 // SetMdioslpen MDIOS peripheral clock enable during CSleep mode
-func (r *registerApb1hlpenrType) SetMdioslpen(value bool) {
+func (r *RegisterApb1hlpenrType) SetMdioslpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1hlpenrFieldMdioslpenMask)
 	} else {
@@ -8553,12 +9749,12 @@ const (
 )
 
 // GetFdcanlpen FDCAN Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1hlpenrType) GetFdcanlpen() bool {
+func (r *RegisterApb1hlpenrType) GetFdcanlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1hlpenrFieldFdcanlpenMask) != 0
 }
 
 // SetFdcanlpen FDCAN Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb1hlpenrType) SetFdcanlpen(value bool) {
+func (r *RegisterApb1hlpenrType) SetFdcanlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1hlpenrFieldFdcanlpenMask)
 	} else {
@@ -8566,8 +9762,31 @@ func (r *registerApb1hlpenrType) SetFdcanlpen(value bool) {
 	}
 }
 
-// registerApb2lpenrType RCC APB2 Sleep Clock Register
-type registerApb2lpenrType uint32
+// RegisterApb2lpenrType RCC APB2 Sleep Clock Register
+type RegisterApb2lpenrType uint32
+
+func (r *RegisterApb2lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb2lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb2lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb2lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb2lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb2lpenrFieldTim1lpenShift = 0
@@ -8575,12 +9794,12 @@ const (
 )
 
 // GetTim1lpen TIM1 peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) GetTim1lpen() bool {
+func (r *RegisterApb2lpenrType) GetTim1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldTim1lpenMask) != 0
 }
 
 // SetTim1lpen TIM1 peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) SetTim1lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetTim1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldTim1lpenMask)
 	} else {
@@ -8594,12 +9813,12 @@ const (
 )
 
 // GetTim8lpen TIM8 peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) GetTim8lpen() bool {
+func (r *RegisterApb2lpenrType) GetTim8lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldTim8lpenMask) != 0
 }
 
 // SetTim8lpen TIM8 peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) SetTim8lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetTim8lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldTim8lpenMask)
 	} else {
@@ -8613,12 +9832,12 @@ const (
 )
 
 // GetUsart1lpen USART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) GetUsart1lpen() bool {
+func (r *RegisterApb2lpenrType) GetUsart1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldUsart1lpenMask) != 0
 }
 
 // SetUsart1lpen USART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) SetUsart1lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetUsart1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldUsart1lpenMask)
 	} else {
@@ -8632,12 +9851,12 @@ const (
 )
 
 // GetUsart6lpen USART6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) GetUsart6lpen() bool {
+func (r *RegisterApb2lpenrType) GetUsart6lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldUsart6lpenMask) != 0
 }
 
 // SetUsart6lpen USART6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) SetUsart6lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetUsart6lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldUsart6lpenMask)
 	} else {
@@ -8651,12 +9870,12 @@ const (
 )
 
 // GetSpi1lpen SPI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) GetSpi1lpen() bool {
+func (r *RegisterApb2lpenrType) GetSpi1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldSpi1lpenMask) != 0
 }
 
 // SetSpi1lpen SPI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) SetSpi1lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetSpi1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldSpi1lpenMask)
 	} else {
@@ -8670,12 +9889,12 @@ const (
 )
 
 // GetSpi4lpen SPI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) GetSpi4lpen() bool {
+func (r *RegisterApb2lpenrType) GetSpi4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldSpi4lpenMask) != 0
 }
 
 // SetSpi4lpen SPI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) SetSpi4lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetSpi4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldSpi4lpenMask)
 	} else {
@@ -8689,12 +9908,12 @@ const (
 )
 
 // GetTim15lpen TIM15 peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) GetTim15lpen() bool {
+func (r *RegisterApb2lpenrType) GetTim15lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldTim15lpenMask) != 0
 }
 
 // SetTim15lpen TIM15 peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) SetTim15lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetTim15lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldTim15lpenMask)
 	} else {
@@ -8708,12 +9927,12 @@ const (
 )
 
 // GetTim16lpen TIM16 peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) GetTim16lpen() bool {
+func (r *RegisterApb2lpenrType) GetTim16lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldTim16lpenMask) != 0
 }
 
 // SetTim16lpen TIM16 peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) SetTim16lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetTim16lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldTim16lpenMask)
 	} else {
@@ -8727,12 +9946,12 @@ const (
 )
 
 // GetTim17lpen TIM17 peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) GetTim17lpen() bool {
+func (r *RegisterApb2lpenrType) GetTim17lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldTim17lpenMask) != 0
 }
 
 // SetTim17lpen TIM17 peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) SetTim17lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetTim17lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldTim17lpenMask)
 	} else {
@@ -8746,12 +9965,12 @@ const (
 )
 
 // GetSpi5lpen SPI5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) GetSpi5lpen() bool {
+func (r *RegisterApb2lpenrType) GetSpi5lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldSpi5lpenMask) != 0
 }
 
 // SetSpi5lpen SPI5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) SetSpi5lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetSpi5lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldSpi5lpenMask)
 	} else {
@@ -8765,12 +9984,12 @@ const (
 )
 
 // GetSai1lpen SAI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) GetSai1lpen() bool {
+func (r *RegisterApb2lpenrType) GetSai1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldSai1lpenMask) != 0
 }
 
 // SetSai1lpen SAI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) SetSai1lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetSai1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldSai1lpenMask)
 	} else {
@@ -8784,12 +10003,12 @@ const (
 )
 
 // GetSai2lpen SAI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) GetSai2lpen() bool {
+func (r *RegisterApb2lpenrType) GetSai2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldSai2lpenMask) != 0
 }
 
 // SetSai2lpen SAI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) SetSai2lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetSai2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldSai2lpenMask)
 	} else {
@@ -8803,12 +10022,12 @@ const (
 )
 
 // GetSai3lpen SAI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) GetSai3lpen() bool {
+func (r *RegisterApb2lpenrType) GetSai3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldSai3lpenMask) != 0
 }
 
 // SetSai3lpen SAI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) SetSai3lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetSai3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldSai3lpenMask)
 	} else {
@@ -8822,12 +10041,12 @@ const (
 )
 
 // GetDfsdm1lpen DFSDM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) GetDfsdm1lpen() bool {
+func (r *RegisterApb2lpenrType) GetDfsdm1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldDfsdm1lpenMask) != 0
 }
 
 // SetDfsdm1lpen DFSDM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb2lpenrType) SetDfsdm1lpen(value bool) {
+func (r *RegisterApb2lpenrType) SetDfsdm1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldDfsdm1lpenMask)
 	} else {
@@ -8841,12 +10060,12 @@ const (
 )
 
 // GetHrtimlpen HRTIM peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) GetHrtimlpen() bool {
+func (r *RegisterApb2lpenrType) GetHrtimlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2lpenrFieldHrtimlpenMask) != 0
 }
 
 // SetHrtimlpen HRTIM peripheral clock enable during CSleep mode
-func (r *registerApb2lpenrType) SetHrtimlpen(value bool) {
+func (r *RegisterApb2lpenrType) SetHrtimlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2lpenrFieldHrtimlpenMask)
 	} else {
@@ -8854,8 +10073,31 @@ func (r *registerApb2lpenrType) SetHrtimlpen(value bool) {
 	}
 }
 
-// registerApb4lpenrType RCC APB4 Sleep Clock Register
-type registerApb4lpenrType uint32
+// RegisterApb4lpenrType RCC APB4 Sleep Clock Register
+type RegisterApb4lpenrType uint32
+
+func (r *RegisterApb4lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb4lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb4lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb4lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb4lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb4lpenrFieldSyscfglpenShift = 1
@@ -8863,12 +10105,12 @@ const (
 )
 
 // GetSyscfglpen SYSCFG peripheral clock enable during CSleep mode
-func (r *registerApb4lpenrType) GetSyscfglpen() bool {
+func (r *RegisterApb4lpenrType) GetSyscfglpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldSyscfglpenMask) != 0
 }
 
 // SetSyscfglpen SYSCFG peripheral clock enable during CSleep mode
-func (r *registerApb4lpenrType) SetSyscfglpen(value bool) {
+func (r *RegisterApb4lpenrType) SetSyscfglpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldSyscfglpenMask)
 	} else {
@@ -8882,12 +10124,12 @@ const (
 )
 
 // GetLpuart1lpen LPUART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) GetLpuart1lpen() bool {
+func (r *RegisterApb4lpenrType) GetLpuart1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldLpuart1lpenMask) != 0
 }
 
 // SetLpuart1lpen LPUART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) SetLpuart1lpen(value bool) {
+func (r *RegisterApb4lpenrType) SetLpuart1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldLpuart1lpenMask)
 	} else {
@@ -8901,12 +10143,12 @@ const (
 )
 
 // GetSpi6lpen SPI6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) GetSpi6lpen() bool {
+func (r *RegisterApb4lpenrType) GetSpi6lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldSpi6lpenMask) != 0
 }
 
 // SetSpi6lpen SPI6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) SetSpi6lpen(value bool) {
+func (r *RegisterApb4lpenrType) SetSpi6lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldSpi6lpenMask)
 	} else {
@@ -8920,12 +10162,12 @@ const (
 )
 
 // GetI2c4lpen I2C4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) GetI2c4lpen() bool {
+func (r *RegisterApb4lpenrType) GetI2c4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldI2c4lpenMask) != 0
 }
 
 // SetI2c4lpen I2C4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) SetI2c4lpen(value bool) {
+func (r *RegisterApb4lpenrType) SetI2c4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldI2c4lpenMask)
 	} else {
@@ -8939,12 +10181,12 @@ const (
 )
 
 // GetLptim2lpen LPTIM2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) GetLptim2lpen() bool {
+func (r *RegisterApb4lpenrType) GetLptim2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldLptim2lpenMask) != 0
 }
 
 // SetLptim2lpen LPTIM2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) SetLptim2lpen(value bool) {
+func (r *RegisterApb4lpenrType) SetLptim2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldLptim2lpenMask)
 	} else {
@@ -8958,12 +10200,12 @@ const (
 )
 
 // GetLptim3lpen LPTIM3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) GetLptim3lpen() bool {
+func (r *RegisterApb4lpenrType) GetLptim3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldLptim3lpenMask) != 0
 }
 
 // SetLptim3lpen LPTIM3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) SetLptim3lpen(value bool) {
+func (r *RegisterApb4lpenrType) SetLptim3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldLptim3lpenMask)
 	} else {
@@ -8977,12 +10219,12 @@ const (
 )
 
 // GetLptim4lpen LPTIM4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) GetLptim4lpen() bool {
+func (r *RegisterApb4lpenrType) GetLptim4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldLptim4lpenMask) != 0
 }
 
 // SetLptim4lpen LPTIM4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) SetLptim4lpen(value bool) {
+func (r *RegisterApb4lpenrType) SetLptim4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldLptim4lpenMask)
 	} else {
@@ -8996,12 +10238,12 @@ const (
 )
 
 // GetLptim5lpen LPTIM5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) GetLptim5lpen() bool {
+func (r *RegisterApb4lpenrType) GetLptim5lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldLptim5lpenMask) != 0
 }
 
 // SetLptim5lpen LPTIM5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) SetLptim5lpen(value bool) {
+func (r *RegisterApb4lpenrType) SetLptim5lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldLptim5lpenMask)
 	} else {
@@ -9015,12 +10257,12 @@ const (
 )
 
 // GetComp12lpen COMP1/2 peripheral clock enable during CSleep mode
-func (r *registerApb4lpenrType) GetComp12lpen() bool {
+func (r *RegisterApb4lpenrType) GetComp12lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldComp12lpenMask) != 0
 }
 
 // SetComp12lpen COMP1/2 peripheral clock enable during CSleep mode
-func (r *registerApb4lpenrType) SetComp12lpen(value bool) {
+func (r *RegisterApb4lpenrType) SetComp12lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldComp12lpenMask)
 	} else {
@@ -9034,12 +10276,12 @@ const (
 )
 
 // GetVreflpen VREF peripheral clock enable during CSleep mode
-func (r *registerApb4lpenrType) GetVreflpen() bool {
+func (r *RegisterApb4lpenrType) GetVreflpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldVreflpenMask) != 0
 }
 
 // SetVreflpen VREF peripheral clock enable during CSleep mode
-func (r *registerApb4lpenrType) SetVreflpen(value bool) {
+func (r *RegisterApb4lpenrType) SetVreflpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldVreflpenMask)
 	} else {
@@ -9053,12 +10295,12 @@ const (
 )
 
 // GetRtcapblpen RTC APB Clock Enable During CSleep Mode
-func (r *registerApb4lpenrType) GetRtcapblpen() bool {
+func (r *RegisterApb4lpenrType) GetRtcapblpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldRtcapblpenMask) != 0
 }
 
 // SetRtcapblpen RTC APB Clock Enable During CSleep Mode
-func (r *registerApb4lpenrType) SetRtcapblpen(value bool) {
+func (r *RegisterApb4lpenrType) SetRtcapblpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldRtcapblpenMask)
 	} else {
@@ -9072,12 +10314,12 @@ const (
 )
 
 // GetSai4lpen SAI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) GetSai4lpen() bool {
+func (r *RegisterApb4lpenrType) GetSai4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4lpenrFieldSai4lpenMask) != 0
 }
 
 // SetSai4lpen SAI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerApb4lpenrType) SetSai4lpen(value bool) {
+func (r *RegisterApb4lpenrType) SetSai4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4lpenrFieldSai4lpenMask)
 	} else {
@@ -9085,8 +10327,31 @@ func (r *registerApb4lpenrType) SetSai4lpen(value bool) {
 	}
 }
 
-// registerC1rsrType RCC Reset Status Register
-type registerC1rsrType uint32
+// RegisterC1rsrType RCC Reset Status Register
+type RegisterC1rsrType uint32
+
+func (r *RegisterC1rsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1rsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1rsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1rsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1rsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1rsrFieldRmvfShift = 16
@@ -9094,12 +10359,12 @@ const (
 )
 
 // GetRmvf Remove reset flag
-func (r *registerC1rsrType) GetRmvf() bool {
+func (r *RegisterC1rsrType) GetRmvf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldRmvfMask) != 0
 }
 
 // SetRmvf Remove reset flag
-func (r *registerC1rsrType) SetRmvf(value bool) {
+func (r *RegisterC1rsrType) SetRmvf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldRmvfMask)
 	} else {
@@ -9113,12 +10378,12 @@ const (
 )
 
 // GetCpurstf CPU reset flag
-func (r *registerC1rsrType) GetCpurstf() bool {
+func (r *RegisterC1rsrType) GetCpurstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldCpurstfMask) != 0
 }
 
 // SetCpurstf CPU reset flag
-func (r *registerC1rsrType) SetCpurstf(value bool) {
+func (r *RegisterC1rsrType) SetCpurstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldCpurstfMask)
 	} else {
@@ -9132,12 +10397,12 @@ const (
 )
 
 // GetD1rstf D1 domain power switch reset flag
-func (r *registerC1rsrType) GetD1rstf() bool {
+func (r *RegisterC1rsrType) GetD1rstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldD1rstfMask) != 0
 }
 
 // SetD1rstf D1 domain power switch reset flag
-func (r *registerC1rsrType) SetD1rstf(value bool) {
+func (r *RegisterC1rsrType) SetD1rstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldD1rstfMask)
 	} else {
@@ -9151,12 +10416,12 @@ const (
 )
 
 // GetD2rstf D2 domain power switch reset flag
-func (r *registerC1rsrType) GetD2rstf() bool {
+func (r *RegisterC1rsrType) GetD2rstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldD2rstfMask) != 0
 }
 
 // SetD2rstf D2 domain power switch reset flag
-func (r *registerC1rsrType) SetD2rstf(value bool) {
+func (r *RegisterC1rsrType) SetD2rstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldD2rstfMask)
 	} else {
@@ -9170,12 +10435,12 @@ const (
 )
 
 // GetBorrstf BOR reset flag
-func (r *registerC1rsrType) GetBorrstf() bool {
+func (r *RegisterC1rsrType) GetBorrstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldBorrstfMask) != 0
 }
 
 // SetBorrstf BOR reset flag
-func (r *registerC1rsrType) SetBorrstf(value bool) {
+func (r *RegisterC1rsrType) SetBorrstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldBorrstfMask)
 	} else {
@@ -9189,12 +10454,12 @@ const (
 )
 
 // GetPinrstf Pin reset flag (NRST)
-func (r *registerC1rsrType) GetPinrstf() bool {
+func (r *RegisterC1rsrType) GetPinrstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldPinrstfMask) != 0
 }
 
 // SetPinrstf Pin reset flag (NRST)
-func (r *registerC1rsrType) SetPinrstf(value bool) {
+func (r *RegisterC1rsrType) SetPinrstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldPinrstfMask)
 	} else {
@@ -9208,12 +10473,12 @@ const (
 )
 
 // GetPorrstf POR/PDR reset flag
-func (r *registerC1rsrType) GetPorrstf() bool {
+func (r *RegisterC1rsrType) GetPorrstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldPorrstfMask) != 0
 }
 
 // SetPorrstf POR/PDR reset flag
-func (r *registerC1rsrType) SetPorrstf(value bool) {
+func (r *RegisterC1rsrType) SetPorrstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldPorrstfMask)
 	} else {
@@ -9227,12 +10492,12 @@ const (
 )
 
 // GetSftrstf System reset from CPU reset flag
-func (r *registerC1rsrType) GetSftrstf() bool {
+func (r *RegisterC1rsrType) GetSftrstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldSftrstfMask) != 0
 }
 
 // SetSftrstf System reset from CPU reset flag
-func (r *registerC1rsrType) SetSftrstf(value bool) {
+func (r *RegisterC1rsrType) SetSftrstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldSftrstfMask)
 	} else {
@@ -9246,12 +10511,12 @@ const (
 )
 
 // GetIwdg1rstf Independent Watchdog reset flag
-func (r *registerC1rsrType) GetIwdg1rstf() bool {
+func (r *RegisterC1rsrType) GetIwdg1rstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldIwdg1rstfMask) != 0
 }
 
 // SetIwdg1rstf Independent Watchdog reset flag
-func (r *registerC1rsrType) SetIwdg1rstf(value bool) {
+func (r *RegisterC1rsrType) SetIwdg1rstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldIwdg1rstfMask)
 	} else {
@@ -9265,12 +10530,12 @@ const (
 )
 
 // GetWwdg1rstf Window Watchdog reset flag
-func (r *registerC1rsrType) GetWwdg1rstf() bool {
+func (r *RegisterC1rsrType) GetWwdg1rstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldWwdg1rstfMask) != 0
 }
 
 // SetWwdg1rstf Window Watchdog reset flag
-func (r *registerC1rsrType) SetWwdg1rstf(value bool) {
+func (r *RegisterC1rsrType) SetWwdg1rstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldWwdg1rstfMask)
 	} else {
@@ -9284,12 +10549,12 @@ const (
 )
 
 // GetLpwrrstf Reset due to illegal D1 DStandby or CPU CStop flag
-func (r *registerC1rsrType) GetLpwrrstf() bool {
+func (r *RegisterC1rsrType) GetLpwrrstf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1rsrFieldLpwrrstfMask) != 0
 }
 
 // SetLpwrrstf Reset due to illegal D1 DStandby or CPU CStop flag
-func (r *registerC1rsrType) SetLpwrrstf(value bool) {
+func (r *RegisterC1rsrType) SetLpwrrstf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1rsrFieldLpwrrstfMask)
 	} else {
@@ -9297,8 +10562,31 @@ func (r *registerC1rsrType) SetLpwrrstf(value bool) {
 	}
 }
 
-// registerC1ahb3enrType RCC AHB3 Clock Register
-type registerC1ahb3enrType uint32
+// RegisterC1ahb3enrType RCC AHB3 Clock Register
+type RegisterC1ahb3enrType uint32
+
+func (r *RegisterC1ahb3enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1ahb3enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1ahb3enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1ahb3enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1ahb3enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1ahb3enrFieldMdmaenShift = 0
@@ -9306,12 +10594,12 @@ const (
 )
 
 // GetMdmaen MDMA Peripheral Clock Enable
-func (r *registerC1ahb3enrType) GetMdmaen() bool {
+func (r *RegisterC1ahb3enrType) GetMdmaen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldMdmaenMask) != 0
 }
 
 // SetMdmaen MDMA Peripheral Clock Enable
-func (r *registerC1ahb3enrType) SetMdmaen(value bool) {
+func (r *RegisterC1ahb3enrType) SetMdmaen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldMdmaenMask)
 	} else {
@@ -9325,12 +10613,12 @@ const (
 )
 
 // GetDma2den DMA2D Peripheral Clock Enable
-func (r *registerC1ahb3enrType) GetDma2den() bool {
+func (r *RegisterC1ahb3enrType) GetDma2den() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldDma2denMask) != 0
 }
 
 // SetDma2den DMA2D Peripheral Clock Enable
-func (r *registerC1ahb3enrType) SetDma2den(value bool) {
+func (r *RegisterC1ahb3enrType) SetDma2den(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldDma2denMask)
 	} else {
@@ -9344,12 +10632,12 @@ const (
 )
 
 // GetJpgdecen JPGDEC Peripheral Clock Enable
-func (r *registerC1ahb3enrType) GetJpgdecen() bool {
+func (r *RegisterC1ahb3enrType) GetJpgdecen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldJpgdecenMask) != 0
 }
 
 // SetJpgdecen JPGDEC Peripheral Clock Enable
-func (r *registerC1ahb3enrType) SetJpgdecen(value bool) {
+func (r *RegisterC1ahb3enrType) SetJpgdecen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldJpgdecenMask)
 	} else {
@@ -9363,12 +10651,12 @@ const (
 )
 
 // GetFmcen FMC Peripheral Clocks Enable
-func (r *registerC1ahb3enrType) GetFmcen() bool {
+func (r *RegisterC1ahb3enrType) GetFmcen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldFmcenMask) != 0
 }
 
 // SetFmcen FMC Peripheral Clocks Enable
-func (r *registerC1ahb3enrType) SetFmcen(value bool) {
+func (r *RegisterC1ahb3enrType) SetFmcen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldFmcenMask)
 	} else {
@@ -9382,12 +10670,12 @@ const (
 )
 
 // GetQspien QUADSPI and QUADSPI Delay Clock Enable
-func (r *registerC1ahb3enrType) GetQspien() bool {
+func (r *RegisterC1ahb3enrType) GetQspien() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldQspienMask) != 0
 }
 
 // SetQspien QUADSPI and QUADSPI Delay Clock Enable
-func (r *registerC1ahb3enrType) SetQspien(value bool) {
+func (r *RegisterC1ahb3enrType) SetQspien(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldQspienMask)
 	} else {
@@ -9401,12 +10689,12 @@ const (
 )
 
 // GetSdmmc1en SDMMC1 and SDMMC1 Delay Clock Enable
-func (r *registerC1ahb3enrType) GetSdmmc1en() bool {
+func (r *RegisterC1ahb3enrType) GetSdmmc1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3enrFieldSdmmc1enMask) != 0
 }
 
 // SetSdmmc1en SDMMC1 and SDMMC1 Delay Clock Enable
-func (r *registerC1ahb3enrType) SetSdmmc1en(value bool) {
+func (r *RegisterC1ahb3enrType) SetSdmmc1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3enrFieldSdmmc1enMask)
 	} else {
@@ -9414,8 +10702,31 @@ func (r *registerC1ahb3enrType) SetSdmmc1en(value bool) {
 	}
 }
 
-// registerC1ahb1enrType RCC AHB1 Clock Register
-type registerC1ahb1enrType uint32
+// RegisterC1ahb1enrType RCC AHB1 Clock Register
+type RegisterC1ahb1enrType uint32
+
+func (r *RegisterC1ahb1enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1ahb1enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1ahb1enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1ahb1enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1ahb1enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1ahb1enrFieldDma1enShift = 0
@@ -9423,12 +10734,12 @@ const (
 )
 
 // GetDma1en DMA1 Clock Enable
-func (r *registerC1ahb1enrType) GetDma1en() bool {
+func (r *RegisterC1ahb1enrType) GetDma1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldDma1enMask) != 0
 }
 
 // SetDma1en DMA1 Clock Enable
-func (r *registerC1ahb1enrType) SetDma1en(value bool) {
+func (r *RegisterC1ahb1enrType) SetDma1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldDma1enMask)
 	} else {
@@ -9442,12 +10753,12 @@ const (
 )
 
 // GetDma2en DMA2 Clock Enable
-func (r *registerC1ahb1enrType) GetDma2en() bool {
+func (r *RegisterC1ahb1enrType) GetDma2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldDma2enMask) != 0
 }
 
 // SetDma2en DMA2 Clock Enable
-func (r *registerC1ahb1enrType) SetDma2en(value bool) {
+func (r *RegisterC1ahb1enrType) SetDma2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldDma2enMask)
 	} else {
@@ -9461,12 +10772,12 @@ const (
 )
 
 // GetAdc12en ADC1/2 Peripheral Clocks Enable
-func (r *registerC1ahb1enrType) GetAdc12en() bool {
+func (r *RegisterC1ahb1enrType) GetAdc12en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldAdc12enMask) != 0
 }
 
 // SetAdc12en ADC1/2 Peripheral Clocks Enable
-func (r *registerC1ahb1enrType) SetAdc12en(value bool) {
+func (r *RegisterC1ahb1enrType) SetAdc12en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldAdc12enMask)
 	} else {
@@ -9480,12 +10791,12 @@ const (
 )
 
 // GetEth1macen Ethernet MAC bus interface Clock Enable
-func (r *registerC1ahb1enrType) GetEth1macen() bool {
+func (r *RegisterC1ahb1enrType) GetEth1macen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldEth1macenMask) != 0
 }
 
 // SetEth1macen Ethernet MAC bus interface Clock Enable
-func (r *registerC1ahb1enrType) SetEth1macen(value bool) {
+func (r *RegisterC1ahb1enrType) SetEth1macen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldEth1macenMask)
 	} else {
@@ -9499,12 +10810,12 @@ const (
 )
 
 // GetEth1txen Ethernet Transmission Clock Enable
-func (r *registerC1ahb1enrType) GetEth1txen() bool {
+func (r *RegisterC1ahb1enrType) GetEth1txen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldEth1txenMask) != 0
 }
 
 // SetEth1txen Ethernet Transmission Clock Enable
-func (r *registerC1ahb1enrType) SetEth1txen(value bool) {
+func (r *RegisterC1ahb1enrType) SetEth1txen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldEth1txenMask)
 	} else {
@@ -9518,12 +10829,12 @@ const (
 )
 
 // GetEth1rxen Ethernet Reception Clock Enable
-func (r *registerC1ahb1enrType) GetEth1rxen() bool {
+func (r *RegisterC1ahb1enrType) GetEth1rxen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldEth1rxenMask) != 0
 }
 
 // SetEth1rxen Ethernet Reception Clock Enable
-func (r *registerC1ahb1enrType) SetEth1rxen(value bool) {
+func (r *RegisterC1ahb1enrType) SetEth1rxen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldEth1rxenMask)
 	} else {
@@ -9537,12 +10848,12 @@ const (
 )
 
 // GetUsb1otgen USB1OTG Peripheral Clocks Enable
-func (r *registerC1ahb1enrType) GetUsb1otgen() bool {
+func (r *RegisterC1ahb1enrType) GetUsb1otgen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldUsb1otgenMask) != 0
 }
 
 // SetUsb1otgen USB1OTG Peripheral Clocks Enable
-func (r *registerC1ahb1enrType) SetUsb1otgen(value bool) {
+func (r *RegisterC1ahb1enrType) SetUsb1otgen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldUsb1otgenMask)
 	} else {
@@ -9556,12 +10867,12 @@ const (
 )
 
 // GetUsb1ulpien USB_PHY1 Clocks Enable
-func (r *registerC1ahb1enrType) GetUsb1ulpien() bool {
+func (r *RegisterC1ahb1enrType) GetUsb1ulpien() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldUsb1ulpienMask) != 0
 }
 
 // SetUsb1ulpien USB_PHY1 Clocks Enable
-func (r *registerC1ahb1enrType) SetUsb1ulpien(value bool) {
+func (r *RegisterC1ahb1enrType) SetUsb1ulpien(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldUsb1ulpienMask)
 	} else {
@@ -9575,12 +10886,12 @@ const (
 )
 
 // GetUsb2otgen USB2OTG Peripheral Clocks Enable
-func (r *registerC1ahb1enrType) GetUsb2otgen() bool {
+func (r *RegisterC1ahb1enrType) GetUsb2otgen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldUsb2otgenMask) != 0
 }
 
 // SetUsb2otgen USB2OTG Peripheral Clocks Enable
-func (r *registerC1ahb1enrType) SetUsb2otgen(value bool) {
+func (r *RegisterC1ahb1enrType) SetUsb2otgen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldUsb2otgenMask)
 	} else {
@@ -9594,12 +10905,12 @@ const (
 )
 
 // GetUsb2ulpien USB_PHY2 Clocks Enable
-func (r *registerC1ahb1enrType) GetUsb2ulpien() bool {
+func (r *RegisterC1ahb1enrType) GetUsb2ulpien() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1enrFieldUsb2ulpienMask) != 0
 }
 
 // SetUsb2ulpien USB_PHY2 Clocks Enable
-func (r *registerC1ahb1enrType) SetUsb2ulpien(value bool) {
+func (r *RegisterC1ahb1enrType) SetUsb2ulpien(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1enrFieldUsb2ulpienMask)
 	} else {
@@ -9607,8 +10918,31 @@ func (r *registerC1ahb1enrType) SetUsb2ulpien(value bool) {
 	}
 }
 
-// registerC1ahb2enrType RCC AHB2 Clock Register
-type registerC1ahb2enrType uint32
+// RegisterC1ahb2enrType RCC AHB2 Clock Register
+type RegisterC1ahb2enrType uint32
+
+func (r *RegisterC1ahb2enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1ahb2enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1ahb2enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1ahb2enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1ahb2enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1ahb2enrFieldCamitfenShift = 0
@@ -9616,12 +10950,12 @@ const (
 )
 
 // GetCamitfen CAMITF peripheral clock enable
-func (r *registerC1ahb2enrType) GetCamitfen() bool {
+func (r *RegisterC1ahb2enrType) GetCamitfen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldCamitfenMask) != 0
 }
 
 // SetCamitfen CAMITF peripheral clock enable
-func (r *registerC1ahb2enrType) SetCamitfen(value bool) {
+func (r *RegisterC1ahb2enrType) SetCamitfen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldCamitfenMask)
 	} else {
@@ -9635,12 +10969,12 @@ const (
 )
 
 // GetCrypten CRYPT peripheral clock enable
-func (r *registerC1ahb2enrType) GetCrypten() bool {
+func (r *RegisterC1ahb2enrType) GetCrypten() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldCryptenMask) != 0
 }
 
 // SetCrypten CRYPT peripheral clock enable
-func (r *registerC1ahb2enrType) SetCrypten(value bool) {
+func (r *RegisterC1ahb2enrType) SetCrypten(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldCryptenMask)
 	} else {
@@ -9654,12 +10988,12 @@ const (
 )
 
 // GetHashen HASH peripheral clock enable
-func (r *registerC1ahb2enrType) GetHashen() bool {
+func (r *RegisterC1ahb2enrType) GetHashen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldHashenMask) != 0
 }
 
 // SetHashen HASH peripheral clock enable
-func (r *registerC1ahb2enrType) SetHashen(value bool) {
+func (r *RegisterC1ahb2enrType) SetHashen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldHashenMask)
 	} else {
@@ -9673,12 +11007,12 @@ const (
 )
 
 // GetRngen RNG peripheral clocks enable
-func (r *registerC1ahb2enrType) GetRngen() bool {
+func (r *RegisterC1ahb2enrType) GetRngen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldRngenMask) != 0
 }
 
 // SetRngen RNG peripheral clocks enable
-func (r *registerC1ahb2enrType) SetRngen(value bool) {
+func (r *RegisterC1ahb2enrType) SetRngen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldRngenMask)
 	} else {
@@ -9692,12 +11026,12 @@ const (
 )
 
 // GetSdmmc2en SDMMC2 and SDMMC2 delay clock enable
-func (r *registerC1ahb2enrType) GetSdmmc2en() bool {
+func (r *RegisterC1ahb2enrType) GetSdmmc2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldSdmmc2enMask) != 0
 }
 
 // SetSdmmc2en SDMMC2 and SDMMC2 delay clock enable
-func (r *registerC1ahb2enrType) SetSdmmc2en(value bool) {
+func (r *RegisterC1ahb2enrType) SetSdmmc2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldSdmmc2enMask)
 	} else {
@@ -9711,12 +11045,12 @@ const (
 )
 
 // GetSram1en SRAM1 block enable
-func (r *registerC1ahb2enrType) GetSram1en() bool {
+func (r *RegisterC1ahb2enrType) GetSram1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldSram1enMask) != 0
 }
 
 // SetSram1en SRAM1 block enable
-func (r *registerC1ahb2enrType) SetSram1en(value bool) {
+func (r *RegisterC1ahb2enrType) SetSram1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldSram1enMask)
 	} else {
@@ -9730,12 +11064,12 @@ const (
 )
 
 // GetSram2en SRAM2 block enable
-func (r *registerC1ahb2enrType) GetSram2en() bool {
+func (r *RegisterC1ahb2enrType) GetSram2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldSram2enMask) != 0
 }
 
 // SetSram2en SRAM2 block enable
-func (r *registerC1ahb2enrType) SetSram2en(value bool) {
+func (r *RegisterC1ahb2enrType) SetSram2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldSram2enMask)
 	} else {
@@ -9749,12 +11083,12 @@ const (
 )
 
 // GetSram3en SRAM3 block enable
-func (r *registerC1ahb2enrType) GetSram3en() bool {
+func (r *RegisterC1ahb2enrType) GetSram3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2enrFieldSram3enMask) != 0
 }
 
 // SetSram3en SRAM3 block enable
-func (r *registerC1ahb2enrType) SetSram3en(value bool) {
+func (r *RegisterC1ahb2enrType) SetSram3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2enrFieldSram3enMask)
 	} else {
@@ -9762,8 +11096,31 @@ func (r *registerC1ahb2enrType) SetSram3en(value bool) {
 	}
 }
 
-// registerC1ahb4enrType RCC AHB4 Clock Register
-type registerC1ahb4enrType uint32
+// RegisterC1ahb4enrType RCC AHB4 Clock Register
+type RegisterC1ahb4enrType uint32
+
+func (r *RegisterC1ahb4enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1ahb4enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1ahb4enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1ahb4enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1ahb4enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1ahb4enrFieldGpioaenShift = 0
@@ -9771,12 +11128,12 @@ const (
 )
 
 // GetGpioaen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpioaen() bool {
+func (r *RegisterC1ahb4enrType) GetGpioaen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpioaenMask) != 0
 }
 
 // SetGpioaen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpioaen(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpioaen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpioaenMask)
 	} else {
@@ -9790,12 +11147,12 @@ const (
 )
 
 // GetGpioben 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpioben() bool {
+func (r *RegisterC1ahb4enrType) GetGpioben() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiobenMask) != 0
 }
 
 // SetGpioben 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpioben(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpioben(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiobenMask)
 	} else {
@@ -9809,12 +11166,12 @@ const (
 )
 
 // GetGpiocen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpiocen() bool {
+func (r *RegisterC1ahb4enrType) GetGpiocen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiocenMask) != 0
 }
 
 // SetGpiocen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpiocen(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpiocen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiocenMask)
 	} else {
@@ -9828,12 +11185,12 @@ const (
 )
 
 // GetGpioden 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpioden() bool {
+func (r *RegisterC1ahb4enrType) GetGpioden() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiodenMask) != 0
 }
 
 // SetGpioden 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpioden(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpioden(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiodenMask)
 	} else {
@@ -9847,12 +11204,12 @@ const (
 )
 
 // GetGpioeen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpioeen() bool {
+func (r *RegisterC1ahb4enrType) GetGpioeen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpioeenMask) != 0
 }
 
 // SetGpioeen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpioeen(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpioeen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpioeenMask)
 	} else {
@@ -9866,12 +11223,12 @@ const (
 )
 
 // GetGpiofen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpiofen() bool {
+func (r *RegisterC1ahb4enrType) GetGpiofen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiofenMask) != 0
 }
 
 // SetGpiofen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpiofen(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpiofen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiofenMask)
 	} else {
@@ -9885,12 +11242,12 @@ const (
 )
 
 // GetGpiogen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpiogen() bool {
+func (r *RegisterC1ahb4enrType) GetGpiogen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiogenMask) != 0
 }
 
 // SetGpiogen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpiogen(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpiogen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiogenMask)
 	} else {
@@ -9904,12 +11261,12 @@ const (
 )
 
 // GetGpiohen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpiohen() bool {
+func (r *RegisterC1ahb4enrType) GetGpiohen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiohenMask) != 0
 }
 
 // SetGpiohen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpiohen(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpiohen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiohenMask)
 	} else {
@@ -9923,12 +11280,12 @@ const (
 )
 
 // GetGpioien 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpioien() bool {
+func (r *RegisterC1ahb4enrType) GetGpioien() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpioienMask) != 0
 }
 
 // SetGpioien 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpioien(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpioien(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpioienMask)
 	} else {
@@ -9942,12 +11299,12 @@ const (
 )
 
 // GetGpiojen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpiojen() bool {
+func (r *RegisterC1ahb4enrType) GetGpiojen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiojenMask) != 0
 }
 
 // SetGpiojen 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpiojen(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpiojen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiojenMask)
 	} else {
@@ -9961,12 +11318,12 @@ const (
 )
 
 // GetGpioken 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) GetGpioken() bool {
+func (r *RegisterC1ahb4enrType) GetGpioken() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldGpiokenMask) != 0
 }
 
 // SetGpioken 0GPIO peripheral clock enable
-func (r *registerC1ahb4enrType) SetGpioken(value bool) {
+func (r *RegisterC1ahb4enrType) SetGpioken(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldGpiokenMask)
 	} else {
@@ -9980,12 +11337,12 @@ const (
 )
 
 // GetCrcen CRC peripheral clock enable
-func (r *registerC1ahb4enrType) GetCrcen() bool {
+func (r *RegisterC1ahb4enrType) GetCrcen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldCrcenMask) != 0
 }
 
 // SetCrcen CRC peripheral clock enable
-func (r *registerC1ahb4enrType) SetCrcen(value bool) {
+func (r *RegisterC1ahb4enrType) SetCrcen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldCrcenMask)
 	} else {
@@ -9999,12 +11356,12 @@ const (
 )
 
 // GetBdmaen BDMA and DMAMUX2 Clock Enable
-func (r *registerC1ahb4enrType) GetBdmaen() bool {
+func (r *RegisterC1ahb4enrType) GetBdmaen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldBdmaenMask) != 0
 }
 
 // SetBdmaen BDMA and DMAMUX2 Clock Enable
-func (r *registerC1ahb4enrType) SetBdmaen(value bool) {
+func (r *RegisterC1ahb4enrType) SetBdmaen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldBdmaenMask)
 	} else {
@@ -10018,12 +11375,12 @@ const (
 )
 
 // GetAdc3en ADC3 Peripheral Clocks Enable
-func (r *registerC1ahb4enrType) GetAdc3en() bool {
+func (r *RegisterC1ahb4enrType) GetAdc3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldAdc3enMask) != 0
 }
 
 // SetAdc3en ADC3 Peripheral Clocks Enable
-func (r *registerC1ahb4enrType) SetAdc3en(value bool) {
+func (r *RegisterC1ahb4enrType) SetAdc3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldAdc3enMask)
 	} else {
@@ -10037,12 +11394,12 @@ const (
 )
 
 // GetHsemen HSEM peripheral clock enable
-func (r *registerC1ahb4enrType) GetHsemen() bool {
+func (r *RegisterC1ahb4enrType) GetHsemen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldHsemenMask) != 0
 }
 
 // SetHsemen HSEM peripheral clock enable
-func (r *registerC1ahb4enrType) SetHsemen(value bool) {
+func (r *RegisterC1ahb4enrType) SetHsemen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldHsemenMask)
 	} else {
@@ -10056,12 +11413,12 @@ const (
 )
 
 // GetBkpramen Backup RAM Clock Enable
-func (r *registerC1ahb4enrType) GetBkpramen() bool {
+func (r *RegisterC1ahb4enrType) GetBkpramen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4enrFieldBkpramenMask) != 0
 }
 
 // SetBkpramen Backup RAM Clock Enable
-func (r *registerC1ahb4enrType) SetBkpramen(value bool) {
+func (r *RegisterC1ahb4enrType) SetBkpramen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4enrFieldBkpramenMask)
 	} else {
@@ -10069,8 +11426,31 @@ func (r *registerC1ahb4enrType) SetBkpramen(value bool) {
 	}
 }
 
-// registerC1apb3enrType RCC APB3 Clock Register
-type registerC1apb3enrType uint32
+// RegisterC1apb3enrType RCC APB3 Clock Register
+type RegisterC1apb3enrType uint32
+
+func (r *RegisterC1apb3enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1apb3enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1apb3enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1apb3enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1apb3enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1apb3enrFieldLtdcenShift = 3
@@ -10078,12 +11458,12 @@ const (
 )
 
 // GetLtdcen LTDC peripheral clock enable
-func (r *registerC1apb3enrType) GetLtdcen() bool {
+func (r *RegisterC1apb3enrType) GetLtdcen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb3enrFieldLtdcenMask) != 0
 }
 
 // SetLtdcen LTDC peripheral clock enable
-func (r *registerC1apb3enrType) SetLtdcen(value bool) {
+func (r *RegisterC1apb3enrType) SetLtdcen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb3enrFieldLtdcenMask)
 	} else {
@@ -10097,12 +11477,12 @@ const (
 )
 
 // GetWwdg1en WWDG1 Clock Enable
-func (r *registerC1apb3enrType) GetWwdg1en() bool {
+func (r *RegisterC1apb3enrType) GetWwdg1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb3enrFieldWwdg1enMask) != 0
 }
 
 // SetWwdg1en WWDG1 Clock Enable
-func (r *registerC1apb3enrType) SetWwdg1en(value bool) {
+func (r *RegisterC1apb3enrType) SetWwdg1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb3enrFieldWwdg1enMask)
 	} else {
@@ -10110,8 +11490,31 @@ func (r *registerC1apb3enrType) SetWwdg1en(value bool) {
 	}
 }
 
-// registerC1apb1lenrType RCC APB1 Clock Register
-type registerC1apb1lenrType uint32
+// RegisterC1apb1lenrType RCC APB1 Clock Register
+type RegisterC1apb1lenrType uint32
+
+func (r *RegisterC1apb1lenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1apb1lenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1apb1lenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1apb1lenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1apb1lenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1apb1lenrFieldTim2enShift = 0
@@ -10119,12 +11522,12 @@ const (
 )
 
 // GetTim2en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) GetTim2en() bool {
+func (r *RegisterC1apb1lenrType) GetTim2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim2enMask) != 0
 }
 
 // SetTim2en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) SetTim2en(value bool) {
+func (r *RegisterC1apb1lenrType) SetTim2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim2enMask)
 	} else {
@@ -10138,12 +11541,12 @@ const (
 )
 
 // GetTim3en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) GetTim3en() bool {
+func (r *RegisterC1apb1lenrType) GetTim3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim3enMask) != 0
 }
 
 // SetTim3en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) SetTim3en(value bool) {
+func (r *RegisterC1apb1lenrType) SetTim3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim3enMask)
 	} else {
@@ -10157,12 +11560,12 @@ const (
 )
 
 // GetTim4en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) GetTim4en() bool {
+func (r *RegisterC1apb1lenrType) GetTim4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim4enMask) != 0
 }
 
 // SetTim4en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) SetTim4en(value bool) {
+func (r *RegisterC1apb1lenrType) SetTim4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim4enMask)
 	} else {
@@ -10176,12 +11579,12 @@ const (
 )
 
 // GetTim5en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) GetTim5en() bool {
+func (r *RegisterC1apb1lenrType) GetTim5en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim5enMask) != 0
 }
 
 // SetTim5en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) SetTim5en(value bool) {
+func (r *RegisterC1apb1lenrType) SetTim5en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim5enMask)
 	} else {
@@ -10195,12 +11598,12 @@ const (
 )
 
 // GetTim6en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) GetTim6en() bool {
+func (r *RegisterC1apb1lenrType) GetTim6en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim6enMask) != 0
 }
 
 // SetTim6en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) SetTim6en(value bool) {
+func (r *RegisterC1apb1lenrType) SetTim6en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim6enMask)
 	} else {
@@ -10214,12 +11617,12 @@ const (
 )
 
 // GetTim7en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) GetTim7en() bool {
+func (r *RegisterC1apb1lenrType) GetTim7en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim7enMask) != 0
 }
 
 // SetTim7en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) SetTim7en(value bool) {
+func (r *RegisterC1apb1lenrType) SetTim7en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim7enMask)
 	} else {
@@ -10233,12 +11636,12 @@ const (
 )
 
 // GetTim12en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) GetTim12en() bool {
+func (r *RegisterC1apb1lenrType) GetTim12en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim12enMask) != 0
 }
 
 // SetTim12en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) SetTim12en(value bool) {
+func (r *RegisterC1apb1lenrType) SetTim12en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim12enMask)
 	} else {
@@ -10252,12 +11655,12 @@ const (
 )
 
 // GetTim13en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) GetTim13en() bool {
+func (r *RegisterC1apb1lenrType) GetTim13en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim13enMask) != 0
 }
 
 // SetTim13en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) SetTim13en(value bool) {
+func (r *RegisterC1apb1lenrType) SetTim13en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim13enMask)
 	} else {
@@ -10271,12 +11674,12 @@ const (
 )
 
 // GetTim14en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) GetTim14en() bool {
+func (r *RegisterC1apb1lenrType) GetTim14en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldTim14enMask) != 0
 }
 
 // SetTim14en TIM peripheral clock enable
-func (r *registerC1apb1lenrType) SetTim14en(value bool) {
+func (r *RegisterC1apb1lenrType) SetTim14en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldTim14enMask)
 	} else {
@@ -10290,12 +11693,12 @@ const (
 )
 
 // GetLptim1en LPTIM1 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetLptim1en() bool {
+func (r *RegisterC1apb1lenrType) GetLptim1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldLptim1enMask) != 0
 }
 
 // SetLptim1en LPTIM1 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetLptim1en(value bool) {
+func (r *RegisterC1apb1lenrType) SetLptim1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldLptim1enMask)
 	} else {
@@ -10309,12 +11712,12 @@ const (
 )
 
 // GetSpi2en SPI2 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetSpi2en() bool {
+func (r *RegisterC1apb1lenrType) GetSpi2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldSpi2enMask) != 0
 }
 
 // SetSpi2en SPI2 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetSpi2en(value bool) {
+func (r *RegisterC1apb1lenrType) SetSpi2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldSpi2enMask)
 	} else {
@@ -10328,12 +11731,12 @@ const (
 )
 
 // GetSpi3en SPI3 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetSpi3en() bool {
+func (r *RegisterC1apb1lenrType) GetSpi3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldSpi3enMask) != 0
 }
 
 // SetSpi3en SPI3 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetSpi3en(value bool) {
+func (r *RegisterC1apb1lenrType) SetSpi3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldSpi3enMask)
 	} else {
@@ -10347,12 +11750,12 @@ const (
 )
 
 // GetSpdifrxen SPDIFRX Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetSpdifrxen() bool {
+func (r *RegisterC1apb1lenrType) GetSpdifrxen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldSpdifrxenMask) != 0
 }
 
 // SetSpdifrxen SPDIFRX Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetSpdifrxen(value bool) {
+func (r *RegisterC1apb1lenrType) SetSpdifrxen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldSpdifrxenMask)
 	} else {
@@ -10366,12 +11769,12 @@ const (
 )
 
 // GetUsart2en USART2 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetUsart2en() bool {
+func (r *RegisterC1apb1lenrType) GetUsart2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUsart2enMask) != 0
 }
 
 // SetUsart2en USART2 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetUsart2en(value bool) {
+func (r *RegisterC1apb1lenrType) SetUsart2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUsart2enMask)
 	} else {
@@ -10385,12 +11788,12 @@ const (
 )
 
 // GetUsart3en USART3 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetUsart3en() bool {
+func (r *RegisterC1apb1lenrType) GetUsart3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUsart3enMask) != 0
 }
 
 // SetUsart3en USART3 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetUsart3en(value bool) {
+func (r *RegisterC1apb1lenrType) SetUsart3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUsart3enMask)
 	} else {
@@ -10404,12 +11807,12 @@ const (
 )
 
 // GetUart4en UART4 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetUart4en() bool {
+func (r *RegisterC1apb1lenrType) GetUart4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUart4enMask) != 0
 }
 
 // SetUart4en UART4 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetUart4en(value bool) {
+func (r *RegisterC1apb1lenrType) SetUart4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUart4enMask)
 	} else {
@@ -10423,12 +11826,12 @@ const (
 )
 
 // GetUart5en UART5 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetUart5en() bool {
+func (r *RegisterC1apb1lenrType) GetUart5en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUart5enMask) != 0
 }
 
 // SetUart5en UART5 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetUart5en(value bool) {
+func (r *RegisterC1apb1lenrType) SetUart5en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUart5enMask)
 	} else {
@@ -10442,12 +11845,12 @@ const (
 )
 
 // GetI2c1en I2C1 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetI2c1en() bool {
+func (r *RegisterC1apb1lenrType) GetI2c1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldI2c1enMask) != 0
 }
 
 // SetI2c1en I2C1 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetI2c1en(value bool) {
+func (r *RegisterC1apb1lenrType) SetI2c1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldI2c1enMask)
 	} else {
@@ -10461,12 +11864,12 @@ const (
 )
 
 // GetI2c2en I2C2 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetI2c2en() bool {
+func (r *RegisterC1apb1lenrType) GetI2c2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldI2c2enMask) != 0
 }
 
 // SetI2c2en I2C2 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetI2c2en(value bool) {
+func (r *RegisterC1apb1lenrType) SetI2c2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldI2c2enMask)
 	} else {
@@ -10480,12 +11883,12 @@ const (
 )
 
 // GetI2c3en I2C3 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetI2c3en() bool {
+func (r *RegisterC1apb1lenrType) GetI2c3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldI2c3enMask) != 0
 }
 
 // SetI2c3en I2C3 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetI2c3en(value bool) {
+func (r *RegisterC1apb1lenrType) SetI2c3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldI2c3enMask)
 	} else {
@@ -10499,12 +11902,12 @@ const (
 )
 
 // GetHdmicecen HDMI-CEC peripheral clock enable
-func (r *registerC1apb1lenrType) GetHdmicecen() bool {
+func (r *RegisterC1apb1lenrType) GetHdmicecen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldHdmicecenMask) != 0
 }
 
 // SetHdmicecen HDMI-CEC peripheral clock enable
-func (r *registerC1apb1lenrType) SetHdmicecen(value bool) {
+func (r *RegisterC1apb1lenrType) SetHdmicecen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldHdmicecenMask)
 	} else {
@@ -10518,12 +11921,12 @@ const (
 )
 
 // GetDac12en DAC1&2 peripheral clock enable
-func (r *registerC1apb1lenrType) GetDac12en() bool {
+func (r *RegisterC1apb1lenrType) GetDac12en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldDac12enMask) != 0
 }
 
 // SetDac12en DAC1&2 peripheral clock enable
-func (r *registerC1apb1lenrType) SetDac12en(value bool) {
+func (r *RegisterC1apb1lenrType) SetDac12en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldDac12enMask)
 	} else {
@@ -10537,12 +11940,12 @@ const (
 )
 
 // GetUsart7en USART7 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetUsart7en() bool {
+func (r *RegisterC1apb1lenrType) GetUsart7en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUsart7enMask) != 0
 }
 
 // SetUsart7en USART7 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetUsart7en(value bool) {
+func (r *RegisterC1apb1lenrType) SetUsart7en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUsart7enMask)
 	} else {
@@ -10556,12 +11959,12 @@ const (
 )
 
 // GetUsart8en USART8 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) GetUsart8en() bool {
+func (r *RegisterC1apb1lenrType) GetUsart8en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1lenrFieldUsart8enMask) != 0
 }
 
 // SetUsart8en USART8 Peripheral Clocks Enable
-func (r *registerC1apb1lenrType) SetUsart8en(value bool) {
+func (r *RegisterC1apb1lenrType) SetUsart8en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1lenrFieldUsart8enMask)
 	} else {
@@ -10569,8 +11972,31 @@ func (r *registerC1apb1lenrType) SetUsart8en(value bool) {
 	}
 }
 
-// registerC1apb1henrType RCC APB1 Clock Register
-type registerC1apb1henrType uint32
+// RegisterC1apb1henrType RCC APB1 Clock Register
+type RegisterC1apb1henrType uint32
+
+func (r *RegisterC1apb1henrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1apb1henrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1apb1henrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1apb1henrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1apb1henrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1apb1henrFieldCrsenShift = 1
@@ -10578,12 +12004,12 @@ const (
 )
 
 // GetCrsen Clock Recovery System peripheral clock enable
-func (r *registerC1apb1henrType) GetCrsen() bool {
+func (r *RegisterC1apb1henrType) GetCrsen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1henrFieldCrsenMask) != 0
 }
 
 // SetCrsen Clock Recovery System peripheral clock enable
-func (r *registerC1apb1henrType) SetCrsen(value bool) {
+func (r *RegisterC1apb1henrType) SetCrsen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1henrFieldCrsenMask)
 	} else {
@@ -10597,12 +12023,12 @@ const (
 )
 
 // GetSwpen SWPMI Peripheral Clocks Enable
-func (r *registerC1apb1henrType) GetSwpen() bool {
+func (r *RegisterC1apb1henrType) GetSwpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1henrFieldSwpenMask) != 0
 }
 
 // SetSwpen SWPMI Peripheral Clocks Enable
-func (r *registerC1apb1henrType) SetSwpen(value bool) {
+func (r *RegisterC1apb1henrType) SetSwpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1henrFieldSwpenMask)
 	} else {
@@ -10616,12 +12042,12 @@ const (
 )
 
 // GetOpampen OPAMP peripheral clock enable
-func (r *registerC1apb1henrType) GetOpampen() bool {
+func (r *RegisterC1apb1henrType) GetOpampen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1henrFieldOpampenMask) != 0
 }
 
 // SetOpampen OPAMP peripheral clock enable
-func (r *registerC1apb1henrType) SetOpampen(value bool) {
+func (r *RegisterC1apb1henrType) SetOpampen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1henrFieldOpampenMask)
 	} else {
@@ -10635,12 +12061,12 @@ const (
 )
 
 // GetMdiosen MDIOS peripheral clock enable
-func (r *registerC1apb1henrType) GetMdiosen() bool {
+func (r *RegisterC1apb1henrType) GetMdiosen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1henrFieldMdiosenMask) != 0
 }
 
 // SetMdiosen MDIOS peripheral clock enable
-func (r *registerC1apb1henrType) SetMdiosen(value bool) {
+func (r *RegisterC1apb1henrType) SetMdiosen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1henrFieldMdiosenMask)
 	} else {
@@ -10654,12 +12080,12 @@ const (
 )
 
 // GetFdcanen FDCAN Peripheral Clocks Enable
-func (r *registerC1apb1henrType) GetFdcanen() bool {
+func (r *RegisterC1apb1henrType) GetFdcanen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1henrFieldFdcanenMask) != 0
 }
 
 // SetFdcanen FDCAN Peripheral Clocks Enable
-func (r *registerC1apb1henrType) SetFdcanen(value bool) {
+func (r *RegisterC1apb1henrType) SetFdcanen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1henrFieldFdcanenMask)
 	} else {
@@ -10667,8 +12093,31 @@ func (r *registerC1apb1henrType) SetFdcanen(value bool) {
 	}
 }
 
-// registerC1apb2enrType RCC APB2 Clock Register
-type registerC1apb2enrType uint32
+// RegisterC1apb2enrType RCC APB2 Clock Register
+type RegisterC1apb2enrType uint32
+
+func (r *RegisterC1apb2enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1apb2enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1apb2enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1apb2enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1apb2enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1apb2enrFieldTim1enShift = 0
@@ -10676,12 +12125,12 @@ const (
 )
 
 // GetTim1en TIM1 peripheral clock enable
-func (r *registerC1apb2enrType) GetTim1en() bool {
+func (r *RegisterC1apb2enrType) GetTim1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldTim1enMask) != 0
 }
 
 // SetTim1en TIM1 peripheral clock enable
-func (r *registerC1apb2enrType) SetTim1en(value bool) {
+func (r *RegisterC1apb2enrType) SetTim1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldTim1enMask)
 	} else {
@@ -10695,12 +12144,12 @@ const (
 )
 
 // GetTim8en TIM8 peripheral clock enable
-func (r *registerC1apb2enrType) GetTim8en() bool {
+func (r *RegisterC1apb2enrType) GetTim8en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldTim8enMask) != 0
 }
 
 // SetTim8en TIM8 peripheral clock enable
-func (r *registerC1apb2enrType) SetTim8en(value bool) {
+func (r *RegisterC1apb2enrType) SetTim8en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldTim8enMask)
 	} else {
@@ -10714,12 +12163,12 @@ const (
 )
 
 // GetUsart1en USART1 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) GetUsart1en() bool {
+func (r *RegisterC1apb2enrType) GetUsart1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldUsart1enMask) != 0
 }
 
 // SetUsart1en USART1 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) SetUsart1en(value bool) {
+func (r *RegisterC1apb2enrType) SetUsart1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldUsart1enMask)
 	} else {
@@ -10733,12 +12182,12 @@ const (
 )
 
 // GetUsart6en USART6 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) GetUsart6en() bool {
+func (r *RegisterC1apb2enrType) GetUsart6en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldUsart6enMask) != 0
 }
 
 // SetUsart6en USART6 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) SetUsart6en(value bool) {
+func (r *RegisterC1apb2enrType) SetUsart6en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldUsart6enMask)
 	} else {
@@ -10752,12 +12201,12 @@ const (
 )
 
 // GetSpi1en SPI1 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) GetSpi1en() bool {
+func (r *RegisterC1apb2enrType) GetSpi1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSpi1enMask) != 0
 }
 
 // SetSpi1en SPI1 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) SetSpi1en(value bool) {
+func (r *RegisterC1apb2enrType) SetSpi1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSpi1enMask)
 	} else {
@@ -10771,12 +12220,12 @@ const (
 )
 
 // GetSpi4en SPI4 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) GetSpi4en() bool {
+func (r *RegisterC1apb2enrType) GetSpi4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSpi4enMask) != 0
 }
 
 // SetSpi4en SPI4 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) SetSpi4en(value bool) {
+func (r *RegisterC1apb2enrType) SetSpi4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSpi4enMask)
 	} else {
@@ -10790,12 +12239,12 @@ const (
 )
 
 // GetTim15en TIM15 peripheral clock enable
-func (r *registerC1apb2enrType) GetTim15en() bool {
+func (r *RegisterC1apb2enrType) GetTim15en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldTim15enMask) != 0
 }
 
 // SetTim15en TIM15 peripheral clock enable
-func (r *registerC1apb2enrType) SetTim15en(value bool) {
+func (r *RegisterC1apb2enrType) SetTim15en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldTim15enMask)
 	} else {
@@ -10809,12 +12258,12 @@ const (
 )
 
 // GetTim16en TIM16 peripheral clock enable
-func (r *registerC1apb2enrType) GetTim16en() bool {
+func (r *RegisterC1apb2enrType) GetTim16en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldTim16enMask) != 0
 }
 
 // SetTim16en TIM16 peripheral clock enable
-func (r *registerC1apb2enrType) SetTim16en(value bool) {
+func (r *RegisterC1apb2enrType) SetTim16en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldTim16enMask)
 	} else {
@@ -10828,12 +12277,12 @@ const (
 )
 
 // GetTim17en TIM17 peripheral clock enable
-func (r *registerC1apb2enrType) GetTim17en() bool {
+func (r *RegisterC1apb2enrType) GetTim17en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldTim17enMask) != 0
 }
 
 // SetTim17en TIM17 peripheral clock enable
-func (r *registerC1apb2enrType) SetTim17en(value bool) {
+func (r *RegisterC1apb2enrType) SetTim17en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldTim17enMask)
 	} else {
@@ -10847,12 +12296,12 @@ const (
 )
 
 // GetSpi5en SPI5 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) GetSpi5en() bool {
+func (r *RegisterC1apb2enrType) GetSpi5en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSpi5enMask) != 0
 }
 
 // SetSpi5en SPI5 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) SetSpi5en(value bool) {
+func (r *RegisterC1apb2enrType) SetSpi5en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSpi5enMask)
 	} else {
@@ -10866,12 +12315,12 @@ const (
 )
 
 // GetSai1en SAI1 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) GetSai1en() bool {
+func (r *RegisterC1apb2enrType) GetSai1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSai1enMask) != 0
 }
 
 // SetSai1en SAI1 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) SetSai1en(value bool) {
+func (r *RegisterC1apb2enrType) SetSai1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSai1enMask)
 	} else {
@@ -10885,12 +12334,12 @@ const (
 )
 
 // GetSai2en SAI2 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) GetSai2en() bool {
+func (r *RegisterC1apb2enrType) GetSai2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSai2enMask) != 0
 }
 
 // SetSai2en SAI2 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) SetSai2en(value bool) {
+func (r *RegisterC1apb2enrType) SetSai2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSai2enMask)
 	} else {
@@ -10904,12 +12353,12 @@ const (
 )
 
 // GetSai3en SAI3 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) GetSai3en() bool {
+func (r *RegisterC1apb2enrType) GetSai3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldSai3enMask) != 0
 }
 
 // SetSai3en SAI3 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) SetSai3en(value bool) {
+func (r *RegisterC1apb2enrType) SetSai3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldSai3enMask)
 	} else {
@@ -10923,12 +12372,12 @@ const (
 )
 
 // GetDfsdm1en DFSDM1 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) GetDfsdm1en() bool {
+func (r *RegisterC1apb2enrType) GetDfsdm1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldDfsdm1enMask) != 0
 }
 
 // SetDfsdm1en DFSDM1 Peripheral Clocks Enable
-func (r *registerC1apb2enrType) SetDfsdm1en(value bool) {
+func (r *RegisterC1apb2enrType) SetDfsdm1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldDfsdm1enMask)
 	} else {
@@ -10942,12 +12391,12 @@ const (
 )
 
 // GetHrtimen HRTIM peripheral clock enable
-func (r *registerC1apb2enrType) GetHrtimen() bool {
+func (r *RegisterC1apb2enrType) GetHrtimen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2enrFieldHrtimenMask) != 0
 }
 
 // SetHrtimen HRTIM peripheral clock enable
-func (r *registerC1apb2enrType) SetHrtimen(value bool) {
+func (r *RegisterC1apb2enrType) SetHrtimen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2enrFieldHrtimenMask)
 	} else {
@@ -10955,8 +12404,31 @@ func (r *registerC1apb2enrType) SetHrtimen(value bool) {
 	}
 }
 
-// registerC1apb4enrType RCC APB4 Clock Register
-type registerC1apb4enrType uint32
+// RegisterC1apb4enrType RCC APB4 Clock Register
+type RegisterC1apb4enrType uint32
+
+func (r *RegisterC1apb4enrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1apb4enrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1apb4enrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1apb4enrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1apb4enrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1apb4enrFieldSyscfgenShift = 1
@@ -10964,12 +12436,12 @@ const (
 )
 
 // GetSyscfgen SYSCFG peripheral clock enable
-func (r *registerC1apb4enrType) GetSyscfgen() bool {
+func (r *RegisterC1apb4enrType) GetSyscfgen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldSyscfgenMask) != 0
 }
 
 // SetSyscfgen SYSCFG peripheral clock enable
-func (r *registerC1apb4enrType) SetSyscfgen(value bool) {
+func (r *RegisterC1apb4enrType) SetSyscfgen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldSyscfgenMask)
 	} else {
@@ -10983,12 +12455,12 @@ const (
 )
 
 // GetLpuart1en LPUART1 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) GetLpuart1en() bool {
+func (r *RegisterC1apb4enrType) GetLpuart1en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldLpuart1enMask) != 0
 }
 
 // SetLpuart1en LPUART1 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) SetLpuart1en(value bool) {
+func (r *RegisterC1apb4enrType) SetLpuart1en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldLpuart1enMask)
 	} else {
@@ -11002,12 +12474,12 @@ const (
 )
 
 // GetSpi6en SPI6 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) GetSpi6en() bool {
+func (r *RegisterC1apb4enrType) GetSpi6en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldSpi6enMask) != 0
 }
 
 // SetSpi6en SPI6 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) SetSpi6en(value bool) {
+func (r *RegisterC1apb4enrType) SetSpi6en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldSpi6enMask)
 	} else {
@@ -11021,12 +12493,12 @@ const (
 )
 
 // GetI2c4en I2C4 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) GetI2c4en() bool {
+func (r *RegisterC1apb4enrType) GetI2c4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldI2c4enMask) != 0
 }
 
 // SetI2c4en I2C4 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) SetI2c4en(value bool) {
+func (r *RegisterC1apb4enrType) SetI2c4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldI2c4enMask)
 	} else {
@@ -11040,12 +12512,12 @@ const (
 )
 
 // GetLptim2en LPTIM2 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) GetLptim2en() bool {
+func (r *RegisterC1apb4enrType) GetLptim2en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldLptim2enMask) != 0
 }
 
 // SetLptim2en LPTIM2 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) SetLptim2en(value bool) {
+func (r *RegisterC1apb4enrType) SetLptim2en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldLptim2enMask)
 	} else {
@@ -11059,12 +12531,12 @@ const (
 )
 
 // GetLptim3en LPTIM3 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) GetLptim3en() bool {
+func (r *RegisterC1apb4enrType) GetLptim3en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldLptim3enMask) != 0
 }
 
 // SetLptim3en LPTIM3 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) SetLptim3en(value bool) {
+func (r *RegisterC1apb4enrType) SetLptim3en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldLptim3enMask)
 	} else {
@@ -11078,12 +12550,12 @@ const (
 )
 
 // GetLptim4en LPTIM4 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) GetLptim4en() bool {
+func (r *RegisterC1apb4enrType) GetLptim4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldLptim4enMask) != 0
 }
 
 // SetLptim4en LPTIM4 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) SetLptim4en(value bool) {
+func (r *RegisterC1apb4enrType) SetLptim4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldLptim4enMask)
 	} else {
@@ -11097,12 +12569,12 @@ const (
 )
 
 // GetLptim5en LPTIM5 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) GetLptim5en() bool {
+func (r *RegisterC1apb4enrType) GetLptim5en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldLptim5enMask) != 0
 }
 
 // SetLptim5en LPTIM5 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) SetLptim5en(value bool) {
+func (r *RegisterC1apb4enrType) SetLptim5en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldLptim5enMask)
 	} else {
@@ -11116,12 +12588,12 @@ const (
 )
 
 // GetComp12en COMP1/2 peripheral clock enable
-func (r *registerC1apb4enrType) GetComp12en() bool {
+func (r *RegisterC1apb4enrType) GetComp12en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldComp12enMask) != 0
 }
 
 // SetComp12en COMP1/2 peripheral clock enable
-func (r *registerC1apb4enrType) SetComp12en(value bool) {
+func (r *RegisterC1apb4enrType) SetComp12en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldComp12enMask)
 	} else {
@@ -11135,12 +12607,12 @@ const (
 )
 
 // GetVrefen VREF peripheral clock enable
-func (r *registerC1apb4enrType) GetVrefen() bool {
+func (r *RegisterC1apb4enrType) GetVrefen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldVrefenMask) != 0
 }
 
 // SetVrefen VREF peripheral clock enable
-func (r *registerC1apb4enrType) SetVrefen(value bool) {
+func (r *RegisterC1apb4enrType) SetVrefen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldVrefenMask)
 	} else {
@@ -11154,12 +12626,12 @@ const (
 )
 
 // GetRtcapben RTC APB Clock Enable
-func (r *registerC1apb4enrType) GetRtcapben() bool {
+func (r *RegisterC1apb4enrType) GetRtcapben() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldRtcapbenMask) != 0
 }
 
 // SetRtcapben RTC APB Clock Enable
-func (r *registerC1apb4enrType) SetRtcapben(value bool) {
+func (r *RegisterC1apb4enrType) SetRtcapben(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldRtcapbenMask)
 	} else {
@@ -11173,12 +12645,12 @@ const (
 )
 
 // GetSai4en SAI4 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) GetSai4en() bool {
+func (r *RegisterC1apb4enrType) GetSai4en() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4enrFieldSai4enMask) != 0
 }
 
 // SetSai4en SAI4 Peripheral Clocks Enable
-func (r *registerC1apb4enrType) SetSai4en(value bool) {
+func (r *RegisterC1apb4enrType) SetSai4en(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4enrFieldSai4enMask)
 	} else {
@@ -11186,8 +12658,31 @@ func (r *registerC1apb4enrType) SetSai4en(value bool) {
 	}
 }
 
-// registerC1ahb3lpenrType RCC AHB3 Sleep Clock Register
-type registerC1ahb3lpenrType uint32
+// RegisterC1ahb3lpenrType RCC AHB3 Sleep Clock Register
+type RegisterC1ahb3lpenrType uint32
+
+func (r *RegisterC1ahb3lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1ahb3lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1ahb3lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1ahb3lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1ahb3lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1ahb3lpenrFieldMdmalpenShift = 0
@@ -11195,12 +12690,12 @@ const (
 )
 
 // GetMdmalpen MDMA Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) GetMdmalpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetMdmalpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldMdmalpenMask) != 0
 }
 
 // SetMdmalpen MDMA Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) SetMdmalpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetMdmalpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldMdmalpenMask)
 	} else {
@@ -11214,12 +12709,12 @@ const (
 )
 
 // GetDma2dlpen DMA2D Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) GetDma2dlpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetDma2dlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldDma2dlpenMask) != 0
 }
 
 // SetDma2dlpen DMA2D Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) SetDma2dlpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetDma2dlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldDma2dlpenMask)
 	} else {
@@ -11233,12 +12728,12 @@ const (
 )
 
 // GetJpgdeclpen JPGDEC Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) GetJpgdeclpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetJpgdeclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldJpgdeclpenMask) != 0
 }
 
 // SetJpgdeclpen JPGDEC Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) SetJpgdeclpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetJpgdeclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldJpgdeclpenMask)
 	} else {
@@ -11252,12 +12747,12 @@ const (
 )
 
 // GetFlitflpen FLITF Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) GetFlitflpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetFlitflpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldFlitflpenMask) != 0
 }
 
 // SetFlitflpen FLITF Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) SetFlitflpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetFlitflpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldFlitflpenMask)
 	} else {
@@ -11271,12 +12766,12 @@ const (
 )
 
 // GetFmclpen FMC Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) GetFmclpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetFmclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldFmclpenMask) != 0
 }
 
 // SetFmclpen FMC Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) SetFmclpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetFmclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldFmclpenMask)
 	} else {
@@ -11290,12 +12785,12 @@ const (
 )
 
 // GetQspilpen QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) GetQspilpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetQspilpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldQspilpenMask) != 0
 }
 
 // SetQspilpen QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) SetQspilpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetQspilpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldQspilpenMask)
 	} else {
@@ -11309,12 +12804,12 @@ const (
 )
 
 // GetSdmmc1lpen SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) GetSdmmc1lpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetSdmmc1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldSdmmc1lpenMask) != 0
 }
 
 // SetSdmmc1lpen SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode
-func (r *registerC1ahb3lpenrType) SetSdmmc1lpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetSdmmc1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldSdmmc1lpenMask)
 	} else {
@@ -11328,12 +12823,12 @@ const (
 )
 
 // GetD1dtcm1lpen D1DTCM1 Block Clock Enable During CSleep mode
-func (r *registerC1ahb3lpenrType) GetD1dtcm1lpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetD1dtcm1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldD1dtcm1lpenMask) != 0
 }
 
 // SetD1dtcm1lpen D1DTCM1 Block Clock Enable During CSleep mode
-func (r *registerC1ahb3lpenrType) SetD1dtcm1lpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetD1dtcm1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldD1dtcm1lpenMask)
 	} else {
@@ -11347,12 +12842,12 @@ const (
 )
 
 // GetDtcm2lpen D1 DTCM2 Block Clock Enable During CSleep mode
-func (r *registerC1ahb3lpenrType) GetDtcm2lpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetDtcm2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldDtcm2lpenMask) != 0
 }
 
 // SetDtcm2lpen D1 DTCM2 Block Clock Enable During CSleep mode
-func (r *registerC1ahb3lpenrType) SetDtcm2lpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetDtcm2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldDtcm2lpenMask)
 	} else {
@@ -11366,12 +12861,12 @@ const (
 )
 
 // GetItcmlpen D1ITCM Block Clock Enable During CSleep mode
-func (r *registerC1ahb3lpenrType) GetItcmlpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetItcmlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldItcmlpenMask) != 0
 }
 
 // SetItcmlpen D1ITCM Block Clock Enable During CSleep mode
-func (r *registerC1ahb3lpenrType) SetItcmlpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetItcmlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldItcmlpenMask)
 	} else {
@@ -11385,12 +12880,12 @@ const (
 )
 
 // GetAxisramlpen AXISRAM Block Clock Enable During CSleep mode
-func (r *registerC1ahb3lpenrType) GetAxisramlpen() bool {
+func (r *RegisterC1ahb3lpenrType) GetAxisramlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb3lpenrFieldAxisramlpenMask) != 0
 }
 
 // SetAxisramlpen AXISRAM Block Clock Enable During CSleep mode
-func (r *registerC1ahb3lpenrType) SetAxisramlpen(value bool) {
+func (r *RegisterC1ahb3lpenrType) SetAxisramlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb3lpenrFieldAxisramlpenMask)
 	} else {
@@ -11398,8 +12893,31 @@ func (r *registerC1ahb3lpenrType) SetAxisramlpen(value bool) {
 	}
 }
 
-// registerC1ahb1lpenrType RCC AHB1 Sleep Clock Register
-type registerC1ahb1lpenrType uint32
+// RegisterC1ahb1lpenrType RCC AHB1 Sleep Clock Register
+type RegisterC1ahb1lpenrType uint32
+
+func (r *RegisterC1ahb1lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1ahb1lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1ahb1lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1ahb1lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1ahb1lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1ahb1lpenrFieldDma1lpenShift = 0
@@ -11407,12 +12925,12 @@ const (
 )
 
 // GetDma1lpen DMA1 Clock Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) GetDma1lpen() bool {
+func (r *RegisterC1ahb1lpenrType) GetDma1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldDma1lpenMask) != 0
 }
 
 // SetDma1lpen DMA1 Clock Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) SetDma1lpen(value bool) {
+func (r *RegisterC1ahb1lpenrType) SetDma1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldDma1lpenMask)
 	} else {
@@ -11426,12 +12944,12 @@ const (
 )
 
 // GetDma2lpen DMA2 Clock Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) GetDma2lpen() bool {
+func (r *RegisterC1ahb1lpenrType) GetDma2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldDma2lpenMask) != 0
 }
 
 // SetDma2lpen DMA2 Clock Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) SetDma2lpen(value bool) {
+func (r *RegisterC1ahb1lpenrType) SetDma2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldDma2lpenMask)
 	} else {
@@ -11445,12 +12963,12 @@ const (
 )
 
 // GetAdc12lpen ADC1/2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) GetAdc12lpen() bool {
+func (r *RegisterC1ahb1lpenrType) GetAdc12lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldAdc12lpenMask) != 0
 }
 
 // SetAdc12lpen ADC1/2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) SetAdc12lpen(value bool) {
+func (r *RegisterC1ahb1lpenrType) SetAdc12lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldAdc12lpenMask)
 	} else {
@@ -11464,12 +12982,12 @@ const (
 )
 
 // GetEth1maclpen Ethernet MAC bus interface Clock Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) GetEth1maclpen() bool {
+func (r *RegisterC1ahb1lpenrType) GetEth1maclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldEth1maclpenMask) != 0
 }
 
 // SetEth1maclpen Ethernet MAC bus interface Clock Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) SetEth1maclpen(value bool) {
+func (r *RegisterC1ahb1lpenrType) SetEth1maclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldEth1maclpenMask)
 	} else {
@@ -11483,12 +13001,12 @@ const (
 )
 
 // GetEth1txlpen Ethernet Transmission Clock Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) GetEth1txlpen() bool {
+func (r *RegisterC1ahb1lpenrType) GetEth1txlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldEth1txlpenMask) != 0
 }
 
 // SetEth1txlpen Ethernet Transmission Clock Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) SetEth1txlpen(value bool) {
+func (r *RegisterC1ahb1lpenrType) SetEth1txlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldEth1txlpenMask)
 	} else {
@@ -11502,12 +13020,12 @@ const (
 )
 
 // GetEth1rxlpen Ethernet Reception Clock Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) GetEth1rxlpen() bool {
+func (r *RegisterC1ahb1lpenrType) GetEth1rxlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldEth1rxlpenMask) != 0
 }
 
 // SetEth1rxlpen Ethernet Reception Clock Enable During CSleep Mode
-func (r *registerC1ahb1lpenrType) SetEth1rxlpen(value bool) {
+func (r *RegisterC1ahb1lpenrType) SetEth1rxlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldEth1rxlpenMask)
 	} else {
@@ -11521,12 +13039,12 @@ const (
 )
 
 // GetUsb1otglpen USB1OTG peripheral clock enable during CSleep mode
-func (r *registerC1ahb1lpenrType) GetUsb1otglpen() bool {
+func (r *RegisterC1ahb1lpenrType) GetUsb1otglpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldUsb1otglpenMask) != 0
 }
 
 // SetUsb1otglpen USB1OTG peripheral clock enable during CSleep mode
-func (r *registerC1ahb1lpenrType) SetUsb1otglpen(value bool) {
+func (r *RegisterC1ahb1lpenrType) SetUsb1otglpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldUsb1otglpenMask)
 	} else {
@@ -11540,12 +13058,12 @@ const (
 )
 
 // GetUsb1ulpilpen USB_PHY1 clock enable during CSleep mode
-func (r *registerC1ahb1lpenrType) GetUsb1ulpilpen() bool {
+func (r *RegisterC1ahb1lpenrType) GetUsb1ulpilpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldUsb1ulpilpenMask) != 0
 }
 
 // SetUsb1ulpilpen USB_PHY1 clock enable during CSleep mode
-func (r *registerC1ahb1lpenrType) SetUsb1ulpilpen(value bool) {
+func (r *RegisterC1ahb1lpenrType) SetUsb1ulpilpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldUsb1ulpilpenMask)
 	} else {
@@ -11559,12 +13077,12 @@ const (
 )
 
 // GetUsb2otglpen USB2OTG peripheral clock enable during CSleep mode
-func (r *registerC1ahb1lpenrType) GetUsb2otglpen() bool {
+func (r *RegisterC1ahb1lpenrType) GetUsb2otglpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldUsb2otglpenMask) != 0
 }
 
 // SetUsb2otglpen USB2OTG peripheral clock enable during CSleep mode
-func (r *registerC1ahb1lpenrType) SetUsb2otglpen(value bool) {
+func (r *RegisterC1ahb1lpenrType) SetUsb2otglpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldUsb2otglpenMask)
 	} else {
@@ -11578,12 +13096,12 @@ const (
 )
 
 // GetUsb2ulpilpen USB_PHY2 clocks enable during CSleep mode
-func (r *registerC1ahb1lpenrType) GetUsb2ulpilpen() bool {
+func (r *RegisterC1ahb1lpenrType) GetUsb2ulpilpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb1lpenrFieldUsb2ulpilpenMask) != 0
 }
 
 // SetUsb2ulpilpen USB_PHY2 clocks enable during CSleep mode
-func (r *registerC1ahb1lpenrType) SetUsb2ulpilpen(value bool) {
+func (r *RegisterC1ahb1lpenrType) SetUsb2ulpilpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb1lpenrFieldUsb2ulpilpenMask)
 	} else {
@@ -11591,8 +13109,31 @@ func (r *registerC1ahb1lpenrType) SetUsb2ulpilpen(value bool) {
 	}
 }
 
-// registerC1ahb2lpenrType RCC AHB2 Sleep Clock Register
-type registerC1ahb2lpenrType uint32
+// RegisterC1ahb2lpenrType RCC AHB2 Sleep Clock Register
+type RegisterC1ahb2lpenrType uint32
+
+func (r *RegisterC1ahb2lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1ahb2lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1ahb2lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1ahb2lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1ahb2lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1ahb2lpenrFieldCamitflpenShift = 0
@@ -11600,12 +13141,12 @@ const (
 )
 
 // GetCamitflpen CAMITF peripheral clock enable during CSleep mode
-func (r *registerC1ahb2lpenrType) GetCamitflpen() bool {
+func (r *RegisterC1ahb2lpenrType) GetCamitflpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldCamitflpenMask) != 0
 }
 
 // SetCamitflpen CAMITF peripheral clock enable during CSleep mode
-func (r *registerC1ahb2lpenrType) SetCamitflpen(value bool) {
+func (r *RegisterC1ahb2lpenrType) SetCamitflpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldCamitflpenMask)
 	} else {
@@ -11619,12 +13160,12 @@ const (
 )
 
 // GetCryptlpen CRYPT peripheral clock enable during CSleep mode
-func (r *registerC1ahb2lpenrType) GetCryptlpen() bool {
+func (r *RegisterC1ahb2lpenrType) GetCryptlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldCryptlpenMask) != 0
 }
 
 // SetCryptlpen CRYPT peripheral clock enable during CSleep mode
-func (r *registerC1ahb2lpenrType) SetCryptlpen(value bool) {
+func (r *RegisterC1ahb2lpenrType) SetCryptlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldCryptlpenMask)
 	} else {
@@ -11638,12 +13179,12 @@ const (
 )
 
 // GetHashlpen HASH peripheral clock enable during CSleep mode
-func (r *registerC1ahb2lpenrType) GetHashlpen() bool {
+func (r *RegisterC1ahb2lpenrType) GetHashlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldHashlpenMask) != 0
 }
 
 // SetHashlpen HASH peripheral clock enable during CSleep mode
-func (r *registerC1ahb2lpenrType) SetHashlpen(value bool) {
+func (r *RegisterC1ahb2lpenrType) SetHashlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldHashlpenMask)
 	} else {
@@ -11657,12 +13198,12 @@ const (
 )
 
 // GetRnglpen RNG peripheral clock enable during CSleep mode
-func (r *registerC1ahb2lpenrType) GetRnglpen() bool {
+func (r *RegisterC1ahb2lpenrType) GetRnglpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldRnglpenMask) != 0
 }
 
 // SetRnglpen RNG peripheral clock enable during CSleep mode
-func (r *registerC1ahb2lpenrType) SetRnglpen(value bool) {
+func (r *RegisterC1ahb2lpenrType) SetRnglpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldRnglpenMask)
 	} else {
@@ -11676,12 +13217,12 @@ const (
 )
 
 // GetSdmmc2lpen SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode
-func (r *registerC1ahb2lpenrType) GetSdmmc2lpen() bool {
+func (r *RegisterC1ahb2lpenrType) GetSdmmc2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldSdmmc2lpenMask) != 0
 }
 
 // SetSdmmc2lpen SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode
-func (r *registerC1ahb2lpenrType) SetSdmmc2lpen(value bool) {
+func (r *RegisterC1ahb2lpenrType) SetSdmmc2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldSdmmc2lpenMask)
 	} else {
@@ -11695,12 +13236,12 @@ const (
 )
 
 // GetSram1lpen SRAM1 Clock Enable During CSleep Mode
-func (r *registerC1ahb2lpenrType) GetSram1lpen() bool {
+func (r *RegisterC1ahb2lpenrType) GetSram1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldSram1lpenMask) != 0
 }
 
 // SetSram1lpen SRAM1 Clock Enable During CSleep Mode
-func (r *registerC1ahb2lpenrType) SetSram1lpen(value bool) {
+func (r *RegisterC1ahb2lpenrType) SetSram1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldSram1lpenMask)
 	} else {
@@ -11714,12 +13255,12 @@ const (
 )
 
 // GetSram2lpen SRAM2 Clock Enable During CSleep Mode
-func (r *registerC1ahb2lpenrType) GetSram2lpen() bool {
+func (r *RegisterC1ahb2lpenrType) GetSram2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldSram2lpenMask) != 0
 }
 
 // SetSram2lpen SRAM2 Clock Enable During CSleep Mode
-func (r *registerC1ahb2lpenrType) SetSram2lpen(value bool) {
+func (r *RegisterC1ahb2lpenrType) SetSram2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldSram2lpenMask)
 	} else {
@@ -11733,12 +13274,12 @@ const (
 )
 
 // GetSram3lpen SRAM3 Clock Enable During CSleep Mode
-func (r *registerC1ahb2lpenrType) GetSram3lpen() bool {
+func (r *RegisterC1ahb2lpenrType) GetSram3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb2lpenrFieldSram3lpenMask) != 0
 }
 
 // SetSram3lpen SRAM3 Clock Enable During CSleep Mode
-func (r *registerC1ahb2lpenrType) SetSram3lpen(value bool) {
+func (r *RegisterC1ahb2lpenrType) SetSram3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb2lpenrFieldSram3lpenMask)
 	} else {
@@ -11746,8 +13287,31 @@ func (r *registerC1ahb2lpenrType) SetSram3lpen(value bool) {
 	}
 }
 
-// registerC1ahb4lpenrType RCC AHB4 Sleep Clock Register
-type registerC1ahb4lpenrType uint32
+// RegisterC1ahb4lpenrType RCC AHB4 Sleep Clock Register
+type RegisterC1ahb4lpenrType uint32
+
+func (r *RegisterC1ahb4lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1ahb4lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1ahb4lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1ahb4lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1ahb4lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1ahb4lpenrFieldGpioalpenShift = 0
@@ -11755,12 +13319,12 @@ const (
 )
 
 // GetGpioalpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpioalpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpioalpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioalpenMask) != 0
 }
 
 // SetGpioalpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpioalpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpioalpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioalpenMask)
 	} else {
@@ -11774,12 +13338,12 @@ const (
 )
 
 // GetGpioblpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpioblpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpioblpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioblpenMask) != 0
 }
 
 // SetGpioblpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpioblpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpioblpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioblpenMask)
 	} else {
@@ -11793,12 +13357,12 @@ const (
 )
 
 // GetGpioclpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpioclpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpioclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioclpenMask) != 0
 }
 
 // SetGpioclpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpioclpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpioclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioclpenMask)
 	} else {
@@ -11812,12 +13376,12 @@ const (
 )
 
 // GetGpiodlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpiodlpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpiodlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpiodlpenMask) != 0
 }
 
 // SetGpiodlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpiodlpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpiodlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpiodlpenMask)
 	} else {
@@ -11831,12 +13395,12 @@ const (
 )
 
 // GetGpioelpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpioelpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpioelpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioelpenMask) != 0
 }
 
 // SetGpioelpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpioelpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpioelpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioelpenMask)
 	} else {
@@ -11850,12 +13414,12 @@ const (
 )
 
 // GetGpioflpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpioflpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpioflpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioflpenMask) != 0
 }
 
 // SetGpioflpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpioflpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpioflpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioflpenMask)
 	} else {
@@ -11869,12 +13433,12 @@ const (
 )
 
 // GetGpioglpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpioglpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpioglpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioglpenMask) != 0
 }
 
 // SetGpioglpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpioglpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpioglpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioglpenMask)
 	} else {
@@ -11888,12 +13452,12 @@ const (
 )
 
 // GetGpiohlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpiohlpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpiohlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpiohlpenMask) != 0
 }
 
 // SetGpiohlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpiohlpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpiohlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpiohlpenMask)
 	} else {
@@ -11907,12 +13471,12 @@ const (
 )
 
 // GetGpioilpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpioilpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpioilpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioilpenMask) != 0
 }
 
 // SetGpioilpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpioilpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpioilpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioilpenMask)
 	} else {
@@ -11926,12 +13490,12 @@ const (
 )
 
 // GetGpiojlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpiojlpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpiojlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpiojlpenMask) != 0
 }
 
 // SetGpiojlpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpiojlpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpiojlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpiojlpenMask)
 	} else {
@@ -11945,12 +13509,12 @@ const (
 )
 
 // GetGpioklpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetGpioklpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetGpioklpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldGpioklpenMask) != 0
 }
 
 // SetGpioklpen GPIO peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetGpioklpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetGpioklpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldGpioklpenMask)
 	} else {
@@ -11964,12 +13528,12 @@ const (
 )
 
 // GetCrclpen CRC peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) GetCrclpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetCrclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldCrclpenMask) != 0
 }
 
 // SetCrclpen CRC peripheral clock enable during CSleep mode
-func (r *registerC1ahb4lpenrType) SetCrclpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetCrclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldCrclpenMask)
 	} else {
@@ -11983,12 +13547,12 @@ const (
 )
 
 // GetBdmalpen BDMA Clock Enable During CSleep Mode
-func (r *registerC1ahb4lpenrType) GetBdmalpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetBdmalpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldBdmalpenMask) != 0
 }
 
 // SetBdmalpen BDMA Clock Enable During CSleep Mode
-func (r *registerC1ahb4lpenrType) SetBdmalpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetBdmalpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldBdmalpenMask)
 	} else {
@@ -12002,12 +13566,12 @@ const (
 )
 
 // GetAdc3lpen ADC3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1ahb4lpenrType) GetAdc3lpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetAdc3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldAdc3lpenMask) != 0
 }
 
 // SetAdc3lpen ADC3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1ahb4lpenrType) SetAdc3lpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetAdc3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldAdc3lpenMask)
 	} else {
@@ -12021,12 +13585,12 @@ const (
 )
 
 // GetBkpramlpen Backup RAM Clock Enable During CSleep Mode
-func (r *registerC1ahb4lpenrType) GetBkpramlpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetBkpramlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldBkpramlpenMask) != 0
 }
 
 // SetBkpramlpen Backup RAM Clock Enable During CSleep Mode
-func (r *registerC1ahb4lpenrType) SetBkpramlpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetBkpramlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldBkpramlpenMask)
 	} else {
@@ -12040,12 +13604,12 @@ const (
 )
 
 // GetSram4lpen SRAM4 Clock Enable During CSleep Mode
-func (r *registerC1ahb4lpenrType) GetSram4lpen() bool {
+func (r *RegisterC1ahb4lpenrType) GetSram4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1ahb4lpenrFieldSram4lpenMask) != 0
 }
 
 // SetSram4lpen SRAM4 Clock Enable During CSleep Mode
-func (r *registerC1ahb4lpenrType) SetSram4lpen(value bool) {
+func (r *RegisterC1ahb4lpenrType) SetSram4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1ahb4lpenrFieldSram4lpenMask)
 	} else {
@@ -12053,8 +13617,31 @@ func (r *registerC1ahb4lpenrType) SetSram4lpen(value bool) {
 	}
 }
 
-// registerC1apb3lpenrType RCC APB3 Sleep Clock Register
-type registerC1apb3lpenrType uint32
+// RegisterC1apb3lpenrType RCC APB3 Sleep Clock Register
+type RegisterC1apb3lpenrType uint32
+
+func (r *RegisterC1apb3lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1apb3lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1apb3lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1apb3lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1apb3lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1apb3lpenrFieldLtdclpenShift = 3
@@ -12062,12 +13649,12 @@ const (
 )
 
 // GetLtdclpen LTDC peripheral clock enable during CSleep mode
-func (r *registerC1apb3lpenrType) GetLtdclpen() bool {
+func (r *RegisterC1apb3lpenrType) GetLtdclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb3lpenrFieldLtdclpenMask) != 0
 }
 
 // SetLtdclpen LTDC peripheral clock enable during CSleep mode
-func (r *registerC1apb3lpenrType) SetLtdclpen(value bool) {
+func (r *RegisterC1apb3lpenrType) SetLtdclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb3lpenrFieldLtdclpenMask)
 	} else {
@@ -12081,12 +13668,12 @@ const (
 )
 
 // GetWwdg1lpen WWDG1 Clock Enable During CSleep Mode
-func (r *registerC1apb3lpenrType) GetWwdg1lpen() bool {
+func (r *RegisterC1apb3lpenrType) GetWwdg1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb3lpenrFieldWwdg1lpenMask) != 0
 }
 
 // SetWwdg1lpen WWDG1 Clock Enable During CSleep Mode
-func (r *registerC1apb3lpenrType) SetWwdg1lpen(value bool) {
+func (r *RegisterC1apb3lpenrType) SetWwdg1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb3lpenrFieldWwdg1lpenMask)
 	} else {
@@ -12094,8 +13681,31 @@ func (r *registerC1apb3lpenrType) SetWwdg1lpen(value bool) {
 	}
 }
 
-// registerC1apb1llpenrType RCC APB1 Low Sleep Clock Register
-type registerC1apb1llpenrType uint32
+// RegisterC1apb1llpenrType RCC APB1 Low Sleep Clock Register
+type RegisterC1apb1llpenrType uint32
+
+func (r *RegisterC1apb1llpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1apb1llpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1apb1llpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1apb1llpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1apb1llpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1apb1llpenrFieldTim2lpenShift = 0
@@ -12103,12 +13713,12 @@ const (
 )
 
 // GetTim2lpen TIM2 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) GetTim2lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetTim2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim2lpenMask) != 0
 }
 
 // SetTim2lpen TIM2 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) SetTim2lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetTim2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim2lpenMask)
 	} else {
@@ -12122,12 +13732,12 @@ const (
 )
 
 // GetTim3lpen TIM3 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) GetTim3lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetTim3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim3lpenMask) != 0
 }
 
 // SetTim3lpen TIM3 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) SetTim3lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetTim3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim3lpenMask)
 	} else {
@@ -12141,12 +13751,12 @@ const (
 )
 
 // GetTim4lpen TIM4 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) GetTim4lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetTim4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim4lpenMask) != 0
 }
 
 // SetTim4lpen TIM4 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) SetTim4lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetTim4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim4lpenMask)
 	} else {
@@ -12160,12 +13770,12 @@ const (
 )
 
 // GetTim5lpen TIM5 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) GetTim5lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetTim5lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim5lpenMask) != 0
 }
 
 // SetTim5lpen TIM5 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) SetTim5lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetTim5lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim5lpenMask)
 	} else {
@@ -12179,12 +13789,12 @@ const (
 )
 
 // GetTim6lpen TIM6 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) GetTim6lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetTim6lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim6lpenMask) != 0
 }
 
 // SetTim6lpen TIM6 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) SetTim6lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetTim6lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim6lpenMask)
 	} else {
@@ -12198,12 +13808,12 @@ const (
 )
 
 // GetTim7lpen TIM7 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) GetTim7lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetTim7lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim7lpenMask) != 0
 }
 
 // SetTim7lpen TIM7 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) SetTim7lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetTim7lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim7lpenMask)
 	} else {
@@ -12217,12 +13827,12 @@ const (
 )
 
 // GetTim12lpen TIM12 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) GetTim12lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetTim12lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim12lpenMask) != 0
 }
 
 // SetTim12lpen TIM12 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) SetTim12lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetTim12lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim12lpenMask)
 	} else {
@@ -12236,12 +13846,12 @@ const (
 )
 
 // GetTim13lpen TIM13 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) GetTim13lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetTim13lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim13lpenMask) != 0
 }
 
 // SetTim13lpen TIM13 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) SetTim13lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetTim13lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim13lpenMask)
 	} else {
@@ -12255,12 +13865,12 @@ const (
 )
 
 // GetTim14lpen TIM14 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) GetTim14lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetTim14lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldTim14lpenMask) != 0
 }
 
 // SetTim14lpen TIM14 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) SetTim14lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetTim14lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldTim14lpenMask)
 	} else {
@@ -12274,12 +13884,12 @@ const (
 )
 
 // GetLptim1lpen LPTIM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetLptim1lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetLptim1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldLptim1lpenMask) != 0
 }
 
 // SetLptim1lpen LPTIM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetLptim1lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetLptim1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldLptim1lpenMask)
 	} else {
@@ -12293,12 +13903,12 @@ const (
 )
 
 // GetSpi2lpen SPI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetSpi2lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetSpi2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldSpi2lpenMask) != 0
 }
 
 // SetSpi2lpen SPI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetSpi2lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetSpi2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldSpi2lpenMask)
 	} else {
@@ -12312,12 +13922,12 @@ const (
 )
 
 // GetSpi3lpen SPI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetSpi3lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetSpi3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldSpi3lpenMask) != 0
 }
 
 // SetSpi3lpen SPI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetSpi3lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetSpi3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldSpi3lpenMask)
 	} else {
@@ -12331,12 +13941,12 @@ const (
 )
 
 // GetSpdifrxlpen SPDIFRX Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetSpdifrxlpen() bool {
+func (r *RegisterC1apb1llpenrType) GetSpdifrxlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldSpdifrxlpenMask) != 0
 }
 
 // SetSpdifrxlpen SPDIFRX Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetSpdifrxlpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetSpdifrxlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldSpdifrxlpenMask)
 	} else {
@@ -12350,12 +13960,12 @@ const (
 )
 
 // GetUsart2lpen USART2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetUsart2lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetUsart2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUsart2lpenMask) != 0
 }
 
 // SetUsart2lpen USART2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetUsart2lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetUsart2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUsart2lpenMask)
 	} else {
@@ -12369,12 +13979,12 @@ const (
 )
 
 // GetUsart3lpen USART3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetUsart3lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetUsart3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUsart3lpenMask) != 0
 }
 
 // SetUsart3lpen USART3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetUsart3lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetUsart3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUsart3lpenMask)
 	} else {
@@ -12388,12 +13998,12 @@ const (
 )
 
 // GetUart4lpen UART4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetUart4lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetUart4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUart4lpenMask) != 0
 }
 
 // SetUart4lpen UART4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetUart4lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetUart4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUart4lpenMask)
 	} else {
@@ -12407,12 +14017,12 @@ const (
 )
 
 // GetUart5lpen UART5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetUart5lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetUart5lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUart5lpenMask) != 0
 }
 
 // SetUart5lpen UART5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetUart5lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetUart5lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUart5lpenMask)
 	} else {
@@ -12426,12 +14036,12 @@ const (
 )
 
 // GetI2c1lpen I2C1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetI2c1lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetI2c1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldI2c1lpenMask) != 0
 }
 
 // SetI2c1lpen I2C1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetI2c1lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetI2c1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldI2c1lpenMask)
 	} else {
@@ -12445,12 +14055,12 @@ const (
 )
 
 // GetI2c2lpen I2C2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetI2c2lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetI2c2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldI2c2lpenMask) != 0
 }
 
 // SetI2c2lpen I2C2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetI2c2lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetI2c2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldI2c2lpenMask)
 	} else {
@@ -12464,12 +14074,12 @@ const (
 )
 
 // GetI2c3lpen I2C3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetI2c3lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetI2c3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldI2c3lpenMask) != 0
 }
 
 // SetI2c3lpen I2C3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetI2c3lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetI2c3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldI2c3lpenMask)
 	} else {
@@ -12483,12 +14093,12 @@ const (
 )
 
 // GetHdmiceclpen HDMI-CEC Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetHdmiceclpen() bool {
+func (r *RegisterC1apb1llpenrType) GetHdmiceclpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldHdmiceclpenMask) != 0
 }
 
 // SetHdmiceclpen HDMI-CEC Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetHdmiceclpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetHdmiceclpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldHdmiceclpenMask)
 	} else {
@@ -12502,12 +14112,12 @@ const (
 )
 
 // GetDac12lpen DAC1/2 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) GetDac12lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetDac12lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldDac12lpenMask) != 0
 }
 
 // SetDac12lpen DAC1/2 peripheral clock enable during CSleep mode
-func (r *registerC1apb1llpenrType) SetDac12lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetDac12lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldDac12lpenMask)
 	} else {
@@ -12521,12 +14131,12 @@ const (
 )
 
 // GetUsart7lpen USART7 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetUsart7lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetUsart7lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUsart7lpenMask) != 0
 }
 
 // SetUsart7lpen USART7 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetUsart7lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetUsart7lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUsart7lpenMask)
 	} else {
@@ -12540,12 +14150,12 @@ const (
 )
 
 // GetUsart8lpen USART8 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) GetUsart8lpen() bool {
+func (r *RegisterC1apb1llpenrType) GetUsart8lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1llpenrFieldUsart8lpenMask) != 0
 }
 
 // SetUsart8lpen USART8 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1llpenrType) SetUsart8lpen(value bool) {
+func (r *RegisterC1apb1llpenrType) SetUsart8lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1llpenrFieldUsart8lpenMask)
 	} else {
@@ -12553,8 +14163,31 @@ func (r *registerC1apb1llpenrType) SetUsart8lpen(value bool) {
 	}
 }
 
-// registerC1apb1hlpenrType RCC APB1 High Sleep Clock Register
-type registerC1apb1hlpenrType uint32
+// RegisterC1apb1hlpenrType RCC APB1 High Sleep Clock Register
+type RegisterC1apb1hlpenrType uint32
+
+func (r *RegisterC1apb1hlpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1apb1hlpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1apb1hlpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1apb1hlpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1apb1hlpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1apb1hlpenrFieldCrslpenShift = 1
@@ -12562,12 +14195,12 @@ const (
 )
 
 // GetCrslpen Clock Recovery System peripheral clock enable during CSleep mode
-func (r *registerC1apb1hlpenrType) GetCrslpen() bool {
+func (r *RegisterC1apb1hlpenrType) GetCrslpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1hlpenrFieldCrslpenMask) != 0
 }
 
 // SetCrslpen Clock Recovery System peripheral clock enable during CSleep mode
-func (r *registerC1apb1hlpenrType) SetCrslpen(value bool) {
+func (r *RegisterC1apb1hlpenrType) SetCrslpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1hlpenrFieldCrslpenMask)
 	} else {
@@ -12581,12 +14214,12 @@ const (
 )
 
 // GetSwplpen SWPMI Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1hlpenrType) GetSwplpen() bool {
+func (r *RegisterC1apb1hlpenrType) GetSwplpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1hlpenrFieldSwplpenMask) != 0
 }
 
 // SetSwplpen SWPMI Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1hlpenrType) SetSwplpen(value bool) {
+func (r *RegisterC1apb1hlpenrType) SetSwplpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1hlpenrFieldSwplpenMask)
 	} else {
@@ -12600,12 +14233,12 @@ const (
 )
 
 // GetOpamplpen OPAMP peripheral clock enable during CSleep mode
-func (r *registerC1apb1hlpenrType) GetOpamplpen() bool {
+func (r *RegisterC1apb1hlpenrType) GetOpamplpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1hlpenrFieldOpamplpenMask) != 0
 }
 
 // SetOpamplpen OPAMP peripheral clock enable during CSleep mode
-func (r *registerC1apb1hlpenrType) SetOpamplpen(value bool) {
+func (r *RegisterC1apb1hlpenrType) SetOpamplpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1hlpenrFieldOpamplpenMask)
 	} else {
@@ -12619,12 +14252,12 @@ const (
 )
 
 // GetMdioslpen MDIOS peripheral clock enable during CSleep mode
-func (r *registerC1apb1hlpenrType) GetMdioslpen() bool {
+func (r *RegisterC1apb1hlpenrType) GetMdioslpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1hlpenrFieldMdioslpenMask) != 0
 }
 
 // SetMdioslpen MDIOS peripheral clock enable during CSleep mode
-func (r *registerC1apb1hlpenrType) SetMdioslpen(value bool) {
+func (r *RegisterC1apb1hlpenrType) SetMdioslpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1hlpenrFieldMdioslpenMask)
 	} else {
@@ -12638,12 +14271,12 @@ const (
 )
 
 // GetFdcanlpen FDCAN Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1hlpenrType) GetFdcanlpen() bool {
+func (r *RegisterC1apb1hlpenrType) GetFdcanlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb1hlpenrFieldFdcanlpenMask) != 0
 }
 
 // SetFdcanlpen FDCAN Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb1hlpenrType) SetFdcanlpen(value bool) {
+func (r *RegisterC1apb1hlpenrType) SetFdcanlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb1hlpenrFieldFdcanlpenMask)
 	} else {
@@ -12651,8 +14284,31 @@ func (r *registerC1apb1hlpenrType) SetFdcanlpen(value bool) {
 	}
 }
 
-// registerC1apb2lpenrType RCC APB2 Sleep Clock Register
-type registerC1apb2lpenrType uint32
+// RegisterC1apb2lpenrType RCC APB2 Sleep Clock Register
+type RegisterC1apb2lpenrType uint32
+
+func (r *RegisterC1apb2lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1apb2lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1apb2lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1apb2lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1apb2lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1apb2lpenrFieldTim1lpenShift = 0
@@ -12660,12 +14316,12 @@ const (
 )
 
 // GetTim1lpen TIM1 peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) GetTim1lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetTim1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldTim1lpenMask) != 0
 }
 
 // SetTim1lpen TIM1 peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) SetTim1lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetTim1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldTim1lpenMask)
 	} else {
@@ -12679,12 +14335,12 @@ const (
 )
 
 // GetTim8lpen TIM8 peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) GetTim8lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetTim8lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldTim8lpenMask) != 0
 }
 
 // SetTim8lpen TIM8 peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) SetTim8lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetTim8lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldTim8lpenMask)
 	} else {
@@ -12698,12 +14354,12 @@ const (
 )
 
 // GetUsart1lpen USART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) GetUsart1lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetUsart1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldUsart1lpenMask) != 0
 }
 
 // SetUsart1lpen USART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) SetUsart1lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetUsart1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldUsart1lpenMask)
 	} else {
@@ -12717,12 +14373,12 @@ const (
 )
 
 // GetUsart6lpen USART6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) GetUsart6lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetUsart6lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldUsart6lpenMask) != 0
 }
 
 // SetUsart6lpen USART6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) SetUsart6lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetUsart6lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldUsart6lpenMask)
 	} else {
@@ -12736,12 +14392,12 @@ const (
 )
 
 // GetSpi1lpen SPI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) GetSpi1lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetSpi1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSpi1lpenMask) != 0
 }
 
 // SetSpi1lpen SPI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) SetSpi1lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetSpi1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSpi1lpenMask)
 	} else {
@@ -12755,12 +14411,12 @@ const (
 )
 
 // GetSpi4lpen SPI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) GetSpi4lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetSpi4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSpi4lpenMask) != 0
 }
 
 // SetSpi4lpen SPI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) SetSpi4lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetSpi4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSpi4lpenMask)
 	} else {
@@ -12774,12 +14430,12 @@ const (
 )
 
 // GetTim15lpen TIM15 peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) GetTim15lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetTim15lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldTim15lpenMask) != 0
 }
 
 // SetTim15lpen TIM15 peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) SetTim15lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetTim15lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldTim15lpenMask)
 	} else {
@@ -12793,12 +14449,12 @@ const (
 )
 
 // GetTim16lpen TIM16 peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) GetTim16lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetTim16lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldTim16lpenMask) != 0
 }
 
 // SetTim16lpen TIM16 peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) SetTim16lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetTim16lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldTim16lpenMask)
 	} else {
@@ -12812,12 +14468,12 @@ const (
 )
 
 // GetTim17lpen TIM17 peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) GetTim17lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetTim17lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldTim17lpenMask) != 0
 }
 
 // SetTim17lpen TIM17 peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) SetTim17lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetTim17lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldTim17lpenMask)
 	} else {
@@ -12831,12 +14487,12 @@ const (
 )
 
 // GetSpi5lpen SPI5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) GetSpi5lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetSpi5lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSpi5lpenMask) != 0
 }
 
 // SetSpi5lpen SPI5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) SetSpi5lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetSpi5lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSpi5lpenMask)
 	} else {
@@ -12850,12 +14506,12 @@ const (
 )
 
 // GetSai1lpen SAI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) GetSai1lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetSai1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSai1lpenMask) != 0
 }
 
 // SetSai1lpen SAI1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) SetSai1lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetSai1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSai1lpenMask)
 	} else {
@@ -12869,12 +14525,12 @@ const (
 )
 
 // GetSai2lpen SAI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) GetSai2lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetSai2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSai2lpenMask) != 0
 }
 
 // SetSai2lpen SAI2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) SetSai2lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetSai2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSai2lpenMask)
 	} else {
@@ -12888,12 +14544,12 @@ const (
 )
 
 // GetSai3lpen SAI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) GetSai3lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetSai3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldSai3lpenMask) != 0
 }
 
 // SetSai3lpen SAI3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) SetSai3lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetSai3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldSai3lpenMask)
 	} else {
@@ -12907,12 +14563,12 @@ const (
 )
 
 // GetDfsdm1lpen DFSDM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) GetDfsdm1lpen() bool {
+func (r *RegisterC1apb2lpenrType) GetDfsdm1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldDfsdm1lpenMask) != 0
 }
 
 // SetDfsdm1lpen DFSDM1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb2lpenrType) SetDfsdm1lpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetDfsdm1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldDfsdm1lpenMask)
 	} else {
@@ -12926,12 +14582,12 @@ const (
 )
 
 // GetHrtimlpen HRTIM peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) GetHrtimlpen() bool {
+func (r *RegisterC1apb2lpenrType) GetHrtimlpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb2lpenrFieldHrtimlpenMask) != 0
 }
 
 // SetHrtimlpen HRTIM peripheral clock enable during CSleep mode
-func (r *registerC1apb2lpenrType) SetHrtimlpen(value bool) {
+func (r *RegisterC1apb2lpenrType) SetHrtimlpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb2lpenrFieldHrtimlpenMask)
 	} else {
@@ -12939,8 +14595,31 @@ func (r *registerC1apb2lpenrType) SetHrtimlpen(value bool) {
 	}
 }
 
-// registerC1apb4lpenrType RCC APB4 Sleep Clock Register
-type registerC1apb4lpenrType uint32
+// RegisterC1apb4lpenrType RCC APB4 Sleep Clock Register
+type RegisterC1apb4lpenrType uint32
+
+func (r *RegisterC1apb4lpenrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1apb4lpenrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1apb4lpenrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1apb4lpenrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1apb4lpenrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1apb4lpenrFieldSyscfglpenShift = 1
@@ -12948,12 +14627,12 @@ const (
 )
 
 // GetSyscfglpen SYSCFG peripheral clock enable during CSleep mode
-func (r *registerC1apb4lpenrType) GetSyscfglpen() bool {
+func (r *RegisterC1apb4lpenrType) GetSyscfglpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldSyscfglpenMask) != 0
 }
 
 // SetSyscfglpen SYSCFG peripheral clock enable during CSleep mode
-func (r *registerC1apb4lpenrType) SetSyscfglpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetSyscfglpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldSyscfglpenMask)
 	} else {
@@ -12967,12 +14646,12 @@ const (
 )
 
 // GetLpuart1lpen LPUART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) GetLpuart1lpen() bool {
+func (r *RegisterC1apb4lpenrType) GetLpuart1lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldLpuart1lpenMask) != 0
 }
 
 // SetLpuart1lpen LPUART1 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) SetLpuart1lpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetLpuart1lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldLpuart1lpenMask)
 	} else {
@@ -12986,12 +14665,12 @@ const (
 )
 
 // GetSpi6lpen SPI6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) GetSpi6lpen() bool {
+func (r *RegisterC1apb4lpenrType) GetSpi6lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldSpi6lpenMask) != 0
 }
 
 // SetSpi6lpen SPI6 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) SetSpi6lpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetSpi6lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldSpi6lpenMask)
 	} else {
@@ -13005,12 +14684,12 @@ const (
 )
 
 // GetI2c4lpen I2C4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) GetI2c4lpen() bool {
+func (r *RegisterC1apb4lpenrType) GetI2c4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldI2c4lpenMask) != 0
 }
 
 // SetI2c4lpen I2C4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) SetI2c4lpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetI2c4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldI2c4lpenMask)
 	} else {
@@ -13024,12 +14703,12 @@ const (
 )
 
 // GetLptim2lpen LPTIM2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) GetLptim2lpen() bool {
+func (r *RegisterC1apb4lpenrType) GetLptim2lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldLptim2lpenMask) != 0
 }
 
 // SetLptim2lpen LPTIM2 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) SetLptim2lpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetLptim2lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldLptim2lpenMask)
 	} else {
@@ -13043,12 +14722,12 @@ const (
 )
 
 // GetLptim3lpen LPTIM3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) GetLptim3lpen() bool {
+func (r *RegisterC1apb4lpenrType) GetLptim3lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldLptim3lpenMask) != 0
 }
 
 // SetLptim3lpen LPTIM3 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) SetLptim3lpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetLptim3lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldLptim3lpenMask)
 	} else {
@@ -13062,12 +14741,12 @@ const (
 )
 
 // GetLptim4lpen LPTIM4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) GetLptim4lpen() bool {
+func (r *RegisterC1apb4lpenrType) GetLptim4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldLptim4lpenMask) != 0
 }
 
 // SetLptim4lpen LPTIM4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) SetLptim4lpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetLptim4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldLptim4lpenMask)
 	} else {
@@ -13081,12 +14760,12 @@ const (
 )
 
 // GetLptim5lpen LPTIM5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) GetLptim5lpen() bool {
+func (r *RegisterC1apb4lpenrType) GetLptim5lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldLptim5lpenMask) != 0
 }
 
 // SetLptim5lpen LPTIM5 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) SetLptim5lpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetLptim5lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldLptim5lpenMask)
 	} else {
@@ -13100,12 +14779,12 @@ const (
 )
 
 // GetComp12lpen COMP1/2 peripheral clock enable during CSleep mode
-func (r *registerC1apb4lpenrType) GetComp12lpen() bool {
+func (r *RegisterC1apb4lpenrType) GetComp12lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldComp12lpenMask) != 0
 }
 
 // SetComp12lpen COMP1/2 peripheral clock enable during CSleep mode
-func (r *registerC1apb4lpenrType) SetComp12lpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetComp12lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldComp12lpenMask)
 	} else {
@@ -13119,12 +14798,12 @@ const (
 )
 
 // GetVreflpen VREF peripheral clock enable during CSleep mode
-func (r *registerC1apb4lpenrType) GetVreflpen() bool {
+func (r *RegisterC1apb4lpenrType) GetVreflpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldVreflpenMask) != 0
 }
 
 // SetVreflpen VREF peripheral clock enable during CSleep mode
-func (r *registerC1apb4lpenrType) SetVreflpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetVreflpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldVreflpenMask)
 	} else {
@@ -13138,12 +14817,12 @@ const (
 )
 
 // GetRtcapblpen RTC APB Clock Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) GetRtcapblpen() bool {
+func (r *RegisterC1apb4lpenrType) GetRtcapblpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldRtcapblpenMask) != 0
 }
 
 // SetRtcapblpen RTC APB Clock Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) SetRtcapblpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetRtcapblpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldRtcapblpenMask)
 	} else {
@@ -13157,12 +14836,12 @@ const (
 )
 
 // GetSai4lpen SAI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) GetSai4lpen() bool {
+func (r *RegisterC1apb4lpenrType) GetSai4lpen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb4lpenrFieldSai4lpenMask) != 0
 }
 
 // SetSai4lpen SAI4 Peripheral Clocks Enable During CSleep Mode
-func (r *registerC1apb4lpenrType) SetSai4lpen(value bool) {
+func (r *RegisterC1apb4lpenrType) SetSai4lpen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb4lpenrFieldSai4lpenMask)
 	} else {

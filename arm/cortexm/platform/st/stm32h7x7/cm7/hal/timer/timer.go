@@ -10,7 +10,6 @@ import (
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
 	tim "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/tim2_3_4_5"
-	"pkg.si-go.dev/chip/arm/cortexm/runtime"
 )
 
 var base [4]uint64
@@ -44,15 +43,16 @@ type Config struct {
 
 func (t _tim32) Configure(config Config) error {
 	mutex := &mutex[t]
-	mutex.Lock()
-	state := runtime.DisableInterrupts()
+	cs := sync.NewCriticalSection(mutex)
+	cs.Begin()
+
 	_t := tim.Instances[t]
 
 	// Reset and enable/disable the timer in RCC.
 	switch t {
 	case 0:
 		// Disable the IRQ.
-		stm32h7x7.IrqTim2.DisableIRQ()
+		stm32h7x7.IrqTim2.Disable()
 
 		// Perform reset sequence.
 		rcc.Rcc.Apb1lrstr.SetTim2rst(true)
@@ -66,7 +66,7 @@ func (t _tim32) Configure(config Config) error {
 		// Enable or disable the timer.
 		rcc.Rcc.Apb1lenr.SetTim2en(config.Enable)
 	case 1:
-		stm32h7x7.IrqTim3.DisableIRQ()
+		stm32h7x7.IrqTim3.Disable()
 
 		// Perform reset sequence.
 		rcc.Rcc.Apb1lrstr.SetTim3rst(true)
@@ -79,7 +79,7 @@ func (t _tim32) Configure(config Config) error {
 
 		rcc.Rcc.Apb1lenr.SetTim3en(config.Enable)
 	case 2:
-		stm32h7x7.IrqTim4.DisableIRQ()
+		stm32h7x7.IrqTim4.Disable()
 
 		// Perform reset sequence.
 		rcc.Rcc.Apb1lrstr.SetTim4rst(true)
@@ -92,7 +92,7 @@ func (t _tim32) Configure(config Config) error {
 
 		rcc.Rcc.Apb1lenr.SetTim4en(config.Enable)
 	case 3:
-		stm32h7x7.IrqTim5.DisableIRQ()
+		stm32h7x7.IrqTim5.Disable()
 
 		// Perform reset sequence.
 		rcc.Rcc.Apb1lrstr.SetTim5rst(true)
@@ -107,8 +107,7 @@ func (t _tim32) Configure(config Config) error {
 	}
 
 	if !config.Enable {
-		mutex.Unlock()
-		runtime.EnableInterrupts(state)
+		cs.End()
 		return nil
 	}
 
@@ -138,13 +137,13 @@ func (t _tim32) Configure(config Config) error {
 
 	switch t {
 	case 0:
-		stm32h7x7.IrqTim2.EnableIRQ()
+		stm32h7x7.IrqTim2.Enable()
 	case 1:
-		stm32h7x7.IrqTim3.EnableIRQ()
+		stm32h7x7.IrqTim3.Enable()
 	case 2:
-		stm32h7x7.IrqTim4.EnableIRQ()
+		stm32h7x7.IrqTim4.Enable()
 	case 3:
-		stm32h7x7.IrqTim5.EnableIRQ()
+		stm32h7x7.IrqTim5.Enable()
 	}
 
 	// Start the timer.
@@ -152,8 +151,7 @@ func (t _tim32) Configure(config Config) error {
 	for !_t.Cr1.GetCen() {
 	}
 
-	mutex.Unlock()
-	runtime.EnableInterrupts(state)
+	cs.End()
 	return nil
 }
 

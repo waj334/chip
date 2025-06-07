@@ -10,11 +10,11 @@ var IrqPriorityMask uint8 = 0xFF
 
 type Interrupt int16
 
-func (i Interrupt) EnableIRQ() {
+func (i Interrupt) Enable() {
 	nvic.Nvic.Iser[i>>5].SetSetena(1 << (i & 0x1F))
 }
 
-func (i Interrupt) DisableIRQ() {
+func (i Interrupt) Disable() {
 	nvic.Nvic.Icer[i>>5].SetClrena(1 << (i & 0x1F))
 }
 

@@ -18,11 +18,34 @@ var (
 )
 
 type _otg_hs_pwrclk struct {
-	Otghspcgcr registerOtghspcgcrType
+	Otghspcgcr RegisterOtghspcgcrType
 }
 
-// registerOtghspcgcrType Power and clock gating control register
-type registerOtghspcgcrType uint32
+// RegisterOtghspcgcrType Power and clock gating control register
+type RegisterOtghspcgcrType uint32
+
+func (r *RegisterOtghspcgcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOtghspcgcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOtghspcgcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOtghspcgcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOtghspcgcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOtghspcgcrFieldStppclkShift = 0
@@ -30,12 +53,12 @@ const (
 )
 
 // GetStppclk Stop PHY clock
-func (r *registerOtghspcgcrType) GetStppclk() bool {
+func (r *RegisterOtghspcgcrType) GetStppclk() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghspcgcrFieldStppclkMask) != 0
 }
 
 // SetStppclk Stop PHY clock
-func (r *registerOtghspcgcrType) SetStppclk(value bool) {
+func (r *RegisterOtghspcgcrType) SetStppclk(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghspcgcrFieldStppclkMask)
 	} else {
@@ -49,12 +72,12 @@ const (
 )
 
 // GetGatehclk Gate HCLK
-func (r *registerOtghspcgcrType) GetGatehclk() bool {
+func (r *RegisterOtghspcgcrType) GetGatehclk() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghspcgcrFieldGatehclkMask) != 0
 }
 
 // SetGatehclk Gate HCLK
-func (r *registerOtghspcgcrType) SetGatehclk(value bool) {
+func (r *RegisterOtghspcgcrType) SetGatehclk(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghspcgcrFieldGatehclkMask)
 	} else {
@@ -68,12 +91,12 @@ const (
 )
 
 // GetPhysusp PHY suspended
-func (r *registerOtghspcgcrType) GetPhysusp() bool {
+func (r *RegisterOtghspcgcrType) GetPhysusp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOtghspcgcrFieldPhysuspMask) != 0
 }
 
 // SetPhysusp PHY suspended
-func (r *registerOtghspcgcrType) SetPhysusp(value bool) {
+func (r *RegisterOtghspcgcrType) SetPhysusp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOtghspcgcrFieldPhysuspMask)
 	} else {

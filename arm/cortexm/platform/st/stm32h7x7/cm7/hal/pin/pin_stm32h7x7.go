@@ -406,9 +406,9 @@ func (p Pin) Set(on bool) {
 	group := gpio.Instances[p.group()]
 	n := p.number()
 	if on {
-		volatile.StoreUint32((*uint32)(&group.Bsrr), 1<<(16+n))
+		group.Bsrr.Store(1 << n)
 	} else {
-		volatile.StoreUint32((*uint32)(&group.Bsrr), 1<<n)
+		group.Bsrr.Store(1 << (16 + n))
 	}
 }
 
@@ -520,22 +520,22 @@ func (p Pin) SetInterrupt(mode corepin.IRQMode, fn corepin.InterruptHandler[Pin]
 	// Enable IRQ in NVIC.
 	switch {
 	case pin == 0:
-		stm32h7x7.IrqExti0.EnableIRQ()
+		stm32h7x7.IrqExti0.Enable()
 		stm32h7x7.IrqExti0.SetPriority(1)
 	case pin == 1:
-		stm32h7x7.IrqExti1.EnableIRQ()
+		stm32h7x7.IrqExti1.Enable()
 		stm32h7x7.IrqExti1.SetPriority(1)
 	case pin == 2:
-		stm32h7x7.IrqExti2.EnableIRQ()
+		stm32h7x7.IrqExti2.Enable()
 		stm32h7x7.IrqExti2.SetPriority(1)
 	case pin == 3:
-		stm32h7x7.IrqExti3.EnableIRQ()
+		stm32h7x7.IrqExti3.Enable()
 		stm32h7x7.IrqExti3.SetPriority(1)
 	case pin >= 4 && pin <= 9:
-		stm32h7x7.IrqExti95.EnableIRQ()
+		stm32h7x7.IrqExti95.Enable()
 		stm32h7x7.IrqExti95.SetPriority(1)
 	case pin >= 10 && pin <= 15:
-		stm32h7x7.IrqExti1510.EnableIRQ()
+		stm32h7x7.IrqExti1510.Enable()
 		stm32h7x7.IrqExti1510.SetPriority(1)
 	default:
 		panic("unreachable")
@@ -562,17 +562,17 @@ func (p Pin) ClearInterrupt() {
 	// Enable IRQ in NVIC.
 	switch {
 	case pin == 0:
-		stm32h7x7.IrqExti0.DisableIRQ()
+		stm32h7x7.IrqExti0.Disable()
 	case pin == 1:
-		stm32h7x7.IrqExti1.DisableIRQ()
+		stm32h7x7.IrqExti1.Disable()
 	case pin == 2:
-		stm32h7x7.IrqExti2.DisableIRQ()
+		stm32h7x7.IrqExti2.Disable()
 	case pin == 3:
-		stm32h7x7.IrqExti3.DisableIRQ()
+		stm32h7x7.IrqExti3.Disable()
 	case pin >= 4 && pin <= 9:
-		stm32h7x7.IrqExti95.DisableIRQ()
+		stm32h7x7.IrqExti95.Disable()
 	case pin >= 10 && pin <= 15:
-		stm32h7x7.IrqExti1510.DisableIRQ()
+		stm32h7x7.IrqExti1510.Disable()
 	default:
 		panic("unreachable")
 	}
@@ -589,8 +589,10 @@ func (p Pin) SetMode(mode corepin.Mode) {
 	n := p.number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
-	volatile.StoreUint32((*uint32)(&group.Moder),
-		(volatile.LoadUint32((*uint32)(&group.Moder))&^mask)|(uint32(pinMode)<<offsetInBits))
+
+	// Set the pin mode register.
+	group.Moder.ClearBits(mask)
+	group.Moder.StoreBits(uint32(pinMode) << offsetInBits)
 
 	if pinMode != AltFunction {
 		alt = 0
@@ -601,12 +603,12 @@ func (p Pin) SetMode(mode corepin.Mode) {
 	mask = uint32(0b1111) << offsetInBits
 	if n < 8 {
 		// Set the alternate function low register.
-		volatile.StoreUint32((*uint32)(&group.Afrl),
-			(volatile.LoadUint32((*uint32)(&group.Afrl))&^mask)|(uint32(alt)<<offsetInBits))
+		group.Afrl.ClearBits(mask)
+		group.Afrl.StoreBits(uint32(alt) << offsetInBits)
 	} else {
 		// Set the alternate function high register.
-		volatile.StoreUint32((*uint32)(&group.Afrh),
-			(volatile.LoadUint32((*uint32)(&group.Afrh))&^mask)|(uint32(alt)<<offsetInBits))
+		group.Afrh.ClearBits(mask)
+		group.Afrh.StoreBits(uint32(alt) << offsetInBits)
 	}
 }
 
@@ -622,8 +624,8 @@ func (p Pin) SetOutputMode(mode corepin.OutputMode) {
 	group := gpio.Instances[p.group()]
 	n := p.number()
 	mask := uint32(0x1) << n
-	volatile.StoreUint32((*uint32)(&group.Otyper),
-		(volatile.LoadUint32((*uint32)(&group.Otyper))&^mask)|(uint32(mode)<<n))
+	group.Otyper.ClearBits(mask)
+	group.Otyper.StoreBits(1 << n)
 }
 
 func (p Pin) GetOutputMode() corepin.OutputMode {
@@ -638,8 +640,8 @@ func (p Pin) SetSpeedMode(speed corepin.SpeedMode) {
 	n := p.number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
-	volatile.StoreUint32((*uint32)(&group.Ospeedr),
-		(volatile.LoadUint32((*uint32)(&group.Ospeedr))&^mask)|(uint32(speed)<<offsetInBits))
+	group.Ospeedr.ClearBits(mask)
+	group.Ospeedr.StoreBits(uint32(speed) << offsetInBits)
 }
 
 func (p Pin) GetSpeedMode() corepin.SpeedMode {
@@ -655,8 +657,8 @@ func (p Pin) SetPullMode(mode corepin.PullMode) {
 	n := p.number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
-	volatile.StoreUint32((*uint32)(&group.Pupdr),
-		(volatile.LoadUint32((*uint32)(&group.Pupdr))&^mask)|(uint32(mode)<<offsetInBits))
+	group.Pupdr.ClearBits(mask)
+	group.Pupdr.StoreBits(uint32(mode) << offsetInBits)
 }
 
 func (p Pin) GetPullMode() corepin.PullMode {
