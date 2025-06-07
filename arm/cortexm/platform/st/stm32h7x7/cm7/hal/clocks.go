@@ -68,7 +68,7 @@ var (
 	Divm3 uint8 = 16
 
 	Divp1FrequencyHz uint64 = 480_000_000
-	Divq1FrequencyHz uint64 = 480_000_000
+	Divq1FrequencyHz uint64 = 240_000_000
 	Divr1FrequencyHz uint64 = 480_000_000
 
 	Divp2FrequencyHz uint64 = 128_000_000
@@ -114,6 +114,7 @@ var (
 	Spi123SourceFrequencyHz      uint64 = Divq1FrequencyHz
 	Spi45SourceFrequencyHz       uint64 = HsiFrequencyHz
 	Spi6SourceFrequencyHz        uint64 = HsiFrequencyHz
+	SdmmcSourceFrequencyHz       uint64 = Divq1FrequencyHz
 
 	PllSource         = ClockSourceHsi
 	I2c13Source       = ClockSourcePclk1
@@ -124,6 +125,7 @@ var (
 	Spi123ClockSource = ClockSourcePll1q
 	Spi45ClockSource  = ClockSourceHsi
 	Spi6ClockSource   = ClockSourceHsi
+	SdmmcClockSource  = ClockSourcePll1q
 
 	EnableHse = false
 	EnableLse = false
@@ -641,6 +643,17 @@ func ConfigureClocks() {
 		case ClockSourceHseRtc:
 			rcc.Rcc.Bdcr.SetRtcsrc(3)
 			RtcSourceFrequencyHz = HseFrequencyHz / uint64(DivRtcHse)
+		}
+	}
+
+	if SdmmcClockSource != ClockSourceNone {
+		switch SdmmcClockSource {
+		case ClockSourcePll1q:
+			rcc.Rcc.D1ccipr.SetSdmmcsrc(false)
+			SdmmcSourceFrequencyHz = Divq1FrequencyHz
+		case ClockSourcePll2r:
+			rcc.Rcc.D1ccipr.SetSdmmcsrc(true)
+			SdmmcSourceFrequencyHz = Divr2FrequencyHz
 		}
 	}
 

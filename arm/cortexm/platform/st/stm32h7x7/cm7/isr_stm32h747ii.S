@@ -156,7 +156,7 @@ __isr_vector:
     .long JpegHandler
     .long MdmaHandler
     .long 0
-    .long SdmmcHandler
+    .long Sdmmc2Handler
     .long Hsem0Handler
     .long 0
     .long Adc3Handler
@@ -312,7 +312,7 @@ __isr_vector:
     IRQ MdiosHandler                      // MDIOS global interrupt
     IRQ JpegHandler                       // JPEG global interrupt
     IRQ MdmaHandler                       // MDMA
-    IRQ SdmmcHandler                      // SDMMC global interrupt
+    IRQ Sdmmc2Handler                     // SDMMC2 global interrupt
     IRQ Hsem0Handler                      // HSEM global interrupt 1
     IRQ Adc3Handler                       // ADC3 global interrupt
     IRQ Dmamux2OvrHandler                 // DMAMUX2 overrun interrupt

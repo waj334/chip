@@ -520,22 +520,22 @@ func (p Pin) SetInterrupt(mode corepin.IRQMode, fn corepin.InterruptHandler[Pin]
 	// Enable IRQ in NVIC.
 	switch {
 	case pin == 0:
-		stm32h7x7.IrqExti0.EnableIRQ()
+		stm32h7x7.IrqExti0.Enable()
 		stm32h7x7.IrqExti0.SetPriority(1)
 	case pin == 1:
-		stm32h7x7.IrqExti1.EnableIRQ()
+		stm32h7x7.IrqExti1.Enable()
 		stm32h7x7.IrqExti1.SetPriority(1)
 	case pin == 2:
-		stm32h7x7.IrqExti2.EnableIRQ()
+		stm32h7x7.IrqExti2.Enable()
 		stm32h7x7.IrqExti2.SetPriority(1)
 	case pin == 3:
-		stm32h7x7.IrqExti3.EnableIRQ()
+		stm32h7x7.IrqExti3.Enable()
 		stm32h7x7.IrqExti3.SetPriority(1)
 	case pin >= 4 && pin <= 9:
-		stm32h7x7.IrqExti95.EnableIRQ()
+		stm32h7x7.IrqExti95.Enable()
 		stm32h7x7.IrqExti95.SetPriority(1)
 	case pin >= 10 && pin <= 15:
-		stm32h7x7.IrqExti1510.EnableIRQ()
+		stm32h7x7.IrqExti1510.Enable()
 		stm32h7x7.IrqExti1510.SetPriority(1)
 	default:
 		panic("unreachable")
@@ -562,17 +562,17 @@ func (p Pin) ClearInterrupt() {
 	// Enable IRQ in NVIC.
 	switch {
 	case pin == 0:
-		stm32h7x7.IrqExti0.DisableIRQ()
+		stm32h7x7.IrqExti0.Disable()
 	case pin == 1:
-		stm32h7x7.IrqExti1.DisableIRQ()
+		stm32h7x7.IrqExti1.Disable()
 	case pin == 2:
-		stm32h7x7.IrqExti2.DisableIRQ()
+		stm32h7x7.IrqExti2.Disable()
 	case pin == 3:
-		stm32h7x7.IrqExti3.DisableIRQ()
+		stm32h7x7.IrqExti3.Disable()
 	case pin >= 4 && pin <= 9:
-		stm32h7x7.IrqExti95.DisableIRQ()
+		stm32h7x7.IrqExti95.Disable()
 	case pin >= 10 && pin <= 15:
-		stm32h7x7.IrqExti1510.DisableIRQ()
+		stm32h7x7.IrqExti1510.Disable()
 	default:
 		panic("unreachable")
 	}
