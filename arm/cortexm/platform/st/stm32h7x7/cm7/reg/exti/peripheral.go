@@ -12,42 +12,65 @@ var (
 )
 
 type _exti struct {
-	Rtsr1   registerRtsr1Type
-	Ftsr1   registerFtsr1Type
-	Swier1  registerSwier1Type
-	D3pmr1  registerD3pmr1Type
-	D3pcr1l registerD3pcr1lType
-	D3pcr1h registerD3pcr1hType
+	Rtsr1   RegisterRtsr1Type
+	Ftsr1   RegisterFtsr1Type
+	Swier1  RegisterSwier1Type
+	D3pmr1  RegisterD3pmr1Type
+	D3pcr1l RegisterD3pcr1lType
+	D3pcr1h RegisterD3pcr1hType
 	_       [8]byte
-	Rtsr2   registerRtsr2Type
-	Ftsr2   registerFtsr2Type
-	Swier2  registerSwier2Type
-	D3pmr2  registerD3pmr2Type
-	D3pcr2l registerD3pcr2lType
-	D3pcr2h registerD3pcr2hType
+	Rtsr2   RegisterRtsr2Type
+	Ftsr2   RegisterFtsr2Type
+	Swier2  RegisterSwier2Type
+	D3pmr2  RegisterD3pmr2Type
+	D3pcr2l RegisterD3pcr2lType
+	D3pcr2h RegisterD3pcr2hType
 	_       [8]byte
-	Rtsr3   registerRtsr3Type
-	Ftsr3   registerFtsr3Type
-	Swier3  registerSwier3Type
-	D3pmr3  registerD3pmr3Type
+	Rtsr3   RegisterRtsr3Type
+	Ftsr3   RegisterFtsr3Type
+	Swier3  RegisterSwier3Type
+	D3pmr3  RegisterD3pmr3Type
 	_       [4]byte
-	D3pcr3h registerD3pcr3hType
+	D3pcr3h RegisterD3pcr3hType
 	_       [40]byte
-	Cpuimr1 registerCpuimr1Type
-	Cpuemr1 registerCpuemr1Type
-	Cpupr1  registerCpupr1Type
+	Cpuimr1 RegisterCpuimr1Type
+	Cpuemr1 RegisterCpuemr1Type
+	Cpupr1  RegisterCpupr1Type
 	_       [4]byte
-	Cpuimr2 registerCpuimr2Type
-	Cpuemr2 registerCpuemr2Type
-	Cpupr2  registerCpupr2Type
+	Cpuimr2 RegisterCpuimr2Type
+	Cpuemr2 RegisterCpuemr2Type
+	Cpupr2  RegisterCpupr2Type
 	_       [4]byte
-	Cpuimr3 registerCpuimr3Type
-	Cpuemr3 registerCpuemr3Type
-	Cpupr3  registerCpupr3Type
+	Cpuimr3 RegisterCpuimr3Type
+	Cpuemr3 RegisterCpuemr3Type
+	Cpupr3  RegisterCpupr3Type
 }
 
-// registerRtsr1Type EXTI rising trigger selection register
-type registerRtsr1Type uint32
+// RegisterRtsr1Type EXTI rising trigger selection register
+type RegisterRtsr1Type uint32
+
+func (r *RegisterRtsr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRtsr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRtsr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRtsr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRtsr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRtsr1FieldTr0Shift = 0
@@ -55,12 +78,12 @@ const (
 )
 
 // GetTr0 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr0() bool {
+func (r *RegisterRtsr1Type) GetTr0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr0Mask) != 0
 }
 
 // SetTr0 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr0(value bool) {
+func (r *RegisterRtsr1Type) SetTr0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr0Mask)
 	} else {
@@ -74,12 +97,12 @@ const (
 )
 
 // GetTr1 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr1() bool {
+func (r *RegisterRtsr1Type) GetTr1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr1Mask) != 0
 }
 
 // SetTr1 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr1(value bool) {
+func (r *RegisterRtsr1Type) SetTr1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr1Mask)
 	} else {
@@ -93,12 +116,12 @@ const (
 )
 
 // GetTr2 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr2() bool {
+func (r *RegisterRtsr1Type) GetTr2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr2Mask) != 0
 }
 
 // SetTr2 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr2(value bool) {
+func (r *RegisterRtsr1Type) SetTr2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr2Mask)
 	} else {
@@ -112,12 +135,12 @@ const (
 )
 
 // GetTr3 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr3() bool {
+func (r *RegisterRtsr1Type) GetTr3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr3Mask) != 0
 }
 
 // SetTr3 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr3(value bool) {
+func (r *RegisterRtsr1Type) SetTr3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr3Mask)
 	} else {
@@ -131,12 +154,12 @@ const (
 )
 
 // GetTr4 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr4() bool {
+func (r *RegisterRtsr1Type) GetTr4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr4Mask) != 0
 }
 
 // SetTr4 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr4(value bool) {
+func (r *RegisterRtsr1Type) SetTr4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr4Mask)
 	} else {
@@ -150,12 +173,12 @@ const (
 )
 
 // GetTr5 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr5() bool {
+func (r *RegisterRtsr1Type) GetTr5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr5Mask) != 0
 }
 
 // SetTr5 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr5(value bool) {
+func (r *RegisterRtsr1Type) SetTr5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr5Mask)
 	} else {
@@ -169,12 +192,12 @@ const (
 )
 
 // GetTr6 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr6() bool {
+func (r *RegisterRtsr1Type) GetTr6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr6Mask) != 0
 }
 
 // SetTr6 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr6(value bool) {
+func (r *RegisterRtsr1Type) SetTr6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr6Mask)
 	} else {
@@ -188,12 +211,12 @@ const (
 )
 
 // GetTr7 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr7() bool {
+func (r *RegisterRtsr1Type) GetTr7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr7Mask) != 0
 }
 
 // SetTr7 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr7(value bool) {
+func (r *RegisterRtsr1Type) SetTr7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr7Mask)
 	} else {
@@ -207,12 +230,12 @@ const (
 )
 
 // GetTr8 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr8() bool {
+func (r *RegisterRtsr1Type) GetTr8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr8Mask) != 0
 }
 
 // SetTr8 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr8(value bool) {
+func (r *RegisterRtsr1Type) SetTr8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr8Mask)
 	} else {
@@ -226,12 +249,12 @@ const (
 )
 
 // GetTr9 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr9() bool {
+func (r *RegisterRtsr1Type) GetTr9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr9Mask) != 0
 }
 
 // SetTr9 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr9(value bool) {
+func (r *RegisterRtsr1Type) SetTr9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr9Mask)
 	} else {
@@ -245,12 +268,12 @@ const (
 )
 
 // GetTr10 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr10() bool {
+func (r *RegisterRtsr1Type) GetTr10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr10Mask) != 0
 }
 
 // SetTr10 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr10(value bool) {
+func (r *RegisterRtsr1Type) SetTr10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr10Mask)
 	} else {
@@ -264,12 +287,12 @@ const (
 )
 
 // GetTr11 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr11() bool {
+func (r *RegisterRtsr1Type) GetTr11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr11Mask) != 0
 }
 
 // SetTr11 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr11(value bool) {
+func (r *RegisterRtsr1Type) SetTr11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr11Mask)
 	} else {
@@ -283,12 +306,12 @@ const (
 )
 
 // GetTr12 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr12() bool {
+func (r *RegisterRtsr1Type) GetTr12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr12Mask) != 0
 }
 
 // SetTr12 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr12(value bool) {
+func (r *RegisterRtsr1Type) SetTr12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr12Mask)
 	} else {
@@ -302,12 +325,12 @@ const (
 )
 
 // GetTr13 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr13() bool {
+func (r *RegisterRtsr1Type) GetTr13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr13Mask) != 0
 }
 
 // SetTr13 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr13(value bool) {
+func (r *RegisterRtsr1Type) SetTr13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr13Mask)
 	} else {
@@ -321,12 +344,12 @@ const (
 )
 
 // GetTr14 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr14() bool {
+func (r *RegisterRtsr1Type) GetTr14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr14Mask) != 0
 }
 
 // SetTr14 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr14(value bool) {
+func (r *RegisterRtsr1Type) SetTr14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr14Mask)
 	} else {
@@ -340,12 +363,12 @@ const (
 )
 
 // GetTr15 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr15() bool {
+func (r *RegisterRtsr1Type) GetTr15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr15Mask) != 0
 }
 
 // SetTr15 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr15(value bool) {
+func (r *RegisterRtsr1Type) SetTr15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr15Mask)
 	} else {
@@ -359,12 +382,12 @@ const (
 )
 
 // GetTr16 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr16() bool {
+func (r *RegisterRtsr1Type) GetTr16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr16Mask) != 0
 }
 
 // SetTr16 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr16(value bool) {
+func (r *RegisterRtsr1Type) SetTr16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr16Mask)
 	} else {
@@ -378,12 +401,12 @@ const (
 )
 
 // GetTr17 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr17() bool {
+func (r *RegisterRtsr1Type) GetTr17() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr17Mask) != 0
 }
 
 // SetTr17 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr17(value bool) {
+func (r *RegisterRtsr1Type) SetTr17(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr17Mask)
 	} else {
@@ -397,12 +420,12 @@ const (
 )
 
 // GetTr18 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr18() bool {
+func (r *RegisterRtsr1Type) GetTr18() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr18Mask) != 0
 }
 
 // SetTr18 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr18(value bool) {
+func (r *RegisterRtsr1Type) SetTr18(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr18Mask)
 	} else {
@@ -416,12 +439,12 @@ const (
 )
 
 // GetTr19 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr19() bool {
+func (r *RegisterRtsr1Type) GetTr19() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr19Mask) != 0
 }
 
 // SetTr19 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr19(value bool) {
+func (r *RegisterRtsr1Type) SetTr19(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr19Mask)
 	} else {
@@ -435,12 +458,12 @@ const (
 )
 
 // GetTr20 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr20() bool {
+func (r *RegisterRtsr1Type) GetTr20() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr20Mask) != 0
 }
 
 // SetTr20 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr20(value bool) {
+func (r *RegisterRtsr1Type) SetTr20(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr20Mask)
 	} else {
@@ -454,12 +477,12 @@ const (
 )
 
 // GetTr21 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) GetTr21() bool {
+func (r *RegisterRtsr1Type) GetTr21() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr1FieldTr21Mask) != 0
 }
 
 // SetTr21 Rising trigger event configuration bit of Configurable Event input
-func (r *registerRtsr1Type) SetTr21(value bool) {
+func (r *RegisterRtsr1Type) SetTr21(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr1FieldTr21Mask)
 	} else {
@@ -467,8 +490,31 @@ func (r *registerRtsr1Type) SetTr21(value bool) {
 	}
 }
 
-// registerFtsr1Type EXTI falling trigger selection register
-type registerFtsr1Type uint32
+// RegisterFtsr1Type EXTI falling trigger selection register
+type RegisterFtsr1Type uint32
+
+func (r *RegisterFtsr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFtsr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFtsr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFtsr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFtsr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFtsr1FieldTr0Shift = 0
@@ -476,12 +522,12 @@ const (
 )
 
 // GetTr0 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr0() bool {
+func (r *RegisterFtsr1Type) GetTr0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr0Mask) != 0
 }
 
 // SetTr0 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr0(value bool) {
+func (r *RegisterFtsr1Type) SetTr0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr0Mask)
 	} else {
@@ -495,12 +541,12 @@ const (
 )
 
 // GetTr1 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr1() bool {
+func (r *RegisterFtsr1Type) GetTr1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr1Mask) != 0
 }
 
 // SetTr1 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr1(value bool) {
+func (r *RegisterFtsr1Type) SetTr1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr1Mask)
 	} else {
@@ -514,12 +560,12 @@ const (
 )
 
 // GetTr2 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr2() bool {
+func (r *RegisterFtsr1Type) GetTr2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr2Mask) != 0
 }
 
 // SetTr2 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr2(value bool) {
+func (r *RegisterFtsr1Type) SetTr2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr2Mask)
 	} else {
@@ -533,12 +579,12 @@ const (
 )
 
 // GetTr3 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr3() bool {
+func (r *RegisterFtsr1Type) GetTr3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr3Mask) != 0
 }
 
 // SetTr3 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr3(value bool) {
+func (r *RegisterFtsr1Type) SetTr3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr3Mask)
 	} else {
@@ -552,12 +598,12 @@ const (
 )
 
 // GetTr4 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr4() bool {
+func (r *RegisterFtsr1Type) GetTr4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr4Mask) != 0
 }
 
 // SetTr4 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr4(value bool) {
+func (r *RegisterFtsr1Type) SetTr4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr4Mask)
 	} else {
@@ -571,12 +617,12 @@ const (
 )
 
 // GetTr5 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr5() bool {
+func (r *RegisterFtsr1Type) GetTr5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr5Mask) != 0
 }
 
 // SetTr5 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr5(value bool) {
+func (r *RegisterFtsr1Type) SetTr5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr5Mask)
 	} else {
@@ -590,12 +636,12 @@ const (
 )
 
 // GetTr6 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr6() bool {
+func (r *RegisterFtsr1Type) GetTr6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr6Mask) != 0
 }
 
 // SetTr6 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr6(value bool) {
+func (r *RegisterFtsr1Type) SetTr6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr6Mask)
 	} else {
@@ -609,12 +655,12 @@ const (
 )
 
 // GetTr7 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr7() bool {
+func (r *RegisterFtsr1Type) GetTr7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr7Mask) != 0
 }
 
 // SetTr7 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr7(value bool) {
+func (r *RegisterFtsr1Type) SetTr7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr7Mask)
 	} else {
@@ -628,12 +674,12 @@ const (
 )
 
 // GetTr8 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr8() bool {
+func (r *RegisterFtsr1Type) GetTr8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr8Mask) != 0
 }
 
 // SetTr8 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr8(value bool) {
+func (r *RegisterFtsr1Type) SetTr8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr8Mask)
 	} else {
@@ -647,12 +693,12 @@ const (
 )
 
 // GetTr9 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr9() bool {
+func (r *RegisterFtsr1Type) GetTr9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr9Mask) != 0
 }
 
 // SetTr9 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr9(value bool) {
+func (r *RegisterFtsr1Type) SetTr9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr9Mask)
 	} else {
@@ -666,12 +712,12 @@ const (
 )
 
 // GetTr10 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr10() bool {
+func (r *RegisterFtsr1Type) GetTr10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr10Mask) != 0
 }
 
 // SetTr10 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr10(value bool) {
+func (r *RegisterFtsr1Type) SetTr10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr10Mask)
 	} else {
@@ -685,12 +731,12 @@ const (
 )
 
 // GetTr11 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr11() bool {
+func (r *RegisterFtsr1Type) GetTr11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr11Mask) != 0
 }
 
 // SetTr11 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr11(value bool) {
+func (r *RegisterFtsr1Type) SetTr11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr11Mask)
 	} else {
@@ -704,12 +750,12 @@ const (
 )
 
 // GetTr12 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr12() bool {
+func (r *RegisterFtsr1Type) GetTr12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr12Mask) != 0
 }
 
 // SetTr12 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr12(value bool) {
+func (r *RegisterFtsr1Type) SetTr12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr12Mask)
 	} else {
@@ -723,12 +769,12 @@ const (
 )
 
 // GetTr13 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr13() bool {
+func (r *RegisterFtsr1Type) GetTr13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr13Mask) != 0
 }
 
 // SetTr13 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr13(value bool) {
+func (r *RegisterFtsr1Type) SetTr13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr13Mask)
 	} else {
@@ -742,12 +788,12 @@ const (
 )
 
 // GetTr14 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr14() bool {
+func (r *RegisterFtsr1Type) GetTr14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr14Mask) != 0
 }
 
 // SetTr14 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr14(value bool) {
+func (r *RegisterFtsr1Type) SetTr14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr14Mask)
 	} else {
@@ -761,12 +807,12 @@ const (
 )
 
 // GetTr15 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr15() bool {
+func (r *RegisterFtsr1Type) GetTr15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr15Mask) != 0
 }
 
 // SetTr15 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr15(value bool) {
+func (r *RegisterFtsr1Type) SetTr15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr15Mask)
 	} else {
@@ -780,12 +826,12 @@ const (
 )
 
 // GetTr16 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr16() bool {
+func (r *RegisterFtsr1Type) GetTr16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr16Mask) != 0
 }
 
 // SetTr16 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr16(value bool) {
+func (r *RegisterFtsr1Type) SetTr16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr16Mask)
 	} else {
@@ -799,12 +845,12 @@ const (
 )
 
 // GetTr17 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr17() bool {
+func (r *RegisterFtsr1Type) GetTr17() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr17Mask) != 0
 }
 
 // SetTr17 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr17(value bool) {
+func (r *RegisterFtsr1Type) SetTr17(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr17Mask)
 	} else {
@@ -818,12 +864,12 @@ const (
 )
 
 // GetTr18 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr18() bool {
+func (r *RegisterFtsr1Type) GetTr18() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr18Mask) != 0
 }
 
 // SetTr18 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr18(value bool) {
+func (r *RegisterFtsr1Type) SetTr18(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr18Mask)
 	} else {
@@ -837,12 +883,12 @@ const (
 )
 
 // GetTr19 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr19() bool {
+func (r *RegisterFtsr1Type) GetTr19() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr19Mask) != 0
 }
 
 // SetTr19 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr19(value bool) {
+func (r *RegisterFtsr1Type) SetTr19(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr19Mask)
 	} else {
@@ -856,12 +902,12 @@ const (
 )
 
 // GetTr20 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr20() bool {
+func (r *RegisterFtsr1Type) GetTr20() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr20Mask) != 0
 }
 
 // SetTr20 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr20(value bool) {
+func (r *RegisterFtsr1Type) SetTr20(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr20Mask)
 	} else {
@@ -875,12 +921,12 @@ const (
 )
 
 // GetTr21 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) GetTr21() bool {
+func (r *RegisterFtsr1Type) GetTr21() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr1FieldTr21Mask) != 0
 }
 
 // SetTr21 Rising trigger event configuration bit of Configurable Event input
-func (r *registerFtsr1Type) SetTr21(value bool) {
+func (r *RegisterFtsr1Type) SetTr21(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr1FieldTr21Mask)
 	} else {
@@ -888,8 +934,31 @@ func (r *registerFtsr1Type) SetTr21(value bool) {
 	}
 }
 
-// registerSwier1Type EXTI software interrupt event register
-type registerSwier1Type uint32
+// RegisterSwier1Type EXTI software interrupt event register
+type RegisterSwier1Type uint32
+
+func (r *RegisterSwier1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterSwier1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterSwier1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterSwier1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterSwier1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterSwier1FieldSwier0Shift = 0
@@ -897,12 +966,12 @@ const (
 )
 
 // GetSwier0 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier0() bool {
+func (r *RegisterSwier1Type) GetSwier0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier0Mask) != 0
 }
 
 // SetSwier0 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier0(value bool) {
+func (r *RegisterSwier1Type) SetSwier0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier0Mask)
 	} else {
@@ -916,12 +985,12 @@ const (
 )
 
 // GetSwier1 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier1() bool {
+func (r *RegisterSwier1Type) GetSwier1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier1Mask) != 0
 }
 
 // SetSwier1 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier1(value bool) {
+func (r *RegisterSwier1Type) SetSwier1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier1Mask)
 	} else {
@@ -935,12 +1004,12 @@ const (
 )
 
 // GetSwier2 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier2() bool {
+func (r *RegisterSwier1Type) GetSwier2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier2Mask) != 0
 }
 
 // SetSwier2 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier2(value bool) {
+func (r *RegisterSwier1Type) SetSwier2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier2Mask)
 	} else {
@@ -954,12 +1023,12 @@ const (
 )
 
 // GetSwier3 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier3() bool {
+func (r *RegisterSwier1Type) GetSwier3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier3Mask) != 0
 }
 
 // SetSwier3 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier3(value bool) {
+func (r *RegisterSwier1Type) SetSwier3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier3Mask)
 	} else {
@@ -973,12 +1042,12 @@ const (
 )
 
 // GetSwier4 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier4() bool {
+func (r *RegisterSwier1Type) GetSwier4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier4Mask) != 0
 }
 
 // SetSwier4 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier4(value bool) {
+func (r *RegisterSwier1Type) SetSwier4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier4Mask)
 	} else {
@@ -992,12 +1061,12 @@ const (
 )
 
 // GetSwier5 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier5() bool {
+func (r *RegisterSwier1Type) GetSwier5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier5Mask) != 0
 }
 
 // SetSwier5 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier5(value bool) {
+func (r *RegisterSwier1Type) SetSwier5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier5Mask)
 	} else {
@@ -1011,12 +1080,12 @@ const (
 )
 
 // GetSwier6 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier6() bool {
+func (r *RegisterSwier1Type) GetSwier6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier6Mask) != 0
 }
 
 // SetSwier6 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier6(value bool) {
+func (r *RegisterSwier1Type) SetSwier6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier6Mask)
 	} else {
@@ -1030,12 +1099,12 @@ const (
 )
 
 // GetSwier7 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier7() bool {
+func (r *RegisterSwier1Type) GetSwier7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier7Mask) != 0
 }
 
 // SetSwier7 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier7(value bool) {
+func (r *RegisterSwier1Type) SetSwier7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier7Mask)
 	} else {
@@ -1049,12 +1118,12 @@ const (
 )
 
 // GetSwier8 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier8() bool {
+func (r *RegisterSwier1Type) GetSwier8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier8Mask) != 0
 }
 
 // SetSwier8 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier8(value bool) {
+func (r *RegisterSwier1Type) SetSwier8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier8Mask)
 	} else {
@@ -1068,12 +1137,12 @@ const (
 )
 
 // GetSwier9 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier9() bool {
+func (r *RegisterSwier1Type) GetSwier9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier9Mask) != 0
 }
 
 // SetSwier9 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier9(value bool) {
+func (r *RegisterSwier1Type) SetSwier9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier9Mask)
 	} else {
@@ -1087,12 +1156,12 @@ const (
 )
 
 // GetSwier10 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier10() bool {
+func (r *RegisterSwier1Type) GetSwier10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier10Mask) != 0
 }
 
 // SetSwier10 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier10(value bool) {
+func (r *RegisterSwier1Type) SetSwier10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier10Mask)
 	} else {
@@ -1106,12 +1175,12 @@ const (
 )
 
 // GetSwier11 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier11() bool {
+func (r *RegisterSwier1Type) GetSwier11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier11Mask) != 0
 }
 
 // SetSwier11 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier11(value bool) {
+func (r *RegisterSwier1Type) SetSwier11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier11Mask)
 	} else {
@@ -1125,12 +1194,12 @@ const (
 )
 
 // GetSwier12 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier12() bool {
+func (r *RegisterSwier1Type) GetSwier12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier12Mask) != 0
 }
 
 // SetSwier12 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier12(value bool) {
+func (r *RegisterSwier1Type) SetSwier12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier12Mask)
 	} else {
@@ -1144,12 +1213,12 @@ const (
 )
 
 // GetSwier13 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier13() bool {
+func (r *RegisterSwier1Type) GetSwier13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier13Mask) != 0
 }
 
 // SetSwier13 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier13(value bool) {
+func (r *RegisterSwier1Type) SetSwier13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier13Mask)
 	} else {
@@ -1163,12 +1232,12 @@ const (
 )
 
 // GetSwier14 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier14() bool {
+func (r *RegisterSwier1Type) GetSwier14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier14Mask) != 0
 }
 
 // SetSwier14 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier14(value bool) {
+func (r *RegisterSwier1Type) SetSwier14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier14Mask)
 	} else {
@@ -1182,12 +1251,12 @@ const (
 )
 
 // GetSwier15 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier15() bool {
+func (r *RegisterSwier1Type) GetSwier15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier15Mask) != 0
 }
 
 // SetSwier15 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier15(value bool) {
+func (r *RegisterSwier1Type) SetSwier15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier15Mask)
 	} else {
@@ -1201,12 +1270,12 @@ const (
 )
 
 // GetSwier16 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier16() bool {
+func (r *RegisterSwier1Type) GetSwier16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier16Mask) != 0
 }
 
 // SetSwier16 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier16(value bool) {
+func (r *RegisterSwier1Type) SetSwier16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier16Mask)
 	} else {
@@ -1220,12 +1289,12 @@ const (
 )
 
 // GetSwier17 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier17() bool {
+func (r *RegisterSwier1Type) GetSwier17() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier17Mask) != 0
 }
 
 // SetSwier17 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier17(value bool) {
+func (r *RegisterSwier1Type) SetSwier17(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier17Mask)
 	} else {
@@ -1239,12 +1308,12 @@ const (
 )
 
 // GetSwier18 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier18() bool {
+func (r *RegisterSwier1Type) GetSwier18() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier18Mask) != 0
 }
 
 // SetSwier18 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier18(value bool) {
+func (r *RegisterSwier1Type) SetSwier18(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier18Mask)
 	} else {
@@ -1258,12 +1327,12 @@ const (
 )
 
 // GetSwier19 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier19() bool {
+func (r *RegisterSwier1Type) GetSwier19() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier19Mask) != 0
 }
 
 // SetSwier19 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier19(value bool) {
+func (r *RegisterSwier1Type) SetSwier19(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier19Mask)
 	} else {
@@ -1277,12 +1346,12 @@ const (
 )
 
 // GetSwier20 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier20() bool {
+func (r *RegisterSwier1Type) GetSwier20() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier20Mask) != 0
 }
 
 // SetSwier20 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier20(value bool) {
+func (r *RegisterSwier1Type) SetSwier20(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier20Mask)
 	} else {
@@ -1296,12 +1365,12 @@ const (
 )
 
 // GetSwier21 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) GetSwier21() bool {
+func (r *RegisterSwier1Type) GetSwier21() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier1FieldSwier21Mask) != 0
 }
 
 // SetSwier21 Rising trigger event configuration bit of Configurable Event input
-func (r *registerSwier1Type) SetSwier21(value bool) {
+func (r *RegisterSwier1Type) SetSwier21(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier1FieldSwier21Mask)
 	} else {
@@ -1309,8 +1378,31 @@ func (r *registerSwier1Type) SetSwier21(value bool) {
 	}
 }
 
-// registerD3pmr1Type EXTI D3 pending mask register
-type registerD3pmr1Type uint32
+// RegisterD3pmr1Type EXTI D3 pending mask register
+type RegisterD3pmr1Type uint32
+
+func (r *RegisterD3pmr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3pmr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3pmr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3pmr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3pmr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD3pmr1FieldMr0Shift = 0
@@ -1318,12 +1410,12 @@ const (
 )
 
 // GetMr0 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr0() bool {
+func (r *RegisterD3pmr1Type) GetMr0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr0Mask) != 0
 }
 
 // SetMr0 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr0(value bool) {
+func (r *RegisterD3pmr1Type) SetMr0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr0Mask)
 	} else {
@@ -1337,12 +1429,12 @@ const (
 )
 
 // GetMr1 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr1() bool {
+func (r *RegisterD3pmr1Type) GetMr1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr1Mask) != 0
 }
 
 // SetMr1 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr1(value bool) {
+func (r *RegisterD3pmr1Type) SetMr1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr1Mask)
 	} else {
@@ -1356,12 +1448,12 @@ const (
 )
 
 // GetMr2 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr2() bool {
+func (r *RegisterD3pmr1Type) GetMr2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr2Mask) != 0
 }
 
 // SetMr2 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr2(value bool) {
+func (r *RegisterD3pmr1Type) SetMr2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr2Mask)
 	} else {
@@ -1375,12 +1467,12 @@ const (
 )
 
 // GetMr3 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr3() bool {
+func (r *RegisterD3pmr1Type) GetMr3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr3Mask) != 0
 }
 
 // SetMr3 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr3(value bool) {
+func (r *RegisterD3pmr1Type) SetMr3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr3Mask)
 	} else {
@@ -1394,12 +1486,12 @@ const (
 )
 
 // GetMr4 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr4() bool {
+func (r *RegisterD3pmr1Type) GetMr4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr4Mask) != 0
 }
 
 // SetMr4 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr4(value bool) {
+func (r *RegisterD3pmr1Type) SetMr4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr4Mask)
 	} else {
@@ -1413,12 +1505,12 @@ const (
 )
 
 // GetMr5 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr5() bool {
+func (r *RegisterD3pmr1Type) GetMr5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr5Mask) != 0
 }
 
 // SetMr5 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr5(value bool) {
+func (r *RegisterD3pmr1Type) SetMr5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr5Mask)
 	} else {
@@ -1432,12 +1524,12 @@ const (
 )
 
 // GetMr6 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr6() bool {
+func (r *RegisterD3pmr1Type) GetMr6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr6Mask) != 0
 }
 
 // SetMr6 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr6(value bool) {
+func (r *RegisterD3pmr1Type) SetMr6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr6Mask)
 	} else {
@@ -1451,12 +1543,12 @@ const (
 )
 
 // GetMr7 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr7() bool {
+func (r *RegisterD3pmr1Type) GetMr7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr7Mask) != 0
 }
 
 // SetMr7 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr7(value bool) {
+func (r *RegisterD3pmr1Type) SetMr7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr7Mask)
 	} else {
@@ -1470,12 +1562,12 @@ const (
 )
 
 // GetMr8 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr8() bool {
+func (r *RegisterD3pmr1Type) GetMr8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr8Mask) != 0
 }
 
 // SetMr8 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr8(value bool) {
+func (r *RegisterD3pmr1Type) SetMr8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr8Mask)
 	} else {
@@ -1489,12 +1581,12 @@ const (
 )
 
 // GetMr9 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr9() bool {
+func (r *RegisterD3pmr1Type) GetMr9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr9Mask) != 0
 }
 
 // SetMr9 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr9(value bool) {
+func (r *RegisterD3pmr1Type) SetMr9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr9Mask)
 	} else {
@@ -1508,12 +1600,12 @@ const (
 )
 
 // GetMr10 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr10() bool {
+func (r *RegisterD3pmr1Type) GetMr10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr10Mask) != 0
 }
 
 // SetMr10 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr10(value bool) {
+func (r *RegisterD3pmr1Type) SetMr10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr10Mask)
 	} else {
@@ -1527,12 +1619,12 @@ const (
 )
 
 // GetMr11 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr11() bool {
+func (r *RegisterD3pmr1Type) GetMr11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr11Mask) != 0
 }
 
 // SetMr11 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr11(value bool) {
+func (r *RegisterD3pmr1Type) SetMr11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr11Mask)
 	} else {
@@ -1546,12 +1638,12 @@ const (
 )
 
 // GetMr12 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr12() bool {
+func (r *RegisterD3pmr1Type) GetMr12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr12Mask) != 0
 }
 
 // SetMr12 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr12(value bool) {
+func (r *RegisterD3pmr1Type) SetMr12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr12Mask)
 	} else {
@@ -1565,12 +1657,12 @@ const (
 )
 
 // GetMr13 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr13() bool {
+func (r *RegisterD3pmr1Type) GetMr13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr13Mask) != 0
 }
 
 // SetMr13 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr13(value bool) {
+func (r *RegisterD3pmr1Type) SetMr13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr13Mask)
 	} else {
@@ -1584,12 +1676,12 @@ const (
 )
 
 // GetMr14 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr14() bool {
+func (r *RegisterD3pmr1Type) GetMr14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr14Mask) != 0
 }
 
 // SetMr14 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr14(value bool) {
+func (r *RegisterD3pmr1Type) SetMr14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr14Mask)
 	} else {
@@ -1603,12 +1695,12 @@ const (
 )
 
 // GetMr15 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr15() bool {
+func (r *RegisterD3pmr1Type) GetMr15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr15Mask) != 0
 }
 
 // SetMr15 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr15(value bool) {
+func (r *RegisterD3pmr1Type) SetMr15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr15Mask)
 	} else {
@@ -1622,12 +1714,12 @@ const (
 )
 
 // GetMr19 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr19() bool {
+func (r *RegisterD3pmr1Type) GetMr19() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr19Mask) != 0
 }
 
 // SetMr19 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr19(value bool) {
+func (r *RegisterD3pmr1Type) SetMr19(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr19Mask)
 	} else {
@@ -1641,12 +1733,12 @@ const (
 )
 
 // GetMr20 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr20() bool {
+func (r *RegisterD3pmr1Type) GetMr20() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr20Mask) != 0
 }
 
 // SetMr20 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr20(value bool) {
+func (r *RegisterD3pmr1Type) SetMr20(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr20Mask)
 	} else {
@@ -1660,12 +1752,12 @@ const (
 )
 
 // GetMr21 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr21() bool {
+func (r *RegisterD3pmr1Type) GetMr21() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr21Mask) != 0
 }
 
 // SetMr21 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr21(value bool) {
+func (r *RegisterD3pmr1Type) SetMr21(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr21Mask)
 	} else {
@@ -1679,12 +1771,12 @@ const (
 )
 
 // GetMr25 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) GetMr25() bool {
+func (r *RegisterD3pmr1Type) GetMr25() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr1FieldMr25Mask) != 0
 }
 
 // SetMr25 Rising trigger event configuration bit of Configurable Event input
-func (r *registerD3pmr1Type) SetMr25(value bool) {
+func (r *RegisterD3pmr1Type) SetMr25(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr1FieldMr25Mask)
 	} else {
@@ -1692,8 +1784,31 @@ func (r *registerD3pmr1Type) SetMr25(value bool) {
 	}
 }
 
-// registerD3pcr1lType EXTI D3 pending clear selection register low
-type registerD3pcr1lType uint32
+// RegisterD3pcr1lType EXTI D3 pending clear selection register low
+type RegisterD3pcr1lType uint32
+
+func (r *RegisterD3pcr1lType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3pcr1lType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3pcr1lType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3pcr1lType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3pcr1lType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD3pcr1lFieldPcs0Shift = 0
@@ -1701,12 +1816,12 @@ const (
 )
 
 // GetPcs0 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs0() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs0() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs0Mask) >> RegisterD3pcr1lFieldPcs0Shift)
 }
 
 // SetPcs0 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs0(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs0(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs0Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs0Shift))
 }
 
@@ -1716,12 +1831,12 @@ const (
 )
 
 // GetPcs1 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs1() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs1Mask) >> RegisterD3pcr1lFieldPcs1Shift)
 }
 
 // SetPcs1 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs1(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs1Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs1Shift))
 }
 
@@ -1731,12 +1846,12 @@ const (
 )
 
 // GetPcs2 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs2() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs2Mask) >> RegisterD3pcr1lFieldPcs2Shift)
 }
 
 // SetPcs2 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs2(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs2Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs2Shift))
 }
 
@@ -1746,12 +1861,12 @@ const (
 )
 
 // GetPcs3 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs3() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs3Mask) >> RegisterD3pcr1lFieldPcs3Shift)
 }
 
 // SetPcs3 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs3(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs3Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs3Shift))
 }
 
@@ -1761,12 +1876,12 @@ const (
 )
 
 // GetPcs4 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs4() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs4() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs4Mask) >> RegisterD3pcr1lFieldPcs4Shift)
 }
 
 // SetPcs4 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs4(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs4(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs4Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs4Shift))
 }
 
@@ -1776,12 +1891,12 @@ const (
 )
 
 // GetPcs5 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs5() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs5() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs5Mask) >> RegisterD3pcr1lFieldPcs5Shift)
 }
 
 // SetPcs5 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs5(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs5(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs5Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs5Shift))
 }
 
@@ -1791,12 +1906,12 @@ const (
 )
 
 // GetPcs6 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs6() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs6() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs6Mask) >> RegisterD3pcr1lFieldPcs6Shift)
 }
 
 // SetPcs6 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs6(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs6(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs6Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs6Shift))
 }
 
@@ -1806,12 +1921,12 @@ const (
 )
 
 // GetPcs7 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs7() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs7() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs7Mask) >> RegisterD3pcr1lFieldPcs7Shift)
 }
 
 // SetPcs7 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs7(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs7(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs7Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs7Shift))
 }
 
@@ -1821,12 +1936,12 @@ const (
 )
 
 // GetPcs8 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs8() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs8() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs8Mask) >> RegisterD3pcr1lFieldPcs8Shift)
 }
 
 // SetPcs8 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs8(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs8(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs8Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs8Shift))
 }
 
@@ -1836,12 +1951,12 @@ const (
 )
 
 // GetPcs9 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs9() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs9() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs9Mask) >> RegisterD3pcr1lFieldPcs9Shift)
 }
 
 // SetPcs9 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs9(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs9(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs9Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs9Shift))
 }
 
@@ -1851,12 +1966,12 @@ const (
 )
 
 // GetPcs10 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs10() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs10() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs10Mask) >> RegisterD3pcr1lFieldPcs10Shift)
 }
 
 // SetPcs10 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs10(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs10(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs10Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs10Shift))
 }
 
@@ -1866,12 +1981,12 @@ const (
 )
 
 // GetPcs11 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs11() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs11() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs11Mask) >> RegisterD3pcr1lFieldPcs11Shift)
 }
 
 // SetPcs11 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs11(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs11(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs11Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs11Shift))
 }
 
@@ -1881,12 +1996,12 @@ const (
 )
 
 // GetPcs12 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs12() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs12() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs12Mask) >> RegisterD3pcr1lFieldPcs12Shift)
 }
 
 // SetPcs12 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs12(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs12(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs12Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs12Shift))
 }
 
@@ -1896,12 +2011,12 @@ const (
 )
 
 // GetPcs13 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs13() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs13() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs13Mask) >> RegisterD3pcr1lFieldPcs13Shift)
 }
 
 // SetPcs13 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs13(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs13(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs13Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs13Shift))
 }
 
@@ -1911,12 +2026,12 @@ const (
 )
 
 // GetPcs14 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs14() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs14() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs14Mask) >> RegisterD3pcr1lFieldPcs14Shift)
 }
 
 // SetPcs14 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs14(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs14(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs14Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs14Shift))
 }
 
@@ -1926,17 +2041,40 @@ const (
 )
 
 // GetPcs15 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) GetPcs15() uint8 {
+func (r *RegisterD3pcr1lType) GetPcs15() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1lFieldPcs15Mask) >> RegisterD3pcr1lFieldPcs15Shift)
 }
 
 // SetPcs15 D3 Pending request clear input signal selection on Event input x = truncate (n/2)
-func (r *registerD3pcr1lType) SetPcs15(value uint8) {
+func (r *RegisterD3pcr1lType) SetPcs15(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1lFieldPcs15Mask)|(uint32(value)<<RegisterD3pcr1lFieldPcs15Shift))
 }
 
-// registerD3pcr1hType EXTI D3 pending clear selection register high
-type registerD3pcr1hType uint32
+// RegisterD3pcr1hType EXTI D3 pending clear selection register high
+type RegisterD3pcr1hType uint32
+
+func (r *RegisterD3pcr1hType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3pcr1hType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3pcr1hType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3pcr1hType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3pcr1hType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD3pcr1hFieldPcs19Shift = 6
@@ -1944,12 +2082,12 @@ const (
 )
 
 // GetPcs19 D3 Pending request clear input signal selection on Event input x = truncate ((n+32)/2)
-func (r *registerD3pcr1hType) GetPcs19() uint8 {
+func (r *RegisterD3pcr1hType) GetPcs19() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1hFieldPcs19Mask) >> RegisterD3pcr1hFieldPcs19Shift)
 }
 
 // SetPcs19 D3 Pending request clear input signal selection on Event input x = truncate ((n+32)/2)
-func (r *registerD3pcr1hType) SetPcs19(value uint8) {
+func (r *RegisterD3pcr1hType) SetPcs19(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1hFieldPcs19Mask)|(uint32(value)<<RegisterD3pcr1hFieldPcs19Shift))
 }
 
@@ -1959,12 +2097,12 @@ const (
 )
 
 // GetPcs20 D3 Pending request clear input signal selection on Event input x = truncate ((n+32)/2)
-func (r *registerD3pcr1hType) GetPcs20() uint8 {
+func (r *RegisterD3pcr1hType) GetPcs20() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1hFieldPcs20Mask) >> RegisterD3pcr1hFieldPcs20Shift)
 }
 
 // SetPcs20 D3 Pending request clear input signal selection on Event input x = truncate ((n+32)/2)
-func (r *registerD3pcr1hType) SetPcs20(value uint8) {
+func (r *RegisterD3pcr1hType) SetPcs20(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1hFieldPcs20Mask)|(uint32(value)<<RegisterD3pcr1hFieldPcs20Shift))
 }
 
@@ -1974,12 +2112,12 @@ const (
 )
 
 // GetPcs21 D3 Pending request clear input signal selection on Event input x = truncate ((n+32)/2)
-func (r *registerD3pcr1hType) GetPcs21() uint8 {
+func (r *RegisterD3pcr1hType) GetPcs21() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1hFieldPcs21Mask) >> RegisterD3pcr1hFieldPcs21Shift)
 }
 
 // SetPcs21 D3 Pending request clear input signal selection on Event input x = truncate ((n+32)/2)
-func (r *registerD3pcr1hType) SetPcs21(value uint8) {
+func (r *RegisterD3pcr1hType) SetPcs21(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1hFieldPcs21Mask)|(uint32(value)<<RegisterD3pcr1hFieldPcs21Shift))
 }
 
@@ -1989,17 +2127,40 @@ const (
 )
 
 // GetPcs25 D3 Pending request clear input signal selection on Event input x = truncate ((n+32)/2)
-func (r *registerD3pcr1hType) GetPcs25() uint8 {
+func (r *RegisterD3pcr1hType) GetPcs25() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr1hFieldPcs25Mask) >> RegisterD3pcr1hFieldPcs25Shift)
 }
 
 // SetPcs25 D3 Pending request clear input signal selection on Event input x = truncate ((n+32)/2)
-func (r *registerD3pcr1hType) SetPcs25(value uint8) {
+func (r *RegisterD3pcr1hType) SetPcs25(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr1hFieldPcs25Mask)|(uint32(value)<<RegisterD3pcr1hFieldPcs25Shift))
 }
 
-// registerRtsr2Type EXTI rising trigger selection register
-type registerRtsr2Type uint32
+// RegisterRtsr2Type EXTI rising trigger selection register
+type RegisterRtsr2Type uint32
+
+func (r *RegisterRtsr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRtsr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRtsr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRtsr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRtsr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRtsr2FieldTr49Shift = 17
@@ -2007,12 +2168,12 @@ const (
 )
 
 // GetTr49 Rising trigger event configuration bit of Configurable Event input x+32
-func (r *registerRtsr2Type) GetTr49() bool {
+func (r *RegisterRtsr2Type) GetTr49() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr2FieldTr49Mask) != 0
 }
 
 // SetTr49 Rising trigger event configuration bit of Configurable Event input x+32
-func (r *registerRtsr2Type) SetTr49(value bool) {
+func (r *RegisterRtsr2Type) SetTr49(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr2FieldTr49Mask)
 	} else {
@@ -2026,12 +2187,12 @@ const (
 )
 
 // GetTr51 Rising trigger event configuration bit of Configurable Event input x+32
-func (r *registerRtsr2Type) GetTr51() bool {
+func (r *RegisterRtsr2Type) GetTr51() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr2FieldTr51Mask) != 0
 }
 
 // SetTr51 Rising trigger event configuration bit of Configurable Event input x+32
-func (r *registerRtsr2Type) SetTr51(value bool) {
+func (r *RegisterRtsr2Type) SetTr51(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr2FieldTr51Mask)
 	} else {
@@ -2039,8 +2200,31 @@ func (r *registerRtsr2Type) SetTr51(value bool) {
 	}
 }
 
-// registerFtsr2Type EXTI falling trigger selection register
-type registerFtsr2Type uint32
+// RegisterFtsr2Type EXTI falling trigger selection register
+type RegisterFtsr2Type uint32
+
+func (r *RegisterFtsr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFtsr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFtsr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFtsr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFtsr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFtsr2FieldTr49Shift = 17
@@ -2048,12 +2232,12 @@ const (
 )
 
 // GetTr49 Falling trigger event configuration bit of Configurable Event input x+32
-func (r *registerFtsr2Type) GetTr49() bool {
+func (r *RegisterFtsr2Type) GetTr49() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr2FieldTr49Mask) != 0
 }
 
 // SetTr49 Falling trigger event configuration bit of Configurable Event input x+32
-func (r *registerFtsr2Type) SetTr49(value bool) {
+func (r *RegisterFtsr2Type) SetTr49(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr2FieldTr49Mask)
 	} else {
@@ -2067,12 +2251,12 @@ const (
 )
 
 // GetTr51 Falling trigger event configuration bit of Configurable Event input x+32
-func (r *registerFtsr2Type) GetTr51() bool {
+func (r *RegisterFtsr2Type) GetTr51() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr2FieldTr51Mask) != 0
 }
 
 // SetTr51 Falling trigger event configuration bit of Configurable Event input x+32
-func (r *registerFtsr2Type) SetTr51(value bool) {
+func (r *RegisterFtsr2Type) SetTr51(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr2FieldTr51Mask)
 	} else {
@@ -2080,8 +2264,31 @@ func (r *registerFtsr2Type) SetTr51(value bool) {
 	}
 }
 
-// registerSwier2Type EXTI software interrupt event register
-type registerSwier2Type uint32
+// RegisterSwier2Type EXTI software interrupt event register
+type RegisterSwier2Type uint32
+
+func (r *RegisterSwier2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterSwier2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterSwier2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterSwier2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterSwier2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterSwier2FieldSwier49Shift = 17
@@ -2089,12 +2296,12 @@ const (
 )
 
 // GetSwier49 Software interrupt on line x+32
-func (r *registerSwier2Type) GetSwier49() bool {
+func (r *RegisterSwier2Type) GetSwier49() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier2FieldSwier49Mask) != 0
 }
 
 // SetSwier49 Software interrupt on line x+32
-func (r *registerSwier2Type) SetSwier49(value bool) {
+func (r *RegisterSwier2Type) SetSwier49(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier2FieldSwier49Mask)
 	} else {
@@ -2108,12 +2315,12 @@ const (
 )
 
 // GetSwier51 Software interrupt on line x+32
-func (r *registerSwier2Type) GetSwier51() bool {
+func (r *RegisterSwier2Type) GetSwier51() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier2FieldSwier51Mask) != 0
 }
 
 // SetSwier51 Software interrupt on line x+32
-func (r *registerSwier2Type) SetSwier51(value bool) {
+func (r *RegisterSwier2Type) SetSwier51(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier2FieldSwier51Mask)
 	} else {
@@ -2121,8 +2328,31 @@ func (r *registerSwier2Type) SetSwier51(value bool) {
 	}
 }
 
-// registerD3pmr2Type EXTI D3 pending mask register
-type registerD3pmr2Type uint32
+// RegisterD3pmr2Type EXTI D3 pending mask register
+type RegisterD3pmr2Type uint32
+
+func (r *RegisterD3pmr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3pmr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3pmr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3pmr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3pmr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD3pmr2FieldMr34Shift = 2
@@ -2130,12 +2360,12 @@ const (
 )
 
 // GetMr34 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) GetMr34() bool {
+func (r *RegisterD3pmr2Type) GetMr34() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr2FieldMr34Mask) != 0
 }
 
 // SetMr34 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) SetMr34(value bool) {
+func (r *RegisterD3pmr2Type) SetMr34(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr2FieldMr34Mask)
 	} else {
@@ -2149,12 +2379,12 @@ const (
 )
 
 // GetMr35 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) GetMr35() bool {
+func (r *RegisterD3pmr2Type) GetMr35() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr2FieldMr35Mask) != 0
 }
 
 // SetMr35 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) SetMr35(value bool) {
+func (r *RegisterD3pmr2Type) SetMr35(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr2FieldMr35Mask)
 	} else {
@@ -2168,12 +2398,12 @@ const (
 )
 
 // GetMr41 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) GetMr41() bool {
+func (r *RegisterD3pmr2Type) GetMr41() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr2FieldMr41Mask) != 0
 }
 
 // SetMr41 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) SetMr41(value bool) {
+func (r *RegisterD3pmr2Type) SetMr41(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr2FieldMr41Mask)
 	} else {
@@ -2187,12 +2417,12 @@ const (
 )
 
 // GetMr48 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) GetMr48() bool {
+func (r *RegisterD3pmr2Type) GetMr48() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr2FieldMr48Mask) != 0
 }
 
 // SetMr48 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) SetMr48(value bool) {
+func (r *RegisterD3pmr2Type) SetMr48(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr2FieldMr48Mask)
 	} else {
@@ -2206,12 +2436,12 @@ const (
 )
 
 // GetMr49 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) GetMr49() bool {
+func (r *RegisterD3pmr2Type) GetMr49() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr2FieldMr49Mask) != 0
 }
 
 // SetMr49 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) SetMr49(value bool) {
+func (r *RegisterD3pmr2Type) SetMr49(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr2FieldMr49Mask)
 	} else {
@@ -2225,12 +2455,12 @@ const (
 )
 
 // GetMr50 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) GetMr50() bool {
+func (r *RegisterD3pmr2Type) GetMr50() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr2FieldMr50Mask) != 0
 }
 
 // SetMr50 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) SetMr50(value bool) {
+func (r *RegisterD3pmr2Type) SetMr50(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr2FieldMr50Mask)
 	} else {
@@ -2244,12 +2474,12 @@ const (
 )
 
 // GetMr51 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) GetMr51() bool {
+func (r *RegisterD3pmr2Type) GetMr51() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr2FieldMr51Mask) != 0
 }
 
 // SetMr51 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) SetMr51(value bool) {
+func (r *RegisterD3pmr2Type) SetMr51(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr2FieldMr51Mask)
 	} else {
@@ -2263,12 +2493,12 @@ const (
 )
 
 // GetMr52 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) GetMr52() bool {
+func (r *RegisterD3pmr2Type) GetMr52() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr2FieldMr52Mask) != 0
 }
 
 // SetMr52 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) SetMr52(value bool) {
+func (r *RegisterD3pmr2Type) SetMr52(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr2FieldMr52Mask)
 	} else {
@@ -2282,12 +2512,12 @@ const (
 )
 
 // GetMr53 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) GetMr53() bool {
+func (r *RegisterD3pmr2Type) GetMr53() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr2FieldMr53Mask) != 0
 }
 
 // SetMr53 D3 Pending Mask on Event input x+32
-func (r *registerD3pmr2Type) SetMr53(value bool) {
+func (r *RegisterD3pmr2Type) SetMr53(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr2FieldMr53Mask)
 	} else {
@@ -2295,8 +2525,31 @@ func (r *registerD3pmr2Type) SetMr53(value bool) {
 	}
 }
 
-// registerD3pcr2lType EXTI D3 pending clear selection register low
-type registerD3pcr2lType uint32
+// RegisterD3pcr2lType EXTI D3 pending clear selection register low
+type RegisterD3pcr2lType uint32
+
+func (r *RegisterD3pcr2lType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3pcr2lType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3pcr2lType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3pcr2lType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3pcr2lType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD3pcr2lFieldPcs34Shift = 4
@@ -2304,12 +2557,12 @@ const (
 )
 
 // GetPcs34 D3 Pending request clear input signal selection on Event input x = truncate ((n+64)/2)
-func (r *registerD3pcr2lType) GetPcs34() uint8 {
+func (r *RegisterD3pcr2lType) GetPcs34() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr2lFieldPcs34Mask) >> RegisterD3pcr2lFieldPcs34Shift)
 }
 
 // SetPcs34 D3 Pending request clear input signal selection on Event input x = truncate ((n+64)/2)
-func (r *registerD3pcr2lType) SetPcs34(value uint8) {
+func (r *RegisterD3pcr2lType) SetPcs34(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr2lFieldPcs34Mask)|(uint32(value)<<RegisterD3pcr2lFieldPcs34Shift))
 }
 
@@ -2319,12 +2572,12 @@ const (
 )
 
 // GetPcs35 D3 Pending request clear input signal selection on Event input x = truncate ((n+64)/2)
-func (r *registerD3pcr2lType) GetPcs35() uint8 {
+func (r *RegisterD3pcr2lType) GetPcs35() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr2lFieldPcs35Mask) >> RegisterD3pcr2lFieldPcs35Shift)
 }
 
 // SetPcs35 D3 Pending request clear input signal selection on Event input x = truncate ((n+64)/2)
-func (r *registerD3pcr2lType) SetPcs35(value uint8) {
+func (r *RegisterD3pcr2lType) SetPcs35(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr2lFieldPcs35Mask)|(uint32(value)<<RegisterD3pcr2lFieldPcs35Shift))
 }
 
@@ -2334,17 +2587,40 @@ const (
 )
 
 // GetPcs41 D3 Pending request clear input signal selection on Event input x = truncate ((n+64)/2)
-func (r *registerD3pcr2lType) GetPcs41() uint8 {
+func (r *RegisterD3pcr2lType) GetPcs41() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr2lFieldPcs41Mask) >> RegisterD3pcr2lFieldPcs41Shift)
 }
 
 // SetPcs41 D3 Pending request clear input signal selection on Event input x = truncate ((n+64)/2)
-func (r *registerD3pcr2lType) SetPcs41(value uint8) {
+func (r *RegisterD3pcr2lType) SetPcs41(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr2lFieldPcs41Mask)|(uint32(value)<<RegisterD3pcr2lFieldPcs41Shift))
 }
 
-// registerD3pcr2hType EXTI D3 pending clear selection register high
-type registerD3pcr2hType uint32
+// RegisterD3pcr2hType EXTI D3 pending clear selection register high
+type RegisterD3pcr2hType uint32
+
+func (r *RegisterD3pcr2hType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3pcr2hType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3pcr2hType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3pcr2hType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3pcr2hType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD3pcr2hFieldPcs48Shift = 0
@@ -2352,12 +2628,12 @@ const (
 )
 
 // GetPcs48 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) GetPcs48() uint8 {
+func (r *RegisterD3pcr2hType) GetPcs48() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr2hFieldPcs48Mask) >> RegisterD3pcr2hFieldPcs48Shift)
 }
 
 // SetPcs48 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) SetPcs48(value uint8) {
+func (r *RegisterD3pcr2hType) SetPcs48(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr2hFieldPcs48Mask)|(uint32(value)<<RegisterD3pcr2hFieldPcs48Shift))
 }
 
@@ -2367,12 +2643,12 @@ const (
 )
 
 // GetPcs49 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) GetPcs49() uint8 {
+func (r *RegisterD3pcr2hType) GetPcs49() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr2hFieldPcs49Mask) >> RegisterD3pcr2hFieldPcs49Shift)
 }
 
 // SetPcs49 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) SetPcs49(value uint8) {
+func (r *RegisterD3pcr2hType) SetPcs49(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr2hFieldPcs49Mask)|(uint32(value)<<RegisterD3pcr2hFieldPcs49Shift))
 }
 
@@ -2382,12 +2658,12 @@ const (
 )
 
 // GetPcs50 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) GetPcs50() uint8 {
+func (r *RegisterD3pcr2hType) GetPcs50() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr2hFieldPcs50Mask) >> RegisterD3pcr2hFieldPcs50Shift)
 }
 
 // SetPcs50 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) SetPcs50(value uint8) {
+func (r *RegisterD3pcr2hType) SetPcs50(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr2hFieldPcs50Mask)|(uint32(value)<<RegisterD3pcr2hFieldPcs50Shift))
 }
 
@@ -2397,12 +2673,12 @@ const (
 )
 
 // GetPcs51 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) GetPcs51() uint8 {
+func (r *RegisterD3pcr2hType) GetPcs51() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr2hFieldPcs51Mask) >> RegisterD3pcr2hFieldPcs51Shift)
 }
 
 // SetPcs51 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) SetPcs51(value uint8) {
+func (r *RegisterD3pcr2hType) SetPcs51(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr2hFieldPcs51Mask)|(uint32(value)<<RegisterD3pcr2hFieldPcs51Shift))
 }
 
@@ -2412,12 +2688,12 @@ const (
 )
 
 // GetPcs52 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) GetPcs52() uint8 {
+func (r *RegisterD3pcr2hType) GetPcs52() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr2hFieldPcs52Mask) >> RegisterD3pcr2hFieldPcs52Shift)
 }
 
 // SetPcs52 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) SetPcs52(value uint8) {
+func (r *RegisterD3pcr2hType) SetPcs52(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr2hFieldPcs52Mask)|(uint32(value)<<RegisterD3pcr2hFieldPcs52Shift))
 }
 
@@ -2427,17 +2703,40 @@ const (
 )
 
 // GetPcs53 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) GetPcs53() uint8 {
+func (r *RegisterD3pcr2hType) GetPcs53() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr2hFieldPcs53Mask) >> RegisterD3pcr2hFieldPcs53Shift)
 }
 
 // SetPcs53 Pending request clear input signal selection on Event input x= truncate ((n+96)/2)
-func (r *registerD3pcr2hType) SetPcs53(value uint8) {
+func (r *RegisterD3pcr2hType) SetPcs53(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr2hFieldPcs53Mask)|(uint32(value)<<RegisterD3pcr2hFieldPcs53Shift))
 }
 
-// registerRtsr3Type EXTI rising trigger selection register
-type registerRtsr3Type uint32
+// RegisterRtsr3Type EXTI rising trigger selection register
+type RegisterRtsr3Type uint32
+
+func (r *RegisterRtsr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRtsr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRtsr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRtsr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRtsr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRtsr3FieldTr82Shift = 18
@@ -2445,12 +2744,12 @@ const (
 )
 
 // GetTr82 Rising trigger event configuration bit of Configurable Event input x+64
-func (r *registerRtsr3Type) GetTr82() bool {
+func (r *RegisterRtsr3Type) GetTr82() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr3FieldTr82Mask) != 0
 }
 
 // SetTr82 Rising trigger event configuration bit of Configurable Event input x+64
-func (r *registerRtsr3Type) SetTr82(value bool) {
+func (r *RegisterRtsr3Type) SetTr82(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr3FieldTr82Mask)
 	} else {
@@ -2464,12 +2763,12 @@ const (
 )
 
 // GetTr84 Rising trigger event configuration bit of Configurable Event input x+64
-func (r *registerRtsr3Type) GetTr84() bool {
+func (r *RegisterRtsr3Type) GetTr84() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr3FieldTr84Mask) != 0
 }
 
 // SetTr84 Rising trigger event configuration bit of Configurable Event input x+64
-func (r *registerRtsr3Type) SetTr84(value bool) {
+func (r *RegisterRtsr3Type) SetTr84(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr3FieldTr84Mask)
 	} else {
@@ -2483,12 +2782,12 @@ const (
 )
 
 // GetTr85 Rising trigger event configuration bit of Configurable Event input x+64
-func (r *registerRtsr3Type) GetTr85() bool {
+func (r *RegisterRtsr3Type) GetTr85() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr3FieldTr85Mask) != 0
 }
 
 // SetTr85 Rising trigger event configuration bit of Configurable Event input x+64
-func (r *registerRtsr3Type) SetTr85(value bool) {
+func (r *RegisterRtsr3Type) SetTr85(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr3FieldTr85Mask)
 	} else {
@@ -2502,12 +2801,12 @@ const (
 )
 
 // GetTr86 Rising trigger event configuration bit of Configurable Event input x+64
-func (r *registerRtsr3Type) GetTr86() bool {
+func (r *RegisterRtsr3Type) GetTr86() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRtsr3FieldTr86Mask) != 0
 }
 
 // SetTr86 Rising trigger event configuration bit of Configurable Event input x+64
-func (r *registerRtsr3Type) SetTr86(value bool) {
+func (r *RegisterRtsr3Type) SetTr86(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRtsr3FieldTr86Mask)
 	} else {
@@ -2515,8 +2814,31 @@ func (r *registerRtsr3Type) SetTr86(value bool) {
 	}
 }
 
-// registerFtsr3Type EXTI falling trigger selection register
-type registerFtsr3Type uint32
+// RegisterFtsr3Type EXTI falling trigger selection register
+type RegisterFtsr3Type uint32
+
+func (r *RegisterFtsr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFtsr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFtsr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFtsr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFtsr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFtsr3FieldTr82Shift = 18
@@ -2524,12 +2846,12 @@ const (
 )
 
 // GetTr82 Falling trigger event configuration bit of Configurable Event input x+64
-func (r *registerFtsr3Type) GetTr82() bool {
+func (r *RegisterFtsr3Type) GetTr82() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr3FieldTr82Mask) != 0
 }
 
 // SetTr82 Falling trigger event configuration bit of Configurable Event input x+64
-func (r *registerFtsr3Type) SetTr82(value bool) {
+func (r *RegisterFtsr3Type) SetTr82(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr3FieldTr82Mask)
 	} else {
@@ -2543,12 +2865,12 @@ const (
 )
 
 // GetTr84 Falling trigger event configuration bit of Configurable Event input x+64
-func (r *registerFtsr3Type) GetTr84() bool {
+func (r *RegisterFtsr3Type) GetTr84() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr3FieldTr84Mask) != 0
 }
 
 // SetTr84 Falling trigger event configuration bit of Configurable Event input x+64
-func (r *registerFtsr3Type) SetTr84(value bool) {
+func (r *RegisterFtsr3Type) SetTr84(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr3FieldTr84Mask)
 	} else {
@@ -2562,12 +2884,12 @@ const (
 )
 
 // GetTr85 Falling trigger event configuration bit of Configurable Event input x+64
-func (r *registerFtsr3Type) GetTr85() bool {
+func (r *RegisterFtsr3Type) GetTr85() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr3FieldTr85Mask) != 0
 }
 
 // SetTr85 Falling trigger event configuration bit of Configurable Event input x+64
-func (r *registerFtsr3Type) SetTr85(value bool) {
+func (r *RegisterFtsr3Type) SetTr85(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr3FieldTr85Mask)
 	} else {
@@ -2581,12 +2903,12 @@ const (
 )
 
 // GetTr86 Falling trigger event configuration bit of Configurable Event input x+64
-func (r *registerFtsr3Type) GetTr86() bool {
+func (r *RegisterFtsr3Type) GetTr86() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFtsr3FieldTr86Mask) != 0
 }
 
 // SetTr86 Falling trigger event configuration bit of Configurable Event input x+64
-func (r *registerFtsr3Type) SetTr86(value bool) {
+func (r *RegisterFtsr3Type) SetTr86(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFtsr3FieldTr86Mask)
 	} else {
@@ -2594,8 +2916,31 @@ func (r *registerFtsr3Type) SetTr86(value bool) {
 	}
 }
 
-// registerSwier3Type EXTI software interrupt event register
-type registerSwier3Type uint32
+// RegisterSwier3Type EXTI software interrupt event register
+type RegisterSwier3Type uint32
+
+func (r *RegisterSwier3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterSwier3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterSwier3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterSwier3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterSwier3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterSwier3FieldSwier82Shift = 18
@@ -2603,12 +2948,12 @@ const (
 )
 
 // GetSwier82 Software interrupt on line x+64
-func (r *registerSwier3Type) GetSwier82() bool {
+func (r *RegisterSwier3Type) GetSwier82() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier3FieldSwier82Mask) != 0
 }
 
 // SetSwier82 Software interrupt on line x+64
-func (r *registerSwier3Type) SetSwier82(value bool) {
+func (r *RegisterSwier3Type) SetSwier82(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier3FieldSwier82Mask)
 	} else {
@@ -2622,12 +2967,12 @@ const (
 )
 
 // GetSwier84 Software interrupt on line x+64
-func (r *registerSwier3Type) GetSwier84() bool {
+func (r *RegisterSwier3Type) GetSwier84() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier3FieldSwier84Mask) != 0
 }
 
 // SetSwier84 Software interrupt on line x+64
-func (r *registerSwier3Type) SetSwier84(value bool) {
+func (r *RegisterSwier3Type) SetSwier84(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier3FieldSwier84Mask)
 	} else {
@@ -2641,12 +2986,12 @@ const (
 )
 
 // GetSwier85 Software interrupt on line x+64
-func (r *registerSwier3Type) GetSwier85() bool {
+func (r *RegisterSwier3Type) GetSwier85() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier3FieldSwier85Mask) != 0
 }
 
 // SetSwier85 Software interrupt on line x+64
-func (r *registerSwier3Type) SetSwier85(value bool) {
+func (r *RegisterSwier3Type) SetSwier85(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier3FieldSwier85Mask)
 	} else {
@@ -2660,12 +3005,12 @@ const (
 )
 
 // GetSwier86 Software interrupt on line x+64
-func (r *registerSwier3Type) GetSwier86() bool {
+func (r *RegisterSwier3Type) GetSwier86() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSwier3FieldSwier86Mask) != 0
 }
 
 // SetSwier86 Software interrupt on line x+64
-func (r *registerSwier3Type) SetSwier86(value bool) {
+func (r *RegisterSwier3Type) SetSwier86(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSwier3FieldSwier86Mask)
 	} else {
@@ -2673,8 +3018,31 @@ func (r *registerSwier3Type) SetSwier86(value bool) {
 	}
 }
 
-// registerD3pmr3Type EXTI D3 pending mask register
-type registerD3pmr3Type uint32
+// RegisterD3pmr3Type EXTI D3 pending mask register
+type RegisterD3pmr3Type uint32
+
+func (r *RegisterD3pmr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3pmr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3pmr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3pmr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3pmr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD3pmr3FieldMr88Shift = 24
@@ -2682,12 +3050,12 @@ const (
 )
 
 // GetMr88 D3 Pending Mask on Event input x+64
-func (r *registerD3pmr3Type) GetMr88() bool {
+func (r *RegisterD3pmr3Type) GetMr88() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterD3pmr3FieldMr88Mask) != 0
 }
 
 // SetMr88 D3 Pending Mask on Event input x+64
-func (r *registerD3pmr3Type) SetMr88(value bool) {
+func (r *RegisterD3pmr3Type) SetMr88(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterD3pmr3FieldMr88Mask)
 	} else {
@@ -2695,8 +3063,31 @@ func (r *registerD3pmr3Type) SetMr88(value bool) {
 	}
 }
 
-// registerD3pcr3hType EXTI D3 pending clear selection register high
-type registerD3pcr3hType uint32
+// RegisterD3pcr3hType EXTI D3 pending clear selection register high
+type RegisterD3pcr3hType uint32
+
+func (r *RegisterD3pcr3hType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterD3pcr3hType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterD3pcr3hType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterD3pcr3hType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterD3pcr3hType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterD3pcr3hFieldPcs88Shift = 18
@@ -2704,17 +3095,40 @@ const (
 )
 
 // GetPcs88 D3 Pending request clear input signal selection on Event input x= truncate N+160/2
-func (r *registerD3pcr3hType) GetPcs88() uint8 {
+func (r *RegisterD3pcr3hType) GetPcs88() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterD3pcr3hFieldPcs88Mask) >> RegisterD3pcr3hFieldPcs88Shift)
 }
 
 // SetPcs88 D3 Pending request clear input signal selection on Event input x= truncate N+160/2
-func (r *registerD3pcr3hType) SetPcs88(value uint8) {
+func (r *RegisterD3pcr3hType) SetPcs88(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterD3pcr3hFieldPcs88Mask)|(uint32(value)<<RegisterD3pcr3hFieldPcs88Shift))
 }
 
-// registerCpuimr1Type EXTI interrupt mask register
-type registerCpuimr1Type uint32
+// RegisterCpuimr1Type EXTI interrupt mask register
+type RegisterCpuimr1Type uint32
+
+func (r *RegisterCpuimr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpuimr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpuimr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpuimr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpuimr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpuimr1FieldMr0Shift = 0
@@ -2722,12 +3136,12 @@ const (
 )
 
 // GetMr0 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr0() bool {
+func (r *RegisterCpuimr1Type) GetMr0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr0Mask) != 0
 }
 
 // SetMr0 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr0(value bool) {
+func (r *RegisterCpuimr1Type) SetMr0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr0Mask)
 	} else {
@@ -2741,12 +3155,12 @@ const (
 )
 
 // GetMr1 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr1() bool {
+func (r *RegisterCpuimr1Type) GetMr1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr1Mask) != 0
 }
 
 // SetMr1 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr1(value bool) {
+func (r *RegisterCpuimr1Type) SetMr1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr1Mask)
 	} else {
@@ -2760,12 +3174,12 @@ const (
 )
 
 // GetMr2 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr2() bool {
+func (r *RegisterCpuimr1Type) GetMr2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr2Mask) != 0
 }
 
 // SetMr2 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr2(value bool) {
+func (r *RegisterCpuimr1Type) SetMr2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr2Mask)
 	} else {
@@ -2779,12 +3193,12 @@ const (
 )
 
 // GetMr3 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr3() bool {
+func (r *RegisterCpuimr1Type) GetMr3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr3Mask) != 0
 }
 
 // SetMr3 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr3(value bool) {
+func (r *RegisterCpuimr1Type) SetMr3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr3Mask)
 	} else {
@@ -2798,12 +3212,12 @@ const (
 )
 
 // GetMr4 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr4() bool {
+func (r *RegisterCpuimr1Type) GetMr4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr4Mask) != 0
 }
 
 // SetMr4 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr4(value bool) {
+func (r *RegisterCpuimr1Type) SetMr4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr4Mask)
 	} else {
@@ -2817,12 +3231,12 @@ const (
 )
 
 // GetMr5 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr5() bool {
+func (r *RegisterCpuimr1Type) GetMr5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr5Mask) != 0
 }
 
 // SetMr5 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr5(value bool) {
+func (r *RegisterCpuimr1Type) SetMr5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr5Mask)
 	} else {
@@ -2836,12 +3250,12 @@ const (
 )
 
 // GetMr6 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr6() bool {
+func (r *RegisterCpuimr1Type) GetMr6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr6Mask) != 0
 }
 
 // SetMr6 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr6(value bool) {
+func (r *RegisterCpuimr1Type) SetMr6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr6Mask)
 	} else {
@@ -2855,12 +3269,12 @@ const (
 )
 
 // GetMr7 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr7() bool {
+func (r *RegisterCpuimr1Type) GetMr7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr7Mask) != 0
 }
 
 // SetMr7 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr7(value bool) {
+func (r *RegisterCpuimr1Type) SetMr7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr7Mask)
 	} else {
@@ -2874,12 +3288,12 @@ const (
 )
 
 // GetMr8 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr8() bool {
+func (r *RegisterCpuimr1Type) GetMr8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr8Mask) != 0
 }
 
 // SetMr8 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr8(value bool) {
+func (r *RegisterCpuimr1Type) SetMr8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr8Mask)
 	} else {
@@ -2893,12 +3307,12 @@ const (
 )
 
 // GetMr9 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr9() bool {
+func (r *RegisterCpuimr1Type) GetMr9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr9Mask) != 0
 }
 
 // SetMr9 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr9(value bool) {
+func (r *RegisterCpuimr1Type) SetMr9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr9Mask)
 	} else {
@@ -2912,12 +3326,12 @@ const (
 )
 
 // GetMr10 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr10() bool {
+func (r *RegisterCpuimr1Type) GetMr10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr10Mask) != 0
 }
 
 // SetMr10 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr10(value bool) {
+func (r *RegisterCpuimr1Type) SetMr10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr10Mask)
 	} else {
@@ -2931,12 +3345,12 @@ const (
 )
 
 // GetMr11 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr11() bool {
+func (r *RegisterCpuimr1Type) GetMr11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr11Mask) != 0
 }
 
 // SetMr11 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr11(value bool) {
+func (r *RegisterCpuimr1Type) SetMr11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr11Mask)
 	} else {
@@ -2950,12 +3364,12 @@ const (
 )
 
 // GetMr12 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr12() bool {
+func (r *RegisterCpuimr1Type) GetMr12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr12Mask) != 0
 }
 
 // SetMr12 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr12(value bool) {
+func (r *RegisterCpuimr1Type) SetMr12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr12Mask)
 	} else {
@@ -2969,12 +3383,12 @@ const (
 )
 
 // GetMr13 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr13() bool {
+func (r *RegisterCpuimr1Type) GetMr13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr13Mask) != 0
 }
 
 // SetMr13 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr13(value bool) {
+func (r *RegisterCpuimr1Type) SetMr13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr13Mask)
 	} else {
@@ -2988,12 +3402,12 @@ const (
 )
 
 // GetMr14 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr14() bool {
+func (r *RegisterCpuimr1Type) GetMr14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr14Mask) != 0
 }
 
 // SetMr14 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr14(value bool) {
+func (r *RegisterCpuimr1Type) SetMr14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr14Mask)
 	} else {
@@ -3007,12 +3421,12 @@ const (
 )
 
 // GetMr15 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr15() bool {
+func (r *RegisterCpuimr1Type) GetMr15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr15Mask) != 0
 }
 
 // SetMr15 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr15(value bool) {
+func (r *RegisterCpuimr1Type) SetMr15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr15Mask)
 	} else {
@@ -3026,12 +3440,12 @@ const (
 )
 
 // GetMr16 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr16() bool {
+func (r *RegisterCpuimr1Type) GetMr16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr16Mask) != 0
 }
 
 // SetMr16 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr16(value bool) {
+func (r *RegisterCpuimr1Type) SetMr16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr16Mask)
 	} else {
@@ -3045,12 +3459,12 @@ const (
 )
 
 // GetMr17 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr17() bool {
+func (r *RegisterCpuimr1Type) GetMr17() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr17Mask) != 0
 }
 
 // SetMr17 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr17(value bool) {
+func (r *RegisterCpuimr1Type) SetMr17(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr17Mask)
 	} else {
@@ -3064,12 +3478,12 @@ const (
 )
 
 // GetMr18 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr18() bool {
+func (r *RegisterCpuimr1Type) GetMr18() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr18Mask) != 0
 }
 
 // SetMr18 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr18(value bool) {
+func (r *RegisterCpuimr1Type) SetMr18(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr18Mask)
 	} else {
@@ -3083,12 +3497,12 @@ const (
 )
 
 // GetMr19 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr19() bool {
+func (r *RegisterCpuimr1Type) GetMr19() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr19Mask) != 0
 }
 
 // SetMr19 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr19(value bool) {
+func (r *RegisterCpuimr1Type) SetMr19(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr19Mask)
 	} else {
@@ -3102,12 +3516,12 @@ const (
 )
 
 // GetMr20 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr20() bool {
+func (r *RegisterCpuimr1Type) GetMr20() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr20Mask) != 0
 }
 
 // SetMr20 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr20(value bool) {
+func (r *RegisterCpuimr1Type) SetMr20(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr20Mask)
 	} else {
@@ -3121,12 +3535,12 @@ const (
 )
 
 // GetMr21 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr21() bool {
+func (r *RegisterCpuimr1Type) GetMr21() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr21Mask) != 0
 }
 
 // SetMr21 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr21(value bool) {
+func (r *RegisterCpuimr1Type) SetMr21(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr21Mask)
 	} else {
@@ -3140,12 +3554,12 @@ const (
 )
 
 // GetMr22 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr22() bool {
+func (r *RegisterCpuimr1Type) GetMr22() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr22Mask) != 0
 }
 
 // SetMr22 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr22(value bool) {
+func (r *RegisterCpuimr1Type) SetMr22(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr22Mask)
 	} else {
@@ -3159,12 +3573,12 @@ const (
 )
 
 // GetMr23 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr23() bool {
+func (r *RegisterCpuimr1Type) GetMr23() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr23Mask) != 0
 }
 
 // SetMr23 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr23(value bool) {
+func (r *RegisterCpuimr1Type) SetMr23(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr23Mask)
 	} else {
@@ -3178,12 +3592,12 @@ const (
 )
 
 // GetMr24 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr24() bool {
+func (r *RegisterCpuimr1Type) GetMr24() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr24Mask) != 0
 }
 
 // SetMr24 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr24(value bool) {
+func (r *RegisterCpuimr1Type) SetMr24(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr24Mask)
 	} else {
@@ -3197,12 +3611,12 @@ const (
 )
 
 // GetMr25 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr25() bool {
+func (r *RegisterCpuimr1Type) GetMr25() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr25Mask) != 0
 }
 
 // SetMr25 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr25(value bool) {
+func (r *RegisterCpuimr1Type) SetMr25(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr25Mask)
 	} else {
@@ -3216,12 +3630,12 @@ const (
 )
 
 // GetMr26 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr26() bool {
+func (r *RegisterCpuimr1Type) GetMr26() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr26Mask) != 0
 }
 
 // SetMr26 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr26(value bool) {
+func (r *RegisterCpuimr1Type) SetMr26(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr26Mask)
 	} else {
@@ -3235,12 +3649,12 @@ const (
 )
 
 // GetMr27 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr27() bool {
+func (r *RegisterCpuimr1Type) GetMr27() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr27Mask) != 0
 }
 
 // SetMr27 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr27(value bool) {
+func (r *RegisterCpuimr1Type) SetMr27(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr27Mask)
 	} else {
@@ -3254,12 +3668,12 @@ const (
 )
 
 // GetMr28 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr28() bool {
+func (r *RegisterCpuimr1Type) GetMr28() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr28Mask) != 0
 }
 
 // SetMr28 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr28(value bool) {
+func (r *RegisterCpuimr1Type) SetMr28(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr28Mask)
 	} else {
@@ -3273,12 +3687,12 @@ const (
 )
 
 // GetMr29 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr29() bool {
+func (r *RegisterCpuimr1Type) GetMr29() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr29Mask) != 0
 }
 
 // SetMr29 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr29(value bool) {
+func (r *RegisterCpuimr1Type) SetMr29(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr29Mask)
 	} else {
@@ -3292,12 +3706,12 @@ const (
 )
 
 // GetMr30 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr30() bool {
+func (r *RegisterCpuimr1Type) GetMr30() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr30Mask) != 0
 }
 
 // SetMr30 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr30(value bool) {
+func (r *RegisterCpuimr1Type) SetMr30(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr30Mask)
 	} else {
@@ -3311,12 +3725,12 @@ const (
 )
 
 // GetMr31 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) GetMr31() bool {
+func (r *RegisterCpuimr1Type) GetMr31() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr1FieldMr31Mask) != 0
 }
 
 // SetMr31 Rising trigger event configuration bit of Configurable Event input
-func (r *registerCpuimr1Type) SetMr31(value bool) {
+func (r *RegisterCpuimr1Type) SetMr31(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr1FieldMr31Mask)
 	} else {
@@ -3324,8 +3738,31 @@ func (r *registerCpuimr1Type) SetMr31(value bool) {
 	}
 }
 
-// registerCpuemr1Type EXTI event mask register
-type registerCpuemr1Type uint32
+// RegisterCpuemr1Type EXTI event mask register
+type RegisterCpuemr1Type uint32
+
+func (r *RegisterCpuemr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpuemr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpuemr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpuemr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpuemr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpuemr1FieldMr0Shift = 0
@@ -3333,12 +3770,12 @@ const (
 )
 
 // GetMr0 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr0() bool {
+func (r *RegisterCpuemr1Type) GetMr0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr0Mask) != 0
 }
 
 // SetMr0 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr0(value bool) {
+func (r *RegisterCpuemr1Type) SetMr0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr0Mask)
 	} else {
@@ -3352,12 +3789,12 @@ const (
 )
 
 // GetMr1 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr1() bool {
+func (r *RegisterCpuemr1Type) GetMr1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr1Mask) != 0
 }
 
 // SetMr1 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr1(value bool) {
+func (r *RegisterCpuemr1Type) SetMr1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr1Mask)
 	} else {
@@ -3371,12 +3808,12 @@ const (
 )
 
 // GetMr2 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr2() bool {
+func (r *RegisterCpuemr1Type) GetMr2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr2Mask) != 0
 }
 
 // SetMr2 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr2(value bool) {
+func (r *RegisterCpuemr1Type) SetMr2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr2Mask)
 	} else {
@@ -3390,12 +3827,12 @@ const (
 )
 
 // GetMr3 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr3() bool {
+func (r *RegisterCpuemr1Type) GetMr3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr3Mask) != 0
 }
 
 // SetMr3 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr3(value bool) {
+func (r *RegisterCpuemr1Type) SetMr3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr3Mask)
 	} else {
@@ -3409,12 +3846,12 @@ const (
 )
 
 // GetMr4 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr4() bool {
+func (r *RegisterCpuemr1Type) GetMr4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr4Mask) != 0
 }
 
 // SetMr4 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr4(value bool) {
+func (r *RegisterCpuemr1Type) SetMr4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr4Mask)
 	} else {
@@ -3428,12 +3865,12 @@ const (
 )
 
 // GetMr5 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr5() bool {
+func (r *RegisterCpuemr1Type) GetMr5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr5Mask) != 0
 }
 
 // SetMr5 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr5(value bool) {
+func (r *RegisterCpuemr1Type) SetMr5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr5Mask)
 	} else {
@@ -3447,12 +3884,12 @@ const (
 )
 
 // GetMr6 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr6() bool {
+func (r *RegisterCpuemr1Type) GetMr6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr6Mask) != 0
 }
 
 // SetMr6 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr6(value bool) {
+func (r *RegisterCpuemr1Type) SetMr6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr6Mask)
 	} else {
@@ -3466,12 +3903,12 @@ const (
 )
 
 // GetMr7 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr7() bool {
+func (r *RegisterCpuemr1Type) GetMr7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr7Mask) != 0
 }
 
 // SetMr7 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr7(value bool) {
+func (r *RegisterCpuemr1Type) SetMr7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr7Mask)
 	} else {
@@ -3485,12 +3922,12 @@ const (
 )
 
 // GetMr8 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr8() bool {
+func (r *RegisterCpuemr1Type) GetMr8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr8Mask) != 0
 }
 
 // SetMr8 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr8(value bool) {
+func (r *RegisterCpuemr1Type) SetMr8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr8Mask)
 	} else {
@@ -3504,12 +3941,12 @@ const (
 )
 
 // GetMr9 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr9() bool {
+func (r *RegisterCpuemr1Type) GetMr9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr9Mask) != 0
 }
 
 // SetMr9 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr9(value bool) {
+func (r *RegisterCpuemr1Type) SetMr9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr9Mask)
 	} else {
@@ -3523,12 +3960,12 @@ const (
 )
 
 // GetMr10 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr10() bool {
+func (r *RegisterCpuemr1Type) GetMr10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr10Mask) != 0
 }
 
 // SetMr10 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr10(value bool) {
+func (r *RegisterCpuemr1Type) SetMr10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr10Mask)
 	} else {
@@ -3542,12 +3979,12 @@ const (
 )
 
 // GetMr11 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr11() bool {
+func (r *RegisterCpuemr1Type) GetMr11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr11Mask) != 0
 }
 
 // SetMr11 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr11(value bool) {
+func (r *RegisterCpuemr1Type) SetMr11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr11Mask)
 	} else {
@@ -3561,12 +3998,12 @@ const (
 )
 
 // GetMr12 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr12() bool {
+func (r *RegisterCpuemr1Type) GetMr12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr12Mask) != 0
 }
 
 // SetMr12 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr12(value bool) {
+func (r *RegisterCpuemr1Type) SetMr12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr12Mask)
 	} else {
@@ -3580,12 +4017,12 @@ const (
 )
 
 // GetMr13 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr13() bool {
+func (r *RegisterCpuemr1Type) GetMr13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr13Mask) != 0
 }
 
 // SetMr13 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr13(value bool) {
+func (r *RegisterCpuemr1Type) SetMr13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr13Mask)
 	} else {
@@ -3599,12 +4036,12 @@ const (
 )
 
 // GetMr14 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr14() bool {
+func (r *RegisterCpuemr1Type) GetMr14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr14Mask) != 0
 }
 
 // SetMr14 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr14(value bool) {
+func (r *RegisterCpuemr1Type) SetMr14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr14Mask)
 	} else {
@@ -3618,12 +4055,12 @@ const (
 )
 
 // GetMr15 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr15() bool {
+func (r *RegisterCpuemr1Type) GetMr15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr15Mask) != 0
 }
 
 // SetMr15 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr15(value bool) {
+func (r *RegisterCpuemr1Type) SetMr15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr15Mask)
 	} else {
@@ -3637,12 +4074,12 @@ const (
 )
 
 // GetMr16 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr16() bool {
+func (r *RegisterCpuemr1Type) GetMr16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr16Mask) != 0
 }
 
 // SetMr16 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr16(value bool) {
+func (r *RegisterCpuemr1Type) SetMr16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr16Mask)
 	} else {
@@ -3656,12 +4093,12 @@ const (
 )
 
 // GetMr17 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr17() bool {
+func (r *RegisterCpuemr1Type) GetMr17() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr17Mask) != 0
 }
 
 // SetMr17 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr17(value bool) {
+func (r *RegisterCpuemr1Type) SetMr17(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr17Mask)
 	} else {
@@ -3675,12 +4112,12 @@ const (
 )
 
 // GetMr18 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr18() bool {
+func (r *RegisterCpuemr1Type) GetMr18() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr18Mask) != 0
 }
 
 // SetMr18 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr18(value bool) {
+func (r *RegisterCpuemr1Type) SetMr18(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr18Mask)
 	} else {
@@ -3694,12 +4131,12 @@ const (
 )
 
 // GetMr19 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr19() bool {
+func (r *RegisterCpuemr1Type) GetMr19() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr19Mask) != 0
 }
 
 // SetMr19 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr19(value bool) {
+func (r *RegisterCpuemr1Type) SetMr19(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr19Mask)
 	} else {
@@ -3713,12 +4150,12 @@ const (
 )
 
 // GetMr20 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr20() bool {
+func (r *RegisterCpuemr1Type) GetMr20() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr20Mask) != 0
 }
 
 // SetMr20 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr20(value bool) {
+func (r *RegisterCpuemr1Type) SetMr20(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr20Mask)
 	} else {
@@ -3732,12 +4169,12 @@ const (
 )
 
 // GetMr21 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr21() bool {
+func (r *RegisterCpuemr1Type) GetMr21() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr21Mask) != 0
 }
 
 // SetMr21 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr21(value bool) {
+func (r *RegisterCpuemr1Type) SetMr21(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr21Mask)
 	} else {
@@ -3751,12 +4188,12 @@ const (
 )
 
 // GetMr22 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr22() bool {
+func (r *RegisterCpuemr1Type) GetMr22() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr22Mask) != 0
 }
 
 // SetMr22 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr22(value bool) {
+func (r *RegisterCpuemr1Type) SetMr22(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr22Mask)
 	} else {
@@ -3770,12 +4207,12 @@ const (
 )
 
 // GetMr23 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr23() bool {
+func (r *RegisterCpuemr1Type) GetMr23() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr23Mask) != 0
 }
 
 // SetMr23 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr23(value bool) {
+func (r *RegisterCpuemr1Type) SetMr23(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr23Mask)
 	} else {
@@ -3789,12 +4226,12 @@ const (
 )
 
 // GetMr24 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr24() bool {
+func (r *RegisterCpuemr1Type) GetMr24() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr24Mask) != 0
 }
 
 // SetMr24 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr24(value bool) {
+func (r *RegisterCpuemr1Type) SetMr24(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr24Mask)
 	} else {
@@ -3808,12 +4245,12 @@ const (
 )
 
 // GetMr25 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr25() bool {
+func (r *RegisterCpuemr1Type) GetMr25() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr25Mask) != 0
 }
 
 // SetMr25 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr25(value bool) {
+func (r *RegisterCpuemr1Type) SetMr25(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr25Mask)
 	} else {
@@ -3827,12 +4264,12 @@ const (
 )
 
 // GetMr26 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr26() bool {
+func (r *RegisterCpuemr1Type) GetMr26() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr26Mask) != 0
 }
 
 // SetMr26 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr26(value bool) {
+func (r *RegisterCpuemr1Type) SetMr26(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr26Mask)
 	} else {
@@ -3846,12 +4283,12 @@ const (
 )
 
 // GetMr27 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr27() bool {
+func (r *RegisterCpuemr1Type) GetMr27() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr27Mask) != 0
 }
 
 // SetMr27 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr27(value bool) {
+func (r *RegisterCpuemr1Type) SetMr27(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr27Mask)
 	} else {
@@ -3865,12 +4302,12 @@ const (
 )
 
 // GetMr28 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr28() bool {
+func (r *RegisterCpuemr1Type) GetMr28() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr28Mask) != 0
 }
 
 // SetMr28 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr28(value bool) {
+func (r *RegisterCpuemr1Type) SetMr28(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr28Mask)
 	} else {
@@ -3884,12 +4321,12 @@ const (
 )
 
 // GetMr29 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr29() bool {
+func (r *RegisterCpuemr1Type) GetMr29() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr29Mask) != 0
 }
 
 // SetMr29 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr29(value bool) {
+func (r *RegisterCpuemr1Type) SetMr29(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr29Mask)
 	} else {
@@ -3903,12 +4340,12 @@ const (
 )
 
 // GetMr30 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr30() bool {
+func (r *RegisterCpuemr1Type) GetMr30() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr30Mask) != 0
 }
 
 // SetMr30 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr30(value bool) {
+func (r *RegisterCpuemr1Type) SetMr30(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr30Mask)
 	} else {
@@ -3922,12 +4359,12 @@ const (
 )
 
 // GetMr31 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) GetMr31() bool {
+func (r *RegisterCpuemr1Type) GetMr31() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr1FieldMr31Mask) != 0
 }
 
 // SetMr31 CPU Event mask on Event input x
-func (r *registerCpuemr1Type) SetMr31(value bool) {
+func (r *RegisterCpuemr1Type) SetMr31(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr1FieldMr31Mask)
 	} else {
@@ -3935,8 +4372,31 @@ func (r *registerCpuemr1Type) SetMr31(value bool) {
 	}
 }
 
-// registerCpupr1Type EXTI pending register
-type registerCpupr1Type uint32
+// RegisterCpupr1Type EXTI pending register
+type RegisterCpupr1Type uint32
+
+func (r *RegisterCpupr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpupr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpupr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpupr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpupr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpupr1FieldPr0Shift = 0
@@ -3944,12 +4404,12 @@ const (
 )
 
 // GetPr0 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr0() bool {
+func (r *RegisterCpupr1Type) GetPr0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr0Mask) != 0
 }
 
 // SetPr0 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr0(value bool) {
+func (r *RegisterCpupr1Type) SetPr0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr0Mask)
 	} else {
@@ -3963,12 +4423,12 @@ const (
 )
 
 // GetPr1 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr1() bool {
+func (r *RegisterCpupr1Type) GetPr1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr1Mask) != 0
 }
 
 // SetPr1 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr1(value bool) {
+func (r *RegisterCpupr1Type) SetPr1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr1Mask)
 	} else {
@@ -3982,12 +4442,12 @@ const (
 )
 
 // GetPr2 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr2() bool {
+func (r *RegisterCpupr1Type) GetPr2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr2Mask) != 0
 }
 
 // SetPr2 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr2(value bool) {
+func (r *RegisterCpupr1Type) SetPr2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr2Mask)
 	} else {
@@ -4001,12 +4461,12 @@ const (
 )
 
 // GetPr3 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr3() bool {
+func (r *RegisterCpupr1Type) GetPr3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr3Mask) != 0
 }
 
 // SetPr3 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr3(value bool) {
+func (r *RegisterCpupr1Type) SetPr3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr3Mask)
 	} else {
@@ -4020,12 +4480,12 @@ const (
 )
 
 // GetPr4 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr4() bool {
+func (r *RegisterCpupr1Type) GetPr4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr4Mask) != 0
 }
 
 // SetPr4 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr4(value bool) {
+func (r *RegisterCpupr1Type) SetPr4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr4Mask)
 	} else {
@@ -4039,12 +4499,12 @@ const (
 )
 
 // GetPr5 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr5() bool {
+func (r *RegisterCpupr1Type) GetPr5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr5Mask) != 0
 }
 
 // SetPr5 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr5(value bool) {
+func (r *RegisterCpupr1Type) SetPr5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr5Mask)
 	} else {
@@ -4058,12 +4518,12 @@ const (
 )
 
 // GetPr6 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr6() bool {
+func (r *RegisterCpupr1Type) GetPr6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr6Mask) != 0
 }
 
 // SetPr6 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr6(value bool) {
+func (r *RegisterCpupr1Type) SetPr6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr6Mask)
 	} else {
@@ -4077,12 +4537,12 @@ const (
 )
 
 // GetPr7 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr7() bool {
+func (r *RegisterCpupr1Type) GetPr7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr7Mask) != 0
 }
 
 // SetPr7 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr7(value bool) {
+func (r *RegisterCpupr1Type) SetPr7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr7Mask)
 	} else {
@@ -4096,12 +4556,12 @@ const (
 )
 
 // GetPr8 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr8() bool {
+func (r *RegisterCpupr1Type) GetPr8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr8Mask) != 0
 }
 
 // SetPr8 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr8(value bool) {
+func (r *RegisterCpupr1Type) SetPr8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr8Mask)
 	} else {
@@ -4115,12 +4575,12 @@ const (
 )
 
 // GetPr9 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr9() bool {
+func (r *RegisterCpupr1Type) GetPr9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr9Mask) != 0
 }
 
 // SetPr9 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr9(value bool) {
+func (r *RegisterCpupr1Type) SetPr9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr9Mask)
 	} else {
@@ -4134,12 +4594,12 @@ const (
 )
 
 // GetPr10 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr10() bool {
+func (r *RegisterCpupr1Type) GetPr10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr10Mask) != 0
 }
 
 // SetPr10 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr10(value bool) {
+func (r *RegisterCpupr1Type) SetPr10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr10Mask)
 	} else {
@@ -4153,12 +4613,12 @@ const (
 )
 
 // GetPr11 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr11() bool {
+func (r *RegisterCpupr1Type) GetPr11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr11Mask) != 0
 }
 
 // SetPr11 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr11(value bool) {
+func (r *RegisterCpupr1Type) SetPr11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr11Mask)
 	} else {
@@ -4172,12 +4632,12 @@ const (
 )
 
 // GetPr12 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr12() bool {
+func (r *RegisterCpupr1Type) GetPr12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr12Mask) != 0
 }
 
 // SetPr12 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr12(value bool) {
+func (r *RegisterCpupr1Type) SetPr12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr12Mask)
 	} else {
@@ -4191,12 +4651,12 @@ const (
 )
 
 // GetPr13 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr13() bool {
+func (r *RegisterCpupr1Type) GetPr13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr13Mask) != 0
 }
 
 // SetPr13 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr13(value bool) {
+func (r *RegisterCpupr1Type) SetPr13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr13Mask)
 	} else {
@@ -4210,12 +4670,12 @@ const (
 )
 
 // GetPr14 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr14() bool {
+func (r *RegisterCpupr1Type) GetPr14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr14Mask) != 0
 }
 
 // SetPr14 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr14(value bool) {
+func (r *RegisterCpupr1Type) SetPr14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr14Mask)
 	} else {
@@ -4229,12 +4689,12 @@ const (
 )
 
 // GetPr15 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr15() bool {
+func (r *RegisterCpupr1Type) GetPr15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr15Mask) != 0
 }
 
 // SetPr15 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr15(value bool) {
+func (r *RegisterCpupr1Type) SetPr15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr15Mask)
 	} else {
@@ -4248,12 +4708,12 @@ const (
 )
 
 // GetPr16 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr16() bool {
+func (r *RegisterCpupr1Type) GetPr16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr16Mask) != 0
 }
 
 // SetPr16 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr16(value bool) {
+func (r *RegisterCpupr1Type) SetPr16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr16Mask)
 	} else {
@@ -4267,12 +4727,12 @@ const (
 )
 
 // GetPr17 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr17() bool {
+func (r *RegisterCpupr1Type) GetPr17() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr17Mask) != 0
 }
 
 // SetPr17 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr17(value bool) {
+func (r *RegisterCpupr1Type) SetPr17(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr17Mask)
 	} else {
@@ -4286,12 +4746,12 @@ const (
 )
 
 // GetPr18 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr18() bool {
+func (r *RegisterCpupr1Type) GetPr18() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr18Mask) != 0
 }
 
 // SetPr18 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr18(value bool) {
+func (r *RegisterCpupr1Type) SetPr18(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr18Mask)
 	} else {
@@ -4305,12 +4765,12 @@ const (
 )
 
 // GetPr19 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr19() bool {
+func (r *RegisterCpupr1Type) GetPr19() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr19Mask) != 0
 }
 
 // SetPr19 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr19(value bool) {
+func (r *RegisterCpupr1Type) SetPr19(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr19Mask)
 	} else {
@@ -4324,12 +4784,12 @@ const (
 )
 
 // GetPr20 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr20() bool {
+func (r *RegisterCpupr1Type) GetPr20() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr20Mask) != 0
 }
 
 // SetPr20 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr20(value bool) {
+func (r *RegisterCpupr1Type) SetPr20(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr20Mask)
 	} else {
@@ -4343,12 +4803,12 @@ const (
 )
 
 // GetPr21 CPU Event mask on Event input x
-func (r *registerCpupr1Type) GetPr21() bool {
+func (r *RegisterCpupr1Type) GetPr21() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr1FieldPr21Mask) != 0
 }
 
 // SetPr21 CPU Event mask on Event input x
-func (r *registerCpupr1Type) SetPr21(value bool) {
+func (r *RegisterCpupr1Type) SetPr21(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr1FieldPr21Mask)
 	} else {
@@ -4356,8 +4816,31 @@ func (r *registerCpupr1Type) SetPr21(value bool) {
 	}
 }
 
-// registerCpuimr2Type EXTI interrupt mask register
-type registerCpuimr2Type uint32
+// RegisterCpuimr2Type EXTI interrupt mask register
+type RegisterCpuimr2Type uint32
+
+func (r *RegisterCpuimr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpuimr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpuimr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpuimr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpuimr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpuimr2FieldMr0Shift = 0
@@ -4365,12 +4848,12 @@ const (
 )
 
 // GetMr0 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr0() bool {
+func (r *RegisterCpuimr2Type) GetMr0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr0Mask) != 0
 }
 
 // SetMr0 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr0(value bool) {
+func (r *RegisterCpuimr2Type) SetMr0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr0Mask)
 	} else {
@@ -4384,12 +4867,12 @@ const (
 )
 
 // GetMr1 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr1() bool {
+func (r *RegisterCpuimr2Type) GetMr1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr1Mask) != 0
 }
 
 // SetMr1 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr1(value bool) {
+func (r *RegisterCpuimr2Type) SetMr1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr1Mask)
 	} else {
@@ -4403,12 +4886,12 @@ const (
 )
 
 // GetMr2 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr2() bool {
+func (r *RegisterCpuimr2Type) GetMr2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr2Mask) != 0
 }
 
 // SetMr2 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr2(value bool) {
+func (r *RegisterCpuimr2Type) SetMr2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr2Mask)
 	} else {
@@ -4422,12 +4905,12 @@ const (
 )
 
 // GetMr3 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr3() bool {
+func (r *RegisterCpuimr2Type) GetMr3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr3Mask) != 0
 }
 
 // SetMr3 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr3(value bool) {
+func (r *RegisterCpuimr2Type) SetMr3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr3Mask)
 	} else {
@@ -4441,12 +4924,12 @@ const (
 )
 
 // GetMr4 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr4() bool {
+func (r *RegisterCpuimr2Type) GetMr4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr4Mask) != 0
 }
 
 // SetMr4 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr4(value bool) {
+func (r *RegisterCpuimr2Type) SetMr4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr4Mask)
 	} else {
@@ -4460,12 +4943,12 @@ const (
 )
 
 // GetMr5 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr5() bool {
+func (r *RegisterCpuimr2Type) GetMr5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr5Mask) != 0
 }
 
 // SetMr5 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr5(value bool) {
+func (r *RegisterCpuimr2Type) SetMr5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr5Mask)
 	} else {
@@ -4479,12 +4962,12 @@ const (
 )
 
 // GetMr6 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr6() bool {
+func (r *RegisterCpuimr2Type) GetMr6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr6Mask) != 0
 }
 
 // SetMr6 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr6(value bool) {
+func (r *RegisterCpuimr2Type) SetMr6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr6Mask)
 	} else {
@@ -4498,12 +4981,12 @@ const (
 )
 
 // GetMr7 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr7() bool {
+func (r *RegisterCpuimr2Type) GetMr7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr7Mask) != 0
 }
 
 // SetMr7 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr7(value bool) {
+func (r *RegisterCpuimr2Type) SetMr7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr7Mask)
 	} else {
@@ -4517,12 +5000,12 @@ const (
 )
 
 // GetMr8 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr8() bool {
+func (r *RegisterCpuimr2Type) GetMr8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr8Mask) != 0
 }
 
 // SetMr8 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr8(value bool) {
+func (r *RegisterCpuimr2Type) SetMr8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr8Mask)
 	} else {
@@ -4536,12 +5019,12 @@ const (
 )
 
 // GetMr9 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr9() bool {
+func (r *RegisterCpuimr2Type) GetMr9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr9Mask) != 0
 }
 
 // SetMr9 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr9(value bool) {
+func (r *RegisterCpuimr2Type) SetMr9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr9Mask)
 	} else {
@@ -4555,12 +5038,12 @@ const (
 )
 
 // GetMr10 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr10() bool {
+func (r *RegisterCpuimr2Type) GetMr10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr10Mask) != 0
 }
 
 // SetMr10 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr10(value bool) {
+func (r *RegisterCpuimr2Type) SetMr10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr10Mask)
 	} else {
@@ -4574,12 +5057,12 @@ const (
 )
 
 // GetMr11 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr11() bool {
+func (r *RegisterCpuimr2Type) GetMr11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr11Mask) != 0
 }
 
 // SetMr11 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr11(value bool) {
+func (r *RegisterCpuimr2Type) SetMr11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr11Mask)
 	} else {
@@ -4593,12 +5076,12 @@ const (
 )
 
 // GetMr12 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr12() bool {
+func (r *RegisterCpuimr2Type) GetMr12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr12Mask) != 0
 }
 
 // SetMr12 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr12(value bool) {
+func (r *RegisterCpuimr2Type) SetMr12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr12Mask)
 	} else {
@@ -4612,12 +5095,12 @@ const (
 )
 
 // GetMr14 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr14() bool {
+func (r *RegisterCpuimr2Type) GetMr14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr14Mask) != 0
 }
 
 // SetMr14 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr14(value bool) {
+func (r *RegisterCpuimr2Type) SetMr14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr14Mask)
 	} else {
@@ -4631,12 +5114,12 @@ const (
 )
 
 // GetMr15 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr15() bool {
+func (r *RegisterCpuimr2Type) GetMr15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr15Mask) != 0
 }
 
 // SetMr15 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr15(value bool) {
+func (r *RegisterCpuimr2Type) SetMr15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr15Mask)
 	} else {
@@ -4650,12 +5133,12 @@ const (
 )
 
 // GetMr16 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr16() bool {
+func (r *RegisterCpuimr2Type) GetMr16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr16Mask) != 0
 }
 
 // SetMr16 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr16(value bool) {
+func (r *RegisterCpuimr2Type) SetMr16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr16Mask)
 	} else {
@@ -4669,12 +5152,12 @@ const (
 )
 
 // GetMr17 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr17() bool {
+func (r *RegisterCpuimr2Type) GetMr17() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr17Mask) != 0
 }
 
 // SetMr17 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr17(value bool) {
+func (r *RegisterCpuimr2Type) SetMr17(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr17Mask)
 	} else {
@@ -4688,12 +5171,12 @@ const (
 )
 
 // GetMr18 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr18() bool {
+func (r *RegisterCpuimr2Type) GetMr18() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr18Mask) != 0
 }
 
 // SetMr18 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr18(value bool) {
+func (r *RegisterCpuimr2Type) SetMr18(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr18Mask)
 	} else {
@@ -4707,12 +5190,12 @@ const (
 )
 
 // GetMr19 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr19() bool {
+func (r *RegisterCpuimr2Type) GetMr19() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr19Mask) != 0
 }
 
 // SetMr19 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr19(value bool) {
+func (r *RegisterCpuimr2Type) SetMr19(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr19Mask)
 	} else {
@@ -4726,12 +5209,12 @@ const (
 )
 
 // GetMr20 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr20() bool {
+func (r *RegisterCpuimr2Type) GetMr20() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr20Mask) != 0
 }
 
 // SetMr20 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr20(value bool) {
+func (r *RegisterCpuimr2Type) SetMr20(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr20Mask)
 	} else {
@@ -4745,12 +5228,12 @@ const (
 )
 
 // GetMr21 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr21() bool {
+func (r *RegisterCpuimr2Type) GetMr21() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr21Mask) != 0
 }
 
 // SetMr21 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr21(value bool) {
+func (r *RegisterCpuimr2Type) SetMr21(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr21Mask)
 	} else {
@@ -4764,12 +5247,12 @@ const (
 )
 
 // GetMr22 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr22() bool {
+func (r *RegisterCpuimr2Type) GetMr22() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr22Mask) != 0
 }
 
 // SetMr22 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr22(value bool) {
+func (r *RegisterCpuimr2Type) SetMr22(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr22Mask)
 	} else {
@@ -4783,12 +5266,12 @@ const (
 )
 
 // GetMr23 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr23() bool {
+func (r *RegisterCpuimr2Type) GetMr23() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr23Mask) != 0
 }
 
 // SetMr23 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr23(value bool) {
+func (r *RegisterCpuimr2Type) SetMr23(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr23Mask)
 	} else {
@@ -4802,12 +5285,12 @@ const (
 )
 
 // GetMr24 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr24() bool {
+func (r *RegisterCpuimr2Type) GetMr24() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr24Mask) != 0
 }
 
 // SetMr24 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr24(value bool) {
+func (r *RegisterCpuimr2Type) SetMr24(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr24Mask)
 	} else {
@@ -4821,12 +5304,12 @@ const (
 )
 
 // GetMr25 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr25() bool {
+func (r *RegisterCpuimr2Type) GetMr25() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr25Mask) != 0
 }
 
 // SetMr25 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr25(value bool) {
+func (r *RegisterCpuimr2Type) SetMr25(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr25Mask)
 	} else {
@@ -4840,12 +5323,12 @@ const (
 )
 
 // GetMr26 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr26() bool {
+func (r *RegisterCpuimr2Type) GetMr26() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr26Mask) != 0
 }
 
 // SetMr26 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr26(value bool) {
+func (r *RegisterCpuimr2Type) SetMr26(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr26Mask)
 	} else {
@@ -4859,12 +5342,12 @@ const (
 )
 
 // GetMr27 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr27() bool {
+func (r *RegisterCpuimr2Type) GetMr27() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr27Mask) != 0
 }
 
 // SetMr27 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr27(value bool) {
+func (r *RegisterCpuimr2Type) SetMr27(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr27Mask)
 	} else {
@@ -4878,12 +5361,12 @@ const (
 )
 
 // GetMr28 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr28() bool {
+func (r *RegisterCpuimr2Type) GetMr28() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr28Mask) != 0
 }
 
 // SetMr28 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr28(value bool) {
+func (r *RegisterCpuimr2Type) SetMr28(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr28Mask)
 	} else {
@@ -4897,12 +5380,12 @@ const (
 )
 
 // GetMr29 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr29() bool {
+func (r *RegisterCpuimr2Type) GetMr29() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr29Mask) != 0
 }
 
 // SetMr29 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr29(value bool) {
+func (r *RegisterCpuimr2Type) SetMr29(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr29Mask)
 	} else {
@@ -4916,12 +5399,12 @@ const (
 )
 
 // GetMr30 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr30() bool {
+func (r *RegisterCpuimr2Type) GetMr30() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr30Mask) != 0
 }
 
 // SetMr30 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr30(value bool) {
+func (r *RegisterCpuimr2Type) SetMr30(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr30Mask)
 	} else {
@@ -4935,12 +5418,12 @@ const (
 )
 
 // GetMr31 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) GetMr31() bool {
+func (r *RegisterCpuimr2Type) GetMr31() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr2FieldMr31Mask) != 0
 }
 
 // SetMr31 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuimr2Type) SetMr31(value bool) {
+func (r *RegisterCpuimr2Type) SetMr31(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr2FieldMr31Mask)
 	} else {
@@ -4948,8 +5431,31 @@ func (r *registerCpuimr2Type) SetMr31(value bool) {
 	}
 }
 
-// registerCpuemr2Type EXTI event mask register
-type registerCpuemr2Type uint32
+// RegisterCpuemr2Type EXTI event mask register
+type RegisterCpuemr2Type uint32
+
+func (r *RegisterCpuemr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpuemr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpuemr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpuemr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpuemr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpuemr2FieldMr32Shift = 0
@@ -4957,12 +5463,12 @@ const (
 )
 
 // GetMr32 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr32() bool {
+func (r *RegisterCpuemr2Type) GetMr32() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr32Mask) != 0
 }
 
 // SetMr32 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr32(value bool) {
+func (r *RegisterCpuemr2Type) SetMr32(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr32Mask)
 	} else {
@@ -4976,12 +5482,12 @@ const (
 )
 
 // GetMr33 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr33() bool {
+func (r *RegisterCpuemr2Type) GetMr33() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr33Mask) != 0
 }
 
 // SetMr33 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr33(value bool) {
+func (r *RegisterCpuemr2Type) SetMr33(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr33Mask)
 	} else {
@@ -4995,12 +5501,12 @@ const (
 )
 
 // GetMr34 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr34() bool {
+func (r *RegisterCpuemr2Type) GetMr34() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr34Mask) != 0
 }
 
 // SetMr34 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr34(value bool) {
+func (r *RegisterCpuemr2Type) SetMr34(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr34Mask)
 	} else {
@@ -5014,12 +5520,12 @@ const (
 )
 
 // GetMr35 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr35() bool {
+func (r *RegisterCpuemr2Type) GetMr35() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr35Mask) != 0
 }
 
 // SetMr35 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr35(value bool) {
+func (r *RegisterCpuemr2Type) SetMr35(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr35Mask)
 	} else {
@@ -5033,12 +5539,12 @@ const (
 )
 
 // GetMr36 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr36() bool {
+func (r *RegisterCpuemr2Type) GetMr36() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr36Mask) != 0
 }
 
 // SetMr36 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr36(value bool) {
+func (r *RegisterCpuemr2Type) SetMr36(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr36Mask)
 	} else {
@@ -5052,12 +5558,12 @@ const (
 )
 
 // GetMr37 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr37() bool {
+func (r *RegisterCpuemr2Type) GetMr37() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr37Mask) != 0
 }
 
 // SetMr37 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr37(value bool) {
+func (r *RegisterCpuemr2Type) SetMr37(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr37Mask)
 	} else {
@@ -5071,12 +5577,12 @@ const (
 )
 
 // GetMr38 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr38() bool {
+func (r *RegisterCpuemr2Type) GetMr38() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr38Mask) != 0
 }
 
 // SetMr38 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr38(value bool) {
+func (r *RegisterCpuemr2Type) SetMr38(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr38Mask)
 	} else {
@@ -5090,12 +5596,12 @@ const (
 )
 
 // GetMr39 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr39() bool {
+func (r *RegisterCpuemr2Type) GetMr39() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr39Mask) != 0
 }
 
 // SetMr39 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr39(value bool) {
+func (r *RegisterCpuemr2Type) SetMr39(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr39Mask)
 	} else {
@@ -5109,12 +5615,12 @@ const (
 )
 
 // GetMr40 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr40() bool {
+func (r *RegisterCpuemr2Type) GetMr40() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr40Mask) != 0
 }
 
 // SetMr40 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr40(value bool) {
+func (r *RegisterCpuemr2Type) SetMr40(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr40Mask)
 	} else {
@@ -5128,12 +5634,12 @@ const (
 )
 
 // GetMr41 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr41() bool {
+func (r *RegisterCpuemr2Type) GetMr41() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr41Mask) != 0
 }
 
 // SetMr41 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr41(value bool) {
+func (r *RegisterCpuemr2Type) SetMr41(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr41Mask)
 	} else {
@@ -5147,12 +5653,12 @@ const (
 )
 
 // GetMr42 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr42() bool {
+func (r *RegisterCpuemr2Type) GetMr42() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr42Mask) != 0
 }
 
 // SetMr42 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr42(value bool) {
+func (r *RegisterCpuemr2Type) SetMr42(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr42Mask)
 	} else {
@@ -5166,12 +5672,12 @@ const (
 )
 
 // GetMr43 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr43() bool {
+func (r *RegisterCpuemr2Type) GetMr43() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr43Mask) != 0
 }
 
 // SetMr43 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr43(value bool) {
+func (r *RegisterCpuemr2Type) SetMr43(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr43Mask)
 	} else {
@@ -5185,12 +5691,12 @@ const (
 )
 
 // GetMr44 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr44() bool {
+func (r *RegisterCpuemr2Type) GetMr44() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr44Mask) != 0
 }
 
 // SetMr44 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr44(value bool) {
+func (r *RegisterCpuemr2Type) SetMr44(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr44Mask)
 	} else {
@@ -5204,12 +5710,12 @@ const (
 )
 
 // GetMr46 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr46() bool {
+func (r *RegisterCpuemr2Type) GetMr46() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr46Mask) != 0
 }
 
 // SetMr46 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr46(value bool) {
+func (r *RegisterCpuemr2Type) SetMr46(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr46Mask)
 	} else {
@@ -5223,12 +5729,12 @@ const (
 )
 
 // GetMr47 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr47() bool {
+func (r *RegisterCpuemr2Type) GetMr47() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr47Mask) != 0
 }
 
 // SetMr47 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr47(value bool) {
+func (r *RegisterCpuemr2Type) SetMr47(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr47Mask)
 	} else {
@@ -5242,12 +5748,12 @@ const (
 )
 
 // GetMr48 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr48() bool {
+func (r *RegisterCpuemr2Type) GetMr48() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr48Mask) != 0
 }
 
 // SetMr48 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr48(value bool) {
+func (r *RegisterCpuemr2Type) SetMr48(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr48Mask)
 	} else {
@@ -5261,12 +5767,12 @@ const (
 )
 
 // GetMr49 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr49() bool {
+func (r *RegisterCpuemr2Type) GetMr49() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr49Mask) != 0
 }
 
 // SetMr49 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr49(value bool) {
+func (r *RegisterCpuemr2Type) SetMr49(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr49Mask)
 	} else {
@@ -5280,12 +5786,12 @@ const (
 )
 
 // GetMr50 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr50() bool {
+func (r *RegisterCpuemr2Type) GetMr50() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr50Mask) != 0
 }
 
 // SetMr50 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr50(value bool) {
+func (r *RegisterCpuemr2Type) SetMr50(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr50Mask)
 	} else {
@@ -5299,12 +5805,12 @@ const (
 )
 
 // GetMr51 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr51() bool {
+func (r *RegisterCpuemr2Type) GetMr51() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr51Mask) != 0
 }
 
 // SetMr51 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr51(value bool) {
+func (r *RegisterCpuemr2Type) SetMr51(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr51Mask)
 	} else {
@@ -5318,12 +5824,12 @@ const (
 )
 
 // GetMr52 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr52() bool {
+func (r *RegisterCpuemr2Type) GetMr52() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr52Mask) != 0
 }
 
 // SetMr52 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr52(value bool) {
+func (r *RegisterCpuemr2Type) SetMr52(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr52Mask)
 	} else {
@@ -5337,12 +5843,12 @@ const (
 )
 
 // GetMr53 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr53() bool {
+func (r *RegisterCpuemr2Type) GetMr53() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr53Mask) != 0
 }
 
 // SetMr53 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr53(value bool) {
+func (r *RegisterCpuemr2Type) SetMr53(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr53Mask)
 	} else {
@@ -5356,12 +5862,12 @@ const (
 )
 
 // GetMr54 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr54() bool {
+func (r *RegisterCpuemr2Type) GetMr54() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr54Mask) != 0
 }
 
 // SetMr54 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr54(value bool) {
+func (r *RegisterCpuemr2Type) SetMr54(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr54Mask)
 	} else {
@@ -5375,12 +5881,12 @@ const (
 )
 
 // GetMr55 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr55() bool {
+func (r *RegisterCpuemr2Type) GetMr55() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr55Mask) != 0
 }
 
 // SetMr55 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr55(value bool) {
+func (r *RegisterCpuemr2Type) SetMr55(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr55Mask)
 	} else {
@@ -5394,12 +5900,12 @@ const (
 )
 
 // GetMr56 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr56() bool {
+func (r *RegisterCpuemr2Type) GetMr56() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr56Mask) != 0
 }
 
 // SetMr56 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr56(value bool) {
+func (r *RegisterCpuemr2Type) SetMr56(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr56Mask)
 	} else {
@@ -5413,12 +5919,12 @@ const (
 )
 
 // GetMr57 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr57() bool {
+func (r *RegisterCpuemr2Type) GetMr57() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr57Mask) != 0
 }
 
 // SetMr57 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr57(value bool) {
+func (r *RegisterCpuemr2Type) SetMr57(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr57Mask)
 	} else {
@@ -5432,12 +5938,12 @@ const (
 )
 
 // GetMr58 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr58() bool {
+func (r *RegisterCpuemr2Type) GetMr58() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr58Mask) != 0
 }
 
 // SetMr58 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr58(value bool) {
+func (r *RegisterCpuemr2Type) SetMr58(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr58Mask)
 	} else {
@@ -5451,12 +5957,12 @@ const (
 )
 
 // GetMr59 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr59() bool {
+func (r *RegisterCpuemr2Type) GetMr59() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr59Mask) != 0
 }
 
 // SetMr59 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr59(value bool) {
+func (r *RegisterCpuemr2Type) SetMr59(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr59Mask)
 	} else {
@@ -5470,12 +5976,12 @@ const (
 )
 
 // GetMr60 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr60() bool {
+func (r *RegisterCpuemr2Type) GetMr60() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr60Mask) != 0
 }
 
 // SetMr60 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr60(value bool) {
+func (r *RegisterCpuemr2Type) SetMr60(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr60Mask)
 	} else {
@@ -5489,12 +5995,12 @@ const (
 )
 
 // GetMr61 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr61() bool {
+func (r *RegisterCpuemr2Type) GetMr61() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr61Mask) != 0
 }
 
 // SetMr61 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr61(value bool) {
+func (r *RegisterCpuemr2Type) SetMr61(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr61Mask)
 	} else {
@@ -5508,12 +6014,12 @@ const (
 )
 
 // GetMr62 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr62() bool {
+func (r *RegisterCpuemr2Type) GetMr62() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr62Mask) != 0
 }
 
 // SetMr62 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr62(value bool) {
+func (r *RegisterCpuemr2Type) SetMr62(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr62Mask)
 	} else {
@@ -5527,12 +6033,12 @@ const (
 )
 
 // GetMr63 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) GetMr63() bool {
+func (r *RegisterCpuemr2Type) GetMr63() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr2FieldMr63Mask) != 0
 }
 
 // SetMr63 CPU Interrupt Mask on Direct Event input x+32
-func (r *registerCpuemr2Type) SetMr63(value bool) {
+func (r *RegisterCpuemr2Type) SetMr63(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr2FieldMr63Mask)
 	} else {
@@ -5540,8 +6046,31 @@ func (r *registerCpuemr2Type) SetMr63(value bool) {
 	}
 }
 
-// registerCpupr2Type EXTI pending register
-type registerCpupr2Type uint32
+// RegisterCpupr2Type EXTI pending register
+type RegisterCpupr2Type uint32
+
+func (r *RegisterCpupr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpupr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpupr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpupr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpupr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpupr2FieldPr49Shift = 17
@@ -5549,12 +6078,12 @@ const (
 )
 
 // GetPr49 Configurable event inputs x+32 Pending bit
-func (r *registerCpupr2Type) GetPr49() bool {
+func (r *RegisterCpupr2Type) GetPr49() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr2FieldPr49Mask) != 0
 }
 
 // SetPr49 Configurable event inputs x+32 Pending bit
-func (r *registerCpupr2Type) SetPr49(value bool) {
+func (r *RegisterCpupr2Type) SetPr49(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr2FieldPr49Mask)
 	} else {
@@ -5568,12 +6097,12 @@ const (
 )
 
 // GetPr51 Configurable event inputs x+32 Pending bit
-func (r *registerCpupr2Type) GetPr51() bool {
+func (r *RegisterCpupr2Type) GetPr51() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr2FieldPr51Mask) != 0
 }
 
 // SetPr51 Configurable event inputs x+32 Pending bit
-func (r *registerCpupr2Type) SetPr51(value bool) {
+func (r *RegisterCpupr2Type) SetPr51(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr2FieldPr51Mask)
 	} else {
@@ -5581,8 +6110,31 @@ func (r *registerCpupr2Type) SetPr51(value bool) {
 	}
 }
 
-// registerCpuimr3Type EXTI interrupt mask register
-type registerCpuimr3Type uint32
+// RegisterCpuimr3Type EXTI interrupt mask register
+type RegisterCpuimr3Type uint32
+
+func (r *RegisterCpuimr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpuimr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpuimr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpuimr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpuimr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpuimr3FieldMr64Shift = 0
@@ -5590,12 +6142,12 @@ const (
 )
 
 // GetMr64 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr64() bool {
+func (r *RegisterCpuimr3Type) GetMr64() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr64Mask) != 0
 }
 
 // SetMr64 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr64(value bool) {
+func (r *RegisterCpuimr3Type) SetMr64(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr64Mask)
 	} else {
@@ -5609,12 +6161,12 @@ const (
 )
 
 // GetMr65 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr65() bool {
+func (r *RegisterCpuimr3Type) GetMr65() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr65Mask) != 0
 }
 
 // SetMr65 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr65(value bool) {
+func (r *RegisterCpuimr3Type) SetMr65(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr65Mask)
 	} else {
@@ -5628,12 +6180,12 @@ const (
 )
 
 // GetMr66 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr66() bool {
+func (r *RegisterCpuimr3Type) GetMr66() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr66Mask) != 0
 }
 
 // SetMr66 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr66(value bool) {
+func (r *RegisterCpuimr3Type) SetMr66(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr66Mask)
 	} else {
@@ -5647,12 +6199,12 @@ const (
 )
 
 // GetMr67 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr67() bool {
+func (r *RegisterCpuimr3Type) GetMr67() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr67Mask) != 0
 }
 
 // SetMr67 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr67(value bool) {
+func (r *RegisterCpuimr3Type) SetMr67(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr67Mask)
 	} else {
@@ -5666,12 +6218,12 @@ const (
 )
 
 // GetMr68 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr68() bool {
+func (r *RegisterCpuimr3Type) GetMr68() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr68Mask) != 0
 }
 
 // SetMr68 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr68(value bool) {
+func (r *RegisterCpuimr3Type) SetMr68(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr68Mask)
 	} else {
@@ -5685,12 +6237,12 @@ const (
 )
 
 // GetMr69 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr69() bool {
+func (r *RegisterCpuimr3Type) GetMr69() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr69Mask) != 0
 }
 
 // SetMr69 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr69(value bool) {
+func (r *RegisterCpuimr3Type) SetMr69(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr69Mask)
 	} else {
@@ -5704,12 +6256,12 @@ const (
 )
 
 // GetMr70 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr70() bool {
+func (r *RegisterCpuimr3Type) GetMr70() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr70Mask) != 0
 }
 
 // SetMr70 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr70(value bool) {
+func (r *RegisterCpuimr3Type) SetMr70(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr70Mask)
 	} else {
@@ -5723,12 +6275,12 @@ const (
 )
 
 // GetMr71 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr71() bool {
+func (r *RegisterCpuimr3Type) GetMr71() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr71Mask) != 0
 }
 
 // SetMr71 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr71(value bool) {
+func (r *RegisterCpuimr3Type) SetMr71(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr71Mask)
 	} else {
@@ -5742,12 +6294,12 @@ const (
 )
 
 // GetMr72 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr72() bool {
+func (r *RegisterCpuimr3Type) GetMr72() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr72Mask) != 0
 }
 
 // SetMr72 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr72(value bool) {
+func (r *RegisterCpuimr3Type) SetMr72(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr72Mask)
 	} else {
@@ -5761,12 +6313,12 @@ const (
 )
 
 // GetMr73 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr73() bool {
+func (r *RegisterCpuimr3Type) GetMr73() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr73Mask) != 0
 }
 
 // SetMr73 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr73(value bool) {
+func (r *RegisterCpuimr3Type) SetMr73(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr73Mask)
 	} else {
@@ -5780,12 +6332,12 @@ const (
 )
 
 // GetMr74 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr74() bool {
+func (r *RegisterCpuimr3Type) GetMr74() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr74Mask) != 0
 }
 
 // SetMr74 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr74(value bool) {
+func (r *RegisterCpuimr3Type) SetMr74(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr74Mask)
 	} else {
@@ -5799,12 +6351,12 @@ const (
 )
 
 // GetMr75 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr75() bool {
+func (r *RegisterCpuimr3Type) GetMr75() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr75Mask) != 0
 }
 
 // SetMr75 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr75(value bool) {
+func (r *RegisterCpuimr3Type) SetMr75(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr75Mask)
 	} else {
@@ -5818,12 +6370,12 @@ const (
 )
 
 // GetMr76 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr76() bool {
+func (r *RegisterCpuimr3Type) GetMr76() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr76Mask) != 0
 }
 
 // SetMr76 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr76(value bool) {
+func (r *RegisterCpuimr3Type) SetMr76(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr76Mask)
 	} else {
@@ -5837,12 +6389,12 @@ const (
 )
 
 // GetMr77 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr77() bool {
+func (r *RegisterCpuimr3Type) GetMr77() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr77Mask) != 0
 }
 
 // SetMr77 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr77(value bool) {
+func (r *RegisterCpuimr3Type) SetMr77(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr77Mask)
 	} else {
@@ -5856,12 +6408,12 @@ const (
 )
 
 // GetMr78 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr78() bool {
+func (r *RegisterCpuimr3Type) GetMr78() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr78Mask) != 0
 }
 
 // SetMr78 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr78(value bool) {
+func (r *RegisterCpuimr3Type) SetMr78(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr78Mask)
 	} else {
@@ -5875,12 +6427,12 @@ const (
 )
 
 // GetMr79 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr79() bool {
+func (r *RegisterCpuimr3Type) GetMr79() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr79Mask) != 0
 }
 
 // SetMr79 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr79(value bool) {
+func (r *RegisterCpuimr3Type) SetMr79(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr79Mask)
 	} else {
@@ -5894,12 +6446,12 @@ const (
 )
 
 // GetMr80 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr80() bool {
+func (r *RegisterCpuimr3Type) GetMr80() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr80Mask) != 0
 }
 
 // SetMr80 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr80(value bool) {
+func (r *RegisterCpuimr3Type) SetMr80(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr80Mask)
 	} else {
@@ -5913,12 +6465,12 @@ const (
 )
 
 // GetMr82 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr82() bool {
+func (r *RegisterCpuimr3Type) GetMr82() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr82Mask) != 0
 }
 
 // SetMr82 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr82(value bool) {
+func (r *RegisterCpuimr3Type) SetMr82(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr82Mask)
 	} else {
@@ -5932,12 +6484,12 @@ const (
 )
 
 // GetMr84 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr84() bool {
+func (r *RegisterCpuimr3Type) GetMr84() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr84Mask) != 0
 }
 
 // SetMr84 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr84(value bool) {
+func (r *RegisterCpuimr3Type) SetMr84(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr84Mask)
 	} else {
@@ -5951,12 +6503,12 @@ const (
 )
 
 // GetMr85 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr85() bool {
+func (r *RegisterCpuimr3Type) GetMr85() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr85Mask) != 0
 }
 
 // SetMr85 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr85(value bool) {
+func (r *RegisterCpuimr3Type) SetMr85(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr85Mask)
 	} else {
@@ -5970,12 +6522,12 @@ const (
 )
 
 // GetMr86 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr86() bool {
+func (r *RegisterCpuimr3Type) GetMr86() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr86Mask) != 0
 }
 
 // SetMr86 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr86(value bool) {
+func (r *RegisterCpuimr3Type) SetMr86(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr86Mask)
 	} else {
@@ -5989,12 +6541,12 @@ const (
 )
 
 // GetMr87 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr87() bool {
+func (r *RegisterCpuimr3Type) GetMr87() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr87Mask) != 0
 }
 
 // SetMr87 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr87(value bool) {
+func (r *RegisterCpuimr3Type) SetMr87(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr87Mask)
 	} else {
@@ -6008,12 +6560,12 @@ const (
 )
 
 // GetMr88 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) GetMr88() bool {
+func (r *RegisterCpuimr3Type) GetMr88() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuimr3FieldMr88Mask) != 0
 }
 
 // SetMr88 CPU Interrupt Mask on Direct Event input x+64
-func (r *registerCpuimr3Type) SetMr88(value bool) {
+func (r *RegisterCpuimr3Type) SetMr88(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuimr3FieldMr88Mask)
 	} else {
@@ -6021,8 +6573,31 @@ func (r *registerCpuimr3Type) SetMr88(value bool) {
 	}
 }
 
-// registerCpuemr3Type EXTI event mask register
-type registerCpuemr3Type uint32
+// RegisterCpuemr3Type EXTI event mask register
+type RegisterCpuemr3Type uint32
+
+func (r *RegisterCpuemr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpuemr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpuemr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpuemr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpuemr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpuemr3FieldMr64Shift = 0
@@ -6030,12 +6605,12 @@ const (
 )
 
 // GetMr64 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr64() bool {
+func (r *RegisterCpuemr3Type) GetMr64() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr64Mask) != 0
 }
 
 // SetMr64 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr64(value bool) {
+func (r *RegisterCpuemr3Type) SetMr64(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr64Mask)
 	} else {
@@ -6049,12 +6624,12 @@ const (
 )
 
 // GetMr65 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr65() bool {
+func (r *RegisterCpuemr3Type) GetMr65() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr65Mask) != 0
 }
 
 // SetMr65 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr65(value bool) {
+func (r *RegisterCpuemr3Type) SetMr65(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr65Mask)
 	} else {
@@ -6068,12 +6643,12 @@ const (
 )
 
 // GetMr66 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr66() bool {
+func (r *RegisterCpuemr3Type) GetMr66() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr66Mask) != 0
 }
 
 // SetMr66 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr66(value bool) {
+func (r *RegisterCpuemr3Type) SetMr66(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr66Mask)
 	} else {
@@ -6087,12 +6662,12 @@ const (
 )
 
 // GetMr67 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr67() bool {
+func (r *RegisterCpuemr3Type) GetMr67() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr67Mask) != 0
 }
 
 // SetMr67 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr67(value bool) {
+func (r *RegisterCpuemr3Type) SetMr67(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr67Mask)
 	} else {
@@ -6106,12 +6681,12 @@ const (
 )
 
 // GetMr68 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr68() bool {
+func (r *RegisterCpuemr3Type) GetMr68() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr68Mask) != 0
 }
 
 // SetMr68 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr68(value bool) {
+func (r *RegisterCpuemr3Type) SetMr68(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr68Mask)
 	} else {
@@ -6125,12 +6700,12 @@ const (
 )
 
 // GetMr69 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr69() bool {
+func (r *RegisterCpuemr3Type) GetMr69() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr69Mask) != 0
 }
 
 // SetMr69 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr69(value bool) {
+func (r *RegisterCpuemr3Type) SetMr69(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr69Mask)
 	} else {
@@ -6144,12 +6719,12 @@ const (
 )
 
 // GetMr70 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr70() bool {
+func (r *RegisterCpuemr3Type) GetMr70() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr70Mask) != 0
 }
 
 // SetMr70 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr70(value bool) {
+func (r *RegisterCpuemr3Type) SetMr70(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr70Mask)
 	} else {
@@ -6163,12 +6738,12 @@ const (
 )
 
 // GetMr71 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr71() bool {
+func (r *RegisterCpuemr3Type) GetMr71() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr71Mask) != 0
 }
 
 // SetMr71 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr71(value bool) {
+func (r *RegisterCpuemr3Type) SetMr71(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr71Mask)
 	} else {
@@ -6182,12 +6757,12 @@ const (
 )
 
 // GetMr72 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr72() bool {
+func (r *RegisterCpuemr3Type) GetMr72() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr72Mask) != 0
 }
 
 // SetMr72 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr72(value bool) {
+func (r *RegisterCpuemr3Type) SetMr72(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr72Mask)
 	} else {
@@ -6201,12 +6776,12 @@ const (
 )
 
 // GetMr73 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr73() bool {
+func (r *RegisterCpuemr3Type) GetMr73() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr73Mask) != 0
 }
 
 // SetMr73 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr73(value bool) {
+func (r *RegisterCpuemr3Type) SetMr73(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr73Mask)
 	} else {
@@ -6220,12 +6795,12 @@ const (
 )
 
 // GetMr74 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr74() bool {
+func (r *RegisterCpuemr3Type) GetMr74() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr74Mask) != 0
 }
 
 // SetMr74 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr74(value bool) {
+func (r *RegisterCpuemr3Type) SetMr74(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr74Mask)
 	} else {
@@ -6239,12 +6814,12 @@ const (
 )
 
 // GetMr75 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr75() bool {
+func (r *RegisterCpuemr3Type) GetMr75() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr75Mask) != 0
 }
 
 // SetMr75 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr75(value bool) {
+func (r *RegisterCpuemr3Type) SetMr75(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr75Mask)
 	} else {
@@ -6258,12 +6833,12 @@ const (
 )
 
 // GetMr76 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr76() bool {
+func (r *RegisterCpuemr3Type) GetMr76() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr76Mask) != 0
 }
 
 // SetMr76 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr76(value bool) {
+func (r *RegisterCpuemr3Type) SetMr76(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr76Mask)
 	} else {
@@ -6277,12 +6852,12 @@ const (
 )
 
 // GetMr77 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr77() bool {
+func (r *RegisterCpuemr3Type) GetMr77() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr77Mask) != 0
 }
 
 // SetMr77 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr77(value bool) {
+func (r *RegisterCpuemr3Type) SetMr77(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr77Mask)
 	} else {
@@ -6296,12 +6871,12 @@ const (
 )
 
 // GetMr78 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr78() bool {
+func (r *RegisterCpuemr3Type) GetMr78() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr78Mask) != 0
 }
 
 // SetMr78 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr78(value bool) {
+func (r *RegisterCpuemr3Type) SetMr78(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr78Mask)
 	} else {
@@ -6315,12 +6890,12 @@ const (
 )
 
 // GetMr79 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr79() bool {
+func (r *RegisterCpuemr3Type) GetMr79() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr79Mask) != 0
 }
 
 // SetMr79 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr79(value bool) {
+func (r *RegisterCpuemr3Type) SetMr79(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr79Mask)
 	} else {
@@ -6334,12 +6909,12 @@ const (
 )
 
 // GetMr80 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr80() bool {
+func (r *RegisterCpuemr3Type) GetMr80() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr80Mask) != 0
 }
 
 // SetMr80 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr80(value bool) {
+func (r *RegisterCpuemr3Type) SetMr80(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr80Mask)
 	} else {
@@ -6353,12 +6928,12 @@ const (
 )
 
 // GetMr82 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr82() bool {
+func (r *RegisterCpuemr3Type) GetMr82() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr82Mask) != 0
 }
 
 // SetMr82 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr82(value bool) {
+func (r *RegisterCpuemr3Type) SetMr82(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr82Mask)
 	} else {
@@ -6372,12 +6947,12 @@ const (
 )
 
 // GetMr84 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr84() bool {
+func (r *RegisterCpuemr3Type) GetMr84() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr84Mask) != 0
 }
 
 // SetMr84 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr84(value bool) {
+func (r *RegisterCpuemr3Type) SetMr84(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr84Mask)
 	} else {
@@ -6391,12 +6966,12 @@ const (
 )
 
 // GetMr85 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr85() bool {
+func (r *RegisterCpuemr3Type) GetMr85() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr85Mask) != 0
 }
 
 // SetMr85 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr85(value bool) {
+func (r *RegisterCpuemr3Type) SetMr85(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr85Mask)
 	} else {
@@ -6410,12 +6985,12 @@ const (
 )
 
 // GetMr86 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr86() bool {
+func (r *RegisterCpuemr3Type) GetMr86() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr86Mask) != 0
 }
 
 // SetMr86 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr86(value bool) {
+func (r *RegisterCpuemr3Type) SetMr86(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr86Mask)
 	} else {
@@ -6429,12 +7004,12 @@ const (
 )
 
 // GetMr87 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr87() bool {
+func (r *RegisterCpuemr3Type) GetMr87() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr87Mask) != 0
 }
 
 // SetMr87 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr87(value bool) {
+func (r *RegisterCpuemr3Type) SetMr87(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr87Mask)
 	} else {
@@ -6448,12 +7023,12 @@ const (
 )
 
 // GetMr88 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) GetMr88() bool {
+func (r *RegisterCpuemr3Type) GetMr88() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpuemr3FieldMr88Mask) != 0
 }
 
 // SetMr88 CPU Event mask on Event input x+64
-func (r *registerCpuemr3Type) SetMr88(value bool) {
+func (r *RegisterCpuemr3Type) SetMr88(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpuemr3FieldMr88Mask)
 	} else {
@@ -6461,8 +7036,31 @@ func (r *registerCpuemr3Type) SetMr88(value bool) {
 	}
 }
 
-// registerCpupr3Type EXTI pending register
-type registerCpupr3Type uint32
+// RegisterCpupr3Type EXTI pending register
+type RegisterCpupr3Type uint32
+
+func (r *RegisterCpupr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCpupr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCpupr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCpupr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCpupr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCpupr3FieldPr82Shift = 18
@@ -6470,12 +7068,12 @@ const (
 )
 
 // GetPr82 Configurable event inputs x+64 Pending bit
-func (r *registerCpupr3Type) GetPr82() bool {
+func (r *RegisterCpupr3Type) GetPr82() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr3FieldPr82Mask) != 0
 }
 
 // SetPr82 Configurable event inputs x+64 Pending bit
-func (r *registerCpupr3Type) SetPr82(value bool) {
+func (r *RegisterCpupr3Type) SetPr82(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr3FieldPr82Mask)
 	} else {
@@ -6489,12 +7087,12 @@ const (
 )
 
 // GetPr84 Configurable event inputs x+64 Pending bit
-func (r *registerCpupr3Type) GetPr84() bool {
+func (r *RegisterCpupr3Type) GetPr84() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr3FieldPr84Mask) != 0
 }
 
 // SetPr84 Configurable event inputs x+64 Pending bit
-func (r *registerCpupr3Type) SetPr84(value bool) {
+func (r *RegisterCpupr3Type) SetPr84(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr3FieldPr84Mask)
 	} else {
@@ -6508,12 +7106,12 @@ const (
 )
 
 // GetPr85 Configurable event inputs x+64 Pending bit
-func (r *registerCpupr3Type) GetPr85() bool {
+func (r *RegisterCpupr3Type) GetPr85() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr3FieldPr85Mask) != 0
 }
 
 // SetPr85 Configurable event inputs x+64 Pending bit
-func (r *registerCpupr3Type) SetPr85(value bool) {
+func (r *RegisterCpupr3Type) SetPr85(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr3FieldPr85Mask)
 	} else {
@@ -6527,12 +7125,12 @@ const (
 )
 
 // GetPr86 Configurable event inputs x+64 Pending bit
-func (r *registerCpupr3Type) GetPr86() bool {
+func (r *RegisterCpupr3Type) GetPr86() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCpupr3FieldPr86Mask) != 0
 }
 
 // SetPr86 Configurable event inputs x+64 Pending bit
-func (r *registerCpupr3Type) SetPr86(value bool) {
+func (r *RegisterCpupr3Type) SetPr86(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCpupr3FieldPr86Mask)
 	} else {

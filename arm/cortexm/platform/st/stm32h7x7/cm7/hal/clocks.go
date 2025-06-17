@@ -60,7 +60,7 @@ const (
 
 var (
 	Divn1Prescaler = 60
-	Divn2Prescaler = 200
+	Divn2Prescaler = 300
 	Divn3Prescaler = 16
 
 	Divm1 uint8 = 4
@@ -68,12 +68,12 @@ var (
 	Divm3 uint8 = 16
 
 	Divp1FrequencyHz uint64 = 480_000_000
-	Divq1FrequencyHz uint64 = 480_000_000
+	Divq1FrequencyHz uint64 = 120_000_000
 	Divr1FrequencyHz uint64 = 480_000_000
 
 	Divp2FrequencyHz uint64 = 128_000_000
 	Divq2FrequencyHz uint64 = 128_000_000
-	Divr2FrequencyHz uint64 = 128_000_000
+	Divr2FrequencyHz uint64 = 150_000_000
 
 	Divp3FrequencyHz uint64 = 128_000_000
 	Divq3FrequencyHz uint64 = 128_000_000
@@ -114,6 +114,7 @@ var (
 	Spi123SourceFrequencyHz      uint64 = Divq1FrequencyHz
 	Spi45SourceFrequencyHz       uint64 = HsiFrequencyHz
 	Spi6SourceFrequencyHz        uint64 = HsiFrequencyHz
+	SdmmcSourceFrequencyHz       uint64 = Divq1FrequencyHz
 
 	PllSource         = ClockSourceHsi
 	I2c13Source       = ClockSourcePclk1
@@ -124,6 +125,7 @@ var (
 	Spi123ClockSource = ClockSourcePll1q
 	Spi45ClockSource  = ClockSourceHsi
 	Spi6ClockSource   = ClockSourceHsi
+	SdmmcClockSource  = ClockSourcePll2r
 
 	EnableHse = false
 	EnableLse = false
@@ -229,6 +231,19 @@ func ConfigureClocks() {
 	divp3 := max(1, (fDivn3/Divp3FrequencyHz)-1)
 	divq3 := max(1, (fDivn3/Divq3FrequencyHz)-1)
 	divr3 := max(1, (fDivn3/Divr3FrequencyHz)-1)
+
+	// Update source clock frequency values.
+	Divp1FrequencyHz = fDivn1 / (divp1 + 1)
+	Divp2FrequencyHz = fDivn2 / (divp2 + 1)
+	Divp3FrequencyHz = fDivn3 / (divp3 + 1)
+
+	Divq1FrequencyHz = fDivn1 / (divq1 + 1)
+	Divq2FrequencyHz = fDivn2 / (divq2 + 1)
+	Divq3FrequencyHz = fDivn3 / (divq3 + 1)
+
+	Divr1FrequencyHz = fDivn1 / (divr1 + 1)
+	Divr2FrequencyHz = fDivn2 / (divr2 + 1)
+	Divr3FrequencyHz = fDivn3 / (divr3 + 1)
 
 	switch {
 	case PllSourceFrequencyHz < 2_000_000:
@@ -641,6 +656,17 @@ func ConfigureClocks() {
 		case ClockSourceHseRtc:
 			rcc.Rcc.Bdcr.SetRtcsrc(3)
 			RtcSourceFrequencyHz = HseFrequencyHz / uint64(DivRtcHse)
+		}
+	}
+
+	if SdmmcClockSource != ClockSourceNone {
+		switch SdmmcClockSource {
+		case ClockSourcePll1q:
+			rcc.Rcc.D1ccipr.SetSdmmcsrc(false)
+			SdmmcSourceFrequencyHz = Divq1FrequencyHz
+		case ClockSourcePll2r:
+			rcc.Rcc.D1ccipr.SetSdmmcsrc(true)
+			SdmmcSourceFrequencyHz = Divr2FrequencyHz
 		}
 	}
 

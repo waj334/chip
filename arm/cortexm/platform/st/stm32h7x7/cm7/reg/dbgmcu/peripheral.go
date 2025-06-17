@@ -12,22 +12,45 @@ var (
 )
 
 type _dbgmcu struct {
-	Idc      registerIdcType
-	Cr       registerCrType
+	Idc      RegisterIdcType
+	Cr       RegisterCrType
 	_        [44]byte
-	Apb3fz1  registerApb3fz1Type
-	Apb3fz2  registerApb3fz2Type
-	Apb1lfz1 registerApb1lfz1Type
-	Apb1lfz2 registerApb1lfz2Type
+	Apb3fz1  RegisterApb3fz1Type
+	Apb3fz2  RegisterApb3fz2Type
+	Apb1lfz1 RegisterApb1lfz1Type
+	Apb1lfz2 RegisterApb1lfz2Type
 	_        [8]byte
-	Apb2fz1  registerApb2fz1Type
-	Apb2fz2  registerApb2fz2Type
-	Apb4fz1  registerApb4fz1Type
-	Apb4fz2  registerApb4fz2Type
+	Apb2fz1  RegisterApb2fz1Type
+	Apb2fz2  RegisterApb2fz2Type
+	Apb4fz1  RegisterApb4fz1Type
+	Apb4fz2  RegisterApb4fz2Type
 }
 
-// registerIdcType DBGMCU Identity Code Register
-type registerIdcType uint32
+// RegisterIdcType DBGMCU Identity Code Register
+type RegisterIdcType uint32
+
+func (r *RegisterIdcType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIdcType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIdcType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIdcType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIdcType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIdcFieldDevidShift = 0
@@ -35,12 +58,12 @@ const (
 )
 
 // GetDevid Device ID
-func (r *registerIdcType) GetDevid() uint16 {
+func (r *RegisterIdcType) GetDevid() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterIdcFieldDevidMask) >> RegisterIdcFieldDevidShift)
 }
 
 // SetDevid Device ID
-func (r *registerIdcType) SetDevid(value uint16) {
+func (r *RegisterIdcType) SetDevid(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIdcFieldDevidMask)|(uint32(value)<<RegisterIdcFieldDevidShift))
 }
 
@@ -50,17 +73,40 @@ const (
 )
 
 // GetRevid Revision
-func (r *registerIdcType) GetRevid() uint16 {
+func (r *RegisterIdcType) GetRevid() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterIdcFieldRevidMask) >> RegisterIdcFieldRevidShift)
 }
 
 // SetRevid Revision
-func (r *registerIdcType) SetRevid(value uint16) {
+func (r *RegisterIdcType) SetRevid(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIdcFieldRevidMask)|(uint32(value)<<RegisterIdcFieldRevidShift))
 }
 
-// registerCrType DBGMCU Configuration Register
-type registerCrType uint32
+// RegisterCrType DBGMCU Configuration Register
+type RegisterCrType uint32
+
+func (r *RegisterCrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCrFieldDbgslpd1Shift = 0
@@ -68,12 +114,12 @@ const (
 )
 
 // GetDbgslpd1 Allow D1 domain debug in Sleep mode
-func (r *registerCrType) GetDbgslpd1() bool {
+func (r *RegisterCrType) GetDbgslpd1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldDbgslpd1Mask) != 0
 }
 
 // SetDbgslpd1 Allow D1 domain debug in Sleep mode
-func (r *registerCrType) SetDbgslpd1(value bool) {
+func (r *RegisterCrType) SetDbgslpd1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldDbgslpd1Mask)
 	} else {
@@ -87,12 +133,12 @@ const (
 )
 
 // GetDbgstpd1 Allow D1 domain debug in Stop mode
-func (r *registerCrType) GetDbgstpd1() bool {
+func (r *RegisterCrType) GetDbgstpd1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldDbgstpd1Mask) != 0
 }
 
 // SetDbgstpd1 Allow D1 domain debug in Stop mode
-func (r *registerCrType) SetDbgstpd1(value bool) {
+func (r *RegisterCrType) SetDbgstpd1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldDbgstpd1Mask)
 	} else {
@@ -106,12 +152,12 @@ const (
 )
 
 // GetDbgstbd1 Allow D1 domain debug in Standby mode
-func (r *registerCrType) GetDbgstbd1() bool {
+func (r *RegisterCrType) GetDbgstbd1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldDbgstbd1Mask) != 0
 }
 
 // SetDbgstbd1 Allow D1 domain debug in Standby mode
-func (r *registerCrType) SetDbgstbd1(value bool) {
+func (r *RegisterCrType) SetDbgstbd1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldDbgstbd1Mask)
 	} else {
@@ -125,12 +171,12 @@ const (
 )
 
 // GetDbgslpd2 Allow D2 domain debug in Sleep mode
-func (r *registerCrType) GetDbgslpd2() bool {
+func (r *RegisterCrType) GetDbgslpd2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldDbgslpd2Mask) != 0
 }
 
 // SetDbgslpd2 Allow D2 domain debug in Sleep mode
-func (r *registerCrType) SetDbgslpd2(value bool) {
+func (r *RegisterCrType) SetDbgslpd2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldDbgslpd2Mask)
 	} else {
@@ -144,12 +190,12 @@ const (
 )
 
 // GetDbgstpd2 Allow D2 domain debug in Stop mode
-func (r *registerCrType) GetDbgstpd2() bool {
+func (r *RegisterCrType) GetDbgstpd2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldDbgstpd2Mask) != 0
 }
 
 // SetDbgstpd2 Allow D2 domain debug in Stop mode
-func (r *registerCrType) SetDbgstpd2(value bool) {
+func (r *RegisterCrType) SetDbgstpd2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldDbgstpd2Mask)
 	} else {
@@ -163,12 +209,12 @@ const (
 )
 
 // GetDbgstbd2 Allow D2 domain debug in Standby mode
-func (r *registerCrType) GetDbgstbd2() bool {
+func (r *RegisterCrType) GetDbgstbd2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldDbgstbd2Mask) != 0
 }
 
 // SetDbgstbd2 Allow D2 domain debug in Standby mode
-func (r *registerCrType) SetDbgstbd2(value bool) {
+func (r *RegisterCrType) SetDbgstbd2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldDbgstbd2Mask)
 	} else {
@@ -182,12 +228,12 @@ const (
 )
 
 // GetDbgstpd3 Allow debug in D3 Stop mode
-func (r *registerCrType) GetDbgstpd3() bool {
+func (r *RegisterCrType) GetDbgstpd3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldDbgstpd3Mask) != 0
 }
 
 // SetDbgstpd3 Allow debug in D3 Stop mode
-func (r *registerCrType) SetDbgstpd3(value bool) {
+func (r *RegisterCrType) SetDbgstpd3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldDbgstpd3Mask)
 	} else {
@@ -201,12 +247,12 @@ const (
 )
 
 // GetDbgstbd3 Allow debug in D3 Standby mode
-func (r *registerCrType) GetDbgstbd3() bool {
+func (r *RegisterCrType) GetDbgstbd3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldDbgstbd3Mask) != 0
 }
 
 // SetDbgstbd3 Allow debug in D3 Standby mode
-func (r *registerCrType) SetDbgstbd3(value bool) {
+func (r *RegisterCrType) SetDbgstbd3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldDbgstbd3Mask)
 	} else {
@@ -220,12 +266,12 @@ const (
 )
 
 // GetTraceclken Trace port clock enable
-func (r *registerCrType) GetTraceclken() bool {
+func (r *RegisterCrType) GetTraceclken() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldTraceclkenMask) != 0
 }
 
 // SetTraceclken Trace port clock enable
-func (r *registerCrType) SetTraceclken(value bool) {
+func (r *RegisterCrType) SetTraceclken(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldTraceclkenMask)
 	} else {
@@ -239,12 +285,12 @@ const (
 )
 
 // GetD1dbgcken D1 debug clock enable
-func (r *registerCrType) GetD1dbgcken() bool {
+func (r *RegisterCrType) GetD1dbgcken() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldD1dbgckenMask) != 0
 }
 
 // SetD1dbgcken D1 debug clock enable
-func (r *registerCrType) SetD1dbgcken(value bool) {
+func (r *RegisterCrType) SetD1dbgcken(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldD1dbgckenMask)
 	} else {
@@ -258,12 +304,12 @@ const (
 )
 
 // GetD3dbgcken D3 debug clock enable
-func (r *registerCrType) GetD3dbgcken() bool {
+func (r *RegisterCrType) GetD3dbgcken() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldD3dbgckenMask) != 0
 }
 
 // SetD3dbgcken D3 debug clock enable
-func (r *registerCrType) SetD3dbgcken(value bool) {
+func (r *RegisterCrType) SetD3dbgcken(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldD3dbgckenMask)
 	} else {
@@ -277,12 +323,12 @@ const (
 )
 
 // GetTrgoen External trigger output enable
-func (r *registerCrType) GetTrgoen() bool {
+func (r *RegisterCrType) GetTrgoen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldTrgoenMask) != 0
 }
 
 // SetTrgoen External trigger output enable
-func (r *registerCrType) SetTrgoen(value bool) {
+func (r *RegisterCrType) SetTrgoen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldTrgoenMask)
 	} else {
@@ -290,8 +336,31 @@ func (r *registerCrType) SetTrgoen(value bool) {
 	}
 }
 
-// registerApb3fz1Type DBGMCU APB3 peripheral freeze register CPU1
-type registerApb3fz1Type uint32
+// RegisterApb3fz1Type DBGMCU APB3 peripheral freeze register CPU1
+type RegisterApb3fz1Type uint32
+
+func (r *RegisterApb3fz1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb3fz1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb3fz1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb3fz1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb3fz1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb3fz1FieldWwdg1Shift = 6
@@ -299,12 +368,12 @@ const (
 )
 
 // GetWwdg1 WWDG1 stop in debug
-func (r *registerApb3fz1Type) GetWwdg1() bool {
+func (r *RegisterApb3fz1Type) GetWwdg1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb3fz1FieldWwdg1Mask) != 0
 }
 
 // SetWwdg1 WWDG1 stop in debug
-func (r *registerApb3fz1Type) SetWwdg1(value bool) {
+func (r *RegisterApb3fz1Type) SetWwdg1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb3fz1FieldWwdg1Mask)
 	} else {
@@ -312,8 +381,31 @@ func (r *registerApb3fz1Type) SetWwdg1(value bool) {
 	}
 }
 
-// registerApb3fz2Type DBGMCU APB3 peripheral freeze register CPU2
-type registerApb3fz2Type uint32
+// RegisterApb3fz2Type DBGMCU APB3 peripheral freeze register CPU2
+type RegisterApb3fz2Type uint32
+
+func (r *RegisterApb3fz2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb3fz2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb3fz2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb3fz2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb3fz2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb3fz2FieldWwdg1Shift = 6
@@ -321,12 +413,12 @@ const (
 )
 
 // GetWwdg1 WWDG1 stop in debug
-func (r *registerApb3fz2Type) GetWwdg1() bool {
+func (r *RegisterApb3fz2Type) GetWwdg1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb3fz2FieldWwdg1Mask) != 0
 }
 
 // SetWwdg1 WWDG1 stop in debug
-func (r *registerApb3fz2Type) SetWwdg1(value bool) {
+func (r *RegisterApb3fz2Type) SetWwdg1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb3fz2FieldWwdg1Mask)
 	} else {
@@ -334,8 +426,31 @@ func (r *registerApb3fz2Type) SetWwdg1(value bool) {
 	}
 }
 
-// registerApb1lfz1Type DBGMCU APB1L peripheral freeze register
-type registerApb1lfz1Type uint32
+// RegisterApb1lfz1Type DBGMCU APB1L peripheral freeze register
+type RegisterApb1lfz1Type uint32
+
+func (r *RegisterApb1lfz1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb1lfz1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb1lfz1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb1lfz1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb1lfz1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb1lfz1FieldDbgtim2Shift = 0
@@ -343,12 +458,12 @@ const (
 )
 
 // GetDbgtim2 TIM2 stop in debug
-func (r *registerApb1lfz1Type) GetDbgtim2() bool {
+func (r *RegisterApb1lfz1Type) GetDbgtim2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgtim2Mask) != 0
 }
 
 // SetDbgtim2 TIM2 stop in debug
-func (r *registerApb1lfz1Type) SetDbgtim2(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgtim2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgtim2Mask)
 	} else {
@@ -362,12 +477,12 @@ const (
 )
 
 // GetDbgtim3 TIM3 stop in debug
-func (r *registerApb1lfz1Type) GetDbgtim3() bool {
+func (r *RegisterApb1lfz1Type) GetDbgtim3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgtim3Mask) != 0
 }
 
 // SetDbgtim3 TIM3 stop in debug
-func (r *registerApb1lfz1Type) SetDbgtim3(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgtim3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgtim3Mask)
 	} else {
@@ -381,12 +496,12 @@ const (
 )
 
 // GetDbgtim4 TIM4 stop in debug
-func (r *registerApb1lfz1Type) GetDbgtim4() bool {
+func (r *RegisterApb1lfz1Type) GetDbgtim4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgtim4Mask) != 0
 }
 
 // SetDbgtim4 TIM4 stop in debug
-func (r *registerApb1lfz1Type) SetDbgtim4(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgtim4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgtim4Mask)
 	} else {
@@ -400,12 +515,12 @@ const (
 )
 
 // GetDbgtim5 TIM5 stop in debug
-func (r *registerApb1lfz1Type) GetDbgtim5() bool {
+func (r *RegisterApb1lfz1Type) GetDbgtim5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgtim5Mask) != 0
 }
 
 // SetDbgtim5 TIM5 stop in debug
-func (r *registerApb1lfz1Type) SetDbgtim5(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgtim5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgtim5Mask)
 	} else {
@@ -419,12 +534,12 @@ const (
 )
 
 // GetDbgtim6 TIM6 stop in debug
-func (r *registerApb1lfz1Type) GetDbgtim6() bool {
+func (r *RegisterApb1lfz1Type) GetDbgtim6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgtim6Mask) != 0
 }
 
 // SetDbgtim6 TIM6 stop in debug
-func (r *registerApb1lfz1Type) SetDbgtim6(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgtim6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgtim6Mask)
 	} else {
@@ -438,12 +553,12 @@ const (
 )
 
 // GetDbgtim7 TIM7 stop in debug
-func (r *registerApb1lfz1Type) GetDbgtim7() bool {
+func (r *RegisterApb1lfz1Type) GetDbgtim7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgtim7Mask) != 0
 }
 
 // SetDbgtim7 TIM7 stop in debug
-func (r *registerApb1lfz1Type) SetDbgtim7(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgtim7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgtim7Mask)
 	} else {
@@ -457,12 +572,12 @@ const (
 )
 
 // GetDbgtim12 TIM12 stop in debug
-func (r *registerApb1lfz1Type) GetDbgtim12() bool {
+func (r *RegisterApb1lfz1Type) GetDbgtim12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgtim12Mask) != 0
 }
 
 // SetDbgtim12 TIM12 stop in debug
-func (r *registerApb1lfz1Type) SetDbgtim12(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgtim12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgtim12Mask)
 	} else {
@@ -476,12 +591,12 @@ const (
 )
 
 // GetDbgtim13 TIM13 stop in debug
-func (r *registerApb1lfz1Type) GetDbgtim13() bool {
+func (r *RegisterApb1lfz1Type) GetDbgtim13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgtim13Mask) != 0
 }
 
 // SetDbgtim13 TIM13 stop in debug
-func (r *registerApb1lfz1Type) SetDbgtim13(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgtim13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgtim13Mask)
 	} else {
@@ -495,12 +610,12 @@ const (
 )
 
 // GetDbgtim14 TIM14 stop in debug
-func (r *registerApb1lfz1Type) GetDbgtim14() bool {
+func (r *RegisterApb1lfz1Type) GetDbgtim14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgtim14Mask) != 0
 }
 
 // SetDbgtim14 TIM14 stop in debug
-func (r *registerApb1lfz1Type) SetDbgtim14(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgtim14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgtim14Mask)
 	} else {
@@ -514,12 +629,12 @@ const (
 )
 
 // GetDbglptim1 LPTIM1 stop in debug
-func (r *registerApb1lfz1Type) GetDbglptim1() bool {
+func (r *RegisterApb1lfz1Type) GetDbglptim1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbglptim1Mask) != 0
 }
 
 // SetDbglptim1 LPTIM1 stop in debug
-func (r *registerApb1lfz1Type) SetDbglptim1(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbglptim1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbglptim1Mask)
 	} else {
@@ -533,12 +648,12 @@ const (
 )
 
 // GetDbgwwdg2 WWDG2 stop in debug
-func (r *registerApb1lfz1Type) GetDbgwwdg2() bool {
+func (r *RegisterApb1lfz1Type) GetDbgwwdg2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgwwdg2Mask) != 0
 }
 
 // SetDbgwwdg2 WWDG2 stop in debug
-func (r *registerApb1lfz1Type) SetDbgwwdg2(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgwwdg2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgwwdg2Mask)
 	} else {
@@ -552,12 +667,12 @@ const (
 )
 
 // GetDbgi2c1 I2C1 SMBUS timeout stop in debug
-func (r *registerApb1lfz1Type) GetDbgi2c1() bool {
+func (r *RegisterApb1lfz1Type) GetDbgi2c1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgi2c1Mask) != 0
 }
 
 // SetDbgi2c1 I2C1 SMBUS timeout stop in debug
-func (r *registerApb1lfz1Type) SetDbgi2c1(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgi2c1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgi2c1Mask)
 	} else {
@@ -571,12 +686,12 @@ const (
 )
 
 // GetDbgi2c2 I2C2 SMBUS timeout stop in debug
-func (r *registerApb1lfz1Type) GetDbgi2c2() bool {
+func (r *RegisterApb1lfz1Type) GetDbgi2c2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgi2c2Mask) != 0
 }
 
 // SetDbgi2c2 I2C2 SMBUS timeout stop in debug
-func (r *registerApb1lfz1Type) SetDbgi2c2(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgi2c2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgi2c2Mask)
 	} else {
@@ -590,12 +705,12 @@ const (
 )
 
 // GetDbgi2c3 I2C3 SMBUS timeout stop in debug
-func (r *registerApb1lfz1Type) GetDbgi2c3() bool {
+func (r *RegisterApb1lfz1Type) GetDbgi2c3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz1FieldDbgi2c3Mask) != 0
 }
 
 // SetDbgi2c3 I2C3 SMBUS timeout stop in debug
-func (r *registerApb1lfz1Type) SetDbgi2c3(value bool) {
+func (r *RegisterApb1lfz1Type) SetDbgi2c3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz1FieldDbgi2c3Mask)
 	} else {
@@ -603,8 +718,31 @@ func (r *registerApb1lfz1Type) SetDbgi2c3(value bool) {
 	}
 }
 
-// registerApb1lfz2Type DBGMCU APB1L peripheral freeze register CPU2
-type registerApb1lfz2Type uint32
+// RegisterApb1lfz2Type DBGMCU APB1L peripheral freeze register CPU2
+type RegisterApb1lfz2Type uint32
+
+func (r *RegisterApb1lfz2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb1lfz2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb1lfz2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb1lfz2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb1lfz2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb1lfz2FieldDbgtim2Shift = 0
@@ -612,12 +750,12 @@ const (
 )
 
 // GetDbgtim2 TIM2 stop in debug
-func (r *registerApb1lfz2Type) GetDbgtim2() bool {
+func (r *RegisterApb1lfz2Type) GetDbgtim2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgtim2Mask) != 0
 }
 
 // SetDbgtim2 TIM2 stop in debug
-func (r *registerApb1lfz2Type) SetDbgtim2(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgtim2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgtim2Mask)
 	} else {
@@ -631,12 +769,12 @@ const (
 )
 
 // GetDbgtim3 TIM3 stop in debug
-func (r *registerApb1lfz2Type) GetDbgtim3() bool {
+func (r *RegisterApb1lfz2Type) GetDbgtim3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgtim3Mask) != 0
 }
 
 // SetDbgtim3 TIM3 stop in debug
-func (r *registerApb1lfz2Type) SetDbgtim3(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgtim3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgtim3Mask)
 	} else {
@@ -650,12 +788,12 @@ const (
 )
 
 // GetDbgtim4 TIM4 stop in debug
-func (r *registerApb1lfz2Type) GetDbgtim4() bool {
+func (r *RegisterApb1lfz2Type) GetDbgtim4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgtim4Mask) != 0
 }
 
 // SetDbgtim4 TIM4 stop in debug
-func (r *registerApb1lfz2Type) SetDbgtim4(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgtim4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgtim4Mask)
 	} else {
@@ -669,12 +807,12 @@ const (
 )
 
 // GetDbgtim5 TIM5 stop in debug
-func (r *registerApb1lfz2Type) GetDbgtim5() bool {
+func (r *RegisterApb1lfz2Type) GetDbgtim5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgtim5Mask) != 0
 }
 
 // SetDbgtim5 TIM5 stop in debug
-func (r *registerApb1lfz2Type) SetDbgtim5(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgtim5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgtim5Mask)
 	} else {
@@ -688,12 +826,12 @@ const (
 )
 
 // GetDbgtim6 TIM6 stop in debug
-func (r *registerApb1lfz2Type) GetDbgtim6() bool {
+func (r *RegisterApb1lfz2Type) GetDbgtim6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgtim6Mask) != 0
 }
 
 // SetDbgtim6 TIM6 stop in debug
-func (r *registerApb1lfz2Type) SetDbgtim6(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgtim6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgtim6Mask)
 	} else {
@@ -707,12 +845,12 @@ const (
 )
 
 // GetDbgtim7 TIM4 stop in debug
-func (r *registerApb1lfz2Type) GetDbgtim7() bool {
+func (r *RegisterApb1lfz2Type) GetDbgtim7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgtim7Mask) != 0
 }
 
 // SetDbgtim7 TIM4 stop in debug
-func (r *registerApb1lfz2Type) SetDbgtim7(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgtim7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgtim7Mask)
 	} else {
@@ -726,12 +864,12 @@ const (
 )
 
 // GetDbgtim12 TIM12 stop in debug
-func (r *registerApb1lfz2Type) GetDbgtim12() bool {
+func (r *RegisterApb1lfz2Type) GetDbgtim12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgtim12Mask) != 0
 }
 
 // SetDbgtim12 TIM12 stop in debug
-func (r *registerApb1lfz2Type) SetDbgtim12(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgtim12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgtim12Mask)
 	} else {
@@ -745,12 +883,12 @@ const (
 )
 
 // GetDbgtim13 TIM13 stop in debug
-func (r *registerApb1lfz2Type) GetDbgtim13() bool {
+func (r *RegisterApb1lfz2Type) GetDbgtim13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgtim13Mask) != 0
 }
 
 // SetDbgtim13 TIM13 stop in debug
-func (r *registerApb1lfz2Type) SetDbgtim13(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgtim13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgtim13Mask)
 	} else {
@@ -764,12 +902,12 @@ const (
 )
 
 // GetDbgtim14 TIM14 stop in debug
-func (r *registerApb1lfz2Type) GetDbgtim14() bool {
+func (r *RegisterApb1lfz2Type) GetDbgtim14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgtim14Mask) != 0
 }
 
 // SetDbgtim14 TIM14 stop in debug
-func (r *registerApb1lfz2Type) SetDbgtim14(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgtim14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgtim14Mask)
 	} else {
@@ -783,12 +921,12 @@ const (
 )
 
 // GetDbglptim1 LPTIM1 stop in debug
-func (r *registerApb1lfz2Type) GetDbglptim1() bool {
+func (r *RegisterApb1lfz2Type) GetDbglptim1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbglptim1Mask) != 0
 }
 
 // SetDbglptim1 LPTIM1 stop in debug
-func (r *registerApb1lfz2Type) SetDbglptim1(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbglptim1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbglptim1Mask)
 	} else {
@@ -802,12 +940,12 @@ const (
 )
 
 // GetDbgwwdg2 WWDG2 stop in debug
-func (r *registerApb1lfz2Type) GetDbgwwdg2() bool {
+func (r *RegisterApb1lfz2Type) GetDbgwwdg2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgwwdg2Mask) != 0
 }
 
 // SetDbgwwdg2 WWDG2 stop in debug
-func (r *registerApb1lfz2Type) SetDbgwwdg2(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgwwdg2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgwwdg2Mask)
 	} else {
@@ -821,12 +959,12 @@ const (
 )
 
 // GetDbgi2c1 I2C1 SMBUS timeout stop in debug
-func (r *registerApb1lfz2Type) GetDbgi2c1() bool {
+func (r *RegisterApb1lfz2Type) GetDbgi2c1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgi2c1Mask) != 0
 }
 
 // SetDbgi2c1 I2C1 SMBUS timeout stop in debug
-func (r *registerApb1lfz2Type) SetDbgi2c1(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgi2c1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgi2c1Mask)
 	} else {
@@ -840,12 +978,12 @@ const (
 )
 
 // GetDbgi2c2 I2C2 SMBUS timeout stop in debug
-func (r *registerApb1lfz2Type) GetDbgi2c2() bool {
+func (r *RegisterApb1lfz2Type) GetDbgi2c2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgi2c2Mask) != 0
 }
 
 // SetDbgi2c2 I2C2 SMBUS timeout stop in debug
-func (r *registerApb1lfz2Type) SetDbgi2c2(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgi2c2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgi2c2Mask)
 	} else {
@@ -859,12 +997,12 @@ const (
 )
 
 // GetDbgi2c3 I2C3 SMBUS timeout stop in debug
-func (r *registerApb1lfz2Type) GetDbgi2c3() bool {
+func (r *RegisterApb1lfz2Type) GetDbgi2c3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb1lfz2FieldDbgi2c3Mask) != 0
 }
 
 // SetDbgi2c3 I2C3 SMBUS timeout stop in debug
-func (r *registerApb1lfz2Type) SetDbgi2c3(value bool) {
+func (r *RegisterApb1lfz2Type) SetDbgi2c3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb1lfz2FieldDbgi2c3Mask)
 	} else {
@@ -872,8 +1010,31 @@ func (r *registerApb1lfz2Type) SetDbgi2c3(value bool) {
 	}
 }
 
-// registerApb2fz1Type DBGMCU APB2 peripheral freeze register
-type registerApb2fz1Type uint32
+// RegisterApb2fz1Type DBGMCU APB2 peripheral freeze register
+type RegisterApb2fz1Type uint32
+
+func (r *RegisterApb2fz1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb2fz1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb2fz1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb2fz1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb2fz1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb2fz1FieldDbgtim1Shift = 0
@@ -881,12 +1042,12 @@ const (
 )
 
 // GetDbgtim1 TIM1 stop in debug
-func (r *registerApb2fz1Type) GetDbgtim1() bool {
+func (r *RegisterApb2fz1Type) GetDbgtim1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz1FieldDbgtim1Mask) != 0
 }
 
 // SetDbgtim1 TIM1 stop in debug
-func (r *registerApb2fz1Type) SetDbgtim1(value bool) {
+func (r *RegisterApb2fz1Type) SetDbgtim1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz1FieldDbgtim1Mask)
 	} else {
@@ -900,12 +1061,12 @@ const (
 )
 
 // GetDbgtim8 TIM8 stop in debug
-func (r *registerApb2fz1Type) GetDbgtim8() bool {
+func (r *RegisterApb2fz1Type) GetDbgtim8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz1FieldDbgtim8Mask) != 0
 }
 
 // SetDbgtim8 TIM8 stop in debug
-func (r *registerApb2fz1Type) SetDbgtim8(value bool) {
+func (r *RegisterApb2fz1Type) SetDbgtim8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz1FieldDbgtim8Mask)
 	} else {
@@ -919,12 +1080,12 @@ const (
 )
 
 // GetDbgtim15 TIM15 stop in debug
-func (r *registerApb2fz1Type) GetDbgtim15() bool {
+func (r *RegisterApb2fz1Type) GetDbgtim15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz1FieldDbgtim15Mask) != 0
 }
 
 // SetDbgtim15 TIM15 stop in debug
-func (r *registerApb2fz1Type) SetDbgtim15(value bool) {
+func (r *RegisterApb2fz1Type) SetDbgtim15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz1FieldDbgtim15Mask)
 	} else {
@@ -938,12 +1099,12 @@ const (
 )
 
 // GetDbgtim16 TIM16 stop in debug
-func (r *registerApb2fz1Type) GetDbgtim16() bool {
+func (r *RegisterApb2fz1Type) GetDbgtim16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz1FieldDbgtim16Mask) != 0
 }
 
 // SetDbgtim16 TIM16 stop in debug
-func (r *registerApb2fz1Type) SetDbgtim16(value bool) {
+func (r *RegisterApb2fz1Type) SetDbgtim16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz1FieldDbgtim16Mask)
 	} else {
@@ -957,12 +1118,12 @@ const (
 )
 
 // GetDbgtim17 TIM17 stop in debug
-func (r *registerApb2fz1Type) GetDbgtim17() bool {
+func (r *RegisterApb2fz1Type) GetDbgtim17() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz1FieldDbgtim17Mask) != 0
 }
 
 // SetDbgtim17 TIM17 stop in debug
-func (r *registerApb2fz1Type) SetDbgtim17(value bool) {
+func (r *RegisterApb2fz1Type) SetDbgtim17(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz1FieldDbgtim17Mask)
 	} else {
@@ -976,12 +1137,12 @@ const (
 )
 
 // GetDbghrtim HRTIM stop in debug
-func (r *registerApb2fz1Type) GetDbghrtim() bool {
+func (r *RegisterApb2fz1Type) GetDbghrtim() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz1FieldDbghrtimMask) != 0
 }
 
 // SetDbghrtim HRTIM stop in debug
-func (r *registerApb2fz1Type) SetDbghrtim(value bool) {
+func (r *RegisterApb2fz1Type) SetDbghrtim(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz1FieldDbghrtimMask)
 	} else {
@@ -989,8 +1150,31 @@ func (r *registerApb2fz1Type) SetDbghrtim(value bool) {
 	}
 }
 
-// registerApb2fz2Type DBGMCU APB2 peripheral freeze register CPU2
-type registerApb2fz2Type uint32
+// RegisterApb2fz2Type DBGMCU APB2 peripheral freeze register CPU2
+type RegisterApb2fz2Type uint32
+
+func (r *RegisterApb2fz2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb2fz2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb2fz2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb2fz2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb2fz2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb2fz2FieldDbgtim1Shift = 0
@@ -998,12 +1182,12 @@ const (
 )
 
 // GetDbgtim1 TIM1 stop in debug
-func (r *registerApb2fz2Type) GetDbgtim1() bool {
+func (r *RegisterApb2fz2Type) GetDbgtim1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz2FieldDbgtim1Mask) != 0
 }
 
 // SetDbgtim1 TIM1 stop in debug
-func (r *registerApb2fz2Type) SetDbgtim1(value bool) {
+func (r *RegisterApb2fz2Type) SetDbgtim1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz2FieldDbgtim1Mask)
 	} else {
@@ -1017,12 +1201,12 @@ const (
 )
 
 // GetDbgtim8 TIM8 stop in debug
-func (r *registerApb2fz2Type) GetDbgtim8() bool {
+func (r *RegisterApb2fz2Type) GetDbgtim8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz2FieldDbgtim8Mask) != 0
 }
 
 // SetDbgtim8 TIM8 stop in debug
-func (r *registerApb2fz2Type) SetDbgtim8(value bool) {
+func (r *RegisterApb2fz2Type) SetDbgtim8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz2FieldDbgtim8Mask)
 	} else {
@@ -1036,12 +1220,12 @@ const (
 )
 
 // GetDbgtim15 TIM15 stop in debug
-func (r *registerApb2fz2Type) GetDbgtim15() bool {
+func (r *RegisterApb2fz2Type) GetDbgtim15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz2FieldDbgtim15Mask) != 0
 }
 
 // SetDbgtim15 TIM15 stop in debug
-func (r *registerApb2fz2Type) SetDbgtim15(value bool) {
+func (r *RegisterApb2fz2Type) SetDbgtim15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz2FieldDbgtim15Mask)
 	} else {
@@ -1055,12 +1239,12 @@ const (
 )
 
 // GetDbgtim16 TIM16 stop in debug
-func (r *registerApb2fz2Type) GetDbgtim16() bool {
+func (r *RegisterApb2fz2Type) GetDbgtim16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz2FieldDbgtim16Mask) != 0
 }
 
 // SetDbgtim16 TIM16 stop in debug
-func (r *registerApb2fz2Type) SetDbgtim16(value bool) {
+func (r *RegisterApb2fz2Type) SetDbgtim16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz2FieldDbgtim16Mask)
 	} else {
@@ -1074,12 +1258,12 @@ const (
 )
 
 // GetDbgtim17 TIM17 stop in debug
-func (r *registerApb2fz2Type) GetDbgtim17() bool {
+func (r *RegisterApb2fz2Type) GetDbgtim17() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz2FieldDbgtim17Mask) != 0
 }
 
 // SetDbgtim17 TIM17 stop in debug
-func (r *registerApb2fz2Type) SetDbgtim17(value bool) {
+func (r *RegisterApb2fz2Type) SetDbgtim17(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz2FieldDbgtim17Mask)
 	} else {
@@ -1093,12 +1277,12 @@ const (
 )
 
 // GetDbghrtim HRTIM stop in debug
-func (r *registerApb2fz2Type) GetDbghrtim() bool {
+func (r *RegisterApb2fz2Type) GetDbghrtim() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb2fz2FieldDbghrtimMask) != 0
 }
 
 // SetDbghrtim HRTIM stop in debug
-func (r *registerApb2fz2Type) SetDbghrtim(value bool) {
+func (r *RegisterApb2fz2Type) SetDbghrtim(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb2fz2FieldDbghrtimMask)
 	} else {
@@ -1106,8 +1290,31 @@ func (r *registerApb2fz2Type) SetDbghrtim(value bool) {
 	}
 }
 
-// registerApb4fz1Type DBGMCU APB4 peripheral freeze register
-type registerApb4fz1Type uint32
+// RegisterApb4fz1Type DBGMCU APB4 peripheral freeze register
+type RegisterApb4fz1Type uint32
+
+func (r *RegisterApb4fz1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb4fz1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb4fz1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb4fz1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb4fz1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb4fz1FieldDbgi2c4Shift = 7
@@ -1115,12 +1322,12 @@ const (
 )
 
 // GetDbgi2c4 I2C4 SMBUS timeout stop in debug
-func (r *registerApb4fz1Type) GetDbgi2c4() bool {
+func (r *RegisterApb4fz1Type) GetDbgi2c4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz1FieldDbgi2c4Mask) != 0
 }
 
 // SetDbgi2c4 I2C4 SMBUS timeout stop in debug
-func (r *registerApb4fz1Type) SetDbgi2c4(value bool) {
+func (r *RegisterApb4fz1Type) SetDbgi2c4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz1FieldDbgi2c4Mask)
 	} else {
@@ -1134,12 +1341,12 @@ const (
 )
 
 // GetDbglptim2 LPTIM2 stop in debug
-func (r *registerApb4fz1Type) GetDbglptim2() bool {
+func (r *RegisterApb4fz1Type) GetDbglptim2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz1FieldDbglptim2Mask) != 0
 }
 
 // SetDbglptim2 LPTIM2 stop in debug
-func (r *registerApb4fz1Type) SetDbglptim2(value bool) {
+func (r *RegisterApb4fz1Type) SetDbglptim2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz1FieldDbglptim2Mask)
 	} else {
@@ -1153,12 +1360,12 @@ const (
 )
 
 // GetDbglptim3 LPTIM2 stop in debug
-func (r *registerApb4fz1Type) GetDbglptim3() bool {
+func (r *RegisterApb4fz1Type) GetDbglptim3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz1FieldDbglptim3Mask) != 0
 }
 
 // SetDbglptim3 LPTIM2 stop in debug
-func (r *registerApb4fz1Type) SetDbglptim3(value bool) {
+func (r *RegisterApb4fz1Type) SetDbglptim3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz1FieldDbglptim3Mask)
 	} else {
@@ -1172,12 +1379,12 @@ const (
 )
 
 // GetDbglptim4 LPTIM4 stop in debug
-func (r *registerApb4fz1Type) GetDbglptim4() bool {
+func (r *RegisterApb4fz1Type) GetDbglptim4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz1FieldDbglptim4Mask) != 0
 }
 
 // SetDbglptim4 LPTIM4 stop in debug
-func (r *registerApb4fz1Type) SetDbglptim4(value bool) {
+func (r *RegisterApb4fz1Type) SetDbglptim4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz1FieldDbglptim4Mask)
 	} else {
@@ -1191,12 +1398,12 @@ const (
 )
 
 // GetDbglptim5 LPTIM5 stop in debug
-func (r *registerApb4fz1Type) GetDbglptim5() bool {
+func (r *RegisterApb4fz1Type) GetDbglptim5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz1FieldDbglptim5Mask) != 0
 }
 
 // SetDbglptim5 LPTIM5 stop in debug
-func (r *registerApb4fz1Type) SetDbglptim5(value bool) {
+func (r *RegisterApb4fz1Type) SetDbglptim5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz1FieldDbglptim5Mask)
 	} else {
@@ -1210,12 +1417,12 @@ const (
 )
 
 // GetDbgrtc RTC stop in debug
-func (r *registerApb4fz1Type) GetDbgrtc() bool {
+func (r *RegisterApb4fz1Type) GetDbgrtc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz1FieldDbgrtcMask) != 0
 }
 
 // SetDbgrtc RTC stop in debug
-func (r *registerApb4fz1Type) SetDbgrtc(value bool) {
+func (r *RegisterApb4fz1Type) SetDbgrtc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz1FieldDbgrtcMask)
 	} else {
@@ -1229,12 +1436,12 @@ const (
 )
 
 // GetDbgwdglsd1 Independent watchdog for D1 stop in debug
-func (r *registerApb4fz1Type) GetDbgwdglsd1() bool {
+func (r *RegisterApb4fz1Type) GetDbgwdglsd1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz1FieldDbgwdglsd1Mask) != 0
 }
 
 // SetDbgwdglsd1 Independent watchdog for D1 stop in debug
-func (r *registerApb4fz1Type) SetDbgwdglsd1(value bool) {
+func (r *RegisterApb4fz1Type) SetDbgwdglsd1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz1FieldDbgwdglsd1Mask)
 	} else {
@@ -1248,12 +1455,12 @@ const (
 )
 
 // GetDbgwdglsd2 Independent watchdog for D2 stop in debug
-func (r *registerApb4fz1Type) GetDbgwdglsd2() bool {
+func (r *RegisterApb4fz1Type) GetDbgwdglsd2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz1FieldDbgwdglsd2Mask) != 0
 }
 
 // SetDbgwdglsd2 Independent watchdog for D2 stop in debug
-func (r *registerApb4fz1Type) SetDbgwdglsd2(value bool) {
+func (r *RegisterApb4fz1Type) SetDbgwdglsd2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz1FieldDbgwdglsd2Mask)
 	} else {
@@ -1261,8 +1468,31 @@ func (r *registerApb4fz1Type) SetDbgwdglsd2(value bool) {
 	}
 }
 
-// registerApb4fz2Type DBGMCU APB4 peripheral freeze register CPU2
-type registerApb4fz2Type uint32
+// RegisterApb4fz2Type DBGMCU APB4 peripheral freeze register CPU2
+type RegisterApb4fz2Type uint32
+
+func (r *RegisterApb4fz2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterApb4fz2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterApb4fz2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterApb4fz2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterApb4fz2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterApb4fz2FieldDbgi2c4Shift = 7
@@ -1270,12 +1500,12 @@ const (
 )
 
 // GetDbgi2c4 I2C4 SMBUS timeout stop in debug
-func (r *registerApb4fz2Type) GetDbgi2c4() bool {
+func (r *RegisterApb4fz2Type) GetDbgi2c4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz2FieldDbgi2c4Mask) != 0
 }
 
 // SetDbgi2c4 I2C4 SMBUS timeout stop in debug
-func (r *registerApb4fz2Type) SetDbgi2c4(value bool) {
+func (r *RegisterApb4fz2Type) SetDbgi2c4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz2FieldDbgi2c4Mask)
 	} else {
@@ -1289,12 +1519,12 @@ const (
 )
 
 // GetDbglptim2 LPTIM2 stop in debug
-func (r *registerApb4fz2Type) GetDbglptim2() bool {
+func (r *RegisterApb4fz2Type) GetDbglptim2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz2FieldDbglptim2Mask) != 0
 }
 
 // SetDbglptim2 LPTIM2 stop in debug
-func (r *registerApb4fz2Type) SetDbglptim2(value bool) {
+func (r *RegisterApb4fz2Type) SetDbglptim2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz2FieldDbglptim2Mask)
 	} else {
@@ -1308,12 +1538,12 @@ const (
 )
 
 // GetDbglptim3 LPTIM2 stop in debug
-func (r *registerApb4fz2Type) GetDbglptim3() bool {
+func (r *RegisterApb4fz2Type) GetDbglptim3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz2FieldDbglptim3Mask) != 0
 }
 
 // SetDbglptim3 LPTIM2 stop in debug
-func (r *registerApb4fz2Type) SetDbglptim3(value bool) {
+func (r *RegisterApb4fz2Type) SetDbglptim3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz2FieldDbglptim3Mask)
 	} else {
@@ -1327,12 +1557,12 @@ const (
 )
 
 // GetDbglptim4 LPTIM4 stop in debug
-func (r *registerApb4fz2Type) GetDbglptim4() bool {
+func (r *RegisterApb4fz2Type) GetDbglptim4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz2FieldDbglptim4Mask) != 0
 }
 
 // SetDbglptim4 LPTIM4 stop in debug
-func (r *registerApb4fz2Type) SetDbglptim4(value bool) {
+func (r *RegisterApb4fz2Type) SetDbglptim4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz2FieldDbglptim4Mask)
 	} else {
@@ -1346,12 +1576,12 @@ const (
 )
 
 // GetDbglptim5 LPTIM5 stop in debug
-func (r *registerApb4fz2Type) GetDbglptim5() bool {
+func (r *RegisterApb4fz2Type) GetDbglptim5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz2FieldDbglptim5Mask) != 0
 }
 
 // SetDbglptim5 LPTIM5 stop in debug
-func (r *registerApb4fz2Type) SetDbglptim5(value bool) {
+func (r *RegisterApb4fz2Type) SetDbglptim5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz2FieldDbglptim5Mask)
 	} else {
@@ -1365,12 +1595,12 @@ const (
 )
 
 // GetDbgrtc RTC stop in debug
-func (r *registerApb4fz2Type) GetDbgrtc() bool {
+func (r *RegisterApb4fz2Type) GetDbgrtc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz2FieldDbgrtcMask) != 0
 }
 
 // SetDbgrtc RTC stop in debug
-func (r *registerApb4fz2Type) SetDbgrtc(value bool) {
+func (r *RegisterApb4fz2Type) SetDbgrtc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz2FieldDbgrtcMask)
 	} else {
@@ -1384,12 +1614,12 @@ const (
 )
 
 // GetDbgwdglsd1 LS watchdog for D1 stop in debug
-func (r *registerApb4fz2Type) GetDbgwdglsd1() bool {
+func (r *RegisterApb4fz2Type) GetDbgwdglsd1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz2FieldDbgwdglsd1Mask) != 0
 }
 
 // SetDbgwdglsd1 LS watchdog for D1 stop in debug
-func (r *registerApb4fz2Type) SetDbgwdglsd1(value bool) {
+func (r *RegisterApb4fz2Type) SetDbgwdglsd1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz2FieldDbgwdglsd1Mask)
 	} else {
@@ -1403,12 +1633,12 @@ const (
 )
 
 // GetDbgwdglsd2 LS watchdog for D2 stop in debug
-func (r *registerApb4fz2Type) GetDbgwdglsd2() bool {
+func (r *RegisterApb4fz2Type) GetDbgwdglsd2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb4fz2FieldDbgwdglsd2Mask) != 0
 }
 
 // SetDbgwdglsd2 LS watchdog for D2 stop in debug
-func (r *registerApb4fz2Type) SetDbgwdglsd2(value bool) {
+func (r *RegisterApb4fz2Type) SetDbgwdglsd2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb4fz2FieldDbgwdglsd2Mask)
 	} else {

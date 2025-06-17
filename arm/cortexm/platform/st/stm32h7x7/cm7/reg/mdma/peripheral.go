@@ -12,251 +12,274 @@ var (
 )
 
 type _mdma struct {
-	Mdmagisr0    registerMdmagisr0Type
+	Mdmagisr0    RegisterMdmagisr0Type
 	_            [60]byte
-	Mdmac0isr    registerMdmac0isrType
-	Mdmac0ifcr   registerMdmac0ifcrType
-	Mdmac0esr    registerMdmac0esrType
-	Mdmac0cr     registerMdmac0crType
-	Mdmac0tcr    registerMdmac0tcrType
-	Mdmac0bndtr  registerMdmac0bndtrType
-	Mdmac0sar    registerMdmac0sarType
-	Mdmac0dar    registerMdmac0darType
-	Mdmac0brur   registerMdmac0brurType
-	Mdmac0lar    registerMdmac0larType
-	Mdmac0tbr    registerMdmac0tbrType
+	Mdmac0isr    RegisterMdmac0isrType
+	Mdmac0ifcr   RegisterMdmac0ifcrType
+	Mdmac0esr    RegisterMdmac0esrType
+	Mdmac0cr     RegisterMdmac0crType
+	Mdmac0tcr    RegisterMdmac0tcrType
+	Mdmac0bndtr  RegisterMdmac0bndtrType
+	Mdmac0sar    RegisterMdmac0sarType
+	Mdmac0dar    RegisterMdmac0darType
+	Mdmac0brur   RegisterMdmac0brurType
+	Mdmac0lar    RegisterMdmac0larType
+	Mdmac0tbr    RegisterMdmac0tbrType
 	_            [4]byte
-	Mdmac0mar    registerMdmac0marType
-	Mdmac0mdr    registerMdmac0mdrType
+	Mdmac0mar    RegisterMdmac0marType
+	Mdmac0mdr    RegisterMdmac0mdrType
 	_            [8]byte
-	Mdmac1isr    registerMdmac1isrType
-	Mdmac1ifcr   registerMdmac1ifcrType
-	Mdmac1esr    registerMdmac1esrType
-	Mdmac1cr     registerMdmac1crType
-	Mdmac1tcr    registerMdmac1tcrType
-	Mdmac1bndtr  registerMdmac1bndtrType
-	Mdmac1sar    registerMdmac1sarType
-	Mdmac1dar    registerMdmac1darType
-	Mdmac1brur   registerMdmac1brurType
-	Mdmac1lar    registerMdmac1larType
-	Mdmac1tbr    registerMdmac1tbrType
+	Mdmac1isr    RegisterMdmac1isrType
+	Mdmac1ifcr   RegisterMdmac1ifcrType
+	Mdmac1esr    RegisterMdmac1esrType
+	Mdmac1cr     RegisterMdmac1crType
+	Mdmac1tcr    RegisterMdmac1tcrType
+	Mdmac1bndtr  RegisterMdmac1bndtrType
+	Mdmac1sar    RegisterMdmac1sarType
+	Mdmac1dar    RegisterMdmac1darType
+	Mdmac1brur   RegisterMdmac1brurType
+	Mdmac1lar    RegisterMdmac1larType
+	Mdmac1tbr    RegisterMdmac1tbrType
 	_            [4]byte
-	Mdmac1mar    registerMdmac1marType
-	Mdmac1mdr    registerMdmac1mdrType
+	Mdmac1mar    RegisterMdmac1marType
+	Mdmac1mdr    RegisterMdmac1mdrType
 	_            [8]byte
-	Mdmac2isr    registerMdmac2isrType
-	Mdmac2ifcr   registerMdmac2ifcrType
-	Mdmac2esr    registerMdmac2esrType
-	Mdmac2cr     registerMdmac2crType
-	Mdmac2tcr    registerMdmac2tcrType
-	Mdmac2bndtr  registerMdmac2bndtrType
-	Mdmac2sar    registerMdmac2sarType
-	Mdmac2dar    registerMdmac2darType
-	Mdmac2brur   registerMdmac2brurType
-	Mdmac2lar    registerMdmac2larType
-	Mdmac2tbr    registerMdmac2tbrType
+	Mdmac2isr    RegisterMdmac2isrType
+	Mdmac2ifcr   RegisterMdmac2ifcrType
+	Mdmac2esr    RegisterMdmac2esrType
+	Mdmac2cr     RegisterMdmac2crType
+	Mdmac2tcr    RegisterMdmac2tcrType
+	Mdmac2bndtr  RegisterMdmac2bndtrType
+	Mdmac2sar    RegisterMdmac2sarType
+	Mdmac2dar    RegisterMdmac2darType
+	Mdmac2brur   RegisterMdmac2brurType
+	Mdmac2lar    RegisterMdmac2larType
+	Mdmac2tbr    RegisterMdmac2tbrType
 	_            [4]byte
-	Mdmac2mar    registerMdmac2marType
-	Mdmac2mdr    registerMdmac2mdrType
+	Mdmac2mar    RegisterMdmac2marType
+	Mdmac2mdr    RegisterMdmac2mdrType
 	_            [8]byte
-	Mdmac3isr    registerMdmac3isrType
-	Mdmac3ifcr   registerMdmac3ifcrType
-	Mdmac3esr    registerMdmac3esrType
-	Mdmac3cr     registerMdmac3crType
-	Mdmac3tcr    registerMdmac3tcrType
-	Mdmac3bndtr  registerMdmac3bndtrType
-	Mdmac3sar    registerMdmac3sarType
-	Mdmac3dar    registerMdmac3darType
-	Mdmac3brur   registerMdmac3brurType
-	Mdmac3lar    registerMdmac3larType
-	Mdmac3tbr    registerMdmac3tbrType
+	Mdmac3isr    RegisterMdmac3isrType
+	Mdmac3ifcr   RegisterMdmac3ifcrType
+	Mdmac3esr    RegisterMdmac3esrType
+	Mdmac3cr     RegisterMdmac3crType
+	Mdmac3tcr    RegisterMdmac3tcrType
+	Mdmac3bndtr  RegisterMdmac3bndtrType
+	Mdmac3sar    RegisterMdmac3sarType
+	Mdmac3dar    RegisterMdmac3darType
+	Mdmac3brur   RegisterMdmac3brurType
+	Mdmac3lar    RegisterMdmac3larType
+	Mdmac3tbr    RegisterMdmac3tbrType
 	_            [4]byte
-	Mdmac3mar    registerMdmac3marType
-	Mdmac3mdr    registerMdmac3mdrType
+	Mdmac3mar    RegisterMdmac3marType
+	Mdmac3mdr    RegisterMdmac3mdrType
 	_            [8]byte
-	Mdmac4isr    registerMdmac4isrType
-	Mdmac4ifcr   registerMdmac4ifcrType
-	Mdmac4esr    registerMdmac4esrType
-	Mdmac4cr     registerMdmac4crType
-	Mdmac4tcr    registerMdmac4tcrType
-	Mdmac4bndtr  registerMdmac4bndtrType
-	Mdmac4sar    registerMdmac4sarType
-	Mdmac4dar    registerMdmac4darType
-	Mdmac4brur   registerMdmac4brurType
-	Mdmac4lar    registerMdmac4larType
-	Mdmac4tbr    registerMdmac4tbrType
+	Mdmac4isr    RegisterMdmac4isrType
+	Mdmac4ifcr   RegisterMdmac4ifcrType
+	Mdmac4esr    RegisterMdmac4esrType
+	Mdmac4cr     RegisterMdmac4crType
+	Mdmac4tcr    RegisterMdmac4tcrType
+	Mdmac4bndtr  RegisterMdmac4bndtrType
+	Mdmac4sar    RegisterMdmac4sarType
+	Mdmac4dar    RegisterMdmac4darType
+	Mdmac4brur   RegisterMdmac4brurType
+	Mdmac4lar    RegisterMdmac4larType
+	Mdmac4tbr    RegisterMdmac4tbrType
 	_            [4]byte
-	Mdmac4mar    registerMdmac4marType
-	Mdmac4mdr    registerMdmac4mdrType
+	Mdmac4mar    RegisterMdmac4marType
+	Mdmac4mdr    RegisterMdmac4mdrType
 	_            [8]byte
-	Mdmac5isr    registerMdmac5isrType
-	Mdmac5ifcr   registerMdmac5ifcrType
-	Mdmac5esr    registerMdmac5esrType
-	Mdmac5cr     registerMdmac5crType
-	Mdmac5tcr    registerMdmac5tcrType
-	Mdmac5bndtr  registerMdmac5bndtrType
-	Mdmac5sar    registerMdmac5sarType
-	Mdmac5dar    registerMdmac5darType
-	Mdmac5brur   registerMdmac5brurType
-	Mdmac5lar    registerMdmac5larType
-	Mdmac5tbr    registerMdmac5tbrType
+	Mdmac5isr    RegisterMdmac5isrType
+	Mdmac5ifcr   RegisterMdmac5ifcrType
+	Mdmac5esr    RegisterMdmac5esrType
+	Mdmac5cr     RegisterMdmac5crType
+	Mdmac5tcr    RegisterMdmac5tcrType
+	Mdmac5bndtr  RegisterMdmac5bndtrType
+	Mdmac5sar    RegisterMdmac5sarType
+	Mdmac5dar    RegisterMdmac5darType
+	Mdmac5brur   RegisterMdmac5brurType
+	Mdmac5lar    RegisterMdmac5larType
+	Mdmac5tbr    RegisterMdmac5tbrType
 	_            [4]byte
-	Mdmac5mar    registerMdmac5marType
-	Mdmac5mdr    registerMdmac5mdrType
+	Mdmac5mar    RegisterMdmac5marType
+	Mdmac5mdr    RegisterMdmac5mdrType
 	_            [8]byte
-	Mdmac6isr    registerMdmac6isrType
-	Mdmac6ifcr   registerMdmac6ifcrType
-	Mdmac6esr    registerMdmac6esrType
-	Mdmac6cr     registerMdmac6crType
-	Mdmac6tcr    registerMdmac6tcrType
-	Mdmac6bndtr  registerMdmac6bndtrType
-	Mdmac6sar    registerMdmac6sarType
-	Mdmac6dar    registerMdmac6darType
-	Mdmac6brur   registerMdmac6brurType
-	Mdmac6lar    registerMdmac6larType
-	Mdmac6tbr    registerMdmac6tbrType
+	Mdmac6isr    RegisterMdmac6isrType
+	Mdmac6ifcr   RegisterMdmac6ifcrType
+	Mdmac6esr    RegisterMdmac6esrType
+	Mdmac6cr     RegisterMdmac6crType
+	Mdmac6tcr    RegisterMdmac6tcrType
+	Mdmac6bndtr  RegisterMdmac6bndtrType
+	Mdmac6sar    RegisterMdmac6sarType
+	Mdmac6dar    RegisterMdmac6darType
+	Mdmac6brur   RegisterMdmac6brurType
+	Mdmac6lar    RegisterMdmac6larType
+	Mdmac6tbr    RegisterMdmac6tbrType
 	_            [4]byte
-	Mdmac6mar    registerMdmac6marType
-	Mdmac6mdr    registerMdmac6mdrType
+	Mdmac6mar    RegisterMdmac6marType
+	Mdmac6mdr    RegisterMdmac6mdrType
 	_            [8]byte
-	Mdmac7isr    registerMdmac7isrType
-	Mdmac7ifcr   registerMdmac7ifcrType
-	Mdmac7esr    registerMdmac7esrType
-	Mdmac7cr     registerMdmac7crType
-	Mdmac7tcr    registerMdmac7tcrType
-	Mdmac7bndtr  registerMdmac7bndtrType
-	Mdmac7sar    registerMdmac7sarType
-	Mdmac7dar    registerMdmac7darType
-	Mdmac7brur   registerMdmac7brurType
-	Mdmac7lar    registerMdmac7larType
-	Mdmac7tbr    registerMdmac7tbrType
+	Mdmac7isr    RegisterMdmac7isrType
+	Mdmac7ifcr   RegisterMdmac7ifcrType
+	Mdmac7esr    RegisterMdmac7esrType
+	Mdmac7cr     RegisterMdmac7crType
+	Mdmac7tcr    RegisterMdmac7tcrType
+	Mdmac7bndtr  RegisterMdmac7bndtrType
+	Mdmac7sar    RegisterMdmac7sarType
+	Mdmac7dar    RegisterMdmac7darType
+	Mdmac7brur   RegisterMdmac7brurType
+	Mdmac7lar    RegisterMdmac7larType
+	Mdmac7tbr    RegisterMdmac7tbrType
 	_            [4]byte
-	Mdmac7mar    registerMdmac7marType
-	Mdmac7mdr    registerMdmac7mdrType
+	Mdmac7mar    RegisterMdmac7marType
+	Mdmac7mdr    RegisterMdmac7mdrType
 	_            [8]byte
-	Mdmac8isr    registerMdmac8isrType
-	Mdmac8ifcr   registerMdmac8ifcrType
-	Mdmac8esr    registerMdmac8esrType
-	Mdmac8cr     registerMdmac8crType
-	Mdmac8tcr    registerMdmac8tcrType
-	Mdmac8bndtr  registerMdmac8bndtrType
-	Mdmac8sar    registerMdmac8sarType
-	Mdmac8dar    registerMdmac8darType
-	Mdmac8brur   registerMdmac8brurType
-	Mdmac8lar    registerMdmac8larType
-	Mdmac8tbr    registerMdmac8tbrType
+	Mdmac8isr    RegisterMdmac8isrType
+	Mdmac8ifcr   RegisterMdmac8ifcrType
+	Mdmac8esr    RegisterMdmac8esrType
+	Mdmac8cr     RegisterMdmac8crType
+	Mdmac8tcr    RegisterMdmac8tcrType
+	Mdmac8bndtr  RegisterMdmac8bndtrType
+	Mdmac8sar    RegisterMdmac8sarType
+	Mdmac8dar    RegisterMdmac8darType
+	Mdmac8brur   RegisterMdmac8brurType
+	Mdmac8lar    RegisterMdmac8larType
+	Mdmac8tbr    RegisterMdmac8tbrType
 	_            [4]byte
-	Mdmac8mar    registerMdmac8marType
-	Mdmac8mdr    registerMdmac8mdrType
+	Mdmac8mar    RegisterMdmac8marType
+	Mdmac8mdr    RegisterMdmac8mdrType
 	_            [8]byte
-	Mdmac9isr    registerMdmac9isrType
-	Mdmac9ifcr   registerMdmac9ifcrType
-	Mdmac9esr    registerMdmac9esrType
-	Mdmac9cr     registerMdmac9crType
-	Mdmac9tcr    registerMdmac9tcrType
-	Mdmac9bndtr  registerMdmac9bndtrType
-	Mdmac9sar    registerMdmac9sarType
-	Mdmac9dar    registerMdmac9darType
-	Mdmac9brur   registerMdmac9brurType
-	Mdmac9lar    registerMdmac9larType
-	Mdmac9tbr    registerMdmac9tbrType
+	Mdmac9isr    RegisterMdmac9isrType
+	Mdmac9ifcr   RegisterMdmac9ifcrType
+	Mdmac9esr    RegisterMdmac9esrType
+	Mdmac9cr     RegisterMdmac9crType
+	Mdmac9tcr    RegisterMdmac9tcrType
+	Mdmac9bndtr  RegisterMdmac9bndtrType
+	Mdmac9sar    RegisterMdmac9sarType
+	Mdmac9dar    RegisterMdmac9darType
+	Mdmac9brur   RegisterMdmac9brurType
+	Mdmac9lar    RegisterMdmac9larType
+	Mdmac9tbr    RegisterMdmac9tbrType
 	_            [4]byte
-	Mdmac9mar    registerMdmac9marType
-	Mdmac9mdr    registerMdmac9mdrType
+	Mdmac9mar    RegisterMdmac9marType
+	Mdmac9mdr    RegisterMdmac9mdrType
 	_            [8]byte
-	Mdmac10isr   registerMdmac10isrType
-	Mdmac10ifcr  registerMdmac10ifcrType
-	Mdmac10esr   registerMdmac10esrType
-	Mdmac10cr    registerMdmac10crType
-	Mdmac10tcr   registerMdmac10tcrType
-	Mdmac10bndtr registerMdmac10bndtrType
-	Mdmac10sar   registerMdmac10sarType
-	Mdmac10dar   registerMdmac10darType
-	Mdmac10brur  registerMdmac10brurType
-	Mdmac10lar   registerMdmac10larType
-	Mdmac10tbr   registerMdmac10tbrType
+	Mdmac10isr   RegisterMdmac10isrType
+	Mdmac10ifcr  RegisterMdmac10ifcrType
+	Mdmac10esr   RegisterMdmac10esrType
+	Mdmac10cr    RegisterMdmac10crType
+	Mdmac10tcr   RegisterMdmac10tcrType
+	Mdmac10bndtr RegisterMdmac10bndtrType
+	Mdmac10sar   RegisterMdmac10sarType
+	Mdmac10dar   RegisterMdmac10darType
+	Mdmac10brur  RegisterMdmac10brurType
+	Mdmac10lar   RegisterMdmac10larType
+	Mdmac10tbr   RegisterMdmac10tbrType
 	_            [4]byte
-	Mdmac10mar   registerMdmac10marType
-	Mdmac10mdr   registerMdmac10mdrType
+	Mdmac10mar   RegisterMdmac10marType
+	Mdmac10mdr   RegisterMdmac10mdrType
 	_            [8]byte
-	Mdmac11isr   registerMdmac11isrType
-	Mdmac11ifcr  registerMdmac11ifcrType
-	Mdmac11esr   registerMdmac11esrType
-	Mdmac11cr    registerMdmac11crType
-	Mdmac11tcr   registerMdmac11tcrType
-	Mdmac11bndtr registerMdmac11bndtrType
-	Mdmac11sar   registerMdmac11sarType
-	Mdmac11dar   registerMdmac11darType
-	Mdmac11brur  registerMdmac11brurType
-	Mdmac11lar   registerMdmac11larType
-	Mdmac11tbr   registerMdmac11tbrType
+	Mdmac11isr   RegisterMdmac11isrType
+	Mdmac11ifcr  RegisterMdmac11ifcrType
+	Mdmac11esr   RegisterMdmac11esrType
+	Mdmac11cr    RegisterMdmac11crType
+	Mdmac11tcr   RegisterMdmac11tcrType
+	Mdmac11bndtr RegisterMdmac11bndtrType
+	Mdmac11sar   RegisterMdmac11sarType
+	Mdmac11dar   RegisterMdmac11darType
+	Mdmac11brur  RegisterMdmac11brurType
+	Mdmac11lar   RegisterMdmac11larType
+	Mdmac11tbr   RegisterMdmac11tbrType
 	_            [4]byte
-	Mdmac11mar   registerMdmac11marType
-	Mdmac11mdr   registerMdmac11mdrType
+	Mdmac11mar   RegisterMdmac11marType
+	Mdmac11mdr   RegisterMdmac11mdrType
 	_            [8]byte
-	Mdmac12isr   registerMdmac12isrType
-	Mdmac12ifcr  registerMdmac12ifcrType
-	Mdmac12esr   registerMdmac12esrType
-	Mdmac12cr    registerMdmac12crType
-	Mdmac12tcr   registerMdmac12tcrType
-	Mdmac12bndtr registerMdmac12bndtrType
-	Mdmac12sar   registerMdmac12sarType
-	Mdmac12dar   registerMdmac12darType
-	Mdmac12brur  registerMdmac12brurType
-	Mdmac12lar   registerMdmac12larType
-	Mdmac12tbr   registerMdmac12tbrType
+	Mdmac12isr   RegisterMdmac12isrType
+	Mdmac12ifcr  RegisterMdmac12ifcrType
+	Mdmac12esr   RegisterMdmac12esrType
+	Mdmac12cr    RegisterMdmac12crType
+	Mdmac12tcr   RegisterMdmac12tcrType
+	Mdmac12bndtr RegisterMdmac12bndtrType
+	Mdmac12sar   RegisterMdmac12sarType
+	Mdmac12dar   RegisterMdmac12darType
+	Mdmac12brur  RegisterMdmac12brurType
+	Mdmac12lar   RegisterMdmac12larType
+	Mdmac12tbr   RegisterMdmac12tbrType
 	_            [4]byte
-	Mdmac12mar   registerMdmac12marType
-	Mdmac12mdr   registerMdmac12mdrType
+	Mdmac12mar   RegisterMdmac12marType
+	Mdmac12mdr   RegisterMdmac12mdrType
 	_            [8]byte
-	Mdmac13isr   registerMdmac13isrType
-	Mdmac13ifcr  registerMdmac13ifcrType
-	Mdmac13esr   registerMdmac13esrType
-	Mdmac13cr    registerMdmac13crType
-	Mdmac13tcr   registerMdmac13tcrType
-	Mdmac13bndtr registerMdmac13bndtrType
-	Mdmac13sar   registerMdmac13sarType
-	Mdmac13dar   registerMdmac13darType
-	Mdmac13brur  registerMdmac13brurType
-	Mdmac13lar   registerMdmac13larType
-	Mdmac13tbr   registerMdmac13tbrType
+	Mdmac13isr   RegisterMdmac13isrType
+	Mdmac13ifcr  RegisterMdmac13ifcrType
+	Mdmac13esr   RegisterMdmac13esrType
+	Mdmac13cr    RegisterMdmac13crType
+	Mdmac13tcr   RegisterMdmac13tcrType
+	Mdmac13bndtr RegisterMdmac13bndtrType
+	Mdmac13sar   RegisterMdmac13sarType
+	Mdmac13dar   RegisterMdmac13darType
+	Mdmac13brur  RegisterMdmac13brurType
+	Mdmac13lar   RegisterMdmac13larType
+	Mdmac13tbr   RegisterMdmac13tbrType
 	_            [4]byte
-	Mdmac13mar   registerMdmac13marType
-	Mdmac13mdr   registerMdmac13mdrType
+	Mdmac13mar   RegisterMdmac13marType
+	Mdmac13mdr   RegisterMdmac13mdrType
 	_            [8]byte
-	Mdmac14isr   registerMdmac14isrType
-	Mdmac14ifcr  registerMdmac14ifcrType
-	Mdmac14esr   registerMdmac14esrType
-	Mdmac14cr    registerMdmac14crType
-	Mdmac14tcr   registerMdmac14tcrType
-	Mdmac14bndtr registerMdmac14bndtrType
-	Mdmac14sar   registerMdmac14sarType
-	Mdmac14dar   registerMdmac14darType
-	Mdmac14brur  registerMdmac14brurType
-	Mdmac14lar   registerMdmac14larType
-	Mdmac14tbr   registerMdmac14tbrType
+	Mdmac14isr   RegisterMdmac14isrType
+	Mdmac14ifcr  RegisterMdmac14ifcrType
+	Mdmac14esr   RegisterMdmac14esrType
+	Mdmac14cr    RegisterMdmac14crType
+	Mdmac14tcr   RegisterMdmac14tcrType
+	Mdmac14bndtr RegisterMdmac14bndtrType
+	Mdmac14sar   RegisterMdmac14sarType
+	Mdmac14dar   RegisterMdmac14darType
+	Mdmac14brur  RegisterMdmac14brurType
+	Mdmac14lar   RegisterMdmac14larType
+	Mdmac14tbr   RegisterMdmac14tbrType
 	_            [4]byte
-	Mdmac14mar   registerMdmac14marType
-	Mdmac14mdr   registerMdmac14mdrType
+	Mdmac14mar   RegisterMdmac14marType
+	Mdmac14mdr   RegisterMdmac14mdrType
 	_            [8]byte
-	Mdmac15isr   registerMdmac15isrType
-	Mdmac15ifcr  registerMdmac15ifcrType
-	Mdmac15esr   registerMdmac15esrType
-	Mdmac15cr    registerMdmac15crType
-	Mdmac15tcr   registerMdmac15tcrType
-	Mdmac15bndtr registerMdmac15bndtrType
-	Mdmac15sar   registerMdmac15sarType
-	Mdmac15dar   registerMdmac15darType
-	Mdmac15brur  registerMdmac15brurType
-	Mdmac15lar   registerMdmac15larType
-	Mdmac15tbr   registerMdmac15tbrType
+	Mdmac15isr   RegisterMdmac15isrType
+	Mdmac15ifcr  RegisterMdmac15ifcrType
+	Mdmac15esr   RegisterMdmac15esrType
+	Mdmac15cr    RegisterMdmac15crType
+	Mdmac15tcr   RegisterMdmac15tcrType
+	Mdmac15bndtr RegisterMdmac15bndtrType
+	Mdmac15sar   RegisterMdmac15sarType
+	Mdmac15dar   RegisterMdmac15darType
+	Mdmac15brur  RegisterMdmac15brurType
+	Mdmac15lar   RegisterMdmac15larType
+	Mdmac15tbr   RegisterMdmac15tbrType
 	_            [4]byte
-	Mdmac15mar   registerMdmac15marType
-	Mdmac15mdr   registerMdmac15mdrType
+	Mdmac15mar   RegisterMdmac15marType
+	Mdmac15mdr   RegisterMdmac15mdrType
 }
 
-// registerMdmagisr0Type MDMA Global Interrupt/Status Register
-type registerMdmagisr0Type uint32
+// RegisterMdmagisr0Type MDMA Global Interrupt/Status Register
+type RegisterMdmagisr0Type uint32
+
+func (r *RegisterMdmagisr0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmagisr0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmagisr0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmagisr0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmagisr0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmagisr0FieldGif0Shift = 0
@@ -264,12 +287,12 @@ const (
 )
 
 // GetGif0 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif0() bool {
+func (r *RegisterMdmagisr0Type) GetGif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif0Mask) != 0
 }
 
 // SetGif0 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif0(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif0Mask)
 	} else {
@@ -283,12 +306,12 @@ const (
 )
 
 // GetGif1 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif1() bool {
+func (r *RegisterMdmagisr0Type) GetGif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif1Mask) != 0
 }
 
 // SetGif1 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif1(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif1Mask)
 	} else {
@@ -302,12 +325,12 @@ const (
 )
 
 // GetGif2 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif2() bool {
+func (r *RegisterMdmagisr0Type) GetGif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif2Mask) != 0
 }
 
 // SetGif2 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif2(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif2Mask)
 	} else {
@@ -321,12 +344,12 @@ const (
 )
 
 // GetGif3 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif3() bool {
+func (r *RegisterMdmagisr0Type) GetGif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif3Mask) != 0
 }
 
 // SetGif3 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif3(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif3Mask)
 	} else {
@@ -340,12 +363,12 @@ const (
 )
 
 // GetGif4 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif4() bool {
+func (r *RegisterMdmagisr0Type) GetGif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif4Mask) != 0
 }
 
 // SetGif4 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif4(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif4Mask)
 	} else {
@@ -359,12 +382,12 @@ const (
 )
 
 // GetGif5 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif5() bool {
+func (r *RegisterMdmagisr0Type) GetGif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif5Mask) != 0
 }
 
 // SetGif5 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif5(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif5Mask)
 	} else {
@@ -378,12 +401,12 @@ const (
 )
 
 // GetGif6 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif6() bool {
+func (r *RegisterMdmagisr0Type) GetGif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif6Mask) != 0
 }
 
 // SetGif6 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif6(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif6Mask)
 	} else {
@@ -397,12 +420,12 @@ const (
 )
 
 // GetGif7 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif7() bool {
+func (r *RegisterMdmagisr0Type) GetGif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif7Mask) != 0
 }
 
 // SetGif7 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif7(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif7Mask)
 	} else {
@@ -416,12 +439,12 @@ const (
 )
 
 // GetGif8 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif8() bool {
+func (r *RegisterMdmagisr0Type) GetGif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif8Mask) != 0
 }
 
 // SetGif8 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif8(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif8Mask)
 	} else {
@@ -435,12 +458,12 @@ const (
 )
 
 // GetGif9 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif9() bool {
+func (r *RegisterMdmagisr0Type) GetGif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif9Mask) != 0
 }
 
 // SetGif9 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif9(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif9Mask)
 	} else {
@@ -454,12 +477,12 @@ const (
 )
 
 // GetGif10 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif10() bool {
+func (r *RegisterMdmagisr0Type) GetGif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif10Mask) != 0
 }
 
 // SetGif10 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif10(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif10Mask)
 	} else {
@@ -473,12 +496,12 @@ const (
 )
 
 // GetGif11 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif11() bool {
+func (r *RegisterMdmagisr0Type) GetGif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif11Mask) != 0
 }
 
 // SetGif11 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif11(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif11Mask)
 	} else {
@@ -492,12 +515,12 @@ const (
 )
 
 // GetGif12 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif12() bool {
+func (r *RegisterMdmagisr0Type) GetGif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif12Mask) != 0
 }
 
 // SetGif12 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif12(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif12Mask)
 	} else {
@@ -511,12 +534,12 @@ const (
 )
 
 // GetGif13 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif13() bool {
+func (r *RegisterMdmagisr0Type) GetGif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif13Mask) != 0
 }
 
 // SetGif13 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif13(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif13Mask)
 	} else {
@@ -530,12 +553,12 @@ const (
 )
 
 // GetGif14 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif14() bool {
+func (r *RegisterMdmagisr0Type) GetGif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif14Mask) != 0
 }
 
 // SetGif14 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif14(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif14Mask)
 	} else {
@@ -549,12 +572,12 @@ const (
 )
 
 // GetGif15 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) GetGif15() bool {
+func (r *RegisterMdmagisr0Type) GetGif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmagisr0FieldGif15Mask) != 0
 }
 
 // SetGif15 Channel x global interrupt flag (x=...) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)
-func (r *registerMdmagisr0Type) SetGif15(value bool) {
+func (r *RegisterMdmagisr0Type) SetGif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmagisr0FieldGif15Mask)
 	} else {
@@ -562,8 +585,31 @@ func (r *registerMdmagisr0Type) SetGif15(value bool) {
 	}
 }
 
-// registerMdmac0isrType MDMA channel x interrupt/status register
-type registerMdmac0isrType uint32
+// RegisterMdmac0isrType MDMA channel x interrupt/status register
+type RegisterMdmac0isrType uint32
+
+func (r *RegisterMdmac0isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0isrFieldTeif0Shift = 0
@@ -571,12 +617,12 @@ const (
 )
 
 // GetTeif0 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac0isrType) GetTeif0() bool {
+func (r *RegisterMdmac0isrType) GetTeif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0isrFieldTeif0Mask) != 0
 }
 
 // SetTeif0 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac0isrType) SetTeif0(value bool) {
+func (r *RegisterMdmac0isrType) SetTeif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0isrFieldTeif0Mask)
 	} else {
@@ -590,12 +636,12 @@ const (
 )
 
 // GetCtcif0 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac0isrType) GetCtcif0() bool {
+func (r *RegisterMdmac0isrType) GetCtcif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0isrFieldCtcif0Mask) != 0
 }
 
 // SetCtcif0 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac0isrType) SetCtcif0(value bool) {
+func (r *RegisterMdmac0isrType) SetCtcif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0isrFieldCtcif0Mask)
 	} else {
@@ -609,12 +655,12 @@ const (
 )
 
 // GetBrtif0 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac0isrType) GetBrtif0() bool {
+func (r *RegisterMdmac0isrType) GetBrtif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0isrFieldBrtif0Mask) != 0
 }
 
 // SetBrtif0 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac0isrType) SetBrtif0(value bool) {
+func (r *RegisterMdmac0isrType) SetBrtif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0isrFieldBrtif0Mask)
 	} else {
@@ -628,12 +674,12 @@ const (
 )
 
 // GetBtif0 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac0isrType) GetBtif0() bool {
+func (r *RegisterMdmac0isrType) GetBtif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0isrFieldBtif0Mask) != 0
 }
 
 // SetBtif0 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac0isrType) SetBtif0(value bool) {
+func (r *RegisterMdmac0isrType) SetBtif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0isrFieldBtif0Mask)
 	} else {
@@ -647,12 +693,12 @@ const (
 )
 
 // GetTcif0 channel x buffer transfer complete
-func (r *registerMdmac0isrType) GetTcif0() bool {
+func (r *RegisterMdmac0isrType) GetTcif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0isrFieldTcif0Mask) != 0
 }
 
 // SetTcif0 channel x buffer transfer complete
-func (r *registerMdmac0isrType) SetTcif0(value bool) {
+func (r *RegisterMdmac0isrType) SetTcif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0isrFieldTcif0Mask)
 	} else {
@@ -666,12 +712,12 @@ const (
 )
 
 // GetCrqa0 channel x request active flag
-func (r *registerMdmac0isrType) GetCrqa0() bool {
+func (r *RegisterMdmac0isrType) GetCrqa0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0isrFieldCrqa0Mask) != 0
 }
 
 // SetCrqa0 channel x request active flag
-func (r *registerMdmac0isrType) SetCrqa0(value bool) {
+func (r *RegisterMdmac0isrType) SetCrqa0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0isrFieldCrqa0Mask)
 	} else {
@@ -679,8 +725,31 @@ func (r *registerMdmac0isrType) SetCrqa0(value bool) {
 	}
 }
 
-// registerMdmac0ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac0ifcrType uint32
+// RegisterMdmac0ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac0ifcrType uint32
+
+func (r *RegisterMdmac0ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0ifcrFieldCteif0Shift = 0
@@ -688,12 +757,12 @@ const (
 )
 
 // GetCteif0 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac0ifcrType) GetCteif0() bool {
+func (r *RegisterMdmac0ifcrType) GetCteif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0ifcrFieldCteif0Mask) != 0
 }
 
 // SetCteif0 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac0ifcrType) SetCteif0(value bool) {
+func (r *RegisterMdmac0ifcrType) SetCteif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0ifcrFieldCteif0Mask)
 	} else {
@@ -707,12 +776,12 @@ const (
 )
 
 // GetCctcif0 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac0ifcrType) GetCctcif0() bool {
+func (r *RegisterMdmac0ifcrType) GetCctcif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0ifcrFieldCctcif0Mask) != 0
 }
 
 // SetCctcif0 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac0ifcrType) SetCctcif0(value bool) {
+func (r *RegisterMdmac0ifcrType) SetCctcif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0ifcrFieldCctcif0Mask)
 	} else {
@@ -726,12 +795,12 @@ const (
 )
 
 // GetCbrtif0 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac0ifcrType) GetCbrtif0() bool {
+func (r *RegisterMdmac0ifcrType) GetCbrtif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0ifcrFieldCbrtif0Mask) != 0
 }
 
 // SetCbrtif0 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac0ifcrType) SetCbrtif0(value bool) {
+func (r *RegisterMdmac0ifcrType) SetCbrtif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0ifcrFieldCbrtif0Mask)
 	} else {
@@ -745,12 +814,12 @@ const (
 )
 
 // GetCbtif0 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac0ifcrType) GetCbtif0() bool {
+func (r *RegisterMdmac0ifcrType) GetCbtif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0ifcrFieldCbtif0Mask) != 0
 }
 
 // SetCbtif0 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac0ifcrType) SetCbtif0(value bool) {
+func (r *RegisterMdmac0ifcrType) SetCbtif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0ifcrFieldCbtif0Mask)
 	} else {
@@ -764,12 +833,12 @@ const (
 )
 
 // GetCltcif0 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac0ifcrType) GetCltcif0() bool {
+func (r *RegisterMdmac0ifcrType) GetCltcif0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0ifcrFieldCltcif0Mask) != 0
 }
 
 // SetCltcif0 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac0ifcrType) SetCltcif0(value bool) {
+func (r *RegisterMdmac0ifcrType) SetCltcif0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0ifcrFieldCltcif0Mask)
 	} else {
@@ -777,8 +846,31 @@ func (r *registerMdmac0ifcrType) SetCltcif0(value bool) {
 	}
 }
 
-// registerMdmac0esrType MDMA Channel x error status register
-type registerMdmac0esrType uint32
+// RegisterMdmac0esrType MDMA Channel x error status register
+type RegisterMdmac0esrType uint32
+
+func (r *RegisterMdmac0esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0esrFieldTeaShift = 0
@@ -786,12 +878,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac0esrType) GetTea() uint8 {
+func (r *RegisterMdmac0esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0esrFieldTeaMask) >> RegisterMdmac0esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac0esrType) SetTea(value uint8) {
+func (r *RegisterMdmac0esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0esrFieldTeaMask)|(uint32(value)<<RegisterMdmac0esrFieldTeaShift))
 }
 
@@ -801,12 +893,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac0esrType) GetTed() bool {
+func (r *RegisterMdmac0esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac0esrType) SetTed(value bool) {
+func (r *RegisterMdmac0esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0esrFieldTedMask)
 	} else {
@@ -820,12 +912,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac0esrType) GetTeld() bool {
+func (r *RegisterMdmac0esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac0esrType) SetTeld(value bool) {
+func (r *RegisterMdmac0esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0esrFieldTeldMask)
 	} else {
@@ -839,12 +931,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac0esrType) GetTemd() bool {
+func (r *RegisterMdmac0esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac0esrType) SetTemd(value bool) {
+func (r *RegisterMdmac0esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0esrFieldTemdMask)
 	} else {
@@ -858,12 +950,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac0esrType) GetAse() bool {
+func (r *RegisterMdmac0esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac0esrType) SetAse(value bool) {
+func (r *RegisterMdmac0esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0esrFieldAseMask)
 	} else {
@@ -877,12 +969,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac0esrType) GetBse() bool {
+func (r *RegisterMdmac0esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac0esrType) SetBse(value bool) {
+func (r *RegisterMdmac0esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0esrFieldBseMask)
 	} else {
@@ -890,8 +982,31 @@ func (r *registerMdmac0esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac0crType This register is used to control the concerned channel.
-type registerMdmac0crType uint32
+// RegisterMdmac0crType This register is used to control the concerned channel.
+type RegisterMdmac0crType uint32
+
+func (r *RegisterMdmac0crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0crFieldEnShift = 0
@@ -899,12 +1014,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac0crType) GetEn() bool {
+func (r *RegisterMdmac0crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac0crType) SetEn(value bool) {
+func (r *RegisterMdmac0crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0crFieldEnMask)
 	} else {
@@ -918,12 +1033,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac0crType) GetTeie() bool {
+func (r *RegisterMdmac0crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac0crType) SetTeie(value bool) {
+func (r *RegisterMdmac0crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0crFieldTeieMask)
 	} else {
@@ -937,12 +1052,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac0crType) GetCtcie() bool {
+func (r *RegisterMdmac0crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac0crType) SetCtcie(value bool) {
+func (r *RegisterMdmac0crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0crFieldCtcieMask)
 	} else {
@@ -956,12 +1071,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac0crType) GetBrtie() bool {
+func (r *RegisterMdmac0crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac0crType) SetBrtie(value bool) {
+func (r *RegisterMdmac0crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0crFieldBrtieMask)
 	} else {
@@ -975,12 +1090,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac0crType) GetBtie() bool {
+func (r *RegisterMdmac0crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac0crType) SetBtie(value bool) {
+func (r *RegisterMdmac0crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0crFieldBtieMask)
 	} else {
@@ -994,12 +1109,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac0crType) GetTcie() bool {
+func (r *RegisterMdmac0crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac0crType) SetTcie(value bool) {
+func (r *RegisterMdmac0crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0crFieldTcieMask)
 	} else {
@@ -1013,12 +1128,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac0crType) GetPl() uint8 {
+func (r *RegisterMdmac0crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0crFieldPlMask) >> RegisterMdmac0crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac0crType) SetPl(value uint8) {
+func (r *RegisterMdmac0crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0crFieldPlMask)|(uint32(value)<<RegisterMdmac0crFieldPlShift))
 }
 
@@ -1028,12 +1143,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac0crType) GetBex() bool {
+func (r *RegisterMdmac0crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac0crType) SetBex(value bool) {
+func (r *RegisterMdmac0crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0crFieldBexMask)
 	} else {
@@ -1047,12 +1162,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac0crType) GetHex() bool {
+func (r *RegisterMdmac0crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac0crType) SetHex(value bool) {
+func (r *RegisterMdmac0crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0crFieldHexMask)
 	} else {
@@ -1066,12 +1181,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac0crType) GetWex() bool {
+func (r *RegisterMdmac0crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac0crType) SetWex(value bool) {
+func (r *RegisterMdmac0crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0crFieldWexMask)
 	} else {
@@ -1085,7 +1200,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac0crType) SetSwrq(value bool) {
+func (r *RegisterMdmac0crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0crFieldSwrqMask)
 	} else {
@@ -1093,8 +1208,31 @@ func (r *registerMdmac0crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac0tcrType This register is used to configure the concerned channel.
-type registerMdmac0tcrType uint32
+// RegisterMdmac0tcrType This register is used to configure the concerned channel.
+type RegisterMdmac0tcrType uint32
+
+func (r *RegisterMdmac0tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0tcrFieldSincShift = 0
@@ -1102,12 +1240,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac0tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac0tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldSincMask) >> RegisterMdmac0tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac0tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac0tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldSincMask)|(uint32(value)<<RegisterMdmac0tcrFieldSincShift))
 }
 
@@ -1117,12 +1255,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac0tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac0tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldDincMask) >> RegisterMdmac0tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac0tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac0tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldDincMask)|(uint32(value)<<RegisterMdmac0tcrFieldDincShift))
 }
 
@@ -1132,12 +1270,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac0tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac0tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldSsizeMask) >> RegisterMdmac0tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac0tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac0tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac0tcrFieldSsizeShift))
 }
 
@@ -1147,12 +1285,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac0tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac0tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldDsizeMask) >> RegisterMdmac0tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac0tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac0tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac0tcrFieldDsizeShift))
 }
 
@@ -1162,12 +1300,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac0tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac0tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldSincosMask) >> RegisterMdmac0tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac0tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac0tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac0tcrFieldSincosShift))
 }
 
@@ -1177,12 +1315,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac0tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac0tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldDincosMask) >> RegisterMdmac0tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac0tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac0tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac0tcrFieldDincosShift))
 }
 
@@ -1192,12 +1330,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac0tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac0tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldSburstMask) >> RegisterMdmac0tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac0tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac0tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac0tcrFieldSburstShift))
 }
 
@@ -1207,12 +1345,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac0tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac0tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldDburstMask) >> RegisterMdmac0tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac0tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac0tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac0tcrFieldDburstShift))
 }
 
@@ -1222,12 +1360,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac0tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac0tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldTlenMask) >> RegisterMdmac0tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac0tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac0tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac0tcrFieldTlenShift))
 }
 
@@ -1237,12 +1375,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac0tcrType) GetPke() bool {
+func (r *RegisterMdmac0tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac0tcrType) SetPke(value bool) {
+func (r *RegisterMdmac0tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0tcrFieldPkeMask)
 	} else {
@@ -1256,12 +1394,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac0tcrType) GetPam() uint8 {
+func (r *RegisterMdmac0tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldPamMask) >> RegisterMdmac0tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac0tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac0tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldPamMask)|(uint32(value)<<RegisterMdmac0tcrFieldPamShift))
 }
 
@@ -1271,12 +1409,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac0tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac0tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldTrgmMask) >> RegisterMdmac0tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac0tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac0tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac0tcrFieldTrgmShift))
 }
 
@@ -1286,12 +1424,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac0tcrType) GetSwrm() bool {
+func (r *RegisterMdmac0tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac0tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac0tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0tcrFieldSwrmMask)
 	} else {
@@ -1305,12 +1443,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac0tcrType) GetBwm() bool {
+func (r *RegisterMdmac0tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac0tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac0tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0tcrFieldBwmMask)
 	} else {
@@ -1318,8 +1456,31 @@ func (r *registerMdmac0tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac0bndtrType MDMA Channel x block number of data register
-type registerMdmac0bndtrType uint32
+// RegisterMdmac0bndtrType MDMA Channel x block number of data register
+type RegisterMdmac0bndtrType uint32
+
+func (r *RegisterMdmac0bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0bndtrFieldBndtShift = 0
@@ -1327,12 +1488,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac0bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac0bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0bndtrFieldBndtMask) >> RegisterMdmac0bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac0bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac0bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac0bndtrFieldBndtShift))
 }
 
@@ -1342,12 +1503,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac0bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac0bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac0bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac0bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0bndtrFieldBrsumMask)
 	} else {
@@ -1361,12 +1522,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac0bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac0bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac0bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac0bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0bndtrFieldBrdumMask)
 	} else {
@@ -1380,17 +1541,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac0bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac0bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0bndtrFieldBrcMask) >> RegisterMdmac0bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac0bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac0bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac0bndtrFieldBrcShift))
 }
 
-// registerMdmac0sarType MDMA channel x source address register
-type registerMdmac0sarType uint32
+// RegisterMdmac0sarType MDMA channel x source address register
+type RegisterMdmac0sarType uint32
+
+func (r *RegisterMdmac0sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0sarFieldSarShift = 0
@@ -1398,17 +1582,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac0sarType) GetSar() uint32 {
+func (r *RegisterMdmac0sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0sarFieldSarMask) >> RegisterMdmac0sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac0sarType) SetSar(value uint32) {
+func (r *RegisterMdmac0sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0sarFieldSarMask)|(uint32(value)<<RegisterMdmac0sarFieldSarShift))
 }
 
-// registerMdmac0darType MDMA channel x destination address register
-type registerMdmac0darType uint32
+// RegisterMdmac0darType MDMA channel x destination address register
+type RegisterMdmac0darType uint32
+
+func (r *RegisterMdmac0darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0darFieldDarShift = 0
@@ -1416,17 +1623,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac0darType) GetDar() uint32 {
+func (r *RegisterMdmac0darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0darFieldDarMask) >> RegisterMdmac0darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac0darType) SetDar(value uint32) {
+func (r *RegisterMdmac0darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0darFieldDarMask)|(uint32(value)<<RegisterMdmac0darFieldDarShift))
 }
 
-// registerMdmac0brurType MDMA channel x Block Repeat address Update register
-type registerMdmac0brurType uint32
+// RegisterMdmac0brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac0brurType uint32
+
+func (r *RegisterMdmac0brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0brurFieldSuvShift = 0
@@ -1434,12 +1664,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac0brurType) GetSuv() uint16 {
+func (r *RegisterMdmac0brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0brurFieldSuvMask) >> RegisterMdmac0brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac0brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac0brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0brurFieldSuvMask)|(uint32(value)<<RegisterMdmac0brurFieldSuvShift))
 }
 
@@ -1449,17 +1679,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac0brurType) GetDuv() uint16 {
+func (r *RegisterMdmac0brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0brurFieldDuvMask) >> RegisterMdmac0brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac0brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac0brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0brurFieldDuvMask)|(uint32(value)<<RegisterMdmac0brurFieldDuvShift))
 }
 
-// registerMdmac0larType MDMA channel x Link Address register
-type registerMdmac0larType uint32
+// RegisterMdmac0larType MDMA channel x Link Address register
+type RegisterMdmac0larType uint32
+
+func (r *RegisterMdmac0larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0larFieldLarShift = 0
@@ -1467,17 +1720,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac0larType) GetLar() uint32 {
+func (r *RegisterMdmac0larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0larFieldLarMask) >> RegisterMdmac0larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac0larType) SetLar(value uint32) {
+func (r *RegisterMdmac0larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0larFieldLarMask)|(uint32(value)<<RegisterMdmac0larFieldLarShift))
 }
 
-// registerMdmac0tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac0tbrType uint32
+// RegisterMdmac0tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac0tbrType uint32
+
+func (r *RegisterMdmac0tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0tbrFieldTselShift = 0
@@ -1485,12 +1761,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac0tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac0tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tbrFieldTselMask) >> RegisterMdmac0tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac0tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac0tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0tbrFieldTselMask)|(uint32(value)<<RegisterMdmac0tbrFieldTselShift))
 }
 
@@ -1500,12 +1776,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac0tbrType) GetSbus() bool {
+func (r *RegisterMdmac0tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac0tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac0tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0tbrFieldSbusMask)
 	} else {
@@ -1519,12 +1795,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac0tbrType) GetDbus() bool {
+func (r *RegisterMdmac0tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac0tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac0tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac0tbrFieldDbusMask)
 	} else {
@@ -1532,8 +1808,31 @@ func (r *registerMdmac0tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac0marType MDMA channel x Mask address register
-type registerMdmac0marType uint32
+// RegisterMdmac0marType MDMA channel x Mask address register
+type RegisterMdmac0marType uint32
+
+func (r *RegisterMdmac0marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0marFieldMarShift = 0
@@ -1541,17 +1840,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac0marType) GetMar() uint32 {
+func (r *RegisterMdmac0marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0marFieldMarMask) >> RegisterMdmac0marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac0marType) SetMar(value uint32) {
+func (r *RegisterMdmac0marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0marFieldMarMask)|(uint32(value)<<RegisterMdmac0marFieldMarShift))
 }
 
-// registerMdmac0mdrType MDMA channel x Mask Data register
-type registerMdmac0mdrType uint32
+// RegisterMdmac0mdrType MDMA channel x Mask Data register
+type RegisterMdmac0mdrType uint32
+
+func (r *RegisterMdmac0mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac0mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac0mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac0mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac0mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac0mdrFieldMdrShift = 0
@@ -1559,17 +1881,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac0mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac0mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac0mdrFieldMdrMask) >> RegisterMdmac0mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac0mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac0mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac0mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac0mdrFieldMdrShift))
 }
 
-// registerMdmac1isrType MDMA channel x interrupt/status register
-type registerMdmac1isrType uint32
+// RegisterMdmac1isrType MDMA channel x interrupt/status register
+type RegisterMdmac1isrType uint32
+
+func (r *RegisterMdmac1isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1isrFieldTeif1Shift = 0
@@ -1577,12 +1922,12 @@ const (
 )
 
 // GetTeif1 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac1isrType) GetTeif1() bool {
+func (r *RegisterMdmac1isrType) GetTeif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1isrFieldTeif1Mask) != 0
 }
 
 // SetTeif1 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac1isrType) SetTeif1(value bool) {
+func (r *RegisterMdmac1isrType) SetTeif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1isrFieldTeif1Mask)
 	} else {
@@ -1596,12 +1941,12 @@ const (
 )
 
 // GetCtcif1 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac1isrType) GetCtcif1() bool {
+func (r *RegisterMdmac1isrType) GetCtcif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1isrFieldCtcif1Mask) != 0
 }
 
 // SetCtcif1 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac1isrType) SetCtcif1(value bool) {
+func (r *RegisterMdmac1isrType) SetCtcif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1isrFieldCtcif1Mask)
 	} else {
@@ -1615,12 +1960,12 @@ const (
 )
 
 // GetBrtif1 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac1isrType) GetBrtif1() bool {
+func (r *RegisterMdmac1isrType) GetBrtif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1isrFieldBrtif1Mask) != 0
 }
 
 // SetBrtif1 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac1isrType) SetBrtif1(value bool) {
+func (r *RegisterMdmac1isrType) SetBrtif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1isrFieldBrtif1Mask)
 	} else {
@@ -1634,12 +1979,12 @@ const (
 )
 
 // GetBtif1 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac1isrType) GetBtif1() bool {
+func (r *RegisterMdmac1isrType) GetBtif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1isrFieldBtif1Mask) != 0
 }
 
 // SetBtif1 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac1isrType) SetBtif1(value bool) {
+func (r *RegisterMdmac1isrType) SetBtif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1isrFieldBtif1Mask)
 	} else {
@@ -1653,12 +1998,12 @@ const (
 )
 
 // GetTcif1 channel x buffer transfer complete
-func (r *registerMdmac1isrType) GetTcif1() bool {
+func (r *RegisterMdmac1isrType) GetTcif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1isrFieldTcif1Mask) != 0
 }
 
 // SetTcif1 channel x buffer transfer complete
-func (r *registerMdmac1isrType) SetTcif1(value bool) {
+func (r *RegisterMdmac1isrType) SetTcif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1isrFieldTcif1Mask)
 	} else {
@@ -1672,12 +2017,12 @@ const (
 )
 
 // GetCrqa1 channel x request active flag
-func (r *registerMdmac1isrType) GetCrqa1() bool {
+func (r *RegisterMdmac1isrType) GetCrqa1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1isrFieldCrqa1Mask) != 0
 }
 
 // SetCrqa1 channel x request active flag
-func (r *registerMdmac1isrType) SetCrqa1(value bool) {
+func (r *RegisterMdmac1isrType) SetCrqa1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1isrFieldCrqa1Mask)
 	} else {
@@ -1685,8 +2030,31 @@ func (r *registerMdmac1isrType) SetCrqa1(value bool) {
 	}
 }
 
-// registerMdmac1ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac1ifcrType uint32
+// RegisterMdmac1ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac1ifcrType uint32
+
+func (r *RegisterMdmac1ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1ifcrFieldCteif1Shift = 0
@@ -1694,12 +2062,12 @@ const (
 )
 
 // GetCteif1 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac1ifcrType) GetCteif1() bool {
+func (r *RegisterMdmac1ifcrType) GetCteif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1ifcrFieldCteif1Mask) != 0
 }
 
 // SetCteif1 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac1ifcrType) SetCteif1(value bool) {
+func (r *RegisterMdmac1ifcrType) SetCteif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1ifcrFieldCteif1Mask)
 	} else {
@@ -1713,12 +2081,12 @@ const (
 )
 
 // GetCctcif1 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac1ifcrType) GetCctcif1() bool {
+func (r *RegisterMdmac1ifcrType) GetCctcif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1ifcrFieldCctcif1Mask) != 0
 }
 
 // SetCctcif1 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac1ifcrType) SetCctcif1(value bool) {
+func (r *RegisterMdmac1ifcrType) SetCctcif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1ifcrFieldCctcif1Mask)
 	} else {
@@ -1732,12 +2100,12 @@ const (
 )
 
 // GetCbrtif1 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac1ifcrType) GetCbrtif1() bool {
+func (r *RegisterMdmac1ifcrType) GetCbrtif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1ifcrFieldCbrtif1Mask) != 0
 }
 
 // SetCbrtif1 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac1ifcrType) SetCbrtif1(value bool) {
+func (r *RegisterMdmac1ifcrType) SetCbrtif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1ifcrFieldCbrtif1Mask)
 	} else {
@@ -1751,12 +2119,12 @@ const (
 )
 
 // GetCbtif1 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac1ifcrType) GetCbtif1() bool {
+func (r *RegisterMdmac1ifcrType) GetCbtif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1ifcrFieldCbtif1Mask) != 0
 }
 
 // SetCbtif1 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac1ifcrType) SetCbtif1(value bool) {
+func (r *RegisterMdmac1ifcrType) SetCbtif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1ifcrFieldCbtif1Mask)
 	} else {
@@ -1770,12 +2138,12 @@ const (
 )
 
 // GetCltcif1 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac1ifcrType) GetCltcif1() bool {
+func (r *RegisterMdmac1ifcrType) GetCltcif1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1ifcrFieldCltcif1Mask) != 0
 }
 
 // SetCltcif1 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac1ifcrType) SetCltcif1(value bool) {
+func (r *RegisterMdmac1ifcrType) SetCltcif1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1ifcrFieldCltcif1Mask)
 	} else {
@@ -1783,8 +2151,31 @@ func (r *registerMdmac1ifcrType) SetCltcif1(value bool) {
 	}
 }
 
-// registerMdmac1esrType MDMA Channel x error status register
-type registerMdmac1esrType uint32
+// RegisterMdmac1esrType MDMA Channel x error status register
+type RegisterMdmac1esrType uint32
+
+func (r *RegisterMdmac1esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1esrFieldTeaShift = 0
@@ -1792,12 +2183,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac1esrType) GetTea() uint8 {
+func (r *RegisterMdmac1esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1esrFieldTeaMask) >> RegisterMdmac1esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac1esrType) SetTea(value uint8) {
+func (r *RegisterMdmac1esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1esrFieldTeaMask)|(uint32(value)<<RegisterMdmac1esrFieldTeaShift))
 }
 
@@ -1807,12 +2198,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac1esrType) GetTed() bool {
+func (r *RegisterMdmac1esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac1esrType) SetTed(value bool) {
+func (r *RegisterMdmac1esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1esrFieldTedMask)
 	} else {
@@ -1826,12 +2217,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac1esrType) GetTeld() bool {
+func (r *RegisterMdmac1esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac1esrType) SetTeld(value bool) {
+func (r *RegisterMdmac1esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1esrFieldTeldMask)
 	} else {
@@ -1845,12 +2236,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac1esrType) GetTemd() bool {
+func (r *RegisterMdmac1esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac1esrType) SetTemd(value bool) {
+func (r *RegisterMdmac1esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1esrFieldTemdMask)
 	} else {
@@ -1864,12 +2255,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac1esrType) GetAse() bool {
+func (r *RegisterMdmac1esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac1esrType) SetAse(value bool) {
+func (r *RegisterMdmac1esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1esrFieldAseMask)
 	} else {
@@ -1883,12 +2274,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac1esrType) GetBse() bool {
+func (r *RegisterMdmac1esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac1esrType) SetBse(value bool) {
+func (r *RegisterMdmac1esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1esrFieldBseMask)
 	} else {
@@ -1896,8 +2287,31 @@ func (r *registerMdmac1esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac1crType This register is used to control the concerned channel.
-type registerMdmac1crType uint32
+// RegisterMdmac1crType This register is used to control the concerned channel.
+type RegisterMdmac1crType uint32
+
+func (r *RegisterMdmac1crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1crFieldEnShift = 0
@@ -1905,12 +2319,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac1crType) GetEn() bool {
+func (r *RegisterMdmac1crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac1crType) SetEn(value bool) {
+func (r *RegisterMdmac1crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1crFieldEnMask)
 	} else {
@@ -1924,12 +2338,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac1crType) GetTeie() bool {
+func (r *RegisterMdmac1crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac1crType) SetTeie(value bool) {
+func (r *RegisterMdmac1crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1crFieldTeieMask)
 	} else {
@@ -1943,12 +2357,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac1crType) GetCtcie() bool {
+func (r *RegisterMdmac1crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac1crType) SetCtcie(value bool) {
+func (r *RegisterMdmac1crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1crFieldCtcieMask)
 	} else {
@@ -1962,12 +2376,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac1crType) GetBrtie() bool {
+func (r *RegisterMdmac1crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac1crType) SetBrtie(value bool) {
+func (r *RegisterMdmac1crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1crFieldBrtieMask)
 	} else {
@@ -1981,12 +2395,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac1crType) GetBtie() bool {
+func (r *RegisterMdmac1crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac1crType) SetBtie(value bool) {
+func (r *RegisterMdmac1crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1crFieldBtieMask)
 	} else {
@@ -2000,12 +2414,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac1crType) GetTcie() bool {
+func (r *RegisterMdmac1crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac1crType) SetTcie(value bool) {
+func (r *RegisterMdmac1crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1crFieldTcieMask)
 	} else {
@@ -2019,12 +2433,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac1crType) GetPl() uint8 {
+func (r *RegisterMdmac1crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1crFieldPlMask) >> RegisterMdmac1crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac1crType) SetPl(value uint8) {
+func (r *RegisterMdmac1crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1crFieldPlMask)|(uint32(value)<<RegisterMdmac1crFieldPlShift))
 }
 
@@ -2034,12 +2448,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac1crType) GetBex() bool {
+func (r *RegisterMdmac1crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac1crType) SetBex(value bool) {
+func (r *RegisterMdmac1crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1crFieldBexMask)
 	} else {
@@ -2053,12 +2467,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac1crType) GetHex() bool {
+func (r *RegisterMdmac1crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac1crType) SetHex(value bool) {
+func (r *RegisterMdmac1crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1crFieldHexMask)
 	} else {
@@ -2072,12 +2486,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac1crType) GetWex() bool {
+func (r *RegisterMdmac1crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac1crType) SetWex(value bool) {
+func (r *RegisterMdmac1crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1crFieldWexMask)
 	} else {
@@ -2091,7 +2505,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac1crType) SetSwrq(value bool) {
+func (r *RegisterMdmac1crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1crFieldSwrqMask)
 	} else {
@@ -2099,8 +2513,31 @@ func (r *registerMdmac1crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac1tcrType This register is used to configure the concerned channel.
-type registerMdmac1tcrType uint32
+// RegisterMdmac1tcrType This register is used to configure the concerned channel.
+type RegisterMdmac1tcrType uint32
+
+func (r *RegisterMdmac1tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1tcrFieldSincShift = 0
@@ -2108,12 +2545,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac1tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac1tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldSincMask) >> RegisterMdmac1tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac1tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac1tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldSincMask)|(uint32(value)<<RegisterMdmac1tcrFieldSincShift))
 }
 
@@ -2123,12 +2560,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac1tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac1tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldDincMask) >> RegisterMdmac1tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac1tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac1tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldDincMask)|(uint32(value)<<RegisterMdmac1tcrFieldDincShift))
 }
 
@@ -2138,12 +2575,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac1tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac1tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldSsizeMask) >> RegisterMdmac1tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac1tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac1tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac1tcrFieldSsizeShift))
 }
 
@@ -2153,12 +2590,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac1tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac1tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldDsizeMask) >> RegisterMdmac1tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac1tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac1tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac1tcrFieldDsizeShift))
 }
 
@@ -2168,12 +2605,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac1tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac1tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldSincosMask) >> RegisterMdmac1tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac1tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac1tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac1tcrFieldSincosShift))
 }
 
@@ -2183,12 +2620,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac1tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac1tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldDincosMask) >> RegisterMdmac1tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac1tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac1tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac1tcrFieldDincosShift))
 }
 
@@ -2198,12 +2635,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac1tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac1tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldSburstMask) >> RegisterMdmac1tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac1tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac1tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac1tcrFieldSburstShift))
 }
 
@@ -2213,12 +2650,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac1tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac1tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldDburstMask) >> RegisterMdmac1tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac1tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac1tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac1tcrFieldDburstShift))
 }
 
@@ -2228,12 +2665,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac1tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac1tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldTlenMask) >> RegisterMdmac1tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac1tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac1tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac1tcrFieldTlenShift))
 }
 
@@ -2243,12 +2680,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac1tcrType) GetPke() bool {
+func (r *RegisterMdmac1tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac1tcrType) SetPke(value bool) {
+func (r *RegisterMdmac1tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1tcrFieldPkeMask)
 	} else {
@@ -2262,12 +2699,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac1tcrType) GetPam() uint8 {
+func (r *RegisterMdmac1tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldPamMask) >> RegisterMdmac1tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac1tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac1tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldPamMask)|(uint32(value)<<RegisterMdmac1tcrFieldPamShift))
 }
 
@@ -2277,12 +2714,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac1tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac1tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldTrgmMask) >> RegisterMdmac1tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac1tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac1tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac1tcrFieldTrgmShift))
 }
 
@@ -2292,12 +2729,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac1tcrType) GetSwrm() bool {
+func (r *RegisterMdmac1tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac1tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac1tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1tcrFieldSwrmMask)
 	} else {
@@ -2311,12 +2748,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac1tcrType) GetBwm() bool {
+func (r *RegisterMdmac1tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac1tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac1tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1tcrFieldBwmMask)
 	} else {
@@ -2324,8 +2761,31 @@ func (r *registerMdmac1tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac1bndtrType MDMA Channel x block number of data register
-type registerMdmac1bndtrType uint32
+// RegisterMdmac1bndtrType MDMA Channel x block number of data register
+type RegisterMdmac1bndtrType uint32
+
+func (r *RegisterMdmac1bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1bndtrFieldBndtShift = 0
@@ -2333,12 +2793,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac1bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac1bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1bndtrFieldBndtMask) >> RegisterMdmac1bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac1bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac1bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac1bndtrFieldBndtShift))
 }
 
@@ -2348,12 +2808,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac1bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac1bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac1bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac1bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1bndtrFieldBrsumMask)
 	} else {
@@ -2367,12 +2827,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac1bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac1bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac1bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac1bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1bndtrFieldBrdumMask)
 	} else {
@@ -2386,17 +2846,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac1bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac1bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1bndtrFieldBrcMask) >> RegisterMdmac1bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac1bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac1bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac1bndtrFieldBrcShift))
 }
 
-// registerMdmac1sarType MDMA channel x source address register
-type registerMdmac1sarType uint32
+// RegisterMdmac1sarType MDMA channel x source address register
+type RegisterMdmac1sarType uint32
+
+func (r *RegisterMdmac1sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1sarFieldSarShift = 0
@@ -2404,17 +2887,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac1sarType) GetSar() uint32 {
+func (r *RegisterMdmac1sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1sarFieldSarMask) >> RegisterMdmac1sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac1sarType) SetSar(value uint32) {
+func (r *RegisterMdmac1sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1sarFieldSarMask)|(uint32(value)<<RegisterMdmac1sarFieldSarShift))
 }
 
-// registerMdmac1darType MDMA channel x destination address register
-type registerMdmac1darType uint32
+// RegisterMdmac1darType MDMA channel x destination address register
+type RegisterMdmac1darType uint32
+
+func (r *RegisterMdmac1darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1darFieldDarShift = 0
@@ -2422,17 +2928,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac1darType) GetDar() uint32 {
+func (r *RegisterMdmac1darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1darFieldDarMask) >> RegisterMdmac1darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac1darType) SetDar(value uint32) {
+func (r *RegisterMdmac1darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1darFieldDarMask)|(uint32(value)<<RegisterMdmac1darFieldDarShift))
 }
 
-// registerMdmac1brurType MDMA channel x Block Repeat address Update register
-type registerMdmac1brurType uint32
+// RegisterMdmac1brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac1brurType uint32
+
+func (r *RegisterMdmac1brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1brurFieldSuvShift = 0
@@ -2440,12 +2969,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac1brurType) GetSuv() uint16 {
+func (r *RegisterMdmac1brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1brurFieldSuvMask) >> RegisterMdmac1brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac1brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac1brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1brurFieldSuvMask)|(uint32(value)<<RegisterMdmac1brurFieldSuvShift))
 }
 
@@ -2455,17 +2984,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac1brurType) GetDuv() uint16 {
+func (r *RegisterMdmac1brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1brurFieldDuvMask) >> RegisterMdmac1brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac1brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac1brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1brurFieldDuvMask)|(uint32(value)<<RegisterMdmac1brurFieldDuvShift))
 }
 
-// registerMdmac1larType MDMA channel x Link Address register
-type registerMdmac1larType uint32
+// RegisterMdmac1larType MDMA channel x Link Address register
+type RegisterMdmac1larType uint32
+
+func (r *RegisterMdmac1larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1larFieldLarShift = 0
@@ -2473,17 +3025,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac1larType) GetLar() uint32 {
+func (r *RegisterMdmac1larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1larFieldLarMask) >> RegisterMdmac1larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac1larType) SetLar(value uint32) {
+func (r *RegisterMdmac1larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1larFieldLarMask)|(uint32(value)<<RegisterMdmac1larFieldLarShift))
 }
 
-// registerMdmac1tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac1tbrType uint32
+// RegisterMdmac1tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac1tbrType uint32
+
+func (r *RegisterMdmac1tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1tbrFieldTselShift = 0
@@ -2491,12 +3066,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac1tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac1tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tbrFieldTselMask) >> RegisterMdmac1tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac1tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac1tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1tbrFieldTselMask)|(uint32(value)<<RegisterMdmac1tbrFieldTselShift))
 }
 
@@ -2506,12 +3081,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac1tbrType) GetSbus() bool {
+func (r *RegisterMdmac1tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac1tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac1tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1tbrFieldSbusMask)
 	} else {
@@ -2525,12 +3100,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac1tbrType) GetDbus() bool {
+func (r *RegisterMdmac1tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac1tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac1tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac1tbrFieldDbusMask)
 	} else {
@@ -2538,8 +3113,31 @@ func (r *registerMdmac1tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac1marType MDMA channel x Mask address register
-type registerMdmac1marType uint32
+// RegisterMdmac1marType MDMA channel x Mask address register
+type RegisterMdmac1marType uint32
+
+func (r *RegisterMdmac1marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1marFieldMarShift = 0
@@ -2547,17 +3145,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac1marType) GetMar() uint32 {
+func (r *RegisterMdmac1marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1marFieldMarMask) >> RegisterMdmac1marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac1marType) SetMar(value uint32) {
+func (r *RegisterMdmac1marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1marFieldMarMask)|(uint32(value)<<RegisterMdmac1marFieldMarShift))
 }
 
-// registerMdmac1mdrType MDMA channel x Mask Data register
-type registerMdmac1mdrType uint32
+// RegisterMdmac1mdrType MDMA channel x Mask Data register
+type RegisterMdmac1mdrType uint32
+
+func (r *RegisterMdmac1mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac1mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac1mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac1mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac1mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac1mdrFieldMdrShift = 0
@@ -2565,17 +3186,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac1mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac1mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac1mdrFieldMdrMask) >> RegisterMdmac1mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac1mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac1mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac1mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac1mdrFieldMdrShift))
 }
 
-// registerMdmac2isrType MDMA channel x interrupt/status register
-type registerMdmac2isrType uint32
+// RegisterMdmac2isrType MDMA channel x interrupt/status register
+type RegisterMdmac2isrType uint32
+
+func (r *RegisterMdmac2isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2isrFieldTeif2Shift = 0
@@ -2583,12 +3227,12 @@ const (
 )
 
 // GetTeif2 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac2isrType) GetTeif2() bool {
+func (r *RegisterMdmac2isrType) GetTeif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2isrFieldTeif2Mask) != 0
 }
 
 // SetTeif2 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac2isrType) SetTeif2(value bool) {
+func (r *RegisterMdmac2isrType) SetTeif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2isrFieldTeif2Mask)
 	} else {
@@ -2602,12 +3246,12 @@ const (
 )
 
 // GetCtcif2 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac2isrType) GetCtcif2() bool {
+func (r *RegisterMdmac2isrType) GetCtcif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2isrFieldCtcif2Mask) != 0
 }
 
 // SetCtcif2 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac2isrType) SetCtcif2(value bool) {
+func (r *RegisterMdmac2isrType) SetCtcif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2isrFieldCtcif2Mask)
 	} else {
@@ -2621,12 +3265,12 @@ const (
 )
 
 // GetBrtif2 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac2isrType) GetBrtif2() bool {
+func (r *RegisterMdmac2isrType) GetBrtif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2isrFieldBrtif2Mask) != 0
 }
 
 // SetBrtif2 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac2isrType) SetBrtif2(value bool) {
+func (r *RegisterMdmac2isrType) SetBrtif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2isrFieldBrtif2Mask)
 	} else {
@@ -2640,12 +3284,12 @@ const (
 )
 
 // GetBtif2 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac2isrType) GetBtif2() bool {
+func (r *RegisterMdmac2isrType) GetBtif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2isrFieldBtif2Mask) != 0
 }
 
 // SetBtif2 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac2isrType) SetBtif2(value bool) {
+func (r *RegisterMdmac2isrType) SetBtif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2isrFieldBtif2Mask)
 	} else {
@@ -2659,12 +3303,12 @@ const (
 )
 
 // GetTcif2 channel x buffer transfer complete
-func (r *registerMdmac2isrType) GetTcif2() bool {
+func (r *RegisterMdmac2isrType) GetTcif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2isrFieldTcif2Mask) != 0
 }
 
 // SetTcif2 channel x buffer transfer complete
-func (r *registerMdmac2isrType) SetTcif2(value bool) {
+func (r *RegisterMdmac2isrType) SetTcif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2isrFieldTcif2Mask)
 	} else {
@@ -2678,12 +3322,12 @@ const (
 )
 
 // GetCrqa2 channel x request active flag
-func (r *registerMdmac2isrType) GetCrqa2() bool {
+func (r *RegisterMdmac2isrType) GetCrqa2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2isrFieldCrqa2Mask) != 0
 }
 
 // SetCrqa2 channel x request active flag
-func (r *registerMdmac2isrType) SetCrqa2(value bool) {
+func (r *RegisterMdmac2isrType) SetCrqa2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2isrFieldCrqa2Mask)
 	} else {
@@ -2691,8 +3335,31 @@ func (r *registerMdmac2isrType) SetCrqa2(value bool) {
 	}
 }
 
-// registerMdmac2ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac2ifcrType uint32
+// RegisterMdmac2ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac2ifcrType uint32
+
+func (r *RegisterMdmac2ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2ifcrFieldCteif2Shift = 0
@@ -2700,12 +3367,12 @@ const (
 )
 
 // GetCteif2 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac2ifcrType) GetCteif2() bool {
+func (r *RegisterMdmac2ifcrType) GetCteif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2ifcrFieldCteif2Mask) != 0
 }
 
 // SetCteif2 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac2ifcrType) SetCteif2(value bool) {
+func (r *RegisterMdmac2ifcrType) SetCteif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2ifcrFieldCteif2Mask)
 	} else {
@@ -2719,12 +3386,12 @@ const (
 )
 
 // GetCctcif2 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac2ifcrType) GetCctcif2() bool {
+func (r *RegisterMdmac2ifcrType) GetCctcif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2ifcrFieldCctcif2Mask) != 0
 }
 
 // SetCctcif2 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac2ifcrType) SetCctcif2(value bool) {
+func (r *RegisterMdmac2ifcrType) SetCctcif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2ifcrFieldCctcif2Mask)
 	} else {
@@ -2738,12 +3405,12 @@ const (
 )
 
 // GetCbrtif2 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac2ifcrType) GetCbrtif2() bool {
+func (r *RegisterMdmac2ifcrType) GetCbrtif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2ifcrFieldCbrtif2Mask) != 0
 }
 
 // SetCbrtif2 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac2ifcrType) SetCbrtif2(value bool) {
+func (r *RegisterMdmac2ifcrType) SetCbrtif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2ifcrFieldCbrtif2Mask)
 	} else {
@@ -2757,12 +3424,12 @@ const (
 )
 
 // GetCbtif2 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac2ifcrType) GetCbtif2() bool {
+func (r *RegisterMdmac2ifcrType) GetCbtif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2ifcrFieldCbtif2Mask) != 0
 }
 
 // SetCbtif2 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac2ifcrType) SetCbtif2(value bool) {
+func (r *RegisterMdmac2ifcrType) SetCbtif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2ifcrFieldCbtif2Mask)
 	} else {
@@ -2776,12 +3443,12 @@ const (
 )
 
 // GetCltcif2 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac2ifcrType) GetCltcif2() bool {
+func (r *RegisterMdmac2ifcrType) GetCltcif2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2ifcrFieldCltcif2Mask) != 0
 }
 
 // SetCltcif2 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac2ifcrType) SetCltcif2(value bool) {
+func (r *RegisterMdmac2ifcrType) SetCltcif2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2ifcrFieldCltcif2Mask)
 	} else {
@@ -2789,8 +3456,31 @@ func (r *registerMdmac2ifcrType) SetCltcif2(value bool) {
 	}
 }
 
-// registerMdmac2esrType MDMA Channel x error status register
-type registerMdmac2esrType uint32
+// RegisterMdmac2esrType MDMA Channel x error status register
+type RegisterMdmac2esrType uint32
+
+func (r *RegisterMdmac2esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2esrFieldTeaShift = 0
@@ -2798,12 +3488,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac2esrType) GetTea() uint8 {
+func (r *RegisterMdmac2esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2esrFieldTeaMask) >> RegisterMdmac2esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac2esrType) SetTea(value uint8) {
+func (r *RegisterMdmac2esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2esrFieldTeaMask)|(uint32(value)<<RegisterMdmac2esrFieldTeaShift))
 }
 
@@ -2813,12 +3503,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac2esrType) GetTed() bool {
+func (r *RegisterMdmac2esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac2esrType) SetTed(value bool) {
+func (r *RegisterMdmac2esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2esrFieldTedMask)
 	} else {
@@ -2832,12 +3522,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac2esrType) GetTeld() bool {
+func (r *RegisterMdmac2esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac2esrType) SetTeld(value bool) {
+func (r *RegisterMdmac2esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2esrFieldTeldMask)
 	} else {
@@ -2851,12 +3541,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac2esrType) GetTemd() bool {
+func (r *RegisterMdmac2esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac2esrType) SetTemd(value bool) {
+func (r *RegisterMdmac2esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2esrFieldTemdMask)
 	} else {
@@ -2870,12 +3560,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac2esrType) GetAse() bool {
+func (r *RegisterMdmac2esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac2esrType) SetAse(value bool) {
+func (r *RegisterMdmac2esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2esrFieldAseMask)
 	} else {
@@ -2889,12 +3579,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac2esrType) GetBse() bool {
+func (r *RegisterMdmac2esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac2esrType) SetBse(value bool) {
+func (r *RegisterMdmac2esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2esrFieldBseMask)
 	} else {
@@ -2902,8 +3592,31 @@ func (r *registerMdmac2esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac2crType This register is used to control the concerned channel.
-type registerMdmac2crType uint32
+// RegisterMdmac2crType This register is used to control the concerned channel.
+type RegisterMdmac2crType uint32
+
+func (r *RegisterMdmac2crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2crFieldEnShift = 0
@@ -2911,12 +3624,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac2crType) GetEn() bool {
+func (r *RegisterMdmac2crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac2crType) SetEn(value bool) {
+func (r *RegisterMdmac2crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2crFieldEnMask)
 	} else {
@@ -2930,12 +3643,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac2crType) GetTeie() bool {
+func (r *RegisterMdmac2crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac2crType) SetTeie(value bool) {
+func (r *RegisterMdmac2crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2crFieldTeieMask)
 	} else {
@@ -2949,12 +3662,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac2crType) GetCtcie() bool {
+func (r *RegisterMdmac2crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac2crType) SetCtcie(value bool) {
+func (r *RegisterMdmac2crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2crFieldCtcieMask)
 	} else {
@@ -2968,12 +3681,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac2crType) GetBrtie() bool {
+func (r *RegisterMdmac2crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac2crType) SetBrtie(value bool) {
+func (r *RegisterMdmac2crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2crFieldBrtieMask)
 	} else {
@@ -2987,12 +3700,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac2crType) GetBtie() bool {
+func (r *RegisterMdmac2crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac2crType) SetBtie(value bool) {
+func (r *RegisterMdmac2crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2crFieldBtieMask)
 	} else {
@@ -3006,12 +3719,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac2crType) GetTcie() bool {
+func (r *RegisterMdmac2crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac2crType) SetTcie(value bool) {
+func (r *RegisterMdmac2crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2crFieldTcieMask)
 	} else {
@@ -3025,12 +3738,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac2crType) GetPl() uint8 {
+func (r *RegisterMdmac2crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2crFieldPlMask) >> RegisterMdmac2crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac2crType) SetPl(value uint8) {
+func (r *RegisterMdmac2crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2crFieldPlMask)|(uint32(value)<<RegisterMdmac2crFieldPlShift))
 }
 
@@ -3040,12 +3753,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac2crType) GetBex() bool {
+func (r *RegisterMdmac2crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac2crType) SetBex(value bool) {
+func (r *RegisterMdmac2crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2crFieldBexMask)
 	} else {
@@ -3059,12 +3772,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac2crType) GetHex() bool {
+func (r *RegisterMdmac2crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac2crType) SetHex(value bool) {
+func (r *RegisterMdmac2crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2crFieldHexMask)
 	} else {
@@ -3078,12 +3791,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac2crType) GetWex() bool {
+func (r *RegisterMdmac2crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac2crType) SetWex(value bool) {
+func (r *RegisterMdmac2crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2crFieldWexMask)
 	} else {
@@ -3097,7 +3810,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac2crType) SetSwrq(value bool) {
+func (r *RegisterMdmac2crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2crFieldSwrqMask)
 	} else {
@@ -3105,8 +3818,31 @@ func (r *registerMdmac2crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac2tcrType This register is used to configure the concerned channel.
-type registerMdmac2tcrType uint32
+// RegisterMdmac2tcrType This register is used to configure the concerned channel.
+type RegisterMdmac2tcrType uint32
+
+func (r *RegisterMdmac2tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2tcrFieldSincShift = 0
@@ -3114,12 +3850,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac2tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac2tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldSincMask) >> RegisterMdmac2tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac2tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac2tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldSincMask)|(uint32(value)<<RegisterMdmac2tcrFieldSincShift))
 }
 
@@ -3129,12 +3865,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac2tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac2tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldDincMask) >> RegisterMdmac2tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac2tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac2tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldDincMask)|(uint32(value)<<RegisterMdmac2tcrFieldDincShift))
 }
 
@@ -3144,12 +3880,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac2tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac2tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldSsizeMask) >> RegisterMdmac2tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac2tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac2tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac2tcrFieldSsizeShift))
 }
 
@@ -3159,12 +3895,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac2tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac2tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldDsizeMask) >> RegisterMdmac2tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac2tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac2tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac2tcrFieldDsizeShift))
 }
 
@@ -3174,12 +3910,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac2tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac2tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldSincosMask) >> RegisterMdmac2tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac2tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac2tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac2tcrFieldSincosShift))
 }
 
@@ -3189,12 +3925,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac2tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac2tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldDincosMask) >> RegisterMdmac2tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac2tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac2tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac2tcrFieldDincosShift))
 }
 
@@ -3204,12 +3940,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac2tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac2tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldSburstMask) >> RegisterMdmac2tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac2tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac2tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac2tcrFieldSburstShift))
 }
 
@@ -3219,12 +3955,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac2tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac2tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldDburstMask) >> RegisterMdmac2tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac2tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac2tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac2tcrFieldDburstShift))
 }
 
@@ -3234,12 +3970,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac2tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac2tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldTlenMask) >> RegisterMdmac2tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac2tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac2tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac2tcrFieldTlenShift))
 }
 
@@ -3249,12 +3985,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac2tcrType) GetPke() bool {
+func (r *RegisterMdmac2tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac2tcrType) SetPke(value bool) {
+func (r *RegisterMdmac2tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2tcrFieldPkeMask)
 	} else {
@@ -3268,12 +4004,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac2tcrType) GetPam() uint8 {
+func (r *RegisterMdmac2tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldPamMask) >> RegisterMdmac2tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac2tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac2tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldPamMask)|(uint32(value)<<RegisterMdmac2tcrFieldPamShift))
 }
 
@@ -3283,12 +4019,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac2tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac2tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldTrgmMask) >> RegisterMdmac2tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac2tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac2tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac2tcrFieldTrgmShift))
 }
 
@@ -3298,12 +4034,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac2tcrType) GetSwrm() bool {
+func (r *RegisterMdmac2tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac2tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac2tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2tcrFieldSwrmMask)
 	} else {
@@ -3317,12 +4053,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac2tcrType) GetBwm() bool {
+func (r *RegisterMdmac2tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac2tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac2tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2tcrFieldBwmMask)
 	} else {
@@ -3330,8 +4066,31 @@ func (r *registerMdmac2tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac2bndtrType MDMA Channel x block number of data register
-type registerMdmac2bndtrType uint32
+// RegisterMdmac2bndtrType MDMA Channel x block number of data register
+type RegisterMdmac2bndtrType uint32
+
+func (r *RegisterMdmac2bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2bndtrFieldBndtShift = 0
@@ -3339,12 +4098,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac2bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac2bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2bndtrFieldBndtMask) >> RegisterMdmac2bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac2bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac2bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac2bndtrFieldBndtShift))
 }
 
@@ -3354,12 +4113,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac2bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac2bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac2bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac2bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2bndtrFieldBrsumMask)
 	} else {
@@ -3373,12 +4132,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac2bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac2bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac2bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac2bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2bndtrFieldBrdumMask)
 	} else {
@@ -3392,17 +4151,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac2bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac2bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2bndtrFieldBrcMask) >> RegisterMdmac2bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac2bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac2bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac2bndtrFieldBrcShift))
 }
 
-// registerMdmac2sarType MDMA channel x source address register
-type registerMdmac2sarType uint32
+// RegisterMdmac2sarType MDMA channel x source address register
+type RegisterMdmac2sarType uint32
+
+func (r *RegisterMdmac2sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2sarFieldSarShift = 0
@@ -3410,17 +4192,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac2sarType) GetSar() uint32 {
+func (r *RegisterMdmac2sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2sarFieldSarMask) >> RegisterMdmac2sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac2sarType) SetSar(value uint32) {
+func (r *RegisterMdmac2sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2sarFieldSarMask)|(uint32(value)<<RegisterMdmac2sarFieldSarShift))
 }
 
-// registerMdmac2darType MDMA channel x destination address register
-type registerMdmac2darType uint32
+// RegisterMdmac2darType MDMA channel x destination address register
+type RegisterMdmac2darType uint32
+
+func (r *RegisterMdmac2darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2darFieldDarShift = 0
@@ -3428,17 +4233,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac2darType) GetDar() uint32 {
+func (r *RegisterMdmac2darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2darFieldDarMask) >> RegisterMdmac2darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac2darType) SetDar(value uint32) {
+func (r *RegisterMdmac2darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2darFieldDarMask)|(uint32(value)<<RegisterMdmac2darFieldDarShift))
 }
 
-// registerMdmac2brurType MDMA channel x Block Repeat address Update register
-type registerMdmac2brurType uint32
+// RegisterMdmac2brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac2brurType uint32
+
+func (r *RegisterMdmac2brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2brurFieldSuvShift = 0
@@ -3446,12 +4274,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac2brurType) GetSuv() uint16 {
+func (r *RegisterMdmac2brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2brurFieldSuvMask) >> RegisterMdmac2brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac2brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac2brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2brurFieldSuvMask)|(uint32(value)<<RegisterMdmac2brurFieldSuvShift))
 }
 
@@ -3461,17 +4289,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac2brurType) GetDuv() uint16 {
+func (r *RegisterMdmac2brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2brurFieldDuvMask) >> RegisterMdmac2brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac2brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac2brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2brurFieldDuvMask)|(uint32(value)<<RegisterMdmac2brurFieldDuvShift))
 }
 
-// registerMdmac2larType MDMA channel x Link Address register
-type registerMdmac2larType uint32
+// RegisterMdmac2larType MDMA channel x Link Address register
+type RegisterMdmac2larType uint32
+
+func (r *RegisterMdmac2larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2larFieldLarShift = 0
@@ -3479,17 +4330,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac2larType) GetLar() uint32 {
+func (r *RegisterMdmac2larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2larFieldLarMask) >> RegisterMdmac2larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac2larType) SetLar(value uint32) {
+func (r *RegisterMdmac2larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2larFieldLarMask)|(uint32(value)<<RegisterMdmac2larFieldLarShift))
 }
 
-// registerMdmac2tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac2tbrType uint32
+// RegisterMdmac2tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac2tbrType uint32
+
+func (r *RegisterMdmac2tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2tbrFieldTselShift = 0
@@ -3497,12 +4371,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac2tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac2tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tbrFieldTselMask) >> RegisterMdmac2tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac2tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac2tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2tbrFieldTselMask)|(uint32(value)<<RegisterMdmac2tbrFieldTselShift))
 }
 
@@ -3512,12 +4386,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac2tbrType) GetSbus() bool {
+func (r *RegisterMdmac2tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac2tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac2tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2tbrFieldSbusMask)
 	} else {
@@ -3531,12 +4405,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac2tbrType) GetDbus() bool {
+func (r *RegisterMdmac2tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac2tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac2tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac2tbrFieldDbusMask)
 	} else {
@@ -3544,8 +4418,31 @@ func (r *registerMdmac2tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac2marType MDMA channel x Mask address register
-type registerMdmac2marType uint32
+// RegisterMdmac2marType MDMA channel x Mask address register
+type RegisterMdmac2marType uint32
+
+func (r *RegisterMdmac2marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2marFieldMarShift = 0
@@ -3553,17 +4450,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac2marType) GetMar() uint32 {
+func (r *RegisterMdmac2marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2marFieldMarMask) >> RegisterMdmac2marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac2marType) SetMar(value uint32) {
+func (r *RegisterMdmac2marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2marFieldMarMask)|(uint32(value)<<RegisterMdmac2marFieldMarShift))
 }
 
-// registerMdmac2mdrType MDMA channel x Mask Data register
-type registerMdmac2mdrType uint32
+// RegisterMdmac2mdrType MDMA channel x Mask Data register
+type RegisterMdmac2mdrType uint32
+
+func (r *RegisterMdmac2mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac2mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac2mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac2mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac2mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac2mdrFieldMdrShift = 0
@@ -3571,17 +4491,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac2mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac2mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac2mdrFieldMdrMask) >> RegisterMdmac2mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac2mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac2mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac2mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac2mdrFieldMdrShift))
 }
 
-// registerMdmac3isrType MDMA channel x interrupt/status register
-type registerMdmac3isrType uint32
+// RegisterMdmac3isrType MDMA channel x interrupt/status register
+type RegisterMdmac3isrType uint32
+
+func (r *RegisterMdmac3isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3isrFieldTeif3Shift = 0
@@ -3589,12 +4532,12 @@ const (
 )
 
 // GetTeif3 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac3isrType) GetTeif3() bool {
+func (r *RegisterMdmac3isrType) GetTeif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3isrFieldTeif3Mask) != 0
 }
 
 // SetTeif3 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac3isrType) SetTeif3(value bool) {
+func (r *RegisterMdmac3isrType) SetTeif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3isrFieldTeif3Mask)
 	} else {
@@ -3608,12 +4551,12 @@ const (
 )
 
 // GetCtcif3 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac3isrType) GetCtcif3() bool {
+func (r *RegisterMdmac3isrType) GetCtcif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3isrFieldCtcif3Mask) != 0
 }
 
 // SetCtcif3 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac3isrType) SetCtcif3(value bool) {
+func (r *RegisterMdmac3isrType) SetCtcif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3isrFieldCtcif3Mask)
 	} else {
@@ -3627,12 +4570,12 @@ const (
 )
 
 // GetBrtif3 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac3isrType) GetBrtif3() bool {
+func (r *RegisterMdmac3isrType) GetBrtif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3isrFieldBrtif3Mask) != 0
 }
 
 // SetBrtif3 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac3isrType) SetBrtif3(value bool) {
+func (r *RegisterMdmac3isrType) SetBrtif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3isrFieldBrtif3Mask)
 	} else {
@@ -3646,12 +4589,12 @@ const (
 )
 
 // GetBtif3 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac3isrType) GetBtif3() bool {
+func (r *RegisterMdmac3isrType) GetBtif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3isrFieldBtif3Mask) != 0
 }
 
 // SetBtif3 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac3isrType) SetBtif3(value bool) {
+func (r *RegisterMdmac3isrType) SetBtif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3isrFieldBtif3Mask)
 	} else {
@@ -3665,12 +4608,12 @@ const (
 )
 
 // GetTcif3 channel x buffer transfer complete
-func (r *registerMdmac3isrType) GetTcif3() bool {
+func (r *RegisterMdmac3isrType) GetTcif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3isrFieldTcif3Mask) != 0
 }
 
 // SetTcif3 channel x buffer transfer complete
-func (r *registerMdmac3isrType) SetTcif3(value bool) {
+func (r *RegisterMdmac3isrType) SetTcif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3isrFieldTcif3Mask)
 	} else {
@@ -3684,12 +4627,12 @@ const (
 )
 
 // GetCrqa3 channel x request active flag
-func (r *registerMdmac3isrType) GetCrqa3() bool {
+func (r *RegisterMdmac3isrType) GetCrqa3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3isrFieldCrqa3Mask) != 0
 }
 
 // SetCrqa3 channel x request active flag
-func (r *registerMdmac3isrType) SetCrqa3(value bool) {
+func (r *RegisterMdmac3isrType) SetCrqa3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3isrFieldCrqa3Mask)
 	} else {
@@ -3697,8 +4640,31 @@ func (r *registerMdmac3isrType) SetCrqa3(value bool) {
 	}
 }
 
-// registerMdmac3ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac3ifcrType uint32
+// RegisterMdmac3ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac3ifcrType uint32
+
+func (r *RegisterMdmac3ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3ifcrFieldCteif3Shift = 0
@@ -3706,12 +4672,12 @@ const (
 )
 
 // GetCteif3 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac3ifcrType) GetCteif3() bool {
+func (r *RegisterMdmac3ifcrType) GetCteif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3ifcrFieldCteif3Mask) != 0
 }
 
 // SetCteif3 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac3ifcrType) SetCteif3(value bool) {
+func (r *RegisterMdmac3ifcrType) SetCteif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3ifcrFieldCteif3Mask)
 	} else {
@@ -3725,12 +4691,12 @@ const (
 )
 
 // GetCctcif3 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac3ifcrType) GetCctcif3() bool {
+func (r *RegisterMdmac3ifcrType) GetCctcif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3ifcrFieldCctcif3Mask) != 0
 }
 
 // SetCctcif3 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac3ifcrType) SetCctcif3(value bool) {
+func (r *RegisterMdmac3ifcrType) SetCctcif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3ifcrFieldCctcif3Mask)
 	} else {
@@ -3744,12 +4710,12 @@ const (
 )
 
 // GetCbrtif3 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac3ifcrType) GetCbrtif3() bool {
+func (r *RegisterMdmac3ifcrType) GetCbrtif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3ifcrFieldCbrtif3Mask) != 0
 }
 
 // SetCbrtif3 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac3ifcrType) SetCbrtif3(value bool) {
+func (r *RegisterMdmac3ifcrType) SetCbrtif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3ifcrFieldCbrtif3Mask)
 	} else {
@@ -3763,12 +4729,12 @@ const (
 )
 
 // GetCbtif3 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac3ifcrType) GetCbtif3() bool {
+func (r *RegisterMdmac3ifcrType) GetCbtif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3ifcrFieldCbtif3Mask) != 0
 }
 
 // SetCbtif3 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac3ifcrType) SetCbtif3(value bool) {
+func (r *RegisterMdmac3ifcrType) SetCbtif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3ifcrFieldCbtif3Mask)
 	} else {
@@ -3782,12 +4748,12 @@ const (
 )
 
 // GetCltcif3 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac3ifcrType) GetCltcif3() bool {
+func (r *RegisterMdmac3ifcrType) GetCltcif3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3ifcrFieldCltcif3Mask) != 0
 }
 
 // SetCltcif3 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac3ifcrType) SetCltcif3(value bool) {
+func (r *RegisterMdmac3ifcrType) SetCltcif3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3ifcrFieldCltcif3Mask)
 	} else {
@@ -3795,8 +4761,31 @@ func (r *registerMdmac3ifcrType) SetCltcif3(value bool) {
 	}
 }
 
-// registerMdmac3esrType MDMA Channel x error status register
-type registerMdmac3esrType uint32
+// RegisterMdmac3esrType MDMA Channel x error status register
+type RegisterMdmac3esrType uint32
+
+func (r *RegisterMdmac3esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3esrFieldTeaShift = 0
@@ -3804,12 +4793,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac3esrType) GetTea() uint8 {
+func (r *RegisterMdmac3esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3esrFieldTeaMask) >> RegisterMdmac3esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac3esrType) SetTea(value uint8) {
+func (r *RegisterMdmac3esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3esrFieldTeaMask)|(uint32(value)<<RegisterMdmac3esrFieldTeaShift))
 }
 
@@ -3819,12 +4808,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac3esrType) GetTed() bool {
+func (r *RegisterMdmac3esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac3esrType) SetTed(value bool) {
+func (r *RegisterMdmac3esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3esrFieldTedMask)
 	} else {
@@ -3838,12 +4827,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac3esrType) GetTeld() bool {
+func (r *RegisterMdmac3esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac3esrType) SetTeld(value bool) {
+func (r *RegisterMdmac3esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3esrFieldTeldMask)
 	} else {
@@ -3857,12 +4846,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac3esrType) GetTemd() bool {
+func (r *RegisterMdmac3esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac3esrType) SetTemd(value bool) {
+func (r *RegisterMdmac3esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3esrFieldTemdMask)
 	} else {
@@ -3876,12 +4865,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac3esrType) GetAse() bool {
+func (r *RegisterMdmac3esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac3esrType) SetAse(value bool) {
+func (r *RegisterMdmac3esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3esrFieldAseMask)
 	} else {
@@ -3895,12 +4884,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac3esrType) GetBse() bool {
+func (r *RegisterMdmac3esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac3esrType) SetBse(value bool) {
+func (r *RegisterMdmac3esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3esrFieldBseMask)
 	} else {
@@ -3908,8 +4897,31 @@ func (r *registerMdmac3esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac3crType This register is used to control the concerned channel.
-type registerMdmac3crType uint32
+// RegisterMdmac3crType This register is used to control the concerned channel.
+type RegisterMdmac3crType uint32
+
+func (r *RegisterMdmac3crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3crFieldEnShift = 0
@@ -3917,12 +4929,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac3crType) GetEn() bool {
+func (r *RegisterMdmac3crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac3crType) SetEn(value bool) {
+func (r *RegisterMdmac3crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3crFieldEnMask)
 	} else {
@@ -3936,12 +4948,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac3crType) GetTeie() bool {
+func (r *RegisterMdmac3crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac3crType) SetTeie(value bool) {
+func (r *RegisterMdmac3crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3crFieldTeieMask)
 	} else {
@@ -3955,12 +4967,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac3crType) GetCtcie() bool {
+func (r *RegisterMdmac3crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac3crType) SetCtcie(value bool) {
+func (r *RegisterMdmac3crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3crFieldCtcieMask)
 	} else {
@@ -3974,12 +4986,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac3crType) GetBrtie() bool {
+func (r *RegisterMdmac3crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac3crType) SetBrtie(value bool) {
+func (r *RegisterMdmac3crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3crFieldBrtieMask)
 	} else {
@@ -3993,12 +5005,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac3crType) GetBtie() bool {
+func (r *RegisterMdmac3crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac3crType) SetBtie(value bool) {
+func (r *RegisterMdmac3crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3crFieldBtieMask)
 	} else {
@@ -4012,12 +5024,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac3crType) GetTcie() bool {
+func (r *RegisterMdmac3crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac3crType) SetTcie(value bool) {
+func (r *RegisterMdmac3crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3crFieldTcieMask)
 	} else {
@@ -4031,12 +5043,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac3crType) GetPl() uint8 {
+func (r *RegisterMdmac3crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3crFieldPlMask) >> RegisterMdmac3crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac3crType) SetPl(value uint8) {
+func (r *RegisterMdmac3crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3crFieldPlMask)|(uint32(value)<<RegisterMdmac3crFieldPlShift))
 }
 
@@ -4046,12 +5058,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac3crType) GetBex() bool {
+func (r *RegisterMdmac3crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac3crType) SetBex(value bool) {
+func (r *RegisterMdmac3crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3crFieldBexMask)
 	} else {
@@ -4065,12 +5077,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac3crType) GetHex() bool {
+func (r *RegisterMdmac3crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac3crType) SetHex(value bool) {
+func (r *RegisterMdmac3crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3crFieldHexMask)
 	} else {
@@ -4084,12 +5096,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac3crType) GetWex() bool {
+func (r *RegisterMdmac3crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac3crType) SetWex(value bool) {
+func (r *RegisterMdmac3crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3crFieldWexMask)
 	} else {
@@ -4103,7 +5115,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac3crType) SetSwrq(value bool) {
+func (r *RegisterMdmac3crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3crFieldSwrqMask)
 	} else {
@@ -4111,8 +5123,31 @@ func (r *registerMdmac3crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac3tcrType This register is used to configure the concerned channel.
-type registerMdmac3tcrType uint32
+// RegisterMdmac3tcrType This register is used to configure the concerned channel.
+type RegisterMdmac3tcrType uint32
+
+func (r *RegisterMdmac3tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3tcrFieldSincShift = 0
@@ -4120,12 +5155,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac3tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac3tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldSincMask) >> RegisterMdmac3tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac3tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac3tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldSincMask)|(uint32(value)<<RegisterMdmac3tcrFieldSincShift))
 }
 
@@ -4135,12 +5170,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac3tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac3tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldDincMask) >> RegisterMdmac3tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac3tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac3tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldDincMask)|(uint32(value)<<RegisterMdmac3tcrFieldDincShift))
 }
 
@@ -4150,12 +5185,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac3tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac3tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldSsizeMask) >> RegisterMdmac3tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac3tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac3tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac3tcrFieldSsizeShift))
 }
 
@@ -4165,12 +5200,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac3tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac3tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldDsizeMask) >> RegisterMdmac3tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac3tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac3tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac3tcrFieldDsizeShift))
 }
 
@@ -4180,12 +5215,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac3tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac3tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldSincosMask) >> RegisterMdmac3tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac3tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac3tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac3tcrFieldSincosShift))
 }
 
@@ -4195,12 +5230,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac3tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac3tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldDincosMask) >> RegisterMdmac3tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac3tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac3tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac3tcrFieldDincosShift))
 }
 
@@ -4210,12 +5245,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac3tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac3tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldSburstMask) >> RegisterMdmac3tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac3tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac3tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac3tcrFieldSburstShift))
 }
 
@@ -4225,12 +5260,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac3tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac3tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldDburstMask) >> RegisterMdmac3tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac3tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac3tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac3tcrFieldDburstShift))
 }
 
@@ -4240,12 +5275,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac3tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac3tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldTlenMask) >> RegisterMdmac3tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac3tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac3tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac3tcrFieldTlenShift))
 }
 
@@ -4255,12 +5290,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac3tcrType) GetPke() bool {
+func (r *RegisterMdmac3tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac3tcrType) SetPke(value bool) {
+func (r *RegisterMdmac3tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3tcrFieldPkeMask)
 	} else {
@@ -4274,12 +5309,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac3tcrType) GetPam() uint8 {
+func (r *RegisterMdmac3tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldPamMask) >> RegisterMdmac3tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac3tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac3tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldPamMask)|(uint32(value)<<RegisterMdmac3tcrFieldPamShift))
 }
 
@@ -4289,12 +5324,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac3tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac3tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldTrgmMask) >> RegisterMdmac3tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac3tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac3tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac3tcrFieldTrgmShift))
 }
 
@@ -4304,12 +5339,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac3tcrType) GetSwrm() bool {
+func (r *RegisterMdmac3tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac3tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac3tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3tcrFieldSwrmMask)
 	} else {
@@ -4323,12 +5358,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac3tcrType) GetBwm() bool {
+func (r *RegisterMdmac3tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac3tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac3tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3tcrFieldBwmMask)
 	} else {
@@ -4336,8 +5371,31 @@ func (r *registerMdmac3tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac3bndtrType MDMA Channel x block number of data register
-type registerMdmac3bndtrType uint32
+// RegisterMdmac3bndtrType MDMA Channel x block number of data register
+type RegisterMdmac3bndtrType uint32
+
+func (r *RegisterMdmac3bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3bndtrFieldBndtShift = 0
@@ -4345,12 +5403,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac3bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac3bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3bndtrFieldBndtMask) >> RegisterMdmac3bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac3bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac3bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac3bndtrFieldBndtShift))
 }
 
@@ -4360,12 +5418,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac3bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac3bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac3bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac3bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3bndtrFieldBrsumMask)
 	} else {
@@ -4379,12 +5437,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac3bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac3bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac3bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac3bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3bndtrFieldBrdumMask)
 	} else {
@@ -4398,17 +5456,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac3bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac3bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3bndtrFieldBrcMask) >> RegisterMdmac3bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac3bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac3bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac3bndtrFieldBrcShift))
 }
 
-// registerMdmac3sarType MDMA channel x source address register
-type registerMdmac3sarType uint32
+// RegisterMdmac3sarType MDMA channel x source address register
+type RegisterMdmac3sarType uint32
+
+func (r *RegisterMdmac3sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3sarFieldSarShift = 0
@@ -4416,17 +5497,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac3sarType) GetSar() uint32 {
+func (r *RegisterMdmac3sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3sarFieldSarMask) >> RegisterMdmac3sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac3sarType) SetSar(value uint32) {
+func (r *RegisterMdmac3sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3sarFieldSarMask)|(uint32(value)<<RegisterMdmac3sarFieldSarShift))
 }
 
-// registerMdmac3darType MDMA channel x destination address register
-type registerMdmac3darType uint32
+// RegisterMdmac3darType MDMA channel x destination address register
+type RegisterMdmac3darType uint32
+
+func (r *RegisterMdmac3darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3darFieldDarShift = 0
@@ -4434,17 +5538,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac3darType) GetDar() uint32 {
+func (r *RegisterMdmac3darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3darFieldDarMask) >> RegisterMdmac3darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac3darType) SetDar(value uint32) {
+func (r *RegisterMdmac3darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3darFieldDarMask)|(uint32(value)<<RegisterMdmac3darFieldDarShift))
 }
 
-// registerMdmac3brurType MDMA channel x Block Repeat address Update register
-type registerMdmac3brurType uint32
+// RegisterMdmac3brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac3brurType uint32
+
+func (r *RegisterMdmac3brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3brurFieldSuvShift = 0
@@ -4452,12 +5579,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac3brurType) GetSuv() uint16 {
+func (r *RegisterMdmac3brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3brurFieldSuvMask) >> RegisterMdmac3brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac3brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac3brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3brurFieldSuvMask)|(uint32(value)<<RegisterMdmac3brurFieldSuvShift))
 }
 
@@ -4467,17 +5594,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac3brurType) GetDuv() uint16 {
+func (r *RegisterMdmac3brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3brurFieldDuvMask) >> RegisterMdmac3brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac3brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac3brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3brurFieldDuvMask)|(uint32(value)<<RegisterMdmac3brurFieldDuvShift))
 }
 
-// registerMdmac3larType MDMA channel x Link Address register
-type registerMdmac3larType uint32
+// RegisterMdmac3larType MDMA channel x Link Address register
+type RegisterMdmac3larType uint32
+
+func (r *RegisterMdmac3larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3larFieldLarShift = 0
@@ -4485,17 +5635,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac3larType) GetLar() uint32 {
+func (r *RegisterMdmac3larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3larFieldLarMask) >> RegisterMdmac3larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac3larType) SetLar(value uint32) {
+func (r *RegisterMdmac3larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3larFieldLarMask)|(uint32(value)<<RegisterMdmac3larFieldLarShift))
 }
 
-// registerMdmac3tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac3tbrType uint32
+// RegisterMdmac3tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac3tbrType uint32
+
+func (r *RegisterMdmac3tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3tbrFieldTselShift = 0
@@ -4503,12 +5676,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac3tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac3tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tbrFieldTselMask) >> RegisterMdmac3tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac3tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac3tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3tbrFieldTselMask)|(uint32(value)<<RegisterMdmac3tbrFieldTselShift))
 }
 
@@ -4518,12 +5691,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac3tbrType) GetSbus() bool {
+func (r *RegisterMdmac3tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac3tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac3tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3tbrFieldSbusMask)
 	} else {
@@ -4537,12 +5710,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac3tbrType) GetDbus() bool {
+func (r *RegisterMdmac3tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac3tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac3tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac3tbrFieldDbusMask)
 	} else {
@@ -4550,8 +5723,31 @@ func (r *registerMdmac3tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac3marType MDMA channel x Mask address register
-type registerMdmac3marType uint32
+// RegisterMdmac3marType MDMA channel x Mask address register
+type RegisterMdmac3marType uint32
+
+func (r *RegisterMdmac3marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3marFieldMarShift = 0
@@ -4559,17 +5755,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac3marType) GetMar() uint32 {
+func (r *RegisterMdmac3marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3marFieldMarMask) >> RegisterMdmac3marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac3marType) SetMar(value uint32) {
+func (r *RegisterMdmac3marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3marFieldMarMask)|(uint32(value)<<RegisterMdmac3marFieldMarShift))
 }
 
-// registerMdmac3mdrType MDMA channel x Mask Data register
-type registerMdmac3mdrType uint32
+// RegisterMdmac3mdrType MDMA channel x Mask Data register
+type RegisterMdmac3mdrType uint32
+
+func (r *RegisterMdmac3mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac3mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac3mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac3mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac3mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac3mdrFieldMdrShift = 0
@@ -4577,17 +5796,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac3mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac3mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac3mdrFieldMdrMask) >> RegisterMdmac3mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac3mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac3mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac3mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac3mdrFieldMdrShift))
 }
 
-// registerMdmac4isrType MDMA channel x interrupt/status register
-type registerMdmac4isrType uint32
+// RegisterMdmac4isrType MDMA channel x interrupt/status register
+type RegisterMdmac4isrType uint32
+
+func (r *RegisterMdmac4isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4isrFieldTeif4Shift = 0
@@ -4595,12 +5837,12 @@ const (
 )
 
 // GetTeif4 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac4isrType) GetTeif4() bool {
+func (r *RegisterMdmac4isrType) GetTeif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4isrFieldTeif4Mask) != 0
 }
 
 // SetTeif4 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac4isrType) SetTeif4(value bool) {
+func (r *RegisterMdmac4isrType) SetTeif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4isrFieldTeif4Mask)
 	} else {
@@ -4614,12 +5856,12 @@ const (
 )
 
 // GetCtcif4 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac4isrType) GetCtcif4() bool {
+func (r *RegisterMdmac4isrType) GetCtcif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4isrFieldCtcif4Mask) != 0
 }
 
 // SetCtcif4 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac4isrType) SetCtcif4(value bool) {
+func (r *RegisterMdmac4isrType) SetCtcif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4isrFieldCtcif4Mask)
 	} else {
@@ -4633,12 +5875,12 @@ const (
 )
 
 // GetBrtif4 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac4isrType) GetBrtif4() bool {
+func (r *RegisterMdmac4isrType) GetBrtif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4isrFieldBrtif4Mask) != 0
 }
 
 // SetBrtif4 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac4isrType) SetBrtif4(value bool) {
+func (r *RegisterMdmac4isrType) SetBrtif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4isrFieldBrtif4Mask)
 	} else {
@@ -4652,12 +5894,12 @@ const (
 )
 
 // GetBtif4 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac4isrType) GetBtif4() bool {
+func (r *RegisterMdmac4isrType) GetBtif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4isrFieldBtif4Mask) != 0
 }
 
 // SetBtif4 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac4isrType) SetBtif4(value bool) {
+func (r *RegisterMdmac4isrType) SetBtif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4isrFieldBtif4Mask)
 	} else {
@@ -4671,12 +5913,12 @@ const (
 )
 
 // GetTcif4 channel x buffer transfer complete
-func (r *registerMdmac4isrType) GetTcif4() bool {
+func (r *RegisterMdmac4isrType) GetTcif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4isrFieldTcif4Mask) != 0
 }
 
 // SetTcif4 channel x buffer transfer complete
-func (r *registerMdmac4isrType) SetTcif4(value bool) {
+func (r *RegisterMdmac4isrType) SetTcif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4isrFieldTcif4Mask)
 	} else {
@@ -4690,12 +5932,12 @@ const (
 )
 
 // GetCrqa4 channel x request active flag
-func (r *registerMdmac4isrType) GetCrqa4() bool {
+func (r *RegisterMdmac4isrType) GetCrqa4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4isrFieldCrqa4Mask) != 0
 }
 
 // SetCrqa4 channel x request active flag
-func (r *registerMdmac4isrType) SetCrqa4(value bool) {
+func (r *RegisterMdmac4isrType) SetCrqa4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4isrFieldCrqa4Mask)
 	} else {
@@ -4703,8 +5945,31 @@ func (r *registerMdmac4isrType) SetCrqa4(value bool) {
 	}
 }
 
-// registerMdmac4ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac4ifcrType uint32
+// RegisterMdmac4ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac4ifcrType uint32
+
+func (r *RegisterMdmac4ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4ifcrFieldCteif4Shift = 0
@@ -4712,12 +5977,12 @@ const (
 )
 
 // GetCteif4 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac4ifcrType) GetCteif4() bool {
+func (r *RegisterMdmac4ifcrType) GetCteif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4ifcrFieldCteif4Mask) != 0
 }
 
 // SetCteif4 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac4ifcrType) SetCteif4(value bool) {
+func (r *RegisterMdmac4ifcrType) SetCteif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4ifcrFieldCteif4Mask)
 	} else {
@@ -4731,12 +5996,12 @@ const (
 )
 
 // GetCctcif4 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac4ifcrType) GetCctcif4() bool {
+func (r *RegisterMdmac4ifcrType) GetCctcif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4ifcrFieldCctcif4Mask) != 0
 }
 
 // SetCctcif4 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac4ifcrType) SetCctcif4(value bool) {
+func (r *RegisterMdmac4ifcrType) SetCctcif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4ifcrFieldCctcif4Mask)
 	} else {
@@ -4750,12 +6015,12 @@ const (
 )
 
 // GetCbrtif4 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac4ifcrType) GetCbrtif4() bool {
+func (r *RegisterMdmac4ifcrType) GetCbrtif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4ifcrFieldCbrtif4Mask) != 0
 }
 
 // SetCbrtif4 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac4ifcrType) SetCbrtif4(value bool) {
+func (r *RegisterMdmac4ifcrType) SetCbrtif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4ifcrFieldCbrtif4Mask)
 	} else {
@@ -4769,12 +6034,12 @@ const (
 )
 
 // GetCbtif4 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac4ifcrType) GetCbtif4() bool {
+func (r *RegisterMdmac4ifcrType) GetCbtif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4ifcrFieldCbtif4Mask) != 0
 }
 
 // SetCbtif4 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac4ifcrType) SetCbtif4(value bool) {
+func (r *RegisterMdmac4ifcrType) SetCbtif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4ifcrFieldCbtif4Mask)
 	} else {
@@ -4788,12 +6053,12 @@ const (
 )
 
 // GetCltcif4 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac4ifcrType) GetCltcif4() bool {
+func (r *RegisterMdmac4ifcrType) GetCltcif4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4ifcrFieldCltcif4Mask) != 0
 }
 
 // SetCltcif4 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac4ifcrType) SetCltcif4(value bool) {
+func (r *RegisterMdmac4ifcrType) SetCltcif4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4ifcrFieldCltcif4Mask)
 	} else {
@@ -4801,8 +6066,31 @@ func (r *registerMdmac4ifcrType) SetCltcif4(value bool) {
 	}
 }
 
-// registerMdmac4esrType MDMA Channel x error status register
-type registerMdmac4esrType uint32
+// RegisterMdmac4esrType MDMA Channel x error status register
+type RegisterMdmac4esrType uint32
+
+func (r *RegisterMdmac4esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4esrFieldTeaShift = 0
@@ -4810,12 +6098,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac4esrType) GetTea() uint8 {
+func (r *RegisterMdmac4esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4esrFieldTeaMask) >> RegisterMdmac4esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac4esrType) SetTea(value uint8) {
+func (r *RegisterMdmac4esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4esrFieldTeaMask)|(uint32(value)<<RegisterMdmac4esrFieldTeaShift))
 }
 
@@ -4825,12 +6113,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac4esrType) GetTed() bool {
+func (r *RegisterMdmac4esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac4esrType) SetTed(value bool) {
+func (r *RegisterMdmac4esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4esrFieldTedMask)
 	} else {
@@ -4844,12 +6132,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac4esrType) GetTeld() bool {
+func (r *RegisterMdmac4esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac4esrType) SetTeld(value bool) {
+func (r *RegisterMdmac4esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4esrFieldTeldMask)
 	} else {
@@ -4863,12 +6151,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac4esrType) GetTemd() bool {
+func (r *RegisterMdmac4esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac4esrType) SetTemd(value bool) {
+func (r *RegisterMdmac4esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4esrFieldTemdMask)
 	} else {
@@ -4882,12 +6170,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac4esrType) GetAse() bool {
+func (r *RegisterMdmac4esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac4esrType) SetAse(value bool) {
+func (r *RegisterMdmac4esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4esrFieldAseMask)
 	} else {
@@ -4901,12 +6189,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac4esrType) GetBse() bool {
+func (r *RegisterMdmac4esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac4esrType) SetBse(value bool) {
+func (r *RegisterMdmac4esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4esrFieldBseMask)
 	} else {
@@ -4914,8 +6202,31 @@ func (r *registerMdmac4esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac4crType This register is used to control the concerned channel.
-type registerMdmac4crType uint32
+// RegisterMdmac4crType This register is used to control the concerned channel.
+type RegisterMdmac4crType uint32
+
+func (r *RegisterMdmac4crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4crFieldEnShift = 0
@@ -4923,12 +6234,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac4crType) GetEn() bool {
+func (r *RegisterMdmac4crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac4crType) SetEn(value bool) {
+func (r *RegisterMdmac4crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4crFieldEnMask)
 	} else {
@@ -4942,12 +6253,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac4crType) GetTeie() bool {
+func (r *RegisterMdmac4crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac4crType) SetTeie(value bool) {
+func (r *RegisterMdmac4crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4crFieldTeieMask)
 	} else {
@@ -4961,12 +6272,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac4crType) GetCtcie() bool {
+func (r *RegisterMdmac4crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac4crType) SetCtcie(value bool) {
+func (r *RegisterMdmac4crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4crFieldCtcieMask)
 	} else {
@@ -4980,12 +6291,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac4crType) GetBrtie() bool {
+func (r *RegisterMdmac4crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac4crType) SetBrtie(value bool) {
+func (r *RegisterMdmac4crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4crFieldBrtieMask)
 	} else {
@@ -4999,12 +6310,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac4crType) GetBtie() bool {
+func (r *RegisterMdmac4crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac4crType) SetBtie(value bool) {
+func (r *RegisterMdmac4crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4crFieldBtieMask)
 	} else {
@@ -5018,12 +6329,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac4crType) GetTcie() bool {
+func (r *RegisterMdmac4crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac4crType) SetTcie(value bool) {
+func (r *RegisterMdmac4crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4crFieldTcieMask)
 	} else {
@@ -5037,12 +6348,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac4crType) GetPl() uint8 {
+func (r *RegisterMdmac4crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4crFieldPlMask) >> RegisterMdmac4crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac4crType) SetPl(value uint8) {
+func (r *RegisterMdmac4crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4crFieldPlMask)|(uint32(value)<<RegisterMdmac4crFieldPlShift))
 }
 
@@ -5052,12 +6363,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac4crType) GetBex() bool {
+func (r *RegisterMdmac4crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac4crType) SetBex(value bool) {
+func (r *RegisterMdmac4crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4crFieldBexMask)
 	} else {
@@ -5071,12 +6382,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac4crType) GetHex() bool {
+func (r *RegisterMdmac4crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac4crType) SetHex(value bool) {
+func (r *RegisterMdmac4crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4crFieldHexMask)
 	} else {
@@ -5090,12 +6401,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac4crType) GetWex() bool {
+func (r *RegisterMdmac4crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac4crType) SetWex(value bool) {
+func (r *RegisterMdmac4crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4crFieldWexMask)
 	} else {
@@ -5109,7 +6420,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac4crType) SetSwrq(value bool) {
+func (r *RegisterMdmac4crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4crFieldSwrqMask)
 	} else {
@@ -5117,8 +6428,31 @@ func (r *registerMdmac4crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac4tcrType This register is used to configure the concerned channel.
-type registerMdmac4tcrType uint32
+// RegisterMdmac4tcrType This register is used to configure the concerned channel.
+type RegisterMdmac4tcrType uint32
+
+func (r *RegisterMdmac4tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4tcrFieldSincShift = 0
@@ -5126,12 +6460,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac4tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac4tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldSincMask) >> RegisterMdmac4tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac4tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac4tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldSincMask)|(uint32(value)<<RegisterMdmac4tcrFieldSincShift))
 }
 
@@ -5141,12 +6475,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac4tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac4tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldDincMask) >> RegisterMdmac4tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac4tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac4tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldDincMask)|(uint32(value)<<RegisterMdmac4tcrFieldDincShift))
 }
 
@@ -5156,12 +6490,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac4tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac4tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldSsizeMask) >> RegisterMdmac4tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac4tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac4tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac4tcrFieldSsizeShift))
 }
 
@@ -5171,12 +6505,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac4tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac4tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldDsizeMask) >> RegisterMdmac4tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac4tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac4tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac4tcrFieldDsizeShift))
 }
 
@@ -5186,12 +6520,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac4tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac4tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldSincosMask) >> RegisterMdmac4tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac4tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac4tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac4tcrFieldSincosShift))
 }
 
@@ -5201,12 +6535,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac4tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac4tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldDincosMask) >> RegisterMdmac4tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac4tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac4tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac4tcrFieldDincosShift))
 }
 
@@ -5216,12 +6550,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac4tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac4tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldSburstMask) >> RegisterMdmac4tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac4tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac4tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac4tcrFieldSburstShift))
 }
 
@@ -5231,12 +6565,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac4tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac4tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldDburstMask) >> RegisterMdmac4tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac4tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac4tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac4tcrFieldDburstShift))
 }
 
@@ -5246,12 +6580,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac4tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac4tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldTlenMask) >> RegisterMdmac4tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac4tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac4tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac4tcrFieldTlenShift))
 }
 
@@ -5261,12 +6595,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac4tcrType) GetPke() bool {
+func (r *RegisterMdmac4tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac4tcrType) SetPke(value bool) {
+func (r *RegisterMdmac4tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4tcrFieldPkeMask)
 	} else {
@@ -5280,12 +6614,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac4tcrType) GetPam() uint8 {
+func (r *RegisterMdmac4tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldPamMask) >> RegisterMdmac4tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac4tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac4tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldPamMask)|(uint32(value)<<RegisterMdmac4tcrFieldPamShift))
 }
 
@@ -5295,12 +6629,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac4tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac4tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldTrgmMask) >> RegisterMdmac4tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac4tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac4tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac4tcrFieldTrgmShift))
 }
 
@@ -5310,12 +6644,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac4tcrType) GetSwrm() bool {
+func (r *RegisterMdmac4tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac4tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac4tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4tcrFieldSwrmMask)
 	} else {
@@ -5329,12 +6663,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac4tcrType) GetBwm() bool {
+func (r *RegisterMdmac4tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac4tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac4tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4tcrFieldBwmMask)
 	} else {
@@ -5342,8 +6676,31 @@ func (r *registerMdmac4tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac4bndtrType MDMA Channel x block number of data register
-type registerMdmac4bndtrType uint32
+// RegisterMdmac4bndtrType MDMA Channel x block number of data register
+type RegisterMdmac4bndtrType uint32
+
+func (r *RegisterMdmac4bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4bndtrFieldBndtShift = 0
@@ -5351,12 +6708,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac4bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac4bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4bndtrFieldBndtMask) >> RegisterMdmac4bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac4bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac4bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac4bndtrFieldBndtShift))
 }
 
@@ -5366,12 +6723,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac4bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac4bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac4bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac4bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4bndtrFieldBrsumMask)
 	} else {
@@ -5385,12 +6742,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac4bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac4bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac4bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac4bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4bndtrFieldBrdumMask)
 	} else {
@@ -5404,17 +6761,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac4bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac4bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4bndtrFieldBrcMask) >> RegisterMdmac4bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac4bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac4bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac4bndtrFieldBrcShift))
 }
 
-// registerMdmac4sarType MDMA channel x source address register
-type registerMdmac4sarType uint32
+// RegisterMdmac4sarType MDMA channel x source address register
+type RegisterMdmac4sarType uint32
+
+func (r *RegisterMdmac4sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4sarFieldSarShift = 0
@@ -5422,17 +6802,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac4sarType) GetSar() uint32 {
+func (r *RegisterMdmac4sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4sarFieldSarMask) >> RegisterMdmac4sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac4sarType) SetSar(value uint32) {
+func (r *RegisterMdmac4sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4sarFieldSarMask)|(uint32(value)<<RegisterMdmac4sarFieldSarShift))
 }
 
-// registerMdmac4darType MDMA channel x destination address register
-type registerMdmac4darType uint32
+// RegisterMdmac4darType MDMA channel x destination address register
+type RegisterMdmac4darType uint32
+
+func (r *RegisterMdmac4darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4darFieldDarShift = 0
@@ -5440,17 +6843,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac4darType) GetDar() uint32 {
+func (r *RegisterMdmac4darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4darFieldDarMask) >> RegisterMdmac4darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac4darType) SetDar(value uint32) {
+func (r *RegisterMdmac4darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4darFieldDarMask)|(uint32(value)<<RegisterMdmac4darFieldDarShift))
 }
 
-// registerMdmac4brurType MDMA channel x Block Repeat address Update register
-type registerMdmac4brurType uint32
+// RegisterMdmac4brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac4brurType uint32
+
+func (r *RegisterMdmac4brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4brurFieldSuvShift = 0
@@ -5458,12 +6884,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac4brurType) GetSuv() uint16 {
+func (r *RegisterMdmac4brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4brurFieldSuvMask) >> RegisterMdmac4brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac4brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac4brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4brurFieldSuvMask)|(uint32(value)<<RegisterMdmac4brurFieldSuvShift))
 }
 
@@ -5473,17 +6899,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac4brurType) GetDuv() uint16 {
+func (r *RegisterMdmac4brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4brurFieldDuvMask) >> RegisterMdmac4brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac4brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac4brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4brurFieldDuvMask)|(uint32(value)<<RegisterMdmac4brurFieldDuvShift))
 }
 
-// registerMdmac4larType MDMA channel x Link Address register
-type registerMdmac4larType uint32
+// RegisterMdmac4larType MDMA channel x Link Address register
+type RegisterMdmac4larType uint32
+
+func (r *RegisterMdmac4larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4larFieldLarShift = 0
@@ -5491,17 +6940,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac4larType) GetLar() uint32 {
+func (r *RegisterMdmac4larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4larFieldLarMask) >> RegisterMdmac4larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac4larType) SetLar(value uint32) {
+func (r *RegisterMdmac4larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4larFieldLarMask)|(uint32(value)<<RegisterMdmac4larFieldLarShift))
 }
 
-// registerMdmac4tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac4tbrType uint32
+// RegisterMdmac4tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac4tbrType uint32
+
+func (r *RegisterMdmac4tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4tbrFieldTselShift = 0
@@ -5509,12 +6981,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac4tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac4tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tbrFieldTselMask) >> RegisterMdmac4tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac4tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac4tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4tbrFieldTselMask)|(uint32(value)<<RegisterMdmac4tbrFieldTselShift))
 }
 
@@ -5524,12 +6996,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac4tbrType) GetSbus() bool {
+func (r *RegisterMdmac4tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac4tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac4tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4tbrFieldSbusMask)
 	} else {
@@ -5543,12 +7015,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac4tbrType) GetDbus() bool {
+func (r *RegisterMdmac4tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac4tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac4tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac4tbrFieldDbusMask)
 	} else {
@@ -5556,8 +7028,31 @@ func (r *registerMdmac4tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac4marType MDMA channel x Mask address register
-type registerMdmac4marType uint32
+// RegisterMdmac4marType MDMA channel x Mask address register
+type RegisterMdmac4marType uint32
+
+func (r *RegisterMdmac4marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4marFieldMarShift = 0
@@ -5565,17 +7060,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac4marType) GetMar() uint32 {
+func (r *RegisterMdmac4marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4marFieldMarMask) >> RegisterMdmac4marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac4marType) SetMar(value uint32) {
+func (r *RegisterMdmac4marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4marFieldMarMask)|(uint32(value)<<RegisterMdmac4marFieldMarShift))
 }
 
-// registerMdmac4mdrType MDMA channel x Mask Data register
-type registerMdmac4mdrType uint32
+// RegisterMdmac4mdrType MDMA channel x Mask Data register
+type RegisterMdmac4mdrType uint32
+
+func (r *RegisterMdmac4mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac4mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac4mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac4mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac4mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac4mdrFieldMdrShift = 0
@@ -5583,17 +7101,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac4mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac4mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac4mdrFieldMdrMask) >> RegisterMdmac4mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac4mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac4mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac4mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac4mdrFieldMdrShift))
 }
 
-// registerMdmac5isrType MDMA channel x interrupt/status register
-type registerMdmac5isrType uint32
+// RegisterMdmac5isrType MDMA channel x interrupt/status register
+type RegisterMdmac5isrType uint32
+
+func (r *RegisterMdmac5isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5isrFieldTeif5Shift = 0
@@ -5601,12 +7142,12 @@ const (
 )
 
 // GetTeif5 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac5isrType) GetTeif5() bool {
+func (r *RegisterMdmac5isrType) GetTeif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5isrFieldTeif5Mask) != 0
 }
 
 // SetTeif5 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac5isrType) SetTeif5(value bool) {
+func (r *RegisterMdmac5isrType) SetTeif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5isrFieldTeif5Mask)
 	} else {
@@ -5620,12 +7161,12 @@ const (
 )
 
 // GetCtcif5 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac5isrType) GetCtcif5() bool {
+func (r *RegisterMdmac5isrType) GetCtcif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5isrFieldCtcif5Mask) != 0
 }
 
 // SetCtcif5 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac5isrType) SetCtcif5(value bool) {
+func (r *RegisterMdmac5isrType) SetCtcif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5isrFieldCtcif5Mask)
 	} else {
@@ -5639,12 +7180,12 @@ const (
 )
 
 // GetBrtif5 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac5isrType) GetBrtif5() bool {
+func (r *RegisterMdmac5isrType) GetBrtif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5isrFieldBrtif5Mask) != 0
 }
 
 // SetBrtif5 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac5isrType) SetBrtif5(value bool) {
+func (r *RegisterMdmac5isrType) SetBrtif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5isrFieldBrtif5Mask)
 	} else {
@@ -5658,12 +7199,12 @@ const (
 )
 
 // GetBtif5 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac5isrType) GetBtif5() bool {
+func (r *RegisterMdmac5isrType) GetBtif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5isrFieldBtif5Mask) != 0
 }
 
 // SetBtif5 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac5isrType) SetBtif5(value bool) {
+func (r *RegisterMdmac5isrType) SetBtif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5isrFieldBtif5Mask)
 	} else {
@@ -5677,12 +7218,12 @@ const (
 )
 
 // GetTcif5 channel x buffer transfer complete
-func (r *registerMdmac5isrType) GetTcif5() bool {
+func (r *RegisterMdmac5isrType) GetTcif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5isrFieldTcif5Mask) != 0
 }
 
 // SetTcif5 channel x buffer transfer complete
-func (r *registerMdmac5isrType) SetTcif5(value bool) {
+func (r *RegisterMdmac5isrType) SetTcif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5isrFieldTcif5Mask)
 	} else {
@@ -5696,12 +7237,12 @@ const (
 )
 
 // GetCrqa5 channel x request active flag
-func (r *registerMdmac5isrType) GetCrqa5() bool {
+func (r *RegisterMdmac5isrType) GetCrqa5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5isrFieldCrqa5Mask) != 0
 }
 
 // SetCrqa5 channel x request active flag
-func (r *registerMdmac5isrType) SetCrqa5(value bool) {
+func (r *RegisterMdmac5isrType) SetCrqa5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5isrFieldCrqa5Mask)
 	} else {
@@ -5709,8 +7250,31 @@ func (r *registerMdmac5isrType) SetCrqa5(value bool) {
 	}
 }
 
-// registerMdmac5ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac5ifcrType uint32
+// RegisterMdmac5ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac5ifcrType uint32
+
+func (r *RegisterMdmac5ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5ifcrFieldCteif5Shift = 0
@@ -5718,12 +7282,12 @@ const (
 )
 
 // GetCteif5 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac5ifcrType) GetCteif5() bool {
+func (r *RegisterMdmac5ifcrType) GetCteif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5ifcrFieldCteif5Mask) != 0
 }
 
 // SetCteif5 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac5ifcrType) SetCteif5(value bool) {
+func (r *RegisterMdmac5ifcrType) SetCteif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5ifcrFieldCteif5Mask)
 	} else {
@@ -5737,12 +7301,12 @@ const (
 )
 
 // GetCctcif5 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac5ifcrType) GetCctcif5() bool {
+func (r *RegisterMdmac5ifcrType) GetCctcif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5ifcrFieldCctcif5Mask) != 0
 }
 
 // SetCctcif5 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac5ifcrType) SetCctcif5(value bool) {
+func (r *RegisterMdmac5ifcrType) SetCctcif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5ifcrFieldCctcif5Mask)
 	} else {
@@ -5756,12 +7320,12 @@ const (
 )
 
 // GetCbrtif5 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac5ifcrType) GetCbrtif5() bool {
+func (r *RegisterMdmac5ifcrType) GetCbrtif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5ifcrFieldCbrtif5Mask) != 0
 }
 
 // SetCbrtif5 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac5ifcrType) SetCbrtif5(value bool) {
+func (r *RegisterMdmac5ifcrType) SetCbrtif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5ifcrFieldCbrtif5Mask)
 	} else {
@@ -5775,12 +7339,12 @@ const (
 )
 
 // GetCbtif5 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac5ifcrType) GetCbtif5() bool {
+func (r *RegisterMdmac5ifcrType) GetCbtif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5ifcrFieldCbtif5Mask) != 0
 }
 
 // SetCbtif5 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac5ifcrType) SetCbtif5(value bool) {
+func (r *RegisterMdmac5ifcrType) SetCbtif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5ifcrFieldCbtif5Mask)
 	} else {
@@ -5794,12 +7358,12 @@ const (
 )
 
 // GetCltcif5 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac5ifcrType) GetCltcif5() bool {
+func (r *RegisterMdmac5ifcrType) GetCltcif5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5ifcrFieldCltcif5Mask) != 0
 }
 
 // SetCltcif5 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac5ifcrType) SetCltcif5(value bool) {
+func (r *RegisterMdmac5ifcrType) SetCltcif5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5ifcrFieldCltcif5Mask)
 	} else {
@@ -5807,8 +7371,31 @@ func (r *registerMdmac5ifcrType) SetCltcif5(value bool) {
 	}
 }
 
-// registerMdmac5esrType MDMA Channel x error status register
-type registerMdmac5esrType uint32
+// RegisterMdmac5esrType MDMA Channel x error status register
+type RegisterMdmac5esrType uint32
+
+func (r *RegisterMdmac5esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5esrFieldTeaShift = 0
@@ -5816,12 +7403,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac5esrType) GetTea() uint8 {
+func (r *RegisterMdmac5esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5esrFieldTeaMask) >> RegisterMdmac5esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac5esrType) SetTea(value uint8) {
+func (r *RegisterMdmac5esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5esrFieldTeaMask)|(uint32(value)<<RegisterMdmac5esrFieldTeaShift))
 }
 
@@ -5831,12 +7418,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac5esrType) GetTed() bool {
+func (r *RegisterMdmac5esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac5esrType) SetTed(value bool) {
+func (r *RegisterMdmac5esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5esrFieldTedMask)
 	} else {
@@ -5850,12 +7437,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac5esrType) GetTeld() bool {
+func (r *RegisterMdmac5esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac5esrType) SetTeld(value bool) {
+func (r *RegisterMdmac5esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5esrFieldTeldMask)
 	} else {
@@ -5869,12 +7456,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac5esrType) GetTemd() bool {
+func (r *RegisterMdmac5esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac5esrType) SetTemd(value bool) {
+func (r *RegisterMdmac5esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5esrFieldTemdMask)
 	} else {
@@ -5888,12 +7475,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac5esrType) GetAse() bool {
+func (r *RegisterMdmac5esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac5esrType) SetAse(value bool) {
+func (r *RegisterMdmac5esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5esrFieldAseMask)
 	} else {
@@ -5907,12 +7494,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac5esrType) GetBse() bool {
+func (r *RegisterMdmac5esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac5esrType) SetBse(value bool) {
+func (r *RegisterMdmac5esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5esrFieldBseMask)
 	} else {
@@ -5920,8 +7507,31 @@ func (r *registerMdmac5esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac5crType This register is used to control the concerned channel.
-type registerMdmac5crType uint32
+// RegisterMdmac5crType This register is used to control the concerned channel.
+type RegisterMdmac5crType uint32
+
+func (r *RegisterMdmac5crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5crFieldEnShift = 0
@@ -5929,12 +7539,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac5crType) GetEn() bool {
+func (r *RegisterMdmac5crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac5crType) SetEn(value bool) {
+func (r *RegisterMdmac5crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5crFieldEnMask)
 	} else {
@@ -5948,12 +7558,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac5crType) GetTeie() bool {
+func (r *RegisterMdmac5crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac5crType) SetTeie(value bool) {
+func (r *RegisterMdmac5crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5crFieldTeieMask)
 	} else {
@@ -5967,12 +7577,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac5crType) GetCtcie() bool {
+func (r *RegisterMdmac5crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac5crType) SetCtcie(value bool) {
+func (r *RegisterMdmac5crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5crFieldCtcieMask)
 	} else {
@@ -5986,12 +7596,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac5crType) GetBrtie() bool {
+func (r *RegisterMdmac5crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac5crType) SetBrtie(value bool) {
+func (r *RegisterMdmac5crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5crFieldBrtieMask)
 	} else {
@@ -6005,12 +7615,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac5crType) GetBtie() bool {
+func (r *RegisterMdmac5crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac5crType) SetBtie(value bool) {
+func (r *RegisterMdmac5crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5crFieldBtieMask)
 	} else {
@@ -6024,12 +7634,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac5crType) GetTcie() bool {
+func (r *RegisterMdmac5crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac5crType) SetTcie(value bool) {
+func (r *RegisterMdmac5crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5crFieldTcieMask)
 	} else {
@@ -6043,12 +7653,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac5crType) GetPl() uint8 {
+func (r *RegisterMdmac5crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5crFieldPlMask) >> RegisterMdmac5crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac5crType) SetPl(value uint8) {
+func (r *RegisterMdmac5crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5crFieldPlMask)|(uint32(value)<<RegisterMdmac5crFieldPlShift))
 }
 
@@ -6058,12 +7668,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac5crType) GetBex() bool {
+func (r *RegisterMdmac5crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac5crType) SetBex(value bool) {
+func (r *RegisterMdmac5crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5crFieldBexMask)
 	} else {
@@ -6077,12 +7687,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac5crType) GetHex() bool {
+func (r *RegisterMdmac5crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac5crType) SetHex(value bool) {
+func (r *RegisterMdmac5crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5crFieldHexMask)
 	} else {
@@ -6096,12 +7706,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac5crType) GetWex() bool {
+func (r *RegisterMdmac5crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac5crType) SetWex(value bool) {
+func (r *RegisterMdmac5crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5crFieldWexMask)
 	} else {
@@ -6115,7 +7725,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac5crType) SetSwrq(value bool) {
+func (r *RegisterMdmac5crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5crFieldSwrqMask)
 	} else {
@@ -6123,8 +7733,31 @@ func (r *registerMdmac5crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac5tcrType This register is used to configure the concerned channel.
-type registerMdmac5tcrType uint32
+// RegisterMdmac5tcrType This register is used to configure the concerned channel.
+type RegisterMdmac5tcrType uint32
+
+func (r *RegisterMdmac5tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5tcrFieldSincShift = 0
@@ -6132,12 +7765,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac5tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac5tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldSincMask) >> RegisterMdmac5tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac5tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac5tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldSincMask)|(uint32(value)<<RegisterMdmac5tcrFieldSincShift))
 }
 
@@ -6147,12 +7780,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac5tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac5tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldDincMask) >> RegisterMdmac5tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac5tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac5tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldDincMask)|(uint32(value)<<RegisterMdmac5tcrFieldDincShift))
 }
 
@@ -6162,12 +7795,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac5tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac5tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldSsizeMask) >> RegisterMdmac5tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac5tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac5tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac5tcrFieldSsizeShift))
 }
 
@@ -6177,12 +7810,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac5tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac5tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldDsizeMask) >> RegisterMdmac5tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac5tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac5tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac5tcrFieldDsizeShift))
 }
 
@@ -6192,12 +7825,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac5tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac5tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldSincosMask) >> RegisterMdmac5tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac5tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac5tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac5tcrFieldSincosShift))
 }
 
@@ -6207,12 +7840,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac5tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac5tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldDincosMask) >> RegisterMdmac5tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac5tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac5tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac5tcrFieldDincosShift))
 }
 
@@ -6222,12 +7855,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac5tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac5tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldSburstMask) >> RegisterMdmac5tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac5tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac5tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac5tcrFieldSburstShift))
 }
 
@@ -6237,12 +7870,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac5tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac5tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldDburstMask) >> RegisterMdmac5tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac5tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac5tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac5tcrFieldDburstShift))
 }
 
@@ -6252,12 +7885,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac5tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac5tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldTlenMask) >> RegisterMdmac5tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac5tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac5tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac5tcrFieldTlenShift))
 }
 
@@ -6267,12 +7900,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac5tcrType) GetPke() bool {
+func (r *RegisterMdmac5tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac5tcrType) SetPke(value bool) {
+func (r *RegisterMdmac5tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5tcrFieldPkeMask)
 	} else {
@@ -6286,12 +7919,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac5tcrType) GetPam() uint8 {
+func (r *RegisterMdmac5tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldPamMask) >> RegisterMdmac5tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac5tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac5tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldPamMask)|(uint32(value)<<RegisterMdmac5tcrFieldPamShift))
 }
 
@@ -6301,12 +7934,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac5tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac5tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldTrgmMask) >> RegisterMdmac5tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac5tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac5tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac5tcrFieldTrgmShift))
 }
 
@@ -6316,12 +7949,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac5tcrType) GetSwrm() bool {
+func (r *RegisterMdmac5tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac5tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac5tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5tcrFieldSwrmMask)
 	} else {
@@ -6335,12 +7968,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac5tcrType) GetBwm() bool {
+func (r *RegisterMdmac5tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac5tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac5tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5tcrFieldBwmMask)
 	} else {
@@ -6348,8 +7981,31 @@ func (r *registerMdmac5tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac5bndtrType MDMA Channel x block number of data register
-type registerMdmac5bndtrType uint32
+// RegisterMdmac5bndtrType MDMA Channel x block number of data register
+type RegisterMdmac5bndtrType uint32
+
+func (r *RegisterMdmac5bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5bndtrFieldBndtShift = 0
@@ -6357,12 +8013,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac5bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac5bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5bndtrFieldBndtMask) >> RegisterMdmac5bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac5bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac5bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac5bndtrFieldBndtShift))
 }
 
@@ -6372,12 +8028,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac5bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac5bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac5bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac5bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5bndtrFieldBrsumMask)
 	} else {
@@ -6391,12 +8047,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac5bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac5bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac5bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac5bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5bndtrFieldBrdumMask)
 	} else {
@@ -6410,17 +8066,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac5bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac5bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5bndtrFieldBrcMask) >> RegisterMdmac5bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac5bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac5bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac5bndtrFieldBrcShift))
 }
 
-// registerMdmac5sarType MDMA channel x source address register
-type registerMdmac5sarType uint32
+// RegisterMdmac5sarType MDMA channel x source address register
+type RegisterMdmac5sarType uint32
+
+func (r *RegisterMdmac5sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5sarFieldSarShift = 0
@@ -6428,17 +8107,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac5sarType) GetSar() uint32 {
+func (r *RegisterMdmac5sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5sarFieldSarMask) >> RegisterMdmac5sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac5sarType) SetSar(value uint32) {
+func (r *RegisterMdmac5sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5sarFieldSarMask)|(uint32(value)<<RegisterMdmac5sarFieldSarShift))
 }
 
-// registerMdmac5darType MDMA channel x destination address register
-type registerMdmac5darType uint32
+// RegisterMdmac5darType MDMA channel x destination address register
+type RegisterMdmac5darType uint32
+
+func (r *RegisterMdmac5darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5darFieldDarShift = 0
@@ -6446,17 +8148,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac5darType) GetDar() uint32 {
+func (r *RegisterMdmac5darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5darFieldDarMask) >> RegisterMdmac5darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac5darType) SetDar(value uint32) {
+func (r *RegisterMdmac5darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5darFieldDarMask)|(uint32(value)<<RegisterMdmac5darFieldDarShift))
 }
 
-// registerMdmac5brurType MDMA channel x Block Repeat address Update register
-type registerMdmac5brurType uint32
+// RegisterMdmac5brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac5brurType uint32
+
+func (r *RegisterMdmac5brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5brurFieldSuvShift = 0
@@ -6464,12 +8189,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac5brurType) GetSuv() uint16 {
+func (r *RegisterMdmac5brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5brurFieldSuvMask) >> RegisterMdmac5brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac5brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac5brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5brurFieldSuvMask)|(uint32(value)<<RegisterMdmac5brurFieldSuvShift))
 }
 
@@ -6479,17 +8204,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac5brurType) GetDuv() uint16 {
+func (r *RegisterMdmac5brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5brurFieldDuvMask) >> RegisterMdmac5brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac5brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac5brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5brurFieldDuvMask)|(uint32(value)<<RegisterMdmac5brurFieldDuvShift))
 }
 
-// registerMdmac5larType MDMA channel x Link Address register
-type registerMdmac5larType uint32
+// RegisterMdmac5larType MDMA channel x Link Address register
+type RegisterMdmac5larType uint32
+
+func (r *RegisterMdmac5larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5larFieldLarShift = 0
@@ -6497,17 +8245,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac5larType) GetLar() uint32 {
+func (r *RegisterMdmac5larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5larFieldLarMask) >> RegisterMdmac5larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac5larType) SetLar(value uint32) {
+func (r *RegisterMdmac5larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5larFieldLarMask)|(uint32(value)<<RegisterMdmac5larFieldLarShift))
 }
 
-// registerMdmac5tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac5tbrType uint32
+// RegisterMdmac5tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac5tbrType uint32
+
+func (r *RegisterMdmac5tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5tbrFieldTselShift = 0
@@ -6515,12 +8286,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac5tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac5tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tbrFieldTselMask) >> RegisterMdmac5tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac5tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac5tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5tbrFieldTselMask)|(uint32(value)<<RegisterMdmac5tbrFieldTselShift))
 }
 
@@ -6530,12 +8301,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac5tbrType) GetSbus() bool {
+func (r *RegisterMdmac5tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac5tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac5tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5tbrFieldSbusMask)
 	} else {
@@ -6549,12 +8320,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac5tbrType) GetDbus() bool {
+func (r *RegisterMdmac5tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac5tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac5tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac5tbrFieldDbusMask)
 	} else {
@@ -6562,8 +8333,31 @@ func (r *registerMdmac5tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac5marType MDMA channel x Mask address register
-type registerMdmac5marType uint32
+// RegisterMdmac5marType MDMA channel x Mask address register
+type RegisterMdmac5marType uint32
+
+func (r *RegisterMdmac5marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5marFieldMarShift = 0
@@ -6571,17 +8365,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac5marType) GetMar() uint32 {
+func (r *RegisterMdmac5marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5marFieldMarMask) >> RegisterMdmac5marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac5marType) SetMar(value uint32) {
+func (r *RegisterMdmac5marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5marFieldMarMask)|(uint32(value)<<RegisterMdmac5marFieldMarShift))
 }
 
-// registerMdmac5mdrType MDMA channel x Mask Data register
-type registerMdmac5mdrType uint32
+// RegisterMdmac5mdrType MDMA channel x Mask Data register
+type RegisterMdmac5mdrType uint32
+
+func (r *RegisterMdmac5mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac5mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac5mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac5mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac5mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac5mdrFieldMdrShift = 0
@@ -6589,17 +8406,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac5mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac5mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac5mdrFieldMdrMask) >> RegisterMdmac5mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac5mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac5mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac5mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac5mdrFieldMdrShift))
 }
 
-// registerMdmac6isrType MDMA channel x interrupt/status register
-type registerMdmac6isrType uint32
+// RegisterMdmac6isrType MDMA channel x interrupt/status register
+type RegisterMdmac6isrType uint32
+
+func (r *RegisterMdmac6isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6isrFieldTeif6Shift = 0
@@ -6607,12 +8447,12 @@ const (
 )
 
 // GetTeif6 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac6isrType) GetTeif6() bool {
+func (r *RegisterMdmac6isrType) GetTeif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6isrFieldTeif6Mask) != 0
 }
 
 // SetTeif6 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac6isrType) SetTeif6(value bool) {
+func (r *RegisterMdmac6isrType) SetTeif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6isrFieldTeif6Mask)
 	} else {
@@ -6626,12 +8466,12 @@ const (
 )
 
 // GetCtcif6 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac6isrType) GetCtcif6() bool {
+func (r *RegisterMdmac6isrType) GetCtcif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6isrFieldCtcif6Mask) != 0
 }
 
 // SetCtcif6 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac6isrType) SetCtcif6(value bool) {
+func (r *RegisterMdmac6isrType) SetCtcif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6isrFieldCtcif6Mask)
 	} else {
@@ -6645,12 +8485,12 @@ const (
 )
 
 // GetBrtif6 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac6isrType) GetBrtif6() bool {
+func (r *RegisterMdmac6isrType) GetBrtif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6isrFieldBrtif6Mask) != 0
 }
 
 // SetBrtif6 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac6isrType) SetBrtif6(value bool) {
+func (r *RegisterMdmac6isrType) SetBrtif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6isrFieldBrtif6Mask)
 	} else {
@@ -6664,12 +8504,12 @@ const (
 )
 
 // GetBtif6 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac6isrType) GetBtif6() bool {
+func (r *RegisterMdmac6isrType) GetBtif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6isrFieldBtif6Mask) != 0
 }
 
 // SetBtif6 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac6isrType) SetBtif6(value bool) {
+func (r *RegisterMdmac6isrType) SetBtif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6isrFieldBtif6Mask)
 	} else {
@@ -6683,12 +8523,12 @@ const (
 )
 
 // GetTcif6 channel x buffer transfer complete
-func (r *registerMdmac6isrType) GetTcif6() bool {
+func (r *RegisterMdmac6isrType) GetTcif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6isrFieldTcif6Mask) != 0
 }
 
 // SetTcif6 channel x buffer transfer complete
-func (r *registerMdmac6isrType) SetTcif6(value bool) {
+func (r *RegisterMdmac6isrType) SetTcif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6isrFieldTcif6Mask)
 	} else {
@@ -6702,12 +8542,12 @@ const (
 )
 
 // GetCrqa6 channel x request active flag
-func (r *registerMdmac6isrType) GetCrqa6() bool {
+func (r *RegisterMdmac6isrType) GetCrqa6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6isrFieldCrqa6Mask) != 0
 }
 
 // SetCrqa6 channel x request active flag
-func (r *registerMdmac6isrType) SetCrqa6(value bool) {
+func (r *RegisterMdmac6isrType) SetCrqa6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6isrFieldCrqa6Mask)
 	} else {
@@ -6715,8 +8555,31 @@ func (r *registerMdmac6isrType) SetCrqa6(value bool) {
 	}
 }
 
-// registerMdmac6ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac6ifcrType uint32
+// RegisterMdmac6ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac6ifcrType uint32
+
+func (r *RegisterMdmac6ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6ifcrFieldCteif6Shift = 0
@@ -6724,12 +8587,12 @@ const (
 )
 
 // GetCteif6 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac6ifcrType) GetCteif6() bool {
+func (r *RegisterMdmac6ifcrType) GetCteif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6ifcrFieldCteif6Mask) != 0
 }
 
 // SetCteif6 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac6ifcrType) SetCteif6(value bool) {
+func (r *RegisterMdmac6ifcrType) SetCteif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6ifcrFieldCteif6Mask)
 	} else {
@@ -6743,12 +8606,12 @@ const (
 )
 
 // GetCctcif6 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac6ifcrType) GetCctcif6() bool {
+func (r *RegisterMdmac6ifcrType) GetCctcif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6ifcrFieldCctcif6Mask) != 0
 }
 
 // SetCctcif6 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac6ifcrType) SetCctcif6(value bool) {
+func (r *RegisterMdmac6ifcrType) SetCctcif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6ifcrFieldCctcif6Mask)
 	} else {
@@ -6762,12 +8625,12 @@ const (
 )
 
 // GetCbrtif6 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac6ifcrType) GetCbrtif6() bool {
+func (r *RegisterMdmac6ifcrType) GetCbrtif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6ifcrFieldCbrtif6Mask) != 0
 }
 
 // SetCbrtif6 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac6ifcrType) SetCbrtif6(value bool) {
+func (r *RegisterMdmac6ifcrType) SetCbrtif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6ifcrFieldCbrtif6Mask)
 	} else {
@@ -6781,12 +8644,12 @@ const (
 )
 
 // GetCbtif6 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac6ifcrType) GetCbtif6() bool {
+func (r *RegisterMdmac6ifcrType) GetCbtif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6ifcrFieldCbtif6Mask) != 0
 }
 
 // SetCbtif6 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac6ifcrType) SetCbtif6(value bool) {
+func (r *RegisterMdmac6ifcrType) SetCbtif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6ifcrFieldCbtif6Mask)
 	} else {
@@ -6800,12 +8663,12 @@ const (
 )
 
 // GetCltcif6 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac6ifcrType) GetCltcif6() bool {
+func (r *RegisterMdmac6ifcrType) GetCltcif6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6ifcrFieldCltcif6Mask) != 0
 }
 
 // SetCltcif6 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac6ifcrType) SetCltcif6(value bool) {
+func (r *RegisterMdmac6ifcrType) SetCltcif6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6ifcrFieldCltcif6Mask)
 	} else {
@@ -6813,8 +8676,31 @@ func (r *registerMdmac6ifcrType) SetCltcif6(value bool) {
 	}
 }
 
-// registerMdmac6esrType MDMA Channel x error status register
-type registerMdmac6esrType uint32
+// RegisterMdmac6esrType MDMA Channel x error status register
+type RegisterMdmac6esrType uint32
+
+func (r *RegisterMdmac6esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6esrFieldTeaShift = 0
@@ -6822,12 +8708,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac6esrType) GetTea() uint8 {
+func (r *RegisterMdmac6esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6esrFieldTeaMask) >> RegisterMdmac6esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac6esrType) SetTea(value uint8) {
+func (r *RegisterMdmac6esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6esrFieldTeaMask)|(uint32(value)<<RegisterMdmac6esrFieldTeaShift))
 }
 
@@ -6837,12 +8723,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac6esrType) GetTed() bool {
+func (r *RegisterMdmac6esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac6esrType) SetTed(value bool) {
+func (r *RegisterMdmac6esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6esrFieldTedMask)
 	} else {
@@ -6856,12 +8742,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac6esrType) GetTeld() bool {
+func (r *RegisterMdmac6esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac6esrType) SetTeld(value bool) {
+func (r *RegisterMdmac6esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6esrFieldTeldMask)
 	} else {
@@ -6875,12 +8761,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac6esrType) GetTemd() bool {
+func (r *RegisterMdmac6esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac6esrType) SetTemd(value bool) {
+func (r *RegisterMdmac6esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6esrFieldTemdMask)
 	} else {
@@ -6894,12 +8780,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac6esrType) GetAse() bool {
+func (r *RegisterMdmac6esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac6esrType) SetAse(value bool) {
+func (r *RegisterMdmac6esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6esrFieldAseMask)
 	} else {
@@ -6913,12 +8799,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac6esrType) GetBse() bool {
+func (r *RegisterMdmac6esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac6esrType) SetBse(value bool) {
+func (r *RegisterMdmac6esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6esrFieldBseMask)
 	} else {
@@ -6926,8 +8812,31 @@ func (r *registerMdmac6esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac6crType This register is used to control the concerned channel.
-type registerMdmac6crType uint32
+// RegisterMdmac6crType This register is used to control the concerned channel.
+type RegisterMdmac6crType uint32
+
+func (r *RegisterMdmac6crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6crFieldEnShift = 0
@@ -6935,12 +8844,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac6crType) GetEn() bool {
+func (r *RegisterMdmac6crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac6crType) SetEn(value bool) {
+func (r *RegisterMdmac6crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6crFieldEnMask)
 	} else {
@@ -6954,12 +8863,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac6crType) GetTeie() bool {
+func (r *RegisterMdmac6crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac6crType) SetTeie(value bool) {
+func (r *RegisterMdmac6crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6crFieldTeieMask)
 	} else {
@@ -6973,12 +8882,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac6crType) GetCtcie() bool {
+func (r *RegisterMdmac6crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac6crType) SetCtcie(value bool) {
+func (r *RegisterMdmac6crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6crFieldCtcieMask)
 	} else {
@@ -6992,12 +8901,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac6crType) GetBrtie() bool {
+func (r *RegisterMdmac6crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac6crType) SetBrtie(value bool) {
+func (r *RegisterMdmac6crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6crFieldBrtieMask)
 	} else {
@@ -7011,12 +8920,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac6crType) GetBtie() bool {
+func (r *RegisterMdmac6crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac6crType) SetBtie(value bool) {
+func (r *RegisterMdmac6crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6crFieldBtieMask)
 	} else {
@@ -7030,12 +8939,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac6crType) GetTcie() bool {
+func (r *RegisterMdmac6crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac6crType) SetTcie(value bool) {
+func (r *RegisterMdmac6crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6crFieldTcieMask)
 	} else {
@@ -7049,12 +8958,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac6crType) GetPl() uint8 {
+func (r *RegisterMdmac6crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6crFieldPlMask) >> RegisterMdmac6crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac6crType) SetPl(value uint8) {
+func (r *RegisterMdmac6crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6crFieldPlMask)|(uint32(value)<<RegisterMdmac6crFieldPlShift))
 }
 
@@ -7064,12 +8973,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac6crType) GetBex() bool {
+func (r *RegisterMdmac6crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac6crType) SetBex(value bool) {
+func (r *RegisterMdmac6crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6crFieldBexMask)
 	} else {
@@ -7083,12 +8992,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac6crType) GetHex() bool {
+func (r *RegisterMdmac6crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac6crType) SetHex(value bool) {
+func (r *RegisterMdmac6crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6crFieldHexMask)
 	} else {
@@ -7102,12 +9011,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac6crType) GetWex() bool {
+func (r *RegisterMdmac6crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac6crType) SetWex(value bool) {
+func (r *RegisterMdmac6crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6crFieldWexMask)
 	} else {
@@ -7121,7 +9030,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac6crType) SetSwrq(value bool) {
+func (r *RegisterMdmac6crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6crFieldSwrqMask)
 	} else {
@@ -7129,8 +9038,31 @@ func (r *registerMdmac6crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac6tcrType This register is used to configure the concerned channel.
-type registerMdmac6tcrType uint32
+// RegisterMdmac6tcrType This register is used to configure the concerned channel.
+type RegisterMdmac6tcrType uint32
+
+func (r *RegisterMdmac6tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6tcrFieldSincShift = 0
@@ -7138,12 +9070,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac6tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac6tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldSincMask) >> RegisterMdmac6tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac6tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac6tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldSincMask)|(uint32(value)<<RegisterMdmac6tcrFieldSincShift))
 }
 
@@ -7153,12 +9085,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac6tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac6tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldDincMask) >> RegisterMdmac6tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac6tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac6tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldDincMask)|(uint32(value)<<RegisterMdmac6tcrFieldDincShift))
 }
 
@@ -7168,12 +9100,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac6tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac6tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldSsizeMask) >> RegisterMdmac6tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac6tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac6tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac6tcrFieldSsizeShift))
 }
 
@@ -7183,12 +9115,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac6tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac6tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldDsizeMask) >> RegisterMdmac6tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac6tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac6tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac6tcrFieldDsizeShift))
 }
 
@@ -7198,12 +9130,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac6tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac6tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldSincosMask) >> RegisterMdmac6tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac6tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac6tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac6tcrFieldSincosShift))
 }
 
@@ -7213,12 +9145,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac6tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac6tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldDincosMask) >> RegisterMdmac6tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac6tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac6tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac6tcrFieldDincosShift))
 }
 
@@ -7228,12 +9160,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac6tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac6tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldSburstMask) >> RegisterMdmac6tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac6tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac6tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac6tcrFieldSburstShift))
 }
 
@@ -7243,12 +9175,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac6tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac6tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldDburstMask) >> RegisterMdmac6tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac6tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac6tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac6tcrFieldDburstShift))
 }
 
@@ -7258,12 +9190,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac6tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac6tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldTlenMask) >> RegisterMdmac6tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac6tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac6tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac6tcrFieldTlenShift))
 }
 
@@ -7273,12 +9205,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac6tcrType) GetPke() bool {
+func (r *RegisterMdmac6tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac6tcrType) SetPke(value bool) {
+func (r *RegisterMdmac6tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6tcrFieldPkeMask)
 	} else {
@@ -7292,12 +9224,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac6tcrType) GetPam() uint8 {
+func (r *RegisterMdmac6tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldPamMask) >> RegisterMdmac6tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac6tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac6tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldPamMask)|(uint32(value)<<RegisterMdmac6tcrFieldPamShift))
 }
 
@@ -7307,12 +9239,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac6tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac6tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldTrgmMask) >> RegisterMdmac6tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac6tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac6tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac6tcrFieldTrgmShift))
 }
 
@@ -7322,12 +9254,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac6tcrType) GetSwrm() bool {
+func (r *RegisterMdmac6tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac6tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac6tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6tcrFieldSwrmMask)
 	} else {
@@ -7341,12 +9273,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac6tcrType) GetBwm() bool {
+func (r *RegisterMdmac6tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac6tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac6tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6tcrFieldBwmMask)
 	} else {
@@ -7354,8 +9286,31 @@ func (r *registerMdmac6tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac6bndtrType MDMA Channel x block number of data register
-type registerMdmac6bndtrType uint32
+// RegisterMdmac6bndtrType MDMA Channel x block number of data register
+type RegisterMdmac6bndtrType uint32
+
+func (r *RegisterMdmac6bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6bndtrFieldBndtShift = 0
@@ -7363,12 +9318,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac6bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac6bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6bndtrFieldBndtMask) >> RegisterMdmac6bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac6bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac6bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac6bndtrFieldBndtShift))
 }
 
@@ -7378,12 +9333,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac6bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac6bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac6bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac6bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6bndtrFieldBrsumMask)
 	} else {
@@ -7397,12 +9352,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac6bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac6bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac6bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac6bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6bndtrFieldBrdumMask)
 	} else {
@@ -7416,17 +9371,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0
-func (r *registerMdmac6bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac6bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6bndtrFieldBrcMask) >> RegisterMdmac6bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0
-func (r *registerMdmac6bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac6bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac6bndtrFieldBrcShift))
 }
 
-// registerMdmac6sarType MDMA channel x source address register
-type registerMdmac6sarType uint32
+// RegisterMdmac6sarType MDMA channel x source address register
+type RegisterMdmac6sarType uint32
+
+func (r *RegisterMdmac6sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6sarFieldSarShift = 0
@@ -7434,17 +9412,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac6sarType) GetSar() uint32 {
+func (r *RegisterMdmac6sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6sarFieldSarMask) >> RegisterMdmac6sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac6sarType) SetSar(value uint32) {
+func (r *RegisterMdmac6sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6sarFieldSarMask)|(uint32(value)<<RegisterMdmac6sarFieldSarShift))
 }
 
-// registerMdmac6darType MDMA channel x destination address register
-type registerMdmac6darType uint32
+// RegisterMdmac6darType MDMA channel x destination address register
+type RegisterMdmac6darType uint32
+
+func (r *RegisterMdmac6darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6darFieldDarShift = 0
@@ -7452,17 +9453,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac6darType) GetDar() uint32 {
+func (r *RegisterMdmac6darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6darFieldDarMask) >> RegisterMdmac6darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac6darType) SetDar(value uint32) {
+func (r *RegisterMdmac6darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6darFieldDarMask)|(uint32(value)<<RegisterMdmac6darFieldDarShift))
 }
 
-// registerMdmac6brurType MDMA channel x Block Repeat address Update register
-type registerMdmac6brurType uint32
+// RegisterMdmac6brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac6brurType uint32
+
+func (r *RegisterMdmac6brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6brurFieldSuvShift = 0
@@ -7470,12 +9494,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac6brurType) GetSuv() uint16 {
+func (r *RegisterMdmac6brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6brurFieldSuvMask) >> RegisterMdmac6brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac6brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac6brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6brurFieldSuvMask)|(uint32(value)<<RegisterMdmac6brurFieldSuvShift))
 }
 
@@ -7485,17 +9509,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac6brurType) GetDuv() uint16 {
+func (r *RegisterMdmac6brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6brurFieldDuvMask) >> RegisterMdmac6brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac6brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac6brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6brurFieldDuvMask)|(uint32(value)<<RegisterMdmac6brurFieldDuvShift))
 }
 
-// registerMdmac6larType MDMA channel x Link Address register
-type registerMdmac6larType uint32
+// RegisterMdmac6larType MDMA channel x Link Address register
+type RegisterMdmac6larType uint32
+
+func (r *RegisterMdmac6larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6larFieldLarShift = 0
@@ -7503,17 +9550,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac6larType) GetLar() uint32 {
+func (r *RegisterMdmac6larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6larFieldLarMask) >> RegisterMdmac6larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac6larType) SetLar(value uint32) {
+func (r *RegisterMdmac6larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6larFieldLarMask)|(uint32(value)<<RegisterMdmac6larFieldLarShift))
 }
 
-// registerMdmac6tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac6tbrType uint32
+// RegisterMdmac6tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac6tbrType uint32
+
+func (r *RegisterMdmac6tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6tbrFieldTselShift = 0
@@ -7521,12 +9591,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac6tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac6tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tbrFieldTselMask) >> RegisterMdmac6tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac6tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac6tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6tbrFieldTselMask)|(uint32(value)<<RegisterMdmac6tbrFieldTselShift))
 }
 
@@ -7536,12 +9606,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac6tbrType) GetSbus() bool {
+func (r *RegisterMdmac6tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac6tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac6tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6tbrFieldSbusMask)
 	} else {
@@ -7555,12 +9625,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac6tbrType) GetDbus() bool {
+func (r *RegisterMdmac6tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac6tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac6tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac6tbrFieldDbusMask)
 	} else {
@@ -7568,8 +9638,31 @@ func (r *registerMdmac6tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac6marType MDMA channel x Mask address register
-type registerMdmac6marType uint32
+// RegisterMdmac6marType MDMA channel x Mask address register
+type RegisterMdmac6marType uint32
+
+func (r *RegisterMdmac6marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6marFieldMarShift = 0
@@ -7577,17 +9670,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac6marType) GetMar() uint32 {
+func (r *RegisterMdmac6marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6marFieldMarMask) >> RegisterMdmac6marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac6marType) SetMar(value uint32) {
+func (r *RegisterMdmac6marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6marFieldMarMask)|(uint32(value)<<RegisterMdmac6marFieldMarShift))
 }
 
-// registerMdmac6mdrType MDMA channel x Mask Data register
-type registerMdmac6mdrType uint32
+// RegisterMdmac6mdrType MDMA channel x Mask Data register
+type RegisterMdmac6mdrType uint32
+
+func (r *RegisterMdmac6mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac6mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac6mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac6mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac6mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac6mdrFieldMdrShift = 0
@@ -7595,17 +9711,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac6mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac6mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac6mdrFieldMdrMask) >> RegisterMdmac6mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac6mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac6mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac6mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac6mdrFieldMdrShift))
 }
 
-// registerMdmac7isrType MDMA channel x interrupt/status register
-type registerMdmac7isrType uint32
+// RegisterMdmac7isrType MDMA channel x interrupt/status register
+type RegisterMdmac7isrType uint32
+
+func (r *RegisterMdmac7isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7isrFieldTeif7Shift = 0
@@ -7613,12 +9752,12 @@ const (
 )
 
 // GetTeif7 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac7isrType) GetTeif7() bool {
+func (r *RegisterMdmac7isrType) GetTeif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7isrFieldTeif7Mask) != 0
 }
 
 // SetTeif7 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac7isrType) SetTeif7(value bool) {
+func (r *RegisterMdmac7isrType) SetTeif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7isrFieldTeif7Mask)
 	} else {
@@ -7632,12 +9771,12 @@ const (
 )
 
 // GetCtcif7 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac7isrType) GetCtcif7() bool {
+func (r *RegisterMdmac7isrType) GetCtcif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7isrFieldCtcif7Mask) != 0
 }
 
 // SetCtcif7 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac7isrType) SetCtcif7(value bool) {
+func (r *RegisterMdmac7isrType) SetCtcif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7isrFieldCtcif7Mask)
 	} else {
@@ -7651,12 +9790,12 @@ const (
 )
 
 // GetBrtif7 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac7isrType) GetBrtif7() bool {
+func (r *RegisterMdmac7isrType) GetBrtif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7isrFieldBrtif7Mask) != 0
 }
 
 // SetBrtif7 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac7isrType) SetBrtif7(value bool) {
+func (r *RegisterMdmac7isrType) SetBrtif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7isrFieldBrtif7Mask)
 	} else {
@@ -7670,12 +9809,12 @@ const (
 )
 
 // GetBtif7 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac7isrType) GetBtif7() bool {
+func (r *RegisterMdmac7isrType) GetBtif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7isrFieldBtif7Mask) != 0
 }
 
 // SetBtif7 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac7isrType) SetBtif7(value bool) {
+func (r *RegisterMdmac7isrType) SetBtif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7isrFieldBtif7Mask)
 	} else {
@@ -7689,12 +9828,12 @@ const (
 )
 
 // GetTcif7 channel x buffer transfer complete
-func (r *registerMdmac7isrType) GetTcif7() bool {
+func (r *RegisterMdmac7isrType) GetTcif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7isrFieldTcif7Mask) != 0
 }
 
 // SetTcif7 channel x buffer transfer complete
-func (r *registerMdmac7isrType) SetTcif7(value bool) {
+func (r *RegisterMdmac7isrType) SetTcif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7isrFieldTcif7Mask)
 	} else {
@@ -7708,12 +9847,12 @@ const (
 )
 
 // GetCrqa7 channel x request active flag
-func (r *registerMdmac7isrType) GetCrqa7() bool {
+func (r *RegisterMdmac7isrType) GetCrqa7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7isrFieldCrqa7Mask) != 0
 }
 
 // SetCrqa7 channel x request active flag
-func (r *registerMdmac7isrType) SetCrqa7(value bool) {
+func (r *RegisterMdmac7isrType) SetCrqa7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7isrFieldCrqa7Mask)
 	} else {
@@ -7721,8 +9860,31 @@ func (r *registerMdmac7isrType) SetCrqa7(value bool) {
 	}
 }
 
-// registerMdmac7ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac7ifcrType uint32
+// RegisterMdmac7ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac7ifcrType uint32
+
+func (r *RegisterMdmac7ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7ifcrFieldCteif7Shift = 0
@@ -7730,12 +9892,12 @@ const (
 )
 
 // GetCteif7 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac7ifcrType) GetCteif7() bool {
+func (r *RegisterMdmac7ifcrType) GetCteif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7ifcrFieldCteif7Mask) != 0
 }
 
 // SetCteif7 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac7ifcrType) SetCteif7(value bool) {
+func (r *RegisterMdmac7ifcrType) SetCteif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7ifcrFieldCteif7Mask)
 	} else {
@@ -7749,12 +9911,12 @@ const (
 )
 
 // GetCctcif7 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac7ifcrType) GetCctcif7() bool {
+func (r *RegisterMdmac7ifcrType) GetCctcif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7ifcrFieldCctcif7Mask) != 0
 }
 
 // SetCctcif7 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac7ifcrType) SetCctcif7(value bool) {
+func (r *RegisterMdmac7ifcrType) SetCctcif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7ifcrFieldCctcif7Mask)
 	} else {
@@ -7768,12 +9930,12 @@ const (
 )
 
 // GetCbrtif7 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac7ifcrType) GetCbrtif7() bool {
+func (r *RegisterMdmac7ifcrType) GetCbrtif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7ifcrFieldCbrtif7Mask) != 0
 }
 
 // SetCbrtif7 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac7ifcrType) SetCbrtif7(value bool) {
+func (r *RegisterMdmac7ifcrType) SetCbrtif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7ifcrFieldCbrtif7Mask)
 	} else {
@@ -7787,12 +9949,12 @@ const (
 )
 
 // GetCbtif7 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac7ifcrType) GetCbtif7() bool {
+func (r *RegisterMdmac7ifcrType) GetCbtif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7ifcrFieldCbtif7Mask) != 0
 }
 
 // SetCbtif7 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac7ifcrType) SetCbtif7(value bool) {
+func (r *RegisterMdmac7ifcrType) SetCbtif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7ifcrFieldCbtif7Mask)
 	} else {
@@ -7806,12 +9968,12 @@ const (
 )
 
 // GetCltcif7 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac7ifcrType) GetCltcif7() bool {
+func (r *RegisterMdmac7ifcrType) GetCltcif7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7ifcrFieldCltcif7Mask) != 0
 }
 
 // SetCltcif7 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac7ifcrType) SetCltcif7(value bool) {
+func (r *RegisterMdmac7ifcrType) SetCltcif7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7ifcrFieldCltcif7Mask)
 	} else {
@@ -7819,8 +9981,31 @@ func (r *registerMdmac7ifcrType) SetCltcif7(value bool) {
 	}
 }
 
-// registerMdmac7esrType MDMA Channel x error status register
-type registerMdmac7esrType uint32
+// RegisterMdmac7esrType MDMA Channel x error status register
+type RegisterMdmac7esrType uint32
+
+func (r *RegisterMdmac7esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7esrFieldTeaShift = 0
@@ -7828,12 +10013,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac7esrType) GetTea() uint8 {
+func (r *RegisterMdmac7esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7esrFieldTeaMask) >> RegisterMdmac7esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac7esrType) SetTea(value uint8) {
+func (r *RegisterMdmac7esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7esrFieldTeaMask)|(uint32(value)<<RegisterMdmac7esrFieldTeaShift))
 }
 
@@ -7843,12 +10028,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac7esrType) GetTed() bool {
+func (r *RegisterMdmac7esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac7esrType) SetTed(value bool) {
+func (r *RegisterMdmac7esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7esrFieldTedMask)
 	} else {
@@ -7862,12 +10047,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac7esrType) GetTeld() bool {
+func (r *RegisterMdmac7esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac7esrType) SetTeld(value bool) {
+func (r *RegisterMdmac7esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7esrFieldTeldMask)
 	} else {
@@ -7881,12 +10066,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac7esrType) GetTemd() bool {
+func (r *RegisterMdmac7esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac7esrType) SetTemd(value bool) {
+func (r *RegisterMdmac7esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7esrFieldTemdMask)
 	} else {
@@ -7900,12 +10085,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac7esrType) GetAse() bool {
+func (r *RegisterMdmac7esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac7esrType) SetAse(value bool) {
+func (r *RegisterMdmac7esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7esrFieldAseMask)
 	} else {
@@ -7919,12 +10104,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac7esrType) GetBse() bool {
+func (r *RegisterMdmac7esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac7esrType) SetBse(value bool) {
+func (r *RegisterMdmac7esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7esrFieldBseMask)
 	} else {
@@ -7932,8 +10117,31 @@ func (r *registerMdmac7esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac7crType This register is used to control the concerned channel.
-type registerMdmac7crType uint32
+// RegisterMdmac7crType This register is used to control the concerned channel.
+type RegisterMdmac7crType uint32
+
+func (r *RegisterMdmac7crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7crFieldEnShift = 0
@@ -7941,12 +10149,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac7crType) GetEn() bool {
+func (r *RegisterMdmac7crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac7crType) SetEn(value bool) {
+func (r *RegisterMdmac7crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7crFieldEnMask)
 	} else {
@@ -7960,12 +10168,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac7crType) GetTeie() bool {
+func (r *RegisterMdmac7crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac7crType) SetTeie(value bool) {
+func (r *RegisterMdmac7crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7crFieldTeieMask)
 	} else {
@@ -7979,12 +10187,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac7crType) GetCtcie() bool {
+func (r *RegisterMdmac7crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac7crType) SetCtcie(value bool) {
+func (r *RegisterMdmac7crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7crFieldCtcieMask)
 	} else {
@@ -7998,12 +10206,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac7crType) GetBrtie() bool {
+func (r *RegisterMdmac7crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac7crType) SetBrtie(value bool) {
+func (r *RegisterMdmac7crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7crFieldBrtieMask)
 	} else {
@@ -8017,12 +10225,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac7crType) GetBtie() bool {
+func (r *RegisterMdmac7crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac7crType) SetBtie(value bool) {
+func (r *RegisterMdmac7crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7crFieldBtieMask)
 	} else {
@@ -8036,12 +10244,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac7crType) GetTcie() bool {
+func (r *RegisterMdmac7crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac7crType) SetTcie(value bool) {
+func (r *RegisterMdmac7crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7crFieldTcieMask)
 	} else {
@@ -8055,12 +10263,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac7crType) GetPl() uint8 {
+func (r *RegisterMdmac7crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7crFieldPlMask) >> RegisterMdmac7crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac7crType) SetPl(value uint8) {
+func (r *RegisterMdmac7crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7crFieldPlMask)|(uint32(value)<<RegisterMdmac7crFieldPlShift))
 }
 
@@ -8070,12 +10278,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac7crType) GetBex() bool {
+func (r *RegisterMdmac7crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac7crType) SetBex(value bool) {
+func (r *RegisterMdmac7crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7crFieldBexMask)
 	} else {
@@ -8089,12 +10297,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac7crType) GetHex() bool {
+func (r *RegisterMdmac7crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac7crType) SetHex(value bool) {
+func (r *RegisterMdmac7crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7crFieldHexMask)
 	} else {
@@ -8108,12 +10316,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac7crType) GetWex() bool {
+func (r *RegisterMdmac7crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac7crType) SetWex(value bool) {
+func (r *RegisterMdmac7crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7crFieldWexMask)
 	} else {
@@ -8127,7 +10335,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac7crType) SetSwrq(value bool) {
+func (r *RegisterMdmac7crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7crFieldSwrqMask)
 	} else {
@@ -8135,8 +10343,31 @@ func (r *registerMdmac7crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac7tcrType This register is used to configure the concerned channel.
-type registerMdmac7tcrType uint32
+// RegisterMdmac7tcrType This register is used to configure the concerned channel.
+type RegisterMdmac7tcrType uint32
+
+func (r *RegisterMdmac7tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7tcrFieldSincShift = 0
@@ -8144,12 +10375,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac7tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac7tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldSincMask) >> RegisterMdmac7tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac7tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac7tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldSincMask)|(uint32(value)<<RegisterMdmac7tcrFieldSincShift))
 }
 
@@ -8159,12 +10390,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac7tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac7tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldDincMask) >> RegisterMdmac7tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac7tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac7tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldDincMask)|(uint32(value)<<RegisterMdmac7tcrFieldDincShift))
 }
 
@@ -8174,12 +10405,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac7tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac7tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldSsizeMask) >> RegisterMdmac7tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac7tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac7tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac7tcrFieldSsizeShift))
 }
 
@@ -8189,12 +10420,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac7tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac7tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldDsizeMask) >> RegisterMdmac7tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac7tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac7tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac7tcrFieldDsizeShift))
 }
 
@@ -8204,12 +10435,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac7tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac7tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldSincosMask) >> RegisterMdmac7tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac7tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac7tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac7tcrFieldSincosShift))
 }
 
@@ -8219,12 +10450,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac7tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac7tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldDincosMask) >> RegisterMdmac7tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac7tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac7tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac7tcrFieldDincosShift))
 }
 
@@ -8234,12 +10465,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac7tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac7tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldSburstMask) >> RegisterMdmac7tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac7tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac7tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac7tcrFieldSburstShift))
 }
 
@@ -8249,12 +10480,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac7tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac7tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldDburstMask) >> RegisterMdmac7tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac7tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac7tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac7tcrFieldDburstShift))
 }
 
@@ -8264,12 +10495,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac7tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac7tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldTlenMask) >> RegisterMdmac7tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac7tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac7tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac7tcrFieldTlenShift))
 }
 
@@ -8279,12 +10510,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac7tcrType) GetPke() bool {
+func (r *RegisterMdmac7tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac7tcrType) SetPke(value bool) {
+func (r *RegisterMdmac7tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7tcrFieldPkeMask)
 	} else {
@@ -8298,12 +10529,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac7tcrType) GetPam() uint8 {
+func (r *RegisterMdmac7tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldPamMask) >> RegisterMdmac7tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac7tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac7tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldPamMask)|(uint32(value)<<RegisterMdmac7tcrFieldPamShift))
 }
 
@@ -8313,12 +10544,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac7tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac7tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldTrgmMask) >> RegisterMdmac7tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac7tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac7tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac7tcrFieldTrgmShift))
 }
 
@@ -8328,12 +10559,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac7tcrType) GetSwrm() bool {
+func (r *RegisterMdmac7tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac7tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac7tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7tcrFieldSwrmMask)
 	} else {
@@ -8347,12 +10578,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac7tcrType) GetBwm() bool {
+func (r *RegisterMdmac7tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac7tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac7tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7tcrFieldBwmMask)
 	} else {
@@ -8360,8 +10591,31 @@ func (r *registerMdmac7tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac7bndtrType MDMA Channel x block number of data register
-type registerMdmac7bndtrType uint32
+// RegisterMdmac7bndtrType MDMA Channel x block number of data register
+type RegisterMdmac7bndtrType uint32
+
+func (r *RegisterMdmac7bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7bndtrFieldBndtShift = 0
@@ -8369,12 +10623,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac7bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac7bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7bndtrFieldBndtMask) >> RegisterMdmac7bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac7bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac7bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac7bndtrFieldBndtShift))
 }
 
@@ -8384,12 +10638,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac7bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac7bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac7bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac7bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7bndtrFieldBrsumMask)
 	} else {
@@ -8403,12 +10657,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac7bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac7bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac7bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac7bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7bndtrFieldBrdumMask)
 	} else {
@@ -8422,17 +10676,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac7bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac7bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7bndtrFieldBrcMask) >> RegisterMdmac7bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac7bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac7bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac7bndtrFieldBrcShift))
 }
 
-// registerMdmac7sarType MDMA channel x source address register
-type registerMdmac7sarType uint32
+// RegisterMdmac7sarType MDMA channel x source address register
+type RegisterMdmac7sarType uint32
+
+func (r *RegisterMdmac7sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7sarFieldSarShift = 0
@@ -8440,17 +10717,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac7sarType) GetSar() uint32 {
+func (r *RegisterMdmac7sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7sarFieldSarMask) >> RegisterMdmac7sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac7sarType) SetSar(value uint32) {
+func (r *RegisterMdmac7sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7sarFieldSarMask)|(uint32(value)<<RegisterMdmac7sarFieldSarShift))
 }
 
-// registerMdmac7darType MDMA channel x destination address register
-type registerMdmac7darType uint32
+// RegisterMdmac7darType MDMA channel x destination address register
+type RegisterMdmac7darType uint32
+
+func (r *RegisterMdmac7darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7darFieldDarShift = 0
@@ -8458,17 +10758,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac7darType) GetDar() uint32 {
+func (r *RegisterMdmac7darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7darFieldDarMask) >> RegisterMdmac7darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac7darType) SetDar(value uint32) {
+func (r *RegisterMdmac7darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7darFieldDarMask)|(uint32(value)<<RegisterMdmac7darFieldDarShift))
 }
 
-// registerMdmac7brurType MDMA channel x Block Repeat address Update register
-type registerMdmac7brurType uint32
+// RegisterMdmac7brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac7brurType uint32
+
+func (r *RegisterMdmac7brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7brurFieldSuvShift = 0
@@ -8476,12 +10799,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac7brurType) GetSuv() uint16 {
+func (r *RegisterMdmac7brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7brurFieldSuvMask) >> RegisterMdmac7brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac7brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac7brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7brurFieldSuvMask)|(uint32(value)<<RegisterMdmac7brurFieldSuvShift))
 }
 
@@ -8491,17 +10814,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac7brurType) GetDuv() uint16 {
+func (r *RegisterMdmac7brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7brurFieldDuvMask) >> RegisterMdmac7brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac7brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac7brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7brurFieldDuvMask)|(uint32(value)<<RegisterMdmac7brurFieldDuvShift))
 }
 
-// registerMdmac7larType MDMA channel x Link Address register
-type registerMdmac7larType uint32
+// RegisterMdmac7larType MDMA channel x Link Address register
+type RegisterMdmac7larType uint32
+
+func (r *RegisterMdmac7larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7larFieldLarShift = 0
@@ -8509,17 +10855,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac7larType) GetLar() uint32 {
+func (r *RegisterMdmac7larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7larFieldLarMask) >> RegisterMdmac7larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac7larType) SetLar(value uint32) {
+func (r *RegisterMdmac7larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7larFieldLarMask)|(uint32(value)<<RegisterMdmac7larFieldLarShift))
 }
 
-// registerMdmac7tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac7tbrType uint32
+// RegisterMdmac7tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac7tbrType uint32
+
+func (r *RegisterMdmac7tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7tbrFieldTselShift = 0
@@ -8527,12 +10896,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac7tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac7tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tbrFieldTselMask) >> RegisterMdmac7tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac7tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac7tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7tbrFieldTselMask)|(uint32(value)<<RegisterMdmac7tbrFieldTselShift))
 }
 
@@ -8542,12 +10911,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac7tbrType) GetSbus() bool {
+func (r *RegisterMdmac7tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac7tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac7tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7tbrFieldSbusMask)
 	} else {
@@ -8561,12 +10930,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac7tbrType) GetDbus() bool {
+func (r *RegisterMdmac7tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac7tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac7tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac7tbrFieldDbusMask)
 	} else {
@@ -8574,8 +10943,31 @@ func (r *registerMdmac7tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac7marType MDMA channel x Mask address register
-type registerMdmac7marType uint32
+// RegisterMdmac7marType MDMA channel x Mask address register
+type RegisterMdmac7marType uint32
+
+func (r *RegisterMdmac7marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7marFieldMarShift = 0
@@ -8583,17 +10975,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac7marType) GetMar() uint32 {
+func (r *RegisterMdmac7marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7marFieldMarMask) >> RegisterMdmac7marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac7marType) SetMar(value uint32) {
+func (r *RegisterMdmac7marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7marFieldMarMask)|(uint32(value)<<RegisterMdmac7marFieldMarShift))
 }
 
-// registerMdmac7mdrType MDMA channel x Mask Data register
-type registerMdmac7mdrType uint32
+// RegisterMdmac7mdrType MDMA channel x Mask Data register
+type RegisterMdmac7mdrType uint32
+
+func (r *RegisterMdmac7mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac7mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac7mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac7mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac7mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac7mdrFieldMdrShift = 0
@@ -8601,17 +11016,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac7mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac7mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac7mdrFieldMdrMask) >> RegisterMdmac7mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac7mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac7mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac7mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac7mdrFieldMdrShift))
 }
 
-// registerMdmac8isrType MDMA channel x interrupt/status register
-type registerMdmac8isrType uint32
+// RegisterMdmac8isrType MDMA channel x interrupt/status register
+type RegisterMdmac8isrType uint32
+
+func (r *RegisterMdmac8isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8isrFieldTeif8Shift = 0
@@ -8619,12 +11057,12 @@ const (
 )
 
 // GetTeif8 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac8isrType) GetTeif8() bool {
+func (r *RegisterMdmac8isrType) GetTeif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8isrFieldTeif8Mask) != 0
 }
 
 // SetTeif8 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac8isrType) SetTeif8(value bool) {
+func (r *RegisterMdmac8isrType) SetTeif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8isrFieldTeif8Mask)
 	} else {
@@ -8638,12 +11076,12 @@ const (
 )
 
 // GetCtcif8 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac8isrType) GetCtcif8() bool {
+func (r *RegisterMdmac8isrType) GetCtcif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8isrFieldCtcif8Mask) != 0
 }
 
 // SetCtcif8 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac8isrType) SetCtcif8(value bool) {
+func (r *RegisterMdmac8isrType) SetCtcif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8isrFieldCtcif8Mask)
 	} else {
@@ -8657,12 +11095,12 @@ const (
 )
 
 // GetBrtif8 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac8isrType) GetBrtif8() bool {
+func (r *RegisterMdmac8isrType) GetBrtif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8isrFieldBrtif8Mask) != 0
 }
 
 // SetBrtif8 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac8isrType) SetBrtif8(value bool) {
+func (r *RegisterMdmac8isrType) SetBrtif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8isrFieldBrtif8Mask)
 	} else {
@@ -8676,12 +11114,12 @@ const (
 )
 
 // GetBtif8 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac8isrType) GetBtif8() bool {
+func (r *RegisterMdmac8isrType) GetBtif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8isrFieldBtif8Mask) != 0
 }
 
 // SetBtif8 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac8isrType) SetBtif8(value bool) {
+func (r *RegisterMdmac8isrType) SetBtif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8isrFieldBtif8Mask)
 	} else {
@@ -8695,12 +11133,12 @@ const (
 )
 
 // GetTcif8 channel x buffer transfer complete
-func (r *registerMdmac8isrType) GetTcif8() bool {
+func (r *RegisterMdmac8isrType) GetTcif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8isrFieldTcif8Mask) != 0
 }
 
 // SetTcif8 channel x buffer transfer complete
-func (r *registerMdmac8isrType) SetTcif8(value bool) {
+func (r *RegisterMdmac8isrType) SetTcif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8isrFieldTcif8Mask)
 	} else {
@@ -8714,12 +11152,12 @@ const (
 )
 
 // GetCrqa8 channel x request active flag
-func (r *registerMdmac8isrType) GetCrqa8() bool {
+func (r *RegisterMdmac8isrType) GetCrqa8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8isrFieldCrqa8Mask) != 0
 }
 
 // SetCrqa8 channel x request active flag
-func (r *registerMdmac8isrType) SetCrqa8(value bool) {
+func (r *RegisterMdmac8isrType) SetCrqa8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8isrFieldCrqa8Mask)
 	} else {
@@ -8727,8 +11165,31 @@ func (r *registerMdmac8isrType) SetCrqa8(value bool) {
 	}
 }
 
-// registerMdmac8ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac8ifcrType uint32
+// RegisterMdmac8ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac8ifcrType uint32
+
+func (r *RegisterMdmac8ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8ifcrFieldCteif8Shift = 0
@@ -8736,12 +11197,12 @@ const (
 )
 
 // GetCteif8 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac8ifcrType) GetCteif8() bool {
+func (r *RegisterMdmac8ifcrType) GetCteif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8ifcrFieldCteif8Mask) != 0
 }
 
 // SetCteif8 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac8ifcrType) SetCteif8(value bool) {
+func (r *RegisterMdmac8ifcrType) SetCteif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8ifcrFieldCteif8Mask)
 	} else {
@@ -8755,12 +11216,12 @@ const (
 )
 
 // GetCctcif8 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac8ifcrType) GetCctcif8() bool {
+func (r *RegisterMdmac8ifcrType) GetCctcif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8ifcrFieldCctcif8Mask) != 0
 }
 
 // SetCctcif8 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac8ifcrType) SetCctcif8(value bool) {
+func (r *RegisterMdmac8ifcrType) SetCctcif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8ifcrFieldCctcif8Mask)
 	} else {
@@ -8774,12 +11235,12 @@ const (
 )
 
 // GetCbrtif8 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac8ifcrType) GetCbrtif8() bool {
+func (r *RegisterMdmac8ifcrType) GetCbrtif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8ifcrFieldCbrtif8Mask) != 0
 }
 
 // SetCbrtif8 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac8ifcrType) SetCbrtif8(value bool) {
+func (r *RegisterMdmac8ifcrType) SetCbrtif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8ifcrFieldCbrtif8Mask)
 	} else {
@@ -8793,12 +11254,12 @@ const (
 )
 
 // GetCbtif8 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac8ifcrType) GetCbtif8() bool {
+func (r *RegisterMdmac8ifcrType) GetCbtif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8ifcrFieldCbtif8Mask) != 0
 }
 
 // SetCbtif8 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac8ifcrType) SetCbtif8(value bool) {
+func (r *RegisterMdmac8ifcrType) SetCbtif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8ifcrFieldCbtif8Mask)
 	} else {
@@ -8812,12 +11273,12 @@ const (
 )
 
 // GetCltcif8 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac8ifcrType) GetCltcif8() bool {
+func (r *RegisterMdmac8ifcrType) GetCltcif8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8ifcrFieldCltcif8Mask) != 0
 }
 
 // SetCltcif8 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac8ifcrType) SetCltcif8(value bool) {
+func (r *RegisterMdmac8ifcrType) SetCltcif8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8ifcrFieldCltcif8Mask)
 	} else {
@@ -8825,8 +11286,31 @@ func (r *registerMdmac8ifcrType) SetCltcif8(value bool) {
 	}
 }
 
-// registerMdmac8esrType MDMA Channel x error status register
-type registerMdmac8esrType uint32
+// RegisterMdmac8esrType MDMA Channel x error status register
+type RegisterMdmac8esrType uint32
+
+func (r *RegisterMdmac8esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8esrFieldTeaShift = 0
@@ -8834,12 +11318,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac8esrType) GetTea() uint8 {
+func (r *RegisterMdmac8esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8esrFieldTeaMask) >> RegisterMdmac8esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac8esrType) SetTea(value uint8) {
+func (r *RegisterMdmac8esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8esrFieldTeaMask)|(uint32(value)<<RegisterMdmac8esrFieldTeaShift))
 }
 
@@ -8849,12 +11333,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac8esrType) GetTed() bool {
+func (r *RegisterMdmac8esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac8esrType) SetTed(value bool) {
+func (r *RegisterMdmac8esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8esrFieldTedMask)
 	} else {
@@ -8868,12 +11352,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac8esrType) GetTeld() bool {
+func (r *RegisterMdmac8esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac8esrType) SetTeld(value bool) {
+func (r *RegisterMdmac8esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8esrFieldTeldMask)
 	} else {
@@ -8887,12 +11371,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac8esrType) GetTemd() bool {
+func (r *RegisterMdmac8esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac8esrType) SetTemd(value bool) {
+func (r *RegisterMdmac8esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8esrFieldTemdMask)
 	} else {
@@ -8906,12 +11390,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac8esrType) GetAse() bool {
+func (r *RegisterMdmac8esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac8esrType) SetAse(value bool) {
+func (r *RegisterMdmac8esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8esrFieldAseMask)
 	} else {
@@ -8925,12 +11409,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac8esrType) GetBse() bool {
+func (r *RegisterMdmac8esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac8esrType) SetBse(value bool) {
+func (r *RegisterMdmac8esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8esrFieldBseMask)
 	} else {
@@ -8938,8 +11422,31 @@ func (r *registerMdmac8esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac8crType This register is used to control the concerned channel.
-type registerMdmac8crType uint32
+// RegisterMdmac8crType This register is used to control the concerned channel.
+type RegisterMdmac8crType uint32
+
+func (r *RegisterMdmac8crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8crFieldEnShift = 0
@@ -8947,12 +11454,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac8crType) GetEn() bool {
+func (r *RegisterMdmac8crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac8crType) SetEn(value bool) {
+func (r *RegisterMdmac8crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8crFieldEnMask)
 	} else {
@@ -8966,12 +11473,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac8crType) GetTeie() bool {
+func (r *RegisterMdmac8crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac8crType) SetTeie(value bool) {
+func (r *RegisterMdmac8crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8crFieldTeieMask)
 	} else {
@@ -8985,12 +11492,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac8crType) GetCtcie() bool {
+func (r *RegisterMdmac8crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac8crType) SetCtcie(value bool) {
+func (r *RegisterMdmac8crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8crFieldCtcieMask)
 	} else {
@@ -9004,12 +11511,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac8crType) GetBrtie() bool {
+func (r *RegisterMdmac8crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac8crType) SetBrtie(value bool) {
+func (r *RegisterMdmac8crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8crFieldBrtieMask)
 	} else {
@@ -9023,12 +11530,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac8crType) GetBtie() bool {
+func (r *RegisterMdmac8crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac8crType) SetBtie(value bool) {
+func (r *RegisterMdmac8crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8crFieldBtieMask)
 	} else {
@@ -9042,12 +11549,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac8crType) GetTcie() bool {
+func (r *RegisterMdmac8crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac8crType) SetTcie(value bool) {
+func (r *RegisterMdmac8crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8crFieldTcieMask)
 	} else {
@@ -9061,12 +11568,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac8crType) GetPl() uint8 {
+func (r *RegisterMdmac8crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8crFieldPlMask) >> RegisterMdmac8crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac8crType) SetPl(value uint8) {
+func (r *RegisterMdmac8crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8crFieldPlMask)|(uint32(value)<<RegisterMdmac8crFieldPlShift))
 }
 
@@ -9076,12 +11583,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac8crType) GetBex() bool {
+func (r *RegisterMdmac8crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac8crType) SetBex(value bool) {
+func (r *RegisterMdmac8crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8crFieldBexMask)
 	} else {
@@ -9095,12 +11602,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac8crType) GetHex() bool {
+func (r *RegisterMdmac8crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac8crType) SetHex(value bool) {
+func (r *RegisterMdmac8crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8crFieldHexMask)
 	} else {
@@ -9114,12 +11621,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac8crType) GetWex() bool {
+func (r *RegisterMdmac8crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac8crType) SetWex(value bool) {
+func (r *RegisterMdmac8crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8crFieldWexMask)
 	} else {
@@ -9133,7 +11640,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac8crType) SetSwrq(value bool) {
+func (r *RegisterMdmac8crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8crFieldSwrqMask)
 	} else {
@@ -9141,8 +11648,31 @@ func (r *registerMdmac8crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac8tcrType This register is used to configure the concerned channel.
-type registerMdmac8tcrType uint32
+// RegisterMdmac8tcrType This register is used to configure the concerned channel.
+type RegisterMdmac8tcrType uint32
+
+func (r *RegisterMdmac8tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8tcrFieldSincShift = 0
@@ -9150,12 +11680,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac8tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac8tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldSincMask) >> RegisterMdmac8tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac8tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac8tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldSincMask)|(uint32(value)<<RegisterMdmac8tcrFieldSincShift))
 }
 
@@ -9165,12 +11695,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac8tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac8tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldDincMask) >> RegisterMdmac8tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac8tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac8tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldDincMask)|(uint32(value)<<RegisterMdmac8tcrFieldDincShift))
 }
 
@@ -9180,12 +11710,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac8tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac8tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldSsizeMask) >> RegisterMdmac8tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac8tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac8tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac8tcrFieldSsizeShift))
 }
 
@@ -9195,12 +11725,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac8tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac8tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldDsizeMask) >> RegisterMdmac8tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac8tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac8tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac8tcrFieldDsizeShift))
 }
 
@@ -9210,12 +11740,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac8tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac8tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldSincosMask) >> RegisterMdmac8tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac8tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac8tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac8tcrFieldSincosShift))
 }
 
@@ -9225,12 +11755,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac8tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac8tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldDincosMask) >> RegisterMdmac8tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac8tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac8tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac8tcrFieldDincosShift))
 }
 
@@ -9240,12 +11770,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac8tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac8tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldSburstMask) >> RegisterMdmac8tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac8tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac8tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac8tcrFieldSburstShift))
 }
 
@@ -9255,12 +11785,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac8tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac8tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldDburstMask) >> RegisterMdmac8tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac8tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac8tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac8tcrFieldDburstShift))
 }
 
@@ -9270,12 +11800,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac8tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac8tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldTlenMask) >> RegisterMdmac8tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac8tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac8tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac8tcrFieldTlenShift))
 }
 
@@ -9285,12 +11815,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac8tcrType) GetPke() bool {
+func (r *RegisterMdmac8tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac8tcrType) SetPke(value bool) {
+func (r *RegisterMdmac8tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8tcrFieldPkeMask)
 	} else {
@@ -9304,12 +11834,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac8tcrType) GetPam() uint8 {
+func (r *RegisterMdmac8tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldPamMask) >> RegisterMdmac8tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac8tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac8tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldPamMask)|(uint32(value)<<RegisterMdmac8tcrFieldPamShift))
 }
 
@@ -9319,12 +11849,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac8tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac8tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldTrgmMask) >> RegisterMdmac8tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac8tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac8tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac8tcrFieldTrgmShift))
 }
 
@@ -9334,12 +11864,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac8tcrType) GetSwrm() bool {
+func (r *RegisterMdmac8tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac8tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac8tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8tcrFieldSwrmMask)
 	} else {
@@ -9353,12 +11883,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac8tcrType) GetBwm() bool {
+func (r *RegisterMdmac8tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac8tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac8tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8tcrFieldBwmMask)
 	} else {
@@ -9366,8 +11896,31 @@ func (r *registerMdmac8tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac8bndtrType MDMA Channel x block number of data register
-type registerMdmac8bndtrType uint32
+// RegisterMdmac8bndtrType MDMA Channel x block number of data register
+type RegisterMdmac8bndtrType uint32
+
+func (r *RegisterMdmac8bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8bndtrFieldBndtShift = 0
@@ -9375,12 +11928,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac8bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac8bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8bndtrFieldBndtMask) >> RegisterMdmac8bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac8bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac8bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac8bndtrFieldBndtShift))
 }
 
@@ -9390,12 +11943,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac8bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac8bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac8bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac8bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8bndtrFieldBrsumMask)
 	} else {
@@ -9409,12 +11962,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac8bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac8bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac8bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac8bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8bndtrFieldBrdumMask)
 	} else {
@@ -9428,17 +11981,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac8bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac8bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8bndtrFieldBrcMask) >> RegisterMdmac8bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac8bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac8bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac8bndtrFieldBrcShift))
 }
 
-// registerMdmac8sarType MDMA channel x source address register
-type registerMdmac8sarType uint32
+// RegisterMdmac8sarType MDMA channel x source address register
+type RegisterMdmac8sarType uint32
+
+func (r *RegisterMdmac8sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8sarFieldSarShift = 0
@@ -9446,17 +12022,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac8sarType) GetSar() uint32 {
+func (r *RegisterMdmac8sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8sarFieldSarMask) >> RegisterMdmac8sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac8sarType) SetSar(value uint32) {
+func (r *RegisterMdmac8sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8sarFieldSarMask)|(uint32(value)<<RegisterMdmac8sarFieldSarShift))
 }
 
-// registerMdmac8darType MDMA channel x destination address register
-type registerMdmac8darType uint32
+// RegisterMdmac8darType MDMA channel x destination address register
+type RegisterMdmac8darType uint32
+
+func (r *RegisterMdmac8darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8darFieldDarShift = 0
@@ -9464,17 +12063,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac8darType) GetDar() uint32 {
+func (r *RegisterMdmac8darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8darFieldDarMask) >> RegisterMdmac8darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac8darType) SetDar(value uint32) {
+func (r *RegisterMdmac8darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8darFieldDarMask)|(uint32(value)<<RegisterMdmac8darFieldDarShift))
 }
 
-// registerMdmac8brurType MDMA channel x Block Repeat address Update register
-type registerMdmac8brurType uint32
+// RegisterMdmac8brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac8brurType uint32
+
+func (r *RegisterMdmac8brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8brurFieldSuvShift = 0
@@ -9482,12 +12104,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac8brurType) GetSuv() uint16 {
+func (r *RegisterMdmac8brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8brurFieldSuvMask) >> RegisterMdmac8brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac8brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac8brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8brurFieldSuvMask)|(uint32(value)<<RegisterMdmac8brurFieldSuvShift))
 }
 
@@ -9497,17 +12119,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac8brurType) GetDuv() uint16 {
+func (r *RegisterMdmac8brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8brurFieldDuvMask) >> RegisterMdmac8brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac8brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac8brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8brurFieldDuvMask)|(uint32(value)<<RegisterMdmac8brurFieldDuvShift))
 }
 
-// registerMdmac8larType MDMA channel x Link Address register
-type registerMdmac8larType uint32
+// RegisterMdmac8larType MDMA channel x Link Address register
+type RegisterMdmac8larType uint32
+
+func (r *RegisterMdmac8larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8larFieldLarShift = 0
@@ -9515,17 +12160,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac8larType) GetLar() uint32 {
+func (r *RegisterMdmac8larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8larFieldLarMask) >> RegisterMdmac8larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac8larType) SetLar(value uint32) {
+func (r *RegisterMdmac8larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8larFieldLarMask)|(uint32(value)<<RegisterMdmac8larFieldLarShift))
 }
 
-// registerMdmac8tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac8tbrType uint32
+// RegisterMdmac8tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac8tbrType uint32
+
+func (r *RegisterMdmac8tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8tbrFieldTselShift = 0
@@ -9533,12 +12201,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac8tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac8tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tbrFieldTselMask) >> RegisterMdmac8tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac8tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac8tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8tbrFieldTselMask)|(uint32(value)<<RegisterMdmac8tbrFieldTselShift))
 }
 
@@ -9548,12 +12216,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac8tbrType) GetSbus() bool {
+func (r *RegisterMdmac8tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac8tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac8tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8tbrFieldSbusMask)
 	} else {
@@ -9567,12 +12235,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac8tbrType) GetDbus() bool {
+func (r *RegisterMdmac8tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac8tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac8tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac8tbrFieldDbusMask)
 	} else {
@@ -9580,8 +12248,31 @@ func (r *registerMdmac8tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac8marType MDMA channel x Mask address register
-type registerMdmac8marType uint32
+// RegisterMdmac8marType MDMA channel x Mask address register
+type RegisterMdmac8marType uint32
+
+func (r *RegisterMdmac8marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8marFieldMarShift = 0
@@ -9589,17 +12280,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac8marType) GetMar() uint32 {
+func (r *RegisterMdmac8marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8marFieldMarMask) >> RegisterMdmac8marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac8marType) SetMar(value uint32) {
+func (r *RegisterMdmac8marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8marFieldMarMask)|(uint32(value)<<RegisterMdmac8marFieldMarShift))
 }
 
-// registerMdmac8mdrType MDMA channel x Mask Data register
-type registerMdmac8mdrType uint32
+// RegisterMdmac8mdrType MDMA channel x Mask Data register
+type RegisterMdmac8mdrType uint32
+
+func (r *RegisterMdmac8mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac8mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac8mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac8mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac8mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac8mdrFieldMdrShift = 0
@@ -9607,17 +12321,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac8mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac8mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac8mdrFieldMdrMask) >> RegisterMdmac8mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac8mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac8mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac8mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac8mdrFieldMdrShift))
 }
 
-// registerMdmac9isrType MDMA channel x interrupt/status register
-type registerMdmac9isrType uint32
+// RegisterMdmac9isrType MDMA channel x interrupt/status register
+type RegisterMdmac9isrType uint32
+
+func (r *RegisterMdmac9isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9isrFieldTeif9Shift = 0
@@ -9625,12 +12362,12 @@ const (
 )
 
 // GetTeif9 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac9isrType) GetTeif9() bool {
+func (r *RegisterMdmac9isrType) GetTeif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9isrFieldTeif9Mask) != 0
 }
 
 // SetTeif9 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac9isrType) SetTeif9(value bool) {
+func (r *RegisterMdmac9isrType) SetTeif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9isrFieldTeif9Mask)
 	} else {
@@ -9644,12 +12381,12 @@ const (
 )
 
 // GetCtcif9 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac9isrType) GetCtcif9() bool {
+func (r *RegisterMdmac9isrType) GetCtcif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9isrFieldCtcif9Mask) != 0
 }
 
 // SetCtcif9 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac9isrType) SetCtcif9(value bool) {
+func (r *RegisterMdmac9isrType) SetCtcif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9isrFieldCtcif9Mask)
 	} else {
@@ -9663,12 +12400,12 @@ const (
 )
 
 // GetBrtif9 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac9isrType) GetBrtif9() bool {
+func (r *RegisterMdmac9isrType) GetBrtif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9isrFieldBrtif9Mask) != 0
 }
 
 // SetBrtif9 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac9isrType) SetBrtif9(value bool) {
+func (r *RegisterMdmac9isrType) SetBrtif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9isrFieldBrtif9Mask)
 	} else {
@@ -9682,12 +12419,12 @@ const (
 )
 
 // GetBtif9 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac9isrType) GetBtif9() bool {
+func (r *RegisterMdmac9isrType) GetBtif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9isrFieldBtif9Mask) != 0
 }
 
 // SetBtif9 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac9isrType) SetBtif9(value bool) {
+func (r *RegisterMdmac9isrType) SetBtif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9isrFieldBtif9Mask)
 	} else {
@@ -9701,12 +12438,12 @@ const (
 )
 
 // GetTcif9 channel x buffer transfer complete
-func (r *registerMdmac9isrType) GetTcif9() bool {
+func (r *RegisterMdmac9isrType) GetTcif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9isrFieldTcif9Mask) != 0
 }
 
 // SetTcif9 channel x buffer transfer complete
-func (r *registerMdmac9isrType) SetTcif9(value bool) {
+func (r *RegisterMdmac9isrType) SetTcif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9isrFieldTcif9Mask)
 	} else {
@@ -9720,12 +12457,12 @@ const (
 )
 
 // GetCrqa9 channel x request active flag
-func (r *registerMdmac9isrType) GetCrqa9() bool {
+func (r *RegisterMdmac9isrType) GetCrqa9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9isrFieldCrqa9Mask) != 0
 }
 
 // SetCrqa9 channel x request active flag
-func (r *registerMdmac9isrType) SetCrqa9(value bool) {
+func (r *RegisterMdmac9isrType) SetCrqa9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9isrFieldCrqa9Mask)
 	} else {
@@ -9733,8 +12470,31 @@ func (r *registerMdmac9isrType) SetCrqa9(value bool) {
 	}
 }
 
-// registerMdmac9ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac9ifcrType uint32
+// RegisterMdmac9ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac9ifcrType uint32
+
+func (r *RegisterMdmac9ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9ifcrFieldCteif9Shift = 0
@@ -9742,12 +12502,12 @@ const (
 )
 
 // GetCteif9 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac9ifcrType) GetCteif9() bool {
+func (r *RegisterMdmac9ifcrType) GetCteif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9ifcrFieldCteif9Mask) != 0
 }
 
 // SetCteif9 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac9ifcrType) SetCteif9(value bool) {
+func (r *RegisterMdmac9ifcrType) SetCteif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9ifcrFieldCteif9Mask)
 	} else {
@@ -9761,12 +12521,12 @@ const (
 )
 
 // GetCctcif9 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac9ifcrType) GetCctcif9() bool {
+func (r *RegisterMdmac9ifcrType) GetCctcif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9ifcrFieldCctcif9Mask) != 0
 }
 
 // SetCctcif9 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac9ifcrType) SetCctcif9(value bool) {
+func (r *RegisterMdmac9ifcrType) SetCctcif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9ifcrFieldCctcif9Mask)
 	} else {
@@ -9780,12 +12540,12 @@ const (
 )
 
 // GetCbrtif9 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac9ifcrType) GetCbrtif9() bool {
+func (r *RegisterMdmac9ifcrType) GetCbrtif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9ifcrFieldCbrtif9Mask) != 0
 }
 
 // SetCbrtif9 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac9ifcrType) SetCbrtif9(value bool) {
+func (r *RegisterMdmac9ifcrType) SetCbrtif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9ifcrFieldCbrtif9Mask)
 	} else {
@@ -9799,12 +12559,12 @@ const (
 )
 
 // GetCbtif9 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac9ifcrType) GetCbtif9() bool {
+func (r *RegisterMdmac9ifcrType) GetCbtif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9ifcrFieldCbtif9Mask) != 0
 }
 
 // SetCbtif9 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac9ifcrType) SetCbtif9(value bool) {
+func (r *RegisterMdmac9ifcrType) SetCbtif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9ifcrFieldCbtif9Mask)
 	} else {
@@ -9818,12 +12578,12 @@ const (
 )
 
 // GetCltcif9 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac9ifcrType) GetCltcif9() bool {
+func (r *RegisterMdmac9ifcrType) GetCltcif9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9ifcrFieldCltcif9Mask) != 0
 }
 
 // SetCltcif9 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac9ifcrType) SetCltcif9(value bool) {
+func (r *RegisterMdmac9ifcrType) SetCltcif9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9ifcrFieldCltcif9Mask)
 	} else {
@@ -9831,8 +12591,31 @@ func (r *registerMdmac9ifcrType) SetCltcif9(value bool) {
 	}
 }
 
-// registerMdmac9esrType MDMA Channel x error status register
-type registerMdmac9esrType uint32
+// RegisterMdmac9esrType MDMA Channel x error status register
+type RegisterMdmac9esrType uint32
+
+func (r *RegisterMdmac9esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9esrFieldTeaShift = 0
@@ -9840,12 +12623,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac9esrType) GetTea() uint8 {
+func (r *RegisterMdmac9esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9esrFieldTeaMask) >> RegisterMdmac9esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac9esrType) SetTea(value uint8) {
+func (r *RegisterMdmac9esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9esrFieldTeaMask)|(uint32(value)<<RegisterMdmac9esrFieldTeaShift))
 }
 
@@ -9855,12 +12638,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac9esrType) GetTed() bool {
+func (r *RegisterMdmac9esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac9esrType) SetTed(value bool) {
+func (r *RegisterMdmac9esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9esrFieldTedMask)
 	} else {
@@ -9874,12 +12657,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac9esrType) GetTeld() bool {
+func (r *RegisterMdmac9esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac9esrType) SetTeld(value bool) {
+func (r *RegisterMdmac9esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9esrFieldTeldMask)
 	} else {
@@ -9893,12 +12676,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac9esrType) GetTemd() bool {
+func (r *RegisterMdmac9esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac9esrType) SetTemd(value bool) {
+func (r *RegisterMdmac9esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9esrFieldTemdMask)
 	} else {
@@ -9912,12 +12695,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac9esrType) GetAse() bool {
+func (r *RegisterMdmac9esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac9esrType) SetAse(value bool) {
+func (r *RegisterMdmac9esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9esrFieldAseMask)
 	} else {
@@ -9931,12 +12714,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac9esrType) GetBse() bool {
+func (r *RegisterMdmac9esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac9esrType) SetBse(value bool) {
+func (r *RegisterMdmac9esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9esrFieldBseMask)
 	} else {
@@ -9944,8 +12727,31 @@ func (r *registerMdmac9esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac9crType This register is used to control the concerned channel.
-type registerMdmac9crType uint32
+// RegisterMdmac9crType This register is used to control the concerned channel.
+type RegisterMdmac9crType uint32
+
+func (r *RegisterMdmac9crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9crFieldEnShift = 0
@@ -9953,12 +12759,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac9crType) GetEn() bool {
+func (r *RegisterMdmac9crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac9crType) SetEn(value bool) {
+func (r *RegisterMdmac9crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9crFieldEnMask)
 	} else {
@@ -9972,12 +12778,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac9crType) GetTeie() bool {
+func (r *RegisterMdmac9crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac9crType) SetTeie(value bool) {
+func (r *RegisterMdmac9crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9crFieldTeieMask)
 	} else {
@@ -9991,12 +12797,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac9crType) GetCtcie() bool {
+func (r *RegisterMdmac9crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac9crType) SetCtcie(value bool) {
+func (r *RegisterMdmac9crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9crFieldCtcieMask)
 	} else {
@@ -10010,12 +12816,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac9crType) GetBrtie() bool {
+func (r *RegisterMdmac9crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac9crType) SetBrtie(value bool) {
+func (r *RegisterMdmac9crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9crFieldBrtieMask)
 	} else {
@@ -10029,12 +12835,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac9crType) GetBtie() bool {
+func (r *RegisterMdmac9crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac9crType) SetBtie(value bool) {
+func (r *RegisterMdmac9crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9crFieldBtieMask)
 	} else {
@@ -10048,12 +12854,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac9crType) GetTcie() bool {
+func (r *RegisterMdmac9crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac9crType) SetTcie(value bool) {
+func (r *RegisterMdmac9crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9crFieldTcieMask)
 	} else {
@@ -10067,12 +12873,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac9crType) GetPl() uint8 {
+func (r *RegisterMdmac9crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9crFieldPlMask) >> RegisterMdmac9crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac9crType) SetPl(value uint8) {
+func (r *RegisterMdmac9crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9crFieldPlMask)|(uint32(value)<<RegisterMdmac9crFieldPlShift))
 }
 
@@ -10082,12 +12888,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac9crType) GetBex() bool {
+func (r *RegisterMdmac9crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac9crType) SetBex(value bool) {
+func (r *RegisterMdmac9crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9crFieldBexMask)
 	} else {
@@ -10101,12 +12907,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac9crType) GetHex() bool {
+func (r *RegisterMdmac9crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac9crType) SetHex(value bool) {
+func (r *RegisterMdmac9crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9crFieldHexMask)
 	} else {
@@ -10120,12 +12926,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac9crType) GetWex() bool {
+func (r *RegisterMdmac9crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac9crType) SetWex(value bool) {
+func (r *RegisterMdmac9crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9crFieldWexMask)
 	} else {
@@ -10139,7 +12945,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac9crType) SetSwrq(value bool) {
+func (r *RegisterMdmac9crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9crFieldSwrqMask)
 	} else {
@@ -10147,8 +12953,31 @@ func (r *registerMdmac9crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac9tcrType This register is used to configure the concerned channel.
-type registerMdmac9tcrType uint32
+// RegisterMdmac9tcrType This register is used to configure the concerned channel.
+type RegisterMdmac9tcrType uint32
+
+func (r *RegisterMdmac9tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9tcrFieldSincShift = 0
@@ -10156,12 +12985,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac9tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac9tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldSincMask) >> RegisterMdmac9tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac9tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac9tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldSincMask)|(uint32(value)<<RegisterMdmac9tcrFieldSincShift))
 }
 
@@ -10171,12 +13000,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac9tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac9tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldDincMask) >> RegisterMdmac9tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac9tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac9tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldDincMask)|(uint32(value)<<RegisterMdmac9tcrFieldDincShift))
 }
 
@@ -10186,12 +13015,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac9tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac9tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldSsizeMask) >> RegisterMdmac9tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac9tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac9tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac9tcrFieldSsizeShift))
 }
 
@@ -10201,12 +13030,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac9tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac9tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldDsizeMask) >> RegisterMdmac9tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac9tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac9tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac9tcrFieldDsizeShift))
 }
 
@@ -10216,12 +13045,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac9tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac9tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldSincosMask) >> RegisterMdmac9tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac9tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac9tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac9tcrFieldSincosShift))
 }
 
@@ -10231,12 +13060,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac9tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac9tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldDincosMask) >> RegisterMdmac9tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac9tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac9tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac9tcrFieldDincosShift))
 }
 
@@ -10246,12 +13075,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac9tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac9tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldSburstMask) >> RegisterMdmac9tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac9tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac9tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac9tcrFieldSburstShift))
 }
 
@@ -10261,12 +13090,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac9tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac9tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldDburstMask) >> RegisterMdmac9tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac9tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac9tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac9tcrFieldDburstShift))
 }
 
@@ -10276,12 +13105,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac9tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac9tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldTlenMask) >> RegisterMdmac9tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac9tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac9tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac9tcrFieldTlenShift))
 }
 
@@ -10291,12 +13120,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac9tcrType) GetPke() bool {
+func (r *RegisterMdmac9tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac9tcrType) SetPke(value bool) {
+func (r *RegisterMdmac9tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9tcrFieldPkeMask)
 	} else {
@@ -10310,12 +13139,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac9tcrType) GetPam() uint8 {
+func (r *RegisterMdmac9tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldPamMask) >> RegisterMdmac9tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac9tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac9tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldPamMask)|(uint32(value)<<RegisterMdmac9tcrFieldPamShift))
 }
 
@@ -10325,12 +13154,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac9tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac9tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldTrgmMask) >> RegisterMdmac9tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac9tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac9tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac9tcrFieldTrgmShift))
 }
 
@@ -10340,12 +13169,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac9tcrType) GetSwrm() bool {
+func (r *RegisterMdmac9tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac9tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac9tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9tcrFieldSwrmMask)
 	} else {
@@ -10359,12 +13188,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac9tcrType) GetBwm() bool {
+func (r *RegisterMdmac9tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac9tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac9tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9tcrFieldBwmMask)
 	} else {
@@ -10372,8 +13201,31 @@ func (r *registerMdmac9tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac9bndtrType MDMA Channel x block number of data register
-type registerMdmac9bndtrType uint32
+// RegisterMdmac9bndtrType MDMA Channel x block number of data register
+type RegisterMdmac9bndtrType uint32
+
+func (r *RegisterMdmac9bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9bndtrFieldBndtShift = 0
@@ -10381,12 +13233,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac9bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac9bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9bndtrFieldBndtMask) >> RegisterMdmac9bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac9bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac9bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac9bndtrFieldBndtShift))
 }
 
@@ -10396,12 +13248,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac9bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac9bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac9bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac9bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9bndtrFieldBrsumMask)
 	} else {
@@ -10415,12 +13267,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac9bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac9bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac9bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac9bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9bndtrFieldBrdumMask)
 	} else {
@@ -10434,17 +13286,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac9bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac9bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9bndtrFieldBrcMask) >> RegisterMdmac9bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac9bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac9bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac9bndtrFieldBrcShift))
 }
 
-// registerMdmac9sarType MDMA channel x source address register
-type registerMdmac9sarType uint32
+// RegisterMdmac9sarType MDMA channel x source address register
+type RegisterMdmac9sarType uint32
+
+func (r *RegisterMdmac9sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9sarFieldSarShift = 0
@@ -10452,17 +13327,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac9sarType) GetSar() uint32 {
+func (r *RegisterMdmac9sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9sarFieldSarMask) >> RegisterMdmac9sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac9sarType) SetSar(value uint32) {
+func (r *RegisterMdmac9sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9sarFieldSarMask)|(uint32(value)<<RegisterMdmac9sarFieldSarShift))
 }
 
-// registerMdmac9darType MDMA channel x destination address register
-type registerMdmac9darType uint32
+// RegisterMdmac9darType MDMA channel x destination address register
+type RegisterMdmac9darType uint32
+
+func (r *RegisterMdmac9darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9darFieldDarShift = 0
@@ -10470,17 +13368,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac9darType) GetDar() uint32 {
+func (r *RegisterMdmac9darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9darFieldDarMask) >> RegisterMdmac9darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac9darType) SetDar(value uint32) {
+func (r *RegisterMdmac9darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9darFieldDarMask)|(uint32(value)<<RegisterMdmac9darFieldDarShift))
 }
 
-// registerMdmac9brurType MDMA channel x Block Repeat address Update register
-type registerMdmac9brurType uint32
+// RegisterMdmac9brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac9brurType uint32
+
+func (r *RegisterMdmac9brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9brurFieldSuvShift = 0
@@ -10488,12 +13409,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac9brurType) GetSuv() uint16 {
+func (r *RegisterMdmac9brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9brurFieldSuvMask) >> RegisterMdmac9brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac9brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac9brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9brurFieldSuvMask)|(uint32(value)<<RegisterMdmac9brurFieldSuvShift))
 }
 
@@ -10503,17 +13424,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac9brurType) GetDuv() uint16 {
+func (r *RegisterMdmac9brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9brurFieldDuvMask) >> RegisterMdmac9brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac9brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac9brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9brurFieldDuvMask)|(uint32(value)<<RegisterMdmac9brurFieldDuvShift))
 }
 
-// registerMdmac9larType MDMA channel x Link Address register
-type registerMdmac9larType uint32
+// RegisterMdmac9larType MDMA channel x Link Address register
+type RegisterMdmac9larType uint32
+
+func (r *RegisterMdmac9larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9larFieldLarShift = 0
@@ -10521,17 +13465,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac9larType) GetLar() uint32 {
+func (r *RegisterMdmac9larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9larFieldLarMask) >> RegisterMdmac9larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac9larType) SetLar(value uint32) {
+func (r *RegisterMdmac9larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9larFieldLarMask)|(uint32(value)<<RegisterMdmac9larFieldLarShift))
 }
 
-// registerMdmac9tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac9tbrType uint32
+// RegisterMdmac9tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac9tbrType uint32
+
+func (r *RegisterMdmac9tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9tbrFieldTselShift = 0
@@ -10539,12 +13506,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac9tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac9tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tbrFieldTselMask) >> RegisterMdmac9tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac9tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac9tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9tbrFieldTselMask)|(uint32(value)<<RegisterMdmac9tbrFieldTselShift))
 }
 
@@ -10554,12 +13521,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac9tbrType) GetSbus() bool {
+func (r *RegisterMdmac9tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac9tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac9tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9tbrFieldSbusMask)
 	} else {
@@ -10573,12 +13540,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac9tbrType) GetDbus() bool {
+func (r *RegisterMdmac9tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac9tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac9tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac9tbrFieldDbusMask)
 	} else {
@@ -10586,8 +13553,31 @@ func (r *registerMdmac9tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac9marType MDMA channel x Mask address register
-type registerMdmac9marType uint32
+// RegisterMdmac9marType MDMA channel x Mask address register
+type RegisterMdmac9marType uint32
+
+func (r *RegisterMdmac9marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9marFieldMarShift = 0
@@ -10595,17 +13585,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac9marType) GetMar() uint32 {
+func (r *RegisterMdmac9marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9marFieldMarMask) >> RegisterMdmac9marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac9marType) SetMar(value uint32) {
+func (r *RegisterMdmac9marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9marFieldMarMask)|(uint32(value)<<RegisterMdmac9marFieldMarShift))
 }
 
-// registerMdmac9mdrType MDMA channel x Mask Data register
-type registerMdmac9mdrType uint32
+// RegisterMdmac9mdrType MDMA channel x Mask Data register
+type RegisterMdmac9mdrType uint32
+
+func (r *RegisterMdmac9mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac9mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac9mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac9mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac9mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac9mdrFieldMdrShift = 0
@@ -10613,17 +13626,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac9mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac9mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac9mdrFieldMdrMask) >> RegisterMdmac9mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac9mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac9mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac9mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac9mdrFieldMdrShift))
 }
 
-// registerMdmac10isrType MDMA channel x interrupt/status register
-type registerMdmac10isrType uint32
+// RegisterMdmac10isrType MDMA channel x interrupt/status register
+type RegisterMdmac10isrType uint32
+
+func (r *RegisterMdmac10isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10isrFieldTeif10Shift = 0
@@ -10631,12 +13667,12 @@ const (
 )
 
 // GetTeif10 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac10isrType) GetTeif10() bool {
+func (r *RegisterMdmac10isrType) GetTeif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10isrFieldTeif10Mask) != 0
 }
 
 // SetTeif10 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac10isrType) SetTeif10(value bool) {
+func (r *RegisterMdmac10isrType) SetTeif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10isrFieldTeif10Mask)
 	} else {
@@ -10650,12 +13686,12 @@ const (
 )
 
 // GetCtcif10 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac10isrType) GetCtcif10() bool {
+func (r *RegisterMdmac10isrType) GetCtcif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10isrFieldCtcif10Mask) != 0
 }
 
 // SetCtcif10 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac10isrType) SetCtcif10(value bool) {
+func (r *RegisterMdmac10isrType) SetCtcif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10isrFieldCtcif10Mask)
 	} else {
@@ -10669,12 +13705,12 @@ const (
 )
 
 // GetBrtif10 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac10isrType) GetBrtif10() bool {
+func (r *RegisterMdmac10isrType) GetBrtif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10isrFieldBrtif10Mask) != 0
 }
 
 // SetBrtif10 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac10isrType) SetBrtif10(value bool) {
+func (r *RegisterMdmac10isrType) SetBrtif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10isrFieldBrtif10Mask)
 	} else {
@@ -10688,12 +13724,12 @@ const (
 )
 
 // GetBtif10 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac10isrType) GetBtif10() bool {
+func (r *RegisterMdmac10isrType) GetBtif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10isrFieldBtif10Mask) != 0
 }
 
 // SetBtif10 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac10isrType) SetBtif10(value bool) {
+func (r *RegisterMdmac10isrType) SetBtif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10isrFieldBtif10Mask)
 	} else {
@@ -10707,12 +13743,12 @@ const (
 )
 
 // GetTcif10 channel x buffer transfer complete
-func (r *registerMdmac10isrType) GetTcif10() bool {
+func (r *RegisterMdmac10isrType) GetTcif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10isrFieldTcif10Mask) != 0
 }
 
 // SetTcif10 channel x buffer transfer complete
-func (r *registerMdmac10isrType) SetTcif10(value bool) {
+func (r *RegisterMdmac10isrType) SetTcif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10isrFieldTcif10Mask)
 	} else {
@@ -10726,12 +13762,12 @@ const (
 )
 
 // GetCrqa10 channel x request active flag
-func (r *registerMdmac10isrType) GetCrqa10() bool {
+func (r *RegisterMdmac10isrType) GetCrqa10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10isrFieldCrqa10Mask) != 0
 }
 
 // SetCrqa10 channel x request active flag
-func (r *registerMdmac10isrType) SetCrqa10(value bool) {
+func (r *RegisterMdmac10isrType) SetCrqa10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10isrFieldCrqa10Mask)
 	} else {
@@ -10739,8 +13775,31 @@ func (r *registerMdmac10isrType) SetCrqa10(value bool) {
 	}
 }
 
-// registerMdmac10ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac10ifcrType uint32
+// RegisterMdmac10ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac10ifcrType uint32
+
+func (r *RegisterMdmac10ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10ifcrFieldCteif10Shift = 0
@@ -10748,12 +13807,12 @@ const (
 )
 
 // GetCteif10 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac10ifcrType) GetCteif10() bool {
+func (r *RegisterMdmac10ifcrType) GetCteif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10ifcrFieldCteif10Mask) != 0
 }
 
 // SetCteif10 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac10ifcrType) SetCteif10(value bool) {
+func (r *RegisterMdmac10ifcrType) SetCteif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10ifcrFieldCteif10Mask)
 	} else {
@@ -10767,12 +13826,12 @@ const (
 )
 
 // GetCctcif10 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac10ifcrType) GetCctcif10() bool {
+func (r *RegisterMdmac10ifcrType) GetCctcif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10ifcrFieldCctcif10Mask) != 0
 }
 
 // SetCctcif10 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac10ifcrType) SetCctcif10(value bool) {
+func (r *RegisterMdmac10ifcrType) SetCctcif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10ifcrFieldCctcif10Mask)
 	} else {
@@ -10786,12 +13845,12 @@ const (
 )
 
 // GetCbrtif10 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac10ifcrType) GetCbrtif10() bool {
+func (r *RegisterMdmac10ifcrType) GetCbrtif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10ifcrFieldCbrtif10Mask) != 0
 }
 
 // SetCbrtif10 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac10ifcrType) SetCbrtif10(value bool) {
+func (r *RegisterMdmac10ifcrType) SetCbrtif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10ifcrFieldCbrtif10Mask)
 	} else {
@@ -10805,12 +13864,12 @@ const (
 )
 
 // GetCbtif10 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac10ifcrType) GetCbtif10() bool {
+func (r *RegisterMdmac10ifcrType) GetCbtif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10ifcrFieldCbtif10Mask) != 0
 }
 
 // SetCbtif10 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac10ifcrType) SetCbtif10(value bool) {
+func (r *RegisterMdmac10ifcrType) SetCbtif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10ifcrFieldCbtif10Mask)
 	} else {
@@ -10824,12 +13883,12 @@ const (
 )
 
 // GetCltcif10 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac10ifcrType) GetCltcif10() bool {
+func (r *RegisterMdmac10ifcrType) GetCltcif10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10ifcrFieldCltcif10Mask) != 0
 }
 
 // SetCltcif10 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac10ifcrType) SetCltcif10(value bool) {
+func (r *RegisterMdmac10ifcrType) SetCltcif10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10ifcrFieldCltcif10Mask)
 	} else {
@@ -10837,8 +13896,31 @@ func (r *registerMdmac10ifcrType) SetCltcif10(value bool) {
 	}
 }
 
-// registerMdmac10esrType MDMA Channel x error status register
-type registerMdmac10esrType uint32
+// RegisterMdmac10esrType MDMA Channel x error status register
+type RegisterMdmac10esrType uint32
+
+func (r *RegisterMdmac10esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10esrFieldTeaShift = 0
@@ -10846,12 +13928,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac10esrType) GetTea() uint8 {
+func (r *RegisterMdmac10esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10esrFieldTeaMask) >> RegisterMdmac10esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac10esrType) SetTea(value uint8) {
+func (r *RegisterMdmac10esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10esrFieldTeaMask)|(uint32(value)<<RegisterMdmac10esrFieldTeaShift))
 }
 
@@ -10861,12 +13943,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac10esrType) GetTed() bool {
+func (r *RegisterMdmac10esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac10esrType) SetTed(value bool) {
+func (r *RegisterMdmac10esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10esrFieldTedMask)
 	} else {
@@ -10880,12 +13962,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac10esrType) GetTeld() bool {
+func (r *RegisterMdmac10esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac10esrType) SetTeld(value bool) {
+func (r *RegisterMdmac10esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10esrFieldTeldMask)
 	} else {
@@ -10899,12 +13981,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac10esrType) GetTemd() bool {
+func (r *RegisterMdmac10esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac10esrType) SetTemd(value bool) {
+func (r *RegisterMdmac10esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10esrFieldTemdMask)
 	} else {
@@ -10918,12 +14000,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac10esrType) GetAse() bool {
+func (r *RegisterMdmac10esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac10esrType) SetAse(value bool) {
+func (r *RegisterMdmac10esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10esrFieldAseMask)
 	} else {
@@ -10937,12 +14019,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac10esrType) GetBse() bool {
+func (r *RegisterMdmac10esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac10esrType) SetBse(value bool) {
+func (r *RegisterMdmac10esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10esrFieldBseMask)
 	} else {
@@ -10950,8 +14032,31 @@ func (r *registerMdmac10esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac10crType This register is used to control the concerned channel.
-type registerMdmac10crType uint32
+// RegisterMdmac10crType This register is used to control the concerned channel.
+type RegisterMdmac10crType uint32
+
+func (r *RegisterMdmac10crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10crFieldEnShift = 0
@@ -10959,12 +14064,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac10crType) GetEn() bool {
+func (r *RegisterMdmac10crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac10crType) SetEn(value bool) {
+func (r *RegisterMdmac10crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10crFieldEnMask)
 	} else {
@@ -10978,12 +14083,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac10crType) GetTeie() bool {
+func (r *RegisterMdmac10crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac10crType) SetTeie(value bool) {
+func (r *RegisterMdmac10crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10crFieldTeieMask)
 	} else {
@@ -10997,12 +14102,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac10crType) GetCtcie() bool {
+func (r *RegisterMdmac10crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac10crType) SetCtcie(value bool) {
+func (r *RegisterMdmac10crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10crFieldCtcieMask)
 	} else {
@@ -11016,12 +14121,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac10crType) GetBrtie() bool {
+func (r *RegisterMdmac10crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac10crType) SetBrtie(value bool) {
+func (r *RegisterMdmac10crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10crFieldBrtieMask)
 	} else {
@@ -11035,12 +14140,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac10crType) GetBtie() bool {
+func (r *RegisterMdmac10crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac10crType) SetBtie(value bool) {
+func (r *RegisterMdmac10crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10crFieldBtieMask)
 	} else {
@@ -11054,12 +14159,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac10crType) GetTcie() bool {
+func (r *RegisterMdmac10crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac10crType) SetTcie(value bool) {
+func (r *RegisterMdmac10crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10crFieldTcieMask)
 	} else {
@@ -11073,12 +14178,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac10crType) GetPl() uint8 {
+func (r *RegisterMdmac10crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10crFieldPlMask) >> RegisterMdmac10crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac10crType) SetPl(value uint8) {
+func (r *RegisterMdmac10crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10crFieldPlMask)|(uint32(value)<<RegisterMdmac10crFieldPlShift))
 }
 
@@ -11088,12 +14193,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac10crType) GetBex() bool {
+func (r *RegisterMdmac10crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac10crType) SetBex(value bool) {
+func (r *RegisterMdmac10crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10crFieldBexMask)
 	} else {
@@ -11107,12 +14212,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac10crType) GetHex() bool {
+func (r *RegisterMdmac10crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac10crType) SetHex(value bool) {
+func (r *RegisterMdmac10crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10crFieldHexMask)
 	} else {
@@ -11126,12 +14231,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac10crType) GetWex() bool {
+func (r *RegisterMdmac10crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac10crType) SetWex(value bool) {
+func (r *RegisterMdmac10crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10crFieldWexMask)
 	} else {
@@ -11145,7 +14250,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac10crType) SetSwrq(value bool) {
+func (r *RegisterMdmac10crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10crFieldSwrqMask)
 	} else {
@@ -11153,8 +14258,31 @@ func (r *registerMdmac10crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac10tcrType This register is used to configure the concerned channel.
-type registerMdmac10tcrType uint32
+// RegisterMdmac10tcrType This register is used to configure the concerned channel.
+type RegisterMdmac10tcrType uint32
+
+func (r *RegisterMdmac10tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10tcrFieldSincShift = 0
@@ -11162,12 +14290,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac10tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac10tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldSincMask) >> RegisterMdmac10tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac10tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac10tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldSincMask)|(uint32(value)<<RegisterMdmac10tcrFieldSincShift))
 }
 
@@ -11177,12 +14305,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac10tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac10tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldDincMask) >> RegisterMdmac10tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac10tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac10tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldDincMask)|(uint32(value)<<RegisterMdmac10tcrFieldDincShift))
 }
 
@@ -11192,12 +14320,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac10tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac10tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldSsizeMask) >> RegisterMdmac10tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac10tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac10tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac10tcrFieldSsizeShift))
 }
 
@@ -11207,12 +14335,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac10tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac10tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldDsizeMask) >> RegisterMdmac10tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac10tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac10tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac10tcrFieldDsizeShift))
 }
 
@@ -11222,12 +14350,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac10tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac10tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldSincosMask) >> RegisterMdmac10tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac10tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac10tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac10tcrFieldSincosShift))
 }
 
@@ -11237,12 +14365,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac10tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac10tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldDincosMask) >> RegisterMdmac10tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac10tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac10tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac10tcrFieldDincosShift))
 }
 
@@ -11252,12 +14380,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac10tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac10tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldSburstMask) >> RegisterMdmac10tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac10tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac10tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac10tcrFieldSburstShift))
 }
 
@@ -11267,12 +14395,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac10tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac10tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldDburstMask) >> RegisterMdmac10tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac10tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac10tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac10tcrFieldDburstShift))
 }
 
@@ -11282,12 +14410,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac10tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac10tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldTlenMask) >> RegisterMdmac10tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac10tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac10tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac10tcrFieldTlenShift))
 }
 
@@ -11297,12 +14425,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac10tcrType) GetPke() bool {
+func (r *RegisterMdmac10tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac10tcrType) SetPke(value bool) {
+func (r *RegisterMdmac10tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10tcrFieldPkeMask)
 	} else {
@@ -11316,12 +14444,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac10tcrType) GetPam() uint8 {
+func (r *RegisterMdmac10tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldPamMask) >> RegisterMdmac10tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac10tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac10tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldPamMask)|(uint32(value)<<RegisterMdmac10tcrFieldPamShift))
 }
 
@@ -11331,12 +14459,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac10tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac10tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldTrgmMask) >> RegisterMdmac10tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac10tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac10tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac10tcrFieldTrgmShift))
 }
 
@@ -11346,12 +14474,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac10tcrType) GetSwrm() bool {
+func (r *RegisterMdmac10tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac10tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac10tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10tcrFieldSwrmMask)
 	} else {
@@ -11365,12 +14493,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac10tcrType) GetBwm() bool {
+func (r *RegisterMdmac10tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac10tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac10tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10tcrFieldBwmMask)
 	} else {
@@ -11378,8 +14506,31 @@ func (r *registerMdmac10tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac10bndtrType MDMA Channel x block number of data register
-type registerMdmac10bndtrType uint32
+// RegisterMdmac10bndtrType MDMA Channel x block number of data register
+type RegisterMdmac10bndtrType uint32
+
+func (r *RegisterMdmac10bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10bndtrFieldBndtShift = 0
@@ -11387,12 +14538,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac10bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac10bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10bndtrFieldBndtMask) >> RegisterMdmac10bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac10bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac10bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac10bndtrFieldBndtShift))
 }
 
@@ -11402,12 +14553,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac10bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac10bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac10bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac10bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10bndtrFieldBrsumMask)
 	} else {
@@ -11421,12 +14572,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac10bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac10bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac10bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac10bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10bndtrFieldBrdumMask)
 	} else {
@@ -11440,17 +14591,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac10bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac10bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10bndtrFieldBrcMask) >> RegisterMdmac10bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac10bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac10bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac10bndtrFieldBrcShift))
 }
 
-// registerMdmac10sarType MDMA channel x source address register
-type registerMdmac10sarType uint32
+// RegisterMdmac10sarType MDMA channel x source address register
+type RegisterMdmac10sarType uint32
+
+func (r *RegisterMdmac10sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10sarFieldSarShift = 0
@@ -11458,17 +14632,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac10sarType) GetSar() uint32 {
+func (r *RegisterMdmac10sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10sarFieldSarMask) >> RegisterMdmac10sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac10sarType) SetSar(value uint32) {
+func (r *RegisterMdmac10sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10sarFieldSarMask)|(uint32(value)<<RegisterMdmac10sarFieldSarShift))
 }
 
-// registerMdmac10darType MDMA channel x destination address register
-type registerMdmac10darType uint32
+// RegisterMdmac10darType MDMA channel x destination address register
+type RegisterMdmac10darType uint32
+
+func (r *RegisterMdmac10darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10darFieldDarShift = 0
@@ -11476,17 +14673,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac10darType) GetDar() uint32 {
+func (r *RegisterMdmac10darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10darFieldDarMask) >> RegisterMdmac10darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac10darType) SetDar(value uint32) {
+func (r *RegisterMdmac10darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10darFieldDarMask)|(uint32(value)<<RegisterMdmac10darFieldDarShift))
 }
 
-// registerMdmac10brurType MDMA channel x Block Repeat address Update register
-type registerMdmac10brurType uint32
+// RegisterMdmac10brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac10brurType uint32
+
+func (r *RegisterMdmac10brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10brurFieldSuvShift = 0
@@ -11494,12 +14714,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac10brurType) GetSuv() uint16 {
+func (r *RegisterMdmac10brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10brurFieldSuvMask) >> RegisterMdmac10brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac10brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac10brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10brurFieldSuvMask)|(uint32(value)<<RegisterMdmac10brurFieldSuvShift))
 }
 
@@ -11509,17 +14729,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac10brurType) GetDuv() uint16 {
+func (r *RegisterMdmac10brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10brurFieldDuvMask) >> RegisterMdmac10brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac10brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac10brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10brurFieldDuvMask)|(uint32(value)<<RegisterMdmac10brurFieldDuvShift))
 }
 
-// registerMdmac10larType MDMA channel x Link Address register
-type registerMdmac10larType uint32
+// RegisterMdmac10larType MDMA channel x Link Address register
+type RegisterMdmac10larType uint32
+
+func (r *RegisterMdmac10larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10larFieldLarShift = 0
@@ -11527,17 +14770,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac10larType) GetLar() uint32 {
+func (r *RegisterMdmac10larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10larFieldLarMask) >> RegisterMdmac10larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac10larType) SetLar(value uint32) {
+func (r *RegisterMdmac10larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10larFieldLarMask)|(uint32(value)<<RegisterMdmac10larFieldLarShift))
 }
 
-// registerMdmac10tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac10tbrType uint32
+// RegisterMdmac10tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac10tbrType uint32
+
+func (r *RegisterMdmac10tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10tbrFieldTselShift = 0
@@ -11545,12 +14811,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac10tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac10tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tbrFieldTselMask) >> RegisterMdmac10tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac10tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac10tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10tbrFieldTselMask)|(uint32(value)<<RegisterMdmac10tbrFieldTselShift))
 }
 
@@ -11560,12 +14826,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac10tbrType) GetSbus() bool {
+func (r *RegisterMdmac10tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac10tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac10tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10tbrFieldSbusMask)
 	} else {
@@ -11579,12 +14845,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac10tbrType) GetDbus() bool {
+func (r *RegisterMdmac10tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac10tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac10tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac10tbrFieldDbusMask)
 	} else {
@@ -11592,8 +14858,31 @@ func (r *registerMdmac10tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac10marType MDMA channel x Mask address register
-type registerMdmac10marType uint32
+// RegisterMdmac10marType MDMA channel x Mask address register
+type RegisterMdmac10marType uint32
+
+func (r *RegisterMdmac10marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10marFieldMarShift = 0
@@ -11601,17 +14890,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac10marType) GetMar() uint32 {
+func (r *RegisterMdmac10marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10marFieldMarMask) >> RegisterMdmac10marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac10marType) SetMar(value uint32) {
+func (r *RegisterMdmac10marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10marFieldMarMask)|(uint32(value)<<RegisterMdmac10marFieldMarShift))
 }
 
-// registerMdmac10mdrType MDMA channel x Mask Data register
-type registerMdmac10mdrType uint32
+// RegisterMdmac10mdrType MDMA channel x Mask Data register
+type RegisterMdmac10mdrType uint32
+
+func (r *RegisterMdmac10mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac10mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac10mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac10mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac10mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac10mdrFieldMdrShift = 0
@@ -11619,17 +14931,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac10mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac10mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac10mdrFieldMdrMask) >> RegisterMdmac10mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac10mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac10mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac10mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac10mdrFieldMdrShift))
 }
 
-// registerMdmac11isrType MDMA channel x interrupt/status register
-type registerMdmac11isrType uint32
+// RegisterMdmac11isrType MDMA channel x interrupt/status register
+type RegisterMdmac11isrType uint32
+
+func (r *RegisterMdmac11isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11isrFieldTeif11Shift = 0
@@ -11637,12 +14972,12 @@ const (
 )
 
 // GetTeif11 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac11isrType) GetTeif11() bool {
+func (r *RegisterMdmac11isrType) GetTeif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11isrFieldTeif11Mask) != 0
 }
 
 // SetTeif11 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac11isrType) SetTeif11(value bool) {
+func (r *RegisterMdmac11isrType) SetTeif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11isrFieldTeif11Mask)
 	} else {
@@ -11656,12 +14991,12 @@ const (
 )
 
 // GetCtcif11 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac11isrType) GetCtcif11() bool {
+func (r *RegisterMdmac11isrType) GetCtcif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11isrFieldCtcif11Mask) != 0
 }
 
 // SetCtcif11 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac11isrType) SetCtcif11(value bool) {
+func (r *RegisterMdmac11isrType) SetCtcif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11isrFieldCtcif11Mask)
 	} else {
@@ -11675,12 +15010,12 @@ const (
 )
 
 // GetBrtif11 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac11isrType) GetBrtif11() bool {
+func (r *RegisterMdmac11isrType) GetBrtif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11isrFieldBrtif11Mask) != 0
 }
 
 // SetBrtif11 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac11isrType) SetBrtif11(value bool) {
+func (r *RegisterMdmac11isrType) SetBrtif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11isrFieldBrtif11Mask)
 	} else {
@@ -11694,12 +15029,12 @@ const (
 )
 
 // GetBtif11 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac11isrType) GetBtif11() bool {
+func (r *RegisterMdmac11isrType) GetBtif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11isrFieldBtif11Mask) != 0
 }
 
 // SetBtif11 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac11isrType) SetBtif11(value bool) {
+func (r *RegisterMdmac11isrType) SetBtif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11isrFieldBtif11Mask)
 	} else {
@@ -11713,12 +15048,12 @@ const (
 )
 
 // GetTcif11 channel x buffer transfer complete
-func (r *registerMdmac11isrType) GetTcif11() bool {
+func (r *RegisterMdmac11isrType) GetTcif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11isrFieldTcif11Mask) != 0
 }
 
 // SetTcif11 channel x buffer transfer complete
-func (r *registerMdmac11isrType) SetTcif11(value bool) {
+func (r *RegisterMdmac11isrType) SetTcif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11isrFieldTcif11Mask)
 	} else {
@@ -11732,12 +15067,12 @@ const (
 )
 
 // GetCrqa11 channel x request active flag
-func (r *registerMdmac11isrType) GetCrqa11() bool {
+func (r *RegisterMdmac11isrType) GetCrqa11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11isrFieldCrqa11Mask) != 0
 }
 
 // SetCrqa11 channel x request active flag
-func (r *registerMdmac11isrType) SetCrqa11(value bool) {
+func (r *RegisterMdmac11isrType) SetCrqa11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11isrFieldCrqa11Mask)
 	} else {
@@ -11745,8 +15080,31 @@ func (r *registerMdmac11isrType) SetCrqa11(value bool) {
 	}
 }
 
-// registerMdmac11ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac11ifcrType uint32
+// RegisterMdmac11ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac11ifcrType uint32
+
+func (r *RegisterMdmac11ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11ifcrFieldCteif11Shift = 0
@@ -11754,12 +15112,12 @@ const (
 )
 
 // GetCteif11 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac11ifcrType) GetCteif11() bool {
+func (r *RegisterMdmac11ifcrType) GetCteif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11ifcrFieldCteif11Mask) != 0
 }
 
 // SetCteif11 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac11ifcrType) SetCteif11(value bool) {
+func (r *RegisterMdmac11ifcrType) SetCteif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11ifcrFieldCteif11Mask)
 	} else {
@@ -11773,12 +15131,12 @@ const (
 )
 
 // GetCctcif11 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac11ifcrType) GetCctcif11() bool {
+func (r *RegisterMdmac11ifcrType) GetCctcif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11ifcrFieldCctcif11Mask) != 0
 }
 
 // SetCctcif11 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac11ifcrType) SetCctcif11(value bool) {
+func (r *RegisterMdmac11ifcrType) SetCctcif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11ifcrFieldCctcif11Mask)
 	} else {
@@ -11792,12 +15150,12 @@ const (
 )
 
 // GetCbrtif11 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac11ifcrType) GetCbrtif11() bool {
+func (r *RegisterMdmac11ifcrType) GetCbrtif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11ifcrFieldCbrtif11Mask) != 0
 }
 
 // SetCbrtif11 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac11ifcrType) SetCbrtif11(value bool) {
+func (r *RegisterMdmac11ifcrType) SetCbrtif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11ifcrFieldCbrtif11Mask)
 	} else {
@@ -11811,12 +15169,12 @@ const (
 )
 
 // GetCbtif11 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac11ifcrType) GetCbtif11() bool {
+func (r *RegisterMdmac11ifcrType) GetCbtif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11ifcrFieldCbtif11Mask) != 0
 }
 
 // SetCbtif11 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac11ifcrType) SetCbtif11(value bool) {
+func (r *RegisterMdmac11ifcrType) SetCbtif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11ifcrFieldCbtif11Mask)
 	} else {
@@ -11830,12 +15188,12 @@ const (
 )
 
 // GetCltcif11 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac11ifcrType) GetCltcif11() bool {
+func (r *RegisterMdmac11ifcrType) GetCltcif11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11ifcrFieldCltcif11Mask) != 0
 }
 
 // SetCltcif11 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac11ifcrType) SetCltcif11(value bool) {
+func (r *RegisterMdmac11ifcrType) SetCltcif11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11ifcrFieldCltcif11Mask)
 	} else {
@@ -11843,8 +15201,31 @@ func (r *registerMdmac11ifcrType) SetCltcif11(value bool) {
 	}
 }
 
-// registerMdmac11esrType MDMA Channel x error status register
-type registerMdmac11esrType uint32
+// RegisterMdmac11esrType MDMA Channel x error status register
+type RegisterMdmac11esrType uint32
+
+func (r *RegisterMdmac11esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11esrFieldTeaShift = 0
@@ -11852,12 +15233,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac11esrType) GetTea() uint8 {
+func (r *RegisterMdmac11esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11esrFieldTeaMask) >> RegisterMdmac11esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac11esrType) SetTea(value uint8) {
+func (r *RegisterMdmac11esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11esrFieldTeaMask)|(uint32(value)<<RegisterMdmac11esrFieldTeaShift))
 }
 
@@ -11867,12 +15248,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac11esrType) GetTed() bool {
+func (r *RegisterMdmac11esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac11esrType) SetTed(value bool) {
+func (r *RegisterMdmac11esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11esrFieldTedMask)
 	} else {
@@ -11886,12 +15267,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac11esrType) GetTeld() bool {
+func (r *RegisterMdmac11esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac11esrType) SetTeld(value bool) {
+func (r *RegisterMdmac11esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11esrFieldTeldMask)
 	} else {
@@ -11905,12 +15286,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac11esrType) GetTemd() bool {
+func (r *RegisterMdmac11esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac11esrType) SetTemd(value bool) {
+func (r *RegisterMdmac11esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11esrFieldTemdMask)
 	} else {
@@ -11924,12 +15305,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac11esrType) GetAse() bool {
+func (r *RegisterMdmac11esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac11esrType) SetAse(value bool) {
+func (r *RegisterMdmac11esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11esrFieldAseMask)
 	} else {
@@ -11943,12 +15324,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac11esrType) GetBse() bool {
+func (r *RegisterMdmac11esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac11esrType) SetBse(value bool) {
+func (r *RegisterMdmac11esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11esrFieldBseMask)
 	} else {
@@ -11956,8 +15337,31 @@ func (r *registerMdmac11esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac11crType This register is used to control the concerned channel.
-type registerMdmac11crType uint32
+// RegisterMdmac11crType This register is used to control the concerned channel.
+type RegisterMdmac11crType uint32
+
+func (r *RegisterMdmac11crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11crFieldEnShift = 0
@@ -11965,12 +15369,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac11crType) GetEn() bool {
+func (r *RegisterMdmac11crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac11crType) SetEn(value bool) {
+func (r *RegisterMdmac11crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11crFieldEnMask)
 	} else {
@@ -11984,12 +15388,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac11crType) GetTeie() bool {
+func (r *RegisterMdmac11crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac11crType) SetTeie(value bool) {
+func (r *RegisterMdmac11crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11crFieldTeieMask)
 	} else {
@@ -12003,12 +15407,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac11crType) GetCtcie() bool {
+func (r *RegisterMdmac11crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac11crType) SetCtcie(value bool) {
+func (r *RegisterMdmac11crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11crFieldCtcieMask)
 	} else {
@@ -12022,12 +15426,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac11crType) GetBrtie() bool {
+func (r *RegisterMdmac11crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac11crType) SetBrtie(value bool) {
+func (r *RegisterMdmac11crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11crFieldBrtieMask)
 	} else {
@@ -12041,12 +15445,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac11crType) GetBtie() bool {
+func (r *RegisterMdmac11crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac11crType) SetBtie(value bool) {
+func (r *RegisterMdmac11crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11crFieldBtieMask)
 	} else {
@@ -12060,12 +15464,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac11crType) GetTcie() bool {
+func (r *RegisterMdmac11crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac11crType) SetTcie(value bool) {
+func (r *RegisterMdmac11crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11crFieldTcieMask)
 	} else {
@@ -12079,12 +15483,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac11crType) GetPl() uint8 {
+func (r *RegisterMdmac11crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11crFieldPlMask) >> RegisterMdmac11crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac11crType) SetPl(value uint8) {
+func (r *RegisterMdmac11crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11crFieldPlMask)|(uint32(value)<<RegisterMdmac11crFieldPlShift))
 }
 
@@ -12094,12 +15498,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac11crType) GetBex() bool {
+func (r *RegisterMdmac11crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac11crType) SetBex(value bool) {
+func (r *RegisterMdmac11crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11crFieldBexMask)
 	} else {
@@ -12113,12 +15517,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac11crType) GetHex() bool {
+func (r *RegisterMdmac11crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac11crType) SetHex(value bool) {
+func (r *RegisterMdmac11crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11crFieldHexMask)
 	} else {
@@ -12132,12 +15536,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac11crType) GetWex() bool {
+func (r *RegisterMdmac11crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac11crType) SetWex(value bool) {
+func (r *RegisterMdmac11crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11crFieldWexMask)
 	} else {
@@ -12151,7 +15555,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac11crType) SetSwrq(value bool) {
+func (r *RegisterMdmac11crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11crFieldSwrqMask)
 	} else {
@@ -12159,8 +15563,31 @@ func (r *registerMdmac11crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac11tcrType This register is used to configure the concerned channel.
-type registerMdmac11tcrType uint32
+// RegisterMdmac11tcrType This register is used to configure the concerned channel.
+type RegisterMdmac11tcrType uint32
+
+func (r *RegisterMdmac11tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11tcrFieldSincShift = 0
@@ -12168,12 +15595,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac11tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac11tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldSincMask) >> RegisterMdmac11tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac11tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac11tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldSincMask)|(uint32(value)<<RegisterMdmac11tcrFieldSincShift))
 }
 
@@ -12183,12 +15610,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac11tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac11tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldDincMask) >> RegisterMdmac11tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac11tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac11tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldDincMask)|(uint32(value)<<RegisterMdmac11tcrFieldDincShift))
 }
 
@@ -12198,12 +15625,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac11tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac11tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldSsizeMask) >> RegisterMdmac11tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac11tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac11tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac11tcrFieldSsizeShift))
 }
 
@@ -12213,12 +15640,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac11tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac11tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldDsizeMask) >> RegisterMdmac11tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac11tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac11tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac11tcrFieldDsizeShift))
 }
 
@@ -12228,12 +15655,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac11tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac11tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldSincosMask) >> RegisterMdmac11tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac11tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac11tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac11tcrFieldSincosShift))
 }
 
@@ -12243,12 +15670,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac11tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac11tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldDincosMask) >> RegisterMdmac11tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac11tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac11tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac11tcrFieldDincosShift))
 }
 
@@ -12258,12 +15685,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac11tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac11tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldSburstMask) >> RegisterMdmac11tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac11tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac11tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac11tcrFieldSburstShift))
 }
 
@@ -12273,12 +15700,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac11tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac11tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldDburstMask) >> RegisterMdmac11tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac11tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac11tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac11tcrFieldDburstShift))
 }
 
@@ -12288,12 +15715,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac11tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac11tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldTlenMask) >> RegisterMdmac11tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac11tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac11tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac11tcrFieldTlenShift))
 }
 
@@ -12303,12 +15730,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac11tcrType) GetPke() bool {
+func (r *RegisterMdmac11tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac11tcrType) SetPke(value bool) {
+func (r *RegisterMdmac11tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11tcrFieldPkeMask)
 	} else {
@@ -12322,12 +15749,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac11tcrType) GetPam() uint8 {
+func (r *RegisterMdmac11tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldPamMask) >> RegisterMdmac11tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac11tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac11tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldPamMask)|(uint32(value)<<RegisterMdmac11tcrFieldPamShift))
 }
 
@@ -12337,12 +15764,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac11tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac11tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldTrgmMask) >> RegisterMdmac11tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac11tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac11tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac11tcrFieldTrgmShift))
 }
 
@@ -12352,12 +15779,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac11tcrType) GetSwrm() bool {
+func (r *RegisterMdmac11tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac11tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac11tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11tcrFieldSwrmMask)
 	} else {
@@ -12371,12 +15798,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac11tcrType) GetBwm() bool {
+func (r *RegisterMdmac11tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac11tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac11tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11tcrFieldBwmMask)
 	} else {
@@ -12384,8 +15811,31 @@ func (r *registerMdmac11tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac11bndtrType MDMA Channel x block number of data register
-type registerMdmac11bndtrType uint32
+// RegisterMdmac11bndtrType MDMA Channel x block number of data register
+type RegisterMdmac11bndtrType uint32
+
+func (r *RegisterMdmac11bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11bndtrFieldBndtShift = 0
@@ -12393,12 +15843,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac11bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac11bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11bndtrFieldBndtMask) >> RegisterMdmac11bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac11bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac11bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac11bndtrFieldBndtShift))
 }
 
@@ -12408,12 +15858,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac11bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac11bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac11bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac11bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11bndtrFieldBrsumMask)
 	} else {
@@ -12427,12 +15877,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac11bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac11bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac11bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac11bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11bndtrFieldBrdumMask)
 	} else {
@@ -12446,17 +15896,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac11bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac11bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11bndtrFieldBrcMask) >> RegisterMdmac11bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac11bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac11bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac11bndtrFieldBrcShift))
 }
 
-// registerMdmac11sarType MDMA channel x source address register
-type registerMdmac11sarType uint32
+// RegisterMdmac11sarType MDMA channel x source address register
+type RegisterMdmac11sarType uint32
+
+func (r *RegisterMdmac11sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11sarFieldSarShift = 0
@@ -12464,17 +15937,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac11sarType) GetSar() uint32 {
+func (r *RegisterMdmac11sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11sarFieldSarMask) >> RegisterMdmac11sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac11sarType) SetSar(value uint32) {
+func (r *RegisterMdmac11sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11sarFieldSarMask)|(uint32(value)<<RegisterMdmac11sarFieldSarShift))
 }
 
-// registerMdmac11darType MDMA channel x destination address register
-type registerMdmac11darType uint32
+// RegisterMdmac11darType MDMA channel x destination address register
+type RegisterMdmac11darType uint32
+
+func (r *RegisterMdmac11darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11darFieldDarShift = 0
@@ -12482,17 +15978,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac11darType) GetDar() uint32 {
+func (r *RegisterMdmac11darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11darFieldDarMask) >> RegisterMdmac11darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac11darType) SetDar(value uint32) {
+func (r *RegisterMdmac11darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11darFieldDarMask)|(uint32(value)<<RegisterMdmac11darFieldDarShift))
 }
 
-// registerMdmac11brurType MDMA channel x Block Repeat address Update register
-type registerMdmac11brurType uint32
+// RegisterMdmac11brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac11brurType uint32
+
+func (r *RegisterMdmac11brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11brurFieldSuvShift = 0
@@ -12500,12 +16019,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac11brurType) GetSuv() uint16 {
+func (r *RegisterMdmac11brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11brurFieldSuvMask) >> RegisterMdmac11brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac11brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac11brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11brurFieldSuvMask)|(uint32(value)<<RegisterMdmac11brurFieldSuvShift))
 }
 
@@ -12515,17 +16034,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac11brurType) GetDuv() uint16 {
+func (r *RegisterMdmac11brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11brurFieldDuvMask) >> RegisterMdmac11brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac11brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac11brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11brurFieldDuvMask)|(uint32(value)<<RegisterMdmac11brurFieldDuvShift))
 }
 
-// registerMdmac11larType MDMA channel x Link Address register
-type registerMdmac11larType uint32
+// RegisterMdmac11larType MDMA channel x Link Address register
+type RegisterMdmac11larType uint32
+
+func (r *RegisterMdmac11larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11larFieldLarShift = 0
@@ -12533,17 +16075,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac11larType) GetLar() uint32 {
+func (r *RegisterMdmac11larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11larFieldLarMask) >> RegisterMdmac11larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac11larType) SetLar(value uint32) {
+func (r *RegisterMdmac11larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11larFieldLarMask)|(uint32(value)<<RegisterMdmac11larFieldLarShift))
 }
 
-// registerMdmac11tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac11tbrType uint32
+// RegisterMdmac11tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac11tbrType uint32
+
+func (r *RegisterMdmac11tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11tbrFieldTselShift = 0
@@ -12551,12 +16116,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac11tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac11tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tbrFieldTselMask) >> RegisterMdmac11tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac11tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac11tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11tbrFieldTselMask)|(uint32(value)<<RegisterMdmac11tbrFieldTselShift))
 }
 
@@ -12566,12 +16131,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac11tbrType) GetSbus() bool {
+func (r *RegisterMdmac11tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac11tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac11tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11tbrFieldSbusMask)
 	} else {
@@ -12585,12 +16150,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac11tbrType) GetDbus() bool {
+func (r *RegisterMdmac11tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac11tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac11tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac11tbrFieldDbusMask)
 	} else {
@@ -12598,8 +16163,31 @@ func (r *registerMdmac11tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac11marType MDMA channel x Mask address register
-type registerMdmac11marType uint32
+// RegisterMdmac11marType MDMA channel x Mask address register
+type RegisterMdmac11marType uint32
+
+func (r *RegisterMdmac11marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11marFieldMarShift = 0
@@ -12607,17 +16195,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac11marType) GetMar() uint32 {
+func (r *RegisterMdmac11marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11marFieldMarMask) >> RegisterMdmac11marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac11marType) SetMar(value uint32) {
+func (r *RegisterMdmac11marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11marFieldMarMask)|(uint32(value)<<RegisterMdmac11marFieldMarShift))
 }
 
-// registerMdmac11mdrType MDMA channel x Mask Data register
-type registerMdmac11mdrType uint32
+// RegisterMdmac11mdrType MDMA channel x Mask Data register
+type RegisterMdmac11mdrType uint32
+
+func (r *RegisterMdmac11mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac11mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac11mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac11mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac11mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac11mdrFieldMdrShift = 0
@@ -12625,17 +16236,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac11mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac11mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac11mdrFieldMdrMask) >> RegisterMdmac11mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac11mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac11mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac11mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac11mdrFieldMdrShift))
 }
 
-// registerMdmac12isrType MDMA channel x interrupt/status register
-type registerMdmac12isrType uint32
+// RegisterMdmac12isrType MDMA channel x interrupt/status register
+type RegisterMdmac12isrType uint32
+
+func (r *RegisterMdmac12isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12isrFieldTeif12Shift = 0
@@ -12643,12 +16277,12 @@ const (
 )
 
 // GetTeif12 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac12isrType) GetTeif12() bool {
+func (r *RegisterMdmac12isrType) GetTeif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12isrFieldTeif12Mask) != 0
 }
 
 // SetTeif12 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac12isrType) SetTeif12(value bool) {
+func (r *RegisterMdmac12isrType) SetTeif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12isrFieldTeif12Mask)
 	} else {
@@ -12662,12 +16296,12 @@ const (
 )
 
 // GetCtcif12 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac12isrType) GetCtcif12() bool {
+func (r *RegisterMdmac12isrType) GetCtcif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12isrFieldCtcif12Mask) != 0
 }
 
 // SetCtcif12 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac12isrType) SetCtcif12(value bool) {
+func (r *RegisterMdmac12isrType) SetCtcif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12isrFieldCtcif12Mask)
 	} else {
@@ -12681,12 +16315,12 @@ const (
 )
 
 // GetBrtif12 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac12isrType) GetBrtif12() bool {
+func (r *RegisterMdmac12isrType) GetBrtif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12isrFieldBrtif12Mask) != 0
 }
 
 // SetBrtif12 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac12isrType) SetBrtif12(value bool) {
+func (r *RegisterMdmac12isrType) SetBrtif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12isrFieldBrtif12Mask)
 	} else {
@@ -12700,12 +16334,12 @@ const (
 )
 
 // GetBtif12 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac12isrType) GetBtif12() bool {
+func (r *RegisterMdmac12isrType) GetBtif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12isrFieldBtif12Mask) != 0
 }
 
 // SetBtif12 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac12isrType) SetBtif12(value bool) {
+func (r *RegisterMdmac12isrType) SetBtif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12isrFieldBtif12Mask)
 	} else {
@@ -12719,12 +16353,12 @@ const (
 )
 
 // GetTcif12 channel x buffer transfer complete
-func (r *registerMdmac12isrType) GetTcif12() bool {
+func (r *RegisterMdmac12isrType) GetTcif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12isrFieldTcif12Mask) != 0
 }
 
 // SetTcif12 channel x buffer transfer complete
-func (r *registerMdmac12isrType) SetTcif12(value bool) {
+func (r *RegisterMdmac12isrType) SetTcif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12isrFieldTcif12Mask)
 	} else {
@@ -12738,12 +16372,12 @@ const (
 )
 
 // GetCrqa12 channel x request active flag
-func (r *registerMdmac12isrType) GetCrqa12() bool {
+func (r *RegisterMdmac12isrType) GetCrqa12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12isrFieldCrqa12Mask) != 0
 }
 
 // SetCrqa12 channel x request active flag
-func (r *registerMdmac12isrType) SetCrqa12(value bool) {
+func (r *RegisterMdmac12isrType) SetCrqa12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12isrFieldCrqa12Mask)
 	} else {
@@ -12751,8 +16385,31 @@ func (r *registerMdmac12isrType) SetCrqa12(value bool) {
 	}
 }
 
-// registerMdmac12ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac12ifcrType uint32
+// RegisterMdmac12ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac12ifcrType uint32
+
+func (r *RegisterMdmac12ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12ifcrFieldCteif12Shift = 0
@@ -12760,12 +16417,12 @@ const (
 )
 
 // GetCteif12 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac12ifcrType) GetCteif12() bool {
+func (r *RegisterMdmac12ifcrType) GetCteif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12ifcrFieldCteif12Mask) != 0
 }
 
 // SetCteif12 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac12ifcrType) SetCteif12(value bool) {
+func (r *RegisterMdmac12ifcrType) SetCteif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12ifcrFieldCteif12Mask)
 	} else {
@@ -12779,12 +16436,12 @@ const (
 )
 
 // GetCctcif12 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac12ifcrType) GetCctcif12() bool {
+func (r *RegisterMdmac12ifcrType) GetCctcif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12ifcrFieldCctcif12Mask) != 0
 }
 
 // SetCctcif12 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac12ifcrType) SetCctcif12(value bool) {
+func (r *RegisterMdmac12ifcrType) SetCctcif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12ifcrFieldCctcif12Mask)
 	} else {
@@ -12798,12 +16455,12 @@ const (
 )
 
 // GetCbrtif12 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac12ifcrType) GetCbrtif12() bool {
+func (r *RegisterMdmac12ifcrType) GetCbrtif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12ifcrFieldCbrtif12Mask) != 0
 }
 
 // SetCbrtif12 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac12ifcrType) SetCbrtif12(value bool) {
+func (r *RegisterMdmac12ifcrType) SetCbrtif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12ifcrFieldCbrtif12Mask)
 	} else {
@@ -12817,12 +16474,12 @@ const (
 )
 
 // GetCbtif12 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac12ifcrType) GetCbtif12() bool {
+func (r *RegisterMdmac12ifcrType) GetCbtif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12ifcrFieldCbtif12Mask) != 0
 }
 
 // SetCbtif12 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac12ifcrType) SetCbtif12(value bool) {
+func (r *RegisterMdmac12ifcrType) SetCbtif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12ifcrFieldCbtif12Mask)
 	} else {
@@ -12836,12 +16493,12 @@ const (
 )
 
 // GetCltcif12 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac12ifcrType) GetCltcif12() bool {
+func (r *RegisterMdmac12ifcrType) GetCltcif12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12ifcrFieldCltcif12Mask) != 0
 }
 
 // SetCltcif12 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac12ifcrType) SetCltcif12(value bool) {
+func (r *RegisterMdmac12ifcrType) SetCltcif12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12ifcrFieldCltcif12Mask)
 	} else {
@@ -12849,8 +16506,31 @@ func (r *registerMdmac12ifcrType) SetCltcif12(value bool) {
 	}
 }
 
-// registerMdmac12esrType MDMA Channel x error status register
-type registerMdmac12esrType uint32
+// RegisterMdmac12esrType MDMA Channel x error status register
+type RegisterMdmac12esrType uint32
+
+func (r *RegisterMdmac12esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12esrFieldTeaShift = 0
@@ -12858,12 +16538,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac12esrType) GetTea() uint8 {
+func (r *RegisterMdmac12esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12esrFieldTeaMask) >> RegisterMdmac12esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac12esrType) SetTea(value uint8) {
+func (r *RegisterMdmac12esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12esrFieldTeaMask)|(uint32(value)<<RegisterMdmac12esrFieldTeaShift))
 }
 
@@ -12873,12 +16553,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac12esrType) GetTed() bool {
+func (r *RegisterMdmac12esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac12esrType) SetTed(value bool) {
+func (r *RegisterMdmac12esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12esrFieldTedMask)
 	} else {
@@ -12892,12 +16572,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac12esrType) GetTeld() bool {
+func (r *RegisterMdmac12esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac12esrType) SetTeld(value bool) {
+func (r *RegisterMdmac12esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12esrFieldTeldMask)
 	} else {
@@ -12911,12 +16591,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac12esrType) GetTemd() bool {
+func (r *RegisterMdmac12esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac12esrType) SetTemd(value bool) {
+func (r *RegisterMdmac12esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12esrFieldTemdMask)
 	} else {
@@ -12930,12 +16610,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac12esrType) GetAse() bool {
+func (r *RegisterMdmac12esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac12esrType) SetAse(value bool) {
+func (r *RegisterMdmac12esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12esrFieldAseMask)
 	} else {
@@ -12949,12 +16629,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac12esrType) GetBse() bool {
+func (r *RegisterMdmac12esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac12esrType) SetBse(value bool) {
+func (r *RegisterMdmac12esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12esrFieldBseMask)
 	} else {
@@ -12962,8 +16642,31 @@ func (r *registerMdmac12esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac12crType This register is used to control the concerned channel.
-type registerMdmac12crType uint32
+// RegisterMdmac12crType This register is used to control the concerned channel.
+type RegisterMdmac12crType uint32
+
+func (r *RegisterMdmac12crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12crFieldEnShift = 0
@@ -12971,12 +16674,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac12crType) GetEn() bool {
+func (r *RegisterMdmac12crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac12crType) SetEn(value bool) {
+func (r *RegisterMdmac12crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12crFieldEnMask)
 	} else {
@@ -12990,12 +16693,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac12crType) GetTeie() bool {
+func (r *RegisterMdmac12crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac12crType) SetTeie(value bool) {
+func (r *RegisterMdmac12crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12crFieldTeieMask)
 	} else {
@@ -13009,12 +16712,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac12crType) GetCtcie() bool {
+func (r *RegisterMdmac12crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac12crType) SetCtcie(value bool) {
+func (r *RegisterMdmac12crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12crFieldCtcieMask)
 	} else {
@@ -13028,12 +16731,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac12crType) GetBrtie() bool {
+func (r *RegisterMdmac12crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac12crType) SetBrtie(value bool) {
+func (r *RegisterMdmac12crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12crFieldBrtieMask)
 	} else {
@@ -13047,12 +16750,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac12crType) GetBtie() bool {
+func (r *RegisterMdmac12crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac12crType) SetBtie(value bool) {
+func (r *RegisterMdmac12crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12crFieldBtieMask)
 	} else {
@@ -13066,12 +16769,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac12crType) GetTcie() bool {
+func (r *RegisterMdmac12crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac12crType) SetTcie(value bool) {
+func (r *RegisterMdmac12crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12crFieldTcieMask)
 	} else {
@@ -13085,12 +16788,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac12crType) GetPl() uint8 {
+func (r *RegisterMdmac12crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12crFieldPlMask) >> RegisterMdmac12crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac12crType) SetPl(value uint8) {
+func (r *RegisterMdmac12crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12crFieldPlMask)|(uint32(value)<<RegisterMdmac12crFieldPlShift))
 }
 
@@ -13100,12 +16803,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac12crType) GetBex() bool {
+func (r *RegisterMdmac12crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac12crType) SetBex(value bool) {
+func (r *RegisterMdmac12crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12crFieldBexMask)
 	} else {
@@ -13119,12 +16822,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac12crType) GetHex() bool {
+func (r *RegisterMdmac12crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac12crType) SetHex(value bool) {
+func (r *RegisterMdmac12crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12crFieldHexMask)
 	} else {
@@ -13138,12 +16841,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac12crType) GetWex() bool {
+func (r *RegisterMdmac12crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac12crType) SetWex(value bool) {
+func (r *RegisterMdmac12crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12crFieldWexMask)
 	} else {
@@ -13157,7 +16860,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac12crType) SetSwrq(value bool) {
+func (r *RegisterMdmac12crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12crFieldSwrqMask)
 	} else {
@@ -13165,8 +16868,31 @@ func (r *registerMdmac12crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac12tcrType This register is used to configure the concerned channel.
-type registerMdmac12tcrType uint32
+// RegisterMdmac12tcrType This register is used to configure the concerned channel.
+type RegisterMdmac12tcrType uint32
+
+func (r *RegisterMdmac12tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12tcrFieldSincShift = 0
@@ -13174,12 +16900,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac12tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac12tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldSincMask) >> RegisterMdmac12tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac12tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac12tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldSincMask)|(uint32(value)<<RegisterMdmac12tcrFieldSincShift))
 }
 
@@ -13189,12 +16915,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac12tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac12tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldDincMask) >> RegisterMdmac12tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac12tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac12tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldDincMask)|(uint32(value)<<RegisterMdmac12tcrFieldDincShift))
 }
 
@@ -13204,12 +16930,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac12tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac12tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldSsizeMask) >> RegisterMdmac12tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac12tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac12tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac12tcrFieldSsizeShift))
 }
 
@@ -13219,12 +16945,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac12tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac12tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldDsizeMask) >> RegisterMdmac12tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac12tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac12tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac12tcrFieldDsizeShift))
 }
 
@@ -13234,12 +16960,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac12tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac12tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldSincosMask) >> RegisterMdmac12tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac12tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac12tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac12tcrFieldSincosShift))
 }
 
@@ -13249,12 +16975,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac12tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac12tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldDincosMask) >> RegisterMdmac12tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac12tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac12tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac12tcrFieldDincosShift))
 }
 
@@ -13264,12 +16990,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac12tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac12tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldSburstMask) >> RegisterMdmac12tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac12tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac12tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac12tcrFieldSburstShift))
 }
 
@@ -13279,12 +17005,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac12tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac12tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldDburstMask) >> RegisterMdmac12tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac12tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac12tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac12tcrFieldDburstShift))
 }
 
@@ -13294,12 +17020,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac12tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac12tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldTlenMask) >> RegisterMdmac12tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac12tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac12tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac12tcrFieldTlenShift))
 }
 
@@ -13309,12 +17035,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac12tcrType) GetPke() bool {
+func (r *RegisterMdmac12tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac12tcrType) SetPke(value bool) {
+func (r *RegisterMdmac12tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12tcrFieldPkeMask)
 	} else {
@@ -13328,12 +17054,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac12tcrType) GetPam() uint8 {
+func (r *RegisterMdmac12tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldPamMask) >> RegisterMdmac12tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac12tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac12tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldPamMask)|(uint32(value)<<RegisterMdmac12tcrFieldPamShift))
 }
 
@@ -13343,12 +17069,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac12tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac12tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldTrgmMask) >> RegisterMdmac12tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac12tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac12tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac12tcrFieldTrgmShift))
 }
 
@@ -13358,12 +17084,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac12tcrType) GetSwrm() bool {
+func (r *RegisterMdmac12tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac12tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac12tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12tcrFieldSwrmMask)
 	} else {
@@ -13377,12 +17103,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac12tcrType) GetBwm() bool {
+func (r *RegisterMdmac12tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac12tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac12tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12tcrFieldBwmMask)
 	} else {
@@ -13390,8 +17116,31 @@ func (r *registerMdmac12tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac12bndtrType MDMA Channel x block number of data register
-type registerMdmac12bndtrType uint32
+// RegisterMdmac12bndtrType MDMA Channel x block number of data register
+type RegisterMdmac12bndtrType uint32
+
+func (r *RegisterMdmac12bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12bndtrFieldBndtShift = 0
@@ -13399,12 +17148,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac12bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac12bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12bndtrFieldBndtMask) >> RegisterMdmac12bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac12bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac12bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac12bndtrFieldBndtShift))
 }
 
@@ -13414,12 +17163,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac12bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac12bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac12bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac12bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12bndtrFieldBrsumMask)
 	} else {
@@ -13433,12 +17182,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac12bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac12bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac12bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac12bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12bndtrFieldBrdumMask)
 	} else {
@@ -13452,17 +17201,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac12bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac12bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12bndtrFieldBrcMask) >> RegisterMdmac12bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac12bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac12bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac12bndtrFieldBrcShift))
 }
 
-// registerMdmac12sarType MDMA channel x source address register
-type registerMdmac12sarType uint32
+// RegisterMdmac12sarType MDMA channel x source address register
+type RegisterMdmac12sarType uint32
+
+func (r *RegisterMdmac12sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12sarFieldSarShift = 0
@@ -13470,17 +17242,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac12sarType) GetSar() uint32 {
+func (r *RegisterMdmac12sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12sarFieldSarMask) >> RegisterMdmac12sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac12sarType) SetSar(value uint32) {
+func (r *RegisterMdmac12sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12sarFieldSarMask)|(uint32(value)<<RegisterMdmac12sarFieldSarShift))
 }
 
-// registerMdmac12darType MDMA channel x destination address register
-type registerMdmac12darType uint32
+// RegisterMdmac12darType MDMA channel x destination address register
+type RegisterMdmac12darType uint32
+
+func (r *RegisterMdmac12darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12darFieldDarShift = 0
@@ -13488,17 +17283,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac12darType) GetDar() uint32 {
+func (r *RegisterMdmac12darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12darFieldDarMask) >> RegisterMdmac12darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac12darType) SetDar(value uint32) {
+func (r *RegisterMdmac12darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12darFieldDarMask)|(uint32(value)<<RegisterMdmac12darFieldDarShift))
 }
 
-// registerMdmac12brurType MDMA channel x Block Repeat address Update register
-type registerMdmac12brurType uint32
+// RegisterMdmac12brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac12brurType uint32
+
+func (r *RegisterMdmac12brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12brurFieldSuvShift = 0
@@ -13506,12 +17324,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac12brurType) GetSuv() uint16 {
+func (r *RegisterMdmac12brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12brurFieldSuvMask) >> RegisterMdmac12brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac12brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac12brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12brurFieldSuvMask)|(uint32(value)<<RegisterMdmac12brurFieldSuvShift))
 }
 
@@ -13521,17 +17339,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac12brurType) GetDuv() uint16 {
+func (r *RegisterMdmac12brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12brurFieldDuvMask) >> RegisterMdmac12brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac12brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac12brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12brurFieldDuvMask)|(uint32(value)<<RegisterMdmac12brurFieldDuvShift))
 }
 
-// registerMdmac12larType MDMA channel x Link Address register
-type registerMdmac12larType uint32
+// RegisterMdmac12larType MDMA channel x Link Address register
+type RegisterMdmac12larType uint32
+
+func (r *RegisterMdmac12larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12larFieldLarShift = 0
@@ -13539,17 +17380,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac12larType) GetLar() uint32 {
+func (r *RegisterMdmac12larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12larFieldLarMask) >> RegisterMdmac12larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac12larType) SetLar(value uint32) {
+func (r *RegisterMdmac12larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12larFieldLarMask)|(uint32(value)<<RegisterMdmac12larFieldLarShift))
 }
 
-// registerMdmac12tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac12tbrType uint32
+// RegisterMdmac12tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac12tbrType uint32
+
+func (r *RegisterMdmac12tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12tbrFieldTselShift = 0
@@ -13557,12 +17421,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac12tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac12tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tbrFieldTselMask) >> RegisterMdmac12tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac12tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac12tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12tbrFieldTselMask)|(uint32(value)<<RegisterMdmac12tbrFieldTselShift))
 }
 
@@ -13572,12 +17436,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac12tbrType) GetSbus() bool {
+func (r *RegisterMdmac12tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac12tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac12tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12tbrFieldSbusMask)
 	} else {
@@ -13591,12 +17455,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac12tbrType) GetDbus() bool {
+func (r *RegisterMdmac12tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac12tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac12tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac12tbrFieldDbusMask)
 	} else {
@@ -13604,8 +17468,31 @@ func (r *registerMdmac12tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac12marType MDMA channel x Mask address register
-type registerMdmac12marType uint32
+// RegisterMdmac12marType MDMA channel x Mask address register
+type RegisterMdmac12marType uint32
+
+func (r *RegisterMdmac12marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12marFieldMarShift = 0
@@ -13613,17 +17500,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac12marType) GetMar() uint32 {
+func (r *RegisterMdmac12marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12marFieldMarMask) >> RegisterMdmac12marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac12marType) SetMar(value uint32) {
+func (r *RegisterMdmac12marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12marFieldMarMask)|(uint32(value)<<RegisterMdmac12marFieldMarShift))
 }
 
-// registerMdmac12mdrType MDMA channel x Mask Data register
-type registerMdmac12mdrType uint32
+// RegisterMdmac12mdrType MDMA channel x Mask Data register
+type RegisterMdmac12mdrType uint32
+
+func (r *RegisterMdmac12mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac12mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac12mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac12mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac12mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac12mdrFieldMdrShift = 0
@@ -13631,17 +17541,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac12mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac12mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac12mdrFieldMdrMask) >> RegisterMdmac12mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac12mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac12mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac12mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac12mdrFieldMdrShift))
 }
 
-// registerMdmac13isrType MDMA channel x interrupt/status register
-type registerMdmac13isrType uint32
+// RegisterMdmac13isrType MDMA channel x interrupt/status register
+type RegisterMdmac13isrType uint32
+
+func (r *RegisterMdmac13isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13isrFieldTeif13Shift = 0
@@ -13649,12 +17582,12 @@ const (
 )
 
 // GetTeif13 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac13isrType) GetTeif13() bool {
+func (r *RegisterMdmac13isrType) GetTeif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13isrFieldTeif13Mask) != 0
 }
 
 // SetTeif13 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac13isrType) SetTeif13(value bool) {
+func (r *RegisterMdmac13isrType) SetTeif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13isrFieldTeif13Mask)
 	} else {
@@ -13668,12 +17601,12 @@ const (
 )
 
 // GetCtcif13 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac13isrType) GetCtcif13() bool {
+func (r *RegisterMdmac13isrType) GetCtcif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13isrFieldCtcif13Mask) != 0
 }
 
 // SetCtcif13 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac13isrType) SetCtcif13(value bool) {
+func (r *RegisterMdmac13isrType) SetCtcif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13isrFieldCtcif13Mask)
 	} else {
@@ -13687,12 +17620,12 @@ const (
 )
 
 // GetBrtif13 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac13isrType) GetBrtif13() bool {
+func (r *RegisterMdmac13isrType) GetBrtif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13isrFieldBrtif13Mask) != 0
 }
 
 // SetBrtif13 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac13isrType) SetBrtif13(value bool) {
+func (r *RegisterMdmac13isrType) SetBrtif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13isrFieldBrtif13Mask)
 	} else {
@@ -13706,12 +17639,12 @@ const (
 )
 
 // GetBtif13 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac13isrType) GetBtif13() bool {
+func (r *RegisterMdmac13isrType) GetBtif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13isrFieldBtif13Mask) != 0
 }
 
 // SetBtif13 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac13isrType) SetBtif13(value bool) {
+func (r *RegisterMdmac13isrType) SetBtif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13isrFieldBtif13Mask)
 	} else {
@@ -13725,12 +17658,12 @@ const (
 )
 
 // GetTcif13 channel x buffer transfer complete
-func (r *registerMdmac13isrType) GetTcif13() bool {
+func (r *RegisterMdmac13isrType) GetTcif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13isrFieldTcif13Mask) != 0
 }
 
 // SetTcif13 channel x buffer transfer complete
-func (r *registerMdmac13isrType) SetTcif13(value bool) {
+func (r *RegisterMdmac13isrType) SetTcif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13isrFieldTcif13Mask)
 	} else {
@@ -13744,12 +17677,12 @@ const (
 )
 
 // GetCrqa13 channel x request active flag
-func (r *registerMdmac13isrType) GetCrqa13() bool {
+func (r *RegisterMdmac13isrType) GetCrqa13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13isrFieldCrqa13Mask) != 0
 }
 
 // SetCrqa13 channel x request active flag
-func (r *registerMdmac13isrType) SetCrqa13(value bool) {
+func (r *RegisterMdmac13isrType) SetCrqa13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13isrFieldCrqa13Mask)
 	} else {
@@ -13757,8 +17690,31 @@ func (r *registerMdmac13isrType) SetCrqa13(value bool) {
 	}
 }
 
-// registerMdmac13ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac13ifcrType uint32
+// RegisterMdmac13ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac13ifcrType uint32
+
+func (r *RegisterMdmac13ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13ifcrFieldCteif13Shift = 0
@@ -13766,12 +17722,12 @@ const (
 )
 
 // GetCteif13 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac13ifcrType) GetCteif13() bool {
+func (r *RegisterMdmac13ifcrType) GetCteif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13ifcrFieldCteif13Mask) != 0
 }
 
 // SetCteif13 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac13ifcrType) SetCteif13(value bool) {
+func (r *RegisterMdmac13ifcrType) SetCteif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13ifcrFieldCteif13Mask)
 	} else {
@@ -13785,12 +17741,12 @@ const (
 )
 
 // GetCctcif13 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac13ifcrType) GetCctcif13() bool {
+func (r *RegisterMdmac13ifcrType) GetCctcif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13ifcrFieldCctcif13Mask) != 0
 }
 
 // SetCctcif13 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac13ifcrType) SetCctcif13(value bool) {
+func (r *RegisterMdmac13ifcrType) SetCctcif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13ifcrFieldCctcif13Mask)
 	} else {
@@ -13804,12 +17760,12 @@ const (
 )
 
 // GetCbrtif13 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac13ifcrType) GetCbrtif13() bool {
+func (r *RegisterMdmac13ifcrType) GetCbrtif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13ifcrFieldCbrtif13Mask) != 0
 }
 
 // SetCbrtif13 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac13ifcrType) SetCbrtif13(value bool) {
+func (r *RegisterMdmac13ifcrType) SetCbrtif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13ifcrFieldCbrtif13Mask)
 	} else {
@@ -13823,12 +17779,12 @@ const (
 )
 
 // GetCbtif13 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac13ifcrType) GetCbtif13() bool {
+func (r *RegisterMdmac13ifcrType) GetCbtif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13ifcrFieldCbtif13Mask) != 0
 }
 
 // SetCbtif13 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac13ifcrType) SetCbtif13(value bool) {
+func (r *RegisterMdmac13ifcrType) SetCbtif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13ifcrFieldCbtif13Mask)
 	} else {
@@ -13842,12 +17798,12 @@ const (
 )
 
 // GetCltcif13 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac13ifcrType) GetCltcif13() bool {
+func (r *RegisterMdmac13ifcrType) GetCltcif13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13ifcrFieldCltcif13Mask) != 0
 }
 
 // SetCltcif13 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac13ifcrType) SetCltcif13(value bool) {
+func (r *RegisterMdmac13ifcrType) SetCltcif13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13ifcrFieldCltcif13Mask)
 	} else {
@@ -13855,8 +17811,31 @@ func (r *registerMdmac13ifcrType) SetCltcif13(value bool) {
 	}
 }
 
-// registerMdmac13esrType MDMA Channel x error status register
-type registerMdmac13esrType uint32
+// RegisterMdmac13esrType MDMA Channel x error status register
+type RegisterMdmac13esrType uint32
+
+func (r *RegisterMdmac13esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13esrFieldTeaShift = 0
@@ -13864,12 +17843,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac13esrType) GetTea() uint8 {
+func (r *RegisterMdmac13esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13esrFieldTeaMask) >> RegisterMdmac13esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac13esrType) SetTea(value uint8) {
+func (r *RegisterMdmac13esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13esrFieldTeaMask)|(uint32(value)<<RegisterMdmac13esrFieldTeaShift))
 }
 
@@ -13879,12 +17858,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac13esrType) GetTed() bool {
+func (r *RegisterMdmac13esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac13esrType) SetTed(value bool) {
+func (r *RegisterMdmac13esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13esrFieldTedMask)
 	} else {
@@ -13898,12 +17877,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac13esrType) GetTeld() bool {
+func (r *RegisterMdmac13esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac13esrType) SetTeld(value bool) {
+func (r *RegisterMdmac13esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13esrFieldTeldMask)
 	} else {
@@ -13917,12 +17896,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac13esrType) GetTemd() bool {
+func (r *RegisterMdmac13esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac13esrType) SetTemd(value bool) {
+func (r *RegisterMdmac13esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13esrFieldTemdMask)
 	} else {
@@ -13936,12 +17915,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac13esrType) GetAse() bool {
+func (r *RegisterMdmac13esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac13esrType) SetAse(value bool) {
+func (r *RegisterMdmac13esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13esrFieldAseMask)
 	} else {
@@ -13955,12 +17934,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac13esrType) GetBse() bool {
+func (r *RegisterMdmac13esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac13esrType) SetBse(value bool) {
+func (r *RegisterMdmac13esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13esrFieldBseMask)
 	} else {
@@ -13968,8 +17947,31 @@ func (r *registerMdmac13esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac13crType This register is used to control the concerned channel.
-type registerMdmac13crType uint32
+// RegisterMdmac13crType This register is used to control the concerned channel.
+type RegisterMdmac13crType uint32
+
+func (r *RegisterMdmac13crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13crFieldEnShift = 0
@@ -13977,12 +17979,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac13crType) GetEn() bool {
+func (r *RegisterMdmac13crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac13crType) SetEn(value bool) {
+func (r *RegisterMdmac13crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13crFieldEnMask)
 	} else {
@@ -13996,12 +17998,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac13crType) GetTeie() bool {
+func (r *RegisterMdmac13crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac13crType) SetTeie(value bool) {
+func (r *RegisterMdmac13crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13crFieldTeieMask)
 	} else {
@@ -14015,12 +18017,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac13crType) GetCtcie() bool {
+func (r *RegisterMdmac13crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac13crType) SetCtcie(value bool) {
+func (r *RegisterMdmac13crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13crFieldCtcieMask)
 	} else {
@@ -14034,12 +18036,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac13crType) GetBrtie() bool {
+func (r *RegisterMdmac13crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac13crType) SetBrtie(value bool) {
+func (r *RegisterMdmac13crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13crFieldBrtieMask)
 	} else {
@@ -14053,12 +18055,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac13crType) GetBtie() bool {
+func (r *RegisterMdmac13crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac13crType) SetBtie(value bool) {
+func (r *RegisterMdmac13crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13crFieldBtieMask)
 	} else {
@@ -14072,12 +18074,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac13crType) GetTcie() bool {
+func (r *RegisterMdmac13crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac13crType) SetTcie(value bool) {
+func (r *RegisterMdmac13crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13crFieldTcieMask)
 	} else {
@@ -14091,12 +18093,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac13crType) GetPl() uint8 {
+func (r *RegisterMdmac13crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13crFieldPlMask) >> RegisterMdmac13crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac13crType) SetPl(value uint8) {
+func (r *RegisterMdmac13crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13crFieldPlMask)|(uint32(value)<<RegisterMdmac13crFieldPlShift))
 }
 
@@ -14106,12 +18108,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac13crType) GetBex() bool {
+func (r *RegisterMdmac13crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac13crType) SetBex(value bool) {
+func (r *RegisterMdmac13crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13crFieldBexMask)
 	} else {
@@ -14125,12 +18127,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac13crType) GetHex() bool {
+func (r *RegisterMdmac13crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac13crType) SetHex(value bool) {
+func (r *RegisterMdmac13crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13crFieldHexMask)
 	} else {
@@ -14144,12 +18146,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac13crType) GetWex() bool {
+func (r *RegisterMdmac13crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac13crType) SetWex(value bool) {
+func (r *RegisterMdmac13crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13crFieldWexMask)
 	} else {
@@ -14163,7 +18165,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac13crType) SetSwrq(value bool) {
+func (r *RegisterMdmac13crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13crFieldSwrqMask)
 	} else {
@@ -14171,8 +18173,31 @@ func (r *registerMdmac13crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac13tcrType This register is used to configure the concerned channel.
-type registerMdmac13tcrType uint32
+// RegisterMdmac13tcrType This register is used to configure the concerned channel.
+type RegisterMdmac13tcrType uint32
+
+func (r *RegisterMdmac13tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13tcrFieldSincShift = 0
@@ -14180,12 +18205,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac13tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac13tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldSincMask) >> RegisterMdmac13tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac13tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac13tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldSincMask)|(uint32(value)<<RegisterMdmac13tcrFieldSincShift))
 }
 
@@ -14195,12 +18220,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac13tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac13tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldDincMask) >> RegisterMdmac13tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac13tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac13tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldDincMask)|(uint32(value)<<RegisterMdmac13tcrFieldDincShift))
 }
 
@@ -14210,12 +18235,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac13tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac13tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldSsizeMask) >> RegisterMdmac13tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac13tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac13tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac13tcrFieldSsizeShift))
 }
 
@@ -14225,12 +18250,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac13tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac13tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldDsizeMask) >> RegisterMdmac13tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac13tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac13tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac13tcrFieldDsizeShift))
 }
 
@@ -14240,12 +18265,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac13tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac13tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldSincosMask) >> RegisterMdmac13tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac13tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac13tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac13tcrFieldSincosShift))
 }
 
@@ -14255,12 +18280,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac13tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac13tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldDincosMask) >> RegisterMdmac13tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac13tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac13tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac13tcrFieldDincosShift))
 }
 
@@ -14270,12 +18295,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac13tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac13tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldSburstMask) >> RegisterMdmac13tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac13tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac13tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac13tcrFieldSburstShift))
 }
 
@@ -14285,12 +18310,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac13tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac13tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldDburstMask) >> RegisterMdmac13tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac13tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac13tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac13tcrFieldDburstShift))
 }
 
@@ -14300,12 +18325,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac13tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac13tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldTlenMask) >> RegisterMdmac13tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac13tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac13tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac13tcrFieldTlenShift))
 }
 
@@ -14315,12 +18340,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac13tcrType) GetPke() bool {
+func (r *RegisterMdmac13tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac13tcrType) SetPke(value bool) {
+func (r *RegisterMdmac13tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13tcrFieldPkeMask)
 	} else {
@@ -14334,12 +18359,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac13tcrType) GetPam() uint8 {
+func (r *RegisterMdmac13tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldPamMask) >> RegisterMdmac13tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac13tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac13tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldPamMask)|(uint32(value)<<RegisterMdmac13tcrFieldPamShift))
 }
 
@@ -14349,12 +18374,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac13tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac13tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldTrgmMask) >> RegisterMdmac13tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac13tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac13tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac13tcrFieldTrgmShift))
 }
 
@@ -14364,12 +18389,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac13tcrType) GetSwrm() bool {
+func (r *RegisterMdmac13tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac13tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac13tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13tcrFieldSwrmMask)
 	} else {
@@ -14383,12 +18408,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac13tcrType) GetBwm() bool {
+func (r *RegisterMdmac13tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac13tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac13tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13tcrFieldBwmMask)
 	} else {
@@ -14396,8 +18421,31 @@ func (r *registerMdmac13tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac13bndtrType MDMA Channel x block number of data register
-type registerMdmac13bndtrType uint32
+// RegisterMdmac13bndtrType MDMA Channel x block number of data register
+type RegisterMdmac13bndtrType uint32
+
+func (r *RegisterMdmac13bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13bndtrFieldBndtShift = 0
@@ -14405,12 +18453,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac13bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac13bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13bndtrFieldBndtMask) >> RegisterMdmac13bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac13bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac13bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac13bndtrFieldBndtShift))
 }
 
@@ -14420,12 +18468,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac13bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac13bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac13bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac13bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13bndtrFieldBrsumMask)
 	} else {
@@ -14439,12 +18487,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac13bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac13bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac13bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac13bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13bndtrFieldBrdumMask)
 	} else {
@@ -14458,17 +18506,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac13bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac13bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13bndtrFieldBrcMask) >> RegisterMdmac13bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac13bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac13bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac13bndtrFieldBrcShift))
 }
 
-// registerMdmac13sarType MDMA channel x source address register
-type registerMdmac13sarType uint32
+// RegisterMdmac13sarType MDMA channel x source address register
+type RegisterMdmac13sarType uint32
+
+func (r *RegisterMdmac13sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13sarFieldSarShift = 0
@@ -14476,17 +18547,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac13sarType) GetSar() uint32 {
+func (r *RegisterMdmac13sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13sarFieldSarMask) >> RegisterMdmac13sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac13sarType) SetSar(value uint32) {
+func (r *RegisterMdmac13sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13sarFieldSarMask)|(uint32(value)<<RegisterMdmac13sarFieldSarShift))
 }
 
-// registerMdmac13darType MDMA channel x destination address register
-type registerMdmac13darType uint32
+// RegisterMdmac13darType MDMA channel x destination address register
+type RegisterMdmac13darType uint32
+
+func (r *RegisterMdmac13darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13darFieldDarShift = 0
@@ -14494,17 +18588,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac13darType) GetDar() uint32 {
+func (r *RegisterMdmac13darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13darFieldDarMask) >> RegisterMdmac13darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac13darType) SetDar(value uint32) {
+func (r *RegisterMdmac13darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13darFieldDarMask)|(uint32(value)<<RegisterMdmac13darFieldDarShift))
 }
 
-// registerMdmac13brurType MDMA channel x Block Repeat address Update register
-type registerMdmac13brurType uint32
+// RegisterMdmac13brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac13brurType uint32
+
+func (r *RegisterMdmac13brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13brurFieldSuvShift = 0
@@ -14512,12 +18629,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac13brurType) GetSuv() uint16 {
+func (r *RegisterMdmac13brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13brurFieldSuvMask) >> RegisterMdmac13brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac13brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac13brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13brurFieldSuvMask)|(uint32(value)<<RegisterMdmac13brurFieldSuvShift))
 }
 
@@ -14527,17 +18644,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac13brurType) GetDuv() uint16 {
+func (r *RegisterMdmac13brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13brurFieldDuvMask) >> RegisterMdmac13brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac13brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac13brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13brurFieldDuvMask)|(uint32(value)<<RegisterMdmac13brurFieldDuvShift))
 }
 
-// registerMdmac13larType MDMA channel x Link Address register
-type registerMdmac13larType uint32
+// RegisterMdmac13larType MDMA channel x Link Address register
+type RegisterMdmac13larType uint32
+
+func (r *RegisterMdmac13larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13larFieldLarShift = 0
@@ -14545,17 +18685,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac13larType) GetLar() uint32 {
+func (r *RegisterMdmac13larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13larFieldLarMask) >> RegisterMdmac13larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac13larType) SetLar(value uint32) {
+func (r *RegisterMdmac13larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13larFieldLarMask)|(uint32(value)<<RegisterMdmac13larFieldLarShift))
 }
 
-// registerMdmac13tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac13tbrType uint32
+// RegisterMdmac13tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac13tbrType uint32
+
+func (r *RegisterMdmac13tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13tbrFieldTselShift = 0
@@ -14563,12 +18726,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac13tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac13tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tbrFieldTselMask) >> RegisterMdmac13tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac13tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac13tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13tbrFieldTselMask)|(uint32(value)<<RegisterMdmac13tbrFieldTselShift))
 }
 
@@ -14578,12 +18741,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac13tbrType) GetSbus() bool {
+func (r *RegisterMdmac13tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac13tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac13tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13tbrFieldSbusMask)
 	} else {
@@ -14597,12 +18760,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac13tbrType) GetDbus() bool {
+func (r *RegisterMdmac13tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac13tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac13tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac13tbrFieldDbusMask)
 	} else {
@@ -14610,8 +18773,31 @@ func (r *registerMdmac13tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac13marType MDMA channel x Mask address register
-type registerMdmac13marType uint32
+// RegisterMdmac13marType MDMA channel x Mask address register
+type RegisterMdmac13marType uint32
+
+func (r *RegisterMdmac13marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13marFieldMarShift = 0
@@ -14619,17 +18805,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac13marType) GetMar() uint32 {
+func (r *RegisterMdmac13marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13marFieldMarMask) >> RegisterMdmac13marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac13marType) SetMar(value uint32) {
+func (r *RegisterMdmac13marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13marFieldMarMask)|(uint32(value)<<RegisterMdmac13marFieldMarShift))
 }
 
-// registerMdmac13mdrType MDMA channel x Mask Data register
-type registerMdmac13mdrType uint32
+// RegisterMdmac13mdrType MDMA channel x Mask Data register
+type RegisterMdmac13mdrType uint32
+
+func (r *RegisterMdmac13mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac13mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac13mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac13mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac13mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac13mdrFieldMdrShift = 0
@@ -14637,17 +18846,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac13mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac13mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac13mdrFieldMdrMask) >> RegisterMdmac13mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac13mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac13mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac13mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac13mdrFieldMdrShift))
 }
 
-// registerMdmac14isrType MDMA channel x interrupt/status register
-type registerMdmac14isrType uint32
+// RegisterMdmac14isrType MDMA channel x interrupt/status register
+type RegisterMdmac14isrType uint32
+
+func (r *RegisterMdmac14isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14isrFieldTeif14Shift = 0
@@ -14655,12 +18887,12 @@ const (
 )
 
 // GetTeif14 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac14isrType) GetTeif14() bool {
+func (r *RegisterMdmac14isrType) GetTeif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14isrFieldTeif14Mask) != 0
 }
 
 // SetTeif14 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac14isrType) SetTeif14(value bool) {
+func (r *RegisterMdmac14isrType) SetTeif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14isrFieldTeif14Mask)
 	} else {
@@ -14674,12 +18906,12 @@ const (
 )
 
 // GetCtcif14 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac14isrType) GetCtcif14() bool {
+func (r *RegisterMdmac14isrType) GetCtcif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14isrFieldCtcif14Mask) != 0
 }
 
 // SetCtcif14 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac14isrType) SetCtcif14(value bool) {
+func (r *RegisterMdmac14isrType) SetCtcif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14isrFieldCtcif14Mask)
 	} else {
@@ -14693,12 +18925,12 @@ const (
 )
 
 // GetBrtif14 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac14isrType) GetBrtif14() bool {
+func (r *RegisterMdmac14isrType) GetBrtif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14isrFieldBrtif14Mask) != 0
 }
 
 // SetBrtif14 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac14isrType) SetBrtif14(value bool) {
+func (r *RegisterMdmac14isrType) SetBrtif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14isrFieldBrtif14Mask)
 	} else {
@@ -14712,12 +18944,12 @@ const (
 )
 
 // GetBtif14 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac14isrType) GetBtif14() bool {
+func (r *RegisterMdmac14isrType) GetBtif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14isrFieldBtif14Mask) != 0
 }
 
 // SetBtif14 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac14isrType) SetBtif14(value bool) {
+func (r *RegisterMdmac14isrType) SetBtif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14isrFieldBtif14Mask)
 	} else {
@@ -14731,12 +18963,12 @@ const (
 )
 
 // GetTcif14 channel x buffer transfer complete
-func (r *registerMdmac14isrType) GetTcif14() bool {
+func (r *RegisterMdmac14isrType) GetTcif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14isrFieldTcif14Mask) != 0
 }
 
 // SetTcif14 channel x buffer transfer complete
-func (r *registerMdmac14isrType) SetTcif14(value bool) {
+func (r *RegisterMdmac14isrType) SetTcif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14isrFieldTcif14Mask)
 	} else {
@@ -14750,12 +18982,12 @@ const (
 )
 
 // GetCrqa14 channel x request active flag
-func (r *registerMdmac14isrType) GetCrqa14() bool {
+func (r *RegisterMdmac14isrType) GetCrqa14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14isrFieldCrqa14Mask) != 0
 }
 
 // SetCrqa14 channel x request active flag
-func (r *registerMdmac14isrType) SetCrqa14(value bool) {
+func (r *RegisterMdmac14isrType) SetCrqa14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14isrFieldCrqa14Mask)
 	} else {
@@ -14763,8 +18995,31 @@ func (r *registerMdmac14isrType) SetCrqa14(value bool) {
 	}
 }
 
-// registerMdmac14ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac14ifcrType uint32
+// RegisterMdmac14ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac14ifcrType uint32
+
+func (r *RegisterMdmac14ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14ifcrFieldCteif14Shift = 0
@@ -14772,12 +19027,12 @@ const (
 )
 
 // GetCteif14 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac14ifcrType) GetCteif14() bool {
+func (r *RegisterMdmac14ifcrType) GetCteif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14ifcrFieldCteif14Mask) != 0
 }
 
 // SetCteif14 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac14ifcrType) SetCteif14(value bool) {
+func (r *RegisterMdmac14ifcrType) SetCteif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14ifcrFieldCteif14Mask)
 	} else {
@@ -14791,12 +19046,12 @@ const (
 )
 
 // GetCctcif14 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac14ifcrType) GetCctcif14() bool {
+func (r *RegisterMdmac14ifcrType) GetCctcif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14ifcrFieldCctcif14Mask) != 0
 }
 
 // SetCctcif14 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac14ifcrType) SetCctcif14(value bool) {
+func (r *RegisterMdmac14ifcrType) SetCctcif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14ifcrFieldCctcif14Mask)
 	} else {
@@ -14810,12 +19065,12 @@ const (
 )
 
 // GetCbrtif14 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac14ifcrType) GetCbrtif14() bool {
+func (r *RegisterMdmac14ifcrType) GetCbrtif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14ifcrFieldCbrtif14Mask) != 0
 }
 
 // SetCbrtif14 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac14ifcrType) SetCbrtif14(value bool) {
+func (r *RegisterMdmac14ifcrType) SetCbrtif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14ifcrFieldCbrtif14Mask)
 	} else {
@@ -14829,12 +19084,12 @@ const (
 )
 
 // GetCbtif14 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac14ifcrType) GetCbtif14() bool {
+func (r *RegisterMdmac14ifcrType) GetCbtif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14ifcrFieldCbtif14Mask) != 0
 }
 
 // SetCbtif14 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac14ifcrType) SetCbtif14(value bool) {
+func (r *RegisterMdmac14ifcrType) SetCbtif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14ifcrFieldCbtif14Mask)
 	} else {
@@ -14848,12 +19103,12 @@ const (
 )
 
 // GetCltcif14 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac14ifcrType) GetCltcif14() bool {
+func (r *RegisterMdmac14ifcrType) GetCltcif14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14ifcrFieldCltcif14Mask) != 0
 }
 
 // SetCltcif14 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac14ifcrType) SetCltcif14(value bool) {
+func (r *RegisterMdmac14ifcrType) SetCltcif14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14ifcrFieldCltcif14Mask)
 	} else {
@@ -14861,8 +19116,31 @@ func (r *registerMdmac14ifcrType) SetCltcif14(value bool) {
 	}
 }
 
-// registerMdmac14esrType MDMA Channel x error status register
-type registerMdmac14esrType uint32
+// RegisterMdmac14esrType MDMA Channel x error status register
+type RegisterMdmac14esrType uint32
+
+func (r *RegisterMdmac14esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14esrFieldTeaShift = 0
@@ -14870,12 +19148,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac14esrType) GetTea() uint8 {
+func (r *RegisterMdmac14esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14esrFieldTeaMask) >> RegisterMdmac14esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac14esrType) SetTea(value uint8) {
+func (r *RegisterMdmac14esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14esrFieldTeaMask)|(uint32(value)<<RegisterMdmac14esrFieldTeaShift))
 }
 
@@ -14885,12 +19163,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac14esrType) GetTed() bool {
+func (r *RegisterMdmac14esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac14esrType) SetTed(value bool) {
+func (r *RegisterMdmac14esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14esrFieldTedMask)
 	} else {
@@ -14904,12 +19182,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac14esrType) GetTeld() bool {
+func (r *RegisterMdmac14esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac14esrType) SetTeld(value bool) {
+func (r *RegisterMdmac14esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14esrFieldTeldMask)
 	} else {
@@ -14923,12 +19201,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac14esrType) GetTemd() bool {
+func (r *RegisterMdmac14esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac14esrType) SetTemd(value bool) {
+func (r *RegisterMdmac14esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14esrFieldTemdMask)
 	} else {
@@ -14942,12 +19220,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac14esrType) GetAse() bool {
+func (r *RegisterMdmac14esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac14esrType) SetAse(value bool) {
+func (r *RegisterMdmac14esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14esrFieldAseMask)
 	} else {
@@ -14961,12 +19239,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac14esrType) GetBse() bool {
+func (r *RegisterMdmac14esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac14esrType) SetBse(value bool) {
+func (r *RegisterMdmac14esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14esrFieldBseMask)
 	} else {
@@ -14974,8 +19252,31 @@ func (r *registerMdmac14esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac14crType This register is used to control the concerned channel.
-type registerMdmac14crType uint32
+// RegisterMdmac14crType This register is used to control the concerned channel.
+type RegisterMdmac14crType uint32
+
+func (r *RegisterMdmac14crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14crFieldEnShift = 0
@@ -14983,12 +19284,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac14crType) GetEn() bool {
+func (r *RegisterMdmac14crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac14crType) SetEn(value bool) {
+func (r *RegisterMdmac14crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14crFieldEnMask)
 	} else {
@@ -15002,12 +19303,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac14crType) GetTeie() bool {
+func (r *RegisterMdmac14crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac14crType) SetTeie(value bool) {
+func (r *RegisterMdmac14crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14crFieldTeieMask)
 	} else {
@@ -15021,12 +19322,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac14crType) GetCtcie() bool {
+func (r *RegisterMdmac14crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac14crType) SetCtcie(value bool) {
+func (r *RegisterMdmac14crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14crFieldCtcieMask)
 	} else {
@@ -15040,12 +19341,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac14crType) GetBrtie() bool {
+func (r *RegisterMdmac14crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac14crType) SetBrtie(value bool) {
+func (r *RegisterMdmac14crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14crFieldBrtieMask)
 	} else {
@@ -15059,12 +19360,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac14crType) GetBtie() bool {
+func (r *RegisterMdmac14crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac14crType) SetBtie(value bool) {
+func (r *RegisterMdmac14crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14crFieldBtieMask)
 	} else {
@@ -15078,12 +19379,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac14crType) GetTcie() bool {
+func (r *RegisterMdmac14crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac14crType) SetTcie(value bool) {
+func (r *RegisterMdmac14crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14crFieldTcieMask)
 	} else {
@@ -15097,12 +19398,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac14crType) GetPl() uint8 {
+func (r *RegisterMdmac14crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14crFieldPlMask) >> RegisterMdmac14crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac14crType) SetPl(value uint8) {
+func (r *RegisterMdmac14crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14crFieldPlMask)|(uint32(value)<<RegisterMdmac14crFieldPlShift))
 }
 
@@ -15112,12 +19413,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac14crType) GetBex() bool {
+func (r *RegisterMdmac14crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac14crType) SetBex(value bool) {
+func (r *RegisterMdmac14crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14crFieldBexMask)
 	} else {
@@ -15131,12 +19432,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac14crType) GetHex() bool {
+func (r *RegisterMdmac14crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac14crType) SetHex(value bool) {
+func (r *RegisterMdmac14crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14crFieldHexMask)
 	} else {
@@ -15150,12 +19451,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac14crType) GetWex() bool {
+func (r *RegisterMdmac14crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac14crType) SetWex(value bool) {
+func (r *RegisterMdmac14crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14crFieldWexMask)
 	} else {
@@ -15169,7 +19470,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac14crType) SetSwrq(value bool) {
+func (r *RegisterMdmac14crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14crFieldSwrqMask)
 	} else {
@@ -15177,8 +19478,31 @@ func (r *registerMdmac14crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac14tcrType This register is used to configure the concerned channel.
-type registerMdmac14tcrType uint32
+// RegisterMdmac14tcrType This register is used to configure the concerned channel.
+type RegisterMdmac14tcrType uint32
+
+func (r *RegisterMdmac14tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14tcrFieldSincShift = 0
@@ -15186,12 +19510,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac14tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac14tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldSincMask) >> RegisterMdmac14tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac14tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac14tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldSincMask)|(uint32(value)<<RegisterMdmac14tcrFieldSincShift))
 }
 
@@ -15201,12 +19525,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac14tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac14tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldDincMask) >> RegisterMdmac14tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac14tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac14tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldDincMask)|(uint32(value)<<RegisterMdmac14tcrFieldDincShift))
 }
 
@@ -15216,12 +19540,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac14tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac14tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldSsizeMask) >> RegisterMdmac14tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac14tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac14tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac14tcrFieldSsizeShift))
 }
 
@@ -15231,12 +19555,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac14tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac14tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldDsizeMask) >> RegisterMdmac14tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac14tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac14tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac14tcrFieldDsizeShift))
 }
 
@@ -15246,12 +19570,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac14tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac14tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldSincosMask) >> RegisterMdmac14tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac14tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac14tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac14tcrFieldSincosShift))
 }
 
@@ -15261,12 +19585,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac14tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac14tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldDincosMask) >> RegisterMdmac14tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac14tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac14tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac14tcrFieldDincosShift))
 }
 
@@ -15276,12 +19600,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac14tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac14tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldSburstMask) >> RegisterMdmac14tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac14tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac14tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac14tcrFieldSburstShift))
 }
 
@@ -15291,12 +19615,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac14tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac14tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldDburstMask) >> RegisterMdmac14tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac14tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac14tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac14tcrFieldDburstShift))
 }
 
@@ -15306,12 +19630,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac14tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac14tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldTlenMask) >> RegisterMdmac14tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac14tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac14tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac14tcrFieldTlenShift))
 }
 
@@ -15321,12 +19645,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac14tcrType) GetPke() bool {
+func (r *RegisterMdmac14tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac14tcrType) SetPke(value bool) {
+func (r *RegisterMdmac14tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14tcrFieldPkeMask)
 	} else {
@@ -15340,12 +19664,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac14tcrType) GetPam() uint8 {
+func (r *RegisterMdmac14tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldPamMask) >> RegisterMdmac14tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac14tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac14tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldPamMask)|(uint32(value)<<RegisterMdmac14tcrFieldPamShift))
 }
 
@@ -15355,12 +19679,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac14tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac14tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldTrgmMask) >> RegisterMdmac14tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac14tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac14tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac14tcrFieldTrgmShift))
 }
 
@@ -15370,12 +19694,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac14tcrType) GetSwrm() bool {
+func (r *RegisterMdmac14tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac14tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac14tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14tcrFieldSwrmMask)
 	} else {
@@ -15389,12 +19713,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac14tcrType) GetBwm() bool {
+func (r *RegisterMdmac14tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac14tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac14tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14tcrFieldBwmMask)
 	} else {
@@ -15402,8 +19726,31 @@ func (r *registerMdmac14tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac14bndtrType MDMA Channel x block number of data register
-type registerMdmac14bndtrType uint32
+// RegisterMdmac14bndtrType MDMA Channel x block number of data register
+type RegisterMdmac14bndtrType uint32
+
+func (r *RegisterMdmac14bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14bndtrFieldBndtShift = 0
@@ -15411,12 +19758,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac14bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac14bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14bndtrFieldBndtMask) >> RegisterMdmac14bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac14bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac14bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac14bndtrFieldBndtShift))
 }
 
@@ -15426,12 +19773,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac14bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac14bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac14bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac14bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14bndtrFieldBrsumMask)
 	} else {
@@ -15445,12 +19792,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac14bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac14bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac14bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac14bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14bndtrFieldBrdumMask)
 	} else {
@@ -15464,17 +19811,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac14bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac14bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14bndtrFieldBrcMask) >> RegisterMdmac14bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac14bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac14bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac14bndtrFieldBrcShift))
 }
 
-// registerMdmac14sarType MDMA channel x source address register
-type registerMdmac14sarType uint32
+// RegisterMdmac14sarType MDMA channel x source address register
+type RegisterMdmac14sarType uint32
+
+func (r *RegisterMdmac14sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14sarFieldSarShift = 0
@@ -15482,17 +19852,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac14sarType) GetSar() uint32 {
+func (r *RegisterMdmac14sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14sarFieldSarMask) >> RegisterMdmac14sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac14sarType) SetSar(value uint32) {
+func (r *RegisterMdmac14sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14sarFieldSarMask)|(uint32(value)<<RegisterMdmac14sarFieldSarShift))
 }
 
-// registerMdmac14darType MDMA channel x destination address register
-type registerMdmac14darType uint32
+// RegisterMdmac14darType MDMA channel x destination address register
+type RegisterMdmac14darType uint32
+
+func (r *RegisterMdmac14darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14darFieldDarShift = 0
@@ -15500,17 +19893,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac14darType) GetDar() uint32 {
+func (r *RegisterMdmac14darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14darFieldDarMask) >> RegisterMdmac14darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac14darType) SetDar(value uint32) {
+func (r *RegisterMdmac14darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14darFieldDarMask)|(uint32(value)<<RegisterMdmac14darFieldDarShift))
 }
 
-// registerMdmac14brurType MDMA channel x Block Repeat address Update register
-type registerMdmac14brurType uint32
+// RegisterMdmac14brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac14brurType uint32
+
+func (r *RegisterMdmac14brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14brurFieldSuvShift = 0
@@ -15518,12 +19934,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac14brurType) GetSuv() uint16 {
+func (r *RegisterMdmac14brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14brurFieldSuvMask) >> RegisterMdmac14brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac14brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac14brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14brurFieldSuvMask)|(uint32(value)<<RegisterMdmac14brurFieldSuvShift))
 }
 
@@ -15533,17 +19949,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac14brurType) GetDuv() uint16 {
+func (r *RegisterMdmac14brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14brurFieldDuvMask) >> RegisterMdmac14brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac14brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac14brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14brurFieldDuvMask)|(uint32(value)<<RegisterMdmac14brurFieldDuvShift))
 }
 
-// registerMdmac14larType MDMA channel x Link Address register
-type registerMdmac14larType uint32
+// RegisterMdmac14larType MDMA channel x Link Address register
+type RegisterMdmac14larType uint32
+
+func (r *RegisterMdmac14larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14larFieldLarShift = 0
@@ -15551,17 +19990,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac14larType) GetLar() uint32 {
+func (r *RegisterMdmac14larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14larFieldLarMask) >> RegisterMdmac14larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac14larType) SetLar(value uint32) {
+func (r *RegisterMdmac14larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14larFieldLarMask)|(uint32(value)<<RegisterMdmac14larFieldLarShift))
 }
 
-// registerMdmac14tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac14tbrType uint32
+// RegisterMdmac14tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac14tbrType uint32
+
+func (r *RegisterMdmac14tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14tbrFieldTselShift = 0
@@ -15569,12 +20031,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac14tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac14tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tbrFieldTselMask) >> RegisterMdmac14tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac14tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac14tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14tbrFieldTselMask)|(uint32(value)<<RegisterMdmac14tbrFieldTselShift))
 }
 
@@ -15584,12 +20046,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac14tbrType) GetSbus() bool {
+func (r *RegisterMdmac14tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac14tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac14tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14tbrFieldSbusMask)
 	} else {
@@ -15603,12 +20065,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac14tbrType) GetDbus() bool {
+func (r *RegisterMdmac14tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac14tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac14tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac14tbrFieldDbusMask)
 	} else {
@@ -15616,8 +20078,31 @@ func (r *registerMdmac14tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac14marType MDMA channel x Mask address register
-type registerMdmac14marType uint32
+// RegisterMdmac14marType MDMA channel x Mask address register
+type RegisterMdmac14marType uint32
+
+func (r *RegisterMdmac14marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14marFieldMarShift = 0
@@ -15625,17 +20110,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac14marType) GetMar() uint32 {
+func (r *RegisterMdmac14marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14marFieldMarMask) >> RegisterMdmac14marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac14marType) SetMar(value uint32) {
+func (r *RegisterMdmac14marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14marFieldMarMask)|(uint32(value)<<RegisterMdmac14marFieldMarShift))
 }
 
-// registerMdmac14mdrType MDMA channel x Mask Data register
-type registerMdmac14mdrType uint32
+// RegisterMdmac14mdrType MDMA channel x Mask Data register
+type RegisterMdmac14mdrType uint32
+
+func (r *RegisterMdmac14mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac14mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac14mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac14mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac14mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac14mdrFieldMdrShift = 0
@@ -15643,17 +20151,40 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac14mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac14mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac14mdrFieldMdrMask) >> RegisterMdmac14mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac14mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac14mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac14mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac14mdrFieldMdrShift))
 }
 
-// registerMdmac15isrType MDMA channel x interrupt/status register
-type registerMdmac15isrType uint32
+// RegisterMdmac15isrType MDMA channel x interrupt/status register
+type RegisterMdmac15isrType uint32
+
+func (r *RegisterMdmac15isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15isrFieldTeif15Shift = 0
@@ -15661,12 +20192,12 @@ const (
 )
 
 // GetTeif15 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac15isrType) GetTeif15() bool {
+func (r *RegisterMdmac15isrType) GetTeif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15isrFieldTeif15Mask) != 0
 }
 
 // SetTeif15 Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac15isrType) SetTeif15(value bool) {
+func (r *RegisterMdmac15isrType) SetTeif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15isrFieldTeif15Mask)
 	} else {
@@ -15680,12 +20211,12 @@ const (
 )
 
 // GetCtcif15 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac15isrType) GetCtcif15() bool {
+func (r *RegisterMdmac15isrType) GetCtcif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15isrFieldCtcif15Mask) != 0
 }
 
 // SetCtcif15 Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0.
-func (r *registerMdmac15isrType) SetCtcif15(value bool) {
+func (r *RegisterMdmac15isrType) SetCtcif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15isrFieldCtcif15Mask)
 	} else {
@@ -15699,12 +20230,12 @@ const (
 )
 
 // GetBrtif15 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac15isrType) GetBrtif15() bool {
+func (r *RegisterMdmac15isrType) GetBrtif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15isrFieldBrtif15Mask) != 0
 }
 
 // SetBrtif15 Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac15isrType) SetBrtif15(value bool) {
+func (r *RegisterMdmac15isrType) SetBrtif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15isrFieldBrtif15Mask)
 	} else {
@@ -15718,12 +20249,12 @@ const (
 )
 
 // GetBtif15 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac15isrType) GetBtif15() bool {
+func (r *RegisterMdmac15isrType) GetBtif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15isrFieldBtif15Mask) != 0
 }
 
 // SetBtif15 Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register.
-func (r *registerMdmac15isrType) SetBtif15(value bool) {
+func (r *RegisterMdmac15isrType) SetBtif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15isrFieldBtif15Mask)
 	} else {
@@ -15737,12 +20268,12 @@ const (
 )
 
 // GetTcif15 channel x buffer transfer complete
-func (r *registerMdmac15isrType) GetTcif15() bool {
+func (r *RegisterMdmac15isrType) GetTcif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15isrFieldTcif15Mask) != 0
 }
 
 // SetTcif15 channel x buffer transfer complete
-func (r *registerMdmac15isrType) SetTcif15(value bool) {
+func (r *RegisterMdmac15isrType) SetTcif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15isrFieldTcif15Mask)
 	} else {
@@ -15756,12 +20287,12 @@ const (
 )
 
 // GetCrqa15 channel x request active flag
-func (r *registerMdmac15isrType) GetCrqa15() bool {
+func (r *RegisterMdmac15isrType) GetCrqa15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15isrFieldCrqa15Mask) != 0
 }
 
 // SetCrqa15 channel x request active flag
-func (r *registerMdmac15isrType) SetCrqa15(value bool) {
+func (r *RegisterMdmac15isrType) SetCrqa15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15isrFieldCrqa15Mask)
 	} else {
@@ -15769,8 +20300,31 @@ func (r *registerMdmac15isrType) SetCrqa15(value bool) {
 	}
 }
 
-// registerMdmac15ifcrType MDMA channel x interrupt flag clear register
-type registerMdmac15ifcrType uint32
+// RegisterMdmac15ifcrType MDMA channel x interrupt flag clear register
+type RegisterMdmac15ifcrType uint32
+
+func (r *RegisterMdmac15ifcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15ifcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15ifcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15ifcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15ifcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15ifcrFieldCteif15Shift = 0
@@ -15778,12 +20332,12 @@ const (
 )
 
 // GetCteif15 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac15ifcrType) GetCteif15() bool {
+func (r *RegisterMdmac15ifcrType) GetCteif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15ifcrFieldCteif15Mask) != 0
 }
 
 // SetCteif15 Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register
-func (r *registerMdmac15ifcrType) SetCteif15(value bool) {
+func (r *RegisterMdmac15ifcrType) SetCteif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15ifcrFieldCteif15Mask)
 	} else {
@@ -15797,12 +20351,12 @@ const (
 )
 
 // GetCctcif15 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac15ifcrType) GetCctcif15() bool {
+func (r *RegisterMdmac15ifcrType) GetCctcif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15ifcrFieldCctcif15Mask) != 0
 }
 
 // SetCctcif15 Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register
-func (r *registerMdmac15ifcrType) SetCctcif15(value bool) {
+func (r *RegisterMdmac15ifcrType) SetCctcif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15ifcrFieldCctcif15Mask)
 	} else {
@@ -15816,12 +20370,12 @@ const (
 )
 
 // GetCbrtif15 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac15ifcrType) GetCbrtif15() bool {
+func (r *RegisterMdmac15ifcrType) GetCbrtif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15ifcrFieldCbrtif15Mask) != 0
 }
 
 // SetCbrtif15 Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register
-func (r *registerMdmac15ifcrType) SetCbrtif15(value bool) {
+func (r *RegisterMdmac15ifcrType) SetCbrtif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15ifcrFieldCbrtif15Mask)
 	} else {
@@ -15835,12 +20389,12 @@ const (
 )
 
 // GetCbtif15 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac15ifcrType) GetCbtif15() bool {
+func (r *RegisterMdmac15ifcrType) GetCbtif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15ifcrFieldCbtif15Mask) != 0
 }
 
 // SetCbtif15 Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register
-func (r *registerMdmac15ifcrType) SetCbtif15(value bool) {
+func (r *RegisterMdmac15ifcrType) SetCbtif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15ifcrFieldCbtif15Mask)
 	} else {
@@ -15854,12 +20408,12 @@ const (
 )
 
 // GetCltcif15 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac15ifcrType) GetCltcif15() bool {
+func (r *RegisterMdmac15ifcrType) GetCltcif15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15ifcrFieldCltcif15Mask) != 0
 }
 
 // SetCltcif15 CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register
-func (r *registerMdmac15ifcrType) SetCltcif15(value bool) {
+func (r *RegisterMdmac15ifcrType) SetCltcif15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15ifcrFieldCltcif15Mask)
 	} else {
@@ -15867,8 +20421,31 @@ func (r *registerMdmac15ifcrType) SetCltcif15(value bool) {
 	}
 }
 
-// registerMdmac15esrType MDMA Channel x error status register
-type registerMdmac15esrType uint32
+// RegisterMdmac15esrType MDMA Channel x error status register
+type RegisterMdmac15esrType uint32
+
+func (r *RegisterMdmac15esrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15esrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15esrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15esrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15esrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15esrFieldTeaShift = 0
@@ -15876,12 +20453,12 @@ const (
 )
 
 // GetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac15esrType) GetTea() uint8 {
+func (r *RegisterMdmac15esrType) GetTea() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15esrFieldTeaMask) >> RegisterMdmac15esrFieldTeaShift)
 }
 
 // SetTea Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error.
-func (r *registerMdmac15esrType) SetTea(value uint8) {
+func (r *RegisterMdmac15esrType) SetTea(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15esrFieldTeaMask)|(uint32(value)<<RegisterMdmac15esrFieldTeaShift))
 }
 
@@ -15891,12 +20468,12 @@ const (
 )
 
 // GetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac15esrType) GetTed() bool {
+func (r *RegisterMdmac15esrType) GetTed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15esrFieldTedMask) != 0
 }
 
 // SetTed Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error.
-func (r *registerMdmac15esrType) SetTed(value bool) {
+func (r *RegisterMdmac15esrType) SetTed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15esrFieldTedMask)
 	} else {
@@ -15910,12 +20487,12 @@ const (
 )
 
 // GetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac15esrType) GetTeld() bool {
+func (r *RegisterMdmac15esrType) GetTeld() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15esrFieldTeldMask) != 0
 }
 
 // SetTeld Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac15esrType) SetTeld(value bool) {
+func (r *RegisterMdmac15esrType) SetTeld(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15esrFieldTeldMask)
 	} else {
@@ -15929,12 +20506,12 @@ const (
 )
 
 // GetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac15esrType) GetTemd() bool {
+func (r *RegisterMdmac15esrType) GetTemd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15esrFieldTemdMask) != 0
 }
 
 // SetTemd Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac15esrType) SetTemd(value bool) {
+func (r *RegisterMdmac15esrType) SetTemd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15esrFieldTemdMask)
 	} else {
@@ -15948,12 +20525,12 @@ const (
 )
 
 // GetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac15esrType) GetAse() bool {
+func (r *RegisterMdmac15esrType) GetAse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15esrFieldAseMask) != 0
 }
 
 // SetAse Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac15esrType) SetAse(value bool) {
+func (r *RegisterMdmac15esrType) SetAse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15esrFieldAseMask)
 	} else {
@@ -15967,12 +20544,12 @@ const (
 )
 
 // GetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac15esrType) GetBse() bool {
+func (r *RegisterMdmac15esrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15esrFieldBseMask) != 0
 }
 
 // SetBse Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register.
-func (r *registerMdmac15esrType) SetBse(value bool) {
+func (r *RegisterMdmac15esrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15esrFieldBseMask)
 	} else {
@@ -15980,8 +20557,31 @@ func (r *registerMdmac15esrType) SetBse(value bool) {
 	}
 }
 
-// registerMdmac15crType This register is used to control the concerned channel.
-type registerMdmac15crType uint32
+// RegisterMdmac15crType This register is used to control the concerned channel.
+type RegisterMdmac15crType uint32
+
+func (r *RegisterMdmac15crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15crFieldEnShift = 0
@@ -15989,12 +20589,12 @@ const (
 )
 
 // GetEn channel enable
-func (r *registerMdmac15crType) GetEn() bool {
+func (r *RegisterMdmac15crType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15crFieldEnMask) != 0
 }
 
 // SetEn channel enable
-func (r *registerMdmac15crType) SetEn(value bool) {
+func (r *RegisterMdmac15crType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15crFieldEnMask)
 	} else {
@@ -16008,12 +20608,12 @@ const (
 )
 
 // GetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac15crType) GetTeie() bool {
+func (r *RegisterMdmac15crType) GetTeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15crFieldTeieMask) != 0
 }
 
 // SetTeie Transfer error interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac15crType) SetTeie(value bool) {
+func (r *RegisterMdmac15crType) SetTeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15crFieldTeieMask)
 	} else {
@@ -16027,12 +20627,12 @@ const (
 )
 
 // GetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac15crType) GetCtcie() bool {
+func (r *RegisterMdmac15crType) GetCtcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15crFieldCtcieMask) != 0
 }
 
 // SetCtcie Channel Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac15crType) SetCtcie(value bool) {
+func (r *RegisterMdmac15crType) SetCtcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15crFieldCtcieMask)
 	} else {
@@ -16046,12 +20646,12 @@ const (
 )
 
 // GetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac15crType) GetBrtie() bool {
+func (r *RegisterMdmac15crType) GetBrtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15crFieldBrtieMask) != 0
 }
 
 // SetBrtie Block Repeat transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac15crType) SetBrtie(value bool) {
+func (r *RegisterMdmac15crType) SetBrtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15crFieldBrtieMask)
 	} else {
@@ -16065,12 +20665,12 @@ const (
 )
 
 // GetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac15crType) GetBtie() bool {
+func (r *RegisterMdmac15crType) GetBtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15crFieldBtieMask) != 0
 }
 
 // SetBtie Block Transfer interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac15crType) SetBtie(value bool) {
+func (r *RegisterMdmac15crType) SetBtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15crFieldBtieMask)
 	} else {
@@ -16084,12 +20684,12 @@ const (
 )
 
 // GetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac15crType) GetTcie() bool {
+func (r *RegisterMdmac15crType) GetTcie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15crFieldTcieMask) != 0
 }
 
 // SetTcie buffer Transfer Complete interrupt enable This bit is set and cleared by software.
-func (r *registerMdmac15crType) SetTcie(value bool) {
+func (r *RegisterMdmac15crType) SetTcie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15crFieldTcieMask)
 	} else {
@@ -16103,12 +20703,12 @@ const (
 )
 
 // GetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac15crType) GetPl() uint8 {
+func (r *RegisterMdmac15crType) GetPl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15crFieldPlMask) >> RegisterMdmac15crFieldPlShift)
 }
 
 // SetPl Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac15crType) SetPl(value uint8) {
+func (r *RegisterMdmac15crType) SetPl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15crFieldPlMask)|(uint32(value)<<RegisterMdmac15crFieldPlShift))
 }
 
@@ -16118,12 +20718,12 @@ const (
 )
 
 // GetBex byte Endianness exchange
-func (r *registerMdmac15crType) GetBex() bool {
+func (r *RegisterMdmac15crType) GetBex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15crFieldBexMask) != 0
 }
 
 // SetBex byte Endianness exchange
-func (r *registerMdmac15crType) SetBex(value bool) {
+func (r *RegisterMdmac15crType) SetBex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15crFieldBexMask)
 	} else {
@@ -16137,12 +20737,12 @@ const (
 )
 
 // GetHex Half word Endianes exchange
-func (r *registerMdmac15crType) GetHex() bool {
+func (r *RegisterMdmac15crType) GetHex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15crFieldHexMask) != 0
 }
 
 // SetHex Half word Endianes exchange
-func (r *registerMdmac15crType) SetHex(value bool) {
+func (r *RegisterMdmac15crType) SetHex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15crFieldHexMask)
 	} else {
@@ -16156,12 +20756,12 @@ const (
 )
 
 // GetWex Word Endianness exchange
-func (r *registerMdmac15crType) GetWex() bool {
+func (r *RegisterMdmac15crType) GetWex() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15crFieldWexMask) != 0
 }
 
 // SetWex Word Endianness exchange
-func (r *registerMdmac15crType) SetWex(value bool) {
+func (r *RegisterMdmac15crType) SetWex(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15crFieldWexMask)
 	} else {
@@ -16175,7 +20775,7 @@ const (
 )
 
 // SetSwrq SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access).
-func (r *registerMdmac15crType) SetSwrq(value bool) {
+func (r *RegisterMdmac15crType) SetSwrq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15crFieldSwrqMask)
 	} else {
@@ -16183,8 +20783,31 @@ func (r *registerMdmac15crType) SetSwrq(value bool) {
 	}
 }
 
-// registerMdmac15tcrType This register is used to configure the concerned channel.
-type registerMdmac15tcrType uint32
+// RegisterMdmac15tcrType This register is used to configure the concerned channel.
+type RegisterMdmac15tcrType uint32
+
+func (r *RegisterMdmac15tcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15tcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15tcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15tcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15tcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15tcrFieldSincShift = 0
@@ -16192,12 +20815,12 @@ const (
 )
 
 // GetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac15tcrType) GetSinc() uint8 {
+func (r *RegisterMdmac15tcrType) GetSinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldSincMask) >> RegisterMdmac15tcrFieldSincShift)
 }
 
 // SetSinc Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR[31:0] + 0x00).
-func (r *registerMdmac15tcrType) SetSinc(value uint8) {
+func (r *RegisterMdmac15tcrType) SetSinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldSincMask)|(uint32(value)<<RegisterMdmac15tcrFieldSincShift))
 }
 
@@ -16207,12 +20830,12 @@ const (
 )
 
 // GetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac15tcrType) GetDinc() uint8 {
+func (r *RegisterMdmac15tcrType) GetDinc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldDincMask) >> RegisterMdmac15tcrFieldDincShift)
 }
 
 // SetDinc Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden.
-func (r *registerMdmac15tcrType) SetDinc(value uint8) {
+func (r *RegisterMdmac15tcrType) SetDinc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldDincMask)|(uint32(value)<<RegisterMdmac15tcrFieldDincShift))
 }
 
@@ -16222,12 +20845,12 @@ const (
 )
 
 // GetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac15tcrType) GetSsize() uint8 {
+func (r *RegisterMdmac15tcrType) GetSsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldSsizeMask) >> RegisterMdmac15tcrFieldSsizeShift)
 }
 
 // SetSsize Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1).
-func (r *registerMdmac15tcrType) SetSsize(value uint8) {
+func (r *RegisterMdmac15tcrType) SetSsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldSsizeMask)|(uint32(value)<<RegisterMdmac15tcrFieldSsizeShift))
 }
 
@@ -16237,12 +20860,12 @@ const (
 )
 
 // GetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac15tcrType) GetDsize() uint8 {
+func (r *RegisterMdmac15tcrType) GetDsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldDsizeMask) >> RegisterMdmac15tcrFieldDsizeShift)
 }
 
 // SetDsize Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1).
-func (r *registerMdmac15tcrType) SetDsize(value uint8) {
+func (r *RegisterMdmac15tcrType) SetDsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldDsizeMask)|(uint32(value)<<RegisterMdmac15tcrFieldDsizeShift))
 }
 
@@ -16252,12 +20875,12 @@ const (
 )
 
 // GetSincos source increment offset size
-func (r *registerMdmac15tcrType) GetSincos() uint8 {
+func (r *RegisterMdmac15tcrType) GetSincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldSincosMask) >> RegisterMdmac15tcrFieldSincosShift)
 }
 
 // SetSincos source increment offset size
-func (r *registerMdmac15tcrType) SetSincos(value uint8) {
+func (r *RegisterMdmac15tcrType) SetSincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldSincosMask)|(uint32(value)<<RegisterMdmac15tcrFieldSincosShift))
 }
 
@@ -16267,12 +20890,12 @@ const (
 )
 
 // GetDincos Destination increment offset
-func (r *registerMdmac15tcrType) GetDincos() uint8 {
+func (r *RegisterMdmac15tcrType) GetDincos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldDincosMask) >> RegisterMdmac15tcrFieldDincosShift)
 }
 
 // SetDincos Destination increment offset
-func (r *registerMdmac15tcrType) SetDincos(value uint8) {
+func (r *RegisterMdmac15tcrType) SetDincos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldDincosMask)|(uint32(value)<<RegisterMdmac15tcrFieldDincosShift))
 }
 
@@ -16282,12 +20905,12 @@ const (
 )
 
 // GetSburst source burst transfer configuration
-func (r *registerMdmac15tcrType) GetSburst() uint8 {
+func (r *RegisterMdmac15tcrType) GetSburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldSburstMask) >> RegisterMdmac15tcrFieldSburstShift)
 }
 
 // SetSburst source burst transfer configuration
-func (r *registerMdmac15tcrType) SetSburst(value uint8) {
+func (r *RegisterMdmac15tcrType) SetSburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldSburstMask)|(uint32(value)<<RegisterMdmac15tcrFieldSburstShift))
 }
 
@@ -16297,12 +20920,12 @@ const (
 )
 
 // GetDburst Destination burst transfer configuration
-func (r *registerMdmac15tcrType) GetDburst() uint8 {
+func (r *RegisterMdmac15tcrType) GetDburst() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldDburstMask) >> RegisterMdmac15tcrFieldDburstShift)
 }
 
 // SetDburst Destination burst transfer configuration
-func (r *registerMdmac15tcrType) SetDburst(value uint8) {
+func (r *RegisterMdmac15tcrType) SetDburst(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldDburstMask)|(uint32(value)<<RegisterMdmac15tcrFieldDburstShift))
 }
 
@@ -16312,12 +20935,12 @@ const (
 )
 
 // GetTlen buffer transfer lengh
-func (r *registerMdmac15tcrType) GetTlen() uint8 {
+func (r *RegisterMdmac15tcrType) GetTlen() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldTlenMask) >> RegisterMdmac15tcrFieldTlenShift)
 }
 
 // SetTlen buffer transfer lengh
-func (r *registerMdmac15tcrType) SetTlen(value uint8) {
+func (r *RegisterMdmac15tcrType) SetTlen(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldTlenMask)|(uint32(value)<<RegisterMdmac15tcrFieldTlenShift))
 }
 
@@ -16327,12 +20950,12 @@ const (
 )
 
 // GetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac15tcrType) GetPke() bool {
+func (r *RegisterMdmac15tcrType) GetPke() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldPkeMask) != 0
 }
 
 // SetPke PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM[0] value. This bit is protected and can be written only if EN is 0
-func (r *registerMdmac15tcrType) SetPke(value bool) {
+func (r *RegisterMdmac15tcrType) SetPke(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15tcrFieldPkeMask)
 	} else {
@@ -16346,12 +20969,12 @@ const (
 )
 
 // GetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac15tcrType) GetPam() uint8 {
+func (r *RegisterMdmac15tcrType) GetPam() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldPamMask) >> RegisterMdmac15tcrFieldPamShift)
 }
 
 // SetPam Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0
-func (r *registerMdmac15tcrType) SetPam(value uint8) {
+func (r *RegisterMdmac15tcrType) SetPam(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldPamMask)|(uint32(value)<<RegisterMdmac15tcrFieldPamShift))
 }
 
@@ -16361,12 +20984,12 @@ const (
 )
 
 // GetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac15tcrType) GetTrgm() uint8 {
+func (r *RegisterMdmac15tcrType) GetTrgm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldTrgmMask) >> RegisterMdmac15tcrFieldTrgmShift)
 }
 
 // SetTrgm Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac15tcrType) SetTrgm(value uint8) {
+func (r *RegisterMdmac15tcrType) SetTrgm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tcrFieldTrgmMask)|(uint32(value)<<RegisterMdmac15tcrFieldTrgmShift))
 }
 
@@ -16376,12 +20999,12 @@ const (
 )
 
 // GetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac15tcrType) GetSwrm() bool {
+func (r *RegisterMdmac15tcrType) GetSwrm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldSwrmMask) != 0
 }
 
 // SetSwrm SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac15tcrType) SetSwrm(value bool) {
+func (r *RegisterMdmac15tcrType) SetSwrm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15tcrFieldSwrmMask)
 	} else {
@@ -16395,12 +21018,12 @@ const (
 )
 
 // GetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac15tcrType) GetBwm() bool {
+func (r *RegisterMdmac15tcrType) GetBwm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tcrFieldBwmMask) != 0
 }
 
 // SetBwm Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable.
-func (r *registerMdmac15tcrType) SetBwm(value bool) {
+func (r *RegisterMdmac15tcrType) SetBwm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15tcrFieldBwmMask)
 	} else {
@@ -16408,8 +21031,31 @@ func (r *registerMdmac15tcrType) SetBwm(value bool) {
 	}
 }
 
-// registerMdmac15bndtrType MDMA Channel x block number of data register
-type registerMdmac15bndtrType uint32
+// RegisterMdmac15bndtrType MDMA Channel x block number of data register
+type RegisterMdmac15bndtrType uint32
+
+func (r *RegisterMdmac15bndtrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15bndtrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15bndtrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15bndtrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15bndtrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15bndtrFieldBndtShift = 0
@@ -16417,12 +21063,12 @@ const (
 )
 
 // GetBndt block number of data to transfer
-func (r *registerMdmac15bndtrType) GetBndt() uint32 {
+func (r *RegisterMdmac15bndtrType) GetBndt() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15bndtrFieldBndtMask) >> RegisterMdmac15bndtrFieldBndtShift)
 }
 
 // SetBndt block number of data to transfer
-func (r *registerMdmac15bndtrType) SetBndt(value uint32) {
+func (r *RegisterMdmac15bndtrType) SetBndt(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15bndtrFieldBndtMask)|(uint32(value)<<RegisterMdmac15bndtrFieldBndtShift))
 }
 
@@ -16432,12 +21078,12 @@ const (
 )
 
 // GetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac15bndtrType) GetBrsum() bool {
+func (r *RegisterMdmac15bndtrType) GetBrsum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15bndtrFieldBrsumMask) != 0
 }
 
 // SetBrsum Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac15bndtrType) SetBrsum(value bool) {
+func (r *RegisterMdmac15bndtrType) SetBrsum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15bndtrFieldBrsumMask)
 	} else {
@@ -16451,12 +21097,12 @@ const (
 )
 
 // GetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac15bndtrType) GetBrdum() bool {
+func (r *RegisterMdmac15bndtrType) GetBrdum() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15bndtrFieldBrdumMask) != 0
 }
 
 // SetBrdum Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac15bndtrType) SetBrdum(value bool) {
+func (r *RegisterMdmac15bndtrType) SetBrdum(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15bndtrFieldBrdumMask)
 	} else {
@@ -16470,17 +21116,40 @@ const (
 )
 
 // GetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac15bndtrType) GetBrc() uint16 {
+func (r *RegisterMdmac15bndtrType) GetBrc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15bndtrFieldBrcMask) >> RegisterMdmac15bndtrFieldBrcShift)
 }
 
 // SetBrc Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0.
-func (r *registerMdmac15bndtrType) SetBrc(value uint16) {
+func (r *RegisterMdmac15bndtrType) SetBrc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15bndtrFieldBrcMask)|(uint32(value)<<RegisterMdmac15bndtrFieldBrcShift))
 }
 
-// registerMdmac15sarType MDMA channel x source address register
-type registerMdmac15sarType uint32
+// RegisterMdmac15sarType MDMA channel x source address register
+type RegisterMdmac15sarType uint32
+
+func (r *RegisterMdmac15sarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15sarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15sarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15sarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15sarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15sarFieldSarShift = 0
@@ -16488,17 +21157,40 @@ const (
 )
 
 // GetSar source adr base
-func (r *registerMdmac15sarType) GetSar() uint32 {
+func (r *RegisterMdmac15sarType) GetSar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15sarFieldSarMask) >> RegisterMdmac15sarFieldSarShift)
 }
 
 // SetSar source adr base
-func (r *registerMdmac15sarType) SetSar(value uint32) {
+func (r *RegisterMdmac15sarType) SetSar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15sarFieldSarMask)|(uint32(value)<<RegisterMdmac15sarFieldSarShift))
 }
 
-// registerMdmac15darType MDMA channel x destination address register
-type registerMdmac15darType uint32
+// RegisterMdmac15darType MDMA channel x destination address register
+type RegisterMdmac15darType uint32
+
+func (r *RegisterMdmac15darType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15darType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15darType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15darType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15darType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15darFieldDarShift = 0
@@ -16506,17 +21198,40 @@ const (
 )
 
 // GetDar Destination adr base
-func (r *registerMdmac15darType) GetDar() uint32 {
+func (r *RegisterMdmac15darType) GetDar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15darFieldDarMask) >> RegisterMdmac15darFieldDarShift)
 }
 
 // SetDar Destination adr base
-func (r *registerMdmac15darType) SetDar(value uint32) {
+func (r *RegisterMdmac15darType) SetDar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15darFieldDarMask)|(uint32(value)<<RegisterMdmac15darFieldDarShift))
 }
 
-// registerMdmac15brurType MDMA channel x Block Repeat address Update register
-type registerMdmac15brurType uint32
+// RegisterMdmac15brurType MDMA channel x Block Repeat address Update register
+type RegisterMdmac15brurType uint32
+
+func (r *RegisterMdmac15brurType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15brurType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15brurType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15brurType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15brurType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15brurFieldSuvShift = 0
@@ -16524,12 +21239,12 @@ const (
 )
 
 // GetSuv source adresse update value
-func (r *registerMdmac15brurType) GetSuv() uint16 {
+func (r *RegisterMdmac15brurType) GetSuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15brurFieldSuvMask) >> RegisterMdmac15brurFieldSuvShift)
 }
 
 // SetSuv source adresse update value
-func (r *registerMdmac15brurType) SetSuv(value uint16) {
+func (r *RegisterMdmac15brurType) SetSuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15brurFieldSuvMask)|(uint32(value)<<RegisterMdmac15brurFieldSuvShift))
 }
 
@@ -16539,17 +21254,40 @@ const (
 )
 
 // GetDuv destination address update
-func (r *registerMdmac15brurType) GetDuv() uint16 {
+func (r *RegisterMdmac15brurType) GetDuv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15brurFieldDuvMask) >> RegisterMdmac15brurFieldDuvShift)
 }
 
 // SetDuv destination address update
-func (r *registerMdmac15brurType) SetDuv(value uint16) {
+func (r *RegisterMdmac15brurType) SetDuv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15brurFieldDuvMask)|(uint32(value)<<RegisterMdmac15brurFieldDuvShift))
 }
 
-// registerMdmac15larType MDMA channel x Link Address register
-type registerMdmac15larType uint32
+// RegisterMdmac15larType MDMA channel x Link Address register
+type RegisterMdmac15larType uint32
+
+func (r *RegisterMdmac15larType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15larType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15larType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15larType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15larType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15larFieldLarShift = 0
@@ -16557,17 +21295,40 @@ const (
 )
 
 // GetLar Link address register
-func (r *registerMdmac15larType) GetLar() uint32 {
+func (r *RegisterMdmac15larType) GetLar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15larFieldLarMask) >> RegisterMdmac15larFieldLarShift)
 }
 
 // SetLar Link address register
-func (r *registerMdmac15larType) SetLar(value uint32) {
+func (r *RegisterMdmac15larType) SetLar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15larFieldLarMask)|(uint32(value)<<RegisterMdmac15larFieldLarShift))
 }
 
-// registerMdmac15tbrType MDMA channel x Trigger and Bus selection Register
-type registerMdmac15tbrType uint32
+// RegisterMdmac15tbrType MDMA channel x Trigger and Bus selection Register
+type RegisterMdmac15tbrType uint32
+
+func (r *RegisterMdmac15tbrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15tbrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15tbrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15tbrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15tbrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15tbrFieldTselShift = 0
@@ -16575,12 +21336,12 @@ const (
 )
 
 // GetTsel Trigger selection
-func (r *registerMdmac15tbrType) GetTsel() uint8 {
+func (r *RegisterMdmac15tbrType) GetTsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tbrFieldTselMask) >> RegisterMdmac15tbrFieldTselShift)
 }
 
 // SetTsel Trigger selection
-func (r *registerMdmac15tbrType) SetTsel(value uint8) {
+func (r *RegisterMdmac15tbrType) SetTsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15tbrFieldTselMask)|(uint32(value)<<RegisterMdmac15tbrFieldTselShift))
 }
 
@@ -16590,12 +21351,12 @@ const (
 )
 
 // GetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac15tbrType) GetSbus() bool {
+func (r *RegisterMdmac15tbrType) GetSbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tbrFieldSbusMask) != 0
 }
 
 // SetSbus Source BUS select This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac15tbrType) SetSbus(value bool) {
+func (r *RegisterMdmac15tbrType) SetSbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15tbrFieldSbusMask)
 	} else {
@@ -16609,12 +21370,12 @@ const (
 )
 
 // GetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac15tbrType) GetDbus() bool {
+func (r *RegisterMdmac15tbrType) GetDbus() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15tbrFieldDbusMask) != 0
 }
 
 // SetDbus Destination BUS slect This bit is protected and can be written only if EN is 0.
-func (r *registerMdmac15tbrType) SetDbus(value bool) {
+func (r *RegisterMdmac15tbrType) SetDbus(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMdmac15tbrFieldDbusMask)
 	} else {
@@ -16622,8 +21383,31 @@ func (r *registerMdmac15tbrType) SetDbus(value bool) {
 	}
 }
 
-// registerMdmac15marType MDMA channel x Mask address register
-type registerMdmac15marType uint32
+// RegisterMdmac15marType MDMA channel x Mask address register
+type RegisterMdmac15marType uint32
+
+func (r *RegisterMdmac15marType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15marType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15marType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15marType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15marType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15marFieldMarShift = 0
@@ -16631,17 +21415,40 @@ const (
 )
 
 // GetMar Mask address
-func (r *registerMdmac15marType) GetMar() uint32 {
+func (r *RegisterMdmac15marType) GetMar() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15marFieldMarMask) >> RegisterMdmac15marFieldMarShift)
 }
 
 // SetMar Mask address
-func (r *registerMdmac15marType) SetMar(value uint32) {
+func (r *RegisterMdmac15marType) SetMar(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15marFieldMarMask)|(uint32(value)<<RegisterMdmac15marFieldMarShift))
 }
 
-// registerMdmac15mdrType MDMA channel x Mask Data register
-type registerMdmac15mdrType uint32
+// RegisterMdmac15mdrType MDMA channel x Mask Data register
+type RegisterMdmac15mdrType uint32
+
+func (r *RegisterMdmac15mdrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMdmac15mdrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMdmac15mdrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMdmac15mdrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMdmac15mdrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMdmac15mdrFieldMdrShift = 0
@@ -16649,11 +21456,11 @@ const (
 )
 
 // GetMdr Mask data
-func (r *registerMdmac15mdrType) GetMdr() uint32 {
+func (r *RegisterMdmac15mdrType) GetMdr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMdmac15mdrFieldMdrMask) >> RegisterMdmac15mdrFieldMdrShift)
 }
 
 // SetMdr Mask data
-func (r *registerMdmac15mdrType) SetMdr(value uint32) {
+func (r *RegisterMdmac15mdrType) SetMdr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMdmac15mdrFieldMdrMask)|(uint32(value)<<RegisterMdmac15mdrFieldMdrShift))
 }

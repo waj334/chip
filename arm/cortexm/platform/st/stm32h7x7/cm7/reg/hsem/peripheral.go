@@ -12,85 +12,108 @@ var (
 )
 
 type _hsem struct {
-	Hsemr0     registerHsemr0Type
-	Hsemr1     registerHsemr1Type
-	Hsemr2     registerHsemr2Type
-	Hsemr3     registerHsemr3Type
-	Hsemr4     registerHsemr4Type
-	Hsemr5     registerHsemr5Type
-	Hsemr6     registerHsemr6Type
-	Hsemr7     registerHsemr7Type
-	Hsemr8     registerHsemr8Type
-	Hsemr9     registerHsemr9Type
-	Hsemr10    registerHsemr10Type
-	Hsemr11    registerHsemr11Type
-	Hsemr12    registerHsemr12Type
-	Hsemr13    registerHsemr13Type
-	Hsemr14    registerHsemr14Type
-	Hsemr15    registerHsemr15Type
-	Hsemr16    registerHsemr16Type
-	Hsemr17    registerHsemr17Type
-	Hsemr18    registerHsemr18Type
-	Hsemr19    registerHsemr19Type
-	Hsemr20    registerHsemr20Type
-	Hsemr21    registerHsemr21Type
-	Hsemr22    registerHsemr22Type
-	Hsemr23    registerHsemr23Type
-	Hsemr24    registerHsemr24Type
-	Hsemr25    registerHsemr25Type
-	Hsemr26    registerHsemr26Type
-	Hsemr27    registerHsemr27Type
-	Hsemr28    registerHsemr28Type
-	Hsemr29    registerHsemr29Type
-	Hsemr30    registerHsemr30Type
-	Hsemr31    registerHsemr31Type
-	Hsemrlr0   registerHsemrlr0Type
-	Hsemrlr1   registerHsemrlr1Type
-	Hsemrlr2   registerHsemrlr2Type
-	Hsemrlr3   registerHsemrlr3Type
-	Hsemrlr4   registerHsemrlr4Type
-	Hsemrlr5   registerHsemrlr5Type
-	Hsemrlr6   registerHsemrlr6Type
-	Hsemrlr7   registerHsemrlr7Type
-	Hsemrlr8   registerHsemrlr8Type
-	Hsemrlr9   registerHsemrlr9Type
-	Hsemrlr10  registerHsemrlr10Type
-	Hsemrlr11  registerHsemrlr11Type
-	Hsemrlr12  registerHsemrlr12Type
-	Hsemrlr13  registerHsemrlr13Type
-	Hsemrlr14  registerHsemrlr14Type
-	Hsemrlr15  registerHsemrlr15Type
-	Hsemrlr16  registerHsemrlr16Type
-	Hsemrlr17  registerHsemrlr17Type
-	Hsemrlr18  registerHsemrlr18Type
-	Hsemrlr19  registerHsemrlr19Type
-	Hsemrlr20  registerHsemrlr20Type
-	Hsemrlr21  registerHsemrlr21Type
-	Hsemrlr22  registerHsemrlr22Type
-	Hsemrlr23  registerHsemrlr23Type
-	Hsemrlr24  registerHsemrlr24Type
-	Hsemrlr25  registerHsemrlr25Type
-	Hsemrlr26  registerHsemrlr26Type
-	Hsemrlr27  registerHsemrlr27Type
-	Hsemrlr28  registerHsemrlr28Type
-	Hsemrlr29  registerHsemrlr29Type
-	Hsemrlr30  registerHsemrlr30Type
-	Hsemrlr31  registerHsemrlr31Type
-	Hsemc1ier  registerHsemc1ierType
-	Hsemc1icr  registerHsemc1icrType
-	Hsemc1isr  registerHsemc1isrType
-	Hsemc1misr registerHsemc1misrType
-	Hsemc2ier  registerHsemc2ierType
-	Hsemc2icr  registerHsemc2icrType
-	Hsemc2isr  registerHsemc2isrType
-	Hsemc2misr registerHsemc2misrType
+	Hsemr0     RegisterHsemr0Type
+	Hsemr1     RegisterHsemr1Type
+	Hsemr2     RegisterHsemr2Type
+	Hsemr3     RegisterHsemr3Type
+	Hsemr4     RegisterHsemr4Type
+	Hsemr5     RegisterHsemr5Type
+	Hsemr6     RegisterHsemr6Type
+	Hsemr7     RegisterHsemr7Type
+	Hsemr8     RegisterHsemr8Type
+	Hsemr9     RegisterHsemr9Type
+	Hsemr10    RegisterHsemr10Type
+	Hsemr11    RegisterHsemr11Type
+	Hsemr12    RegisterHsemr12Type
+	Hsemr13    RegisterHsemr13Type
+	Hsemr14    RegisterHsemr14Type
+	Hsemr15    RegisterHsemr15Type
+	Hsemr16    RegisterHsemr16Type
+	Hsemr17    RegisterHsemr17Type
+	Hsemr18    RegisterHsemr18Type
+	Hsemr19    RegisterHsemr19Type
+	Hsemr20    RegisterHsemr20Type
+	Hsemr21    RegisterHsemr21Type
+	Hsemr22    RegisterHsemr22Type
+	Hsemr23    RegisterHsemr23Type
+	Hsemr24    RegisterHsemr24Type
+	Hsemr25    RegisterHsemr25Type
+	Hsemr26    RegisterHsemr26Type
+	Hsemr27    RegisterHsemr27Type
+	Hsemr28    RegisterHsemr28Type
+	Hsemr29    RegisterHsemr29Type
+	Hsemr30    RegisterHsemr30Type
+	Hsemr31    RegisterHsemr31Type
+	Hsemrlr0   RegisterHsemrlr0Type
+	Hsemrlr1   RegisterHsemrlr1Type
+	Hsemrlr2   RegisterHsemrlr2Type
+	Hsemrlr3   RegisterHsemrlr3Type
+	Hsemrlr4   RegisterHsemrlr4Type
+	Hsemrlr5   RegisterHsemrlr5Type
+	Hsemrlr6   RegisterHsemrlr6Type
+	Hsemrlr7   RegisterHsemrlr7Type
+	Hsemrlr8   RegisterHsemrlr8Type
+	Hsemrlr9   RegisterHsemrlr9Type
+	Hsemrlr10  RegisterHsemrlr10Type
+	Hsemrlr11  RegisterHsemrlr11Type
+	Hsemrlr12  RegisterHsemrlr12Type
+	Hsemrlr13  RegisterHsemrlr13Type
+	Hsemrlr14  RegisterHsemrlr14Type
+	Hsemrlr15  RegisterHsemrlr15Type
+	Hsemrlr16  RegisterHsemrlr16Type
+	Hsemrlr17  RegisterHsemrlr17Type
+	Hsemrlr18  RegisterHsemrlr18Type
+	Hsemrlr19  RegisterHsemrlr19Type
+	Hsemrlr20  RegisterHsemrlr20Type
+	Hsemrlr21  RegisterHsemrlr21Type
+	Hsemrlr22  RegisterHsemrlr22Type
+	Hsemrlr23  RegisterHsemrlr23Type
+	Hsemrlr24  RegisterHsemrlr24Type
+	Hsemrlr25  RegisterHsemrlr25Type
+	Hsemrlr26  RegisterHsemrlr26Type
+	Hsemrlr27  RegisterHsemrlr27Type
+	Hsemrlr28  RegisterHsemrlr28Type
+	Hsemrlr29  RegisterHsemrlr29Type
+	Hsemrlr30  RegisterHsemrlr30Type
+	Hsemrlr31  RegisterHsemrlr31Type
+	Hsemc1ier  RegisterHsemc1ierType
+	Hsemc1icr  RegisterHsemc1icrType
+	Hsemc1isr  RegisterHsemc1isrType
+	Hsemc1misr RegisterHsemc1misrType
+	Hsemc2ier  RegisterHsemc2ierType
+	Hsemc2icr  RegisterHsemc2icrType
+	Hsemc2isr  RegisterHsemc2isrType
+	Hsemc2misr RegisterHsemc2misrType
 	_          [32]byte
-	Hsemcr     registerHsemcrType
-	Hsemkeyr   registerHsemkeyrType
+	Hsemcr     RegisterHsemcrType
+	Hsemkeyr   RegisterHsemkeyrType
 }
 
-// registerHsemr0Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr0Type uint32
+// RegisterHsemr0Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr0Type uint32
+
+func (r *RegisterHsemr0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr0FieldProcidShift = 0
@@ -98,12 +121,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr0Type) GetProcid() uint8 {
+func (r *RegisterHsemr0Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr0FieldProcidMask) >> RegisterHsemr0FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr0Type) SetProcid(value uint8) {
+func (r *RegisterHsemr0Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr0FieldProcidMask)|(uint32(value)<<RegisterHsemr0FieldProcidShift))
 }
 
@@ -113,12 +136,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr0Type) GetCoreid() uint8 {
+func (r *RegisterHsemr0Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr0FieldCoreidMask) >> RegisterHsemr0FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr0Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr0Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr0FieldCoreidMask)|(uint32(value)<<RegisterHsemr0FieldCoreidShift))
 }
 
@@ -128,12 +151,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr0Type) GetLock() bool {
+func (r *RegisterHsemr0Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr0FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr0Type) SetLock(value bool) {
+func (r *RegisterHsemr0Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr0FieldLockMask)
 	} else {
@@ -141,8 +164,31 @@ func (r *registerHsemr0Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr1Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr1Type uint32
+// RegisterHsemr1Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr1Type uint32
+
+func (r *RegisterHsemr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr1FieldProcidShift = 0
@@ -150,12 +196,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr1Type) GetProcid() uint8 {
+func (r *RegisterHsemr1Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr1FieldProcidMask) >> RegisterHsemr1FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr1Type) SetProcid(value uint8) {
+func (r *RegisterHsemr1Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr1FieldProcidMask)|(uint32(value)<<RegisterHsemr1FieldProcidShift))
 }
 
@@ -165,12 +211,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr1Type) GetCoreid() uint8 {
+func (r *RegisterHsemr1Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr1FieldCoreidMask) >> RegisterHsemr1FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr1Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr1Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr1FieldCoreidMask)|(uint32(value)<<RegisterHsemr1FieldCoreidShift))
 }
 
@@ -180,12 +226,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr1Type) GetLock() bool {
+func (r *RegisterHsemr1Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr1FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr1Type) SetLock(value bool) {
+func (r *RegisterHsemr1Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr1FieldLockMask)
 	} else {
@@ -193,8 +239,31 @@ func (r *registerHsemr1Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr2Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr2Type uint32
+// RegisterHsemr2Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr2Type uint32
+
+func (r *RegisterHsemr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr2FieldProcidShift = 0
@@ -202,12 +271,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr2Type) GetProcid() uint8 {
+func (r *RegisterHsemr2Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr2FieldProcidMask) >> RegisterHsemr2FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr2Type) SetProcid(value uint8) {
+func (r *RegisterHsemr2Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr2FieldProcidMask)|(uint32(value)<<RegisterHsemr2FieldProcidShift))
 }
 
@@ -217,12 +286,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr2Type) GetCoreid() uint8 {
+func (r *RegisterHsemr2Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr2FieldCoreidMask) >> RegisterHsemr2FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr2Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr2Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr2FieldCoreidMask)|(uint32(value)<<RegisterHsemr2FieldCoreidShift))
 }
 
@@ -232,12 +301,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr2Type) GetLock() bool {
+func (r *RegisterHsemr2Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr2FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr2Type) SetLock(value bool) {
+func (r *RegisterHsemr2Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr2FieldLockMask)
 	} else {
@@ -245,8 +314,31 @@ func (r *registerHsemr2Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr3Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr3Type uint32
+// RegisterHsemr3Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr3Type uint32
+
+func (r *RegisterHsemr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr3FieldProcidShift = 0
@@ -254,12 +346,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr3Type) GetProcid() uint8 {
+func (r *RegisterHsemr3Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr3FieldProcidMask) >> RegisterHsemr3FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr3Type) SetProcid(value uint8) {
+func (r *RegisterHsemr3Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr3FieldProcidMask)|(uint32(value)<<RegisterHsemr3FieldProcidShift))
 }
 
@@ -269,12 +361,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr3Type) GetCoreid() uint8 {
+func (r *RegisterHsemr3Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr3FieldCoreidMask) >> RegisterHsemr3FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr3Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr3Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr3FieldCoreidMask)|(uint32(value)<<RegisterHsemr3FieldCoreidShift))
 }
 
@@ -284,12 +376,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr3Type) GetLock() bool {
+func (r *RegisterHsemr3Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr3FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr3Type) SetLock(value bool) {
+func (r *RegisterHsemr3Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr3FieldLockMask)
 	} else {
@@ -297,8 +389,31 @@ func (r *registerHsemr3Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr4Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr4Type uint32
+// RegisterHsemr4Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr4Type uint32
+
+func (r *RegisterHsemr4Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr4Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr4Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr4Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr4Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr4FieldProcidShift = 0
@@ -306,12 +421,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr4Type) GetProcid() uint8 {
+func (r *RegisterHsemr4Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr4FieldProcidMask) >> RegisterHsemr4FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr4Type) SetProcid(value uint8) {
+func (r *RegisterHsemr4Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr4FieldProcidMask)|(uint32(value)<<RegisterHsemr4FieldProcidShift))
 }
 
@@ -321,12 +436,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr4Type) GetCoreid() uint8 {
+func (r *RegisterHsemr4Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr4FieldCoreidMask) >> RegisterHsemr4FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr4Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr4Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr4FieldCoreidMask)|(uint32(value)<<RegisterHsemr4FieldCoreidShift))
 }
 
@@ -336,12 +451,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr4Type) GetLock() bool {
+func (r *RegisterHsemr4Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr4FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr4Type) SetLock(value bool) {
+func (r *RegisterHsemr4Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr4FieldLockMask)
 	} else {
@@ -349,8 +464,31 @@ func (r *registerHsemr4Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr5Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr5Type uint32
+// RegisterHsemr5Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr5Type uint32
+
+func (r *RegisterHsemr5Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr5Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr5Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr5Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr5Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr5FieldProcidShift = 0
@@ -358,12 +496,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr5Type) GetProcid() uint8 {
+func (r *RegisterHsemr5Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr5FieldProcidMask) >> RegisterHsemr5FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr5Type) SetProcid(value uint8) {
+func (r *RegisterHsemr5Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr5FieldProcidMask)|(uint32(value)<<RegisterHsemr5FieldProcidShift))
 }
 
@@ -373,12 +511,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr5Type) GetCoreid() uint8 {
+func (r *RegisterHsemr5Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr5FieldCoreidMask) >> RegisterHsemr5FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr5Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr5Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr5FieldCoreidMask)|(uint32(value)<<RegisterHsemr5FieldCoreidShift))
 }
 
@@ -388,12 +526,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr5Type) GetLock() bool {
+func (r *RegisterHsemr5Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr5FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr5Type) SetLock(value bool) {
+func (r *RegisterHsemr5Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr5FieldLockMask)
 	} else {
@@ -401,8 +539,31 @@ func (r *registerHsemr5Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr6Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr6Type uint32
+// RegisterHsemr6Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr6Type uint32
+
+func (r *RegisterHsemr6Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr6Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr6Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr6Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr6Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr6FieldProcidShift = 0
@@ -410,12 +571,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr6Type) GetProcid() uint8 {
+func (r *RegisterHsemr6Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr6FieldProcidMask) >> RegisterHsemr6FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr6Type) SetProcid(value uint8) {
+func (r *RegisterHsemr6Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr6FieldProcidMask)|(uint32(value)<<RegisterHsemr6FieldProcidShift))
 }
 
@@ -425,12 +586,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr6Type) GetCoreid() uint8 {
+func (r *RegisterHsemr6Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr6FieldCoreidMask) >> RegisterHsemr6FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr6Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr6Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr6FieldCoreidMask)|(uint32(value)<<RegisterHsemr6FieldCoreidShift))
 }
 
@@ -440,12 +601,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr6Type) GetLock() bool {
+func (r *RegisterHsemr6Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr6FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr6Type) SetLock(value bool) {
+func (r *RegisterHsemr6Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr6FieldLockMask)
 	} else {
@@ -453,8 +614,31 @@ func (r *registerHsemr6Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr7Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr7Type uint32
+// RegisterHsemr7Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr7Type uint32
+
+func (r *RegisterHsemr7Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr7Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr7Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr7Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr7Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr7FieldProcidShift = 0
@@ -462,12 +646,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr7Type) GetProcid() uint8 {
+func (r *RegisterHsemr7Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr7FieldProcidMask) >> RegisterHsemr7FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr7Type) SetProcid(value uint8) {
+func (r *RegisterHsemr7Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr7FieldProcidMask)|(uint32(value)<<RegisterHsemr7FieldProcidShift))
 }
 
@@ -477,12 +661,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr7Type) GetCoreid() uint8 {
+func (r *RegisterHsemr7Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr7FieldCoreidMask) >> RegisterHsemr7FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr7Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr7Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr7FieldCoreidMask)|(uint32(value)<<RegisterHsemr7FieldCoreidShift))
 }
 
@@ -492,12 +676,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr7Type) GetLock() bool {
+func (r *RegisterHsemr7Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr7FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr7Type) SetLock(value bool) {
+func (r *RegisterHsemr7Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr7FieldLockMask)
 	} else {
@@ -505,8 +689,31 @@ func (r *registerHsemr7Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr8Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr8Type uint32
+// RegisterHsemr8Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr8Type uint32
+
+func (r *RegisterHsemr8Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr8Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr8Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr8Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr8Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr8FieldProcidShift = 0
@@ -514,12 +721,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr8Type) GetProcid() uint8 {
+func (r *RegisterHsemr8Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr8FieldProcidMask) >> RegisterHsemr8FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr8Type) SetProcid(value uint8) {
+func (r *RegisterHsemr8Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr8FieldProcidMask)|(uint32(value)<<RegisterHsemr8FieldProcidShift))
 }
 
@@ -529,12 +736,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr8Type) GetCoreid() uint8 {
+func (r *RegisterHsemr8Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr8FieldCoreidMask) >> RegisterHsemr8FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr8Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr8Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr8FieldCoreidMask)|(uint32(value)<<RegisterHsemr8FieldCoreidShift))
 }
 
@@ -544,12 +751,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr8Type) GetLock() bool {
+func (r *RegisterHsemr8Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr8FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr8Type) SetLock(value bool) {
+func (r *RegisterHsemr8Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr8FieldLockMask)
 	} else {
@@ -557,8 +764,31 @@ func (r *registerHsemr8Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr9Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr9Type uint32
+// RegisterHsemr9Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr9Type uint32
+
+func (r *RegisterHsemr9Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr9Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr9Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr9Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr9Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr9FieldProcidShift = 0
@@ -566,12 +796,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr9Type) GetProcid() uint8 {
+func (r *RegisterHsemr9Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr9FieldProcidMask) >> RegisterHsemr9FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr9Type) SetProcid(value uint8) {
+func (r *RegisterHsemr9Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr9FieldProcidMask)|(uint32(value)<<RegisterHsemr9FieldProcidShift))
 }
 
@@ -581,12 +811,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr9Type) GetCoreid() uint8 {
+func (r *RegisterHsemr9Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr9FieldCoreidMask) >> RegisterHsemr9FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr9Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr9Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr9FieldCoreidMask)|(uint32(value)<<RegisterHsemr9FieldCoreidShift))
 }
 
@@ -596,12 +826,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr9Type) GetLock() bool {
+func (r *RegisterHsemr9Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr9FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr9Type) SetLock(value bool) {
+func (r *RegisterHsemr9Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr9FieldLockMask)
 	} else {
@@ -609,8 +839,31 @@ func (r *registerHsemr9Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr10Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr10Type uint32
+// RegisterHsemr10Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr10Type uint32
+
+func (r *RegisterHsemr10Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr10Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr10Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr10Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr10Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr10FieldProcidShift = 0
@@ -618,12 +871,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr10Type) GetProcid() uint8 {
+func (r *RegisterHsemr10Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr10FieldProcidMask) >> RegisterHsemr10FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr10Type) SetProcid(value uint8) {
+func (r *RegisterHsemr10Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr10FieldProcidMask)|(uint32(value)<<RegisterHsemr10FieldProcidShift))
 }
 
@@ -633,12 +886,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr10Type) GetCoreid() uint8 {
+func (r *RegisterHsemr10Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr10FieldCoreidMask) >> RegisterHsemr10FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr10Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr10Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr10FieldCoreidMask)|(uint32(value)<<RegisterHsemr10FieldCoreidShift))
 }
 
@@ -648,12 +901,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr10Type) GetLock() bool {
+func (r *RegisterHsemr10Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr10FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr10Type) SetLock(value bool) {
+func (r *RegisterHsemr10Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr10FieldLockMask)
 	} else {
@@ -661,8 +914,31 @@ func (r *registerHsemr10Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr11Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr11Type uint32
+// RegisterHsemr11Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr11Type uint32
+
+func (r *RegisterHsemr11Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr11Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr11Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr11Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr11Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr11FieldProcidShift = 0
@@ -670,12 +946,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr11Type) GetProcid() uint8 {
+func (r *RegisterHsemr11Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr11FieldProcidMask) >> RegisterHsemr11FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr11Type) SetProcid(value uint8) {
+func (r *RegisterHsemr11Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr11FieldProcidMask)|(uint32(value)<<RegisterHsemr11FieldProcidShift))
 }
 
@@ -685,12 +961,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr11Type) GetCoreid() uint8 {
+func (r *RegisterHsemr11Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr11FieldCoreidMask) >> RegisterHsemr11FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr11Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr11Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr11FieldCoreidMask)|(uint32(value)<<RegisterHsemr11FieldCoreidShift))
 }
 
@@ -700,12 +976,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr11Type) GetLock() bool {
+func (r *RegisterHsemr11Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr11FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr11Type) SetLock(value bool) {
+func (r *RegisterHsemr11Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr11FieldLockMask)
 	} else {
@@ -713,8 +989,31 @@ func (r *registerHsemr11Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr12Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr12Type uint32
+// RegisterHsemr12Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr12Type uint32
+
+func (r *RegisterHsemr12Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr12Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr12Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr12Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr12Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr12FieldProcidShift = 0
@@ -722,12 +1021,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr12Type) GetProcid() uint8 {
+func (r *RegisterHsemr12Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr12FieldProcidMask) >> RegisterHsemr12FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr12Type) SetProcid(value uint8) {
+func (r *RegisterHsemr12Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr12FieldProcidMask)|(uint32(value)<<RegisterHsemr12FieldProcidShift))
 }
 
@@ -737,12 +1036,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr12Type) GetCoreid() uint8 {
+func (r *RegisterHsemr12Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr12FieldCoreidMask) >> RegisterHsemr12FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr12Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr12Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr12FieldCoreidMask)|(uint32(value)<<RegisterHsemr12FieldCoreidShift))
 }
 
@@ -752,12 +1051,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr12Type) GetLock() bool {
+func (r *RegisterHsemr12Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr12FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr12Type) SetLock(value bool) {
+func (r *RegisterHsemr12Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr12FieldLockMask)
 	} else {
@@ -765,8 +1064,31 @@ func (r *registerHsemr12Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr13Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr13Type uint32
+// RegisterHsemr13Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr13Type uint32
+
+func (r *RegisterHsemr13Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr13Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr13Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr13Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr13Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr13FieldProcidShift = 0
@@ -774,12 +1096,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr13Type) GetProcid() uint8 {
+func (r *RegisterHsemr13Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr13FieldProcidMask) >> RegisterHsemr13FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr13Type) SetProcid(value uint8) {
+func (r *RegisterHsemr13Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr13FieldProcidMask)|(uint32(value)<<RegisterHsemr13FieldProcidShift))
 }
 
@@ -789,12 +1111,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr13Type) GetCoreid() uint8 {
+func (r *RegisterHsemr13Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr13FieldCoreidMask) >> RegisterHsemr13FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr13Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr13Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr13FieldCoreidMask)|(uint32(value)<<RegisterHsemr13FieldCoreidShift))
 }
 
@@ -804,12 +1126,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr13Type) GetLock() bool {
+func (r *RegisterHsemr13Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr13FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr13Type) SetLock(value bool) {
+func (r *RegisterHsemr13Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr13FieldLockMask)
 	} else {
@@ -817,8 +1139,31 @@ func (r *registerHsemr13Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr14Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr14Type uint32
+// RegisterHsemr14Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr14Type uint32
+
+func (r *RegisterHsemr14Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr14Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr14Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr14Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr14Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr14FieldProcidShift = 0
@@ -826,12 +1171,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr14Type) GetProcid() uint8 {
+func (r *RegisterHsemr14Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr14FieldProcidMask) >> RegisterHsemr14FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr14Type) SetProcid(value uint8) {
+func (r *RegisterHsemr14Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr14FieldProcidMask)|(uint32(value)<<RegisterHsemr14FieldProcidShift))
 }
 
@@ -841,12 +1186,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr14Type) GetCoreid() uint8 {
+func (r *RegisterHsemr14Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr14FieldCoreidMask) >> RegisterHsemr14FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr14Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr14Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr14FieldCoreidMask)|(uint32(value)<<RegisterHsemr14FieldCoreidShift))
 }
 
@@ -856,12 +1201,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr14Type) GetLock() bool {
+func (r *RegisterHsemr14Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr14FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr14Type) SetLock(value bool) {
+func (r *RegisterHsemr14Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr14FieldLockMask)
 	} else {
@@ -869,8 +1214,31 @@ func (r *registerHsemr14Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr15Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr15Type uint32
+// RegisterHsemr15Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr15Type uint32
+
+func (r *RegisterHsemr15Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr15Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr15Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr15Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr15Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr15FieldProcidShift = 0
@@ -878,12 +1246,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr15Type) GetProcid() uint8 {
+func (r *RegisterHsemr15Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr15FieldProcidMask) >> RegisterHsemr15FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr15Type) SetProcid(value uint8) {
+func (r *RegisterHsemr15Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr15FieldProcidMask)|(uint32(value)<<RegisterHsemr15FieldProcidShift))
 }
 
@@ -893,12 +1261,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr15Type) GetCoreid() uint8 {
+func (r *RegisterHsemr15Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr15FieldCoreidMask) >> RegisterHsemr15FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr15Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr15Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr15FieldCoreidMask)|(uint32(value)<<RegisterHsemr15FieldCoreidShift))
 }
 
@@ -908,12 +1276,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr15Type) GetLock() bool {
+func (r *RegisterHsemr15Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr15FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr15Type) SetLock(value bool) {
+func (r *RegisterHsemr15Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr15FieldLockMask)
 	} else {
@@ -921,8 +1289,31 @@ func (r *registerHsemr15Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr16Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr16Type uint32
+// RegisterHsemr16Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr16Type uint32
+
+func (r *RegisterHsemr16Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr16Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr16Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr16Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr16Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr16FieldProcidShift = 0
@@ -930,12 +1321,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr16Type) GetProcid() uint8 {
+func (r *RegisterHsemr16Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr16FieldProcidMask) >> RegisterHsemr16FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr16Type) SetProcid(value uint8) {
+func (r *RegisterHsemr16Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr16FieldProcidMask)|(uint32(value)<<RegisterHsemr16FieldProcidShift))
 }
 
@@ -945,12 +1336,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr16Type) GetCoreid() uint8 {
+func (r *RegisterHsemr16Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr16FieldCoreidMask) >> RegisterHsemr16FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr16Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr16Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr16FieldCoreidMask)|(uint32(value)<<RegisterHsemr16FieldCoreidShift))
 }
 
@@ -960,12 +1351,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr16Type) GetLock() bool {
+func (r *RegisterHsemr16Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr16FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr16Type) SetLock(value bool) {
+func (r *RegisterHsemr16Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr16FieldLockMask)
 	} else {
@@ -973,8 +1364,31 @@ func (r *registerHsemr16Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr17Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr17Type uint32
+// RegisterHsemr17Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr17Type uint32
+
+func (r *RegisterHsemr17Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr17Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr17Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr17Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr17Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr17FieldProcidShift = 0
@@ -982,12 +1396,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr17Type) GetProcid() uint8 {
+func (r *RegisterHsemr17Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr17FieldProcidMask) >> RegisterHsemr17FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr17Type) SetProcid(value uint8) {
+func (r *RegisterHsemr17Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr17FieldProcidMask)|(uint32(value)<<RegisterHsemr17FieldProcidShift))
 }
 
@@ -997,12 +1411,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr17Type) GetCoreid() uint8 {
+func (r *RegisterHsemr17Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr17FieldCoreidMask) >> RegisterHsemr17FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr17Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr17Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr17FieldCoreidMask)|(uint32(value)<<RegisterHsemr17FieldCoreidShift))
 }
 
@@ -1012,12 +1426,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr17Type) GetLock() bool {
+func (r *RegisterHsemr17Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr17FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr17Type) SetLock(value bool) {
+func (r *RegisterHsemr17Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr17FieldLockMask)
 	} else {
@@ -1025,8 +1439,31 @@ func (r *registerHsemr17Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr18Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr18Type uint32
+// RegisterHsemr18Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr18Type uint32
+
+func (r *RegisterHsemr18Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr18Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr18Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr18Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr18Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr18FieldProcidShift = 0
@@ -1034,12 +1471,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr18Type) GetProcid() uint8 {
+func (r *RegisterHsemr18Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr18FieldProcidMask) >> RegisterHsemr18FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr18Type) SetProcid(value uint8) {
+func (r *RegisterHsemr18Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr18FieldProcidMask)|(uint32(value)<<RegisterHsemr18FieldProcidShift))
 }
 
@@ -1049,12 +1486,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr18Type) GetCoreid() uint8 {
+func (r *RegisterHsemr18Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr18FieldCoreidMask) >> RegisterHsemr18FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr18Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr18Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr18FieldCoreidMask)|(uint32(value)<<RegisterHsemr18FieldCoreidShift))
 }
 
@@ -1064,12 +1501,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr18Type) GetLock() bool {
+func (r *RegisterHsemr18Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr18FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr18Type) SetLock(value bool) {
+func (r *RegisterHsemr18Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr18FieldLockMask)
 	} else {
@@ -1077,8 +1514,31 @@ func (r *registerHsemr18Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr19Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr19Type uint32
+// RegisterHsemr19Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr19Type uint32
+
+func (r *RegisterHsemr19Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr19Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr19Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr19Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr19Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr19FieldProcidShift = 0
@@ -1086,12 +1546,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr19Type) GetProcid() uint8 {
+func (r *RegisterHsemr19Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr19FieldProcidMask) >> RegisterHsemr19FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr19Type) SetProcid(value uint8) {
+func (r *RegisterHsemr19Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr19FieldProcidMask)|(uint32(value)<<RegisterHsemr19FieldProcidShift))
 }
 
@@ -1101,12 +1561,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr19Type) GetCoreid() uint8 {
+func (r *RegisterHsemr19Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr19FieldCoreidMask) >> RegisterHsemr19FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr19Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr19Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr19FieldCoreidMask)|(uint32(value)<<RegisterHsemr19FieldCoreidShift))
 }
 
@@ -1116,12 +1576,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr19Type) GetLock() bool {
+func (r *RegisterHsemr19Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr19FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr19Type) SetLock(value bool) {
+func (r *RegisterHsemr19Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr19FieldLockMask)
 	} else {
@@ -1129,8 +1589,31 @@ func (r *registerHsemr19Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr20Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr20Type uint32
+// RegisterHsemr20Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr20Type uint32
+
+func (r *RegisterHsemr20Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr20Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr20Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr20Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr20Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr20FieldProcidShift = 0
@@ -1138,12 +1621,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr20Type) GetProcid() uint8 {
+func (r *RegisterHsemr20Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr20FieldProcidMask) >> RegisterHsemr20FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr20Type) SetProcid(value uint8) {
+func (r *RegisterHsemr20Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr20FieldProcidMask)|(uint32(value)<<RegisterHsemr20FieldProcidShift))
 }
 
@@ -1153,12 +1636,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr20Type) GetCoreid() uint8 {
+func (r *RegisterHsemr20Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr20FieldCoreidMask) >> RegisterHsemr20FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr20Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr20Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr20FieldCoreidMask)|(uint32(value)<<RegisterHsemr20FieldCoreidShift))
 }
 
@@ -1168,12 +1651,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr20Type) GetLock() bool {
+func (r *RegisterHsemr20Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr20FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr20Type) SetLock(value bool) {
+func (r *RegisterHsemr20Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr20FieldLockMask)
 	} else {
@@ -1181,8 +1664,31 @@ func (r *registerHsemr20Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr21Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr21Type uint32
+// RegisterHsemr21Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr21Type uint32
+
+func (r *RegisterHsemr21Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr21Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr21Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr21Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr21Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr21FieldProcidShift = 0
@@ -1190,12 +1696,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr21Type) GetProcid() uint8 {
+func (r *RegisterHsemr21Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr21FieldProcidMask) >> RegisterHsemr21FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr21Type) SetProcid(value uint8) {
+func (r *RegisterHsemr21Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr21FieldProcidMask)|(uint32(value)<<RegisterHsemr21FieldProcidShift))
 }
 
@@ -1205,12 +1711,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr21Type) GetCoreid() uint8 {
+func (r *RegisterHsemr21Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr21FieldCoreidMask) >> RegisterHsemr21FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr21Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr21Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr21FieldCoreidMask)|(uint32(value)<<RegisterHsemr21FieldCoreidShift))
 }
 
@@ -1220,12 +1726,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr21Type) GetLock() bool {
+func (r *RegisterHsemr21Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr21FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr21Type) SetLock(value bool) {
+func (r *RegisterHsemr21Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr21FieldLockMask)
 	} else {
@@ -1233,8 +1739,31 @@ func (r *registerHsemr21Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr22Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr22Type uint32
+// RegisterHsemr22Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr22Type uint32
+
+func (r *RegisterHsemr22Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr22Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr22Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr22Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr22Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr22FieldProcidShift = 0
@@ -1242,12 +1771,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr22Type) GetProcid() uint8 {
+func (r *RegisterHsemr22Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr22FieldProcidMask) >> RegisterHsemr22FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr22Type) SetProcid(value uint8) {
+func (r *RegisterHsemr22Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr22FieldProcidMask)|(uint32(value)<<RegisterHsemr22FieldProcidShift))
 }
 
@@ -1257,12 +1786,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr22Type) GetCoreid() uint8 {
+func (r *RegisterHsemr22Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr22FieldCoreidMask) >> RegisterHsemr22FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr22Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr22Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr22FieldCoreidMask)|(uint32(value)<<RegisterHsemr22FieldCoreidShift))
 }
 
@@ -1272,12 +1801,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr22Type) GetLock() bool {
+func (r *RegisterHsemr22Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr22FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr22Type) SetLock(value bool) {
+func (r *RegisterHsemr22Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr22FieldLockMask)
 	} else {
@@ -1285,8 +1814,31 @@ func (r *registerHsemr22Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr23Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr23Type uint32
+// RegisterHsemr23Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr23Type uint32
+
+func (r *RegisterHsemr23Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr23Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr23Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr23Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr23Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr23FieldProcidShift = 0
@@ -1294,12 +1846,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr23Type) GetProcid() uint8 {
+func (r *RegisterHsemr23Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr23FieldProcidMask) >> RegisterHsemr23FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr23Type) SetProcid(value uint8) {
+func (r *RegisterHsemr23Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr23FieldProcidMask)|(uint32(value)<<RegisterHsemr23FieldProcidShift))
 }
 
@@ -1309,12 +1861,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr23Type) GetCoreid() uint8 {
+func (r *RegisterHsemr23Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr23FieldCoreidMask) >> RegisterHsemr23FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr23Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr23Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr23FieldCoreidMask)|(uint32(value)<<RegisterHsemr23FieldCoreidShift))
 }
 
@@ -1324,12 +1876,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr23Type) GetLock() bool {
+func (r *RegisterHsemr23Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr23FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr23Type) SetLock(value bool) {
+func (r *RegisterHsemr23Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr23FieldLockMask)
 	} else {
@@ -1337,8 +1889,31 @@ func (r *registerHsemr23Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr24Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr24Type uint32
+// RegisterHsemr24Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr24Type uint32
+
+func (r *RegisterHsemr24Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr24Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr24Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr24Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr24Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr24FieldProcidShift = 0
@@ -1346,12 +1921,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr24Type) GetProcid() uint8 {
+func (r *RegisterHsemr24Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr24FieldProcidMask) >> RegisterHsemr24FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr24Type) SetProcid(value uint8) {
+func (r *RegisterHsemr24Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr24FieldProcidMask)|(uint32(value)<<RegisterHsemr24FieldProcidShift))
 }
 
@@ -1361,12 +1936,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr24Type) GetCoreid() uint8 {
+func (r *RegisterHsemr24Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr24FieldCoreidMask) >> RegisterHsemr24FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr24Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr24Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr24FieldCoreidMask)|(uint32(value)<<RegisterHsemr24FieldCoreidShift))
 }
 
@@ -1376,12 +1951,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr24Type) GetLock() bool {
+func (r *RegisterHsemr24Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr24FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr24Type) SetLock(value bool) {
+func (r *RegisterHsemr24Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr24FieldLockMask)
 	} else {
@@ -1389,8 +1964,31 @@ func (r *registerHsemr24Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr25Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr25Type uint32
+// RegisterHsemr25Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr25Type uint32
+
+func (r *RegisterHsemr25Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr25Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr25Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr25Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr25Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr25FieldProcidShift = 0
@@ -1398,12 +1996,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr25Type) GetProcid() uint8 {
+func (r *RegisterHsemr25Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr25FieldProcidMask) >> RegisterHsemr25FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr25Type) SetProcid(value uint8) {
+func (r *RegisterHsemr25Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr25FieldProcidMask)|(uint32(value)<<RegisterHsemr25FieldProcidShift))
 }
 
@@ -1413,12 +2011,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr25Type) GetCoreid() uint8 {
+func (r *RegisterHsemr25Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr25FieldCoreidMask) >> RegisterHsemr25FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr25Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr25Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr25FieldCoreidMask)|(uint32(value)<<RegisterHsemr25FieldCoreidShift))
 }
 
@@ -1428,12 +2026,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr25Type) GetLock() bool {
+func (r *RegisterHsemr25Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr25FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr25Type) SetLock(value bool) {
+func (r *RegisterHsemr25Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr25FieldLockMask)
 	} else {
@@ -1441,8 +2039,31 @@ func (r *registerHsemr25Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr26Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr26Type uint32
+// RegisterHsemr26Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr26Type uint32
+
+func (r *RegisterHsemr26Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr26Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr26Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr26Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr26Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr26FieldProcidShift = 0
@@ -1450,12 +2071,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr26Type) GetProcid() uint8 {
+func (r *RegisterHsemr26Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr26FieldProcidMask) >> RegisterHsemr26FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr26Type) SetProcid(value uint8) {
+func (r *RegisterHsemr26Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr26FieldProcidMask)|(uint32(value)<<RegisterHsemr26FieldProcidShift))
 }
 
@@ -1465,12 +2086,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr26Type) GetCoreid() uint8 {
+func (r *RegisterHsemr26Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr26FieldCoreidMask) >> RegisterHsemr26FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr26Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr26Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr26FieldCoreidMask)|(uint32(value)<<RegisterHsemr26FieldCoreidShift))
 }
 
@@ -1480,12 +2101,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr26Type) GetLock() bool {
+func (r *RegisterHsemr26Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr26FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr26Type) SetLock(value bool) {
+func (r *RegisterHsemr26Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr26FieldLockMask)
 	} else {
@@ -1493,8 +2114,31 @@ func (r *registerHsemr26Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr27Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr27Type uint32
+// RegisterHsemr27Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr27Type uint32
+
+func (r *RegisterHsemr27Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr27Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr27Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr27Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr27Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr27FieldProcidShift = 0
@@ -1502,12 +2146,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr27Type) GetProcid() uint8 {
+func (r *RegisterHsemr27Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr27FieldProcidMask) >> RegisterHsemr27FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr27Type) SetProcid(value uint8) {
+func (r *RegisterHsemr27Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr27FieldProcidMask)|(uint32(value)<<RegisterHsemr27FieldProcidShift))
 }
 
@@ -1517,12 +2161,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr27Type) GetCoreid() uint8 {
+func (r *RegisterHsemr27Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr27FieldCoreidMask) >> RegisterHsemr27FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr27Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr27Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr27FieldCoreidMask)|(uint32(value)<<RegisterHsemr27FieldCoreidShift))
 }
 
@@ -1532,12 +2176,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr27Type) GetLock() bool {
+func (r *RegisterHsemr27Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr27FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr27Type) SetLock(value bool) {
+func (r *RegisterHsemr27Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr27FieldLockMask)
 	} else {
@@ -1545,8 +2189,31 @@ func (r *registerHsemr27Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr28Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr28Type uint32
+// RegisterHsemr28Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr28Type uint32
+
+func (r *RegisterHsemr28Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr28Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr28Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr28Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr28Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr28FieldProcidShift = 0
@@ -1554,12 +2221,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr28Type) GetProcid() uint8 {
+func (r *RegisterHsemr28Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr28FieldProcidMask) >> RegisterHsemr28FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr28Type) SetProcid(value uint8) {
+func (r *RegisterHsemr28Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr28FieldProcidMask)|(uint32(value)<<RegisterHsemr28FieldProcidShift))
 }
 
@@ -1569,12 +2236,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr28Type) GetCoreid() uint8 {
+func (r *RegisterHsemr28Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr28FieldCoreidMask) >> RegisterHsemr28FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr28Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr28Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr28FieldCoreidMask)|(uint32(value)<<RegisterHsemr28FieldCoreidShift))
 }
 
@@ -1584,12 +2251,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr28Type) GetLock() bool {
+func (r *RegisterHsemr28Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr28FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr28Type) SetLock(value bool) {
+func (r *RegisterHsemr28Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr28FieldLockMask)
 	} else {
@@ -1597,8 +2264,31 @@ func (r *registerHsemr28Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr29Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr29Type uint32
+// RegisterHsemr29Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr29Type uint32
+
+func (r *RegisterHsemr29Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr29Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr29Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr29Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr29Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr29FieldProcidShift = 0
@@ -1606,12 +2296,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr29Type) GetProcid() uint8 {
+func (r *RegisterHsemr29Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr29FieldProcidMask) >> RegisterHsemr29FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr29Type) SetProcid(value uint8) {
+func (r *RegisterHsemr29Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr29FieldProcidMask)|(uint32(value)<<RegisterHsemr29FieldProcidShift))
 }
 
@@ -1621,12 +2311,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr29Type) GetCoreid() uint8 {
+func (r *RegisterHsemr29Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr29FieldCoreidMask) >> RegisterHsemr29FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr29Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr29Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr29FieldCoreidMask)|(uint32(value)<<RegisterHsemr29FieldCoreidShift))
 }
 
@@ -1636,12 +2326,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr29Type) GetLock() bool {
+func (r *RegisterHsemr29Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr29FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr29Type) SetLock(value bool) {
+func (r *RegisterHsemr29Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr29FieldLockMask)
 	} else {
@@ -1649,8 +2339,31 @@ func (r *registerHsemr29Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr30Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr30Type uint32
+// RegisterHsemr30Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr30Type uint32
+
+func (r *RegisterHsemr30Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr30Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr30Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr30Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr30Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr30FieldProcidShift = 0
@@ -1658,12 +2371,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr30Type) GetProcid() uint8 {
+func (r *RegisterHsemr30Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr30FieldProcidMask) >> RegisterHsemr30FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr30Type) SetProcid(value uint8) {
+func (r *RegisterHsemr30Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr30FieldProcidMask)|(uint32(value)<<RegisterHsemr30FieldProcidShift))
 }
 
@@ -1673,12 +2386,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr30Type) GetCoreid() uint8 {
+func (r *RegisterHsemr30Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr30FieldCoreidMask) >> RegisterHsemr30FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr30Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr30Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr30FieldCoreidMask)|(uint32(value)<<RegisterHsemr30FieldCoreidShift))
 }
 
@@ -1688,12 +2401,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr30Type) GetLock() bool {
+func (r *RegisterHsemr30Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr30FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr30Type) SetLock(value bool) {
+func (r *RegisterHsemr30Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr30FieldLockMask)
 	} else {
@@ -1701,8 +2414,31 @@ func (r *registerHsemr30Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemr31Type HSEM register HSEM_R0 HSEM_R31
-type registerHsemr31Type uint32
+// RegisterHsemr31Type HSEM register HSEM_R0 HSEM_R31
+type RegisterHsemr31Type uint32
+
+func (r *RegisterHsemr31Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemr31Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemr31Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemr31Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemr31Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemr31FieldProcidShift = 0
@@ -1710,12 +2446,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemr31Type) GetProcid() uint8 {
+func (r *RegisterHsemr31Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr31FieldProcidMask) >> RegisterHsemr31FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemr31Type) SetProcid(value uint8) {
+func (r *RegisterHsemr31Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr31FieldProcidMask)|(uint32(value)<<RegisterHsemr31FieldProcidShift))
 }
 
@@ -1725,12 +2461,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemr31Type) GetCoreid() uint8 {
+func (r *RegisterHsemr31Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemr31FieldCoreidMask) >> RegisterHsemr31FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemr31Type) SetCoreid(value uint8) {
+func (r *RegisterHsemr31Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemr31FieldCoreidMask)|(uint32(value)<<RegisterHsemr31FieldCoreidShift))
 }
 
@@ -1740,12 +2476,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemr31Type) GetLock() bool {
+func (r *RegisterHsemr31Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemr31FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemr31Type) SetLock(value bool) {
+func (r *RegisterHsemr31Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemr31FieldLockMask)
 	} else {
@@ -1753,8 +2489,31 @@ func (r *registerHsemr31Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr0Type HSEM Read lock register
-type registerHsemrlr0Type uint32
+// RegisterHsemrlr0Type HSEM Read lock register
+type RegisterHsemrlr0Type uint32
+
+func (r *RegisterHsemrlr0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr0FieldProcidShift = 0
@@ -1762,12 +2521,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr0Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr0Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr0FieldProcidMask) >> RegisterHsemrlr0FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr0Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr0Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr0FieldProcidMask)|(uint32(value)<<RegisterHsemrlr0FieldProcidShift))
 }
 
@@ -1777,12 +2536,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr0Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr0Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr0FieldCoreidMask) >> RegisterHsemrlr0FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr0Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr0Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr0FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr0FieldCoreidShift))
 }
 
@@ -1792,12 +2551,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr0Type) GetLock() bool {
+func (r *RegisterHsemrlr0Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr0FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr0Type) SetLock(value bool) {
+func (r *RegisterHsemrlr0Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr0FieldLockMask)
 	} else {
@@ -1805,8 +2564,31 @@ func (r *registerHsemrlr0Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr1Type HSEM Read lock register
-type registerHsemrlr1Type uint32
+// RegisterHsemrlr1Type HSEM Read lock register
+type RegisterHsemrlr1Type uint32
+
+func (r *RegisterHsemrlr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr1FieldProcidShift = 0
@@ -1814,12 +2596,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr1Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr1Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr1FieldProcidMask) >> RegisterHsemrlr1FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr1Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr1Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr1FieldProcidMask)|(uint32(value)<<RegisterHsemrlr1FieldProcidShift))
 }
 
@@ -1829,12 +2611,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr1Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr1Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr1FieldCoreidMask) >> RegisterHsemrlr1FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr1Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr1Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr1FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr1FieldCoreidShift))
 }
 
@@ -1844,12 +2626,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr1Type) GetLock() bool {
+func (r *RegisterHsemrlr1Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr1FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr1Type) SetLock(value bool) {
+func (r *RegisterHsemrlr1Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr1FieldLockMask)
 	} else {
@@ -1857,8 +2639,31 @@ func (r *registerHsemrlr1Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr2Type HSEM Read lock register
-type registerHsemrlr2Type uint32
+// RegisterHsemrlr2Type HSEM Read lock register
+type RegisterHsemrlr2Type uint32
+
+func (r *RegisterHsemrlr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr2FieldProcidShift = 0
@@ -1866,12 +2671,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr2Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr2Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr2FieldProcidMask) >> RegisterHsemrlr2FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr2Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr2Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr2FieldProcidMask)|(uint32(value)<<RegisterHsemrlr2FieldProcidShift))
 }
 
@@ -1881,12 +2686,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr2Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr2Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr2FieldCoreidMask) >> RegisterHsemrlr2FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr2Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr2Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr2FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr2FieldCoreidShift))
 }
 
@@ -1896,12 +2701,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr2Type) GetLock() bool {
+func (r *RegisterHsemrlr2Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr2FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr2Type) SetLock(value bool) {
+func (r *RegisterHsemrlr2Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr2FieldLockMask)
 	} else {
@@ -1909,8 +2714,31 @@ func (r *registerHsemrlr2Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr3Type HSEM Read lock register
-type registerHsemrlr3Type uint32
+// RegisterHsemrlr3Type HSEM Read lock register
+type RegisterHsemrlr3Type uint32
+
+func (r *RegisterHsemrlr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr3FieldProcidShift = 0
@@ -1918,12 +2746,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr3Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr3Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr3FieldProcidMask) >> RegisterHsemrlr3FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr3Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr3Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr3FieldProcidMask)|(uint32(value)<<RegisterHsemrlr3FieldProcidShift))
 }
 
@@ -1933,12 +2761,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr3Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr3Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr3FieldCoreidMask) >> RegisterHsemrlr3FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr3Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr3Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr3FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr3FieldCoreidShift))
 }
 
@@ -1948,12 +2776,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr3Type) GetLock() bool {
+func (r *RegisterHsemrlr3Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr3FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr3Type) SetLock(value bool) {
+func (r *RegisterHsemrlr3Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr3FieldLockMask)
 	} else {
@@ -1961,8 +2789,31 @@ func (r *registerHsemrlr3Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr4Type HSEM Read lock register
-type registerHsemrlr4Type uint32
+// RegisterHsemrlr4Type HSEM Read lock register
+type RegisterHsemrlr4Type uint32
+
+func (r *RegisterHsemrlr4Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr4Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr4Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr4Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr4Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr4FieldProcidShift = 0
@@ -1970,12 +2821,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr4Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr4Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr4FieldProcidMask) >> RegisterHsemrlr4FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr4Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr4Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr4FieldProcidMask)|(uint32(value)<<RegisterHsemrlr4FieldProcidShift))
 }
 
@@ -1985,12 +2836,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr4Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr4Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr4FieldCoreidMask) >> RegisterHsemrlr4FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr4Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr4Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr4FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr4FieldCoreidShift))
 }
 
@@ -2000,12 +2851,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr4Type) GetLock() bool {
+func (r *RegisterHsemrlr4Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr4FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr4Type) SetLock(value bool) {
+func (r *RegisterHsemrlr4Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr4FieldLockMask)
 	} else {
@@ -2013,8 +2864,31 @@ func (r *registerHsemrlr4Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr5Type HSEM Read lock register
-type registerHsemrlr5Type uint32
+// RegisterHsemrlr5Type HSEM Read lock register
+type RegisterHsemrlr5Type uint32
+
+func (r *RegisterHsemrlr5Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr5Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr5Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr5Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr5Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr5FieldProcidShift = 0
@@ -2022,12 +2896,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr5Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr5Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr5FieldProcidMask) >> RegisterHsemrlr5FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr5Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr5Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr5FieldProcidMask)|(uint32(value)<<RegisterHsemrlr5FieldProcidShift))
 }
 
@@ -2037,12 +2911,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr5Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr5Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr5FieldCoreidMask) >> RegisterHsemrlr5FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr5Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr5Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr5FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr5FieldCoreidShift))
 }
 
@@ -2052,12 +2926,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr5Type) GetLock() bool {
+func (r *RegisterHsemrlr5Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr5FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr5Type) SetLock(value bool) {
+func (r *RegisterHsemrlr5Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr5FieldLockMask)
 	} else {
@@ -2065,8 +2939,31 @@ func (r *registerHsemrlr5Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr6Type HSEM Read lock register
-type registerHsemrlr6Type uint32
+// RegisterHsemrlr6Type HSEM Read lock register
+type RegisterHsemrlr6Type uint32
+
+func (r *RegisterHsemrlr6Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr6Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr6Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr6Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr6Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr6FieldProcidShift = 0
@@ -2074,12 +2971,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr6Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr6Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr6FieldProcidMask) >> RegisterHsemrlr6FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr6Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr6Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr6FieldProcidMask)|(uint32(value)<<RegisterHsemrlr6FieldProcidShift))
 }
 
@@ -2089,12 +2986,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr6Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr6Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr6FieldCoreidMask) >> RegisterHsemrlr6FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr6Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr6Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr6FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr6FieldCoreidShift))
 }
 
@@ -2104,12 +3001,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr6Type) GetLock() bool {
+func (r *RegisterHsemrlr6Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr6FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr6Type) SetLock(value bool) {
+func (r *RegisterHsemrlr6Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr6FieldLockMask)
 	} else {
@@ -2117,8 +3014,31 @@ func (r *registerHsemrlr6Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr7Type HSEM Read lock register
-type registerHsemrlr7Type uint32
+// RegisterHsemrlr7Type HSEM Read lock register
+type RegisterHsemrlr7Type uint32
+
+func (r *RegisterHsemrlr7Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr7Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr7Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr7Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr7Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr7FieldProcidShift = 0
@@ -2126,12 +3046,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr7Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr7Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr7FieldProcidMask) >> RegisterHsemrlr7FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr7Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr7Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr7FieldProcidMask)|(uint32(value)<<RegisterHsemrlr7FieldProcidShift))
 }
 
@@ -2141,12 +3061,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr7Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr7Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr7FieldCoreidMask) >> RegisterHsemrlr7FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr7Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr7Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr7FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr7FieldCoreidShift))
 }
 
@@ -2156,12 +3076,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr7Type) GetLock() bool {
+func (r *RegisterHsemrlr7Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr7FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr7Type) SetLock(value bool) {
+func (r *RegisterHsemrlr7Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr7FieldLockMask)
 	} else {
@@ -2169,8 +3089,31 @@ func (r *registerHsemrlr7Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr8Type HSEM Read lock register
-type registerHsemrlr8Type uint32
+// RegisterHsemrlr8Type HSEM Read lock register
+type RegisterHsemrlr8Type uint32
+
+func (r *RegisterHsemrlr8Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr8Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr8Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr8Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr8Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr8FieldProcidShift = 0
@@ -2178,12 +3121,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr8Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr8Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr8FieldProcidMask) >> RegisterHsemrlr8FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr8Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr8Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr8FieldProcidMask)|(uint32(value)<<RegisterHsemrlr8FieldProcidShift))
 }
 
@@ -2193,12 +3136,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr8Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr8Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr8FieldCoreidMask) >> RegisterHsemrlr8FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr8Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr8Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr8FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr8FieldCoreidShift))
 }
 
@@ -2208,12 +3151,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr8Type) GetLock() bool {
+func (r *RegisterHsemrlr8Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr8FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr8Type) SetLock(value bool) {
+func (r *RegisterHsemrlr8Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr8FieldLockMask)
 	} else {
@@ -2221,8 +3164,31 @@ func (r *registerHsemrlr8Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr9Type HSEM Read lock register
-type registerHsemrlr9Type uint32
+// RegisterHsemrlr9Type HSEM Read lock register
+type RegisterHsemrlr9Type uint32
+
+func (r *RegisterHsemrlr9Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr9Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr9Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr9Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr9Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr9FieldProcidShift = 0
@@ -2230,12 +3196,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr9Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr9Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr9FieldProcidMask) >> RegisterHsemrlr9FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr9Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr9Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr9FieldProcidMask)|(uint32(value)<<RegisterHsemrlr9FieldProcidShift))
 }
 
@@ -2245,12 +3211,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr9Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr9Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr9FieldCoreidMask) >> RegisterHsemrlr9FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr9Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr9Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr9FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr9FieldCoreidShift))
 }
 
@@ -2260,12 +3226,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr9Type) GetLock() bool {
+func (r *RegisterHsemrlr9Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr9FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr9Type) SetLock(value bool) {
+func (r *RegisterHsemrlr9Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr9FieldLockMask)
 	} else {
@@ -2273,8 +3239,31 @@ func (r *registerHsemrlr9Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr10Type HSEM Read lock register
-type registerHsemrlr10Type uint32
+// RegisterHsemrlr10Type HSEM Read lock register
+type RegisterHsemrlr10Type uint32
+
+func (r *RegisterHsemrlr10Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr10Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr10Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr10Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr10Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr10FieldProcidShift = 0
@@ -2282,12 +3271,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr10Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr10Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr10FieldProcidMask) >> RegisterHsemrlr10FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr10Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr10Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr10FieldProcidMask)|(uint32(value)<<RegisterHsemrlr10FieldProcidShift))
 }
 
@@ -2297,12 +3286,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr10Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr10Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr10FieldCoreidMask) >> RegisterHsemrlr10FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr10Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr10Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr10FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr10FieldCoreidShift))
 }
 
@@ -2312,12 +3301,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr10Type) GetLock() bool {
+func (r *RegisterHsemrlr10Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr10FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr10Type) SetLock(value bool) {
+func (r *RegisterHsemrlr10Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr10FieldLockMask)
 	} else {
@@ -2325,8 +3314,31 @@ func (r *registerHsemrlr10Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr11Type HSEM Read lock register
-type registerHsemrlr11Type uint32
+// RegisterHsemrlr11Type HSEM Read lock register
+type RegisterHsemrlr11Type uint32
+
+func (r *RegisterHsemrlr11Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr11Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr11Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr11Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr11Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr11FieldProcidShift = 0
@@ -2334,12 +3346,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr11Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr11Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr11FieldProcidMask) >> RegisterHsemrlr11FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr11Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr11Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr11FieldProcidMask)|(uint32(value)<<RegisterHsemrlr11FieldProcidShift))
 }
 
@@ -2349,12 +3361,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr11Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr11Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr11FieldCoreidMask) >> RegisterHsemrlr11FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr11Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr11Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr11FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr11FieldCoreidShift))
 }
 
@@ -2364,12 +3376,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr11Type) GetLock() bool {
+func (r *RegisterHsemrlr11Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr11FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr11Type) SetLock(value bool) {
+func (r *RegisterHsemrlr11Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr11FieldLockMask)
 	} else {
@@ -2377,8 +3389,31 @@ func (r *registerHsemrlr11Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr12Type HSEM Read lock register
-type registerHsemrlr12Type uint32
+// RegisterHsemrlr12Type HSEM Read lock register
+type RegisterHsemrlr12Type uint32
+
+func (r *RegisterHsemrlr12Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr12Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr12Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr12Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr12Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr12FieldProcidShift = 0
@@ -2386,12 +3421,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr12Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr12Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr12FieldProcidMask) >> RegisterHsemrlr12FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr12Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr12Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr12FieldProcidMask)|(uint32(value)<<RegisterHsemrlr12FieldProcidShift))
 }
 
@@ -2401,12 +3436,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr12Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr12Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr12FieldCoreidMask) >> RegisterHsemrlr12FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr12Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr12Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr12FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr12FieldCoreidShift))
 }
 
@@ -2416,12 +3451,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr12Type) GetLock() bool {
+func (r *RegisterHsemrlr12Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr12FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr12Type) SetLock(value bool) {
+func (r *RegisterHsemrlr12Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr12FieldLockMask)
 	} else {
@@ -2429,8 +3464,31 @@ func (r *registerHsemrlr12Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr13Type HSEM Read lock register
-type registerHsemrlr13Type uint32
+// RegisterHsemrlr13Type HSEM Read lock register
+type RegisterHsemrlr13Type uint32
+
+func (r *RegisterHsemrlr13Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr13Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr13Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr13Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr13Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr13FieldProcidShift = 0
@@ -2438,12 +3496,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr13Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr13Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr13FieldProcidMask) >> RegisterHsemrlr13FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr13Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr13Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr13FieldProcidMask)|(uint32(value)<<RegisterHsemrlr13FieldProcidShift))
 }
 
@@ -2453,12 +3511,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr13Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr13Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr13FieldCoreidMask) >> RegisterHsemrlr13FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr13Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr13Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr13FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr13FieldCoreidShift))
 }
 
@@ -2468,12 +3526,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr13Type) GetLock() bool {
+func (r *RegisterHsemrlr13Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr13FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr13Type) SetLock(value bool) {
+func (r *RegisterHsemrlr13Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr13FieldLockMask)
 	} else {
@@ -2481,8 +3539,31 @@ func (r *registerHsemrlr13Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr14Type HSEM Read lock register
-type registerHsemrlr14Type uint32
+// RegisterHsemrlr14Type HSEM Read lock register
+type RegisterHsemrlr14Type uint32
+
+func (r *RegisterHsemrlr14Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr14Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr14Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr14Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr14Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr14FieldProcidShift = 0
@@ -2490,12 +3571,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr14Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr14Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr14FieldProcidMask) >> RegisterHsemrlr14FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr14Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr14Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr14FieldProcidMask)|(uint32(value)<<RegisterHsemrlr14FieldProcidShift))
 }
 
@@ -2505,12 +3586,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr14Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr14Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr14FieldCoreidMask) >> RegisterHsemrlr14FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr14Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr14Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr14FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr14FieldCoreidShift))
 }
 
@@ -2520,12 +3601,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr14Type) GetLock() bool {
+func (r *RegisterHsemrlr14Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr14FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr14Type) SetLock(value bool) {
+func (r *RegisterHsemrlr14Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr14FieldLockMask)
 	} else {
@@ -2533,8 +3614,31 @@ func (r *registerHsemrlr14Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr15Type HSEM Read lock register
-type registerHsemrlr15Type uint32
+// RegisterHsemrlr15Type HSEM Read lock register
+type RegisterHsemrlr15Type uint32
+
+func (r *RegisterHsemrlr15Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr15Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr15Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr15Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr15Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr15FieldProcidShift = 0
@@ -2542,12 +3646,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr15Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr15Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr15FieldProcidMask) >> RegisterHsemrlr15FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr15Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr15Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr15FieldProcidMask)|(uint32(value)<<RegisterHsemrlr15FieldProcidShift))
 }
 
@@ -2557,12 +3661,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr15Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr15Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr15FieldCoreidMask) >> RegisterHsemrlr15FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr15Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr15Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr15FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr15FieldCoreidShift))
 }
 
@@ -2572,12 +3676,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr15Type) GetLock() bool {
+func (r *RegisterHsemrlr15Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr15FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr15Type) SetLock(value bool) {
+func (r *RegisterHsemrlr15Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr15FieldLockMask)
 	} else {
@@ -2585,8 +3689,31 @@ func (r *registerHsemrlr15Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr16Type HSEM Read lock register
-type registerHsemrlr16Type uint32
+// RegisterHsemrlr16Type HSEM Read lock register
+type RegisterHsemrlr16Type uint32
+
+func (r *RegisterHsemrlr16Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr16Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr16Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr16Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr16Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr16FieldProcidShift = 0
@@ -2594,12 +3721,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr16Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr16Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr16FieldProcidMask) >> RegisterHsemrlr16FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr16Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr16Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr16FieldProcidMask)|(uint32(value)<<RegisterHsemrlr16FieldProcidShift))
 }
 
@@ -2609,12 +3736,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr16Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr16Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr16FieldCoreidMask) >> RegisterHsemrlr16FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr16Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr16Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr16FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr16FieldCoreidShift))
 }
 
@@ -2624,12 +3751,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr16Type) GetLock() bool {
+func (r *RegisterHsemrlr16Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr16FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr16Type) SetLock(value bool) {
+func (r *RegisterHsemrlr16Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr16FieldLockMask)
 	} else {
@@ -2637,8 +3764,31 @@ func (r *registerHsemrlr16Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr17Type HSEM Read lock register
-type registerHsemrlr17Type uint32
+// RegisterHsemrlr17Type HSEM Read lock register
+type RegisterHsemrlr17Type uint32
+
+func (r *RegisterHsemrlr17Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr17Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr17Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr17Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr17Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr17FieldProcidShift = 0
@@ -2646,12 +3796,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr17Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr17Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr17FieldProcidMask) >> RegisterHsemrlr17FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr17Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr17Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr17FieldProcidMask)|(uint32(value)<<RegisterHsemrlr17FieldProcidShift))
 }
 
@@ -2661,12 +3811,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr17Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr17Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr17FieldCoreidMask) >> RegisterHsemrlr17FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr17Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr17Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr17FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr17FieldCoreidShift))
 }
 
@@ -2676,12 +3826,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr17Type) GetLock() bool {
+func (r *RegisterHsemrlr17Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr17FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr17Type) SetLock(value bool) {
+func (r *RegisterHsemrlr17Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr17FieldLockMask)
 	} else {
@@ -2689,8 +3839,31 @@ func (r *registerHsemrlr17Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr18Type HSEM Read lock register
-type registerHsemrlr18Type uint32
+// RegisterHsemrlr18Type HSEM Read lock register
+type RegisterHsemrlr18Type uint32
+
+func (r *RegisterHsemrlr18Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr18Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr18Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr18Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr18Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr18FieldProcidShift = 0
@@ -2698,12 +3871,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr18Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr18Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr18FieldProcidMask) >> RegisterHsemrlr18FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr18Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr18Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr18FieldProcidMask)|(uint32(value)<<RegisterHsemrlr18FieldProcidShift))
 }
 
@@ -2713,12 +3886,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr18Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr18Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr18FieldCoreidMask) >> RegisterHsemrlr18FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr18Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr18Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr18FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr18FieldCoreidShift))
 }
 
@@ -2728,12 +3901,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr18Type) GetLock() bool {
+func (r *RegisterHsemrlr18Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr18FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr18Type) SetLock(value bool) {
+func (r *RegisterHsemrlr18Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr18FieldLockMask)
 	} else {
@@ -2741,8 +3914,31 @@ func (r *registerHsemrlr18Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr19Type HSEM Read lock register
-type registerHsemrlr19Type uint32
+// RegisterHsemrlr19Type HSEM Read lock register
+type RegisterHsemrlr19Type uint32
+
+func (r *RegisterHsemrlr19Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr19Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr19Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr19Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr19Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr19FieldProcidShift = 0
@@ -2750,12 +3946,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr19Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr19Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr19FieldProcidMask) >> RegisterHsemrlr19FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr19Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr19Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr19FieldProcidMask)|(uint32(value)<<RegisterHsemrlr19FieldProcidShift))
 }
 
@@ -2765,12 +3961,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr19Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr19Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr19FieldCoreidMask) >> RegisterHsemrlr19FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr19Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr19Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr19FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr19FieldCoreidShift))
 }
 
@@ -2780,12 +3976,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr19Type) GetLock() bool {
+func (r *RegisterHsemrlr19Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr19FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr19Type) SetLock(value bool) {
+func (r *RegisterHsemrlr19Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr19FieldLockMask)
 	} else {
@@ -2793,8 +3989,31 @@ func (r *registerHsemrlr19Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr20Type HSEM Read lock register
-type registerHsemrlr20Type uint32
+// RegisterHsemrlr20Type HSEM Read lock register
+type RegisterHsemrlr20Type uint32
+
+func (r *RegisterHsemrlr20Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr20Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr20Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr20Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr20Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr20FieldProcidShift = 0
@@ -2802,12 +4021,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr20Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr20Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr20FieldProcidMask) >> RegisterHsemrlr20FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr20Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr20Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr20FieldProcidMask)|(uint32(value)<<RegisterHsemrlr20FieldProcidShift))
 }
 
@@ -2817,12 +4036,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr20Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr20Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr20FieldCoreidMask) >> RegisterHsemrlr20FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr20Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr20Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr20FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr20FieldCoreidShift))
 }
 
@@ -2832,12 +4051,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr20Type) GetLock() bool {
+func (r *RegisterHsemrlr20Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr20FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr20Type) SetLock(value bool) {
+func (r *RegisterHsemrlr20Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr20FieldLockMask)
 	} else {
@@ -2845,8 +4064,31 @@ func (r *registerHsemrlr20Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr21Type HSEM Read lock register
-type registerHsemrlr21Type uint32
+// RegisterHsemrlr21Type HSEM Read lock register
+type RegisterHsemrlr21Type uint32
+
+func (r *RegisterHsemrlr21Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr21Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr21Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr21Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr21Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr21FieldProcidShift = 0
@@ -2854,12 +4096,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr21Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr21Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr21FieldProcidMask) >> RegisterHsemrlr21FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr21Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr21Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr21FieldProcidMask)|(uint32(value)<<RegisterHsemrlr21FieldProcidShift))
 }
 
@@ -2869,12 +4111,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr21Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr21Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr21FieldCoreidMask) >> RegisterHsemrlr21FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr21Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr21Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr21FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr21FieldCoreidShift))
 }
 
@@ -2884,12 +4126,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr21Type) GetLock() bool {
+func (r *RegisterHsemrlr21Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr21FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr21Type) SetLock(value bool) {
+func (r *RegisterHsemrlr21Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr21FieldLockMask)
 	} else {
@@ -2897,8 +4139,31 @@ func (r *registerHsemrlr21Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr22Type HSEM Read lock register
-type registerHsemrlr22Type uint32
+// RegisterHsemrlr22Type HSEM Read lock register
+type RegisterHsemrlr22Type uint32
+
+func (r *RegisterHsemrlr22Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr22Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr22Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr22Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr22Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr22FieldProcidShift = 0
@@ -2906,12 +4171,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr22Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr22Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr22FieldProcidMask) >> RegisterHsemrlr22FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr22Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr22Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr22FieldProcidMask)|(uint32(value)<<RegisterHsemrlr22FieldProcidShift))
 }
 
@@ -2921,12 +4186,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr22Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr22Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr22FieldCoreidMask) >> RegisterHsemrlr22FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr22Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr22Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr22FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr22FieldCoreidShift))
 }
 
@@ -2936,12 +4201,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr22Type) GetLock() bool {
+func (r *RegisterHsemrlr22Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr22FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr22Type) SetLock(value bool) {
+func (r *RegisterHsemrlr22Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr22FieldLockMask)
 	} else {
@@ -2949,8 +4214,31 @@ func (r *registerHsemrlr22Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr23Type HSEM Read lock register
-type registerHsemrlr23Type uint32
+// RegisterHsemrlr23Type HSEM Read lock register
+type RegisterHsemrlr23Type uint32
+
+func (r *RegisterHsemrlr23Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr23Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr23Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr23Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr23Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr23FieldProcidShift = 0
@@ -2958,12 +4246,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr23Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr23Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr23FieldProcidMask) >> RegisterHsemrlr23FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr23Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr23Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr23FieldProcidMask)|(uint32(value)<<RegisterHsemrlr23FieldProcidShift))
 }
 
@@ -2973,12 +4261,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr23Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr23Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr23FieldCoreidMask) >> RegisterHsemrlr23FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr23Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr23Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr23FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr23FieldCoreidShift))
 }
 
@@ -2988,12 +4276,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr23Type) GetLock() bool {
+func (r *RegisterHsemrlr23Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr23FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr23Type) SetLock(value bool) {
+func (r *RegisterHsemrlr23Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr23FieldLockMask)
 	} else {
@@ -3001,8 +4289,31 @@ func (r *registerHsemrlr23Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr24Type HSEM Read lock register
-type registerHsemrlr24Type uint32
+// RegisterHsemrlr24Type HSEM Read lock register
+type RegisterHsemrlr24Type uint32
+
+func (r *RegisterHsemrlr24Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr24Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr24Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr24Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr24Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr24FieldProcidShift = 0
@@ -3010,12 +4321,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr24Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr24Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr24FieldProcidMask) >> RegisterHsemrlr24FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr24Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr24Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr24FieldProcidMask)|(uint32(value)<<RegisterHsemrlr24FieldProcidShift))
 }
 
@@ -3025,12 +4336,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr24Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr24Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr24FieldCoreidMask) >> RegisterHsemrlr24FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr24Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr24Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr24FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr24FieldCoreidShift))
 }
 
@@ -3040,12 +4351,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr24Type) GetLock() bool {
+func (r *RegisterHsemrlr24Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr24FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr24Type) SetLock(value bool) {
+func (r *RegisterHsemrlr24Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr24FieldLockMask)
 	} else {
@@ -3053,8 +4364,31 @@ func (r *registerHsemrlr24Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr25Type HSEM Read lock register
-type registerHsemrlr25Type uint32
+// RegisterHsemrlr25Type HSEM Read lock register
+type RegisterHsemrlr25Type uint32
+
+func (r *RegisterHsemrlr25Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr25Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr25Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr25Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr25Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr25FieldProcidShift = 0
@@ -3062,12 +4396,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr25Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr25Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr25FieldProcidMask) >> RegisterHsemrlr25FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr25Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr25Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr25FieldProcidMask)|(uint32(value)<<RegisterHsemrlr25FieldProcidShift))
 }
 
@@ -3077,12 +4411,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr25Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr25Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr25FieldCoreidMask) >> RegisterHsemrlr25FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr25Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr25Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr25FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr25FieldCoreidShift))
 }
 
@@ -3092,12 +4426,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr25Type) GetLock() bool {
+func (r *RegisterHsemrlr25Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr25FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr25Type) SetLock(value bool) {
+func (r *RegisterHsemrlr25Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr25FieldLockMask)
 	} else {
@@ -3105,8 +4439,31 @@ func (r *registerHsemrlr25Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr26Type HSEM Read lock register
-type registerHsemrlr26Type uint32
+// RegisterHsemrlr26Type HSEM Read lock register
+type RegisterHsemrlr26Type uint32
+
+func (r *RegisterHsemrlr26Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr26Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr26Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr26Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr26Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr26FieldProcidShift = 0
@@ -3114,12 +4471,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr26Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr26Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr26FieldProcidMask) >> RegisterHsemrlr26FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr26Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr26Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr26FieldProcidMask)|(uint32(value)<<RegisterHsemrlr26FieldProcidShift))
 }
 
@@ -3129,12 +4486,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr26Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr26Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr26FieldCoreidMask) >> RegisterHsemrlr26FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr26Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr26Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr26FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr26FieldCoreidShift))
 }
 
@@ -3144,12 +4501,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr26Type) GetLock() bool {
+func (r *RegisterHsemrlr26Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr26FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr26Type) SetLock(value bool) {
+func (r *RegisterHsemrlr26Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr26FieldLockMask)
 	} else {
@@ -3157,8 +4514,31 @@ func (r *registerHsemrlr26Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr27Type HSEM Read lock register
-type registerHsemrlr27Type uint32
+// RegisterHsemrlr27Type HSEM Read lock register
+type RegisterHsemrlr27Type uint32
+
+func (r *RegisterHsemrlr27Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr27Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr27Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr27Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr27Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr27FieldProcidShift = 0
@@ -3166,12 +4546,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr27Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr27Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr27FieldProcidMask) >> RegisterHsemrlr27FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr27Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr27Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr27FieldProcidMask)|(uint32(value)<<RegisterHsemrlr27FieldProcidShift))
 }
 
@@ -3181,12 +4561,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr27Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr27Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr27FieldCoreidMask) >> RegisterHsemrlr27FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr27Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr27Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr27FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr27FieldCoreidShift))
 }
 
@@ -3196,12 +4576,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr27Type) GetLock() bool {
+func (r *RegisterHsemrlr27Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr27FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr27Type) SetLock(value bool) {
+func (r *RegisterHsemrlr27Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr27FieldLockMask)
 	} else {
@@ -3209,8 +4589,31 @@ func (r *registerHsemrlr27Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr28Type HSEM Read lock register
-type registerHsemrlr28Type uint32
+// RegisterHsemrlr28Type HSEM Read lock register
+type RegisterHsemrlr28Type uint32
+
+func (r *RegisterHsemrlr28Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr28Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr28Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr28Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr28Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr28FieldProcidShift = 0
@@ -3218,12 +4621,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr28Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr28Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr28FieldProcidMask) >> RegisterHsemrlr28FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr28Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr28Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr28FieldProcidMask)|(uint32(value)<<RegisterHsemrlr28FieldProcidShift))
 }
 
@@ -3233,12 +4636,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr28Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr28Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr28FieldCoreidMask) >> RegisterHsemrlr28FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr28Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr28Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr28FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr28FieldCoreidShift))
 }
 
@@ -3248,12 +4651,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr28Type) GetLock() bool {
+func (r *RegisterHsemrlr28Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr28FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr28Type) SetLock(value bool) {
+func (r *RegisterHsemrlr28Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr28FieldLockMask)
 	} else {
@@ -3261,8 +4664,31 @@ func (r *registerHsemrlr28Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr29Type HSEM Read lock register
-type registerHsemrlr29Type uint32
+// RegisterHsemrlr29Type HSEM Read lock register
+type RegisterHsemrlr29Type uint32
+
+func (r *RegisterHsemrlr29Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr29Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr29Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr29Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr29Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr29FieldProcidShift = 0
@@ -3270,12 +4696,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr29Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr29Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr29FieldProcidMask) >> RegisterHsemrlr29FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr29Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr29Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr29FieldProcidMask)|(uint32(value)<<RegisterHsemrlr29FieldProcidShift))
 }
 
@@ -3285,12 +4711,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr29Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr29Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr29FieldCoreidMask) >> RegisterHsemrlr29FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr29Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr29Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr29FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr29FieldCoreidShift))
 }
 
@@ -3300,12 +4726,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr29Type) GetLock() bool {
+func (r *RegisterHsemrlr29Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr29FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr29Type) SetLock(value bool) {
+func (r *RegisterHsemrlr29Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr29FieldLockMask)
 	} else {
@@ -3313,8 +4739,31 @@ func (r *registerHsemrlr29Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr30Type HSEM Read lock register
-type registerHsemrlr30Type uint32
+// RegisterHsemrlr30Type HSEM Read lock register
+type RegisterHsemrlr30Type uint32
+
+func (r *RegisterHsemrlr30Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr30Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr30Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr30Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr30Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr30FieldProcidShift = 0
@@ -3322,12 +4771,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr30Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr30Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr30FieldProcidMask) >> RegisterHsemrlr30FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr30Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr30Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr30FieldProcidMask)|(uint32(value)<<RegisterHsemrlr30FieldProcidShift))
 }
 
@@ -3337,12 +4786,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr30Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr30Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr30FieldCoreidMask) >> RegisterHsemrlr30FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr30Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr30Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr30FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr30FieldCoreidShift))
 }
 
@@ -3352,12 +4801,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr30Type) GetLock() bool {
+func (r *RegisterHsemrlr30Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr30FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr30Type) SetLock(value bool) {
+func (r *RegisterHsemrlr30Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr30FieldLockMask)
 	} else {
@@ -3365,8 +4814,31 @@ func (r *registerHsemrlr30Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemrlr31Type HSEM Read lock register
-type registerHsemrlr31Type uint32
+// RegisterHsemrlr31Type HSEM Read lock register
+type RegisterHsemrlr31Type uint32
+
+func (r *RegisterHsemrlr31Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemrlr31Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemrlr31Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemrlr31Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemrlr31Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemrlr31FieldProcidShift = 0
@@ -3374,12 +4846,12 @@ const (
 )
 
 // GetProcid Semaphore ProcessID
-func (r *registerHsemrlr31Type) GetProcid() uint8 {
+func (r *RegisterHsemrlr31Type) GetProcid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr31FieldProcidMask) >> RegisterHsemrlr31FieldProcidShift)
 }
 
 // SetProcid Semaphore ProcessID
-func (r *registerHsemrlr31Type) SetProcid(value uint8) {
+func (r *RegisterHsemrlr31Type) SetProcid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr31FieldProcidMask)|(uint32(value)<<RegisterHsemrlr31FieldProcidShift))
 }
 
@@ -3389,12 +4861,12 @@ const (
 )
 
 // GetCoreid Semaphore COREID
-func (r *registerHsemrlr31Type) GetCoreid() uint8 {
+func (r *RegisterHsemrlr31Type) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr31FieldCoreidMask) >> RegisterHsemrlr31FieldCoreidShift)
 }
 
 // SetCoreid Semaphore COREID
-func (r *registerHsemrlr31Type) SetCoreid(value uint8) {
+func (r *RegisterHsemrlr31Type) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemrlr31FieldCoreidMask)|(uint32(value)<<RegisterHsemrlr31FieldCoreidShift))
 }
 
@@ -3404,12 +4876,12 @@ const (
 )
 
 // GetLock Lock indication
-func (r *registerHsemrlr31Type) GetLock() bool {
+func (r *RegisterHsemrlr31Type) GetLock() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterHsemrlr31FieldLockMask) != 0
 }
 
 // SetLock Lock indication
-func (r *registerHsemrlr31Type) SetLock(value bool) {
+func (r *RegisterHsemrlr31Type) SetLock(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterHsemrlr31FieldLockMask)
 	} else {
@@ -3417,8 +4889,31 @@ func (r *registerHsemrlr31Type) SetLock(value bool) {
 	}
 }
 
-// registerHsemc1ierType HSEM Interrupt enable register
-type registerHsemc1ierType uint32
+// RegisterHsemc1ierType HSEM Interrupt enable register
+type RegisterHsemc1ierType uint32
+
+func (r *RegisterHsemc1ierType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemc1ierType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemc1ierType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemc1ierType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemc1ierType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemc1ierFieldIseShift = 0
@@ -3426,17 +4921,40 @@ const (
 )
 
 // GetIse Interrupt semaphore x enable bit
-func (r *registerHsemc1ierType) GetIse() uint32 {
+func (r *RegisterHsemc1ierType) GetIse() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHsemc1ierFieldIseMask) >> RegisterHsemc1ierFieldIseShift)
 }
 
 // SetIse Interrupt semaphore x enable bit
-func (r *registerHsemc1ierType) SetIse(value uint32) {
+func (r *RegisterHsemc1ierType) SetIse(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemc1ierFieldIseMask)|(uint32(value)<<RegisterHsemc1ierFieldIseShift))
 }
 
-// registerHsemc1icrType HSEM Interrupt clear register
-type registerHsemc1icrType uint32
+// RegisterHsemc1icrType HSEM Interrupt clear register
+type RegisterHsemc1icrType uint32
+
+func (r *RegisterHsemc1icrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemc1icrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemc1icrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemc1icrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemc1icrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemc1icrFieldIscShift = 0
@@ -3444,17 +4962,40 @@ const (
 )
 
 // GetIsc Interrupt semaphore x clear bit
-func (r *registerHsemc1icrType) GetIsc() uint32 {
+func (r *RegisterHsemc1icrType) GetIsc() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHsemc1icrFieldIscMask) >> RegisterHsemc1icrFieldIscShift)
 }
 
 // SetIsc Interrupt semaphore x clear bit
-func (r *registerHsemc1icrType) SetIsc(value uint32) {
+func (r *RegisterHsemc1icrType) SetIsc(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemc1icrFieldIscMask)|(uint32(value)<<RegisterHsemc1icrFieldIscShift))
 }
 
-// registerHsemc1isrType HSEM Interrupt status register
-type registerHsemc1isrType uint32
+// RegisterHsemc1isrType HSEM Interrupt status register
+type RegisterHsemc1isrType uint32
+
+func (r *RegisterHsemc1isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemc1isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemc1isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemc1isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemc1isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemc1isrFieldIsfShift = 0
@@ -3462,17 +5003,40 @@ const (
 )
 
 // GetIsf Interrupt semaphore x status bit before enable (mask)
-func (r *registerHsemc1isrType) GetIsf() uint32 {
+func (r *RegisterHsemc1isrType) GetIsf() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHsemc1isrFieldIsfMask) >> RegisterHsemc1isrFieldIsfShift)
 }
 
 // SetIsf Interrupt semaphore x status bit before enable (mask)
-func (r *registerHsemc1isrType) SetIsf(value uint32) {
+func (r *RegisterHsemc1isrType) SetIsf(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemc1isrFieldIsfMask)|(uint32(value)<<RegisterHsemc1isrFieldIsfShift))
 }
 
-// registerHsemc1misrType HSEM Masked interrupt status register
-type registerHsemc1misrType uint32
+// RegisterHsemc1misrType HSEM Masked interrupt status register
+type RegisterHsemc1misrType uint32
+
+func (r *RegisterHsemc1misrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemc1misrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemc1misrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemc1misrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemc1misrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemc1misrFieldMisfShift = 0
@@ -3480,17 +5044,40 @@ const (
 )
 
 // GetMisf masked interrupt semaphore x status bit after enable (mask)
-func (r *registerHsemc1misrType) GetMisf() uint32 {
+func (r *RegisterHsemc1misrType) GetMisf() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHsemc1misrFieldMisfMask) >> RegisterHsemc1misrFieldMisfShift)
 }
 
 // SetMisf masked interrupt semaphore x status bit after enable (mask)
-func (r *registerHsemc1misrType) SetMisf(value uint32) {
+func (r *RegisterHsemc1misrType) SetMisf(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemc1misrFieldMisfMask)|(uint32(value)<<RegisterHsemc1misrFieldMisfShift))
 }
 
-// registerHsemc2ierType HSEM Interrupt enable register
-type registerHsemc2ierType uint32
+// RegisterHsemc2ierType HSEM Interrupt enable register
+type RegisterHsemc2ierType uint32
+
+func (r *RegisterHsemc2ierType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemc2ierType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemc2ierType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemc2ierType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemc2ierType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemc2ierFieldIseShift = 0
@@ -3498,17 +5085,40 @@ const (
 )
 
 // GetIse Interrupt semaphore x enable bit
-func (r *registerHsemc2ierType) GetIse() uint32 {
+func (r *RegisterHsemc2ierType) GetIse() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHsemc2ierFieldIseMask) >> RegisterHsemc2ierFieldIseShift)
 }
 
 // SetIse Interrupt semaphore x enable bit
-func (r *registerHsemc2ierType) SetIse(value uint32) {
+func (r *RegisterHsemc2ierType) SetIse(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemc2ierFieldIseMask)|(uint32(value)<<RegisterHsemc2ierFieldIseShift))
 }
 
-// registerHsemc2icrType HSEM Interrupt clear register
-type registerHsemc2icrType uint32
+// RegisterHsemc2icrType HSEM Interrupt clear register
+type RegisterHsemc2icrType uint32
+
+func (r *RegisterHsemc2icrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemc2icrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemc2icrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemc2icrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemc2icrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemc2icrFieldIscShift = 0
@@ -3516,17 +5126,40 @@ const (
 )
 
 // GetIsc Interrupt semaphore x clear bit
-func (r *registerHsemc2icrType) GetIsc() uint32 {
+func (r *RegisterHsemc2icrType) GetIsc() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHsemc2icrFieldIscMask) >> RegisterHsemc2icrFieldIscShift)
 }
 
 // SetIsc Interrupt semaphore x clear bit
-func (r *registerHsemc2icrType) SetIsc(value uint32) {
+func (r *RegisterHsemc2icrType) SetIsc(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemc2icrFieldIscMask)|(uint32(value)<<RegisterHsemc2icrFieldIscShift))
 }
 
-// registerHsemc2isrType HSEM Interrupt status register
-type registerHsemc2isrType uint32
+// RegisterHsemc2isrType HSEM Interrupt status register
+type RegisterHsemc2isrType uint32
+
+func (r *RegisterHsemc2isrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemc2isrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemc2isrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemc2isrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemc2isrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemc2isrFieldIsfShift = 0
@@ -3534,17 +5167,40 @@ const (
 )
 
 // GetIsf Interrupt semaphore x status bit before enable (mask)
-func (r *registerHsemc2isrType) GetIsf() uint32 {
+func (r *RegisterHsemc2isrType) GetIsf() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHsemc2isrFieldIsfMask) >> RegisterHsemc2isrFieldIsfShift)
 }
 
 // SetIsf Interrupt semaphore x status bit before enable (mask)
-func (r *registerHsemc2isrType) SetIsf(value uint32) {
+func (r *RegisterHsemc2isrType) SetIsf(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemc2isrFieldIsfMask)|(uint32(value)<<RegisterHsemc2isrFieldIsfShift))
 }
 
-// registerHsemc2misrType HSEM Masked interrupt status register
-type registerHsemc2misrType uint32
+// RegisterHsemc2misrType HSEM Masked interrupt status register
+type RegisterHsemc2misrType uint32
+
+func (r *RegisterHsemc2misrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemc2misrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemc2misrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemc2misrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemc2misrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemc2misrFieldMisfShift = 0
@@ -3552,17 +5208,40 @@ const (
 )
 
 // GetMisf masked interrupt semaphore x status bit after enable (mask)
-func (r *registerHsemc2misrType) GetMisf() uint32 {
+func (r *RegisterHsemc2misrType) GetMisf() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterHsemc2misrFieldMisfMask) >> RegisterHsemc2misrFieldMisfShift)
 }
 
 // SetMisf masked interrupt semaphore x status bit after enable (mask)
-func (r *registerHsemc2misrType) SetMisf(value uint32) {
+func (r *RegisterHsemc2misrType) SetMisf(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemc2misrFieldMisfMask)|(uint32(value)<<RegisterHsemc2misrFieldMisfShift))
 }
 
-// registerHsemcrType HSEM Clear register
-type registerHsemcrType uint32
+// RegisterHsemcrType HSEM Clear register
+type RegisterHsemcrType uint32
+
+func (r *RegisterHsemcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemcrFieldCoreidShift = 8
@@ -3570,12 +5249,12 @@ const (
 )
 
 // GetCoreid COREID of semaphores to be cleared
-func (r *registerHsemcrType) GetCoreid() uint8 {
+func (r *RegisterHsemcrType) GetCoreid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterHsemcrFieldCoreidMask) >> RegisterHsemcrFieldCoreidShift)
 }
 
 // SetCoreid COREID of semaphores to be cleared
-func (r *registerHsemcrType) SetCoreid(value uint8) {
+func (r *RegisterHsemcrType) SetCoreid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemcrFieldCoreidMask)|(uint32(value)<<RegisterHsemcrFieldCoreidShift))
 }
 
@@ -3585,17 +5264,40 @@ const (
 )
 
 // GetKey Semaphore clear Key
-func (r *registerHsemcrType) GetKey() uint16 {
+func (r *RegisterHsemcrType) GetKey() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterHsemcrFieldKeyMask) >> RegisterHsemcrFieldKeyShift)
 }
 
 // SetKey Semaphore clear Key
-func (r *registerHsemcrType) SetKey(value uint16) {
+func (r *RegisterHsemcrType) SetKey(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemcrFieldKeyMask)|(uint32(value)<<RegisterHsemcrFieldKeyShift))
 }
 
-// registerHsemkeyrType HSEM Interrupt clear register
-type registerHsemkeyrType uint32
+// RegisterHsemkeyrType HSEM Interrupt clear register
+type RegisterHsemkeyrType uint32
+
+func (r *RegisterHsemkeyrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterHsemkeyrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterHsemkeyrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterHsemkeyrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterHsemkeyrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterHsemkeyrFieldKeyShift = 16
@@ -3603,11 +5305,11 @@ const (
 )
 
 // GetKey Semaphore Clear Key
-func (r *registerHsemkeyrType) GetKey() uint16 {
+func (r *RegisterHsemkeyrType) GetKey() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterHsemkeyrFieldKeyMask) >> RegisterHsemkeyrFieldKeyShift)
 }
 
 // SetKey Semaphore Clear Key
-func (r *registerHsemkeyrType) SetKey(value uint16) {
+func (r *RegisterHsemkeyrType) SetKey(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterHsemkeyrFieldKeyMask)|(uint32(value)<<RegisterHsemkeyrFieldKeyShift))
 }

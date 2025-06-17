@@ -13,82 +13,105 @@ var (
 )
 
 type _fdcan struct {
-	Fdcancrel   registerFdcancrelType
-	Fdcanendn   registerFdcanendnType
+	Fdcancrel   RegisterFdcancrelType
+	Fdcanendn   RegisterFdcanendnType
 	_           [4]byte
-	Fdcandbtp   registerFdcandbtpType
-	Fdcantest   registerFdcantestType
-	Fdcanrwd    registerFdcanrwdType
-	Fdcancccr   registerFdcancccrType
-	Fdcannbtp   registerFdcannbtpType
-	Fdcantscc   registerFdcantsccType
-	Fdcantscv   registerFdcantscvType
-	Fdcantocc   registerFdcantoccType
-	Fdcantocv   registerFdcantocvType
+	Fdcandbtp   RegisterFdcandbtpType
+	Fdcantest   RegisterFdcantestType
+	Fdcanrwd    RegisterFdcanrwdType
+	Fdcancccr   RegisterFdcancccrType
+	Fdcannbtp   RegisterFdcannbtpType
+	Fdcantscc   RegisterFdcantsccType
+	Fdcantscv   RegisterFdcantscvType
+	Fdcantocc   RegisterFdcantoccType
+	Fdcantocv   RegisterFdcantocvType
 	_           [16]byte
-	Fdcanecr    registerFdcanecrType
-	Fdcanpsr    registerFdcanpsrType
-	Fdcantdcr   registerFdcantdcrType
+	Fdcanecr    RegisterFdcanecrType
+	Fdcanpsr    RegisterFdcanpsrType
+	Fdcantdcr   RegisterFdcantdcrType
 	_           [4]byte
-	Fdcanir     registerFdcanirType
-	Fdcanie     registerFdcanieType
-	Fdcanils    registerFdcanilsType
-	Fdcanile    registerFdcanileType
+	Fdcanir     RegisterFdcanirType
+	Fdcanie     RegisterFdcanieType
+	Fdcanils    RegisterFdcanilsType
+	Fdcanile    RegisterFdcanileType
 	_           [32]byte
-	Fdcangfc    registerFdcangfcType
-	Fdcansidfc  registerFdcansidfcType
-	Fdcanxidfc  registerFdcanxidfcType
+	Fdcangfc    RegisterFdcangfcType
+	Fdcansidfc  RegisterFdcansidfcType
+	Fdcanxidfc  RegisterFdcanxidfcType
 	_           [4]byte
-	Fdcanxidam  registerFdcanxidamType
-	Fdcanhpms   registerFdcanhpmsType
-	Fdcanndat1  registerFdcanndat1Type
-	Fdcanndat2  registerFdcanndat2Type
-	Fdcanrxf0c  registerFdcanrxf0cType
-	Fdcanrxf0s  registerFdcanrxf0sType
-	Fdcanrxf0a  registerFdcanrxf0aType
-	Fdcanrxbc   registerFdcanrxbcType
-	Fdcanrxf1c  registerFdcanrxf1cType
-	Fdcanrxf1s  registerFdcanrxf1sType
-	Fdcanrxf1a  registerFdcanrxf1aType
-	Fdcanrxesc  registerFdcanrxescType
-	Fdcantxbc   registerFdcantxbcType
-	Fdcantxfqs  registerFdcantxfqsType
-	Fdcantxesc  registerFdcantxescType
-	Fdcantxbrp  registerFdcantxbrpType
-	Fdcantxbar  registerFdcantxbarType
-	Fdcantxbcr  registerFdcantxbcrType
-	Fdcantxbto  registerFdcantxbtoType
-	Fdcantxbcf  registerFdcantxbcfType
-	Fdcantxbtie registerFdcantxbtieType
-	Fdcantxbcie registerFdcantxbcieType
+	Fdcanxidam  RegisterFdcanxidamType
+	Fdcanhpms   RegisterFdcanhpmsType
+	Fdcanndat1  RegisterFdcanndat1Type
+	Fdcanndat2  RegisterFdcanndat2Type
+	Fdcanrxf0c  RegisterFdcanrxf0cType
+	Fdcanrxf0s  RegisterFdcanrxf0sType
+	Fdcanrxf0a  RegisterFdcanrxf0aType
+	Fdcanrxbc   RegisterFdcanrxbcType
+	Fdcanrxf1c  RegisterFdcanrxf1cType
+	Fdcanrxf1s  RegisterFdcanrxf1sType
+	Fdcanrxf1a  RegisterFdcanrxf1aType
+	Fdcanrxesc  RegisterFdcanrxescType
+	Fdcantxbc   RegisterFdcantxbcType
+	Fdcantxfqs  RegisterFdcantxfqsType
+	Fdcantxesc  RegisterFdcantxescType
+	Fdcantxbrp  RegisterFdcantxbrpType
+	Fdcantxbar  RegisterFdcantxbarType
+	Fdcantxbcr  RegisterFdcantxbcrType
+	Fdcantxbto  RegisterFdcantxbtoType
+	Fdcantxbcf  RegisterFdcantxbcfType
+	Fdcantxbtie RegisterFdcantxbtieType
+	Fdcantxbcie RegisterFdcantxbcieType
 	_           [8]byte
-	Fdcantxefc  registerFdcantxefcType
-	Fdcantxefs  registerFdcantxefsType
-	Fdcantxefa  registerFdcantxefaType
+	Fdcantxefc  RegisterFdcantxefcType
+	Fdcantxefs  RegisterFdcantxefsType
+	Fdcantxefa  RegisterFdcantxefaType
 	_           [4]byte
-	Fdcantttmc  registerFdcantttmcType
-	Fdcanttrmc  registerFdcanttrmcType
-	Fdcanttocf  registerFdcanttocfType
-	Fdcanttmlm  registerFdcanttmlmType
-	Fdcanturcf  registerFdcanturcfType
-	Fdcanttocn  registerFdcanttocnType
-	Canttgtp    registerCanttgtpType
-	Fdcantttmk  registerFdcantttmkType
-	Fdcanttir   registerFdcanttirType
-	Fdcanttie   registerFdcanttieType
-	Fdcanttils  registerFdcanttilsType
-	Fdcanttost  registerFdcanttostType
-	Fdcanturna  registerFdcanturnaType
-	Fdcanttlgt  registerFdcanttlgtType
-	Fdcanttctc  registerFdcanttctcType
-	Fdcanttcpt  registerFdcanttcptType
-	Fdcanttcsm  registerFdcanttcsmType
+	Fdcantttmc  RegisterFdcantttmcType
+	Fdcanttrmc  RegisterFdcanttrmcType
+	Fdcanttocf  RegisterFdcanttocfType
+	Fdcanttmlm  RegisterFdcanttmlmType
+	Fdcanturcf  RegisterFdcanturcfType
+	Fdcanttocn  RegisterFdcanttocnType
+	Canttgtp    RegisterCanttgtpType
+	Fdcantttmk  RegisterFdcantttmkType
+	Fdcanttir   RegisterFdcanttirType
+	Fdcanttie   RegisterFdcanttieType
+	Fdcanttils  RegisterFdcanttilsType
+	Fdcanttost  RegisterFdcanttostType
+	Fdcanturna  RegisterFdcanturnaType
+	Fdcanttlgt  RegisterFdcanttlgtType
+	Fdcanttctc  RegisterFdcanttctcType
+	Fdcanttcpt  RegisterFdcanttcptType
+	Fdcanttcsm  RegisterFdcanttcsmType
 	_           [444]byte
-	Fdcanttts   registerFdcantttsType
+	Fdcanttts   RegisterFdcantttsType
 }
 
-// registerFdcancrelType FDCAN Core Release Register
-type registerFdcancrelType uint32
+// RegisterFdcancrelType FDCAN Core Release Register
+type RegisterFdcancrelType uint32
+
+func (r *RegisterFdcancrelType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcancrelType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcancrelType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcancrelType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcancrelType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcancrelFieldDayShift = 0
@@ -96,12 +119,12 @@ const (
 )
 
 // GetDay Timestamp Day
-func (r *registerFdcancrelType) GetDay() uint8 {
+func (r *RegisterFdcancrelType) GetDay() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcancrelFieldDayMask) >> RegisterFdcancrelFieldDayShift)
 }
 
 // SetDay Timestamp Day
-func (r *registerFdcancrelType) SetDay(value uint8) {
+func (r *RegisterFdcancrelType) SetDay(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcancrelFieldDayMask)|(uint32(value)<<RegisterFdcancrelFieldDayShift))
 }
 
@@ -111,12 +134,12 @@ const (
 )
 
 // GetMon Timestamp Month
-func (r *registerFdcancrelType) GetMon() uint8 {
+func (r *RegisterFdcancrelType) GetMon() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcancrelFieldMonMask) >> RegisterFdcancrelFieldMonShift)
 }
 
 // SetMon Timestamp Month
-func (r *registerFdcancrelType) SetMon(value uint8) {
+func (r *RegisterFdcancrelType) SetMon(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcancrelFieldMonMask)|(uint32(value)<<RegisterFdcancrelFieldMonShift))
 }
 
@@ -126,12 +149,12 @@ const (
 )
 
 // GetYear Timestamp Year
-func (r *registerFdcancrelType) GetYear() uint8 {
+func (r *RegisterFdcancrelType) GetYear() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcancrelFieldYearMask) >> RegisterFdcancrelFieldYearShift)
 }
 
 // SetYear Timestamp Year
-func (r *registerFdcancrelType) SetYear(value uint8) {
+func (r *RegisterFdcancrelType) SetYear(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcancrelFieldYearMask)|(uint32(value)<<RegisterFdcancrelFieldYearShift))
 }
 
@@ -141,12 +164,12 @@ const (
 )
 
 // GetSubstep Sub-step of Core release
-func (r *registerFdcancrelType) GetSubstep() uint8 {
+func (r *RegisterFdcancrelType) GetSubstep() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcancrelFieldSubstepMask) >> RegisterFdcancrelFieldSubstepShift)
 }
 
 // SetSubstep Sub-step of Core release
-func (r *registerFdcancrelType) SetSubstep(value uint8) {
+func (r *RegisterFdcancrelType) SetSubstep(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcancrelFieldSubstepMask)|(uint32(value)<<RegisterFdcancrelFieldSubstepShift))
 }
 
@@ -156,12 +179,12 @@ const (
 )
 
 // GetStep Step of Core release
-func (r *registerFdcancrelType) GetStep() uint8 {
+func (r *RegisterFdcancrelType) GetStep() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcancrelFieldStepMask) >> RegisterFdcancrelFieldStepShift)
 }
 
 // SetStep Step of Core release
-func (r *registerFdcancrelType) SetStep(value uint8) {
+func (r *RegisterFdcancrelType) SetStep(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcancrelFieldStepMask)|(uint32(value)<<RegisterFdcancrelFieldStepShift))
 }
 
@@ -171,17 +194,40 @@ const (
 )
 
 // GetRel Core release
-func (r *registerFdcancrelType) GetRel() uint8 {
+func (r *RegisterFdcancrelType) GetRel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcancrelFieldRelMask) >> RegisterFdcancrelFieldRelShift)
 }
 
 // SetRel Core release
-func (r *registerFdcancrelType) SetRel(value uint8) {
+func (r *RegisterFdcancrelType) SetRel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcancrelFieldRelMask)|(uint32(value)<<RegisterFdcancrelFieldRelShift))
 }
 
-// registerFdcanendnType FDCAN Core Release Register
-type registerFdcanendnType uint32
+// RegisterFdcanendnType FDCAN Core Release Register
+type RegisterFdcanendnType uint32
+
+func (r *RegisterFdcanendnType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanendnType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanendnType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanendnType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanendnType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanendnFieldEtvShift = 0
@@ -189,17 +235,40 @@ const (
 )
 
 // GetEtv Endiannes Test Value
-func (r *registerFdcanendnType) GetEtv() uint32 {
+func (r *RegisterFdcanendnType) GetEtv() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanendnFieldEtvMask) >> RegisterFdcanendnFieldEtvShift)
 }
 
 // SetEtv Endiannes Test Value
-func (r *registerFdcanendnType) SetEtv(value uint32) {
+func (r *RegisterFdcanendnType) SetEtv(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanendnFieldEtvMask)|(uint32(value)<<RegisterFdcanendnFieldEtvShift))
 }
 
-// registerFdcandbtpType FDCAN Data Bit Timing and Prescaler Register
-type registerFdcandbtpType uint32
+// RegisterFdcandbtpType FDCAN Data Bit Timing and Prescaler Register
+type RegisterFdcandbtpType uint32
+
+func (r *RegisterFdcandbtpType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcandbtpType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcandbtpType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcandbtpType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcandbtpType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcandbtpFieldDsjwShift = 0
@@ -207,12 +276,12 @@ const (
 )
 
 // GetDsjw Synchronization Jump Width
-func (r *registerFdcandbtpType) GetDsjw() uint8 {
+func (r *RegisterFdcandbtpType) GetDsjw() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcandbtpFieldDsjwMask) >> RegisterFdcandbtpFieldDsjwShift)
 }
 
 // SetDsjw Synchronization Jump Width
-func (r *registerFdcandbtpType) SetDsjw(value uint8) {
+func (r *RegisterFdcandbtpType) SetDsjw(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcandbtpFieldDsjwMask)|(uint32(value)<<RegisterFdcandbtpFieldDsjwShift))
 }
 
@@ -222,12 +291,12 @@ const (
 )
 
 // GetDtseg2 Data time segment after sample point
-func (r *registerFdcandbtpType) GetDtseg2() uint8 {
+func (r *RegisterFdcandbtpType) GetDtseg2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcandbtpFieldDtseg2Mask) >> RegisterFdcandbtpFieldDtseg2Shift)
 }
 
 // SetDtseg2 Data time segment after sample point
-func (r *registerFdcandbtpType) SetDtseg2(value uint8) {
+func (r *RegisterFdcandbtpType) SetDtseg2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcandbtpFieldDtseg2Mask)|(uint32(value)<<RegisterFdcandbtpFieldDtseg2Shift))
 }
 
@@ -237,12 +306,12 @@ const (
 )
 
 // GetDtseg1 Data time segment after sample point
-func (r *registerFdcandbtpType) GetDtseg1() uint8 {
+func (r *RegisterFdcandbtpType) GetDtseg1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcandbtpFieldDtseg1Mask) >> RegisterFdcandbtpFieldDtseg1Shift)
 }
 
 // SetDtseg1 Data time segment after sample point
-func (r *registerFdcandbtpType) SetDtseg1(value uint8) {
+func (r *RegisterFdcandbtpType) SetDtseg1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcandbtpFieldDtseg1Mask)|(uint32(value)<<RegisterFdcandbtpFieldDtseg1Shift))
 }
 
@@ -252,12 +321,12 @@ const (
 )
 
 // GetDbrp Data BIt Rate Prescaler
-func (r *registerFdcandbtpType) GetDbrp() uint8 {
+func (r *RegisterFdcandbtpType) GetDbrp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcandbtpFieldDbrpMask) >> RegisterFdcandbtpFieldDbrpShift)
 }
 
 // SetDbrp Data BIt Rate Prescaler
-func (r *registerFdcandbtpType) SetDbrp(value uint8) {
+func (r *RegisterFdcandbtpType) SetDbrp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcandbtpFieldDbrpMask)|(uint32(value)<<RegisterFdcandbtpFieldDbrpShift))
 }
 
@@ -267,12 +336,12 @@ const (
 )
 
 // GetTdc Transceiver Delay Compensation
-func (r *registerFdcandbtpType) GetTdc() bool {
+func (r *RegisterFdcandbtpType) GetTdc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcandbtpFieldTdcMask) != 0
 }
 
 // SetTdc Transceiver Delay Compensation
-func (r *registerFdcandbtpType) SetTdc(value bool) {
+func (r *RegisterFdcandbtpType) SetTdc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcandbtpFieldTdcMask)
 	} else {
@@ -280,8 +349,31 @@ func (r *registerFdcandbtpType) SetTdc(value bool) {
 	}
 }
 
-// registerFdcantestType FDCAN Test Register
-type registerFdcantestType uint32
+// RegisterFdcantestType FDCAN Test Register
+type RegisterFdcantestType uint32
+
+func (r *RegisterFdcantestType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantestType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantestType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantestType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantestType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantestFieldLbckShift = 4
@@ -289,12 +381,12 @@ const (
 )
 
 // GetLbck Loop Back mode
-func (r *registerFdcantestType) GetLbck() bool {
+func (r *RegisterFdcantestType) GetLbck() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcantestFieldLbckMask) != 0
 }
 
 // SetLbck Loop Back mode
-func (r *registerFdcantestType) SetLbck(value bool) {
+func (r *RegisterFdcantestType) SetLbck(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcantestFieldLbckMask)
 	} else {
@@ -308,12 +400,12 @@ const (
 )
 
 // GetTx Loop Back mode
-func (r *registerFdcantestType) GetTx() uint8 {
+func (r *RegisterFdcantestType) GetTx() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantestFieldTxMask) >> RegisterFdcantestFieldTxShift)
 }
 
 // SetTx Loop Back mode
-func (r *registerFdcantestType) SetTx(value uint8) {
+func (r *RegisterFdcantestType) SetTx(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantestFieldTxMask)|(uint32(value)<<RegisterFdcantestFieldTxShift))
 }
 
@@ -323,12 +415,12 @@ const (
 )
 
 // GetRx Control of Transmit Pin
-func (r *registerFdcantestType) GetRx() bool {
+func (r *RegisterFdcantestType) GetRx() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcantestFieldRxMask) != 0
 }
 
 // SetRx Control of Transmit Pin
-func (r *registerFdcantestType) SetRx(value bool) {
+func (r *RegisterFdcantestType) SetRx(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcantestFieldRxMask)
 	} else {
@@ -336,8 +428,31 @@ func (r *registerFdcantestType) SetRx(value bool) {
 	}
 }
 
-// registerFdcanrwdType FDCAN RAM Watchdog Register
-type registerFdcanrwdType uint32
+// RegisterFdcanrwdType FDCAN RAM Watchdog Register
+type RegisterFdcanrwdType uint32
+
+func (r *RegisterFdcanrwdType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanrwdType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanrwdType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanrwdType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanrwdType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanrwdFieldWdcShift = 0
@@ -345,12 +460,12 @@ const (
 )
 
 // GetWdc Watchdog configuration
-func (r *registerFdcanrwdType) GetWdc() uint8 {
+func (r *RegisterFdcanrwdType) GetWdc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrwdFieldWdcMask) >> RegisterFdcanrwdFieldWdcShift)
 }
 
 // SetWdc Watchdog configuration
-func (r *registerFdcanrwdType) SetWdc(value uint8) {
+func (r *RegisterFdcanrwdType) SetWdc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrwdFieldWdcMask)|(uint32(value)<<RegisterFdcanrwdFieldWdcShift))
 }
 
@@ -360,17 +475,40 @@ const (
 )
 
 // GetWdv Watchdog value
-func (r *registerFdcanrwdType) GetWdv() uint8 {
+func (r *RegisterFdcanrwdType) GetWdv() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrwdFieldWdvMask) >> RegisterFdcanrwdFieldWdvShift)
 }
 
 // SetWdv Watchdog value
-func (r *registerFdcanrwdType) SetWdv(value uint8) {
+func (r *RegisterFdcanrwdType) SetWdv(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrwdFieldWdvMask)|(uint32(value)<<RegisterFdcanrwdFieldWdvShift))
 }
 
-// registerFdcancccrType FDCAN CC Control Register
-type registerFdcancccrType uint32
+// RegisterFdcancccrType FDCAN CC Control Register
+type RegisterFdcancccrType uint32
+
+func (r *RegisterFdcancccrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcancccrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcancccrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcancccrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcancccrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcancccrFieldInitShift = 0
@@ -378,12 +516,12 @@ const (
 )
 
 // GetInit Initialization
-func (r *registerFdcancccrType) GetInit() bool {
+func (r *RegisterFdcancccrType) GetInit() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldInitMask) != 0
 }
 
 // SetInit Initialization
-func (r *registerFdcancccrType) SetInit(value bool) {
+func (r *RegisterFdcancccrType) SetInit(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldInitMask)
 	} else {
@@ -397,12 +535,12 @@ const (
 )
 
 // GetCce Configuration Change Enable
-func (r *registerFdcancccrType) GetCce() bool {
+func (r *RegisterFdcancccrType) GetCce() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldCceMask) != 0
 }
 
 // SetCce Configuration Change Enable
-func (r *registerFdcancccrType) SetCce(value bool) {
+func (r *RegisterFdcancccrType) SetCce(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldCceMask)
 	} else {
@@ -416,12 +554,12 @@ const (
 )
 
 // GetAsm ASM Restricted Operation Mode
-func (r *registerFdcancccrType) GetAsm() bool {
+func (r *RegisterFdcancccrType) GetAsm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldAsmMask) != 0
 }
 
 // SetAsm ASM Restricted Operation Mode
-func (r *registerFdcancccrType) SetAsm(value bool) {
+func (r *RegisterFdcancccrType) SetAsm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldAsmMask)
 	} else {
@@ -435,12 +573,12 @@ const (
 )
 
 // GetCsa Clock Stop Acknowledge
-func (r *registerFdcancccrType) GetCsa() bool {
+func (r *RegisterFdcancccrType) GetCsa() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldCsaMask) != 0
 }
 
 // SetCsa Clock Stop Acknowledge
-func (r *registerFdcancccrType) SetCsa(value bool) {
+func (r *RegisterFdcancccrType) SetCsa(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldCsaMask)
 	} else {
@@ -454,12 +592,12 @@ const (
 )
 
 // GetCsr Clock Stop Request
-func (r *registerFdcancccrType) GetCsr() bool {
+func (r *RegisterFdcancccrType) GetCsr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldCsrMask) != 0
 }
 
 // SetCsr Clock Stop Request
-func (r *registerFdcancccrType) SetCsr(value bool) {
+func (r *RegisterFdcancccrType) SetCsr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldCsrMask)
 	} else {
@@ -473,12 +611,12 @@ const (
 )
 
 // GetMon Bus Monitoring Mode
-func (r *registerFdcancccrType) GetMon() bool {
+func (r *RegisterFdcancccrType) GetMon() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldMonMask) != 0
 }
 
 // SetMon Bus Monitoring Mode
-func (r *registerFdcancccrType) SetMon(value bool) {
+func (r *RegisterFdcancccrType) SetMon(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldMonMask)
 	} else {
@@ -492,12 +630,12 @@ const (
 )
 
 // GetDar Disable Automatic Retransmission
-func (r *registerFdcancccrType) GetDar() bool {
+func (r *RegisterFdcancccrType) GetDar() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldDarMask) != 0
 }
 
 // SetDar Disable Automatic Retransmission
-func (r *registerFdcancccrType) SetDar(value bool) {
+func (r *RegisterFdcancccrType) SetDar(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldDarMask)
 	} else {
@@ -511,12 +649,12 @@ const (
 )
 
 // GetTest Test Mode Enable
-func (r *registerFdcancccrType) GetTest() bool {
+func (r *RegisterFdcancccrType) GetTest() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldTestMask) != 0
 }
 
 // SetTest Test Mode Enable
-func (r *registerFdcancccrType) SetTest(value bool) {
+func (r *RegisterFdcancccrType) SetTest(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldTestMask)
 	} else {
@@ -530,12 +668,12 @@ const (
 )
 
 // GetFdoe FD Operation Enable
-func (r *registerFdcancccrType) GetFdoe() bool {
+func (r *RegisterFdcancccrType) GetFdoe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldFdoeMask) != 0
 }
 
 // SetFdoe FD Operation Enable
-func (r *registerFdcancccrType) SetFdoe(value bool) {
+func (r *RegisterFdcancccrType) SetFdoe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldFdoeMask)
 	} else {
@@ -549,12 +687,12 @@ const (
 )
 
 // GetBse FDCAN Bit Rate Switching
-func (r *registerFdcancccrType) GetBse() bool {
+func (r *RegisterFdcancccrType) GetBse() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldBseMask) != 0
 }
 
 // SetBse FDCAN Bit Rate Switching
-func (r *registerFdcancccrType) SetBse(value bool) {
+func (r *RegisterFdcancccrType) SetBse(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldBseMask)
 	} else {
@@ -568,12 +706,12 @@ const (
 )
 
 // GetPxhd Protocol Exception Handling Disable
-func (r *registerFdcancccrType) GetPxhd() bool {
+func (r *RegisterFdcancccrType) GetPxhd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldPxhdMask) != 0
 }
 
 // SetPxhd Protocol Exception Handling Disable
-func (r *registerFdcancccrType) SetPxhd(value bool) {
+func (r *RegisterFdcancccrType) SetPxhd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldPxhdMask)
 	} else {
@@ -587,12 +725,12 @@ const (
 )
 
 // GetEfbi Edge Filtering during Bus Integration
-func (r *registerFdcancccrType) GetEfbi() bool {
+func (r *RegisterFdcancccrType) GetEfbi() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldEfbiMask) != 0
 }
 
 // SetEfbi Edge Filtering during Bus Integration
-func (r *registerFdcancccrType) SetEfbi(value bool) {
+func (r *RegisterFdcancccrType) SetEfbi(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldEfbiMask)
 	} else {
@@ -606,12 +744,12 @@ const (
 )
 
 // GetTxp TXP
-func (r *registerFdcancccrType) GetTxp() bool {
+func (r *RegisterFdcancccrType) GetTxp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldTxpMask) != 0
 }
 
 // SetTxp TXP
-func (r *registerFdcancccrType) SetTxp(value bool) {
+func (r *RegisterFdcancccrType) SetTxp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldTxpMask)
 	} else {
@@ -625,12 +763,12 @@ const (
 )
 
 // GetNiso Non ISO Operation
-func (r *registerFdcancccrType) GetNiso() bool {
+func (r *RegisterFdcancccrType) GetNiso() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcancccrFieldNisoMask) != 0
 }
 
 // SetNiso Non ISO Operation
-func (r *registerFdcancccrType) SetNiso(value bool) {
+func (r *RegisterFdcancccrType) SetNiso(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcancccrFieldNisoMask)
 	} else {
@@ -638,8 +776,31 @@ func (r *registerFdcancccrType) SetNiso(value bool) {
 	}
 }
 
-// registerFdcannbtpType FDCAN Nominal Bit Timing and Prescaler Register
-type registerFdcannbtpType uint32
+// RegisterFdcannbtpType FDCAN Nominal Bit Timing and Prescaler Register
+type RegisterFdcannbtpType uint32
+
+func (r *RegisterFdcannbtpType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcannbtpType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcannbtpType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcannbtpType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcannbtpType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcannbtpFieldTseg2Shift = 0
@@ -647,12 +808,12 @@ const (
 )
 
 // GetTseg2 Nominal Time segment after sample point
-func (r *registerFdcannbtpType) GetTseg2() uint8 {
+func (r *RegisterFdcannbtpType) GetTseg2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcannbtpFieldTseg2Mask) >> RegisterFdcannbtpFieldTseg2Shift)
 }
 
 // SetTseg2 Nominal Time segment after sample point
-func (r *registerFdcannbtpType) SetTseg2(value uint8) {
+func (r *RegisterFdcannbtpType) SetTseg2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcannbtpFieldTseg2Mask)|(uint32(value)<<RegisterFdcannbtpFieldTseg2Shift))
 }
 
@@ -662,12 +823,12 @@ const (
 )
 
 // GetNtseg1 Nominal Time segment before sample point
-func (r *registerFdcannbtpType) GetNtseg1() uint8 {
+func (r *RegisterFdcannbtpType) GetNtseg1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcannbtpFieldNtseg1Mask) >> RegisterFdcannbtpFieldNtseg1Shift)
 }
 
 // SetNtseg1 Nominal Time segment before sample point
-func (r *registerFdcannbtpType) SetNtseg1(value uint8) {
+func (r *RegisterFdcannbtpType) SetNtseg1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcannbtpFieldNtseg1Mask)|(uint32(value)<<RegisterFdcannbtpFieldNtseg1Shift))
 }
 
@@ -677,12 +838,12 @@ const (
 )
 
 // GetNbrp Bit Rate Prescaler
-func (r *registerFdcannbtpType) GetNbrp() uint16 {
+func (r *RegisterFdcannbtpType) GetNbrp() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcannbtpFieldNbrpMask) >> RegisterFdcannbtpFieldNbrpShift)
 }
 
 // SetNbrp Bit Rate Prescaler
-func (r *registerFdcannbtpType) SetNbrp(value uint16) {
+func (r *RegisterFdcannbtpType) SetNbrp(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcannbtpFieldNbrpMask)|(uint32(value)<<RegisterFdcannbtpFieldNbrpShift))
 }
 
@@ -692,17 +853,40 @@ const (
 )
 
 // GetNsjw NSJW: Nominal (Re)Synchronization Jump Width
-func (r *registerFdcannbtpType) GetNsjw() uint8 {
+func (r *RegisterFdcannbtpType) GetNsjw() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcannbtpFieldNsjwMask) >> RegisterFdcannbtpFieldNsjwShift)
 }
 
 // SetNsjw NSJW: Nominal (Re)Synchronization Jump Width
-func (r *registerFdcannbtpType) SetNsjw(value uint8) {
+func (r *RegisterFdcannbtpType) SetNsjw(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcannbtpFieldNsjwMask)|(uint32(value)<<RegisterFdcannbtpFieldNsjwShift))
 }
 
-// registerFdcantsccType FDCAN Timestamp Counter Configuration Register
-type registerFdcantsccType uint32
+// RegisterFdcantsccType FDCAN Timestamp Counter Configuration Register
+type RegisterFdcantsccType uint32
+
+func (r *RegisterFdcantsccType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantsccType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantsccType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantsccType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantsccType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantsccFieldTssShift = 0
@@ -710,12 +894,12 @@ const (
 )
 
 // GetTss Timestamp Select
-func (r *registerFdcantsccType) GetTss() uint8 {
+func (r *RegisterFdcantsccType) GetTss() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantsccFieldTssMask) >> RegisterFdcantsccFieldTssShift)
 }
 
 // SetTss Timestamp Select
-func (r *registerFdcantsccType) SetTss(value uint8) {
+func (r *RegisterFdcantsccType) SetTss(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantsccFieldTssMask)|(uint32(value)<<RegisterFdcantsccFieldTssShift))
 }
 
@@ -725,17 +909,40 @@ const (
 )
 
 // GetTcp Timestamp Counter Prescaler
-func (r *registerFdcantsccType) GetTcp() uint8 {
+func (r *RegisterFdcantsccType) GetTcp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantsccFieldTcpMask) >> RegisterFdcantsccFieldTcpShift)
 }
 
 // SetTcp Timestamp Counter Prescaler
-func (r *registerFdcantsccType) SetTcp(value uint8) {
+func (r *RegisterFdcantsccType) SetTcp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantsccFieldTcpMask)|(uint32(value)<<RegisterFdcantsccFieldTcpShift))
 }
 
-// registerFdcantscvType FDCAN Timestamp Counter Value Register
-type registerFdcantscvType uint32
+// RegisterFdcantscvType FDCAN Timestamp Counter Value Register
+type RegisterFdcantscvType uint32
+
+func (r *RegisterFdcantscvType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantscvType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantscvType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantscvType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantscvType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantscvFieldTscShift = 0
@@ -743,17 +950,40 @@ const (
 )
 
 // GetTsc Timestamp Counter
-func (r *registerFdcantscvType) GetTsc() uint16 {
+func (r *RegisterFdcantscvType) GetTsc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantscvFieldTscMask) >> RegisterFdcantscvFieldTscShift)
 }
 
 // SetTsc Timestamp Counter
-func (r *registerFdcantscvType) SetTsc(value uint16) {
+func (r *RegisterFdcantscvType) SetTsc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantscvFieldTscMask)|(uint32(value)<<RegisterFdcantscvFieldTscShift))
 }
 
-// registerFdcantoccType FDCAN Timeout Counter Configuration Register
-type registerFdcantoccType uint32
+// RegisterFdcantoccType FDCAN Timeout Counter Configuration Register
+type RegisterFdcantoccType uint32
+
+func (r *RegisterFdcantoccType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantoccType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantoccType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantoccType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantoccType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantoccFieldEtocShift = 0
@@ -761,12 +991,12 @@ const (
 )
 
 // GetEtoc Enable Timeout Counter
-func (r *registerFdcantoccType) GetEtoc() bool {
+func (r *RegisterFdcantoccType) GetEtoc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcantoccFieldEtocMask) != 0
 }
 
 // SetEtoc Enable Timeout Counter
-func (r *registerFdcantoccType) SetEtoc(value bool) {
+func (r *RegisterFdcantoccType) SetEtoc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcantoccFieldEtocMask)
 	} else {
@@ -780,12 +1010,12 @@ const (
 )
 
 // GetTos Timeout Select
-func (r *registerFdcantoccType) GetTos() uint8 {
+func (r *RegisterFdcantoccType) GetTos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantoccFieldTosMask) >> RegisterFdcantoccFieldTosShift)
 }
 
 // SetTos Timeout Select
-func (r *registerFdcantoccType) SetTos(value uint8) {
+func (r *RegisterFdcantoccType) SetTos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantoccFieldTosMask)|(uint32(value)<<RegisterFdcantoccFieldTosShift))
 }
 
@@ -795,17 +1025,40 @@ const (
 )
 
 // GetTop Timeout Period
-func (r *registerFdcantoccType) GetTop() uint16 {
+func (r *RegisterFdcantoccType) GetTop() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantoccFieldTopMask) >> RegisterFdcantoccFieldTopShift)
 }
 
 // SetTop Timeout Period
-func (r *registerFdcantoccType) SetTop(value uint16) {
+func (r *RegisterFdcantoccType) SetTop(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantoccFieldTopMask)|(uint32(value)<<RegisterFdcantoccFieldTopShift))
 }
 
-// registerFdcantocvType FDCAN Timeout Counter Value Register
-type registerFdcantocvType uint32
+// RegisterFdcantocvType FDCAN Timeout Counter Value Register
+type RegisterFdcantocvType uint32
+
+func (r *RegisterFdcantocvType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantocvType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantocvType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantocvType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantocvType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantocvFieldTocShift = 0
@@ -813,17 +1066,40 @@ const (
 )
 
 // GetToc Timeout Counter
-func (r *registerFdcantocvType) GetToc() uint16 {
+func (r *RegisterFdcantocvType) GetToc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantocvFieldTocMask) >> RegisterFdcantocvFieldTocShift)
 }
 
 // SetToc Timeout Counter
-func (r *registerFdcantocvType) SetToc(value uint16) {
+func (r *RegisterFdcantocvType) SetToc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantocvFieldTocMask)|(uint32(value)<<RegisterFdcantocvFieldTocShift))
 }
 
-// registerFdcanecrType FDCAN Error Counter Register
-type registerFdcanecrType uint32
+// RegisterFdcanecrType FDCAN Error Counter Register
+type RegisterFdcanecrType uint32
+
+func (r *RegisterFdcanecrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanecrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanecrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanecrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanecrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanecrFieldTecShift = 0
@@ -831,12 +1107,12 @@ const (
 )
 
 // GetTec Transmit Error Counter
-func (r *registerFdcanecrType) GetTec() uint8 {
+func (r *RegisterFdcanecrType) GetTec() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanecrFieldTecMask) >> RegisterFdcanecrFieldTecShift)
 }
 
 // SetTec Transmit Error Counter
-func (r *registerFdcanecrType) SetTec(value uint8) {
+func (r *RegisterFdcanecrType) SetTec(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanecrFieldTecMask)|(uint32(value)<<RegisterFdcanecrFieldTecShift))
 }
 
@@ -846,12 +1122,12 @@ const (
 )
 
 // GetTrec Receive Error Counter
-func (r *registerFdcanecrType) GetTrec() uint8 {
+func (r *RegisterFdcanecrType) GetTrec() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanecrFieldTrecMask) >> RegisterFdcanecrFieldTrecShift)
 }
 
 // SetTrec Receive Error Counter
-func (r *registerFdcanecrType) SetTrec(value uint8) {
+func (r *RegisterFdcanecrType) SetTrec(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanecrFieldTrecMask)|(uint32(value)<<RegisterFdcanecrFieldTrecShift))
 }
 
@@ -861,12 +1137,12 @@ const (
 )
 
 // GetRp Receive Error Passive
-func (r *registerFdcanecrType) GetRp() bool {
+func (r *RegisterFdcanecrType) GetRp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanecrFieldRpMask) != 0
 }
 
 // SetRp Receive Error Passive
-func (r *registerFdcanecrType) SetRp(value bool) {
+func (r *RegisterFdcanecrType) SetRp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanecrFieldRpMask)
 	} else {
@@ -880,17 +1156,40 @@ const (
 )
 
 // GetCel AN Error Logging
-func (r *registerFdcanecrType) GetCel() uint8 {
+func (r *RegisterFdcanecrType) GetCel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanecrFieldCelMask) >> RegisterFdcanecrFieldCelShift)
 }
 
 // SetCel AN Error Logging
-func (r *registerFdcanecrType) SetCel(value uint8) {
+func (r *RegisterFdcanecrType) SetCel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanecrFieldCelMask)|(uint32(value)<<RegisterFdcanecrFieldCelShift))
 }
 
-// registerFdcanpsrType FDCAN Protocol Status Register
-type registerFdcanpsrType uint32
+// RegisterFdcanpsrType FDCAN Protocol Status Register
+type RegisterFdcanpsrType uint32
+
+func (r *RegisterFdcanpsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanpsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanpsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanpsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanpsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanpsrFieldLecShift = 0
@@ -898,12 +1197,12 @@ const (
 )
 
 // GetLec Last Error Code
-func (r *registerFdcanpsrType) GetLec() uint8 {
+func (r *RegisterFdcanpsrType) GetLec() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldLecMask) >> RegisterFdcanpsrFieldLecShift)
 }
 
 // SetLec Last Error Code
-func (r *registerFdcanpsrType) SetLec(value uint8) {
+func (r *RegisterFdcanpsrType) SetLec(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanpsrFieldLecMask)|(uint32(value)<<RegisterFdcanpsrFieldLecShift))
 }
 
@@ -913,12 +1212,12 @@ const (
 )
 
 // GetAct Activity
-func (r *registerFdcanpsrType) GetAct() uint8 {
+func (r *RegisterFdcanpsrType) GetAct() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldActMask) >> RegisterFdcanpsrFieldActShift)
 }
 
 // SetAct Activity
-func (r *registerFdcanpsrType) SetAct(value uint8) {
+func (r *RegisterFdcanpsrType) SetAct(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanpsrFieldActMask)|(uint32(value)<<RegisterFdcanpsrFieldActShift))
 }
 
@@ -928,12 +1227,12 @@ const (
 )
 
 // GetEp Error Passive
-func (r *registerFdcanpsrType) GetEp() bool {
+func (r *RegisterFdcanpsrType) GetEp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldEpMask) != 0
 }
 
 // SetEp Error Passive
-func (r *registerFdcanpsrType) SetEp(value bool) {
+func (r *RegisterFdcanpsrType) SetEp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanpsrFieldEpMask)
 	} else {
@@ -947,12 +1246,12 @@ const (
 )
 
 // GetEw Warning Status
-func (r *registerFdcanpsrType) GetEw() bool {
+func (r *RegisterFdcanpsrType) GetEw() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldEwMask) != 0
 }
 
 // SetEw Warning Status
-func (r *registerFdcanpsrType) SetEw(value bool) {
+func (r *RegisterFdcanpsrType) SetEw(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanpsrFieldEwMask)
 	} else {
@@ -966,12 +1265,12 @@ const (
 )
 
 // GetBo Bus_Off Status
-func (r *registerFdcanpsrType) GetBo() bool {
+func (r *RegisterFdcanpsrType) GetBo() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldBoMask) != 0
 }
 
 // SetBo Bus_Off Status
-func (r *registerFdcanpsrType) SetBo(value bool) {
+func (r *RegisterFdcanpsrType) SetBo(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanpsrFieldBoMask)
 	} else {
@@ -985,12 +1284,12 @@ const (
 )
 
 // GetDlec Data Last Error Code
-func (r *registerFdcanpsrType) GetDlec() uint8 {
+func (r *RegisterFdcanpsrType) GetDlec() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldDlecMask) >> RegisterFdcanpsrFieldDlecShift)
 }
 
 // SetDlec Data Last Error Code
-func (r *registerFdcanpsrType) SetDlec(value uint8) {
+func (r *RegisterFdcanpsrType) SetDlec(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanpsrFieldDlecMask)|(uint32(value)<<RegisterFdcanpsrFieldDlecShift))
 }
 
@@ -1000,12 +1299,12 @@ const (
 )
 
 // GetResi ESI flag of last received FDCAN Message
-func (r *registerFdcanpsrType) GetResi() bool {
+func (r *RegisterFdcanpsrType) GetResi() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldResiMask) != 0
 }
 
 // SetResi ESI flag of last received FDCAN Message
-func (r *registerFdcanpsrType) SetResi(value bool) {
+func (r *RegisterFdcanpsrType) SetResi(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanpsrFieldResiMask)
 	} else {
@@ -1019,12 +1318,12 @@ const (
 )
 
 // GetRbrs BRS flag of last received FDCAN Message
-func (r *registerFdcanpsrType) GetRbrs() bool {
+func (r *RegisterFdcanpsrType) GetRbrs() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldRbrsMask) != 0
 }
 
 // SetRbrs BRS flag of last received FDCAN Message
-func (r *registerFdcanpsrType) SetRbrs(value bool) {
+func (r *RegisterFdcanpsrType) SetRbrs(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanpsrFieldRbrsMask)
 	} else {
@@ -1038,12 +1337,12 @@ const (
 )
 
 // GetRedl Received FDCAN Message
-func (r *registerFdcanpsrType) GetRedl() bool {
+func (r *RegisterFdcanpsrType) GetRedl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldRedlMask) != 0
 }
 
 // SetRedl Received FDCAN Message
-func (r *registerFdcanpsrType) SetRedl(value bool) {
+func (r *RegisterFdcanpsrType) SetRedl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanpsrFieldRedlMask)
 	} else {
@@ -1057,12 +1356,12 @@ const (
 )
 
 // GetPxe Protocol Exception Event
-func (r *registerFdcanpsrType) GetPxe() bool {
+func (r *RegisterFdcanpsrType) GetPxe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldPxeMask) != 0
 }
 
 // SetPxe Protocol Exception Event
-func (r *registerFdcanpsrType) SetPxe(value bool) {
+func (r *RegisterFdcanpsrType) SetPxe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanpsrFieldPxeMask)
 	} else {
@@ -1076,17 +1375,40 @@ const (
 )
 
 // GetTdcv Transmitter Delay Compensation Value
-func (r *registerFdcanpsrType) GetTdcv() uint8 {
+func (r *RegisterFdcanpsrType) GetTdcv() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanpsrFieldTdcvMask) >> RegisterFdcanpsrFieldTdcvShift)
 }
 
 // SetTdcv Transmitter Delay Compensation Value
-func (r *registerFdcanpsrType) SetTdcv(value uint8) {
+func (r *RegisterFdcanpsrType) SetTdcv(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanpsrFieldTdcvMask)|(uint32(value)<<RegisterFdcanpsrFieldTdcvShift))
 }
 
-// registerFdcantdcrType FDCAN Transmitter Delay Compensation Register
-type registerFdcantdcrType uint32
+// RegisterFdcantdcrType FDCAN Transmitter Delay Compensation Register
+type RegisterFdcantdcrType uint32
+
+func (r *RegisterFdcantdcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantdcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantdcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantdcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantdcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantdcrFieldTdcfShift = 0
@@ -1094,12 +1416,12 @@ const (
 )
 
 // GetTdcf Transmitter Delay Compensation Filter Window Length
-func (r *registerFdcantdcrType) GetTdcf() uint8 {
+func (r *RegisterFdcantdcrType) GetTdcf() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantdcrFieldTdcfMask) >> RegisterFdcantdcrFieldTdcfShift)
 }
 
 // SetTdcf Transmitter Delay Compensation Filter Window Length
-func (r *registerFdcantdcrType) SetTdcf(value uint8) {
+func (r *RegisterFdcantdcrType) SetTdcf(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantdcrFieldTdcfMask)|(uint32(value)<<RegisterFdcantdcrFieldTdcfShift))
 }
 
@@ -1109,17 +1431,40 @@ const (
 )
 
 // GetTdco Transmitter Delay Compensation Offset
-func (r *registerFdcantdcrType) GetTdco() uint8 {
+func (r *RegisterFdcantdcrType) GetTdco() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantdcrFieldTdcoMask) >> RegisterFdcantdcrFieldTdcoShift)
 }
 
 // SetTdco Transmitter Delay Compensation Offset
-func (r *registerFdcantdcrType) SetTdco(value uint8) {
+func (r *RegisterFdcantdcrType) SetTdco(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantdcrFieldTdcoMask)|(uint32(value)<<RegisterFdcantdcrFieldTdcoShift))
 }
 
-// registerFdcanirType FDCAN Interrupt Register
-type registerFdcanirType uint32
+// RegisterFdcanirType FDCAN Interrupt Register
+type RegisterFdcanirType uint32
+
+func (r *RegisterFdcanirType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanirType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanirType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanirType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanirType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanirFieldRf0nShift = 0
@@ -1127,12 +1472,12 @@ const (
 )
 
 // GetRf0n Rx FIFO 0 New Message
-func (r *registerFdcanirType) GetRf0n() bool {
+func (r *RegisterFdcanirType) GetRf0n() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldRf0nMask) != 0
 }
 
 // SetRf0n Rx FIFO 0 New Message
-func (r *registerFdcanirType) SetRf0n(value bool) {
+func (r *RegisterFdcanirType) SetRf0n(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldRf0nMask)
 	} else {
@@ -1146,12 +1491,12 @@ const (
 )
 
 // GetRf0w Rx FIFO 0 Full
-func (r *registerFdcanirType) GetRf0w() bool {
+func (r *RegisterFdcanirType) GetRf0w() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldRf0wMask) != 0
 }
 
 // SetRf0w Rx FIFO 0 Full
-func (r *registerFdcanirType) SetRf0w(value bool) {
+func (r *RegisterFdcanirType) SetRf0w(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldRf0wMask)
 	} else {
@@ -1165,12 +1510,12 @@ const (
 )
 
 // GetRf0f Rx FIFO 0 Full
-func (r *registerFdcanirType) GetRf0f() bool {
+func (r *RegisterFdcanirType) GetRf0f() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldRf0fMask) != 0
 }
 
 // SetRf0f Rx FIFO 0 Full
-func (r *registerFdcanirType) SetRf0f(value bool) {
+func (r *RegisterFdcanirType) SetRf0f(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldRf0fMask)
 	} else {
@@ -1184,12 +1529,12 @@ const (
 )
 
 // GetRf0l Rx FIFO 0 Message Lost
-func (r *registerFdcanirType) GetRf0l() bool {
+func (r *RegisterFdcanirType) GetRf0l() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldRf0lMask) != 0
 }
 
 // SetRf0l Rx FIFO 0 Message Lost
-func (r *registerFdcanirType) SetRf0l(value bool) {
+func (r *RegisterFdcanirType) SetRf0l(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldRf0lMask)
 	} else {
@@ -1203,12 +1548,12 @@ const (
 )
 
 // GetRf1n Rx FIFO 1 New Message
-func (r *registerFdcanirType) GetRf1n() bool {
+func (r *RegisterFdcanirType) GetRf1n() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldRf1nMask) != 0
 }
 
 // SetRf1n Rx FIFO 1 New Message
-func (r *registerFdcanirType) SetRf1n(value bool) {
+func (r *RegisterFdcanirType) SetRf1n(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldRf1nMask)
 	} else {
@@ -1222,12 +1567,12 @@ const (
 )
 
 // GetRf1w Rx FIFO 1 Watermark Reached
-func (r *registerFdcanirType) GetRf1w() bool {
+func (r *RegisterFdcanirType) GetRf1w() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldRf1wMask) != 0
 }
 
 // SetRf1w Rx FIFO 1 Watermark Reached
-func (r *registerFdcanirType) SetRf1w(value bool) {
+func (r *RegisterFdcanirType) SetRf1w(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldRf1wMask)
 	} else {
@@ -1241,12 +1586,12 @@ const (
 )
 
 // GetRf1f Rx FIFO 1 Watermark Reached
-func (r *registerFdcanirType) GetRf1f() bool {
+func (r *RegisterFdcanirType) GetRf1f() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldRf1fMask) != 0
 }
 
 // SetRf1f Rx FIFO 1 Watermark Reached
-func (r *registerFdcanirType) SetRf1f(value bool) {
+func (r *RegisterFdcanirType) SetRf1f(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldRf1fMask)
 	} else {
@@ -1260,12 +1605,12 @@ const (
 )
 
 // GetRf1l Rx FIFO 1 Message Lost
-func (r *registerFdcanirType) GetRf1l() bool {
+func (r *RegisterFdcanirType) GetRf1l() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldRf1lMask) != 0
 }
 
 // SetRf1l Rx FIFO 1 Message Lost
-func (r *registerFdcanirType) SetRf1l(value bool) {
+func (r *RegisterFdcanirType) SetRf1l(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldRf1lMask)
 	} else {
@@ -1279,12 +1624,12 @@ const (
 )
 
 // GetHpm High Priority Message
-func (r *registerFdcanirType) GetHpm() bool {
+func (r *RegisterFdcanirType) GetHpm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldHpmMask) != 0
 }
 
 // SetHpm High Priority Message
-func (r *registerFdcanirType) SetHpm(value bool) {
+func (r *RegisterFdcanirType) SetHpm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldHpmMask)
 	} else {
@@ -1298,12 +1643,12 @@ const (
 )
 
 // GetTc Transmission Completed
-func (r *registerFdcanirType) GetTc() bool {
+func (r *RegisterFdcanirType) GetTc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldTcMask) != 0
 }
 
 // SetTc Transmission Completed
-func (r *registerFdcanirType) SetTc(value bool) {
+func (r *RegisterFdcanirType) SetTc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldTcMask)
 	} else {
@@ -1317,12 +1662,12 @@ const (
 )
 
 // GetTcf Transmission Cancellation Finished
-func (r *registerFdcanirType) GetTcf() bool {
+func (r *RegisterFdcanirType) GetTcf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldTcfMask) != 0
 }
 
 // SetTcf Transmission Cancellation Finished
-func (r *registerFdcanirType) SetTcf(value bool) {
+func (r *RegisterFdcanirType) SetTcf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldTcfMask)
 	} else {
@@ -1336,12 +1681,12 @@ const (
 )
 
 // GetTef Tx FIFO Empty
-func (r *registerFdcanirType) GetTef() bool {
+func (r *RegisterFdcanirType) GetTef() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldTefMask) != 0
 }
 
 // SetTef Tx FIFO Empty
-func (r *registerFdcanirType) SetTef(value bool) {
+func (r *RegisterFdcanirType) SetTef(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldTefMask)
 	} else {
@@ -1355,12 +1700,12 @@ const (
 )
 
 // GetTefn Tx Event FIFO New Entry
-func (r *registerFdcanirType) GetTefn() bool {
+func (r *RegisterFdcanirType) GetTefn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldTefnMask) != 0
 }
 
 // SetTefn Tx Event FIFO New Entry
-func (r *registerFdcanirType) SetTefn(value bool) {
+func (r *RegisterFdcanirType) SetTefn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldTefnMask)
 	} else {
@@ -1374,12 +1719,12 @@ const (
 )
 
 // GetTefw Tx Event FIFO Watermark Reached
-func (r *registerFdcanirType) GetTefw() bool {
+func (r *RegisterFdcanirType) GetTefw() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldTefwMask) != 0
 }
 
 // SetTefw Tx Event FIFO Watermark Reached
-func (r *registerFdcanirType) SetTefw(value bool) {
+func (r *RegisterFdcanirType) SetTefw(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldTefwMask)
 	} else {
@@ -1393,12 +1738,12 @@ const (
 )
 
 // GetTeff Tx Event FIFO Full
-func (r *registerFdcanirType) GetTeff() bool {
+func (r *RegisterFdcanirType) GetTeff() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldTeffMask) != 0
 }
 
 // SetTeff Tx Event FIFO Full
-func (r *registerFdcanirType) SetTeff(value bool) {
+func (r *RegisterFdcanirType) SetTeff(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldTeffMask)
 	} else {
@@ -1412,12 +1757,12 @@ const (
 )
 
 // GetTefl Tx Event FIFO Element Lost
-func (r *registerFdcanirType) GetTefl() bool {
+func (r *RegisterFdcanirType) GetTefl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldTeflMask) != 0
 }
 
 // SetTefl Tx Event FIFO Element Lost
-func (r *registerFdcanirType) SetTefl(value bool) {
+func (r *RegisterFdcanirType) SetTefl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldTeflMask)
 	} else {
@@ -1431,12 +1776,12 @@ const (
 )
 
 // GetTsw Timestamp Wraparound
-func (r *registerFdcanirType) GetTsw() bool {
+func (r *RegisterFdcanirType) GetTsw() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldTswMask) != 0
 }
 
 // SetTsw Timestamp Wraparound
-func (r *registerFdcanirType) SetTsw(value bool) {
+func (r *RegisterFdcanirType) SetTsw(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldTswMask)
 	} else {
@@ -1450,12 +1795,12 @@ const (
 )
 
 // GetMraf Message RAM Access Failure
-func (r *registerFdcanirType) GetMraf() bool {
+func (r *RegisterFdcanirType) GetMraf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldMrafMask) != 0
 }
 
 // SetMraf Message RAM Access Failure
-func (r *registerFdcanirType) SetMraf(value bool) {
+func (r *RegisterFdcanirType) SetMraf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldMrafMask)
 	} else {
@@ -1469,12 +1814,12 @@ const (
 )
 
 // GetToo Timeout Occurred
-func (r *registerFdcanirType) GetToo() bool {
+func (r *RegisterFdcanirType) GetToo() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldTooMask) != 0
 }
 
 // SetToo Timeout Occurred
-func (r *registerFdcanirType) SetToo(value bool) {
+func (r *RegisterFdcanirType) SetToo(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldTooMask)
 	} else {
@@ -1488,12 +1833,12 @@ const (
 )
 
 // GetDrx Message stored to Dedicated Rx Buffer
-func (r *registerFdcanirType) GetDrx() bool {
+func (r *RegisterFdcanirType) GetDrx() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldDrxMask) != 0
 }
 
 // SetDrx Message stored to Dedicated Rx Buffer
-func (r *registerFdcanirType) SetDrx(value bool) {
+func (r *RegisterFdcanirType) SetDrx(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldDrxMask)
 	} else {
@@ -1507,12 +1852,12 @@ const (
 )
 
 // GetElo Error Logging Overflow
-func (r *registerFdcanirType) GetElo() bool {
+func (r *RegisterFdcanirType) GetElo() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldEloMask) != 0
 }
 
 // SetElo Error Logging Overflow
-func (r *registerFdcanirType) SetElo(value bool) {
+func (r *RegisterFdcanirType) SetElo(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldEloMask)
 	} else {
@@ -1526,12 +1871,12 @@ const (
 )
 
 // GetEp Error Passive
-func (r *registerFdcanirType) GetEp() bool {
+func (r *RegisterFdcanirType) GetEp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldEpMask) != 0
 }
 
 // SetEp Error Passive
-func (r *registerFdcanirType) SetEp(value bool) {
+func (r *RegisterFdcanirType) SetEp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldEpMask)
 	} else {
@@ -1545,12 +1890,12 @@ const (
 )
 
 // GetEw Warning Status
-func (r *registerFdcanirType) GetEw() bool {
+func (r *RegisterFdcanirType) GetEw() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldEwMask) != 0
 }
 
 // SetEw Warning Status
-func (r *registerFdcanirType) SetEw(value bool) {
+func (r *RegisterFdcanirType) SetEw(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldEwMask)
 	} else {
@@ -1564,12 +1909,12 @@ const (
 )
 
 // GetBo Bus_Off Status
-func (r *registerFdcanirType) GetBo() bool {
+func (r *RegisterFdcanirType) GetBo() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldBoMask) != 0
 }
 
 // SetBo Bus_Off Status
-func (r *registerFdcanirType) SetBo(value bool) {
+func (r *RegisterFdcanirType) SetBo(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldBoMask)
 	} else {
@@ -1583,12 +1928,12 @@ const (
 )
 
 // GetWdi Watchdog Interrupt
-func (r *registerFdcanirType) GetWdi() bool {
+func (r *RegisterFdcanirType) GetWdi() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldWdiMask) != 0
 }
 
 // SetWdi Watchdog Interrupt
-func (r *registerFdcanirType) SetWdi(value bool) {
+func (r *RegisterFdcanirType) SetWdi(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldWdiMask)
 	} else {
@@ -1602,12 +1947,12 @@ const (
 )
 
 // GetPea Protocol Error in Arbitration Phase (Nominal Bit Time is used)
-func (r *registerFdcanirType) GetPea() bool {
+func (r *RegisterFdcanirType) GetPea() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldPeaMask) != 0
 }
 
 // SetPea Protocol Error in Arbitration Phase (Nominal Bit Time is used)
-func (r *registerFdcanirType) SetPea(value bool) {
+func (r *RegisterFdcanirType) SetPea(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldPeaMask)
 	} else {
@@ -1621,12 +1966,12 @@ const (
 )
 
 // GetPed Protocol Error in Data Phase (Data Bit Time is used)
-func (r *registerFdcanirType) GetPed() bool {
+func (r *RegisterFdcanirType) GetPed() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldPedMask) != 0
 }
 
 // SetPed Protocol Error in Data Phase (Data Bit Time is used)
-func (r *registerFdcanirType) SetPed(value bool) {
+func (r *RegisterFdcanirType) SetPed(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldPedMask)
 	} else {
@@ -1640,12 +1985,12 @@ const (
 )
 
 // GetAra Access to Reserved Address
-func (r *registerFdcanirType) GetAra() bool {
+func (r *RegisterFdcanirType) GetAra() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanirFieldAraMask) != 0
 }
 
 // SetAra Access to Reserved Address
-func (r *registerFdcanirType) SetAra(value bool) {
+func (r *RegisterFdcanirType) SetAra(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanirFieldAraMask)
 	} else {
@@ -1653,8 +1998,31 @@ func (r *registerFdcanirType) SetAra(value bool) {
 	}
 }
 
-// registerFdcanieType FDCAN Interrupt Enable Register
-type registerFdcanieType uint32
+// RegisterFdcanieType FDCAN Interrupt Enable Register
+type RegisterFdcanieType uint32
+
+func (r *RegisterFdcanieType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanieType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanieType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanieType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanieType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanieFieldRf0neShift = 0
@@ -1662,12 +2030,12 @@ const (
 )
 
 // GetRf0ne Rx FIFO 0 New Message Enable
-func (r *registerFdcanieType) GetRf0ne() bool {
+func (r *RegisterFdcanieType) GetRf0ne() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldRf0neMask) != 0
 }
 
 // SetRf0ne Rx FIFO 0 New Message Enable
-func (r *registerFdcanieType) SetRf0ne(value bool) {
+func (r *RegisterFdcanieType) SetRf0ne(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldRf0neMask)
 	} else {
@@ -1681,12 +2049,12 @@ const (
 )
 
 // GetRf0we Rx FIFO 0 Full Enable
-func (r *registerFdcanieType) GetRf0we() bool {
+func (r *RegisterFdcanieType) GetRf0we() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldRf0weMask) != 0
 }
 
 // SetRf0we Rx FIFO 0 Full Enable
-func (r *registerFdcanieType) SetRf0we(value bool) {
+func (r *RegisterFdcanieType) SetRf0we(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldRf0weMask)
 	} else {
@@ -1700,12 +2068,12 @@ const (
 )
 
 // GetRf0fe Rx FIFO 0 Full Enable
-func (r *registerFdcanieType) GetRf0fe() bool {
+func (r *RegisterFdcanieType) GetRf0fe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldRf0feMask) != 0
 }
 
 // SetRf0fe Rx FIFO 0 Full Enable
-func (r *registerFdcanieType) SetRf0fe(value bool) {
+func (r *RegisterFdcanieType) SetRf0fe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldRf0feMask)
 	} else {
@@ -1719,12 +2087,12 @@ const (
 )
 
 // GetRf0le Rx FIFO 0 Message Lost Enable
-func (r *registerFdcanieType) GetRf0le() bool {
+func (r *RegisterFdcanieType) GetRf0le() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldRf0leMask) != 0
 }
 
 // SetRf0le Rx FIFO 0 Message Lost Enable
-func (r *registerFdcanieType) SetRf0le(value bool) {
+func (r *RegisterFdcanieType) SetRf0le(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldRf0leMask)
 	} else {
@@ -1738,12 +2106,12 @@ const (
 )
 
 // GetRf1ne Rx FIFO 1 New Message Enable
-func (r *registerFdcanieType) GetRf1ne() bool {
+func (r *RegisterFdcanieType) GetRf1ne() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldRf1neMask) != 0
 }
 
 // SetRf1ne Rx FIFO 1 New Message Enable
-func (r *registerFdcanieType) SetRf1ne(value bool) {
+func (r *RegisterFdcanieType) SetRf1ne(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldRf1neMask)
 	} else {
@@ -1757,12 +2125,12 @@ const (
 )
 
 // GetRf1we Rx FIFO 1 Watermark Reached Enable
-func (r *registerFdcanieType) GetRf1we() bool {
+func (r *RegisterFdcanieType) GetRf1we() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldRf1weMask) != 0
 }
 
 // SetRf1we Rx FIFO 1 Watermark Reached Enable
-func (r *registerFdcanieType) SetRf1we(value bool) {
+func (r *RegisterFdcanieType) SetRf1we(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldRf1weMask)
 	} else {
@@ -1776,12 +2144,12 @@ const (
 )
 
 // GetRf1fe Rx FIFO 1 Watermark Reached Enable
-func (r *registerFdcanieType) GetRf1fe() bool {
+func (r *RegisterFdcanieType) GetRf1fe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldRf1feMask) != 0
 }
 
 // SetRf1fe Rx FIFO 1 Watermark Reached Enable
-func (r *registerFdcanieType) SetRf1fe(value bool) {
+func (r *RegisterFdcanieType) SetRf1fe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldRf1feMask)
 	} else {
@@ -1795,12 +2163,12 @@ const (
 )
 
 // GetRf1le Rx FIFO 1 Message Lost Enable
-func (r *registerFdcanieType) GetRf1le() bool {
+func (r *RegisterFdcanieType) GetRf1le() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldRf1leMask) != 0
 }
 
 // SetRf1le Rx FIFO 1 Message Lost Enable
-func (r *registerFdcanieType) SetRf1le(value bool) {
+func (r *RegisterFdcanieType) SetRf1le(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldRf1leMask)
 	} else {
@@ -1814,12 +2182,12 @@ const (
 )
 
 // GetHpme High Priority Message Enable
-func (r *registerFdcanieType) GetHpme() bool {
+func (r *RegisterFdcanieType) GetHpme() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldHpmeMask) != 0
 }
 
 // SetHpme High Priority Message Enable
-func (r *registerFdcanieType) SetHpme(value bool) {
+func (r *RegisterFdcanieType) SetHpme(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldHpmeMask)
 	} else {
@@ -1833,12 +2201,12 @@ const (
 )
 
 // GetTce Transmission Completed Enable
-func (r *registerFdcanieType) GetTce() bool {
+func (r *RegisterFdcanieType) GetTce() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldTceMask) != 0
 }
 
 // SetTce Transmission Completed Enable
-func (r *registerFdcanieType) SetTce(value bool) {
+func (r *RegisterFdcanieType) SetTce(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldTceMask)
 	} else {
@@ -1852,12 +2220,12 @@ const (
 )
 
 // GetTcfe Transmission Cancellation Finished Enable
-func (r *registerFdcanieType) GetTcfe() bool {
+func (r *RegisterFdcanieType) GetTcfe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldTcfeMask) != 0
 }
 
 // SetTcfe Transmission Cancellation Finished Enable
-func (r *registerFdcanieType) SetTcfe(value bool) {
+func (r *RegisterFdcanieType) SetTcfe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldTcfeMask)
 	} else {
@@ -1871,12 +2239,12 @@ const (
 )
 
 // GetTefe Tx FIFO Empty Enable
-func (r *registerFdcanieType) GetTefe() bool {
+func (r *RegisterFdcanieType) GetTefe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldTefeMask) != 0
 }
 
 // SetTefe Tx FIFO Empty Enable
-func (r *registerFdcanieType) SetTefe(value bool) {
+func (r *RegisterFdcanieType) SetTefe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldTefeMask)
 	} else {
@@ -1890,12 +2258,12 @@ const (
 )
 
 // GetTefne Tx Event FIFO New Entry Enable
-func (r *registerFdcanieType) GetTefne() bool {
+func (r *RegisterFdcanieType) GetTefne() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldTefneMask) != 0
 }
 
 // SetTefne Tx Event FIFO New Entry Enable
-func (r *registerFdcanieType) SetTefne(value bool) {
+func (r *RegisterFdcanieType) SetTefne(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldTefneMask)
 	} else {
@@ -1909,12 +2277,12 @@ const (
 )
 
 // GetTefwe Tx Event FIFO Watermark Reached Enable
-func (r *registerFdcanieType) GetTefwe() bool {
+func (r *RegisterFdcanieType) GetTefwe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldTefweMask) != 0
 }
 
 // SetTefwe Tx Event FIFO Watermark Reached Enable
-func (r *registerFdcanieType) SetTefwe(value bool) {
+func (r *RegisterFdcanieType) SetTefwe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldTefweMask)
 	} else {
@@ -1928,12 +2296,12 @@ const (
 )
 
 // GetTeffe Tx Event FIFO Full Enable
-func (r *registerFdcanieType) GetTeffe() bool {
+func (r *RegisterFdcanieType) GetTeffe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldTeffeMask) != 0
 }
 
 // SetTeffe Tx Event FIFO Full Enable
-func (r *registerFdcanieType) SetTeffe(value bool) {
+func (r *RegisterFdcanieType) SetTeffe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldTeffeMask)
 	} else {
@@ -1947,12 +2315,12 @@ const (
 )
 
 // GetTefle Tx Event FIFO Element Lost Enable
-func (r *registerFdcanieType) GetTefle() bool {
+func (r *RegisterFdcanieType) GetTefle() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldTefleMask) != 0
 }
 
 // SetTefle Tx Event FIFO Element Lost Enable
-func (r *registerFdcanieType) SetTefle(value bool) {
+func (r *RegisterFdcanieType) SetTefle(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldTefleMask)
 	} else {
@@ -1966,12 +2334,12 @@ const (
 )
 
 // GetTswe Timestamp Wraparound Enable
-func (r *registerFdcanieType) GetTswe() bool {
+func (r *RegisterFdcanieType) GetTswe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldTsweMask) != 0
 }
 
 // SetTswe Timestamp Wraparound Enable
-func (r *registerFdcanieType) SetTswe(value bool) {
+func (r *RegisterFdcanieType) SetTswe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldTsweMask)
 	} else {
@@ -1985,12 +2353,12 @@ const (
 )
 
 // GetMrafe Message RAM Access Failure Enable
-func (r *registerFdcanieType) GetMrafe() bool {
+func (r *RegisterFdcanieType) GetMrafe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldMrafeMask) != 0
 }
 
 // SetMrafe Message RAM Access Failure Enable
-func (r *registerFdcanieType) SetMrafe(value bool) {
+func (r *RegisterFdcanieType) SetMrafe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldMrafeMask)
 	} else {
@@ -2004,12 +2372,12 @@ const (
 )
 
 // GetTooe Timeout Occurred Enable
-func (r *registerFdcanieType) GetTooe() bool {
+func (r *RegisterFdcanieType) GetTooe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldTooeMask) != 0
 }
 
 // SetTooe Timeout Occurred Enable
-func (r *registerFdcanieType) SetTooe(value bool) {
+func (r *RegisterFdcanieType) SetTooe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldTooeMask)
 	} else {
@@ -2023,12 +2391,12 @@ const (
 )
 
 // GetDrxe Message stored to Dedicated Rx Buffer Enable
-func (r *registerFdcanieType) GetDrxe() bool {
+func (r *RegisterFdcanieType) GetDrxe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldDrxeMask) != 0
 }
 
 // SetDrxe Message stored to Dedicated Rx Buffer Enable
-func (r *registerFdcanieType) SetDrxe(value bool) {
+func (r *RegisterFdcanieType) SetDrxe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldDrxeMask)
 	} else {
@@ -2042,12 +2410,12 @@ const (
 )
 
 // GetBece Bit Error Corrected Interrupt Enable
-func (r *registerFdcanieType) GetBece() bool {
+func (r *RegisterFdcanieType) GetBece() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldBeceMask) != 0
 }
 
 // SetBece Bit Error Corrected Interrupt Enable
-func (r *registerFdcanieType) SetBece(value bool) {
+func (r *RegisterFdcanieType) SetBece(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldBeceMask)
 	} else {
@@ -2061,12 +2429,12 @@ const (
 )
 
 // GetBeue Bit Error Uncorrected Interrupt Enable
-func (r *registerFdcanieType) GetBeue() bool {
+func (r *RegisterFdcanieType) GetBeue() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldBeueMask) != 0
 }
 
 // SetBeue Bit Error Uncorrected Interrupt Enable
-func (r *registerFdcanieType) SetBeue(value bool) {
+func (r *RegisterFdcanieType) SetBeue(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldBeueMask)
 	} else {
@@ -2080,12 +2448,12 @@ const (
 )
 
 // GetEloe Error Logging Overflow Enable
-func (r *registerFdcanieType) GetEloe() bool {
+func (r *RegisterFdcanieType) GetEloe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldEloeMask) != 0
 }
 
 // SetEloe Error Logging Overflow Enable
-func (r *registerFdcanieType) SetEloe(value bool) {
+func (r *RegisterFdcanieType) SetEloe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldEloeMask)
 	} else {
@@ -2099,12 +2467,12 @@ const (
 )
 
 // GetEpe Error Passive Enable
-func (r *registerFdcanieType) GetEpe() bool {
+func (r *RegisterFdcanieType) GetEpe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldEpeMask) != 0
 }
 
 // SetEpe Error Passive Enable
-func (r *registerFdcanieType) SetEpe(value bool) {
+func (r *RegisterFdcanieType) SetEpe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldEpeMask)
 	} else {
@@ -2118,12 +2486,12 @@ const (
 )
 
 // GetEwe Warning Status Enable
-func (r *registerFdcanieType) GetEwe() bool {
+func (r *RegisterFdcanieType) GetEwe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldEweMask) != 0
 }
 
 // SetEwe Warning Status Enable
-func (r *registerFdcanieType) SetEwe(value bool) {
+func (r *RegisterFdcanieType) SetEwe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldEweMask)
 	} else {
@@ -2137,12 +2505,12 @@ const (
 )
 
 // GetBoe Bus_Off Status Enable
-func (r *registerFdcanieType) GetBoe() bool {
+func (r *RegisterFdcanieType) GetBoe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldBoeMask) != 0
 }
 
 // SetBoe Bus_Off Status Enable
-func (r *registerFdcanieType) SetBoe(value bool) {
+func (r *RegisterFdcanieType) SetBoe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldBoeMask)
 	} else {
@@ -2156,12 +2524,12 @@ const (
 )
 
 // GetWdie Watchdog Interrupt Enable
-func (r *registerFdcanieType) GetWdie() bool {
+func (r *RegisterFdcanieType) GetWdie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldWdieMask) != 0
 }
 
 // SetWdie Watchdog Interrupt Enable
-func (r *registerFdcanieType) SetWdie(value bool) {
+func (r *RegisterFdcanieType) SetWdie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldWdieMask)
 	} else {
@@ -2175,12 +2543,12 @@ const (
 )
 
 // GetPeae Protocol Error in Arbitration Phase Enable
-func (r *registerFdcanieType) GetPeae() bool {
+func (r *RegisterFdcanieType) GetPeae() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldPeaeMask) != 0
 }
 
 // SetPeae Protocol Error in Arbitration Phase Enable
-func (r *registerFdcanieType) SetPeae(value bool) {
+func (r *RegisterFdcanieType) SetPeae(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldPeaeMask)
 	} else {
@@ -2194,12 +2562,12 @@ const (
 )
 
 // GetPede Protocol Error in Data Phase Enable
-func (r *registerFdcanieType) GetPede() bool {
+func (r *RegisterFdcanieType) GetPede() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldPedeMask) != 0
 }
 
 // SetPede Protocol Error in Data Phase Enable
-func (r *registerFdcanieType) SetPede(value bool) {
+func (r *RegisterFdcanieType) SetPede(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldPedeMask)
 	} else {
@@ -2213,12 +2581,12 @@ const (
 )
 
 // GetArae Access to Reserved Address Enable
-func (r *registerFdcanieType) GetArae() bool {
+func (r *RegisterFdcanieType) GetArae() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanieFieldAraeMask) != 0
 }
 
 // SetArae Access to Reserved Address Enable
-func (r *registerFdcanieType) SetArae(value bool) {
+func (r *RegisterFdcanieType) SetArae(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanieFieldAraeMask)
 	} else {
@@ -2226,8 +2594,31 @@ func (r *registerFdcanieType) SetArae(value bool) {
 	}
 }
 
-// registerFdcanilsType FDCAN Interrupt Line Select Register
-type registerFdcanilsType uint32
+// RegisterFdcanilsType FDCAN Interrupt Line Select Register
+type RegisterFdcanilsType uint32
+
+func (r *RegisterFdcanilsType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanilsType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanilsType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanilsType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanilsType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanilsFieldRf0nlShift = 0
@@ -2235,12 +2626,12 @@ const (
 )
 
 // GetRf0nl Rx FIFO 0 New Message Interrupt Line
-func (r *registerFdcanilsType) GetRf0nl() bool {
+func (r *RegisterFdcanilsType) GetRf0nl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldRf0nlMask) != 0
 }
 
 // SetRf0nl Rx FIFO 0 New Message Interrupt Line
-func (r *registerFdcanilsType) SetRf0nl(value bool) {
+func (r *RegisterFdcanilsType) SetRf0nl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldRf0nlMask)
 	} else {
@@ -2254,12 +2645,12 @@ const (
 )
 
 // GetRf0wl Rx FIFO 0 Watermark Reached Interrupt Line
-func (r *registerFdcanilsType) GetRf0wl() bool {
+func (r *RegisterFdcanilsType) GetRf0wl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldRf0wlMask) != 0
 }
 
 // SetRf0wl Rx FIFO 0 Watermark Reached Interrupt Line
-func (r *registerFdcanilsType) SetRf0wl(value bool) {
+func (r *RegisterFdcanilsType) SetRf0wl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldRf0wlMask)
 	} else {
@@ -2273,12 +2664,12 @@ const (
 )
 
 // GetRf0fl Rx FIFO 0 Full Interrupt Line
-func (r *registerFdcanilsType) GetRf0fl() bool {
+func (r *RegisterFdcanilsType) GetRf0fl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldRf0flMask) != 0
 }
 
 // SetRf0fl Rx FIFO 0 Full Interrupt Line
-func (r *registerFdcanilsType) SetRf0fl(value bool) {
+func (r *RegisterFdcanilsType) SetRf0fl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldRf0flMask)
 	} else {
@@ -2292,12 +2683,12 @@ const (
 )
 
 // GetRf0ll Rx FIFO 0 Message Lost Interrupt Line
-func (r *registerFdcanilsType) GetRf0ll() bool {
+func (r *RegisterFdcanilsType) GetRf0ll() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldRf0llMask) != 0
 }
 
 // SetRf0ll Rx FIFO 0 Message Lost Interrupt Line
-func (r *registerFdcanilsType) SetRf0ll(value bool) {
+func (r *RegisterFdcanilsType) SetRf0ll(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldRf0llMask)
 	} else {
@@ -2311,12 +2702,12 @@ const (
 )
 
 // GetRf1nl Rx FIFO 1 New Message Interrupt Line
-func (r *registerFdcanilsType) GetRf1nl() bool {
+func (r *RegisterFdcanilsType) GetRf1nl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldRf1nlMask) != 0
 }
 
 // SetRf1nl Rx FIFO 1 New Message Interrupt Line
-func (r *registerFdcanilsType) SetRf1nl(value bool) {
+func (r *RegisterFdcanilsType) SetRf1nl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldRf1nlMask)
 	} else {
@@ -2330,12 +2721,12 @@ const (
 )
 
 // GetRf1wl Rx FIFO 1 Watermark Reached Interrupt Line
-func (r *registerFdcanilsType) GetRf1wl() bool {
+func (r *RegisterFdcanilsType) GetRf1wl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldRf1wlMask) != 0
 }
 
 // SetRf1wl Rx FIFO 1 Watermark Reached Interrupt Line
-func (r *registerFdcanilsType) SetRf1wl(value bool) {
+func (r *RegisterFdcanilsType) SetRf1wl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldRf1wlMask)
 	} else {
@@ -2349,12 +2740,12 @@ const (
 )
 
 // GetRf1fl Rx FIFO 1 Full Interrupt Line
-func (r *registerFdcanilsType) GetRf1fl() bool {
+func (r *RegisterFdcanilsType) GetRf1fl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldRf1flMask) != 0
 }
 
 // SetRf1fl Rx FIFO 1 Full Interrupt Line
-func (r *registerFdcanilsType) SetRf1fl(value bool) {
+func (r *RegisterFdcanilsType) SetRf1fl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldRf1flMask)
 	} else {
@@ -2368,12 +2759,12 @@ const (
 )
 
 // GetRf1ll Rx FIFO 1 Message Lost Interrupt Line
-func (r *registerFdcanilsType) GetRf1ll() bool {
+func (r *RegisterFdcanilsType) GetRf1ll() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldRf1llMask) != 0
 }
 
 // SetRf1ll Rx FIFO 1 Message Lost Interrupt Line
-func (r *registerFdcanilsType) SetRf1ll(value bool) {
+func (r *RegisterFdcanilsType) SetRf1ll(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldRf1llMask)
 	} else {
@@ -2387,12 +2778,12 @@ const (
 )
 
 // GetHpml High Priority Message Interrupt Line
-func (r *registerFdcanilsType) GetHpml() bool {
+func (r *RegisterFdcanilsType) GetHpml() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldHpmlMask) != 0
 }
 
 // SetHpml High Priority Message Interrupt Line
-func (r *registerFdcanilsType) SetHpml(value bool) {
+func (r *RegisterFdcanilsType) SetHpml(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldHpmlMask)
 	} else {
@@ -2406,12 +2797,12 @@ const (
 )
 
 // GetTcl Transmission Completed Interrupt Line
-func (r *registerFdcanilsType) GetTcl() bool {
+func (r *RegisterFdcanilsType) GetTcl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldTclMask) != 0
 }
 
 // SetTcl Transmission Completed Interrupt Line
-func (r *registerFdcanilsType) SetTcl(value bool) {
+func (r *RegisterFdcanilsType) SetTcl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldTclMask)
 	} else {
@@ -2425,12 +2816,12 @@ const (
 )
 
 // GetTcfl Transmission Cancellation Finished Interrupt Line
-func (r *registerFdcanilsType) GetTcfl() bool {
+func (r *RegisterFdcanilsType) GetTcfl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldTcflMask) != 0
 }
 
 // SetTcfl Transmission Cancellation Finished Interrupt Line
-func (r *registerFdcanilsType) SetTcfl(value bool) {
+func (r *RegisterFdcanilsType) SetTcfl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldTcflMask)
 	} else {
@@ -2444,12 +2835,12 @@ const (
 )
 
 // GetTefl Tx FIFO Empty Interrupt Line
-func (r *registerFdcanilsType) GetTefl() bool {
+func (r *RegisterFdcanilsType) GetTefl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldTeflMask) != 0
 }
 
 // SetTefl Tx FIFO Empty Interrupt Line
-func (r *registerFdcanilsType) SetTefl(value bool) {
+func (r *RegisterFdcanilsType) SetTefl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldTeflMask)
 	} else {
@@ -2463,12 +2854,12 @@ const (
 )
 
 // GetTefnl Tx Event FIFO New Entry Interrupt Line
-func (r *registerFdcanilsType) GetTefnl() bool {
+func (r *RegisterFdcanilsType) GetTefnl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldTefnlMask) != 0
 }
 
 // SetTefnl Tx Event FIFO New Entry Interrupt Line
-func (r *registerFdcanilsType) SetTefnl(value bool) {
+func (r *RegisterFdcanilsType) SetTefnl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldTefnlMask)
 	} else {
@@ -2482,12 +2873,12 @@ const (
 )
 
 // GetTefwl Tx Event FIFO Watermark Reached Interrupt Line
-func (r *registerFdcanilsType) GetTefwl() bool {
+func (r *RegisterFdcanilsType) GetTefwl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldTefwlMask) != 0
 }
 
 // SetTefwl Tx Event FIFO Watermark Reached Interrupt Line
-func (r *registerFdcanilsType) SetTefwl(value bool) {
+func (r *RegisterFdcanilsType) SetTefwl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldTefwlMask)
 	} else {
@@ -2501,12 +2892,12 @@ const (
 )
 
 // GetTeffl Tx Event FIFO Full Interrupt Line
-func (r *registerFdcanilsType) GetTeffl() bool {
+func (r *RegisterFdcanilsType) GetTeffl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldTefflMask) != 0
 }
 
 // SetTeffl Tx Event FIFO Full Interrupt Line
-func (r *registerFdcanilsType) SetTeffl(value bool) {
+func (r *RegisterFdcanilsType) SetTeffl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldTefflMask)
 	} else {
@@ -2520,12 +2911,12 @@ const (
 )
 
 // GetTefll Tx Event FIFO Element Lost Interrupt Line
-func (r *registerFdcanilsType) GetTefll() bool {
+func (r *RegisterFdcanilsType) GetTefll() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldTefllMask) != 0
 }
 
 // SetTefll Tx Event FIFO Element Lost Interrupt Line
-func (r *registerFdcanilsType) SetTefll(value bool) {
+func (r *RegisterFdcanilsType) SetTefll(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldTefllMask)
 	} else {
@@ -2539,12 +2930,12 @@ const (
 )
 
 // GetTswl Timestamp Wraparound Interrupt Line
-func (r *registerFdcanilsType) GetTswl() bool {
+func (r *RegisterFdcanilsType) GetTswl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldTswlMask) != 0
 }
 
 // SetTswl Timestamp Wraparound Interrupt Line
-func (r *registerFdcanilsType) SetTswl(value bool) {
+func (r *RegisterFdcanilsType) SetTswl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldTswlMask)
 	} else {
@@ -2558,12 +2949,12 @@ const (
 )
 
 // GetMrafl Message RAM Access Failure Interrupt Line
-func (r *registerFdcanilsType) GetMrafl() bool {
+func (r *RegisterFdcanilsType) GetMrafl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldMraflMask) != 0
 }
 
 // SetMrafl Message RAM Access Failure Interrupt Line
-func (r *registerFdcanilsType) SetMrafl(value bool) {
+func (r *RegisterFdcanilsType) SetMrafl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldMraflMask)
 	} else {
@@ -2577,12 +2968,12 @@ const (
 )
 
 // GetTool Timeout Occurred Interrupt Line
-func (r *registerFdcanilsType) GetTool() bool {
+func (r *RegisterFdcanilsType) GetTool() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldToolMask) != 0
 }
 
 // SetTool Timeout Occurred Interrupt Line
-func (r *registerFdcanilsType) SetTool(value bool) {
+func (r *RegisterFdcanilsType) SetTool(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldToolMask)
 	} else {
@@ -2596,12 +2987,12 @@ const (
 )
 
 // GetDrxl Message stored to Dedicated Rx Buffer Interrupt Line
-func (r *registerFdcanilsType) GetDrxl() bool {
+func (r *RegisterFdcanilsType) GetDrxl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldDrxlMask) != 0
 }
 
 // SetDrxl Message stored to Dedicated Rx Buffer Interrupt Line
-func (r *registerFdcanilsType) SetDrxl(value bool) {
+func (r *RegisterFdcanilsType) SetDrxl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldDrxlMask)
 	} else {
@@ -2615,12 +3006,12 @@ const (
 )
 
 // GetBecl Bit Error Corrected Interrupt Line
-func (r *registerFdcanilsType) GetBecl() bool {
+func (r *RegisterFdcanilsType) GetBecl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldBeclMask) != 0
 }
 
 // SetBecl Bit Error Corrected Interrupt Line
-func (r *registerFdcanilsType) SetBecl(value bool) {
+func (r *RegisterFdcanilsType) SetBecl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldBeclMask)
 	} else {
@@ -2634,12 +3025,12 @@ const (
 )
 
 // GetBeul Bit Error Uncorrected Interrupt Line
-func (r *registerFdcanilsType) GetBeul() bool {
+func (r *RegisterFdcanilsType) GetBeul() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldBeulMask) != 0
 }
 
 // SetBeul Bit Error Uncorrected Interrupt Line
-func (r *registerFdcanilsType) SetBeul(value bool) {
+func (r *RegisterFdcanilsType) SetBeul(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldBeulMask)
 	} else {
@@ -2653,12 +3044,12 @@ const (
 )
 
 // GetElol Error Logging Overflow Interrupt Line
-func (r *registerFdcanilsType) GetElol() bool {
+func (r *RegisterFdcanilsType) GetElol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldElolMask) != 0
 }
 
 // SetElol Error Logging Overflow Interrupt Line
-func (r *registerFdcanilsType) SetElol(value bool) {
+func (r *RegisterFdcanilsType) SetElol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldElolMask)
 	} else {
@@ -2672,12 +3063,12 @@ const (
 )
 
 // GetEpl Error Passive Interrupt Line
-func (r *registerFdcanilsType) GetEpl() bool {
+func (r *RegisterFdcanilsType) GetEpl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldEplMask) != 0
 }
 
 // SetEpl Error Passive Interrupt Line
-func (r *registerFdcanilsType) SetEpl(value bool) {
+func (r *RegisterFdcanilsType) SetEpl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldEplMask)
 	} else {
@@ -2691,12 +3082,12 @@ const (
 )
 
 // GetEwl Warning Status Interrupt Line
-func (r *registerFdcanilsType) GetEwl() bool {
+func (r *RegisterFdcanilsType) GetEwl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldEwlMask) != 0
 }
 
 // SetEwl Warning Status Interrupt Line
-func (r *registerFdcanilsType) SetEwl(value bool) {
+func (r *RegisterFdcanilsType) SetEwl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldEwlMask)
 	} else {
@@ -2710,12 +3101,12 @@ const (
 )
 
 // GetBol Bus_Off Status
-func (r *registerFdcanilsType) GetBol() bool {
+func (r *RegisterFdcanilsType) GetBol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldBolMask) != 0
 }
 
 // SetBol Bus_Off Status
-func (r *registerFdcanilsType) SetBol(value bool) {
+func (r *RegisterFdcanilsType) SetBol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldBolMask)
 	} else {
@@ -2729,12 +3120,12 @@ const (
 )
 
 // GetWdil Watchdog Interrupt Line
-func (r *registerFdcanilsType) GetWdil() bool {
+func (r *RegisterFdcanilsType) GetWdil() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldWdilMask) != 0
 }
 
 // SetWdil Watchdog Interrupt Line
-func (r *registerFdcanilsType) SetWdil(value bool) {
+func (r *RegisterFdcanilsType) SetWdil(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldWdilMask)
 	} else {
@@ -2748,12 +3139,12 @@ const (
 )
 
 // GetPeal Protocol Error in Arbitration Phase Line
-func (r *registerFdcanilsType) GetPeal() bool {
+func (r *RegisterFdcanilsType) GetPeal() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldPealMask) != 0
 }
 
 // SetPeal Protocol Error in Arbitration Phase Line
-func (r *registerFdcanilsType) SetPeal(value bool) {
+func (r *RegisterFdcanilsType) SetPeal(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldPealMask)
 	} else {
@@ -2767,12 +3158,12 @@ const (
 )
 
 // GetPedl Protocol Error in Data Phase Line
-func (r *registerFdcanilsType) GetPedl() bool {
+func (r *RegisterFdcanilsType) GetPedl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldPedlMask) != 0
 }
 
 // SetPedl Protocol Error in Data Phase Line
-func (r *registerFdcanilsType) SetPedl(value bool) {
+func (r *RegisterFdcanilsType) SetPedl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldPedlMask)
 	} else {
@@ -2786,12 +3177,12 @@ const (
 )
 
 // GetAral Access to Reserved Address Line
-func (r *registerFdcanilsType) GetAral() bool {
+func (r *RegisterFdcanilsType) GetAral() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanilsFieldAralMask) != 0
 }
 
 // SetAral Access to Reserved Address Line
-func (r *registerFdcanilsType) SetAral(value bool) {
+func (r *RegisterFdcanilsType) SetAral(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanilsFieldAralMask)
 	} else {
@@ -2799,8 +3190,31 @@ func (r *registerFdcanilsType) SetAral(value bool) {
 	}
 }
 
-// registerFdcanileType FDCAN Interrupt Line Enable Register
-type registerFdcanileType uint32
+// RegisterFdcanileType FDCAN Interrupt Line Enable Register
+type RegisterFdcanileType uint32
+
+func (r *RegisterFdcanileType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanileType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanileType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanileType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanileType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanileFieldEint0Shift = 0
@@ -2808,12 +3222,12 @@ const (
 )
 
 // GetEint0 Enable Interrupt Line 0
-func (r *registerFdcanileType) GetEint0() bool {
+func (r *RegisterFdcanileType) GetEint0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanileFieldEint0Mask) != 0
 }
 
 // SetEint0 Enable Interrupt Line 0
-func (r *registerFdcanileType) SetEint0(value bool) {
+func (r *RegisterFdcanileType) SetEint0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanileFieldEint0Mask)
 	} else {
@@ -2827,12 +3241,12 @@ const (
 )
 
 // GetEint1 Enable Interrupt Line 1
-func (r *registerFdcanileType) GetEint1() bool {
+func (r *RegisterFdcanileType) GetEint1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanileFieldEint1Mask) != 0
 }
 
 // SetEint1 Enable Interrupt Line 1
-func (r *registerFdcanileType) SetEint1(value bool) {
+func (r *RegisterFdcanileType) SetEint1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanileFieldEint1Mask)
 	} else {
@@ -2840,8 +3254,31 @@ func (r *registerFdcanileType) SetEint1(value bool) {
 	}
 }
 
-// registerFdcangfcType FDCAN Global Filter Configuration Register
-type registerFdcangfcType uint32
+// RegisterFdcangfcType FDCAN Global Filter Configuration Register
+type RegisterFdcangfcType uint32
+
+func (r *RegisterFdcangfcType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcangfcType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcangfcType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcangfcType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcangfcType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcangfcFieldRrfeShift = 0
@@ -2849,12 +3286,12 @@ const (
 )
 
 // GetRrfe Reject Remote Frames Extended
-func (r *registerFdcangfcType) GetRrfe() bool {
+func (r *RegisterFdcangfcType) GetRrfe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcangfcFieldRrfeMask) != 0
 }
 
 // SetRrfe Reject Remote Frames Extended
-func (r *registerFdcangfcType) SetRrfe(value bool) {
+func (r *RegisterFdcangfcType) SetRrfe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcangfcFieldRrfeMask)
 	} else {
@@ -2868,12 +3305,12 @@ const (
 )
 
 // GetRrfs Reject Remote Frames Standard
-func (r *registerFdcangfcType) GetRrfs() bool {
+func (r *RegisterFdcangfcType) GetRrfs() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcangfcFieldRrfsMask) != 0
 }
 
 // SetRrfs Reject Remote Frames Standard
-func (r *registerFdcangfcType) SetRrfs(value bool) {
+func (r *RegisterFdcangfcType) SetRrfs(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcangfcFieldRrfsMask)
 	} else {
@@ -2887,12 +3324,12 @@ const (
 )
 
 // GetAnfe Accept Non-matching Frames Extended
-func (r *registerFdcangfcType) GetAnfe() uint8 {
+func (r *RegisterFdcangfcType) GetAnfe() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcangfcFieldAnfeMask) >> RegisterFdcangfcFieldAnfeShift)
 }
 
 // SetAnfe Accept Non-matching Frames Extended
-func (r *registerFdcangfcType) SetAnfe(value uint8) {
+func (r *RegisterFdcangfcType) SetAnfe(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcangfcFieldAnfeMask)|(uint32(value)<<RegisterFdcangfcFieldAnfeShift))
 }
 
@@ -2902,17 +3339,40 @@ const (
 )
 
 // GetAnfs Accept Non-matching Frames Standard
-func (r *registerFdcangfcType) GetAnfs() uint8 {
+func (r *RegisterFdcangfcType) GetAnfs() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcangfcFieldAnfsMask) >> RegisterFdcangfcFieldAnfsShift)
 }
 
 // SetAnfs Accept Non-matching Frames Standard
-func (r *registerFdcangfcType) SetAnfs(value uint8) {
+func (r *RegisterFdcangfcType) SetAnfs(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcangfcFieldAnfsMask)|(uint32(value)<<RegisterFdcangfcFieldAnfsShift))
 }
 
-// registerFdcansidfcType FDCAN Standard ID Filter Configuration Register
-type registerFdcansidfcType uint32
+// RegisterFdcansidfcType FDCAN Standard ID Filter Configuration Register
+type RegisterFdcansidfcType uint32
+
+func (r *RegisterFdcansidfcType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcansidfcType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcansidfcType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcansidfcType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcansidfcType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcansidfcFieldFlssaShift = 2
@@ -2920,12 +3380,12 @@ const (
 )
 
 // GetFlssa Filter List Standard Start Address
-func (r *registerFdcansidfcType) GetFlssa() uint16 {
+func (r *RegisterFdcansidfcType) GetFlssa() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcansidfcFieldFlssaMask) >> RegisterFdcansidfcFieldFlssaShift)
 }
 
 // SetFlssa Filter List Standard Start Address
-func (r *registerFdcansidfcType) SetFlssa(value uint16) {
+func (r *RegisterFdcansidfcType) SetFlssa(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcansidfcFieldFlssaMask)|(uint32(value)<<RegisterFdcansidfcFieldFlssaShift))
 }
 
@@ -2935,17 +3395,40 @@ const (
 )
 
 // GetLss List Size Standard
-func (r *registerFdcansidfcType) GetLss() uint8 {
+func (r *RegisterFdcansidfcType) GetLss() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcansidfcFieldLssMask) >> RegisterFdcansidfcFieldLssShift)
 }
 
 // SetLss List Size Standard
-func (r *registerFdcansidfcType) SetLss(value uint8) {
+func (r *RegisterFdcansidfcType) SetLss(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcansidfcFieldLssMask)|(uint32(value)<<RegisterFdcansidfcFieldLssShift))
 }
 
-// registerFdcanxidfcType FDCAN Extended ID Filter Configuration Register
-type registerFdcanxidfcType uint32
+// RegisterFdcanxidfcType FDCAN Extended ID Filter Configuration Register
+type RegisterFdcanxidfcType uint32
+
+func (r *RegisterFdcanxidfcType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanxidfcType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanxidfcType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanxidfcType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanxidfcType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanxidfcFieldFlesaShift = 2
@@ -2953,12 +3436,12 @@ const (
 )
 
 // GetFlesa Filter List Standard Start Address
-func (r *registerFdcanxidfcType) GetFlesa() uint16 {
+func (r *RegisterFdcanxidfcType) GetFlesa() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanxidfcFieldFlesaMask) >> RegisterFdcanxidfcFieldFlesaShift)
 }
 
 // SetFlesa Filter List Standard Start Address
-func (r *registerFdcanxidfcType) SetFlesa(value uint16) {
+func (r *RegisterFdcanxidfcType) SetFlesa(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanxidfcFieldFlesaMask)|(uint32(value)<<RegisterFdcanxidfcFieldFlesaShift))
 }
 
@@ -2968,17 +3451,40 @@ const (
 )
 
 // GetLse List Size Extended
-func (r *registerFdcanxidfcType) GetLse() uint8 {
+func (r *RegisterFdcanxidfcType) GetLse() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanxidfcFieldLseMask) >> RegisterFdcanxidfcFieldLseShift)
 }
 
 // SetLse List Size Extended
-func (r *registerFdcanxidfcType) SetLse(value uint8) {
+func (r *RegisterFdcanxidfcType) SetLse(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanxidfcFieldLseMask)|(uint32(value)<<RegisterFdcanxidfcFieldLseShift))
 }
 
-// registerFdcanxidamType FDCAN Extended ID and Mask Register
-type registerFdcanxidamType uint32
+// RegisterFdcanxidamType FDCAN Extended ID and Mask Register
+type RegisterFdcanxidamType uint32
+
+func (r *RegisterFdcanxidamType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanxidamType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanxidamType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanxidamType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanxidamType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanxidamFieldEidmShift = 0
@@ -2986,17 +3492,40 @@ const (
 )
 
 // GetEidm Extended ID Mask
-func (r *registerFdcanxidamType) GetEidm() uint32 {
+func (r *RegisterFdcanxidamType) GetEidm() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanxidamFieldEidmMask) >> RegisterFdcanxidamFieldEidmShift)
 }
 
 // SetEidm Extended ID Mask
-func (r *registerFdcanxidamType) SetEidm(value uint32) {
+func (r *RegisterFdcanxidamType) SetEidm(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanxidamFieldEidmMask)|(uint32(value)<<RegisterFdcanxidamFieldEidmShift))
 }
 
-// registerFdcanhpmsType FDCAN High Priority Message Status Register
-type registerFdcanhpmsType uint32
+// RegisterFdcanhpmsType FDCAN High Priority Message Status Register
+type RegisterFdcanhpmsType uint32
+
+func (r *RegisterFdcanhpmsType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanhpmsType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanhpmsType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanhpmsType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanhpmsType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanhpmsFieldBidxShift = 0
@@ -3004,12 +3533,12 @@ const (
 )
 
 // GetBidx Buffer Index
-func (r *registerFdcanhpmsType) GetBidx() uint8 {
+func (r *RegisterFdcanhpmsType) GetBidx() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanhpmsFieldBidxMask) >> RegisterFdcanhpmsFieldBidxShift)
 }
 
 // SetBidx Buffer Index
-func (r *registerFdcanhpmsType) SetBidx(value uint8) {
+func (r *RegisterFdcanhpmsType) SetBidx(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanhpmsFieldBidxMask)|(uint32(value)<<RegisterFdcanhpmsFieldBidxShift))
 }
 
@@ -3019,12 +3548,12 @@ const (
 )
 
 // GetMsi Message Storage Indicator
-func (r *registerFdcanhpmsType) GetMsi() uint8 {
+func (r *RegisterFdcanhpmsType) GetMsi() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanhpmsFieldMsiMask) >> RegisterFdcanhpmsFieldMsiShift)
 }
 
 // SetMsi Message Storage Indicator
-func (r *registerFdcanhpmsType) SetMsi(value uint8) {
+func (r *RegisterFdcanhpmsType) SetMsi(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanhpmsFieldMsiMask)|(uint32(value)<<RegisterFdcanhpmsFieldMsiShift))
 }
 
@@ -3034,12 +3563,12 @@ const (
 )
 
 // GetFidx Filter Index
-func (r *registerFdcanhpmsType) GetFidx() uint8 {
+func (r *RegisterFdcanhpmsType) GetFidx() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanhpmsFieldFidxMask) >> RegisterFdcanhpmsFieldFidxShift)
 }
 
 // SetFidx Filter Index
-func (r *registerFdcanhpmsType) SetFidx(value uint8) {
+func (r *RegisterFdcanhpmsType) SetFidx(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanhpmsFieldFidxMask)|(uint32(value)<<RegisterFdcanhpmsFieldFidxShift))
 }
 
@@ -3049,12 +3578,12 @@ const (
 )
 
 // GetFlst Filter List
-func (r *registerFdcanhpmsType) GetFlst() bool {
+func (r *RegisterFdcanhpmsType) GetFlst() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanhpmsFieldFlstMask) != 0
 }
 
 // SetFlst Filter List
-func (r *registerFdcanhpmsType) SetFlst(value bool) {
+func (r *RegisterFdcanhpmsType) SetFlst(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanhpmsFieldFlstMask)
 	} else {
@@ -3062,8 +3591,31 @@ func (r *registerFdcanhpmsType) SetFlst(value bool) {
 	}
 }
 
-// registerFdcanndat1Type FDCAN New Data 1 Register
-type registerFdcanndat1Type uint32
+// RegisterFdcanndat1Type FDCAN New Data 1 Register
+type RegisterFdcanndat1Type uint32
+
+func (r *RegisterFdcanndat1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanndat1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanndat1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanndat1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanndat1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanndat1FieldNd0Shift = 0
@@ -3071,12 +3623,12 @@ const (
 )
 
 // GetNd0 New data
-func (r *registerFdcanndat1Type) GetNd0() bool {
+func (r *RegisterFdcanndat1Type) GetNd0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd0Mask) != 0
 }
 
 // SetNd0 New data
-func (r *registerFdcanndat1Type) SetNd0(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd0Mask)
 	} else {
@@ -3090,12 +3642,12 @@ const (
 )
 
 // GetNd1 New data
-func (r *registerFdcanndat1Type) GetNd1() bool {
+func (r *RegisterFdcanndat1Type) GetNd1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd1Mask) != 0
 }
 
 // SetNd1 New data
-func (r *registerFdcanndat1Type) SetNd1(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd1Mask)
 	} else {
@@ -3109,12 +3661,12 @@ const (
 )
 
 // GetNd2 New data
-func (r *registerFdcanndat1Type) GetNd2() bool {
+func (r *RegisterFdcanndat1Type) GetNd2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd2Mask) != 0
 }
 
 // SetNd2 New data
-func (r *registerFdcanndat1Type) SetNd2(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd2Mask)
 	} else {
@@ -3128,12 +3680,12 @@ const (
 )
 
 // GetNd3 New data
-func (r *registerFdcanndat1Type) GetNd3() bool {
+func (r *RegisterFdcanndat1Type) GetNd3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd3Mask) != 0
 }
 
 // SetNd3 New data
-func (r *registerFdcanndat1Type) SetNd3(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd3Mask)
 	} else {
@@ -3147,12 +3699,12 @@ const (
 )
 
 // GetNd4 New data
-func (r *registerFdcanndat1Type) GetNd4() bool {
+func (r *RegisterFdcanndat1Type) GetNd4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd4Mask) != 0
 }
 
 // SetNd4 New data
-func (r *registerFdcanndat1Type) SetNd4(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd4Mask)
 	} else {
@@ -3166,12 +3718,12 @@ const (
 )
 
 // GetNd5 New data
-func (r *registerFdcanndat1Type) GetNd5() bool {
+func (r *RegisterFdcanndat1Type) GetNd5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd5Mask) != 0
 }
 
 // SetNd5 New data
-func (r *registerFdcanndat1Type) SetNd5(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd5Mask)
 	} else {
@@ -3185,12 +3737,12 @@ const (
 )
 
 // GetNd6 New data
-func (r *registerFdcanndat1Type) GetNd6() bool {
+func (r *RegisterFdcanndat1Type) GetNd6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd6Mask) != 0
 }
 
 // SetNd6 New data
-func (r *registerFdcanndat1Type) SetNd6(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd6Mask)
 	} else {
@@ -3204,12 +3756,12 @@ const (
 )
 
 // GetNd7 New data
-func (r *registerFdcanndat1Type) GetNd7() bool {
+func (r *RegisterFdcanndat1Type) GetNd7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd7Mask) != 0
 }
 
 // SetNd7 New data
-func (r *registerFdcanndat1Type) SetNd7(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd7Mask)
 	} else {
@@ -3223,12 +3775,12 @@ const (
 )
 
 // GetNd8 New data
-func (r *registerFdcanndat1Type) GetNd8() bool {
+func (r *RegisterFdcanndat1Type) GetNd8() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd8Mask) != 0
 }
 
 // SetNd8 New data
-func (r *registerFdcanndat1Type) SetNd8(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd8(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd8Mask)
 	} else {
@@ -3242,12 +3794,12 @@ const (
 )
 
 // GetNd9 New data
-func (r *registerFdcanndat1Type) GetNd9() bool {
+func (r *RegisterFdcanndat1Type) GetNd9() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd9Mask) != 0
 }
 
 // SetNd9 New data
-func (r *registerFdcanndat1Type) SetNd9(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd9(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd9Mask)
 	} else {
@@ -3261,12 +3813,12 @@ const (
 )
 
 // GetNd10 New data
-func (r *registerFdcanndat1Type) GetNd10() bool {
+func (r *RegisterFdcanndat1Type) GetNd10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd10Mask) != 0
 }
 
 // SetNd10 New data
-func (r *registerFdcanndat1Type) SetNd10(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd10Mask)
 	} else {
@@ -3280,12 +3832,12 @@ const (
 )
 
 // GetNd11 New data
-func (r *registerFdcanndat1Type) GetNd11() bool {
+func (r *RegisterFdcanndat1Type) GetNd11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd11Mask) != 0
 }
 
 // SetNd11 New data
-func (r *registerFdcanndat1Type) SetNd11(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd11Mask)
 	} else {
@@ -3299,12 +3851,12 @@ const (
 )
 
 // GetNd12 New data
-func (r *registerFdcanndat1Type) GetNd12() bool {
+func (r *RegisterFdcanndat1Type) GetNd12() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd12Mask) != 0
 }
 
 // SetNd12 New data
-func (r *registerFdcanndat1Type) SetNd12(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd12(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd12Mask)
 	} else {
@@ -3318,12 +3870,12 @@ const (
 )
 
 // GetNd13 New data
-func (r *registerFdcanndat1Type) GetNd13() bool {
+func (r *RegisterFdcanndat1Type) GetNd13() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd13Mask) != 0
 }
 
 // SetNd13 New data
-func (r *registerFdcanndat1Type) SetNd13(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd13(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd13Mask)
 	} else {
@@ -3337,12 +3889,12 @@ const (
 )
 
 // GetNd14 New data
-func (r *registerFdcanndat1Type) GetNd14() bool {
+func (r *RegisterFdcanndat1Type) GetNd14() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd14Mask) != 0
 }
 
 // SetNd14 New data
-func (r *registerFdcanndat1Type) SetNd14(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd14(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd14Mask)
 	} else {
@@ -3356,12 +3908,12 @@ const (
 )
 
 // GetNd15 New data
-func (r *registerFdcanndat1Type) GetNd15() bool {
+func (r *RegisterFdcanndat1Type) GetNd15() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd15Mask) != 0
 }
 
 // SetNd15 New data
-func (r *registerFdcanndat1Type) SetNd15(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd15(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd15Mask)
 	} else {
@@ -3375,12 +3927,12 @@ const (
 )
 
 // GetNd16 New data
-func (r *registerFdcanndat1Type) GetNd16() bool {
+func (r *RegisterFdcanndat1Type) GetNd16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd16Mask) != 0
 }
 
 // SetNd16 New data
-func (r *registerFdcanndat1Type) SetNd16(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd16Mask)
 	} else {
@@ -3394,12 +3946,12 @@ const (
 )
 
 // GetNd17 New data
-func (r *registerFdcanndat1Type) GetNd17() bool {
+func (r *RegisterFdcanndat1Type) GetNd17() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd17Mask) != 0
 }
 
 // SetNd17 New data
-func (r *registerFdcanndat1Type) SetNd17(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd17(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd17Mask)
 	} else {
@@ -3413,12 +3965,12 @@ const (
 )
 
 // GetNd18 New data
-func (r *registerFdcanndat1Type) GetNd18() bool {
+func (r *RegisterFdcanndat1Type) GetNd18() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd18Mask) != 0
 }
 
 // SetNd18 New data
-func (r *registerFdcanndat1Type) SetNd18(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd18(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd18Mask)
 	} else {
@@ -3432,12 +3984,12 @@ const (
 )
 
 // GetNd19 New data
-func (r *registerFdcanndat1Type) GetNd19() bool {
+func (r *RegisterFdcanndat1Type) GetNd19() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd19Mask) != 0
 }
 
 // SetNd19 New data
-func (r *registerFdcanndat1Type) SetNd19(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd19(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd19Mask)
 	} else {
@@ -3451,12 +4003,12 @@ const (
 )
 
 // GetNd20 New data
-func (r *registerFdcanndat1Type) GetNd20() bool {
+func (r *RegisterFdcanndat1Type) GetNd20() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd20Mask) != 0
 }
 
 // SetNd20 New data
-func (r *registerFdcanndat1Type) SetNd20(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd20(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd20Mask)
 	} else {
@@ -3470,12 +4022,12 @@ const (
 )
 
 // GetNd21 New data
-func (r *registerFdcanndat1Type) GetNd21() bool {
+func (r *RegisterFdcanndat1Type) GetNd21() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd21Mask) != 0
 }
 
 // SetNd21 New data
-func (r *registerFdcanndat1Type) SetNd21(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd21(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd21Mask)
 	} else {
@@ -3489,12 +4041,12 @@ const (
 )
 
 // GetNd22 New data
-func (r *registerFdcanndat1Type) GetNd22() bool {
+func (r *RegisterFdcanndat1Type) GetNd22() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd22Mask) != 0
 }
 
 // SetNd22 New data
-func (r *registerFdcanndat1Type) SetNd22(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd22(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd22Mask)
 	} else {
@@ -3508,12 +4060,12 @@ const (
 )
 
 // GetNd23 New data
-func (r *registerFdcanndat1Type) GetNd23() bool {
+func (r *RegisterFdcanndat1Type) GetNd23() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd23Mask) != 0
 }
 
 // SetNd23 New data
-func (r *registerFdcanndat1Type) SetNd23(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd23(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd23Mask)
 	} else {
@@ -3527,12 +4079,12 @@ const (
 )
 
 // GetNd24 New data
-func (r *registerFdcanndat1Type) GetNd24() bool {
+func (r *RegisterFdcanndat1Type) GetNd24() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd24Mask) != 0
 }
 
 // SetNd24 New data
-func (r *registerFdcanndat1Type) SetNd24(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd24(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd24Mask)
 	} else {
@@ -3546,12 +4098,12 @@ const (
 )
 
 // GetNd25 New data
-func (r *registerFdcanndat1Type) GetNd25() bool {
+func (r *RegisterFdcanndat1Type) GetNd25() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd25Mask) != 0
 }
 
 // SetNd25 New data
-func (r *registerFdcanndat1Type) SetNd25(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd25(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd25Mask)
 	} else {
@@ -3565,12 +4117,12 @@ const (
 )
 
 // GetNd26 New data
-func (r *registerFdcanndat1Type) GetNd26() bool {
+func (r *RegisterFdcanndat1Type) GetNd26() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd26Mask) != 0
 }
 
 // SetNd26 New data
-func (r *registerFdcanndat1Type) SetNd26(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd26(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd26Mask)
 	} else {
@@ -3584,12 +4136,12 @@ const (
 )
 
 // GetNd27 New data
-func (r *registerFdcanndat1Type) GetNd27() bool {
+func (r *RegisterFdcanndat1Type) GetNd27() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd27Mask) != 0
 }
 
 // SetNd27 New data
-func (r *registerFdcanndat1Type) SetNd27(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd27(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd27Mask)
 	} else {
@@ -3603,12 +4155,12 @@ const (
 )
 
 // GetNd28 New data
-func (r *registerFdcanndat1Type) GetNd28() bool {
+func (r *RegisterFdcanndat1Type) GetNd28() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd28Mask) != 0
 }
 
 // SetNd28 New data
-func (r *registerFdcanndat1Type) SetNd28(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd28(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd28Mask)
 	} else {
@@ -3622,12 +4174,12 @@ const (
 )
 
 // GetNd29 New data
-func (r *registerFdcanndat1Type) GetNd29() bool {
+func (r *RegisterFdcanndat1Type) GetNd29() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd29Mask) != 0
 }
 
 // SetNd29 New data
-func (r *registerFdcanndat1Type) SetNd29(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd29(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd29Mask)
 	} else {
@@ -3641,12 +4193,12 @@ const (
 )
 
 // GetNd30 New data
-func (r *registerFdcanndat1Type) GetNd30() bool {
+func (r *RegisterFdcanndat1Type) GetNd30() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd30Mask) != 0
 }
 
 // SetNd30 New data
-func (r *registerFdcanndat1Type) SetNd30(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd30(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd30Mask)
 	} else {
@@ -3660,12 +4212,12 @@ const (
 )
 
 // GetNd31 New data
-func (r *registerFdcanndat1Type) GetNd31() bool {
+func (r *RegisterFdcanndat1Type) GetNd31() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat1FieldNd31Mask) != 0
 }
 
 // SetNd31 New data
-func (r *registerFdcanndat1Type) SetNd31(value bool) {
+func (r *RegisterFdcanndat1Type) SetNd31(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat1FieldNd31Mask)
 	} else {
@@ -3673,8 +4225,31 @@ func (r *registerFdcanndat1Type) SetNd31(value bool) {
 	}
 }
 
-// registerFdcanndat2Type FDCAN New Data 2 Register
-type registerFdcanndat2Type uint32
+// RegisterFdcanndat2Type FDCAN New Data 2 Register
+type RegisterFdcanndat2Type uint32
+
+func (r *RegisterFdcanndat2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanndat2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanndat2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanndat2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanndat2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanndat2FieldNd32Shift = 0
@@ -3682,12 +4257,12 @@ const (
 )
 
 // GetNd32 New data
-func (r *registerFdcanndat2Type) GetNd32() bool {
+func (r *RegisterFdcanndat2Type) GetNd32() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd32Mask) != 0
 }
 
 // SetNd32 New data
-func (r *registerFdcanndat2Type) SetNd32(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd32(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd32Mask)
 	} else {
@@ -3701,12 +4276,12 @@ const (
 )
 
 // GetNd33 New data
-func (r *registerFdcanndat2Type) GetNd33() bool {
+func (r *RegisterFdcanndat2Type) GetNd33() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd33Mask) != 0
 }
 
 // SetNd33 New data
-func (r *registerFdcanndat2Type) SetNd33(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd33(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd33Mask)
 	} else {
@@ -3720,12 +4295,12 @@ const (
 )
 
 // GetNd34 New data
-func (r *registerFdcanndat2Type) GetNd34() bool {
+func (r *RegisterFdcanndat2Type) GetNd34() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd34Mask) != 0
 }
 
 // SetNd34 New data
-func (r *registerFdcanndat2Type) SetNd34(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd34(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd34Mask)
 	} else {
@@ -3739,12 +4314,12 @@ const (
 )
 
 // GetNd35 New data
-func (r *registerFdcanndat2Type) GetNd35() bool {
+func (r *RegisterFdcanndat2Type) GetNd35() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd35Mask) != 0
 }
 
 // SetNd35 New data
-func (r *registerFdcanndat2Type) SetNd35(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd35(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd35Mask)
 	} else {
@@ -3758,12 +4333,12 @@ const (
 )
 
 // GetNd36 New data
-func (r *registerFdcanndat2Type) GetNd36() bool {
+func (r *RegisterFdcanndat2Type) GetNd36() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd36Mask) != 0
 }
 
 // SetNd36 New data
-func (r *registerFdcanndat2Type) SetNd36(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd36(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd36Mask)
 	} else {
@@ -3777,12 +4352,12 @@ const (
 )
 
 // GetNd37 New data
-func (r *registerFdcanndat2Type) GetNd37() bool {
+func (r *RegisterFdcanndat2Type) GetNd37() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd37Mask) != 0
 }
 
 // SetNd37 New data
-func (r *registerFdcanndat2Type) SetNd37(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd37(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd37Mask)
 	} else {
@@ -3796,12 +4371,12 @@ const (
 )
 
 // GetNd38 New data
-func (r *registerFdcanndat2Type) GetNd38() bool {
+func (r *RegisterFdcanndat2Type) GetNd38() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd38Mask) != 0
 }
 
 // SetNd38 New data
-func (r *registerFdcanndat2Type) SetNd38(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd38(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd38Mask)
 	} else {
@@ -3815,12 +4390,12 @@ const (
 )
 
 // GetNd39 New data
-func (r *registerFdcanndat2Type) GetNd39() bool {
+func (r *RegisterFdcanndat2Type) GetNd39() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd39Mask) != 0
 }
 
 // SetNd39 New data
-func (r *registerFdcanndat2Type) SetNd39(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd39(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd39Mask)
 	} else {
@@ -3834,12 +4409,12 @@ const (
 )
 
 // GetNd40 New data
-func (r *registerFdcanndat2Type) GetNd40() bool {
+func (r *RegisterFdcanndat2Type) GetNd40() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd40Mask) != 0
 }
 
 // SetNd40 New data
-func (r *registerFdcanndat2Type) SetNd40(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd40(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd40Mask)
 	} else {
@@ -3853,12 +4428,12 @@ const (
 )
 
 // GetNd41 New data
-func (r *registerFdcanndat2Type) GetNd41() bool {
+func (r *RegisterFdcanndat2Type) GetNd41() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd41Mask) != 0
 }
 
 // SetNd41 New data
-func (r *registerFdcanndat2Type) SetNd41(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd41(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd41Mask)
 	} else {
@@ -3872,12 +4447,12 @@ const (
 )
 
 // GetNd42 New data
-func (r *registerFdcanndat2Type) GetNd42() bool {
+func (r *RegisterFdcanndat2Type) GetNd42() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd42Mask) != 0
 }
 
 // SetNd42 New data
-func (r *registerFdcanndat2Type) SetNd42(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd42(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd42Mask)
 	} else {
@@ -3891,12 +4466,12 @@ const (
 )
 
 // GetNd43 New data
-func (r *registerFdcanndat2Type) GetNd43() bool {
+func (r *RegisterFdcanndat2Type) GetNd43() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd43Mask) != 0
 }
 
 // SetNd43 New data
-func (r *registerFdcanndat2Type) SetNd43(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd43(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd43Mask)
 	} else {
@@ -3910,12 +4485,12 @@ const (
 )
 
 // GetNd44 New data
-func (r *registerFdcanndat2Type) GetNd44() bool {
+func (r *RegisterFdcanndat2Type) GetNd44() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd44Mask) != 0
 }
 
 // SetNd44 New data
-func (r *registerFdcanndat2Type) SetNd44(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd44(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd44Mask)
 	} else {
@@ -3929,12 +4504,12 @@ const (
 )
 
 // GetNd45 New data
-func (r *registerFdcanndat2Type) GetNd45() bool {
+func (r *RegisterFdcanndat2Type) GetNd45() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd45Mask) != 0
 }
 
 // SetNd45 New data
-func (r *registerFdcanndat2Type) SetNd45(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd45(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd45Mask)
 	} else {
@@ -3948,12 +4523,12 @@ const (
 )
 
 // GetNd46 New data
-func (r *registerFdcanndat2Type) GetNd46() bool {
+func (r *RegisterFdcanndat2Type) GetNd46() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd46Mask) != 0
 }
 
 // SetNd46 New data
-func (r *registerFdcanndat2Type) SetNd46(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd46(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd46Mask)
 	} else {
@@ -3967,12 +4542,12 @@ const (
 )
 
 // GetNd47 New data
-func (r *registerFdcanndat2Type) GetNd47() bool {
+func (r *RegisterFdcanndat2Type) GetNd47() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd47Mask) != 0
 }
 
 // SetNd47 New data
-func (r *registerFdcanndat2Type) SetNd47(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd47(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd47Mask)
 	} else {
@@ -3986,12 +4561,12 @@ const (
 )
 
 // GetNd48 New data
-func (r *registerFdcanndat2Type) GetNd48() bool {
+func (r *RegisterFdcanndat2Type) GetNd48() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd48Mask) != 0
 }
 
 // SetNd48 New data
-func (r *registerFdcanndat2Type) SetNd48(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd48(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd48Mask)
 	} else {
@@ -4005,12 +4580,12 @@ const (
 )
 
 // GetNd49 New data
-func (r *registerFdcanndat2Type) GetNd49() bool {
+func (r *RegisterFdcanndat2Type) GetNd49() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd49Mask) != 0
 }
 
 // SetNd49 New data
-func (r *registerFdcanndat2Type) SetNd49(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd49(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd49Mask)
 	} else {
@@ -4024,12 +4599,12 @@ const (
 )
 
 // GetNd50 New data
-func (r *registerFdcanndat2Type) GetNd50() bool {
+func (r *RegisterFdcanndat2Type) GetNd50() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd50Mask) != 0
 }
 
 // SetNd50 New data
-func (r *registerFdcanndat2Type) SetNd50(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd50(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd50Mask)
 	} else {
@@ -4043,12 +4618,12 @@ const (
 )
 
 // GetNd51 New data
-func (r *registerFdcanndat2Type) GetNd51() bool {
+func (r *RegisterFdcanndat2Type) GetNd51() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd51Mask) != 0
 }
 
 // SetNd51 New data
-func (r *registerFdcanndat2Type) SetNd51(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd51(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd51Mask)
 	} else {
@@ -4062,12 +4637,12 @@ const (
 )
 
 // GetNd52 New data
-func (r *registerFdcanndat2Type) GetNd52() bool {
+func (r *RegisterFdcanndat2Type) GetNd52() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd52Mask) != 0
 }
 
 // SetNd52 New data
-func (r *registerFdcanndat2Type) SetNd52(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd52(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd52Mask)
 	} else {
@@ -4081,12 +4656,12 @@ const (
 )
 
 // GetNd53 New data
-func (r *registerFdcanndat2Type) GetNd53() bool {
+func (r *RegisterFdcanndat2Type) GetNd53() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd53Mask) != 0
 }
 
 // SetNd53 New data
-func (r *registerFdcanndat2Type) SetNd53(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd53(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd53Mask)
 	} else {
@@ -4100,12 +4675,12 @@ const (
 )
 
 // GetNd54 New data
-func (r *registerFdcanndat2Type) GetNd54() bool {
+func (r *RegisterFdcanndat2Type) GetNd54() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd54Mask) != 0
 }
 
 // SetNd54 New data
-func (r *registerFdcanndat2Type) SetNd54(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd54(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd54Mask)
 	} else {
@@ -4119,12 +4694,12 @@ const (
 )
 
 // GetNd55 New data
-func (r *registerFdcanndat2Type) GetNd55() bool {
+func (r *RegisterFdcanndat2Type) GetNd55() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd55Mask) != 0
 }
 
 // SetNd55 New data
-func (r *registerFdcanndat2Type) SetNd55(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd55(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd55Mask)
 	} else {
@@ -4138,12 +4713,12 @@ const (
 )
 
 // GetNd56 New data
-func (r *registerFdcanndat2Type) GetNd56() bool {
+func (r *RegisterFdcanndat2Type) GetNd56() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd56Mask) != 0
 }
 
 // SetNd56 New data
-func (r *registerFdcanndat2Type) SetNd56(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd56(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd56Mask)
 	} else {
@@ -4157,12 +4732,12 @@ const (
 )
 
 // GetNd57 New data
-func (r *registerFdcanndat2Type) GetNd57() bool {
+func (r *RegisterFdcanndat2Type) GetNd57() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd57Mask) != 0
 }
 
 // SetNd57 New data
-func (r *registerFdcanndat2Type) SetNd57(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd57(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd57Mask)
 	} else {
@@ -4176,12 +4751,12 @@ const (
 )
 
 // GetNd58 New data
-func (r *registerFdcanndat2Type) GetNd58() bool {
+func (r *RegisterFdcanndat2Type) GetNd58() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd58Mask) != 0
 }
 
 // SetNd58 New data
-func (r *registerFdcanndat2Type) SetNd58(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd58(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd58Mask)
 	} else {
@@ -4195,12 +4770,12 @@ const (
 )
 
 // GetNd59 New data
-func (r *registerFdcanndat2Type) GetNd59() bool {
+func (r *RegisterFdcanndat2Type) GetNd59() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd59Mask) != 0
 }
 
 // SetNd59 New data
-func (r *registerFdcanndat2Type) SetNd59(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd59(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd59Mask)
 	} else {
@@ -4214,12 +4789,12 @@ const (
 )
 
 // GetNd60 New data
-func (r *registerFdcanndat2Type) GetNd60() bool {
+func (r *RegisterFdcanndat2Type) GetNd60() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd60Mask) != 0
 }
 
 // SetNd60 New data
-func (r *registerFdcanndat2Type) SetNd60(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd60(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd60Mask)
 	} else {
@@ -4233,12 +4808,12 @@ const (
 )
 
 // GetNd61 New data
-func (r *registerFdcanndat2Type) GetNd61() bool {
+func (r *RegisterFdcanndat2Type) GetNd61() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd61Mask) != 0
 }
 
 // SetNd61 New data
-func (r *registerFdcanndat2Type) SetNd61(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd61(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd61Mask)
 	} else {
@@ -4252,12 +4827,12 @@ const (
 )
 
 // GetNd62 New data
-func (r *registerFdcanndat2Type) GetNd62() bool {
+func (r *RegisterFdcanndat2Type) GetNd62() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd62Mask) != 0
 }
 
 // SetNd62 New data
-func (r *registerFdcanndat2Type) SetNd62(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd62(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd62Mask)
 	} else {
@@ -4271,12 +4846,12 @@ const (
 )
 
 // GetNd63 New data
-func (r *registerFdcanndat2Type) GetNd63() bool {
+func (r *RegisterFdcanndat2Type) GetNd63() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanndat2FieldNd63Mask) != 0
 }
 
 // SetNd63 New data
-func (r *registerFdcanndat2Type) SetNd63(value bool) {
+func (r *RegisterFdcanndat2Type) SetNd63(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanndat2FieldNd63Mask)
 	} else {
@@ -4284,8 +4859,31 @@ func (r *registerFdcanndat2Type) SetNd63(value bool) {
 	}
 }
 
-// registerFdcanrxf0cType FDCAN Rx FIFO 0 Configuration Register
-type registerFdcanrxf0cType uint32
+// RegisterFdcanrxf0cType FDCAN Rx FIFO 0 Configuration Register
+type RegisterFdcanrxf0cType uint32
+
+func (r *RegisterFdcanrxf0cType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanrxf0cType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanrxf0cType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanrxf0cType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanrxf0cType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanrxf0cFieldF0saShift = 2
@@ -4293,12 +4891,12 @@ const (
 )
 
 // GetF0sa Rx FIFO 0 Start Address
-func (r *registerFdcanrxf0cType) GetF0sa() uint16 {
+func (r *RegisterFdcanrxf0cType) GetF0sa() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf0cFieldF0saMask) >> RegisterFdcanrxf0cFieldF0saShift)
 }
 
 // SetF0sa Rx FIFO 0 Start Address
-func (r *registerFdcanrxf0cType) SetF0sa(value uint16) {
+func (r *RegisterFdcanrxf0cType) SetF0sa(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf0cFieldF0saMask)|(uint32(value)<<RegisterFdcanrxf0cFieldF0saShift))
 }
 
@@ -4308,12 +4906,12 @@ const (
 )
 
 // GetF0s Rx FIFO 0 Size
-func (r *registerFdcanrxf0cType) GetF0s() uint8 {
+func (r *RegisterFdcanrxf0cType) GetF0s() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf0cFieldF0sMask) >> RegisterFdcanrxf0cFieldF0sShift)
 }
 
 // SetF0s Rx FIFO 0 Size
-func (r *registerFdcanrxf0cType) SetF0s(value uint8) {
+func (r *RegisterFdcanrxf0cType) SetF0s(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf0cFieldF0sMask)|(uint32(value)<<RegisterFdcanrxf0cFieldF0sShift))
 }
 
@@ -4323,17 +4921,40 @@ const (
 )
 
 // GetF0wm FIFO 0 Watermark
-func (r *registerFdcanrxf0cType) GetF0wm() uint8 {
+func (r *RegisterFdcanrxf0cType) GetF0wm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf0cFieldF0wmMask) >> RegisterFdcanrxf0cFieldF0wmShift)
 }
 
 // SetF0wm FIFO 0 Watermark
-func (r *registerFdcanrxf0cType) SetF0wm(value uint8) {
+func (r *RegisterFdcanrxf0cType) SetF0wm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf0cFieldF0wmMask)|(uint32(value)<<RegisterFdcanrxf0cFieldF0wmShift))
 }
 
-// registerFdcanrxf0sType FDCAN Rx FIFO 0 Status Register
-type registerFdcanrxf0sType uint32
+// RegisterFdcanrxf0sType FDCAN Rx FIFO 0 Status Register
+type RegisterFdcanrxf0sType uint32
+
+func (r *RegisterFdcanrxf0sType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanrxf0sType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanrxf0sType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanrxf0sType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanrxf0sType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanrxf0sFieldF0flShift = 0
@@ -4341,12 +4962,12 @@ const (
 )
 
 // GetF0fl Rx FIFO 0 Fill Level
-func (r *registerFdcanrxf0sType) GetF0fl() uint8 {
+func (r *RegisterFdcanrxf0sType) GetF0fl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf0sFieldF0flMask) >> RegisterFdcanrxf0sFieldF0flShift)
 }
 
 // SetF0fl Rx FIFO 0 Fill Level
-func (r *registerFdcanrxf0sType) SetF0fl(value uint8) {
+func (r *RegisterFdcanrxf0sType) SetF0fl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf0sFieldF0flMask)|(uint32(value)<<RegisterFdcanrxf0sFieldF0flShift))
 }
 
@@ -4356,12 +4977,12 @@ const (
 )
 
 // GetF0g Rx FIFO 0 Get Index
-func (r *registerFdcanrxf0sType) GetF0g() uint8 {
+func (r *RegisterFdcanrxf0sType) GetF0g() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf0sFieldF0gMask) >> RegisterFdcanrxf0sFieldF0gShift)
 }
 
 // SetF0g Rx FIFO 0 Get Index
-func (r *registerFdcanrxf0sType) SetF0g(value uint8) {
+func (r *RegisterFdcanrxf0sType) SetF0g(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf0sFieldF0gMask)|(uint32(value)<<RegisterFdcanrxf0sFieldF0gShift))
 }
 
@@ -4371,12 +4992,12 @@ const (
 )
 
 // GetF0p Rx FIFO 0 Put Index
-func (r *registerFdcanrxf0sType) GetF0p() uint8 {
+func (r *RegisterFdcanrxf0sType) GetF0p() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf0sFieldF0pMask) >> RegisterFdcanrxf0sFieldF0pShift)
 }
 
 // SetF0p Rx FIFO 0 Put Index
-func (r *registerFdcanrxf0sType) SetF0p(value uint8) {
+func (r *RegisterFdcanrxf0sType) SetF0p(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf0sFieldF0pMask)|(uint32(value)<<RegisterFdcanrxf0sFieldF0pShift))
 }
 
@@ -4386,12 +5007,12 @@ const (
 )
 
 // GetF0f Rx FIFO 0 Full
-func (r *registerFdcanrxf0sType) GetF0f() bool {
+func (r *RegisterFdcanrxf0sType) GetF0f() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf0sFieldF0fMask) != 0
 }
 
 // SetF0f Rx FIFO 0 Full
-func (r *registerFdcanrxf0sType) SetF0f(value bool) {
+func (r *RegisterFdcanrxf0sType) SetF0f(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanrxf0sFieldF0fMask)
 	} else {
@@ -4405,12 +5026,12 @@ const (
 )
 
 // GetRf0l Rx FIFO 0 Message Lost
-func (r *registerFdcanrxf0sType) GetRf0l() bool {
+func (r *RegisterFdcanrxf0sType) GetRf0l() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf0sFieldRf0lMask) != 0
 }
 
 // SetRf0l Rx FIFO 0 Message Lost
-func (r *registerFdcanrxf0sType) SetRf0l(value bool) {
+func (r *RegisterFdcanrxf0sType) SetRf0l(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanrxf0sFieldRf0lMask)
 	} else {
@@ -4418,8 +5039,31 @@ func (r *registerFdcanrxf0sType) SetRf0l(value bool) {
 	}
 }
 
-// registerFdcanrxf0aType CAN Rx FIFO 0 Acknowledge Register
-type registerFdcanrxf0aType uint32
+// RegisterFdcanrxf0aType CAN Rx FIFO 0 Acknowledge Register
+type RegisterFdcanrxf0aType uint32
+
+func (r *RegisterFdcanrxf0aType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanrxf0aType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanrxf0aType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanrxf0aType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanrxf0aType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanrxf0aFieldFa01Shift = 0
@@ -4427,17 +5071,40 @@ const (
 )
 
 // GetFa01 Rx FIFO 0 Acknowledge Index
-func (r *registerFdcanrxf0aType) GetFa01() uint8 {
+func (r *RegisterFdcanrxf0aType) GetFa01() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf0aFieldFa01Mask) >> RegisterFdcanrxf0aFieldFa01Shift)
 }
 
 // SetFa01 Rx FIFO 0 Acknowledge Index
-func (r *registerFdcanrxf0aType) SetFa01(value uint8) {
+func (r *RegisterFdcanrxf0aType) SetFa01(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf0aFieldFa01Mask)|(uint32(value)<<RegisterFdcanrxf0aFieldFa01Shift))
 }
 
-// registerFdcanrxbcType FDCAN Rx Buffer Configuration Register
-type registerFdcanrxbcType uint32
+// RegisterFdcanrxbcType FDCAN Rx Buffer Configuration Register
+type RegisterFdcanrxbcType uint32
+
+func (r *RegisterFdcanrxbcType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanrxbcType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanrxbcType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanrxbcType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanrxbcType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanrxbcFieldRbsaShift = 2
@@ -4445,17 +5112,40 @@ const (
 )
 
 // GetRbsa Rx Buffer Start Address
-func (r *registerFdcanrxbcType) GetRbsa() uint16 {
+func (r *RegisterFdcanrxbcType) GetRbsa() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxbcFieldRbsaMask) >> RegisterFdcanrxbcFieldRbsaShift)
 }
 
 // SetRbsa Rx Buffer Start Address
-func (r *registerFdcanrxbcType) SetRbsa(value uint16) {
+func (r *RegisterFdcanrxbcType) SetRbsa(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxbcFieldRbsaMask)|(uint32(value)<<RegisterFdcanrxbcFieldRbsaShift))
 }
 
-// registerFdcanrxf1cType FDCAN Rx FIFO 1 Configuration Register
-type registerFdcanrxf1cType uint32
+// RegisterFdcanrxf1cType FDCAN Rx FIFO 1 Configuration Register
+type RegisterFdcanrxf1cType uint32
+
+func (r *RegisterFdcanrxf1cType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanrxf1cType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanrxf1cType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanrxf1cType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanrxf1cType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanrxf1cFieldF1saShift = 2
@@ -4463,12 +5153,12 @@ const (
 )
 
 // GetF1sa Rx FIFO 1 Start Address
-func (r *registerFdcanrxf1cType) GetF1sa() uint16 {
+func (r *RegisterFdcanrxf1cType) GetF1sa() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf1cFieldF1saMask) >> RegisterFdcanrxf1cFieldF1saShift)
 }
 
 // SetF1sa Rx FIFO 1 Start Address
-func (r *registerFdcanrxf1cType) SetF1sa(value uint16) {
+func (r *RegisterFdcanrxf1cType) SetF1sa(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf1cFieldF1saMask)|(uint32(value)<<RegisterFdcanrxf1cFieldF1saShift))
 }
 
@@ -4478,12 +5168,12 @@ const (
 )
 
 // GetF1s Rx FIFO 1 Size
-func (r *registerFdcanrxf1cType) GetF1s() uint8 {
+func (r *RegisterFdcanrxf1cType) GetF1s() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf1cFieldF1sMask) >> RegisterFdcanrxf1cFieldF1sShift)
 }
 
 // SetF1s Rx FIFO 1 Size
-func (r *registerFdcanrxf1cType) SetF1s(value uint8) {
+func (r *RegisterFdcanrxf1cType) SetF1s(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf1cFieldF1sMask)|(uint32(value)<<RegisterFdcanrxf1cFieldF1sShift))
 }
 
@@ -4493,17 +5183,40 @@ const (
 )
 
 // GetF1wm Rx FIFO 1 Watermark
-func (r *registerFdcanrxf1cType) GetF1wm() uint8 {
+func (r *RegisterFdcanrxf1cType) GetF1wm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf1cFieldF1wmMask) >> RegisterFdcanrxf1cFieldF1wmShift)
 }
 
 // SetF1wm Rx FIFO 1 Watermark
-func (r *registerFdcanrxf1cType) SetF1wm(value uint8) {
+func (r *RegisterFdcanrxf1cType) SetF1wm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf1cFieldF1wmMask)|(uint32(value)<<RegisterFdcanrxf1cFieldF1wmShift))
 }
 
-// registerFdcanrxf1sType FDCAN Rx FIFO 1 Status Register
-type registerFdcanrxf1sType uint32
+// RegisterFdcanrxf1sType FDCAN Rx FIFO 1 Status Register
+type RegisterFdcanrxf1sType uint32
+
+func (r *RegisterFdcanrxf1sType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanrxf1sType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanrxf1sType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanrxf1sType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanrxf1sType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanrxf1sFieldF1flShift = 0
@@ -4511,12 +5224,12 @@ const (
 )
 
 // GetF1fl Rx FIFO 1 Fill Level
-func (r *registerFdcanrxf1sType) GetF1fl() uint8 {
+func (r *RegisterFdcanrxf1sType) GetF1fl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf1sFieldF1flMask) >> RegisterFdcanrxf1sFieldF1flShift)
 }
 
 // SetF1fl Rx FIFO 1 Fill Level
-func (r *registerFdcanrxf1sType) SetF1fl(value uint8) {
+func (r *RegisterFdcanrxf1sType) SetF1fl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf1sFieldF1flMask)|(uint32(value)<<RegisterFdcanrxf1sFieldF1flShift))
 }
 
@@ -4526,12 +5239,12 @@ const (
 )
 
 // GetF1gi Rx FIFO 1 Get Index
-func (r *registerFdcanrxf1sType) GetF1gi() uint8 {
+func (r *RegisterFdcanrxf1sType) GetF1gi() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf1sFieldF1giMask) >> RegisterFdcanrxf1sFieldF1giShift)
 }
 
 // SetF1gi Rx FIFO 1 Get Index
-func (r *registerFdcanrxf1sType) SetF1gi(value uint8) {
+func (r *RegisterFdcanrxf1sType) SetF1gi(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf1sFieldF1giMask)|(uint32(value)<<RegisterFdcanrxf1sFieldF1giShift))
 }
 
@@ -4541,12 +5254,12 @@ const (
 )
 
 // GetF1pi Rx FIFO 1 Put Index
-func (r *registerFdcanrxf1sType) GetF1pi() uint8 {
+func (r *RegisterFdcanrxf1sType) GetF1pi() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf1sFieldF1piMask) >> RegisterFdcanrxf1sFieldF1piShift)
 }
 
 // SetF1pi Rx FIFO 1 Put Index
-func (r *registerFdcanrxf1sType) SetF1pi(value uint8) {
+func (r *RegisterFdcanrxf1sType) SetF1pi(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf1sFieldF1piMask)|(uint32(value)<<RegisterFdcanrxf1sFieldF1piShift))
 }
 
@@ -4556,12 +5269,12 @@ const (
 )
 
 // GetF1f Rx FIFO 1 Full
-func (r *registerFdcanrxf1sType) GetF1f() bool {
+func (r *RegisterFdcanrxf1sType) GetF1f() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf1sFieldF1fMask) != 0
 }
 
 // SetF1f Rx FIFO 1 Full
-func (r *registerFdcanrxf1sType) SetF1f(value bool) {
+func (r *RegisterFdcanrxf1sType) SetF1f(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanrxf1sFieldF1fMask)
 	} else {
@@ -4575,12 +5288,12 @@ const (
 )
 
 // GetRf1l Rx FIFO 1 Message Lost
-func (r *registerFdcanrxf1sType) GetRf1l() bool {
+func (r *RegisterFdcanrxf1sType) GetRf1l() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf1sFieldRf1lMask) != 0
 }
 
 // SetRf1l Rx FIFO 1 Message Lost
-func (r *registerFdcanrxf1sType) SetRf1l(value bool) {
+func (r *RegisterFdcanrxf1sType) SetRf1l(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanrxf1sFieldRf1lMask)
 	} else {
@@ -4594,17 +5307,40 @@ const (
 )
 
 // GetDms Debug Message Status
-func (r *registerFdcanrxf1sType) GetDms() uint8 {
+func (r *RegisterFdcanrxf1sType) GetDms() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf1sFieldDmsMask) >> RegisterFdcanrxf1sFieldDmsShift)
 }
 
 // SetDms Debug Message Status
-func (r *registerFdcanrxf1sType) SetDms(value uint8) {
+func (r *RegisterFdcanrxf1sType) SetDms(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf1sFieldDmsMask)|(uint32(value)<<RegisterFdcanrxf1sFieldDmsShift))
 }
 
-// registerFdcanrxf1aType FDCAN Rx FIFO 1 Acknowledge Register
-type registerFdcanrxf1aType uint32
+// RegisterFdcanrxf1aType FDCAN Rx FIFO 1 Acknowledge Register
+type RegisterFdcanrxf1aType uint32
+
+func (r *RegisterFdcanrxf1aType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanrxf1aType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanrxf1aType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanrxf1aType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanrxf1aType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanrxf1aFieldF1aiShift = 0
@@ -4612,17 +5348,40 @@ const (
 )
 
 // GetF1ai Rx FIFO 1 Acknowledge Index
-func (r *registerFdcanrxf1aType) GetF1ai() uint8 {
+func (r *RegisterFdcanrxf1aType) GetF1ai() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxf1aFieldF1aiMask) >> RegisterFdcanrxf1aFieldF1aiShift)
 }
 
 // SetF1ai Rx FIFO 1 Acknowledge Index
-func (r *registerFdcanrxf1aType) SetF1ai(value uint8) {
+func (r *RegisterFdcanrxf1aType) SetF1ai(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxf1aFieldF1aiMask)|(uint32(value)<<RegisterFdcanrxf1aFieldF1aiShift))
 }
 
-// registerFdcanrxescType FDCAN Rx Buffer Element Size Configuration Register
-type registerFdcanrxescType uint32
+// RegisterFdcanrxescType FDCAN Rx Buffer Element Size Configuration Register
+type RegisterFdcanrxescType uint32
+
+func (r *RegisterFdcanrxescType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanrxescType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanrxescType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanrxescType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanrxescType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanrxescFieldF0dsShift = 0
@@ -4630,12 +5389,12 @@ const (
 )
 
 // GetF0ds Rx FIFO 1 Data Field Size:
-func (r *registerFdcanrxescType) GetF0ds() uint8 {
+func (r *RegisterFdcanrxescType) GetF0ds() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxescFieldF0dsMask) >> RegisterFdcanrxescFieldF0dsShift)
 }
 
 // SetF0ds Rx FIFO 1 Data Field Size:
-func (r *registerFdcanrxescType) SetF0ds(value uint8) {
+func (r *RegisterFdcanrxescType) SetF0ds(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxescFieldF0dsMask)|(uint32(value)<<RegisterFdcanrxescFieldF0dsShift))
 }
 
@@ -4645,12 +5404,12 @@ const (
 )
 
 // GetF1ds Rx FIFO 0 Data Field Size:
-func (r *registerFdcanrxescType) GetF1ds() uint8 {
+func (r *RegisterFdcanrxescType) GetF1ds() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxescFieldF1dsMask) >> RegisterFdcanrxescFieldF1dsShift)
 }
 
 // SetF1ds Rx FIFO 0 Data Field Size:
-func (r *registerFdcanrxescType) SetF1ds(value uint8) {
+func (r *RegisterFdcanrxescType) SetF1ds(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxescFieldF1dsMask)|(uint32(value)<<RegisterFdcanrxescFieldF1dsShift))
 }
 
@@ -4660,17 +5419,40 @@ const (
 )
 
 // GetRbds Rx Buffer Data Field Size:
-func (r *registerFdcanrxescType) GetRbds() uint8 {
+func (r *RegisterFdcanrxescType) GetRbds() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanrxescFieldRbdsMask) >> RegisterFdcanrxescFieldRbdsShift)
 }
 
 // SetRbds Rx Buffer Data Field Size:
-func (r *registerFdcanrxescType) SetRbds(value uint8) {
+func (r *RegisterFdcanrxescType) SetRbds(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanrxescFieldRbdsMask)|(uint32(value)<<RegisterFdcanrxescFieldRbdsShift))
 }
 
-// registerFdcantxbcType FDCAN Tx Buffer Configuration Register
-type registerFdcantxbcType uint32
+// RegisterFdcantxbcType FDCAN Tx Buffer Configuration Register
+type RegisterFdcantxbcType uint32
+
+func (r *RegisterFdcantxbcType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxbcType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxbcType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxbcType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxbcType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxbcFieldTbsaShift = 2
@@ -4678,12 +5460,12 @@ const (
 )
 
 // GetTbsa Tx Buffers Start Address
-func (r *registerFdcantxbcType) GetTbsa() uint16 {
+func (r *RegisterFdcantxbcType) GetTbsa() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbcFieldTbsaMask) >> RegisterFdcantxbcFieldTbsaShift)
 }
 
 // SetTbsa Tx Buffers Start Address
-func (r *registerFdcantxbcType) SetTbsa(value uint16) {
+func (r *RegisterFdcantxbcType) SetTbsa(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxbcFieldTbsaMask)|(uint32(value)<<RegisterFdcantxbcFieldTbsaShift))
 }
 
@@ -4693,12 +5475,12 @@ const (
 )
 
 // GetNdtb Number of Dedicated Transmit Buffers
-func (r *registerFdcantxbcType) GetNdtb() uint8 {
+func (r *RegisterFdcantxbcType) GetNdtb() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbcFieldNdtbMask) >> RegisterFdcantxbcFieldNdtbShift)
 }
 
 // SetNdtb Number of Dedicated Transmit Buffers
-func (r *registerFdcantxbcType) SetNdtb(value uint8) {
+func (r *RegisterFdcantxbcType) SetNdtb(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxbcFieldNdtbMask)|(uint32(value)<<RegisterFdcantxbcFieldNdtbShift))
 }
 
@@ -4708,12 +5490,12 @@ const (
 )
 
 // GetTfqs Transmit FIFO/Queue Size
-func (r *registerFdcantxbcType) GetTfqs() uint8 {
+func (r *RegisterFdcantxbcType) GetTfqs() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbcFieldTfqsMask) >> RegisterFdcantxbcFieldTfqsShift)
 }
 
 // SetTfqs Transmit FIFO/Queue Size
-func (r *registerFdcantxbcType) SetTfqs(value uint8) {
+func (r *RegisterFdcantxbcType) SetTfqs(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxbcFieldTfqsMask)|(uint32(value)<<RegisterFdcantxbcFieldTfqsShift))
 }
 
@@ -4723,12 +5505,12 @@ const (
 )
 
 // GetTfqm Tx FIFO/Queue Mode
-func (r *registerFdcantxbcType) GetTfqm() bool {
+func (r *RegisterFdcantxbcType) GetTfqm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbcFieldTfqmMask) != 0
 }
 
 // SetTfqm Tx FIFO/Queue Mode
-func (r *registerFdcantxbcType) SetTfqm(value bool) {
+func (r *RegisterFdcantxbcType) SetTfqm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcantxbcFieldTfqmMask)
 	} else {
@@ -4736,8 +5518,31 @@ func (r *registerFdcantxbcType) SetTfqm(value bool) {
 	}
 }
 
-// registerFdcantxfqsType FDCAN Tx FIFO/Queue Status Register
-type registerFdcantxfqsType uint32
+// RegisterFdcantxfqsType FDCAN Tx FIFO/Queue Status Register
+type RegisterFdcantxfqsType uint32
+
+func (r *RegisterFdcantxfqsType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxfqsType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxfqsType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxfqsType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxfqsType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxfqsFieldTfflShift = 0
@@ -4745,12 +5550,12 @@ const (
 )
 
 // GetTffl Tx FIFO Free Level
-func (r *registerFdcantxfqsType) GetTffl() uint8 {
+func (r *RegisterFdcantxfqsType) GetTffl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxfqsFieldTfflMask) >> RegisterFdcantxfqsFieldTfflShift)
 }
 
 // SetTffl Tx FIFO Free Level
-func (r *registerFdcantxfqsType) SetTffl(value uint8) {
+func (r *RegisterFdcantxfqsType) SetTffl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxfqsFieldTfflMask)|(uint32(value)<<RegisterFdcantxfqsFieldTfflShift))
 }
 
@@ -4760,12 +5565,12 @@ const (
 )
 
 // GetTfgi TFGI
-func (r *registerFdcantxfqsType) GetTfgi() uint8 {
+func (r *RegisterFdcantxfqsType) GetTfgi() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxfqsFieldTfgiMask) >> RegisterFdcantxfqsFieldTfgiShift)
 }
 
 // SetTfgi TFGI
-func (r *registerFdcantxfqsType) SetTfgi(value uint8) {
+func (r *RegisterFdcantxfqsType) SetTfgi(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxfqsFieldTfgiMask)|(uint32(value)<<RegisterFdcantxfqsFieldTfgiShift))
 }
 
@@ -4775,12 +5580,12 @@ const (
 )
 
 // GetTfqpi Tx FIFO/Queue Put Index
-func (r *registerFdcantxfqsType) GetTfqpi() uint8 {
+func (r *RegisterFdcantxfqsType) GetTfqpi() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxfqsFieldTfqpiMask) >> RegisterFdcantxfqsFieldTfqpiShift)
 }
 
 // SetTfqpi Tx FIFO/Queue Put Index
-func (r *registerFdcantxfqsType) SetTfqpi(value uint8) {
+func (r *RegisterFdcantxfqsType) SetTfqpi(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxfqsFieldTfqpiMask)|(uint32(value)<<RegisterFdcantxfqsFieldTfqpiShift))
 }
 
@@ -4790,12 +5595,12 @@ const (
 )
 
 // GetTfqf Tx FIFO/Queue Full
-func (r *registerFdcantxfqsType) GetTfqf() bool {
+func (r *RegisterFdcantxfqsType) GetTfqf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxfqsFieldTfqfMask) != 0
 }
 
 // SetTfqf Tx FIFO/Queue Full
-func (r *registerFdcantxfqsType) SetTfqf(value bool) {
+func (r *RegisterFdcantxfqsType) SetTfqf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcantxfqsFieldTfqfMask)
 	} else {
@@ -4803,8 +5608,31 @@ func (r *registerFdcantxfqsType) SetTfqf(value bool) {
 	}
 }
 
-// registerFdcantxescType FDCAN Tx Buffer Element Size Configuration Register
-type registerFdcantxescType uint32
+// RegisterFdcantxescType FDCAN Tx Buffer Element Size Configuration Register
+type RegisterFdcantxescType uint32
+
+func (r *RegisterFdcantxescType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxescType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxescType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxescType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxescType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxescFieldTbdsShift = 0
@@ -4812,17 +5640,40 @@ const (
 )
 
 // GetTbds Tx Buffer Data Field Size:
-func (r *registerFdcantxescType) GetTbds() uint8 {
+func (r *RegisterFdcantxescType) GetTbds() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxescFieldTbdsMask) >> RegisterFdcantxescFieldTbdsShift)
 }
 
 // SetTbds Tx Buffer Data Field Size:
-func (r *registerFdcantxescType) SetTbds(value uint8) {
+func (r *RegisterFdcantxescType) SetTbds(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxescFieldTbdsMask)|(uint32(value)<<RegisterFdcantxescFieldTbdsShift))
 }
 
-// registerFdcantxbrpType FDCAN Tx Buffer Request Pending Register
-type registerFdcantxbrpType uint32
+// RegisterFdcantxbrpType FDCAN Tx Buffer Request Pending Register
+type RegisterFdcantxbrpType uint32
+
+func (r *RegisterFdcantxbrpType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxbrpType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxbrpType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxbrpType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxbrpType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxbrpFieldTrpShift = 0
@@ -4830,17 +5681,40 @@ const (
 )
 
 // GetTrp Transmission Request Pending
-func (r *registerFdcantxbrpType) GetTrp() uint32 {
+func (r *RegisterFdcantxbrpType) GetTrp() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbrpFieldTrpMask) >> RegisterFdcantxbrpFieldTrpShift)
 }
 
 // SetTrp Transmission Request Pending
-func (r *registerFdcantxbrpType) SetTrp(value uint32) {
+func (r *RegisterFdcantxbrpType) SetTrp(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxbrpFieldTrpMask)|(uint32(value)<<RegisterFdcantxbrpFieldTrpShift))
 }
 
-// registerFdcantxbarType FDCAN Tx Buffer Add Request Register
-type registerFdcantxbarType uint32
+// RegisterFdcantxbarType FDCAN Tx Buffer Add Request Register
+type RegisterFdcantxbarType uint32
+
+func (r *RegisterFdcantxbarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxbarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxbarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxbarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxbarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxbarFieldArShift = 0
@@ -4848,17 +5722,40 @@ const (
 )
 
 // GetAr Add Request
-func (r *registerFdcantxbarType) GetAr() uint32 {
+func (r *RegisterFdcantxbarType) GetAr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbarFieldArMask) >> RegisterFdcantxbarFieldArShift)
 }
 
 // SetAr Add Request
-func (r *registerFdcantxbarType) SetAr(value uint32) {
+func (r *RegisterFdcantxbarType) SetAr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxbarFieldArMask)|(uint32(value)<<RegisterFdcantxbarFieldArShift))
 }
 
-// registerFdcantxbcrType FDCAN Tx Buffer Cancellation Request Register
-type registerFdcantxbcrType uint32
+// RegisterFdcantxbcrType FDCAN Tx Buffer Cancellation Request Register
+type RegisterFdcantxbcrType uint32
+
+func (r *RegisterFdcantxbcrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxbcrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxbcrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxbcrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxbcrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxbcrFieldCrShift = 0
@@ -4866,17 +5763,40 @@ const (
 )
 
 // GetCr Cancellation Request
-func (r *registerFdcantxbcrType) GetCr() uint32 {
+func (r *RegisterFdcantxbcrType) GetCr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbcrFieldCrMask) >> RegisterFdcantxbcrFieldCrShift)
 }
 
 // SetCr Cancellation Request
-func (r *registerFdcantxbcrType) SetCr(value uint32) {
+func (r *RegisterFdcantxbcrType) SetCr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxbcrFieldCrMask)|(uint32(value)<<RegisterFdcantxbcrFieldCrShift))
 }
 
-// registerFdcantxbtoType FDCAN Tx Buffer Transmission Occurred Register
-type registerFdcantxbtoType uint32
+// RegisterFdcantxbtoType FDCAN Tx Buffer Transmission Occurred Register
+type RegisterFdcantxbtoType uint32
+
+func (r *RegisterFdcantxbtoType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxbtoType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxbtoType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxbtoType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxbtoType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxbtoFieldToShift = 0
@@ -4884,17 +5804,40 @@ const (
 )
 
 // GetTo Transmission Occurred.
-func (r *registerFdcantxbtoType) GetTo() uint32 {
+func (r *RegisterFdcantxbtoType) GetTo() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbtoFieldToMask) >> RegisterFdcantxbtoFieldToShift)
 }
 
 // SetTo Transmission Occurred.
-func (r *registerFdcantxbtoType) SetTo(value uint32) {
+func (r *RegisterFdcantxbtoType) SetTo(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxbtoFieldToMask)|(uint32(value)<<RegisterFdcantxbtoFieldToShift))
 }
 
-// registerFdcantxbcfType FDCAN Tx Buffer Cancellation Finished Register
-type registerFdcantxbcfType uint32
+// RegisterFdcantxbcfType FDCAN Tx Buffer Cancellation Finished Register
+type RegisterFdcantxbcfType uint32
+
+func (r *RegisterFdcantxbcfType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxbcfType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxbcfType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxbcfType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxbcfType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxbcfFieldCfShift = 0
@@ -4902,17 +5845,40 @@ const (
 )
 
 // GetCf Cancellation Finished
-func (r *registerFdcantxbcfType) GetCf() uint32 {
+func (r *RegisterFdcantxbcfType) GetCf() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbcfFieldCfMask) >> RegisterFdcantxbcfFieldCfShift)
 }
 
 // SetCf Cancellation Finished
-func (r *registerFdcantxbcfType) SetCf(value uint32) {
+func (r *RegisterFdcantxbcfType) SetCf(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxbcfFieldCfMask)|(uint32(value)<<RegisterFdcantxbcfFieldCfShift))
 }
 
-// registerFdcantxbtieType FDCAN Tx Buffer Transmission Interrupt Enable Register
-type registerFdcantxbtieType uint32
+// RegisterFdcantxbtieType FDCAN Tx Buffer Transmission Interrupt Enable Register
+type RegisterFdcantxbtieType uint32
+
+func (r *RegisterFdcantxbtieType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxbtieType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxbtieType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxbtieType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxbtieType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxbtieFieldTieShift = 0
@@ -4920,17 +5886,40 @@ const (
 )
 
 // GetTie Transmission Interrupt Enable
-func (r *registerFdcantxbtieType) GetTie() uint32 {
+func (r *RegisterFdcantxbtieType) GetTie() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbtieFieldTieMask) >> RegisterFdcantxbtieFieldTieShift)
 }
 
 // SetTie Transmission Interrupt Enable
-func (r *registerFdcantxbtieType) SetTie(value uint32) {
+func (r *RegisterFdcantxbtieType) SetTie(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxbtieFieldTieMask)|(uint32(value)<<RegisterFdcantxbtieFieldTieShift))
 }
 
-// registerFdcantxbcieType FDCAN Tx Buffer Cancellation Finished Interrupt Enable Register
-type registerFdcantxbcieType uint32
+// RegisterFdcantxbcieType FDCAN Tx Buffer Cancellation Finished Interrupt Enable Register
+type RegisterFdcantxbcieType uint32
+
+func (r *RegisterFdcantxbcieType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxbcieType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxbcieType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxbcieType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxbcieType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxbcieFieldCfShift = 0
@@ -4938,17 +5927,40 @@ const (
 )
 
 // GetCf Cancellation Finished Interrupt Enable
-func (r *registerFdcantxbcieType) GetCf() uint32 {
+func (r *RegisterFdcantxbcieType) GetCf() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxbcieFieldCfMask) >> RegisterFdcantxbcieFieldCfShift)
 }
 
 // SetCf Cancellation Finished Interrupt Enable
-func (r *registerFdcantxbcieType) SetCf(value uint32) {
+func (r *RegisterFdcantxbcieType) SetCf(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxbcieFieldCfMask)|(uint32(value)<<RegisterFdcantxbcieFieldCfShift))
 }
 
-// registerFdcantxefcType FDCAN Tx Event FIFO Configuration Register
-type registerFdcantxefcType uint32
+// RegisterFdcantxefcType FDCAN Tx Event FIFO Configuration Register
+type RegisterFdcantxefcType uint32
+
+func (r *RegisterFdcantxefcType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxefcType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxefcType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxefcType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxefcType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxefcFieldEfsaShift = 2
@@ -4956,12 +5968,12 @@ const (
 )
 
 // GetEfsa Event FIFO Start Address
-func (r *registerFdcantxefcType) GetEfsa() uint16 {
+func (r *RegisterFdcantxefcType) GetEfsa() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxefcFieldEfsaMask) >> RegisterFdcantxefcFieldEfsaShift)
 }
 
 // SetEfsa Event FIFO Start Address
-func (r *registerFdcantxefcType) SetEfsa(value uint16) {
+func (r *RegisterFdcantxefcType) SetEfsa(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxefcFieldEfsaMask)|(uint32(value)<<RegisterFdcantxefcFieldEfsaShift))
 }
 
@@ -4971,12 +5983,12 @@ const (
 )
 
 // GetEfs Event FIFO Size
-func (r *registerFdcantxefcType) GetEfs() uint8 {
+func (r *RegisterFdcantxefcType) GetEfs() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxefcFieldEfsMask) >> RegisterFdcantxefcFieldEfsShift)
 }
 
 // SetEfs Event FIFO Size
-func (r *registerFdcantxefcType) SetEfs(value uint8) {
+func (r *RegisterFdcantxefcType) SetEfs(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxefcFieldEfsMask)|(uint32(value)<<RegisterFdcantxefcFieldEfsShift))
 }
 
@@ -4986,17 +5998,40 @@ const (
 )
 
 // GetEfwm Event FIFO Watermark
-func (r *registerFdcantxefcType) GetEfwm() uint8 {
+func (r *RegisterFdcantxefcType) GetEfwm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxefcFieldEfwmMask) >> RegisterFdcantxefcFieldEfwmShift)
 }
 
 // SetEfwm Event FIFO Watermark
-func (r *registerFdcantxefcType) SetEfwm(value uint8) {
+func (r *RegisterFdcantxefcType) SetEfwm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxefcFieldEfwmMask)|(uint32(value)<<RegisterFdcantxefcFieldEfwmShift))
 }
 
-// registerFdcantxefsType FDCAN Tx Event FIFO Status Register
-type registerFdcantxefsType uint32
+// RegisterFdcantxefsType FDCAN Tx Event FIFO Status Register
+type RegisterFdcantxefsType uint32
+
+func (r *RegisterFdcantxefsType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxefsType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxefsType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxefsType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxefsType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxefsFieldEfflShift = 0
@@ -5004,12 +6039,12 @@ const (
 )
 
 // GetEffl Event FIFO Fill Level
-func (r *registerFdcantxefsType) GetEffl() uint8 {
+func (r *RegisterFdcantxefsType) GetEffl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxefsFieldEfflMask) >> RegisterFdcantxefsFieldEfflShift)
 }
 
 // SetEffl Event FIFO Fill Level
-func (r *registerFdcantxefsType) SetEffl(value uint8) {
+func (r *RegisterFdcantxefsType) SetEffl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxefsFieldEfflMask)|(uint32(value)<<RegisterFdcantxefsFieldEfflShift))
 }
 
@@ -5019,12 +6054,12 @@ const (
 )
 
 // GetEfgi Event FIFO Get Index.
-func (r *registerFdcantxefsType) GetEfgi() uint8 {
+func (r *RegisterFdcantxefsType) GetEfgi() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxefsFieldEfgiMask) >> RegisterFdcantxefsFieldEfgiShift)
 }
 
 // SetEfgi Event FIFO Get Index.
-func (r *registerFdcantxefsType) SetEfgi(value uint8) {
+func (r *RegisterFdcantxefsType) SetEfgi(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxefsFieldEfgiMask)|(uint32(value)<<RegisterFdcantxefsFieldEfgiShift))
 }
 
@@ -5034,12 +6069,12 @@ const (
 )
 
 // GetEfpi Event FIFO put index.
-func (r *registerFdcantxefsType) GetEfpi() uint8 {
+func (r *RegisterFdcantxefsType) GetEfpi() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxefsFieldEfpiMask) >> RegisterFdcantxefsFieldEfpiShift)
 }
 
 // SetEfpi Event FIFO put index.
-func (r *registerFdcantxefsType) SetEfpi(value uint8) {
+func (r *RegisterFdcantxefsType) SetEfpi(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxefsFieldEfpiMask)|(uint32(value)<<RegisterFdcantxefsFieldEfpiShift))
 }
 
@@ -5049,12 +6084,12 @@ const (
 )
 
 // GetEff Event FIFO Full.
-func (r *registerFdcantxefsType) GetEff() bool {
+func (r *RegisterFdcantxefsType) GetEff() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxefsFieldEffMask) != 0
 }
 
 // SetEff Event FIFO Full.
-func (r *registerFdcantxefsType) SetEff(value bool) {
+func (r *RegisterFdcantxefsType) SetEff(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcantxefsFieldEffMask)
 	} else {
@@ -5068,12 +6103,12 @@ const (
 )
 
 // GetTefl Tx Event FIFO Element Lost.
-func (r *registerFdcantxefsType) GetTefl() bool {
+func (r *RegisterFdcantxefsType) GetTefl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxefsFieldTeflMask) != 0
 }
 
 // SetTefl Tx Event FIFO Element Lost.
-func (r *registerFdcantxefsType) SetTefl(value bool) {
+func (r *RegisterFdcantxefsType) SetTefl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcantxefsFieldTeflMask)
 	} else {
@@ -5081,8 +6116,31 @@ func (r *registerFdcantxefsType) SetTefl(value bool) {
 	}
 }
 
-// registerFdcantxefaType FDCAN Tx Event FIFO Acknowledge Register
-type registerFdcantxefaType uint32
+// RegisterFdcantxefaType FDCAN Tx Event FIFO Acknowledge Register
+type RegisterFdcantxefaType uint32
+
+func (r *RegisterFdcantxefaType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantxefaType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantxefaType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantxefaType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantxefaType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantxefaFieldEfaiShift = 0
@@ -5090,17 +6148,40 @@ const (
 )
 
 // GetEfai Event FIFO Acknowledge Index
-func (r *registerFdcantxefaType) GetEfai() uint8 {
+func (r *RegisterFdcantxefaType) GetEfai() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantxefaFieldEfaiMask) >> RegisterFdcantxefaFieldEfaiShift)
 }
 
 // SetEfai Event FIFO Acknowledge Index
-func (r *registerFdcantxefaType) SetEfai(value uint8) {
+func (r *RegisterFdcantxefaType) SetEfai(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantxefaFieldEfaiMask)|(uint32(value)<<RegisterFdcantxefaFieldEfaiShift))
 }
 
-// registerFdcantttmcType FDCAN TT Trigger Memory Configuration Register
-type registerFdcantttmcType uint32
+// RegisterFdcantttmcType FDCAN TT Trigger Memory Configuration Register
+type RegisterFdcantttmcType uint32
+
+func (r *RegisterFdcantttmcType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantttmcType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantttmcType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantttmcType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantttmcType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantttmcFieldTmsaShift = 2
@@ -5108,12 +6189,12 @@ const (
 )
 
 // GetTmsa Trigger Memory Start Address
-func (r *registerFdcantttmcType) GetTmsa() uint16 {
+func (r *RegisterFdcantttmcType) GetTmsa() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantttmcFieldTmsaMask) >> RegisterFdcantttmcFieldTmsaShift)
 }
 
 // SetTmsa Trigger Memory Start Address
-func (r *registerFdcantttmcType) SetTmsa(value uint16) {
+func (r *RegisterFdcantttmcType) SetTmsa(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantttmcFieldTmsaMask)|(uint32(value)<<RegisterFdcantttmcFieldTmsaShift))
 }
 
@@ -5123,17 +6204,40 @@ const (
 )
 
 // GetTme Trigger Memory Elements
-func (r *registerFdcantttmcType) GetTme() uint8 {
+func (r *RegisterFdcantttmcType) GetTme() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantttmcFieldTmeMask) >> RegisterFdcantttmcFieldTmeShift)
 }
 
 // SetTme Trigger Memory Elements
-func (r *registerFdcantttmcType) SetTme(value uint8) {
+func (r *RegisterFdcantttmcType) SetTme(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantttmcFieldTmeMask)|(uint32(value)<<RegisterFdcantttmcFieldTmeShift))
 }
 
-// registerFdcanttrmcType FDCAN TT Reference Message Configuration Register
-type registerFdcanttrmcType uint32
+// RegisterFdcanttrmcType FDCAN TT Reference Message Configuration Register
+type RegisterFdcanttrmcType uint32
+
+func (r *RegisterFdcanttrmcType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttrmcType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttrmcType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttrmcType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttrmcType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttrmcFieldRidShift = 0
@@ -5141,12 +6245,12 @@ const (
 )
 
 // GetRid Reference Identifier.
-func (r *registerFdcanttrmcType) GetRid() uint32 {
+func (r *RegisterFdcanttrmcType) GetRid() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttrmcFieldRidMask) >> RegisterFdcanttrmcFieldRidShift)
 }
 
 // SetRid Reference Identifier.
-func (r *registerFdcanttrmcType) SetRid(value uint32) {
+func (r *RegisterFdcanttrmcType) SetRid(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttrmcFieldRidMask)|(uint32(value)<<RegisterFdcanttrmcFieldRidShift))
 }
 
@@ -5156,12 +6260,12 @@ const (
 )
 
 // GetXtd Extended Identifier
-func (r *registerFdcanttrmcType) GetXtd() bool {
+func (r *RegisterFdcanttrmcType) GetXtd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttrmcFieldXtdMask) != 0
 }
 
 // SetXtd Extended Identifier
-func (r *registerFdcanttrmcType) SetXtd(value bool) {
+func (r *RegisterFdcanttrmcType) SetXtd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttrmcFieldXtdMask)
 	} else {
@@ -5175,12 +6279,12 @@ const (
 )
 
 // GetRmps Reference Message Payload Select
-func (r *registerFdcanttrmcType) GetRmps() bool {
+func (r *RegisterFdcanttrmcType) GetRmps() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttrmcFieldRmpsMask) != 0
 }
 
 // SetRmps Reference Message Payload Select
-func (r *registerFdcanttrmcType) SetRmps(value bool) {
+func (r *RegisterFdcanttrmcType) SetRmps(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttrmcFieldRmpsMask)
 	} else {
@@ -5188,8 +6292,31 @@ func (r *registerFdcanttrmcType) SetRmps(value bool) {
 	}
 }
 
-// registerFdcanttocfType FDCAN TT Operation Configuration Register
-type registerFdcanttocfType uint32
+// RegisterFdcanttocfType FDCAN TT Operation Configuration Register
+type RegisterFdcanttocfType uint32
+
+func (r *RegisterFdcanttocfType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttocfType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttocfType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttocfType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttocfType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttocfFieldOmShift = 0
@@ -5197,12 +6324,12 @@ const (
 )
 
 // GetOm Operation Mode
-func (r *registerFdcanttocfType) GetOm() uint8 {
+func (r *RegisterFdcanttocfType) GetOm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocfFieldOmMask) >> RegisterFdcanttocfFieldOmShift)
 }
 
 // SetOm Operation Mode
-func (r *registerFdcanttocfType) SetOm(value uint8) {
+func (r *RegisterFdcanttocfType) SetOm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttocfFieldOmMask)|(uint32(value)<<RegisterFdcanttocfFieldOmShift))
 }
 
@@ -5212,12 +6339,12 @@ const (
 )
 
 // GetGen Gap Enable
-func (r *registerFdcanttocfType) GetGen() bool {
+func (r *RegisterFdcanttocfType) GetGen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocfFieldGenMask) != 0
 }
 
 // SetGen Gap Enable
-func (r *registerFdcanttocfType) SetGen(value bool) {
+func (r *RegisterFdcanttocfType) SetGen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocfFieldGenMask)
 	} else {
@@ -5231,12 +6358,12 @@ const (
 )
 
 // GetTm Time Master
-func (r *registerFdcanttocfType) GetTm() bool {
+func (r *RegisterFdcanttocfType) GetTm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocfFieldTmMask) != 0
 }
 
 // SetTm Time Master
-func (r *registerFdcanttocfType) SetTm(value bool) {
+func (r *RegisterFdcanttocfType) SetTm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocfFieldTmMask)
 	} else {
@@ -5250,12 +6377,12 @@ const (
 )
 
 // GetLdsdl LD of Synchronization Deviation Limit
-func (r *registerFdcanttocfType) GetLdsdl() uint8 {
+func (r *RegisterFdcanttocfType) GetLdsdl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocfFieldLdsdlMask) >> RegisterFdcanttocfFieldLdsdlShift)
 }
 
 // SetLdsdl LD of Synchronization Deviation Limit
-func (r *registerFdcanttocfType) SetLdsdl(value uint8) {
+func (r *RegisterFdcanttocfType) SetLdsdl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttocfFieldLdsdlMask)|(uint32(value)<<RegisterFdcanttocfFieldLdsdlShift))
 }
 
@@ -5265,12 +6392,12 @@ const (
 )
 
 // GetIrto Initial Reference Trigger Offset
-func (r *registerFdcanttocfType) GetIrto() uint8 {
+func (r *RegisterFdcanttocfType) GetIrto() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocfFieldIrtoMask) >> RegisterFdcanttocfFieldIrtoShift)
 }
 
 // SetIrto Initial Reference Trigger Offset
-func (r *registerFdcanttocfType) SetIrto(value uint8) {
+func (r *RegisterFdcanttocfType) SetIrto(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttocfFieldIrtoMask)|(uint32(value)<<RegisterFdcanttocfFieldIrtoShift))
 }
 
@@ -5280,12 +6407,12 @@ const (
 )
 
 // GetEecs Enable External Clock Synchronization
-func (r *registerFdcanttocfType) GetEecs() bool {
+func (r *RegisterFdcanttocfType) GetEecs() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocfFieldEecsMask) != 0
 }
 
 // SetEecs Enable External Clock Synchronization
-func (r *registerFdcanttocfType) SetEecs(value bool) {
+func (r *RegisterFdcanttocfType) SetEecs(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocfFieldEecsMask)
 	} else {
@@ -5299,12 +6426,12 @@ const (
 )
 
 // GetAwl Application Watchdog Limit
-func (r *registerFdcanttocfType) GetAwl() uint8 {
+func (r *RegisterFdcanttocfType) GetAwl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocfFieldAwlMask) >> RegisterFdcanttocfFieldAwlShift)
 }
 
 // SetAwl Application Watchdog Limit
-func (r *registerFdcanttocfType) SetAwl(value uint8) {
+func (r *RegisterFdcanttocfType) SetAwl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttocfFieldAwlMask)|(uint32(value)<<RegisterFdcanttocfFieldAwlShift))
 }
 
@@ -5314,12 +6441,12 @@ const (
 )
 
 // GetEgtf Enable Global Time Filtering
-func (r *registerFdcanttocfType) GetEgtf() bool {
+func (r *RegisterFdcanttocfType) GetEgtf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocfFieldEgtfMask) != 0
 }
 
 // SetEgtf Enable Global Time Filtering
-func (r *registerFdcanttocfType) SetEgtf(value bool) {
+func (r *RegisterFdcanttocfType) SetEgtf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocfFieldEgtfMask)
 	} else {
@@ -5333,12 +6460,12 @@ const (
 )
 
 // GetEcc Enable Clock Calibration
-func (r *registerFdcanttocfType) GetEcc() bool {
+func (r *RegisterFdcanttocfType) GetEcc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocfFieldEccMask) != 0
 }
 
 // SetEcc Enable Clock Calibration
-func (r *registerFdcanttocfType) SetEcc(value bool) {
+func (r *RegisterFdcanttocfType) SetEcc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocfFieldEccMask)
 	} else {
@@ -5352,12 +6479,12 @@ const (
 )
 
 // GetEvtp Event Trigger Polarity
-func (r *registerFdcanttocfType) GetEvtp() bool {
+func (r *RegisterFdcanttocfType) GetEvtp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocfFieldEvtpMask) != 0
 }
 
 // SetEvtp Event Trigger Polarity
-func (r *registerFdcanttocfType) SetEvtp(value bool) {
+func (r *RegisterFdcanttocfType) SetEvtp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocfFieldEvtpMask)
 	} else {
@@ -5365,8 +6492,31 @@ func (r *registerFdcanttocfType) SetEvtp(value bool) {
 	}
 }
 
-// registerFdcanttmlmType FDCAN TT Matrix Limits Register
-type registerFdcanttmlmType uint32
+// RegisterFdcanttmlmType FDCAN TT Matrix Limits Register
+type RegisterFdcanttmlmType uint32
+
+func (r *RegisterFdcanttmlmType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttmlmType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttmlmType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttmlmType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttmlmType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttmlmFieldCcmShift = 0
@@ -5374,12 +6524,12 @@ const (
 )
 
 // GetCcm Cycle Count Max
-func (r *registerFdcanttmlmType) GetCcm() uint8 {
+func (r *RegisterFdcanttmlmType) GetCcm() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttmlmFieldCcmMask) >> RegisterFdcanttmlmFieldCcmShift)
 }
 
 // SetCcm Cycle Count Max
-func (r *registerFdcanttmlmType) SetCcm(value uint8) {
+func (r *RegisterFdcanttmlmType) SetCcm(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttmlmFieldCcmMask)|(uint32(value)<<RegisterFdcanttmlmFieldCcmShift))
 }
 
@@ -5389,12 +6539,12 @@ const (
 )
 
 // GetCss Cycle Start Synchronization
-func (r *registerFdcanttmlmType) GetCss() uint8 {
+func (r *RegisterFdcanttmlmType) GetCss() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttmlmFieldCssMask) >> RegisterFdcanttmlmFieldCssShift)
 }
 
 // SetCss Cycle Start Synchronization
-func (r *registerFdcanttmlmType) SetCss(value uint8) {
+func (r *RegisterFdcanttmlmType) SetCss(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttmlmFieldCssMask)|(uint32(value)<<RegisterFdcanttmlmFieldCssShift))
 }
 
@@ -5404,12 +6554,12 @@ const (
 )
 
 // GetTxew Tx Enable Window
-func (r *registerFdcanttmlmType) GetTxew() uint8 {
+func (r *RegisterFdcanttmlmType) GetTxew() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttmlmFieldTxewMask) >> RegisterFdcanttmlmFieldTxewShift)
 }
 
 // SetTxew Tx Enable Window
-func (r *registerFdcanttmlmType) SetTxew(value uint8) {
+func (r *RegisterFdcanttmlmType) SetTxew(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttmlmFieldTxewMask)|(uint32(value)<<RegisterFdcanttmlmFieldTxewShift))
 }
 
@@ -5419,17 +6569,40 @@ const (
 )
 
 // GetEntt Expected Number of Tx Triggers
-func (r *registerFdcanttmlmType) GetEntt() uint16 {
+func (r *RegisterFdcanttmlmType) GetEntt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttmlmFieldEnttMask) >> RegisterFdcanttmlmFieldEnttShift)
 }
 
 // SetEntt Expected Number of Tx Triggers
-func (r *registerFdcanttmlmType) SetEntt(value uint16) {
+func (r *RegisterFdcanttmlmType) SetEntt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttmlmFieldEnttMask)|(uint32(value)<<RegisterFdcanttmlmFieldEnttShift))
 }
 
-// registerFdcanturcfType FDCAN TUR Configuration Register
-type registerFdcanturcfType uint32
+// RegisterFdcanturcfType FDCAN TUR Configuration Register
+type RegisterFdcanturcfType uint32
+
+func (r *RegisterFdcanturcfType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanturcfType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanturcfType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanturcfType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanturcfType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanturcfFieldNclShift = 0
@@ -5437,12 +6610,12 @@ const (
 )
 
 // GetNcl Numerator Configuration Low.
-func (r *registerFdcanturcfType) GetNcl() uint16 {
+func (r *RegisterFdcanturcfType) GetNcl() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanturcfFieldNclMask) >> RegisterFdcanturcfFieldNclShift)
 }
 
 // SetNcl Numerator Configuration Low.
-func (r *registerFdcanturcfType) SetNcl(value uint16) {
+func (r *RegisterFdcanturcfType) SetNcl(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanturcfFieldNclMask)|(uint32(value)<<RegisterFdcanturcfFieldNclShift))
 }
 
@@ -5452,12 +6625,12 @@ const (
 )
 
 // GetDc Denominator Configuration.
-func (r *registerFdcanturcfType) GetDc() uint16 {
+func (r *RegisterFdcanturcfType) GetDc() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanturcfFieldDcMask) >> RegisterFdcanturcfFieldDcShift)
 }
 
 // SetDc Denominator Configuration.
-func (r *registerFdcanturcfType) SetDc(value uint16) {
+func (r *RegisterFdcanturcfType) SetDc(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanturcfFieldDcMask)|(uint32(value)<<RegisterFdcanturcfFieldDcShift))
 }
 
@@ -5467,12 +6640,12 @@ const (
 )
 
 // GetElt Enable Local Time
-func (r *registerFdcanturcfType) GetElt() bool {
+func (r *RegisterFdcanturcfType) GetElt() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanturcfFieldEltMask) != 0
 }
 
 // SetElt Enable Local Time
-func (r *registerFdcanturcfType) SetElt(value bool) {
+func (r *RegisterFdcanturcfType) SetElt(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanturcfFieldEltMask)
 	} else {
@@ -5480,8 +6653,31 @@ func (r *registerFdcanturcfType) SetElt(value bool) {
 	}
 }
 
-// registerFdcanttocnType FDCAN TT Operation Control Register
-type registerFdcanttocnType uint32
+// RegisterFdcanttocnType FDCAN TT Operation Control Register
+type RegisterFdcanttocnType uint32
+
+func (r *RegisterFdcanttocnType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttocnType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttocnType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttocnType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttocnType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttocnFieldSgtShift = 0
@@ -5489,12 +6685,12 @@ const (
 )
 
 // GetSgt Set Global time
-func (r *registerFdcanttocnType) GetSgt() bool {
+func (r *RegisterFdcanttocnType) GetSgt() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldSgtMask) != 0
 }
 
 // SetSgt Set Global time
-func (r *registerFdcanttocnType) SetSgt(value bool) {
+func (r *RegisterFdcanttocnType) SetSgt(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldSgtMask)
 	} else {
@@ -5508,12 +6704,12 @@ const (
 )
 
 // GetEcs External Clock Synchronization
-func (r *registerFdcanttocnType) GetEcs() bool {
+func (r *RegisterFdcanttocnType) GetEcs() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldEcsMask) != 0
 }
 
 // SetEcs External Clock Synchronization
-func (r *registerFdcanttocnType) SetEcs(value bool) {
+func (r *RegisterFdcanttocnType) SetEcs(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldEcsMask)
 	} else {
@@ -5527,12 +6723,12 @@ const (
 )
 
 // GetSwp Stop Watch Polarity
-func (r *registerFdcanttocnType) GetSwp() bool {
+func (r *RegisterFdcanttocnType) GetSwp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldSwpMask) != 0
 }
 
 // SetSwp Stop Watch Polarity
-func (r *registerFdcanttocnType) SetSwp(value bool) {
+func (r *RegisterFdcanttocnType) SetSwp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldSwpMask)
 	} else {
@@ -5546,12 +6742,12 @@ const (
 )
 
 // GetSws Stop Watch Source.
-func (r *registerFdcanttocnType) GetSws() uint8 {
+func (r *RegisterFdcanttocnType) GetSws() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldSwsMask) >> RegisterFdcanttocnFieldSwsShift)
 }
 
 // SetSws Stop Watch Source.
-func (r *registerFdcanttocnType) SetSws(value uint8) {
+func (r *RegisterFdcanttocnType) SetSws(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttocnFieldSwsMask)|(uint32(value)<<RegisterFdcanttocnFieldSwsShift))
 }
 
@@ -5561,12 +6757,12 @@ const (
 )
 
 // GetRtie Register Time Mark Interrupt Pulse Enable
-func (r *registerFdcanttocnType) GetRtie() bool {
+func (r *RegisterFdcanttocnType) GetRtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldRtieMask) != 0
 }
 
 // SetRtie Register Time Mark Interrupt Pulse Enable
-func (r *registerFdcanttocnType) SetRtie(value bool) {
+func (r *RegisterFdcanttocnType) SetRtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldRtieMask)
 	} else {
@@ -5580,12 +6776,12 @@ const (
 )
 
 // GetTmc Register Time Mark Compare
-func (r *registerFdcanttocnType) GetTmc() uint8 {
+func (r *RegisterFdcanttocnType) GetTmc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldTmcMask) >> RegisterFdcanttocnFieldTmcShift)
 }
 
 // SetTmc Register Time Mark Compare
-func (r *registerFdcanttocnType) SetTmc(value uint8) {
+func (r *RegisterFdcanttocnType) SetTmc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttocnFieldTmcMask)|(uint32(value)<<RegisterFdcanttocnFieldTmcShift))
 }
 
@@ -5595,12 +6791,12 @@ const (
 )
 
 // GetTtie Trigger Time Mark Interrupt Pulse Enable
-func (r *registerFdcanttocnType) GetTtie() bool {
+func (r *RegisterFdcanttocnType) GetTtie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldTtieMask) != 0
 }
 
 // SetTtie Trigger Time Mark Interrupt Pulse Enable
-func (r *registerFdcanttocnType) SetTtie(value bool) {
+func (r *RegisterFdcanttocnType) SetTtie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldTtieMask)
 	} else {
@@ -5614,12 +6810,12 @@ const (
 )
 
 // GetGcs Gap Control Select
-func (r *registerFdcanttocnType) GetGcs() bool {
+func (r *RegisterFdcanttocnType) GetGcs() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldGcsMask) != 0
 }
 
 // SetGcs Gap Control Select
-func (r *registerFdcanttocnType) SetGcs(value bool) {
+func (r *RegisterFdcanttocnType) SetGcs(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldGcsMask)
 	} else {
@@ -5633,12 +6829,12 @@ const (
 )
 
 // GetFgp Finish Gap.
-func (r *registerFdcanttocnType) GetFgp() bool {
+func (r *RegisterFdcanttocnType) GetFgp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldFgpMask) != 0
 }
 
 // SetFgp Finish Gap.
-func (r *registerFdcanttocnType) SetFgp(value bool) {
+func (r *RegisterFdcanttocnType) SetFgp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldFgpMask)
 	} else {
@@ -5652,12 +6848,12 @@ const (
 )
 
 // GetTmg Time Mark Gap
-func (r *registerFdcanttocnType) GetTmg() bool {
+func (r *RegisterFdcanttocnType) GetTmg() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldTmgMask) != 0
 }
 
 // SetTmg Time Mark Gap
-func (r *registerFdcanttocnType) SetTmg(value bool) {
+func (r *RegisterFdcanttocnType) SetTmg(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldTmgMask)
 	} else {
@@ -5671,12 +6867,12 @@ const (
 )
 
 // GetNig Next is Gap
-func (r *registerFdcanttocnType) GetNig() bool {
+func (r *RegisterFdcanttocnType) GetNig() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldNigMask) != 0
 }
 
 // SetNig Next is Gap
-func (r *registerFdcanttocnType) SetNig(value bool) {
+func (r *RegisterFdcanttocnType) SetNig(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldNigMask)
 	} else {
@@ -5690,12 +6886,12 @@ const (
 )
 
 // GetEscn External Synchronization Control
-func (r *registerFdcanttocnType) GetEscn() bool {
+func (r *RegisterFdcanttocnType) GetEscn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldEscnMask) != 0
 }
 
 // SetEscn External Synchronization Control
-func (r *registerFdcanttocnType) SetEscn(value bool) {
+func (r *RegisterFdcanttocnType) SetEscn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldEscnMask)
 	} else {
@@ -5709,12 +6905,12 @@ const (
 )
 
 // GetLckc TT Operation Control Register Locked
-func (r *registerFdcanttocnType) GetLckc() bool {
+func (r *RegisterFdcanttocnType) GetLckc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttocnFieldLckcMask) != 0
 }
 
 // SetLckc TT Operation Control Register Locked
-func (r *registerFdcanttocnType) SetLckc(value bool) {
+func (r *RegisterFdcanttocnType) SetLckc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttocnFieldLckcMask)
 	} else {
@@ -5722,8 +6918,31 @@ func (r *registerFdcanttocnType) SetLckc(value bool) {
 	}
 }
 
-// registerCanttgtpType FDCAN TT Global Time Preset Register
-type registerCanttgtpType uint32
+// RegisterCanttgtpType FDCAN TT Global Time Preset Register
+type RegisterCanttgtpType uint32
+
+func (r *RegisterCanttgtpType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCanttgtpType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCanttgtpType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCanttgtpType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCanttgtpType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCanttgtpFieldNclShift = 0
@@ -5731,12 +6950,12 @@ const (
 )
 
 // GetNcl Time Preset
-func (r *registerCanttgtpType) GetNcl() uint16 {
+func (r *RegisterCanttgtpType) GetNcl() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCanttgtpFieldNclMask) >> RegisterCanttgtpFieldNclShift)
 }
 
 // SetNcl Time Preset
-func (r *registerCanttgtpType) SetNcl(value uint16) {
+func (r *RegisterCanttgtpType) SetNcl(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCanttgtpFieldNclMask)|(uint32(value)<<RegisterCanttgtpFieldNclShift))
 }
 
@@ -5746,17 +6965,40 @@ const (
 )
 
 // GetCtp Cycle Time Target Phase
-func (r *registerCanttgtpType) GetCtp() uint16 {
+func (r *RegisterCanttgtpType) GetCtp() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCanttgtpFieldCtpMask) >> RegisterCanttgtpFieldCtpShift)
 }
 
 // SetCtp Cycle Time Target Phase
-func (r *registerCanttgtpType) SetCtp(value uint16) {
+func (r *RegisterCanttgtpType) SetCtp(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCanttgtpFieldCtpMask)|(uint32(value)<<RegisterCanttgtpFieldCtpShift))
 }
 
-// registerFdcantttmkType FDCAN TT Time Mark Register
-type registerFdcantttmkType uint32
+// RegisterFdcantttmkType FDCAN TT Time Mark Register
+type RegisterFdcantttmkType uint32
+
+func (r *RegisterFdcantttmkType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantttmkType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantttmkType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantttmkType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantttmkType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantttmkFieldTmShift = 0
@@ -5764,12 +7006,12 @@ const (
 )
 
 // GetTm Time Mark
-func (r *registerFdcantttmkType) GetTm() uint16 {
+func (r *RegisterFdcantttmkType) GetTm() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantttmkFieldTmMask) >> RegisterFdcantttmkFieldTmShift)
 }
 
 // SetTm Time Mark
-func (r *registerFdcantttmkType) SetTm(value uint16) {
+func (r *RegisterFdcantttmkType) SetTm(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantttmkFieldTmMask)|(uint32(value)<<RegisterFdcantttmkFieldTmShift))
 }
 
@@ -5779,12 +7021,12 @@ const (
 )
 
 // GetTicc Time Mark Cycle Code
-func (r *registerFdcantttmkType) GetTicc() uint8 {
+func (r *RegisterFdcantttmkType) GetTicc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantttmkFieldTiccMask) >> RegisterFdcantttmkFieldTiccShift)
 }
 
 // SetTicc Time Mark Cycle Code
-func (r *registerFdcantttmkType) SetTicc(value uint8) {
+func (r *RegisterFdcantttmkType) SetTicc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantttmkFieldTiccMask)|(uint32(value)<<RegisterFdcantttmkFieldTiccShift))
 }
 
@@ -5794,12 +7036,12 @@ const (
 )
 
 // GetLckm TT Time Mark Register Locked
-func (r *registerFdcantttmkType) GetLckm() bool {
+func (r *RegisterFdcantttmkType) GetLckm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcantttmkFieldLckmMask) != 0
 }
 
 // SetLckm TT Time Mark Register Locked
-func (r *registerFdcantttmkType) SetLckm(value bool) {
+func (r *RegisterFdcantttmkType) SetLckm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcantttmkFieldLckmMask)
 	} else {
@@ -5807,8 +7049,31 @@ func (r *registerFdcantttmkType) SetLckm(value bool) {
 	}
 }
 
-// registerFdcanttirType FDCAN TT Interrupt Register
-type registerFdcanttirType uint32
+// RegisterFdcanttirType FDCAN TT Interrupt Register
+type RegisterFdcanttirType uint32
+
+func (r *RegisterFdcanttirType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttirType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttirType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttirType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttirType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttirFieldSbcShift = 0
@@ -5816,12 +7081,12 @@ const (
 )
 
 // GetSbc Start of Basic Cycle
-func (r *registerFdcanttirType) GetSbc() bool {
+func (r *RegisterFdcanttirType) GetSbc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldSbcMask) != 0
 }
 
 // SetSbc Start of Basic Cycle
-func (r *registerFdcanttirType) SetSbc(value bool) {
+func (r *RegisterFdcanttirType) SetSbc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldSbcMask)
 	} else {
@@ -5835,12 +7100,12 @@ const (
 )
 
 // GetSmc Start of Matrix Cycle
-func (r *registerFdcanttirType) GetSmc() bool {
+func (r *RegisterFdcanttirType) GetSmc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldSmcMask) != 0
 }
 
 // SetSmc Start of Matrix Cycle
-func (r *registerFdcanttirType) SetSmc(value bool) {
+func (r *RegisterFdcanttirType) SetSmc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldSmcMask)
 	} else {
@@ -5854,12 +7119,12 @@ const (
 )
 
 // GetCsm Change of Synchronization Mode
-func (r *registerFdcanttirType) GetCsm() bool {
+func (r *RegisterFdcanttirType) GetCsm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldCsmMask) != 0
 }
 
 // SetCsm Change of Synchronization Mode
-func (r *registerFdcanttirType) SetCsm(value bool) {
+func (r *RegisterFdcanttirType) SetCsm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldCsmMask)
 	} else {
@@ -5873,12 +7138,12 @@ const (
 )
 
 // GetSog Start of Gap
-func (r *registerFdcanttirType) GetSog() bool {
+func (r *RegisterFdcanttirType) GetSog() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldSogMask) != 0
 }
 
 // SetSog Start of Gap
-func (r *registerFdcanttirType) SetSog(value bool) {
+func (r *RegisterFdcanttirType) SetSog(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldSogMask)
 	} else {
@@ -5892,12 +7157,12 @@ const (
 )
 
 // GetRtmi Register Time Mark Interrupt.
-func (r *registerFdcanttirType) GetRtmi() bool {
+func (r *RegisterFdcanttirType) GetRtmi() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldRtmiMask) != 0
 }
 
 // SetRtmi Register Time Mark Interrupt.
-func (r *registerFdcanttirType) SetRtmi(value bool) {
+func (r *RegisterFdcanttirType) SetRtmi(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldRtmiMask)
 	} else {
@@ -5911,12 +7176,12 @@ const (
 )
 
 // GetTtmi Trigger Time Mark Event Internal
-func (r *registerFdcanttirType) GetTtmi() bool {
+func (r *RegisterFdcanttirType) GetTtmi() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldTtmiMask) != 0
 }
 
 // SetTtmi Trigger Time Mark Event Internal
-func (r *registerFdcanttirType) SetTtmi(value bool) {
+func (r *RegisterFdcanttirType) SetTtmi(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldTtmiMask)
 	} else {
@@ -5930,12 +7195,12 @@ const (
 )
 
 // GetSwe Stop Watch Event
-func (r *registerFdcanttirType) GetSwe() bool {
+func (r *RegisterFdcanttirType) GetSwe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldSweMask) != 0
 }
 
 // SetSwe Stop Watch Event
-func (r *registerFdcanttirType) SetSwe(value bool) {
+func (r *RegisterFdcanttirType) SetSwe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldSweMask)
 	} else {
@@ -5949,12 +7214,12 @@ const (
 )
 
 // GetGtw Global Time Wrap
-func (r *registerFdcanttirType) GetGtw() bool {
+func (r *RegisterFdcanttirType) GetGtw() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldGtwMask) != 0
 }
 
 // SetGtw Global Time Wrap
-func (r *registerFdcanttirType) SetGtw(value bool) {
+func (r *RegisterFdcanttirType) SetGtw(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldGtwMask)
 	} else {
@@ -5968,12 +7233,12 @@ const (
 )
 
 // GetGtd Global Time Discontinuity
-func (r *registerFdcanttirType) GetGtd() bool {
+func (r *RegisterFdcanttirType) GetGtd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldGtdMask) != 0
 }
 
 // SetGtd Global Time Discontinuity
-func (r *registerFdcanttirType) SetGtd(value bool) {
+func (r *RegisterFdcanttirType) SetGtd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldGtdMask)
 	} else {
@@ -5987,12 +7252,12 @@ const (
 )
 
 // GetGte Global Time Error
-func (r *registerFdcanttirType) GetGte() bool {
+func (r *RegisterFdcanttirType) GetGte() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldGteMask) != 0
 }
 
 // SetGte Global Time Error
-func (r *registerFdcanttirType) SetGte(value bool) {
+func (r *RegisterFdcanttirType) SetGte(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldGteMask)
 	} else {
@@ -6006,12 +7271,12 @@ const (
 )
 
 // GetTxu Tx Count Underflow
-func (r *registerFdcanttirType) GetTxu() bool {
+func (r *RegisterFdcanttirType) GetTxu() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldTxuMask) != 0
 }
 
 // SetTxu Tx Count Underflow
-func (r *registerFdcanttirType) SetTxu(value bool) {
+func (r *RegisterFdcanttirType) SetTxu(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldTxuMask)
 	} else {
@@ -6025,12 +7290,12 @@ const (
 )
 
 // GetTxo Tx Count Overflow
-func (r *registerFdcanttirType) GetTxo() bool {
+func (r *RegisterFdcanttirType) GetTxo() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldTxoMask) != 0
 }
 
 // SetTxo Tx Count Overflow
-func (r *registerFdcanttirType) SetTxo(value bool) {
+func (r *RegisterFdcanttirType) SetTxo(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldTxoMask)
 	} else {
@@ -6044,12 +7309,12 @@ const (
 )
 
 // GetSe1 Scheduling Error 1
-func (r *registerFdcanttirType) GetSe1() bool {
+func (r *RegisterFdcanttirType) GetSe1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldSe1Mask) != 0
 }
 
 // SetSe1 Scheduling Error 1
-func (r *registerFdcanttirType) SetSe1(value bool) {
+func (r *RegisterFdcanttirType) SetSe1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldSe1Mask)
 	} else {
@@ -6063,12 +7328,12 @@ const (
 )
 
 // GetSe2 Scheduling Error 2
-func (r *registerFdcanttirType) GetSe2() bool {
+func (r *RegisterFdcanttirType) GetSe2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldSe2Mask) != 0
 }
 
 // SetSe2 Scheduling Error 2
-func (r *registerFdcanttirType) SetSe2(value bool) {
+func (r *RegisterFdcanttirType) SetSe2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldSe2Mask)
 	} else {
@@ -6082,12 +7347,12 @@ const (
 )
 
 // GetElc Error Level Changed.
-func (r *registerFdcanttirType) GetElc() bool {
+func (r *RegisterFdcanttirType) GetElc() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldElcMask) != 0
 }
 
 // SetElc Error Level Changed.
-func (r *registerFdcanttirType) SetElc(value bool) {
+func (r *RegisterFdcanttirType) SetElc(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldElcMask)
 	} else {
@@ -6101,12 +7366,12 @@ const (
 )
 
 // GetIwtg Initialization Watch Trigger
-func (r *registerFdcanttirType) GetIwtg() bool {
+func (r *RegisterFdcanttirType) GetIwtg() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldIwtgMask) != 0
 }
 
 // SetIwtg Initialization Watch Trigger
-func (r *registerFdcanttirType) SetIwtg(value bool) {
+func (r *RegisterFdcanttirType) SetIwtg(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldIwtgMask)
 	} else {
@@ -6120,12 +7385,12 @@ const (
 )
 
 // GetWt Watch Trigger
-func (r *registerFdcanttirType) GetWt() bool {
+func (r *RegisterFdcanttirType) GetWt() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldWtMask) != 0
 }
 
 // SetWt Watch Trigger
-func (r *registerFdcanttirType) SetWt(value bool) {
+func (r *RegisterFdcanttirType) SetWt(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldWtMask)
 	} else {
@@ -6139,12 +7404,12 @@ const (
 )
 
 // GetAw Application Watchdog
-func (r *registerFdcanttirType) GetAw() bool {
+func (r *RegisterFdcanttirType) GetAw() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldAwMask) != 0
 }
 
 // SetAw Application Watchdog
-func (r *registerFdcanttirType) SetAw(value bool) {
+func (r *RegisterFdcanttirType) SetAw(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldAwMask)
 	} else {
@@ -6158,12 +7423,12 @@ const (
 )
 
 // GetCer Configuration Error
-func (r *registerFdcanttirType) GetCer() bool {
+func (r *RegisterFdcanttirType) GetCer() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttirFieldCerMask) != 0
 }
 
 // SetCer Configuration Error
-func (r *registerFdcanttirType) SetCer(value bool) {
+func (r *RegisterFdcanttirType) SetCer(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttirFieldCerMask)
 	} else {
@@ -6171,8 +7436,31 @@ func (r *registerFdcanttirType) SetCer(value bool) {
 	}
 }
 
-// registerFdcanttieType FDCAN TT Interrupt Enable Register
-type registerFdcanttieType uint32
+// RegisterFdcanttieType FDCAN TT Interrupt Enable Register
+type RegisterFdcanttieType uint32
+
+func (r *RegisterFdcanttieType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttieType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttieType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttieType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttieType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttieFieldSbceShift = 0
@@ -6180,12 +7468,12 @@ const (
 )
 
 // GetSbce Start of Basic Cycle Interrupt Enable
-func (r *registerFdcanttieType) GetSbce() bool {
+func (r *RegisterFdcanttieType) GetSbce() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldSbceMask) != 0
 }
 
 // SetSbce Start of Basic Cycle Interrupt Enable
-func (r *registerFdcanttieType) SetSbce(value bool) {
+func (r *RegisterFdcanttieType) SetSbce(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldSbceMask)
 	} else {
@@ -6199,12 +7487,12 @@ const (
 )
 
 // GetSmce Start of Matrix Cycle Interrupt Enable
-func (r *registerFdcanttieType) GetSmce() bool {
+func (r *RegisterFdcanttieType) GetSmce() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldSmceMask) != 0
 }
 
 // SetSmce Start of Matrix Cycle Interrupt Enable
-func (r *registerFdcanttieType) SetSmce(value bool) {
+func (r *RegisterFdcanttieType) SetSmce(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldSmceMask)
 	} else {
@@ -6218,12 +7506,12 @@ const (
 )
 
 // GetCsme Change of Synchronization Mode Interrupt Enable
-func (r *registerFdcanttieType) GetCsme() bool {
+func (r *RegisterFdcanttieType) GetCsme() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldCsmeMask) != 0
 }
 
 // SetCsme Change of Synchronization Mode Interrupt Enable
-func (r *registerFdcanttieType) SetCsme(value bool) {
+func (r *RegisterFdcanttieType) SetCsme(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldCsmeMask)
 	} else {
@@ -6237,12 +7525,12 @@ const (
 )
 
 // GetSoge Start of Gap Interrupt Enable
-func (r *registerFdcanttieType) GetSoge() bool {
+func (r *RegisterFdcanttieType) GetSoge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldSogeMask) != 0
 }
 
 // SetSoge Start of Gap Interrupt Enable
-func (r *registerFdcanttieType) SetSoge(value bool) {
+func (r *RegisterFdcanttieType) SetSoge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldSogeMask)
 	} else {
@@ -6256,12 +7544,12 @@ const (
 )
 
 // GetRtmie Register Time Mark Interrupt Enable
-func (r *registerFdcanttieType) GetRtmie() bool {
+func (r *RegisterFdcanttieType) GetRtmie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldRtmieMask) != 0
 }
 
 // SetRtmie Register Time Mark Interrupt Enable
-func (r *registerFdcanttieType) SetRtmie(value bool) {
+func (r *RegisterFdcanttieType) SetRtmie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldRtmieMask)
 	} else {
@@ -6275,12 +7563,12 @@ const (
 )
 
 // GetTtmie Trigger Time Mark Event Internal Interrupt Enable
-func (r *registerFdcanttieType) GetTtmie() bool {
+func (r *RegisterFdcanttieType) GetTtmie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldTtmieMask) != 0
 }
 
 // SetTtmie Trigger Time Mark Event Internal Interrupt Enable
-func (r *registerFdcanttieType) SetTtmie(value bool) {
+func (r *RegisterFdcanttieType) SetTtmie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldTtmieMask)
 	} else {
@@ -6294,12 +7582,12 @@ const (
 )
 
 // GetSwee Stop Watch Event Interrupt Enable
-func (r *registerFdcanttieType) GetSwee() bool {
+func (r *RegisterFdcanttieType) GetSwee() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldSweeMask) != 0
 }
 
 // SetSwee Stop Watch Event Interrupt Enable
-func (r *registerFdcanttieType) SetSwee(value bool) {
+func (r *RegisterFdcanttieType) SetSwee(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldSweeMask)
 	} else {
@@ -6313,12 +7601,12 @@ const (
 )
 
 // GetGtwe Global Time Wrap Interrupt Enable
-func (r *registerFdcanttieType) GetGtwe() bool {
+func (r *RegisterFdcanttieType) GetGtwe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldGtweMask) != 0
 }
 
 // SetGtwe Global Time Wrap Interrupt Enable
-func (r *registerFdcanttieType) SetGtwe(value bool) {
+func (r *RegisterFdcanttieType) SetGtwe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldGtweMask)
 	} else {
@@ -6332,12 +7620,12 @@ const (
 )
 
 // GetGtde Global Time Discontinuity Interrupt Enable
-func (r *registerFdcanttieType) GetGtde() bool {
+func (r *RegisterFdcanttieType) GetGtde() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldGtdeMask) != 0
 }
 
 // SetGtde Global Time Discontinuity Interrupt Enable
-func (r *registerFdcanttieType) SetGtde(value bool) {
+func (r *RegisterFdcanttieType) SetGtde(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldGtdeMask)
 	} else {
@@ -6351,12 +7639,12 @@ const (
 )
 
 // GetGtee Global Time Error Interrupt Enable
-func (r *registerFdcanttieType) GetGtee() bool {
+func (r *RegisterFdcanttieType) GetGtee() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldGteeMask) != 0
 }
 
 // SetGtee Global Time Error Interrupt Enable
-func (r *registerFdcanttieType) SetGtee(value bool) {
+func (r *RegisterFdcanttieType) SetGtee(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldGteeMask)
 	} else {
@@ -6370,12 +7658,12 @@ const (
 )
 
 // GetTxue Tx Count Underflow Interrupt Enable
-func (r *registerFdcanttieType) GetTxue() bool {
+func (r *RegisterFdcanttieType) GetTxue() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldTxueMask) != 0
 }
 
 // SetTxue Tx Count Underflow Interrupt Enable
-func (r *registerFdcanttieType) SetTxue(value bool) {
+func (r *RegisterFdcanttieType) SetTxue(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldTxueMask)
 	} else {
@@ -6389,12 +7677,12 @@ const (
 )
 
 // GetTxoe Tx Count Overflow Interrupt Enable
-func (r *registerFdcanttieType) GetTxoe() bool {
+func (r *RegisterFdcanttieType) GetTxoe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldTxoeMask) != 0
 }
 
 // SetTxoe Tx Count Overflow Interrupt Enable
-func (r *registerFdcanttieType) SetTxoe(value bool) {
+func (r *RegisterFdcanttieType) SetTxoe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldTxoeMask)
 	} else {
@@ -6408,12 +7696,12 @@ const (
 )
 
 // GetSe1e Scheduling Error 1 Interrupt Enable
-func (r *registerFdcanttieType) GetSe1e() bool {
+func (r *RegisterFdcanttieType) GetSe1e() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldSe1eMask) != 0
 }
 
 // SetSe1e Scheduling Error 1 Interrupt Enable
-func (r *registerFdcanttieType) SetSe1e(value bool) {
+func (r *RegisterFdcanttieType) SetSe1e(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldSe1eMask)
 	} else {
@@ -6427,12 +7715,12 @@ const (
 )
 
 // GetSe2e Scheduling Error 2 Interrupt Enable
-func (r *registerFdcanttieType) GetSe2e() bool {
+func (r *RegisterFdcanttieType) GetSe2e() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldSe2eMask) != 0
 }
 
 // SetSe2e Scheduling Error 2 Interrupt Enable
-func (r *registerFdcanttieType) SetSe2e(value bool) {
+func (r *RegisterFdcanttieType) SetSe2e(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldSe2eMask)
 	} else {
@@ -6446,12 +7734,12 @@ const (
 )
 
 // GetElce Change Error Level Interrupt Enable
-func (r *registerFdcanttieType) GetElce() bool {
+func (r *RegisterFdcanttieType) GetElce() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldElceMask) != 0
 }
 
 // SetElce Change Error Level Interrupt Enable
-func (r *registerFdcanttieType) SetElce(value bool) {
+func (r *RegisterFdcanttieType) SetElce(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldElceMask)
 	} else {
@@ -6465,12 +7753,12 @@ const (
 )
 
 // GetIwtge Initialization Watch Trigger Interrupt Enable
-func (r *registerFdcanttieType) GetIwtge() bool {
+func (r *RegisterFdcanttieType) GetIwtge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldIwtgeMask) != 0
 }
 
 // SetIwtge Initialization Watch Trigger Interrupt Enable
-func (r *registerFdcanttieType) SetIwtge(value bool) {
+func (r *RegisterFdcanttieType) SetIwtge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldIwtgeMask)
 	} else {
@@ -6484,12 +7772,12 @@ const (
 )
 
 // GetWte Watch Trigger Interrupt Enable
-func (r *registerFdcanttieType) GetWte() bool {
+func (r *RegisterFdcanttieType) GetWte() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldWteMask) != 0
 }
 
 // SetWte Watch Trigger Interrupt Enable
-func (r *registerFdcanttieType) SetWte(value bool) {
+func (r *RegisterFdcanttieType) SetWte(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldWteMask)
 	} else {
@@ -6503,12 +7791,12 @@ const (
 )
 
 // GetAwe Application Watchdog Interrupt Enable
-func (r *registerFdcanttieType) GetAwe() bool {
+func (r *RegisterFdcanttieType) GetAwe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldAweMask) != 0
 }
 
 // SetAwe Application Watchdog Interrupt Enable
-func (r *registerFdcanttieType) SetAwe(value bool) {
+func (r *RegisterFdcanttieType) SetAwe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldAweMask)
 	} else {
@@ -6522,12 +7810,12 @@ const (
 )
 
 // GetCere Configuration Error Interrupt Enable
-func (r *registerFdcanttieType) GetCere() bool {
+func (r *RegisterFdcanttieType) GetCere() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttieFieldCereMask) != 0
 }
 
 // SetCere Configuration Error Interrupt Enable
-func (r *registerFdcanttieType) SetCere(value bool) {
+func (r *RegisterFdcanttieType) SetCere(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttieFieldCereMask)
 	} else {
@@ -6535,8 +7823,31 @@ func (r *registerFdcanttieType) SetCere(value bool) {
 	}
 }
 
-// registerFdcanttilsType FDCAN TT Interrupt Line Select Register
-type registerFdcanttilsType uint32
+// RegisterFdcanttilsType FDCAN TT Interrupt Line Select Register
+type RegisterFdcanttilsType uint32
+
+func (r *RegisterFdcanttilsType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttilsType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttilsType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttilsType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttilsType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttilsFieldSbclShift = 0
@@ -6544,12 +7855,12 @@ const (
 )
 
 // GetSbcl Start of Basic Cycle Interrupt Line
-func (r *registerFdcanttilsType) GetSbcl() bool {
+func (r *RegisterFdcanttilsType) GetSbcl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldSbclMask) != 0
 }
 
 // SetSbcl Start of Basic Cycle Interrupt Line
-func (r *registerFdcanttilsType) SetSbcl(value bool) {
+func (r *RegisterFdcanttilsType) SetSbcl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldSbclMask)
 	} else {
@@ -6563,12 +7874,12 @@ const (
 )
 
 // GetSmcl Start of Matrix Cycle Interrupt Line
-func (r *registerFdcanttilsType) GetSmcl() bool {
+func (r *RegisterFdcanttilsType) GetSmcl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldSmclMask) != 0
 }
 
 // SetSmcl Start of Matrix Cycle Interrupt Line
-func (r *registerFdcanttilsType) SetSmcl(value bool) {
+func (r *RegisterFdcanttilsType) SetSmcl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldSmclMask)
 	} else {
@@ -6582,12 +7893,12 @@ const (
 )
 
 // GetCsml Change of Synchronization Mode Interrupt Line
-func (r *registerFdcanttilsType) GetCsml() bool {
+func (r *RegisterFdcanttilsType) GetCsml() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldCsmlMask) != 0
 }
 
 // SetCsml Change of Synchronization Mode Interrupt Line
-func (r *registerFdcanttilsType) SetCsml(value bool) {
+func (r *RegisterFdcanttilsType) SetCsml(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldCsmlMask)
 	} else {
@@ -6601,12 +7912,12 @@ const (
 )
 
 // GetSogl Start of Gap Interrupt Line
-func (r *registerFdcanttilsType) GetSogl() bool {
+func (r *RegisterFdcanttilsType) GetSogl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldSoglMask) != 0
 }
 
 // SetSogl Start of Gap Interrupt Line
-func (r *registerFdcanttilsType) SetSogl(value bool) {
+func (r *RegisterFdcanttilsType) SetSogl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldSoglMask)
 	} else {
@@ -6620,12 +7931,12 @@ const (
 )
 
 // GetRtmil Register Time Mark Interrupt Line
-func (r *registerFdcanttilsType) GetRtmil() bool {
+func (r *RegisterFdcanttilsType) GetRtmil() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldRtmilMask) != 0
 }
 
 // SetRtmil Register Time Mark Interrupt Line
-func (r *registerFdcanttilsType) SetRtmil(value bool) {
+func (r *RegisterFdcanttilsType) SetRtmil(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldRtmilMask)
 	} else {
@@ -6639,12 +7950,12 @@ const (
 )
 
 // GetTtmil Trigger Time Mark Event Internal Interrupt Line
-func (r *registerFdcanttilsType) GetTtmil() bool {
+func (r *RegisterFdcanttilsType) GetTtmil() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldTtmilMask) != 0
 }
 
 // SetTtmil Trigger Time Mark Event Internal Interrupt Line
-func (r *registerFdcanttilsType) SetTtmil(value bool) {
+func (r *RegisterFdcanttilsType) SetTtmil(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldTtmilMask)
 	} else {
@@ -6658,12 +7969,12 @@ const (
 )
 
 // GetSwel Stop Watch Event Interrupt Line
-func (r *registerFdcanttilsType) GetSwel() bool {
+func (r *RegisterFdcanttilsType) GetSwel() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldSwelMask) != 0
 }
 
 // SetSwel Stop Watch Event Interrupt Line
-func (r *registerFdcanttilsType) SetSwel(value bool) {
+func (r *RegisterFdcanttilsType) SetSwel(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldSwelMask)
 	} else {
@@ -6677,12 +7988,12 @@ const (
 )
 
 // GetGtwl Global Time Wrap Interrupt Line
-func (r *registerFdcanttilsType) GetGtwl() bool {
+func (r *RegisterFdcanttilsType) GetGtwl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldGtwlMask) != 0
 }
 
 // SetGtwl Global Time Wrap Interrupt Line
-func (r *registerFdcanttilsType) SetGtwl(value bool) {
+func (r *RegisterFdcanttilsType) SetGtwl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldGtwlMask)
 	} else {
@@ -6696,12 +8007,12 @@ const (
 )
 
 // GetGtdl Global Time Discontinuity Interrupt Line
-func (r *registerFdcanttilsType) GetGtdl() bool {
+func (r *RegisterFdcanttilsType) GetGtdl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldGtdlMask) != 0
 }
 
 // SetGtdl Global Time Discontinuity Interrupt Line
-func (r *registerFdcanttilsType) SetGtdl(value bool) {
+func (r *RegisterFdcanttilsType) SetGtdl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldGtdlMask)
 	} else {
@@ -6715,12 +8026,12 @@ const (
 )
 
 // GetGtel Global Time Error Interrupt Line
-func (r *registerFdcanttilsType) GetGtel() bool {
+func (r *RegisterFdcanttilsType) GetGtel() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldGtelMask) != 0
 }
 
 // SetGtel Global Time Error Interrupt Line
-func (r *registerFdcanttilsType) SetGtel(value bool) {
+func (r *RegisterFdcanttilsType) SetGtel(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldGtelMask)
 	} else {
@@ -6734,12 +8045,12 @@ const (
 )
 
 // GetTxul Tx Count Underflow Interrupt Line
-func (r *registerFdcanttilsType) GetTxul() bool {
+func (r *RegisterFdcanttilsType) GetTxul() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldTxulMask) != 0
 }
 
 // SetTxul Tx Count Underflow Interrupt Line
-func (r *registerFdcanttilsType) SetTxul(value bool) {
+func (r *RegisterFdcanttilsType) SetTxul(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldTxulMask)
 	} else {
@@ -6753,12 +8064,12 @@ const (
 )
 
 // GetTxol Tx Count Overflow Interrupt Line
-func (r *registerFdcanttilsType) GetTxol() bool {
+func (r *RegisterFdcanttilsType) GetTxol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldTxolMask) != 0
 }
 
 // SetTxol Tx Count Overflow Interrupt Line
-func (r *registerFdcanttilsType) SetTxol(value bool) {
+func (r *RegisterFdcanttilsType) SetTxol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldTxolMask)
 	} else {
@@ -6772,12 +8083,12 @@ const (
 )
 
 // GetSe1l Scheduling Error 1 Interrupt Line
-func (r *registerFdcanttilsType) GetSe1l() bool {
+func (r *RegisterFdcanttilsType) GetSe1l() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldSe1lMask) != 0
 }
 
 // SetSe1l Scheduling Error 1 Interrupt Line
-func (r *registerFdcanttilsType) SetSe1l(value bool) {
+func (r *RegisterFdcanttilsType) SetSe1l(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldSe1lMask)
 	} else {
@@ -6791,12 +8102,12 @@ const (
 )
 
 // GetSe2l Scheduling Error 2 Interrupt Line
-func (r *registerFdcanttilsType) GetSe2l() bool {
+func (r *RegisterFdcanttilsType) GetSe2l() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldSe2lMask) != 0
 }
 
 // SetSe2l Scheduling Error 2 Interrupt Line
-func (r *registerFdcanttilsType) SetSe2l(value bool) {
+func (r *RegisterFdcanttilsType) SetSe2l(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldSe2lMask)
 	} else {
@@ -6810,12 +8121,12 @@ const (
 )
 
 // GetElcl Change Error Level Interrupt Line
-func (r *registerFdcanttilsType) GetElcl() bool {
+func (r *RegisterFdcanttilsType) GetElcl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldElclMask) != 0
 }
 
 // SetElcl Change Error Level Interrupt Line
-func (r *registerFdcanttilsType) SetElcl(value bool) {
+func (r *RegisterFdcanttilsType) SetElcl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldElclMask)
 	} else {
@@ -6829,12 +8140,12 @@ const (
 )
 
 // GetIwtgl Initialization Watch Trigger Interrupt Line
-func (r *registerFdcanttilsType) GetIwtgl() bool {
+func (r *RegisterFdcanttilsType) GetIwtgl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldIwtglMask) != 0
 }
 
 // SetIwtgl Initialization Watch Trigger Interrupt Line
-func (r *registerFdcanttilsType) SetIwtgl(value bool) {
+func (r *RegisterFdcanttilsType) SetIwtgl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldIwtglMask)
 	} else {
@@ -6848,12 +8159,12 @@ const (
 )
 
 // GetWtl Watch Trigger Interrupt Line
-func (r *registerFdcanttilsType) GetWtl() bool {
+func (r *RegisterFdcanttilsType) GetWtl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldWtlMask) != 0
 }
 
 // SetWtl Watch Trigger Interrupt Line
-func (r *registerFdcanttilsType) SetWtl(value bool) {
+func (r *RegisterFdcanttilsType) SetWtl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldWtlMask)
 	} else {
@@ -6867,12 +8178,12 @@ const (
 )
 
 // GetAwl Application Watchdog Interrupt Line
-func (r *registerFdcanttilsType) GetAwl() bool {
+func (r *RegisterFdcanttilsType) GetAwl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldAwlMask) != 0
 }
 
 // SetAwl Application Watchdog Interrupt Line
-func (r *registerFdcanttilsType) SetAwl(value bool) {
+func (r *RegisterFdcanttilsType) SetAwl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldAwlMask)
 	} else {
@@ -6886,12 +8197,12 @@ const (
 )
 
 // GetCerl Configuration Error Interrupt Line
-func (r *registerFdcanttilsType) GetCerl() bool {
+func (r *RegisterFdcanttilsType) GetCerl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttilsFieldCerlMask) != 0
 }
 
 // SetCerl Configuration Error Interrupt Line
-func (r *registerFdcanttilsType) SetCerl(value bool) {
+func (r *RegisterFdcanttilsType) SetCerl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttilsFieldCerlMask)
 	} else {
@@ -6899,8 +8210,31 @@ func (r *registerFdcanttilsType) SetCerl(value bool) {
 	}
 }
 
-// registerFdcanttostType FDCAN TT Operation Status Register
-type registerFdcanttostType uint32
+// RegisterFdcanttostType FDCAN TT Operation Status Register
+type RegisterFdcanttostType uint32
+
+func (r *RegisterFdcanttostType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttostType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttostType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttostType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttostType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttostFieldElShift = 0
@@ -6908,12 +8242,12 @@ const (
 )
 
 // GetEl Error Level
-func (r *registerFdcanttostType) GetEl() uint8 {
+func (r *RegisterFdcanttostType) GetEl() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldElMask) >> RegisterFdcanttostFieldElShift)
 }
 
 // SetEl Error Level
-func (r *registerFdcanttostType) SetEl(value uint8) {
+func (r *RegisterFdcanttostType) SetEl(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttostFieldElMask)|(uint32(value)<<RegisterFdcanttostFieldElShift))
 }
 
@@ -6923,12 +8257,12 @@ const (
 )
 
 // GetMs Master State.
-func (r *registerFdcanttostType) GetMs() uint8 {
+func (r *RegisterFdcanttostType) GetMs() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldMsMask) >> RegisterFdcanttostFieldMsShift)
 }
 
 // SetMs Master State.
-func (r *registerFdcanttostType) SetMs(value uint8) {
+func (r *RegisterFdcanttostType) SetMs(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttostFieldMsMask)|(uint32(value)<<RegisterFdcanttostFieldMsShift))
 }
 
@@ -6938,12 +8272,12 @@ const (
 )
 
 // GetSys Synchronization State
-func (r *registerFdcanttostType) GetSys() uint8 {
+func (r *RegisterFdcanttostType) GetSys() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldSysMask) >> RegisterFdcanttostFieldSysShift)
 }
 
 // SetSys Synchronization State
-func (r *registerFdcanttostType) SetSys(value uint8) {
+func (r *RegisterFdcanttostType) SetSys(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttostFieldSysMask)|(uint32(value)<<RegisterFdcanttostFieldSysShift))
 }
 
@@ -6953,12 +8287,12 @@ const (
 )
 
 // GetGtp Quality of Global Time Phase
-func (r *registerFdcanttostType) GetGtp() bool {
+func (r *RegisterFdcanttostType) GetGtp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldGtpMask) != 0
 }
 
 // SetGtp Quality of Global Time Phase
-func (r *registerFdcanttostType) SetGtp(value bool) {
+func (r *RegisterFdcanttostType) SetGtp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttostFieldGtpMask)
 	} else {
@@ -6972,12 +8306,12 @@ const (
 )
 
 // GetQcs Quality of Clock Speed
-func (r *registerFdcanttostType) GetQcs() bool {
+func (r *RegisterFdcanttostType) GetQcs() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldQcsMask) != 0
 }
 
 // SetQcs Quality of Clock Speed
-func (r *registerFdcanttostType) SetQcs(value bool) {
+func (r *RegisterFdcanttostType) SetQcs(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttostFieldQcsMask)
 	} else {
@@ -6991,12 +8325,12 @@ const (
 )
 
 // GetRto Reference Trigger Offset
-func (r *registerFdcanttostType) GetRto() uint8 {
+func (r *RegisterFdcanttostType) GetRto() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldRtoMask) >> RegisterFdcanttostFieldRtoShift)
 }
 
 // SetRto Reference Trigger Offset
-func (r *registerFdcanttostType) SetRto(value uint8) {
+func (r *RegisterFdcanttostType) SetRto(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttostFieldRtoMask)|(uint32(value)<<RegisterFdcanttostFieldRtoShift))
 }
 
@@ -7006,12 +8340,12 @@ const (
 )
 
 // GetWgtd Wait for Global Time Discontinuity
-func (r *registerFdcanttostType) GetWgtd() bool {
+func (r *RegisterFdcanttostType) GetWgtd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldWgtdMask) != 0
 }
 
 // SetWgtd Wait for Global Time Discontinuity
-func (r *registerFdcanttostType) SetWgtd(value bool) {
+func (r *RegisterFdcanttostType) SetWgtd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttostFieldWgtdMask)
 	} else {
@@ -7025,12 +8359,12 @@ const (
 )
 
 // GetGfi Gap Finished Indicator.
-func (r *registerFdcanttostType) GetGfi() bool {
+func (r *RegisterFdcanttostType) GetGfi() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldGfiMask) != 0
 }
 
 // SetGfi Gap Finished Indicator.
-func (r *registerFdcanttostType) SetGfi(value bool) {
+func (r *RegisterFdcanttostType) SetGfi(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttostFieldGfiMask)
 	} else {
@@ -7044,12 +8378,12 @@ const (
 )
 
 // GetTmp Time Master Priority
-func (r *registerFdcanttostType) GetTmp() uint8 {
+func (r *RegisterFdcanttostType) GetTmp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldTmpMask) >> RegisterFdcanttostFieldTmpShift)
 }
 
 // SetTmp Time Master Priority
-func (r *registerFdcanttostType) SetTmp(value uint8) {
+func (r *RegisterFdcanttostType) SetTmp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttostFieldTmpMask)|(uint32(value)<<RegisterFdcanttostFieldTmpShift))
 }
 
@@ -7059,12 +8393,12 @@ const (
 )
 
 // GetGsi Gap Started Indicator.
-func (r *registerFdcanttostType) GetGsi() bool {
+func (r *RegisterFdcanttostType) GetGsi() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldGsiMask) != 0
 }
 
 // SetGsi Gap Started Indicator.
-func (r *registerFdcanttostType) SetGsi(value bool) {
+func (r *RegisterFdcanttostType) SetGsi(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttostFieldGsiMask)
 	} else {
@@ -7078,12 +8412,12 @@ const (
 )
 
 // GetWfe Wait for Event
-func (r *registerFdcanttostType) GetWfe() bool {
+func (r *RegisterFdcanttostType) GetWfe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldWfeMask) != 0
 }
 
 // SetWfe Wait for Event
-func (r *registerFdcanttostType) SetWfe(value bool) {
+func (r *RegisterFdcanttostType) SetWfe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttostFieldWfeMask)
 	} else {
@@ -7097,12 +8431,12 @@ const (
 )
 
 // GetAwe Application Watchdog Event
-func (r *registerFdcanttostType) GetAwe() bool {
+func (r *RegisterFdcanttostType) GetAwe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldAweMask) != 0
 }
 
 // SetAwe Application Watchdog Event
-func (r *registerFdcanttostType) SetAwe(value bool) {
+func (r *RegisterFdcanttostType) SetAwe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttostFieldAweMask)
 	} else {
@@ -7116,12 +8450,12 @@ const (
 )
 
 // GetWecs Wait for External Clock Synchronization
-func (r *registerFdcanttostType) GetWecs() bool {
+func (r *RegisterFdcanttostType) GetWecs() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldWecsMask) != 0
 }
 
 // SetWecs Wait for External Clock Synchronization
-func (r *registerFdcanttostType) SetWecs(value bool) {
+func (r *RegisterFdcanttostType) SetWecs(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttostFieldWecsMask)
 	} else {
@@ -7135,12 +8469,12 @@ const (
 )
 
 // GetSpl Schedule Phase Lock
-func (r *registerFdcanttostType) GetSpl() bool {
+func (r *RegisterFdcanttostType) GetSpl() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttostFieldSplMask) != 0
 }
 
 // SetSpl Schedule Phase Lock
-func (r *registerFdcanttostType) SetSpl(value bool) {
+func (r *RegisterFdcanttostType) SetSpl(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFdcanttostFieldSplMask)
 	} else {
@@ -7148,8 +8482,31 @@ func (r *registerFdcanttostType) SetSpl(value bool) {
 	}
 }
 
-// registerFdcanturnaType FDCAN TUR Numerator Actual Register
-type registerFdcanturnaType uint32
+// RegisterFdcanturnaType FDCAN TUR Numerator Actual Register
+type RegisterFdcanturnaType uint32
+
+func (r *RegisterFdcanturnaType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanturnaType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanturnaType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanturnaType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanturnaType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanturnaFieldNavShift = 0
@@ -7157,17 +8514,40 @@ const (
 )
 
 // GetNav Numerator Actual Value
-func (r *registerFdcanturnaType) GetNav() uint32 {
+func (r *RegisterFdcanturnaType) GetNav() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanturnaFieldNavMask) >> RegisterFdcanturnaFieldNavShift)
 }
 
 // SetNav Numerator Actual Value
-func (r *registerFdcanturnaType) SetNav(value uint32) {
+func (r *RegisterFdcanturnaType) SetNav(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanturnaFieldNavMask)|(uint32(value)<<RegisterFdcanturnaFieldNavShift))
 }
 
-// registerFdcanttlgtType FDCAN TT Local and Global Time Register
-type registerFdcanttlgtType uint32
+// RegisterFdcanttlgtType FDCAN TT Local and Global Time Register
+type RegisterFdcanttlgtType uint32
+
+func (r *RegisterFdcanttlgtType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttlgtType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttlgtType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttlgtType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttlgtType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttlgtFieldLtShift = 0
@@ -7175,12 +8555,12 @@ const (
 )
 
 // GetLt Local Time
-func (r *registerFdcanttlgtType) GetLt() uint16 {
+func (r *RegisterFdcanttlgtType) GetLt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttlgtFieldLtMask) >> RegisterFdcanttlgtFieldLtShift)
 }
 
 // SetLt Local Time
-func (r *registerFdcanttlgtType) SetLt(value uint16) {
+func (r *RegisterFdcanttlgtType) SetLt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttlgtFieldLtMask)|(uint32(value)<<RegisterFdcanttlgtFieldLtShift))
 }
 
@@ -7190,17 +8570,40 @@ const (
 )
 
 // GetGt Global Time
-func (r *registerFdcanttlgtType) GetGt() uint16 {
+func (r *RegisterFdcanttlgtType) GetGt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttlgtFieldGtMask) >> RegisterFdcanttlgtFieldGtShift)
 }
 
 // SetGt Global Time
-func (r *registerFdcanttlgtType) SetGt(value uint16) {
+func (r *RegisterFdcanttlgtType) SetGt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttlgtFieldGtMask)|(uint32(value)<<RegisterFdcanttlgtFieldGtShift))
 }
 
-// registerFdcanttctcType FDCAN TT Cycle Time and Count Register
-type registerFdcanttctcType uint32
+// RegisterFdcanttctcType FDCAN TT Cycle Time and Count Register
+type RegisterFdcanttctcType uint32
+
+func (r *RegisterFdcanttctcType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttctcType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttctcType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttctcType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttctcType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttctcFieldCtShift = 0
@@ -7208,12 +8611,12 @@ const (
 )
 
 // GetCt Cycle Time
-func (r *registerFdcanttctcType) GetCt() uint16 {
+func (r *RegisterFdcanttctcType) GetCt() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttctcFieldCtMask) >> RegisterFdcanttctcFieldCtShift)
 }
 
 // SetCt Cycle Time
-func (r *registerFdcanttctcType) SetCt(value uint16) {
+func (r *RegisterFdcanttctcType) SetCt(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttctcFieldCtMask)|(uint32(value)<<RegisterFdcanttctcFieldCtShift))
 }
 
@@ -7223,17 +8626,40 @@ const (
 )
 
 // GetCc Cycle Count
-func (r *registerFdcanttctcType) GetCc() uint8 {
+func (r *RegisterFdcanttctcType) GetCc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttctcFieldCcMask) >> RegisterFdcanttctcFieldCcShift)
 }
 
 // SetCc Cycle Count
-func (r *registerFdcanttctcType) SetCc(value uint8) {
+func (r *RegisterFdcanttctcType) SetCc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttctcFieldCcMask)|(uint32(value)<<RegisterFdcanttctcFieldCcShift))
 }
 
-// registerFdcanttcptType FDCAN TT Capture Time Register
-type registerFdcanttcptType uint32
+// RegisterFdcanttcptType FDCAN TT Capture Time Register
+type RegisterFdcanttcptType uint32
+
+func (r *RegisterFdcanttcptType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttcptType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttcptType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttcptType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttcptType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttcptFieldCtShift = 0
@@ -7241,12 +8667,12 @@ const (
 )
 
 // GetCt Cycle Count Value
-func (r *registerFdcanttcptType) GetCt() uint8 {
+func (r *RegisterFdcanttcptType) GetCt() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttcptFieldCtMask) >> RegisterFdcanttcptFieldCtShift)
 }
 
 // SetCt Cycle Count Value
-func (r *registerFdcanttcptType) SetCt(value uint8) {
+func (r *RegisterFdcanttcptType) SetCt(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttcptFieldCtMask)|(uint32(value)<<RegisterFdcanttcptFieldCtShift))
 }
 
@@ -7256,17 +8682,40 @@ const (
 )
 
 // GetSwv Stop Watch Value
-func (r *registerFdcanttcptType) GetSwv() uint16 {
+func (r *RegisterFdcanttcptType) GetSwv() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttcptFieldSwvMask) >> RegisterFdcanttcptFieldSwvShift)
 }
 
 // SetSwv Stop Watch Value
-func (r *registerFdcanttcptType) SetSwv(value uint16) {
+func (r *RegisterFdcanttcptType) SetSwv(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttcptFieldSwvMask)|(uint32(value)<<RegisterFdcanttcptFieldSwvShift))
 }
 
-// registerFdcanttcsmType FDCAN TT Cycle Sync Mark Register
-type registerFdcanttcsmType uint32
+// RegisterFdcanttcsmType FDCAN TT Cycle Sync Mark Register
+type RegisterFdcanttcsmType uint32
+
+func (r *RegisterFdcanttcsmType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcanttcsmType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcanttcsmType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcanttcsmType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcanttcsmType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcanttcsmFieldCsmShift = 0
@@ -7274,17 +8723,40 @@ const (
 )
 
 // GetCsm Cycle Sync Mark
-func (r *registerFdcanttcsmType) GetCsm() uint16 {
+func (r *RegisterFdcanttcsmType) GetCsm() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterFdcanttcsmFieldCsmMask) >> RegisterFdcanttcsmFieldCsmShift)
 }
 
 // SetCsm Cycle Sync Mark
-func (r *registerFdcanttcsmType) SetCsm(value uint16) {
+func (r *RegisterFdcanttcsmType) SetCsm(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcanttcsmFieldCsmMask)|(uint32(value)<<RegisterFdcanttcsmFieldCsmShift))
 }
 
-// registerFdcantttsType FDCAN TT Trigger Select Register
-type registerFdcantttsType uint32
+// RegisterFdcantttsType FDCAN TT Trigger Select Register
+type RegisterFdcantttsType uint32
+
+func (r *RegisterFdcantttsType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFdcantttsType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFdcantttsType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFdcantttsType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFdcantttsType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFdcantttsFieldSwtdelShift = 0
@@ -7292,12 +8764,12 @@ const (
 )
 
 // GetSwtdel Stop watch trigger input selection
-func (r *registerFdcantttsType) GetSwtdel() uint8 {
+func (r *RegisterFdcantttsType) GetSwtdel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantttsFieldSwtdelMask) >> RegisterFdcantttsFieldSwtdelShift)
 }
 
 // SetSwtdel Stop watch trigger input selection
-func (r *registerFdcantttsType) SetSwtdel(value uint8) {
+func (r *RegisterFdcantttsType) SetSwtdel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantttsFieldSwtdelMask)|(uint32(value)<<RegisterFdcantttsFieldSwtdelShift))
 }
 
@@ -7307,11 +8779,11 @@ const (
 )
 
 // GetEvtsel Event trigger input selection
-func (r *registerFdcantttsType) GetEvtsel() uint8 {
+func (r *RegisterFdcantttsType) GetEvtsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFdcantttsFieldEvtselMask) >> RegisterFdcantttsFieldEvtselShift)
 }
 
 // SetEvtsel Event trigger input selection
-func (r *registerFdcantttsType) SetEvtsel(value uint8) {
+func (r *RegisterFdcantttsType) SetEvtsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFdcantttsFieldEvtselMask)|(uint32(value)<<RegisterFdcantttsFieldEvtselShift))
 }

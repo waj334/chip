@@ -12,17 +12,40 @@ var (
 )
 
 type _opamp struct {
-	Opamp1csr   registerOpamp1csrType
-	Opamp1otr   registerOpamp1otrType
-	Opamp1hsotr registerOpamp1hsotrType
+	Opamp1csr   RegisterOpamp1csrType
+	Opamp1otr   RegisterOpamp1otrType
+	Opamp1hsotr RegisterOpamp1hsotrType
 	_           [4]byte
-	Opamp2csr   registerOpamp2csrType
-	Opamp2otr   registerOpamp2otrType
-	Opamp2hsotr registerOpamp2hsotrType
+	Opamp2csr   RegisterOpamp2csrType
+	Opamp2otr   RegisterOpamp2otrType
+	Opamp2hsotr RegisterOpamp2hsotrType
 }
 
-// registerOpamp1csrType OPAMP1 control/status register
-type registerOpamp1csrType uint32
+// RegisterOpamp1csrType OPAMP1 control/status register
+type RegisterOpamp1csrType uint32
+
+func (r *RegisterOpamp1csrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOpamp1csrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOpamp1csrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOpamp1csrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOpamp1csrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOpamp1csrFieldOpaenShift = 0
@@ -30,12 +53,12 @@ const (
 )
 
 // GetOpaen Operational amplifier Enable
-func (r *registerOpamp1csrType) GetOpaen() bool {
+func (r *RegisterOpamp1csrType) GetOpaen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldOpaenMask) != 0
 }
 
 // SetOpaen Operational amplifier Enable
-func (r *registerOpamp1csrType) SetOpaen(value bool) {
+func (r *RegisterOpamp1csrType) SetOpaen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp1csrFieldOpaenMask)
 	} else {
@@ -49,12 +72,12 @@ const (
 )
 
 // GetForcevp Force internal reference on VP (reserved for test
-func (r *registerOpamp1csrType) GetForcevp() bool {
+func (r *RegisterOpamp1csrType) GetForcevp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldForcevpMask) != 0
 }
 
 // SetForcevp Force internal reference on VP (reserved for test
-func (r *registerOpamp1csrType) SetForcevp(value bool) {
+func (r *RegisterOpamp1csrType) SetForcevp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp1csrFieldForcevpMask)
 	} else {
@@ -68,12 +91,12 @@ const (
 )
 
 // GetVpsel Operational amplifier PGA mode
-func (r *registerOpamp1csrType) GetVpsel() uint8 {
+func (r *RegisterOpamp1csrType) GetVpsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldVpselMask) >> RegisterOpamp1csrFieldVpselShift)
 }
 
 // SetVpsel Operational amplifier PGA mode
-func (r *registerOpamp1csrType) SetVpsel(value uint8) {
+func (r *RegisterOpamp1csrType) SetVpsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp1csrFieldVpselMask)|(uint32(value)<<RegisterOpamp1csrFieldVpselShift))
 }
 
@@ -83,12 +106,12 @@ const (
 )
 
 // GetVmsel Inverting input selection
-func (r *registerOpamp1csrType) GetVmsel() uint8 {
+func (r *RegisterOpamp1csrType) GetVmsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldVmselMask) >> RegisterOpamp1csrFieldVmselShift)
 }
 
 // SetVmsel Inverting input selection
-func (r *registerOpamp1csrType) SetVmsel(value uint8) {
+func (r *RegisterOpamp1csrType) SetVmsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp1csrFieldVmselMask)|(uint32(value)<<RegisterOpamp1csrFieldVmselShift))
 }
 
@@ -98,12 +121,12 @@ const (
 )
 
 // GetOpahsm Operational amplifier high-speed mode
-func (r *registerOpamp1csrType) GetOpahsm() bool {
+func (r *RegisterOpamp1csrType) GetOpahsm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldOpahsmMask) != 0
 }
 
 // SetOpahsm Operational amplifier high-speed mode
-func (r *registerOpamp1csrType) SetOpahsm(value bool) {
+func (r *RegisterOpamp1csrType) SetOpahsm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp1csrFieldOpahsmMask)
 	} else {
@@ -117,12 +140,12 @@ const (
 )
 
 // GetCalon Calibration mode enabled
-func (r *registerOpamp1csrType) GetCalon() bool {
+func (r *RegisterOpamp1csrType) GetCalon() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldCalonMask) != 0
 }
 
 // SetCalon Calibration mode enabled
-func (r *registerOpamp1csrType) SetCalon(value bool) {
+func (r *RegisterOpamp1csrType) SetCalon(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp1csrFieldCalonMask)
 	} else {
@@ -136,12 +159,12 @@ const (
 )
 
 // GetCalsel Calibration selection
-func (r *registerOpamp1csrType) GetCalsel() uint8 {
+func (r *RegisterOpamp1csrType) GetCalsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldCalselMask) >> RegisterOpamp1csrFieldCalselShift)
 }
 
 // SetCalsel Calibration selection
-func (r *registerOpamp1csrType) SetCalsel(value uint8) {
+func (r *RegisterOpamp1csrType) SetCalsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp1csrFieldCalselMask)|(uint32(value)<<RegisterOpamp1csrFieldCalselShift))
 }
 
@@ -151,12 +174,12 @@ const (
 )
 
 // GetPgagain allows to switch from AOP offset trimmed values to AOP offset
-func (r *registerOpamp1csrType) GetPgagain() uint8 {
+func (r *RegisterOpamp1csrType) GetPgagain() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldPgagainMask) >> RegisterOpamp1csrFieldPgagainShift)
 }
 
 // SetPgagain allows to switch from AOP offset trimmed values to AOP offset
-func (r *registerOpamp1csrType) SetPgagain(value uint8) {
+func (r *RegisterOpamp1csrType) SetPgagain(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp1csrFieldPgagainMask)|(uint32(value)<<RegisterOpamp1csrFieldPgagainShift))
 }
 
@@ -166,12 +189,12 @@ const (
 )
 
 // GetUsertrim User trimming enable
-func (r *registerOpamp1csrType) GetUsertrim() bool {
+func (r *RegisterOpamp1csrType) GetUsertrim() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldUsertrimMask) != 0
 }
 
 // SetUsertrim User trimming enable
-func (r *registerOpamp1csrType) SetUsertrim(value bool) {
+func (r *RegisterOpamp1csrType) SetUsertrim(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp1csrFieldUsertrimMask)
 	} else {
@@ -185,12 +208,12 @@ const (
 )
 
 // GetTstref OPAMP calibration reference voltage output control (reserved for test)
-func (r *registerOpamp1csrType) GetTstref() bool {
+func (r *RegisterOpamp1csrType) GetTstref() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldTstrefMask) != 0
 }
 
 // SetTstref OPAMP calibration reference voltage output control (reserved for test)
-func (r *registerOpamp1csrType) SetTstref(value bool) {
+func (r *RegisterOpamp1csrType) SetTstref(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp1csrFieldTstrefMask)
 	} else {
@@ -204,12 +227,12 @@ const (
 )
 
 // GetCalout Operational amplifier calibration output
-func (r *registerOpamp1csrType) GetCalout() bool {
+func (r *RegisterOpamp1csrType) GetCalout() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1csrFieldCaloutMask) != 0
 }
 
 // SetCalout Operational amplifier calibration output
-func (r *registerOpamp1csrType) SetCalout(value bool) {
+func (r *RegisterOpamp1csrType) SetCalout(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp1csrFieldCaloutMask)
 	} else {
@@ -217,8 +240,31 @@ func (r *registerOpamp1csrType) SetCalout(value bool) {
 	}
 }
 
-// registerOpamp1otrType OPAMP1 offset trimming register in normal mode
-type registerOpamp1otrType uint32
+// RegisterOpamp1otrType OPAMP1 offset trimming register in normal mode
+type RegisterOpamp1otrType uint32
+
+func (r *RegisterOpamp1otrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOpamp1otrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOpamp1otrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOpamp1otrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOpamp1otrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOpamp1otrFieldTrimoffsetnShift = 0
@@ -226,12 +272,12 @@ const (
 )
 
 // GetTrimoffsetn Trim for NMOS differential pairs
-func (r *registerOpamp1otrType) GetTrimoffsetn() uint8 {
+func (r *RegisterOpamp1otrType) GetTrimoffsetn() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1otrFieldTrimoffsetnMask) >> RegisterOpamp1otrFieldTrimoffsetnShift)
 }
 
 // SetTrimoffsetn Trim for NMOS differential pairs
-func (r *registerOpamp1otrType) SetTrimoffsetn(value uint8) {
+func (r *RegisterOpamp1otrType) SetTrimoffsetn(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp1otrFieldTrimoffsetnMask)|(uint32(value)<<RegisterOpamp1otrFieldTrimoffsetnShift))
 }
 
@@ -241,17 +287,40 @@ const (
 )
 
 // GetTrimoffsetp Trim for PMOS differential pairs
-func (r *registerOpamp1otrType) GetTrimoffsetp() uint8 {
+func (r *RegisterOpamp1otrType) GetTrimoffsetp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1otrFieldTrimoffsetpMask) >> RegisterOpamp1otrFieldTrimoffsetpShift)
 }
 
 // SetTrimoffsetp Trim for PMOS differential pairs
-func (r *registerOpamp1otrType) SetTrimoffsetp(value uint8) {
+func (r *RegisterOpamp1otrType) SetTrimoffsetp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp1otrFieldTrimoffsetpMask)|(uint32(value)<<RegisterOpamp1otrFieldTrimoffsetpShift))
 }
 
-// registerOpamp1hsotrType OPAMP1 offset trimming register in low-power mode
-type registerOpamp1hsotrType uint32
+// RegisterOpamp1hsotrType OPAMP1 offset trimming register in low-power mode
+type RegisterOpamp1hsotrType uint32
+
+func (r *RegisterOpamp1hsotrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOpamp1hsotrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOpamp1hsotrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOpamp1hsotrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOpamp1hsotrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOpamp1hsotrFieldTrimlpoffsetnShift = 0
@@ -259,12 +328,12 @@ const (
 )
 
 // GetTrimlpoffsetn Trim for NMOS differential pairs
-func (r *registerOpamp1hsotrType) GetTrimlpoffsetn() uint8 {
+func (r *RegisterOpamp1hsotrType) GetTrimlpoffsetn() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1hsotrFieldTrimlpoffsetnMask) >> RegisterOpamp1hsotrFieldTrimlpoffsetnShift)
 }
 
 // SetTrimlpoffsetn Trim for NMOS differential pairs
-func (r *registerOpamp1hsotrType) SetTrimlpoffsetn(value uint8) {
+func (r *RegisterOpamp1hsotrType) SetTrimlpoffsetn(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp1hsotrFieldTrimlpoffsetnMask)|(uint32(value)<<RegisterOpamp1hsotrFieldTrimlpoffsetnShift))
 }
 
@@ -274,17 +343,40 @@ const (
 )
 
 // GetTrimlpoffsetp Trim for PMOS differential pairs
-func (r *registerOpamp1hsotrType) GetTrimlpoffsetp() uint8 {
+func (r *RegisterOpamp1hsotrType) GetTrimlpoffsetp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp1hsotrFieldTrimlpoffsetpMask) >> RegisterOpamp1hsotrFieldTrimlpoffsetpShift)
 }
 
 // SetTrimlpoffsetp Trim for PMOS differential pairs
-func (r *registerOpamp1hsotrType) SetTrimlpoffsetp(value uint8) {
+func (r *RegisterOpamp1hsotrType) SetTrimlpoffsetp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp1hsotrFieldTrimlpoffsetpMask)|(uint32(value)<<RegisterOpamp1hsotrFieldTrimlpoffsetpShift))
 }
 
-// registerOpamp2csrType OPAMP2 control/status register
-type registerOpamp2csrType uint32
+// RegisterOpamp2csrType OPAMP2 control/status register
+type RegisterOpamp2csrType uint32
+
+func (r *RegisterOpamp2csrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOpamp2csrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOpamp2csrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOpamp2csrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOpamp2csrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOpamp2csrFieldOpaenShift = 0
@@ -292,12 +384,12 @@ const (
 )
 
 // GetOpaen Operational amplifier Enable
-func (r *registerOpamp2csrType) GetOpaen() bool {
+func (r *RegisterOpamp2csrType) GetOpaen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2csrFieldOpaenMask) != 0
 }
 
 // SetOpaen Operational amplifier Enable
-func (r *registerOpamp2csrType) SetOpaen(value bool) {
+func (r *RegisterOpamp2csrType) SetOpaen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp2csrFieldOpaenMask)
 	} else {
@@ -311,12 +403,12 @@ const (
 )
 
 // GetForcevp Force internal reference on VP (reserved for test)
-func (r *registerOpamp2csrType) GetForcevp() bool {
+func (r *RegisterOpamp2csrType) GetForcevp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2csrFieldForcevpMask) != 0
 }
 
 // SetForcevp Force internal reference on VP (reserved for test)
-func (r *registerOpamp2csrType) SetForcevp(value bool) {
+func (r *RegisterOpamp2csrType) SetForcevp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp2csrFieldForcevpMask)
 	} else {
@@ -330,12 +422,12 @@ const (
 )
 
 // GetVmsel Inverting input selection
-func (r *registerOpamp2csrType) GetVmsel() uint8 {
+func (r *RegisterOpamp2csrType) GetVmsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2csrFieldVmselMask) >> RegisterOpamp2csrFieldVmselShift)
 }
 
 // SetVmsel Inverting input selection
-func (r *registerOpamp2csrType) SetVmsel(value uint8) {
+func (r *RegisterOpamp2csrType) SetVmsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp2csrFieldVmselMask)|(uint32(value)<<RegisterOpamp2csrFieldVmselShift))
 }
 
@@ -345,12 +437,12 @@ const (
 )
 
 // GetOpahsm Operational amplifier high-speed mode
-func (r *registerOpamp2csrType) GetOpahsm() bool {
+func (r *RegisterOpamp2csrType) GetOpahsm() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2csrFieldOpahsmMask) != 0
 }
 
 // SetOpahsm Operational amplifier high-speed mode
-func (r *registerOpamp2csrType) SetOpahsm(value bool) {
+func (r *RegisterOpamp2csrType) SetOpahsm(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp2csrFieldOpahsmMask)
 	} else {
@@ -364,12 +456,12 @@ const (
 )
 
 // GetCalon Calibration mode enabled
-func (r *registerOpamp2csrType) GetCalon() bool {
+func (r *RegisterOpamp2csrType) GetCalon() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2csrFieldCalonMask) != 0
 }
 
 // SetCalon Calibration mode enabled
-func (r *registerOpamp2csrType) SetCalon(value bool) {
+func (r *RegisterOpamp2csrType) SetCalon(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp2csrFieldCalonMask)
 	} else {
@@ -383,12 +475,12 @@ const (
 )
 
 // GetCalsel Calibration selection
-func (r *registerOpamp2csrType) GetCalsel() uint8 {
+func (r *RegisterOpamp2csrType) GetCalsel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2csrFieldCalselMask) >> RegisterOpamp2csrFieldCalselShift)
 }
 
 // SetCalsel Calibration selection
-func (r *registerOpamp2csrType) SetCalsel(value uint8) {
+func (r *RegisterOpamp2csrType) SetCalsel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp2csrFieldCalselMask)|(uint32(value)<<RegisterOpamp2csrFieldCalselShift))
 }
 
@@ -398,12 +490,12 @@ const (
 )
 
 // GetPgagain Operational amplifier Programmable amplifier gain value
-func (r *registerOpamp2csrType) GetPgagain() uint8 {
+func (r *RegisterOpamp2csrType) GetPgagain() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2csrFieldPgagainMask) >> RegisterOpamp2csrFieldPgagainShift)
 }
 
 // SetPgagain Operational amplifier Programmable amplifier gain value
-func (r *registerOpamp2csrType) SetPgagain(value uint8) {
+func (r *RegisterOpamp2csrType) SetPgagain(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp2csrFieldPgagainMask)|(uint32(value)<<RegisterOpamp2csrFieldPgagainShift))
 }
 
@@ -413,12 +505,12 @@ const (
 )
 
 // GetUsertrim User trimming enable
-func (r *registerOpamp2csrType) GetUsertrim() bool {
+func (r *RegisterOpamp2csrType) GetUsertrim() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2csrFieldUsertrimMask) != 0
 }
 
 // SetUsertrim User trimming enable
-func (r *registerOpamp2csrType) SetUsertrim(value bool) {
+func (r *RegisterOpamp2csrType) SetUsertrim(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp2csrFieldUsertrimMask)
 	} else {
@@ -432,12 +524,12 @@ const (
 )
 
 // GetTstref OPAMP calibration reference voltage output control (reserved for test)
-func (r *registerOpamp2csrType) GetTstref() bool {
+func (r *RegisterOpamp2csrType) GetTstref() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2csrFieldTstrefMask) != 0
 }
 
 // SetTstref OPAMP calibration reference voltage output control (reserved for test)
-func (r *registerOpamp2csrType) SetTstref(value bool) {
+func (r *RegisterOpamp2csrType) SetTstref(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp2csrFieldTstrefMask)
 	} else {
@@ -451,12 +543,12 @@ const (
 )
 
 // GetCalout Operational amplifier calibration output
-func (r *registerOpamp2csrType) GetCalout() bool {
+func (r *RegisterOpamp2csrType) GetCalout() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2csrFieldCaloutMask) != 0
 }
 
 // SetCalout Operational amplifier calibration output
-func (r *registerOpamp2csrType) SetCalout(value bool) {
+func (r *RegisterOpamp2csrType) SetCalout(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterOpamp2csrFieldCaloutMask)
 	} else {
@@ -464,8 +556,31 @@ func (r *registerOpamp2csrType) SetCalout(value bool) {
 	}
 }
 
-// registerOpamp2otrType OPAMP2 offset trimming register in normal mode
-type registerOpamp2otrType uint32
+// RegisterOpamp2otrType OPAMP2 offset trimming register in normal mode
+type RegisterOpamp2otrType uint32
+
+func (r *RegisterOpamp2otrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOpamp2otrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOpamp2otrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOpamp2otrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOpamp2otrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOpamp2otrFieldTrimoffsetnShift = 0
@@ -473,12 +588,12 @@ const (
 )
 
 // GetTrimoffsetn Trim for NMOS differential pairs
-func (r *registerOpamp2otrType) GetTrimoffsetn() uint8 {
+func (r *RegisterOpamp2otrType) GetTrimoffsetn() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2otrFieldTrimoffsetnMask) >> RegisterOpamp2otrFieldTrimoffsetnShift)
 }
 
 // SetTrimoffsetn Trim for NMOS differential pairs
-func (r *registerOpamp2otrType) SetTrimoffsetn(value uint8) {
+func (r *RegisterOpamp2otrType) SetTrimoffsetn(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp2otrFieldTrimoffsetnMask)|(uint32(value)<<RegisterOpamp2otrFieldTrimoffsetnShift))
 }
 
@@ -488,17 +603,40 @@ const (
 )
 
 // GetTrimoffsetp Trim for PMOS differential pairs
-func (r *registerOpamp2otrType) GetTrimoffsetp() uint8 {
+func (r *RegisterOpamp2otrType) GetTrimoffsetp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2otrFieldTrimoffsetpMask) >> RegisterOpamp2otrFieldTrimoffsetpShift)
 }
 
 // SetTrimoffsetp Trim for PMOS differential pairs
-func (r *registerOpamp2otrType) SetTrimoffsetp(value uint8) {
+func (r *RegisterOpamp2otrType) SetTrimoffsetp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp2otrFieldTrimoffsetpMask)|(uint32(value)<<RegisterOpamp2otrFieldTrimoffsetpShift))
 }
 
-// registerOpamp2hsotrType OPAMP2 offset trimming register in low-power mode
-type registerOpamp2hsotrType uint32
+// RegisterOpamp2hsotrType OPAMP2 offset trimming register in low-power mode
+type RegisterOpamp2hsotrType uint32
+
+func (r *RegisterOpamp2hsotrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterOpamp2hsotrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterOpamp2hsotrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterOpamp2hsotrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterOpamp2hsotrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterOpamp2hsotrFieldTrimlpoffsetnShift = 0
@@ -506,12 +644,12 @@ const (
 )
 
 // GetTrimlpoffsetn Trim for NMOS differential pairs
-func (r *registerOpamp2hsotrType) GetTrimlpoffsetn() uint8 {
+func (r *RegisterOpamp2hsotrType) GetTrimlpoffsetn() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2hsotrFieldTrimlpoffsetnMask) >> RegisterOpamp2hsotrFieldTrimlpoffsetnShift)
 }
 
 // SetTrimlpoffsetn Trim for NMOS differential pairs
-func (r *registerOpamp2hsotrType) SetTrimlpoffsetn(value uint8) {
+func (r *RegisterOpamp2hsotrType) SetTrimlpoffsetn(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp2hsotrFieldTrimlpoffsetnMask)|(uint32(value)<<RegisterOpamp2hsotrFieldTrimlpoffsetnShift))
 }
 
@@ -521,11 +659,11 @@ const (
 )
 
 // GetTrimlpoffsetp Trim for PMOS differential pairs
-func (r *registerOpamp2hsotrType) GetTrimlpoffsetp() uint8 {
+func (r *RegisterOpamp2hsotrType) GetTrimlpoffsetp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterOpamp2hsotrFieldTrimlpoffsetpMask) >> RegisterOpamp2hsotrFieldTrimlpoffsetpShift)
 }
 
 // SetTrimlpoffsetp Trim for PMOS differential pairs
-func (r *registerOpamp2hsotrType) SetTrimlpoffsetp(value uint8) {
+func (r *RegisterOpamp2hsotrType) SetTrimlpoffsetp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterOpamp2hsotrFieldTrimlpoffsetpMask)|(uint32(value)<<RegisterOpamp2hsotrFieldTrimlpoffsetpShift))
 }

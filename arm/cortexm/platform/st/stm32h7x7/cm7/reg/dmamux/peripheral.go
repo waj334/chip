@@ -13,41 +13,64 @@ var (
 )
 
 type _dmamux struct {
-	C0cr  registerC0crType
-	C1cr  registerC1crType
-	C2cr  registerC2crType
-	C3cr  registerC3crType
-	C4cr  registerC4crType
-	C5cr  registerC5crType
-	C6cr  registerC6crType
-	C7cr  registerC7crType
-	C8cr  registerC8crType
-	C9cr  registerC9crType
-	C10cr registerC10crType
-	C11cr registerC11crType
-	C12cr registerC12crType
-	C13cr registerC13crType
-	C14cr registerC14crType
-	C15cr registerC15crType
+	C0cr  RegisterC0crType
+	C1cr  RegisterC1crType
+	C2cr  RegisterC2crType
+	C3cr  RegisterC3crType
+	C4cr  RegisterC4crType
+	C5cr  RegisterC5crType
+	C6cr  RegisterC6crType
+	C7cr  RegisterC7crType
+	C8cr  RegisterC8crType
+	C9cr  RegisterC9crType
+	C10cr RegisterC10crType
+	C11cr RegisterC11crType
+	C12cr RegisterC12crType
+	C13cr RegisterC13crType
+	C14cr RegisterC14crType
+	C15cr RegisterC15crType
 	_     [64]byte
-	Csr   registerCsrType
-	Cfr   registerCfrType
+	Csr   RegisterCsrType
+	Cfr   RegisterCfrType
 	_     [120]byte
-	Rg0cr registerRg0crType
-	Rg1cr registerRg1crType
-	Rg2cr registerRg2crType
-	Rg3cr registerRg3crType
-	Rg4cr registerRg4crType
-	Rg5cr registerRg5crType
-	Rg6cr registerRg6crType
-	Rg7cr registerRg7crType
+	Rg0cr RegisterRg0crType
+	Rg1cr RegisterRg1crType
+	Rg2cr RegisterRg2crType
+	Rg3cr RegisterRg3crType
+	Rg4cr RegisterRg4crType
+	Rg5cr RegisterRg5crType
+	Rg6cr RegisterRg6crType
+	Rg7cr RegisterRg7crType
 	_     [32]byte
-	Rgsr  registerRgsrType
-	Rgcfr registerRgcfrType
+	Rgsr  RegisterRgsrType
+	Rgcfr RegisterRgcfrType
 }
 
-// registerC0crType DMAMux - DMA request line multiplexer channel x control register
-type registerC0crType uint32
+// RegisterC0crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC0crType uint32
+
+func (r *RegisterC0crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC0crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC0crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC0crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC0crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC0crFieldDmareqidShift = 0
@@ -55,12 +78,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC0crType) GetDmareqid() uint8 {
+func (r *RegisterC0crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldDmareqidMask) >> RegisterC0crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC0crType) SetDmareqid(value uint8) {
+func (r *RegisterC0crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC0crFieldDmareqidMask)|(uint32(value)<<RegisterC0crFieldDmareqidShift))
 }
 
@@ -70,12 +93,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC0crType) GetSoie() bool {
+func (r *RegisterC0crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC0crType) SetSoie(value bool) {
+func (r *RegisterC0crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC0crFieldSoieMask)
 	} else {
@@ -89,12 +112,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC0crType) GetEge() bool {
+func (r *RegisterC0crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC0crType) SetEge(value bool) {
+func (r *RegisterC0crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC0crFieldEgeMask)
 	} else {
@@ -108,12 +131,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC0crType) GetSe() bool {
+func (r *RegisterC0crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC0crType) SetSe(value bool) {
+func (r *RegisterC0crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC0crFieldSeMask)
 	} else {
@@ -127,12 +150,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC0crType) GetSpol() uint8 {
+func (r *RegisterC0crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldSpolMask) >> RegisterC0crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC0crType) SetSpol(value uint8) {
+func (r *RegisterC0crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC0crFieldSpolMask)|(uint32(value)<<RegisterC0crFieldSpolShift))
 }
 
@@ -142,12 +165,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC0crType) GetNbreq() uint8 {
+func (r *RegisterC0crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldNbreqMask) >> RegisterC0crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC0crType) SetNbreq(value uint8) {
+func (r *RegisterC0crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC0crFieldNbreqMask)|(uint32(value)<<RegisterC0crFieldNbreqShift))
 }
 
@@ -157,17 +180,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC0crType) GetSyncid() uint8 {
+func (r *RegisterC0crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC0crFieldSyncidMask) >> RegisterC0crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC0crType) SetSyncid(value uint8) {
+func (r *RegisterC0crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC0crFieldSyncidMask)|(uint32(value)<<RegisterC0crFieldSyncidShift))
 }
 
-// registerC1crType DMAMux - DMA request line multiplexer channel x control register
-type registerC1crType uint32
+// RegisterC1crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC1crType uint32
+
+func (r *RegisterC1crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC1crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC1crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC1crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC1crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC1crFieldDmareqidShift = 0
@@ -175,12 +221,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC1crType) GetDmareqid() uint8 {
+func (r *RegisterC1crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldDmareqidMask) >> RegisterC1crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC1crType) SetDmareqid(value uint8) {
+func (r *RegisterC1crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC1crFieldDmareqidMask)|(uint32(value)<<RegisterC1crFieldDmareqidShift))
 }
 
@@ -190,12 +236,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC1crType) GetSoie() bool {
+func (r *RegisterC1crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC1crType) SetSoie(value bool) {
+func (r *RegisterC1crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1crFieldSoieMask)
 	} else {
@@ -209,12 +255,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC1crType) GetEge() bool {
+func (r *RegisterC1crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC1crType) SetEge(value bool) {
+func (r *RegisterC1crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1crFieldEgeMask)
 	} else {
@@ -228,12 +274,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC1crType) GetSe() bool {
+func (r *RegisterC1crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC1crType) SetSe(value bool) {
+func (r *RegisterC1crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1crFieldSeMask)
 	} else {
@@ -247,12 +293,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC1crType) GetSpol() uint8 {
+func (r *RegisterC1crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldSpolMask) >> RegisterC1crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC1crType) SetSpol(value uint8) {
+func (r *RegisterC1crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC1crFieldSpolMask)|(uint32(value)<<RegisterC1crFieldSpolShift))
 }
 
@@ -262,12 +308,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC1crType) GetNbreq() uint8 {
+func (r *RegisterC1crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldNbreqMask) >> RegisterC1crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC1crType) SetNbreq(value uint8) {
+func (r *RegisterC1crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC1crFieldNbreqMask)|(uint32(value)<<RegisterC1crFieldNbreqShift))
 }
 
@@ -277,17 +323,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC1crType) GetSyncid() uint8 {
+func (r *RegisterC1crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC1crFieldSyncidMask) >> RegisterC1crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC1crType) SetSyncid(value uint8) {
+func (r *RegisterC1crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC1crFieldSyncidMask)|(uint32(value)<<RegisterC1crFieldSyncidShift))
 }
 
-// registerC2crType DMAMux - DMA request line multiplexer channel x control register
-type registerC2crType uint32
+// RegisterC2crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC2crType uint32
+
+func (r *RegisterC2crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC2crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC2crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC2crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC2crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC2crFieldDmareqidShift = 0
@@ -295,12 +364,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC2crType) GetDmareqid() uint8 {
+func (r *RegisterC2crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldDmareqidMask) >> RegisterC2crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC2crType) SetDmareqid(value uint8) {
+func (r *RegisterC2crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC2crFieldDmareqidMask)|(uint32(value)<<RegisterC2crFieldDmareqidShift))
 }
 
@@ -310,12 +379,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC2crType) GetSoie() bool {
+func (r *RegisterC2crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC2crType) SetSoie(value bool) {
+func (r *RegisterC2crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC2crFieldSoieMask)
 	} else {
@@ -329,12 +398,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC2crType) GetEge() bool {
+func (r *RegisterC2crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC2crType) SetEge(value bool) {
+func (r *RegisterC2crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC2crFieldEgeMask)
 	} else {
@@ -348,12 +417,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC2crType) GetSe() bool {
+func (r *RegisterC2crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC2crType) SetSe(value bool) {
+func (r *RegisterC2crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC2crFieldSeMask)
 	} else {
@@ -367,12 +436,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC2crType) GetSpol() uint8 {
+func (r *RegisterC2crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldSpolMask) >> RegisterC2crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC2crType) SetSpol(value uint8) {
+func (r *RegisterC2crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC2crFieldSpolMask)|(uint32(value)<<RegisterC2crFieldSpolShift))
 }
 
@@ -382,12 +451,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC2crType) GetNbreq() uint8 {
+func (r *RegisterC2crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldNbreqMask) >> RegisterC2crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC2crType) SetNbreq(value uint8) {
+func (r *RegisterC2crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC2crFieldNbreqMask)|(uint32(value)<<RegisterC2crFieldNbreqShift))
 }
 
@@ -397,17 +466,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC2crType) GetSyncid() uint8 {
+func (r *RegisterC2crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC2crFieldSyncidMask) >> RegisterC2crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC2crType) SetSyncid(value uint8) {
+func (r *RegisterC2crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC2crFieldSyncidMask)|(uint32(value)<<RegisterC2crFieldSyncidShift))
 }
 
-// registerC3crType DMAMux - DMA request line multiplexer channel x control register
-type registerC3crType uint32
+// RegisterC3crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC3crType uint32
+
+func (r *RegisterC3crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC3crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC3crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC3crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC3crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC3crFieldDmareqidShift = 0
@@ -415,12 +507,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC3crType) GetDmareqid() uint8 {
+func (r *RegisterC3crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldDmareqidMask) >> RegisterC3crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC3crType) SetDmareqid(value uint8) {
+func (r *RegisterC3crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC3crFieldDmareqidMask)|(uint32(value)<<RegisterC3crFieldDmareqidShift))
 }
 
@@ -430,12 +522,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC3crType) GetSoie() bool {
+func (r *RegisterC3crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC3crType) SetSoie(value bool) {
+func (r *RegisterC3crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC3crFieldSoieMask)
 	} else {
@@ -449,12 +541,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC3crType) GetEge() bool {
+func (r *RegisterC3crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC3crType) SetEge(value bool) {
+func (r *RegisterC3crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC3crFieldEgeMask)
 	} else {
@@ -468,12 +560,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC3crType) GetSe() bool {
+func (r *RegisterC3crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC3crType) SetSe(value bool) {
+func (r *RegisterC3crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC3crFieldSeMask)
 	} else {
@@ -487,12 +579,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC3crType) GetSpol() uint8 {
+func (r *RegisterC3crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldSpolMask) >> RegisterC3crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC3crType) SetSpol(value uint8) {
+func (r *RegisterC3crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC3crFieldSpolMask)|(uint32(value)<<RegisterC3crFieldSpolShift))
 }
 
@@ -502,12 +594,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC3crType) GetNbreq() uint8 {
+func (r *RegisterC3crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldNbreqMask) >> RegisterC3crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC3crType) SetNbreq(value uint8) {
+func (r *RegisterC3crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC3crFieldNbreqMask)|(uint32(value)<<RegisterC3crFieldNbreqShift))
 }
 
@@ -517,17 +609,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC3crType) GetSyncid() uint8 {
+func (r *RegisterC3crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC3crFieldSyncidMask) >> RegisterC3crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC3crType) SetSyncid(value uint8) {
+func (r *RegisterC3crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC3crFieldSyncidMask)|(uint32(value)<<RegisterC3crFieldSyncidShift))
 }
 
-// registerC4crType DMAMux - DMA request line multiplexer channel x control register
-type registerC4crType uint32
+// RegisterC4crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC4crType uint32
+
+func (r *RegisterC4crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC4crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC4crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC4crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC4crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC4crFieldDmareqidShift = 0
@@ -535,12 +650,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC4crType) GetDmareqid() uint8 {
+func (r *RegisterC4crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldDmareqidMask) >> RegisterC4crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC4crType) SetDmareqid(value uint8) {
+func (r *RegisterC4crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC4crFieldDmareqidMask)|(uint32(value)<<RegisterC4crFieldDmareqidShift))
 }
 
@@ -550,12 +665,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC4crType) GetSoie() bool {
+func (r *RegisterC4crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC4crType) SetSoie(value bool) {
+func (r *RegisterC4crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC4crFieldSoieMask)
 	} else {
@@ -569,12 +684,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC4crType) GetEge() bool {
+func (r *RegisterC4crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC4crType) SetEge(value bool) {
+func (r *RegisterC4crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC4crFieldEgeMask)
 	} else {
@@ -588,12 +703,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC4crType) GetSe() bool {
+func (r *RegisterC4crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC4crType) SetSe(value bool) {
+func (r *RegisterC4crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC4crFieldSeMask)
 	} else {
@@ -607,12 +722,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC4crType) GetSpol() uint8 {
+func (r *RegisterC4crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldSpolMask) >> RegisterC4crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC4crType) SetSpol(value uint8) {
+func (r *RegisterC4crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC4crFieldSpolMask)|(uint32(value)<<RegisterC4crFieldSpolShift))
 }
 
@@ -622,12 +737,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC4crType) GetNbreq() uint8 {
+func (r *RegisterC4crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldNbreqMask) >> RegisterC4crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC4crType) SetNbreq(value uint8) {
+func (r *RegisterC4crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC4crFieldNbreqMask)|(uint32(value)<<RegisterC4crFieldNbreqShift))
 }
 
@@ -637,17 +752,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC4crType) GetSyncid() uint8 {
+func (r *RegisterC4crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC4crFieldSyncidMask) >> RegisterC4crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC4crType) SetSyncid(value uint8) {
+func (r *RegisterC4crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC4crFieldSyncidMask)|(uint32(value)<<RegisterC4crFieldSyncidShift))
 }
 
-// registerC5crType DMAMux - DMA request line multiplexer channel x control register
-type registerC5crType uint32
+// RegisterC5crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC5crType uint32
+
+func (r *RegisterC5crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC5crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC5crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC5crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC5crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC5crFieldDmareqidShift = 0
@@ -655,12 +793,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC5crType) GetDmareqid() uint8 {
+func (r *RegisterC5crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldDmareqidMask) >> RegisterC5crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC5crType) SetDmareqid(value uint8) {
+func (r *RegisterC5crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC5crFieldDmareqidMask)|(uint32(value)<<RegisterC5crFieldDmareqidShift))
 }
 
@@ -670,12 +808,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC5crType) GetSoie() bool {
+func (r *RegisterC5crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC5crType) SetSoie(value bool) {
+func (r *RegisterC5crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC5crFieldSoieMask)
 	} else {
@@ -689,12 +827,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC5crType) GetEge() bool {
+func (r *RegisterC5crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC5crType) SetEge(value bool) {
+func (r *RegisterC5crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC5crFieldEgeMask)
 	} else {
@@ -708,12 +846,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC5crType) GetSe() bool {
+func (r *RegisterC5crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC5crType) SetSe(value bool) {
+func (r *RegisterC5crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC5crFieldSeMask)
 	} else {
@@ -727,12 +865,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC5crType) GetSpol() uint8 {
+func (r *RegisterC5crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldSpolMask) >> RegisterC5crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC5crType) SetSpol(value uint8) {
+func (r *RegisterC5crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC5crFieldSpolMask)|(uint32(value)<<RegisterC5crFieldSpolShift))
 }
 
@@ -742,12 +880,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC5crType) GetNbreq() uint8 {
+func (r *RegisterC5crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldNbreqMask) >> RegisterC5crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC5crType) SetNbreq(value uint8) {
+func (r *RegisterC5crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC5crFieldNbreqMask)|(uint32(value)<<RegisterC5crFieldNbreqShift))
 }
 
@@ -757,17 +895,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC5crType) GetSyncid() uint8 {
+func (r *RegisterC5crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC5crFieldSyncidMask) >> RegisterC5crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC5crType) SetSyncid(value uint8) {
+func (r *RegisterC5crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC5crFieldSyncidMask)|(uint32(value)<<RegisterC5crFieldSyncidShift))
 }
 
-// registerC6crType DMAMux - DMA request line multiplexer channel x control register
-type registerC6crType uint32
+// RegisterC6crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC6crType uint32
+
+func (r *RegisterC6crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC6crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC6crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC6crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC6crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC6crFieldDmareqidShift = 0
@@ -775,12 +936,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC6crType) GetDmareqid() uint8 {
+func (r *RegisterC6crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldDmareqidMask) >> RegisterC6crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC6crType) SetDmareqid(value uint8) {
+func (r *RegisterC6crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC6crFieldDmareqidMask)|(uint32(value)<<RegisterC6crFieldDmareqidShift))
 }
 
@@ -790,12 +951,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC6crType) GetSoie() bool {
+func (r *RegisterC6crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC6crType) SetSoie(value bool) {
+func (r *RegisterC6crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC6crFieldSoieMask)
 	} else {
@@ -809,12 +970,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC6crType) GetEge() bool {
+func (r *RegisterC6crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC6crType) SetEge(value bool) {
+func (r *RegisterC6crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC6crFieldEgeMask)
 	} else {
@@ -828,12 +989,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC6crType) GetSe() bool {
+func (r *RegisterC6crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC6crType) SetSe(value bool) {
+func (r *RegisterC6crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC6crFieldSeMask)
 	} else {
@@ -847,12 +1008,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC6crType) GetSpol() uint8 {
+func (r *RegisterC6crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldSpolMask) >> RegisterC6crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC6crType) SetSpol(value uint8) {
+func (r *RegisterC6crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC6crFieldSpolMask)|(uint32(value)<<RegisterC6crFieldSpolShift))
 }
 
@@ -862,12 +1023,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC6crType) GetNbreq() uint8 {
+func (r *RegisterC6crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldNbreqMask) >> RegisterC6crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC6crType) SetNbreq(value uint8) {
+func (r *RegisterC6crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC6crFieldNbreqMask)|(uint32(value)<<RegisterC6crFieldNbreqShift))
 }
 
@@ -877,17 +1038,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC6crType) GetSyncid() uint8 {
+func (r *RegisterC6crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC6crFieldSyncidMask) >> RegisterC6crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC6crType) SetSyncid(value uint8) {
+func (r *RegisterC6crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC6crFieldSyncidMask)|(uint32(value)<<RegisterC6crFieldSyncidShift))
 }
 
-// registerC7crType DMAMux - DMA request line multiplexer channel x control register
-type registerC7crType uint32
+// RegisterC7crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC7crType uint32
+
+func (r *RegisterC7crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC7crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC7crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC7crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC7crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC7crFieldDmareqidShift = 0
@@ -895,12 +1079,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC7crType) GetDmareqid() uint8 {
+func (r *RegisterC7crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldDmareqidMask) >> RegisterC7crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC7crType) SetDmareqid(value uint8) {
+func (r *RegisterC7crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC7crFieldDmareqidMask)|(uint32(value)<<RegisterC7crFieldDmareqidShift))
 }
 
@@ -910,12 +1094,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC7crType) GetSoie() bool {
+func (r *RegisterC7crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC7crType) SetSoie(value bool) {
+func (r *RegisterC7crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC7crFieldSoieMask)
 	} else {
@@ -929,12 +1113,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC7crType) GetEge() bool {
+func (r *RegisterC7crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC7crType) SetEge(value bool) {
+func (r *RegisterC7crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC7crFieldEgeMask)
 	} else {
@@ -948,12 +1132,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC7crType) GetSe() bool {
+func (r *RegisterC7crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC7crType) SetSe(value bool) {
+func (r *RegisterC7crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC7crFieldSeMask)
 	} else {
@@ -967,12 +1151,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC7crType) GetSpol() uint8 {
+func (r *RegisterC7crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldSpolMask) >> RegisterC7crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC7crType) SetSpol(value uint8) {
+func (r *RegisterC7crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC7crFieldSpolMask)|(uint32(value)<<RegisterC7crFieldSpolShift))
 }
 
@@ -982,12 +1166,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC7crType) GetNbreq() uint8 {
+func (r *RegisterC7crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldNbreqMask) >> RegisterC7crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC7crType) SetNbreq(value uint8) {
+func (r *RegisterC7crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC7crFieldNbreqMask)|(uint32(value)<<RegisterC7crFieldNbreqShift))
 }
 
@@ -997,17 +1181,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC7crType) GetSyncid() uint8 {
+func (r *RegisterC7crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC7crFieldSyncidMask) >> RegisterC7crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC7crType) SetSyncid(value uint8) {
+func (r *RegisterC7crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC7crFieldSyncidMask)|(uint32(value)<<RegisterC7crFieldSyncidShift))
 }
 
-// registerC8crType DMAMux - DMA request line multiplexer channel x control register
-type registerC8crType uint32
+// RegisterC8crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC8crType uint32
+
+func (r *RegisterC8crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC8crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC8crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC8crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC8crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC8crFieldDmareqidShift = 0
@@ -1015,12 +1222,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC8crType) GetDmareqid() uint8 {
+func (r *RegisterC8crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldDmareqidMask) >> RegisterC8crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC8crType) SetDmareqid(value uint8) {
+func (r *RegisterC8crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC8crFieldDmareqidMask)|(uint32(value)<<RegisterC8crFieldDmareqidShift))
 }
 
@@ -1030,12 +1237,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC8crType) GetSoie() bool {
+func (r *RegisterC8crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC8crType) SetSoie(value bool) {
+func (r *RegisterC8crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC8crFieldSoieMask)
 	} else {
@@ -1049,12 +1256,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC8crType) GetEge() bool {
+func (r *RegisterC8crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC8crType) SetEge(value bool) {
+func (r *RegisterC8crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC8crFieldEgeMask)
 	} else {
@@ -1068,12 +1275,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC8crType) GetSe() bool {
+func (r *RegisterC8crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC8crType) SetSe(value bool) {
+func (r *RegisterC8crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC8crFieldSeMask)
 	} else {
@@ -1087,12 +1294,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC8crType) GetSpol() uint8 {
+func (r *RegisterC8crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldSpolMask) >> RegisterC8crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC8crType) SetSpol(value uint8) {
+func (r *RegisterC8crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC8crFieldSpolMask)|(uint32(value)<<RegisterC8crFieldSpolShift))
 }
 
@@ -1102,12 +1309,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC8crType) GetNbreq() uint8 {
+func (r *RegisterC8crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldNbreqMask) >> RegisterC8crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC8crType) SetNbreq(value uint8) {
+func (r *RegisterC8crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC8crFieldNbreqMask)|(uint32(value)<<RegisterC8crFieldNbreqShift))
 }
 
@@ -1117,17 +1324,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC8crType) GetSyncid() uint8 {
+func (r *RegisterC8crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC8crFieldSyncidMask) >> RegisterC8crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC8crType) SetSyncid(value uint8) {
+func (r *RegisterC8crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC8crFieldSyncidMask)|(uint32(value)<<RegisterC8crFieldSyncidShift))
 }
 
-// registerC9crType DMAMux - DMA request line multiplexer channel x control register
-type registerC9crType uint32
+// RegisterC9crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC9crType uint32
+
+func (r *RegisterC9crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC9crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC9crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC9crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC9crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC9crFieldDmareqidShift = 0
@@ -1135,12 +1365,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC9crType) GetDmareqid() uint8 {
+func (r *RegisterC9crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldDmareqidMask) >> RegisterC9crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC9crType) SetDmareqid(value uint8) {
+func (r *RegisterC9crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC9crFieldDmareqidMask)|(uint32(value)<<RegisterC9crFieldDmareqidShift))
 }
 
@@ -1150,12 +1380,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC9crType) GetSoie() bool {
+func (r *RegisterC9crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC9crType) SetSoie(value bool) {
+func (r *RegisterC9crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC9crFieldSoieMask)
 	} else {
@@ -1169,12 +1399,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC9crType) GetEge() bool {
+func (r *RegisterC9crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC9crType) SetEge(value bool) {
+func (r *RegisterC9crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC9crFieldEgeMask)
 	} else {
@@ -1188,12 +1418,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC9crType) GetSe() bool {
+func (r *RegisterC9crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC9crType) SetSe(value bool) {
+func (r *RegisterC9crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC9crFieldSeMask)
 	} else {
@@ -1207,12 +1437,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC9crType) GetSpol() uint8 {
+func (r *RegisterC9crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldSpolMask) >> RegisterC9crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC9crType) SetSpol(value uint8) {
+func (r *RegisterC9crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC9crFieldSpolMask)|(uint32(value)<<RegisterC9crFieldSpolShift))
 }
 
@@ -1222,12 +1452,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC9crType) GetNbreq() uint8 {
+func (r *RegisterC9crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldNbreqMask) >> RegisterC9crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC9crType) SetNbreq(value uint8) {
+func (r *RegisterC9crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC9crFieldNbreqMask)|(uint32(value)<<RegisterC9crFieldNbreqShift))
 }
 
@@ -1237,17 +1467,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC9crType) GetSyncid() uint8 {
+func (r *RegisterC9crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC9crFieldSyncidMask) >> RegisterC9crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC9crType) SetSyncid(value uint8) {
+func (r *RegisterC9crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC9crFieldSyncidMask)|(uint32(value)<<RegisterC9crFieldSyncidShift))
 }
 
-// registerC10crType DMAMux - DMA request line multiplexer channel x control register
-type registerC10crType uint32
+// RegisterC10crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC10crType uint32
+
+func (r *RegisterC10crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC10crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC10crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC10crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC10crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC10crFieldDmareqidShift = 0
@@ -1255,12 +1508,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC10crType) GetDmareqid() uint8 {
+func (r *RegisterC10crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldDmareqidMask) >> RegisterC10crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC10crType) SetDmareqid(value uint8) {
+func (r *RegisterC10crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC10crFieldDmareqidMask)|(uint32(value)<<RegisterC10crFieldDmareqidShift))
 }
 
@@ -1270,12 +1523,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC10crType) GetSoie() bool {
+func (r *RegisterC10crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC10crType) SetSoie(value bool) {
+func (r *RegisterC10crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC10crFieldSoieMask)
 	} else {
@@ -1289,12 +1542,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC10crType) GetEge() bool {
+func (r *RegisterC10crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC10crType) SetEge(value bool) {
+func (r *RegisterC10crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC10crFieldEgeMask)
 	} else {
@@ -1308,12 +1561,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC10crType) GetSe() bool {
+func (r *RegisterC10crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC10crType) SetSe(value bool) {
+func (r *RegisterC10crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC10crFieldSeMask)
 	} else {
@@ -1327,12 +1580,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC10crType) GetSpol() uint8 {
+func (r *RegisterC10crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldSpolMask) >> RegisterC10crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC10crType) SetSpol(value uint8) {
+func (r *RegisterC10crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC10crFieldSpolMask)|(uint32(value)<<RegisterC10crFieldSpolShift))
 }
 
@@ -1342,12 +1595,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC10crType) GetNbreq() uint8 {
+func (r *RegisterC10crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldNbreqMask) >> RegisterC10crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC10crType) SetNbreq(value uint8) {
+func (r *RegisterC10crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC10crFieldNbreqMask)|(uint32(value)<<RegisterC10crFieldNbreqShift))
 }
 
@@ -1357,17 +1610,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC10crType) GetSyncid() uint8 {
+func (r *RegisterC10crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC10crFieldSyncidMask) >> RegisterC10crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC10crType) SetSyncid(value uint8) {
+func (r *RegisterC10crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC10crFieldSyncidMask)|(uint32(value)<<RegisterC10crFieldSyncidShift))
 }
 
-// registerC11crType DMAMux - DMA request line multiplexer channel x control register
-type registerC11crType uint32
+// RegisterC11crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC11crType uint32
+
+func (r *RegisterC11crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC11crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC11crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC11crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC11crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC11crFieldDmareqidShift = 0
@@ -1375,12 +1651,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC11crType) GetDmareqid() uint8 {
+func (r *RegisterC11crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldDmareqidMask) >> RegisterC11crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC11crType) SetDmareqid(value uint8) {
+func (r *RegisterC11crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC11crFieldDmareqidMask)|(uint32(value)<<RegisterC11crFieldDmareqidShift))
 }
 
@@ -1390,12 +1666,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC11crType) GetSoie() bool {
+func (r *RegisterC11crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC11crType) SetSoie(value bool) {
+func (r *RegisterC11crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC11crFieldSoieMask)
 	} else {
@@ -1409,12 +1685,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC11crType) GetEge() bool {
+func (r *RegisterC11crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC11crType) SetEge(value bool) {
+func (r *RegisterC11crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC11crFieldEgeMask)
 	} else {
@@ -1428,12 +1704,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC11crType) GetSe() bool {
+func (r *RegisterC11crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC11crType) SetSe(value bool) {
+func (r *RegisterC11crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC11crFieldSeMask)
 	} else {
@@ -1447,12 +1723,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC11crType) GetSpol() uint8 {
+func (r *RegisterC11crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldSpolMask) >> RegisterC11crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC11crType) SetSpol(value uint8) {
+func (r *RegisterC11crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC11crFieldSpolMask)|(uint32(value)<<RegisterC11crFieldSpolShift))
 }
 
@@ -1462,12 +1738,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC11crType) GetNbreq() uint8 {
+func (r *RegisterC11crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldNbreqMask) >> RegisterC11crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC11crType) SetNbreq(value uint8) {
+func (r *RegisterC11crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC11crFieldNbreqMask)|(uint32(value)<<RegisterC11crFieldNbreqShift))
 }
 
@@ -1477,17 +1753,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC11crType) GetSyncid() uint8 {
+func (r *RegisterC11crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC11crFieldSyncidMask) >> RegisterC11crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC11crType) SetSyncid(value uint8) {
+func (r *RegisterC11crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC11crFieldSyncidMask)|(uint32(value)<<RegisterC11crFieldSyncidShift))
 }
 
-// registerC12crType DMAMux - DMA request line multiplexer channel x control register
-type registerC12crType uint32
+// RegisterC12crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC12crType uint32
+
+func (r *RegisterC12crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC12crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC12crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC12crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC12crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC12crFieldDmareqidShift = 0
@@ -1495,12 +1794,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC12crType) GetDmareqid() uint8 {
+func (r *RegisterC12crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldDmareqidMask) >> RegisterC12crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC12crType) SetDmareqid(value uint8) {
+func (r *RegisterC12crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC12crFieldDmareqidMask)|(uint32(value)<<RegisterC12crFieldDmareqidShift))
 }
 
@@ -1510,12 +1809,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC12crType) GetSoie() bool {
+func (r *RegisterC12crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC12crType) SetSoie(value bool) {
+func (r *RegisterC12crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC12crFieldSoieMask)
 	} else {
@@ -1529,12 +1828,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC12crType) GetEge() bool {
+func (r *RegisterC12crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC12crType) SetEge(value bool) {
+func (r *RegisterC12crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC12crFieldEgeMask)
 	} else {
@@ -1548,12 +1847,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC12crType) GetSe() bool {
+func (r *RegisterC12crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC12crType) SetSe(value bool) {
+func (r *RegisterC12crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC12crFieldSeMask)
 	} else {
@@ -1567,12 +1866,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC12crType) GetSpol() uint8 {
+func (r *RegisterC12crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldSpolMask) >> RegisterC12crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC12crType) SetSpol(value uint8) {
+func (r *RegisterC12crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC12crFieldSpolMask)|(uint32(value)<<RegisterC12crFieldSpolShift))
 }
 
@@ -1582,12 +1881,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC12crType) GetNbreq() uint8 {
+func (r *RegisterC12crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldNbreqMask) >> RegisterC12crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC12crType) SetNbreq(value uint8) {
+func (r *RegisterC12crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC12crFieldNbreqMask)|(uint32(value)<<RegisterC12crFieldNbreqShift))
 }
 
@@ -1597,17 +1896,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC12crType) GetSyncid() uint8 {
+func (r *RegisterC12crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC12crFieldSyncidMask) >> RegisterC12crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC12crType) SetSyncid(value uint8) {
+func (r *RegisterC12crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC12crFieldSyncidMask)|(uint32(value)<<RegisterC12crFieldSyncidShift))
 }
 
-// registerC13crType DMAMux - DMA request line multiplexer channel x control register
-type registerC13crType uint32
+// RegisterC13crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC13crType uint32
+
+func (r *RegisterC13crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC13crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC13crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC13crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC13crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC13crFieldDmareqidShift = 0
@@ -1615,12 +1937,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC13crType) GetDmareqid() uint8 {
+func (r *RegisterC13crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldDmareqidMask) >> RegisterC13crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC13crType) SetDmareqid(value uint8) {
+func (r *RegisterC13crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC13crFieldDmareqidMask)|(uint32(value)<<RegisterC13crFieldDmareqidShift))
 }
 
@@ -1630,12 +1952,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC13crType) GetSoie() bool {
+func (r *RegisterC13crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC13crType) SetSoie(value bool) {
+func (r *RegisterC13crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC13crFieldSoieMask)
 	} else {
@@ -1649,12 +1971,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC13crType) GetEge() bool {
+func (r *RegisterC13crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC13crType) SetEge(value bool) {
+func (r *RegisterC13crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC13crFieldEgeMask)
 	} else {
@@ -1668,12 +1990,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC13crType) GetSe() bool {
+func (r *RegisterC13crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC13crType) SetSe(value bool) {
+func (r *RegisterC13crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC13crFieldSeMask)
 	} else {
@@ -1687,12 +2009,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC13crType) GetSpol() uint8 {
+func (r *RegisterC13crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldSpolMask) >> RegisterC13crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC13crType) SetSpol(value uint8) {
+func (r *RegisterC13crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC13crFieldSpolMask)|(uint32(value)<<RegisterC13crFieldSpolShift))
 }
 
@@ -1702,12 +2024,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC13crType) GetNbreq() uint8 {
+func (r *RegisterC13crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldNbreqMask) >> RegisterC13crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC13crType) SetNbreq(value uint8) {
+func (r *RegisterC13crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC13crFieldNbreqMask)|(uint32(value)<<RegisterC13crFieldNbreqShift))
 }
 
@@ -1717,17 +2039,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC13crType) GetSyncid() uint8 {
+func (r *RegisterC13crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC13crFieldSyncidMask) >> RegisterC13crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC13crType) SetSyncid(value uint8) {
+func (r *RegisterC13crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC13crFieldSyncidMask)|(uint32(value)<<RegisterC13crFieldSyncidShift))
 }
 
-// registerC14crType DMAMux - DMA request line multiplexer channel x control register
-type registerC14crType uint32
+// RegisterC14crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC14crType uint32
+
+func (r *RegisterC14crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC14crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC14crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC14crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC14crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC14crFieldDmareqidShift = 0
@@ -1735,12 +2080,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC14crType) GetDmareqid() uint8 {
+func (r *RegisterC14crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldDmareqidMask) >> RegisterC14crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC14crType) SetDmareqid(value uint8) {
+func (r *RegisterC14crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC14crFieldDmareqidMask)|(uint32(value)<<RegisterC14crFieldDmareqidShift))
 }
 
@@ -1750,12 +2095,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC14crType) GetSoie() bool {
+func (r *RegisterC14crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC14crType) SetSoie(value bool) {
+func (r *RegisterC14crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC14crFieldSoieMask)
 	} else {
@@ -1769,12 +2114,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC14crType) GetEge() bool {
+func (r *RegisterC14crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC14crType) SetEge(value bool) {
+func (r *RegisterC14crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC14crFieldEgeMask)
 	} else {
@@ -1788,12 +2133,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC14crType) GetSe() bool {
+func (r *RegisterC14crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC14crType) SetSe(value bool) {
+func (r *RegisterC14crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC14crFieldSeMask)
 	} else {
@@ -1807,12 +2152,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC14crType) GetSpol() uint8 {
+func (r *RegisterC14crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldSpolMask) >> RegisterC14crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC14crType) SetSpol(value uint8) {
+func (r *RegisterC14crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC14crFieldSpolMask)|(uint32(value)<<RegisterC14crFieldSpolShift))
 }
 
@@ -1822,12 +2167,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC14crType) GetNbreq() uint8 {
+func (r *RegisterC14crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldNbreqMask) >> RegisterC14crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC14crType) SetNbreq(value uint8) {
+func (r *RegisterC14crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC14crFieldNbreqMask)|(uint32(value)<<RegisterC14crFieldNbreqShift))
 }
 
@@ -1837,17 +2182,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC14crType) GetSyncid() uint8 {
+func (r *RegisterC14crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC14crFieldSyncidMask) >> RegisterC14crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC14crType) SetSyncid(value uint8) {
+func (r *RegisterC14crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC14crFieldSyncidMask)|(uint32(value)<<RegisterC14crFieldSyncidShift))
 }
 
-// registerC15crType DMAMux - DMA request line multiplexer channel x control register
-type registerC15crType uint32
+// RegisterC15crType DMAMux - DMA request line multiplexer channel x control register
+type RegisterC15crType uint32
+
+func (r *RegisterC15crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterC15crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterC15crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterC15crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterC15crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterC15crFieldDmareqidShift = 0
@@ -1855,12 +2223,12 @@ const (
 )
 
 // GetDmareqid Input DMA request line selected
-func (r *registerC15crType) GetDmareqid() uint8 {
+func (r *RegisterC15crType) GetDmareqid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldDmareqidMask) >> RegisterC15crFieldDmareqidShift)
 }
 
 // SetDmareqid Input DMA request line selected
-func (r *registerC15crType) SetDmareqid(value uint8) {
+func (r *RegisterC15crType) SetDmareqid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC15crFieldDmareqidMask)|(uint32(value)<<RegisterC15crFieldDmareqidShift))
 }
 
@@ -1870,12 +2238,12 @@ const (
 )
 
 // GetSoie Interrupt enable at synchronization event overrun
-func (r *registerC15crType) GetSoie() bool {
+func (r *RegisterC15crType) GetSoie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldSoieMask) != 0
 }
 
 // SetSoie Interrupt enable at synchronization event overrun
-func (r *registerC15crType) SetSoie(value bool) {
+func (r *RegisterC15crType) SetSoie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC15crFieldSoieMask)
 	} else {
@@ -1889,12 +2257,12 @@ const (
 )
 
 // GetEge Event generation enable/disable
-func (r *registerC15crType) GetEge() bool {
+func (r *RegisterC15crType) GetEge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldEgeMask) != 0
 }
 
 // SetEge Event generation enable/disable
-func (r *registerC15crType) SetEge(value bool) {
+func (r *RegisterC15crType) SetEge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC15crFieldEgeMask)
 	} else {
@@ -1908,12 +2276,12 @@ const (
 )
 
 // GetSe Synchronous operating mode enable/disable
-func (r *registerC15crType) GetSe() bool {
+func (r *RegisterC15crType) GetSe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldSeMask) != 0
 }
 
 // SetSe Synchronous operating mode enable/disable
-func (r *registerC15crType) SetSe(value bool) {
+func (r *RegisterC15crType) SetSe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC15crFieldSeMask)
 	} else {
@@ -1927,12 +2295,12 @@ const (
 )
 
 // GetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC15crType) GetSpol() uint8 {
+func (r *RegisterC15crType) GetSpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldSpolMask) >> RegisterC15crFieldSpolShift)
 }
 
 // SetSpol Synchronization event type selector Defines the synchronization event on the selected synchronization input:
-func (r *registerC15crType) SetSpol(value uint8) {
+func (r *RegisterC15crType) SetSpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC15crFieldSpolMask)|(uint32(value)<<RegisterC15crFieldSpolShift))
 }
 
@@ -1942,12 +2310,12 @@ const (
 )
 
 // GetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC15crType) GetNbreq() uint8 {
+func (r *RegisterC15crType) GetNbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldNbreqMask) >> RegisterC15crFieldNbreqShift)
 }
 
 // SetNbreq Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.
-func (r *registerC15crType) SetNbreq(value uint8) {
+func (r *RegisterC15crType) SetNbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC15crFieldNbreqMask)|(uint32(value)<<RegisterC15crFieldNbreqShift))
 }
 
@@ -1957,17 +2325,40 @@ const (
 )
 
 // GetSyncid Synchronization input selected
-func (r *registerC15crType) GetSyncid() uint8 {
+func (r *RegisterC15crType) GetSyncid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterC15crFieldSyncidMask) >> RegisterC15crFieldSyncidShift)
 }
 
 // SetSyncid Synchronization input selected
-func (r *registerC15crType) SetSyncid(value uint8) {
+func (r *RegisterC15crType) SetSyncid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterC15crFieldSyncidMask)|(uint32(value)<<RegisterC15crFieldSyncidShift))
 }
 
-// registerCsrType DMAMUX request line multiplexer interrupt channel status register
-type registerCsrType uint32
+// RegisterCsrType DMAMUX request line multiplexer interrupt channel status register
+type RegisterCsrType uint32
+
+func (r *RegisterCsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCsrFieldSofShift = 0
@@ -1975,17 +2366,40 @@ const (
 )
 
 // GetSof Synchronization overrun event flag
-func (r *registerCsrType) GetSof() uint16 {
+func (r *RegisterCsrType) GetSof() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCsrFieldSofMask) >> RegisterCsrFieldSofShift)
 }
 
 // SetSof Synchronization overrun event flag
-func (r *registerCsrType) SetSof(value uint16) {
+func (r *RegisterCsrType) SetSof(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCsrFieldSofMask)|(uint32(value)<<RegisterCsrFieldSofShift))
 }
 
-// registerCfrType DMAMUX request line multiplexer interrupt clear flag register
-type registerCfrType uint32
+// RegisterCfrType DMAMUX request line multiplexer interrupt clear flag register
+type RegisterCfrType uint32
+
+func (r *RegisterCfrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCfrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCfrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCfrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCfrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCfrFieldCsofShift = 0
@@ -1993,17 +2407,40 @@ const (
 )
 
 // GetCsof Clear synchronization overrun event flag
-func (r *registerCfrType) GetCsof() uint16 {
+func (r *RegisterCfrType) GetCsof() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCfrFieldCsofMask) >> RegisterCfrFieldCsofShift)
 }
 
 // SetCsof Clear synchronization overrun event flag
-func (r *registerCfrType) SetCsof(value uint16) {
+func (r *RegisterCfrType) SetCsof(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfrFieldCsofMask)|(uint32(value)<<RegisterCfrFieldCsofShift))
 }
 
-// registerRg0crType DMAMux - DMA request generator channel x control register
-type registerRg0crType uint32
+// RegisterRg0crType DMAMux - DMA request generator channel x control register
+type RegisterRg0crType uint32
+
+func (r *RegisterRg0crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRg0crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRg0crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRg0crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRg0crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRg0crFieldSigidShift = 0
@@ -2011,12 +2448,12 @@ const (
 )
 
 // GetSigid DMA request trigger input selected
-func (r *registerRg0crType) GetSigid() uint8 {
+func (r *RegisterRg0crType) GetSigid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg0crFieldSigidMask) >> RegisterRg0crFieldSigidShift)
 }
 
 // SetSigid DMA request trigger input selected
-func (r *registerRg0crType) SetSigid(value uint8) {
+func (r *RegisterRg0crType) SetSigid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg0crFieldSigidMask)|(uint32(value)<<RegisterRg0crFieldSigidShift))
 }
 
@@ -2026,12 +2463,12 @@ const (
 )
 
 // GetOie Interrupt enable at trigger event overrun
-func (r *registerRg0crType) GetOie() bool {
+func (r *RegisterRg0crType) GetOie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg0crFieldOieMask) != 0
 }
 
 // SetOie Interrupt enable at trigger event overrun
-func (r *registerRg0crType) SetOie(value bool) {
+func (r *RegisterRg0crType) SetOie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg0crFieldOieMask)
 	} else {
@@ -2045,12 +2482,12 @@ const (
 )
 
 // GetGe DMA request generator channel enable/disable
-func (r *registerRg0crType) GetGe() bool {
+func (r *RegisterRg0crType) GetGe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg0crFieldGeMask) != 0
 }
 
 // SetGe DMA request generator channel enable/disable
-func (r *registerRg0crType) SetGe(value bool) {
+func (r *RegisterRg0crType) SetGe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg0crFieldGeMask)
 	} else {
@@ -2064,12 +2501,12 @@ const (
 )
 
 // GetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg0crType) GetGpol() uint8 {
+func (r *RegisterRg0crType) GetGpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg0crFieldGpolMask) >> RegisterRg0crFieldGpolShift)
 }
 
 // SetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg0crType) SetGpol(value uint8) {
+func (r *RegisterRg0crType) SetGpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg0crFieldGpolMask)|(uint32(value)<<RegisterRg0crFieldGpolShift))
 }
 
@@ -2079,17 +2516,40 @@ const (
 )
 
 // GetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg0crType) GetGnbreq() uint8 {
+func (r *RegisterRg0crType) GetGnbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg0crFieldGnbreqMask) >> RegisterRg0crFieldGnbreqShift)
 }
 
 // SetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg0crType) SetGnbreq(value uint8) {
+func (r *RegisterRg0crType) SetGnbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg0crFieldGnbreqMask)|(uint32(value)<<RegisterRg0crFieldGnbreqShift))
 }
 
-// registerRg1crType DMAMux - DMA request generator channel x control register
-type registerRg1crType uint32
+// RegisterRg1crType DMAMux - DMA request generator channel x control register
+type RegisterRg1crType uint32
+
+func (r *RegisterRg1crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRg1crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRg1crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRg1crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRg1crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRg1crFieldSigidShift = 0
@@ -2097,12 +2557,12 @@ const (
 )
 
 // GetSigid DMA request trigger input selected
-func (r *registerRg1crType) GetSigid() uint8 {
+func (r *RegisterRg1crType) GetSigid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg1crFieldSigidMask) >> RegisterRg1crFieldSigidShift)
 }
 
 // SetSigid DMA request trigger input selected
-func (r *registerRg1crType) SetSigid(value uint8) {
+func (r *RegisterRg1crType) SetSigid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg1crFieldSigidMask)|(uint32(value)<<RegisterRg1crFieldSigidShift))
 }
 
@@ -2112,12 +2572,12 @@ const (
 )
 
 // GetOie Interrupt enable at trigger event overrun
-func (r *registerRg1crType) GetOie() bool {
+func (r *RegisterRg1crType) GetOie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg1crFieldOieMask) != 0
 }
 
 // SetOie Interrupt enable at trigger event overrun
-func (r *registerRg1crType) SetOie(value bool) {
+func (r *RegisterRg1crType) SetOie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg1crFieldOieMask)
 	} else {
@@ -2131,12 +2591,12 @@ const (
 )
 
 // GetGe DMA request generator channel enable/disable
-func (r *registerRg1crType) GetGe() bool {
+func (r *RegisterRg1crType) GetGe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg1crFieldGeMask) != 0
 }
 
 // SetGe DMA request generator channel enable/disable
-func (r *registerRg1crType) SetGe(value bool) {
+func (r *RegisterRg1crType) SetGe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg1crFieldGeMask)
 	} else {
@@ -2150,12 +2610,12 @@ const (
 )
 
 // GetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg1crType) GetGpol() uint8 {
+func (r *RegisterRg1crType) GetGpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg1crFieldGpolMask) >> RegisterRg1crFieldGpolShift)
 }
 
 // SetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg1crType) SetGpol(value uint8) {
+func (r *RegisterRg1crType) SetGpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg1crFieldGpolMask)|(uint32(value)<<RegisterRg1crFieldGpolShift))
 }
 
@@ -2165,17 +2625,40 @@ const (
 )
 
 // GetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg1crType) GetGnbreq() uint8 {
+func (r *RegisterRg1crType) GetGnbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg1crFieldGnbreqMask) >> RegisterRg1crFieldGnbreqShift)
 }
 
 // SetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg1crType) SetGnbreq(value uint8) {
+func (r *RegisterRg1crType) SetGnbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg1crFieldGnbreqMask)|(uint32(value)<<RegisterRg1crFieldGnbreqShift))
 }
 
-// registerRg2crType DMAMux - DMA request generator channel x control register
-type registerRg2crType uint32
+// RegisterRg2crType DMAMux - DMA request generator channel x control register
+type RegisterRg2crType uint32
+
+func (r *RegisterRg2crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRg2crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRg2crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRg2crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRg2crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRg2crFieldSigidShift = 0
@@ -2183,12 +2666,12 @@ const (
 )
 
 // GetSigid DMA request trigger input selected
-func (r *registerRg2crType) GetSigid() uint8 {
+func (r *RegisterRg2crType) GetSigid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg2crFieldSigidMask) >> RegisterRg2crFieldSigidShift)
 }
 
 // SetSigid DMA request trigger input selected
-func (r *registerRg2crType) SetSigid(value uint8) {
+func (r *RegisterRg2crType) SetSigid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg2crFieldSigidMask)|(uint32(value)<<RegisterRg2crFieldSigidShift))
 }
 
@@ -2198,12 +2681,12 @@ const (
 )
 
 // GetOie Interrupt enable at trigger event overrun
-func (r *registerRg2crType) GetOie() bool {
+func (r *RegisterRg2crType) GetOie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg2crFieldOieMask) != 0
 }
 
 // SetOie Interrupt enable at trigger event overrun
-func (r *registerRg2crType) SetOie(value bool) {
+func (r *RegisterRg2crType) SetOie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg2crFieldOieMask)
 	} else {
@@ -2217,12 +2700,12 @@ const (
 )
 
 // GetGe DMA request generator channel enable/disable
-func (r *registerRg2crType) GetGe() bool {
+func (r *RegisterRg2crType) GetGe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg2crFieldGeMask) != 0
 }
 
 // SetGe DMA request generator channel enable/disable
-func (r *registerRg2crType) SetGe(value bool) {
+func (r *RegisterRg2crType) SetGe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg2crFieldGeMask)
 	} else {
@@ -2236,12 +2719,12 @@ const (
 )
 
 // GetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg2crType) GetGpol() uint8 {
+func (r *RegisterRg2crType) GetGpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg2crFieldGpolMask) >> RegisterRg2crFieldGpolShift)
 }
 
 // SetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg2crType) SetGpol(value uint8) {
+func (r *RegisterRg2crType) SetGpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg2crFieldGpolMask)|(uint32(value)<<RegisterRg2crFieldGpolShift))
 }
 
@@ -2251,17 +2734,40 @@ const (
 )
 
 // GetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg2crType) GetGnbreq() uint8 {
+func (r *RegisterRg2crType) GetGnbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg2crFieldGnbreqMask) >> RegisterRg2crFieldGnbreqShift)
 }
 
 // SetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg2crType) SetGnbreq(value uint8) {
+func (r *RegisterRg2crType) SetGnbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg2crFieldGnbreqMask)|(uint32(value)<<RegisterRg2crFieldGnbreqShift))
 }
 
-// registerRg3crType DMAMux - DMA request generator channel x control register
-type registerRg3crType uint32
+// RegisterRg3crType DMAMux - DMA request generator channel x control register
+type RegisterRg3crType uint32
+
+func (r *RegisterRg3crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRg3crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRg3crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRg3crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRg3crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRg3crFieldSigidShift = 0
@@ -2269,12 +2775,12 @@ const (
 )
 
 // GetSigid DMA request trigger input selected
-func (r *registerRg3crType) GetSigid() uint8 {
+func (r *RegisterRg3crType) GetSigid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg3crFieldSigidMask) >> RegisterRg3crFieldSigidShift)
 }
 
 // SetSigid DMA request trigger input selected
-func (r *registerRg3crType) SetSigid(value uint8) {
+func (r *RegisterRg3crType) SetSigid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg3crFieldSigidMask)|(uint32(value)<<RegisterRg3crFieldSigidShift))
 }
 
@@ -2284,12 +2790,12 @@ const (
 )
 
 // GetOie Interrupt enable at trigger event overrun
-func (r *registerRg3crType) GetOie() bool {
+func (r *RegisterRg3crType) GetOie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg3crFieldOieMask) != 0
 }
 
 // SetOie Interrupt enable at trigger event overrun
-func (r *registerRg3crType) SetOie(value bool) {
+func (r *RegisterRg3crType) SetOie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg3crFieldOieMask)
 	} else {
@@ -2303,12 +2809,12 @@ const (
 )
 
 // GetGe DMA request generator channel enable/disable
-func (r *registerRg3crType) GetGe() bool {
+func (r *RegisterRg3crType) GetGe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg3crFieldGeMask) != 0
 }
 
 // SetGe DMA request generator channel enable/disable
-func (r *registerRg3crType) SetGe(value bool) {
+func (r *RegisterRg3crType) SetGe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg3crFieldGeMask)
 	} else {
@@ -2322,12 +2828,12 @@ const (
 )
 
 // GetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg3crType) GetGpol() uint8 {
+func (r *RegisterRg3crType) GetGpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg3crFieldGpolMask) >> RegisterRg3crFieldGpolShift)
 }
 
 // SetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg3crType) SetGpol(value uint8) {
+func (r *RegisterRg3crType) SetGpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg3crFieldGpolMask)|(uint32(value)<<RegisterRg3crFieldGpolShift))
 }
 
@@ -2337,17 +2843,40 @@ const (
 )
 
 // GetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg3crType) GetGnbreq() uint8 {
+func (r *RegisterRg3crType) GetGnbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg3crFieldGnbreqMask) >> RegisterRg3crFieldGnbreqShift)
 }
 
 // SetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg3crType) SetGnbreq(value uint8) {
+func (r *RegisterRg3crType) SetGnbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg3crFieldGnbreqMask)|(uint32(value)<<RegisterRg3crFieldGnbreqShift))
 }
 
-// registerRg4crType DMAMux - DMA request generator channel x control register
-type registerRg4crType uint32
+// RegisterRg4crType DMAMux - DMA request generator channel x control register
+type RegisterRg4crType uint32
+
+func (r *RegisterRg4crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRg4crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRg4crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRg4crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRg4crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRg4crFieldSigidShift = 0
@@ -2355,12 +2884,12 @@ const (
 )
 
 // GetSigid DMA request trigger input selected
-func (r *registerRg4crType) GetSigid() uint8 {
+func (r *RegisterRg4crType) GetSigid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg4crFieldSigidMask) >> RegisterRg4crFieldSigidShift)
 }
 
 // SetSigid DMA request trigger input selected
-func (r *registerRg4crType) SetSigid(value uint8) {
+func (r *RegisterRg4crType) SetSigid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg4crFieldSigidMask)|(uint32(value)<<RegisterRg4crFieldSigidShift))
 }
 
@@ -2370,12 +2899,12 @@ const (
 )
 
 // GetOie Interrupt enable at trigger event overrun
-func (r *registerRg4crType) GetOie() bool {
+func (r *RegisterRg4crType) GetOie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg4crFieldOieMask) != 0
 }
 
 // SetOie Interrupt enable at trigger event overrun
-func (r *registerRg4crType) SetOie(value bool) {
+func (r *RegisterRg4crType) SetOie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg4crFieldOieMask)
 	} else {
@@ -2389,12 +2918,12 @@ const (
 )
 
 // GetGe DMA request generator channel enable/disable
-func (r *registerRg4crType) GetGe() bool {
+func (r *RegisterRg4crType) GetGe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg4crFieldGeMask) != 0
 }
 
 // SetGe DMA request generator channel enable/disable
-func (r *registerRg4crType) SetGe(value bool) {
+func (r *RegisterRg4crType) SetGe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg4crFieldGeMask)
 	} else {
@@ -2408,12 +2937,12 @@ const (
 )
 
 // GetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg4crType) GetGpol() uint8 {
+func (r *RegisterRg4crType) GetGpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg4crFieldGpolMask) >> RegisterRg4crFieldGpolShift)
 }
 
 // SetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg4crType) SetGpol(value uint8) {
+func (r *RegisterRg4crType) SetGpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg4crFieldGpolMask)|(uint32(value)<<RegisterRg4crFieldGpolShift))
 }
 
@@ -2423,17 +2952,40 @@ const (
 )
 
 // GetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg4crType) GetGnbreq() uint8 {
+func (r *RegisterRg4crType) GetGnbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg4crFieldGnbreqMask) >> RegisterRg4crFieldGnbreqShift)
 }
 
 // SetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg4crType) SetGnbreq(value uint8) {
+func (r *RegisterRg4crType) SetGnbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg4crFieldGnbreqMask)|(uint32(value)<<RegisterRg4crFieldGnbreqShift))
 }
 
-// registerRg5crType DMAMux - DMA request generator channel x control register
-type registerRg5crType uint32
+// RegisterRg5crType DMAMux - DMA request generator channel x control register
+type RegisterRg5crType uint32
+
+func (r *RegisterRg5crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRg5crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRg5crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRg5crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRg5crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRg5crFieldSigidShift = 0
@@ -2441,12 +2993,12 @@ const (
 )
 
 // GetSigid DMA request trigger input selected
-func (r *registerRg5crType) GetSigid() uint8 {
+func (r *RegisterRg5crType) GetSigid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg5crFieldSigidMask) >> RegisterRg5crFieldSigidShift)
 }
 
 // SetSigid DMA request trigger input selected
-func (r *registerRg5crType) SetSigid(value uint8) {
+func (r *RegisterRg5crType) SetSigid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg5crFieldSigidMask)|(uint32(value)<<RegisterRg5crFieldSigidShift))
 }
 
@@ -2456,12 +3008,12 @@ const (
 )
 
 // GetOie Interrupt enable at trigger event overrun
-func (r *registerRg5crType) GetOie() bool {
+func (r *RegisterRg5crType) GetOie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg5crFieldOieMask) != 0
 }
 
 // SetOie Interrupt enable at trigger event overrun
-func (r *registerRg5crType) SetOie(value bool) {
+func (r *RegisterRg5crType) SetOie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg5crFieldOieMask)
 	} else {
@@ -2475,12 +3027,12 @@ const (
 )
 
 // GetGe DMA request generator channel enable/disable
-func (r *registerRg5crType) GetGe() bool {
+func (r *RegisterRg5crType) GetGe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg5crFieldGeMask) != 0
 }
 
 // SetGe DMA request generator channel enable/disable
-func (r *registerRg5crType) SetGe(value bool) {
+func (r *RegisterRg5crType) SetGe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg5crFieldGeMask)
 	} else {
@@ -2494,12 +3046,12 @@ const (
 )
 
 // GetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg5crType) GetGpol() uint8 {
+func (r *RegisterRg5crType) GetGpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg5crFieldGpolMask) >> RegisterRg5crFieldGpolShift)
 }
 
 // SetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg5crType) SetGpol(value uint8) {
+func (r *RegisterRg5crType) SetGpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg5crFieldGpolMask)|(uint32(value)<<RegisterRg5crFieldGpolShift))
 }
 
@@ -2509,17 +3061,40 @@ const (
 )
 
 // GetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg5crType) GetGnbreq() uint8 {
+func (r *RegisterRg5crType) GetGnbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg5crFieldGnbreqMask) >> RegisterRg5crFieldGnbreqShift)
 }
 
 // SetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg5crType) SetGnbreq(value uint8) {
+func (r *RegisterRg5crType) SetGnbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg5crFieldGnbreqMask)|(uint32(value)<<RegisterRg5crFieldGnbreqShift))
 }
 
-// registerRg6crType DMAMux - DMA request generator channel x control register
-type registerRg6crType uint32
+// RegisterRg6crType DMAMux - DMA request generator channel x control register
+type RegisterRg6crType uint32
+
+func (r *RegisterRg6crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRg6crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRg6crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRg6crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRg6crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRg6crFieldSigidShift = 0
@@ -2527,12 +3102,12 @@ const (
 )
 
 // GetSigid DMA request trigger input selected
-func (r *registerRg6crType) GetSigid() uint8 {
+func (r *RegisterRg6crType) GetSigid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg6crFieldSigidMask) >> RegisterRg6crFieldSigidShift)
 }
 
 // SetSigid DMA request trigger input selected
-func (r *registerRg6crType) SetSigid(value uint8) {
+func (r *RegisterRg6crType) SetSigid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg6crFieldSigidMask)|(uint32(value)<<RegisterRg6crFieldSigidShift))
 }
 
@@ -2542,12 +3117,12 @@ const (
 )
 
 // GetOie Interrupt enable at trigger event overrun
-func (r *registerRg6crType) GetOie() bool {
+func (r *RegisterRg6crType) GetOie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg6crFieldOieMask) != 0
 }
 
 // SetOie Interrupt enable at trigger event overrun
-func (r *registerRg6crType) SetOie(value bool) {
+func (r *RegisterRg6crType) SetOie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg6crFieldOieMask)
 	} else {
@@ -2561,12 +3136,12 @@ const (
 )
 
 // GetGe DMA request generator channel enable/disable
-func (r *registerRg6crType) GetGe() bool {
+func (r *RegisterRg6crType) GetGe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg6crFieldGeMask) != 0
 }
 
 // SetGe DMA request generator channel enable/disable
-func (r *registerRg6crType) SetGe(value bool) {
+func (r *RegisterRg6crType) SetGe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg6crFieldGeMask)
 	} else {
@@ -2580,12 +3155,12 @@ const (
 )
 
 // GetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg6crType) GetGpol() uint8 {
+func (r *RegisterRg6crType) GetGpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg6crFieldGpolMask) >> RegisterRg6crFieldGpolShift)
 }
 
 // SetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg6crType) SetGpol(value uint8) {
+func (r *RegisterRg6crType) SetGpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg6crFieldGpolMask)|(uint32(value)<<RegisterRg6crFieldGpolShift))
 }
 
@@ -2595,17 +3170,40 @@ const (
 )
 
 // GetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg6crType) GetGnbreq() uint8 {
+func (r *RegisterRg6crType) GetGnbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg6crFieldGnbreqMask) >> RegisterRg6crFieldGnbreqShift)
 }
 
 // SetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg6crType) SetGnbreq(value uint8) {
+func (r *RegisterRg6crType) SetGnbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg6crFieldGnbreqMask)|(uint32(value)<<RegisterRg6crFieldGnbreqShift))
 }
 
-// registerRg7crType DMAMux - DMA request generator channel x control register
-type registerRg7crType uint32
+// RegisterRg7crType DMAMux - DMA request generator channel x control register
+type RegisterRg7crType uint32
+
+func (r *RegisterRg7crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRg7crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRg7crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRg7crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRg7crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRg7crFieldSigidShift = 0
@@ -2613,12 +3211,12 @@ const (
 )
 
 // GetSigid DMA request trigger input selected
-func (r *registerRg7crType) GetSigid() uint8 {
+func (r *RegisterRg7crType) GetSigid() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg7crFieldSigidMask) >> RegisterRg7crFieldSigidShift)
 }
 
 // SetSigid DMA request trigger input selected
-func (r *registerRg7crType) SetSigid(value uint8) {
+func (r *RegisterRg7crType) SetSigid(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg7crFieldSigidMask)|(uint32(value)<<RegisterRg7crFieldSigidShift))
 }
 
@@ -2628,12 +3226,12 @@ const (
 )
 
 // GetOie Interrupt enable at trigger event overrun
-func (r *registerRg7crType) GetOie() bool {
+func (r *RegisterRg7crType) GetOie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg7crFieldOieMask) != 0
 }
 
 // SetOie Interrupt enable at trigger event overrun
-func (r *registerRg7crType) SetOie(value bool) {
+func (r *RegisterRg7crType) SetOie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg7crFieldOieMask)
 	} else {
@@ -2647,12 +3245,12 @@ const (
 )
 
 // GetGe DMA request generator channel enable/disable
-func (r *registerRg7crType) GetGe() bool {
+func (r *RegisterRg7crType) GetGe() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterRg7crFieldGeMask) != 0
 }
 
 // SetGe DMA request generator channel enable/disable
-func (r *registerRg7crType) SetGe(value bool) {
+func (r *RegisterRg7crType) SetGe(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterRg7crFieldGeMask)
 	} else {
@@ -2666,12 +3264,12 @@ const (
 )
 
 // GetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg7crType) GetGpol() uint8 {
+func (r *RegisterRg7crType) GetGpol() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg7crFieldGpolMask) >> RegisterRg7crFieldGpolShift)
 }
 
 // SetGpol DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
-func (r *registerRg7crType) SetGpol(value uint8) {
+func (r *RegisterRg7crType) SetGpol(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg7crFieldGpolMask)|(uint32(value)<<RegisterRg7crFieldGpolShift))
 }
 
@@ -2681,17 +3279,40 @@ const (
 )
 
 // GetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg7crType) GetGnbreq() uint8 {
+func (r *RegisterRg7crType) GetGnbreq() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRg7crFieldGnbreqMask) >> RegisterRg7crFieldGnbreqShift)
 }
 
 // SetGnbreq Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.
-func (r *registerRg7crType) SetGnbreq(value uint8) {
+func (r *RegisterRg7crType) SetGnbreq(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRg7crFieldGnbreqMask)|(uint32(value)<<RegisterRg7crFieldGnbreqShift))
 }
 
-// registerRgsrType DMAMux - DMA request generator status register
-type registerRgsrType uint32
+// RegisterRgsrType DMAMux - DMA request generator status register
+type RegisterRgsrType uint32
+
+func (r *RegisterRgsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRgsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRgsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRgsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRgsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRgsrFieldOfShift = 0
@@ -2699,17 +3320,40 @@ const (
 )
 
 // GetOf Trigger event overrun flag The flag is set when a trigger event occurs on DMA request generator channel x, while the DMA request generator counter value is lower than GNBREQ. The flag is cleared by writing 1 to the corresponding COFx bit in DMAMUX_RGCFR register.
-func (r *registerRgsrType) GetOf() uint8 {
+func (r *RegisterRgsrType) GetOf() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRgsrFieldOfMask) >> RegisterRgsrFieldOfShift)
 }
 
 // SetOf Trigger event overrun flag The flag is set when a trigger event occurs on DMA request generator channel x, while the DMA request generator counter value is lower than GNBREQ. The flag is cleared by writing 1 to the corresponding COFx bit in DMAMUX_RGCFR register.
-func (r *registerRgsrType) SetOf(value uint8) {
+func (r *RegisterRgsrType) SetOf(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRgsrFieldOfMask)|(uint32(value)<<RegisterRgsrFieldOfShift))
 }
 
-// registerRgcfrType DMAMux - DMA request generator clear flag register
-type registerRgcfrType uint32
+// RegisterRgcfrType DMAMux - DMA request generator clear flag register
+type RegisterRgcfrType uint32
+
+func (r *RegisterRgcfrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRgcfrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRgcfrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRgcfrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRgcfrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRgcfrFieldCofShift = 0
@@ -2717,11 +3361,11 @@ const (
 )
 
 // GetCof Clear trigger event overrun flag Upon setting, this bit clears the corresponding overrun flag OFx in the DMAMUX_RGCSR register.
-func (r *registerRgcfrType) GetCof() uint8 {
+func (r *RegisterRgcfrType) GetCof() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRgcfrFieldCofMask) >> RegisterRgcfrFieldCofShift)
 }
 
 // SetCof Clear trigger event overrun flag Upon setting, this bit clears the corresponding overrun flag OFx in the DMAMUX_RGCSR register.
-func (r *registerRgcfrType) SetCof(value uint8) {
+func (r *RegisterRgcfrType) SetCof(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRgcfrFieldCofMask)|(uint32(value)<<RegisterRgcfrFieldCofShift))
 }

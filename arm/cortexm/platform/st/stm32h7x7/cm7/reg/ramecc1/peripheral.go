@@ -12,47 +12,70 @@ var (
 )
 
 type _ramecc1 struct {
-	Ier    registerIerType
+	Ier    RegisterIerType
 	_      [28]byte
-	M1cr   registerM1crType
-	M1sr   registerM1srType
-	M1far  registerM1farType
-	M1fdrl registerM1fdrlType
-	M1fdrh registerM1fdrhType
-	M1fecr registerM1fecrType
+	M1cr   RegisterM1crType
+	M1sr   RegisterM1srType
+	M1far  RegisterM1farType
+	M1fdrl RegisterM1fdrlType
+	M1fdrh RegisterM1fdrhType
+	M1fecr RegisterM1fecrType
 	_      [8]byte
-	M2cr   registerM2crType
-	M2sr   registerM2srType
-	M2far  registerM2farType
-	M2fdrl registerM2fdrlType
-	M2fdrh registerM2fdrhType
+	M2cr   RegisterM2crType
+	M2sr   RegisterM2srType
+	M2far  RegisterM2farType
+	M2fdrl RegisterM2fdrlType
+	M2fdrh RegisterM2fdrhType
 	_      [4]byte
-	M2fecr registerM2fecrType
+	M2fecr RegisterM2fecrType
 	_      [4]byte
-	M3cr   registerM3crType
-	M3sr   registerM3srType
-	M3far  registerM3farType
-	M3fdrl registerM3fdrlType
-	M3fdrh registerM3fdrhType
+	M3cr   RegisterM3crType
+	M3sr   RegisterM3srType
+	M3far  RegisterM3farType
+	M3fdrl RegisterM3fdrlType
+	M3fdrh RegisterM3fdrhType
 	_      [8]byte
-	M3fecr registerM3fecrType
-	M4cr   registerM4crType
-	M4sr   registerM4srType
-	M4far  registerM4farType
-	M4fdrl registerM4fdrlType
-	M4fdrh registerM4fdrhType
-	M4fecr registerM4fecrType
+	M3fecr RegisterM3fecrType
+	M4cr   RegisterM4crType
+	M4sr   RegisterM4srType
+	M4far  RegisterM4farType
+	M4fdrl RegisterM4fdrlType
+	M4fdrh RegisterM4fdrhType
+	M4fecr RegisterM4fecrType
 	_      [12]byte
-	M5cr   registerM5crType
-	M5sr   registerM5srType
-	M5far  registerM5farType
-	M5fdrl registerM5fdrlType
-	M5fdrh registerM5fdrhType
-	M5fecr registerM5fecrType
+	M5cr   RegisterM5crType
+	M5sr   RegisterM5srType
+	M5far  RegisterM5farType
+	M5fdrl RegisterM5fdrlType
+	M5fdrh RegisterM5fdrhType
+	M5fecr RegisterM5fecrType
 }
 
-// registerIerType RAMECC interrupt enable register
-type registerIerType uint32
+// RegisterIerType RAMECC interrupt enable register
+type RegisterIerType uint32
+
+func (r *RegisterIerType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIerType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIerType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIerType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIerType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIerFieldGieShift = 0
@@ -60,12 +83,12 @@ const (
 )
 
 // GetGie Global interrupt enable
-func (r *registerIerType) GetGie() bool {
+func (r *RegisterIerType) GetGie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldGieMask) != 0
 }
 
 // SetGie Global interrupt enable
-func (r *registerIerType) SetGie(value bool) {
+func (r *RegisterIerType) SetGie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldGieMask)
 	} else {
@@ -79,12 +102,12 @@ const (
 )
 
 // GetGeccseie Global ECC single error interrupt enable
-func (r *registerIerType) GetGeccseie() bool {
+func (r *RegisterIerType) GetGeccseie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldGeccseieMask) != 0
 }
 
 // SetGeccseie Global ECC single error interrupt enable
-func (r *registerIerType) SetGeccseie(value bool) {
+func (r *RegisterIerType) SetGeccseie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldGeccseieMask)
 	} else {
@@ -98,12 +121,12 @@ const (
 )
 
 // GetGeccdeie Global ECC double error interrupt enable
-func (r *registerIerType) GetGeccdeie() bool {
+func (r *RegisterIerType) GetGeccdeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldGeccdeieMask) != 0
 }
 
 // SetGeccdeie Global ECC double error interrupt enable
-func (r *registerIerType) SetGeccdeie(value bool) {
+func (r *RegisterIerType) SetGeccdeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldGeccdeieMask)
 	} else {
@@ -117,12 +140,12 @@ const (
 )
 
 // GetGeccdebwie Global ECC double error on byte write (BW) interrupt enable
-func (r *registerIerType) GetGeccdebwie() bool {
+func (r *RegisterIerType) GetGeccdebwie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIerFieldGeccdebwieMask) != 0
 }
 
 // SetGeccdebwie Global ECC double error on byte write (BW) interrupt enable
-func (r *registerIerType) SetGeccdebwie(value bool) {
+func (r *RegisterIerType) SetGeccdebwie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIerFieldGeccdebwieMask)
 	} else {
@@ -130,8 +153,31 @@ func (r *registerIerType) SetGeccdebwie(value bool) {
 	}
 }
 
-// registerM1crType RAMECC monitor x configuration register
-type registerM1crType uint32
+// RegisterM1crType RAMECC monitor x configuration register
+type RegisterM1crType uint32
+
+func (r *RegisterM1crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM1crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM1crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM1crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM1crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM1crFieldEccseieShift = 2
@@ -139,12 +185,12 @@ const (
 )
 
 // GetEccseie ECC single error interrupt enable
-func (r *registerM1crType) GetEccseie() bool {
+func (r *RegisterM1crType) GetEccseie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1crFieldEccseieMask) != 0
 }
 
 // SetEccseie ECC single error interrupt enable
-func (r *registerM1crType) SetEccseie(value bool) {
+func (r *RegisterM1crType) SetEccseie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1crFieldEccseieMask)
 	} else {
@@ -158,12 +204,12 @@ const (
 )
 
 // GetEccdeie ECC double error interrupt enable
-func (r *registerM1crType) GetEccdeie() bool {
+func (r *RegisterM1crType) GetEccdeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1crFieldEccdeieMask) != 0
 }
 
 // SetEccdeie ECC double error interrupt enable
-func (r *registerM1crType) SetEccdeie(value bool) {
+func (r *RegisterM1crType) SetEccdeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1crFieldEccdeieMask)
 	} else {
@@ -177,12 +223,12 @@ const (
 )
 
 // GetEccdebwie ECC double error on byte write (BW) interrupt enable
-func (r *registerM1crType) GetEccdebwie() bool {
+func (r *RegisterM1crType) GetEccdebwie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1crFieldEccdebwieMask) != 0
 }
 
 // SetEccdebwie ECC double error on byte write (BW) interrupt enable
-func (r *registerM1crType) SetEccdebwie(value bool) {
+func (r *RegisterM1crType) SetEccdebwie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1crFieldEccdebwieMask)
 	} else {
@@ -196,12 +242,12 @@ const (
 )
 
 // GetEccelen ECC error latching enable
-func (r *registerM1crType) GetEccelen() bool {
+func (r *RegisterM1crType) GetEccelen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1crFieldEccelenMask) != 0
 }
 
 // SetEccelen ECC error latching enable
-func (r *registerM1crType) SetEccelen(value bool) {
+func (r *RegisterM1crType) SetEccelen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1crFieldEccelenMask)
 	} else {
@@ -209,8 +255,31 @@ func (r *registerM1crType) SetEccelen(value bool) {
 	}
 }
 
-// registerM1srType RAMECC monitor x status register
-type registerM1srType uint32
+// RegisterM1srType RAMECC monitor x status register
+type RegisterM1srType uint32
+
+func (r *RegisterM1srType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM1srType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM1srType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM1srType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM1srType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM1srFieldEccseieShift = 2
@@ -218,12 +287,12 @@ const (
 )
 
 // GetEccseie ECC single error interrupt enable
-func (r *registerM1srType) GetEccseie() bool {
+func (r *RegisterM1srType) GetEccseie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1srFieldEccseieMask) != 0
 }
 
 // SetEccseie ECC single error interrupt enable
-func (r *registerM1srType) SetEccseie(value bool) {
+func (r *RegisterM1srType) SetEccseie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1srFieldEccseieMask)
 	} else {
@@ -237,12 +306,12 @@ const (
 )
 
 // GetEccdeie ECC double error interrupt enable
-func (r *registerM1srType) GetEccdeie() bool {
+func (r *RegisterM1srType) GetEccdeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1srFieldEccdeieMask) != 0
 }
 
 // SetEccdeie ECC double error interrupt enable
-func (r *registerM1srType) SetEccdeie(value bool) {
+func (r *RegisterM1srType) SetEccdeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1srFieldEccdeieMask)
 	} else {
@@ -256,12 +325,12 @@ const (
 )
 
 // GetEccdebwie ECC double error on byte write (BW) interrupt enable
-func (r *registerM1srType) GetEccdebwie() bool {
+func (r *RegisterM1srType) GetEccdebwie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1srFieldEccdebwieMask) != 0
 }
 
 // SetEccdebwie ECC double error on byte write (BW) interrupt enable
-func (r *registerM1srType) SetEccdebwie(value bool) {
+func (r *RegisterM1srType) SetEccdebwie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1srFieldEccdebwieMask)
 	} else {
@@ -275,12 +344,12 @@ const (
 )
 
 // GetEccelen ECC error latching enable
-func (r *registerM1srType) GetEccelen() bool {
+func (r *RegisterM1srType) GetEccelen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1srFieldEccelenMask) != 0
 }
 
 // SetEccelen ECC error latching enable
-func (r *registerM1srType) SetEccelen(value bool) {
+func (r *RegisterM1srType) SetEccelen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1srFieldEccelenMask)
 	} else {
@@ -288,8 +357,31 @@ func (r *registerM1srType) SetEccelen(value bool) {
 	}
 }
 
-// registerM1farType RAMECC monitor x failing address register
-type registerM1farType uint32
+// RegisterM1farType RAMECC monitor x failing address register
+type RegisterM1farType uint32
+
+func (r *RegisterM1farType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM1farType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM1farType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM1farType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM1farType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM1farFieldEccseieShift = 2
@@ -297,12 +389,12 @@ const (
 )
 
 // GetEccseie ECC single error interrupt enable
-func (r *registerM1farType) GetEccseie() bool {
+func (r *RegisterM1farType) GetEccseie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1farFieldEccseieMask) != 0
 }
 
 // SetEccseie ECC single error interrupt enable
-func (r *registerM1farType) SetEccseie(value bool) {
+func (r *RegisterM1farType) SetEccseie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1farFieldEccseieMask)
 	} else {
@@ -316,12 +408,12 @@ const (
 )
 
 // GetEccdeie ECC double error interrupt enable
-func (r *registerM1farType) GetEccdeie() bool {
+func (r *RegisterM1farType) GetEccdeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1farFieldEccdeieMask) != 0
 }
 
 // SetEccdeie ECC double error interrupt enable
-func (r *registerM1farType) SetEccdeie(value bool) {
+func (r *RegisterM1farType) SetEccdeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1farFieldEccdeieMask)
 	} else {
@@ -335,12 +427,12 @@ const (
 )
 
 // GetEccdebwie ECC double error on byte write (BW) interrupt enable
-func (r *registerM1farType) GetEccdebwie() bool {
+func (r *RegisterM1farType) GetEccdebwie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1farFieldEccdebwieMask) != 0
 }
 
 // SetEccdebwie ECC double error on byte write (BW) interrupt enable
-func (r *registerM1farType) SetEccdebwie(value bool) {
+func (r *RegisterM1farType) SetEccdebwie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1farFieldEccdebwieMask)
 	} else {
@@ -354,12 +446,12 @@ const (
 )
 
 // GetEccelen ECC error latching enable
-func (r *registerM1farType) GetEccelen() bool {
+func (r *RegisterM1farType) GetEccelen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1farFieldEccelenMask) != 0
 }
 
 // SetEccelen ECC error latching enable
-func (r *registerM1farType) SetEccelen(value bool) {
+func (r *RegisterM1farType) SetEccelen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1farFieldEccelenMask)
 	} else {
@@ -367,8 +459,31 @@ func (r *registerM1farType) SetEccelen(value bool) {
 	}
 }
 
-// registerM1fdrlType RAMECC monitor x failing data low register
-type registerM1fdrlType uint32
+// RegisterM1fdrlType RAMECC monitor x failing data low register
+type RegisterM1fdrlType uint32
+
+func (r *RegisterM1fdrlType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM1fdrlType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM1fdrlType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM1fdrlType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM1fdrlType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM1fdrlFieldEccseieShift = 2
@@ -376,12 +491,12 @@ const (
 )
 
 // GetEccseie ECC single error interrupt enable
-func (r *registerM1fdrlType) GetEccseie() bool {
+func (r *RegisterM1fdrlType) GetEccseie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fdrlFieldEccseieMask) != 0
 }
 
 // SetEccseie ECC single error interrupt enable
-func (r *registerM1fdrlType) SetEccseie(value bool) {
+func (r *RegisterM1fdrlType) SetEccseie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fdrlFieldEccseieMask)
 	} else {
@@ -395,12 +510,12 @@ const (
 )
 
 // GetEccdeie ECC double error interrupt enable
-func (r *registerM1fdrlType) GetEccdeie() bool {
+func (r *RegisterM1fdrlType) GetEccdeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fdrlFieldEccdeieMask) != 0
 }
 
 // SetEccdeie ECC double error interrupt enable
-func (r *registerM1fdrlType) SetEccdeie(value bool) {
+func (r *RegisterM1fdrlType) SetEccdeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fdrlFieldEccdeieMask)
 	} else {
@@ -414,12 +529,12 @@ const (
 )
 
 // GetEccdebwie ECC double error on byte write (BW) interrupt enable
-func (r *registerM1fdrlType) GetEccdebwie() bool {
+func (r *RegisterM1fdrlType) GetEccdebwie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fdrlFieldEccdebwieMask) != 0
 }
 
 // SetEccdebwie ECC double error on byte write (BW) interrupt enable
-func (r *registerM1fdrlType) SetEccdebwie(value bool) {
+func (r *RegisterM1fdrlType) SetEccdebwie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fdrlFieldEccdebwieMask)
 	} else {
@@ -433,12 +548,12 @@ const (
 )
 
 // GetEccelen ECC error latching enable
-func (r *registerM1fdrlType) GetEccelen() bool {
+func (r *RegisterM1fdrlType) GetEccelen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fdrlFieldEccelenMask) != 0
 }
 
 // SetEccelen ECC error latching enable
-func (r *registerM1fdrlType) SetEccelen(value bool) {
+func (r *RegisterM1fdrlType) SetEccelen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fdrlFieldEccelenMask)
 	} else {
@@ -446,8 +561,31 @@ func (r *registerM1fdrlType) SetEccelen(value bool) {
 	}
 }
 
-// registerM1fdrhType RAMECC monitor x failing data high register
-type registerM1fdrhType uint32
+// RegisterM1fdrhType RAMECC monitor x failing data high register
+type RegisterM1fdrhType uint32
+
+func (r *RegisterM1fdrhType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM1fdrhType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM1fdrhType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM1fdrhType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM1fdrhType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM1fdrhFieldEccseieShift = 2
@@ -455,12 +593,12 @@ const (
 )
 
 // GetEccseie ECC single error interrupt enable
-func (r *registerM1fdrhType) GetEccseie() bool {
+func (r *RegisterM1fdrhType) GetEccseie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fdrhFieldEccseieMask) != 0
 }
 
 // SetEccseie ECC single error interrupt enable
-func (r *registerM1fdrhType) SetEccseie(value bool) {
+func (r *RegisterM1fdrhType) SetEccseie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fdrhFieldEccseieMask)
 	} else {
@@ -474,12 +612,12 @@ const (
 )
 
 // GetEccdeie ECC double error interrupt enable
-func (r *registerM1fdrhType) GetEccdeie() bool {
+func (r *RegisterM1fdrhType) GetEccdeie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fdrhFieldEccdeieMask) != 0
 }
 
 // SetEccdeie ECC double error interrupt enable
-func (r *registerM1fdrhType) SetEccdeie(value bool) {
+func (r *RegisterM1fdrhType) SetEccdeie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fdrhFieldEccdeieMask)
 	} else {
@@ -493,12 +631,12 @@ const (
 )
 
 // GetEccdebwie ECC double error on byte write (BW) interrupt enable
-func (r *registerM1fdrhType) GetEccdebwie() bool {
+func (r *RegisterM1fdrhType) GetEccdebwie() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fdrhFieldEccdebwieMask) != 0
 }
 
 // SetEccdebwie ECC double error on byte write (BW) interrupt enable
-func (r *registerM1fdrhType) SetEccdebwie(value bool) {
+func (r *RegisterM1fdrhType) SetEccdebwie(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fdrhFieldEccdebwieMask)
 	} else {
@@ -512,12 +650,12 @@ const (
 )
 
 // GetEccelen ECC error latching enable
-func (r *registerM1fdrhType) GetEccelen() bool {
+func (r *RegisterM1fdrhType) GetEccelen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fdrhFieldEccelenMask) != 0
 }
 
 // SetEccelen ECC error latching enable
-func (r *registerM1fdrhType) SetEccelen(value bool) {
+func (r *RegisterM1fdrhType) SetEccelen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fdrhFieldEccelenMask)
 	} else {
@@ -525,8 +663,31 @@ func (r *registerM1fdrhType) SetEccelen(value bool) {
 	}
 }
 
-// registerM1fecrType RAMECC monitor x failing ECC error code register
-type registerM1fecrType uint32
+// RegisterM1fecrType RAMECC monitor x failing ECC error code register
+type RegisterM1fecrType uint32
+
+func (r *RegisterM1fecrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM1fecrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM1fecrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM1fecrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM1fecrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM1fecrFieldSedcfShift = 0
@@ -534,12 +695,12 @@ const (
 )
 
 // GetSedcf ECC single error detected and corrected flag
-func (r *registerM1fecrType) GetSedcf() bool {
+func (r *RegisterM1fecrType) GetSedcf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fecrFieldSedcfMask) != 0
 }
 
 // SetSedcf ECC single error detected and corrected flag
-func (r *registerM1fecrType) SetSedcf(value bool) {
+func (r *RegisterM1fecrType) SetSedcf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fecrFieldSedcfMask)
 	} else {
@@ -553,12 +714,12 @@ const (
 )
 
 // GetDedf ECC double error detected flag
-func (r *registerM1fecrType) GetDedf() bool {
+func (r *RegisterM1fecrType) GetDedf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fecrFieldDedfMask) != 0
 }
 
 // SetDedf ECC double error detected flag
-func (r *registerM1fecrType) SetDedf(value bool) {
+func (r *RegisterM1fecrType) SetDedf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fecrFieldDedfMask)
 	} else {
@@ -572,12 +733,12 @@ const (
 )
 
 // GetDebwdf ECC double error on byte write (BW) detected flag
-func (r *registerM1fecrType) GetDebwdf() bool {
+func (r *RegisterM1fecrType) GetDebwdf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM1fecrFieldDebwdfMask) != 0
 }
 
 // SetDebwdf ECC double error on byte write (BW) detected flag
-func (r *registerM1fecrType) SetDebwdf(value bool) {
+func (r *RegisterM1fecrType) SetDebwdf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM1fecrFieldDebwdfMask)
 	} else {
@@ -585,8 +746,31 @@ func (r *registerM1fecrType) SetDebwdf(value bool) {
 	}
 }
 
-// registerM2crType RAMECC monitor x configuration register
-type registerM2crType uint32
+// RegisterM2crType RAMECC monitor x configuration register
+type RegisterM2crType uint32
+
+func (r *RegisterM2crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM2crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM2crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM2crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM2crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM2crFieldSedcfShift = 0
@@ -594,12 +778,12 @@ const (
 )
 
 // GetSedcf ECC single error detected and corrected flag
-func (r *registerM2crType) GetSedcf() bool {
+func (r *RegisterM2crType) GetSedcf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2crFieldSedcfMask) != 0
 }
 
 // SetSedcf ECC single error detected and corrected flag
-func (r *registerM2crType) SetSedcf(value bool) {
+func (r *RegisterM2crType) SetSedcf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2crFieldSedcfMask)
 	} else {
@@ -613,12 +797,12 @@ const (
 )
 
 // GetDedf ECC double error detected flag
-func (r *registerM2crType) GetDedf() bool {
+func (r *RegisterM2crType) GetDedf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2crFieldDedfMask) != 0
 }
 
 // SetDedf ECC double error detected flag
-func (r *registerM2crType) SetDedf(value bool) {
+func (r *RegisterM2crType) SetDedf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2crFieldDedfMask)
 	} else {
@@ -632,12 +816,12 @@ const (
 )
 
 // GetDebwdf ECC double error on byte write (BW) detected flag
-func (r *registerM2crType) GetDebwdf() bool {
+func (r *RegisterM2crType) GetDebwdf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2crFieldDebwdfMask) != 0
 }
 
 // SetDebwdf ECC double error on byte write (BW) detected flag
-func (r *registerM2crType) SetDebwdf(value bool) {
+func (r *RegisterM2crType) SetDebwdf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2crFieldDebwdfMask)
 	} else {
@@ -645,8 +829,31 @@ func (r *registerM2crType) SetDebwdf(value bool) {
 	}
 }
 
-// registerM2srType RAMECC monitor x status register
-type registerM2srType uint32
+// RegisterM2srType RAMECC monitor x status register
+type RegisterM2srType uint32
+
+func (r *RegisterM2srType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM2srType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM2srType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM2srType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM2srType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM2srFieldSedcfShift = 0
@@ -654,12 +861,12 @@ const (
 )
 
 // GetSedcf ECC single error detected and corrected flag
-func (r *registerM2srType) GetSedcf() bool {
+func (r *RegisterM2srType) GetSedcf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2srFieldSedcfMask) != 0
 }
 
 // SetSedcf ECC single error detected and corrected flag
-func (r *registerM2srType) SetSedcf(value bool) {
+func (r *RegisterM2srType) SetSedcf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2srFieldSedcfMask)
 	} else {
@@ -673,12 +880,12 @@ const (
 )
 
 // GetDedf ECC double error detected flag
-func (r *registerM2srType) GetDedf() bool {
+func (r *RegisterM2srType) GetDedf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2srFieldDedfMask) != 0
 }
 
 // SetDedf ECC double error detected flag
-func (r *registerM2srType) SetDedf(value bool) {
+func (r *RegisterM2srType) SetDedf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2srFieldDedfMask)
 	} else {
@@ -692,12 +899,12 @@ const (
 )
 
 // GetDebwdf ECC double error on byte write (BW) detected flag
-func (r *registerM2srType) GetDebwdf() bool {
+func (r *RegisterM2srType) GetDebwdf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2srFieldDebwdfMask) != 0
 }
 
 // SetDebwdf ECC double error on byte write (BW) detected flag
-func (r *registerM2srType) SetDebwdf(value bool) {
+func (r *RegisterM2srType) SetDebwdf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2srFieldDebwdfMask)
 	} else {
@@ -705,8 +912,31 @@ func (r *registerM2srType) SetDebwdf(value bool) {
 	}
 }
 
-// registerM2farType RAMECC monitor x failing address register
-type registerM2farType uint32
+// RegisterM2farType RAMECC monitor x failing address register
+type RegisterM2farType uint32
+
+func (r *RegisterM2farType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM2farType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM2farType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM2farType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM2farType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM2farFieldSedcfShift = 0
@@ -714,12 +944,12 @@ const (
 )
 
 // GetSedcf ECC single error detected and corrected flag
-func (r *registerM2farType) GetSedcf() bool {
+func (r *RegisterM2farType) GetSedcf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2farFieldSedcfMask) != 0
 }
 
 // SetSedcf ECC single error detected and corrected flag
-func (r *registerM2farType) SetSedcf(value bool) {
+func (r *RegisterM2farType) SetSedcf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2farFieldSedcfMask)
 	} else {
@@ -733,12 +963,12 @@ const (
 )
 
 // GetDedf ECC double error detected flag
-func (r *registerM2farType) GetDedf() bool {
+func (r *RegisterM2farType) GetDedf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2farFieldDedfMask) != 0
 }
 
 // SetDedf ECC double error detected flag
-func (r *registerM2farType) SetDedf(value bool) {
+func (r *RegisterM2farType) SetDedf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2farFieldDedfMask)
 	} else {
@@ -752,12 +982,12 @@ const (
 )
 
 // GetDebwdf ECC double error on byte write (BW) detected flag
-func (r *registerM2farType) GetDebwdf() bool {
+func (r *RegisterM2farType) GetDebwdf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2farFieldDebwdfMask) != 0
 }
 
 // SetDebwdf ECC double error on byte write (BW) detected flag
-func (r *registerM2farType) SetDebwdf(value bool) {
+func (r *RegisterM2farType) SetDebwdf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2farFieldDebwdfMask)
 	} else {
@@ -765,8 +995,31 @@ func (r *registerM2farType) SetDebwdf(value bool) {
 	}
 }
 
-// registerM2fdrlType RAMECC monitor x failing data low register
-type registerM2fdrlType uint32
+// RegisterM2fdrlType RAMECC monitor x failing data low register
+type RegisterM2fdrlType uint32
+
+func (r *RegisterM2fdrlType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM2fdrlType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM2fdrlType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM2fdrlType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM2fdrlType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM2fdrlFieldSedcfShift = 0
@@ -774,12 +1027,12 @@ const (
 )
 
 // GetSedcf ECC single error detected and corrected flag
-func (r *registerM2fdrlType) GetSedcf() bool {
+func (r *RegisterM2fdrlType) GetSedcf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2fdrlFieldSedcfMask) != 0
 }
 
 // SetSedcf ECC single error detected and corrected flag
-func (r *registerM2fdrlType) SetSedcf(value bool) {
+func (r *RegisterM2fdrlType) SetSedcf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2fdrlFieldSedcfMask)
 	} else {
@@ -793,12 +1046,12 @@ const (
 )
 
 // GetDedf ECC double error detected flag
-func (r *registerM2fdrlType) GetDedf() bool {
+func (r *RegisterM2fdrlType) GetDedf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2fdrlFieldDedfMask) != 0
 }
 
 // SetDedf ECC double error detected flag
-func (r *registerM2fdrlType) SetDedf(value bool) {
+func (r *RegisterM2fdrlType) SetDedf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2fdrlFieldDedfMask)
 	} else {
@@ -812,12 +1065,12 @@ const (
 )
 
 // GetDebwdf ECC double error on byte write (BW) detected flag
-func (r *registerM2fdrlType) GetDebwdf() bool {
+func (r *RegisterM2fdrlType) GetDebwdf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterM2fdrlFieldDebwdfMask) != 0
 }
 
 // SetDebwdf ECC double error on byte write (BW) detected flag
-func (r *registerM2fdrlType) SetDebwdf(value bool) {
+func (r *RegisterM2fdrlType) SetDebwdf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterM2fdrlFieldDebwdfMask)
 	} else {
@@ -825,8 +1078,31 @@ func (r *registerM2fdrlType) SetDebwdf(value bool) {
 	}
 }
 
-// registerM2fdrhType RAMECC monitor x failing data high register
-type registerM2fdrhType uint32
+// RegisterM2fdrhType RAMECC monitor x failing data high register
+type RegisterM2fdrhType uint32
+
+func (r *RegisterM2fdrhType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM2fdrhType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM2fdrhType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM2fdrhType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM2fdrhType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM2fdrhFieldFaddShift = 0
@@ -834,17 +1110,40 @@ const (
 )
 
 // GetFadd ECC error failing address
-func (r *registerM2fdrhType) GetFadd() uint32 {
+func (r *RegisterM2fdrhType) GetFadd() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM2fdrhFieldFaddMask) >> RegisterM2fdrhFieldFaddShift)
 }
 
 // SetFadd ECC error failing address
-func (r *registerM2fdrhType) SetFadd(value uint32) {
+func (r *RegisterM2fdrhType) SetFadd(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM2fdrhFieldFaddMask)|(uint32(value)<<RegisterM2fdrhFieldFaddShift))
 }
 
-// registerM2fecrType RAMECC monitor x failing ECC error code register
-type registerM2fecrType uint32
+// RegisterM2fecrType RAMECC monitor x failing ECC error code register
+type RegisterM2fecrType uint32
+
+func (r *RegisterM2fecrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM2fecrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM2fecrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM2fecrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM2fecrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM2fecrFieldFaddShift = 0
@@ -852,17 +1151,40 @@ const (
 )
 
 // GetFadd ECC error failing address
-func (r *registerM2fecrType) GetFadd() uint32 {
+func (r *RegisterM2fecrType) GetFadd() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM2fecrFieldFaddMask) >> RegisterM2fecrFieldFaddShift)
 }
 
 // SetFadd ECC error failing address
-func (r *registerM2fecrType) SetFadd(value uint32) {
+func (r *RegisterM2fecrType) SetFadd(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM2fecrFieldFaddMask)|(uint32(value)<<RegisterM2fecrFieldFaddShift))
 }
 
-// registerM3crType RAMECC monitor x configuration register
-type registerM3crType uint32
+// RegisterM3crType RAMECC monitor x configuration register
+type RegisterM3crType uint32
+
+func (r *RegisterM3crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM3crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM3crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM3crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM3crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM3crFieldFaddShift = 0
@@ -870,17 +1192,40 @@ const (
 )
 
 // GetFadd ECC error failing address
-func (r *registerM3crType) GetFadd() uint32 {
+func (r *RegisterM3crType) GetFadd() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM3crFieldFaddMask) >> RegisterM3crFieldFaddShift)
 }
 
 // SetFadd ECC error failing address
-func (r *registerM3crType) SetFadd(value uint32) {
+func (r *RegisterM3crType) SetFadd(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM3crFieldFaddMask)|(uint32(value)<<RegisterM3crFieldFaddShift))
 }
 
-// registerM3srType RAMECC monitor x status register
-type registerM3srType uint32
+// RegisterM3srType RAMECC monitor x status register
+type RegisterM3srType uint32
+
+func (r *RegisterM3srType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM3srType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM3srType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM3srType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM3srType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM3srFieldFaddShift = 0
@@ -888,17 +1233,40 @@ const (
 )
 
 // GetFadd ECC error failing address
-func (r *registerM3srType) GetFadd() uint32 {
+func (r *RegisterM3srType) GetFadd() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM3srFieldFaddMask) >> RegisterM3srFieldFaddShift)
 }
 
 // SetFadd ECC error failing address
-func (r *registerM3srType) SetFadd(value uint32) {
+func (r *RegisterM3srType) SetFadd(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM3srFieldFaddMask)|(uint32(value)<<RegisterM3srFieldFaddShift))
 }
 
-// registerM3farType RAMECC monitor x failing address register
-type registerM3farType uint32
+// RegisterM3farType RAMECC monitor x failing address register
+type RegisterM3farType uint32
+
+func (r *RegisterM3farType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM3farType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM3farType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM3farType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM3farType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM3farFieldFaddShift = 0
@@ -906,17 +1274,40 @@ const (
 )
 
 // GetFadd ECC error failing address
-func (r *registerM3farType) GetFadd() uint32 {
+func (r *RegisterM3farType) GetFadd() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM3farFieldFaddMask) >> RegisterM3farFieldFaddShift)
 }
 
 // SetFadd ECC error failing address
-func (r *registerM3farType) SetFadd(value uint32) {
+func (r *RegisterM3farType) SetFadd(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM3farFieldFaddMask)|(uint32(value)<<RegisterM3farFieldFaddShift))
 }
 
-// registerM3fdrlType RAMECC monitor x failing data low register
-type registerM3fdrlType uint32
+// RegisterM3fdrlType RAMECC monitor x failing data low register
+type RegisterM3fdrlType uint32
+
+func (r *RegisterM3fdrlType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM3fdrlType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM3fdrlType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM3fdrlType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM3fdrlType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM3fdrlFieldFdatalShift = 0
@@ -924,17 +1315,40 @@ const (
 )
 
 // GetFdatal Failing data low
-func (r *registerM3fdrlType) GetFdatal() uint32 {
+func (r *RegisterM3fdrlType) GetFdatal() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM3fdrlFieldFdatalMask) >> RegisterM3fdrlFieldFdatalShift)
 }
 
 // SetFdatal Failing data low
-func (r *registerM3fdrlType) SetFdatal(value uint32) {
+func (r *RegisterM3fdrlType) SetFdatal(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM3fdrlFieldFdatalMask)|(uint32(value)<<RegisterM3fdrlFieldFdatalShift))
 }
 
-// registerM3fdrhType RAMECC monitor x failing data high register
-type registerM3fdrhType uint32
+// RegisterM3fdrhType RAMECC monitor x failing data high register
+type RegisterM3fdrhType uint32
+
+func (r *RegisterM3fdrhType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM3fdrhType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM3fdrhType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM3fdrhType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM3fdrhType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM3fdrhFieldFdatalShift = 0
@@ -942,17 +1356,40 @@ const (
 )
 
 // GetFdatal Failing data low
-func (r *registerM3fdrhType) GetFdatal() uint32 {
+func (r *RegisterM3fdrhType) GetFdatal() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM3fdrhFieldFdatalMask) >> RegisterM3fdrhFieldFdatalShift)
 }
 
 // SetFdatal Failing data low
-func (r *registerM3fdrhType) SetFdatal(value uint32) {
+func (r *RegisterM3fdrhType) SetFdatal(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM3fdrhFieldFdatalMask)|(uint32(value)<<RegisterM3fdrhFieldFdatalShift))
 }
 
-// registerM3fecrType RAMECC monitor x failing ECC error code register
-type registerM3fecrType uint32
+// RegisterM3fecrType RAMECC monitor x failing ECC error code register
+type RegisterM3fecrType uint32
+
+func (r *RegisterM3fecrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM3fecrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM3fecrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM3fecrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM3fecrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM3fecrFieldFdatalShift = 0
@@ -960,17 +1397,40 @@ const (
 )
 
 // GetFdatal Failing data low
-func (r *registerM3fecrType) GetFdatal() uint32 {
+func (r *RegisterM3fecrType) GetFdatal() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM3fecrFieldFdatalMask) >> RegisterM3fecrFieldFdatalShift)
 }
 
 // SetFdatal Failing data low
-func (r *registerM3fecrType) SetFdatal(value uint32) {
+func (r *RegisterM3fecrType) SetFdatal(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM3fecrFieldFdatalMask)|(uint32(value)<<RegisterM3fecrFieldFdatalShift))
 }
 
-// registerM4crType RAMECC monitor x configuration register
-type registerM4crType uint32
+// RegisterM4crType RAMECC monitor x configuration register
+type RegisterM4crType uint32
+
+func (r *RegisterM4crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM4crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM4crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM4crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM4crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM4crFieldFdatalShift = 0
@@ -978,17 +1438,40 @@ const (
 )
 
 // GetFdatal Failing data low
-func (r *registerM4crType) GetFdatal() uint32 {
+func (r *RegisterM4crType) GetFdatal() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM4crFieldFdatalMask) >> RegisterM4crFieldFdatalShift)
 }
 
 // SetFdatal Failing data low
-func (r *registerM4crType) SetFdatal(value uint32) {
+func (r *RegisterM4crType) SetFdatal(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM4crFieldFdatalMask)|(uint32(value)<<RegisterM4crFieldFdatalShift))
 }
 
-// registerM4srType RAMECC monitor x status register
-type registerM4srType uint32
+// RegisterM4srType RAMECC monitor x status register
+type RegisterM4srType uint32
+
+func (r *RegisterM4srType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM4srType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM4srType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM4srType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM4srType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM4srFieldFdatalShift = 0
@@ -996,17 +1479,40 @@ const (
 )
 
 // GetFdatal Failing data low
-func (r *registerM4srType) GetFdatal() uint32 {
+func (r *RegisterM4srType) GetFdatal() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM4srFieldFdatalMask) >> RegisterM4srFieldFdatalShift)
 }
 
 // SetFdatal Failing data low
-func (r *registerM4srType) SetFdatal(value uint32) {
+func (r *RegisterM4srType) SetFdatal(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM4srFieldFdatalMask)|(uint32(value)<<RegisterM4srFieldFdatalShift))
 }
 
-// registerM4farType RAMECC monitor x failing address register
-type registerM4farType uint32
+// RegisterM4farType RAMECC monitor x failing address register
+type RegisterM4farType uint32
+
+func (r *RegisterM4farType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM4farType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM4farType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM4farType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM4farType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM4farFieldFdatahShift = 0
@@ -1014,17 +1520,40 @@ const (
 )
 
 // GetFdatah Failing data high (64-bit memory)
-func (r *registerM4farType) GetFdatah() uint32 {
+func (r *RegisterM4farType) GetFdatah() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM4farFieldFdatahMask) >> RegisterM4farFieldFdatahShift)
 }
 
 // SetFdatah Failing data high (64-bit memory)
-func (r *registerM4farType) SetFdatah(value uint32) {
+func (r *RegisterM4farType) SetFdatah(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM4farFieldFdatahMask)|(uint32(value)<<RegisterM4farFieldFdatahShift))
 }
 
-// registerM4fdrlType RAMECC monitor x failing data low register
-type registerM4fdrlType uint32
+// RegisterM4fdrlType RAMECC monitor x failing data low register
+type RegisterM4fdrlType uint32
+
+func (r *RegisterM4fdrlType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM4fdrlType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM4fdrlType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM4fdrlType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM4fdrlType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM4fdrlFieldFdatahShift = 0
@@ -1032,17 +1561,40 @@ const (
 )
 
 // GetFdatah Failing data high (64-bit memory)
-func (r *registerM4fdrlType) GetFdatah() uint32 {
+func (r *RegisterM4fdrlType) GetFdatah() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM4fdrlFieldFdatahMask) >> RegisterM4fdrlFieldFdatahShift)
 }
 
 // SetFdatah Failing data high (64-bit memory)
-func (r *registerM4fdrlType) SetFdatah(value uint32) {
+func (r *RegisterM4fdrlType) SetFdatah(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM4fdrlFieldFdatahMask)|(uint32(value)<<RegisterM4fdrlFieldFdatahShift))
 }
 
-// registerM4fdrhType RAMECC monitor x failing data high register
-type registerM4fdrhType uint32
+// RegisterM4fdrhType RAMECC monitor x failing data high register
+type RegisterM4fdrhType uint32
+
+func (r *RegisterM4fdrhType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM4fdrhType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM4fdrhType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM4fdrhType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM4fdrhType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM4fdrhFieldFdatahShift = 0
@@ -1050,17 +1602,40 @@ const (
 )
 
 // GetFdatah Failing data high (64-bit memory)
-func (r *registerM4fdrhType) GetFdatah() uint32 {
+func (r *RegisterM4fdrhType) GetFdatah() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM4fdrhFieldFdatahMask) >> RegisterM4fdrhFieldFdatahShift)
 }
 
 // SetFdatah Failing data high (64-bit memory)
-func (r *registerM4fdrhType) SetFdatah(value uint32) {
+func (r *RegisterM4fdrhType) SetFdatah(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM4fdrhFieldFdatahMask)|(uint32(value)<<RegisterM4fdrhFieldFdatahShift))
 }
 
-// registerM4fecrType RAMECC monitor x failing ECC error code register
-type registerM4fecrType uint32
+// RegisterM4fecrType RAMECC monitor x failing ECC error code register
+type RegisterM4fecrType uint32
+
+func (r *RegisterM4fecrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM4fecrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM4fecrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM4fecrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM4fecrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM4fecrFieldFdatahShift = 0
@@ -1068,17 +1643,40 @@ const (
 )
 
 // GetFdatah Failing data high (64-bit memory)
-func (r *registerM4fecrType) GetFdatah() uint32 {
+func (r *RegisterM4fecrType) GetFdatah() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM4fecrFieldFdatahMask) >> RegisterM4fecrFieldFdatahShift)
 }
 
 // SetFdatah Failing data high (64-bit memory)
-func (r *registerM4fecrType) SetFdatah(value uint32) {
+func (r *RegisterM4fecrType) SetFdatah(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM4fecrFieldFdatahMask)|(uint32(value)<<RegisterM4fecrFieldFdatahShift))
 }
 
-// registerM5crType RAMECC monitor x configuration register
-type registerM5crType uint32
+// RegisterM5crType RAMECC monitor x configuration register
+type RegisterM5crType uint32
+
+func (r *RegisterM5crType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM5crType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM5crType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM5crType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM5crType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM5crFieldFecShift = 0
@@ -1086,17 +1684,40 @@ const (
 )
 
 // GetFec Failing error code
-func (r *registerM5crType) GetFec() uint32 {
+func (r *RegisterM5crType) GetFec() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM5crFieldFecMask) >> RegisterM5crFieldFecShift)
 }
 
 // SetFec Failing error code
-func (r *registerM5crType) SetFec(value uint32) {
+func (r *RegisterM5crType) SetFec(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM5crFieldFecMask)|(uint32(value)<<RegisterM5crFieldFecShift))
 }
 
-// registerM5srType RAMECC monitor x status register
-type registerM5srType uint32
+// RegisterM5srType RAMECC monitor x status register
+type RegisterM5srType uint32
+
+func (r *RegisterM5srType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM5srType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM5srType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM5srType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM5srType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM5srFieldFecShift = 0
@@ -1104,17 +1725,40 @@ const (
 )
 
 // GetFec Failing error code
-func (r *registerM5srType) GetFec() uint32 {
+func (r *RegisterM5srType) GetFec() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM5srFieldFecMask) >> RegisterM5srFieldFecShift)
 }
 
 // SetFec Failing error code
-func (r *registerM5srType) SetFec(value uint32) {
+func (r *RegisterM5srType) SetFec(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM5srFieldFecMask)|(uint32(value)<<RegisterM5srFieldFecShift))
 }
 
-// registerM5farType RAMECC monitor x failing address register
-type registerM5farType uint32
+// RegisterM5farType RAMECC monitor x failing address register
+type RegisterM5farType uint32
+
+func (r *RegisterM5farType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM5farType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM5farType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM5farType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM5farType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM5farFieldFecShift = 0
@@ -1122,17 +1766,40 @@ const (
 )
 
 // GetFec Failing error code
-func (r *registerM5farType) GetFec() uint32 {
+func (r *RegisterM5farType) GetFec() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM5farFieldFecMask) >> RegisterM5farFieldFecShift)
 }
 
 // SetFec Failing error code
-func (r *registerM5farType) SetFec(value uint32) {
+func (r *RegisterM5farType) SetFec(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM5farFieldFecMask)|(uint32(value)<<RegisterM5farFieldFecShift))
 }
 
-// registerM5fdrlType RAMECC monitor x failing data low register
-type registerM5fdrlType uint32
+// RegisterM5fdrlType RAMECC monitor x failing data low register
+type RegisterM5fdrlType uint32
+
+func (r *RegisterM5fdrlType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM5fdrlType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM5fdrlType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM5fdrlType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM5fdrlType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM5fdrlFieldFecShift = 0
@@ -1140,17 +1807,40 @@ const (
 )
 
 // GetFec Failing error code
-func (r *registerM5fdrlType) GetFec() uint32 {
+func (r *RegisterM5fdrlType) GetFec() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM5fdrlFieldFecMask) >> RegisterM5fdrlFieldFecShift)
 }
 
 // SetFec Failing error code
-func (r *registerM5fdrlType) SetFec(value uint32) {
+func (r *RegisterM5fdrlType) SetFec(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM5fdrlFieldFecMask)|(uint32(value)<<RegisterM5fdrlFieldFecShift))
 }
 
-// registerM5fdrhType RAMECC monitor x failing data high register
-type registerM5fdrhType uint32
+// RegisterM5fdrhType RAMECC monitor x failing data high register
+type RegisterM5fdrhType uint32
+
+func (r *RegisterM5fdrhType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM5fdrhType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM5fdrhType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM5fdrhType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM5fdrhType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM5fdrhFieldFecShift = 0
@@ -1158,17 +1848,40 @@ const (
 )
 
 // GetFec Failing error code
-func (r *registerM5fdrhType) GetFec() uint32 {
+func (r *RegisterM5fdrhType) GetFec() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM5fdrhFieldFecMask) >> RegisterM5fdrhFieldFecShift)
 }
 
 // SetFec Failing error code
-func (r *registerM5fdrhType) SetFec(value uint32) {
+func (r *RegisterM5fdrhType) SetFec(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM5fdrhFieldFecMask)|(uint32(value)<<RegisterM5fdrhFieldFecShift))
 }
 
-// registerM5fecrType RAMECC monitor x failing ECC error code register
-type registerM5fecrType uint32
+// RegisterM5fecrType RAMECC monitor x failing ECC error code register
+type RegisterM5fecrType uint32
+
+func (r *RegisterM5fecrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterM5fecrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterM5fecrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterM5fecrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterM5fecrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterM5fecrFieldFecShift = 0
@@ -1176,11 +1889,11 @@ const (
 )
 
 // GetFec Failing error code
-func (r *registerM5fecrType) GetFec() uint32 {
+func (r *RegisterM5fecrType) GetFec() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterM5fecrFieldFecMask) >> RegisterM5fecrFieldFecShift)
 }
 
 // SetFec Failing error code
-func (r *registerM5fecrType) SetFec(value uint32) {
+func (r *RegisterM5fecrType) SetFec(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterM5fecrFieldFecMask)|(uint32(value)<<RegisterM5fecrFieldFecShift))
 }

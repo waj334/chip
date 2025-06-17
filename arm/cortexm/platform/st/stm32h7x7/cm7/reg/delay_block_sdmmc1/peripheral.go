@@ -14,12 +14,35 @@ var (
 )
 
 type _delay_block_sdmmc1 struct {
-	Cr   registerCrType
-	Cfgr registerCfgrType
+	Cr   RegisterCrType
+	Cfgr RegisterCfgrType
 }
 
-// registerCrType DLYB control register
-type registerCrType uint32
+// RegisterCrType DLYB control register
+type RegisterCrType uint32
+
+func (r *RegisterCrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCrFieldDenShift = 0
@@ -27,12 +50,12 @@ const (
 )
 
 // GetDen Delay block enable bit
-func (r *registerCrType) GetDen() bool {
+func (r *RegisterCrType) GetDen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldDenMask) != 0
 }
 
 // SetDen Delay block enable bit
-func (r *registerCrType) SetDen(value bool) {
+func (r *RegisterCrType) SetDen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldDenMask)
 	} else {
@@ -46,12 +69,12 @@ const (
 )
 
 // GetSen Sampler length enable bit
-func (r *registerCrType) GetSen() bool {
+func (r *RegisterCrType) GetSen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldSenMask) != 0
 }
 
 // SetSen Sampler length enable bit
-func (r *registerCrType) SetSen(value bool) {
+func (r *RegisterCrType) SetSen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldSenMask)
 	} else {
@@ -59,8 +82,31 @@ func (r *registerCrType) SetSen(value bool) {
 	}
 }
 
-// registerCfgrType DLYB configuration register
-type registerCfgrType uint32
+// RegisterCfgrType DLYB configuration register
+type RegisterCfgrType uint32
+
+func (r *RegisterCfgrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCfgrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCfgrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCfgrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCfgrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCfgrFieldSelShift = 0
@@ -68,12 +114,12 @@ const (
 )
 
 // GetSel Select the phase for the Output clock
-func (r *registerCfgrType) GetSel() uint8 {
+func (r *RegisterCfgrType) GetSel() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldSelMask) >> RegisterCfgrFieldSelShift)
 }
 
 // SetSel Select the phase for the Output clock
-func (r *registerCfgrType) SetSel(value uint8) {
+func (r *RegisterCfgrType) SetSel(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldSelMask)|(uint32(value)<<RegisterCfgrFieldSelShift))
 }
 
@@ -83,12 +129,12 @@ const (
 )
 
 // GetUnit Delay Defines the delay of a Unit delay cell
-func (r *registerCfgrType) GetUnit() uint8 {
+func (r *RegisterCfgrType) GetUnit() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldUnitMask) >> RegisterCfgrFieldUnitShift)
 }
 
 // SetUnit Delay Defines the delay of a Unit delay cell
-func (r *registerCfgrType) SetUnit(value uint8) {
+func (r *RegisterCfgrType) SetUnit(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldUnitMask)|(uint32(value)<<RegisterCfgrFieldUnitShift))
 }
 
@@ -98,12 +144,12 @@ const (
 )
 
 // GetLng Delay line length value
-func (r *registerCfgrType) GetLng() uint16 {
+func (r *RegisterCfgrType) GetLng() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldLngMask) >> RegisterCfgrFieldLngShift)
 }
 
 // SetLng Delay line length value
-func (r *registerCfgrType) SetLng(value uint16) {
+func (r *RegisterCfgrType) SetLng(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCfgrFieldLngMask)|(uint32(value)<<RegisterCfgrFieldLngShift))
 }
 
@@ -113,12 +159,12 @@ const (
 )
 
 // GetLngf Length valid flag
-func (r *registerCfgrType) GetLngf() bool {
+func (r *RegisterCfgrType) GetLngf() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCfgrFieldLngfMask) != 0
 }
 
 // SetLngf Length valid flag
-func (r *registerCfgrType) SetLngf(value bool) {
+func (r *RegisterCfgrType) SetLngf(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCfgrFieldLngfMask)
 	} else {

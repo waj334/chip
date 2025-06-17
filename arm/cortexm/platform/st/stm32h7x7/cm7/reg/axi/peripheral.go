@@ -13,80 +13,103 @@ var (
 
 type _axi struct {
 	_                  [8144]byte
-	Axiperiphid4       registerAxiperiphid4Type
+	Axiperiphid4       RegisterAxiperiphid4Type
 	_                  [12]byte
-	Axiperiphid0       registerAxiperiphid0Type
-	Axiperiphid1       registerAxiperiphid1Type
-	Axiperiphid2       registerAxiperiphid2Type
-	Axiperiphid3       registerAxiperiphid3Type
-	Axicompid0         registerAxicompid0Type
-	Axicompid1         registerAxicompid1Type
-	Axicompid2         registerAxicompid2Type
-	Axicompid3         registerAxicompid3Type
+	Axiperiphid0       RegisterAxiperiphid0Type
+	Axiperiphid1       RegisterAxiperiphid1Type
+	Axiperiphid2       RegisterAxiperiphid2Type
+	Axiperiphid3       RegisterAxiperiphid3Type
+	Axicompid0         RegisterAxicompid0Type
+	Axicompid1         RegisterAxicompid1Type
+	Axicompid2         RegisterAxicompid2Type
+	Axicompid3         RegisterAxicompid3Type
 	_                  [8]byte
-	Axitarg1fnmodissbm registerAxitarg1fnmodissbmType
+	Axitarg1fnmodissbm RegisterAxitarg1fnmodissbmType
 	_                  [24]byte
-	Axitarg1fnmod2     registerAxitarg1fnmod2Type
+	Axitarg1fnmod2     RegisterAxitarg1fnmod2Type
 	_                  [4]byte
-	Axitarg1fnmodlb    registerAxitarg1fnmodlbType
+	Axitarg1fnmodlb    RegisterAxitarg1fnmodlbType
 	_                  [216]byte
-	Axitarg1fnmod      registerAxitarg1fnmodType
+	Axitarg1fnmod      RegisterAxitarg1fnmodType
 	_                  [3836]byte
-	Axitarg2fnmodissbm registerAxitarg2fnmodissbmType
+	Axitarg2fnmodissbm RegisterAxitarg2fnmodissbmType
 	_                  [24]byte
-	Axitarg2fnmod2     registerAxitarg2fnmod2Type
+	Axitarg2fnmod2     RegisterAxitarg2fnmod2Type
 	_                  [4]byte
-	Axitarg2fnmodlb    registerAxitarg2fnmodlbType
+	Axitarg2fnmodlb    RegisterAxitarg2fnmodlbType
 	_                  [216]byte
-	Axitarg2fnmod      registerAxitarg2fnmodType
+	Axitarg2fnmod      RegisterAxitarg2fnmodType
 	_                  [3836]byte
-	Axitarg3fnmodissbm registerAxitarg3fnmodissbmType
+	Axitarg3fnmodissbm RegisterAxitarg3fnmodissbmType
 	_                  [4092]byte
-	Axitarg4fnmodissbm registerAxitarg4fnmodissbmType
+	Axitarg4fnmodissbm RegisterAxitarg4fnmodissbmType
 	_                  [4092]byte
-	Axitarg5fnmodissbm registerAxitarg5fnmodissbmType
+	Axitarg5fnmodissbm RegisterAxitarg5fnmodissbmType
 	_                  [4092]byte
-	Axitarg6fnmodissbm registerAxitarg6fnmodissbmType
+	Axitarg6fnmodissbm RegisterAxitarg6fnmodissbmType
 	_                  [4096]byte
-	Axitarg7fnmodissbm registerAxitarg7fnmodissbmType
+	Axitarg7fnmodissbm RegisterAxitarg7fnmodissbmType
 	_                  [20]byte
-	Axitarg7fnmod2     registerAxitarg7fnmod2Type
+	Axitarg7fnmod2     RegisterAxitarg7fnmod2Type
 	_                  [224]byte
-	Axitarg7fnmod      registerAxitarg7fnmodType
+	Axitarg7fnmod      RegisterAxitarg7fnmodType
 	_                  [237336]byte
-	Axiini1fnmod2      registerAxiini1fnmod2Type
-	Axiini1fnmodahb    registerAxiini1fnmodahbType
+	Axiini1fnmod2      RegisterAxiini1fnmod2Type
+	Axiini1fnmodahb    RegisterAxiini1fnmodahbType
 	_                  [212]byte
-	Axiini1readqos     registerAxiini1readqosType
-	Axiini1writeqos    registerAxiini1writeqosType
-	Axiini1fnmod       registerAxiini1fnmodType
+	Axiini1readqos     RegisterAxiini1readqosType
+	Axiini1writeqos    RegisterAxiini1writeqosType
+	Axiini1fnmod       RegisterAxiini1fnmodType
 	_                  [4084]byte
-	Axiini2readqos     registerAxiini2readqosType
-	Axiini2writeqos    registerAxiini2writeqosType
-	Axiini2fnmod       registerAxiini2fnmodType
+	Axiini2readqos     RegisterAxiini2readqosType
+	Axiini2writeqos    RegisterAxiini2writeqosType
+	Axiini2fnmod       RegisterAxiini2fnmodType
 	_                  [3864]byte
-	Axiini3fnmod2      registerAxiini3fnmod2Type
-	Axiini3fnmodahb    registerAxiini3fnmodahbType
+	Axiini3fnmod2      RegisterAxiini3fnmod2Type
+	Axiini3fnmodahb    RegisterAxiini3fnmodahbType
 	_                  [212]byte
-	Axiini3readqos     registerAxiini3readqosType
-	Axiini3writeqos    registerAxiini3writeqosType
-	Axiini3fnmod       registerAxiini3fnmodType
+	Axiini3readqos     RegisterAxiini3readqosType
+	Axiini3writeqos    RegisterAxiini3writeqosType
+	Axiini3fnmod       RegisterAxiini3fnmodType
 	_                  [4084]byte
-	Axiini4readqos     registerAxiini4readqosType
-	Axiini4writeqos    registerAxiini4writeqosType
-	Axiini4fnmod       registerAxiini4fnmodType
+	Axiini4readqos     RegisterAxiini4readqosType
+	Axiini4writeqos    RegisterAxiini4writeqosType
+	Axiini4fnmod       RegisterAxiini4fnmodType
 	_                  [4084]byte
-	Axiini5readqos     registerAxiini5readqosType
-	Axiini5writeqos    registerAxiini5writeqosType
-	Axiini5fnmod       registerAxiini5fnmodType
+	Axiini5readqos     RegisterAxiini5readqosType
+	Axiini5writeqos    RegisterAxiini5writeqosType
+	Axiini5fnmod       RegisterAxiini5fnmodType
 	_                  [4084]byte
-	Axiini6readqos     registerAxiini6readqosType
-	Axiini6writeqos    registerAxiini6writeqosType
-	Axiini6fnmod       registerAxiini6fnmodType
+	Axiini6readqos     RegisterAxiini6readqosType
+	Axiini6writeqos    RegisterAxiini6writeqosType
+	Axiini6fnmod       RegisterAxiini6fnmodType
 }
 
-// registerAxiperiphid4Type AXI interconnect - peripheral ID4 register
-type registerAxiperiphid4Type uint32
+// RegisterAxiperiphid4Type AXI interconnect - peripheral ID4 register
+type RegisterAxiperiphid4Type uint32
+
+func (r *RegisterAxiperiphid4Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiperiphid4Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiperiphid4Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiperiphid4Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiperiphid4Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiperiphid4FieldJep106conShift = 0
@@ -94,12 +117,12 @@ const (
 )
 
 // GetJep106con JEP106 continuation code
-func (r *registerAxiperiphid4Type) GetJep106con() uint8 {
+func (r *RegisterAxiperiphid4Type) GetJep106con() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiperiphid4FieldJep106conMask) >> RegisterAxiperiphid4FieldJep106conShift)
 }
 
 // SetJep106con JEP106 continuation code
-func (r *registerAxiperiphid4Type) SetJep106con(value uint8) {
+func (r *RegisterAxiperiphid4Type) SetJep106con(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiperiphid4FieldJep106conMask)|(uint32(value)<<RegisterAxiperiphid4FieldJep106conShift))
 }
 
@@ -109,17 +132,40 @@ const (
 )
 
 // GetKcount4 Register file size
-func (r *registerAxiperiphid4Type) GetKcount4() uint8 {
+func (r *RegisterAxiperiphid4Type) GetKcount4() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiperiphid4FieldKcount4Mask) >> RegisterAxiperiphid4FieldKcount4Shift)
 }
 
 // SetKcount4 Register file size
-func (r *registerAxiperiphid4Type) SetKcount4(value uint8) {
+func (r *RegisterAxiperiphid4Type) SetKcount4(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiperiphid4FieldKcount4Mask)|(uint32(value)<<RegisterAxiperiphid4FieldKcount4Shift))
 }
 
-// registerAxiperiphid0Type AXI interconnect - peripheral ID0 register
-type registerAxiperiphid0Type uint32
+// RegisterAxiperiphid0Type AXI interconnect - peripheral ID0 register
+type RegisterAxiperiphid0Type uint32
+
+func (r *RegisterAxiperiphid0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiperiphid0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiperiphid0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiperiphid0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiperiphid0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiperiphid0FieldPartnumShift = 0
@@ -127,17 +173,40 @@ const (
 )
 
 // GetPartnum Peripheral part number bits 0 to 7
-func (r *registerAxiperiphid0Type) GetPartnum() uint8 {
+func (r *RegisterAxiperiphid0Type) GetPartnum() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiperiphid0FieldPartnumMask) >> RegisterAxiperiphid0FieldPartnumShift)
 }
 
 // SetPartnum Peripheral part number bits 0 to 7
-func (r *registerAxiperiphid0Type) SetPartnum(value uint8) {
+func (r *RegisterAxiperiphid0Type) SetPartnum(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiperiphid0FieldPartnumMask)|(uint32(value)<<RegisterAxiperiphid0FieldPartnumShift))
 }
 
-// registerAxiperiphid1Type AXI interconnect - peripheral ID1 register
-type registerAxiperiphid1Type uint32
+// RegisterAxiperiphid1Type AXI interconnect - peripheral ID1 register
+type RegisterAxiperiphid1Type uint32
+
+func (r *RegisterAxiperiphid1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiperiphid1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiperiphid1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiperiphid1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiperiphid1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiperiphid1FieldPartnumShift = 0
@@ -145,12 +214,12 @@ const (
 )
 
 // GetPartnum Peripheral part number bits 8 to 11
-func (r *registerAxiperiphid1Type) GetPartnum() uint8 {
+func (r *RegisterAxiperiphid1Type) GetPartnum() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiperiphid1FieldPartnumMask) >> RegisterAxiperiphid1FieldPartnumShift)
 }
 
 // SetPartnum Peripheral part number bits 8 to 11
-func (r *registerAxiperiphid1Type) SetPartnum(value uint8) {
+func (r *RegisterAxiperiphid1Type) SetPartnum(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiperiphid1FieldPartnumMask)|(uint32(value)<<RegisterAxiperiphid1FieldPartnumShift))
 }
 
@@ -160,17 +229,40 @@ const (
 )
 
 // GetJep106i JEP106 identity bits 0 to 3
-func (r *registerAxiperiphid1Type) GetJep106i() uint8 {
+func (r *RegisterAxiperiphid1Type) GetJep106i() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiperiphid1FieldJep106iMask) >> RegisterAxiperiphid1FieldJep106iShift)
 }
 
 // SetJep106i JEP106 identity bits 0 to 3
-func (r *registerAxiperiphid1Type) SetJep106i(value uint8) {
+func (r *RegisterAxiperiphid1Type) SetJep106i(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiperiphid1FieldJep106iMask)|(uint32(value)<<RegisterAxiperiphid1FieldJep106iShift))
 }
 
-// registerAxiperiphid2Type AXI interconnect - peripheral ID2 register
-type registerAxiperiphid2Type uint32
+// RegisterAxiperiphid2Type AXI interconnect - peripheral ID2 register
+type RegisterAxiperiphid2Type uint32
+
+func (r *RegisterAxiperiphid2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiperiphid2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiperiphid2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiperiphid2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiperiphid2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiperiphid2FieldJep106idShift = 0
@@ -178,12 +270,12 @@ const (
 )
 
 // GetJep106id JEP106 Identity bits 4 to 6
-func (r *registerAxiperiphid2Type) GetJep106id() uint8 {
+func (r *RegisterAxiperiphid2Type) GetJep106id() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiperiphid2FieldJep106idMask) >> RegisterAxiperiphid2FieldJep106idShift)
 }
 
 // SetJep106id JEP106 Identity bits 4 to 6
-func (r *registerAxiperiphid2Type) SetJep106id(value uint8) {
+func (r *RegisterAxiperiphid2Type) SetJep106id(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiperiphid2FieldJep106idMask)|(uint32(value)<<RegisterAxiperiphid2FieldJep106idShift))
 }
 
@@ -193,12 +285,12 @@ const (
 )
 
 // GetJedec JEP106 code flag
-func (r *registerAxiperiphid2Type) GetJedec() bool {
+func (r *RegisterAxiperiphid2Type) GetJedec() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiperiphid2FieldJedecMask) != 0
 }
 
 // SetJedec JEP106 code flag
-func (r *registerAxiperiphid2Type) SetJedec(value bool) {
+func (r *RegisterAxiperiphid2Type) SetJedec(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiperiphid2FieldJedecMask)
 	} else {
@@ -212,17 +304,40 @@ const (
 )
 
 // GetRevision Peripheral revision number
-func (r *registerAxiperiphid2Type) GetRevision() uint8 {
+func (r *RegisterAxiperiphid2Type) GetRevision() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiperiphid2FieldRevisionMask) >> RegisterAxiperiphid2FieldRevisionShift)
 }
 
 // SetRevision Peripheral revision number
-func (r *registerAxiperiphid2Type) SetRevision(value uint8) {
+func (r *RegisterAxiperiphid2Type) SetRevision(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiperiphid2FieldRevisionMask)|(uint32(value)<<RegisterAxiperiphid2FieldRevisionShift))
 }
 
-// registerAxiperiphid3Type AXI interconnect - peripheral ID3 register
-type registerAxiperiphid3Type uint32
+// RegisterAxiperiphid3Type AXI interconnect - peripheral ID3 register
+type RegisterAxiperiphid3Type uint32
+
+func (r *RegisterAxiperiphid3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiperiphid3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiperiphid3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiperiphid3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiperiphid3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiperiphid3FieldCustmodnumShift = 0
@@ -230,12 +345,12 @@ const (
 )
 
 // GetCustmodnum Customer modification
-func (r *registerAxiperiphid3Type) GetCustmodnum() uint8 {
+func (r *RegisterAxiperiphid3Type) GetCustmodnum() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiperiphid3FieldCustmodnumMask) >> RegisterAxiperiphid3FieldCustmodnumShift)
 }
 
 // SetCustmodnum Customer modification
-func (r *registerAxiperiphid3Type) SetCustmodnum(value uint8) {
+func (r *RegisterAxiperiphid3Type) SetCustmodnum(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiperiphid3FieldCustmodnumMask)|(uint32(value)<<RegisterAxiperiphid3FieldCustmodnumShift))
 }
 
@@ -245,17 +360,40 @@ const (
 )
 
 // GetRevand Customer version
-func (r *registerAxiperiphid3Type) GetRevand() uint8 {
+func (r *RegisterAxiperiphid3Type) GetRevand() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiperiphid3FieldRevandMask) >> RegisterAxiperiphid3FieldRevandShift)
 }
 
 // SetRevand Customer version
-func (r *registerAxiperiphid3Type) SetRevand(value uint8) {
+func (r *RegisterAxiperiphid3Type) SetRevand(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiperiphid3FieldRevandMask)|(uint32(value)<<RegisterAxiperiphid3FieldRevandShift))
 }
 
-// registerAxicompid0Type AXI interconnect - component ID0 register
-type registerAxicompid0Type uint32
+// RegisterAxicompid0Type AXI interconnect - component ID0 register
+type RegisterAxicompid0Type uint32
+
+func (r *RegisterAxicompid0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxicompid0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxicompid0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxicompid0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxicompid0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxicompid0FieldPreambleShift = 0
@@ -263,17 +401,40 @@ const (
 )
 
 // GetPreamble Preamble bits 0 to 7
-func (r *registerAxicompid0Type) GetPreamble() uint8 {
+func (r *RegisterAxicompid0Type) GetPreamble() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxicompid0FieldPreambleMask) >> RegisterAxicompid0FieldPreambleShift)
 }
 
 // SetPreamble Preamble bits 0 to 7
-func (r *registerAxicompid0Type) SetPreamble(value uint8) {
+func (r *RegisterAxicompid0Type) SetPreamble(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxicompid0FieldPreambleMask)|(uint32(value)<<RegisterAxicompid0FieldPreambleShift))
 }
 
-// registerAxicompid1Type AXI interconnect - component ID1 register
-type registerAxicompid1Type uint32
+// RegisterAxicompid1Type AXI interconnect - component ID1 register
+type RegisterAxicompid1Type uint32
+
+func (r *RegisterAxicompid1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxicompid1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxicompid1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxicompid1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxicompid1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxicompid1FieldPreambleShift = 0
@@ -281,12 +442,12 @@ const (
 )
 
 // GetPreamble Preamble bits 8 to 11
-func (r *registerAxicompid1Type) GetPreamble() uint8 {
+func (r *RegisterAxicompid1Type) GetPreamble() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxicompid1FieldPreambleMask) >> RegisterAxicompid1FieldPreambleShift)
 }
 
 // SetPreamble Preamble bits 8 to 11
-func (r *registerAxicompid1Type) SetPreamble(value uint8) {
+func (r *RegisterAxicompid1Type) SetPreamble(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxicompid1FieldPreambleMask)|(uint32(value)<<RegisterAxicompid1FieldPreambleShift))
 }
 
@@ -296,17 +457,40 @@ const (
 )
 
 // GetClass Component class
-func (r *registerAxicompid1Type) GetClass() uint8 {
+func (r *RegisterAxicompid1Type) GetClass() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxicompid1FieldClassMask) >> RegisterAxicompid1FieldClassShift)
 }
 
 // SetClass Component class
-func (r *registerAxicompid1Type) SetClass(value uint8) {
+func (r *RegisterAxicompid1Type) SetClass(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxicompid1FieldClassMask)|(uint32(value)<<RegisterAxicompid1FieldClassShift))
 }
 
-// registerAxicompid2Type AXI interconnect - component ID2 register
-type registerAxicompid2Type uint32
+// RegisterAxicompid2Type AXI interconnect - component ID2 register
+type RegisterAxicompid2Type uint32
+
+func (r *RegisterAxicompid2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxicompid2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxicompid2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxicompid2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxicompid2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxicompid2FieldPreambleShift = 0
@@ -314,17 +498,40 @@ const (
 )
 
 // GetPreamble Preamble bits 12 to 19
-func (r *registerAxicompid2Type) GetPreamble() uint8 {
+func (r *RegisterAxicompid2Type) GetPreamble() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxicompid2FieldPreambleMask) >> RegisterAxicompid2FieldPreambleShift)
 }
 
 // SetPreamble Preamble bits 12 to 19
-func (r *registerAxicompid2Type) SetPreamble(value uint8) {
+func (r *RegisterAxicompid2Type) SetPreamble(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxicompid2FieldPreambleMask)|(uint32(value)<<RegisterAxicompid2FieldPreambleShift))
 }
 
-// registerAxicompid3Type AXI interconnect - component ID3 register
-type registerAxicompid3Type uint32
+// RegisterAxicompid3Type AXI interconnect - component ID3 register
+type RegisterAxicompid3Type uint32
+
+func (r *RegisterAxicompid3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxicompid3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxicompid3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxicompid3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxicompid3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxicompid3FieldPreambleShift = 0
@@ -332,17 +539,40 @@ const (
 )
 
 // GetPreamble Preamble bits 20 to 27
-func (r *registerAxicompid3Type) GetPreamble() uint8 {
+func (r *RegisterAxicompid3Type) GetPreamble() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxicompid3FieldPreambleMask) >> RegisterAxicompid3FieldPreambleShift)
 }
 
 // SetPreamble Preamble bits 20 to 27
-func (r *registerAxicompid3Type) SetPreamble(value uint8) {
+func (r *RegisterAxicompid3Type) SetPreamble(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxicompid3FieldPreambleMask)|(uint32(value)<<RegisterAxicompid3FieldPreambleShift))
 }
 
-// registerAxitarg1fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
-type registerAxitarg1fnmodissbmType uint32
+// RegisterAxitarg1fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
+type RegisterAxitarg1fnmodissbmType uint32
+
+func (r *RegisterAxitarg1fnmodissbmType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg1fnmodissbmType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg1fnmodissbmType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg1fnmodissbmType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg1fnmodissbmType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg1fnmodissbmFieldReadissoverrideShift = 0
@@ -350,12 +580,12 @@ const (
 )
 
 // GetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg1fnmodissbmType) GetReadissoverride() bool {
+func (r *RegisterAxitarg1fnmodissbmType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg1fnmodissbmFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg1fnmodissbmType) SetReadissoverride(value bool) {
+func (r *RegisterAxitarg1fnmodissbmType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg1fnmodissbmFieldReadissoverrideMask)
 	} else {
@@ -369,12 +599,12 @@ const (
 )
 
 // GetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg1fnmodissbmType) GetWriteissoverride() bool {
+func (r *RegisterAxitarg1fnmodissbmType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg1fnmodissbmFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg1fnmodissbmType) SetWriteissoverride(value bool) {
+func (r *RegisterAxitarg1fnmodissbmType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg1fnmodissbmFieldWriteissoverrideMask)
 	} else {
@@ -382,8 +612,31 @@ func (r *registerAxitarg1fnmodissbmType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxitarg1fnmod2Type AXI interconnect - TARG x bus matrix functionality 2 register
-type registerAxitarg1fnmod2Type uint32
+// RegisterAxitarg1fnmod2Type AXI interconnect - TARG x bus matrix functionality 2 register
+type RegisterAxitarg1fnmod2Type uint32
+
+func (r *RegisterAxitarg1fnmod2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg1fnmod2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg1fnmod2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg1fnmod2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg1fnmod2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg1fnmod2FieldBypassmergeShift = 0
@@ -391,12 +644,12 @@ const (
 )
 
 // GetBypassmerge Disable packing of beats to match the output data width
-func (r *registerAxitarg1fnmod2Type) GetBypassmerge() bool {
+func (r *RegisterAxitarg1fnmod2Type) GetBypassmerge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg1fnmod2FieldBypassmergeMask) != 0
 }
 
 // SetBypassmerge Disable packing of beats to match the output data width
-func (r *registerAxitarg1fnmod2Type) SetBypassmerge(value bool) {
+func (r *RegisterAxitarg1fnmod2Type) SetBypassmerge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg1fnmod2FieldBypassmergeMask)
 	} else {
@@ -404,8 +657,31 @@ func (r *registerAxitarg1fnmod2Type) SetBypassmerge(value bool) {
 	}
 }
 
-// registerAxitarg1fnmodlbType AXI interconnect - TARG x long burst functionality modification
-type registerAxitarg1fnmodlbType uint32
+// RegisterAxitarg1fnmodlbType AXI interconnect - TARG x long burst functionality modification
+type RegisterAxitarg1fnmodlbType uint32
+
+func (r *RegisterAxitarg1fnmodlbType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg1fnmodlbType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg1fnmodlbType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg1fnmodlbType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg1fnmodlbType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg1fnmodlbFieldFnmodlbShift = 0
@@ -413,12 +689,12 @@ const (
 )
 
 // GetFnmodlb Controls burst breaking of long bursts
-func (r *registerAxitarg1fnmodlbType) GetFnmodlb() bool {
+func (r *RegisterAxitarg1fnmodlbType) GetFnmodlb() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg1fnmodlbFieldFnmodlbMask) != 0
 }
 
 // SetFnmodlb Controls burst breaking of long bursts
-func (r *registerAxitarg1fnmodlbType) SetFnmodlb(value bool) {
+func (r *RegisterAxitarg1fnmodlbType) SetFnmodlb(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg1fnmodlbFieldFnmodlbMask)
 	} else {
@@ -426,8 +702,31 @@ func (r *registerAxitarg1fnmodlbType) SetFnmodlb(value bool) {
 	}
 }
 
-// registerAxitarg1fnmodType AXI interconnect - TARG x long burst functionality modification
-type registerAxitarg1fnmodType uint32
+// RegisterAxitarg1fnmodType AXI interconnect - TARG x long burst functionality modification
+type RegisterAxitarg1fnmodType uint32
+
+func (r *RegisterAxitarg1fnmodType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg1fnmodType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg1fnmodType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg1fnmodType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg1fnmodType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg1fnmodFieldReadissoverrideShift = 0
@@ -435,12 +734,12 @@ const (
 )
 
 // GetReadissoverride Override AMIB read issuing capability
-func (r *registerAxitarg1fnmodType) GetReadissoverride() bool {
+func (r *RegisterAxitarg1fnmodType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg1fnmodFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride Override AMIB read issuing capability
-func (r *registerAxitarg1fnmodType) SetReadissoverride(value bool) {
+func (r *RegisterAxitarg1fnmodType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg1fnmodFieldReadissoverrideMask)
 	} else {
@@ -454,12 +753,12 @@ const (
 )
 
 // GetWriteissoverride Override AMIB write issuing capability
-func (r *registerAxitarg1fnmodType) GetWriteissoverride() bool {
+func (r *RegisterAxitarg1fnmodType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg1fnmodFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Override AMIB write issuing capability
-func (r *registerAxitarg1fnmodType) SetWriteissoverride(value bool) {
+func (r *RegisterAxitarg1fnmodType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg1fnmodFieldWriteissoverrideMask)
 	} else {
@@ -467,8 +766,31 @@ func (r *registerAxitarg1fnmodType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxitarg2fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
-type registerAxitarg2fnmodissbmType uint32
+// RegisterAxitarg2fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
+type RegisterAxitarg2fnmodissbmType uint32
+
+func (r *RegisterAxitarg2fnmodissbmType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg2fnmodissbmType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg2fnmodissbmType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg2fnmodissbmType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg2fnmodissbmType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg2fnmodissbmFieldReadissoverrideShift = 0
@@ -476,12 +798,12 @@ const (
 )
 
 // GetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg2fnmodissbmType) GetReadissoverride() bool {
+func (r *RegisterAxitarg2fnmodissbmType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg2fnmodissbmFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg2fnmodissbmType) SetReadissoverride(value bool) {
+func (r *RegisterAxitarg2fnmodissbmType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg2fnmodissbmFieldReadissoverrideMask)
 	} else {
@@ -495,12 +817,12 @@ const (
 )
 
 // GetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg2fnmodissbmType) GetWriteissoverride() bool {
+func (r *RegisterAxitarg2fnmodissbmType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg2fnmodissbmFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg2fnmodissbmType) SetWriteissoverride(value bool) {
+func (r *RegisterAxitarg2fnmodissbmType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg2fnmodissbmFieldWriteissoverrideMask)
 	} else {
@@ -508,8 +830,31 @@ func (r *registerAxitarg2fnmodissbmType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxitarg2fnmod2Type AXI interconnect - TARG x bus matrix functionality 2 register
-type registerAxitarg2fnmod2Type uint32
+// RegisterAxitarg2fnmod2Type AXI interconnect - TARG x bus matrix functionality 2 register
+type RegisterAxitarg2fnmod2Type uint32
+
+func (r *RegisterAxitarg2fnmod2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg2fnmod2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg2fnmod2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg2fnmod2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg2fnmod2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg2fnmod2FieldBypassmergeShift = 0
@@ -517,12 +862,12 @@ const (
 )
 
 // GetBypassmerge Disable packing of beats to match the output data width
-func (r *registerAxitarg2fnmod2Type) GetBypassmerge() bool {
+func (r *RegisterAxitarg2fnmod2Type) GetBypassmerge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg2fnmod2FieldBypassmergeMask) != 0
 }
 
 // SetBypassmerge Disable packing of beats to match the output data width
-func (r *registerAxitarg2fnmod2Type) SetBypassmerge(value bool) {
+func (r *RegisterAxitarg2fnmod2Type) SetBypassmerge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg2fnmod2FieldBypassmergeMask)
 	} else {
@@ -530,8 +875,31 @@ func (r *registerAxitarg2fnmod2Type) SetBypassmerge(value bool) {
 	}
 }
 
-// registerAxitarg2fnmodlbType AXI interconnect - TARG x long burst functionality modification
-type registerAxitarg2fnmodlbType uint32
+// RegisterAxitarg2fnmodlbType AXI interconnect - TARG x long burst functionality modification
+type RegisterAxitarg2fnmodlbType uint32
+
+func (r *RegisterAxitarg2fnmodlbType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg2fnmodlbType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg2fnmodlbType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg2fnmodlbType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg2fnmodlbType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg2fnmodlbFieldFnmodlbShift = 0
@@ -539,12 +907,12 @@ const (
 )
 
 // GetFnmodlb Controls burst breaking of long bursts
-func (r *registerAxitarg2fnmodlbType) GetFnmodlb() bool {
+func (r *RegisterAxitarg2fnmodlbType) GetFnmodlb() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg2fnmodlbFieldFnmodlbMask) != 0
 }
 
 // SetFnmodlb Controls burst breaking of long bursts
-func (r *registerAxitarg2fnmodlbType) SetFnmodlb(value bool) {
+func (r *RegisterAxitarg2fnmodlbType) SetFnmodlb(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg2fnmodlbFieldFnmodlbMask)
 	} else {
@@ -552,8 +920,31 @@ func (r *registerAxitarg2fnmodlbType) SetFnmodlb(value bool) {
 	}
 }
 
-// registerAxitarg2fnmodType AXI interconnect - TARG x long burst functionality modification
-type registerAxitarg2fnmodType uint32
+// RegisterAxitarg2fnmodType AXI interconnect - TARG x long burst functionality modification
+type RegisterAxitarg2fnmodType uint32
+
+func (r *RegisterAxitarg2fnmodType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg2fnmodType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg2fnmodType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg2fnmodType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg2fnmodType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg2fnmodFieldReadissoverrideShift = 0
@@ -561,12 +952,12 @@ const (
 )
 
 // GetReadissoverride Override AMIB read issuing capability
-func (r *registerAxitarg2fnmodType) GetReadissoverride() bool {
+func (r *RegisterAxitarg2fnmodType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg2fnmodFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride Override AMIB read issuing capability
-func (r *registerAxitarg2fnmodType) SetReadissoverride(value bool) {
+func (r *RegisterAxitarg2fnmodType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg2fnmodFieldReadissoverrideMask)
 	} else {
@@ -580,12 +971,12 @@ const (
 )
 
 // GetWriteissoverride Override AMIB write issuing capability
-func (r *registerAxitarg2fnmodType) GetWriteissoverride() bool {
+func (r *RegisterAxitarg2fnmodType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg2fnmodFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Override AMIB write issuing capability
-func (r *registerAxitarg2fnmodType) SetWriteissoverride(value bool) {
+func (r *RegisterAxitarg2fnmodType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg2fnmodFieldWriteissoverrideMask)
 	} else {
@@ -593,8 +984,31 @@ func (r *registerAxitarg2fnmodType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxitarg3fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
-type registerAxitarg3fnmodissbmType uint32
+// RegisterAxitarg3fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
+type RegisterAxitarg3fnmodissbmType uint32
+
+func (r *RegisterAxitarg3fnmodissbmType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg3fnmodissbmType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg3fnmodissbmType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg3fnmodissbmType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg3fnmodissbmType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg3fnmodissbmFieldReadissoverrideShift = 0
@@ -602,12 +1016,12 @@ const (
 )
 
 // GetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg3fnmodissbmType) GetReadissoverride() bool {
+func (r *RegisterAxitarg3fnmodissbmType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg3fnmodissbmFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg3fnmodissbmType) SetReadissoverride(value bool) {
+func (r *RegisterAxitarg3fnmodissbmType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg3fnmodissbmFieldReadissoverrideMask)
 	} else {
@@ -621,12 +1035,12 @@ const (
 )
 
 // GetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg3fnmodissbmType) GetWriteissoverride() bool {
+func (r *RegisterAxitarg3fnmodissbmType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg3fnmodissbmFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg3fnmodissbmType) SetWriteissoverride(value bool) {
+func (r *RegisterAxitarg3fnmodissbmType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg3fnmodissbmFieldWriteissoverrideMask)
 	} else {
@@ -634,8 +1048,31 @@ func (r *registerAxitarg3fnmodissbmType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxitarg4fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
-type registerAxitarg4fnmodissbmType uint32
+// RegisterAxitarg4fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
+type RegisterAxitarg4fnmodissbmType uint32
+
+func (r *RegisterAxitarg4fnmodissbmType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg4fnmodissbmType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg4fnmodissbmType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg4fnmodissbmType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg4fnmodissbmType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg4fnmodissbmFieldReadissoverrideShift = 0
@@ -643,12 +1080,12 @@ const (
 )
 
 // GetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg4fnmodissbmType) GetReadissoverride() bool {
+func (r *RegisterAxitarg4fnmodissbmType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg4fnmodissbmFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg4fnmodissbmType) SetReadissoverride(value bool) {
+func (r *RegisterAxitarg4fnmodissbmType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg4fnmodissbmFieldReadissoverrideMask)
 	} else {
@@ -662,12 +1099,12 @@ const (
 )
 
 // GetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg4fnmodissbmType) GetWriteissoverride() bool {
+func (r *RegisterAxitarg4fnmodissbmType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg4fnmodissbmFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg4fnmodissbmType) SetWriteissoverride(value bool) {
+func (r *RegisterAxitarg4fnmodissbmType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg4fnmodissbmFieldWriteissoverrideMask)
 	} else {
@@ -675,8 +1112,31 @@ func (r *registerAxitarg4fnmodissbmType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxitarg5fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
-type registerAxitarg5fnmodissbmType uint32
+// RegisterAxitarg5fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
+type RegisterAxitarg5fnmodissbmType uint32
+
+func (r *RegisterAxitarg5fnmodissbmType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg5fnmodissbmType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg5fnmodissbmType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg5fnmodissbmType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg5fnmodissbmType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg5fnmodissbmFieldReadissoverrideShift = 0
@@ -684,12 +1144,12 @@ const (
 )
 
 // GetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg5fnmodissbmType) GetReadissoverride() bool {
+func (r *RegisterAxitarg5fnmodissbmType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg5fnmodissbmFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg5fnmodissbmType) SetReadissoverride(value bool) {
+func (r *RegisterAxitarg5fnmodissbmType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg5fnmodissbmFieldReadissoverrideMask)
 	} else {
@@ -703,12 +1163,12 @@ const (
 )
 
 // GetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg5fnmodissbmType) GetWriteissoverride() bool {
+func (r *RegisterAxitarg5fnmodissbmType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg5fnmodissbmFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg5fnmodissbmType) SetWriteissoverride(value bool) {
+func (r *RegisterAxitarg5fnmodissbmType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg5fnmodissbmFieldWriteissoverrideMask)
 	} else {
@@ -716,8 +1176,31 @@ func (r *registerAxitarg5fnmodissbmType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxitarg6fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
-type registerAxitarg6fnmodissbmType uint32
+// RegisterAxitarg6fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
+type RegisterAxitarg6fnmodissbmType uint32
+
+func (r *RegisterAxitarg6fnmodissbmType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg6fnmodissbmType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg6fnmodissbmType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg6fnmodissbmType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg6fnmodissbmType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg6fnmodissbmFieldReadissoverrideShift = 0
@@ -725,12 +1208,12 @@ const (
 )
 
 // GetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg6fnmodissbmType) GetReadissoverride() bool {
+func (r *RegisterAxitarg6fnmodissbmType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg6fnmodissbmFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg6fnmodissbmType) SetReadissoverride(value bool) {
+func (r *RegisterAxitarg6fnmodissbmType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg6fnmodissbmFieldReadissoverrideMask)
 	} else {
@@ -744,12 +1227,12 @@ const (
 )
 
 // GetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg6fnmodissbmType) GetWriteissoverride() bool {
+func (r *RegisterAxitarg6fnmodissbmType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg6fnmodissbmFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg6fnmodissbmType) SetWriteissoverride(value bool) {
+func (r *RegisterAxitarg6fnmodissbmType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg6fnmodissbmFieldWriteissoverrideMask)
 	} else {
@@ -757,8 +1240,31 @@ func (r *registerAxitarg6fnmodissbmType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxitarg7fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
-type registerAxitarg7fnmodissbmType uint32
+// RegisterAxitarg7fnmodissbmType AXI interconnect - TARG x bus matrix issuing functionality register
+type RegisterAxitarg7fnmodissbmType uint32
+
+func (r *RegisterAxitarg7fnmodissbmType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg7fnmodissbmType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg7fnmodissbmType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg7fnmodissbmType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg7fnmodissbmType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg7fnmodissbmFieldReadissoverrideShift = 0
@@ -766,12 +1272,12 @@ const (
 )
 
 // GetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg7fnmodissbmType) GetReadissoverride() bool {
+func (r *RegisterAxitarg7fnmodissbmType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg7fnmodissbmFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride READ_ISS_OVERRIDE
-func (r *registerAxitarg7fnmodissbmType) SetReadissoverride(value bool) {
+func (r *RegisterAxitarg7fnmodissbmType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg7fnmodissbmFieldReadissoverrideMask)
 	} else {
@@ -785,12 +1291,12 @@ const (
 )
 
 // GetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg7fnmodissbmType) GetWriteissoverride() bool {
+func (r *RegisterAxitarg7fnmodissbmType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg7fnmodissbmFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Switch matrix write issuing override for target
-func (r *registerAxitarg7fnmodissbmType) SetWriteissoverride(value bool) {
+func (r *RegisterAxitarg7fnmodissbmType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg7fnmodissbmFieldWriteissoverrideMask)
 	} else {
@@ -798,8 +1304,31 @@ func (r *registerAxitarg7fnmodissbmType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxitarg7fnmod2Type AXI interconnect - TARG x bus matrix functionality 2 register
-type registerAxitarg7fnmod2Type uint32
+// RegisterAxitarg7fnmod2Type AXI interconnect - TARG x bus matrix functionality 2 register
+type RegisterAxitarg7fnmod2Type uint32
+
+func (r *RegisterAxitarg7fnmod2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg7fnmod2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg7fnmod2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg7fnmod2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg7fnmod2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg7fnmod2FieldBypassmergeShift = 0
@@ -807,12 +1336,12 @@ const (
 )
 
 // GetBypassmerge Disable packing of beats to match the output data width
-func (r *registerAxitarg7fnmod2Type) GetBypassmerge() bool {
+func (r *RegisterAxitarg7fnmod2Type) GetBypassmerge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg7fnmod2FieldBypassmergeMask) != 0
 }
 
 // SetBypassmerge Disable packing of beats to match the output data width
-func (r *registerAxitarg7fnmod2Type) SetBypassmerge(value bool) {
+func (r *RegisterAxitarg7fnmod2Type) SetBypassmerge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg7fnmod2FieldBypassmergeMask)
 	} else {
@@ -820,8 +1349,31 @@ func (r *registerAxitarg7fnmod2Type) SetBypassmerge(value bool) {
 	}
 }
 
-// registerAxitarg7fnmodType AXI interconnect - TARG x long burst functionality modification
-type registerAxitarg7fnmodType uint32
+// RegisterAxitarg7fnmodType AXI interconnect - TARG x long burst functionality modification
+type RegisterAxitarg7fnmodType uint32
+
+func (r *RegisterAxitarg7fnmodType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxitarg7fnmodType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxitarg7fnmodType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxitarg7fnmodType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxitarg7fnmodType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxitarg7fnmodFieldReadissoverrideShift = 0
@@ -829,12 +1381,12 @@ const (
 )
 
 // GetReadissoverride Override AMIB read issuing capability
-func (r *registerAxitarg7fnmodType) GetReadissoverride() bool {
+func (r *RegisterAxitarg7fnmodType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg7fnmodFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride Override AMIB read issuing capability
-func (r *registerAxitarg7fnmodType) SetReadissoverride(value bool) {
+func (r *RegisterAxitarg7fnmodType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg7fnmodFieldReadissoverrideMask)
 	} else {
@@ -848,12 +1400,12 @@ const (
 )
 
 // GetWriteissoverride Override AMIB write issuing capability
-func (r *registerAxitarg7fnmodType) GetWriteissoverride() bool {
+func (r *RegisterAxitarg7fnmodType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxitarg7fnmodFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Override AMIB write issuing capability
-func (r *registerAxitarg7fnmodType) SetWriteissoverride(value bool) {
+func (r *RegisterAxitarg7fnmodType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxitarg7fnmodFieldWriteissoverrideMask)
 	} else {
@@ -861,8 +1413,31 @@ func (r *registerAxitarg7fnmodType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxiini1fnmod2Type AXI interconnect - INI x functionality modification 2 register
-type registerAxiini1fnmod2Type uint32
+// RegisterAxiini1fnmod2Type AXI interconnect - INI x functionality modification 2 register
+type RegisterAxiini1fnmod2Type uint32
+
+func (r *RegisterAxiini1fnmod2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini1fnmod2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini1fnmod2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini1fnmod2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini1fnmod2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini1fnmod2FieldBypassmergeShift = 0
@@ -870,12 +1445,12 @@ const (
 )
 
 // GetBypassmerge Disables alteration of transactions by the up-sizer unless required by the protocol
-func (r *registerAxiini1fnmod2Type) GetBypassmerge() bool {
+func (r *RegisterAxiini1fnmod2Type) GetBypassmerge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini1fnmod2FieldBypassmergeMask) != 0
 }
 
 // SetBypassmerge Disables alteration of transactions by the up-sizer unless required by the protocol
-func (r *registerAxiini1fnmod2Type) SetBypassmerge(value bool) {
+func (r *RegisterAxiini1fnmod2Type) SetBypassmerge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini1fnmod2FieldBypassmergeMask)
 	} else {
@@ -883,8 +1458,31 @@ func (r *registerAxiini1fnmod2Type) SetBypassmerge(value bool) {
 	}
 }
 
-// registerAxiini1fnmodahbType AXI interconnect - INI x AHB functionality modification register
-type registerAxiini1fnmodahbType uint32
+// RegisterAxiini1fnmodahbType AXI interconnect - INI x AHB functionality modification register
+type RegisterAxiini1fnmodahbType uint32
+
+func (r *RegisterAxiini1fnmodahbType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini1fnmodahbType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini1fnmodahbType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini1fnmodahbType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini1fnmodahbType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini1fnmodahbFieldRdincoverrideShift = 0
@@ -892,12 +1490,12 @@ const (
 )
 
 // GetRdincoverride Converts all AHB-Lite write transactions to a series of single beat AXI
-func (r *registerAxiini1fnmodahbType) GetRdincoverride() bool {
+func (r *RegisterAxiini1fnmodahbType) GetRdincoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini1fnmodahbFieldRdincoverrideMask) != 0
 }
 
 // SetRdincoverride Converts all AHB-Lite write transactions to a series of single beat AXI
-func (r *registerAxiini1fnmodahbType) SetRdincoverride(value bool) {
+func (r *RegisterAxiini1fnmodahbType) SetRdincoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini1fnmodahbFieldRdincoverrideMask)
 	} else {
@@ -911,12 +1509,12 @@ const (
 )
 
 // GetWrincoverride Converts all AHB-Lite read transactions to a series of single beat AXI
-func (r *registerAxiini1fnmodahbType) GetWrincoverride() bool {
+func (r *RegisterAxiini1fnmodahbType) GetWrincoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini1fnmodahbFieldWrincoverrideMask) != 0
 }
 
 // SetWrincoverride Converts all AHB-Lite read transactions to a series of single beat AXI
-func (r *registerAxiini1fnmodahbType) SetWrincoverride(value bool) {
+func (r *RegisterAxiini1fnmodahbType) SetWrincoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini1fnmodahbFieldWrincoverrideMask)
 	} else {
@@ -924,8 +1522,31 @@ func (r *registerAxiini1fnmodahbType) SetWrincoverride(value bool) {
 	}
 }
 
-// registerAxiini1readqosType AXI interconnect - INI x read QoS register
-type registerAxiini1readqosType uint32
+// RegisterAxiini1readqosType AXI interconnect - INI x read QoS register
+type RegisterAxiini1readqosType uint32
+
+func (r *RegisterAxiini1readqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini1readqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini1readqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini1readqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini1readqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini1readqosFieldArqosShift = 0
@@ -933,17 +1554,40 @@ const (
 )
 
 // GetArqos Read channel QoS setting
-func (r *registerAxiini1readqosType) GetArqos() uint8 {
+func (r *RegisterAxiini1readqosType) GetArqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini1readqosFieldArqosMask) >> RegisterAxiini1readqosFieldArqosShift)
 }
 
 // SetArqos Read channel QoS setting
-func (r *registerAxiini1readqosType) SetArqos(value uint8) {
+func (r *RegisterAxiini1readqosType) SetArqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini1readqosFieldArqosMask)|(uint32(value)<<RegisterAxiini1readqosFieldArqosShift))
 }
 
-// registerAxiini1writeqosType AXI interconnect - INI x write QoS register
-type registerAxiini1writeqosType uint32
+// RegisterAxiini1writeqosType AXI interconnect - INI x write QoS register
+type RegisterAxiini1writeqosType uint32
+
+func (r *RegisterAxiini1writeqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini1writeqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini1writeqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini1writeqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini1writeqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini1writeqosFieldAwqosShift = 0
@@ -951,17 +1595,40 @@ const (
 )
 
 // GetAwqos Write channel QoS setting
-func (r *registerAxiini1writeqosType) GetAwqos() uint8 {
+func (r *RegisterAxiini1writeqosType) GetAwqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini1writeqosFieldAwqosMask) >> RegisterAxiini1writeqosFieldAwqosShift)
 }
 
 // SetAwqos Write channel QoS setting
-func (r *registerAxiini1writeqosType) SetAwqos(value uint8) {
+func (r *RegisterAxiini1writeqosType) SetAwqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini1writeqosFieldAwqosMask)|(uint32(value)<<RegisterAxiini1writeqosFieldAwqosShift))
 }
 
-// registerAxiini1fnmodType AXI interconnect - INI x issuing functionality modification register
-type registerAxiini1fnmodType uint32
+// RegisterAxiini1fnmodType AXI interconnect - INI x issuing functionality modification register
+type RegisterAxiini1fnmodType uint32
+
+func (r *RegisterAxiini1fnmodType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini1fnmodType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini1fnmodType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini1fnmodType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini1fnmodType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini1fnmodFieldReadissoverrideShift = 0
@@ -969,12 +1636,12 @@ const (
 )
 
 // GetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini1fnmodType) GetReadissoverride() bool {
+func (r *RegisterAxiini1fnmodType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini1fnmodFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini1fnmodType) SetReadissoverride(value bool) {
+func (r *RegisterAxiini1fnmodType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini1fnmodFieldReadissoverrideMask)
 	} else {
@@ -988,12 +1655,12 @@ const (
 )
 
 // GetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini1fnmodType) GetWriteissoverride() bool {
+func (r *RegisterAxiini1fnmodType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini1fnmodFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini1fnmodType) SetWriteissoverride(value bool) {
+func (r *RegisterAxiini1fnmodType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini1fnmodFieldWriteissoverrideMask)
 	} else {
@@ -1001,8 +1668,31 @@ func (r *registerAxiini1fnmodType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxiini2readqosType AXI interconnect - INI x read QoS register
-type registerAxiini2readqosType uint32
+// RegisterAxiini2readqosType AXI interconnect - INI x read QoS register
+type RegisterAxiini2readqosType uint32
+
+func (r *RegisterAxiini2readqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini2readqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini2readqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini2readqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini2readqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini2readqosFieldArqosShift = 0
@@ -1010,17 +1700,40 @@ const (
 )
 
 // GetArqos Read channel QoS setting
-func (r *registerAxiini2readqosType) GetArqos() uint8 {
+func (r *RegisterAxiini2readqosType) GetArqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini2readqosFieldArqosMask) >> RegisterAxiini2readqosFieldArqosShift)
 }
 
 // SetArqos Read channel QoS setting
-func (r *registerAxiini2readqosType) SetArqos(value uint8) {
+func (r *RegisterAxiini2readqosType) SetArqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini2readqosFieldArqosMask)|(uint32(value)<<RegisterAxiini2readqosFieldArqosShift))
 }
 
-// registerAxiini2writeqosType AXI interconnect - INI x write QoS register
-type registerAxiini2writeqosType uint32
+// RegisterAxiini2writeqosType AXI interconnect - INI x write QoS register
+type RegisterAxiini2writeqosType uint32
+
+func (r *RegisterAxiini2writeqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini2writeqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini2writeqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini2writeqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini2writeqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini2writeqosFieldAwqosShift = 0
@@ -1028,17 +1741,40 @@ const (
 )
 
 // GetAwqos Write channel QoS setting
-func (r *registerAxiini2writeqosType) GetAwqos() uint8 {
+func (r *RegisterAxiini2writeqosType) GetAwqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini2writeqosFieldAwqosMask) >> RegisterAxiini2writeqosFieldAwqosShift)
 }
 
 // SetAwqos Write channel QoS setting
-func (r *registerAxiini2writeqosType) SetAwqos(value uint8) {
+func (r *RegisterAxiini2writeqosType) SetAwqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini2writeqosFieldAwqosMask)|(uint32(value)<<RegisterAxiini2writeqosFieldAwqosShift))
 }
 
-// registerAxiini2fnmodType AXI interconnect - INI x issuing functionality modification register
-type registerAxiini2fnmodType uint32
+// RegisterAxiini2fnmodType AXI interconnect - INI x issuing functionality modification register
+type RegisterAxiini2fnmodType uint32
+
+func (r *RegisterAxiini2fnmodType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini2fnmodType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini2fnmodType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini2fnmodType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini2fnmodType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini2fnmodFieldReadissoverrideShift = 0
@@ -1046,12 +1782,12 @@ const (
 )
 
 // GetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini2fnmodType) GetReadissoverride() bool {
+func (r *RegisterAxiini2fnmodType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini2fnmodFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini2fnmodType) SetReadissoverride(value bool) {
+func (r *RegisterAxiini2fnmodType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini2fnmodFieldReadissoverrideMask)
 	} else {
@@ -1065,12 +1801,12 @@ const (
 )
 
 // GetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini2fnmodType) GetWriteissoverride() bool {
+func (r *RegisterAxiini2fnmodType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini2fnmodFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini2fnmodType) SetWriteissoverride(value bool) {
+func (r *RegisterAxiini2fnmodType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini2fnmodFieldWriteissoverrideMask)
 	} else {
@@ -1078,8 +1814,31 @@ func (r *registerAxiini2fnmodType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxiini3fnmod2Type AXI interconnect - INI x functionality modification 2 register
-type registerAxiini3fnmod2Type uint32
+// RegisterAxiini3fnmod2Type AXI interconnect - INI x functionality modification 2 register
+type RegisterAxiini3fnmod2Type uint32
+
+func (r *RegisterAxiini3fnmod2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini3fnmod2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini3fnmod2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini3fnmod2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini3fnmod2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini3fnmod2FieldBypassmergeShift = 0
@@ -1087,12 +1846,12 @@ const (
 )
 
 // GetBypassmerge Disables alteration of transactions by the up-sizer unless required by the protocol
-func (r *registerAxiini3fnmod2Type) GetBypassmerge() bool {
+func (r *RegisterAxiini3fnmod2Type) GetBypassmerge() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini3fnmod2FieldBypassmergeMask) != 0
 }
 
 // SetBypassmerge Disables alteration of transactions by the up-sizer unless required by the protocol
-func (r *registerAxiini3fnmod2Type) SetBypassmerge(value bool) {
+func (r *RegisterAxiini3fnmod2Type) SetBypassmerge(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini3fnmod2FieldBypassmergeMask)
 	} else {
@@ -1100,8 +1859,31 @@ func (r *registerAxiini3fnmod2Type) SetBypassmerge(value bool) {
 	}
 }
 
-// registerAxiini3fnmodahbType AXI interconnect - INI x AHB functionality modification register
-type registerAxiini3fnmodahbType uint32
+// RegisterAxiini3fnmodahbType AXI interconnect - INI x AHB functionality modification register
+type RegisterAxiini3fnmodahbType uint32
+
+func (r *RegisterAxiini3fnmodahbType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini3fnmodahbType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini3fnmodahbType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini3fnmodahbType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini3fnmodahbType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini3fnmodahbFieldRdincoverrideShift = 0
@@ -1109,12 +1891,12 @@ const (
 )
 
 // GetRdincoverride Converts all AHB-Lite write transactions to a series of single beat AXI
-func (r *registerAxiini3fnmodahbType) GetRdincoverride() bool {
+func (r *RegisterAxiini3fnmodahbType) GetRdincoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini3fnmodahbFieldRdincoverrideMask) != 0
 }
 
 // SetRdincoverride Converts all AHB-Lite write transactions to a series of single beat AXI
-func (r *registerAxiini3fnmodahbType) SetRdincoverride(value bool) {
+func (r *RegisterAxiini3fnmodahbType) SetRdincoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini3fnmodahbFieldRdincoverrideMask)
 	} else {
@@ -1128,12 +1910,12 @@ const (
 )
 
 // GetWrincoverride Converts all AHB-Lite read transactions to a series of single beat AXI
-func (r *registerAxiini3fnmodahbType) GetWrincoverride() bool {
+func (r *RegisterAxiini3fnmodahbType) GetWrincoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini3fnmodahbFieldWrincoverrideMask) != 0
 }
 
 // SetWrincoverride Converts all AHB-Lite read transactions to a series of single beat AXI
-func (r *registerAxiini3fnmodahbType) SetWrincoverride(value bool) {
+func (r *RegisterAxiini3fnmodahbType) SetWrincoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini3fnmodahbFieldWrincoverrideMask)
 	} else {
@@ -1141,8 +1923,31 @@ func (r *registerAxiini3fnmodahbType) SetWrincoverride(value bool) {
 	}
 }
 
-// registerAxiini3readqosType AXI interconnect - INI x read QoS register
-type registerAxiini3readqosType uint32
+// RegisterAxiini3readqosType AXI interconnect - INI x read QoS register
+type RegisterAxiini3readqosType uint32
+
+func (r *RegisterAxiini3readqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini3readqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini3readqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini3readqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini3readqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini3readqosFieldArqosShift = 0
@@ -1150,17 +1955,40 @@ const (
 )
 
 // GetArqos Read channel QoS setting
-func (r *registerAxiini3readqosType) GetArqos() uint8 {
+func (r *RegisterAxiini3readqosType) GetArqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini3readqosFieldArqosMask) >> RegisterAxiini3readqosFieldArqosShift)
 }
 
 // SetArqos Read channel QoS setting
-func (r *registerAxiini3readqosType) SetArqos(value uint8) {
+func (r *RegisterAxiini3readqosType) SetArqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini3readqosFieldArqosMask)|(uint32(value)<<RegisterAxiini3readqosFieldArqosShift))
 }
 
-// registerAxiini3writeqosType AXI interconnect - INI x write QoS register
-type registerAxiini3writeqosType uint32
+// RegisterAxiini3writeqosType AXI interconnect - INI x write QoS register
+type RegisterAxiini3writeqosType uint32
+
+func (r *RegisterAxiini3writeqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini3writeqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini3writeqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini3writeqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini3writeqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini3writeqosFieldAwqosShift = 0
@@ -1168,17 +1996,40 @@ const (
 )
 
 // GetAwqos Write channel QoS setting
-func (r *registerAxiini3writeqosType) GetAwqos() uint8 {
+func (r *RegisterAxiini3writeqosType) GetAwqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini3writeqosFieldAwqosMask) >> RegisterAxiini3writeqosFieldAwqosShift)
 }
 
 // SetAwqos Write channel QoS setting
-func (r *registerAxiini3writeqosType) SetAwqos(value uint8) {
+func (r *RegisterAxiini3writeqosType) SetAwqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini3writeqosFieldAwqosMask)|(uint32(value)<<RegisterAxiini3writeqosFieldAwqosShift))
 }
 
-// registerAxiini3fnmodType AXI interconnect - INI x issuing functionality modification register
-type registerAxiini3fnmodType uint32
+// RegisterAxiini3fnmodType AXI interconnect - INI x issuing functionality modification register
+type RegisterAxiini3fnmodType uint32
+
+func (r *RegisterAxiini3fnmodType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini3fnmodType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini3fnmodType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini3fnmodType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini3fnmodType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini3fnmodFieldReadissoverrideShift = 0
@@ -1186,12 +2037,12 @@ const (
 )
 
 // GetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini3fnmodType) GetReadissoverride() bool {
+func (r *RegisterAxiini3fnmodType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini3fnmodFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini3fnmodType) SetReadissoverride(value bool) {
+func (r *RegisterAxiini3fnmodType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini3fnmodFieldReadissoverrideMask)
 	} else {
@@ -1205,12 +2056,12 @@ const (
 )
 
 // GetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini3fnmodType) GetWriteissoverride() bool {
+func (r *RegisterAxiini3fnmodType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini3fnmodFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini3fnmodType) SetWriteissoverride(value bool) {
+func (r *RegisterAxiini3fnmodType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini3fnmodFieldWriteissoverrideMask)
 	} else {
@@ -1218,8 +2069,31 @@ func (r *registerAxiini3fnmodType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxiini4readqosType AXI interconnect - INI x read QoS register
-type registerAxiini4readqosType uint32
+// RegisterAxiini4readqosType AXI interconnect - INI x read QoS register
+type RegisterAxiini4readqosType uint32
+
+func (r *RegisterAxiini4readqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini4readqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini4readqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini4readqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini4readqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini4readqosFieldArqosShift = 0
@@ -1227,17 +2101,40 @@ const (
 )
 
 // GetArqos Read channel QoS setting
-func (r *registerAxiini4readqosType) GetArqos() uint8 {
+func (r *RegisterAxiini4readqosType) GetArqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini4readqosFieldArqosMask) >> RegisterAxiini4readqosFieldArqosShift)
 }
 
 // SetArqos Read channel QoS setting
-func (r *registerAxiini4readqosType) SetArqos(value uint8) {
+func (r *RegisterAxiini4readqosType) SetArqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini4readqosFieldArqosMask)|(uint32(value)<<RegisterAxiini4readqosFieldArqosShift))
 }
 
-// registerAxiini4writeqosType AXI interconnect - INI x write QoS register
-type registerAxiini4writeqosType uint32
+// RegisterAxiini4writeqosType AXI interconnect - INI x write QoS register
+type RegisterAxiini4writeqosType uint32
+
+func (r *RegisterAxiini4writeqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini4writeqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini4writeqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini4writeqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini4writeqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini4writeqosFieldAwqosShift = 0
@@ -1245,17 +2142,40 @@ const (
 )
 
 // GetAwqos Write channel QoS setting
-func (r *registerAxiini4writeqosType) GetAwqos() uint8 {
+func (r *RegisterAxiini4writeqosType) GetAwqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini4writeqosFieldAwqosMask) >> RegisterAxiini4writeqosFieldAwqosShift)
 }
 
 // SetAwqos Write channel QoS setting
-func (r *registerAxiini4writeqosType) SetAwqos(value uint8) {
+func (r *RegisterAxiini4writeqosType) SetAwqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini4writeqosFieldAwqosMask)|(uint32(value)<<RegisterAxiini4writeqosFieldAwqosShift))
 }
 
-// registerAxiini4fnmodType AXI interconnect - INI x issuing functionality modification register
-type registerAxiini4fnmodType uint32
+// RegisterAxiini4fnmodType AXI interconnect - INI x issuing functionality modification register
+type RegisterAxiini4fnmodType uint32
+
+func (r *RegisterAxiini4fnmodType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini4fnmodType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini4fnmodType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini4fnmodType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini4fnmodType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini4fnmodFieldReadissoverrideShift = 0
@@ -1263,12 +2183,12 @@ const (
 )
 
 // GetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini4fnmodType) GetReadissoverride() bool {
+func (r *RegisterAxiini4fnmodType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini4fnmodFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini4fnmodType) SetReadissoverride(value bool) {
+func (r *RegisterAxiini4fnmodType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini4fnmodFieldReadissoverrideMask)
 	} else {
@@ -1282,12 +2202,12 @@ const (
 )
 
 // GetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini4fnmodType) GetWriteissoverride() bool {
+func (r *RegisterAxiini4fnmodType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini4fnmodFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini4fnmodType) SetWriteissoverride(value bool) {
+func (r *RegisterAxiini4fnmodType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini4fnmodFieldWriteissoverrideMask)
 	} else {
@@ -1295,8 +2215,31 @@ func (r *registerAxiini4fnmodType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxiini5readqosType AXI interconnect - INI x read QoS register
-type registerAxiini5readqosType uint32
+// RegisterAxiini5readqosType AXI interconnect - INI x read QoS register
+type RegisterAxiini5readqosType uint32
+
+func (r *RegisterAxiini5readqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini5readqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini5readqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini5readqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini5readqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini5readqosFieldArqosShift = 0
@@ -1304,17 +2247,40 @@ const (
 )
 
 // GetArqos Read channel QoS setting
-func (r *registerAxiini5readqosType) GetArqos() uint8 {
+func (r *RegisterAxiini5readqosType) GetArqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini5readqosFieldArqosMask) >> RegisterAxiini5readqosFieldArqosShift)
 }
 
 // SetArqos Read channel QoS setting
-func (r *registerAxiini5readqosType) SetArqos(value uint8) {
+func (r *RegisterAxiini5readqosType) SetArqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini5readqosFieldArqosMask)|(uint32(value)<<RegisterAxiini5readqosFieldArqosShift))
 }
 
-// registerAxiini5writeqosType AXI interconnect - INI x write QoS register
-type registerAxiini5writeqosType uint32
+// RegisterAxiini5writeqosType AXI interconnect - INI x write QoS register
+type RegisterAxiini5writeqosType uint32
+
+func (r *RegisterAxiini5writeqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini5writeqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini5writeqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini5writeqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini5writeqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini5writeqosFieldAwqosShift = 0
@@ -1322,17 +2288,40 @@ const (
 )
 
 // GetAwqos Write channel QoS setting
-func (r *registerAxiini5writeqosType) GetAwqos() uint8 {
+func (r *RegisterAxiini5writeqosType) GetAwqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini5writeqosFieldAwqosMask) >> RegisterAxiini5writeqosFieldAwqosShift)
 }
 
 // SetAwqos Write channel QoS setting
-func (r *registerAxiini5writeqosType) SetAwqos(value uint8) {
+func (r *RegisterAxiini5writeqosType) SetAwqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini5writeqosFieldAwqosMask)|(uint32(value)<<RegisterAxiini5writeqosFieldAwqosShift))
 }
 
-// registerAxiini5fnmodType AXI interconnect - INI x issuing functionality modification register
-type registerAxiini5fnmodType uint32
+// RegisterAxiini5fnmodType AXI interconnect - INI x issuing functionality modification register
+type RegisterAxiini5fnmodType uint32
+
+func (r *RegisterAxiini5fnmodType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini5fnmodType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini5fnmodType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini5fnmodType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini5fnmodType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini5fnmodFieldReadissoverrideShift = 0
@@ -1340,12 +2329,12 @@ const (
 )
 
 // GetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini5fnmodType) GetReadissoverride() bool {
+func (r *RegisterAxiini5fnmodType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini5fnmodFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini5fnmodType) SetReadissoverride(value bool) {
+func (r *RegisterAxiini5fnmodType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini5fnmodFieldReadissoverrideMask)
 	} else {
@@ -1359,12 +2348,12 @@ const (
 )
 
 // GetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini5fnmodType) GetWriteissoverride() bool {
+func (r *RegisterAxiini5fnmodType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini5fnmodFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini5fnmodType) SetWriteissoverride(value bool) {
+func (r *RegisterAxiini5fnmodType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini5fnmodFieldWriteissoverrideMask)
 	} else {
@@ -1372,8 +2361,31 @@ func (r *registerAxiini5fnmodType) SetWriteissoverride(value bool) {
 	}
 }
 
-// registerAxiini6readqosType AXI interconnect - INI x read QoS register
-type registerAxiini6readqosType uint32
+// RegisterAxiini6readqosType AXI interconnect - INI x read QoS register
+type RegisterAxiini6readqosType uint32
+
+func (r *RegisterAxiini6readqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini6readqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini6readqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini6readqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini6readqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini6readqosFieldArqosShift = 0
@@ -1381,17 +2393,40 @@ const (
 )
 
 // GetArqos Read channel QoS setting
-func (r *registerAxiini6readqosType) GetArqos() uint8 {
+func (r *RegisterAxiini6readqosType) GetArqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini6readqosFieldArqosMask) >> RegisterAxiini6readqosFieldArqosShift)
 }
 
 // SetArqos Read channel QoS setting
-func (r *registerAxiini6readqosType) SetArqos(value uint8) {
+func (r *RegisterAxiini6readqosType) SetArqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini6readqosFieldArqosMask)|(uint32(value)<<RegisterAxiini6readqosFieldArqosShift))
 }
 
-// registerAxiini6writeqosType AXI interconnect - INI x write QoS register
-type registerAxiini6writeqosType uint32
+// RegisterAxiini6writeqosType AXI interconnect - INI x write QoS register
+type RegisterAxiini6writeqosType uint32
+
+func (r *RegisterAxiini6writeqosType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini6writeqosType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini6writeqosType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini6writeqosType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini6writeqosType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini6writeqosFieldAwqosShift = 0
@@ -1399,17 +2434,40 @@ const (
 )
 
 // GetAwqos Write channel QoS setting
-func (r *registerAxiini6writeqosType) GetAwqos() uint8 {
+func (r *RegisterAxiini6writeqosType) GetAwqos() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterAxiini6writeqosFieldAwqosMask) >> RegisterAxiini6writeqosFieldAwqosShift)
 }
 
 // SetAwqos Write channel QoS setting
-func (r *registerAxiini6writeqosType) SetAwqos(value uint8) {
+func (r *RegisterAxiini6writeqosType) SetAwqos(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterAxiini6writeqosFieldAwqosMask)|(uint32(value)<<RegisterAxiini6writeqosFieldAwqosShift))
 }
 
-// registerAxiini6fnmodType AXI interconnect - INI x issuing functionality modification register
-type registerAxiini6fnmodType uint32
+// RegisterAxiini6fnmodType AXI interconnect - INI x issuing functionality modification register
+type RegisterAxiini6fnmodType uint32
+
+func (r *RegisterAxiini6fnmodType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAxiini6fnmodType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAxiini6fnmodType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAxiini6fnmodType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAxiini6fnmodType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAxiini6fnmodFieldReadissoverrideShift = 0
@@ -1417,12 +2475,12 @@ const (
 )
 
 // GetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini6fnmodType) GetReadissoverride() bool {
+func (r *RegisterAxiini6fnmodType) GetReadissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini6fnmodFieldReadissoverrideMask) != 0
 }
 
 // SetReadissoverride Override ASIB read issuing capability
-func (r *registerAxiini6fnmodType) SetReadissoverride(value bool) {
+func (r *RegisterAxiini6fnmodType) SetReadissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini6fnmodFieldReadissoverrideMask)
 	} else {
@@ -1436,12 +2494,12 @@ const (
 )
 
 // GetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini6fnmodType) GetWriteissoverride() bool {
+func (r *RegisterAxiini6fnmodType) GetWriteissoverride() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAxiini6fnmodFieldWriteissoverrideMask) != 0
 }
 
 // SetWriteissoverride Override ASIB write issuing capability
-func (r *registerAxiini6fnmodType) SetWriteissoverride(value bool) {
+func (r *RegisterAxiini6fnmodType) SetWriteissoverride(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAxiini6fnmodFieldWriteissoverrideMask)
 	} else {
