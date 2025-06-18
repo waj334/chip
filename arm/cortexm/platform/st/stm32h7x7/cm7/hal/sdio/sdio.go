@@ -6,8 +6,8 @@ import (
 	"runtime"
 	"sync"
 	"time"
+	"unsafe"
 
-	stm32h7x7 "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/pin"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
@@ -66,9 +66,9 @@ const (
 )
 
 const (
-	Bus1Bit = coresdio.Width1Bit
-	Bus4Bit = coresdio.Width4Bit
-	Bus8Bit = coresdio.Width8Bit
+	Width1Bit = coresdio.Width1Bit
+	Width4Bit = coresdio.Width4Bit
+	Width8Bit = coresdio.Width8Bit
 
 	Sdr12  = coresdio.Sdr12
 	Sdr25  = coresdio.Sdr25
@@ -104,16 +104,13 @@ const (
 )
 
 var instances = [2]_state{}
+var defaultTimeout = time.Millisecond * 50
 
 type (
 	SDIO uint8
 
 	_state struct {
-		mutex    sync.Mutex
-		cmd      coresdio.Command
-		status   sdmmc.RegisterStarType
-		response coresdio.Response
-		done     bool
+		mutex sync.Mutex
 	}
 
 	Config struct {
@@ -129,8 +126,8 @@ type (
 
 	SecondaryConfig struct {
 		NegEdge             bool
-		BusWidth            coresdio.BusWidth
-		BusSpeed            coresdio.BusSpeed
+		BusWidth            BusWidth
+		BusSpeed            BusSpeed
 		PowerSave           bool
 		HardwareFlowControl bool
 	}
@@ -142,6 +139,7 @@ type (
 	Command      = coresdio.Command
 	CommandIndex = coresdio.CommandIndex
 	Response     = coresdio.Response
+	Transfer     = coresdio.Transfer
 )
 
 type altKey struct {
@@ -195,13 +193,13 @@ func altFunction(p pin.Pin, alt int, instance SDIO) (corepin.Mode, error) {
 
 func (s SDIO) Configure(config Config) error {
 	regs := sdmmc.Instances[s]
-	_s := &instances[s]
+	state := &instances[s]
 
-	_s.mutex.Lock()
+	state.mutex.Lock()
 
 	switch s {
 	case SDIO1:
-		stm32h7x7.IrqSdmmc1.Disable()
+		//stm32h7x7.IrqSdmmc1.Disable()
 		rcc.Rcc.Ahb3rstr.SetSdmmc1rst(true)
 		for !rcc.Rcc.Ahb3rstr.GetSdmmc1rst() {
 		}
@@ -210,7 +208,7 @@ func (s SDIO) Configure(config Config) error {
 		for rcc.Rcc.Ahb3rstr.GetSdmmc1rst() {
 		}
 	case SDIO2:
-		stm32h7x7.IrqSdmmc2.Disable()
+		//stm32h7x7.IrqSdmmc2.Disable()
 		rcc.Rcc.Ahb2rstr.SetSdmmc2rst(true)
 		for !rcc.Rcc.Ahb2rstr.GetSdmmc2rst() {
 		}
@@ -221,7 +219,7 @@ func (s SDIO) Configure(config Config) error {
 	}
 
 	if !config.Enable {
-		_s.mutex.Unlock()
+		state.mutex.Unlock()
 		return nil
 	}
 
@@ -303,35 +301,37 @@ func (s SDIO) Configure(config Config) error {
 	// Wait 74 cycles.
 	time.Sleep(time.Millisecond * 200)
 
-	switch s {
-	case SDIO1:
-		stm32h7x7.IrqSdmmc1.Enable()
-	case SDIO2:
-		stm32h7x7.IrqSdmmc2.Enable()
-	}
+	/*
+		switch s {
+		case SDIO1:
+			stm32h7x7.IrqSdmmc1.Enable()
+		case SDIO2:
+			stm32h7x7.IrqSdmmc2.Enable()
+		}
+	*/
 
-	_s.mutex.Unlock()
+	state.mutex.Unlock()
 	return nil
 }
 
 func (s SDIO) Reconfigure(config SecondaryConfig) error {
-	_s := &instances[s]
-	_s.mutex.Lock()
+	state := &instances[s]
+	state.mutex.Lock()
 	regs := sdmmc.Instances[s]
 
 	var err error
 	if config.BusWidth != 0 {
 		err := s.setBusWidth(config.BusWidth)
 		if err != nil {
-			_s.mutex.Unlock()
+			state.mutex.Unlock()
 			return err
 		}
 	}
 
 	if config.BusSpeed != 0 {
-		err = s.SetBusSpeed(config.BusSpeed)
+		err = s.setBusSpeed(config.BusSpeed)
 		if err != nil {
-			_s.mutex.Unlock()
+			state.mutex.Unlock()
 			return err
 		}
 	}
@@ -339,38 +339,38 @@ func (s SDIO) Reconfigure(config SecondaryConfig) error {
 	regs.Clkcr.SetNegedge(config.NegEdge)
 	regs.Clkcr.SetPwrsav(config.PowerSave)
 	regs.Clkcr.SetHwfcen(config.HardwareFlowControl)
-	_s.mutex.Unlock()
+	state.mutex.Unlock()
 	return nil
 }
 
-func (s SDIO) SetBusWidth(width coresdio.BusWidth) error {
-	_s := &instances[s]
-	_s.mutex.Lock()
+func (s SDIO) SetBusWidth(width BusWidth) error {
+	state := &instances[s]
+	state.mutex.Lock()
 	err := s.setBusWidth(width)
-	_s.mutex.Unlock()
+	state.mutex.Unlock()
 	return err
 }
 
-func (s SDIO) setBusWidth(width coresdio.BusWidth) error {
+func (s SDIO) setBusWidth(width BusWidth) error {
 	var cccr uint32
 	var buswid uint8
 
 	switch width {
-	case coresdio.Width1Bit:
+	case Width1Bit:
 		buswid = 0
 		cccr = 0
-	case coresdio.Width4Bit:
+	case Width4Bit:
 		buswid = 1
 		cccr = 2
-	case coresdio.Width8Bit:
+	case Width8Bit:
 		buswid = 2
 		cccr = 3
 	default:
 		return corehal.ErrInvalidConfig
 	}
 
-	resp, err := s.sendCommand(coresdio.Command{
-		Index: coresdio.CMD52,
+	resp, err := s.sendCommand(Command{
+		Index: CMD52,
 		Argument: (1 << 31) | // Write flag.
 			(0 << 28) | // Function 0
 			(0 << 27) | // No RAW
@@ -393,43 +393,43 @@ func (s SDIO) setBusWidth(width coresdio.BusWidth) error {
 	return nil
 }
 
-func (s SDIO) SetBusSpeed(speed coresdio.BusSpeed) error {
-	_s := &instances[s]
-	_s.mutex.Lock()
+func (s SDIO) SetBusSpeed(speed BusSpeed) error {
+	state := &instances[s]
+	state.mutex.Lock()
 	err := s.setBusSpeed(speed)
-	_s.mutex.Unlock()
+	state.mutex.Unlock()
 	return err
 }
 
-func (s SDIO) setBusSpeed(speed coresdio.BusSpeed) error {
+func (s SDIO) setBusSpeed(speed BusSpeed) error {
 	var speedBits uint8
 	var ddr bool
 	var busspeed bool
 
 	switch speed {
-	case coresdio.Sdr12:
+	case Sdr12:
 		speedBits = 0
-	case coresdio.Sdr25:
+	case Sdr25:
 		speedBits = 1
-	case coresdio.Sdr50:
+	case Sdr50:
 		speedBits = 2
 		busspeed = true
-	case coresdio.Sdr104:
+	case Sdr104:
 		speedBits = 3
 		busspeed = true
-	case coresdio.Ddr50:
+	case Ddr50:
 		speedBits = 4
 		ddr = true
 		busspeed = true
-	case coresdio.Hs, coresdio.Ds:
+	case Hs, Ds:
 		speedBits = 0
 	default:
 		return corehal.ErrInvalidConfig
 	}
 
 	// CMD52 read to CCCR 0x13.
-	resp, err := s.sendCommand(coresdio.Command{
-		Index: coresdio.CMD52,
+	resp, err := s.sendCommand(Command{
+		Index: CMD52,
 		Argument: (0 << 31) | // Read.
 			(0 << 28) | // Func 0.
 			(0 << 27) | // No RAW.
@@ -441,10 +441,10 @@ func (s SDIO) setBusSpeed(speed coresdio.BusSpeed) error {
 
 	// Data is in bits 7:0.
 	val := uint8(resp[0])
-	if speed == coresdio.Ds {
+	if speed == Ds {
 		// Unset EHS bit.
 		val |= 0 << 1
-	} else if speed == coresdio.Hs {
+	} else if speed == Hs {
 		// Set EHS bit.
 		val |= 1 << 1
 	} else {
@@ -454,8 +454,8 @@ func (s SDIO) setBusSpeed(speed coresdio.BusSpeed) error {
 	}
 
 	// CMD52 write to CCCR 0x13.
-	resp, err = s.sendCommand(coresdio.Command{
-		Index: coresdio.CMD52,
+	resp, err = s.sendCommand(Command{
+		Index: CMD52,
 		Argument: (1 << 31) | // Write.
 			(0 << 28) | // Func 0.
 			(0 << 27) | // No RAW.
@@ -479,10 +479,10 @@ func (s SDIO) setBusSpeed(speed coresdio.BusSpeed) error {
 }
 
 func (s SDIO) SetClockFrequency(hz uint32) error {
-	_s := &instances[s]
-	_s.mutex.Lock()
+	state := &instances[s]
+	state.mutex.Lock()
 	s.setClockFrequency(hz)
-	_s.mutex.Unlock()
+	state.mutex.Unlock()
 	return nil
 }
 
@@ -495,7 +495,7 @@ func (s SDIO) setClockFrequency(hz uint32) {
 	regs.Clkcr.SetClkdiv(div)
 }
 
-func (s SDIO) SendCommand(cmd coresdio.Command) (coresdio.Response, error) {
+func (s SDIO) SendCommand(cmd Command) (Response, error) {
 	state := &instances[s]
 	state.mutex.Lock()
 	resp, err := s.sendCommand(cmd)
@@ -503,33 +503,23 @@ func (s SDIO) SendCommand(cmd coresdio.Command) (coresdio.Response, error) {
 	return resp, err
 }
 
-func (s SDIO) sendCommand(cmd coresdio.Command) (coresdio.Response, error) {
+func (s SDIO) sendCommand(cmd Command) (Response, error) {
 	regs := sdmmc.Instances[s]
-	state := &instances[s]
-
-	// Prepare state.
-	state.cmd = cmd
-	state.status = 0
-	state.response = coresdio.Response{}
-	state.done = false
 
 	interrupt := false
 	var responseType uint8
 
 	switch cmd.Index {
-	case coresdio.CMD0:
+	case CMD0:
 		responseType = NoResponse
-	case coresdio.CMD3, coresdio.CMD5, coresdio.CMD7:
+	case CMD3, CMD5, CMD7:
 		responseType = ShortResponseNoCrc
 	default:
 		responseType = ShortResponse
 	}
 
-	// Clear pending command interrupt flags.
+	// Clear pending flags.
 	regs.Icr.StoreBits(0xFFFF_FFFF)
-
-	// Enable command-related interrupts
-	regs.Maskr.Store(1<<0 | 1<<1 | 1<<2 | 1<<6 | 1<<7)
 
 	// Wait for CPSM idle.
 	for regs.Star.GetCpsmact() {
@@ -546,47 +536,169 @@ func (s SDIO) sendCommand(cmd coresdio.Command) (coresdio.Response, error) {
 	regs.Cmdr.Store(uint32(cmdr))
 
 	// Busy-wait for ISR to complete command.
-	for !state.done {
+	deadline := time.Now().Add(defaultTimeout)
+	status := &regs.Star
+	for {
+		switch {
+		case status.GetCmdrend():
+			regs.Icr.SetCmdrendc(true)
+			goto response
+		case status.GetCmdsent():
+			regs.Icr.SetCmdsentc(true)
+			return Response{}, nil
+		case status.GetCtimeout():
+			regs.Icr.SetCtimeoutc(true)
+			return Response{}, coresdio.ErrTimeout
+		case status.GetCcrcfail():
+			regs.Icr.SetCcrcfailc(true)
+			return Response{}, coresdio.ErrCommandCrcFail
+		case time.Now().After(deadline):
+			return Response{}, coresdio.ErrTimeout
+		}
+
+		// Do something else while waiting for the response.
 		runtime.Gosched()
 	}
 
-	// Check error
-	if state.status.GetCtimeout() {
-		return coresdio.Response{}, errTimeout
-	}
+response:
+	var resp Response
+	resp[0] = regs.Resp1r.GetCardstatus1()
+	resp[1] = regs.Resp2r.GetCardstatus2()
+	resp[2] = regs.Resp3r.GetCardstatus3()
+	resp[3] = regs.Resp4r.GetCardstatus4()
 
-	if state.status.GetDtimeout() {
-		return coresdio.Response{}, errTimeout
-	}
-
-	// NOTE: CMD5 does not require CRC checking.
-	if state.status.GetCcrcfail() || state.status.GetDcrcfail() {
-		return coresdio.Response{}, errCommandCrcFail
-	}
-
-	if state.status.GetAckfail() {
-		return coresdio.Response{}, errCommandFail
-	}
-
-	return state.response, nil
+	return resp, nil
 }
 
-func (s SDIO) ReadBlock(buf []byte, blockAddr uint32) error {
+func (s SDIO) ReadBytes(buf []byte, transfer Transfer) error {
+	state := &instances[s]
+	state.mutex.Lock()
+	err := s.transfer(buf, transfer, false, false)
+	state.mutex.Unlock()
+	return err
+}
+
+func (s SDIO) WriteBytes(buf []byte, transfer Transfer) error {
+	state := &instances[s]
+	state.mutex.Lock()
+	err := s.transfer(buf, transfer, true, false)
+	state.mutex.Unlock()
+	return err
+}
+
+func (s SDIO) ReadBlocks(buf []byte, transfer Transfer) error {
+	state := &instances[s]
+	state.mutex.Lock()
+	err := s.transfer(buf, transfer, false, true)
+	state.mutex.Unlock()
+	return err
+}
+
+func (s SDIO) WriteBlocks(buf []byte, transfer Transfer) error {
+	state := &instances[s]
+	state.mutex.Lock()
+	err := s.transfer(buf, transfer, true, true)
+	state.mutex.Unlock()
+	return err
+}
+
+func (s SDIO) transfer(buf []byte, transfer Transfer, write bool, blockMode bool) error {
+	if len(buf) == 0 {
+		return corehal.ErrInvalidConfig
+	}
+
+	regs := sdmmc.Instances[s]
+	arg := uint32(0)
+
+	// Set up IDMA transfer before enabling the data path.
+	const baseUnit = 32 // bytes.
+	regs.Idmabsizer.SetIdmabndt(uint8((len(buf) + baseUnit - 1) / baseUnit))
+	regs.Idmabase0r.SetIdmabase0(uint32(uintptr(unsafe.Pointer(unsafe.SliceData(buf)))))
+
+	var idmaCtrl sdmmc.RegisterIdmactrlrType
+	idmaCtrl.SetIdmabact(false)
+	idmaCtrl.SetIdmabmode(false)
+	idmaCtrl.SetIdmaen(true)
+	regs.Idmactrlr.Store(uint32(idmaCtrl))
+
+	// Set up the data transfer before sending CMD53.
+	var dctrl sdmmc.RegisterDctrlType
+	regs.Dtimer.Store(0xFFFF_FFFF)
+	if blockMode {
+		if transfer.BlockSize == 0 || transfer.BlockCount == 0 {
+			return corehal.ErrInvalidConfig
+		}
+		dctrl.SetDtmode(0) // Block data transfer ending on block count.
+		regs.Dlenr.Store(uint32(transfer.BlockSize * transfer.BlockCount))
+		dctrl.SetDblocksize(blockSize(int(transfer.BlockSize)))
+		arg |= uint32(transfer.BlockCount & 0x1FF)
+		arg |= 1 << 27
+	} else {
+		if len(buf) > 511 {
+			return corehal.ErrInvalidConfig
+		}
+		dctrl.SetDtmode(1) // SDIO multibyte data transfer.
+		regs.Dlenr.Store(uint32(len(buf)))
+		arg |= uint32(len(buf) & 0x1FF)
+	}
+
+	dctrl.SetDtdir(!write)
+	dctrl.SetDten(true)
+	regs.Dctrl.Store(uint32(dctrl))
+
+	if write {
+		arg |= 1 << 31
+	}
+
+	if transfer.Increment {
+		arg |= 1 << 26
+	}
+
+	arg |= uint32(transfer.Function&0x3) << 28
+	arg |= (transfer.Address & 0x1FFFF) << 9
+
+	// Send CMD53 to begin the byte transfer.
+	resp, err := s.sendCommand(Command{
+		Index:    CMD53,
+		Argument: arg, // Packed CMD53 argument: function, RW, mode, addr, count
+	})
+	if err != nil {
+		return err
+	}
+
+	// Check the response for an error.
+	flags := uint8(resp[0] >> 8)
+	const cmd53ErrorMask = 0b11001011
+	if flags&cmd53ErrorMask != 0 {
+		return coresdio.ErrCommandFail
+	}
+
+	deadline := time.Now().Add(defaultTimeout)
+	status := &regs.Star
+	for {
+		if status.GetDataend() {
+			break
+		}
+		if status.GetDtimeout() || time.Now().After(deadline) {
+			return coresdio.ErrTimeout
+		}
+		if status.GetDcrcfail() {
+			return coresdio.ErrCommandCrcFail
+		}
+		if !write && status.GetRxoverr() {
+			return coresdio.ErrDataError
+		}
+		if write && status.GetTxunderr() {
+			return coresdio.ErrDataError
+		}
+
+		// Do something else while waiting for the transfer to complete.
+		runtime.Gosched()
+	}
 	return nil
 }
 
-func (s SDIO) WriteBlock(buf []byte, blockAddr uint32) error {
-	return nil
-}
-
-func (s SDIO) ReadBlocks(buf []byte, blockAddr, count uint32) error {
-	return nil
-}
-
-func (s SDIO) WriteBlocks(buf []byte, blockAddr, count uint32) error {
-	return nil
-}
-
+/*
 //sigo:interrupt sdmmc1Handler Sdmmc1Handler
 func sdmmc1Handler() {
 	irqHandler(SDIO1)
@@ -598,21 +710,43 @@ func sdmmc2Handler() {
 }
 
 func irqHandler(instance SDIO) {
-	regs := sdmmc.Instances[instance]
-	state := &instances[instance]
+	// Not really needed right now. Perhaps later for wake up logic.
+}
+*/
 
-	state.status = sdmmc.RegisterStarType(regs.Star.Load())
-
-	// Clear all flags.
-	regs.Icr.StoreBits(0xFFFF_FFFF)
-
-	// Capture the response.
-	var resp coresdio.Response
-	resp[0] = regs.Resp1r.GetCardstatus1()
-	resp[1] = regs.Resp2r.GetCardstatus2()
-	resp[2] = regs.Resp3r.GetCardstatus3()
-	resp[3] = regs.Resp4r.GetCardstatus4()
-
-	state.response = resp
-	state.done = true
+func blockSize(size int) uint8 {
+	switch {
+	case size >= 16384:
+		return 0b1110
+	case size >= 8192:
+		return 0b1101
+	case size >= 4096:
+		return 0b1100
+	case size >= 2048:
+		return 0b1011
+	case size >= 1024:
+		return 0b1010
+	case size >= 512:
+		return 0b1001
+	case size >= 256:
+		return 0b1000
+	case size >= 128:
+		return 0b0111
+	case size >= 64:
+		return 0b0110
+	case size >= 32:
+		return 0b0101
+	case size >= 16:
+		return 0b0100
+	case size >= 8:
+		return 0b0011
+	case size >= 4:
+		return 0b0010
+	case size >= 2:
+		return 0b0001
+	case size >= 1:
+		return 0b0000
+	default:
+		return 0b0010
+	}
 }
