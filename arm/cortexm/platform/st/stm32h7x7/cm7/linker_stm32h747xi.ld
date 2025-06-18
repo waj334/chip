@@ -4,7 +4,7 @@ MEMORY
 	FLASH (rwx) : ORIGIN = 0x8000000, LENGTH = 2000K				/* Flash memory */
 	DTCM (rwx) : ORIGIN = 0x20000000, LENGTH = 128K				/* DTCM RAM (instruction) */
 	SRAM_AXI (rwx) : ORIGIN = 0x24000000, LENGTH = 512K				/* SRAM mapped on AXI bus */
-	RAM (rwx) : ORIGIN = 0x30000000, LENGTH = 288K				/* [SRAM1 : SRAM3] */
+	RAM (rwx) : ORIGIN = 0x24000000, LENGTH = 512K				/* [SRAM1 : SRAM3] */
 	SRAM1 (rwx) : ORIGIN = 0x30000000, LENGTH = 128K				/* SRAM1 (D2 domain) */
 	SRAM2 (rwx) : ORIGIN = 0x30020000, LENGTH = 128K				/* SRAM2 (D2 domain) */
 	SRAM3 (rwx) : ORIGIN = 0x30040000, LENGTH = 32K				/* SRAM3 (D2 domain) */
