@@ -47,6 +47,7 @@ const (
 	ErrCommandFail
 	ErrCommandCrcFail
 	ErrTimeout
+	ErrDataError
 	ErrNotReady
 )
 
@@ -60,6 +61,8 @@ func (e _error) Error() string {
 		return "command crc fail"
 	case ErrTimeout:
 		return "command timeout"
+	case ErrDataError:
+		return "command data error"
 	case ErrNotReady:
 		return "the card is not ready"
 	default:
@@ -74,6 +77,14 @@ type Command struct {
 	Index    CommandIndex
 }
 
+type Transfer struct {
+	Address    uint32
+	BlockSize  uint16
+	BlockCount uint16
+	Function   uint8
+	Increment  bool
+}
+
 type Host interface {
 	SetBusSpeed(speed BusSpeed) error
 	SetBusWidth(width BusWidth) error
@@ -81,9 +92,9 @@ type Host interface {
 
 	SendCommand(cmd Command) (Response, error)
 
-	ReadBlock(buf []byte, blockAddr uint32) error
-	WriteBlock(buf []byte, blockAddr uint32) error
+	ReadBytes(buf []byte, transfer Transfer) error
+	WriteBytes(buf []byte, transfer Transfer) error
 
-	ReadBlocks(buf []byte, blockAddr, count uint32) error
-	WriteBlocks(buf []byte, blockAddr, count uint32) error
+	ReadBlocks(buf []byte, transfer Transfer) error
+	WriteBlocks(buf []byte, transfer Transfer) error
 }
