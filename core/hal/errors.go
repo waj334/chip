@@ -1,10 +1,11 @@
 package hal
 
 const (
-	ErrInvalidPinout Error = -1
-	ErrInvalidConfig Error = -2
-	ErrInvalidBuffer Error = -3
-	ErrInvalidState  Error = -4
+	ErrInvalidPinout    Error = -1
+	ErrInvalidConfig    Error = -2
+	ErrInvalidBuffer    Error = -3
+	ErrInvalidState     Error = -4
+	ErrInvalidParameter Error = -5
 )
 
 type Error int
@@ -21,6 +22,8 @@ func (e Error) Error() string {
 		return "invalid buffer"
 	case -4:
 		return "invalid state"
+	case -5:
+		return "invalid parameter"
 	default:
 		return "unknown error"
 	}

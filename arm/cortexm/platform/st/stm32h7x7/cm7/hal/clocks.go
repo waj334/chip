@@ -73,7 +73,7 @@ var (
 
 	Divp2FrequencyHz uint64 = 128_000_000
 	Divq2FrequencyHz uint64 = 128_000_000
-	Divr2FrequencyHz uint64 = 150_000_000
+	Divr2FrequencyHz uint64 = 100_000_000
 
 	Divp3FrequencyHz uint64 = 128_000_000
 	Divq3FrequencyHz uint64 = 128_000_000

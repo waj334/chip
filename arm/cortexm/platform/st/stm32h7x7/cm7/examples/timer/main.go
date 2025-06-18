@@ -32,8 +32,8 @@ func nanotime() uint64 {
 }
 
 //sigo:export addsleep runtime.addsleep
-func addsleep(deadline uint64) {
-	TIM2.SetAlarm(deadline/timescale, alarm)
+func addsleep(deadline uint64) bool {
+	return !TIM2.SetAlarm(deadline/timescale, alarm)
 }
 
 func init() {
