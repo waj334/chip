@@ -141,44 +141,21 @@ func (cmd CMD7Args) Value() uint32 {
 }
 
 type CMD52Args struct {
-	Data      uint32    // 8 bits (for writes); ignored on reads
-	Address   uint32    // 17 bits
-	Raw       RAWMode   // 0=Normal, 1=ReadAfterWrite (writes only)
-	Function  uint32    // 3 bits (0..7)
-	ReadWrite Direction // 0=Read, 1=Write
+	Data      uint32
+	Address   uint32
+	Raw       RAWMode
+	Function  uint32
+	ReadWrite Direction
 }
 
-const (
-	cmd52DataMask = 0xFF
-	cmd52AddrMask = 0x1FFFF
-	cmd52FuncMask = 0x7
-
-	cmd52DataShift = 0
-	cmd52AddrShift = 9 // leaves bit 8 as required stuff bit (0)
-	cmd52RawShift  = 27
-	cmd52FuncShift = 28
-	cmd52RwShift   = 31
-)
-
 func (cmd CMD52Args) Value() uint32 {
-	// Enforce spec-ish constraints
-	data := cmd.Data & cmd52DataMask
-	addr := cmd.Address & cmd52AddrMask
-	function := cmd.Function & cmd52FuncMask
-
-	// RAW is only meaningful for writes; clear on reads to be safe.
-	raw := uint32(cmd.Raw & 0x1)
-	if cmd.ReadWrite&0x1 == 0 {
-		raw = 0
-	}
-
-	var v uint32
-	v |= data << cmd52DataShift
-	v |= addr << cmd52AddrShift
-	v |= raw << cmd52RawShift
-	v |= function << cmd52FuncShift
-	v |= uint32(cmd.ReadWrite&0x1) << cmd52RwShift
-	return v
+	var value uint32
+	value |= cmd.Data & 0xFF
+	value |= (cmd.Address & 0x1FFFF) << 9
+	value |= uint32(cmd.Raw&0x1) << 27
+	value |= (cmd.Function & 0x7) << 28
+	value |= uint32(cmd.ReadWrite&0x1) << 31
+	return value
 }
 
 type CMD53Args struct {
@@ -199,15 +176,4 @@ func (cmd CMD53Args) Value() uint32 {
 	value |= (cmd.Function & 0x7) << 28
 	value |= uint32(cmd.ReadWrite&0x1) << 31
 	return value
-}
-
-func DecodeCMD53(args uint32) CMD53Args {
-	return CMD53Args{
-		Count:     args & 0x1FF,
-		Address:   (args >> 9) & 0x1FFFF,
-		OpCode:    OpCode(args>>26) & 0x1,
-		BlockMode: BlockMode(args>>27) & 0x1,
-		Function:  (args >> 28) & 0x7,
-		ReadWrite: Direction(args>>31) & 0x1,
-	}
 }

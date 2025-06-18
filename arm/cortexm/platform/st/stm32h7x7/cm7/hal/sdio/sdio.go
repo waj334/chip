@@ -3,17 +3,16 @@
 package sdio
 
 import (
-	"runtime"
-	"sync"
-	"time"
-	"unsafe"
-	"volatile"
-
 	stm32h7x7 "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/pin"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/sdmmc"
+	"runtime"
+	"sync"
+	"time"
+	"unsafe"
+	"volatile"
 
 	corehal "pkg.si-go.dev/chip/core/hal"
 	corepin "pkg.si-go.dev/chip/core/hal/pin"
@@ -111,13 +110,11 @@ type (
 		mutex  sync.Mutex
 		config Config
 
-		data     []uint32
-		index    int
-		cmdDone  bool
-		dataDone bool
-		done     bool
-		hasData  bool
-		write    bool
+		data    []uint32
+		index   int
+		done    bool
+		hasData bool
+		write   bool
 
 		lastResponse [4]uint32
 		lastError    error
@@ -556,39 +553,21 @@ func (s SDIO) sendCommand(cmd Command) (Response, error) {
 		transfer = true
 		write = true
 	} else if cmd.Class == CMD53 {
-		args := coresdio.DecodeCMD53(cmd.Argument)
 		transfer = true
-		write = args.ReadWrite == coresdio.Write
-		blockMode = args.BlockMode == coresdio.Blocks
-		count = args.Count
+		write = cmd.Argument&(1<<31) != 0
+		blockMode = cmd.Argument&(1<<27) != 0
+		count = cmd.Argument & 0x1F
 	}
 
-	var irq sdmmc.RegisterMaskrType
-	irq.SetCmdsentie(true)
-	irq.SetCmdrendie(true)
-	irq.SetCtimeoutie(true)
-	irq.SetCcrcfailie(true)
-
 	if transfer {
-		irq.SetDataendie(true)
-		irq.SetDtimeoutie(true)
-		irq.SetDcrcfailie(true)
-
-		if write {
-			irq.SetTxunderrie(true)
-		} else {
-			irq.SetRxoverrie(true)
-		}
-
 		// Set up transfer.
-		if !state.config.DMA {
-			if write {
-				irq.SetTxfifoheie(true) // TX FIFO half-empty IRQ
-				irq.SetTxfifoeie(true)
-			} else {
-				irq.SetRxfifohfie(true) // RX FIFO half-full IRQ
-				irq.SetRxfifofie(true)
-			}
+		if state.config.DMA {
+			// Enable interrupts required from IDMA.
+			regs.Maskr.SetDcrcfailie(true)
+			regs.Maskr.SetDtimeoutie(true)
+			regs.Maskr.SetRxoverrie(true)
+			regs.Maskr.SetTxunderrie(true)
+			regs.Maskr.SetDataendie(true)
 		}
 
 		// Set up the data transfer before sending CMD53.
@@ -605,7 +584,7 @@ func (s SDIO) sendCommand(cmd Command) (Response, error) {
 			if count == 512 {
 				// NOTE: BlockCount == 0 -> 512 bytes
 				count = 0
-			} else if count > 512 {
+			} else {
 				return Response{}, corehal.ErrInvalidConfig
 			}
 
@@ -642,17 +621,14 @@ func (s SDIO) sendCommand(cmd Command) (Response, error) {
 
 	// Reset state.
 	state.done = false
-	state.cmdDone = false
-	state.dataDone = !transfer
 	state.data = words
 	state.hasData = transfer
 	state.index = 0
 	state.lastError = nil
 	state.lastResponse = [4]uint32{}
-	state.write = write
 
 	// Enable interrupts.
-	regs.Maskr.Store(uint32(irq))
+	regs.Maskr.Store(0x0006_CFFF)
 
 	// Issue command.
 	regs.Argr.SetCmdarg(cmd.Argument)
@@ -748,7 +724,6 @@ func irqHandler(instance SDIO) {
 
 		// All data has finished transmission.
 		state.hasData = false
-		state.dataDone = true
 	}
 
 	// If any error
@@ -790,31 +765,29 @@ func irqHandler(instance SDIO) {
 
 	// If command complete
 	if status.GetCmdrend() {
-		icr.SetCmdrendc(true)
-		state.lastResponse[0] = regs.Resp1r.Load()
-		state.lastResponse[1] = regs.Resp2r.Load()
-		state.lastResponse[2] = regs.Resp3r.Load()
-		state.lastResponse[3] = regs.Resp4r.Load()
-		state.cmdDone = true
+		if !state.hasData {
+			icr.SetCmdrendc(true)
+			state.lastResponse[0] = regs.Resp1r.Load()
+			state.lastResponse[1] = regs.Resp2r.Load()
+			state.lastResponse[2] = regs.Resp3r.Load()
+			state.lastResponse[3] = regs.Resp4r.Load()
+			state.done = true
+		}
+		return
 	}
 
 	// If command sent without response
 	if status.GetCmdsent() {
 		icr.SetCmdsentc(true)
-		state.cmdDone = true
+		state.done = true
+		return
 	}
 
 	// If IDMA boundary (double buffer complete)
 	if status.GetIdmabtc() {
 		icr.SetIdmabtcc(true)
-		// TODO: Track buffer switching here.
-	}
-
-	if state.cmdDone && state.dataDone {
-		state.done = true
-
-		// Disable interrupts.
-		regs.Maskr.Store(0)
+		// If you use IDMA double buffer, you could track buffer switching here
+		return
 	}
 }
 
