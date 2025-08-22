@@ -4,7 +4,7 @@
 .type PendSvHandler, %function
 PendSvHandler:
     push {lr}                           // Temporarily store LR on the stack since the branch below will NOT restore LR.
-    bl runtime.schedule             // Choose the next goroutine
+    bl runtime.schedule                 // Choose the next goroutine
 #ifdef __thumb2__
     pop {lr}                            // Restore the previous value of LR
 #else

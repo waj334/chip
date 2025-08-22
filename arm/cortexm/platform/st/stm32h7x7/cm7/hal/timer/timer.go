@@ -196,15 +196,20 @@ func (t _tim32) Resolution() time.Duration {
 	return time.Microsecond
 }
 
-func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
+func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) bool {
+	if fn == nil {
+		// Do nothing.
+		return false
+	}
+
 	criticalSection := sync.NewCriticalSection(&mutex[t])
 	criticalSection.Begin()
 
 	now := t.tick()
-	if fn == nil || deadline <= now {
+	if deadline <= now {
 		criticalSection.End()
 		fn(now)
-		return
+		return true
 	}
 
 	// Try to assign to an available channel
@@ -214,7 +219,7 @@ func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
 			alarms[ch] = entry
 			armCompare(t, ch, deadline)
 			criticalSection.End()
-			return
+			return false
 		}
 	}
 
@@ -222,6 +227,7 @@ func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
 	entry := &alarmEntry{deadline: deadline, callback: fn, channel: -1}
 	insertQueuedAlarm(t, entry)
 	criticalSection.End()
+	return false
 }
 
 func (t _tim32) tick() uint64 {
