@@ -156,8 +156,8 @@ func (t _tim32) Configure(config Config) error {
 }
 
 func (t _tim32) Reset(tick uint64) {
-	mutex := &mutex[t]
-	mutex.Lock()
+	cs := sync.NewCriticalSection(&mutex[t])
+	cs.Begin()
 	_t := tim.Instances[t]
 	_t.Cnt.SetCntl(uint16(tick))
 	_t.Cnt.SetCnth(uint16(tick >> 16))
@@ -166,24 +166,24 @@ func (t _tim32) Reset(tick uint64) {
 	_t.Cr1.SetCen(true)
 	for !_t.Cr1.GetCen() {
 	}
-	mutex.Unlock()
+	cs.End()
 }
 
 func (t _tim32) Stop() {
-	mutex := &mutex[t]
-	mutex.Lock()
+	cs := sync.NewCriticalSection(&mutex[t])
+	cs.Begin()
 	_t := tim.Instances[t]
 	_t.Cr1.SetCen(false)
 	for _t.Cr1.GetCen() {
 	}
-	mutex.Unlock()
+	cs.End()
 }
 
 func (t _tim32) Tick() uint64 {
-	mutex := &mutex[t]
-	mutex.Lock()
+	cs := sync.NewCriticalSection(&mutex[t])
+	cs.Begin()
 	result := t.tick()
-	mutex.Unlock()
+	cs.End()
 	return result
 }
 
@@ -254,7 +254,7 @@ func tim5Handler() {
 }
 
 func interrupt(instance _tim32) {
-	criticalSection := sync.NewCriticalSection(&mutex[instance])
+	criticalSection := sync.NewCriticalSection(nil)
 	criticalSection.Begin()
 
 	_t := tim.Instances[instance]
