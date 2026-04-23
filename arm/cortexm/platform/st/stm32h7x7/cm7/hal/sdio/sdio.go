@@ -593,8 +593,13 @@ func (s SDIO) sendCommand(cmd Command) (Response, error) {
 	useDMA := transfer &&
 		state.config.DMA &&
 		IsSDMMCDMABuffer(data) &&
-		wordAligned &&
-		(len(data)&3) == 0
+		wordAligned
+
+	// If the caller configured DMA but the buffer isn't DMA-accessible,
+	// return an error rather than silently falling back to PIO.
+	if transfer && state.config.DMA && !useDMA {
+		return Response{}, corehal.ErrInvalidBuffer
+	}
 
 	// Make sure prior command/data activity is gone before reprogramming.
 	regs.Maskr.Store(0)

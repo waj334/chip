@@ -65,6 +65,8 @@ SECTIONS
         *(.eh_frame .eh_frame.*)
         *(.ARM.extab* .gnu.linkonce.armextab.*)
         *(.ARM.exidx*)
+        *(.fini_array .fini_array.*)
+        *(.dtors .dtors.*)
     }
 }
 
