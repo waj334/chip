@@ -126,9 +126,11 @@ var (
 	Spi45ClockSource  = ClockSourceHsi
 	Spi6ClockSource   = ClockSourceHsi
 	SdmmcClockSource  = ClockSourcePll2r
+	RngClockSource    = ClockSourceRc48
 
-	EnableHse = false
-	EnableLse = false
+	EnableRc48 = true
+	EnableHse  = false
+	EnableLse  = false
 )
 
 const (
@@ -163,6 +165,13 @@ func ConfigureClocks() {
 
 	// Wait for the ready bit.
 	for !pwr.Pwr.D3cr.GetVosrdy() {
+	}
+
+	// Enable RC48.
+	if EnableRc48 {
+		rcc.Rcc.Cr.SetRc48on(true)
+		for !rcc.Rcc.Cr.GetRc48rdy() {
+		}
 	}
 
 	if EnableHse {
@@ -491,6 +500,9 @@ func ConfigureClocks() {
 	rcc.Rcc.Ahb1enr.SetAdc12en(true)
 	rcc.Rcc.Ahb4enr.SetAdc3en(true)
 
+	// Enable RNG clocks.
+	rcc.Rcc.Ahb2enr.SetRngen(true)
+
 	// Handle I2C1 - I2C3
 	if I2c13Source != ClockSourceNone {
 		// Set the clock source.
@@ -667,6 +679,19 @@ func ConfigureClocks() {
 		case ClockSourcePll2r:
 			rcc.Rcc.D1ccipr.SetSdmmcsrc(true)
 			SdmmcSourceFrequencyHz = Divr2FrequencyHz
+		}
+	}
+
+	if RngClockSource != ClockSourceNone {
+		switch RngClockSource {
+		case ClockSourceRc48:
+			rcc.Rcc.D2ccip2r.SetRngsrc(0)
+		case ClockSourcePll1q:
+			rcc.Rcc.D2ccip2r.SetRngsrc(1)
+		case ClockSourceLse:
+			rcc.Rcc.D2ccip2r.SetRngsrc(2)
+		case ClockSourceLsi:
+			rcc.Rcc.D2ccip2r.SetRngsrc(3)
 		}
 	}
 
