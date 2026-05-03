@@ -9,12 +9,12 @@ import (
 	"unsafe"
 	"volatile"
 
-	stm32h7x7 "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/pin"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/sdmmc"
 
+	stm32h7x7 "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7"
 	corehal "pkg.si-go.dev/chip/core/hal"
 	corepin "pkg.si-go.dev/chip/core/hal/pin"
 	coresdio "pkg.si-go.dev/chip/core/hal/sdio"
@@ -101,6 +101,24 @@ const (
 	r5ErrorBits      = r5ComCrcError | r5IllegalCommand | r5Error | r5FunctionNumber | r5OutOfRange
 )
 
+// SDMMC_MASKR / SDMMC_STAR bit positions per RM0399 §58.10.13 / §58.10.11.
+// These constants define the bit index for each interrupt enable / status flag.
+const (
+	bitCCRCFAIL = 0
+	bitDCRCFAIL = 1
+	bitCTIMEOUT = 2
+	bitDTIMEOUT = 3
+	bitTXUNDERR = 4
+	bitRXOVERR  = 5
+	bitCMDREND  = 6
+	bitCMDSENT  = 7
+	bitDATAEND  = 8
+	bitTXFIFOHE = 14
+	bitRXFIFOHF = 15
+	bitRXFIFOF  = 17
+	bitIDMABTC  = 28
+)
+
 var instances [2]_state
 var defaultTimeout = time.Millisecond * 500
 
@@ -111,13 +129,15 @@ type (
 		mutex  sync.Mutex
 		config Config
 
-		data     []uint32
-		index    int
-		cmdDone  bool
-		dataDone bool
-		done     bool
-		hasData  bool
-		write    bool
+		data []byte
+
+		index       int32 // bytes processed
+		done        int32 // 0 = not done, 1 = done
+		cmdDone     int32 // 0 = command phase not complete, 1 = complete
+		dataDone    int32 // 0 = data phase not complete, 1 = complete
+		useDMA      int32 // 0 = PIO/IRQ FIFO path, 1 = IDMA path
+		wordAligned int32 // 0 = byte path, 1 = aligned fast path
+		write       int32 // 0 = read, 1 = write
 
 		lastResponse [4]uint32
 		lastError    error
@@ -262,39 +282,35 @@ func (s SDIO) Configure(config Config) error {
 	}
 
 	if err := pinCfg(config.CKIN, _ALT_CKIN); err != nil {
+		state.mutex.Unlock()
 		return err
 	}
-
 	if err := pinCfg(config.CDIR, _ALT_CDIR); err != nil {
+		state.mutex.Unlock()
 		return err
 	}
-
 	if err := pinCfg(config.D0DIR, _ALT_D0DIR); err != nil {
+		state.mutex.Unlock()
 		return err
 	}
-
 	if err := pinCfg(config.D123DIR, _ALT_D123DIR); err != nil {
+		state.mutex.Unlock()
 		return err
 	}
-
 	if err := pinCfg(config.CK, _ALT_CK); err != nil {
+		state.mutex.Unlock()
 		return err
 	}
-
 	if err := pinCfg(config.CMD, _ALT_CMD); err != nil {
+		state.mutex.Unlock()
 		return err
 	}
 
 	for i, Dn := range config.Dn {
-		if Dn != 0 {
-			Dn.SetMode(pin.Output)
-			Dn.High()
-		}
-
 		if err := pinCfg(Dn, _ALT_D0+i); err != nil {
+			state.mutex.Unlock()
 			return err
 		}
-
 	}
 
 	// Power cycle the card and then turn it off before initializing to SDIO peripheral.
@@ -308,11 +324,11 @@ func (s SDIO) Configure(config Config) error {
 	regs.Clkcr.SetPwrsav(false)
 	regs.Clkcr.SetWidbus(0)
 	regs.Clkcr.SetHwfcen(false)
-	s.setClockFrequency(400_000) // 400KHz init clock.
+	s.setClockFrequency(400_000)
 	regs.Power.SetPwrctrl(sdmmc.RegisterPowerFieldPwrctrlEnumPoweron)
 
-	// Wait 74 cycles.
-	time.Sleep(time.Millisecond * 200)
+	// 74 SD clock cycles at 400 KHz is ~185 us. 1 ms is already generous.
+	time.Sleep(time.Millisecond)
 
 	switch s {
 	case SDIO1:
@@ -331,7 +347,6 @@ func (s SDIO) Reconfigure(config SecondaryConfig) error {
 	state.mutex.Lock()
 	regs := sdmmc.Instances[s]
 
-	var err error
 	if config.BusWidth != 0 {
 		err := s.setBusWidth(config.BusWidth)
 		if err != nil {
@@ -341,7 +356,7 @@ func (s SDIO) Reconfigure(config SecondaryConfig) error {
 	}
 
 	if config.BusSpeed != 0 {
-		err = s.setBusSpeed(config.BusSpeed)
+		err := s.setBusSpeed(config.BusSpeed)
 		if err != nil {
 			state.mutex.Unlock()
 			return err
@@ -451,7 +466,6 @@ func (s SDIO) setBusSpeed(speed BusSpeed) error {
 		ReadWrite: coresdio.Read,
 	}
 
-	// CMD52 read to CCCR 0x13.
 	resp, err := s.sendCommand(Command{
 		Class:    CMD52,
 		Argument: arg.Value(),
@@ -461,23 +475,24 @@ func (s SDIO) setBusSpeed(speed BusSpeed) error {
 	}
 
 	r5 := coresdio.R5(resp[0])
+	if r5.Flags()&r5ErrorBits != 0 {
+		return coresdio.ErrCommandFail
+	}
+
 	val := r5.Data()
 	if speed == Ds {
-		// Unset EHS bit.
-		val |= 0 << 1
+		val &= ^uint8(1 << 1)
 	} else if speed == Hs {
-		// Set EHS bit.
 		val |= 1 << 1
 	} else {
-		val &= ^uint8(0x7)    // Clear speed bits.
-		val |= speedBits << 0 // Set speed.
-		val |= 1 << 1         // EHS.
+		val &= ^uint8(0x7)
+		val |= speedBits
+		val |= 1 << 1
 	}
 
 	arg.Data = uint32(val)
 	arg.ReadWrite = coresdio.Write
 
-	// CMD52 write to CCCR 0x13.
 	resp, err = s.sendCommand(Command{
 		Class:    CMD52,
 		Argument: arg.Value(),
@@ -486,8 +501,8 @@ func (s SDIO) setBusSpeed(speed BusSpeed) error {
 		return err
 	}
 
-	// Check the response for an error.
-	if r5.Flags()&r5ErrorBits != 0 {
+	r5Write := coresdio.R5(resp[0])
+	if r5Write.Flags()&r5ErrorBits != 0 {
 		return coresdio.ErrCommandFail
 	}
 
@@ -527,103 +542,112 @@ func (s SDIO) sendCommand(cmd Command) (Response, error) {
 	regs := sdmmc.Instances[s]
 	data := cmd.Data
 
-	// Precompute words length.
-	nwords := (len(data) + 3) / 4
-	if nwords == 0 {
-		nwords = 1
-	}
-	words := unsafe.Slice((*uint32)(unsafe.Pointer(unsafe.SliceData(data))), nwords)
+	cmdIndex := uint8(cmd.Class & 0xFF)
 
-	transfer := false
-	write := false
-	blockMode := true
-	count := uint32(len(cmd.Data))
 	var responseType uint8
-
-	switch cmd.Class {
-	case CMD0:
+	switch cmdIndex {
+	case 0:
 		responseType = NoResponse
-	case CMD3, CMD5, CMD7:
+	case 2, 9, 10:
+		responseType = LongResponse
+	case 3, 5, 7:
 		responseType = ShortResponseNoCrc
 	default:
 		responseType = ShortResponse
 	}
 
-	// Determine transfer parameters.
-	if cmd.Class&coresdio.CmdFlagBlockRead != 0 {
-		transfer = true
-	} else if cmd.Class&coresdio.CmdFlagBlockWrite != 0 {
-		transfer = true
-		write = true
-	} else if cmd.Class == CMD53 {
-		args := coresdio.DecodeCMD53(cmd.Argument)
-		transfer = true
-		write = args.ReadWrite == coresdio.Write
-		blockMode = args.BlockMode == coresdio.Blocks
-		count = args.Count
-	}
-
-	var irq sdmmc.RegisterMaskrType
-	irq.SetCmdsentie(true)
-	irq.SetCmdrendie(true)
-	irq.SetCtimeoutie(true)
-	irq.SetCcrcfailie(true)
+	transfer := cmdIndex == uint8(CMD53&0xFF)
+	write := false
+	blockMode := false
+	var xferBytes uint32
 
 	if transfer {
-		irq.SetDataendie(true)
-		irq.SetDtimeoutie(true)
-		irq.SetDcrcfailie(true)
+		write = (cmd.Argument & (1 << 31)) != 0
+		blockMode = (cmd.Argument & (1 << 27)) != 0
+		count := cmd.Argument & 0x1FF
 
-		if write {
-			irq.SetTxunderrie(true)
-		} else {
-			irq.SetRxoverrie(true)
-		}
-
-		// Set up transfer.
-		if !state.config.DMA {
-			if write {
-				irq.SetTxfifoheie(true) // TX FIFO half-empty IRQ
-				irq.SetTxfifoeie(true)
-			} else {
-				irq.SetRxfifohfie(true) // RX FIFO half-full IRQ
-				irq.SetRxfifofie(true)
-			}
-		}
-
-		// Set up the data transfer before sending CMD53.
-		var dctrl sdmmc.RegisterDctrlType
-		regs.Dtimer.Store(0xFFFF_FFFF)
 		if blockMode {
 			if cmd.BlockSize == 0 || count == 0 {
 				return Response{}, corehal.ErrInvalidConfig
 			}
-			dctrl.SetDtmode(0) // Block data transfer ending on block count.
-			regs.Dlenr.Store(cmd.BlockSize * count)
-			dctrl.SetDblocksize(blockSize(int(cmd.BlockSize)))
-		} else {
-			if count == 512 {
-				// NOTE: BlockCount == 0 -> 512 bytes
-				count = 0
-			} else if count > 512 {
+			if !isPowerOfTwo(int(cmd.BlockSize)) {
 				return Response{}, corehal.ErrInvalidConfig
 			}
+			xferBytes = cmd.BlockSize * count
+		} else {
+			if count == 0 {
+				count = 512
+			}
+			if count > 512 {
+				return Response{}, corehal.ErrInvalidConfig
+			}
+			xferBytes = count
+		}
 
-			regs.Dlenr.Store(count)
+		if uint32(len(data)) != xferBytes {
+			return Response{}, corehal.ErrInvalidConfig
+		}
+	}
+
+	wordAligned := isWordAligned(data)
+	useDMA := transfer &&
+		state.config.DMA &&
+		IsSDMMCDMABuffer(data) &&
+		wordAligned
+
+	// If the caller configured DMA but the buffer isn't DMA-accessible,
+	// return an error rather than silently falling back to PIO.
+	if transfer && state.config.DMA && !useDMA {
+		return Response{}, corehal.ErrInvalidBuffer
+	}
+
+	// Make sure prior command/data activity is gone before reprogramming.
+	regs.Maskr.Store(0)
+	regs.Idmactrlr.Store(0)
+	regs.Icr.StoreBits(0xFFFF_FFFF)
+
+	for regs.Star.GetCpsmact() {
+	}
+	for regs.Star.GetDpsmact() {
+	}
+
+	// Publish shared state before enabling interrupts / issuing the command.
+	state.data = data
+	volatile.StoreInt32(&state.index, 0)
+	volatile.StoreInt32(&state.done, 0)
+	volatile.StoreInt32(&state.cmdDone, 0)
+	volatile.StoreInt32(&state.dataDone, boolToInt32(!transfer))
+	volatile.StoreInt32(&state.useDMA, boolToInt32(useDMA))
+	volatile.StoreInt32(&state.wordAligned, boolToInt32(wordAligned))
+	volatile.StoreInt32(&state.write, boolToInt32(write))
+	state.lastError = nil
+	state.lastResponse = [4]uint32{}
+
+	if transfer {
+		var dctrl sdmmc.RegisterDctrlType
+
+		regs.Dtimer.Store(0xFFFF_FFFF)
+
+		if blockMode {
+			regs.Dlenr.Store(xferBytes)
+			dctrl.SetDtmode(0)
+			dctrl.SetDblocksize(blockSize(int(cmd.BlockSize)))
+		} else {
+			regs.Dlenr.Store(xferBytes)
+			dctrl.SetDtmode(1) // SDIO multibyte mode
 			dctrl.SetDblocksize(0)
-			dctrl.SetDtmode(1) // SDIO multibyte data transfer.
 		}
 
 		dctrl.SetDtdir(!write)
-		dctrl.SetSdioen(true)
-		dctrl.SetFiforst(true)
+
+		// Do NOT set DTEN for SD/SDIO/eMMC card transfers.
+		// CMDTRANS is what should start the DPSM for CMD53.
 		regs.Dctrl.Store(uint32(dctrl))
 
-		if state.config.DMA {
-			// Set up IDMA transfer.
-			const baseUnit = 32 // bytes.
+		if useDMA {
+			const baseUnit = 32 // bytes
 			regs.Idmabsizer.SetIdmabndt(uint8((len(data) + baseUnit - 1) / baseUnit))
-			regs.Idmabase0r.SetIdmabase0(uint32(uintptr(unsafe.Pointer(unsafe.SliceData(data)))))
+			regs.Idmabase0r.SetIdmabase0(uint32(uintptr(dataPointer(data))))
 
 			var idmaCtrl sdmmc.RegisterIdmactrlrType
 			idmaCtrl.SetIdmabact(false)
@@ -633,60 +657,124 @@ func (s SDIO) sendCommand(cmd Command) (Response, error) {
 		}
 	}
 
-	// Clear pending flags.
+	// Clear flags again after programming transfer state, before enabling IRQs.
 	regs.Icr.StoreBits(0xFFFF_FFFF)
 
-	// Wait for CPSM idle.
-	for regs.Star.GetCpsmact() {
+	// Enable only the interrupts you actually use.
+	// Bit positions per RM0399 SDMMC_MASKR (§58.10.13):
+	//   0: CCRCFAILIE    1: DCRCFAILIE    2: CTIMEOUTIE   3: DTIMEOUTIE
+	//   4: TXUNDERRIE    5: RXOVERRIE     6: CMDRENDIE    7: CMDSENTIE
+	//   8: DATAENDIE    14: TXFIFOHEIE   15: RXFIFOHFIE  17: RXFIFOFIE
+	//  28: IDMABTCIE
+	var mask uint32
+	mask |= 1 << bitCCRCFAIL // CCRCFAILIE
+	mask |= 1 << bitCTIMEOUT // CTIMEOUTIE
+
+	if responseType == NoResponse {
+		mask |= 1 << bitCMDSENT // CMDSENTIE
+	} else {
+		mask |= 1 << bitCMDREND // CMDRENDIE
 	}
 
-	// Reset state.
-	state.done = false
-	state.cmdDone = false
-	state.dataDone = !transfer
-	state.data = words
-	state.hasData = transfer
-	state.index = 0
-	state.lastError = nil
-	state.lastResponse = [4]uint32{}
-	state.write = write
+	if transfer {
+		mask |= 1 << bitTXUNDERR // TXUNDERRIE
+		mask |= 1 << bitRXOVERR  // RXOVERRIE
+		mask |= 1 << bitDATAEND  // DATAENDIE
+		mask |= 1 << bitDCRCFAIL // DCRCFAILIE
+		mask |= 1 << bitDTIMEOUT // DTIMEOUTIE
 
-	// Enable interrupts.
-	regs.Maskr.Store(uint32(irq))
+		if useDMA {
+			mask |= 1 << bitIDMABTC // IDMABTCIE
+		} else if write {
+			mask |= 1 << bitTXFIFOHE // TXFIFOHEIE
+		} else {
+			mask |= 1 << bitRXFIFOHF // RXFIFOHFIE
+			mask |= 1 << bitRXFIFOF  // RXFIFOFIE
+		}
+	}
+
+	regs.Maskr.Store(mask)
 
 	// Issue command.
 	regs.Argr.SetCmdarg(cmd.Argument)
 
 	var cmdr sdmmc.RegisterCmdrType
-	cmdr.SetCmdindex(uint8(cmd.Class & 0xFF))
+	cmdr.SetCmdindex(cmdIndex)
 	cmdr.SetWaitresp(responseType)
 	cmdr.SetWaitint(false)
 	cmdr.SetCpsmen(true)
-	cmdr.SetCmdtrans(transfer)
+	cmdr.SetCmdtrans(transfer) // This is the correct way to start CMD53 data path.
 	regs.Cmdr.Store(uint32(cmdr))
 
-	// Busy-wait for ISR to complete command.
+	// Wait for ISR completion.
 	deadline := time.Now().Add(defaultTimeout)
-	for !state.done {
+
+	for volatile.LoadInt32(&state.done) == 0 {
+		// For non-DMA PIO reads, poll-drain the FIFO from the goroutine
+		// context. The ISR drains the FIFO when RXFIFOHF fires, but
+		// RXFIFOHF requires ≥8 words (32 bytes) in the FIFO. Transfers
+		// smaller than 32 bytes — or the final chunk of any transfer —
+		// never trigger RXFIFOHF. Without this drain the DPSM stays in
+		// Wait_R (it won't move to Idle until the FIFO is empty), DATAEND
+		// never fires, and sendCommand times out.
+		//
+		// The SDMMC IRQ is briefly disabled so we don't race with the ISR
+		// over the FIFO and the shared index.
+		if transfer && !useDMA && !write {
+			s.disableIRQ()
+			idx := int(volatile.LoadInt32(&state.index))
+			if idx < len(data) && !regs.Star.GetRxfifoe() {
+				fifop := (*uint32)(&regs.Fifor)
+				for idx < len(data) && !regs.Star.GetRxfifoe() {
+					w := volatile.LoadUint32(fifop)
+					if wordAligned && idx+4 <= len(data) {
+						*(*uint32)(unsafe.Add(dataPointer(data), idx)) = w
+						idx += 4
+					} else {
+						unpackWordLE(data, idx, w)
+						rem := len(data) - idx
+						if rem > 4 {
+							rem = 4
+						}
+						idx += rem
+					}
+				}
+				volatile.StoreInt32(&state.index, int32(idx))
+			}
+
+			// The FIFO may now be empty — check whether DATAEND fired.
+			if regs.Star.GetDataend() && volatile.LoadInt32(&state.dataDone) == 0 {
+				regs.Icr.SetDataendc(true)
+				volatile.StoreInt32(&state.dataDone, 1)
+				if volatile.LoadInt32(&state.cmdDone) != 0 {
+					regs.Maskr.Store(0)
+					regs.Idmactrlr.Store(0)
+					volatile.StoreInt32(&state.done, 1)
+				}
+			}
+			s.enableIRQ()
+		}
+
 		if time.Now().After(deadline) {
-			// Wait for the command path to become inactive.
+			regs.Maskr.Store(0)
+			regs.Idmactrlr.Store(0)
+
 			for regs.Star.GetCpsmact() {
 				runtime.Gosched()
 			}
 
-			// Check if the data path is active.
 			for regs.Star.GetDpsmact() {
-				// Send stop command.
 				regs.Cmdr.Store(0x1080)
-
-				// Wait for the command path to become inactive.
 				for regs.Star.GetCpsmact() {
 					runtime.Gosched()
 				}
 			}
 
+			regs.Icr.StoreBits(0xFFFF_FFFF)
+			volatile.StoreInt32(&state.done, 1)
 			return Response{}, coresdio.ErrTimeout
 		}
+
 		runtime.Gosched()
 	}
 
@@ -703,6 +791,24 @@ func sdmmc2Handler() {
 	irqHandler(SDIO2)
 }
 
+func (s SDIO) disableIRQ() {
+	switch s {
+	case SDIO1:
+		stm32h7x7.IrqSdmmc1.Disable()
+	case SDIO2:
+		stm32h7x7.IrqSdmmc2.Disable()
+	}
+}
+
+func (s SDIO) enableIRQ() {
+	switch s {
+	case SDIO1:
+		stm32h7x7.IrqSdmmc1.Enable()
+	case SDIO2:
+		stm32h7x7.IrqSdmmc2.Enable()
+	}
+}
+
 func irqHandler(instance SDIO) {
 	state := &instances[instance]
 	regs := sdmmc.Instances[instance]
@@ -710,52 +816,121 @@ func irqHandler(instance SDIO) {
 	icr := &regs.Icr
 	fifof := &regs.Fifor
 
-	length := len(state.data)
-	data := state.data
-	index := state.index
-	write := state.write
-	hasData := state.hasData
-
-	if state.config.IrqCallback != nil {
-		defer state.config.IrqCallback(*status)
+	if volatile.LoadInt32(&state.done) != 0 {
+		icr.StoreBits(0xFFFF_FFFF)
+		regs.Maskr.Store(0)
+		return
 	}
 
-	if hasData && index < length {
+	data := state.data
+	length := len(data)
+	index := int(volatile.LoadInt32(&state.index))
+	write := volatile.LoadInt32(&state.write) != 0
+	useDMA := volatile.LoadInt32(&state.useDMA) != 0
+	wordAligned := volatile.LoadInt32(&state.wordAligned) != 0
+	dataPending := volatile.LoadInt32(&state.dataDone) == 0
+
+	// PIO FIFO servicing.
+	if dataPending && !useDMA && regs.Star.GetDpsmact() && index < length {
 		if write {
-			for !status.GetTxfifof() && index < length {
-				volatile.StoreUint32((*uint32)(fifof), data[index])
-				index++
+			if wordAligned {
+				for index+4 <= length {
+					if status.GetTxfifof() {
+						break
+					}
+
+					remainingWords := (length - index) >> 2
+					if remainingWords > 8 {
+						remainingWords = 8
+					}
+
+					base := unsafe.Add(dataPointer(data), index)
+					for i := 0; i < remainingWords && !status.GetTxfifof(); i++ {
+						volatile.StoreUint32((*uint32)(fifof), *(*uint32)(unsafe.Add(base, i*4)))
+						index += 4
+					}
+				}
+			}
+
+			if index < length && (!wordAligned || (length-index) < 4) {
+				for index < length && !status.GetTxfifof() {
+					volatile.StoreUint32((*uint32)(fifof), packWordLE(data, index))
+
+					remaining := length - index
+					if remaining > 4 {
+						remaining = 4
+					}
+					index += remaining
+				}
 			}
 		} else {
-			for !status.GetRxfifoe() && index < length {
-				state.data[index] = volatile.LoadUint32((*uint32)(fifof))
-				index++
+			if wordAligned {
+				for index+4 <= length {
+					if status.GetRxfifoe() {
+						break
+					}
+
+					remainingWords := (length - index) >> 2
+					if remainingWords > 8 {
+						remainingWords = 8
+					}
+
+					base := unsafe.Add(dataPointer(data), index)
+					for i := 0; i < remainingWords && !status.GetRxfifoe(); i++ {
+						*(*uint32)(unsafe.Add(base, i*4)) = volatile.LoadUint32((*uint32)(fifof))
+						index += 4
+					}
+				}
+			}
+
+			if index < length && (!wordAligned || (length-index) < 4) {
+				for index < length && !status.GetRxfifoe() {
+					v := volatile.LoadUint32((*uint32)(fifof))
+					unpackWordLE(data, index, v)
+
+					remaining := length - index
+					if remaining > 4 {
+						remaining = 4
+					}
+					index += remaining
+				}
 			}
 		}
-		state.index = index
+
+		volatile.StoreInt32(&state.index, int32(index))
 	}
 
 	if status.GetSdioit() {
-		// Just clear the SDIO interrupt status.
 		icr.SetSdioitc(true)
+	}
+
+	if status.GetIdmabtc() {
+		icr.SetIdmabtcc(true)
 	}
 
 	if status.GetDataend() {
 		icr.SetDataendc(true)
-
-		// Disable data-related interrupts.
-		regs.Maskr.ClearBits(0x0000_003F)
-
-		// All data has finished transmission.
-		state.hasData = false
-		state.dataDone = true
+		volatile.StoreInt32(&state.dataDone, 1)
 	}
 
-	// If any error
-	if status.GetDcrcfail() || status.GetCtimeout() || status.GetDtimeout() || status.GetRxoverr() || status.GetTxunderr() {
+	// Errors.
+	if status.GetCcrcfail() ||
+		status.GetDcrcfail() ||
+		status.GetCtimeout() ||
+		status.GetDtimeout() ||
+		status.GetRxoverr() ||
+		status.GetTxunderr() {
+
+		if status.GetCcrcfail() {
+			icr.SetCcrcfailc(true)
+			state.lastError = coresdio.ErrCommandCrcFail
+		}
+
 		if status.GetDcrcfail() {
 			icr.SetDcrcfailc(true)
-			state.lastError = coresdio.ErrCommandCrcFail
+			if state.lastError == nil {
+				state.lastError = coresdio.ErrDataError
+			}
 		}
 
 		if status.GetCtimeout() {
@@ -778,79 +953,43 @@ func irqHandler(instance SDIO) {
 			state.lastError = coresdio.ErrDataError
 		}
 
-		// Clear all flags.
-		icr.StoreBits(0xFFFF_FFFF)
-
-		// Disable interrupts
 		regs.Maskr.Store(0)
 
-		state.done = true
+		if !useDMA && regs.Star.GetDpsmact() {
+			var dctrl sdmmc.RegisterDctrlType
+			dctrl.SetFiforst(true)
+			regs.Dctrl.Store(uint32(dctrl))
+		}
+
+		volatile.StoreInt32(&state.done, 1)
+
+		if state.config.IrqCallback != nil {
+			state.config.IrqCallback(*status)
+		}
 		return
 	}
 
-	// If command complete
 	if status.GetCmdrend() {
 		icr.SetCmdrendc(true)
 		state.lastResponse[0] = regs.Resp1r.Load()
 		state.lastResponse[1] = regs.Resp2r.Load()
 		state.lastResponse[2] = regs.Resp3r.Load()
 		state.lastResponse[3] = regs.Resp4r.Load()
-		state.cmdDone = true
+		volatile.StoreInt32(&state.cmdDone, 1)
 	}
 
-	// If command sent without response
 	if status.GetCmdsent() {
 		icr.SetCmdsentc(true)
-		state.cmdDone = true
+		volatile.StoreInt32(&state.cmdDone, 1)
 	}
 
-	// If IDMA boundary (double buffer complete)
-	if status.GetIdmabtc() {
-		icr.SetIdmabtcc(true)
-		// TODO: Track buffer switching here.
-	}
-
-	if state.cmdDone && state.dataDone {
-		state.done = true
-
-		// Disable interrupts.
+	if volatile.LoadInt32(&state.cmdDone) != 0 && volatile.LoadInt32(&state.dataDone) != 0 {
 		regs.Maskr.Store(0)
+		regs.Idmactrlr.Store(0)
+		volatile.StoreInt32(&state.done, 1)
 	}
-}
 
-func blockSize(size int) uint8 {
-	switch {
-	case size >= 16384:
-		return 0b1110
-	case size >= 8192:
-		return 0b1101
-	case size >= 4096:
-		return 0b1100
-	case size >= 2048:
-		return 0b1011
-	case size >= 1024:
-		return 0b1010
-	case size >= 512:
-		return 0b1001
-	case size >= 256:
-		return 0b1000
-	case size >= 128:
-		return 0b0111
-	case size >= 64:
-		return 0b0110
-	case size >= 32:
-		return 0b0101
-	case size >= 16:
-		return 0b0100
-	case size >= 8:
-		return 0b0011
-	case size >= 4:
-		return 0b0010
-	case size >= 2:
-		return 0b0001
-	case size >= 1:
-		return 0b0000
-	default:
-		return 0b0010
+	if state.config.IrqCallback != nil {
+		state.config.IrqCallback(*status)
 	}
 }

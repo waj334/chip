@@ -126,9 +126,11 @@ var (
 	Spi45ClockSource  = ClockSourceHsi
 	Spi6ClockSource   = ClockSourceHsi
 	SdmmcClockSource  = ClockSourcePll2r
+	RngClockSource    = ClockSourceRc48
 
-	EnableHse = false
-	EnableLse = false
+	EnableRc48 = true
+	EnableHse  = false
+	EnableLse  = false
 )
 
 const (
@@ -163,6 +165,13 @@ func ConfigureClocks() {
 
 	// Wait for the ready bit.
 	for !pwr.Pwr.D3cr.GetVosrdy() {
+	}
+
+	// Enable RC48.
+	if EnableRc48 {
+		rcc.Rcc.Cr.SetRc48on(true)
+		for !rcc.Rcc.Cr.GetRc48rdy() {
+		}
 	}
 
 	if EnableHse {
@@ -220,17 +229,17 @@ func ConfigureClocks() {
 	fDivn2 := uint64(Divn2Prescaler) * (PllSourceFrequencyHz / uint64(Divm2))
 	fDivn3 := uint64(Divn3Prescaler) * (PllSourceFrequencyHz / uint64(Divm3))
 
-	divp1 := max(1, (fDivn1/Divp1FrequencyHz)-1)
-	divq1 := max(1, (fDivn1/Divq1FrequencyHz)-1)
-	divr1 := max(1, (fDivn1/Divr1FrequencyHz)-1)
+	divp1 := max(1, (fDivn1+Divp1FrequencyHz-1)/Divp1FrequencyHz-1)
+	divq1 := max(1, (fDivn1+Divq1FrequencyHz-1)/Divq1FrequencyHz-1)
+	divr1 := max(1, (fDivn1+Divr1FrequencyHz-1)/Divr1FrequencyHz-1)
 
-	divp2 := max(1, (fDivn2/Divp2FrequencyHz)-1)
-	divq2 := max(1, (fDivn2/Divq2FrequencyHz)-1)
-	divr2 := max(1, (fDivn2/Divr2FrequencyHz)-1)
+	divp2 := max(1, (fDivn2+Divp2FrequencyHz-1)/Divp2FrequencyHz-1)
+	divq2 := max(1, (fDivn2+Divq2FrequencyHz-1)/Divq2FrequencyHz-1)
+	divr2 := max(1, (fDivn2+Divr2FrequencyHz-1)/Divr2FrequencyHz-1)
 
-	divp3 := max(1, (fDivn3/Divp3FrequencyHz)-1)
-	divq3 := max(1, (fDivn3/Divq3FrequencyHz)-1)
-	divr3 := max(1, (fDivn3/Divr3FrequencyHz)-1)
+	divp3 := max(1, (fDivn3+Divp3FrequencyHz-1)/Divp3FrequencyHz-1)
+	divq3 := max(1, (fDivn3+Divq3FrequencyHz-1)/Divq3FrequencyHz-1)
+	divr3 := max(1, (fDivn3+Divr3FrequencyHz-1)/Divr3FrequencyHz-1)
 
 	// Update source clock frequency values.
 	Divp1FrequencyHz = fDivn1 / (divp1 + 1)
@@ -491,6 +500,9 @@ func ConfigureClocks() {
 	rcc.Rcc.Ahb1enr.SetAdc12en(true)
 	rcc.Rcc.Ahb4enr.SetAdc3en(true)
 
+	// Enable RNG clocks.
+	rcc.Rcc.Ahb2enr.SetRngen(true)
+
 	// Handle I2C1 - I2C3
 	if I2c13Source != ClockSourceNone {
 		// Set the clock source.
@@ -667,6 +679,19 @@ func ConfigureClocks() {
 		case ClockSourcePll2r:
 			rcc.Rcc.D1ccipr.SetSdmmcsrc(true)
 			SdmmcSourceFrequencyHz = Divr2FrequencyHz
+		}
+	}
+
+	if RngClockSource != ClockSourceNone {
+		switch RngClockSource {
+		case ClockSourceRc48:
+			rcc.Rcc.D2ccip2r.SetRngsrc(0)
+		case ClockSourcePll1q:
+			rcc.Rcc.D2ccip2r.SetRngsrc(1)
+		case ClockSourceLse:
+			rcc.Rcc.D2ccip2r.SetRngsrc(2)
+		case ClockSourceLsi:
+			rcc.Rcc.D2ccip2r.SetRngsrc(3)
 		}
 	}
 

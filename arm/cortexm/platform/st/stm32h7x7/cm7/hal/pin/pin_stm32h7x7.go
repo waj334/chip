@@ -591,8 +591,9 @@ func (p Pin) SetMode(mode corepin.Mode) {
 	mask := uint32(0x3) << offsetInBits
 
 	// Set the pin mode register.
-	group.Moder.ClearBits(mask)
-	group.Moder.StoreBits(uint32(pinMode) << offsetInBits)
+	moder := group.Moder.Load()
+	moder = (moder &^ mask) | (uint32(pinMode) << offsetInBits)
+	group.Moder.Store(moder)
 
 	if pinMode != AltFunction {
 		alt = 0

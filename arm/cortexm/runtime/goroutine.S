@@ -29,7 +29,9 @@ PendSvHandler:
 #ifdef __thumb2__
     tst lr, #0x10                       // Is the goroutine using the FPU context?
     it eq
+#ifdef __ARM_FP
     vstmdbeq r1!, {s16-s31}             // Save the high VFP registers first if the FPU was active
+#endif
     stmdb r1!, {r4-r11, lr}             // Save [R4-R11] and LR on the last goroutine's stack
 #else
     // NOTE: No supported armv6-m targets have a FPU, so no FPU context is considered!
@@ -59,7 +61,9 @@ _context_switch:
     ldmia r0!, {r4-r12}                 // Load [R4-R12] (where R12 holds the previous value of LR) from the new goroutine's stack
     tst r12, #0x10                      // Is the goroutine using the FPU context?
     itte eq
+#ifdef __ARM_FP
     vldmiaeq r0!, {s16-s31}             // Load the high VFP registers
+#endif
     ldreq lr, =0xFFFFFFED               // Set EXC_RETURN value for return to Thread mode with PSP and FPU enabled
     ldrne lr, =0xFFFFFFFD               // Set EXC_RETURN value for return to Thread mode with PSP
 #else

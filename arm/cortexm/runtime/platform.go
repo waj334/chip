@@ -49,3 +49,11 @@ func InterruptState() (state uint32) {
 	`, asm.Out(&state))
 	return
 }
+
+func ISB() {
+	asm.Inline(`isb 0xF`)
+}
+
+func DSB() {
+	asm.Inline(`dsb 0xF`)
+}

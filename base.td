@@ -14,7 +14,7 @@ class FPU<string Value, list<string> Features = []> : StringValue<Value> {
     list<string> features = Features;
 }
 
-def NoFPU : FPU<"none">;
+def NoFPU : FPU<"nofpu">;
 
 class AccessMode<string Value> : StringValue<Value>;
 
