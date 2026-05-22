@@ -12,16 +12,39 @@ var (
 )
 
 type _fpu struct {
-	Fpccr  registerFpccrType
-	Fpcar  registerFpcarType
-	Fpdscr registerFpdscrType
-	Mvfr0  registerMvfr0Type
-	Mvfr1  registerMvfr1Type
-	Mvfr2  registerMvfr2Type
+	Fpccr  RegisterFpccrType
+	Fpcar  RegisterFpcarType
+	Fpdscr RegisterFpdscrType
+	Mvfr0  RegisterMvfr0Type
+	Mvfr1  RegisterMvfr1Type
+	Mvfr2  RegisterMvfr2Type
 }
 
-// registerFpccrType Holds control data for the Floating Point Unit
-type registerFpccrType uint32
+// RegisterFpccrType Holds control data for the Floating Point Unit
+type RegisterFpccrType uint32
+
+func (r *RegisterFpccrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFpccrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFpccrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFpccrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFpccrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFpccrFieldLspactShift = 0
@@ -29,12 +52,12 @@ const (
 )
 
 // GetLspact Lazy state preservation active
-func (r *registerFpccrType) GetLspact() bool {
+func (r *RegisterFpccrType) GetLspact() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldLspactMask) != 0
 }
 
 // SetLspact Lazy state preservation active
-func (r *registerFpccrType) SetLspact(value bool) {
+func (r *RegisterFpccrType) SetLspact(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldLspactMask)
 	} else {
@@ -48,12 +71,12 @@ const (
 )
 
 // GetUser Indicates the privilege level of the software executing, when the processor allocated the floating point stack
-func (r *registerFpccrType) GetUser() bool {
+func (r *RegisterFpccrType) GetUser() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldUserMask) != 0
 }
 
 // SetUser Indicates the privilege level of the software executing, when the processor allocated the floating point stack
-func (r *registerFpccrType) SetUser(value bool) {
+func (r *RegisterFpccrType) SetUser(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldUserMask)
 	} else {
@@ -67,12 +90,12 @@ const (
 )
 
 // GetS Security status of the floating point context
-func (r *registerFpccrType) GetS() bool {
+func (r *RegisterFpccrType) GetS() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldSMask) != 0
 }
 
 // SetS Security status of the floating point context
-func (r *registerFpccrType) SetS(value bool) {
+func (r *RegisterFpccrType) SetS(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldSMask)
 	} else {
@@ -86,12 +109,12 @@ const (
 )
 
 // GetThread Thread mode
-func (r *registerFpccrType) GetThread() bool {
+func (r *RegisterFpccrType) GetThread() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldThreadMask) != 0
 }
 
 // SetThread Thread mode
-func (r *registerFpccrType) SetThread(value bool) {
+func (r *RegisterFpccrType) SetThread(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldThreadMask)
 	} else {
@@ -105,12 +128,12 @@ const (
 )
 
 // GetHfrdy HardFault ready
-func (r *registerFpccrType) GetHfrdy() bool {
+func (r *RegisterFpccrType) GetHfrdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldHfrdyMask) != 0
 }
 
 // SetHfrdy HardFault ready
-func (r *registerFpccrType) SetHfrdy(value bool) {
+func (r *RegisterFpccrType) SetHfrdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldHfrdyMask)
 	} else {
@@ -124,12 +147,12 @@ const (
 )
 
 // GetMmrdy MemManage ready
-func (r *registerFpccrType) GetMmrdy() bool {
+func (r *RegisterFpccrType) GetMmrdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldMmrdyMask) != 0
 }
 
 // SetMmrdy MemManage ready
-func (r *registerFpccrType) SetMmrdy(value bool) {
+func (r *RegisterFpccrType) SetMmrdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldMmrdyMask)
 	} else {
@@ -143,12 +166,12 @@ const (
 )
 
 // GetBfrdy BusFault ready
-func (r *registerFpccrType) GetBfrdy() bool {
+func (r *RegisterFpccrType) GetBfrdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldBfrdyMask) != 0
 }
 
 // SetBfrdy BusFault ready
-func (r *registerFpccrType) SetBfrdy(value bool) {
+func (r *RegisterFpccrType) SetBfrdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldBfrdyMask)
 	} else {
@@ -162,12 +185,12 @@ const (
 )
 
 // GetSfrdy SecureFault ready
-func (r *registerFpccrType) GetSfrdy() bool {
+func (r *RegisterFpccrType) GetSfrdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldSfrdyMask) != 0
 }
 
 // SetSfrdy SecureFault ready
-func (r *registerFpccrType) SetSfrdy(value bool) {
+func (r *RegisterFpccrType) SetSfrdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldSfrdyMask)
 	} else {
@@ -181,12 +204,12 @@ const (
 )
 
 // GetMonrdy DebugMonitor ready
-func (r *registerFpccrType) GetMonrdy() bool {
+func (r *RegisterFpccrType) GetMonrdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldMonrdyMask) != 0
 }
 
 // SetMonrdy DebugMonitor ready
-func (r *registerFpccrType) SetMonrdy(value bool) {
+func (r *RegisterFpccrType) SetMonrdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldMonrdyMask)
 	} else {
@@ -200,12 +223,12 @@ const (
 )
 
 // GetSplimviol Stack pointer limit violation
-func (r *registerFpccrType) GetSplimviol() bool {
+func (r *RegisterFpccrType) GetSplimviol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldSplimviolMask) != 0
 }
 
 // SetSplimviol Stack pointer limit violation
-func (r *registerFpccrType) SetSplimviol(value bool) {
+func (r *RegisterFpccrType) SetSplimviol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldSplimviolMask)
 	} else {
@@ -219,12 +242,12 @@ const (
 )
 
 // GetUfrdy UsageFault ready
-func (r *registerFpccrType) GetUfrdy() bool {
+func (r *RegisterFpccrType) GetUfrdy() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldUfrdyMask) != 0
 }
 
 // SetUfrdy UsageFault ready
-func (r *registerFpccrType) SetUfrdy(value bool) {
+func (r *RegisterFpccrType) SetUfrdy(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldUfrdyMask)
 	} else {
@@ -238,12 +261,12 @@ const (
 )
 
 // GetTs Treat as Secure
-func (r *registerFpccrType) GetTs() bool {
+func (r *RegisterFpccrType) GetTs() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldTsMask) != 0
 }
 
 // SetTs Treat as Secure
-func (r *registerFpccrType) SetTs(value bool) {
+func (r *RegisterFpccrType) SetTs(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldTsMask)
 	} else {
@@ -257,12 +280,12 @@ const (
 )
 
 // GetClronrets Clear on return Secure only
-func (r *registerFpccrType) GetClronrets() bool {
+func (r *RegisterFpccrType) GetClronrets() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldClronretsMask) != 0
 }
 
 // SetClronrets Clear on return Secure only
-func (r *registerFpccrType) SetClronrets(value bool) {
+func (r *RegisterFpccrType) SetClronrets(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldClronretsMask)
 	} else {
@@ -276,12 +299,12 @@ const (
 )
 
 // GetClronret Clear on return
-func (r *registerFpccrType) GetClronret() bool {
+func (r *RegisterFpccrType) GetClronret() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldClronretMask) != 0
 }
 
 // SetClronret Clear on return
-func (r *registerFpccrType) SetClronret(value bool) {
+func (r *RegisterFpccrType) SetClronret(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldClronretMask)
 	} else {
@@ -295,12 +318,12 @@ const (
 )
 
 // GetLspens Lazy state preservation enable Secure only
-func (r *registerFpccrType) GetLspens() bool {
+func (r *RegisterFpccrType) GetLspens() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldLspensMask) != 0
 }
 
 // SetLspens Lazy state preservation enable Secure only
-func (r *registerFpccrType) SetLspens(value bool) {
+func (r *RegisterFpccrType) SetLspens(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldLspensMask)
 	} else {
@@ -314,12 +337,12 @@ const (
 )
 
 // GetLspen Automatic state preservation enable
-func (r *registerFpccrType) GetLspen() bool {
+func (r *RegisterFpccrType) GetLspen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldLspenMask) != 0
 }
 
 // SetLspen Automatic state preservation enable
-func (r *registerFpccrType) SetLspen(value bool) {
+func (r *RegisterFpccrType) SetLspen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldLspenMask)
 	} else {
@@ -333,12 +356,12 @@ const (
 )
 
 // GetAspen Automatic state preservation enable
-func (r *registerFpccrType) GetAspen() bool {
+func (r *RegisterFpccrType) GetAspen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpccrFieldAspenMask) != 0
 }
 
 // SetAspen Automatic state preservation enable
-func (r *registerFpccrType) SetAspen(value bool) {
+func (r *RegisterFpccrType) SetAspen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpccrFieldAspenMask)
 	} else {
@@ -346,11 +369,57 @@ func (r *registerFpccrType) SetAspen(value bool) {
 	}
 }
 
-// registerFpcarType Holds the location of the unpopulated floating-point register space allocated on an exception stack frame
-type registerFpcarType uint32
+// RegisterFpcarType Holds the location of the unpopulated floating-point register space allocated on an exception stack frame
+type RegisterFpcarType uint32
 
-// registerFpdscrType Holds the default values for the floating-point status control data that the processor assigns to the FPSCR when it creates a new floating-point context
-type registerFpdscrType uint32
+func (r *RegisterFpcarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFpcarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFpcarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFpcarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFpcarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterFpdscrType Holds the default values for the floating-point status control data that the processor assigns to the FPSCR when it creates a new floating-point context
+type RegisterFpdscrType uint32
+
+func (r *RegisterFpdscrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterFpdscrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterFpdscrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterFpdscrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterFpdscrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterFpdscrFieldLtpsizeShift = 16
@@ -358,12 +427,12 @@ const (
 )
 
 // GetLtpsize Default value for FPSCR.LTPSIZE
-func (r *registerFpdscrType) GetLtpsize() uint8 {
+func (r *RegisterFpdscrType) GetLtpsize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFpdscrFieldLtpsizeMask) >> RegisterFpdscrFieldLtpsizeShift)
 }
 
 // SetLtpsize Default value for FPSCR.LTPSIZE
-func (r *registerFpdscrType) SetLtpsize(value uint8) {
+func (r *RegisterFpdscrType) SetLtpsize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFpdscrFieldLtpsizeMask)|(uint32(value)<<RegisterFpdscrFieldLtpsizeShift))
 }
 
@@ -373,12 +442,12 @@ const (
 )
 
 // GetFz16 Default value for FPSCR.FZ16
-func (r *registerFpdscrType) GetFz16() bool {
+func (r *RegisterFpdscrType) GetFz16() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpdscrFieldFz16Mask) != 0
 }
 
 // SetFz16 Default value for FPSCR.FZ16
-func (r *registerFpdscrType) SetFz16(value bool) {
+func (r *RegisterFpdscrType) SetFz16(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpdscrFieldFz16Mask)
 	} else {
@@ -392,12 +461,12 @@ const (
 )
 
 // GetRmode Default value for FPSCR.RMode
-func (r *registerFpdscrType) GetRmode() uint8 {
+func (r *RegisterFpdscrType) GetRmode() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterFpdscrFieldRmodeMask) >> RegisterFpdscrFieldRmodeShift)
 }
 
 // SetRmode Default value for FPSCR.RMode
-func (r *registerFpdscrType) SetRmode(value uint8) {
+func (r *RegisterFpdscrType) SetRmode(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterFpdscrFieldRmodeMask)|(uint32(value)<<RegisterFpdscrFieldRmodeShift))
 }
 
@@ -407,12 +476,12 @@ const (
 )
 
 // GetFz Default value for FPSCR.FZ
-func (r *registerFpdscrType) GetFz() bool {
+func (r *RegisterFpdscrType) GetFz() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpdscrFieldFzMask) != 0
 }
 
 // SetFz Default value for FPSCR.FZ
-func (r *registerFpdscrType) SetFz(value bool) {
+func (r *RegisterFpdscrType) SetFz(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpdscrFieldFzMask)
 	} else {
@@ -426,12 +495,12 @@ const (
 )
 
 // GetDn Default value for FPSCR.DN
-func (r *registerFpdscrType) GetDn() bool {
+func (r *RegisterFpdscrType) GetDn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpdscrFieldDnMask) != 0
 }
 
 // SetDn Default value for FPSCR.DN
-func (r *registerFpdscrType) SetDn(value bool) {
+func (r *RegisterFpdscrType) SetDn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpdscrFieldDnMask)
 	} else {
@@ -445,12 +514,12 @@ const (
 )
 
 // GetAhp Default value for FPSCR.AHP
-func (r *registerFpdscrType) GetAhp() bool {
+func (r *RegisterFpdscrType) GetAhp() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterFpdscrFieldAhpMask) != 0
 }
 
 // SetAhp Default value for FPSCR.AHP
-func (r *registerFpdscrType) SetAhp(value bool) {
+func (r *RegisterFpdscrType) SetAhp(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterFpdscrFieldAhpMask)
 	} else {
@@ -458,8 +527,31 @@ func (r *registerFpdscrType) SetAhp(value bool) {
 	}
 }
 
-// registerMvfr0Type Describes the features provided by the Floating-point extension
-type registerMvfr0Type uint32
+// RegisterMvfr0Type Describes the features provided by the Floating-point extension
+type RegisterMvfr0Type uint32
+
+func (r *RegisterMvfr0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMvfr0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMvfr0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMvfr0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMvfr0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMvfr0FieldSimdregShift = 0
@@ -467,12 +559,12 @@ const (
 )
 
 // GetSimdreg SIMD registers
-func (r *registerMvfr0Type) GetSimdreg() uint8 {
+func (r *RegisterMvfr0Type) GetSimdreg() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr0FieldSimdregMask) >> RegisterMvfr0FieldSimdregShift)
 }
 
 // SetSimdreg SIMD registers
-func (r *registerMvfr0Type) SetSimdreg(value uint8) {
+func (r *RegisterMvfr0Type) SetSimdreg(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr0FieldSimdregMask)|(uint32(value)<<RegisterMvfr0FieldSimdregShift))
 }
 
@@ -482,12 +574,12 @@ const (
 )
 
 // GetFpsp Floating-point single-precision
-func (r *registerMvfr0Type) GetFpsp() uint8 {
+func (r *RegisterMvfr0Type) GetFpsp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr0FieldFpspMask) >> RegisterMvfr0FieldFpspShift)
 }
 
 // SetFpsp Floating-point single-precision
-func (r *registerMvfr0Type) SetFpsp(value uint8) {
+func (r *RegisterMvfr0Type) SetFpsp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr0FieldFpspMask)|(uint32(value)<<RegisterMvfr0FieldFpspShift))
 }
 
@@ -497,12 +589,12 @@ const (
 )
 
 // GetFpdp Floating-point double-precision
-func (r *registerMvfr0Type) GetFpdp() uint8 {
+func (r *RegisterMvfr0Type) GetFpdp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr0FieldFpdpMask) >> RegisterMvfr0FieldFpdpShift)
 }
 
 // SetFpdp Floating-point double-precision
-func (r *registerMvfr0Type) SetFpdp(value uint8) {
+func (r *RegisterMvfr0Type) SetFpdp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr0FieldFpdpMask)|(uint32(value)<<RegisterMvfr0FieldFpdpShift))
 }
 
@@ -512,12 +604,12 @@ const (
 )
 
 // GetFpdivide Floating-point divide
-func (r *registerMvfr0Type) GetFpdivide() uint8 {
+func (r *RegisterMvfr0Type) GetFpdivide() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr0FieldFpdivideMask) >> RegisterMvfr0FieldFpdivideShift)
 }
 
 // SetFpdivide Floating-point divide
-func (r *registerMvfr0Type) SetFpdivide(value uint8) {
+func (r *RegisterMvfr0Type) SetFpdivide(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr0FieldFpdivideMask)|(uint32(value)<<RegisterMvfr0FieldFpdivideShift))
 }
 
@@ -527,12 +619,12 @@ const (
 )
 
 // GetFpsqrt Floating-point square root
-func (r *registerMvfr0Type) GetFpsqrt() uint8 {
+func (r *RegisterMvfr0Type) GetFpsqrt() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr0FieldFpsqrtMask) >> RegisterMvfr0FieldFpsqrtShift)
 }
 
 // SetFpsqrt Floating-point square root
-func (r *registerMvfr0Type) SetFpsqrt(value uint8) {
+func (r *RegisterMvfr0Type) SetFpsqrt(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr0FieldFpsqrtMask)|(uint32(value)<<RegisterMvfr0FieldFpsqrtShift))
 }
 
@@ -542,17 +634,40 @@ const (
 )
 
 // GetFpround Floating-point rounding modes
-func (r *registerMvfr0Type) GetFpround() uint8 {
+func (r *RegisterMvfr0Type) GetFpround() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr0FieldFproundMask) >> RegisterMvfr0FieldFproundShift)
 }
 
 // SetFpround Floating-point rounding modes
-func (r *registerMvfr0Type) SetFpround(value uint8) {
+func (r *RegisterMvfr0Type) SetFpround(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr0FieldFproundMask)|(uint32(value)<<RegisterMvfr0FieldFproundShift))
 }
 
-// registerMvfr1Type Describes the features provided by the Floating-point extension
-type registerMvfr1Type uint32
+// RegisterMvfr1Type Describes the features provided by the Floating-point extension
+type RegisterMvfr1Type uint32
+
+func (r *RegisterMvfr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMvfr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMvfr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMvfr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMvfr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMvfr1FieldFpftzShift = 0
@@ -560,12 +675,12 @@ const (
 )
 
 // GetFpftz Floating-point flush-to-zero
-func (r *registerMvfr1Type) GetFpftz() uint8 {
+func (r *RegisterMvfr1Type) GetFpftz() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr1FieldFpftzMask) >> RegisterMvfr1FieldFpftzShift)
 }
 
 // SetFpftz Floating-point flush-to-zero
-func (r *registerMvfr1Type) SetFpftz(value uint8) {
+func (r *RegisterMvfr1Type) SetFpftz(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr1FieldFpftzMask)|(uint32(value)<<RegisterMvfr1FieldFpftzShift))
 }
 
@@ -575,12 +690,12 @@ const (
 )
 
 // GetFpdnan Floating-point default NaN
-func (r *registerMvfr1Type) GetFpdnan() uint8 {
+func (r *RegisterMvfr1Type) GetFpdnan() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr1FieldFpdnanMask) >> RegisterMvfr1FieldFpdnanShift)
 }
 
 // SetFpdnan Floating-point default NaN
-func (r *registerMvfr1Type) SetFpdnan(value uint8) {
+func (r *RegisterMvfr1Type) SetFpdnan(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr1FieldFpdnanMask)|(uint32(value)<<RegisterMvfr1FieldFpdnanShift))
 }
 
@@ -590,12 +705,12 @@ const (
 )
 
 // GetMve Indicates support for MVE
-func (r *registerMvfr1Type) GetMve() uint8 {
+func (r *RegisterMvfr1Type) GetMve() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr1FieldMveMask) >> RegisterMvfr1FieldMveShift)
 }
 
 // SetMve Indicates support for MVE
-func (r *registerMvfr1Type) SetMve(value uint8) {
+func (r *RegisterMvfr1Type) SetMve(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr1FieldMveMask)|(uint32(value)<<RegisterMvfr1FieldMveShift))
 }
 
@@ -605,12 +720,12 @@ const (
 )
 
 // GetFp16 Floating-point half-precision data processing
-func (r *registerMvfr1Type) GetFp16() uint8 {
+func (r *RegisterMvfr1Type) GetFp16() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr1FieldFp16Mask) >> RegisterMvfr1FieldFp16Shift)
 }
 
 // SetFp16 Floating-point half-precision data processing
-func (r *registerMvfr1Type) SetFp16(value uint8) {
+func (r *RegisterMvfr1Type) SetFp16(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr1FieldFp16Mask)|(uint32(value)<<RegisterMvfr1FieldFp16Shift))
 }
 
@@ -620,12 +735,12 @@ const (
 )
 
 // GetFphp Floating-point half-precision conversion
-func (r *registerMvfr1Type) GetFphp() uint8 {
+func (r *RegisterMvfr1Type) GetFphp() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr1FieldFphpMask) >> RegisterMvfr1FieldFphpShift)
 }
 
 // SetFphp Floating-point half-precision conversion
-func (r *registerMvfr1Type) SetFphp(value uint8) {
+func (r *RegisterMvfr1Type) SetFphp(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr1FieldFphpMask)|(uint32(value)<<RegisterMvfr1FieldFphpShift))
 }
 
@@ -635,17 +750,40 @@ const (
 )
 
 // GetFmac Fused multiply accumulate instructions
-func (r *registerMvfr1Type) GetFmac() uint8 {
+func (r *RegisterMvfr1Type) GetFmac() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr1FieldFmacMask) >> RegisterMvfr1FieldFmacShift)
 }
 
 // SetFmac Fused multiply accumulate instructions
-func (r *registerMvfr1Type) SetFmac(value uint8) {
+func (r *RegisterMvfr1Type) SetFmac(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr1FieldFmacMask)|(uint32(value)<<RegisterMvfr1FieldFmacShift))
 }
 
-// registerMvfr2Type Describes the features provided by the floating-point extension
-type registerMvfr2Type uint32
+// RegisterMvfr2Type Describes the features provided by the floating-point extension
+type RegisterMvfr2Type uint32
+
+func (r *RegisterMvfr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMvfr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMvfr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMvfr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMvfr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMvfr2FieldFpmiscShift = 4
@@ -653,11 +791,11 @@ const (
 )
 
 // GetFpmisc Floating-point miscellaneous
-func (r *registerMvfr2Type) GetFpmisc() uint8 {
+func (r *RegisterMvfr2Type) GetFpmisc() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterMvfr2FieldFpmiscMask) >> RegisterMvfr2FieldFpmiscShift)
 }
 
 // SetFpmisc Floating-point miscellaneous
-func (r *registerMvfr2Type) SetFpmisc(value uint8) {
+func (r *RegisterMvfr2Type) SetFpmisc(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMvfr2FieldFpmiscMask)|(uint32(value)<<RegisterMvfr2FieldFpmiscShift))
 }

@@ -28,17 +28,17 @@ class CortexMArchitectue<string Name, string Arch, string Triple, list<string> T
     let runtimePackages = [ "pkg.si-go.dev/chip/arm/cortexm/runtime" ];
 }
 
-def CortexM0 : CortexMArchitectue<"cortexm-m0", "arm", "armv6m-none-eabi", [ "armv6m" ]>;
-def CortexM0Plus : CortexMArchitectue<"cortexm-m0plus", "arm", "armv6m-none-eabi", [ "armv6m" ]>;
-def CortexM1 : CortexMArchitectue<"cortexm-m1", "arm", "armv6m-none-eabi", [ "armv6m" ]>;
-def CortexM23 : CortexMArchitectue<"cortex-m23", "arm", "armv8m.base-none-eabihf", [ "armv8m.base" ]>;
-def CortexM3 : CortexMArchitectue<"cortex-m3", "thumb2", "armv7m-none-eabi", [ "armv7m", "thumb" ]>;
-def CortexM33 : CortexMArchitectue<"cortex-m33", "thumb2", "armv8m.main-none-eabihf", [ "armv8m.main", "thumb" ], FPV5_SP_D16>;
-def CortexM35P : CortexMArchitectue<"cortex-m35p", "thumb2", "armv8m.main-none-eabihf", [ "armv8m.main", "thumb" ], FPV5_SP_D16>;
-def CortexM4 : CortexMArchitectue<"cortex-m4", "thumb2", "armv7em-none-eabihf", [ "armv7m", "armv7em", "thumb" ], FPV4_SP_D16>;
-def CortexM52 : CortexMArchitectue<"cortex-m52", "thumb2", "armv81m.main-none-eabihf", [ "armv81m.main", "thumb" ], FPV5_D16>;
-def CortexM55 : CortexMArchitectue<"cortex-m55", "thumb2", "armv81m.main-none-eabihf", [ "armv81m.main", "thumb" ], FPV5_D16>;
-def CortexM7 : CortexMArchitectue<"cortex-m7", "thumb2", "armv7em-none-eabihf", [ "armv7m", "armv7em", "thumb" ], FPV5_D16>;
-def CortexM85 : CortexMArchitectue<"cortex-m85", "thumb2", "armv81m.main-none-eabihf", [ "armv81m.main", "thumb" ], FPV5_D16>;
+def CortexM0 : CortexMArchitectue<"cortexm-m0", "arm", "armv6m-none-eabi", [ "cortexm0","armv6m" ]>;
+def CortexM0Plus : CortexMArchitectue<"cortexm-m0plus", "arm", "armv6m-none-eabi", [ "cortexm0", "cortexm0plus", "armv6m" ]>;
+def CortexM1 : CortexMArchitectue<"cortexm-m1", "arm", "armv6m-none-eabi", [ "cortexm1", "armv6m" ]>;
+def CortexM23 : CortexMArchitectue<"cortex-m23", "arm", "armv8m.base-none-eabihf", [ "cortexm23", "armv8m.base" ]>;
+def CortexM3 : CortexMArchitectue<"cortex-m3", "thumb2", "armv7m-none-eabi", [ "cortexm3", "armv7m", "thumb" ]>;
+def CortexM33 : CortexMArchitectue<"cortex-m33", "thumb2", "armv8m.main-none-eabihf", [ "cortexm33", "armv8m.main", "thumb" ], FPV5_SP_D16>;
+def CortexM35P : CortexMArchitectue<"cortex-m35p", "thumb2", "armv8m.main-none-eabihf", [ "cortexm35p", "armv8m.main", "thumb" ], FPV5_SP_D16>;
+def CortexM4 : CortexMArchitectue<"cortex-m4", "thumb2", "armv7em-none-eabihf", [ "cortexm4", "armv7m", "armv7em", "thumb" ], FPV4_SP_D16>;
+def CortexM52 : CortexMArchitectue<"cortex-m52", "thumb2", "armv81m.main-none-eabihf", [ "cortexm52", "armv81m.main", "thumb" ], FPV5_D16>;
+def CortexM55 : CortexMArchitectue<"cortex-m55", "thumb2", "armv81m.main-none-eabihf", [ "cortexm55", "armv81m.main", "thumb" ], FPV5_D16>;
+def CortexM7 : CortexMArchitectue<"cortex-m7", "thumb2", "armv7em-none-eabihf", [ "cortexm7", "armv7m", "armv7em", "thumb" ], FPV5_D16>;
+def CortexM85 : CortexMArchitectue<"cortex-m85", "thumb2", "armv81m.main-none-eabihf", [ "cortexm85", "armv81m.main", "thumb" ], FPV5_D16>;
 
 #endif // _ARM_FAMILY_TD

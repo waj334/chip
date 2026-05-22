@@ -12,22 +12,45 @@ var (
 )
 
 type _ewic struct {
-	Cr      registerCrType
-	Ascr    registerAscrType
-	Clrmask registerClrmaskType
-	Numid   registerNumidType
+	Cr      RegisterCrType
+	Ascr    RegisterAscrType
+	Clrmask RegisterClrmaskType
+	Numid   RegisterNumidType
 	_       [496]byte
-	Maska   registerMaskaType
-	Mask    [15]registerMaskType
+	Maska   RegisterMaskaType
+	Mask    [15]RegisterMaskType
 	_       [448]byte
-	Penda   registerPendaType
-	Pend    [15]registerPendType
+	Penda   RegisterPendaType
+	Pend    [15]RegisterPendType
 	_       [448]byte
-	Psr     registerPsrType
+	Psr     RegisterPsrType
 }
 
-// registerCrType The main External Wakeup Interrupt Controller (EWIC) control register
-type registerCrType uint32
+// RegisterCrType The main External Wakeup Interrupt Controller (EWIC) control register
+type RegisterCrType uint32
+
+func (r *RegisterCrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCrFieldEnShift = 0
@@ -35,12 +58,12 @@ const (
 )
 
 // GetEn Enable
-func (r *registerCrType) GetEn() bool {
+func (r *RegisterCrType) GetEn() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCrFieldEnMask) != 0
 }
 
 // SetEn Enable
-func (r *registerCrType) SetEn(value bool) {
+func (r *RegisterCrType) SetEn(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCrFieldEnMask)
 	} else {
@@ -48,8 +71,31 @@ func (r *registerCrType) SetEn(value bool) {
 	}
 }
 
-// registerAscrType Determines whether the processor generates APB transactions on entry and exit from Wakeup Interrupt Controller (WIC) sleep to set up the wakeup state in the External Wakeup Interrupt Controller (EWIC)
-type registerAscrType uint32
+// RegisterAscrType Determines whether the processor generates APB transactions on entry and exit from Wakeup Interrupt Controller (WIC) sleep to set up the wakeup state in the External Wakeup Interrupt Controller (EWIC)
+type RegisterAscrType uint32
+
+func (r *RegisterAscrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAscrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAscrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAscrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAscrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterAscrFieldAspdShift = 0
@@ -57,12 +103,12 @@ const (
 )
 
 // GetAspd The processor must use this value to decide whether any automatic EWIC accesses must be performed on transitioning to a low-power state
-func (r *registerAscrType) GetAspd() bool {
+func (r *RegisterAscrType) GetAspd() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAscrFieldAspdMask) != 0
 }
 
 // SetAspd The processor must use this value to decide whether any automatic EWIC accesses must be performed on transitioning to a low-power state
-func (r *registerAscrType) SetAspd(value bool) {
+func (r *RegisterAscrType) SetAspd(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAscrFieldAspdMask)
 	} else {
@@ -76,12 +122,12 @@ const (
 )
 
 // GetAspu The processor must use this value to decide whether any automatic EWIC accesses must be performed on transitioning from a low-power state
-func (r *registerAscrType) GetAspu() bool {
+func (r *RegisterAscrType) GetAspu() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterAscrFieldAspuMask) != 0
 }
 
 // SetAspu The processor must use this value to decide whether any automatic EWIC accesses must be performed on transitioning from a low-power state
-func (r *registerAscrType) SetAspu(value bool) {
+func (r *RegisterAscrType) SetAspu(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterAscrFieldAspuMask)
 	} else {
@@ -89,11 +135,57 @@ func (r *registerAscrType) SetAspu(value bool) {
 	}
 }
 
-// registerClrmaskType Causes EWIC_MASKA and all the EWIC_MASKn registers to be cleared. The write data is ignored. This register is RAZ.
-type registerClrmaskType uint32
+// RegisterClrmaskType Causes EWIC_MASKA and all the EWIC_MASKn registers to be cleared. The write data is ignored. This register is RAZ.
+type RegisterClrmaskType uint32
 
-// registerNumidType Returns the total number of events supported in the External Wakeup Interrupt Controller (EWIC) that have been configured during synthesis
-type registerNumidType uint32
+func (r *RegisterClrmaskType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterClrmaskType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterClrmaskType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterClrmaskType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterClrmaskType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterNumidType Returns the total number of events supported in the External Wakeup Interrupt Controller (EWIC) that have been configured during synthesis
+type RegisterNumidType uint32
+
+func (r *RegisterNumidType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterNumidType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterNumidType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterNumidType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterNumidType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterNumidFieldNumeventShift = 0
@@ -101,17 +193,40 @@ const (
 )
 
 // GetNumevent The number of events supported
-func (r *registerNumidType) GetNumevent() uint16 {
+func (r *RegisterNumidType) GetNumevent() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterNumidFieldNumeventMask) >> RegisterNumidFieldNumeventShift)
 }
 
 // SetNumevent The number of events supported
-func (r *registerNumidType) SetNumevent(value uint16) {
+func (r *RegisterNumidType) SetNumevent(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterNumidFieldNumeventMask)|(uint32(value)<<RegisterNumidFieldNumeventShift))
 }
 
-// registerMaskaType Defines the mask for special events and the EWIC_MASKn registers for external interrupt (IRQ) events
-type registerMaskaType uint32
+// RegisterMaskaType Defines the mask for special events and the EWIC_MASKn registers for external interrupt (IRQ) events
+type RegisterMaskaType uint32
+
+func (r *RegisterMaskaType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMaskaType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMaskaType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMaskaType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMaskaType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMaskaFieldEventShift = 0
@@ -119,12 +234,12 @@ const (
 )
 
 // GetEvent Mask for Wait For Exception (WFE) wakeup event
-func (r *registerMaskaType) GetEvent() bool {
+func (r *RegisterMaskaType) GetEvent() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskaFieldEventMask) != 0
 }
 
 // SetEvent Mask for Wait For Exception (WFE) wakeup event
-func (r *registerMaskaType) SetEvent(value bool) {
+func (r *RegisterMaskaType) SetEvent(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskaFieldEventMask)
 	} else {
@@ -138,12 +253,12 @@ const (
 )
 
 // GetNmi Mask for Non-Maskable Interrupt (NMI)
-func (r *registerMaskaType) GetNmi() bool {
+func (r *RegisterMaskaType) GetNmi() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskaFieldNmiMask) != 0
 }
 
 // SetNmi Mask for Non-Maskable Interrupt (NMI)
-func (r *registerMaskaType) SetNmi(value bool) {
+func (r *RegisterMaskaType) SetNmi(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskaFieldNmiMask)
 	} else {
@@ -157,12 +272,12 @@ const (
 )
 
 // GetEdbgreq Mask for external debug request
-func (r *registerMaskaType) GetEdbgreq() bool {
+func (r *RegisterMaskaType) GetEdbgreq() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterMaskaFieldEdbgreqMask) != 0
 }
 
 // SetEdbgreq Mask for external debug request
-func (r *registerMaskaType) SetEdbgreq(value bool) {
+func (r *RegisterMaskaType) SetEdbgreq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterMaskaFieldEdbgreqMask)
 	} else {
@@ -170,8 +285,31 @@ func (r *registerMaskaType) SetEdbgreq(value bool) {
 	}
 }
 
-// registerMaskType Defines the mask for special events and the EWIC_MASKn registers for external interrupt (IRQ) events
-type registerMaskType uint32
+// RegisterMaskType Defines the mask for special events and the EWIC_MASKn registers for external interrupt (IRQ) events
+type RegisterMaskType uint32
+
+func (r *RegisterMaskType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterMaskType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterMaskType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterMaskType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterMaskType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterMaskFieldIrqShift = 0
@@ -179,17 +317,40 @@ const (
 )
 
 // GetIrq Masks for interrupts (nx32) to ((n+1)x32)-1
-func (r *registerMaskType) GetIrq() uint32 {
+func (r *RegisterMaskType) GetIrq() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterMaskFieldIrqMask) >> RegisterMaskFieldIrqShift)
 }
 
 // SetIrq Masks for interrupts (nx32) to ((n+1)x32)-1
-func (r *registerMaskType) SetIrq(value uint32) {
+func (r *RegisterMaskType) SetIrq(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterMaskFieldIrqMask)|(uint32(value)<<RegisterMaskFieldIrqShift))
 }
 
-// registerPendaType Indicate which events have been pended
-type registerPendaType uint32
+// RegisterPendaType Indicate which events have been pended
+type RegisterPendaType uint32
+
+func (r *RegisterPendaType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPendaType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPendaType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPendaType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPendaType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPendaFieldEventShift = 0
@@ -197,12 +358,12 @@ const (
 )
 
 // GetEvent Wait For Exception (WFE) wakeup event is pended
-func (r *registerPendaType) GetEvent() bool {
+func (r *RegisterPendaType) GetEvent() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPendaFieldEventMask) != 0
 }
 
 // SetEvent Wait For Exception (WFE) wakeup event is pended
-func (r *registerPendaType) SetEvent(value bool) {
+func (r *RegisterPendaType) SetEvent(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPendaFieldEventMask)
 	} else {
@@ -216,12 +377,12 @@ const (
 )
 
 // GetNmi Non-Maskable Interrupt (NMI) is pended
-func (r *registerPendaType) GetNmi() bool {
+func (r *RegisterPendaType) GetNmi() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPendaFieldNmiMask) != 0
 }
 
 // SetNmi Non-Maskable Interrupt (NMI) is pended
-func (r *registerPendaType) SetNmi(value bool) {
+func (r *RegisterPendaType) SetNmi(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPendaFieldNmiMask)
 	} else {
@@ -235,12 +396,12 @@ const (
 )
 
 // GetEdbgreq External debug request is pended
-func (r *registerPendaType) GetEdbgreq() bool {
+func (r *RegisterPendaType) GetEdbgreq() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPendaFieldEdbgreqMask) != 0
 }
 
 // SetEdbgreq External debug request is pended
-func (r *registerPendaType) SetEdbgreq(value bool) {
+func (r *RegisterPendaType) SetEdbgreq(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPendaFieldEdbgreqMask)
 	} else {
@@ -248,8 +409,31 @@ func (r *registerPendaType) SetEdbgreq(value bool) {
 	}
 }
 
-// registerPendType Indicate which events have been pended
-type registerPendType uint32
+// RegisterPendType Indicate which events have been pended
+type RegisterPendType uint32
+
+func (r *RegisterPendType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPendType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPendType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPendType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPendType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPendFieldIrqShift = 0
@@ -257,17 +441,40 @@ const (
 )
 
 // GetIrq Interrupts (nx32) to ((n+1)x32)-1 are pended. A write of zero to this field is ignored.
-func (r *registerPendType) GetIrq() uint32 {
+func (r *RegisterPendType) GetIrq() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterPendFieldIrqMask) >> RegisterPendFieldIrqShift)
 }
 
 // SetIrq Interrupts (nx32) to ((n+1)x32)-1 are pended. A write of zero to this field is ignored.
-func (r *registerPendType) SetIrq(value uint32) {
+func (r *RegisterPendType) SetIrq(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPendFieldIrqMask)|(uint32(value)<<RegisterPendFieldIrqShift))
 }
 
-// registerPsrType Indicates which EWIC_PENDn registers are non-zero
-type registerPsrType uint32
+// RegisterPsrType Indicates which EWIC_PENDn registers are non-zero
+type RegisterPsrType uint32
+
+func (r *RegisterPsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPsrFieldNzaShift = 0
@@ -275,12 +482,12 @@ const (
 )
 
 // GetNza If EWIC_PSR.NZA set, then EWIC_PENDA is non-zero
-func (r *registerPsrType) GetNza() bool {
+func (r *RegisterPsrType) GetNza() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPsrFieldNzaMask) != 0
 }
 
 // SetNza If EWIC_PSR.NZA set, then EWIC_PENDA is non-zero
-func (r *registerPsrType) SetNza(value bool) {
+func (r *RegisterPsrType) SetNza(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPsrFieldNzaMask)
 	} else {
@@ -294,11 +501,11 @@ const (
 )
 
 // GetNz If EWIC_PSR.NZ[n+1] is set, then EWIC_PENDn is non-zero
-func (r *registerPsrType) GetNz() uint16 {
+func (r *RegisterPsrType) GetNz() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterPsrFieldNzMask) >> RegisterPsrFieldNzShift)
 }
 
 // SetNz If EWIC_PSR.NZ[n+1] is set, then EWIC_PENDn is non-zero
-func (r *registerPsrType) SetNz(value uint16) {
+func (r *RegisterPsrType) SetNz(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPsrFieldNzMask)|(uint32(value)<<RegisterPsrFieldNzShift))
 }

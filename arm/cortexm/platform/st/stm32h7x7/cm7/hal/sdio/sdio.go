@@ -592,7 +592,7 @@ func (s SDIO) sendCommand(cmd Command) (Response, error) {
 	wordAligned := isWordAligned(data)
 	useDMA := transfer &&
 		state.config.DMA &&
-		IsSDMMCDMABuffer(data) &&
+		IsSDMMCDMABuffer(data, s) &&
 		wordAligned
 
 	// If the caller configured DMA but the buffer isn't DMA-accessible,

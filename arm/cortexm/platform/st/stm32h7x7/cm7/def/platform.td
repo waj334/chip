@@ -294,70 +294,100 @@ defvar interrupts = [
 
 defvar tags = [ "stm32h7x7" ];
 
-def Flash512K_1 : MemoryRange<"FLASH", 0x08000000, KB<512>, true, ReadWrite, "Flash memory bank 1">;
-def Flash512K_2 : MemoryRange<"FLASH2", 0x08100000, KB<512>, true, ReadWrite, "Flash memory bank 2">;
-def Flash2M : MemoryRange<"FLASH", 0x08000000, MB<2>, true, ReadWrite, "Flash memory">;
+// G variants: two physically-separate banks of 512 KB each, with a gap.
+def FLASH512K_G_1 : MemoryRange<"FLASH1",  0x08000000, KB<512>, true, ReadWrite, "Flash bank 1 (512KB)">;
+def FLASH512K_G_2 : MemoryRange<"FLASH2", 0x08100000, KB<512>, true, ReadWrite, "Flash bank 2 (512KB)">;
+
+// I variants: 1 MB per bank. Banks are physically adjacent.
+// Modeled as separate banks because they have independent erase/write
+// controllers (FLASH_CR1 / FLASH_CR2) and bank swapping affects them.
+def FLASH1M_I_1 : MemoryRange<"FLASH1",  0x08000000, MB<1>, true, ReadWrite, "Flash bank 1 (1MB)">;
+def FLASH1M_I_2 : MemoryRange<"FLASH2", 0x08100000, MB<1>, true, ReadWrite, "Flash bank 2 (1MB)">;
+def FLASH2M_I : MemoryRange<"FLASH", 0x08000000, MB<2>, true, ReadWrite, "Flash bank [1:2] (2MB)">;
 
 def SRAM_AXI : MemoryRange<"SRAM_AXI", 0x24000000, KB<512>, true, ReadWrite, "SRAM mapped on AXI bus">;
-def SRAM1_3 : MemoryRange<"RAM", 0x30000000, KB<288>, true, ReadWrite, "[SRAM1 : SRAM3]">;
-def SRAMSRAM1 : MemoryRange<"SRAM1", 0x30000000, KB<128>, true, ReadWrite, "SRAM1 (D2 domain)">;
-def SRAMSRAM2 : MemoryRange<"SRAM2", 0x30020000, KB<128>, true, ReadWrite, "SRAM2 (D2 domain)">;
-def SRAMSRAM3 : MemoryRange<"SRAM3", 0x30040000, KB<32>, true, ReadWrite, "SRAM3 (D2 domain)">;
-def SRAMSRAM4 : MemoryRange<"SRAM4", 0x38000000, KB<64>, true, ReadWrite, "SRAM4 (D3 domain)">;
-def SRAMITCM : MemoryRange<"ITCM", 0x00000000, KB<64>, true, ReadWrite, "ITCM RAM (instruction)">;
-def SRAMDTCM : MemoryRange<"DTCM", 0x20000000, KB<128>, true, ReadWrite, "DTCM RAM (instruction)">;
-def SRAMBackup : MemoryRange<"SRAM_BACKUP", 0x38800000, KB<4>, true, ReadWrite, "Backup SRAM (Kbytes)">;
+def SRAM_1 : MemoryRange<"SRAM1", 0x30000000, KB<128>, true, ReadWrite, "SRAM1 (D2 domain)">;
+def SRAM_2 : MemoryRange<"SRAM2", 0x30020000, KB<128>, true, ReadWrite, "SRAM2 (D2 domain)">;
+def SRAM_3 : MemoryRange<"SRAM3", 0x30040000, KB<32>, true, ReadWrite, "SRAM3 (D2 domain)">;
+def SRAM_4 : MemoryRange<"SRAM4", 0x38000000, KB<64>, true, ReadWrite, "SRAM4 (D3 domain)">;
+def SRAM_ITCM : MemoryRange<"ITCM", 0x00000000, KB<64>, true, ReadWrite, "ITCM RAM (instruction)">;
+def SRAM_DTCM : MemoryRange<"DTCM", 0x20000000, KB<128>, true, ReadWrite, "DTCM RAM (instruction)">;
+def SRAM_BACKUP : MemoryRange<"SRAM_BACKUP", 0x38800000, KB<4>, true, ReadWrite, "Backup SRAM (Kbytes)">;
 
-class STM32H7x7Variant<string Name, list<MemoryRange> Memories, MemoryUnit StackSize, list<string> Tags = [],
+class STM32H7x7Variant<string Name, list<MemoryRange> Memories, MemoryUnit StackSize,
+    MemoryRange DefaultTextRegion = UnsetMemoryRange,
+    MemoryRange DefaultRAMRegion = UnsetMemoryRange,
+    MemoryRange DefaultHeapRegion = UnsetMemoryRange,
+    MemoryRange DefaultStackRegion = UnsetMemoryRange,
+    list<string> Tags = [],
     string Description = "">
-      : CortexMVariant<Name, Memories, interrupts, StackSize, !listconcat(tags, Tags), Description>;
+      : CortexMVariant<Name, Memories, interrupts, StackSize, !listconcat(tags, Tags), Description,
+          DefaultTextRegion, DefaultRAMRegion, DefaultHeapRegion, DefaultStackRegion>;
 
 defvar GMemories = [
-    Flash512K_1,
-    Flash512K_2,
+    FLASH512K_G_1,
+    FLASH512K_G_2,
     SRAM_AXI,
-    SRAM1_3,
-    SRAMSRAM1,
-    SRAMSRAM2,
-    SRAMSRAM3,
-    SRAMSRAM4,
-    SRAMITCM,
-    SRAMDTCM,
-    SRAMBackup,
+    SRAM_1,
+    SRAM_2,
+    SRAM_3,
+    SRAM_4,
+    SRAM_ITCM,
+    SRAM_DTCM,
+    SRAM_BACKUP,
 ];
 
 defvar IMemories = [
-    Flash2M,
+    FLASH1M_I_1,
+    FLASH1M_I_2,
+    FLASH2M_I,
     SRAM_AXI,
-    SRAM1_3,
-    SRAMSRAM1,
-    SRAMSRAM2,
-    SRAMSRAM3,
-    SRAMSRAM4,
-    SRAMITCM,
-    SRAMDTCM,
-    SRAMBackup,
+    SRAM_1,
+    SRAM_2,
+    SRAM_3,
+    SRAM_4,
+    SRAM_ITCM,
+    SRAM_DTCM,
+    SRAM_BACKUP,
 ];
 
-class GVariant<string Name, list<string> Tags = []> : STM32H7x7Variant<Name, GMemories, KB<4>, Tags>;
-class IVariant<string Name, list<string> Tags = []> : STM32H7x7Variant<Name, IMemories, KB<4>, Tags>;
+class GVariant<string Name,
+  MemoryRange DefaultTextRegion = UnsetMemoryRange,
+  MemoryRange DefaultRAMRegion = UnsetMemoryRange,
+  MemoryRange DefaultHeapRegion = UnsetMemoryRange,
+  MemoryRange DefaultStackRegion = UnsetMemoryRange,
+  list<string> Tags = [],
+  string Description = ""> : STM32H7x7Variant<
+    Name, GMemories, KB<4>,
+    DefaultTextRegion, DefaultRAMRegion, DefaultHeapRegion, DefaultStackRegion, Tags, Description>;
+
+class IVariant<string Name,
+  MemoryRange DefaultTextRegion = UnsetMemoryRange,
+  MemoryRange DefaultRAMRegion = UnsetMemoryRange,
+  MemoryRange DefaultHeapRegion = UnsetMemoryRange,
+  MemoryRange DefaultStackRegion = UnsetMemoryRange,
+  list<string> Tags = [],
+  string Description = ""> : STM32H7x7Variant<
+    Name, IMemories, KB<4>,
+    DefaultTextRegion, DefaultRAMRegion, DefaultHeapRegion, DefaultStackRegion, Tags, Description>;
 
 defvar allVariants = [
-    GVariant<"STM32H747AG">,
-    GVariant<"STM32H747IG">,
-    GVariant<"STM32H747BG">,
-    GVariant<"STM32H747XG">,
-    IVariant<"STM32H747ZI">,
-    IVariant<"STM32H747AI">,
-    IVariant<"STM32H747II">,
-    IVariant<"STM32H747BI">,
-    IVariant<"STM32H747XI">,
+    GVariant<"STM32H747AG", FLASH512K_G_1, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    GVariant<"STM32H747IG", FLASH512K_G_1, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    GVariant<"STM32H747BG", FLASH512K_G_1, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    GVariant<"STM32H747XG", FLASH512K_G_1, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
 
-    IVariant<"STM32H757ZI">,
-    IVariant<"STM32H757AI">,
-    IVariant<"STM32H757II">,
-    IVariant<"STM32H757BI">,
-    IVariant<"STM32H757XI">,
+    IVariant<"STM32H747ZI", FLASH2M_I, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    IVariant<"STM32H747AI", FLASH2M_I, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    IVariant<"STM32H747II", FLASH2M_I, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    IVariant<"STM32H747BI", FLASH2M_I, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    IVariant<"STM32H747XI", FLASH2M_I, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+
+    IVariant<"STM32H757ZI", FLASH2M_I, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    IVariant<"STM32H757AI", FLASH2M_I, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    IVariant<"STM32H757II", FLASH2M_I, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    IVariant<"STM32H757BI", FLASH2M_I, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
+    IVariant<"STM32H757XI", FLASH2M_I, SRAM_AXI, SRAM_AXI, SRAM_AXI>,
 ];
 
 def STM32H7x7 : Series<"STM32H7x7", CortexM7> {

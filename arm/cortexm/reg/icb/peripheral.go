@@ -12,13 +12,36 @@ var (
 )
 
 type _icb struct {
-	Ictr  registerIctrType
-	Actlr registerActlrType
-	Cppwr registerCppwrType
+	Ictr  RegisterIctrType
+	Actlr RegisterActlrType
+	Cppwr RegisterCppwrType
 }
 
-// registerIctrType Provides information about the interrupt controller
-type registerIctrType uint32
+// RegisterIctrType Provides information about the interrupt controller
+type RegisterIctrType uint32
+
+func (r *RegisterIctrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIctrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIctrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIctrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIctrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIctrFieldIntlinesnumShift = 0
@@ -26,17 +49,40 @@ const (
 )
 
 // GetIntlinesnum The total number of interrupt lines supported by an implementation, defined in groups of 32
-func (r *registerIctrType) GetIntlinesnum() uint8 {
+func (r *RegisterIctrType) GetIntlinesnum() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterIctrFieldIntlinesnumMask) >> RegisterIctrFieldIntlinesnumShift)
 }
 
 // SetIntlinesnum The total number of interrupt lines supported by an implementation, defined in groups of 32
-func (r *registerIctrType) SetIntlinesnum(value uint8) {
+func (r *RegisterIctrType) SetIntlinesnum(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIctrFieldIntlinesnumMask)|(uint32(value)<<RegisterIctrFieldIntlinesnumShift))
 }
 
-// registerActlrType Allow software to control the processor features and functionality
-type registerActlrType uint32
+// RegisterActlrType Allow software to control the processor features and functionality
+type RegisterActlrType uint32
+
+func (r *RegisterActlrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterActlrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterActlrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterActlrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterActlrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterActlrFieldFpexcodisShift = 10
@@ -44,12 +90,12 @@ const (
 )
 
 // GetFpexcodis Determines whether floating-point exception outputs are disabled
-func (r *registerActlrType) GetFpexcodis() bool {
+func (r *RegisterActlrType) GetFpexcodis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterActlrFieldFpexcodisMask) != 0
 }
 
 // SetFpexcodis Determines whether floating-point exception outputs are disabled
-func (r *registerActlrType) SetFpexcodis(value bool) {
+func (r *RegisterActlrType) SetFpexcodis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterActlrFieldFpexcodisMask)
 	} else {
@@ -63,12 +109,12 @@ const (
 )
 
 // GetDisnwamode Determines whether no write allocate mode is disabled
-func (r *registerActlrType) GetDisnwamode() bool {
+func (r *RegisterActlrType) GetDisnwamode() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterActlrFieldDisnwamodeMask) != 0
 }
 
 // SetDisnwamode Determines whether no write allocate mode is disabled
-func (r *registerActlrType) SetDisnwamode(value bool) {
+func (r *RegisterActlrType) SetDisnwamode(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterActlrFieldDisnwamodeMask)
 	} else {
@@ -82,12 +128,12 @@ const (
 )
 
 // GetDisitmatbflush Determines whether Instrumentation Trace Macrocell (ITM) or Data Watchpoint and Trace (DWT) ATB flush is disabled
-func (r *registerActlrType) GetDisitmatbflush() bool {
+func (r *RegisterActlrType) GetDisitmatbflush() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterActlrFieldDisitmatbflushMask) != 0
 }
 
 // SetDisitmatbflush Determines whether Instrumentation Trace Macrocell (ITM) or Data Watchpoint and Trace (DWT) ATB flush is disabled
-func (r *registerActlrType) SetDisitmatbflush(value bool) {
+func (r *RegisterActlrType) SetDisitmatbflush(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterActlrFieldDisitmatbflushMask)
 	} else {
@@ -101,12 +147,12 @@ const (
 )
 
 // GetEventbusens Accessibility of EVENTBUSEN
-func (r *registerActlrType) GetEventbusens() bool {
+func (r *RegisterActlrType) GetEventbusens() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterActlrFieldEventbusensMask) != 0
 }
 
 // SetEventbusens Accessibility of EVENTBUSEN
-func (r *registerActlrType) SetEventbusens(value bool) {
+func (r *RegisterActlrType) SetEventbusens(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterActlrFieldEventbusensMask)
 	} else {
@@ -120,12 +166,12 @@ const (
 )
 
 // GetEventbusen Activate EVENTBUS output
-func (r *registerActlrType) GetEventbusen() bool {
+func (r *RegisterActlrType) GetEventbusen() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterActlrFieldEventbusenMask) != 0
 }
 
 // SetEventbusen Activate EVENTBUS output
-func (r *registerActlrType) SetEventbusen(value bool) {
+func (r *RegisterActlrType) SetEventbusen(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterActlrFieldEventbusenMask)
 	} else {
@@ -139,12 +185,12 @@ const (
 )
 
 // GetDiscritaxirur Disable critical AXI Read-Under-Read
-func (r *registerActlrType) GetDiscritaxirur() bool {
+func (r *RegisterActlrType) GetDiscritaxirur() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterActlrFieldDiscritaxirurMask) != 0
 }
 
 // SetDiscritaxirur Disable critical AXI Read-Under-Read
-func (r *registerActlrType) SetDiscritaxirur(value bool) {
+func (r *RegisterActlrType) SetDiscritaxirur(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterActlrFieldDiscritaxirurMask)
 	} else {
@@ -158,12 +204,12 @@ const (
 )
 
 // GetDiscritaxiruw Disable-Critical-AXI-Read-Under-Write
-func (r *registerActlrType) GetDiscritaxiruw() bool {
+func (r *RegisterActlrType) GetDiscritaxiruw() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterActlrFieldDiscritaxiruwMask) != 0
 }
 
 // SetDiscritaxiruw Disable-Critical-AXI-Read-Under-Write
-func (r *registerActlrType) SetDiscritaxiruw(value bool) {
+func (r *RegisterActlrType) SetDiscritaxiruw(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterActlrFieldDiscritaxiruwMask)
 	} else {
@@ -171,8 +217,31 @@ func (r *registerActlrType) SetDiscritaxiruw(value bool) {
 	}
 }
 
-// registerCppwrType Specifies whether coprocessors are permitted to enter a non-retentive power state
-type registerCppwrType uint32
+// RegisterCppwrType Specifies whether coprocessors are permitted to enter a non-retentive power state
+type RegisterCppwrType uint32
+
+func (r *RegisterCppwrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCppwrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCppwrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCppwrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCppwrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCppwrFieldSu0Shift = 0
@@ -180,12 +249,12 @@ const (
 )
 
 // GetSu0 This field indicates and allows modification of whether the state associated with coprocessor 0 is permitted to become unknown
-func (r *registerCppwrType) GetSu0() bool {
+func (r *RegisterCppwrType) GetSu0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSu0Mask) != 0
 }
 
 // SetSu0 This field indicates and allows modification of whether the state associated with coprocessor 0 is permitted to become unknown
-func (r *registerCppwrType) SetSu0(value bool) {
+func (r *RegisterCppwrType) SetSu0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSu0Mask)
 	} else {
@@ -199,12 +268,12 @@ const (
 )
 
 // GetSus0 This field indicates and allows modification of whether the SU0 field can be modified from Non-secure state
-func (r *registerCppwrType) GetSus0() bool {
+func (r *RegisterCppwrType) GetSus0() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSus0Mask) != 0
 }
 
 // SetSus0 This field indicates and allows modification of whether the SU0 field can be modified from Non-secure state
-func (r *registerCppwrType) SetSus0(value bool) {
+func (r *RegisterCppwrType) SetSus0(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSus0Mask)
 	} else {
@@ -218,12 +287,12 @@ const (
 )
 
 // GetSu1 This field indicates and allows modification of whether the state associated with coprocessor 1 is permitted to become unknown
-func (r *registerCppwrType) GetSu1() bool {
+func (r *RegisterCppwrType) GetSu1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSu1Mask) != 0
 }
 
 // SetSu1 This field indicates and allows modification of whether the state associated with coprocessor 1 is permitted to become unknown
-func (r *registerCppwrType) SetSu1(value bool) {
+func (r *RegisterCppwrType) SetSu1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSu1Mask)
 	} else {
@@ -237,12 +306,12 @@ const (
 )
 
 // GetSus1 This field indicates and allows modification of whether the SU1 field can be modified from Non-secure state
-func (r *registerCppwrType) GetSus1() bool {
+func (r *RegisterCppwrType) GetSus1() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSus1Mask) != 0
 }
 
 // SetSus1 This field indicates and allows modification of whether the SU1 field can be modified from Non-secure state
-func (r *registerCppwrType) SetSus1(value bool) {
+func (r *RegisterCppwrType) SetSus1(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSus1Mask)
 	} else {
@@ -256,12 +325,12 @@ const (
 )
 
 // GetSu2 This field indicates and allows modification of whether the state associated with coprocessor 2 is permitted to become unknown
-func (r *registerCppwrType) GetSu2() bool {
+func (r *RegisterCppwrType) GetSu2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSu2Mask) != 0
 }
 
 // SetSu2 This field indicates and allows modification of whether the state associated with coprocessor 2 is permitted to become unknown
-func (r *registerCppwrType) SetSu2(value bool) {
+func (r *RegisterCppwrType) SetSu2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSu2Mask)
 	} else {
@@ -275,12 +344,12 @@ const (
 )
 
 // GetSus2 This field indicates and allows modification of whether the SU2 field can be modified from Non-secure state
-func (r *registerCppwrType) GetSus2() bool {
+func (r *RegisterCppwrType) GetSus2() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSus2Mask) != 0
 }
 
 // SetSus2 This field indicates and allows modification of whether the SU2 field can be modified from Non-secure state
-func (r *registerCppwrType) SetSus2(value bool) {
+func (r *RegisterCppwrType) SetSus2(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSus2Mask)
 	} else {
@@ -294,12 +363,12 @@ const (
 )
 
 // GetSu3 This field indicates and allows modification of whether the state associated with coprocessor 3 is permitted to become unknown
-func (r *registerCppwrType) GetSu3() bool {
+func (r *RegisterCppwrType) GetSu3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSu3Mask) != 0
 }
 
 // SetSu3 This field indicates and allows modification of whether the state associated with coprocessor 3 is permitted to become unknown
-func (r *registerCppwrType) SetSu3(value bool) {
+func (r *RegisterCppwrType) SetSu3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSu3Mask)
 	} else {
@@ -313,12 +382,12 @@ const (
 )
 
 // GetSus3 This field indicates and allows modification of whether the SU3 field can be modified from Non-secure state
-func (r *registerCppwrType) GetSus3() bool {
+func (r *RegisterCppwrType) GetSus3() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSus3Mask) != 0
 }
 
 // SetSus3 This field indicates and allows modification of whether the SU3 field can be modified from Non-secure state
-func (r *registerCppwrType) SetSus3(value bool) {
+func (r *RegisterCppwrType) SetSus3(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSus3Mask)
 	} else {
@@ -332,12 +401,12 @@ const (
 )
 
 // GetSu4 This field indicates and allows modification of whether the state associated with coprocessor 4 is permitted to become unknown
-func (r *registerCppwrType) GetSu4() bool {
+func (r *RegisterCppwrType) GetSu4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSu4Mask) != 0
 }
 
 // SetSu4 This field indicates and allows modification of whether the state associated with coprocessor 4 is permitted to become unknown
-func (r *registerCppwrType) SetSu4(value bool) {
+func (r *RegisterCppwrType) SetSu4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSu4Mask)
 	} else {
@@ -351,12 +420,12 @@ const (
 )
 
 // GetSus4 This field indicates and allows modification of whether the SU4 field can be modified from Non-secure state
-func (r *registerCppwrType) GetSus4() bool {
+func (r *RegisterCppwrType) GetSus4() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSus4Mask) != 0
 }
 
 // SetSus4 This field indicates and allows modification of whether the SU4 field can be modified from Non-secure state
-func (r *registerCppwrType) SetSus4(value bool) {
+func (r *RegisterCppwrType) SetSus4(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSus4Mask)
 	} else {
@@ -370,12 +439,12 @@ const (
 )
 
 // GetSu5 This field indicates and allows modification of whether the state associated with coprocessor 5 is permitted to become unknown
-func (r *registerCppwrType) GetSu5() bool {
+func (r *RegisterCppwrType) GetSu5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSu5Mask) != 0
 }
 
 // SetSu5 This field indicates and allows modification of whether the state associated with coprocessor 5 is permitted to become unknown
-func (r *registerCppwrType) SetSu5(value bool) {
+func (r *RegisterCppwrType) SetSu5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSu5Mask)
 	} else {
@@ -389,12 +458,12 @@ const (
 )
 
 // GetSus5 This field indicates and allows modification of whether the SU5 field can be modified from Non-secure state
-func (r *registerCppwrType) GetSus5() bool {
+func (r *RegisterCppwrType) GetSus5() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSus5Mask) != 0
 }
 
 // SetSus5 This field indicates and allows modification of whether the SU5 field can be modified from Non-secure state
-func (r *registerCppwrType) SetSus5(value bool) {
+func (r *RegisterCppwrType) SetSus5(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSus5Mask)
 	} else {
@@ -408,12 +477,12 @@ const (
 )
 
 // GetSu6 This field indicates and allows modification of whether the state associated with coprocessor 6 is permitted to become unknown
-func (r *registerCppwrType) GetSu6() bool {
+func (r *RegisterCppwrType) GetSu6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSu6Mask) != 0
 }
 
 // SetSu6 This field indicates and allows modification of whether the state associated with coprocessor 6 is permitted to become unknown
-func (r *registerCppwrType) SetSu6(value bool) {
+func (r *RegisterCppwrType) SetSu6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSu6Mask)
 	} else {
@@ -427,12 +496,12 @@ const (
 )
 
 // GetSus6 This field indicates and allows modification of whether the SU6 field can be modified from Non-secure state
-func (r *registerCppwrType) GetSus6() bool {
+func (r *RegisterCppwrType) GetSus6() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSus6Mask) != 0
 }
 
 // SetSus6 This field indicates and allows modification of whether the SU6 field can be modified from Non-secure state
-func (r *registerCppwrType) SetSus6(value bool) {
+func (r *RegisterCppwrType) SetSus6(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSus6Mask)
 	} else {
@@ -446,12 +515,12 @@ const (
 )
 
 // GetSu7 This field indicates and allows modification of whether the state associated with coprocessor 7 is permitted to become unknown
-func (r *registerCppwrType) GetSu7() bool {
+func (r *RegisterCppwrType) GetSu7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSu7Mask) != 0
 }
 
 // SetSu7 This field indicates and allows modification of whether the state associated with coprocessor 7 is permitted to become unknown
-func (r *registerCppwrType) SetSu7(value bool) {
+func (r *RegisterCppwrType) SetSu7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSu7Mask)
 	} else {
@@ -465,12 +534,12 @@ const (
 )
 
 // GetSus7 This field indicates and allows modification of whether the SU7 field can be modified from Non-secure state
-func (r *registerCppwrType) GetSus7() bool {
+func (r *RegisterCppwrType) GetSus7() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSus7Mask) != 0
 }
 
 // SetSus7 This field indicates and allows modification of whether the SU7 field can be modified from Non-secure state
-func (r *registerCppwrType) SetSus7(value bool) {
+func (r *RegisterCppwrType) SetSus7(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSus7Mask)
 	} else {
@@ -484,12 +553,12 @@ const (
 )
 
 // GetSu10 This bit indicates and allows modification of whether the state associated with the floating-point and M-profile Vector Extension (MVE) functionality is permitted to become UNKNOWN.
-func (r *registerCppwrType) GetSu10() bool {
+func (r *RegisterCppwrType) GetSu10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSu10Mask) != 0
 }
 
 // SetSu10 This bit indicates and allows modification of whether the state associated with the floating-point and M-profile Vector Extension (MVE) functionality is permitted to become UNKNOWN.
-func (r *registerCppwrType) SetSu10(value bool) {
+func (r *RegisterCppwrType) SetSu10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSu10Mask)
 	} else {
@@ -503,12 +572,12 @@ const (
 )
 
 // GetSus10 This bit indicates and allows modification of whether the SU10 field can be modified from Non-secure state.
-func (r *registerCppwrType) GetSus10() bool {
+func (r *RegisterCppwrType) GetSus10() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSus10Mask) != 0
 }
 
 // SetSus10 This bit indicates and allows modification of whether the SU10 field can be modified from Non-secure state.
-func (r *registerCppwrType) SetSus10(value bool) {
+func (r *RegisterCppwrType) SetSus10(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSus10Mask)
 	} else {
@@ -522,12 +591,12 @@ const (
 )
 
 // GetSu11 If the value of this bit is not programmed to the same value as the SU10 field, then the value is unknown.
-func (r *registerCppwrType) GetSu11() bool {
+func (r *RegisterCppwrType) GetSu11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSu11Mask) != 0
 }
 
 // SetSu11 If the value of this bit is not programmed to the same value as the SU10 field, then the value is unknown.
-func (r *registerCppwrType) SetSu11(value bool) {
+func (r *RegisterCppwrType) SetSu11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSu11Mask)
 	} else {
@@ -541,12 +610,12 @@ const (
 )
 
 // GetSus11 If the value of this bit is not programmed to the same value as the SUS10 field, then the value is unknown.
-func (r *registerCppwrType) GetSus11() bool {
+func (r *RegisterCppwrType) GetSus11() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCppwrFieldSus11Mask) != 0
 }
 
 // SetSus11 If the value of this bit is not programmed to the same value as the SUS10 field, then the value is unknown.
-func (r *registerCppwrType) SetSus11(value bool) {
+func (r *RegisterCppwrType) SetSus11(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCppwrFieldSus11Mask)
 	} else {

@@ -342,6 +342,9 @@ def RCCPeripheral : PeripheralType<"RCC", "Reset and clock control"> {
     ], "RCC APB4 Peripheral Reset Register">,
     Register<"GCR", 0xa0, 32, [
       Field<"WW1RSC", 0, 1, ReadWrite, "WWDG1 reset scope control">,
+      Field<"WW2RSC", 1, 1, ReadWrite, "WWDG2 reset scope control">,
+      Field<"BOOT_C1", 2, 1, ReadWrite, "Allows CPU1 to boot">,
+      Field<"BOOT_C2", 3, 1, ReadWrite, "Allows CPU2 to boot">,
     ], "RCC Global Control Register">,
     Register<"D3AMR", 0xa8, 32, [
       Field<"BDMAAMEN", 0, 1, ReadWrite, "BDMA and DMAMUX Autonomous mode enable">,

@@ -2,6 +2,7 @@ ENTRY(ResetHandler)
 
 SECTIONS
 {
+    /* Code, read-only data, init arrays. */
     .text :
     {
         KEEP(*(.isr_vector))
@@ -9,16 +10,16 @@ SECTIONS
         *(.text.*)
         *(.rodata)
         *(.rodata.*)
+
         . = ALIGN(8);
-
         /* Required for global ctors. */
-        PROVIDE_HIDDEN ( __init_array_start = . );
-        KEEP (*(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*)))
-        KEEP (*(.init_array .ctors))
-        PROVIDE_HIDDEN ( __init_array_end = . );
+        PROVIDE_HIDDEN(__init_array_start = .);
+        KEEP(*(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*)))
+        KEEP(*(.init_array .ctors))
+        PROVIDE_HIDDEN(__init_array_end = .);
+    } > TEXT
 
-    } >FLASH
-
+    /* Initialized data. VMA in RAM, LMA in TEXT (startup copies). */
     .data :
     {
         __start_data = .;
@@ -26,9 +27,11 @@ SECTIONS
         *(.data.*)
         . = ALIGN(8);
         __end_data = .;
-    } >RAM AT>FLASH
+    } > RAM AT> TEXT
+
     __data_base_addr = LOADADDR(.data);
 
+    /* Zero-initialized data. */
     .bss (NOLOAD) :
     {
         __start_bss = .;
@@ -37,28 +40,43 @@ SECTIONS
         *(COMMON)
         . = ALIGN(8);
         __end_bss = .;
-    } >RAM
+    } > RAM
 
-    /* Heap grows up from end of BSS. */
-    __heap_start = __end_bss;
-    __heap_end = ORIGIN(RAM) + LENGTH(RAM) - __stack_size;
-    __heap_size = __heap_end - __heap_start;
+    /* Heap grows up from the end of .bss when HEAP and RAM are the same
+       region; otherwise the heap fills its own region.
 
-    /* Stack at the very end of RAM. Overflow goes past RAM_END and faults. */
-   .stack ORIGIN(RAM) + LENGTH(RAM) - __stack_size (NOLOAD) :
-   {
-       __stack_bottom = .;
-       . += __stack_size;
-       . = ALIGN(8);
-       __stack_top = .;
-   } >RAM
+       The boundary computation handles both cases: when HEAP == RAM, the
+       heap starts after .bss and ends before the stack reservation.
+       When HEAP is a separate region, the heap fills it entirely. */
+    .heap (NOLOAD) :
+    {
+        . = ALIGN(8);
+        __heap_start = .;
 
-    /* Define the range that the garbage collector
-       should scan for heap references. */
+        /* When heap shares region with stack, leave room for stack */
+        /* When heap is in a separate region, use the whole region */
+        . = (ORIGIN(STACK) == ORIGIN(HEAP))
+            ? (ORIGIN(HEAP) + LENGTH(HEAP) - __stack_size)
+            : (ORIGIN(HEAP) + LENGTH(HEAP));
+
+        __heap_end = .;
+    } > HEAP
+
+    /* Stack at the top of its region. Stack overflow runs past the region
+       end and faults via the MPU or just an unmapped-address bus error. */
+    .stack ORIGIN(STACK) + LENGTH(STACK) - __stack_size (NOLOAD) :
+    {
+        __stack_bottom = .;
+        . += __stack_size;
+        . = ALIGN(8);
+        __stack_top = .;
+    } > STACK
+
+    /* GC scans the contiguous globals range covering .data and .bss. */
     __gc_scan_start = __start_data;
     __gc_scan_end   = __end_bss;
 
-    /* Exception handling is not needed. */
+    /* Exception handling not needed on bare metal. */
     /DISCARD/ :
     {
         *(.note .note.*)
@@ -71,10 +89,6 @@ SECTIONS
 }
 
 __globals_start = __start_data;
-__globals_end = __end_bss;
-_estack = __stack_top;
-__stack = __stack_top;
-
-/* Boehm GC */
-__data_start = __gc_scan_start;
-end = __gc_scan_end;
+__globals_end   = __end_bss;
+_estack         = __stack_top;
+__stack         = __stack_top;

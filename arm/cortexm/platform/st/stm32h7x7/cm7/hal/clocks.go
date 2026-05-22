@@ -11,6 +11,8 @@ import (
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/syscfg"
 )
 
+// ClockSource identifies a hardware clock source for selectable peripheral
+// clock muxes. Used as the value type for the Default*ClockSource constants.
 type ClockSource uint8
 
 const (
@@ -43,6 +45,9 @@ const (
 	ClockSourceHseRtc
 )
 
+// Divider expresses an integer clock divider. Values are the actual division
+// factor (Div2 = divide by 2). Used both at compile time for frequency math
+// and at runtime to select the matching register field encoding.
 type Divider uint16
 
 const (
@@ -58,283 +63,555 @@ const (
 	Div512 Divider = 512
 )
 
-var (
-	Divn1Prescaler = 60
-	Divn2Prescaler = 300
-	Divn3Prescaler = 16
-
-	Divm1 uint8 = 4
-	Divm2 uint8 = 32
-	Divm3 uint8 = 16
-
-	Divp1FrequencyHz uint64 = 480_000_000
-	Divq1FrequencyHz uint64 = 120_000_000
-	Divr1FrequencyHz uint64 = 480_000_000
-
-	Divp2FrequencyHz uint64 = 128_000_000
-	Divq2FrequencyHz uint64 = 128_000_000
-	Divr2FrequencyHz uint64 = 100_000_000
-
-	Divp3FrequencyHz uint64 = 128_000_000
-	Divq3FrequencyHz uint64 = 128_000_000
-	Divr3FrequencyHz uint64 = 128_000_000
-
-	D1cpre    = Div1
-	Hpre      = Div2
-	D1ppre    = Div2
-	D2ppre1   = Div2
-	D2ppre2   = Div2
-	D3ppre    = Div2
-	DivRtcHse = Div32
-
-	cpu1FrequencyHz = Divp1FrequencyHz / uint64(D1cpre)
-	HpreFrequencyHz = Divp1FrequencyHz / uint64(Hpre)
-
-	Hclk1FrequencyHz = HpreFrequencyHz
-	Pclk1FrequencyHz = HpreFrequencyHz / uint64(D2ppre1)
-
-	Hclk2FrequencyHz = HpreFrequencyHz
-	Pclk2FrequencyHz = HpreFrequencyHz / uint64(D2ppre2)
-
-	Hclk3FrequencyHz = HpreFrequencyHz
-	Pclk3FrequencyHz = HpreFrequencyHz / uint64(D1ppre)
-
-	Hclk4FrequencyHz = HpreFrequencyHz
-	Pclk4FrequencyHz = HpreFrequencyHz / uint64(D3ppre)
-
-	// HseFrequencyHz High-speed external oscillator. 4 MHz - 48 MHz.
-	HseFrequencyHz               uint64 = 16_000_000 // Default: 16 MHz
-	LseFrequencyHz               uint64 = 32_768
-	PllSourceFrequencyHz         uint64 = HsiFrequencyHz
-	I2c13SourceFrequencyHz       uint64 = Pclk1FrequencyHz
-	I2c4SourceFrequencyHz        uint64 = Pclk4FrequencyHz
-	Usart16SourceFrequencyHz     uint64 = Pclk2FrequencyHz
-	Usart234578SourceFrequencyHz uint64 = Pclk1FrequencyHz
-	RtcSourceFrequencyHz         uint64 = LseFrequencyHz
-	Spi123SourceFrequencyHz      uint64 = Divq1FrequencyHz
-	Spi45SourceFrequencyHz       uint64 = HsiFrequencyHz
-	Spi6SourceFrequencyHz        uint64 = HsiFrequencyHz
-	SdmmcSourceFrequencyHz       uint64 = Divq1FrequencyHz
-
-	PllSource         = ClockSourceHsi
-	I2c13Source       = ClockSourcePclk1
-	I2c4Source        = ClockSourcePclk4
-	Usart234578Source = ClockSourcePclk1
-	Usart16Source     = ClockSourcePclk2
-	RtcClockSource    = ClockSourceLse
-	Spi123ClockSource = ClockSourcePll1q
-	Spi45ClockSource  = ClockSourceHsi
-	Spi6ClockSource   = ClockSourceHsi
-	SdmmcClockSource  = ClockSourcePll2r
-	RngClockSource    = ClockSourceRc48
-
-	EnableRc48 = true
-	EnableHse  = false
-	EnableLse  = false
-)
-
+// Internal oscillator frequencies — fixed by hardware.
 const (
-	// HsiFrequencyHz High-speed internal oscillator.
-	HsiFrequencyHz = 64_000_000 // 64 MHz
-	CsiFrequencyHz = 4_000_000  // 8 MHz
-	LsiFrequencyHz = 32_000
+	HsiFrequencyHz  uint64 = 64_000_000
+	CsiFrequencyHz  uint64 = 4_000_000
+	LsiFrequencyHz  uint64 = 32_000
+	Rc48FrequencyHz uint64 = 48_000_000
 )
 
+// Default board oscillator frequencies. Boards may use different crystals;
+// these are only used by the default ConfigureClocks.
+const (
+	DefaultHseFrequencyHz uint64 = 16_000_000
+	DefaultLseFrequencyHz uint64 = 32_768
+)
+
+// Default oscillator enables.
+const (
+	DefaultEnableRc48 = true
+	DefaultEnableHse  = false
+	DefaultEnableLse  = false
+)
+
+// Default PLL input dividers. The PLL input frequency must be in the range
+// 1–16 MHz; check the reference manual for valid combinations with the
+// configured PLL source.
+const (
+	DefaultDivm1 uint8 = 4  // PLL1 input = 64M / 4 = 16 MHz
+	DefaultDivm2 uint8 = 32 // PLL2 input = 64M / 32 = 2 MHz
+	DefaultDivm3 uint8 = 16 // PLL3 input = 64M / 16 = 4 MHz
+)
+
+// Default PLL multipliers (Divn) and output dividers.
+//
+// PLL1 VCO = (input × Divn) where input = HSI / Divm1 = 16 MHz, so
+// VCO = 16 × 60 = 960 MHz. Output frequencies follow from the dividers.
+const (
+	DefaultDivn1 uint16 = 60
+	DefaultDivn2 uint16 = 300
+	DefaultDivn3 uint16 = 16
+
+	DefaultDivp1 uint8 = 2 // 960 / 2 = 480 MHz (CPU)
+	DefaultDivq1 uint8 = 8 // 960 / 8 = 120 MHz (SPI1/2/3, RNG, SDMMC alt)
+	DefaultDivr1 uint8 = 2 // 960 / 2 = 480 MHz
+
+	DefaultDivp2 uint8 = 4 // 600 / 4 = 150 MHz
+	DefaultDivq2 uint8 = 4 // 600 / 4 = 150 MHz
+	DefaultDivr2 uint8 = 6 // 600 / 6 = 100 MHz (SDMMC clock source)
+
+	DefaultDivp3 uint8 = 2 // 64 / 2 = 32 MHz (placeholder; reconfigure as needed)
+	DefaultDivq3 uint8 = 2 // 64 / 2 = 32 MHz
+	DefaultDivr3 uint8 = 2 // 64 / 2 = 32 MHz
+)
+
+// Default bus prescalers from the CPU clock down through the AHB and APB
+// hierarchy. With CPU = 480 MHz, HPRE = /2 yields HCLK = 240 MHz which
+// satisfies the 240 MHz HCLK ceiling for VOS0.
+const (
+	DefaultD1cpre    Divider = Div1
+	DefaultHpre      Divider = Div2
+	DefaultD1ppre    Divider = Div2
+	DefaultD2ppre1   Divider = Div2
+	DefaultD2ppre2   Divider = Div2
+	DefaultD3ppre    Divider = Div2
+	DefaultDivRtcHse Divider = Div32
+)
+
+// Default peripheral clock source selections.
+const (
+	DefaultPllSource         = ClockSourceHsi
+	DefaultRtcClockSource    = ClockSourceLse
+	DefaultI2c13Source       = ClockSourcePclk1
+	DefaultI2c4Source        = ClockSourcePclk4
+	DefaultUsart16Source     = ClockSourcePclk2
+	DefaultUsart234578Source = ClockSourcePclk1
+	DefaultSpi123ClockSource = ClockSourcePll1q
+	DefaultSpi45ClockSource  = ClockSourceHsi
+	DefaultSpi6ClockSource   = ClockSourceHsi
+	DefaultSdmmcClockSource  = ClockSourcePll2r
+	DefaultRngClockSource    = ClockSourceRc48
+	DefaultFmcClockSource    = ClockSourceHclk3
+)
+
+// Default frequencies derived from the configuration above. These are the
+// values ConfigureClocks will write into the corresponding globals.
+//
+// Boards that override ConfigureClocks compute their own equivalents and
+// write to the globals directly.
+const (
+	defaultPll1VcoHz uint64 = (HsiFrequencyHz / uint64(DefaultDivm1)) * uint64(DefaultDivn1)
+	defaultPll2VcoHz uint64 = (HsiFrequencyHz / uint64(DefaultDivm2)) * uint64(DefaultDivn2)
+	defaultPll3VcoHz uint64 = (HsiFrequencyHz / uint64(DefaultDivm3)) * uint64(DefaultDivn3)
+
+	DefaultDivp1FrequencyHz uint64 = defaultPll1VcoHz / uint64(DefaultDivp1)
+	DefaultDivq1FrequencyHz uint64 = defaultPll1VcoHz / uint64(DefaultDivq1)
+	DefaultDivr1FrequencyHz uint64 = defaultPll1VcoHz / uint64(DefaultDivr1)
+	DefaultDivp2FrequencyHz uint64 = defaultPll2VcoHz / uint64(DefaultDivp2)
+	DefaultDivq2FrequencyHz uint64 = defaultPll2VcoHz / uint64(DefaultDivq2)
+	DefaultDivr2FrequencyHz uint64 = defaultPll2VcoHz / uint64(DefaultDivr2)
+	DefaultDivp3FrequencyHz uint64 = defaultPll3VcoHz / uint64(DefaultDivp3)
+	DefaultDivq3FrequencyHz uint64 = defaultPll3VcoHz / uint64(DefaultDivq3)
+	DefaultDivr3FrequencyHz uint64 = defaultPll3VcoHz / uint64(DefaultDivr3)
+
+	DefaultCpu1FrequencyHz uint64 = DefaultDivp1FrequencyHz / uint64(DefaultD1cpre)
+	DefaultHpreFrequencyHz uint64 = DefaultDivp1FrequencyHz / uint64(DefaultHpre)
+
+	DefaultPclk1FrequencyHz uint64 = DefaultHpreFrequencyHz / uint64(DefaultD2ppre1)
+	DefaultPclk2FrequencyHz uint64 = DefaultHpreFrequencyHz / uint64(DefaultD2ppre2)
+	DefaultPclk3FrequencyHz uint64 = DefaultHpreFrequencyHz / uint64(DefaultD1ppre)
+	DefaultPclk4FrequencyHz uint64 = DefaultHpreFrequencyHz / uint64(DefaultD3ppre)
+)
+
+// Configured clock frequencies. Populated by ConfigureClocks (or a board's
+// equivalent) during postinit. Peripheral drivers read these to derive
+// their own timings.
+//
+// Reading these before postinit returns zero — drivers must not be used
+// before clocks are configured.
+var (
+	D1cpre    Divider
+	Hpre      Divider
+	D1ppre    Divider
+	D2ppre1   Divider
+	D2ppre2   Divider
+	D3ppre    Divider
+	DivRtcHse Divider
+
+	HseFrequencyHz uint64
+	LseFrequencyHz uint64
+
+	Cpu1FrequencyHz uint64
+	HpreFrequencyHz uint64
+
+	Hclk1FrequencyHz uint64
+	Hclk2FrequencyHz uint64
+	Hclk3FrequencyHz uint64
+	Hclk4FrequencyHz uint64
+
+	Pclk1FrequencyHz uint64
+	Pclk2FrequencyHz uint64
+	Pclk3FrequencyHz uint64
+	Pclk4FrequencyHz uint64
+
+	Divp1FrequencyHz uint64
+	Divq1FrequencyHz uint64
+	Divr1FrequencyHz uint64
+
+	Divp2FrequencyHz uint64
+	Divq2FrequencyHz uint64
+	Divr2FrequencyHz uint64
+
+	Divp3FrequencyHz uint64
+	Divq3FrequencyHz uint64
+	Divr3FrequencyHz uint64
+
+	PllSourceFrequencyHz         uint64
+	RtcSourceFrequencyHz         uint64
+	I2c13SourceFrequencyHz       uint64
+	I2c4SourceFrequencyHz        uint64
+	Usart16SourceFrequencyHz     uint64
+	Usart234578SourceFrequencyHz uint64
+	Spi123SourceFrequencyHz      uint64
+	Spi45SourceFrequencyHz       uint64
+	Spi6SourceFrequencyHz        uint64
+	SdmmcSourceFrequencyHz       uint64
+	RngSourceFrequencyHz         uint64
+)
+
+// ConfigureClocks programs the chip's clock tree to the default configuration.
+// It reads only constants and writes only to hardware registers. Safe to call
+// from preinit because no global state is touched.
+//
+// Boards that need different settings replace this entirely with their own
+// version (typically by providing their own preinit that does not call
+// hal.ConfigureClocks).
 func ConfigureClocks() {
 	state := cortexm.DisableInterrupts()
 
-	// Enable the LDO.
-	// pwr.Pwr.Cr3.SetLdoen(false)
-	// pwr.Pwr.Cr3.SetLdoen(true)
-
-	// NOTE: VOS0 can only be activated in VOS1 mode.
+	// VOS0 (480 MHz) is reachable only from VOS1.
 	if pwr.Pwr.D3cr.GetVos() != pwr.RegisterD3crFieldVosEnumScale1 {
-		// Set the LDO voltage scaler to 1.
 		pwr.Pwr.D3cr.SetVos(pwr.RegisterD3crFieldVosEnumScale1)
 	}
-
-	// Disable the step-down converter.
-	// TODO: Determine if this is always safe!
 	pwr.Pwr.Cr3.SetSden(false)
 
-	// Enable the SYSCFG clock.
 	rcc.Rcc.Apb4enr.SetSyscfgen(true)
-
-	// Enable overdrive. This will implicitly enable VOS0.
 	syscfg.Syscfg.Pwrcr.SetOden(true)
-
-	// Wait for the ready bit.
 	for !pwr.Pwr.D3cr.GetVosrdy() {
 	}
 
-	// Enable RC48.
-	if EnableRc48 {
+	if DefaultEnableRc48 {
 		rcc.Rcc.Cr.SetRc48on(true)
 		for !rcc.Rcc.Cr.GetRc48rdy() {
 		}
 	}
-
-	if EnableHse {
-		// Enable the HSE clock source.
+	if DefaultEnableHse {
 		rcc.Rcc.Cr.SetHseon(true)
 		for !rcc.Rcc.Cr.GetHserdy() {
 		}
 	}
-
-	if EnableLse {
-		// Enable the LSE clock source.
+	if DefaultEnableLse {
 		rcc.Rcc.Bdcr.SetLseon(true)
 		for !rcc.Rcc.Bdcr.GetLseon() {
 		}
 	}
 
-	// Configure RTC clock settings.
-	rcc.Rcc.Cfgr.SetRtcpre(uint8(DivRtcHse))
-
-	switch RtcClockSource {
-	case ClockSourceNone:
-		rcc.Rcc.Bdcr.SetRtcsrc(0)
-		RtcSourceFrequencyHz = 0
+	// RTC source mux.
+	rcc.Rcc.Cfgr.SetRtcpre(uint8(DefaultDivRtcHse))
+	switch DefaultRtcClockSource {
 	case ClockSourceLse:
 		rcc.Rcc.Bdcr.SetRtcsrc(1)
-		RtcSourceFrequencyHz = LseFrequencyHz
 	case ClockSourceLsi:
 		rcc.Rcc.Bdcr.SetRtcsrc(2)
-		RtcSourceFrequencyHz = LsiFrequencyHz
 	case ClockSourceHseRtc:
 		rcc.Rcc.Bdcr.SetRtcsrc(3)
-		RtcSourceFrequencyHz = HseFrequencyHz / uint64(DivRtcHse)
 	}
 
-	switch PllSource {
+	// PLL source mux.
+	switch DefaultPllSource {
 	case ClockSourceHse:
-		// Select the external clock source.
 		rcc.Rcc.Pllckselr.SetPllsrc(rcc.RegisterPllckselrFieldPllsrcEnumHse)
-		PllSourceFrequencyHz = HseFrequencyHz
 	case ClockSourceHsi:
-		// Select the internal clock source.
 		rcc.Rcc.Pllckselr.SetPllsrc(rcc.RegisterPllckselrFieldPllsrcEnumHsi)
-		PllSourceFrequencyHz = HsiFrequencyHz
 	case ClockSourceCsi:
-		// Select the CSI clock source.
 		rcc.Rcc.Pllckselr.SetPllsrc(rcc.RegisterPllckselrFieldPllsrcEnumCsi)
-		PllSourceFrequencyHz = CsiFrequencyHz
 	}
 
-	rcc.Rcc.Pllckselr.SetDivm1(Divm1)
-	rcc.Rcc.Pllckselr.SetDivm2(Divm2)
-	rcc.Rcc.Pllckselr.SetDivm3(Divm3)
+	// PLL input dividers.
+	rcc.Rcc.Pllckselr.SetDivm1(DefaultDivm1)
+	rcc.Rcc.Pllckselr.SetDivm2(DefaultDivm2)
+	rcc.Rcc.Pllckselr.SetDivm3(DefaultDivm3)
 
-	fDivn1 := uint64(Divn1Prescaler) * (PllSourceFrequencyHz / uint64(Divm1))
-	fDivn2 := uint64(Divn2Prescaler) * (PllSourceFrequencyHz / uint64(Divm2))
-	fDivn3 := uint64(Divn3Prescaler) * (PllSourceFrequencyHz / uint64(Divm3))
+	// PLL input range. Hardcoded for the default config (HSI/Divm1=16MHz,
+	// HSI/Divm2=2MHz, HSI/Divm3=4MHz). Boards changing Divm values must
+	// adjust these.
+	rcc.Rcc.Pllcfgr.SetPll1rge(rcc.RegisterPllcfgrFieldPll1rgeEnum8to16mhz)
+	rcc.Rcc.Pllcfgr.SetPll2rge(rcc.RegisterPllcfgrFieldPll2rgeEnum1to2mhz)
+	rcc.Rcc.Pllcfgr.SetPll3rge(rcc.RegisterPllcfgrFieldPll3rgeEnum2to4mhz)
 
-	divp1 := max(1, (fDivn1+Divp1FrequencyHz-1)/Divp1FrequencyHz-1)
-	divq1 := max(1, (fDivn1+Divq1FrequencyHz-1)/Divq1FrequencyHz-1)
-	divr1 := max(1, (fDivn1+Divr1FrequencyHz-1)/Divr1FrequencyHz-1)
+	// PLL multipliers and output dividers. Register fields are 0-based
+	// (value = N-1).
+	rcc.Rcc.Pll1divr.SetDivn1(DefaultDivn1 - 1)
+	rcc.Rcc.Pll1divr.SetDivp1(DefaultDivp1 - 1)
+	rcc.Rcc.Pll1divr.SetDivq1(DefaultDivq1 - 1)
+	rcc.Rcc.Pll1divr.SetDivr1(DefaultDivr1 - 1)
 
-	divp2 := max(1, (fDivn2+Divp2FrequencyHz-1)/Divp2FrequencyHz-1)
-	divq2 := max(1, (fDivn2+Divq2FrequencyHz-1)/Divq2FrequencyHz-1)
-	divr2 := max(1, (fDivn2+Divr2FrequencyHz-1)/Divr2FrequencyHz-1)
+	rcc.Rcc.Pll2divr.SetDivn2(DefaultDivn2 - 1)
+	rcc.Rcc.Pll2divr.SetDivp2(DefaultDivp2 - 1)
+	rcc.Rcc.Pll2divr.SetDivq2(DefaultDivq2 - 1)
+	rcc.Rcc.Pll2divr.SetDivr2(DefaultDivr2 - 1)
 
-	divp3 := max(1, (fDivn3+Divp3FrequencyHz-1)/Divp3FrequencyHz-1)
-	divq3 := max(1, (fDivn3+Divq3FrequencyHz-1)/Divq3FrequencyHz-1)
-	divr3 := max(1, (fDivn3+Divr3FrequencyHz-1)/Divr3FrequencyHz-1)
+	rcc.Rcc.Pll3divr.SetDivn3(DefaultDivn3 - 1)
+	rcc.Rcc.Pll3divr.SetDivp3(DefaultDivp3 - 1)
+	rcc.Rcc.Pll3divr.SetDivq3(DefaultDivq3 - 1)
+	rcc.Rcc.Pll3divr.SetDivr3(DefaultDivr3 - 1)
 
-	// Update source clock frequency values.
-	Divp1FrequencyHz = fDivn1 / (divp1 + 1)
-	Divp2FrequencyHz = fDivn2 / (divp2 + 1)
-	Divp3FrequencyHz = fDivn3 / (divp3 + 1)
-
-	Divq1FrequencyHz = fDivn1 / (divq1 + 1)
-	Divq2FrequencyHz = fDivn2 / (divq2 + 1)
-	Divq3FrequencyHz = fDivn3 / (divq3 + 1)
-
-	Divr1FrequencyHz = fDivn1 / (divr1 + 1)
-	Divr2FrequencyHz = fDivn2 / (divr2 + 1)
-	Divr3FrequencyHz = fDivn3 / (divr3 + 1)
-
-	switch {
-	case PllSourceFrequencyHz < 2_000_000:
-		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.RegisterPllcfgrFieldPll1rgeEnum1to2mhz)
-		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.RegisterPllcfgrFieldPll2rgeEnum1to2mhz)
-		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.RegisterPllcfgrFieldPll3rgeEnum1to2mhz)
-	case PllSourceFrequencyHz < 4_000_000:
-		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.RegisterPllcfgrFieldPll1rgeEnum2to4mhz)
-		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.RegisterPllcfgrFieldPll2rgeEnum2to4mhz)
-		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.RegisterPllcfgrFieldPll3rgeEnum2to4mhz)
-	case PllSourceFrequencyHz < 8_000_000:
-		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.RegisterPllcfgrFieldPll1rgeEnum4to8mhz)
-		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.RegisterPllcfgrFieldPll2rgeEnum4to8mhz)
-		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.RegisterPllcfgrFieldPll3rgeEnum4to8mhz)
-	default:
-		rcc.Rcc.Pllcfgr.SetPll1rge(rcc.RegisterPllcfgrFieldPll1rgeEnum8to16mhz)
-		rcc.Rcc.Pllcfgr.SetPll2rge(rcc.RegisterPllcfgrFieldPll2rgeEnum8to16mhz)
-		rcc.Rcc.Pllcfgr.SetPll3rge(rcc.RegisterPllcfgrFieldPll3rgeEnum8to16mhz)
-	}
-
-	// Configure PLL1 clock source.
-	rcc.Rcc.Pll1divr.SetDivn1(uint16(Divn1Prescaler - 1))
-	rcc.Rcc.Pll1divr.SetDivp1(uint8(divp1))
-	rcc.Rcc.Pll1divr.SetDivq1(uint8(divq1))
-	rcc.Rcc.Pll1divr.SetDivr1(uint8(divr1))
-
-	// Disable fractional latch.
-	rcc.Rcc.Pllcfgr.SetPll1fracen(false)
-	rcc.Rcc.Pll1fracr.SetFracn1(0)
-
-	// Select wide VCO range.
-	rcc.Rcc.Pllcfgr.SetPll1vcosel(false)
-
-	// Enable divider outputs.
+	// Enable PLL outputs.
 	rcc.Rcc.Pllcfgr.SetDivp1en(true)
 	rcc.Rcc.Pllcfgr.SetDivq1en(true)
 	rcc.Rcc.Pllcfgr.SetDivr1en(true)
-
-	// Enable PLL1.
-	rcc.Rcc.Pllcfgr.SetPll1fracen(true)
-	rcc.Rcc.Cr.SetPll1on(true)
-	for !rcc.Rcc.Cr.GetPll1rdy() {
-	}
-
-	// Configure PLL2 clock source.
-	rcc.Rcc.Pll2divr.SetDivn2(uint16(Divn2Prescaler - 1))
-	rcc.Rcc.Pll2divr.SetDivp2(uint8(divp2))
-	rcc.Rcc.Pll2divr.SetDivq2(uint8(divq2))
-	rcc.Rcc.Pll2divr.SetDivr2(uint8(divr2))
-	rcc.Rcc.Pllcfgr.SetPll2fracen(false)
-	rcc.Rcc.Pll2fracr.SetFracn2(0)
-	rcc.Rcc.Pllcfgr.SetPll2vcosel(true)
 	rcc.Rcc.Pllcfgr.SetDivp2en(true)
 	rcc.Rcc.Pllcfgr.SetDivq2en(true)
 	rcc.Rcc.Pllcfgr.SetDivr2en(true)
-
-	// Enable PLL2.
-	rcc.Rcc.Pllcfgr.SetPll2fracen(true)
-	rcc.Rcc.Cr.SetPll2on(true)
-	for !rcc.Rcc.Cr.GetPll2rdy() {
-	}
-
-	// Configure PLL3 clock source.
-	rcc.Rcc.Pll3divr.SetDivn3(uint16(Divn3Prescaler - 1))
-	rcc.Rcc.Pll3divr.SetDivp3(uint8(divp3))
-	rcc.Rcc.Pll3divr.SetDivq3(uint8(divq3))
-	rcc.Rcc.Pll3divr.SetDivr3(uint8(divr3))
-	rcc.Rcc.Pllcfgr.SetPll3fracen(false)
-	rcc.Rcc.Pll3fracr.SetFracn3(0)
-	rcc.Rcc.Pllcfgr.SetPll3vcosel(true)
 	rcc.Rcc.Pllcfgr.SetDivp3en(true)
 	rcc.Rcc.Pllcfgr.SetDivq3en(true)
 	rcc.Rcc.Pllcfgr.SetDivr3en(true)
 
-	// Enable PLL3.
-	rcc.Rcc.Pllcfgr.SetPll3fracen(true)
+	// Start the PLLs.
+	rcc.Rcc.Cr.SetPll1on(true)
+	rcc.Rcc.Cr.SetPll2on(true)
 	rcc.Rcc.Cr.SetPll3on(true)
-	for !rcc.Rcc.Cr.GetPll3rdy() {
+
+	// Bus prescalers — apply before switching SYSCLK so HCLK and the APBs
+	// don't briefly overshoot when SYSCLK jumps from HSI to PLL1.
+	setD1cpre(DefaultD1cpre)
+	setHpre(DefaultHpre)
+	setD1ppre(DefaultD1ppre)
+	setD2ppre1(DefaultD2ppre1)
+	setD2ppre2(DefaultD2ppre2)
+	setD3ppre(DefaultD3ppre)
+
+	// Wait for PLL1 lock.
+	for !rcc.Rcc.Cr.GetPll1rdy() {
 	}
 
-	// Set D1 domain Core prescaler.
-	switch D1cpre {
+	// Switch SYSCLK to PLL1.
+	rcc.Rcc.Cfgr.SetSw(rcc.RegisterCfgrFieldSwEnumPll1)
+	for rcc.Rcc.Cfgr.GetSws() != rcc.RegisterCfgrFieldSwsEnumPll1 {
+	}
+
+	// Flash wait states for VOS0 + 240 MHz HCLK + AXI 240 MHz.
+	flash.Flash.Bank[0].Acr.SetLatency(4)
+	for flash.Flash.Bank[0].Acr.GetLatency() != 4 {
+	}
+	flash.Flash.Bank[0].Acr.SetWrhighfreq(3)
+	for flash.Flash.Bank[0].Acr.GetWrhighfreq() != 3 {
+	}
+
+	// GPIO clocks. All banks; boards can disable individual ones later.
+	rcc.Rcc.Ahb4enr.SetGpioaen(true)
+	rcc.Rcc.Ahb4enr.SetGpioben(true)
+	rcc.Rcc.Ahb4enr.SetGpiocen(true)
+	rcc.Rcc.Ahb4enr.SetGpioden(true)
+	rcc.Rcc.Ahb4enr.SetGpioeen(true)
+	rcc.Rcc.Ahb4enr.SetGpiofen(true)
+	rcc.Rcc.Ahb4enr.SetGpiogen(true)
+	rcc.Rcc.Ahb4enr.SetGpiohen(true)
+	rcc.Rcc.Ahb4enr.SetGpioien(true)
+	rcc.Rcc.Ahb4enr.SetGpiojen(true)
+	rcc.Rcc.Ahb4enr.SetGpioken(true)
+
+	// DAC, ADC, RNG infrastructure clocks.
+	rcc.Rcc.Apb1lenr.SetDac12en(true)
+	rcc.Rcc.D3ccipr.SetAdcsrc(0b00) // PLL2.
+	rcc.Rcc.Ahb1enr.SetAdc12en(true)
+	rcc.Rcc.Ahb4enr.SetAdc3en(true)
+	rcc.Rcc.Ahb2enr.SetRngen(true)
+
+	// Peripheral source muxes — hardcoded for the default config since
+	// every selection is a known constant.
+
+	// I2C1-3.
+	switch DefaultI2c13Source {
+	case ClockSourcePclk1:
+		rcc.Rcc.D2ccip2r.SetI2c123src(0)
+	case ClockSourcePll3r:
+		rcc.Rcc.D2ccip2r.SetI2c123src(1)
+	case ClockSourceHsi:
+		rcc.Rcc.D2ccip2r.SetI2c123src(2)
+	case ClockSourceCsi:
+		rcc.Rcc.D2ccip2r.SetI2c123src(3)
+	}
+
+	// I2C4.
+	switch DefaultI2c4Source {
+	case ClockSourcePclk4:
+		rcc.Rcc.D3ccipr.SetI2c4src(0)
+	case ClockSourcePll3r:
+		rcc.Rcc.D3ccipr.SetI2c4src(1)
+	case ClockSourceHsi:
+		rcc.Rcc.D3ccipr.SetI2c4src(2)
+	case ClockSourceCsi:
+		rcc.Rcc.D3ccipr.SetI2c4src(3)
+	}
+
+	// USART1/6.
+	switch DefaultUsart16Source {
+	case ClockSourcePclk2:
+		rcc.Rcc.D2ccip2r.SetUsart16src(0)
+	case ClockSourcePll2q:
+		rcc.Rcc.D2ccip2r.SetUsart16src(1)
+	case ClockSourcePll3q:
+		rcc.Rcc.D2ccip2r.SetUsart16src(2)
+	case ClockSourceHsi:
+		rcc.Rcc.D2ccip2r.SetUsart16src(3)
+	case ClockSourceCsi:
+		rcc.Rcc.D2ccip2r.SetUsart16src(4)
+	case ClockSourceLse:
+		rcc.Rcc.D2ccip2r.SetUsart16src(5)
+	}
+
+	// USART2/3/4/5/7/8.
+	switch DefaultUsart234578Source {
+	case ClockSourcePclk1:
+		rcc.Rcc.D2ccip2r.SetUsart234578src(0)
+	case ClockSourcePll2q:
+		rcc.Rcc.D2ccip2r.SetUsart234578src(1)
+	case ClockSourcePll3q:
+		rcc.Rcc.D2ccip2r.SetUsart234578src(2)
+	case ClockSourceHsi:
+		rcc.Rcc.D2ccip2r.SetUsart234578src(3)
+	case ClockSourceCsi:
+		rcc.Rcc.D2ccip2r.SetUsart234578src(4)
+	case ClockSourceLse:
+		rcc.Rcc.D2ccip2r.SetUsart234578src(5)
+	}
+
+	// SPI1/2/3.
+	switch DefaultSpi123ClockSource {
+	case ClockSourcePll1q:
+		rcc.Rcc.D2ccip1r.SetSpi123src(0)
+	case ClockSourcePll2p:
+		rcc.Rcc.D2ccip1r.SetSpi123src(1)
+	case ClockSourcePll3p:
+		rcc.Rcc.D2ccip1r.SetSpi123src(2)
+	case ClockSourceI2sCkin:
+		rcc.Rcc.D2ccip1r.SetSpi123src(3)
+	case ClockSourcePerCk:
+		rcc.Rcc.D2ccip1r.SetSpi123src(4)
+	}
+
+	// SPI4/5.
+	switch DefaultSpi45ClockSource {
+	case ClockSourcePclk2:
+		rcc.Rcc.D2ccip1r.SetSpi45src(0)
+	case ClockSourcePll2q:
+		rcc.Rcc.D2ccip1r.SetSpi45src(1)
+	case ClockSourcePll3q:
+		rcc.Rcc.D2ccip1r.SetSpi45src(2)
+	case ClockSourceHsi:
+		rcc.Rcc.D2ccip1r.SetSpi45src(3)
+	case ClockSourceCsi:
+		rcc.Rcc.D2ccip1r.SetSpi45src(4)
+	case ClockSourceHse:
+		rcc.Rcc.D2ccip1r.SetSpi45src(5)
+	}
+
+	// SPI6.
+	switch DefaultSpi6ClockSource {
+	case ClockSourcePclk4:
+		rcc.Rcc.D3ccipr.SetSpi6src(0)
+	case ClockSourcePll2q:
+		rcc.Rcc.D3ccipr.SetSpi6src(1)
+	case ClockSourcePll3q:
+		rcc.Rcc.D3ccipr.SetSpi6src(2)
+	case ClockSourceHsi:
+		rcc.Rcc.D3ccipr.SetSpi6src(3)
+	case ClockSourceCsi:
+		rcc.Rcc.D3ccipr.SetSpi6src(4)
+	case ClockSourceHse:
+		rcc.Rcc.D3ccipr.SetSpi6src(5)
+	}
+
+	// SDMMC.
+	switch DefaultSdmmcClockSource {
+	case ClockSourcePll1q:
+		rcc.Rcc.D1ccipr.SetSdmmcsrc(false)
+	case ClockSourcePll2r:
+		rcc.Rcc.D1ccipr.SetSdmmcsrc(true)
+	}
+
+	// RNG.
+	switch DefaultRngClockSource {
+	case ClockSourceRc48:
+		rcc.Rcc.D2ccip2r.SetRngsrc(0)
+	case ClockSourcePll1q:
+		rcc.Rcc.D2ccip2r.SetRngsrc(1)
+	case ClockSourceLse:
+		rcc.Rcc.D2ccip2r.SetRngsrc(2)
+	case ClockSourceLsi:
+		rcc.Rcc.D2ccip2r.SetRngsrc(3)
+	}
+
+	// FMC.
+	switch DefaultFmcClockSource {
+	case ClockSourceHclk3:
+		rcc.Rcc.D1ccipr.SetFmcsrc(0)
+	case ClockSourcePll1q:
+		rcc.Rcc.D1ccipr.SetFmcsrc(1)
+	case ClockSourcePll2r:
+		rcc.Rcc.D1ccipr.SetFmcsrc(2)
+	case ClockSourcePerCk:
+		rcc.Rcc.D1ccipr.SetFmcsrc(3)
+	}
+
+	cortexm.EnableInterrupts(state)
+}
+
+// SetDefaultFrequencies writes the chip-default frequency values into
+// the package globals. Called by the default postinit after ConfigureClocks
+// has applied the matching configuration.
+//
+// Boards that program different clock values must publish their actual
+// frequencies (either by writing to the globals directly or by providing
+// their own publish function) so peripheral drivers see consistent values.
+func SetDefaultFrequencies() {
+	D1cpre = DefaultD1cpre
+	Hpre = DefaultHpre
+	D1ppre = DefaultD1ppre
+	D2ppre1 = DefaultD2ppre1
+	D2ppre2 = DefaultD2ppre2
+	D3ppre = DefaultD3ppre
+	DivRtcHse = DefaultDivRtcHse
+
+	HseFrequencyHz = DefaultHseFrequencyHz
+	LseFrequencyHz = DefaultLseFrequencyHz
+
+	Cpu1FrequencyHz = DefaultCpu1FrequencyHz
+	HpreFrequencyHz = DefaultHpreFrequencyHz
+
+	Hclk1FrequencyHz = DefaultHpreFrequencyHz
+	Hclk2FrequencyHz = DefaultHpreFrequencyHz
+	Hclk3FrequencyHz = DefaultHpreFrequencyHz
+	Hclk4FrequencyHz = DefaultHpreFrequencyHz
+
+	Pclk1FrequencyHz = DefaultPclk1FrequencyHz
+	Pclk2FrequencyHz = DefaultPclk2FrequencyHz
+	Pclk3FrequencyHz = DefaultPclk3FrequencyHz
+	Pclk4FrequencyHz = DefaultPclk4FrequencyHz
+
+	Divp1FrequencyHz = DefaultDivp1FrequencyHz
+	Divq1FrequencyHz = DefaultDivq1FrequencyHz
+	Divr1FrequencyHz = DefaultDivr1FrequencyHz
+	Divp2FrequencyHz = DefaultDivp2FrequencyHz
+	Divq2FrequencyHz = DefaultDivq2FrequencyHz
+	Divr2FrequencyHz = DefaultDivr2FrequencyHz
+	Divp3FrequencyHz = DefaultDivp3FrequencyHz
+	Divq3FrequencyHz = DefaultDivq3FrequencyHz
+	Divr3FrequencyHz = DefaultDivr3FrequencyHz
+
+	PllSourceFrequencyHz = HsiFrequencyHz
+
+	switch DefaultRtcClockSource {
+	case ClockSourceLse:
+		RtcSourceFrequencyHz = DefaultLseFrequencyHz
+	case ClockSourceLsi:
+		RtcSourceFrequencyHz = LsiFrequencyHz
+	case ClockSourceHseRtc:
+		RtcSourceFrequencyHz = DefaultHseFrequencyHz / uint64(DefaultDivRtcHse)
+	}
+
+	I2c13SourceFrequencyHz = DefaultPclk1FrequencyHz
+	I2c4SourceFrequencyHz = DefaultPclk4FrequencyHz
+	Usart16SourceFrequencyHz = DefaultPclk2FrequencyHz
+	Usart234578SourceFrequencyHz = DefaultPclk1FrequencyHz
+	Spi123SourceFrequencyHz = DefaultDivq1FrequencyHz
+	Spi45SourceFrequencyHz = HsiFrequencyHz
+	Spi6SourceFrequencyHz = HsiFrequencyHz
+	SdmmcSourceFrequencyHz = DefaultDivr2FrequencyHz
+	RngSourceFrequencyHz = Rc48FrequencyHz
+
+	// SysTick on the new CPU clock.
+	cortexm.UpdateSysTickFrequency(uint32(Cpu1FrequencyHz))
+}
+
+// TimerMultiplier returns the multiplier between the APB peripheral clock
+// and the timer clock for a given APB prescaler. Used by timer drivers to
+// derive timer-clock frequencies from PCLK frequencies.
+func TimerMultiplier(d2ppre Divider) uint64 {
+	timpre := rcc.Rcc.Cfgr.GetTimpre()
+	switch d2ppre {
+	case Div1:
+		return 1
+	case Div2:
+		return 2
+	case Div4, Div8, Div16:
+		if timpre {
+			return 4
+		}
+		return 2
+	default:
+		panic("invalid divider value")
+	}
+}
+
+// Helper functions for divider→register-field translation. Each takes a
+// constant Divider at every call site, so the compiler reduces these to a
+// single register write at -O2.
+
+func setD1cpre(d Divider) {
+	switch d {
 	case Div1:
 		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv1)
 	case Div2:
@@ -354,11 +631,12 @@ func ConfigureClocks() {
 	case Div512:
 		rcc.Rcc.D1cfgr.SetD1cpre(rcc.RegisterD1cfgrFieldD1cpreEnumDiv512)
 	default:
-		panic("invalid divider value")
+		panic("invalid D1CPRE divider")
 	}
+}
 
-	// Set D1 domain AHB prescaler.
-	switch Hpre {
+func setHpre(d Divider) {
+	switch d {
 	case Div1:
 		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv1)
 	case Div2:
@@ -378,11 +656,12 @@ func ConfigureClocks() {
 	case Div512:
 		rcc.Rcc.D1cfgr.SetHpre(rcc.RegisterD1cfgrFieldHpreEnumDiv512)
 	default:
-		panic("invalid divider value")
+		panic("invalid HPRE divider")
 	}
+}
 
-	// Set D1 domain APB3 prescaler.
-	switch D1ppre {
+func setD1ppre(d Divider) {
+	switch d {
 	case Div1:
 		rcc.Rcc.D1cfgr.SetD1ppre(rcc.RegisterD1cfgrFieldD1ppreEnumDiv1)
 	case Div2:
@@ -394,11 +673,12 @@ func ConfigureClocks() {
 	case Div16:
 		rcc.Rcc.D1cfgr.SetD1ppre(rcc.RegisterD1cfgrFieldD1ppreEnumDiv16)
 	default:
-		panic("invalid divider value")
+		panic("invalid D1PPRE divider")
 	}
+}
 
-	// Set D2 domain APB1 prescaler.
-	switch D2ppre1 {
+func setD2ppre1(d Divider) {
+	switch d {
 	case Div1:
 		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.RegisterD2cfgrFieldD2ppre1EnumDiv1)
 	case Div2:
@@ -410,11 +690,12 @@ func ConfigureClocks() {
 	case Div16:
 		rcc.Rcc.D2cfgr.SetD2ppre1(rcc.RegisterD2cfgrFieldD2ppre1EnumDiv16)
 	default:
-		panic("invalid divider value")
+		panic("invalid D2PPRE1 divider")
 	}
+}
 
-	// Set D2 domain APB2 prescaler.
-	switch D2ppre2 {
+func setD2ppre2(d Divider) {
+	switch d {
 	case Div1:
 		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.RegisterD2cfgrFieldD2ppre2EnumDiv1)
 	case Div2:
@@ -426,11 +707,12 @@ func ConfigureClocks() {
 	case Div16:
 		rcc.Rcc.D2cfgr.SetD2ppre2(rcc.RegisterD2cfgrFieldD2ppre2EnumDiv16)
 	default:
-		panic("invalid divider value")
+		panic("invalid D2PPRE2 divider")
 	}
+}
 
-	// Set D3 domain APB4 prescaler.
-	switch D3ppre {
+func setD3ppre(d Divider) {
+	switch d {
 	case Div1:
 		rcc.Rcc.D3cfgr.SetD3ppre(rcc.RegisterD3cfgrFieldD3ppreEnumDiv1)
 	case Div2:
@@ -442,278 +724,6 @@ func ConfigureClocks() {
 	case Div16:
 		rcc.Rcc.D3cfgr.SetD3ppre(rcc.RegisterD3cfgrFieldD3ppreEnumDiv16)
 	default:
-		panic("invalid divider value")
-	}
-
-	// Wait for PLL1 to be ready
-	for !rcc.Rcc.Cr.GetPll1rdy() {
-	}
-
-	// Set the System Clock source to PLL1.
-	rcc.Rcc.Cfgr.SetSw(rcc.RegisterCfgrFieldSwEnumPll1)
-	for rcc.Rcc.Cfgr.GetSws() != rcc.RegisterCfgrFieldSwsEnumPll1 {
-	}
-
-	// Set flash wait state for 480Mhz.
-	flash.Flash.Bank[0].Acr.SetLatency(4) // Use 4 wait states.
-	for flash.Flash.Bank[0].Acr.GetLatency() != 4 {
-	}
-
-	flash.Flash.Bank[0].Acr.SetWrhighfreq(3) // Delay.
-	for flash.Flash.Bank[0].Acr.GetWrhighfreq() != 3 {
-	}
-
-	// Update clock frequency values.
-	cpu1FrequencyHz = Divp1FrequencyHz / uint64(D1cpre)
-	HpreFrequencyHz = Divp1FrequencyHz / uint64(Hpre)
-
-	Hclk1FrequencyHz = HpreFrequencyHz
-	Pclk1FrequencyHz = HpreFrequencyHz / uint64(D2ppre1)
-
-	Hclk2FrequencyHz = HpreFrequencyHz
-	Pclk2FrequencyHz = HpreFrequencyHz / uint64(D2ppre2)
-
-	Hclk3FrequencyHz = HpreFrequencyHz
-	Pclk3FrequencyHz = HpreFrequencyHz / uint64(D1ppre)
-
-	Hclk4FrequencyHz = HpreFrequencyHz
-	Pclk4FrequencyHz = HpreFrequencyHz / uint64(D3ppre)
-
-	// Enable GPIO clocks.
-	rcc.Rcc.Ahb4enr.SetGpioaen(true)
-	rcc.Rcc.Ahb4enr.SetGpioben(true)
-	rcc.Rcc.Ahb4enr.SetGpiocen(true)
-	rcc.Rcc.Ahb4enr.SetGpioden(true)
-	rcc.Rcc.Ahb4enr.SetGpioeen(true)
-	rcc.Rcc.Ahb4enr.SetGpiofen(true)
-	rcc.Rcc.Ahb4enr.SetGpiogen(true)
-	rcc.Rcc.Ahb4enr.SetGpiohen(true)
-	rcc.Rcc.Ahb4enr.SetGpioien(true)
-	rcc.Rcc.Ahb4enr.SetGpiojen(true)
-	rcc.Rcc.Ahb4enr.SetGpioken(true)
-
-	// Enable DAC clock.
-	rcc.Rcc.Apb1lenr.SetDac12en(true)
-
-	// Enable ADC clocks.
-	rcc.Rcc.D3ccipr.SetAdcsrc(0b00) // Select PLL2.
-	rcc.Rcc.Ahb1enr.SetAdc12en(true)
-	rcc.Rcc.Ahb4enr.SetAdc3en(true)
-
-	// Enable RNG clocks.
-	rcc.Rcc.Ahb2enr.SetRngen(true)
-
-	// Handle I2C1 - I2C3
-	if I2c13Source != ClockSourceNone {
-		// Set the clock source.
-		switch I2c13Source {
-		case ClockSourcePclk1:
-			rcc.Rcc.D2ccip2r.SetI2c123src(0)
-			I2c13SourceFrequencyHz = Pclk1FrequencyHz
-		case ClockSourcePll3r:
-			rcc.Rcc.D2ccip2r.SetI2c123src(1)
-			I2c13SourceFrequencyHz = Divr3FrequencyHz
-		case ClockSourceHsi:
-			rcc.Rcc.D2ccip2r.SetI2c123src(2)
-			I2c13SourceFrequencyHz = HsiFrequencyHz
-		case ClockSourceCsi:
-			rcc.Rcc.D2ccip2r.SetI2c123src(3)
-			I2c13SourceFrequencyHz = CsiFrequencyHz
-		default:
-			panic("invalid I2C1_3 clock source")
-		}
-	}
-
-	// Handle I2C4
-	if I2c4Source != ClockSourceNone {
-		// Set the clock source.
-		switch I2c4Source {
-		case ClockSourcePclk4:
-			rcc.Rcc.D3ccipr.SetI2c4src(0)
-			I2c4SourceFrequencyHz = Pclk4FrequencyHz
-		case ClockSourcePll3r:
-			rcc.Rcc.D3ccipr.SetI2c4src(1)
-			I2c4SourceFrequencyHz = Divr3FrequencyHz
-		case ClockSourceHsi:
-			rcc.Rcc.D3ccipr.SetI2c4src(2)
-			I2c4SourceFrequencyHz = HsiFrequencyHz
-		case ClockSourceCsi:
-			rcc.Rcc.D3ccipr.SetI2c4src(3)
-			I2c4SourceFrequencyHz = CsiFrequencyHz
-		default:
-			panic("invalid I2C4 clock source")
-		}
-	}
-
-	if Usart16Source != ClockSourceNone {
-		switch Usart16Source {
-		case ClockSourcePclk2:
-			rcc.Rcc.D2ccip2r.SetUsart16src(0)
-			Usart16SourceFrequencyHz = Pclk1FrequencyHz
-		case ClockSourcePll2q:
-			rcc.Rcc.D2ccip2r.SetUsart16src(1)
-			Usart16SourceFrequencyHz = Divq2FrequencyHz
-		case ClockSourcePll3q:
-			rcc.Rcc.D2ccip2r.SetUsart16src(2)
-			Usart16SourceFrequencyHz = Divq3FrequencyHz
-		case ClockSourceHsi:
-			rcc.Rcc.D2ccip2r.SetUsart16src(3)
-			Usart16SourceFrequencyHz = HsiFrequencyHz
-		case ClockSourceCsi:
-			rcc.Rcc.D2ccip2r.SetUsart16src(4)
-			Usart16SourceFrequencyHz = CsiFrequencyHz
-		case ClockSourceLse:
-			rcc.Rcc.D2ccip2r.SetUsart16src(4)
-			Usart16SourceFrequencyHz = HseFrequencyHz
-		}
-	}
-
-	if Usart234578Source != ClockSourceNone {
-		switch Usart16Source {
-		case ClockSourcePclk1:
-			rcc.Rcc.D2ccip2r.SetUsart234578src(0)
-			Usart234578SourceFrequencyHz = Pclk1FrequencyHz
-		case ClockSourcePll2q:
-			rcc.Rcc.D2ccip2r.SetUsart234578src(1)
-			Usart234578SourceFrequencyHz = Divq2FrequencyHz
-		case ClockSourcePll3q:
-			rcc.Rcc.D2ccip2r.SetUsart234578src(2)
-			Usart234578SourceFrequencyHz = Divq3FrequencyHz
-		case ClockSourceHsi:
-			rcc.Rcc.D2ccip2r.SetUsart234578src(3)
-			Usart234578SourceFrequencyHz = HsiFrequencyHz
-		case ClockSourceCsi:
-			rcc.Rcc.D2ccip2r.SetUsart234578src(4)
-			Usart234578SourceFrequencyHz = CsiFrequencyHz
-		case ClockSourceLse:
-			rcc.Rcc.D2ccip2r.SetUsart234578src(4)
-			Usart234578SourceFrequencyHz = HseFrequencyHz
-		}
-	}
-
-	if Spi123ClockSource != ClockSourceNone {
-		switch Spi123ClockSource {
-		case ClockSourcePll1q:
-			rcc.Rcc.D2ccip1r.SetSpi123src(0)
-			Spi123SourceFrequencyHz = Divq1FrequencyHz
-		case ClockSourcePll2p:
-			rcc.Rcc.D2ccip1r.SetSpi123src(1)
-			Spi123SourceFrequencyHz = Divp2FrequencyHz
-		case ClockSourcePll3p:
-			rcc.Rcc.D2ccip1r.SetSpi123src(2)
-			Spi123SourceFrequencyHz = Divp3FrequencyHz
-		case ClockSourceI2sCkin:
-			rcc.Rcc.D2ccip1r.SetSpi123src(3)
-			// TODO: Derive frequency
-		case ClockSourcePerCk:
-			rcc.Rcc.D2ccip1r.SetSpi123src(4)
-			// TODO: Derive frequency
-		}
-	}
-
-	if Spi45ClockSource != ClockSourceNone {
-		switch Spi45ClockSource {
-		case ClockSourcePclk2:
-			rcc.Rcc.D2ccip1r.SetSpi45src(0)
-			Spi45SourceFrequencyHz = Pclk2FrequencyHz
-		case ClockSourcePll2q:
-			rcc.Rcc.D2ccip1r.SetSpi45src(1)
-			Spi45SourceFrequencyHz = Divq2FrequencyHz
-		case ClockSourcePll3q:
-			rcc.Rcc.D2ccip1r.SetSpi45src(2)
-			Spi45SourceFrequencyHz = Divq3FrequencyHz
-		case ClockSourceHsi:
-			rcc.Rcc.D2ccip1r.SetSpi45src(3)
-			Spi45SourceFrequencyHz = HsiFrequencyHz
-		case ClockSourceCsi:
-			rcc.Rcc.D2ccip1r.SetSpi45src(4)
-			Spi45SourceFrequencyHz = CsiFrequencyHz
-		case ClockSourceHse:
-			rcc.Rcc.D2ccip1r.SetSpi45src(5)
-			Spi45SourceFrequencyHz = HseFrequencyHz
-		}
-	}
-
-	if Spi6ClockSource != ClockSourceNone {
-		switch Spi6ClockSource {
-		case ClockSourcePclk4:
-			rcc.Rcc.D3ccipr.SetSpi6src(0)
-			Spi6SourceFrequencyHz = Pclk4FrequencyHz
-		case ClockSourcePll2q:
-			rcc.Rcc.D3ccipr.SetSpi6src(1)
-			Spi6SourceFrequencyHz = Divq2FrequencyHz
-		case ClockSourcePll3q:
-			rcc.Rcc.D3ccipr.SetSpi6src(2)
-			Spi6SourceFrequencyHz = Divq3FrequencyHz
-		case ClockSourceHsi:
-			rcc.Rcc.D3ccipr.SetSpi6src(3)
-			Spi6SourceFrequencyHz = HsiFrequencyHz
-		case ClockSourceCsi:
-			rcc.Rcc.D3ccipr.SetSpi6src(4)
-			Spi6SourceFrequencyHz = CsiFrequencyHz
-		case ClockSourceHse:
-			rcc.Rcc.D3ccipr.SetSpi6src(5)
-			Spi6SourceFrequencyHz = HseFrequencyHz
-		}
-	}
-
-	if RtcClockSource != ClockSourceNone {
-		switch RtcClockSource {
-		case ClockSourceLse:
-			rcc.Rcc.Bdcr.SetRtcsrc(1)
-			RtcSourceFrequencyHz = LseFrequencyHz
-		case ClockSourceLsi:
-			rcc.Rcc.Bdcr.SetRtcsrc(2)
-			RtcSourceFrequencyHz = LsiFrequencyHz
-		case ClockSourceHseRtc:
-			rcc.Rcc.Bdcr.SetRtcsrc(3)
-			RtcSourceFrequencyHz = HseFrequencyHz / uint64(DivRtcHse)
-		}
-	}
-
-	if SdmmcClockSource != ClockSourceNone {
-		switch SdmmcClockSource {
-		case ClockSourcePll1q:
-			rcc.Rcc.D1ccipr.SetSdmmcsrc(false)
-			SdmmcSourceFrequencyHz = Divq1FrequencyHz
-		case ClockSourcePll2r:
-			rcc.Rcc.D1ccipr.SetSdmmcsrc(true)
-			SdmmcSourceFrequencyHz = Divr2FrequencyHz
-		}
-	}
-
-	if RngClockSource != ClockSourceNone {
-		switch RngClockSource {
-		case ClockSourceRc48:
-			rcc.Rcc.D2ccip2r.SetRngsrc(0)
-		case ClockSourcePll1q:
-			rcc.Rcc.D2ccip2r.SetRngsrc(1)
-		case ClockSourceLse:
-			rcc.Rcc.D2ccip2r.SetRngsrc(2)
-		case ClockSourceLsi:
-			rcc.Rcc.D2ccip2r.SetRngsrc(3)
-		}
-	}
-
-	// Update the SysTick frequency to match the CPU clock frequency.
-	cortexm.UpdateSysTickFrequency(uint32(Divp1FrequencyHz))
-	cortexm.EnableInterrupts(state)
-}
-
-func TimerMultiplier(d2ppre Divider) uint64 {
-	timpre := rcc.Rcc.Cfgr.GetTimpre()
-	switch d2ppre {
-	case Div1:
-		return 1
-	case Div2:
-		return 2
-	case Div4, Div8, Div16:
-		if timpre {
-			return 4
-		} else {
-			return 2
-		}
-	default:
-		panic("invalid divider value")
+		panic("invalid D3PPRE divider")
 	}
 }

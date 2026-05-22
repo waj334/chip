@@ -31,6 +31,26 @@ var __end_data unsafe.Pointer
 //sigo:extern __data_base_addr __data_base_addr
 var __data_base_addr unsafe.Pointer
 
+// preinit runs before initMemory. Use only for hardware setup that:
+//   - depends on no globals (constants are fine)
+//   - writes to no globals (only registers)
+//
+// Typical use: external memory bring-up so initMemory can run if .bss
+// is in external RAM.
+//
+//sigo:export preinit _preinit
+//sigo:linkage preinit weak
+func preinit() {}
+
+// postinit runs after initMemory but before initgc. Globals are valid
+// at this point — both reading and writing. Use this for clock setup,
+// peripheral source mux configuration, or anything else that benefits
+// from .data/.bss being ready.
+//
+//sigo:export postinit _postinit
+//sigo:linkage postinit weak
+func postinit() {}
+
 func initMemory() {
 	// Zero init globals
 	sbss := unsafe.Pointer(&__start_bss)
@@ -55,8 +75,14 @@ func initMemory() {
 func _entry() {
 	state := DisableInterrupts()
 
+	// Run pre-initialization code.
+	preinit()
+
 	// Initialize the global variables.
 	initMemory()
+
+	// Run post-initialization code.
+	postinit()
 
 	// Initialize the FPU if it was enabled during the build.
 	initFPU()

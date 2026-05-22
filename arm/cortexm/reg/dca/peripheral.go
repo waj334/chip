@@ -12,15 +12,38 @@ var (
 )
 
 type _dca struct {
-	Dcadcrr registerDcadcrrType
-	Dcaicrr registerDcaicrrType
+	Dcadcrr RegisterDcadcrrType
+	Dcaicrr RegisterDcaicrrType
 	_       [8]byte
-	Dcadclr registerDcadclrType
-	Dcaiclr registerDcaiclrType
+	Dcadclr RegisterDcadclrType
+	Dcaiclr RegisterDcaiclrType
 }
 
-// registerDcadcrrType Read the data from the Level 1 (L1) data cache from the location that is determined by the DCADCLR registers
-type registerDcadcrrType uint32
+// RegisterDcadcrrType Read the data from the Level 1 (L1) data cache from the location that is determined by the DCADCLR registers
+type RegisterDcadcrrType uint32
+
+func (r *RegisterDcadcrrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDcadcrrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDcadcrrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDcadcrrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDcadcrrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDcadcrrFieldTagShift = 0
@@ -28,12 +51,12 @@ const (
 )
 
 // GetTag Tag address. The number of significant bits of TAG depends on the cache size.
-func (r *registerDcadcrrType) GetTag() uint32 {
+func (r *RegisterDcadcrrType) GetTag() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDcadcrrFieldTagMask) >> RegisterDcadcrrFieldTagShift)
 }
 
 // SetTag Tag address. The number of significant bits of TAG depends on the cache size.
-func (r *registerDcadcrrType) SetTag(value uint32) {
+func (r *RegisterDcadcrrType) SetTag(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDcadcrrFieldTagMask)|(uint32(value)<<RegisterDcadcrrFieldTagShift))
 }
 
@@ -43,12 +66,12 @@ const (
 )
 
 // GetValid Valid state of the cache line
-func (r *registerDcadcrrType) GetValid() bool {
+func (r *RegisterDcadcrrType) GetValid() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDcadcrrFieldValidMask) != 0
 }
 
 // SetValid Valid state of the cache line
-func (r *registerDcadcrrType) SetValid(value bool) {
+func (r *RegisterDcadcrrType) SetValid(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDcadcrrFieldValidMask)
 	} else {
@@ -56,8 +79,31 @@ func (r *registerDcadcrrType) SetValid(value bool) {
 	}
 }
 
-// registerDcaicrrType Read the data from the Level 1 (L1) instruction cache from the location that is determined by the DCAICLR registers
-type registerDcaicrrType uint32
+// RegisterDcaicrrType Read the data from the Level 1 (L1) instruction cache from the location that is determined by the DCAICLR registers
+type RegisterDcaicrrType uint32
+
+func (r *RegisterDcaicrrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDcaicrrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDcaicrrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDcaicrrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDcaicrrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDcaicrrFieldTagShift = 0
@@ -65,12 +111,12 @@ const (
 )
 
 // GetTag Tag address. The number of significant bits of TAG depends on the cache size.
-func (r *registerDcaicrrType) GetTag() uint32 {
+func (r *RegisterDcaicrrType) GetTag() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterDcaicrrFieldTagMask) >> RegisterDcaicrrFieldTagShift)
 }
 
 // SetTag Tag address. The number of significant bits of TAG depends on the cache size.
-func (r *registerDcaicrrType) SetTag(value uint32) {
+func (r *RegisterDcaicrrType) SetTag(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDcaicrrFieldTagMask)|(uint32(value)<<RegisterDcaicrrFieldTagShift))
 }
 
@@ -80,12 +126,12 @@ const (
 )
 
 // GetValid Valid state of the cache line
-func (r *registerDcaicrrType) GetValid() bool {
+func (r *RegisterDcaicrrType) GetValid() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDcaicrrFieldValidMask) != 0
 }
 
 // SetValid Valid state of the cache line
-func (r *registerDcaicrrType) SetValid(value bool) {
+func (r *RegisterDcaicrrType) SetValid(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDcaicrrFieldValidMask)
 	} else {
@@ -93,8 +139,31 @@ func (r *registerDcaicrrType) SetValid(value bool) {
 	}
 }
 
-// registerDcadclrType Set the location to be read from the Level 1 (L1) data cache
-type registerDcadclrType uint32
+// RegisterDcadclrType Set the location to be read from the Level 1 (L1) data cache
+type RegisterDcadclrType uint32
+
+func (r *RegisterDcadclrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDcadclrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDcadclrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDcadclrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDcadclrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDcadclrFieldRamtypeShift = 0
@@ -102,12 +171,12 @@ const (
 )
 
 // GetRamtype RAM type
-func (r *registerDcadclrType) GetRamtype() bool {
+func (r *RegisterDcadclrType) GetRamtype() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDcadclrFieldRamtypeMask) != 0
 }
 
 // SetRamtype RAM type
-func (r *registerDcadclrType) SetRamtype(value bool) {
+func (r *RegisterDcadclrType) SetRamtype(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDcadclrFieldRamtypeMask)
 	} else {
@@ -121,12 +190,12 @@ const (
 )
 
 // GetOffset Data offset
-func (r *registerDcadclrType) GetOffset() uint8 {
+func (r *RegisterDcadclrType) GetOffset() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDcadclrFieldOffsetMask) >> RegisterDcadclrFieldOffsetShift)
 }
 
 // SetOffset Data offset
-func (r *registerDcadclrType) SetOffset(value uint8) {
+func (r *RegisterDcadclrType) SetOffset(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDcadclrFieldOffsetMask)|(uint32(value)<<RegisterDcadclrFieldOffsetShift))
 }
 
@@ -136,12 +205,12 @@ const (
 )
 
 // GetSet Set index. The number of significant bits of SET depends on the cache size.
-func (r *registerDcadclrType) GetSet() uint16 {
+func (r *RegisterDcadclrType) GetSet() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDcadclrFieldSetMask) >> RegisterDcadclrFieldSetShift)
 }
 
 // SetSet Set index. The number of significant bits of SET depends on the cache size.
-func (r *registerDcadclrType) SetSet(value uint16) {
+func (r *RegisterDcadclrType) SetSet(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDcadclrFieldSetMask)|(uint32(value)<<RegisterDcadclrFieldSetShift))
 }
 
@@ -151,12 +220,12 @@ const (
 )
 
 // GetWay Cache way
-func (r *registerDcadclrType) GetWay() bool {
+func (r *RegisterDcadclrType) GetWay() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDcadclrFieldWayMask) != 0
 }
 
 // SetWay Cache way
-func (r *registerDcadclrType) SetWay(value bool) {
+func (r *RegisterDcadclrType) SetWay(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDcadclrFieldWayMask)
 	} else {
@@ -164,8 +233,31 @@ func (r *registerDcadclrType) SetWay(value bool) {
 	}
 }
 
-// registerDcaiclrType Set the location to be read from the Level 1 (L1) instruction cache
-type registerDcaiclrType uint32
+// RegisterDcaiclrType Set the location to be read from the Level 1 (L1) instruction cache
+type RegisterDcaiclrType uint32
+
+func (r *RegisterDcaiclrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDcaiclrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDcaiclrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDcaiclrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDcaiclrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDcaiclrFieldRamtypeShift = 0
@@ -173,12 +265,12 @@ const (
 )
 
 // GetRamtype RAM type
-func (r *registerDcaiclrType) GetRamtype() bool {
+func (r *RegisterDcaiclrType) GetRamtype() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDcaiclrFieldRamtypeMask) != 0
 }
 
 // SetRamtype RAM type
-func (r *registerDcaiclrType) SetRamtype(value bool) {
+func (r *RegisterDcaiclrType) SetRamtype(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDcaiclrFieldRamtypeMask)
 	} else {
@@ -192,12 +284,12 @@ const (
 )
 
 // GetOffset Data offset
-func (r *registerDcaiclrType) GetOffset() uint8 {
+func (r *RegisterDcaiclrType) GetOffset() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDcaiclrFieldOffsetMask) >> RegisterDcaiclrFieldOffsetShift)
 }
 
 // SetOffset Data offset
-func (r *registerDcaiclrType) SetOffset(value uint8) {
+func (r *RegisterDcaiclrType) SetOffset(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDcaiclrFieldOffsetMask)|(uint32(value)<<RegisterDcaiclrFieldOffsetShift))
 }
 
@@ -207,12 +299,12 @@ const (
 )
 
 // GetSet Set index. The number of significant bits of SET depends on the cache size.
-func (r *registerDcaiclrType) GetSet() uint16 {
+func (r *RegisterDcaiclrType) GetSet() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDcaiclrFieldSetMask) >> RegisterDcaiclrFieldSetShift)
 }
 
 // SetSet Set index. The number of significant bits of SET depends on the cache size.
-func (r *registerDcaiclrType) SetSet(value uint16) {
+func (r *RegisterDcaiclrType) SetSet(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDcaiclrFieldSetMask)|(uint32(value)<<RegisterDcaiclrFieldSetShift))
 }
 
@@ -222,12 +314,12 @@ const (
 )
 
 // GetWay Cache way
-func (r *registerDcaiclrType) GetWay() bool {
+func (r *RegisterDcaiclrType) GetWay() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDcaiclrFieldWayMask) != 0
 }
 
 // SetWay Cache way
-func (r *registerDcaiclrType) SetWay(value bool) {
+func (r *RegisterDcaiclrType) SetWay(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDcaiclrFieldWayMask)
 	} else {

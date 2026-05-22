@@ -12,60 +12,267 @@ var (
 )
 
 type _ewiccs struct {
-	Itctrl     registerItctrlType
+	Itctrl     RegisterItctrlType
 	_          [156]byte
-	Claimset   registerClaimsetType
-	Claimclr   registerClaimclrType
-	Devaff0    registerDevaff0Type
-	Devaff1    registerDevaff1Type
-	Lar        registerLarType
-	Lsr        registerLsrType
-	Authstatus registerAuthstatusType
-	Devarch    registerDevarchType
-	Devid2     registerDevid2Type
-	Devid1     registerDevid1Type
-	Devid      registerDevidType
-	Devtype    registerDevtypeType
-	Pidr4      registerPidr4Type
-	Pidr5      registerPidr5Type
-	Pidr6      registerPidr6Type
-	Pidr7      registerPidr7Type
-	Pidr0      registerPidr0Type
-	Pidr1      registerPidr1Type
-	Pidr2      registerPidr2Type
-	Pidr3      registerPidr3Type
-	Cidr0      registerCidr0Type
-	Cidr1      registerCidr1Type
-	Cidr2      registerCidr2Type
-	Cidr3      registerCidr3Type
+	Claimset   RegisterClaimsetType
+	Claimclr   RegisterClaimclrType
+	Devaff0    RegisterDevaff0Type
+	Devaff1    RegisterDevaff1Type
+	Lar        RegisterLarType
+	Lsr        RegisterLsrType
+	Authstatus RegisterAuthstatusType
+	Devarch    RegisterDevarchType
+	Devid2     RegisterDevid2Type
+	Devid1     RegisterDevid1Type
+	Devid      RegisterDevidType
+	Devtype    RegisterDevtypeType
+	Pidr4      RegisterPidr4Type
+	Pidr5      RegisterPidr5Type
+	Pidr6      RegisterPidr6Type
+	Pidr7      RegisterPidr7Type
+	Pidr0      RegisterPidr0Type
+	Pidr1      RegisterPidr1Type
+	Pidr2      RegisterPidr2Type
+	Pidr3      RegisterPidr3Type
+	Cidr0      RegisterCidr0Type
+	Cidr1      RegisterCidr1Type
+	Cidr2      RegisterCidr2Type
+	Cidr3      RegisterCidr3Type
 }
 
-// registerItctrlType Used to dynamically switch between functional mode and integration mode. The EWIC does not support integration mode, and this register is RAZ.
-type registerItctrlType uint32
+// RegisterItctrlType Used to dynamically switch between functional mode and integration mode. The EWIC does not support integration mode, and this register is RAZ.
+type RegisterItctrlType uint32
 
-// registerClaimsetType The EWIC_CLAIMSET register is used to set whether functionality is in use by a debug agent. The EWIC does not have any associated debug functionality, and this register is 0xF.
-type registerClaimsetType uint32
+func (r *RegisterItctrlType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
 
-// registerClaimclrType The EWIC_CLAIMCLR register is used to set whether functionality is in use by a debug agent. The EWIC does not have any associated debug functionality, and this register is 0x0.
-type registerClaimclrType uint32
+func (r *RegisterItctrlType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
 
-// registerDevaff0Type The EWIC_DEVAFF0 register enables a debugger to determine whether the EWIC and the processor have an affinity with each other. The EWIC does not have any associated debug functionality, and this register is 0x80000000.
-type registerDevaff0Type uint32
+func (r *RegisterItctrlType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
 
-// registerDevaff1Type The EWIC_DEVAFF1 register enables a debugger to determine whether the EWIC and the processor have an affinity with each other. The EWIC does not have any associated debug functionality, and this register is 0x0.
-type registerDevaff1Type uint32
+func (r *RegisterItctrlType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
 
-// registerLarType The EWIC_LAR register controls software access to CoreSight components to reduce the likelihood of accidental access to the EWIC. The EWIC does not support software locking, and writing to this register has no affect.
-type registerLarType uint32
+func (r *RegisterItctrlType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
-// registerLsrType The EWIC_LSR register controls software access to CoreSight components to reduce the likelihood of accidental access to the EWIC. The EWIC does not support software locking, and this register is RAZ.
-type registerLsrType uint32
+// RegisterClaimsetType The EWIC_CLAIMSET register is used to set whether functionality is in use by a debug agent. The EWIC does not have any associated debug functionality, and this register is 0xF.
+type RegisterClaimsetType uint32
 
-// registerAuthstatusType The EWIC_AUTHSTATUS register indicates whether the EWIC includes debug functionality. The EWIC is not a debug component, therefore, the EWIC_AUTHSTATIS register is RAZ.
-type registerAuthstatusType uint32
+func (r *RegisterClaimsetType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
 
-// registerDevarchType Identifies the architecture of the EWIC
-type registerDevarchType uint32
+func (r *RegisterClaimsetType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterClaimsetType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterClaimsetType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterClaimsetType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterClaimclrType The EWIC_CLAIMCLR register is used to set whether functionality is in use by a debug agent. The EWIC does not have any associated debug functionality, and this register is 0x0.
+type RegisterClaimclrType uint32
+
+func (r *RegisterClaimclrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterClaimclrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterClaimclrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterClaimclrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterClaimclrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterDevaff0Type The EWIC_DEVAFF0 register enables a debugger to determine whether the EWIC and the processor have an affinity with each other. The EWIC does not have any associated debug functionality, and this register is 0x80000000.
+type RegisterDevaff0Type uint32
+
+func (r *RegisterDevaff0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDevaff0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDevaff0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDevaff0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDevaff0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterDevaff1Type The EWIC_DEVAFF1 register enables a debugger to determine whether the EWIC and the processor have an affinity with each other. The EWIC does not have any associated debug functionality, and this register is 0x0.
+type RegisterDevaff1Type uint32
+
+func (r *RegisterDevaff1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDevaff1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDevaff1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDevaff1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDevaff1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterLarType The EWIC_LAR register controls software access to CoreSight components to reduce the likelihood of accidental access to the EWIC. The EWIC does not support software locking, and writing to this register has no affect.
+type RegisterLarType uint32
+
+func (r *RegisterLarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterLarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterLarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterLarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterLarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterLsrType The EWIC_LSR register controls software access to CoreSight components to reduce the likelihood of accidental access to the EWIC. The EWIC does not support software locking, and this register is RAZ.
+type RegisterLsrType uint32
+
+func (r *RegisterLsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterLsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterLsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterLsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterLsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterAuthstatusType The EWIC_AUTHSTATUS register indicates whether the EWIC includes debug functionality. The EWIC is not a debug component, therefore, the EWIC_AUTHSTATIS register is RAZ.
+type RegisterAuthstatusType uint32
+
+func (r *RegisterAuthstatusType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterAuthstatusType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterAuthstatusType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterAuthstatusType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterAuthstatusType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterDevarchType Identifies the architecture of the EWIC
+type RegisterDevarchType uint32
+
+func (r *RegisterDevarchType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDevarchType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDevarchType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDevarchType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDevarchType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDevarchFieldArchidShift = 0
@@ -73,12 +280,12 @@ const (
 )
 
 // GetArchid Returns a value that identifies the architecture of the component. This value is 0x0A07 corresponding to EWIC architecture.
-func (r *registerDevarchType) GetArchid() uint16 {
+func (r *RegisterDevarchType) GetArchid() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDevarchFieldArchidMask) >> RegisterDevarchFieldArchidShift)
 }
 
 // SetArchid Returns a value that identifies the architecture of the component. This value is 0x0A07 corresponding to EWIC architecture.
-func (r *registerDevarchType) SetArchid(value uint16) {
+func (r *RegisterDevarchType) SetArchid(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDevarchFieldArchidMask)|(uint32(value)<<RegisterDevarchFieldArchidShift))
 }
 
@@ -88,12 +295,12 @@ const (
 )
 
 // GetRevision Architecture revision. This value is 0b0000.
-func (r *registerDevarchType) GetRevision() uint8 {
+func (r *RegisterDevarchType) GetRevision() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDevarchFieldRevisionMask) >> RegisterDevarchFieldRevisionShift)
 }
 
 // SetRevision Architecture revision. This value is 0b0000.
-func (r *registerDevarchType) SetRevision(value uint8) {
+func (r *RegisterDevarchType) SetRevision(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDevarchFieldRevisionMask)|(uint32(value)<<RegisterDevarchFieldRevisionShift))
 }
 
@@ -103,12 +310,12 @@ const (
 )
 
 // GetPresent Indicates the presence of this register. This value is 0b1.
-func (r *registerDevarchType) GetPresent() bool {
+func (r *RegisterDevarchType) GetPresent() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDevarchFieldPresentMask) != 0
 }
 
 // SetPresent Indicates the presence of this register. This value is 0b1.
-func (r *registerDevarchType) SetPresent(value bool) {
+func (r *RegisterDevarchType) SetPresent(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDevarchFieldPresentMask)
 	} else {
@@ -122,12 +329,12 @@ const (
 )
 
 // GetArchitectjep106i Defines the architect of the component, JEP106 identification code
-func (r *registerDevarchType) GetArchitectjep106i() uint8 {
+func (r *RegisterDevarchType) GetArchitectjep106i() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDevarchFieldArchitectjep106iMask) >> RegisterDevarchFieldArchitectjep106iShift)
 }
 
 // SetArchitectjep106i Defines the architect of the component, JEP106 identification code
-func (r *registerDevarchType) SetArchitectjep106i(value uint8) {
+func (r *RegisterDevarchType) SetArchitectjep106i(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDevarchFieldArchitectjep106iMask)|(uint32(value)<<RegisterDevarchFieldArchitectjep106iShift))
 }
 
@@ -137,26 +344,118 @@ const (
 )
 
 // GetArchitectjep106c Defines the architect of the component, JEP106 continuation code
-func (r *registerDevarchType) GetArchitectjep106c() uint8 {
+func (r *RegisterDevarchType) GetArchitectjep106c() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDevarchFieldArchitectjep106cMask) >> RegisterDevarchFieldArchitectjep106cShift)
 }
 
 // SetArchitectjep106c Defines the architect of the component, JEP106 continuation code
-func (r *registerDevarchType) SetArchitectjep106c(value uint8) {
+func (r *RegisterDevarchType) SetArchitectjep106c(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDevarchFieldArchitectjep106cMask)|(uint32(value)<<RegisterDevarchFieldArchitectjep106cShift))
 }
 
-// registerDevid2Type The EWIC_DEVID2 indicates some capabilities of the EWIC. This register is RAZ/WI.
-type registerDevid2Type uint32
+// RegisterDevid2Type The EWIC_DEVID2 indicates some capabilities of the EWIC. This register is RAZ/WI.
+type RegisterDevid2Type uint32
 
-// registerDevid1Type The EWIC_DEVID1 indicates some capabilities of the EWIC. This register is RAZ/WI.
-type registerDevid1Type uint32
+func (r *RegisterDevid2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
 
-// registerDevidType The EWIC_DEVID indicates some capabilities of the EWIC. This register is RAZ/WI.
-type registerDevidType uint32
+func (r *RegisterDevid2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
 
-// registerDevtypeType Provides part number information about the EWIC component to the debugger.
-type registerDevtypeType uint32
+func (r *RegisterDevid2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDevid2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDevid2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterDevid1Type The EWIC_DEVID1 indicates some capabilities of the EWIC. This register is RAZ/WI.
+type RegisterDevid1Type uint32
+
+func (r *RegisterDevid1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDevid1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDevid1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDevid1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDevid1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterDevidType The EWIC_DEVID indicates some capabilities of the EWIC. This register is RAZ/WI.
+type RegisterDevidType uint32
+
+func (r *RegisterDevidType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDevidType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDevidType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDevidType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDevidType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterDevtypeType Provides part number information about the EWIC component to the debugger.
+type RegisterDevtypeType uint32
+
+func (r *RegisterDevtypeType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDevtypeType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDevtypeType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDevtypeType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDevtypeType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDevtypeFieldMajorShift = 0
@@ -164,12 +463,12 @@ const (
 )
 
 // GetMajor Major type for the component device type. This field is set to 0b0000.
-func (r *registerDevtypeType) GetMajor() uint8 {
+func (r *RegisterDevtypeType) GetMajor() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDevtypeFieldMajorMask) >> RegisterDevtypeFieldMajorShift)
 }
 
 // SetMajor Major type for the component device type. This field is set to 0b0000.
-func (r *registerDevtypeType) SetMajor(value uint8) {
+func (r *RegisterDevtypeType) SetMajor(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDevtypeFieldMajorMask)|(uint32(value)<<RegisterDevtypeFieldMajorShift))
 }
 
@@ -179,17 +478,40 @@ const (
 )
 
 // GetSub Sub type for the component device type. This field is set to 0b0000.
-func (r *registerDevtypeType) GetSub() uint8 {
+func (r *RegisterDevtypeType) GetSub() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDevtypeFieldSubMask) >> RegisterDevtypeFieldSubShift)
 }
 
 // SetSub Sub type for the component device type. This field is set to 0b0000.
-func (r *registerDevtypeType) SetSub(value uint8) {
+func (r *RegisterDevtypeType) SetSub(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDevtypeFieldSubMask)|(uint32(value)<<RegisterDevtypeFieldSubShift))
 }
 
-// registerPidr4Type provides information about the memory size and JEP106 continuation code that the External Wakeup Interrupt Controller (EWIC) component uses
-type registerPidr4Type uint32
+// RegisterPidr4Type provides information about the memory size and JEP106 continuation code that the External Wakeup Interrupt Controller (EWIC) component uses
+type RegisterPidr4Type uint32
+
+func (r *RegisterPidr4Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPidr4Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPidr4Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPidr4Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPidr4Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPidr4FieldDes2Shift = 0
@@ -197,12 +519,12 @@ const (
 )
 
 // GetDes2 JEP106 continuation code. Together with EWIC_PIDR2.DES_1 and EWIC_PIDR1.DES_0, they indicate the designer of the component, not the implementer, except where the two are the same. The reset value of this field is 0x4.
-func (r *registerPidr4Type) GetDes2() uint8 {
+func (r *RegisterPidr4Type) GetDes2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPidr4FieldDes2Mask) >> RegisterPidr4FieldDes2Shift)
 }
 
 // SetDes2 JEP106 continuation code. Together with EWIC_PIDR2.DES_1 and EWIC_PIDR1.DES_0, they indicate the designer of the component, not the implementer, except where the two are the same. The reset value of this field is 0x4.
-func (r *registerPidr4Type) SetDes2(value uint8) {
+func (r *RegisterPidr4Type) SetDes2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPidr4FieldDes2Mask)|(uint32(value)<<RegisterPidr4FieldDes2Shift))
 }
 
@@ -212,26 +534,118 @@ const (
 )
 
 // GetSize This field indicates the memory size that the EWIC uses. This field returns 0x0 indicating that the component uses an UNKNOWN number of 4KB blocks.
-func (r *registerPidr4Type) GetSize() uint8 {
+func (r *RegisterPidr4Type) GetSize() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPidr4FieldSizeMask) >> RegisterPidr4FieldSizeShift)
 }
 
 // SetSize This field indicates the memory size that the EWIC uses. This field returns 0x0 indicating that the component uses an UNKNOWN number of 4KB blocks.
-func (r *registerPidr4Type) SetSize(value uint8) {
+func (r *RegisterPidr4Type) SetSize(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPidr4FieldSizeMask)|(uint32(value)<<RegisterPidr4FieldSizeShift))
 }
 
-// registerPidr5Type The register is reserved, RES0
-type registerPidr5Type uint32
+// RegisterPidr5Type The register is reserved, RES0
+type RegisterPidr5Type uint32
 
-// registerPidr6Type The register is reserved, RES0
-type registerPidr6Type uint32
+func (r *RegisterPidr5Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
 
-// registerPidr7Type The register is reserved, RES0
-type registerPidr7Type uint32
+func (r *RegisterPidr5Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
 
-// registerPidr0Type Indicates the EWIC component part number
-type registerPidr0Type uint32
+func (r *RegisterPidr5Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPidr5Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPidr5Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterPidr6Type The register is reserved, RES0
+type RegisterPidr6Type uint32
+
+func (r *RegisterPidr6Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPidr6Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPidr6Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPidr6Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPidr6Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterPidr7Type The register is reserved, RES0
+type RegisterPidr7Type uint32
+
+func (r *RegisterPidr7Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPidr7Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPidr7Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPidr7Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPidr7Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
+
+// RegisterPidr0Type Indicates the EWIC component part number
+type RegisterPidr0Type uint32
+
+func (r *RegisterPidr0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPidr0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPidr0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPidr0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPidr0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPidr0FieldPart0Shift = 0
@@ -239,17 +653,40 @@ const (
 )
 
 // GetPart0 This field indicates the part number. When taken together with EWIC_PIDR1.PART_1, it indicates the component. The part number is selected by the designer of the component.
-func (r *registerPidr0Type) GetPart0() uint8 {
+func (r *RegisterPidr0Type) GetPart0() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPidr0FieldPart0Mask) >> RegisterPidr0FieldPart0Shift)
 }
 
 // SetPart0 This field indicates the part number. When taken together with EWIC_PIDR1.PART_1, it indicates the component. The part number is selected by the designer of the component.
-func (r *registerPidr0Type) SetPart0(value uint8) {
+func (r *RegisterPidr0Type) SetPart0(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPidr0FieldPart0Mask)|(uint32(value)<<RegisterPidr0FieldPart0Shift))
 }
 
-// registerPidr1Type Indicates the EWIC component JEP106 continuation code and part number
-type registerPidr1Type uint32
+// RegisterPidr1Type Indicates the EWIC component JEP106 continuation code and part number
+type RegisterPidr1Type uint32
+
+func (r *RegisterPidr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPidr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPidr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPidr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPidr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPidr1FieldPart1Shift = 0
@@ -257,12 +694,12 @@ const (
 )
 
 // GetPart1 This field indicates the part number, bits[11:8]. Taken together with EWIC_PIDR0.PART_0 it indicates the component. The part number is selected by the designer of the component. The reset value is 0xD.
-func (r *registerPidr1Type) GetPart1() uint8 {
+func (r *RegisterPidr1Type) GetPart1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPidr1FieldPart1Mask) >> RegisterPidr1FieldPart1Shift)
 }
 
 // SetPart1 This field indicates the part number, bits[11:8]. Taken together with EWIC_PIDR0.PART_0 it indicates the component. The part number is selected by the designer of the component. The reset value is 0xD.
-func (r *registerPidr1Type) SetPart1(value uint8) {
+func (r *RegisterPidr1Type) SetPart1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPidr1FieldPart1Mask)|(uint32(value)<<RegisterPidr1FieldPart1Shift))
 }
 
@@ -272,17 +709,40 @@ const (
 )
 
 // GetDes0 This field indicates the JEP106 identification code, bits[3:0]. Together, with EWIC_PIDR4.DES_2 and EWIC_PIDR2.DES_1, they indicate the designer of the component and not the implementer, except where the two are the same. The reset value is 0xB.
-func (r *registerPidr1Type) GetDes0() uint8 {
+func (r *RegisterPidr1Type) GetDes0() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPidr1FieldDes0Mask) >> RegisterPidr1FieldDes0Shift)
 }
 
 // SetDes0 This field indicates the JEP106 identification code, bits[3:0]. Together, with EWIC_PIDR4.DES_2 and EWIC_PIDR2.DES_1, they indicate the designer of the component and not the implementer, except where the two are the same. The reset value is 0xB.
-func (r *registerPidr1Type) SetDes0(value uint8) {
+func (r *RegisterPidr1Type) SetDes0(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPidr1FieldDes0Mask)|(uint32(value)<<RegisterPidr1FieldDes0Shift))
 }
 
-// registerPidr2Type Indicates the EWIC component revision number, JEDEC value, and part of the JEP106 continuation code
-type registerPidr2Type uint32
+// RegisterPidr2Type Indicates the EWIC component revision number, JEDEC value, and part of the JEP106 continuation code
+type RegisterPidr2Type uint32
+
+func (r *RegisterPidr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPidr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPidr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPidr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPidr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPidr2FieldDes1Shift = 0
@@ -290,12 +750,12 @@ const (
 )
 
 // GetDes1 This field is the JEP106 identification code, bits[6:4]. Together, with CTI_PIDR4.DES_2 and CTI_PIDR1.DES_0, they indicate the designer of the component and not the implementer, except where the two are the same. The reset value is 0b011.
-func (r *registerPidr2Type) GetDes1() uint8 {
+func (r *RegisterPidr2Type) GetDes1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPidr2FieldDes1Mask) >> RegisterPidr2FieldDes1Shift)
 }
 
 // SetDes1 This field is the JEP106 identification code, bits[6:4]. Together, with CTI_PIDR4.DES_2 and CTI_PIDR1.DES_0, they indicate the designer of the component and not the implementer, except where the two are the same. The reset value is 0b011.
-func (r *registerPidr2Type) SetDes1(value uint8) {
+func (r *RegisterPidr2Type) SetDes1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPidr2FieldDes1Mask)|(uint32(value)<<RegisterPidr2FieldDes1Shift))
 }
 
@@ -305,12 +765,12 @@ const (
 )
 
 // GetJedec This field is always 1, indicating that a JEDEC assigned value is used.
-func (r *registerPidr2Type) GetJedec() bool {
+func (r *RegisterPidr2Type) GetJedec() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterPidr2FieldJedecMask) != 0
 }
 
 // SetJedec This field is always 1, indicating that a JEDEC assigned value is used.
-func (r *registerPidr2Type) SetJedec(value bool) {
+func (r *RegisterPidr2Type) SetJedec(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterPidr2FieldJedecMask)
 	} else {
@@ -324,17 +784,40 @@ const (
 )
 
 // GetRevision This field indicates the revision number of the EWIC component. It is an incremental value starting at 0x0 for the first design. The reset value is 0x0.
-func (r *registerPidr2Type) GetRevision() uint8 {
+func (r *RegisterPidr2Type) GetRevision() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPidr2FieldRevisionMask) >> RegisterPidr2FieldRevisionShift)
 }
 
 // SetRevision This field indicates the revision number of the EWIC component. It is an incremental value starting at 0x0 for the first design. The reset value is 0x0.
-func (r *registerPidr2Type) SetRevision(value uint8) {
+func (r *RegisterPidr2Type) SetRevision(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPidr2FieldRevisionMask)|(uint32(value)<<RegisterPidr2FieldRevisionShift))
 }
 
-// registerPidr3Type Indicates minor errata fixes of the Cross Trigger Interface (CTI) component and if you have modified the behavior of the component
-type registerPidr3Type uint32
+// RegisterPidr3Type Indicates minor errata fixes of the Cross Trigger Interface (CTI) component and if you have modified the behavior of the component
+type RegisterPidr3Type uint32
+
+func (r *RegisterPidr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterPidr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterPidr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterPidr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterPidr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterPidr3FieldCmodShift = 0
@@ -342,12 +825,12 @@ const (
 )
 
 // GetCmod Customer modified. Where the component is reusable IP, this value indicates whether you have modified the behavior of the component. In most cases, this field is 0x0.
-func (r *registerPidr3Type) GetCmod() uint8 {
+func (r *RegisterPidr3Type) GetCmod() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPidr3FieldCmodMask) >> RegisterPidr3FieldCmodShift)
 }
 
 // SetCmod Customer modified. Where the component is reusable IP, this value indicates whether you have modified the behavior of the component. In most cases, this field is 0x0.
-func (r *registerPidr3Type) SetCmod(value uint8) {
+func (r *RegisterPidr3Type) SetCmod(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPidr3FieldCmodMask)|(uint32(value)<<RegisterPidr3FieldCmodShift))
 }
 
@@ -357,17 +840,40 @@ const (
 )
 
 // GetRevand This field indicates minor errata fixes specific to this design, for example metal fixes after implementation. In most cases this field is 0x0.
-func (r *registerPidr3Type) GetRevand() uint8 {
+func (r *RegisterPidr3Type) GetRevand() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterPidr3FieldRevandMask) >> RegisterPidr3FieldRevandShift)
 }
 
 // SetRevand This field indicates minor errata fixes specific to this design, for example metal fixes after implementation. In most cases this field is 0x0.
-func (r *registerPidr3Type) SetRevand(value uint8) {
+func (r *RegisterPidr3Type) SetRevand(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterPidr3FieldRevandMask)|(uint32(value)<<RegisterPidr3FieldRevandShift))
 }
 
-// registerCidr0Type Indicates the preamble
-type registerCidr0Type uint32
+// RegisterCidr0Type Indicates the preamble
+type RegisterCidr0Type uint32
+
+func (r *RegisterCidr0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCidr0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCidr0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCidr0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCidr0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCidr0FieldPrmbl0Shift = 0
@@ -375,17 +881,40 @@ const (
 )
 
 // GetPrmbl0 Preamble. This field returns 0x0D.
-func (r *registerCidr0Type) GetPrmbl0() uint8 {
+func (r *RegisterCidr0Type) GetPrmbl0() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCidr0FieldPrmbl0Mask) >> RegisterCidr0FieldPrmbl0Shift)
 }
 
 // SetPrmbl0 Preamble. This field returns 0x0D.
-func (r *registerCidr0Type) SetPrmbl0(value uint8) {
+func (r *RegisterCidr0Type) SetPrmbl0(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCidr0FieldPrmbl0Mask)|(uint32(value)<<RegisterCidr0FieldPrmbl0Shift))
 }
 
-// registerCidr1Type indicates the component class and preamble
-type registerCidr1Type uint32
+// RegisterCidr1Type indicates the component class and preamble
+type RegisterCidr1Type uint32
+
+func (r *RegisterCidr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCidr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCidr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCidr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCidr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCidr1FieldClassShift = 0
@@ -393,12 +922,12 @@ const (
 )
 
 // GetClass Component class. Returns 0x9, indicating this is a CoreSight component.
-func (r *registerCidr1Type) GetClass() uint8 {
+func (r *RegisterCidr1Type) GetClass() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCidr1FieldClassMask) >> RegisterCidr1FieldClassShift)
 }
 
 // SetClass Component class. Returns 0x9, indicating this is a CoreSight component.
-func (r *registerCidr1Type) SetClass(value uint8) {
+func (r *RegisterCidr1Type) SetClass(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCidr1FieldClassMask)|(uint32(value)<<RegisterCidr1FieldClassShift))
 }
 
@@ -408,17 +937,40 @@ const (
 )
 
 // GetPrmbl1 Preamble. This field returns 0x0.
-func (r *registerCidr1Type) GetPrmbl1() uint8 {
+func (r *RegisterCidr1Type) GetPrmbl1() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCidr1FieldPrmbl1Mask) >> RegisterCidr1FieldPrmbl1Shift)
 }
 
 // SetPrmbl1 Preamble. This field returns 0x0.
-func (r *registerCidr1Type) SetPrmbl1(value uint8) {
+func (r *RegisterCidr1Type) SetPrmbl1(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCidr1FieldPrmbl1Mask)|(uint32(value)<<RegisterCidr1FieldPrmbl1Shift))
 }
 
-// registerCidr2Type Indicates the preamble
-type registerCidr2Type uint32
+// RegisterCidr2Type Indicates the preamble
+type RegisterCidr2Type uint32
+
+func (r *RegisterCidr2Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCidr2Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCidr2Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCidr2Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCidr2Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCidr2FieldPrmbl2Shift = 0
@@ -426,17 +978,40 @@ const (
 )
 
 // GetPrmbl2 Preamble. This field returns 0x05.
-func (r *registerCidr2Type) GetPrmbl2() uint8 {
+func (r *RegisterCidr2Type) GetPrmbl2() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCidr2FieldPrmbl2Mask) >> RegisterCidr2FieldPrmbl2Shift)
 }
 
 // SetPrmbl2 Preamble. This field returns 0x05.
-func (r *registerCidr2Type) SetPrmbl2(value uint8) {
+func (r *RegisterCidr2Type) SetPrmbl2(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCidr2FieldPrmbl2Mask)|(uint32(value)<<RegisterCidr2FieldPrmbl2Shift))
 }
 
-// registerCidr3Type Indicates the preamble
-type registerCidr3Type uint32
+// RegisterCidr3Type Indicates the preamble
+type RegisterCidr3Type uint32
+
+func (r *RegisterCidr3Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCidr3Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCidr3Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCidr3Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCidr3Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCidr3FieldPrmbl3Shift = 0
@@ -444,11 +1019,11 @@ const (
 )
 
 // GetPrmbl3 Preamble. This field returns 0xB1.
-func (r *registerCidr3Type) GetPrmbl3() uint8 {
+func (r *RegisterCidr3Type) GetPrmbl3() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterCidr3FieldPrmbl3Mask) >> RegisterCidr3FieldPrmbl3Shift)
 }
 
 // SetPrmbl3 Preamble. This field returns 0xB1.
-func (r *registerCidr3Type) SetPrmbl3(value uint8) {
+func (r *RegisterCidr3Type) SetPrmbl3(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterCidr3FieldPrmbl3Mask)|(uint32(value)<<RegisterCidr3FieldPrmbl3Shift))
 }

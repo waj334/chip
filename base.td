@@ -19,7 +19,11 @@ def NoFPU : FPU<"nofpu">;
 class AccessMode<string Value> : StringValue<Value>;
 
 def Read : AccessMode<"R">;
+def ReadOnly : AccessMode<"R">;
+
 def Write : AccessMode<"W">;
+def WriteOnly : AccessMode<"W">;
+
 def ReadWrite : AccessMode<"RW">;
 
 class Family<string Name> : Object<Name>;
@@ -41,10 +45,10 @@ class Quantity<int Value, int Multiplier = 1> {
 class Bit<int Value> : Quantity<Value>;
 
 class MemoryUnit<int Value, int Multiplier> : Quantity<Value, Multiplier>;
-class B<int Value> : MemoryUnit<Value, 1>;
-class KB<int Value> : MemoryUnit<Value, 1000>;
-class MB<int Value> : MemoryUnit<Value, 1000000>;
-class GB<int Value> : MemoryUnit<Value, 1000000000>;
+class B<int Value>  : MemoryUnit<Value, 1>;
+class KB<int Value> : MemoryUnit<Value, 1024>;
+class MB<int Value> : MemoryUnit<Value, 1048576>;     // 1024 * 1024
+class GB<int Value> : MemoryUnit<Value, 1073741824>;  // 1024 * 1024 * 1024
 
 class Range<int Offset, int Width> {
   int offset = Offset;
@@ -54,13 +58,20 @@ class Range<int Offset, int Width> {
 class BitRange<int Offset, int Width> : Range<Offset, Width>;
 class ByteRange<int Offset, int Width> : Range<Offset, Width>;
 class MemoryRange<string Name, int Origin, MemoryUnit Size, bit Executable = false, AccessMode Access = ReadWrite,
-    string Description = "">
+    string Description = "",
+    Bit Align = Bit<32>>
         : Object<Name, Description>, Range<Origin, Size.value>
 {
     AccessMode access = Access;
     bit executable = Executable;
+    int align = Align.value;
 }
+
 defvar Executable = true;
+
+// Sentinel "unset" memory range. The empty name signals "no default chosen"
+// to the consumer; the address and length are arbitrary placeholders.
+def UnsetMemoryRange : MemoryRange<"", 0x0, B<0>>;
 
 // Describes an acceptable value for a field.
 class Enum<string Name, int Val, string Description = ""> : Object<Name, Description> {
@@ -83,10 +94,12 @@ class RepeatingField<string Name, int Count, int Offset, int Width, AccessMode A
 }
 
 // Describes a register containing fields that can be read from of written.
-class Register<string Name, int Offset, int Width, list<Field> Fields = [], string Description = "">
+class Register<string Name, int Offset, int Width, list<Field> Fields = [], string Description = "",
+  Bit Alignment = Bit<32>>
         : Object<Name, Description>, ByteRange<Offset, Width> {
     list<Field> fields = Fields;
     int count = 1;
+    int alignment = Alignment.value;
 }
 
 class RepeatingRegister<string Name, int Count, int Offset, int Width, list<Field> Fields = [], string Description = "">
@@ -126,12 +139,20 @@ class Interrupt<string Name, int Line, string Description = ""> : Object<Name, D
 
 // Describes a variant within a chip series.
 class Variant<string Name, list<MemoryRange> Memories = [], list<Interrupt> Interrupts = [],
-    MemoryUnit StackSize = KB<4>, list<string> Tags = [], string Description = "">
+    MemoryUnit StackSize = KB<4>, list<string> Tags = [], string Description = "",
+    MemoryRange DefaultTextRegion = UnsetMemoryRange,
+    MemoryRange DefaultRAMRegion = UnsetMemoryRange,
+    MemoryRange DefaultHeapRegion = UnsetMemoryRange,
+    MemoryRange DefaultStackRegion = UnsetMemoryRange>
         : Object<Name, Description> {
     list<MemoryRange> memories = Memories;
     list<Interrupt> interrupts = Interrupts;
     int stackSize = StackSize.value;
     list<string> tags = Tags;
+    string defaultTextRegion = DefaultTextRegion.name;
+    string defaultRAMRegion = DefaultRAMRegion.name;
+    string defaultHeapRegion = DefaultHeapRegion.name;
+    string defaultStackRegion = DefaultStackRegion.name;
 }
 
 class Series<string Name, Architecture Arch, string Description = ""> : Object<Name, Description> {

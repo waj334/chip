@@ -1,4 +1,4 @@
-//go:build arm && cortexm && armv7m && armv7em && thumb && (stm32h747ag || stm32h747ig || stm32h747bg || stm32h747xg || stm32h747zi || stm32h747ai || stm32h747ii || stm32h747bi || stm32h747xi || stm32h757zi || stm32h757ai || stm32h757ii || stm32h757bi || stm32h757xi)
+//go:build arm && cortexm && cortexm7 && armv7m && armv7em && thumb && (stm32h747ag || stm32h747ig || stm32h747bg || stm32h747xg || stm32h747zi || stm32h747ai || stm32h747ii || stm32h747bi || stm32h747xi || stm32h757zi || stm32h757ai || stm32h757ii || stm32h757bi || stm32h757xi)
 
 package rcc
 
@@ -5472,6 +5472,63 @@ func (r *RegisterGcrType) SetWw1rsc(value bool) {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterGcrFieldWw1rscMask)
 	} else {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterGcrFieldWw1rscMask)
+	}
+}
+
+const (
+	RegisterGcrFieldWw2rscShift = 1
+	RegisterGcrFieldWw2rscMask  = 0x2
+)
+
+// GetWw2rsc WWDG2 reset scope control
+func (r *RegisterGcrType) GetWw2rsc() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterGcrFieldWw2rscMask) != 0
+}
+
+// SetWw2rsc WWDG2 reset scope control
+func (r *RegisterGcrType) SetWw2rsc(value bool) {
+	if value {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterGcrFieldWw2rscMask)
+	} else {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterGcrFieldWw2rscMask)
+	}
+}
+
+const (
+	RegisterGcrFieldBootc1Shift = 2
+	RegisterGcrFieldBootc1Mask  = 0x4
+)
+
+// GetBootc1 Allows CPU1 to boot
+func (r *RegisterGcrType) GetBootc1() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterGcrFieldBootc1Mask) != 0
+}
+
+// SetBootc1 Allows CPU1 to boot
+func (r *RegisterGcrType) SetBootc1(value bool) {
+	if value {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterGcrFieldBootc1Mask)
+	} else {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterGcrFieldBootc1Mask)
+	}
+}
+
+const (
+	RegisterGcrFieldBootc2Shift = 3
+	RegisterGcrFieldBootc2Mask  = 0x8
+)
+
+// GetBootc2 Allows CPU2 to boot
+func (r *RegisterGcrType) GetBootc2() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterGcrFieldBootc2Mask) != 0
+}
+
+// SetBootc2 Allows CPU2 to boot
+func (r *RegisterGcrType) SetBootc2(value bool) {
+	if value {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterGcrFieldBootc2Mask)
+	} else {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterGcrFieldBootc2Mask)
 	}
 }
 

@@ -12,17 +12,40 @@ var (
 )
 
 type _sau struct {
-	Ctrl registerCtrlType
-	Type registerTypeType
-	Rnr  registerRnrType
-	Rbar registerRbarType
-	Rlar registerRlarType
-	Sfsr registerSfsrType
-	Sfar registerSfarType
+	Ctrl RegisterCtrlType
+	Type RegisterTypeType
+	Rnr  RegisterRnrType
+	Rbar RegisterRbarType
+	Rlar RegisterRlarType
+	Sfsr RegisterSfsrType
+	Sfar RegisterSfarType
 }
 
-// registerCtrlType Allows enabling of the Security Attribution Unit (SAU)
-type registerCtrlType uint32
+// RegisterCtrlType Allows enabling of the Security Attribution Unit (SAU)
+type RegisterCtrlType uint32
+
+func (r *RegisterCtrlType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterCtrlType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterCtrlType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterCtrlType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterCtrlType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterCtrlFieldEnableShift = 0
@@ -30,12 +53,12 @@ const (
 )
 
 // GetEnable Enables the (SAU)
-func (r *registerCtrlType) GetEnable() bool {
+func (r *RegisterCtrlType) GetEnable() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCtrlFieldEnableMask) != 0
 }
 
 // SetEnable Enables the (SAU)
-func (r *registerCtrlType) SetEnable(value bool) {
+func (r *RegisterCtrlType) SetEnable(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCtrlFieldEnableMask)
 	} else {
@@ -49,12 +72,12 @@ const (
 )
 
 // GetAllns When SAU_CTRL.ENABLE is 0 this bit controls whether the memory is marked as Non-secure or Secure
-func (r *registerCtrlType) GetAllns() bool {
+func (r *RegisterCtrlType) GetAllns() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterCtrlFieldAllnsMask) != 0
 }
 
 // SetAllns When SAU_CTRL.ENABLE is 0 this bit controls whether the memory is marked as Non-secure or Secure
-func (r *registerCtrlType) SetAllns(value bool) {
+func (r *RegisterCtrlType) SetAllns(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterCtrlFieldAllnsMask)
 	} else {
@@ -62,8 +85,31 @@ func (r *registerCtrlType) SetAllns(value bool) {
 	}
 }
 
-// registerTypeType Indicates the number of regions implemented by the Security Attribution Unit (SAU)
-type registerTypeType uint32
+// RegisterTypeType Indicates the number of regions implemented by the Security Attribution Unit (SAU)
+type RegisterTypeType uint32
+
+func (r *RegisterTypeType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterTypeType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterTypeType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterTypeType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterTypeType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterTypeFieldSregionShift = 0
@@ -71,17 +117,40 @@ const (
 )
 
 // GetSregion The number of implemented (SAU) regions
-func (r *registerTypeType) GetSregion() uint8 {
+func (r *RegisterTypeType) GetSregion() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterTypeFieldSregionMask) >> RegisterTypeFieldSregionShift)
 }
 
 // SetSregion The number of implemented (SAU) regions
-func (r *registerTypeType) SetSregion(value uint8) {
+func (r *RegisterTypeType) SetSregion(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTypeFieldSregionMask)|(uint32(value)<<RegisterTypeFieldSregionShift))
 }
 
-// registerRnrType Selects the region currently accessed by SAU_RBAR and SAU_RLAR
-type registerRnrType uint32
+// RegisterRnrType Selects the region currently accessed by SAU_RBAR and SAU_RLAR
+type RegisterRnrType uint32
+
+func (r *RegisterRnrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRnrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRnrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRnrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRnrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRnrFieldRegionShift = 0
@@ -89,17 +158,40 @@ const (
 )
 
 // GetRegion Indicates the Security Attribution Unit (SAU) region accessed by SAU_RBAR and SAU_RLAR
-func (r *registerRnrType) GetRegion() uint8 {
+func (r *RegisterRnrType) GetRegion() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterRnrFieldRegionMask) >> RegisterRnrFieldRegionShift)
 }
 
 // SetRegion Indicates the Security Attribution Unit (SAU) region accessed by SAU_RBAR and SAU_RLAR
-func (r *registerRnrType) SetRegion(value uint8) {
+func (r *RegisterRnrType) SetRegion(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRnrFieldRegionMask)|(uint32(value)<<RegisterRnrFieldRegionShift))
 }
 
-// registerRbarType Provides indirect read and write access to the base address of the currently selected Security Attribution Unit (SAU) region
-type registerRbarType uint32
+// RegisterRbarType Provides indirect read and write access to the base address of the currently selected Security Attribution Unit (SAU) region
+type RegisterRbarType uint32
+
+func (r *RegisterRbarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRbarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRbarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRbarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRbarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRbarFieldBaddrShift = 5
@@ -107,17 +199,40 @@ const (
 )
 
 // GetBaddr Holds bits[31:5] of the base address for the selected (SAU) region
-func (r *registerRbarType) GetBaddr() uint32 {
+func (r *RegisterRbarType) GetBaddr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRbarFieldBaddrMask) >> RegisterRbarFieldBaddrShift)
 }
 
 // SetBaddr Holds bits[31:5] of the base address for the selected (SAU) region
-func (r *registerRbarType) SetBaddr(value uint32) {
+func (r *RegisterRbarType) SetBaddr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRbarFieldBaddrMask)|(uint32(value)<<RegisterRbarFieldBaddrShift))
 }
 
-// registerRlarType Provides indirect read and write access to the limit address of the currently selected Security Attribution Unit (SAU) region
-type registerRlarType uint32
+// RegisterRlarType Provides indirect read and write access to the limit address of the currently selected Security Attribution Unit (SAU) region
+type RegisterRlarType uint32
+
+func (r *RegisterRlarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterRlarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterRlarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterRlarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterRlarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterRlarFieldLaddrShift = 5
@@ -125,12 +240,12 @@ const (
 )
 
 // GetLaddr Holds bits[31:5] of the limit address for the selected (SAU) region
-func (r *registerRlarType) GetLaddr() uint32 {
+func (r *RegisterRlarType) GetLaddr() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRlarFieldLaddrMask) >> RegisterRlarFieldLaddrShift)
 }
 
 // SetLaddr Holds bits[31:5] of the limit address for the selected (SAU) region
-func (r *registerRlarType) SetLaddr(value uint32) {
+func (r *RegisterRlarType) SetLaddr(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRlarFieldLaddrMask)|(uint32(value)<<RegisterRlarFieldLaddrShift))
 }
 
@@ -140,12 +255,12 @@ const (
 )
 
 // GetNsc Controls whether Non-secure state is permitted to execute an SG instruction from this region
-func (r *registerRlarType) GetNsc() uint32 {
+func (r *RegisterRlarType) GetNsc() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRlarFieldNscMask) >> RegisterRlarFieldNscShift)
 }
 
 // SetNsc Controls whether Non-secure state is permitted to execute an SG instruction from this region
-func (r *registerRlarType) SetNsc(value uint32) {
+func (r *RegisterRlarType) SetNsc(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRlarFieldNscMask)|(uint32(value)<<RegisterRlarFieldNscShift))
 }
 
@@ -155,17 +270,40 @@ const (
 )
 
 // GetEnable (SAU) region enable
-func (r *registerRlarType) GetEnable() uint32 {
+func (r *RegisterRlarType) GetEnable() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterRlarFieldEnableMask) >> RegisterRlarFieldEnableShift)
 }
 
 // SetEnable (SAU) region enable
-func (r *registerRlarType) SetEnable(value uint32) {
+func (r *RegisterRlarType) SetEnable(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterRlarFieldEnableMask)|(uint32(value)<<RegisterRlarFieldEnableShift))
 }
 
-// registerSfsrType Provides information about any security related faults
-type registerSfsrType uint32
+// RegisterSfsrType Provides information about any security related faults
+type RegisterSfsrType uint32
+
+func (r *RegisterSfsrType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterSfsrType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterSfsrType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterSfsrType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterSfsrType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterSfsrFieldInvepShift = 0
@@ -173,12 +311,12 @@ const (
 )
 
 // GetInvep Inidcates a function call from the Non-secure state or exception targets a non-SG instruction in the Secure state
-func (r *registerSfsrType) GetInvep() bool {
+func (r *RegisterSfsrType) GetInvep() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSfsrFieldInvepMask) != 0
 }
 
 // SetInvep Inidcates a function call from the Non-secure state or exception targets a non-SG instruction in the Secure state
-func (r *registerSfsrType) SetInvep(value bool) {
+func (r *RegisterSfsrType) SetInvep(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSfsrFieldInvepMask)
 	} else {
@@ -192,12 +330,12 @@ const (
 )
 
 // GetInvis Indicates the integrity signature in an exception stack frame is found to be invalid during the unstacking operation
-func (r *registerSfsrType) GetInvis() bool {
+func (r *RegisterSfsrType) GetInvis() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSfsrFieldInvisMask) != 0
 }
 
 // SetInvis Indicates the integrity signature in an exception stack frame is found to be invalid during the unstacking operation
-func (r *registerSfsrType) SetInvis(value bool) {
+func (r *RegisterSfsrType) SetInvis(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSfsrFieldInvisMask)
 	} else {
@@ -211,12 +349,12 @@ const (
 )
 
 // GetInver Indicates EXC_RETURN.DCRS being set to 0 when returning from an exception in the Non-secure state, or EXC_RETURN.ES being set to 1 when returning from an exception in the Non-secure state
-func (r *registerSfsrType) GetInver() bool {
+func (r *RegisterSfsrType) GetInver() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSfsrFieldInverMask) != 0
 }
 
 // SetInver Indicates EXC_RETURN.DCRS being set to 0 when returning from an exception in the Non-secure state, or EXC_RETURN.ES being set to 1 when returning from an exception in the Non-secure state
-func (r *registerSfsrType) SetInver(value bool) {
+func (r *RegisterSfsrType) SetInver(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSfsrFieldInverMask)
 	} else {
@@ -230,12 +368,12 @@ const (
 )
 
 // GetAuviol Sticky flag indicating that an attempt was made to access parts of the address space that are marked as Secure with NS-Req for the transaction set to Non-secure
-func (r *registerSfsrType) GetAuviol() bool {
+func (r *RegisterSfsrType) GetAuviol() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSfsrFieldAuviolMask) != 0
 }
 
 // SetAuviol Sticky flag indicating that an attempt was made to access parts of the address space that are marked as Secure with NS-Req for the transaction set to Non-secure
-func (r *registerSfsrType) SetAuviol(value bool) {
+func (r *RegisterSfsrType) SetAuviol(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSfsrFieldAuviolMask)
 	} else {
@@ -249,12 +387,12 @@ const (
 )
 
 // GetInvtran Sticky flag indicating that an exception was raised due to a branch that was not flagged as being domain crossing causing a transition from Secure to Non-secure memory
-func (r *registerSfsrType) GetInvtran() bool {
+func (r *RegisterSfsrType) GetInvtran() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSfsrFieldInvtranMask) != 0
 }
 
 // SetInvtran Sticky flag indicating that an exception was raised due to a branch that was not flagged as being domain crossing causing a transition from Secure to Non-secure memory
-func (r *registerSfsrType) SetInvtran(value bool) {
+func (r *RegisterSfsrType) SetInvtran(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSfsrFieldInvtranMask)
 	} else {
@@ -268,12 +406,12 @@ const (
 )
 
 // GetLsperr Sticky flag indicating that an Security Attribution Unit (SAU) or Implementation Defined Attribution Unit (IDAU) violation occurred during the lazy preservation of floating-point state
-func (r *registerSfsrType) GetLsperr() bool {
+func (r *RegisterSfsrType) GetLsperr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSfsrFieldLsperrMask) != 0
 }
 
 // SetLsperr Sticky flag indicating that an Security Attribution Unit (SAU) or Implementation Defined Attribution Unit (IDAU) violation occurred during the lazy preservation of floating-point state
-func (r *registerSfsrType) SetLsperr(value bool) {
+func (r *RegisterSfsrType) SetLsperr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSfsrFieldLsperrMask)
 	} else {
@@ -287,12 +425,12 @@ const (
 )
 
 // GetSfarvalid This bit is set when the SFAR register contains a valid value
-func (r *registerSfsrType) GetSfarvalid() bool {
+func (r *RegisterSfsrType) GetSfarvalid() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSfsrFieldSfarvalidMask) != 0
 }
 
 // SetSfarvalid This bit is set when the SFAR register contains a valid value
-func (r *registerSfsrType) SetSfarvalid(value bool) {
+func (r *RegisterSfsrType) SetSfarvalid(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSfsrFieldSfarvalidMask)
 	} else {
@@ -306,12 +444,12 @@ const (
 )
 
 // GetLserr Sticky flag indicating that an error occurred during lazy state activation or deactivation
-func (r *registerSfsrType) GetLserr() bool {
+func (r *RegisterSfsrType) GetLserr() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterSfsrFieldLserrMask) != 0
 }
 
 // SetLserr Sticky flag indicating that an error occurred during lazy state activation or deactivation
-func (r *registerSfsrType) SetLserr(value bool) {
+func (r *RegisterSfsrType) SetLserr(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterSfsrFieldLserrMask)
 	} else {
@@ -319,5 +457,28 @@ func (r *registerSfsrType) SetLserr(value bool) {
 	}
 }
 
-// registerSfarType Shows the address of the memory location that caused a security violation
-type registerSfarType uint32
+// RegisterSfarType Shows the address of the memory location that caused a security violation
+type RegisterSfarType uint32
+
+func (r *RegisterSfarType) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterSfarType) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterSfarType) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterSfarType) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterSfarType) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}

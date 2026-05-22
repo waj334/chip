@@ -12,19 +12,42 @@ var (
 )
 
 type _errbnk struct {
-	Iebr0 registerIebr0Type
-	Iebr1 registerIebr1Type
+	Iebr0 RegisterIebr0Type
+	Iebr1 RegisterIebr1Type
 	_     [8]byte
-	Debr0 registerDebr0Type
-	Debr1 registerDebr1Type
+	Debr0 RegisterDebr0Type
+	Debr1 RegisterDebr1Type
 	_     [8]byte
-	Tebr0 registerTebr0Type
+	Tebr0 RegisterTebr0Type
 	_     [4]byte
-	Tebr1 registerTebr1Type
+	Tebr1 RegisterTebr1Type
 }
 
-// registerIebr0Type Record errors that occur during memory accesses to the L1 instruction cache
-type registerIebr0Type uint32
+// RegisterIebr0Type Record errors that occur during memory accesses to the L1 instruction cache
+type RegisterIebr0Type uint32
+
+func (r *RegisterIebr0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIebr0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIebr0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIebr0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIebr0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIebr0FieldValidShift = 0
@@ -32,12 +55,12 @@ const (
 )
 
 // GetValid Indicates whether the entry is valid or not
-func (r *registerIebr0Type) GetValid() bool {
+func (r *RegisterIebr0Type) GetValid() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIebr0FieldValidMask) != 0
 }
 
 // SetValid Indicates whether the entry is valid or not
-func (r *registerIebr0Type) SetValid(value bool) {
+func (r *RegisterIebr0Type) SetValid(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIebr0FieldValidMask)
 	} else {
@@ -51,12 +74,12 @@ const (
 )
 
 // GetLocked Indicates whether the location is locked or not
-func (r *registerIebr0Type) GetLocked() bool {
+func (r *RegisterIebr0Type) GetLocked() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIebr0FieldLockedMask) != 0
 }
 
 // SetLocked Indicates whether the location is locked or not
-func (r *registerIebr0Type) SetLocked(value bool) {
+func (r *RegisterIebr0Type) SetLocked(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIebr0FieldLockedMask)
 	} else {
@@ -70,12 +93,12 @@ const (
 )
 
 // GetLocationlwo Indicates the location in the L1 instruction cache RAM, line word offset
-func (r *registerIebr0Type) GetLocationlwo() uint8 {
+func (r *RegisterIebr0Type) GetLocationlwo() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterIebr0FieldLocationlwoMask) >> RegisterIebr0FieldLocationlwoShift)
 }
 
 // SetLocationlwo Indicates the location in the L1 instruction cache RAM, line word offset
-func (r *registerIebr0Type) SetLocationlwo(value uint8) {
+func (r *RegisterIebr0Type) SetLocationlwo(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIebr0FieldLocationlwoMask)|(uint32(value)<<RegisterIebr0FieldLocationlwoShift))
 }
 
@@ -85,12 +108,12 @@ const (
 )
 
 // GetLocationindex Indicates the location in the L1 instruction cache RAM, index
-func (r *registerIebr0Type) GetLocationindex() uint16 {
+func (r *RegisterIebr0Type) GetLocationindex() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterIebr0FieldLocationindexMask) >> RegisterIebr0FieldLocationindexShift)
 }
 
 // SetLocationindex Indicates the location in the L1 instruction cache RAM, index
-func (r *registerIebr0Type) SetLocationindex(value uint16) {
+func (r *RegisterIebr0Type) SetLocationindex(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIebr0FieldLocationindexMask)|(uint32(value)<<RegisterIebr0FieldLocationindexShift))
 }
 
@@ -100,12 +123,12 @@ const (
 )
 
 // GetLocationway Indicates the location in the L1 instruction cache RAM, way
-func (r *registerIebr0Type) GetLocationway() bool {
+func (r *RegisterIebr0Type) GetLocationway() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIebr0FieldLocationwayMask) != 0
 }
 
 // SetLocationway Indicates the location in the L1 instruction cache RAM, way
-func (r *registerIebr0Type) SetLocationway(value bool) {
+func (r *RegisterIebr0Type) SetLocationway(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIebr0FieldLocationwayMask)
 	} else {
@@ -119,12 +142,12 @@ const (
 )
 
 // GetBank Indicates which RAM bank to use
-func (r *registerIebr0Type) GetBank() bool {
+func (r *RegisterIebr0Type) GetBank() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIebr0FieldBankMask) != 0
 }
 
 // SetBank Indicates which RAM bank to use
-func (r *registerIebr0Type) SetBank(value bool) {
+func (r *RegisterIebr0Type) SetBank(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIebr0FieldBankMask)
 	} else {
@@ -138,17 +161,40 @@ const (
 )
 
 // GetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerIebr0Type) GetSwdef() uint8 {
+func (r *RegisterIebr0Type) GetSwdef() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterIebr0FieldSwdefMask) >> RegisterIebr0FieldSwdefShift)
 }
 
 // SetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerIebr0Type) SetSwdef(value uint8) {
+func (r *RegisterIebr0Type) SetSwdef(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIebr0FieldSwdefMask)|(uint32(value)<<RegisterIebr0FieldSwdefShift))
 }
 
-// registerIebr1Type Record errors that occur during memory accesses to the L1 instruction cache
-type registerIebr1Type uint32
+// RegisterIebr1Type Record errors that occur during memory accesses to the L1 instruction cache
+type RegisterIebr1Type uint32
+
+func (r *RegisterIebr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterIebr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterIebr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterIebr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterIebr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterIebr1FieldValidShift = 0
@@ -156,12 +202,12 @@ const (
 )
 
 // GetValid Indicates whether the entry is valid or not
-func (r *registerIebr1Type) GetValid() bool {
+func (r *RegisterIebr1Type) GetValid() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIebr1FieldValidMask) != 0
 }
 
 // SetValid Indicates whether the entry is valid or not
-func (r *registerIebr1Type) SetValid(value bool) {
+func (r *RegisterIebr1Type) SetValid(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIebr1FieldValidMask)
 	} else {
@@ -175,12 +221,12 @@ const (
 )
 
 // GetLocked Indicates whether the location is locked or not
-func (r *registerIebr1Type) GetLocked() bool {
+func (r *RegisterIebr1Type) GetLocked() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIebr1FieldLockedMask) != 0
 }
 
 // SetLocked Indicates whether the location is locked or not
-func (r *registerIebr1Type) SetLocked(value bool) {
+func (r *RegisterIebr1Type) SetLocked(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIebr1FieldLockedMask)
 	} else {
@@ -194,12 +240,12 @@ const (
 )
 
 // GetLocationlwo Indicates the location in the L1 instruction cache RAM, line word offset
-func (r *registerIebr1Type) GetLocationlwo() uint8 {
+func (r *RegisterIebr1Type) GetLocationlwo() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterIebr1FieldLocationlwoMask) >> RegisterIebr1FieldLocationlwoShift)
 }
 
 // SetLocationlwo Indicates the location in the L1 instruction cache RAM, line word offset
-func (r *registerIebr1Type) SetLocationlwo(value uint8) {
+func (r *RegisterIebr1Type) SetLocationlwo(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIebr1FieldLocationlwoMask)|(uint32(value)<<RegisterIebr1FieldLocationlwoShift))
 }
 
@@ -209,12 +255,12 @@ const (
 )
 
 // GetLocationindex Indicates the location in the L1 instruction cache RAM, index
-func (r *registerIebr1Type) GetLocationindex() uint16 {
+func (r *RegisterIebr1Type) GetLocationindex() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterIebr1FieldLocationindexMask) >> RegisterIebr1FieldLocationindexShift)
 }
 
 // SetLocationindex Indicates the location in the L1 instruction cache RAM, index
-func (r *registerIebr1Type) SetLocationindex(value uint16) {
+func (r *RegisterIebr1Type) SetLocationindex(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIebr1FieldLocationindexMask)|(uint32(value)<<RegisterIebr1FieldLocationindexShift))
 }
 
@@ -224,12 +270,12 @@ const (
 )
 
 // GetLocationway Indicates the location in the L1 instruction cache RAM, way
-func (r *registerIebr1Type) GetLocationway() bool {
+func (r *RegisterIebr1Type) GetLocationway() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIebr1FieldLocationwayMask) != 0
 }
 
 // SetLocationway Indicates the location in the L1 instruction cache RAM, way
-func (r *registerIebr1Type) SetLocationway(value bool) {
+func (r *RegisterIebr1Type) SetLocationway(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIebr1FieldLocationwayMask)
 	} else {
@@ -243,12 +289,12 @@ const (
 )
 
 // GetBank Indicates which RAM bank to use
-func (r *registerIebr1Type) GetBank() bool {
+func (r *RegisterIebr1Type) GetBank() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterIebr1FieldBankMask) != 0
 }
 
 // SetBank Indicates which RAM bank to use
-func (r *registerIebr1Type) SetBank(value bool) {
+func (r *RegisterIebr1Type) SetBank(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterIebr1FieldBankMask)
 	} else {
@@ -262,17 +308,40 @@ const (
 )
 
 // GetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerIebr1Type) GetSwdef() uint8 {
+func (r *RegisterIebr1Type) GetSwdef() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterIebr1FieldSwdefMask) >> RegisterIebr1FieldSwdefShift)
 }
 
 // SetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerIebr1Type) SetSwdef(value uint8) {
+func (r *RegisterIebr1Type) SetSwdef(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterIebr1FieldSwdefMask)|(uint32(value)<<RegisterIebr1FieldSwdefShift))
 }
 
-// registerDebr0Type Record errors that occur during memory accesses to the L1 data cache
-type registerDebr0Type uint32
+// RegisterDebr0Type Record errors that occur during memory accesses to the L1 data cache
+type RegisterDebr0Type uint32
+
+func (r *RegisterDebr0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDebr0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDebr0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDebr0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDebr0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDebr0FieldValidShift = 0
@@ -280,12 +349,12 @@ const (
 )
 
 // GetValid Indicates whether the entry is valid or not
-func (r *registerDebr0Type) GetValid() bool {
+func (r *RegisterDebr0Type) GetValid() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDebr0FieldValidMask) != 0
 }
 
 // SetValid Indicates whether the entry is valid or not
-func (r *registerDebr0Type) SetValid(value bool) {
+func (r *RegisterDebr0Type) SetValid(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDebr0FieldValidMask)
 	} else {
@@ -299,12 +368,12 @@ const (
 )
 
 // GetLocked Indicates whether the location is locked or not
-func (r *registerDebr0Type) GetLocked() bool {
+func (r *RegisterDebr0Type) GetLocked() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDebr0FieldLockedMask) != 0
 }
 
 // SetLocked Indicates whether the location is locked or not
-func (r *registerDebr0Type) SetLocked(value bool) {
+func (r *RegisterDebr0Type) SetLocked(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDebr0FieldLockedMask)
 	} else {
@@ -318,12 +387,12 @@ const (
 )
 
 // GetLocationlwo Indicates the location in the L1 instruction cache RAM, line doubleword offset
-func (r *registerDebr0Type) GetLocationlwo() uint8 {
+func (r *RegisterDebr0Type) GetLocationlwo() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDebr0FieldLocationlwoMask) >> RegisterDebr0FieldLocationlwoShift)
 }
 
 // SetLocationlwo Indicates the location in the L1 instruction cache RAM, line doubleword offset
-func (r *registerDebr0Type) SetLocationlwo(value uint8) {
+func (r *RegisterDebr0Type) SetLocationlwo(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDebr0FieldLocationlwoMask)|(uint32(value)<<RegisterDebr0FieldLocationlwoShift))
 }
 
@@ -333,12 +402,12 @@ const (
 )
 
 // GetLocationindex Indicates the location in the L1 instruction cache RAM, index
-func (r *registerDebr0Type) GetLocationindex() uint16 {
+func (r *RegisterDebr0Type) GetLocationindex() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDebr0FieldLocationindexMask) >> RegisterDebr0FieldLocationindexShift)
 }
 
 // SetLocationindex Indicates the location in the L1 instruction cache RAM, index
-func (r *registerDebr0Type) SetLocationindex(value uint16) {
+func (r *RegisterDebr0Type) SetLocationindex(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDebr0FieldLocationindexMask)|(uint32(value)<<RegisterDebr0FieldLocationindexShift))
 }
 
@@ -348,12 +417,12 @@ const (
 )
 
 // GetLocationway Indicates the location in the L1 instruction cache RAM, way
-func (r *registerDebr0Type) GetLocationway() uint8 {
+func (r *RegisterDebr0Type) GetLocationway() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDebr0FieldLocationwayMask) >> RegisterDebr0FieldLocationwayShift)
 }
 
 // SetLocationway Indicates the location in the L1 instruction cache RAM, way
-func (r *registerDebr0Type) SetLocationway(value uint8) {
+func (r *RegisterDebr0Type) SetLocationway(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDebr0FieldLocationwayMask)|(uint32(value)<<RegisterDebr0FieldLocationwayShift))
 }
 
@@ -363,12 +432,12 @@ const (
 )
 
 // GetBank Indicates which RAM bank to use
-func (r *registerDebr0Type) GetBank() bool {
+func (r *RegisterDebr0Type) GetBank() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDebr0FieldBankMask) != 0
 }
 
 // SetBank Indicates which RAM bank to use
-func (r *registerDebr0Type) SetBank(value bool) {
+func (r *RegisterDebr0Type) SetBank(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDebr0FieldBankMask)
 	} else {
@@ -382,12 +451,12 @@ const (
 )
 
 // GetType Indicates the error type
-func (r *registerDebr0Type) GetType() bool {
+func (r *RegisterDebr0Type) GetType() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDebr0FieldTypeMask) != 0
 }
 
 // SetType Indicates the error type
-func (r *registerDebr0Type) SetType(value bool) {
+func (r *RegisterDebr0Type) SetType(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDebr0FieldTypeMask)
 	} else {
@@ -401,17 +470,40 @@ const (
 )
 
 // GetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerDebr0Type) GetSwdef() uint8 {
+func (r *RegisterDebr0Type) GetSwdef() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDebr0FieldSwdefMask) >> RegisterDebr0FieldSwdefShift)
 }
 
 // SetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerDebr0Type) SetSwdef(value uint8) {
+func (r *RegisterDebr0Type) SetSwdef(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDebr0FieldSwdefMask)|(uint32(value)<<RegisterDebr0FieldSwdefShift))
 }
 
-// registerDebr1Type Record errors that occur during memory accesses to the L1 data cache
-type registerDebr1Type uint32
+// RegisterDebr1Type Record errors that occur during memory accesses to the L1 data cache
+type RegisterDebr1Type uint32
+
+func (r *RegisterDebr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterDebr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterDebr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterDebr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterDebr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterDebr1FieldValidShift = 0
@@ -419,12 +511,12 @@ const (
 )
 
 // GetValid Indicates whether the entry is valid or not
-func (r *registerDebr1Type) GetValid() bool {
+func (r *RegisterDebr1Type) GetValid() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDebr1FieldValidMask) != 0
 }
 
 // SetValid Indicates whether the entry is valid or not
-func (r *registerDebr1Type) SetValid(value bool) {
+func (r *RegisterDebr1Type) SetValid(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDebr1FieldValidMask)
 	} else {
@@ -438,12 +530,12 @@ const (
 )
 
 // GetLocked Indicates whether the location is locked or not
-func (r *registerDebr1Type) GetLocked() bool {
+func (r *RegisterDebr1Type) GetLocked() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDebr1FieldLockedMask) != 0
 }
 
 // SetLocked Indicates whether the location is locked or not
-func (r *registerDebr1Type) SetLocked(value bool) {
+func (r *RegisterDebr1Type) SetLocked(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDebr1FieldLockedMask)
 	} else {
@@ -457,12 +549,12 @@ const (
 )
 
 // GetLocationlwo Indicates the location in the L1 instruction cache RAM, line doubleword offset
-func (r *registerDebr1Type) GetLocationlwo() uint8 {
+func (r *RegisterDebr1Type) GetLocationlwo() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDebr1FieldLocationlwoMask) >> RegisterDebr1FieldLocationlwoShift)
 }
 
 // SetLocationlwo Indicates the location in the L1 instruction cache RAM, line doubleword offset
-func (r *registerDebr1Type) SetLocationlwo(value uint8) {
+func (r *RegisterDebr1Type) SetLocationlwo(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDebr1FieldLocationlwoMask)|(uint32(value)<<RegisterDebr1FieldLocationlwoShift))
 }
 
@@ -472,12 +564,12 @@ const (
 )
 
 // GetLocationindex Indicates the location in the L1 instruction cache RAM, index
-func (r *registerDebr1Type) GetLocationindex() uint16 {
+func (r *RegisterDebr1Type) GetLocationindex() uint16 {
 	return uint16((volatile.LoadUint32((*uint32)(r)) & RegisterDebr1FieldLocationindexMask) >> RegisterDebr1FieldLocationindexShift)
 }
 
 // SetLocationindex Indicates the location in the L1 instruction cache RAM, index
-func (r *registerDebr1Type) SetLocationindex(value uint16) {
+func (r *RegisterDebr1Type) SetLocationindex(value uint16) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDebr1FieldLocationindexMask)|(uint32(value)<<RegisterDebr1FieldLocationindexShift))
 }
 
@@ -487,12 +579,12 @@ const (
 )
 
 // GetLocationway Indicates the location in the L1 instruction cache RAM, way
-func (r *registerDebr1Type) GetLocationway() uint8 {
+func (r *RegisterDebr1Type) GetLocationway() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDebr1FieldLocationwayMask) >> RegisterDebr1FieldLocationwayShift)
 }
 
 // SetLocationway Indicates the location in the L1 instruction cache RAM, way
-func (r *registerDebr1Type) SetLocationway(value uint8) {
+func (r *RegisterDebr1Type) SetLocationway(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDebr1FieldLocationwayMask)|(uint32(value)<<RegisterDebr1FieldLocationwayShift))
 }
 
@@ -502,12 +594,12 @@ const (
 )
 
 // GetBank Indicates which RAM bank to use
-func (r *registerDebr1Type) GetBank() bool {
+func (r *RegisterDebr1Type) GetBank() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDebr1FieldBankMask) != 0
 }
 
 // SetBank Indicates which RAM bank to use
-func (r *registerDebr1Type) SetBank(value bool) {
+func (r *RegisterDebr1Type) SetBank(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDebr1FieldBankMask)
 	} else {
@@ -521,12 +613,12 @@ const (
 )
 
 // GetType Indicates the error type
-func (r *registerDebr1Type) GetType() bool {
+func (r *RegisterDebr1Type) GetType() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterDebr1FieldTypeMask) != 0
 }
 
 // SetType Indicates the error type
-func (r *registerDebr1Type) SetType(value bool) {
+func (r *RegisterDebr1Type) SetType(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterDebr1FieldTypeMask)
 	} else {
@@ -540,17 +632,40 @@ const (
 )
 
 // GetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerDebr1Type) GetSwdef() uint8 {
+func (r *RegisterDebr1Type) GetSwdef() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterDebr1FieldSwdefMask) >> RegisterDebr1FieldSwdefShift)
 }
 
 // SetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerDebr1Type) SetSwdef(value uint8) {
+func (r *RegisterDebr1Type) SetSwdef(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterDebr1FieldSwdefMask)|(uint32(value)<<RegisterDebr1FieldSwdefShift))
 }
 
-// registerTebr0Type Record the location of errors in the TCM
-type registerTebr0Type uint32
+// RegisterTebr0Type Record the location of errors in the TCM
+type RegisterTebr0Type uint32
+
+func (r *RegisterTebr0Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterTebr0Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterTebr0Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterTebr0Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterTebr0Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterTebr0FieldValidShift = 0
@@ -558,12 +673,12 @@ const (
 )
 
 // GetValid Indicates whether the entry is valid or not
-func (r *registerTebr0Type) GetValid() bool {
+func (r *RegisterTebr0Type) GetValid() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterTebr0FieldValidMask) != 0
 }
 
 // SetValid Indicates whether the entry is valid or not
-func (r *registerTebr0Type) SetValid(value bool) {
+func (r *RegisterTebr0Type) SetValid(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterTebr0FieldValidMask)
 	} else {
@@ -577,12 +692,12 @@ const (
 )
 
 // GetLocked Indicates whether the location is locked or not
-func (r *registerTebr0Type) GetLocked() bool {
+func (r *RegisterTebr0Type) GetLocked() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterTebr0FieldLockedMask) != 0
 }
 
 // SetLocked Indicates whether the location is locked or not
-func (r *registerTebr0Type) SetLocked(value bool) {
+func (r *RegisterTebr0Type) SetLocked(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterTebr0FieldLockedMask)
 	} else {
@@ -596,12 +711,12 @@ const (
 )
 
 // GetLocation Indicates the physical location in the data cache RAM
-func (r *registerTebr0Type) GetLocation() uint32 {
+func (r *RegisterTebr0Type) GetLocation() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTebr0FieldLocationMask) >> RegisterTebr0FieldLocationShift)
 }
 
 // SetLocation Indicates the physical location in the data cache RAM
-func (r *registerTebr0Type) SetLocation(value uint32) {
+func (r *RegisterTebr0Type) SetLocation(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTebr0FieldLocationMask)|(uint32(value)<<RegisterTebr0FieldLocationShift))
 }
 
@@ -611,12 +726,12 @@ const (
 )
 
 // GetBank Indicates which RAM bank to use
-func (r *registerTebr0Type) GetBank() uint8 {
+func (r *RegisterTebr0Type) GetBank() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterTebr0FieldBankMask) >> RegisterTebr0FieldBankShift)
 }
 
 // SetBank Indicates which RAM bank to use
-func (r *registerTebr0Type) SetBank(value uint8) {
+func (r *RegisterTebr0Type) SetBank(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTebr0FieldBankMask)|(uint32(value)<<RegisterTebr0FieldBankShift))
 }
 
@@ -626,12 +741,12 @@ const (
 )
 
 // GetType Indicates the error type
-func (r *registerTebr0Type) GetType() bool {
+func (r *RegisterTebr0Type) GetType() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterTebr0FieldTypeMask) != 0
 }
 
 // SetType Indicates the error type
-func (r *registerTebr0Type) SetType(value bool) {
+func (r *RegisterTebr0Type) SetType(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterTebr0FieldTypeMask)
 	} else {
@@ -645,12 +760,12 @@ const (
 )
 
 // GetPoison Indicates whether a BusFault is generated or not
-func (r *registerTebr0Type) GetPoison() bool {
+func (r *RegisterTebr0Type) GetPoison() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterTebr0FieldPoisonMask) != 0
 }
 
 // SetPoison Indicates whether a BusFault is generated or not
-func (r *registerTebr0Type) SetPoison(value bool) {
+func (r *RegisterTebr0Type) SetPoison(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterTebr0FieldPoisonMask)
 	} else {
@@ -664,17 +779,40 @@ const (
 )
 
 // GetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerTebr0Type) GetSwdef() uint8 {
+func (r *RegisterTebr0Type) GetSwdef() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterTebr0FieldSwdefMask) >> RegisterTebr0FieldSwdefShift)
 }
 
 // SetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerTebr0Type) SetSwdef(value uint8) {
+func (r *RegisterTebr0Type) SetSwdef(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTebr0FieldSwdefMask)|(uint32(value)<<RegisterTebr0FieldSwdefShift))
 }
 
-// registerTebr1Type Record the location of errors in the TCM
-type registerTebr1Type uint32
+// RegisterTebr1Type Record the location of errors in the TCM
+type RegisterTebr1Type uint32
+
+func (r *RegisterTebr1Type) Load() uint32 {
+	return volatile.LoadUint32((*uint32)(r))
+}
+
+func (r *RegisterTebr1Type) Store(value uint32) {
+	volatile.StoreUint32((*uint32)(r), value)
+}
+
+func (r *RegisterTebr1Type) StoreBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value|mask)
+}
+
+func (r *RegisterTebr1Type) ClearBits(mask uint32) {
+	value := volatile.LoadUint32((*uint32)(r))
+	volatile.StoreUint32((*uint32)(r), value&^mask)
+}
+
+func (r *RegisterTebr1Type) HasBits(mask uint32) bool {
+	value := volatile.LoadUint32((*uint32)(r))
+	return value&mask != 0
+}
 
 const (
 	RegisterTebr1FieldValidShift = 0
@@ -682,12 +820,12 @@ const (
 )
 
 // GetValid Indicates whether the entry is valid or not
-func (r *registerTebr1Type) GetValid() bool {
+func (r *RegisterTebr1Type) GetValid() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterTebr1FieldValidMask) != 0
 }
 
 // SetValid Indicates whether the entry is valid or not
-func (r *registerTebr1Type) SetValid(value bool) {
+func (r *RegisterTebr1Type) SetValid(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterTebr1FieldValidMask)
 	} else {
@@ -701,12 +839,12 @@ const (
 )
 
 // GetLocked Indicates whether the location is locked or not
-func (r *registerTebr1Type) GetLocked() bool {
+func (r *RegisterTebr1Type) GetLocked() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterTebr1FieldLockedMask) != 0
 }
 
 // SetLocked Indicates whether the location is locked or not
-func (r *registerTebr1Type) SetLocked(value bool) {
+func (r *RegisterTebr1Type) SetLocked(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterTebr1FieldLockedMask)
 	} else {
@@ -720,12 +858,12 @@ const (
 )
 
 // GetLocation Indicates the physical location in the data cache RAM
-func (r *registerTebr1Type) GetLocation() uint32 {
+func (r *RegisterTebr1Type) GetLocation() uint32 {
 	return uint32((volatile.LoadUint32((*uint32)(r)) & RegisterTebr1FieldLocationMask) >> RegisterTebr1FieldLocationShift)
 }
 
 // SetLocation Indicates the physical location in the data cache RAM
-func (r *registerTebr1Type) SetLocation(value uint32) {
+func (r *RegisterTebr1Type) SetLocation(value uint32) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTebr1FieldLocationMask)|(uint32(value)<<RegisterTebr1FieldLocationShift))
 }
 
@@ -735,12 +873,12 @@ const (
 )
 
 // GetBank Indicates which RAM bank to use
-func (r *registerTebr1Type) GetBank() uint8 {
+func (r *RegisterTebr1Type) GetBank() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterTebr1FieldBankMask) >> RegisterTebr1FieldBankShift)
 }
 
 // SetBank Indicates which RAM bank to use
-func (r *registerTebr1Type) SetBank(value uint8) {
+func (r *RegisterTebr1Type) SetBank(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTebr1FieldBankMask)|(uint32(value)<<RegisterTebr1FieldBankShift))
 }
 
@@ -750,12 +888,12 @@ const (
 )
 
 // GetType Indicates the error type
-func (r *registerTebr1Type) GetType() bool {
+func (r *RegisterTebr1Type) GetType() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterTebr1FieldTypeMask) != 0
 }
 
 // SetType Indicates the error type
-func (r *registerTebr1Type) SetType(value bool) {
+func (r *RegisterTebr1Type) SetType(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterTebr1FieldTypeMask)
 	} else {
@@ -769,12 +907,12 @@ const (
 )
 
 // GetPoison Indicates whether a BusFault is generated or not
-func (r *registerTebr1Type) GetPoison() bool {
+func (r *RegisterTebr1Type) GetPoison() bool {
 	return (volatile.LoadUint32((*uint32)(r)) & RegisterTebr1FieldPoisonMask) != 0
 }
 
 // SetPoison Indicates whether a BusFault is generated or not
-func (r *registerTebr1Type) SetPoison(value bool) {
+func (r *RegisterTebr1Type) SetPoison(value bool) {
 	if value {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterTebr1FieldPoisonMask)
 	} else {
@@ -788,11 +926,11 @@ const (
 )
 
 // GetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerTebr1Type) GetSwdef() uint8 {
+func (r *RegisterTebr1Type) GetSwdef() uint8 {
 	return uint8((volatile.LoadUint32((*uint32)(r)) & RegisterTebr1FieldSwdefMask) >> RegisterTebr1FieldSwdefShift)
 }
 
 // SetSwdef Error detection logic sets this field to 0b00 on a new allocation and on Cold reset
-func (r *registerTebr1Type) SetSwdef(value uint8) {
+func (r *RegisterTebr1Type) SetSwdef(value uint8) {
 	volatile.StoreUint32((*uint32)(r), (volatile.LoadUint32((*uint32)(r))&^RegisterTebr1FieldSwdefMask)|(uint32(value)<<RegisterTebr1FieldSwdefShift))
 }
