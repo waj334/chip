@@ -1,30 +1,19 @@
 package hal
 
 const (
-	ErrInvalidPinout    Error = -1
-	ErrInvalidConfig    Error = -2
-	ErrInvalidBuffer    Error = -3
-	ErrInvalidState     Error = -4
-	ErrInvalidParameter Error = -5
+	NoError             Error = "no error"
+	ErrInvalidPinout    Error = "invalid pinout"
+	ErrInvalidConfig    Error = "invalid configuration"
+	ErrInvalidBuffer    Error = "invalid buffer"
+	ErrInvalidState     Error = "invalid state"
+	ErrInvalidParameter Error = "invalid parameter"
+	ErrBusy             Error = "busy"
+	ErrNotReady         Error = "no ready"
+	ErrTimeout          Error = "timeout"
 )
 
-type Error int
+type Error string
 
 func (e Error) Error() string {
-	switch e {
-	case 0:
-		return "no error"
-	case -1:
-		return "invalid pinout"
-	case -2:
-		return "invalid configuration"
-	case -3:
-		return "invalid buffer"
-	case -4:
-		return "invalid state"
-	case -5:
-		return "invalid parameter"
-	default:
-		return "unknown error"
-	}
+	return string(e)
 }

@@ -1,4 +1,4 @@
-package runtime
+package cortexm
 
 import (
 	"nonstandard"
@@ -37,7 +37,7 @@ func coroEntry(c unsafe.Pointer)
 func initCoro(cptr unsafe.Pointer) {
 	c := (*_coro)(cptr)
 
-	frameSize := basicGoroutineContextSize + unsafe.Sizeof(extendedGoroutineContext{})
+	frameSize := baseGoroutineContextSize + unsafe.Sizeof(extendedGoroutineContext{})
 	top := uintptr(c.stack) + _coroStackSize
 	frameAddr := top - frameSize
 
@@ -48,7 +48,7 @@ func initCoro(cptr unsafe.Pointer) {
 
 	// Integer context starts after the FPU context (FPU at low end of frame).
 	basicAddr := frameAddr + uintptr(unsafe.Sizeof(extendedGoroutineContext{}))
-	basic := (*basicGoroutineContext)(unsafe.Pointer(basicAddr))
+	basic := (*baseGoroutineContext)(unsafe.Pointer(basicAddr))
 	basic.LR = uintptr(nonstandard.PointerOf(coroEntry)) | thumbEnabledBit
 
 	c.sp = unsafe.Pointer(frameAddr)

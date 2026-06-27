@@ -3,12 +3,12 @@ package main
 import (
 	"time"
 
+	"pkg.si-go.dev/chip/arm/cortexm"
 	_ "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/pin"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/sdio"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/timer"
-	"pkg.si-go.dev/chip/arm/cortexm/runtime"
 )
 
 const (
@@ -53,7 +53,7 @@ func addsleep(deadline uint64) {
 
 func init() {
 	// Prevent SysTick from driving timers.
-	runtime.SysTickCanWake = false
+	cortexm.SysTickCanWake = false
 
 	hal.ConfigureClocks()
 
@@ -109,14 +109,14 @@ func main() {
 	ready := false
 
 	// Send CMD0 to reset the card
-	if _, err = SDIO1.SendCommand(sdio.Command{Index: sdio.CMD0, Argument: 0}); err != nil {
+	if _, err = SDIO1.SendCommand(sdio.Command{Class: sdio.CMD0, Argument: 0}); err != nil {
 		errorState()
 		busyLoop()
 	}
 
 	for retry := 0; retry < 1000; retry++ {
 		// Send CMD5 to get the ready status of the card.
-		if resp, err = SDIO1.SendCommand(sdio.Command{Index: sdio.CMD5, Argument: 0x00FF8000}); err != nil {
+		if resp, err = SDIO1.SendCommand(sdio.Command{Class: sdio.CMD5, Argument: 0x00FF8000}); err != nil {
 			time.Sleep(time.Millisecond * 5)
 			continue
 		} else {
@@ -136,14 +136,14 @@ func main() {
 	}
 
 	// Send CMD3 to get the address of the card.
-	resp, err = SDIO1.SendCommand(sdio.Command{Index: sdio.CMD3, Argument: 0})
+	resp, err = SDIO1.SendCommand(sdio.Command{Class: sdio.CMD3, Argument: 0})
 	if err != nil {
 		errorState()
 		busyLoop()
 	}
 
 	// Send CMD7 with the returned RCA to select the card.
-	_, err = SDIO1.SendCommand(sdio.Command{Index: sdio.CMD7, Argument: resp[0] & 0xFFFF0000})
+	_, err = SDIO1.SendCommand(sdio.Command{Class: sdio.CMD7, Argument: resp[0] & 0xFFFF0000})
 	if err != nil {
 		errorState()
 		busyLoop()

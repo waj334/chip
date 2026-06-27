@@ -27,12 +27,26 @@ def WriteOnly : AccessMode<"W">;
 def ReadWrite : AccessMode<"RW">;
 
 class Family<string Name> : Object<Name>;
-class Architecture<string Name, Family Fam, string Arch, string Triple, int Alignment = 4, FPU Fpu = NoFPU> : Object<Name> {
+class Architecture<
+      string Name,
+      Family Fam,
+      string Arch,
+      string Triple,
+      int PointerSize,
+      int PointerAlignment,
+      int StackAlignment,
+      int MinHeapAlignment,
+      FPU Fpu = NoFPU> : Object<Name> {
     Family family = Fam;
     FPU fpu = Fpu;
     string triple = Triple;
     string arch = Arch;
-    int alignment = Alignment;
+
+    int pointerSize = PointerSize;
+    int pointerAlignment = PointerAlignment;
+    int stackAlignment = StackAlignment;
+    int minimumHeapAlignment = MinHeapAlignment;
+
     list<string> runtimePackages = [];
     list<string> tags = [];
     list<string> features = [];
@@ -43,6 +57,9 @@ class Quantity<int Value, int Multiplier = 1> {
 }
 
 class Bit<int Value> : Quantity<Value>;
+
+class Byte<int Value> : Quantity<Value>;
+class ByteAlignment<int Value> : Byte<Value>;
 
 class MemoryUnit<int Value, int Multiplier> : Quantity<Value, Multiplier>;
 class B<int Value>  : MemoryUnit<Value, 1>;

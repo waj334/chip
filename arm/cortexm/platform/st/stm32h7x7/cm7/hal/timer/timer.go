@@ -3,8 +3,11 @@
 package timer
 
 import (
+	"cache"
+	"pool"
 	"sync"
 	"time"
+	"unsafe"
 
 	stm32h7x7 "pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal"
@@ -30,11 +33,86 @@ type _tim32 uint8
 // The parameter is the current tick count when the alarm fired.
 type AlarmFunc func(t uint64)
 
+// alarmEntry is pooled via alarmAllocator (a pool.FixedPool). Its first field
+// (deadline) aliases the pool's intrusive free-list link when the entry is
+// free, so a freed entry's fields are invalid and must not be read.
 type alarmEntry struct {
 	deadline uint64
 	callback AlarmFunc
 	channel  int         // 0 to 3 for CCR1 to CCR4
-	next     *alarmEntry // Optional for future queuing
+	next     *alarmEntry // queue linkage
+}
+
+// --------------------------------------------------------------------------
+// alarmEntry pool (lock-free, no heap allocation)
+//
+// alarmEntry values are NEVER heap-allocated. SetAlarm is reachable from
+// contexts where heap allocation is forbidden:
+//
+//   - the runtime sleep() path calls SetAlarm from inside goparkWithCallback,
+//     which runs with interrupts DISABLED. alloc() takes gcMu.Lock(); with
+//     interrupts off no other goroutine can run to release that lock, so the
+//     lock can never be acquired -> deadlock (and, while half-parked, a pended
+//     PendSV produces an inconsistent context switch -> INVPC HardFault).
+//   - the TIM ISR (interrupt()) promotes queued alarms and re-arms channels;
+//     allocation from interrupt context is likewise forbidden.
+//
+// Entries come from a pool.FixedPool whose Get/Put are lock-free (atomic CAS),
+// so they compose with the interrupts-disabled park callback and with ISR
+// context without adding any lock dependency.
+//
+// IMPORTANT - backing placement: alarmBacking is a package-level global, so it
+// resides in .bss within [__gc_scan_start, __gc_scan_end). It MUST remain in
+// the GC-scanned globals range: each alarmEntry holds a callback (a func value
+// the GC treats as a pointer) which may be a heap-allocated closure (the
+// runtime sleep path). Keeping the backing in the scanned globals range means
+// a live alarm's callback stays reachable as a GC root and is not collected
+// out from under a pending alarm. Do NOT move alarmBacking into the SDRAM heap
+// or any unscanned region.
+// --------------------------------------------------------------------------
+
+const alarmPoolSize = 4*4 + 16 // 16 active channels + 16 queued, tune as needed
+
+// Slot size is one alarmEntry, rounded up by the pool to satisfy alignment and
+// to hold the intrusive free-list link. Aligning to the pointer size is
+// sufficient for a CPU-only (non-DMA) structure pool.
+const alarmSlotSize = unsafe.Sizeof(alarmEntry{})
+const alarmAlign = unsafe.Sizeof(uintptr(0))
+
+// alarmBacking lives in .bss (scanned globals). Sized generously so slot
+// rounding inside the pool never reduces capacity below alarmPoolSize.
+var alarmBacking [alarmPoolSize*alarmSlotSize + alarmAlign]byte
+
+var alarmAllocator = pool.MustNewFixed[cache.NoCache](
+	alarmBacking[:],
+	alarmSlotSize,
+	alarmAlign,
+)
+
+// allocAlarm returns a zeroed alarmEntry from the pool, or nil if exhausted.
+// No heap allocation. Lock-free; safe under interrupts-disabled and ISR
+// contexts.
+func allocAlarm() *alarmEntry {
+	b := alarmAllocator.Get()
+	if b == nil {
+		return nil
+	}
+	e := (*alarmEntry)(unsafe.Pointer(&b[0]))
+	*e = alarmEntry{channel: -1} // fully reinitialize; Get() contents are unspecified
+	return e
+}
+
+// freeAlarm returns an entry to the pool. The entry MUST be unlinked from all
+// channel slots and queues first, and MUST NOT be touched afterward: Put
+// overwrites the first word of the slot (which aliases alarmEntry.deadline)
+// with the free-list link.
+func freeAlarm(e *alarmEntry) {
+	if e == nil {
+		return
+	}
+	e.callback = nil // drop the closure reference so the GC can reclaim it
+	b := unsafe.Slice((*byte)(unsafe.Pointer(e)), alarmSlotSize)
+	alarmAllocator.Put(b)
 }
 
 type Direction bool
@@ -198,6 +276,16 @@ func (t _tim32) Resolution() time.Duration {
 	return time.Microsecond
 }
 
+// SetAlarm registers fn to fire at deadline (in timer ticks). It performs NO
+// heap allocation: alarmEntry values are drawn from the static pool, so this
+// is safe to call from interrupts-disabled context (e.g. the runtime sleep
+// park callback) and indirectly from contexts that must not touch gcMu.
+//
+// If deadline has already passed, fn is invoked immediately (outside the
+// critical section). If the pool is exhausted, fn is dropped after being
+// invoked with the current time is NOT done; instead the alarm is silently
+// dropped only if no entry is available - callers that require guaranteed
+// scheduling should ensure alarmPoolSize is large enough.
 func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
 	criticalSection := sync.NewCriticalSection(&mutex[t])
 	criticalSection.Begin()
@@ -205,14 +293,26 @@ func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
 	now := t.tick()
 	if fn == nil || deadline <= now {
 		criticalSection.End()
-		fn(now)
+		if fn != nil {
+			fn(now)
+		}
 		return
 	}
 
-	// Try to assign to an available channel
+	// Try to assign to an available channel.
 	for ch := 0; ch < 4; ch++ {
 		if alarms[t][ch] == nil {
-			entry := &alarmEntry{deadline: deadline, callback: fn, channel: ch}
+			entry := allocAlarm()
+			if entry == nil {
+				// Pool exhausted; cannot schedule. Fire immediately as a
+				// degraded fallback so the waiter is not lost forever.
+				criticalSection.End()
+				fn(now)
+				return
+			}
+			entry.deadline = deadline
+			entry.callback = fn
+			entry.channel = ch
 			alarms[t][ch] = entry
 			armCompare(t, ch, deadline)
 			criticalSection.End()
@@ -229,6 +329,7 @@ func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
 		if alarms[t][ch] != nil && now >= alarms[t][ch].deadline {
 			staleCallbacks[ch] = alarms[t][ch].callback
 			disableCompareInterrupt(t, ch)
+			freeAlarm(alarms[t][ch])
 			alarms[t][ch] = nil
 			staleCount++
 		}
@@ -238,7 +339,21 @@ func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
 		// Assign our new alarm to the first freed channel.
 		for ch := 0; ch < 4; ch++ {
 			if alarms[t][ch] == nil {
-				newEntry := &alarmEntry{deadline: deadline, callback: fn, channel: ch}
+				newEntry := allocAlarm()
+				if newEntry == nil {
+					criticalSection.End()
+					// Fire stale callbacks, then this one, outside the CS.
+					for i := 0; i < 4; i++ {
+						if staleCallbacks[i] != nil {
+							staleCallbacks[i](now)
+						}
+					}
+					fn(now)
+					return
+				}
+				newEntry.deadline = deadline
+				newEntry.callback = fn
+				newEntry.channel = ch
 				alarms[t][ch] = newEntry
 				armCompare(t, ch, deadline)
 
@@ -267,11 +382,18 @@ func (t _tim32) SetAlarm(deadline uint64, fn AlarmFunc) {
 		}
 	}
 
-	// No channels available. Queue it.
-	entry := &alarmEntry{deadline: deadline, callback: fn, channel: -1}
+	// No channels available. Queue it (still no heap allocation).
+	entry := allocAlarm()
+	if entry == nil {
+		criticalSection.End()
+		fn(now) // degraded fallback: pool exhausted
+		return
+	}
+	entry.deadline = deadline
+	entry.callback = fn
+	entry.channel = -1
 	insertQueuedAlarm(t, entry)
 	criticalSection.End()
-	return
 }
 
 func (t _tim32) tick() uint64 {
@@ -317,8 +439,11 @@ func interrupt(instance _tim32) {
 
 	// Phase 1: Collect fired alarms and promote queued alarms into freed
 	// channels. No callbacks are called in this phase, preventing re-entrant
-	// SetAlarm calls from racing with the channel promotion logic.
+	// SetAlarm calls from racing with the channel promotion logic. No heap
+	// allocation occurs here: promoted entries are existing pool entries, and
+	// fired entries are recorded for Phase 2 then returned to the pool.
 	var fired [4]*alarmEntry
+	var firedCallbacks [4]AlarmFunc
 
 	for ch := 0; ch < 4; ch++ {
 		entry := alarms[instance][ch]
@@ -363,10 +488,16 @@ func interrupt(instance _tim32) {
 				disableCompareInterrupt(instance, ch)
 			}
 
-			alarms[instance][ch] = nil
+			// Capture the callback, then release the entry back to the pool
+			// BEFORE running any callback (Phase 2). Capturing the callback
+			// separately lets us free the entry immediately and keeps the
+			// pool churn-free even if the callback re-arms a new alarm.
+			firedCallbacks[ch] = entry.callback
 			fired[ch] = entry
+			alarms[instance][ch] = nil
 
-			// Promote next queued alarm to this channel.
+			// Promote next queued alarm to this channel (reuses a pool entry,
+			// no allocation).
 			if alarmQueues[instance] != nil {
 				promoted := alarmQueues[instance]
 				alarmQueues[instance] = promoted.next
@@ -375,6 +506,9 @@ func interrupt(instance _tim32) {
 				alarms[instance][ch] = promoted
 				armCompare(instance, ch, promoted.deadline)
 			}
+
+			// Return the fired entry to the pool now that it is unlinked.
+			freeAlarm(fired[ch])
 		} else if ccFired {
 			// CC fired but deadline not yet reached (spurious or early). Reschedule.
 			armCompare(instance, ch, entry.deadline)
@@ -385,10 +519,11 @@ func interrupt(instance _tim32) {
 
 	// Phase 2: Fire callbacks outside the critical section. This allows
 	// callbacks to safely interact with goroutine scheduling (goresume, etc.)
-	// without holding any locks.
+	// without holding any locks. The pool entries have already been freed, so
+	// a callback that calls SetAlarm can reuse them.
 	for ch := 0; ch < 4; ch++ {
-		if fired[ch] != nil {
-			fired[ch].callback(now)
+		if firedCallbacks[ch] != nil {
+			firedCallbacks[ch](now)
 		}
 	}
 }

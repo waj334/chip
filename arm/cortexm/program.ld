@@ -6,17 +6,35 @@ SECTIONS
     .text :
     {
         KEEP(*(.isr_vector))
+
         *(.text)
         *(.text.*)
+
         *(.rodata)
         *(.rodata.*)
 
+        /*
+         * Picolibc constructor arrays.
+         *
+         * __bothinit_array_* covers the contiguous preinit and init
+         * arrays for Picolibc builds without _init/_fini functions.
+         */
         . = ALIGN(8);
-        /* Required for global ctors. */
+
+        PROVIDE_HIDDEN(__preinit_array_start = .);
+        PROVIDE_HIDDEN(__bothinit_array_start = .);
+
+        KEEP(*(.preinit_array))
+
+        PROVIDE_HIDDEN(__preinit_array_end = .);
         PROVIDE_HIDDEN(__init_array_start = .);
-        KEEP(*(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*)))
+
+        KEEP(*(SORT_BY_INIT_PRIORITY(.init_array.*)
+               SORT_BY_INIT_PRIORITY(.ctors.*)))
         KEEP(*(.init_array .ctors))
+
         PROVIDE_HIDDEN(__init_array_end = .);
+        PROVIDE_HIDDEN(__bothinit_array_end = .);
     } > TEXT
 
     /* Initialized data. VMA in RAM, LMA in TEXT (startup copies). */
@@ -42,35 +60,46 @@ SECTIONS
         __end_bss = .;
     } > RAM
 
-    /* Heap grows up from the end of .bss when HEAP and RAM are the same
-       region; otherwise the heap fills its own region.
+    /*
+     * Explicit sections that live in the heap region must be emitted before
+     * .heap consumes the rest of HEAP.
+     *
+     * Board/linker wrappers can define HEAP_RESERVED_SECTIONS to place fixed
+     * framebuffers, DMA pools, external RAM objects, etc. before the heap.
+     */
+    #ifdef HEAP_RESERVED_SECTIONS
+        HEAP_RESERVED_SECTIONS
+    #endif
 
-       The boundary computation handles both cases: when HEAP == RAM, the
-       heap starts after .bss and ends before the stack reservation.
-       When HEAP is a separate region, the heap fills it entirely. */
     .heap (NOLOAD) :
     {
         . = ALIGN(8);
         __heap_start = .;
 
-        /* When heap shares region with stack, leave room for stack */
-        /* When heap is in a separate region, use the whole region */
         . = (ORIGIN(STACK) == ORIGIN(HEAP))
             ? (ORIGIN(HEAP) + LENGTH(HEAP) - __stack_size)
             : (ORIGIN(HEAP) + LENGTH(HEAP));
 
+        . = ALIGN(8);
         __heap_end = .;
     } > HEAP
 
-    /* Stack at the top of its region. Stack overflow runs past the region
-       end and faults via the MPU or just an unmapped-address bus error. */
-    .stack ORIGIN(STACK) + LENGTH(STACK) - __stack_size (NOLOAD) :
+    .stack ((ORIGIN(STACK) + LENGTH(STACK) - __stack_size) & ~7) (NOLOAD) :
     {
+        . = ALIGN(8);
         __stack_bottom = .;
+
         . += __stack_size;
         . = ALIGN(8);
         __stack_top = .;
     } > STACK
+
+    ASSERT((__stack_size & 7) == 0, "__stack_size must be 8-byte aligned")
+    ASSERT((__stack_bottom & 7) == 0, "stack bottom is not 8-byte aligned")
+    ASSERT((__stack_top & 7) == 0, "stack top is not 8-byte aligned")
+    ASSERT(__heap_end >= __heap_start, "heap region overflowed by explicit sections")
+    ASSERT(__stack_top <= ORIGIN(STACK) + LENGTH(STACK), "stack exceeds stack region")
+    ASSERT(__heap_end <= __stack_bottom || ORIGIN(STACK) != ORIGIN(HEAP), "heap overlaps stack")
 
     /* GC scans the contiguous globals range covering .data and .bss. */
     __gc_scan_start = __start_data;

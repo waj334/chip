@@ -1,4 +1,4 @@
-package runtime
+package cortexm
 
 import (
 	"sync/atomic"
@@ -32,20 +32,23 @@ func nanotime() uint64 {
 }
 
 func initSysTick() {
-	// Disable SysTick first
 	systick.Systick.Csr.SetEnable(false)
 
-	// Set PendSV to the lowest priority so that context switching does not occur before other interrupts are serviced.
-	scb.Scb.Shpr3.SetPri14(5)
+	// STM32H747 implements 4 of the 8 architectural priority bits.
+	const priorityShift = 4
 
-	// NOTE: The priority for SysTick should be higher than PendSV, but lower than other critical interrupts.
-	scb.Scb.Shpr3.SetPri15(4)
+	// Lowest configurable priority.
+	scb.Scb.Shpr3.SetPri14(15 << priorityShift)
 
-	// TODO: Derive this value from the system clock settings
+	// One priority level above PendSV.
+	scb.Scb.Shpr3.SetPri15(14 << priorityShift)
+
 	UpdateSysTickFrequency(SysTickFrequency)
+
 	systick.Systick.Csr.SetTickint(true)
 	systick.Systick.Csr.SetClksource(true)
 	systick.Systick.Csr.SetEnable(true)
+
 	for !systick.Systick.Csr.GetEnable() {
 	}
 }

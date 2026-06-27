@@ -1,4 +1,4 @@
-package runtime
+package cortexm
 
 import (
 	"asm"
@@ -40,6 +40,19 @@ func DisableInterrupts() (state uint32) {
 		cpsid i
 	`, asm.Out(&state))
 	return
+}
+
+//sigo:export InterruptStatus runtime.InterruptStatus
+func InterruptStatus() (state uint32) {
+	asm.Inline(`
+		mrs {{state}}, IPSR
+	`, asm.Out(&state))
+	return
+}
+
+//sigo:export InInterrupt runtime.InInterrupt
+func InInterrupt() bool {
+	return InterruptStatus() != 0
 }
 
 //sigo:export InterruptState runtime.InterruptState

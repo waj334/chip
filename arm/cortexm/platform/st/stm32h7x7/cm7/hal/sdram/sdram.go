@@ -1,10 +1,10 @@
 package sdram
 
 import (
+	"pkg.si-go.dev/chip/arm/cortexm"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/hal/pin"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/fmc"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
-	cortexm "pkg.si-go.dev/chip/arm/cortexm/runtime"
 )
 
 const (

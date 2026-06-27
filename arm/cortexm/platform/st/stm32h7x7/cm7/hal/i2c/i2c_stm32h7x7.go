@@ -41,10 +41,10 @@ func (e _error) Error() string {
 }
 
 var (
-	I2C1 = &_i2c{index: 0}
-	I2C2 = &_i2c{index: 1}
-	I2C3 = &_i2c{index: 2}
-	I2C4 = &_i2c{index: 3}
+	I2C1 = &I2C{index: 0}
+	I2C2 = &I2C{index: 1}
+	I2C3 = &I2C{index: 2}
+	I2C4 = &I2C{index: 3}
 )
 
 type Config struct {
@@ -63,7 +63,7 @@ type Config struct {
 	Timeout time.Duration
 }
 
-type _i2c struct {
+type I2C struct {
 	index          uint8
 	address        uint16
 	clockFrequency uint32
@@ -73,7 +73,7 @@ type _i2c struct {
 	mutex sync.Mutex
 }
 
-func altFunction(p pin.Pin, instance *_i2c, wantSCL bool) (corepin.Mode, error) {
+func altFunction(p pin.Pin, instance *I2C, wantSCL bool) (corepin.Mode, error) {
 	if instance == I2C4 {
 		if wantSCL {
 			switch p {
@@ -106,7 +106,7 @@ func altFunction(p pin.Pin, instance *_i2c, wantSCL bool) (corepin.Mode, error) 
 	return 0, corehal.ErrInvalidPinout
 }
 
-func (i *_i2c) Configure(config Config) error {
+func (i *I2C) Configure(config Config) error {
 	i.mutex.Lock()
 
 	p := i2c.Instances[i.index]
@@ -175,39 +175,39 @@ func (i *_i2c) Configure(config Config) error {
 	return nil
 }
 
-func (i *_i2c) Read(b []byte) (n int, err error) {
+func (i *I2C) Read(b []byte) (n int, err error) {
 	i.mutex.Lock()
 	n, err = i.readAddress(i.address, b)
 	i.mutex.Unlock()
 	return n, err
 }
 
-func (i *_i2c) Write(b []byte) (n int, err error) {
+func (i *I2C) Write(b []byte) (n int, err error) {
 	i.mutex.Lock()
 	n, err = i.writeAddress(i.address, b)
 	i.mutex.Unlock()
 	return n, err
 }
 
-func (i *_i2c) SetAddress(addr uint16) {
+func (i *I2C) SetAddress(addr uint16) {
 	i.mutex.Lock()
 	i.address = addr
 	i.mutex.Unlock()
 }
 
-func (i *_i2c) SetClockFrequency(clockSpeedHz uint32) bool {
+func (i *I2C) SetClockFrequency(clockSpeedHz uint32) bool {
 	// i.clockFrequency = clockSpeedHz
 	return true
 }
 
-func (i *_i2c) GetClockFrequency() uint32 {
+func (i *I2C) GetClockFrequency() uint32 {
 	i.mutex.Lock()
 	result := i.clockFrequency
 	i.mutex.Unlock()
 	return result
 }
 
-func (i *_i2c) SetTiming(clockSpeedHz uint32, timing uint32) {
+func (i *I2C) SetTiming(clockSpeedHz uint32, timing uint32) {
 	i.mutex.Lock()
 	p := i2c.Instances[i.index]
 
@@ -225,7 +225,7 @@ func (i *_i2c) SetTiming(clockSpeedHz uint32, timing uint32) {
 	i.mutex.Unlock()
 }
 
-func (i *_i2c) GetTiming() (uint32, uint32) {
+func (i *I2C) GetTiming() (uint32, uint32) {
 	i.mutex.Lock()
 	f := i.clockFrequency
 	timing := i.timing
@@ -233,21 +233,21 @@ func (i *_i2c) GetTiming() (uint32, uint32) {
 	return f, timing
 }
 
-func (i *_i2c) WriteAddress(addr uint16, b []byte) (n int, err error) {
+func (i *I2C) WriteAddress(addr uint16, b []byte) (n int, err error) {
 	i.mutex.Lock()
 	n, err = i.writeAddress(addr, b)
 	i.mutex.Unlock()
 	return n, err
 }
 
-func (i *_i2c) ReadAddress(addr uint16, b []byte) (n int, err error) {
+func (i *I2C) ReadAddress(addr uint16, b []byte) (n int, err error) {
 	i.mutex.Lock()
 	n, err = i.readAddress(addr, b)
 	i.mutex.Unlock()
 	return n, err
 }
 
-func (i *_i2c) writeAddress(addr uint16, b []byte) (n int, err error) {
+func (i *I2C) writeAddress(addr uint16, b []byte) (n int, err error) {
 	p := i2c.Instances[i.index]
 
 	p.Cr2.SetAdd10(false) // 7-bit address mode
@@ -367,7 +367,7 @@ func (i *_i2c) writeAddress(addr uint16, b []byte) (n int, err error) {
 	return n, nil
 }
 
-func (i *_i2c) readAddress(addr uint16, b []byte) (n int, err error) {
+func (i *I2C) readAddress(addr uint16, b []byte) (n int, err error) {
 	p := i2c.Instances[i.index]
 
 	p.Cr2.SetAdd10(false) // 7-bit address mode

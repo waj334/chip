@@ -276,6 +276,7 @@ def RCCPeripheral : PeripheralType<"RCC", "Reset and clock control"> {
     ], "RCC AHB4 Peripheral Reset Register">,
     Register<"APB3RSTR", 0x8c, 32, [
       Field<"LTDCRST", 3, 1, ReadWrite, "LTDC block reset">,
+      Field<"DSIRST", 4, 1, ReadWrite, "DSI block reset">,
     ], "RCC APB3 Peripheral Reset Register">,
     Register<"APB1LRSTR", 0x90, 32, [
       Field<"TIM2RST", 0, 1, ReadWrite, "TIM block reset">,
@@ -427,6 +428,7 @@ def RCCPeripheral : PeripheralType<"RCC", "Reset and clock control"> {
     ], "RCC AHB4 Clock Register">,
     Register<"APB3ENR", 0xe4, 32, [
       Field<"LTDCEN", 3, 1, ReadWrite, "LTDC peripheral clock enable">,
+      Field<"DSIEN", 4, 1, ReadWrite, "DSI peripheral clock enable">,
       Field<"WWDG1EN", 6, 1, ReadWrite, "WWDG1 Clock Enable">,
     ], "RCC APB3 Clock Register">,
     Register<"APB1LENR", 0xe8, 32, [
@@ -677,6 +679,7 @@ def RCCPeripheral : PeripheralType<"RCC", "Reset and clock control"> {
     ], "RCC AHB4 Clock Register">,
     Register<"C1_APB3ENR", 0x144, 32, [
       Field<"LTDCEN", 3, 1, ReadWrite, "LTDC peripheral clock enable">,
+      Field<"DSIEN", 4, 1, ReadWrite, "DSI peripheral clock enable">,
       Field<"WWDG1EN", 6, 1, ReadWrite, "WWDG1 Clock Enable">,
     ], "RCC APB3 Clock Register">,
     Register<"C1_APB1LENR", 0x148, 32, [

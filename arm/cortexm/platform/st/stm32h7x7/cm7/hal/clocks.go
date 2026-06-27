@@ -3,8 +3,7 @@
 package hal
 
 import (
-	cortexm "pkg.si-go.dev/chip/arm/cortexm/runtime"
-
+	"pkg.si-go.dev/chip/arm/cortexm"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/flash"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/pwr"
 	"pkg.si-go.dev/chip/arm/cortexm/platform/st/stm32h7x7/cm7/reg/rcc"
@@ -228,6 +227,13 @@ var (
 	Spi6SourceFrequencyHz        uint64
 	SdmmcSourceFrequencyHz       uint64
 	RngSourceFrequencyHz         uint64
+	FmcSourceFrequencyHz         uint64
+	QspiSourceFrequencyHz        uint64
+	LtdcSourceFrequencyHz        uint64
+	DsiHostReferenceFrequencyHz  uint64
+	DsiHostPhyFrequencyHz        uint64
+	DsiHostLaneByteFrequencyHz   uint64
+	DsiHostTxEscapeFrequencyHz   uint64
 )
 
 // ConfigureClocks programs the chip's clock tree to the default configuration.

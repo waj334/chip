@@ -1,6 +1,6 @@
 //go:build armv6m
 
-package runtime
+package cortexm
 
 const (
 	defaultPsrValue uintptr = 0

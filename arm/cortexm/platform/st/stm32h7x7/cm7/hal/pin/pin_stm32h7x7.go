@@ -132,6 +132,20 @@ const (
 	MediumSpeed   corepin.SpeedMode = 1
 	HighSpeed     corepin.SpeedMode = 2
 	VeryHighSpeed corepin.SpeedMode = 3
+
+	GpioA = 0
+	GpioB = 1
+	GpioC = 2
+	GpioD = 3
+	GpioE = 4
+	GpioF = 5
+	GpioG = 6
+	GpioH = 7
+	GpioI = 8
+	GpioJ = 9
+	GpioK = 10
+
+	NoPin Pin = 0
 )
 
 // GPIO group A
@@ -367,11 +381,11 @@ type Mode corepin.Mode
 
 type Pin uint32
 
-func (p Pin) number() int {
+func (p Pin) Number() int {
 	return int(p) & 0xF
 }
 
-func (p Pin) group() int {
+func (p Pin) Group() int {
 	return int(p>>4) & 0xF
 }
 
@@ -404,8 +418,8 @@ func (p Pin) Toggle() {
 }
 
 func (p Pin) Set(on bool) {
-	group := gpio.Instances[p.group()]
-	n := p.number()
+	group := gpio.Instances[p.Group()]
+	n := p.Number()
 	if on {
 		group.Bsrr.Store(1 << n)
 	} else {
@@ -414,8 +428,8 @@ func (p Pin) Set(on bool) {
 }
 
 func (p Pin) Get() bool {
-	group := gpio.Instances[p.group()]
-	n := p.number()
+	group := gpio.Instances[p.Group()]
+	n := p.Number()
 	return group.Idr.Load()&(1<<n) != 0
 }
 
@@ -455,8 +469,8 @@ func (p Pin) Value() (value uint, err error) {
 }
 
 func (p Pin) SetInterrupt(mode corepin.IRQMode, fn corepin.InterruptHandler[Pin]) {
-	group := uint8(p.group())
-	pin := p.number()
+	group := uint8(p.Group())
+	pin := p.Number()
 	mask := uint32(1 << pin)
 
 	// Set the pin group for the EXTI corresponding to the pin number.
@@ -545,7 +559,7 @@ func (p Pin) SetInterrupt(mode corepin.IRQMode, fn corepin.InterruptHandler[Pin]
 }
 
 func (p Pin) ClearInterrupt() {
-	pin := p.number()
+	pin := p.Number()
 	mask := uint32(1 << pin)
 
 	// Disable EXTI interrupt
@@ -585,8 +599,8 @@ func (p Pin) SetMode(mode corepin.Mode) {
 		alt = 0
 	}
 
-	group := gpio.Instances[p.group()]
-	n := p.number()
+	group := gpio.Instances[p.Group()]
+	n := p.Number()
 
 	// Program AF first, before activating AF mode.
 	afOffset := uint32(4 * (n % 8))
@@ -610,16 +624,16 @@ func (p Pin) SetMode(mode corepin.Mode) {
 }
 
 func (p Pin) GetMode() corepin.Mode {
-	group := gpio.Instances[p.group()]
-	n := p.number()
+	group := gpio.Instances[p.Group()]
+	n := p.Number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
 	return corepin.Mode((group.Moder.Load() & mask) >> offsetInBits)
 }
 
 func (p Pin) SetOutputMode(mode corepin.OutputMode) {
-	group := gpio.Instances[p.group()]
-	mask := uint32(0x1) << p.number()
+	group := gpio.Instances[p.Group()]
+	mask := uint32(0x1) << p.Number()
 	if mode == OpenDrain {
 		group.Otyper.StoreBits(mask)
 	} else {
@@ -628,15 +642,15 @@ func (p Pin) SetOutputMode(mode corepin.OutputMode) {
 }
 
 func (p Pin) GetOutputMode() corepin.OutputMode {
-	group := gpio.Instances[p.group()]
-	n := p.number()
+	group := gpio.Instances[p.Group()]
+	n := p.Number()
 	mask := uint32(0x1) << n
 	return corepin.OutputMode((volatile.LoadUint32((*uint32)(&group.Otyper)) & mask) >> n)
 }
 
 func (p Pin) SetSpeedMode(speed corepin.SpeedMode) {
-	group := gpio.Instances[p.group()]
-	n := p.number()
+	group := gpio.Instances[p.Group()]
+	n := p.Number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
 	ospeedr := group.Ospeedr.Load()
@@ -645,16 +659,16 @@ func (p Pin) SetSpeedMode(speed corepin.SpeedMode) {
 }
 
 func (p Pin) GetSpeedMode() corepin.SpeedMode {
-	group := gpio.Instances[p.group()]
-	n := p.number()
+	group := gpio.Instances[p.Group()]
+	n := p.Number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
 	return corepin.SpeedMode((volatile.LoadUint32((*uint32)(&group.Ospeedr)) & mask) >> offsetInBits)
 }
 
 func (p Pin) SetPullMode(mode corepin.PullMode) {
-	group := gpio.Instances[p.group()]
-	n := p.number()
+	group := gpio.Instances[p.Group()]
+	n := p.Number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
 	pupdr := group.Pupdr.Load()
@@ -663,8 +677,8 @@ func (p Pin) SetPullMode(mode corepin.PullMode) {
 }
 
 func (p Pin) GetPullMode() corepin.PullMode {
-	group := gpio.Instances[p.group()]
-	n := p.number()
+	group := gpio.Instances[p.Group()]
+	n := p.Number()
 	offsetInBits := uint32(2 * n)
 	mask := uint32(0x3) << offsetInBits
 	return corepin.PullMode((volatile.LoadUint32((*uint32)(&group.Pupdr)) & mask) >> offsetInBits)

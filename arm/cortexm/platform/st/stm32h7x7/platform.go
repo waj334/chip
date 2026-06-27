@@ -3,7 +3,7 @@
 package stm32h7x7
 
 import (
-	cortexm "pkg.si-go.dev/chip/arm/cortexm/runtime"
+	"pkg.si-go.dev/chip/arm/cortexm"
 )
 
 func init() {

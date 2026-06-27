@@ -24,9 +24,8 @@ type base interface {
 	GetPullMode() PullMode
 }
 
-type Pin interface {
+type Pin[BaseT base] interface {
 	base
-
-	SetInterrupt(mode IRQMode, fn InterruptHandler[base])
+	SetInterrupt(mode IRQMode, fn InterruptHandler[BaseT])
 	ClearInterrupt()
 }

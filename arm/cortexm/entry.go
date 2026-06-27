@@ -1,4 +1,4 @@
-package runtime
+package cortexm
 
 import (
 	"unsafe"
@@ -81,11 +81,11 @@ func _entry() {
 	// Initialize the global variables.
 	initMemory()
 
-	// Run post-initialization code.
-	postinit()
-
 	// Initialize the FPU if it was enabled during the build.
 	initFPU()
+
+	// Run post-initialization code.
+	postinit()
 
 	// Init the GC
 	initgc()

@@ -4281,6 +4281,25 @@ func (r *RegisterApb3rstrType) SetLtdcrst(value bool) {
 	}
 }
 
+const (
+	RegisterApb3rstrFieldDsirstShift = 4
+	RegisterApb3rstrFieldDsirstMask  = 0x10
+)
+
+// GetDsirst DSI block reset
+func (r *RegisterApb3rstrType) GetDsirst() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb3rstrFieldDsirstMask) != 0
+}
+
+// SetDsirst DSI block reset
+func (r *RegisterApb3rstrType) SetDsirst(value bool) {
+	if value {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb3rstrFieldDsirstMask)
+	} else {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterApb3rstrFieldDsirstMask)
+	}
+}
+
 // RegisterApb1lrstrType RCC APB1 Peripheral Reset Register
 type RegisterApb1lrstrType uint32
 
@@ -7003,6 +7022,25 @@ func (r *RegisterApb3enrType) SetLtdcen(value bool) {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb3enrFieldLtdcenMask)
 	} else {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterApb3enrFieldLtdcenMask)
+	}
+}
+
+const (
+	RegisterApb3enrFieldDsienShift = 4
+	RegisterApb3enrFieldDsienMask  = 0x10
+)
+
+// GetDsien DSI peripheral clock enable
+func (r *RegisterApb3enrType) GetDsien() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterApb3enrFieldDsienMask) != 0
+}
+
+// SetDsien DSI peripheral clock enable
+func (r *RegisterApb3enrType) SetDsien(value bool) {
+	if value {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterApb3enrFieldDsienMask)
+	} else {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterApb3enrFieldDsienMask)
 	}
 }
 
@@ -11525,6 +11563,25 @@ func (r *RegisterC1apb3enrType) SetLtdcen(value bool) {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb3enrFieldLtdcenMask)
 	} else {
 		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb3enrFieldLtdcenMask)
+	}
+}
+
+const (
+	RegisterC1apb3enrFieldDsienShift = 4
+	RegisterC1apb3enrFieldDsienMask  = 0x10
+)
+
+// GetDsien DSI peripheral clock enable
+func (r *RegisterC1apb3enrType) GetDsien() bool {
+	return (volatile.LoadUint32((*uint32)(r)) & RegisterC1apb3enrFieldDsienMask) != 0
+}
+
+// SetDsien DSI peripheral clock enable
+func (r *RegisterC1apb3enrType) SetDsien(value bool) {
+	if value {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))|RegisterC1apb3enrFieldDsienMask)
+	} else {
+		volatile.StoreUint32((*uint32)(r), volatile.LoadUint32((*uint32)(r))&^RegisterC1apb3enrFieldDsienMask)
 	}
 }
 
